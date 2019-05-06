@@ -2325,18 +2325,32 @@
 				</Page>
 			</ChildItems>
 		</Pages>
-		<UsualGroup name="ГруппаСлужбаПоддержки" id="630">
+		<UsualGroup name="ГруппаТребуетсяПомощь" id="725">
 			<Title>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Служба поддержки</v8:content>
+					<v8:content>Требуется помощь?</v8:content>
 				</v8:item>
 			</Title>
-			<Representation>None</Representation>
-			<ShowTitle>false</ShowTitle>
-			<ExtendedTooltip name="ГруппаСлужбаПоддержкиРасширеннаяПодсказка" id="631"/>
+			<Group>Vertical</Group>
+			<Behavior>PopUp</Behavior>
+			<ExtendedTooltip name="ГруппаТребуетсяПомощьРасширеннаяПодсказка" id="726"/>
 			<ChildItems>
-				<LabelDecoration name="СлужбаПоддержки" id="632">
+				<LabelDecoration name="ДекорацияОписание" id="727">
+					<Title formatted="false">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Описание, условия и цены</v8:content>
+						</v8:item>
+					</Title>
+					<Hyperlink>true</Hyperlink>
+					<ContextMenu name="ДекорацияОписаниеКонтекстноеМеню" id="728"/>
+					<ExtendedTooltip name="ДекорацияОписаниеРасширеннаяПодсказка" id="729"/>
+					<Events>
+						<Event name="Click">ДекорацияОписаниеНажатие</Event>
+					</Events>
+				</LabelDecoration>
+				<LabelDecoration name="СлужбаПоддержки" id="730">
 					<AutoMaxWidth>false</AutoMaxWidth>
 					<TextColor>style:ПоясняющийТекст</TextColor>
 					<Title formatted="true">
@@ -2346,8 +2360,8 @@
 						</v8:item>
 					</Title>
 					<VerticalAlign>Bottom</VerticalAlign>
-					<ContextMenu name="СлужбаПоддержкиКонтекстноеМеню" id="633"/>
-					<ExtendedTooltip name="СлужбаПоддержкиРасширеннаяПодсказка" id="634"/>
+					<ContextMenu name="СлужбаПоддержкиКонтекстноеМеню" id="731"/>
+					<ExtendedTooltip name="СлужбаПоддержкиРасширеннаяПодсказка" id="732"/>
 				</LabelDecoration>
 			</ChildItems>
 		</UsualGroup>

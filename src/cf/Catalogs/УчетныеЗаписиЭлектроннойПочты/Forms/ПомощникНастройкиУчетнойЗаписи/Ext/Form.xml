@@ -101,18 +101,47 @@
 									<ContextMenu name="КартинкаПредупреждениеКонтекстноеМеню" id="161"/>
 									<ExtendedTooltip name="КартинкаПредупреждениеРасширеннаяПодсказка" id="162"/>
 								</PictureDecoration>
-								<InputField name="СообщенияОбОшибках" id="238">
-									<DataPath>СообщенияОбОшибках</DataPath>
-									<ReadOnly>true</ReadOnly>
-									<TitleLocation>None</TitleLocation>
-									<Height>2</Height>
-									<VerticalStretch>false</VerticalStretch>
-									<MultiLine>true</MultiLine>
-									<BackColor>style:FormBackColor</BackColor>
-									<BorderColor>style:FormBackColor</BorderColor>
-									<ContextMenu name="СообщенияОбОшибкахКонтекстноеМеню" id="239"/>
-									<ExtendedTooltip name="СообщенияОбОшибкахРасширеннаяПодсказка" id="240"/>
-								</InputField>
+								<UsualGroup name="ГруппаСообщенияОбОшибках" id="270">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Группа сообщения об ошибках</v8:content>
+										</v8:item>
+									</Title>
+									<Group>Vertical</Group>
+									<Representation>None</Representation>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="ГруппаСообщенияОбОшибкахРасширеннаяПодсказка" id="271"/>
+									<ChildItems>
+										<InputField name="СообщенияОбОшибках" id="238">
+											<DataPath>СообщенияОбОшибках</DataPath>
+											<ReadOnly>true</ReadOnly>
+											<TitleLocation>None</TitleLocation>
+											<Height>2</Height>
+											<VerticalStretch>false</VerticalStretch>
+											<MultiLine>true</MultiLine>
+											<BackColor>style:FormBackColor</BackColor>
+											<BorderColor>style:FormBackColor</BorderColor>
+											<ContextMenu name="СообщенияОбОшибкахКонтекстноеМеню" id="239"/>
+											<ExtendedTooltip name="СообщенияОбОшибкахРасширеннаяПодсказка" id="240"/>
+										</InputField>
+										<LabelDecoration name="НужнаПомощь" id="272">
+											<Title formatted="false">
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Нужна помощь?</v8:content>
+												</v8:item>
+											</Title>
+											<GroupHorizontalAlign>Left</GroupHorizontalAlign>
+											<Hyperlink>true</Hyperlink>
+											<ContextMenu name="НужнаПомощьКонтекстноеМеню" id="273"/>
+											<ExtendedTooltip name="НужнаПомощьРасширеннаяПодсказка" id="274"/>
+											<Events>
+												<Event name="Click">НужнаПомощьНажатие</Event>
+											</Events>
+										</LabelDecoration>
+									</ChildItems>
+								</UsualGroup>
 							</ChildItems>
 						</UsualGroup>
 						<UsualGroup name="Аутентификация" id="200">
