@@ -307,7 +307,11 @@
 			<AuxiliaryFolderChoiceForm/>
 			<IncludeHelpInContents>false</IncludeHelpInContents>
 			<BasedOn/>
-			<DataLockFields/>
+			<DataLockFields>
+				<xr:Field>Catalog.НаборыГруппДоступа.Attribute.ДляВнешнихПользователей</xr:Field>
+				<xr:Field>Catalog.НаборыГруппДоступа.Attribute.ТипЭлементовНабора</xr:Field>
+				<xr:Field>Catalog.НаборыГруппДоступа.Attribute.Хеш</xr:Field>
+			</DataLockFields>
 			<DataLockControlMode>Managed</DataLockControlMode>
 			<FullTextSearch>DontUse</FullTextSearch>
 			<ObjectPresentation>
@@ -428,6 +432,57 @@
 					<DataHistory>Use</DataHistory>
 				</Properties>
 			</Attribute>
+			<Attribute uuid="a56ff7f4-2259-455f-b707-b98aacd7d0b2">
+				<Properties>
+					<Name>Хеш</Name>
+					<Synonym>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Хеш</v8:content>
+						</v8:item>
+					</Synonym>
+					<Comment/>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>10</v8:Digits>
+							<v8:FractionDigits>0</v8:FractionDigits>
+							<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+					<PasswordMode>false</PasswordMode>
+					<Format/>
+					<EditFormat/>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Хеш-сумма состава групп, позволяющая
+сделать быстрый поиск по индексу</v8:content>
+						</v8:item>
+					</ToolTip>
+					<MarkNegatives>false</MarkNegatives>
+					<Mask/>
+					<MultiLine>false</MultiLine>
+					<ExtendedEdit>false</ExtendedEdit>
+					<MinValue xsi:nil="true"/>
+					<MaxValue xsi:nil="true"/>
+					<FillFromFillingValue>false</FillFromFillingValue>
+					<FillValue xsi:nil="true"/>
+					<FillChecking>DontCheck</FillChecking>
+					<ChoiceFoldersAndItems>Items</ChoiceFoldersAndItems>
+					<ChoiceParameterLinks/>
+					<ChoiceParameters/>
+					<QuickChoice>Auto</QuickChoice>
+					<CreateOnInput>Auto</CreateOnInput>
+					<ChoiceForm/>
+					<LinkByType/>
+					<ChoiceHistoryOnInput>Auto</ChoiceHistoryOnInput>
+					<Use>ForItem</Use>
+					<Indexing>Index</Indexing>
+					<FullTextSearch>Use</FullTextSearch>
+					<DataHistory>Use</DataHistory>
+				</Properties>
+			</Attribute>
 			<Attribute uuid="8c9636c3-0a84-4575-b4c7-6d8bb588e1b0">
 				<Properties>
 					<Name>НеИспользуетсяС</Name>
@@ -452,7 +507,7 @@
 							<v8:lang>ru</v8:lang>
 							<v8:content>Когда заполнено, тогда набор не используется ни одним из пользователей
 по текущим настройкам, но еще может использоваться в параметрах сеансов.
-Через сутки неиспользуемый набор удаляется.</v8:content>
+Через некоторое время неиспользуемый набор удаляется.</v8:content>
 						</v8:item>
 					</ToolTip>
 					<MarkNegatives>false</MarkNegatives>

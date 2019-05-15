@@ -49,20 +49,38 @@
 				</CheckBoxField>
 			</ChildItems>
 		</UsualGroup>
-		<InputField name="ТипЭлементовНабора" id="10">
-			<DataPath>Объект.ТипЭлементовНабора</DataPath>
-			<EditMode>EnterOnInput</EditMode>
-			<DropListButton>false</DropListButton>
-			<ChoiceButtonRepresentation>ShowInInputField</ChoiceButtonRepresentation>
-			<OpenButton>false</OpenButton>
-			<CreateButton>false</CreateButton>
-			<ListChoiceMode>true</ListChoiceMode>
-			<ContextMenu name="ТипЭлементовНабораКонтекстноеМеню" id="11"/>
-			<ExtendedTooltip name="ТипЭлементовНабораРасширеннаяПодсказка" id="12"/>
-			<Events>
-				<Event name="OnChange">ТипЭлементовНабораПриИзменении</Event>
-			</Events>
-		</InputField>
+		<UsualGroup name="ТипЭлементовНабораИХеш" id="60">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Тип элементов набора и хеш</v8:content>
+				</v8:item>
+			</Title>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ТипЭлементовНабораИХешРасширеннаяПодсказка" id="61"/>
+			<ChildItems>
+				<InputField name="ТипЭлементовНабора" id="10">
+					<DataPath>Объект.ТипЭлементовНабора</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<DropListButton>false</DropListButton>
+					<ChoiceButtonRepresentation>ShowInInputField</ChoiceButtonRepresentation>
+					<OpenButton>false</OpenButton>
+					<CreateButton>false</CreateButton>
+					<ListChoiceMode>true</ListChoiceMode>
+					<ContextMenu name="ТипЭлементовНабораКонтекстноеМеню" id="11"/>
+					<ExtendedTooltip name="ТипЭлементовНабораРасширеннаяПодсказка" id="12"/>
+					<Events>
+						<Event name="OnChange">ТипЭлементовНабораПриИзменении</Event>
+					</Events>
+				</InputField>
+				<InputField name="Хеш" id="57">
+					<DataPath>Объект.Хеш</DataPath>
+					<ContextMenu name="ХешКонтекстноеМеню" id="58"/>
+					<ExtendedTooltip name="ХешРасширеннаяПодсказка" id="59"/>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
 		<Pages name="РеквизитыНаборов" id="34">
 			<Title>
 				<v8:item>

@@ -83,16 +83,69 @@
 				</UsualGroup>
 			</ChildItems>
 		</UsualGroup>
-		<UsualGroup name="ГруппаОбновлениеДоступаКоВсемЭлементамСписков" id="11">
+		<UsualGroup name="ГруппаПланированиеОбновлениеДоступа" id="11">
 			<Title>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
 					<v8:content>2. Обновление доступа ко всем элементам списков</v8:content>
 				</v8:item>
 			</Title>
+			<Group>Vertical</Group>
 			<Representation>NormalSeparation</Representation>
-			<ExtendedTooltip name="ГруппаОбновлениеДоступаКоВсемЭлементамСписковРасширеннаяПодсказка" id="12"/>
+			<ExtendedTooltip name="ГруппаПланированиеОбновлениеДоступаРасширеннаяПодсказка" id="12"/>
 			<ChildItems>
+				<CheckBoxField name="ОбновитьКлючиДоступаКЭлементамДанных" id="58">
+					<DataPath>ОбновитьКлючиДоступаКЭлементамДанных</DataPath>
+					<TitleLocation>Right</TitleLocation>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Это обработка элементов данных:
+выбор запросом порций объектов или отборов записей регистров,
+у которых устарели ключи доступа, и замена их ключей доступа на новые.</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ToolTipRepresentation>Button</ToolTipRepresentation>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="ОбновитьКлючиДоступаКЭлементамДанныхКонтекстноеМеню" id="59"/>
+					<ExtendedTooltip name="ОбновитьКлючиДоступаКЭлементамДанныхРасширеннаяПодсказка" id="60"/>
+				</CheckBoxField>
+				<CheckBoxField name="ОбновитьПраваНаКлючиДоступа" id="61">
+					<DataPath>ОбновитьПраваНаКлючиДоступа</DataPath>
+					<TitleLocation>Right</TitleLocation>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Это обработка ключей доступа:
+выбор запросом порций ранее созданных ключей доступа списка,
+расчет прав групп доступа, прав пользователей, прав внешних пользователей и
+обновление прав в регистрах, если права в регистрах отличаются от рассчитанных прав.</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ToolTipRepresentation>Button</ToolTipRepresentation>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="ОбновитьПраваНаКлючиДоступаКонтекстноеМеню" id="62"/>
+					<ExtendedTooltip name="ОбновитьПраваНаКлючиДоступаРасширеннаяПодсказка" id="63"/>
+				</CheckBoxField>
+				<CheckBoxField name="УдалитьУстаревшиеСлужебныеДанные" id="64">
+					<DataPath>УдалитьУстаревшиеСлужебныеДанные</DataPath>
+					<TitleLocation>Right</TitleLocation>
+					<ToolTipRepresentation>Button</ToolTipRepresentation>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="УдалитьУстаревшиеСлужебныеДанныеКонтекстноеМеню" id="65"/>
+					<ExtendedTooltip name="УдалитьУстаревшиеСлужебныеДанныеРасширеннаяПодсказка" id="66">
+						<Title formatted="false">
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Это обработка устаревших:
+- выбор запросом порций устаревших элементов данных и удаление,
+- выбор запросом порций неиспользуемых ключей доступа и установка отсрочки устаревания,
+- выбор запросом порций устаревших ключей доступа и удаление,
+- выбор запросом порций устаревших наборов групп доступа и удаление.</v8:content>
+							</v8:item>
+						</Title>
+					</ExtendedTooltip>
+				</CheckBoxField>
 				<Table name="СпискиДляОбновления" id="18">
 					<Representation>List</Representation>
 					<ChangeRowSet>false</ChangeRowSet>
@@ -126,16 +179,16 @@
 								<LocationInCommandBar>InCommandBarAndInAdditionalSubmenu</LocationInCommandBar>
 								<ExtendedTooltip name="СпискиДляОбновленияСнятьФлажкиРасширеннаяПодсказка" id="42"/>
 							</Button>
-							<Button name="СпискиЗапланироватьОбновлениеДоступаКоВсемЭлементамОтмеченныхСписков" id="37">
+							<Button name="СпискиЗапланироватьОбновлениеДоступаСписков" id="37">
 								<Type>CommandBarButton</Type>
-								<CommandName>Form.Command.ЗапланироватьОбновлениеДоступаКоВсемЭлементамОтмеченныхСписков</CommandName>
+								<CommandName>Form.Command.ЗапланироватьОбновлениеДоступаСписков</CommandName>
 								<Title>
 									<v8:item>
 										<v8:lang>ru</v8:lang>
 										<v8:content>Запланировать обновление</v8:content>
 									</v8:item>
 								</Title>
-								<ExtendedTooltip name="СпискиЗапланироватьОбновлениеДоступаКоВсемЭлементамОтмеченныхСписковРасширеннаяПодсказка" id="38"/>
+								<ExtendedTooltip name="СпискиЗапланироватьОбновлениеДоступаСписковРасширеннаяПодсказка" id="38"/>
 							</Button>
 						</ChildItems>
 					</AutoCommandBar>
@@ -259,6 +312,39 @@
 				<v8:TypeSet>cfg:AnyRef</v8:TypeSet>
 			</Type>
 		</Attribute>
+		<Attribute name="ОбновитьКлючиДоступаКЭлементамДанных" id="8">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Обновить ключи доступа к элементам данных</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ОбновитьПраваНаКлючиДоступа" id="9">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Обновить права на ключи доступа</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="УдалитьУстаревшиеСлужебныеДанные" id="10">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Удалить устаревшие служебные данные</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
 	</Attributes>
 	<Commands>
 		<Command name="ОбновитьДоступКОбъекту" id="1">
@@ -277,21 +363,21 @@
 			<Action>ОбновитьДоступКОбъекту</Action>
 			<CurrentRowUse>DontUse</CurrentRowUse>
 		</Command>
-		<Command name="ЗапланироватьОбновлениеДоступаКоВсемЭлементамОтмеченныхСписков" id="2">
+		<Command name="ЗапланироватьОбновлениеДоступаСписков" id="2">
 			<Title>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Запланировать обновление доступа ко всем элементам отмеченных списков</v8:content>
+					<v8:content>Запланировать обновление доступа списков</v8:content>
 				</v8:item>
 			</Title>
 			<ToolTip>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Запланировать обновление доступа ко всем элементам отмеченных списков.
+					<v8:content>Запланировать указанные виды обновления для отмеченных списков.
 Обновление будет выполняться регламентным заданием "Обновление доступа".</v8:content>
 				</v8:item>
 			</ToolTip>
-			<Action>ЗапланироватьОбновлениеДоступаКоВсемЭлементамОтмеченныхСписков</Action>
+			<Action>ЗапланироватьОбновлениеДоступаСписков</Action>
 			<CurrentRowUse>DontUse</CurrentRowUse>
 		</Command>
 		<Command name="ПоказатьДоступКОбъекту" id="3">

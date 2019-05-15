@@ -1518,7 +1518,8 @@
 									<Title>
 										<v8:item>
 											<v8:lang>ru</v8:lang>
-											<v8:content>Протокол загрузки (для COM - соединения) на сервере</v8:content>
+											<v8:content>Протокол загрузки (для COM - соединения)
+на сервере</v8:content>
 										</v8:item>
 									</Title>
 									<ChoiceButton>true</ChoiceButton>
@@ -1529,6 +1530,79 @@
 										<Event name="StartChoice">ИмяФайлаПротоколаОбменаЗагрузкаНачалоВыбора</Event>
 										<Event name="Opening">ИмяФайлаПротоколаОбменаЗагрузкаОткрытие</Event>
 									</Events>
+								</InputField>
+								<InputField name="КодировкаФайлаПротоколаСписок" id="407">
+									<DataPath>Объект.КодировкаФайлаПротоколаОбмена</DataPath>
+									<ListChoiceMode>true</ListChoiceMode>
+									<ChoiceList>
+										<xr:Item>
+											<xr:Presentation/>
+											<xr:CheckState>0</xr:CheckState>
+											<xr:Value xsi:type="FormChoiceListDesTimeValue">
+												<Presentation>
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>ANSI</v8:content>
+													</v8:item>
+												</Presentation>
+												<Value xsi:type="xs:string">КодировкаТекста.ANSI</Value>
+											</xr:Value>
+										</xr:Item>
+										<xr:Item>
+											<xr:Presentation/>
+											<xr:CheckState>0</xr:CheckState>
+											<xr:Value xsi:type="FormChoiceListDesTimeValue">
+												<Presentation>
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>OEM</v8:content>
+													</v8:item>
+												</Presentation>
+												<Value xsi:type="xs:string">КодировкаТекста.OEM</Value>
+											</xr:Value>
+										</xr:Item>
+										<xr:Item>
+											<xr:Presentation/>
+											<xr:CheckState>0</xr:CheckState>
+											<xr:Value xsi:type="FormChoiceListDesTimeValue">
+												<Presentation>
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>UTF-8</v8:content>
+													</v8:item>
+												</Presentation>
+												<Value xsi:type="xs:string">КодировкаТекста.UTF8</Value>
+											</xr:Value>
+										</xr:Item>
+										<xr:Item>
+											<xr:Presentation/>
+											<xr:CheckState>0</xr:CheckState>
+											<xr:Value xsi:type="FormChoiceListDesTimeValue">
+												<Presentation>
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>UTF-16</v8:content>
+													</v8:item>
+												</Presentation>
+												<Value xsi:type="xs:string">КодировкаТекста.UTF16</Value>
+											</xr:Value>
+										</xr:Item>
+										<xr:Item>
+											<xr:Presentation/>
+											<xr:CheckState>0</xr:CheckState>
+											<xr:Value xsi:type="FormChoiceListDesTimeValue">
+												<Presentation>
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>Системная</v8:content>
+													</v8:item>
+												</Presentation>
+												<Value xsi:type="xs:string">КодировкаТекста.Системная</Value>
+											</xr:Value>
+										</xr:Item>
+									</ChoiceList>
+									<ContextMenu name="КодировкаФайлаПротоколаСписокКонтекстноеМеню" id="408"/>
+									<ExtendedTooltip name="КодировкаФайлаПротоколаСписокРасширеннаяПодсказка" id="409"/>
 								</InputField>
 								<CheckBoxField name="ДописыватьДанныеВПротоколОбмена" id="118">
 									<DataPath>Объект.ДописыватьДанныеВПротоколОбмена</DataPath>

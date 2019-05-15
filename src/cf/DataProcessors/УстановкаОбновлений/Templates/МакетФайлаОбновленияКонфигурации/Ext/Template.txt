@@ -186,7 +186,7 @@ function finalize (success) {
   writeEventLog(success)
 
   if (!success) {
-    if (UseRestore) {
+    if (UseRestore && backupCreated) {
       log('Восстановление ИБ из временного архива')
       restoreDB()
     }
@@ -288,7 +288,6 @@ function backupDB () {
     return 0
   }
   var ret = 0
-  UseRestore = false
   
   log(
     format('\r\n\
@@ -391,7 +390,6 @@ function backupDB () {
   }
   if (ret === 0) {
     backupCreated = true
-    UseRestore = true
   }
   return ret
 }
