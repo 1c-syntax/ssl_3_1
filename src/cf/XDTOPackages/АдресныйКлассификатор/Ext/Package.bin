@@ -64,6 +64,14 @@
 			<property name="UpdateDate" type="xs:dateTime" form="Attribute"/>
 		</typeDef>
 	</property>
+	<property name="Links">
+		<typeDef xsi:type="ObjectType">
+			<property xmlns:d4p1="http://www.v8.1c.ru/ssl/AddressSystem" name="Link" type="d4p1:Link" lowerBound="0" upperBound="-1"/>
+			<property name="Version" type="xs:int" form="Attribute"/>
+			<property name="Title" type="xs:string" lowerBound="0" form="Attribute"/>
+			<property name="UpdateDate" type="xs:dateTime" form="Attribute"/>
+		</typeDef>
+	</property>
 	<valueType name="SortDirection" base="xs:string" variety="Atomic">
 		<enumeration>ASC</enumeration>
 		<enumeration>DESC</enumeration>
@@ -264,5 +272,10 @@
 		<property xmlns:d3p1="http://www.v8.1c.ru/ssl/AddressSystem" name="AOGUID" type="d3p1:UUID" lowerBound="1" form="Attribute"/>
 		<property name="POSTALCODE" type="xs:decimal" lowerBound="0" nillable="true" form="Attribute"/>
 		<property xmlns:d3p1="http://www.v8.1c.ru/ssl/AddressSystem" name="NUMBERS" type="d3p1:StringBlob" lowerBound="1" form="Attribute"/>
+	</objectType>
+	<objectType name="Link">
+		<property name="REGIONCODE" type="xs:int" form="Attribute"/>
+		<property xmlns:d3p1="http://www.v8.1c.ru/ssl/AddressSystem" name="AOGUID" type="d3p1:UUID" lowerBound="1" form="Attribute"/>
+		<property xmlns:d3p1="http://www.v8.1c.ru/ssl/AddressSystem" name="MUNPARENTGUID" type="d3p1:UUID" lowerBound="1" form="Attribute"/>
 	</objectType>
 </package>
