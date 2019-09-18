@@ -235,6 +235,241 @@
 			</Title>
 			<ExtendedTooltip name="СтраницыВариантыКомандыРазрешенияРасширеннаяПодсказка" id="186"/>
 			<ChildItems>
+				<Page name="СтраницаВарианты" id="81">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Варианты отчета</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="СтраницаВариантыExtendedTooltip" id="189"/>
+					<ChildItems>
+						<Pages name="СтраницыВарианты" id="83">
+							<EnableContentChange>true</EnableContentChange>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Страницы варианты</v8:content>
+								</v8:item>
+							</Title>
+							<PagesRepresentation>None</PagesRepresentation>
+							<ExtendedTooltip name="СтраницыВариантыExtendedTooltip" id="190"/>
+							<ChildItems>
+								<Page name="ВариантыСкрытьДоЗаписи" id="84">
+									<EnableContentChange>true</EnableContentChange>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Варианты скрыть до записи</v8:content>
+										</v8:item>
+									</Title>
+									<Group>HorizontalIfPossible</Group>
+									<ExtendedTooltip name="ВариантыСкрытьДоЗаписиExtendedTooltip" id="191"/>
+									<ChildItems>
+										<LabelDecoration name="ВариантыИнформационнаяНадпись" id="85">
+											<AutoMaxWidth>false</AutoMaxWidth>
+											<TextColor>style:ПоясняющийТекст</TextColor>
+											<Title formatted="false">
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Для просмотра и изменения вариантов 
+необходимо записать дополнительный отчет, 
+указав в поле Публикация "Используется".</v8:content>
+												</v8:item>
+											</Title>
+											<ContextMenu name="ВариантыИнформационнаяНадписьКонтекстноеМеню" id="86"/>
+											<ExtendedTooltip name="ВариантыИнформационнаяНадписьExtendedTooltip" id="192"/>
+										</LabelDecoration>
+										<Button name="КомандаЗаписатьДляВариантовОтчетов" id="248">
+											<Type>UsualButton</Type>
+											<Representation>PictureAndText</Representation>
+											<CommandName>Form.Command.КомандаЗаписать</CommandName>
+											<ExtendedTooltip name="КомандаЗаписатьДляВариантовОтчетовРасширеннаяПодсказка" id="249"/>
+										</Button>
+									</ChildItems>
+								</Page>
+								<Page name="ВариантыПоказать" id="88">
+									<EnableContentChange>true</EnableContentChange>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Варианты показать</v8:content>
+										</v8:item>
+									</Title>
+									<ExtendedTooltip name="ВариантыПоказатьExtendedTooltip" id="194"/>
+									<ChildItems>
+										<Table name="ВариантыДополнительногоОтчета" id="89">
+											<Representation>List</Representation>
+											<ChangeRowOrder>false</ChangeRowOrder>
+											<Header>false</Header>
+											<HorizontalLines>false</HorizontalLines>
+											<VerticalLines>false</VerticalLines>
+											<AutoInsertNewRow>true</AutoInsertNewRow>
+											<FileDragMode>AsFile</FileDragMode>
+											<DataPath>ВариантыДополнительногоОтчета</DataPath>
+											<RowPictureDataPath>ВариантыДополнительногоОтчета.ИндексКартинки</RowPictureDataPath>
+											<RowsPicture>
+												<xr:Ref>CommonPicture.ПиктограммыЭлементов</xr:Ref>
+												<xr:LoadTransparent>false</xr:LoadTransparent>
+											</RowsPicture>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Варианты дополнительного отчета</v8:content>
+												</v8:item>
+											</Title>
+											<CommandSet>
+												<ExcludedCommand>Add</ExcludedCommand>
+												<ExcludedCommand>Copy</ExcludedCommand>
+												<ExcludedCommand>EndEdit</ExcludedCommand>
+												<ExcludedCommand>MoveDown</ExcludedCommand>
+												<ExcludedCommand>MoveUp</ExcludedCommand>
+												<ExcludedCommand>SelectAll</ExcludedCommand>
+											</CommandSet>
+											<RowFilter xsi:nil="true"/>
+											<ContextMenu name="ВариантыДополнительногоОтчетаКонтекстноеМеню" id="90">
+												<ChildItems>
+													<Button name="ВариантыДополнительногоОтчетаОткрыть1" id="114">
+														<Type>CommandBarButton</Type>
+														<CommandName>Form.Command.ВариантыДополнительногоОтчетаОткрыть</CommandName>
+														<ExtendedTooltip name="ВариантыДополнительногоОтчетаОткрыть1ExtendedTooltip" id="195"/>
+													</Button>
+													<Button name="ВариантыДополнительногоОтчетаИзменить1" id="115">
+														<Type>CommandBarButton</Type>
+														<Representation>PictureAndText</Representation>
+														<CommandName>Form.Item.ВариантыДополнительногоОтчета.StandardCommand.Change</CommandName>
+														<Title>
+															<v8:item>
+																<v8:lang>ru</v8:lang>
+																<v8:content>Изменить...</v8:content>
+															</v8:item>
+														</Title>
+														<ExtendedTooltip name="ВариантыДополнительногоОтчетаИзменить1ExtendedTooltip" id="196"/>
+													</Button>
+													<Button name="ВариантыДополнительногоОтчетаРазместитьВРазделах1" id="116">
+														<Type>CommandBarButton</Type>
+														<CommandName>Form.Command.РазместитьВРазделах</CommandName>
+														<ExtendedTooltip name="ВариантыДополнительногоОтчетаРазместитьВРазделах1ExtendedTooltip" id="197"/>
+													</Button>
+													<Button name="ВариантыДополнительногоОтчетаУдалить1" id="117">
+														<Type>CommandBarButton</Type>
+														<CommandName>Form.Item.ВариантыДополнительногоОтчета.StandardCommand.Delete</CommandName>
+														<Picture>
+															<xr:Ref>StdPicture.MarkToDelete</xr:Ref>
+															<xr:LoadTransparent>true</xr:LoadTransparent>
+														</Picture>
+														<ExtendedTooltip name="ВариантыДополнительногоОтчетаУдалить1ExtendedTooltip" id="198"/>
+													</Button>
+												</ChildItems>
+											</ContextMenu>
+											<AutoCommandBar name="ВариантыДополнительногоОтчетаКоманднаяПанель" id="91">
+												<ChildItems>
+													<ButtonGroup name="ВариантыДополнительногоОтчетаПоискИВывестиСписок" id="113">
+														<Title>
+															<v8:item>
+																<v8:lang>ru</v8:lang>
+																<v8:content>Группа поиск и вывести список</v8:content>
+															</v8:item>
+														</Title>
+														<ExtendedTooltip name="ВариантыДополнительногоОтчетаПоискИВывестиСписокExtendedTooltip" id="199"/>
+														<ChildItems>
+															<Button name="ВариантыДополнительногоОтчетаНайти" id="101">
+																<Type>CommandBarButton</Type>
+																<CommandName>Form.Item.ВариантыДополнительногоОтчета.StandardCommand.Find</CommandName>
+																<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
+																<ExtendedTooltip name="ВариантыДополнительногоОтчетаНайтиExtendedTooltip" id="200"/>
+															</Button>
+															<Button name="ВариантыДополнительногоОтчетаОтменитьПоиск" id="102">
+																<Type>CommandBarButton</Type>
+																<CommandName>Form.Item.ВариантыДополнительногоОтчета.StandardCommand.CancelSearch</CommandName>
+																<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
+																<ExtendedTooltip name="ВариантыДополнительногоОтчетаОтменитьПоискExtendedTooltip" id="201"/>
+															</Button>
+															<Button name="ВариантыДополнительногоОтчетаВывестиСписок" id="112">
+																<Type>CommandBarButton</Type>
+																<CommandName>Form.Item.ВариантыДополнительногоОтчета.StandardCommand.OutputList</CommandName>
+																<ExtendedTooltip name="ВариантыДополнительногоОтчетаВывестиСписокExtendedTooltip" id="202"/>
+															</Button>
+														</ChildItems>
+													</ButtonGroup>
+													<Button name="ВариантыДополнительногоОтчетаОткрыть" id="94">
+														<Type>CommandBarButton</Type>
+														<CommandName>Form.Command.ВариантыДополнительногоОтчетаОткрыть</CommandName>
+														<ExtendedTooltip name="ВариантыДополнительногоОтчетаОткрытьExtendedTooltip" id="203"/>
+													</Button>
+													<Button name="ВариантыДополнительногоОтчетаИзменить" id="111">
+														<Type>CommandBarButton</Type>
+														<Representation>PictureAndText</Representation>
+														<CommandName>Form.Item.ВариантыДополнительногоОтчета.StandardCommand.Change</CommandName>
+														<Title>
+															<v8:item>
+																<v8:lang>ru</v8:lang>
+																<v8:content>Изменить...</v8:content>
+															</v8:item>
+														</Title>
+														<LocationInCommandBar>InCommandBarAndInAdditionalSubmenu</LocationInCommandBar>
+														<ExtendedTooltip name="ВариантыДополнительногоОтчетаИзменитьExtendedTooltip" id="204"/>
+													</Button>
+													<Button name="ВариантыДополнительногоОтчетаРазместитьВРазделах" id="103">
+														<Type>CommandBarButton</Type>
+														<CommandName>Form.Command.РазместитьВРазделах</CommandName>
+														<ExtendedTooltip name="ВариантыДополнительногоОтчетаРазместитьВРазделахExtendedTooltip" id="205"/>
+													</Button>
+													<Button name="ВариантыДополнительногоОтчетаУдалить" id="104">
+														<Type>CommandBarButton</Type>
+														<CommandName>Form.Item.ВариантыДополнительногоОтчета.StandardCommand.Delete</CommandName>
+														<Picture>
+															<xr:Ref>StdPicture.MarkToDelete</xr:Ref>
+															<xr:LoadTransparent>true</xr:LoadTransparent>
+														</Picture>
+														<ExtendedTooltip name="ВариантыДополнительногоОтчетаУдалитьExtendedTooltip" id="206"/>
+													</Button>
+												</ChildItems>
+											</AutoCommandBar>
+											<ExtendedTooltip name="ВариантыДополнительногоОтчетаExtendedTooltip" id="207"/>
+											<SearchStringAddition name="ВариантыДополнительногоОтчетаСтрокаПоиска" id="344">
+												<AdditionSource>
+													<Item>ВариантыДополнительногоОтчета</Item>
+													<Type>SearchStringRepresentation</Type>
+												</AdditionSource>
+												<ContextMenu name="ВариантыДополнительногоОтчетаСтрокаПоискаКонтекстноеМеню" id="345"/>
+												<ExtendedTooltip name="ВариантыДополнительногоОтчетаСтрокаПоискаРасширеннаяПодсказка" id="346"/>
+											</SearchStringAddition>
+											<ViewStatusAddition name="ВариантыДополнительногоОтчетаСостояниеПросмотра" id="347">
+												<AdditionSource>
+													<Item>ВариантыДополнительногоОтчета</Item>
+													<Type>ViewStatusRepresentation</Type>
+												</AdditionSource>
+												<ContextMenu name="ВариантыДополнительногоОтчетаСостояниеПросмотраКонтекстноеМеню" id="348"/>
+												<ExtendedTooltip name="ВариантыДополнительногоОтчетаСостояниеПросмотраРасширеннаяПодсказка" id="349"/>
+											</ViewStatusAddition>
+											<SearchControlAddition name="ВариантыДополнительногоОтчетаУправлениеПоиском" id="350">
+												<AdditionSource>
+													<Item>ВариантыДополнительногоОтчета</Item>
+													<Type>SearchControl</Type>
+												</AdditionSource>
+												<ContextMenu name="ВариантыДополнительногоОтчетаУправлениеПоискомКонтекстноеМеню" id="351"/>
+												<ExtendedTooltip name="ВариантыДополнительногоОтчетаУправлениеПоискомРасширеннаяПодсказка" id="352"/>
+											</SearchControlAddition>
+											<Events>
+												<Event name="BeforeAddRow">ВариантыДополнительногоОтчетаПередНачаломДобавления</Event>
+												<Event name="BeforeDeleteRow">ВариантыДополнительногоОтчетаПередУдалением</Event>
+												<Event name="BeforeRowChange">ВариантыДополнительногоОтчетаПередНачаломИзменения</Event>
+											</Events>
+											<ChildItems>
+												<LabelField name="ВариантыДополнительногоОтчетаНаименование" id="98">
+													<DataPath>ВариантыДополнительногоОтчета.Наименование</DataPath>
+													<ContextMenu name="ВариантыДополнительногоОтчетаНаименованиеКонтекстноеМеню" id="99"/>
+													<ExtendedTooltip name="ВариантыДополнительногоОтчетаНаименованиеExtendedTooltip" id="208"/>
+												</LabelField>
+											</ChildItems>
+										</Table>
+									</ChildItems>
+								</Page>
+							</ChildItems>
+						</Pages>
+					</ChildItems>
+				</Page>
 				<Page name="СтраницаКоманды" id="164">
 					<Title>
 						<v8:item>
@@ -508,241 +743,6 @@
 								</InputField>
 							</ChildItems>
 						</Table>
-					</ChildItems>
-				</Page>
-				<Page name="СтраницаВарианты" id="81">
-					<Title>
-						<v8:item>
-							<v8:lang>ru</v8:lang>
-							<v8:content>Варианты отчета</v8:content>
-						</v8:item>
-					</Title>
-					<ExtendedTooltip name="СтраницаВариантыExtendedTooltip" id="189"/>
-					<ChildItems>
-						<Pages name="СтраницыВарианты" id="83">
-							<EnableContentChange>true</EnableContentChange>
-							<Title>
-								<v8:item>
-									<v8:lang>ru</v8:lang>
-									<v8:content>Страницы варианты</v8:content>
-								</v8:item>
-							</Title>
-							<PagesRepresentation>None</PagesRepresentation>
-							<ExtendedTooltip name="СтраницыВариантыExtendedTooltip" id="190"/>
-							<ChildItems>
-								<Page name="ВариантыСкрытьДоЗаписи" id="84">
-									<EnableContentChange>true</EnableContentChange>
-									<Title>
-										<v8:item>
-											<v8:lang>ru</v8:lang>
-											<v8:content>Варианты скрыть до записи</v8:content>
-										</v8:item>
-									</Title>
-									<Group>HorizontalIfPossible</Group>
-									<ExtendedTooltip name="ВариантыСкрытьДоЗаписиExtendedTooltip" id="191"/>
-									<ChildItems>
-										<LabelDecoration name="ВариантыИнформационнаяНадпись" id="85">
-											<AutoMaxWidth>false</AutoMaxWidth>
-											<TextColor>style:ПоясняющийТекст</TextColor>
-											<Title formatted="false">
-												<v8:item>
-													<v8:lang>ru</v8:lang>
-													<v8:content>Для просмотра и изменения вариантов 
-необходимо записать дополнительный отчет, 
-указав в поле Публикация "Используется".</v8:content>
-												</v8:item>
-											</Title>
-											<ContextMenu name="ВариантыИнформационнаяНадписьКонтекстноеМеню" id="86"/>
-											<ExtendedTooltip name="ВариантыИнформационнаяНадписьExtendedTooltip" id="192"/>
-										</LabelDecoration>
-										<Button name="КомандаЗаписатьДляВариантовОтчетов" id="248">
-											<Type>UsualButton</Type>
-											<Representation>PictureAndText</Representation>
-											<CommandName>Form.Command.КомандаЗаписать</CommandName>
-											<ExtendedTooltip name="КомандаЗаписатьДляВариантовОтчетовРасширеннаяПодсказка" id="249"/>
-										</Button>
-									</ChildItems>
-								</Page>
-								<Page name="ВариантыПоказать" id="88">
-									<EnableContentChange>true</EnableContentChange>
-									<Title>
-										<v8:item>
-											<v8:lang>ru</v8:lang>
-											<v8:content>Варианты показать</v8:content>
-										</v8:item>
-									</Title>
-									<ExtendedTooltip name="ВариантыПоказатьExtendedTooltip" id="194"/>
-									<ChildItems>
-										<Table name="ВариантыДополнительногоОтчета" id="89">
-											<Representation>List</Representation>
-											<ChangeRowOrder>false</ChangeRowOrder>
-											<Header>false</Header>
-											<HorizontalLines>false</HorizontalLines>
-											<VerticalLines>false</VerticalLines>
-											<AutoInsertNewRow>true</AutoInsertNewRow>
-											<FileDragMode>AsFile</FileDragMode>
-											<DataPath>ВариантыДополнительногоОтчета</DataPath>
-											<RowPictureDataPath>ВариантыДополнительногоОтчета.ИндексКартинки</RowPictureDataPath>
-											<RowsPicture>
-												<xr:Ref>CommonPicture.ПиктограммыЭлементов</xr:Ref>
-												<xr:LoadTransparent>false</xr:LoadTransparent>
-											</RowsPicture>
-											<Title>
-												<v8:item>
-													<v8:lang>ru</v8:lang>
-													<v8:content>Варианты дополнительного отчета</v8:content>
-												</v8:item>
-											</Title>
-											<CommandSet>
-												<ExcludedCommand>Add</ExcludedCommand>
-												<ExcludedCommand>Copy</ExcludedCommand>
-												<ExcludedCommand>EndEdit</ExcludedCommand>
-												<ExcludedCommand>MoveDown</ExcludedCommand>
-												<ExcludedCommand>MoveUp</ExcludedCommand>
-												<ExcludedCommand>SelectAll</ExcludedCommand>
-											</CommandSet>
-											<RowFilter xsi:nil="true"/>
-											<ContextMenu name="ВариантыДополнительногоОтчетаКонтекстноеМеню" id="90">
-												<ChildItems>
-													<Button name="ВариантыДополнительногоОтчетаОткрыть1" id="114">
-														<Type>CommandBarButton</Type>
-														<CommandName>Form.Command.ВариантыДополнительногоОтчетаОткрыть</CommandName>
-														<ExtendedTooltip name="ВариантыДополнительногоОтчетаОткрыть1ExtendedTooltip" id="195"/>
-													</Button>
-													<Button name="ВариантыДополнительногоОтчетаИзменить1" id="115">
-														<Type>CommandBarButton</Type>
-														<Representation>PictureAndText</Representation>
-														<CommandName>Form.Item.ВариантыДополнительногоОтчета.StandardCommand.Change</CommandName>
-														<Title>
-															<v8:item>
-																<v8:lang>ru</v8:lang>
-																<v8:content>Изменить...</v8:content>
-															</v8:item>
-														</Title>
-														<ExtendedTooltip name="ВариантыДополнительногоОтчетаИзменить1ExtendedTooltip" id="196"/>
-													</Button>
-													<Button name="ВариантыДополнительногоОтчетаРазместитьВРазделах1" id="116">
-														<Type>CommandBarButton</Type>
-														<CommandName>Form.Command.РазместитьВРазделах</CommandName>
-														<ExtendedTooltip name="ВариантыДополнительногоОтчетаРазместитьВРазделах1ExtendedTooltip" id="197"/>
-													</Button>
-													<Button name="ВариантыДополнительногоОтчетаУдалить1" id="117">
-														<Type>CommandBarButton</Type>
-														<CommandName>Form.Item.ВариантыДополнительногоОтчета.StandardCommand.Delete</CommandName>
-														<Picture>
-															<xr:Ref>StdPicture.MarkToDelete</xr:Ref>
-															<xr:LoadTransparent>true</xr:LoadTransparent>
-														</Picture>
-														<ExtendedTooltip name="ВариантыДополнительногоОтчетаУдалить1ExtendedTooltip" id="198"/>
-													</Button>
-												</ChildItems>
-											</ContextMenu>
-											<AutoCommandBar name="ВариантыДополнительногоОтчетаКоманднаяПанель" id="91">
-												<ChildItems>
-													<ButtonGroup name="ВариантыДополнительногоОтчетаПоискИВывестиСписок" id="113">
-														<Title>
-															<v8:item>
-																<v8:lang>ru</v8:lang>
-																<v8:content>Группа поиск и вывести список</v8:content>
-															</v8:item>
-														</Title>
-														<ExtendedTooltip name="ВариантыДополнительногоОтчетаПоискИВывестиСписокExtendedTooltip" id="199"/>
-														<ChildItems>
-															<Button name="ВариантыДополнительногоОтчетаНайти" id="101">
-																<Type>CommandBarButton</Type>
-																<CommandName>Form.Item.ВариантыДополнительногоОтчета.StandardCommand.Find</CommandName>
-																<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
-																<ExtendedTooltip name="ВариантыДополнительногоОтчетаНайтиExtendedTooltip" id="200"/>
-															</Button>
-															<Button name="ВариантыДополнительногоОтчетаОтменитьПоиск" id="102">
-																<Type>CommandBarButton</Type>
-																<CommandName>Form.Item.ВариантыДополнительногоОтчета.StandardCommand.CancelSearch</CommandName>
-																<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
-																<ExtendedTooltip name="ВариантыДополнительногоОтчетаОтменитьПоискExtendedTooltip" id="201"/>
-															</Button>
-															<Button name="ВариантыДополнительногоОтчетаВывестиСписок" id="112">
-																<Type>CommandBarButton</Type>
-																<CommandName>Form.Item.ВариантыДополнительногоОтчета.StandardCommand.OutputList</CommandName>
-																<ExtendedTooltip name="ВариантыДополнительногоОтчетаВывестиСписокExtendedTooltip" id="202"/>
-															</Button>
-														</ChildItems>
-													</ButtonGroup>
-													<Button name="ВариантыДополнительногоОтчетаОткрыть" id="94">
-														<Type>CommandBarButton</Type>
-														<CommandName>Form.Command.ВариантыДополнительногоОтчетаОткрыть</CommandName>
-														<ExtendedTooltip name="ВариантыДополнительногоОтчетаОткрытьExtendedTooltip" id="203"/>
-													</Button>
-													<Button name="ВариантыДополнительногоОтчетаИзменить" id="111">
-														<Type>CommandBarButton</Type>
-														<Representation>PictureAndText</Representation>
-														<CommandName>Form.Item.ВариантыДополнительногоОтчета.StandardCommand.Change</CommandName>
-														<Title>
-															<v8:item>
-																<v8:lang>ru</v8:lang>
-																<v8:content>Изменить...</v8:content>
-															</v8:item>
-														</Title>
-														<LocationInCommandBar>InCommandBarAndInAdditionalSubmenu</LocationInCommandBar>
-														<ExtendedTooltip name="ВариантыДополнительногоОтчетаИзменитьExtendedTooltip" id="204"/>
-													</Button>
-													<Button name="ВариантыДополнительногоОтчетаРазместитьВРазделах" id="103">
-														<Type>CommandBarButton</Type>
-														<CommandName>Form.Command.РазместитьВРазделах</CommandName>
-														<ExtendedTooltip name="ВариантыДополнительногоОтчетаРазместитьВРазделахExtendedTooltip" id="205"/>
-													</Button>
-													<Button name="ВариантыДополнительногоОтчетаУдалить" id="104">
-														<Type>CommandBarButton</Type>
-														<CommandName>Form.Item.ВариантыДополнительногоОтчета.StandardCommand.Delete</CommandName>
-														<Picture>
-															<xr:Ref>StdPicture.MarkToDelete</xr:Ref>
-															<xr:LoadTransparent>true</xr:LoadTransparent>
-														</Picture>
-														<ExtendedTooltip name="ВариантыДополнительногоОтчетаУдалитьExtendedTooltip" id="206"/>
-													</Button>
-												</ChildItems>
-											</AutoCommandBar>
-											<ExtendedTooltip name="ВариантыДополнительногоОтчетаExtendedTooltip" id="207"/>
-											<SearchStringAddition name="ВариантыДополнительногоОтчетаСтрокаПоиска" id="344">
-												<AdditionSource>
-													<Item>ВариантыДополнительногоОтчета</Item>
-													<Type>SearchStringRepresentation</Type>
-												</AdditionSource>
-												<ContextMenu name="ВариантыДополнительногоОтчетаСтрокаПоискаКонтекстноеМеню" id="345"/>
-												<ExtendedTooltip name="ВариантыДополнительногоОтчетаСтрокаПоискаРасширеннаяПодсказка" id="346"/>
-											</SearchStringAddition>
-											<ViewStatusAddition name="ВариантыДополнительногоОтчетаСостояниеПросмотра" id="347">
-												<AdditionSource>
-													<Item>ВариантыДополнительногоОтчета</Item>
-													<Type>ViewStatusRepresentation</Type>
-												</AdditionSource>
-												<ContextMenu name="ВариантыДополнительногоОтчетаСостояниеПросмотраКонтекстноеМеню" id="348"/>
-												<ExtendedTooltip name="ВариантыДополнительногоОтчетаСостояниеПросмотраРасширеннаяПодсказка" id="349"/>
-											</ViewStatusAddition>
-											<SearchControlAddition name="ВариантыДополнительногоОтчетаУправлениеПоиском" id="350">
-												<AdditionSource>
-													<Item>ВариантыДополнительногоОтчета</Item>
-													<Type>SearchControl</Type>
-												</AdditionSource>
-												<ContextMenu name="ВариантыДополнительногоОтчетаУправлениеПоискомКонтекстноеМеню" id="351"/>
-												<ExtendedTooltip name="ВариантыДополнительногоОтчетаУправлениеПоискомРасширеннаяПодсказка" id="352"/>
-											</SearchControlAddition>
-											<Events>
-												<Event name="BeforeAddRow">ВариантыДополнительногоОтчетаПередНачаломДобавления</Event>
-												<Event name="BeforeDeleteRow">ВариантыДополнительногоОтчетаПередУдалением</Event>
-												<Event name="BeforeRowChange">ВариантыДополнительногоОтчетаПередНачаломИзменения</Event>
-											</Events>
-											<ChildItems>
-												<LabelField name="ВариантыДополнительногоОтчетаНаименование" id="98">
-													<DataPath>ВариантыДополнительногоОтчета.Наименование</DataPath>
-													<ContextMenu name="ВариантыДополнительногоОтчетаНаименованиеКонтекстноеМеню" id="99"/>
-													<ExtendedTooltip name="ВариантыДополнительногоОтчетаНаименованиеExtendedTooltip" id="208"/>
-												</LabelField>
-											</ChildItems>
-										</Table>
-									</ChildItems>
-								</Page>
-							</ChildItems>
-						</Pages>
 					</ChildItems>
 				</Page>
 				<Page name="СтраницаРазрешения" id="259">
@@ -1027,23 +1027,49 @@
 							<v8:content>Дополнительная информация</v8:content>
 						</v8:item>
 					</Title>
-					<ToolTip>
-						<v8:item>
-							<v8:lang>ru</v8:lang>
-							<v8:content>Дополнительная информация об обработке</v8:content>
-						</v8:item>
-					</ToolTip>
 					<ExtendedTooltip name="СтраницаДополнительнаяИнформацияРасширеннаяПодсказка" id="319"/>
 					<ChildItems>
-						<LabelField name="Вид" id="12">
+						<InputField name="Информация" id="26">
+							<DataPath>Объект.Информация</DataPath>
+							<ReadOnly>true</ReadOnly>
+							<SkipOnInput>true</SkipOnInput>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Описание</v8:content>
+								</v8:item>
+							</Title>
+							<TitleLocation>None</TitleLocation>
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<MultiLine>true</MultiLine>
+							<TextEdit>false</TextEdit>
+							<HeightControlVariant>UseContentHeight</HeightControlVariant>
+							<ContextMenu name="ИнформацияКонтекстноеМеню" id="27"/>
+							<ExtendedTooltip name="ИнформацияExtendedTooltip" id="236"/>
+						</InputField>
+						<InputField name="Версия" id="7">
+							<DataPath>Объект.Версия</DataPath>
+							<ReadOnly>true</ReadOnly>
+							<SkipOnInput>true</SkipOnInput>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Версия</v8:content>
+								</v8:item>
+							</Title>
+							<Width>10</Width>
+							<ContextMenu name="ВерсияКонтекстноеМеню" id="8"/>
+							<ExtendedTooltip name="ВерсияExtendedTooltip" id="234"/>
+						</InputField>
+						<InputField name="Вид" id="12">
 							<DataPath>Объект.Вид</DataPath>
+							<ReadOnly>true</ReadOnly>
 							<SkipOnInput>true</SkipOnInput>
 							<Width>50</Width>
-							<Font ref="sys:DefaultGUIFont" bold="true" italic="false" underline="false" strikeout="false" kind="WindowsFont"/>
 							<ContextMenu name="ВидКонтекстноеМеню" id="13"/>
 							<ExtendedTooltip name="ВидExtendedTooltip" id="232"/>
-						</LabelField>
-						<LabelField name="ИмяФайла" id="4">
+						</InputField>
+						<InputField name="ИмяФайла" id="4">
 							<DataPath>Объект.ИмяФайла</DataPath>
 							<ReadOnly>true</ReadOnly>
 							<SkipOnInput>true</SkipOnInput>
@@ -1054,63 +1080,44 @@
 								</v8:item>
 							</Title>
 							<Width>50</Width>
-							<Font ref="sys:DefaultGUIFont" bold="true" italic="false" underline="false" strikeout="false" kind="WindowsFont"/>
 							<ContextMenu name="ИмяФайлаКонтекстноеМеню" id="5"/>
 							<ExtendedTooltip name="ИмяФайлаExtendedTooltip" id="233"/>
-						</LabelField>
-						<LabelField name="Версия" id="7">
-							<DataPath>Объект.Версия</DataPath>
-							<SkipOnInput>true</SkipOnInput>
-							<Title>
-								<v8:item>
-									<v8:lang>ru</v8:lang>
-									<v8:content>Версия</v8:content>
-								</v8:item>
-							</Title>
-							<Width>10</Width>
-							<Font ref="sys:DefaultGUIFont" bold="true" italic="false" underline="false" strikeout="false" kind="WindowsFont"/>
-							<ContextMenu name="ВерсияКонтекстноеМеню" id="8"/>
-							<ExtendedTooltip name="ВерсияExtendedTooltip" id="234"/>
-						</LabelField>
-						<LabelField name="ИмяОбъекта" id="78">
+						</InputField>
+						<InputField name="ИмяОбъекта" id="78">
 							<DataPath>Объект.ИмяОбъекта</DataPath>
-							<SkipOnInput>true</SkipOnInput>
-							<Width>1</Width>
-							<Font ref="sys:DefaultGUIFont" bold="true" italic="false" underline="false" strikeout="false" kind="WindowsFont"/>
-							<ContextMenu name="ИмяОбъектаКонтекстноеМеню" id="79"/>
-							<ExtendedTooltip name="ИмяОбъектаExtendedTooltip" id="235"/>
-						</LabelField>
-						<LabelField name="Информация" id="26">
-							<DataPath>Объект.Информация</DataPath>
 							<ReadOnly>true</ReadOnly>
 							<SkipOnInput>true</SkipOnInput>
-							<Title>
-								<v8:item>
-									<v8:lang>ru</v8:lang>
-									<v8:content>Описание</v8:content>
-								</v8:item>
-							</Title>
-							<TitleLocation>Left</TitleLocation>
-							<AutoMaxWidth>false</AutoMaxWidth>
-							<Height>2</Height>
-							<AutoMaxHeight>false</AutoMaxHeight>
-							<MaxHeight>3</MaxHeight>
-							<ContextMenu name="ИнформацияКонтекстноеМеню" id="27"/>
-							<ExtendedTooltip name="ИнформацияExtendedTooltip" id="236"/>
-						</LabelField>
-						<InputField name="Группа" id="45">
-							<DataPath>Объект.Parent</DataPath>
-							<Title>
-								<v8:item>
-									<v8:lang>ru</v8:lang>
-									<v8:content>Группа</v8:content>
-								</v8:item>
-							</Title>
-							<Width>33</Width>
-							<HorizontalStretch>false</HorizontalStretch>
-							<ContextMenu name="ГруппаКонтекстноеМеню" id="46"/>
-							<ExtendedTooltip name="ГруппаExtendedTooltip" id="237"/>
+							<Width>1</Width>
+							<ContextMenu name="ИмяОбъектаКонтекстноеМеню" id="79"/>
+							<ExtendedTooltip name="ИмяОбъектаExtendedTooltip" id="235"/>
 						</InputField>
+						<UsualGroup name="ГруппаОтступ" id="409">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Отступ</v8:content>
+								</v8:item>
+							</Title>
+							<Representation>NormalSeparation</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ThroughAlign>Use</ThroughAlign>
+							<ExtendedTooltip name="ГруппаОтступРасширеннаяПодсказка" id="410"/>
+							<ChildItems>
+								<InputField name="Группа" id="45">
+									<DataPath>Объект.Parent</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Группа</v8:content>
+										</v8:item>
+									</Title>
+									<Width>33</Width>
+									<HorizontalStretch>false</HorizontalStretch>
+									<ContextMenu name="ГруппаКонтекстноеМеню" id="46"/>
+									<ExtendedTooltip name="ГруппаExtendedTooltip" id="237"/>
+								</InputField>
+							</ChildItems>
+						</UsualGroup>
 					</ChildItems>
 				</Page>
 			</ChildItems>

@@ -87,6 +87,7 @@
 									<Events>
 										<Event name="AutoComplete">ПоискАвтоПодбор</Event>
 										<Event name="Clearing">ПоискОчистка</Event>
+										<Event name="TextEditEnd">ПоискОкончаниеВводаТекста</Event>
 									</Events>
 								</InputField>
 								<CommandBar name="ГруппаЕще" id="210">
@@ -208,6 +209,7 @@
 										</CheckBoxField>
 										<InputField name="СубъектыРФКодСубъектаРФ" id="227">
 											<DataPath>СубъектыРФ.КодСубъектаРФ</DataPath>
+											<ReadOnly>true</ReadOnly>
 											<HorizontalAlign>Left</HorizontalAlign>
 											<EditMode>EnterOnInput</EditMode>
 											<FooterHorizontalAlign>Left</FooterHorizontalAlign>
@@ -231,6 +233,7 @@
 										</InputField>
 										<InputField name="СубъектыРФПредставление" id="224">
 											<DataPath>СубъектыРФ.Представление</DataPath>
+											<ReadOnly>true</ReadOnly>
 											<EditMode>EnterOnInput</EditMode>
 											<ContextMenu name="СубъектыРФПредставлениеКонтекстноеМеню" id="225"/>
 											<ExtendedTooltip name="СубъектыРФПредставлениеРасширеннаяПодсказка" id="226"/>
@@ -294,7 +297,6 @@
 													<v8:content>ЧН=-</v8:content>
 												</v8:item>
 											</Format>
-											<Font ref="sys:DefaultGUIFont" bold="true" italic="false" underline="false" strikeout="false" kind="WindowsFont"/>
 											<ContextMenu name="ВыбраноРегионовДляЗагрузкиКонтекстноеМеню" id="52"/>
 											<ExtendedTooltip name="ВыбраноРегионовДляЗагрузкиРасширеннаяПодсказка" id="53"/>
 										</LabelField>

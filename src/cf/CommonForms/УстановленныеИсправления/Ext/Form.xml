@@ -120,6 +120,12 @@
 						<CommandName>Form.Item.УстановленныеИсправления.StandardCommand.OutputList</CommandName>
 						<ExtendedTooltip name="УстановленныеИсправленияВывестиСписокРасширеннаяПодсказка" id="75"/>
 					</Button>
+					<Button name="УстановленныеИсправленияСохранитьКак" id="104">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Command.СохранитьКак</CommandName>
+						<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
+						<ExtendedTooltip name="УстановленныеИсправленияСохранитьКакРасширеннаяПодсказка" id="105"/>
+					</Button>
 				</ChildItems>
 			</AutoCommandBar>
 			<ExtendedTooltip name="УстановленныеИсправленияРасширеннаяПодсказка" id="4"/>
@@ -478,10 +484,32 @@
 				</Column>
 			</Columns>
 		</Attribute>
-		<Attribute name="ОтображаемыеИсправления" id="3">
+		<Attribute name="Фильтр" id="3">
 			<Type/>
 		</Attribute>
 	</Attributes>
+	<Commands>
+		<Command name="СохранитьКак" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сохранить как...</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сохранить как</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>CommonPicture.СохранитьФайлКак</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>СохранитьКак</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+	</Commands>
 	<Parameters>
 		<Parameter name="Исправления">
 			<Type/>

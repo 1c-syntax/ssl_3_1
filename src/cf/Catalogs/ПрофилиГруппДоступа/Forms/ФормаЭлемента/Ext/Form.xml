@@ -321,7 +321,6 @@
 									<v8:content>Виды доступа</v8:content>
 								</v8:item>
 							</Title>
-							<TitleFont ref="sys:DefaultGUIFont" bold="true" italic="false" underline="false" strikeout="false" kind="WindowsFont"/>
 							<CommandSet>
 								<ExcludedCommand>CancelSearch</ExcludedCommand>
 								<ExcludedCommand>Change</ExcludedCommand>
@@ -452,7 +451,6 @@
 												<Table name="ЗначенияДоступа" id="233">
 													<Representation>List</Representation>
 													<Height>6</Height>
-													<Header>false</Header>
 													<UseAlternationRowColor>true</UseAlternationRowColor>
 													<AutoInsertNewRow>true</AutoInsertNewRow>
 													<EnableStartDrag>true</EnableStartDrag>
@@ -527,6 +525,18 @@
 																<Event name="ChoiceProcessing">ЗначениеДоступаОбработкаВыбора</Event>
 															</Events>
 														</InputField>
+														<CheckBoxField name="ЗначенияДоступаВключаяНижестоящие" id="397">
+															<DataPath>Объект.ЗначенияДоступа.ВключаяНижестоящие</DataPath>
+															<TitleLocation>None</TitleLocation>
+															<EditMode>EnterOnInput</EditMode>
+															<HeaderPicture>
+																<xr:Ref>CommonPicture.ИерархическийСписок</xr:Ref>
+																<xr:LoadTransparent>true</xr:LoadTransparent>
+															</HeaderPicture>
+															<CheckBoxType>Auto</CheckBoxType>
+															<ContextMenu name="ЗначенияДоступаВключаяНижестоящиеКонтекстноеМеню" id="398"/>
+															<ExtendedTooltip name="ЗначенияДоступаВключаяНижестоящиеРасширеннаяПодсказка" id="399"/>
+														</CheckBoxField>
 													</ChildItems>
 												</Table>
 											</ChildItems>

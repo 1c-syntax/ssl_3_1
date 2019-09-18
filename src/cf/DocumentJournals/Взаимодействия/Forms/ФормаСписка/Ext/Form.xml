@@ -496,34 +496,60 @@
 									</Title>
 									<ExtendedTooltip name="СписокСоздатьЭлектронноеПисьмоОтдельнаяКнопкаExtendedTooltip" id="561"/>
 								</Button>
-								<Button name="СписокОтветить" id="342">
-									<Type>CommandBarButton</Type>
-									<Representation>Text</Representation>
-									<CommandName>Form.Command.Ответить</CommandName>
-									<Picture>
-										<xr:Ref>CommonPicture.ОтветитьНаЭлектронноеПисьмо</xr:Ref>
-										<xr:LoadTransparent>false</xr:LoadTransparent>
-									</Picture>
-									<ExtendedTooltip name="СписокОтветитьРасширеннаяПодсказка" id="606"/>
-								</Button>
-								<Button name="СписокОтветитьВсем" id="343">
-									<Type>CommandBarButton</Type>
-									<Representation>Picture</Representation>
-									<CommandName>Form.Command.ОтветитьВсем</CommandName>
-									<ExtendedTooltip name="СписокОтветитьВсемРасширеннаяПодсказка" id="607"/>
-								</Button>
-								<Button name="СписокПереслать" id="344">
-									<Type>CommandBarButton</Type>
-									<Representation>Picture</Representation>
-									<CommandName>Form.Command.Переслать</CommandName>
-									<ExtendedTooltip name="СписокПереслатьРасширеннаяПодсказка" id="608"/>
-								</Button>
+								<ButtonGroup name="ГруппаОтветитьПереслать" id="919">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Ответить переслать</v8:content>
+										</v8:item>
+									</Title>
+									<Representation>Compact</Representation>
+									<ExtendedTooltip name="ГруппаОтветитьПереслатьРасширеннаяПодсказка" id="920"/>
+									<ChildItems>
+										<Button name="СписокОтветить" id="342">
+											<Type>CommandBarButton</Type>
+											<Representation>Text</Representation>
+											<CommandName>Form.Command.Ответить</CommandName>
+											<Picture>
+												<xr:Ref>CommonPicture.ОтветитьНаЭлектронноеПисьмо</xr:Ref>
+												<xr:LoadTransparent>false</xr:LoadTransparent>
+											</Picture>
+											<ExtendedTooltip name="СписокОтветитьРасширеннаяПодсказка" id="606"/>
+										</Button>
+										<Button name="СписокОтветитьВсем" id="343">
+											<Type>CommandBarButton</Type>
+											<Representation>Picture</Representation>
+											<CommandName>Form.Command.ОтветитьВсем</CommandName>
+											<ExtendedTooltip name="СписокОтветитьВсемРасширеннаяПодсказка" id="607"/>
+										</Button>
+										<Button name="СписокПереслать" id="344">
+											<Type>CommandBarButton</Type>
+											<Representation>Picture</Representation>
+											<CommandName>Form.Command.Переслать</CommandName>
+											<ExtendedTooltip name="СписокПереслатьРасширеннаяПодсказка" id="608"/>
+										</Button>
+									</ChildItems>
+								</ButtonGroup>
 								<Button name="СписокОтправитьПолучитьПочту" id="59">
 									<Type>CommandBarButton</Type>
 									<Representation>Picture</Representation>
 									<CommandName>Form.Command.ОтправитьПолучитьПочту</CommandName>
 									<ExtendedTooltip name="СписокОтправитьПолучитьПочтуExtendedTooltip" id="562"/>
 								</Button>
+								<Popup name="ПодменюСоздатьНаОсновании" id="917">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Создать на основании</v8:content>
+										</v8:item>
+									</Title>
+									<Picture>
+										<xr:Ref>StdPicture.InputOnBasis</xr:Ref>
+										<xr:LoadTransparent>true</xr:LoadTransparent>
+									</Picture>
+									<Representation>Picture</Representation>
+									<ExtendedTooltip name="ПодменюСоздатьНаОснованииРасширеннаяПодсказка" id="918"/>
+								</Popup>
 								<ButtonGroup name="ГруппаРассмотрено" id="410">
 									<Title>
 										<v8:item>
@@ -531,6 +557,7 @@
 											<v8:content>Рассмотрено</v8:content>
 										</v8:item>
 									</Title>
+									<Representation>Compact</Representation>
 									<ExtendedTooltip name="ГруппаРассмотреноExtendedTooltip" id="563"/>
 									<ChildItems>
 										<Button name="СписокРассмотрено" id="40">
@@ -566,7 +593,7 @@
 									<Title>
 										<v8:item>
 											<v8:lang>ru</v8:lang>
-											<v8:content>Список тип взаимодействия</v8:content>
+											<v8:content>Показывать</v8:content>
 										</v8:item>
 									</Title>
 									<ExtendedTooltip name="СписокТипВзаимодействияРасширеннаяПодсказка" id="825"/>
@@ -941,6 +968,8 @@
 																				<xr:LoadTransparent>false</xr:LoadTransparent>
 																			</HeaderPicture>
 																			<Width>3</Width>
+																			<AutoMaxWidth>false</AutoMaxWidth>
+																			<MaxWidth>3</MaxWidth>
 																			<HorizontalStretch>false</HorizontalStretch>
 																			<ContextMenu name="НеРассмотреноКонтекстноеМеню" id="729"/>
 																			<ExtendedTooltip name="НеРассмотреноРасширеннаяПодсказка" id="730"/>
@@ -961,6 +990,7 @@
 																				</v8:item>
 																			</ToolTip>
 																			<HorizontalAlign>Left</HorizontalAlign>
+																			<HorizontalStretch>true</HorizontalStretch>
 																			<ContextMenu name="КонтактыДатаПоследнегоВзаимодействияКонтекстноеМеню" id="726"/>
 																			<ExtendedTooltip name="КонтактыДатаПоследнегоВзаимодействияРасширеннаяПодсказка" id="727"/>
 																		</LabelField>
@@ -1203,6 +1233,7 @@
 																					<v8:content>Дата последнего взаимодействия</v8:content>
 																				</v8:item>
 																			</ToolTip>
+																			<HorizontalStretch>true</HorizontalStretch>
 																			<ContextMenu name="ДатаПоследнегоВзаимодействияКонтекстноеМеню" id="701"/>
 																			<ExtendedTooltip name="ДатаПоследнегоВзаимодействияРасширеннаяПодсказка" id="702"/>
 																		</LabelField>
@@ -2247,7 +2278,7 @@
 															<ToolTip>
 																<v8:item>
 																	<v8:lang>ru</v8:lang>
-																	<v8:content>Наличие вложений</v8:content>
+																	<v8:content>Есть вложения</v8:content>
 																</v8:item>
 															</ToolTip>
 															<HeaderPicture>
@@ -2369,7 +2400,7 @@
 															</Title>
 															<Picture>
 																<xr:Ref>CommonPicture.Предупреждение</xr:Ref>
-																<xr:LoadTransparent>true</xr:LoadTransparent>
+																<xr:LoadTransparent>false</xr:LoadTransparent>
 															</Picture>
 															<ContextMenu name="КартинкаПредупреждениеКонтекстноеМеню" id="915"/>
 															<ExtendedTooltip name="КартинкаПредупреждениеРасширеннаяПодсказка" id="916"/>
@@ -3465,13 +3496,13 @@
 			<Title>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Раcсмотрено</v8:content>
+					<v8:content>Рассмотрено</v8:content>
 				</v8:item>
 			</Title>
 			<ToolTip>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Установить признак рассмотрено</v8:content>
+					<v8:content>Установить признак "Рассмотрено"</v8:content>
 				</v8:item>
 			</ToolTip>
 			<Picture>

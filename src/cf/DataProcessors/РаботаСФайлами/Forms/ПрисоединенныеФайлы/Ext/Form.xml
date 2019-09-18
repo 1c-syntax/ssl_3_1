@@ -189,7 +189,7 @@
 				</Title>
 				<Picture>
 					<xr:Ref>CommonPicture.ПодписанЗашифрованЗаголовок</xr:Ref>
-					<xr:LoadTransparent>true</xr:LoadTransparent>
+					<xr:LoadTransparent>false</xr:LoadTransparent>
 				</Picture>
 				<Representation>Picture</Representation>
 				<ExtendedTooltip name="ФормаГруппаКомандЭлектроннаяПодписьИШифрованиеРасширеннаяПодсказка" id="110"/>
@@ -293,12 +293,6 @@
 				<ToolTipRepresentation>None</ToolTipRepresentation>
 				<ExtendedTooltip name="ФормаГруппаДополнительноРасширеннаяПодсказка" id="217"/>
 				<ChildItems>
-					<Button name="ФормаИзменить82" id="238">
-						<Type>CommandBarButton</Type>
-						<Visible>false</Visible>
-						<CommandName>Form.Command.ОткрытьСвойстваФайла</CommandName>
-						<ExtendedTooltip name="ФормаИзменить82РасширеннаяПодсказка" id="239"/>
-					</Button>
 					<Button name="ФормаСкопировать" id="19">
 						<Type>CommandBarButton</Type>
 						<CommandName>Form.Command.Скопировать</CommandName>
@@ -365,7 +359,7 @@
 						<CommandName>Form.Command.ОбновитьИзФайлаНаДиске</CommandName>
 						<Picture>
 							<xr:Ref>CommonPicture.ОбновитьФайлИзФайлаНаДиске</xr:Ref>
-							<xr:LoadTransparent>true</xr:LoadTransparent>
+							<xr:LoadTransparent>false</xr:LoadTransparent>
 						</Picture>
 						<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
 						<ExtendedTooltip name="ФормаОбновитьИзФайлаНаДискеExtendedTooltip" id="121"/>
@@ -469,9 +463,9 @@
 	<ChildItems>
 		<LabelField name="ВладелецФайла" id="280">
 			<DataPath>ВладелецФайла</DataPath>
-			<TitleFont ref="style:LargeTextFont" bold="false" italic="false" underline="false" strikeout="false" kind="StyleItem"/>
+			<TitleFont ref="style:ВладелецФайловШрифт" kind="StyleItem"/>
 			<Hiperlink>true</Hiperlink>
-			<Font ref="style:LargeTextFont" bold="false" italic="false" underline="false" strikeout="false" kind="StyleItem"/>
+			<Font ref="style:ВладелецФайловШрифт" kind="StyleItem"/>
 			<ContextMenu name="ВладелецФайлаКонтекстноеМеню" id="281"/>
 			<ExtendedTooltip name="ВладелецФайлаРасширеннаяПодсказка" id="282"/>
 		</LabelField>
@@ -562,7 +556,7 @@
 							</ToolTip>
 							<Picture>
 								<xr:Ref>CommonPicture.Предупреждение</xr:Ref>
-								<xr:LoadTransparent>true</xr:LoadTransparent>
+								<xr:LoadTransparent>false</xr:LoadTransparent>
 							</Picture>
 							<FileDragMode>AsFile</FileDragMode>
 							<ContextMenu name="ДекорацияКартинкаСтатусСинхронизацииКонтекстноеМеню" id="343"/>
@@ -754,7 +748,7 @@
 										</Title>
 										<Picture>
 											<xr:Ref>CommonPicture.ПодписанЗашифрованЗаголовок</xr:Ref>
-											<xr:LoadTransparent>true</xr:LoadTransparent>
+											<xr:LoadTransparent>false</xr:LoadTransparent>
 										</Picture>
 										<ExtendedTooltip name="СписокКонтекстноеМенюГруппаКомандЭлектроннаяПодписьИШифрованиеРасширеннаяПодсказка" id="149"/>
 										<ChildItems>
@@ -930,12 +924,12 @@
 									</ToolTip>
 									<HeaderPicture>
 										<xr:Ref>CommonPicture.ПодписанЗашифрованЗаголовок</xr:Ref>
-										<xr:LoadTransparent>true</xr:LoadTransparent>
+										<xr:LoadTransparent>false</xr:LoadTransparent>
 									</HeaderPicture>
 									<Width>2</Width>
 									<ValuesPicture>
 										<xr:Ref>CommonPicture.ПодписанЗашифрованСостояния</xr:Ref>
-										<xr:LoadTransparent>true</xr:LoadTransparent>
+										<xr:LoadTransparent>false</xr:LoadTransparent>
 									</ValuesPicture>
 									<FileDragMode>AsFile</FileDragMode>
 									<ContextMenu name="СписокНомерКартинкиПодписанЗашифрованКонтекстноеМеню" id="207"/>
@@ -1272,6 +1266,7 @@
 			<Type>
 				<v8:Type>v8:ValueListType</v8:Type>
 			</Type>
+			<Settings xsi:type="v8:TypeDescription"/>
 		</Attribute>
 		<Attribute name="Предпросмотр" id="7">
 			<Type>
@@ -1353,6 +1348,7 @@
 			<Type>
 				<v8:Type>v8:ValueListType</v8:Type>
 			</Type>
+			<Settings xsi:type="v8:TypeDescription"/>
 		</Attribute>
 		<Attribute name="ЭтоВладелецЭлементовСправочникаФайлы" id="19">
 			<Type>
@@ -1720,7 +1716,7 @@
 			</ToolTip>
 			<Picture>
 				<xr:Ref>CommonPicture.ОтправитьЭлектронноеПисьмо</xr:Ref>
-				<xr:LoadTransparent>true</xr:LoadTransparent>
+				<xr:LoadTransparent>false</xr:LoadTransparent>
 			</Picture>
 			<Action>Отправить</Action>
 			<Representation>TextPicture</Representation>
@@ -1904,7 +1900,7 @@
 			</ToolTip>
 			<Picture>
 				<xr:Ref>CommonPicture.ЗанятьФайл</xr:Ref>
-				<xr:LoadTransparent>true</xr:LoadTransparent>
+				<xr:LoadTransparent>false</xr:LoadTransparent>
 			</Picture>
 			<Action>Занять</Action>
 			<CurrentRowUse>Use</CurrentRowUse>

@@ -92,44 +92,11 @@
 						<Event name="OnChange">ЗаголовокПрограммыПриИзменении</Event>
 					</Events>
 				</InputField>
-				<UsualGroup name="ГруппаЧасовойПоясПрограммы" id="1696">
-					<Title>
-						<v8:item>
-							<v8:lang>ru</v8:lang>
-							<v8:content>Часовой пояс программы</v8:content>
-						</v8:item>
-					</Title>
-					<ToolTipRepresentation>ShowBottom</ToolTipRepresentation>
-					<Representation>None</Representation>
-					<ShowTitle>false</ShowTitle>
-					<ExtendedTooltip name="ГруппаЧасовойПоясПрограммыExtendedTooltip" id="1836">
-						<Title formatted="false">
-							<v8:item>
-								<v8:lang>ru</v8:lang>
-								<v8:content>Часовой пояс, в котором ведется учет в программе. Даты всех документов и других данных вводятся и хранятся в этом часовом поясе. </v8:content>
-							</v8:item>
-						</Title>
-					</ExtendedTooltip>
-					<ChildItems>
-						<InputField name="ЧасовойПоясПрограммы" id="1693">
-							<DataPath>ЧасовойПоясПрограммы</DataPath>
-							<HorizontalStretch>false</HorizontalStretch>
-							<ListChoiceMode>true</ListChoiceMode>
-							<TextEdit>false</TextEdit>
-							<EditTextUpdate>OnValueChange</EditTextUpdate>
-							<ContextMenu name="ЧасовойПоясПрограммыКонтекстноеМеню" id="1694"/>
-							<ExtendedTooltip name="ЧасовойПоясПрограммыExtendedTooltip" id="1837"/>
-							<Events>
-								<Event name="OnChange">ЧасовойПоясПрограммыПриИзменении</Event>
-							</Events>
-						</InputField>
-						<Button name="ВремяТекущегоСеанса" id="2061">
-							<Type>Hyperlink</Type>
-							<CommandName>CommonCommand.ВремяТекущегоСеанса</CommandName>
-							<ExtendedTooltip name="ВремяТекущегоСеансаРасширеннаяПодсказка" id="2062"/>
-						</Button>
-					</ChildItems>
-				</UsualGroup>
+				<Button name="РегиональныеНастройки" id="2094">
+					<Type>Hyperlink</Type>
+					<CommandName>Form.Command.РегиональныеНастройки</CommandName>
+					<ExtendedTooltip name="РегиональныеНастройкиРасширеннаяПодсказка" id="2095"/>
+				</Button>
 			</ChildItems>
 		</UsualGroup>
 		<UsualGroup name="ГруппаПубликацияИнформационнойБазы" id="2038">
@@ -475,7 +442,7 @@
 							<ChildItems>
 								<Button name="ДополнительныеРеквизиты" id="2051">
 									<Type>Hyperlink</Type>
-									<CommandName>Catalog.НаборыДополнительныхРеквизитовИСведений.Command.ДополнительныеРеквизиты</CommandName>
+									<CommandName>Form.Command.ДополнительныеРеквизиты</CommandName>
 									<ToolTipRepresentation>ShowBottom</ToolTipRepresentation>
 									<ExtendedTooltip name="ДополнительныеРеквизитыРасширеннаяПодсказка" id="2052">
 										<AutoMaxWidth>false</AutoMaxWidth>
@@ -504,7 +471,7 @@
 							<ChildItems>
 								<Button name="ДополнительныеСведения" id="2053">
 									<Type>Hyperlink</Type>
-									<CommandName>Catalog.НаборыДополнительныхРеквизитовИСведений.Command.ДополнительныеСведения</CommandName>
+									<CommandName>Form.Command.ДополнительныеСведения</CommandName>
 									<ToolTipRepresentation>ShowBottom</ToolTipRepresentation>
 									<ExtendedTooltip name="ДополнительныеСведенияРасширеннаяПодсказка" id="2054">
 										<AutoMaxWidth>false</AutoMaxWidth>
@@ -756,21 +723,6 @@
 				<Field>НаборКонстант.ИспользоватьРазделениеПоОбластямДанных</Field>
 			</UseAlways>
 		</Attribute>
-		<Attribute name="ЧасовойПоясПрограммы" id="2">
-			<Title>
-				<v8:item>
-					<v8:lang>ru</v8:lang>
-					<v8:content>Часовой пояс</v8:content>
-				</v8:item>
-			</Title>
-			<Type>
-				<v8:Type>xs:string</v8:Type>
-				<v8:StringQualifiers>
-					<v8:Length>0</v8:Length>
-					<v8:AllowedLength>Variable</v8:AllowedLength>
-				</v8:StringQualifiers>
-			</Type>
-		</Attribute>
 		<Attribute name="ИспользоватьПолнотекстовыйПоиск" id="6">
 			<Title>
 				<v8:item>
@@ -839,6 +791,51 @@
 				</v8:item>
 			</ToolTip>
 			<Action>НастроитьХранениеИсторииИзменений</Action>
+		</Command>
+		<Command name="РегиональныеНастройки" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Региональные настройки</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Региональные настройки</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>РегиональныеНастройки</Action>
+		</Command>
+		<Command name="ДополнительныеРеквизиты" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Дополнительные реквизиты</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Дополнительные реквизиты</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ДополнительныеРеквизиты</Action>
+		</Command>
+		<Command name="ДополнительныеСведения" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Дополнительные сведения</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Дополнительные сведения</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ДополнительныеСведения</Action>
 		</Command>
 	</Commands>
 </Form>

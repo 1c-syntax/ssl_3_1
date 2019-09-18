@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.9">
+	<AutoSaveDataInSettings>Use</AutoSaveDataInSettings>
 	<AutoTitle>false</AutoTitle>
 	<AutoURL>false</AutoURL>
 	<CommandBarLocation>None</CommandBarLocation>
@@ -38,7 +39,7 @@
 		<xr:Item>
 			<xr:Presentation/>
 			<xr:CheckState>0</xr:CheckState>
-			<xr:Value xsi:type="xs:string">ГруппаВидыПоказателейЕще</xr:Value>
+			<xr:Value xsi:type="xs:string">КомандыВидовПоказателейЕще</xr:Value>
 		</xr:Item>
 		<xr:Item>
 			<xr:Presentation/>
@@ -166,7 +167,7 @@
 									</ToolTip>
 									<Picture>
 										<xr:Ref>CommonPicture.ВыбратьВариантОтчета</xr:Ref>
-										<xr:LoadTransparent>true</xr:LoadTransparent>
+										<xr:LoadTransparent>false</xr:LoadTransparent>
 									</Picture>
 									<Representation>Picture</Representation>
 									<ExtendedTooltip name="ГруппаСохранениеВыборВариантаОтчетаРасширеннаяПодсказка" id="359"/>
@@ -177,7 +178,7 @@
 											<CommandName>Form.StandardCommand.SaveVariant</CommandName>
 											<Picture>
 												<xr:Ref>CommonPicture.СохранитьВариантОтчета</xr:Ref>
-												<xr:LoadTransparent>true</xr:LoadTransparent>
+												<xr:LoadTransparent>false</xr:LoadTransparent>
 											</Picture>
 											<Title>
 												<v8:item>
@@ -262,20 +263,32 @@
 							</Title>
 							<ExtendedTooltip name="ГруппаВыводРасширеннаяПодсказка" id="535"/>
 							<ChildItems>
-								<Button name="Печать" id="52">
-									<Type>CommandBarButton</Type>
-									<Representation>Picture</Representation>
-									<CommandName>Form.StandardCommand.Print</CommandName>
-									<LocationInCommandBar>InCommandBarAndInAdditionalSubmenu</LocationInCommandBar>
-									<ExtendedTooltip name="ПечатьРасширеннаяПодсказка" id="138"/>
-								</Button>
-								<Button name="ПредварительныйПросмотр" id="90">
-									<Type>CommandBarButton</Type>
-									<Representation>Picture</Representation>
-									<CommandName>Form.Item.ОтчетТабличныйДокумент.StandardCommand.Preview</CommandName>
-									<LocationInCommandBar>InCommandBarAndInAdditionalSubmenu</LocationInCommandBar>
-									<ExtendedTooltip name="ПредварительныйПросмотрРасширеннаяПодсказка" id="139"/>
-								</Button>
+								<ButtonGroup name="ГруппаПечать" id="826">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Печать</v8:content>
+										</v8:item>
+									</Title>
+									<Representation>Compact</Representation>
+									<ExtendedTooltip name="ГруппаПечатьРасширеннаяПодсказка" id="827"/>
+									<ChildItems>
+										<Button name="Печать" id="52">
+											<Type>CommandBarButton</Type>
+											<Representation>Picture</Representation>
+											<CommandName>Form.StandardCommand.Print</CommandName>
+											<LocationInCommandBar>InCommandBarAndInAdditionalSubmenu</LocationInCommandBar>
+											<ExtendedTooltip name="ПечатьРасширеннаяПодсказка" id="138"/>
+										</Button>
+										<Button name="ПредварительныйПросмотр" id="90">
+											<Type>CommandBarButton</Type>
+											<Representation>Picture</Representation>
+											<CommandName>Form.Item.ОтчетТабличныйДокумент.StandardCommand.Preview</CommandName>
+											<LocationInCommandBar>InCommandBarAndInAdditionalSubmenu</LocationInCommandBar>
+											<ExtendedTooltip name="ПредварительныйПросмотрРасширеннаяПодсказка" id="139"/>
+										</Button>
+									</ChildItems>
+								</ButtonGroup>
 								<Button name="Сохранить" id="51">
 									<Type>CommandBarButton</Type>
 									<Representation>Picture</Representation>
@@ -345,7 +358,7 @@
 							<ContextMenu name="ПоказательКонтекстноеМеню" id="722"/>
 							<ExtendedTooltip name="ПоказательРасширеннаяПодсказка" id="723"/>
 						</InputField>
-						<CommandBar name="ГруппаПоказатели" id="684">
+						<CommandBar name="КомандыПоказателей" id="684">
 							<EnableContentChange>true</EnableContentChange>
 							<Title>
 								<v8:item>
@@ -359,9 +372,9 @@
 									<v8:content>Выполняет расчет определенного или всех показателей выделенных ячеек</v8:content>
 								</v8:item>
 							</ToolTip>
-							<ExtendedTooltip name="ГруппаПоказателиРасширеннаяПодсказка" id="685"/>
+							<ExtendedTooltip name="КомандыПоказателейРасширеннаяПодсказка" id="685"/>
 							<ChildItems>
-								<Popup name="ГруппаВидыПоказателей" id="728">
+								<Popup name="КомандыВидовПоказателей" id="728">
 									<Title>
 										<v8:item>
 											<v8:lang>ru</v8:lang>
@@ -376,10 +389,10 @@
 									</ToolTip>
 									<Picture>
 										<xr:Ref>CommonPicture.Сумма</xr:Ref>
-										<xr:LoadTransparent>true</xr:LoadTransparent>
+										<xr:LoadTransparent>false</xr:LoadTransparent>
 									</Picture>
 									<Representation>Picture</Representation>
-									<ExtendedTooltip name="ГруппаВидыПоказателейРасширеннаяПодсказка" id="729"/>
+									<ExtendedTooltip name="КомандыВидовПоказателейРасширеннаяПодсказка" id="729"/>
 									<ChildItems>
 										<Button name="РассчитатьСумму" id="688">
 											<Type>CommandBarButton</Type>
@@ -436,7 +449,7 @@
 											</Title>
 											<ExtendedTooltip name="РассчитатьМаксимумРасширеннаяПодсказка" id="697"/>
 										</Button>
-										<ButtonGroup name="ГруппаВсеПоказатели" id="686">
+										<ButtonGroup name="ВсеПоказатели" id="686">
 											<EnableContentChange>true</EnableContentChange>
 											<Title>
 												<v8:item>
@@ -444,7 +457,7 @@
 													<v8:content>Все показатели</v8:content>
 												</v8:item>
 											</Title>
-											<ExtendedTooltip name="ГруппаВсеПоказателиРасширеннаяПодсказка" id="687"/>
+											<ExtendedTooltip name="ВсеПоказателиРасширеннаяПодсказка" id="687"/>
 											<ChildItems>
 												<Button name="РассчитатьВсеПоказатели" id="698">
 													<Type>CommandBarButton</Type>
@@ -540,7 +553,7 @@
 									</ToolTip>
 									<Picture>
 										<xr:Ref>CommonPicture.ВыбратьВариантОтчета</xr:Ref>
-										<xr:LoadTransparent>true</xr:LoadTransparent>
+										<xr:LoadTransparent>false</xr:LoadTransparent>
 									</Picture>
 									<Representation>Picture</Representation>
 									<ExtendedTooltip name="ГруппаСохранениеВариантаОтчетаЕщеРасширеннаяПодсказка" id="737"/>
@@ -551,8 +564,14 @@
 											<CommandName>Form.StandardCommand.SaveVariant</CommandName>
 											<Picture>
 												<xr:Ref>CommonPicture.СохранитьВариантОтчета</xr:Ref>
-												<xr:LoadTransparent>true</xr:LoadTransparent>
+												<xr:LoadTransparent>false</xr:LoadTransparent>
 											</Picture>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Сохранить...</v8:content>
+												</v8:item>
+											</Title>
 											<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
 											<ExtendedTooltip name="СохранитьВариантЕщеРасширеннаяПодсказка" id="739"/>
 										</Button>
@@ -572,6 +591,29 @@
 											<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
 											<ExtendedTooltip name="ДругиеОтчетыЕщеРасширеннаяПодсказка" id="741"/>
 										</Button>
+										<ButtonGroup name="ГруппаОбменНастройкамиЕще" id="820">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Обмен настройками</v8:content>
+												</v8:item>
+											</Title>
+											<ExtendedTooltip name="ГруппаОбменНастройкамиЕщеРасширеннаяПодсказка" id="821"/>
+											<ChildItems>
+												<Button name="СохранитьВариантОтчетаВФайл" id="822">
+													<Type>CommandBarButton</Type>
+													<CommandName>Form.Command.СохранитьВариантОтчетаВФайл</CommandName>
+													<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
+													<ExtendedTooltip name="СохранитьВариантОтчетаВФайлРасширеннаяПодсказка" id="823"/>
+												</Button>
+												<Button name="ОбновитьВариантОтчетаИзФайла" id="824">
+													<Type>CommandBarButton</Type>
+													<CommandName>Form.Command.ОбновитьВариантОтчетаИзФайла</CommandName>
+													<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
+													<ExtendedTooltip name="ОбновитьВариантОтчетаИзФайлаРасширеннаяПодсказка" id="825"/>
+												</Button>
+											</ChildItems>
+										</ButtonGroup>
 									</ChildItems>
 								</Popup>
 								<Popup name="ГруппаПрочиеНастройкиОтчетаЕще" id="502">
@@ -633,6 +675,12 @@
 													<CommandName>Form.StandardCommand.SaveReportSettings</CommandName>
 													<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
 													<ExtendedTooltip name="СохранитьНастройкиРасширеннаяПодсказка" id="461"/>
+												</Button>
+												<Button name="ПоделитьсяНастройками" id="828">
+													<Type>CommandBarButton</Type>
+													<CommandName>Form.Command.ПоделитьсяНастройками</CommandName>
+													<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
+													<ExtendedTooltip name="ПоделитьсяНастройкамиРасширеннаяПодсказка" id="829"/>
 												</Button>
 											</ChildItems>
 										</ButtonGroup>
@@ -784,7 +832,7 @@
 									</ToolTip>
 									<Picture>
 										<xr:Ref>CommonPicture.ЭлектронноеПисьмо</xr:Ref>
-										<xr:LoadTransparent>true</xr:LoadTransparent>
+										<xr:LoadTransparent>false</xr:LoadTransparent>
 									</Picture>
 									<Representation>Picture</Representation>
 									<ExtendedTooltip name="ГруппаОтправитьЕщеРасширеннаяПодсказка" id="755"/>
@@ -799,7 +847,7 @@
 								</Popup>
 							</ChildItems>
 						</ButtonGroup>
-						<Popup name="ГруппаВидыПоказателейЕще" id="760">
+						<Popup name="КомандыВидовПоказателейЕще" id="760">
 							<Title>
 								<v8:item>
 									<v8:lang>ru</v8:lang>
@@ -812,7 +860,7 @@
 									<v8:content>Расчет выбранного, либо всех доступных показателей</v8:content>
 								</v8:item>
 							</ToolTip>
-							<ExtendedTooltip name="ГруппаВидыПоказателейЕщеРасширеннаяПодсказка" id="761"/>
+							<ExtendedTooltip name="КомандыВидовПоказателейЕщеРасширеннаяПодсказка" id="761"/>
 							<ChildItems>
 								<Button name="РассчитатьСуммуЕще" id="762">
 									<Type>CommandBarButton</Type>
@@ -874,14 +922,14 @@
 									<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
 									<ExtendedTooltip name="РассчитатьМаксимумЕщеРасширеннаяПодсказка" id="771"/>
 								</Button>
-								<ButtonGroup name="ГруппаВсеПоказателиЕще" id="772">
+								<ButtonGroup name="ВсеПоказателиЕще" id="772">
 									<Title>
 										<v8:item>
 											<v8:lang>ru</v8:lang>
 											<v8:content>Все показатели</v8:content>
 										</v8:item>
 									</Title>
-									<ExtendedTooltip name="ГруппаВсеПоказателиЕщеРасширеннаяПодсказка" id="773"/>
+									<ExtendedTooltip name="ВсеПоказателиЕщеРасширеннаяПодсказка" id="773"/>
 									<ChildItems>
 										<Button name="РассчитатьВсеПоказателиЕще" id="774">
 											<Type>CommandBarButton</Type>
@@ -1271,11 +1319,13 @@
 			<Type>
 				<v8:Type>v8:ValueListType</v8:Type>
 			</Type>
+			<Settings xsi:type="v8:TypeDescription"/>
 		</Attribute>
 		<Attribute name="ПостоянныеРеквизиты" id="21">
 			<Type>
 				<v8:Type>v8:ValueListType</v8:Type>
 			</Type>
+			<Settings xsi:type="v8:TypeDescription"/>
 		</Attribute>
 		<Attribute name="ФормаПараметры" id="6">
 			<Type/>
@@ -1408,8 +1458,8 @@
 			<Type>
 				<v8:Type>xs:decimal</v8:Type>
 				<v8:NumberQualifiers>
-					<v8:Digits>15</v8:Digits>
-					<v8:FractionDigits>2</v8:FractionDigits>
+					<v8:Digits>25</v8:Digits>
+					<v8:FractionDigits>5</v8:FractionDigits>
 					<v8:AllowedSign>Any</v8:AllowedSign>
 				</v8:NumberQualifiers>
 			</Type>
@@ -1424,8 +1474,8 @@
 			<Type>
 				<v8:Type>xs:decimal</v8:Type>
 				<v8:NumberQualifiers>
-					<v8:Digits>15</v8:Digits>
-					<v8:FractionDigits>2</v8:FractionDigits>
+					<v8:Digits>25</v8:Digits>
+					<v8:FractionDigits>5</v8:FractionDigits>
 					<v8:AllowedSign>Any</v8:AllowedSign>
 				</v8:NumberQualifiers>
 			</Type>
@@ -1440,8 +1490,8 @@
 			<Type>
 				<v8:Type>xs:decimal</v8:Type>
 				<v8:NumberQualifiers>
-					<v8:Digits>17</v8:Digits>
-					<v8:FractionDigits>4</v8:FractionDigits>
+					<v8:Digits>25</v8:Digits>
+					<v8:FractionDigits>5</v8:FractionDigits>
 					<v8:AllowedSign>Any</v8:AllowedSign>
 				</v8:NumberQualifiers>
 			</Type>
@@ -1456,8 +1506,8 @@
 			<Type>
 				<v8:Type>xs:decimal</v8:Type>
 				<v8:NumberQualifiers>
-					<v8:Digits>15</v8:Digits>
-					<v8:FractionDigits>2</v8:FractionDigits>
+					<v8:Digits>25</v8:Digits>
+					<v8:FractionDigits>5</v8:FractionDigits>
 					<v8:AllowedSign>Any</v8:AllowedSign>
 				</v8:NumberQualifiers>
 			</Type>
@@ -1472,8 +1522,8 @@
 			<Type>
 				<v8:Type>xs:decimal</v8:Type>
 				<v8:NumberQualifiers>
-					<v8:Digits>15</v8:Digits>
-					<v8:FractionDigits>2</v8:FractionDigits>
+					<v8:Digits>25</v8:Digits>
+					<v8:FractionDigits>5</v8:FractionDigits>
 					<v8:AllowedSign>Any</v8:AllowedSign>
 				</v8:NumberQualifiers>
 			</Type>
@@ -1488,8 +1538,8 @@
 			<Type>
 				<v8:Type>xs:decimal</v8:Type>
 				<v8:NumberQualifiers>
-					<v8:Digits>17</v8:Digits>
-					<v8:FractionDigits>4</v8:FractionDigits>
+					<v8:Digits>25</v8:Digits>
+					<v8:FractionDigits>5</v8:FractionDigits>
 					<v8:AllowedSign>Any</v8:AllowedSign>
 				</v8:NumberQualifiers>
 			</Type>
@@ -1528,6 +1578,26 @@
 			<Type>
 				<v8:Type>xs:boolean</v8:Type>
 			</Type>
+		</Attribute>
+		<Attribute name="ОсновнойПоказатель" id="8">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>100</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+			<Save>
+				<Field>ОсновнойПоказатель</Field>
+			</Save>
+		</Attribute>
+		<Attribute name="РазвернутьОбластьПоказателей" id="9">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+			<Save>
+				<Field>РазвернутьОбластьПоказателей</Field>
+			</Save>
 		</Attribute>
 	</Attributes>
 	<Commands>
@@ -1657,7 +1727,7 @@
 			</ToolTip>
 			<Picture>
 				<xr:Ref>CommonPicture.Отчеты</xr:Ref>
-				<xr:LoadTransparent>true</xr:LoadTransparent>
+				<xr:LoadTransparent>false</xr:LoadTransparent>
 			</Picture>
 			<Action>ДругиеОтчеты</Action>
 			<CurrentRowUse>DontUse</CurrentRowUse>
@@ -1692,7 +1762,7 @@
 			</ToolTip>
 			<Picture>
 				<xr:Ref>CommonPicture.ВидСравнения</xr:Ref>
-				<xr:LoadTransparent>true</xr:LoadTransparent>
+				<xr:LoadTransparent>false</xr:LoadTransparent>
 			</Picture>
 			<Action>ИзменитьУсловияОтборов</Action>
 			<CurrentRowUse>DontUse</CurrentRowUse>
@@ -1802,7 +1872,7 @@
 			</ToolTip>
 			<Picture>
 				<xr:Ref>CommonPicture.СтрелкаВнизЗеленая</xr:Ref>
-				<xr:LoadTransparent>true</xr:LoadTransparent>
+				<xr:LoadTransparent>false</xr:LoadTransparent>
 			</Picture>
 			<Action>СвернутьПоказатели</Action>
 			<Representation>Picture</Representation>
@@ -1891,6 +1961,59 @@
 			</Picture>
 			<Action>Подключаемый_ВыбратьПериод</Action>
 			<Representation>Picture</Representation>
+		</Command>
+		<Command name="СохранитьВариантОтчетаВФайл" id="22">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сохранить в файл...</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сохранить вариант отчета в файл</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>CommonPicture.СохранитьФайлКак</xr:Ref>
+				<xr:LoadTransparent>false</xr:LoadTransparent>
+			</Picture>
+			<Action>СохранитьВариантОтчетаВФайл</Action>
+		</Command>
+		<Command name="ОбновитьВариантОтчетаИзФайла" id="23">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Обновить из файла...</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Обновить вариант отчета из файла</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>CommonPicture.ОбновитьФайлИзФайлаНаДиске</xr:Ref>
+				<xr:LoadTransparent>false</xr:LoadTransparent>
+			</Picture>
+			<Action>ОбновитьВариантОтчетаИзФайла</Action>
+		</Command>
+		<Command name="ПоделитьсяНастройками" id="24">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Поделиться настройками...</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Поделиться настройками</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ПоделитьсяНастройками</Action>
 		</Command>
 	</Commands>
 	<Parameters>

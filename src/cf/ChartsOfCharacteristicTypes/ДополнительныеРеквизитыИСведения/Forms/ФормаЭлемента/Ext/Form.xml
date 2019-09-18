@@ -91,10 +91,10 @@
 											</Title>
 											<ExtendedTooltip name="ПодменюЕщеРасширеннаяПодсказка" id="411"/>
 											<ChildItems>
-												<Button name="ОбщиеРеквизитыНеВключенныеВНаборы" id="412">
+												<Button name="НеиспользуемыеРеквизиты" id="412">
 													<Type>CommandBarButton</Type>
-													<CommandName>Form.Command.ОбщиеРеквизитыНеВключенныеВНаборы</CommandName>
-													<ExtendedTooltip name="ОбщиеРеквизитыНеВключенныеВНаборыРасширеннаяПодсказка" id="413"/>
+													<CommandName>Form.Command.НеиспользуемыеРеквизиты</CommandName>
+													<ExtendedTooltip name="НеиспользуемыеРеквизитыРасширеннаяПодсказка" id="413"/>
 												</Button>
 											</ChildItems>
 										</Popup>
@@ -164,7 +164,7 @@
 															<RowPictureDataPath>НаборыСвойств.НомерКартинки</RowPictureDataPath>
 															<RowsPicture>
 																<xr:Ref>CommonPicture.ПиктограммыЭлементов</xr:Ref>
-																<xr:LoadTransparent>true</xr:LoadTransparent>
+																<xr:LoadTransparent>false</xr:LoadTransparent>
 															</RowsPicture>
 															<Title>
 																<v8:item>
@@ -270,7 +270,7 @@
 															<RowPictureDataPath>ОбщиеНаборыСвойств.НомерКартинки</RowPictureDataPath>
 															<RowsPicture>
 																<xr:Ref>CommonPicture.ПиктограммыЭлементов</xr:Ref>
-																<xr:LoadTransparent>true</xr:LoadTransparent>
+																<xr:LoadTransparent>false</xr:LoadTransparent>
 															</RowsPicture>
 															<Title>
 																<v8:item>
@@ -600,9 +600,6 @@
 									<Wrap>false</Wrap>
 									<ContextMenu name="ЗаголовокКонтекстноеМеню" id="2"/>
 									<ExtendedTooltip name="ЗаголовокExtendedTooltip" id="118"/>
-									<Events>
-										<Event name="Opening">ЗаголовокОткрытие</Event>
-									</Events>
 								</InputField>
 								<RadioButtonField name="ЭтоДополнительноеСведение" id="20">
 									<DataPath>ЭтоДополнительноеСведение</DataPath>
@@ -840,32 +837,6 @@
 											<ShowTitle>false</ShowTitle>
 											<ExtendedTooltip name="ГруппаСвойстваИЗависимостиРасширеннаяПодсказка" id="325"/>
 											<ChildItems>
-												<UsualGroup name="ГруппаСвойства" id="326">
-													<Title>
-														<v8:item>
-															<v8:lang>ru</v8:lang>
-															<v8:content>Свойства</v8:content>
-														</v8:item>
-													</Title>
-													<Group>AlwaysHorizontal</Group>
-													<Representation>None</Representation>
-													<United>false</United>
-													<ShowTitle>false</ShowTitle>
-													<ExtendedTooltip name="ГруппаСвойстваРасширеннаяПодсказка" id="327"/>
-												</UsualGroup>
-												<UsualGroup name="ГруппаНастройкаЗависимостей" id="328">
-													<Title>
-														<v8:item>
-															<v8:lang>ru</v8:lang>
-															<v8:content>Настройка зависимостей</v8:content>
-														</v8:item>
-													</Title>
-													<Group>Vertical</Group>
-													<Representation>None</Representation>
-													<United>false</United>
-													<ShowTitle>false</ShowTitle>
-													<ExtendedTooltip name="ГруппаНастройкаЗависимостейРасширеннаяПодсказка" id="329"/>
-												</UsualGroup>
 												<UsualGroup name="ГруппаВиден" id="463">
 													<Title>
 														<v8:item>
@@ -1014,9 +985,6 @@
 													<TitleHeight>2</TitleHeight>
 													<ContextMenu name="ПодсказкаКонтекстноеМеню" id="31"/>
 													<ExtendedTooltip name="ПодсказкаExtendedTooltip" id="155"/>
-													<Events>
-														<Event name="Opening">ПодсказкаОткрытие</Event>
-													</Events>
 												</InputField>
 												<UsualGroup name="ГруппаЗаголовкиФормЗначений" id="32">
 													<Title>
@@ -1042,9 +1010,6 @@
 															<Width>20</Width>
 															<ContextMenu name="ЗаголовокФормыЗначенияКонтекстноеМеню" id="34"/>
 															<ExtendedTooltip name="ЗаголовокФормыЗначенияExtendedTooltip" id="157"/>
-															<Events>
-																<Event name="Opening">ЗаголовокФормыЗначенияОткрытие</Event>
-															</Events>
 														</InputField>
 														<InputField name="ЗаголовокФормыВыбораЗначения" id="35">
 															<DataPath>Объект.ЗаголовокФормыВыбораЗначения</DataPath>
@@ -1058,9 +1023,6 @@
 															<Width>20</Width>
 															<ContextMenu name="ЗаголовокФормыВыбораЗначенияКонтекстноеМеню" id="36"/>
 															<ExtendedTooltip name="ЗаголовокФормыВыбораЗначенияExtendedTooltip" id="158"/>
-															<Events>
-																<Event name="Opening">ЗаголовокФормыВыбораЗначенияОткрытие</Event>
-															</Events>
 														</InputField>
 													</ChildItems>
 												</UsualGroup>
@@ -1657,6 +1619,7 @@
 			<Type>
 				<v8:Type>v8:ValueListType</v8:Type>
 			</Type>
+			<Settings xsi:type="v8:TypeDescription"/>
 		</Attribute>
 		<Attribute name="МногострочноеПолеВвода" id="7">
 			<Type>
@@ -1843,6 +1806,7 @@
 			<Type>
 				<v8:Type>v8:ValueListType</v8:Type>
 			</Type>
+			<Settings xsi:type="v8:TypeDescription"/>
 		</Attribute>
 		<Attribute name="ИзмененыУсловияЗависимостиРеквизитов" id="19">
 			<Type>
@@ -1887,13 +1851,19 @@
 		КОГДА &amp;ЭтоДополнительноеСведение
 			ТОГДА ВЫБОР
 					КОГДА Наборы.КоличествоСведений = ""
-						ТОГДА Наборы.Наименование
-					ИНАЧЕ Наборы.Наименование + " (" + Наборы.КоличествоСведений + ")"
+						ТОГДА ПРЕДСТАВЛЕНИЕ(Наборы.Ссылка)
+					КОГДА Наборы.КоличествоСведений &lt;&gt; ""
+							И &amp;ЭтоОсновнойЯзык
+						ТОГДА Наборы.Наименование + " (" + Наборы.КоличествоСведений + ")"
+					ИНАЧЕ (ВЫРАЗИТЬ(ЕСТЬNULL(НаборыПредставления.Наименование, Наборы.Наименование) КАК СТРОКА(150))) + " (" + Наборы.КоличествоСведений + ")"
 				КОНЕЦ
 		ИНАЧЕ ВЫБОР
 				КОГДА Наборы.КоличествоРеквизитов = ""
-					ТОГДА Наборы.Наименование
-				ИНАЧЕ Наборы.Наименование + " (" + Наборы.КоличествоРеквизитов + ")"
+					ТОГДА ПРЕДСТАВЛЕНИЕ(Наборы.Ссылка)
+				КОГДА Наборы.КоличествоСведений &lt;&gt; ""
+						И &amp;ЭтоОсновнойЯзык
+					ТОГДА Наборы.Наименование + " (" + Наборы.КоличествоРеквизитов + ")"
+				ИНАЧЕ (ВЫРАЗИТЬ(ЕСТЬNULL(НаборыПредставления.Наименование, Наборы.Наименование) КАК СТРОКА(150))) + " (" + Наборы.КоличествоРеквизитов + ")"
 			КОНЕЦ
 	КОНЕЦ КАК Представление,
 	ВЫБОР
@@ -1907,6 +1877,9 @@
 	КОНЕЦ КАК НомерКартинки
 ИЗ
 	Справочник.НаборыДополнительныхРеквизитовИСведений КАК Наборы
+	ЛЕВОЕ СОЕДИНЕНИЕ Справочник.НаборыДополнительныхРеквизитовИСведений.Представления КАК НаборыПредставления
+		ПО (НаборыПредставления.Ссылка = Наборы.Ссылка)
+			И (НаборыПредставления.КодЯзыка = &amp;КодЯзыка)
 ГДЕ
 	ВЫБОР
 			КОГДА Наборы.Родитель = ЗНАЧЕНИЕ(Справочник.НаборыДополнительныхРеквизитовИСведений.ПустаяСсылка)
@@ -2258,14 +2231,14 @@
 			<Action>Изменить</Action>
 			<CurrentRowUse>DontUse</CurrentRowUse>
 		</Command>
-		<Command name="ОбщиеРеквизитыНеВключенныеВНаборы" id="9">
+		<Command name="НеиспользуемыеРеквизиты" id="9">
 			<Title>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Только общие дополнительные реквизиты</v8:content>
+					<v8:content>Неиспользуемые реквизиты</v8:content>
 				</v8:item>
 			</Title>
-			<Action>ОбщиеРеквизитыНеВключенныеВНаборы</Action>
+			<Action>ПоказатьНеиспользуемыеРеквизиты</Action>
 			<CurrentRowUse>DontUse</CurrentRowUse>
 		</Command>
 		<Command name="УстановитьСнятьПометкуУдаления" id="10">

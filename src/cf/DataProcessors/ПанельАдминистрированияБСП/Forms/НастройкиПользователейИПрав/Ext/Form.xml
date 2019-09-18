@@ -414,6 +414,67 @@
 										</Title>
 									</ExtendedTooltip>
 								</Button>
+								<InputField name="ОграничиватьДоступНаУровнеЗаписейУниверсально" id="2236">
+									<DataPath>НаборКонстант.ОграничиватьДоступНаУровнеЗаписейУниверсально</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Вариант работы</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTipRepresentation>Button</ToolTipRepresentation>
+									<Width>24</Width>
+									<HorizontalStretch>false</HorizontalStretch>
+									<ListChoiceMode>true</ListChoiceMode>
+									<ChoiceList>
+										<xr:Item>
+											<xr:Presentation/>
+											<xr:CheckState>0</xr:CheckState>
+											<xr:Value xsi:type="FormChoiceListDesTimeValue">
+												<Presentation>
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>Стандартный</v8:content>
+													</v8:item>
+												</Presentation>
+												<Value xsi:type="xs:boolean">false</Value>
+											</xr:Value>
+										</xr:Item>
+										<xr:Item>
+											<xr:Presentation/>
+											<xr:CheckState>0</xr:CheckState>
+											<xr:Value xsi:type="FormChoiceListDesTimeValue">
+												<Presentation>
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>Производительный</v8:content>
+													</v8:item>
+												</Presentation>
+												<Value xsi:type="xs:boolean">true</Value>
+											</xr:Value>
+										</xr:Item>
+									</ChoiceList>
+									<ContextMenu name="ОграничиватьДоступНаУровнеЗаписейУниверсальноКонтекстноеМеню" id="2237"/>
+									<ExtendedTooltip name="ОграничиватьДоступНаУровнеЗаписейУниверсальноРасширеннаяПодсказка" id="2238">
+										<Title formatted="false">
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Производительный вариант рекомендуется выбирать для клиент-серверной информационной базы,
+где он значительно эффективнее стандартного варианта. 
+
+Однако в многопользовательской файловой информационной базе он может ограничивать интенсивность
+одновременной работы нескольких пользователей, поэтому может потребоваться стандартный вариант.
+
+При этом если в файловой базе работает один пользователь, либо данные вводятся несколькими пользователями
+не интенсивно, то производительный вариант не накладывает каких-либо дополнительных ограничений и
+ускорит просмотр списков и формирование отчетов по сравнению со стандартным вариантом.</v8:content>
+											</v8:item>
+										</Title>
+									</ExtendedTooltip>
+									<Events>
+										<Event name="OnChange">ОграничиватьДоступНаУровнеЗаписейУниверсальноПриИзменении</Event>
+									</Events>
+								</InputField>
 								<Button name="ОбновлениеДоступаНаУровнеЗаписей" id="2219">
 									<Type>Hyperlink</Type>
 									<CommandName>Form.Command.ОбновлениеДоступаНаУровнеЗаписей</CommandName>

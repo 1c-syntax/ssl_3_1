@@ -41,6 +41,7 @@
 					<v8:content>Фильтры</v8:content>
 				</v8:item>
 			</Title>
+			<Group>AlwaysHorizontal</Group>
 			<Representation>None</Representation>
 			<ShowTitle>false</ShowTitle>
 			<ExtendedTooltip name="ГруппаФильтрыExtendedTooltip" id="147"/>
@@ -469,6 +470,7 @@
 												<v8:content>Команды взаимодействий</v8:content>
 											</v8:item>
 										</Title>
+										<Representation>Compact</Representation>
 										<ExtendedTooltip name="ГруппаКомандыВзаимодействийExtendedTooltip" id="165"/>
 										<ChildItems>
 											<Button name="КомандаРассмотрено" id="45">
@@ -508,7 +510,7 @@
 										<Title>
 											<v8:item>
 												<v8:lang>ru</v8:lang>
-												<v8:content>Список тип взаимодействия</v8:content>
+												<v8:content>Показывать</v8:content>
 											</v8:item>
 										</Title>
 										<ExtendedTooltip name="СписокТипВзаимодействияРасширеннаяПодсказка" id="233"/>
@@ -685,7 +687,6 @@
 												<InputField name="Участники" id="66">
 													<DataPath>Список.Участники</DataPath>
 													<Width>20</Width>
-													<HorizontalStretch>false</HorizontalStretch>
 													<Wrap>false</Wrap>
 													<ContextMenu name="УчастникиКонтекстноеМеню" id="67"/>
 													<ExtendedTooltip name="УчастникиExtendedTooltip" id="188"/>
@@ -703,6 +704,29 @@
 													<ContextMenu name="ДатаКонтекстноеМеню" id="69"/>
 													<ExtendedTooltip name="ДатаExtendedTooltip" id="187"/>
 												</InputField>
+												<PictureField name="ЕстьВложения" id="254">
+													<DataPath>Список.ЕстьВложения</DataPath>
+													<TitleLocation>None</TitleLocation>
+													<ToolTip>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Есть вложения</v8:content>
+														</v8:item>
+													</ToolTip>
+													<HeaderPicture>
+														<xr:Ref>CommonPicture.Скрепка</xr:Ref>
+														<xr:LoadTransparent>true</xr:LoadTransparent>
+													</HeaderPicture>
+													<ShowInFooter>false</ShowInFooter>
+													<Width>2</Width>
+													<HorizontalStretch>false</HorizontalStretch>
+													<ValuesPicture>
+														<xr:Ref>CommonPicture.Скрепка</xr:Ref>
+														<xr:LoadTransparent>true</xr:LoadTransparent>
+													</ValuesPicture>
+													<ContextMenu name="ЕстьВложенияКонтекстноеМеню" id="255"/>
+													<ExtendedTooltip name="ЕстьВложенияРасширеннаяПодсказка" id="256"/>
+												</PictureField>
 											</ChildItems>
 										</ColumnGroup>
 										<InputField name="Тема" id="20">
@@ -915,7 +939,7 @@
 												<Title>
 													<v8:item>
 														<v8:lang>ru</v8:lang>
-														<v8:content>Пометить на удаление /  Cнять пометку</v8:content>
+														<v8:content>Пометить на удаление /  Снять пометку</v8:content>
 													</v8:item>
 												</Title>
 												<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
@@ -1153,7 +1177,8 @@
 	ТИПЗНАЧЕНИЯ(ПредметыВзаимодействий.Предмет) КАК ТипПредмета,
 	ПредметыВзаимодействий.ПапкаЭлектронногоПисьма,
 	ЖурналДокументовВзаимодействия.Размер,
-	ЖурналДокументовВзаимодействия.СтатусИсходящегоПисьма
+	ЖурналДокументовВзаимодействия.СтатусИсходящегоПисьма,
+	ЖурналДокументовВзаимодействия.ЕстьВложения
 ИЗ
 	ЖурналДокументов.Взаимодействия КАК ЖурналДокументовВзаимодействия
 		ВНУТРЕННЕЕ СОЕДИНЕНИЕ РегистрСведений.ПредметыПапкиВзаимодействий КАК ПредметыВзаимодействий
@@ -1397,7 +1422,7 @@
 			<ToolTip>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Установить признак рассмотрено</v8:content>
+					<v8:content>Установить признак "Рассмотрено"</v8:content>
 				</v8:item>
 			</ToolTip>
 			<Picture>
@@ -1608,7 +1633,7 @@
 			<Title>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Снять признак рассмотрено</v8:content>
+					<v8:content>Снять признак "Рассмотрено"</v8:content>
 				</v8:item>
 			</Title>
 			<ToolTip>

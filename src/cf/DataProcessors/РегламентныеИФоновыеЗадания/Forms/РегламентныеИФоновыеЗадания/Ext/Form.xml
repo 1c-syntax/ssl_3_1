@@ -58,7 +58,7 @@
 								<PictureDecoration name="КартинкаБлокировкаРаботыСВнешнимиРесурсами" id="288">
 									<Picture>
 										<xr:Ref>CommonPicture.Предупреждение32</xr:Ref>
-										<xr:LoadTransparent>true</xr:LoadTransparent>
+										<xr:LoadTransparent>false</xr:LoadTransparent>
 									</Picture>
 									<FileDragMode>AsFile</FileDragMode>
 									<ContextMenu name="КартинкаБлокировкаРаботыСВнешнимиРесурсамиКонтекстноеМеню" id="289"/>
@@ -105,7 +105,7 @@
 										<PictureDecoration name="ДекорацияДлительнаяОперация" id="297">
 											<Picture>
 												<xr:Ref>CommonPicture.ДлительнаяОперация48</xr:Ref>
-												<xr:LoadTransparent>true</xr:LoadTransparent>
+												<xr:LoadTransparent>false</xr:LoadTransparent>
 											</Picture>
 											<FileDragMode>AsFile</FileDragMode>
 											<ContextMenu name="ДекорацияДлительнаяОперацияКонтекстноеМеню" id="298"/>
@@ -426,6 +426,15 @@
 													<Wrap>false</Wrap>
 													<ContextMenu name="ИмяПользователяКонтекстноеМеню" id="142"/>
 													<ExtendedTooltip name="ИмяПользователяExtendedTooltip" id="199"/>
+												</InputField>
+												<InputField name="РасписаниеЗадания" id="316">
+													<DataPath>ТаблицаРегламентныеЗадания.Расписание</DataPath>
+													<UserVisible>
+														<xr:Common>false</xr:Common>
+													</UserVisible>
+													<EditMode>EnterOnInput</EditMode>
+													<ContextMenu name="РасписаниеЗаданияКонтекстноеМеню" id="317"/>
+													<ExtendedTooltip name="РасписаниеЗаданияРасширеннаяПодсказка" id="318"/>
 												</InputField>
 												<CheckBoxField name="Предопределенное" id="34">
 													<DataPath>ТаблицаРегламентныеЗадания.Предопределенное</DataPath>
@@ -923,7 +932,7 @@
 											<ToolTipRepresentation>ShowRight</ToolTipRepresentation>
 											<Picture>
 												<xr:Ref>CommonPicture.ДлительнаяОперация48</xr:Ref>
-												<xr:LoadTransparent>true</xr:LoadTransparent>
+												<xr:LoadTransparent>false</xr:LoadTransparent>
 											</Picture>
 											<FileDragMode>AsFile</FileDragMode>
 											<ContextMenu name="ДлительнаяОперацияКонтекстноеМеню" id="271"/>
@@ -1454,6 +1463,7 @@
 			<Type>
 				<v8:Type>v8:ValueListType</v8:Type>
 			</Type>
+			<Settings xsi:type="v8:TypeDescription"/>
 		</Attribute>
 		<Attribute name="СтраницаФоновыеЗаданияОткрывалась" id="15">
 			<Type>
@@ -1472,6 +1482,7 @@
 			<Type>
 				<v8:Type>v8:ValueListType</v8:Type>
 			</Type>
+			<Settings xsi:type="v8:TypeDescription"/>
 		</Attribute>
 		<Attribute name="РезультатВыполнения" id="28">
 			<Type/>
@@ -1576,7 +1587,6 @@
 			<Picture>
 				<xr:Ref>CommonPicture.ВыполнитьРегламентноеЗаданиеВручную</xr:Ref>
 				<xr:LoadTransparent>true</xr:LoadTransparent>
-				<xr:TransparentPixel x="14" y="2"/>
 			</Picture>
 			<Action>ВыполнитьРегламентноеЗаданиеВручную</Action>
 			<Representation>Text</Representation>
@@ -1696,26 +1706,17 @@
 				<Type>Auto</Type>
 				<CommandGroup>FormNavigationPanelImportant</CommandGroup>
 				<Index>2</Index>
-				<Visible>
-					<xr:Common>false</xr:Common>
-				</Visible>
 			</Item>
 			<Item>
 				<Command>0:49440928-bbd6-4c6a-bf40-af70a34d7372</Command>
 				<Type>Auto</Type>
 				<CommandGroup>FormNavigationPanelImportant</CommandGroup>
-				<Visible>
-					<xr:Common>false</xr:Common>
-				</Visible>
 			</Item>
 			<Item>
 				<Command>0:721481be-40e4-45b6-9530-ad7fb0c60429</Command>
 				<Type>Auto</Type>
 				<CommandGroup>FormNavigationPanelImportant</CommandGroup>
 				<Index>1</Index>
-				<Visible>
-					<xr:Common>false</xr:Common>
-				</Visible>
 			</Item>
 			<Item>
 				<Command>0:f7ccc574-d6c3-495a-86b4-7e24e75502d9</Command>

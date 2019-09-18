@@ -21,6 +21,7 @@
 	</AutoCommandBar>
 	<Events>
 		<Event name="AfterWrite">ПослеЗаписи</Event>
+		<Event name="AfterWriteAtServer">ПослеЗаписиНаСервере</Event>
 		<Event name="OnReadAtServer">ПриЧтенииНаСервере</Event>
 		<Event name="OnOpen">ПриОткрытии</Event>
 		<Event name="BeforeWrite">ПередЗаписью</Event>
@@ -29,12 +30,6 @@
 	</Events>
 	<ChildItems>
 		<UsualGroup name="Предмет" id="134">
-			<Title>
-				<v8:item>
-					<v8:lang>ru</v8:lang>
-					<v8:content>Предмет</v8:content>
-				</v8:item>
-			</Title>
 			<Representation>None</Representation>
 			<ShowTitle>false</ShowTitle>
 			<ExtendedTooltip name="ПредметРасширеннаяПодсказка" id="135"/>
@@ -83,27 +78,10 @@
 			<ExtendedTooltip name="ТекстExtendedTooltip" id="111"/>
 		</InputField>
 		<UsualGroup name="НастройкаВремени" id="102">
-			<Title>
-				<v8:item>
-					<v8:lang>ru</v8:lang>
-					<v8:content>Напомнить</v8:content>
-				</v8:item>
-			</Title>
 			<Representation>None</Representation>
 			<ShowTitle>false</ShowTitle>
 			<ExtendedTooltip name="НастройкаВремениExtendedTooltip" id="112"/>
 			<ChildItems>
-				<UsualGroup name="ПанельПереключателей" id="82">
-					<Title>
-						<v8:item>
-							<v8:lang>ru</v8:lang>
-							<v8:content>Панель переключателей</v8:content>
-						</v8:item>
-					</Title>
-					<Representation>None</Representation>
-					<ShowTitle>false</ShowTitle>
-					<ExtendedTooltip name="ПанельПереключателейExtendedTooltip" id="113"/>
-				</UsualGroup>
 				<InputField name="СпособУстановкиВремениНапоминания" id="39">
 					<DataPath>СпособУстановкиВремениНапоминания</DataPath>
 					<Title>
@@ -130,48 +108,37 @@
 					</Events>
 				</InputField>
 				<Pages name="ПанельДетальныхНастроек" id="72">
-					<Title>
-						<v8:item>
-							<v8:lang>ru</v8:lang>
-							<v8:content>Панель детальных настроек</v8:content>
-						</v8:item>
-					</Title>
+					<VerticalStretch>false</VerticalStretch>
 					<PagesRepresentation>None</PagesRepresentation>
 					<ExtendedTooltip name="ПанельДетальныхНастроекExtendedTooltip" id="115"/>
 					<ChildItems>
 						<Page name="БезДетализации" id="76">
-							<Title>
-								<v8:item>
-									<v8:lang>ru</v8:lang>
-									<v8:content>Без детализации</v8:content>
-								</v8:item>
-							</Title>
-							<VerticalStretch>true</VerticalStretch>
 							<Group>HorizontalIfPossible</Group>
 							<ShowTitle>false</ShowTitle>
 							<ExtendedTooltip name="БезДетализацииExtendedTooltip" id="116"/>
 							<ChildItems>
 								<LabelDecoration name="РасчетноеВремяНапоминания" id="97">
 									<HorizontalStretch>true</HorizontalStretch>
-									<VerticalStretch>false</VerticalStretch>
+									<VerticalStretch>true</VerticalStretch>
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>00:00</v8:content>
+										</v8:item>
+									</Title>
 									<ToolTip>
 										<v8:item>
 											<v8:lang>ru</v8:lang>
 											<v8:content>Расчетное время</v8:content>
 										</v8:item>
 									</ToolTip>
+									<TitleHeight>1</TitleHeight>
 									<ContextMenu name="РасчетноеВремяНапоминанияКонтекстноеМеню" id="98"/>
 									<ExtendedTooltip name="РасчетноеВремяНапоминанияExtendedTooltip" id="117"/>
 								</LabelDecoration>
 							</ChildItems>
 						</Page>
 						<Page name="ДатаВремя" id="73">
-							<Title>
-								<v8:item>
-									<v8:lang>ru</v8:lang>
-									<v8:content>Дата время</v8:content>
-								</v8:item>
-							</Title>
 							<Group>HorizontalIfPossible</Group>
 							<ShowTitle>false</ShowTitle>
 							<ExtendedTooltip name="ДатаВремяExtendedTooltip" id="118"/>
@@ -236,23 +203,11 @@
 							</ChildItems>
 						</Page>
 						<Page name="НастройкаИсточника" id="74">
-							<Title>
-								<v8:item>
-									<v8:lang>ru</v8:lang>
-									<v8:content>Настройка источника</v8:content>
-								</v8:item>
-							</Title>
 							<Group>HorizontalIfPossible</Group>
 							<ShowTitle>false</ShowTitle>
 							<ExtendedTooltip name="НастройкаИсточникаExtendedTooltip" id="121"/>
 							<ChildItems>
 								<UsualGroup name="ГруппаИнтервалВремениОтносительноИсточника" id="136">
-									<Title>
-										<v8:item>
-											<v8:lang>ru</v8:lang>
-											<v8:content>Интервал времени относительно источника</v8:content>
-										</v8:item>
-									</Title>
 									<Group>AlwaysHorizontal</Group>
 									<Representation>None</Representation>
 									<ShowTitle>false</ShowTitle>
@@ -465,12 +420,6 @@
 									</ChildItems>
 								</UsualGroup>
 								<UsualGroup name="ГруппаИмяРеквизитаИсточника" id="138">
-									<Title>
-										<v8:item>
-											<v8:lang>ru</v8:lang>
-											<v8:content>Имя реквизита источника</v8:content>
-										</v8:item>
-									</Title>
 									<Group>AlwaysHorizontal</Group>
 									<Representation>None</Representation>
 									<ShowTitle>false</ShowTitle>
@@ -511,12 +460,6 @@
 							</ChildItems>
 						</Page>
 						<Page name="НастройкаПериодичности" id="75">
-							<Title>
-								<v8:item>
-									<v8:lang>ru</v8:lang>
-									<v8:content>Настройка периодичности</v8:content>
-								</v8:item>
-							</Title>
 							<Group>HorizontalIfPossible</Group>
 							<ShowTitle>false</ShowTitle>
 							<ExtendedTooltip name="НастройкаПериодичностиExtendedTooltip" id="126"/>
@@ -654,7 +597,7 @@
 			<Type>
 				<v8:Type>xs:string</v8:Type>
 				<v8:StringQualifiers>
-					<v8:Length>30</v8:Length>
+					<v8:Length>0</v8:Length>
 					<v8:AllowedLength>Variable</v8:AllowedLength>
 				</v8:StringQualifiers>
 			</Type>

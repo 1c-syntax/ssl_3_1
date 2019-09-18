@@ -1,6 +1,9 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.9">
 	<WindowOpeningMode>LockOwnerWindow</WindowOpeningMode>
+	<CommandSet>
+		<ExcludedCommand>Copy</ExcludedCommand>
+	</CommandSet>
 	<UseForFoldersAndItems>Items</UseForFoldersAndItems>
 	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
 		<Autofill>false</Autofill>
@@ -15,11 +18,10 @@
 				<CommandSource>Form</CommandSource>
 				<ExtendedTooltip name="ФормаСтандартныеКомандыРасширеннаяПодсказка" id="90"/>
 				<ChildItems>
-					<Button name="ФормаСкопировать" id="229">
+					<Button name="ФормаСкопировать" id="267">
 						<Type>CommandBarButton</Type>
-						<Visible>false</Visible>
-						<CommandName>Form.StandardCommand.Copy</CommandName>
-						<ExtendedTooltip name="ФормаСкопироватьРасширеннаяПодсказка" id="230"/>
+						<CommandName>Form.Command.Скопировать</CommandName>
+						<ExtendedTooltip name="ФормаСкопироватьРасширеннаяПодсказка" id="268"/>
 					</Button>
 					<Button name="ФормаУдалить" id="231">
 						<Type>CommandBarButton</Type>
@@ -362,6 +364,7 @@
 					<v8:content>Настройки закрытого ключа (для создания электронных подписей или расшифровки данных)</v8:content>
 				</v8:item>
 			</Title>
+			<Width>60</Width>
 			<Representation>None</Representation>
 			<ExtendedTooltip name="ДляЭлектроннойПодписиИРасшифровкиРасширеннаяПодсказка" id="222"/>
 			<ChildItems>
@@ -369,6 +372,9 @@
 					<DataPath>Объект.Программа</DataPath>
 					<ContextMenu name="ПрограммаКонтекстноеМеню" id="130"/>
 					<ExtendedTooltip name="ПрограммаРасширеннаяПодсказка" id="131"/>
+					<Events>
+						<Event name="OnChange">ПрограммаПриИзменении</Event>
+					</Events>
 				</InputField>
 				<CheckBoxField name="УсиленнаяЗащитаЗакрытогоКлюча" id="158">
 					<DataPath>Объект.УсиленнаяЗащитаЗакрытогоКлюча</DataPath>
@@ -465,6 +471,11 @@
 				<v8:Type>xs:boolean</v8:Type>
 			</Type>
 		</Attribute>
+		<Attribute name="ПрограммаОблачногоСервиса" id="2">
+			<Type>
+				<v8:Type>cfg:CatalogRef.ПрограммыЭлектроннойПодписиИШифрования</v8:Type>
+			</Type>
+		</Attribute>
 	</Attributes>
 	<Commands>
 		<Command name="СертификатОтозван" id="3">
@@ -504,7 +515,7 @@
 			</ToolTip>
 			<Picture>
 				<xr:Ref>CommonPicture.СертификатКлюча</xr:Ref>
-				<xr:LoadTransparent>true</xr:LoadTransparent>
+				<xr:LoadTransparent>false</xr:LoadTransparent>
 			</Picture>
 			<Action>ПоказатьДанныеСертификата</Action>
 			<CurrentRowUse>DontUse</CurrentRowUse>
@@ -544,11 +555,32 @@
 			</ToolTip>
 			<Picture>
 				<xr:Ref>CommonPicture.ЗаявлениеНаВыпускСертификатаКлюча</xr:Ref>
-				<xr:LoadTransparent>true</xr:LoadTransparent>
+				<xr:LoadTransparent>false</xr:LoadTransparent>
 			</Picture>
 			<Action>ПоказатьЗаявлениеПоКоторомуБылПолученСертификат</Action>
 			<Representation>Picture</Representation>
 			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="Скопировать" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Скопировать</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Скопировать</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Shortcut>F9</Shortcut>
+			<Picture>
+				<xr:Ref>StdPicture.CloneListItem</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>Скопировать</Action>
+			<Representation>Picture</Representation>
 		</Command>
 	</Commands>
 	<CommandInterface>
@@ -557,9 +589,6 @@
 				<Command>InformationRegister.ПутиКПрограммамЭлектроннойПодписиИШифрованияНаСерверахLinux.Command.ПутиКПрограммеНаСерверахLinux</Command>
 				<Type>Auto</Type>
 				<CommandGroup>FormNavigationPanelGoTo</CommandGroup>
-				<Visible>
-					<xr:Common>false</xr:Common>
-				</Visible>
 			</Item>
 		</NavigationPanel>
 		<CommandBar>

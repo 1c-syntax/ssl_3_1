@@ -63,9 +63,14 @@
 						</Button>
 					</ChildItems>
 				</ButtonGroup>
-				<Button name="ФормаКартаМаршрута" id="33">
+				<Button name="ФормаЗадачиБизнесПроцесса" id="76">
 					<Type>CommandBarButton</Type>
 					<Representation>PictureAndText</Representation>
+					<CommandName>Form.Command.ЗадачиБизнесПроцесса</CommandName>
+					<ExtendedTooltip name="ФормаЗадачиБизнесПроцессаРасширеннаяПодсказка" id="77"/>
+				</Button>
+				<Button name="ФормаКартаМаршрута" id="33">
+					<Type>CommandBarButton</Type>
 					<CommandName>Form.Command.КартаМаршрута</CommandName>
 					<ExtendedTooltip name="ФормаКартаМаршрутаExtendedTooltip" id="42"/>
 				</Button>
@@ -248,6 +253,12 @@
 					<UserVisible>
 						<xr:Common>false</xr:Common>
 					</UserVisible>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Бизнес-процесс</v8:content>
+						</v8:item>
+					</Title>
 					<ContextMenu name="БизнесПроцессКонтекстноеМеню" id="61"/>
 					<ExtendedTooltip name="БизнесПроцессРасширеннаяПодсказка" id="62"/>
 				</LabelField>
@@ -268,7 +279,7 @@
 				<ManualQuery>true</ManualQuery>
 				<DynamicDataRead>true</DynamicDataRead>
 				<QueryText>ВЫБРАТЬ
-	РегистрСведенийДанныеБизнесПроцессов.БизнесПроцесс,
+	РегистрСведенийДанныеБизнесПроцессов.Владелец КАК БизнесПроцесс,
 	РегистрСведенийДанныеБизнесПроцессов.Номер,
 	РегистрСведенийДанныеБизнесПроцессов.Дата,
 	РегистрСведенийДанныеБизнесПроцессов.Завершен,
@@ -301,7 +312,7 @@
 ИЗ
 	РегистрСведений.ДанныеБизнесПроцессов КАК РегистрСведенийДанныеБизнесПроцессов
 		ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.ПроцессыДляЗапуска КАК ПроцессыДляЗапуска
-		ПО РегистрСведенийДанныеБизнесПроцессов.БизнесПроцесс = ПроцессыДляЗапуска.БизнесПроцесс</QueryText>
+		ПО РегистрСведенийДанныеБизнесПроцессов.Владелец = ПроцессыДляЗапуска.Владелец</QueryText>
 				<MainTable>InformationRegister.ДанныеБизнесПроцессов</MainTable>
 				<ListSettings>
 					<dcsset:filter>
@@ -375,6 +386,25 @@
 			</Picture>
 			<Action>КартаМаршрута</Action>
 			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ЗадачиБизнесПроцесса" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Задачи</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Открыть задачи бизнес-процесса</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.Task</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>ЗадачиБизнесПроцесса</Action>
 		</Command>
 	</Commands>
 </Form>

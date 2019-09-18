@@ -225,6 +225,11 @@
 										</Button>
 									</ChildItems>
 								</Popup>
+								<Button name="Скопировать" id="353">
+									<Type>CommandBarButton</Type>
+									<CommandName>Form.Command.Скопировать</CommandName>
+									<ExtendedTooltip name="СкопироватьРасширеннаяПодсказка" id="354"/>
+								</Button>
 								<ButtonGroup name="СертификатыСтандартныеКоманды" id="98">
 									<Title>
 										<v8:item>
@@ -617,7 +622,6 @@
 															<v8:content>Путь к программе на компьютере ОС Linux</v8:content>
 														</v8:item>
 													</Title>
-													<TitleFont ref="style:TextFont" bold="true" italic="false" underline="false" strikeout="false" kind="StyleItem"/>
 													<TitleLocation>None</TitleLocation>
 													<ToolTip>
 														<v8:item>
@@ -712,7 +716,7 @@
 для проверки электронных подписей и сертификатов.
 
 Важно: на каждый компьютер, где работает сервер 1С:Предприятия
-или веб-сервер, использующий файловую информационную базу,
+или веб-сервер, подключенный к файловой информационной базе,
 должна быть установлена хотя бы одна из программ в списке.</v8:content>
 											</v8:item>
 										</Title>
@@ -741,7 +745,7 @@
 на компьютер пользователя для подписания, шифрования и расшифровки.
 
 Важно: на каждый компьютер, где работает сервер 1С:Предприятия
-или веб-сервер, использующий файловую информационную базу,
+или веб-сервер, подключенный к файловой информационной базе,
 должна быть установлена программа и сертификат с закрытым ключом.</v8:content>
 											</v8:item>
 										</Title>
@@ -1283,6 +1287,27 @@
 			</ToolTip>
 			<Action>ДобавитьИзУстановленныхНаКомпьютере</Action>
 			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="Скопировать" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Скопировать</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Скопировать</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Shortcut>F9</Shortcut>
+			<Picture>
+				<xr:Ref>StdPicture.CloneListItem</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>Скопировать</Action>
+			<Representation>Picture</Representation>
 		</Command>
 	</Commands>
 </Form>

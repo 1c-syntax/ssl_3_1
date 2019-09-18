@@ -29,6 +29,17 @@
 		</right>
 	</object>
 	<object>
+		<name>SessionParameter.СчетчикПроблемВеденияУчета</name>
+		<right>
+			<name>Get</name>
+			<value>true</value>
+		</right>
+		<right>
+			<name>Set</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
 		<name>Constant.ИспользоватьПочтовыйКлиент</name>
 		<right>
 			<name>Read</name>
@@ -210,6 +221,13 @@
 		</right>
 	</object>
 	<object>
+		<name>CommonForm.РегиональныеНастройки</name>
+		<right>
+			<name>View</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
 		<name>Catalog.ВнешниеКомпоненты</name>
 		<right>
 			<name>Read</name>
@@ -226,6 +244,17 @@
 	</object>
 	<object>
 		<name>Constant.АдресПубликацииИнформационнойБазыВИнтернете</name>
+		<right>
+			<name>Read</name>
+			<value>true</value>
+		</right>
+		<right>
+			<name>View</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
+		<name>Constant.СоздаватьПодкаталогиСИменамиВладельцев</name>
 		<right>
 			<name>Read</name>
 			<value>true</value>
@@ -284,6 +313,17 @@
 	</object>
 	<object>
 		<name>CommonCommand.НастроитьПрава</name>
+		<right>
+			<name>View</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
+		<name>Constant.СпособХраненияФайлов</name>
+		<right>
+			<name>Read</name>
+			<value>true</value>
+		</right>
 		<right>
 			<name>View</name>
 			<value>true</value>
@@ -417,6 +457,13 @@
 		</right>
 	</object>
 	<object>
+		<name>InformationRegister.ИспользованиеПоставляемыхДополнительныхОтчетовИОбработокВОбластяхДанных</name>
+		<right>
+			<name>Read</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
 		<name>CommonForm.УстановкаВнешнейКомпонентыНевозможна</name>
 		<right>
 			<name>View</name>
@@ -478,17 +525,6 @@
 		</right>
 		<right>
 			<name>InputByString</name>
-			<value>true</value>
-		</right>
-	</object>
-	<object>
-		<name>Constant.ИспользоватьОбщиеДополнительныеЗначения</name>
-		<right>
-			<name>Read</name>
-			<value>true</value>
-		</right>
-		<right>
-			<name>View</name>
 			<value>true</value>
 		</right>
 	</object>
@@ -816,9 +852,31 @@
 		</right>
 	</object>
 	<object>
+		<name>Constant.ОсновнойЯзык</name>
+		<right>
+			<name>Read</name>
+			<value>true</value>
+		</right>
+		<right>
+			<name>View</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
 		<name>DataProcessor.ВводКонтактнойИнформации</name>
 		<right>
 			<name>Use</name>
+			<value>true</value>
+		</right>
+		<right>
+			<name>View</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
+		<name>Constant.ИспользоватьДополнительныйЯзык1</name>
+		<right>
+			<name>Read</name>
 			<value>true</value>
 		</right>
 		<right>
@@ -1001,7 +1059,29 @@
 		</right>
 	</object>
 	<object>
+		<name>Constant.ПриоритетОбновленияВОбластяхДанных</name>
+		<right>
+			<name>Read</name>
+			<value>true</value>
+		</right>
+		<right>
+			<name>View</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
 		<name>CommonForm.ПраваДоступа</name>
+		<right>
+			<name>View</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
+		<name>Constant.ИспользоватьДополнительныйЯзык2</name>
+		<right>
+			<name>Read</name>
+			<value>true</value>
+		</right>
 		<right>
 			<name>View</name>
 			<value>true</value>
@@ -1145,11 +1225,26 @@
 			<name>Read</name>
 			<value>true</value>
 			<restrictionByCondition>
-				<condition>ГДЕ Пользователь = &amp;ТекущийПользователь</condition>
+				<condition>#Если &amp;ОграничениеДоступаНаУровнеЗаписейУниверсально #Тогда
+#ДляРегистра("ИдентификаторыОбъектовМетаданных.РегистрСведенийСоставыГруппПользователей", "Пользователь", "", "", "", "")
+#Иначе
+ГДЕ Пользователь = &amp;ТекущийПользователь
+#КонецЕсли</condition>
 			</restrictionByCondition>
 		</right>
 		<right>
 			<name>View</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
+		<name>SessionParameter.ИнтерактивнаяПроверкаЗаполненияКонтактнойИнформации</name>
+		<right>
+			<name>Get</name>
+			<value>true</value>
+		</right>
+		<right>
+			<name>Set</name>
 			<value>true</value>
 		</right>
 	</object>
@@ -1165,7 +1260,7 @@
 		</right>
 	</object>
 	<object>
-		<name>CommonCommand.УстановитьРасширениеРаботыСФайлами</name>
+		<name>CommonCommand.УстановитьРасширениеДляРаботыС1СПредприятием</name>
 		<right>
 			<name>View</name>
 			<value>true</value>
@@ -1189,6 +1284,13 @@
 		<name>CommonForm.ВыборДаты</name>
 		<right>
 			<name>View</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
+		<name>SessionParameter.ОсновнойЯзык</name>
+		<right>
+			<name>Get</name>
 			<value>true</value>
 		</right>
 	</object>
@@ -1219,6 +1321,17 @@
 	</object>
 	<object>
 		<name>Constant.ИспользоватьПолнотекстовыйПоиск</name>
+		<right>
+			<name>Read</name>
+			<value>true</value>
+		</right>
+		<right>
+			<name>View</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
+		<name>Constant.ДополнительныйЯзык2</name>
 		<right>
 			<name>Read</name>
 			<value>true</value>
@@ -1685,10 +1798,20 @@
 			<value>true</value>
 			<restrictionByCondition>
 				<condition>#Если &amp;ОграничениеДоступаНаУровнеЗаписейУниверсально #Тогда
-#ДляРегистра("ИдентификаторыОбъектовМетаданных.РегистрСведенийНастройкиВариантовОтчетов", "Пользователь", "Вариант", "", "", "")
+#ДляРегистра("ИдентификаторыОбъектовМетаданных.РегистрСведенийНастройкиВариантовОтчетов", "Вариант", "Пользователь", "", "", "")
 #Иначе
-ГДЕ (Пользователь = &amp;АвторизованныйПользователь
-    ИЛИ Вариант.Автор = &amp;АвторизованныйПользователь)
+ТекущаяТаблица
+ГДЕ Пользователь = &amp;АвторизованныйПользователь
+	ИЛИ Пользователь = НЕОПРЕДЕЛЕНО
+	ИЛИ Вариант.Автор = &amp;АвторизованныйПользователь
+	ИЛИ ИСТИНА В (
+			ВЫБРАТЬ ПЕРВЫЕ 1
+				ИСТИНА
+			ИЗ
+				РегистрСведений.СоставыГруппПользователей КАК СоставыГруппПользователей
+			ГДЕ
+				СоставыГруппПользователей.ГруппаПользователей = ТекущаяТаблица.Пользователь
+				И СоставыГруппПользователей.Пользователь = &amp;АвторизованныйПользователь)
 #КонецЕсли</condition>
 			</restrictionByCondition>
 		</right>
@@ -1697,10 +1820,20 @@
 			<value>true</value>
 			<restrictionByCondition>
 				<condition>#Если &amp;ОграничениеДоступаНаУровнеЗаписейУниверсально #Тогда
-#ДляРегистра("ИдентификаторыОбъектовМетаданных.РегистрСведенийНастройкиВариантовОтчетов", "Пользователь", "Вариант", "", "", "")
+#ДляРегистра("ИдентификаторыОбъектовМетаданных.РегистрСведенийНастройкиВариантовОтчетов", "Вариант", "Пользователь", "", "", "")
 #Иначе
-ГДЕ (Пользователь = &amp;АвторизованныйПользователь
-    ИЛИ Вариант.Автор = &amp;АвторизованныйПользователь)
+ТекущаяТаблица
+ГДЕ Пользователь = &amp;АвторизованныйПользователь
+	ИЛИ Пользователь = НЕОПРЕДЕЛЕНО
+	ИЛИ Вариант.Автор = &amp;АвторизованныйПользователь
+	ИЛИ ИСТИНА В (
+			ВЫБРАТЬ ПЕРВЫЕ 1
+				ИСТИНА
+			ИЗ
+				РегистрСведений.СоставыГруппПользователей КАК СоставыГруппПользователей
+			ГДЕ
+				СоставыГруппПользователей.ГруппаПользователей = ТекущаяТаблица.Пользователь
+				И СоставыГруппПользователей.Пользователь = &amp;АвторизованныйПользователь)
 #КонецЕсли</condition>
 			</restrictionByCondition>
 		</right>
@@ -1723,6 +1856,17 @@
 		<name>CommonCommand.Обсуждения</name>
 		<right>
 			<name>View</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
+		<name>SessionParameter.ИнтерактивнаяПроверкаЗаполненияСвойств</name>
+		<right>
+			<name>Get</name>
+			<value>true</value>
+		</right>
+		<right>
+			<name>Set</name>
 			<value>true</value>
 		</right>
 	</object>
@@ -2000,6 +2144,17 @@
 		</right>
 	</object>
 	<object>
+		<name>Constant.ДополнительныйЯзык1</name>
+		<right>
+			<name>Read</name>
+			<value>true</value>
+		</right>
+		<right>
+			<name>View</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
 		<name>SessionParameter.УстановленныеРасширения</name>
 		<right>
 			<name>Get</name>
@@ -2068,6 +2223,17 @@
 		</right>
 	</object>
 	<object>
+		<name>Constant.ПараметрыХраненияФайловВИБ</name>
+		<right>
+			<name>Read</name>
+			<value>true</value>
+		</right>
+		<right>
+			<name>View</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
 		<name>InformationRegister.ОриентирыАдресныхОбъектов</name>
 		<right>
 			<name>Read</name>
@@ -2118,17 +2284,6 @@
 		<name>SessionParameter.ПодключенныеРасширения</name>
 		<right>
 			<name>Get</name>
-			<value>true</value>
-		</right>
-	</object>
-	<object>
-		<name>Constant.ИспользоватьОбщиеДополнительныеРеквизитыИСведения</name>
-		<right>
-			<name>Read</name>
-			<value>true</value>
-		</right>
-		<right>
-			<name>View</name>
 			<value>true</value>
 		</right>
 	</object>
@@ -2209,25 +2364,6 @@
 		<name>SessionParameter.ОбластьДанныхЗначение</name>
 		<right>
 			<name>Get</name>
-			<value>true</value>
-		</right>
-	</object>
-	<object>
-		<name>InformationRegister.СеансыВерсийРасширений</name>
-		<right>
-			<name>Read</name>
-			<value>true</value>
-		</right>
-		<right>
-			<name>Update</name>
-			<value>true</value>
-		</right>
-		<right>
-			<name>View</name>
-			<value>true</value>
-		</right>
-		<right>
-			<name>Edit</name>
 			<value>true</value>
 		</right>
 	</object>

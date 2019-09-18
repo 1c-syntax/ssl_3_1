@@ -13,6 +13,7 @@
 	</AutoCommandBar>
 	<Events>
 		<Event name="NotificationProcessing">ОбработкаОповещения</Event>
+		<Event name="OnOpen">ПриОткрытии</Event>
 		<Event name="OnLoadDataFromSettingsAtServer">ПриЗагрузкеДанныхИзНастроекНаСервере</Event>
 		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
 		<Event name="OnClose">ПриЗакрытии</Event>
@@ -31,7 +32,6 @@
 			<ChildItems>
 				<InputField name="Период" id="34">
 					<DataPath>Период</DataPath>
-					<Width>30</Width>
 					<HorizontalStretch>false</HorizontalStretch>
 					<ClearButton>true</ClearButton>
 					<ContextMenu name="ПериодКонтекстноеМеню" id="35">
@@ -44,7 +44,6 @@
 				</InputField>
 				<InputField name="УзелИнформационнойБазы" id="36">
 					<DataPath>УзелИнформационнойБазы</DataPath>
-					<Width>30</Width>
 					<HorizontalStretch>false</HorizontalStretch>
 					<ClearButton>true</ClearButton>
 					<OpenButton>false</OpenButton>
@@ -68,7 +67,6 @@
 							<v8:content>Причина</v8:content>
 						</v8:item>
 					</Title>
-					<Width>30</Width>
 					<HorizontalStretch>false</HorizontalStretch>
 					<ClearButton>true</ClearButton>
 					<ContextMenu name="СтрокаПоискаКонтекстноеМеню" id="56">
@@ -119,7 +117,7 @@
 					</ToolTip>
 					<Picture>
 						<xr:Ref>CommonPicture.ИнформацияПоНедоступнымПолям</xr:Ref>
-						<xr:LoadTransparent>true</xr:LoadTransparent>
+						<xr:LoadTransparent>false</xr:LoadTransparent>
 					</Picture>
 					<ExtendedTooltip name="СтраницаОшибкиXDTOРасширеннаяПодсказка" id="538"/>
 					<ChildItems>
@@ -336,7 +334,7 @@
 											<TitleLocation>None</TitleLocation>
 											<ValuesPicture>
 												<xr:Ref>CommonPicture.ПиктограммыЭлементов</xr:Ref>
-												<xr:LoadTransparent>true</xr:LoadTransparent>
+												<xr:LoadTransparent>false</xr:LoadTransparent>
 											</ValuesPicture>
 											<ContextMenu name="ОшибкиОбъектаXDTOКартинкаКонтекстноеМеню" id="744"/>
 											<ExtendedTooltip name="ОшибкиОбъектаXDTOКартинкаРасширеннаяПодсказка" id="745"/>
@@ -377,21 +375,6 @@
 								</InputField>
 							</ChildItems>
 						</Table>
-						<InputField name="ОшибкиОбъектаXDTOПричинаПодробно" id="758">
-							<DataPath>Items.ОшибкиОбъектаXDTO.CurrentData.Причина</DataPath>
-							<ReadOnly>true</ReadOnly>
-							<Title>
-								<v8:item>
-									<v8:lang>ru</v8:lang>
-									<v8:content>Данные не удалось отправить по причине</v8:content>
-								</v8:item>
-							</Title>
-							<AutoMaxWidth>false</AutoMaxWidth>
-							<Height>4</Height>
-							<MultiLine>true</MultiLine>
-							<ContextMenu name="ОшибкиОбъектаXDTOПричинаПодробноКонтекстноеМеню" id="759"/>
-							<ExtendedTooltip name="ОшибкиОбъектаXDTOПричинаПодробноРасширеннаяПодсказка" id="760"/>
-						</InputField>
 					</ChildItems>
 				</Page>
 				<Page name="СтраницаНепроведенныеДокументы" id="2">
@@ -761,21 +744,6 @@
 								</LabelField>
 							</ChildItems>
 						</Table>
-						<InputField name="НепроведенныеДокументыПричинаПодробно" id="170">
-							<DataPath>Items.НепроведенныеДокументы.CurrentData.Причина</DataPath>
-							<ReadOnly>true</ReadOnly>
-							<Title>
-								<v8:item>
-									<v8:lang>ru</v8:lang>
-									<v8:content>Документ не удалось провести автоматически по причине</v8:content>
-								</v8:item>
-							</Title>
-							<AutoMaxWidth>false</AutoMaxWidth>
-							<Height>4</Height>
-							<MultiLine>true</MultiLine>
-							<ContextMenu name="НепроведенныеДокументыПричинаПодробноКонтекстноеМеню" id="171"/>
-							<ExtendedTooltip name="НепроведенныеДокументыПричинаПодробноExtendedTooltip" id="402"/>
-						</InputField>
 					</ChildItems>
 				</Page>
 				<Page name="СтраницаНезаполненныеРеквизиты" id="39">
@@ -1093,21 +1061,6 @@
 								</LabelField>
 							</ChildItems>
 						</Table>
-						<InputField name="НезаполненныеРеквизитыПричинаПодробно" id="174">
-							<DataPath>Items.НезаполненныеРеквизиты.CurrentData.Причина</DataPath>
-							<ReadOnly>true</ReadOnly>
-							<Title>
-								<v8:item>
-									<v8:lang>ru</v8:lang>
-									<v8:content>Данные не удалось записать по причине</v8:content>
-								</v8:item>
-							</Title>
-							<AutoMaxWidth>false</AutoMaxWidth>
-							<Height>4</Height>
-							<MultiLine>true</MultiLine>
-							<ContextMenu name="НезаполненныеРеквизитыПричинаПодробноКонтекстноеМеню" id="175"/>
-							<ExtendedTooltip name="НезаполненныеРеквизитыПричинаПодробноExtendedTooltip" id="432"/>
-						</InputField>
 					</ChildItems>
 				</Page>
 				<Page name="СтраницаКоллизии" id="42">
@@ -1459,16 +1412,6 @@
 								</LabelField>
 							</ChildItems>
 						</Table>
-						<InputField name="ПричинаКонфликта" id="353">
-							<DataPath>ПричинаКонфликта</DataPath>
-							<ReadOnly>true</ReadOnly>
-							<TitleLocation>Top</TitleLocation>
-							<AutoMaxWidth>false</AutoMaxWidth>
-							<Height>4</Height>
-							<MultiLine>true</MultiLine>
-							<ContextMenu name="ПричинаКонфликтаКонтекстноеМеню" id="354"/>
-							<ExtendedTooltip name="ПричинаКонфликтаExtendedTooltip" id="465"/>
-						</InputField>
 					</ChildItems>
 				</Page>
 				<Page name="СтраницаНепринятыеПоДатеЗапрета" id="50">
@@ -1777,21 +1720,6 @@
 								</LabelField>
 							</ChildItems>
 						</Table>
-						<InputField name="НепринятыеПоДатеПричинаЗапретаПодробно" id="225">
-							<DataPath>Items.НепринятыеПоДате.CurrentData.ПричинаЗапрета</DataPath>
-							<ReadOnly>true</ReadOnly>
-							<Title>
-								<v8:item>
-									<v8:lang>ru</v8:lang>
-									<v8:content>Данные были отклонены из-за запрета</v8:content>
-								</v8:item>
-							</Title>
-							<AutoMaxWidth>false</AutoMaxWidth>
-							<Height>4</Height>
-							<MultiLine>true</MultiLine>
-							<ContextMenu name="НепринятыеПоДатеПричинаЗапретаПодробноКонтекстноеМеню" id="226"/>
-							<ExtendedTooltip name="НепринятыеПоДатеПричинаЗапретаПодробноExtendedTooltip" id="498"/>
-						</InputField>
 					</ChildItems>
 				</Page>
 				<Page name="СтраницаОшибкиПриВыполненииКодаОбработчиковОтправки" id="535">
@@ -1799,18 +1727,12 @@
 					<Title>
 						<v8:item>
 							<v8:lang>ru</v8:lang>
-							<v8:content>Ошибки кода обработчиков при отправки</v8:content>
+							<v8:content>Ошибки кода обработчиков при отправке</v8:content>
 						</v8:item>
 					</Title>
-					<ToolTip>
-						<v8:item>
-							<v8:lang>ru</v8:lang>
-							<v8:content>Ошибки при выполнении кода обработчиков отправки</v8:content>
-						</v8:item>
-					</ToolTip>
 					<Picture>
 						<xr:Ref>CommonPicture.Предупреждение</xr:Ref>
-						<xr:LoadTransparent>true</xr:LoadTransparent>
+						<xr:LoadTransparent>false</xr:LoadTransparent>
 					</Picture>
 					<ExtendedTooltip name="СтраницаОшибкиПриВыполненииКодаОбработчиковОтправкиРасширеннаяПодсказка" id="536"/>
 					<ChildItems>
@@ -1820,7 +1742,7 @@
 							<Title formatted="false">
 								<v8:item>
 									<v8:lang>ru</v8:lang>
-									<v8:content>При отправке данных в другую программу, обнаружены ошибки в код правил конвертации объектов. Необходимо либо обновится на актуальную версию программы, либо связаться с обслуживающей организацией.</v8:content>
+									<v8:content>При отправке данных в другую программу обнаружены ошибки в коде правил конвертации объектов. Необходимо обновится на актуальную версию программы, либо связаться с обслуживающей организацией.</v8:content>
 								</v8:item>
 							</Title>
 							<ContextMenu name="ДекорацияОшибкиОтправкиКонтекстноеМеню" id="762"/>
@@ -1924,21 +1846,6 @@
 								</LabelField>
 							</ChildItems>
 						</Table>
-						<InputField name="ОшибкиКодаОтправкаПричинаПодробно" id="767">
-							<DataPath>Items.ОшибкиПриВыполненииКодаОбработчиковОтправки.CurrentData.Причина</DataPath>
-							<ReadOnly>true</ReadOnly>
-							<Title>
-								<v8:item>
-									<v8:lang>ru</v8:lang>
-									<v8:content>Данные не удалось отправить по причине</v8:content>
-								</v8:item>
-							</Title>
-							<AutoMaxWidth>false</AutoMaxWidth>
-							<Height>4</Height>
-							<MultiLine>true</MultiLine>
-							<ContextMenu name="ОшибкиКодаОтправкаПричинаПодробноКонтекстноеМеню" id="768"/>
-							<ExtendedTooltip name="ОшибкиКодаОтправкаПричинаПодробноРасширеннаяПодсказка" id="769"/>
-						</InputField>
 					</ChildItems>
 				</Page>
 				<Page name="СтраницаОшибкиПриВыполненииКодаОбработчиковПолучения" id="539">
@@ -1946,18 +1853,12 @@
 					<Title>
 						<v8:item>
 							<v8:lang>ru</v8:lang>
-							<v8:content>Ошибки кода обработчиков при получения</v8:content>
+							<v8:content>Ошибки кода обработчиков при получении</v8:content>
 						</v8:item>
 					</Title>
-					<ToolTip>
-						<v8:item>
-							<v8:lang>ru</v8:lang>
-							<v8:content>Ошибки при выполнении кода обработчиков получения</v8:content>
-						</v8:item>
-					</ToolTip>
 					<Picture>
 						<xr:Ref>CommonPicture.Предупреждение</xr:Ref>
-						<xr:LoadTransparent>true</xr:LoadTransparent>
+						<xr:LoadTransparent>false</xr:LoadTransparent>
 					</Picture>
 					<ExtendedTooltip name="СтраницаОшибкиПриВыполненииКодаОбработчиковПолученияРасширеннаяПодсказка" id="540"/>
 					<ChildItems>
@@ -1967,7 +1868,7 @@
 							<Title formatted="false">
 								<v8:item>
 									<v8:lang>ru</v8:lang>
-									<v8:content>При получении данных из другой программы, обнаружены ошибки в код правил конвертации объектов. Необходимо либо обновится на актуальную версию программы, либо связаться с обслуживающей организацией.</v8:content>
+									<v8:content>При получении данных из другой программы обнаружены ошибки в коде правил конвертации объектов. Необходимо обновится на актуальную версию программы, или связаться с обслуживающей организацией.</v8:content>
 								</v8:item>
 							</Title>
 							<ContextMenu name="ДекорацияОшибкиПолученияКонтекстноеМеню" id="765"/>
@@ -2071,6 +1972,174 @@
 								</LabelField>
 							</ChildItems>
 						</Table>
+					</ChildItems>
+				</Page>
+			</ChildItems>
+		</Pages>
+		<Pages name="ПанельПодробноеОписание" id="823">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Панель подробное описание</v8:content>
+				</v8:item>
+			</Title>
+			<PagesRepresentation>None</PagesRepresentation>
+			<ExtendedTooltip name="ПанельПодробноеОписаниеРасширеннаяПодсказка" id="824"/>
+			<ChildItems>
+				<Page name="СтраницаОшибкиXDTOПодробноеОписание" id="825">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Страница ошибки XDTO подробное описание</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="СтраницаОшибкиXDTOПодробноеОписаниеРасширеннаяПодсказка" id="826"/>
+					<ChildItems>
+						<InputField name="ОшибкиОбъектаXDTOПричинаПодробно" id="758">
+							<DataPath>Items.ОшибкиОбъектаXDTO.CurrentData.Причина</DataPath>
+							<ReadOnly>true</ReadOnly>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Данные не удалось отправить по причине</v8:content>
+								</v8:item>
+							</Title>
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<MultiLine>true</MultiLine>
+							<ContextMenu name="ОшибкиОбъектаXDTOПричинаПодробноКонтекстноеМеню" id="759"/>
+							<ExtendedTooltip name="ОшибкиОбъектаXDTOПричинаПодробноРасширеннаяПодсказка" id="760"/>
+						</InputField>
+					</ChildItems>
+				</Page>
+				<Page name="СтраницаНепроведенныеДокументыПодробноеОписание" id="827">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Страница непроведенные документы подробное описание</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="СтраницаНепроведенныеДокументыПодробноеОписаниеРасширеннаяПодсказка" id="828"/>
+					<ChildItems>
+						<InputField name="НепроведенныеДокументыПричинаПодробно" id="170">
+							<DataPath>Items.НепроведенныеДокументы.CurrentData.Причина</DataPath>
+							<ReadOnly>true</ReadOnly>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Документ не удалось провести автоматически по причине</v8:content>
+								</v8:item>
+							</Title>
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<MultiLine>true</MultiLine>
+							<ContextMenu name="НепроведенныеДокументыПричинаПодробноКонтекстноеМеню" id="171"/>
+							<ExtendedTooltip name="НепроведенныеДокументыПричинаПодробноExtendedTooltip" id="402"/>
+						</InputField>
+					</ChildItems>
+				</Page>
+				<Page name="СтраницаНезаполненныеРеквизитыПодробноеОписание" id="829">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Страница незаполненные реквизиты подробное описание</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="СтраницаНезаполненныеРеквизитыПодробноеОписаниеРасширеннаяПодсказка" id="830"/>
+					<ChildItems>
+						<InputField name="НезаполненныеРеквизитыПричинаПодробно" id="174">
+							<DataPath>Items.НезаполненныеРеквизиты.CurrentData.Причина</DataPath>
+							<ReadOnly>true</ReadOnly>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Данные не удалось записать по причине</v8:content>
+								</v8:item>
+							</Title>
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<MultiLine>true</MultiLine>
+							<ContextMenu name="НезаполненныеРеквизитыПричинаПодробноКонтекстноеМеню" id="175"/>
+							<ExtendedTooltip name="НезаполненныеРеквизитыПричинаПодробноExtendedTooltip" id="432"/>
+						</InputField>
+					</ChildItems>
+				</Page>
+				<Page name="СтраницаКоллизииПодробноеОписание" id="831">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Страница коллизии подробное описание</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="СтраницаКоллизииПодробноеОписаниеРасширеннаяПодсказка" id="832"/>
+					<ChildItems>
+						<InputField name="ПричинаКонфликта" id="353">
+							<DataPath>ПричинаКонфликта</DataPath>
+							<ReadOnly>true</ReadOnly>
+							<TitleLocation>Top</TitleLocation>
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<MultiLine>true</MultiLine>
+							<ContextMenu name="ПричинаКонфликтаКонтекстноеМеню" id="354"/>
+							<ExtendedTooltip name="ПричинаКонфликтаExtendedTooltip" id="465"/>
+						</InputField>
+					</ChildItems>
+				</Page>
+				<Page name="СтраницаНепринятыеПоДатеЗапретаПодробноеОписание" id="833">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Страница непринятые по дате запрета подробное описание</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="СтраницаНепринятыеПоДатеЗапретаПодробноеОписаниеРасширеннаяПодсказка" id="834"/>
+					<ChildItems>
+						<InputField name="НепринятыеПоДатеПричинаЗапретаПодробно" id="225">
+							<DataPath>Items.НепринятыеПоДате.CurrentData.ПричинаЗапрета</DataPath>
+							<ReadOnly>true</ReadOnly>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Данные были отклонены из-за запрета</v8:content>
+								</v8:item>
+							</Title>
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<MultiLine>true</MultiLine>
+							<ContextMenu name="НепринятыеПоДатеПричинаЗапретаПодробноКонтекстноеМеню" id="226"/>
+							<ExtendedTooltip name="НепринятыеПоДатеПричинаЗапретаПодробноExtendedTooltip" id="498"/>
+						</InputField>
+					</ChildItems>
+				</Page>
+				<Page name="СтраницаОшибкиПриВыполненииКодаОбработчиковОтправкиПодробноеОписание" id="835">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Страница ошибки при выполнении кода обработчиков отправки подробное описание</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="СтраницаОшибкиПриВыполненииКодаОбработчиковОтправкиПодробноеОписаниеРасширеннаяПодсказка" id="836"/>
+					<ChildItems>
+						<InputField name="ОшибкиКодаОтправкаПричинаПодробно" id="767">
+							<DataPath>Items.ОшибкиПриВыполненииКодаОбработчиковОтправки.CurrentData.Причина</DataPath>
+							<ReadOnly>true</ReadOnly>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Данные не удалось отправить по причине</v8:content>
+								</v8:item>
+							</Title>
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<MultiLine>true</MultiLine>
+							<ContextMenu name="ОшибкиКодаОтправкаПричинаПодробноКонтекстноеМеню" id="768"/>
+							<ExtendedTooltip name="ОшибкиКодаОтправкаПричинаПодробноРасширеннаяПодсказка" id="769"/>
+						</InputField>
+					</ChildItems>
+				</Page>
+				<Page name="СтраницаОшибкиПриВыполненииКодаОбработчиковПолученияПодробноеОписание" id="837">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Страница ошибки при выполнении кода обработчиков получения подробное описание</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="СтраницаОшибкиПриВыполненииКодаОбработчиковПолученияПодробноеОписаниеРасширеннаяПодсказка" id="838"/>
+					<ChildItems>
 						<InputField name="ОшибкиКодаПолучениеПричинаПодробно" id="770">
 							<DataPath>Items.ОшибкиПриВыполненииКодаОбработчиковПолучения.CurrentData.Причина</DataPath>
 							<ReadOnly>true</ReadOnly>
@@ -2081,7 +2150,6 @@
 								</v8:item>
 							</Title>
 							<AutoMaxWidth>false</AutoMaxWidth>
-							<Height>4</Height>
 							<MultiLine>true</MultiLine>
 							<ContextMenu name="ОшибкиКодаПолучениеПричинаПодробноКонтекстноеМеню" id="771"/>
 							<ExtendedTooltip name="ОшибкиКодаПолучениеПричинаПодробноРасширеннаяПодсказка" id="772"/>

@@ -15,6 +15,9 @@
 			</Button>
 		</ChildItems>
 	</AutoCommandBar>
+	<Events>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
 	<ChildItems>
 		<InputField name="Наименование" id="1">
 			<DataPath>Объект.Description</DataPath>
@@ -115,6 +118,16 @@
 			<Columns>
 				<AdditionalColumns table="Объект.КлючевыеОперацииПрофиля"/>
 			</Columns>
+		</Attribute>
+		<Attribute name="ЕстьБазоваяФункциональность" id="2">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ЗаданВопросОбУстановкеРасширения" id="3">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
 		</Attribute>
 	</Attributes>
 	<Commands>

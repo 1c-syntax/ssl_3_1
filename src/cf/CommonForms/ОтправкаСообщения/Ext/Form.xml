@@ -83,7 +83,7 @@
 					<Title>
 						<v8:item>
 							<v8:lang>ru</v8:lang>
-							<v8:content>Почтовый адреса получателей</v8:content>
+							<v8:content>Почтовые адреса получателей</v8:content>
 						</v8:item>
 					</Title>
 					<RowFilter xsi:nil="true"/>
@@ -622,10 +622,23 @@
 			<Type>
 				<v8:Type>v8:ValueListType</v8:Type>
 			</Type>
+			<Settings xsi:type="v8:TypeDescription"/>
 		</Attribute>
 		<Attribute name="РезультатУспехЦвет" id="21">
 			<Type>
 				<v8:Type>v8ui:Color</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="Предмет" id="12">
+			<Type/>
+		</Attribute>
+		<Attribute name="ОписаниеПолучателяВоВременномХранилище" id="14">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
 			</Type>
 		</Attribute>
 	</Attributes>
@@ -769,6 +782,9 @@
 			<Type/>
 		</Parameter>
 		<Parameter name="СкрытыеКопии">
+			<Type/>
+		</Parameter>
+		<Parameter name="Предмет">
 			<Type/>
 		</Parameter>
 	</Parameters>

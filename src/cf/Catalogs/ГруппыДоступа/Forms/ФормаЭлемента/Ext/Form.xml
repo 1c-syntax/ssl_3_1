@@ -98,7 +98,6 @@
 							<v8:content>Участники группы</v8:content>
 						</v8:item>
 					</Title>
-					<TitleFont ref="sys:DefaultGUIFont" bold="true" italic="false" underline="false" strikeout="false" kind="WindowsFont"/>
 					<ExtendedTooltip name="ПользователиГруппыExtendedTooltip" id="344"/>
 					<ChildItems>
 						<Table name="Пользователи" id="298">
@@ -252,7 +251,6 @@
 							<v8:content>Ограничения доступа</v8:content>
 						</v8:item>
 					</Title>
-					<TitleFont ref="sys:DefaultGUIFont" bold="true" italic="false" underline="false" strikeout="false" kind="WindowsFont"/>
 					<ExtendedTooltip name="ДоступExtendedTooltip" id="362"/>
 					<ChildItems>
 						<Table name="ВидыДоступа" id="169">
@@ -426,7 +424,6 @@
 									<Representation>List</Representation>
 									<SkipOnInput>false</SkipOnInput>
 									<HeightInTableRows>2</HeightInTableRows>
-									<Header>false</Header>
 									<UseAlternationRowColor>true</UseAlternationRowColor>
 									<AutoInsertNewRow>true</AutoInsertNewRow>
 									<EnableStartDrag>true</EnableStartDrag>
@@ -480,6 +477,12 @@
 									<ChildItems>
 										<LabelField name="ЗначенияДоступаНомерСтрокиПоВиду" id="308">
 											<DataPath>Объект.ЗначенияДоступа.НомерСтрокиПоВиду</DataPath>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>N</v8:content>
+												</v8:item>
+											</Title>
 											<EditMode>EnterOnInput</EditMode>
 											<Width>3</Width>
 											<ContextMenu name="ЗначенияДоступаНомерСтрокиПоВидуКонтекстноеМеню" id="309"/>
@@ -498,6 +501,24 @@
 												<Event name="ChoiceProcessing">ЗначениеДоступаОбработкаВыбора</Event>
 											</Events>
 										</InputField>
+										<CheckBoxField name="ЗначенияДоступаВключаяНижестоящие" id="448">
+											<DataPath>Объект.ЗначенияДоступа.ВключаяНижестоящие</DataPath>
+											<TitleLocation>None</TitleLocation>
+											<ToolTip>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Включая нижестоящие (с иерархией)</v8:content>
+												</v8:item>
+											</ToolTip>
+											<EditMode>EnterOnInput</EditMode>
+											<HeaderPicture>
+												<xr:Ref>CommonPicture.ИерархическийСписок</xr:Ref>
+												<xr:LoadTransparent>true</xr:LoadTransparent>
+											</HeaderPicture>
+											<CheckBoxType>Auto</CheckBoxType>
+											<ContextMenu name="ЗначенияДоступаВключаяНижестоящиеКонтекстноеМеню" id="449"/>
+											<ExtendedTooltip name="ЗначенияДоступаВключаяНижестоящиеРасширеннаяПодсказка" id="450"/>
+										</CheckBoxField>
 									</ChildItems>
 								</Table>
 							</ChildItems>

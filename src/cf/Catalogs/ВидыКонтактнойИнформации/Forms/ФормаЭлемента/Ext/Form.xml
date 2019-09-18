@@ -56,9 +56,6 @@
 					<Wrap>false</Wrap>
 					<ContextMenu name="НаименованиеКонтекстноеМеню" id="2"/>
 					<ExtendedTooltip name="НаименованиеExtendedTooltip" id="87"/>
-					<Events>
-						<Event name="Opening">НаименованиеОткрытие</Event>
-					</Events>
 				</InputField>
 				<InputField name="Родитель" id="11">
 					<DataPath>Объект.Parent</DataPath>
@@ -104,16 +101,65 @@
 							<ContextMenu name="ОбязательноеЗаполнениеКонтекстноеМеню" id="19"/>
 							<ExtendedTooltip name="ОбязательноеЗаполнениеExtendedTooltip" id="92"/>
 						</CheckBoxField>
-						<CheckBoxField name="РедактированиеТолькоВДиалоге" id="9">
-							<DataPath>Объект.РедактированиеТолькоВДиалоге</DataPath>
-							<TitleLocation>Right</TitleLocation>
-							<CheckBoxType>Auto</CheckBoxType>
-							<ContextMenu name="РедактированиеТолькоВДиалогеКонтекстноеМеню" id="10"/>
-							<ExtendedTooltip name="РедактированиеТолькоВДиалогеExtendedTooltip" id="93"/>
+						<InputField name="ВидРедактирования" id="168">
+							<DataPath>Объект.ВидРедактирования</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Редактировать</v8:content>
+								</v8:item>
+							</Title>
+							<Width>15</Width>
+							<ListChoiceMode>true</ListChoiceMode>
+							<ChooseType>false</ChooseType>
+							<TextEdit>false</TextEdit>
+							<ChoiceList>
+								<xr:Item>
+									<xr:Presentation/>
+									<xr:CheckState>0</xr:CheckState>
+									<xr:Value xsi:type="FormChoiceListDesTimeValue">
+										<Presentation>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>В диалоге</v8:content>
+											</v8:item>
+										</Presentation>
+										<Value xsi:type="xs:string">Диалог</Value>
+									</xr:Value>
+								</xr:Item>
+								<xr:Item>
+									<xr:Presentation/>
+									<xr:CheckState>0</xr:CheckState>
+									<xr:Value xsi:type="FormChoiceListDesTimeValue">
+										<Presentation>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>В поле ввода</v8:content>
+											</v8:item>
+										</Presentation>
+										<Value xsi:type="xs:string">ПолеВвода</Value>
+									</xr:Value>
+								</xr:Item>
+								<xr:Item>
+									<xr:Presentation/>
+									<xr:CheckState>0</xr:CheckState>
+									<xr:Value xsi:type="FormChoiceListDesTimeValue">
+										<Presentation>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>В диалоге и поле ввода</v8:content>
+											</v8:item>
+										</Presentation>
+										<Value xsi:type="xs:string">ПолеВводаИДиалог</Value>
+									</xr:Value>
+								</xr:Item>
+							</ChoiceList>
+							<ContextMenu name="ВидРедактированияКонтекстноеМеню" id="169"/>
+							<ExtendedTooltip name="ВидРедактированияРасширеннаяПодсказка" id="170"/>
 							<Events>
-								<Event name="OnChange">РедактированиеТолькоВДиалогеПриИзменении</Event>
+								<Event name="OnChange">ВидРедактированияПриИзменении</Event>
 							</Events>
-						</CheckBoxField>
+						</InputField>
 						<UsualGroup name="ГруппаХранитьИсториюИзменений" id="157">
 							<Title>
 								<v8:item>

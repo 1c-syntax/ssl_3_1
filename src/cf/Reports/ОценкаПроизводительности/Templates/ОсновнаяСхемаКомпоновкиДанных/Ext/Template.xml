@@ -305,7 +305,7 @@
 		</field>
 		<dataSource>ИсточникДанных1</dataSource>
 		<query>ВЫБРАТЬ
-	ВЫБОР &amp;ПереодичностьЗамеров
+	ВЫБОР &amp;ПериодичностьЗамеров
 		КОГДА 1
 			ТОГДА НАЧАЛОПЕРИОДА(ДОБАВИТЬКДАТЕ(ДАТАВРЕМЯ(2015, 1, 1), СЕКУНДА, Замеры.ДатаНачалаЗамера / 1000 - 63555667200 + &amp;ПоправкаЧасовогоПояса), ЧАС)
 		КОГДА 2
@@ -361,7 +361,7 @@
 	Замеры.ВыполненСОшибкой}
 
 СГРУППИРОВАТЬ ПО
-	ВЫБОР &amp;ПереодичностьЗамеров
+	ВЫБОР &amp;ПериодичностьЗамеров
 		КОГДА 1
 			ТОГДА НАЧАЛОПЕРИОДА(ДОБАВИТЬКДАТЕ(ДАТАВРЕМЯ(2015, 1, 1), СЕКУНДА, Замеры.ДатаНачалаЗамера / 1000 - 63555667200 + &amp;ПоправкаЧасовогоПояса), ЧАС)
 		КОГДА 2
@@ -388,7 +388,7 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 ВЫБРАТЬ
-	ВЫБОР &amp;ПереодичностьЗамеров
+	ВЫБОР &amp;ПериодичностьЗамеров
 		КОГДА 1
 			ТОГДА НАЧАЛОПЕРИОДА(ДОБАВИТЬКДАТЕ(ДАТАВРЕМЯ(2015, 1, 1), СЕКУНДА, (Замеры.ДатаНачалаЗамера + (&amp;НачалоПериодаЧисло - &amp;НачалоПериодаСравненияЧисло)) / 1000 - 63555667200 + &amp;ПоправкаЧасовогоПояса), ЧАС)
 		КОГДА 2
@@ -442,7 +442,7 @@
 	Замеры.ВыполненСОшибкой}
 
 СГРУППИРОВАТЬ ПО
-	ВЫБОР &amp;ПереодичностьЗамеров
+	ВЫБОР &amp;ПериодичностьЗамеров
 		КОГДА 1
 			ТОГДА НАЧАЛОПЕРИОДА(ДОБАВИТЬКДАТЕ(ДАТАВРЕМЯ(2015, 1, 1), СЕКУНДА, (Замеры.ДатаНачалаЗамера + (&amp;НачалоПериодаЧисло - &amp;НачалоПериодаСравненияЧисло)) / 1000 - 63555667200 + &amp;ПоправкаЧасовогоПояса), ЧАС)
 		КОГДА 2
@@ -717,63 +717,6 @@
 		<use>Always</use>
 	</parameter>
 	<parameter>
-		<name>ПереодичностьЗамеров</name>
-		<title xsi:type="v8:LocalStringType">
-			<v8:item>
-				<v8:lang>ru</v8:lang>
-				<v8:content>Периодичность замеров</v8:content>
-			</v8:item>
-		</title>
-		<valueType>
-			<v8:Type>xs:decimal</v8:Type>
-			<v8:NumberQualifiers>
-				<v8:Digits>1</v8:Digits>
-				<v8:FractionDigits>0</v8:FractionDigits>
-				<v8:AllowedSign>Any</v8:AllowedSign>
-			</v8:NumberQualifiers>
-		</valueType>
-		<value xsi:type="xs:decimal">0</value>
-		<useRestriction>false</useRestriction>
-		<availableValue>
-			<value xsi:type="xs:decimal">1</value>
-			<presentation xsi:type="v8:LocalStringType">
-				<v8:item>
-					<v8:lang>ru</v8:lang>
-					<v8:content>Час</v8:content>
-				</v8:item>
-			</presentation>
-		</availableValue>
-		<availableValue>
-			<value xsi:type="xs:decimal">2</value>
-			<presentation xsi:type="v8:LocalStringType">
-				<v8:item>
-					<v8:lang>ru</v8:lang>
-					<v8:content>День</v8:content>
-				</v8:item>
-			</presentation>
-		</availableValue>
-		<availableValue>
-			<value xsi:type="xs:decimal">3</value>
-			<presentation xsi:type="v8:LocalStringType">
-				<v8:item>
-					<v8:lang>ru</v8:lang>
-					<v8:content>Неделя</v8:content>
-				</v8:item>
-			</presentation>
-		</availableValue>
-		<availableValue>
-			<value xsi:type="xs:decimal">4</value>
-			<presentation xsi:type="v8:LocalStringType">
-				<v8:item>
-					<v8:lang>ru</v8:lang>
-					<v8:content>Весь период</v8:content>
-				</v8:item>
-			</presentation>
-		</availableValue>
-		<denyIncompleteValues>true</denyIncompleteValues>
-		<use>Always</use>
-	</parameter>
-	<parameter>
 		<name>ВидСравнения</name>
 		<title xsi:type="v8:LocalStringType">
 			<v8:item>
@@ -1037,6 +980,63 @@
 		<expression>РАЗНОСТЬДАТ(УниверсальноеВремя(&amp;Период.ДатаНачала), &amp;Период.ДатаНачала, "Секунда")</expression>
 		<use>Always</use>
 	</parameter>
+	<parameter>
+		<name>ПериодичностьЗамеров</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Периодичность замеров</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:decimal</v8:Type>
+			<v8:NumberQualifiers>
+				<v8:Digits>0</v8:Digits>
+				<v8:FractionDigits>0</v8:FractionDigits>
+				<v8:AllowedSign>Any</v8:AllowedSign>
+			</v8:NumberQualifiers>
+		</valueType>
+		<value xsi:type="xs:decimal">0</value>
+		<useRestriction>false</useRestriction>
+		<availableValue>
+			<value xsi:type="xs:decimal">1</value>
+			<presentation xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Час</v8:content>
+				</v8:item>
+			</presentation>
+		</availableValue>
+		<availableValue>
+			<value xsi:type="xs:decimal">2</value>
+			<presentation xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>День</v8:content>
+				</v8:item>
+			</presentation>
+		</availableValue>
+		<availableValue>
+			<value xsi:type="xs:decimal">3</value>
+			<presentation xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Неделя</v8:content>
+				</v8:item>
+			</presentation>
+		</availableValue>
+		<availableValue>
+			<value xsi:type="xs:decimal">4</value>
+			<presentation xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Весь период</v8:content>
+				</v8:item>
+			</presentation>
+		</availableValue>
+		<denyIncompleteValues>true</denyIncompleteValues>
+		<use>Always</use>
+	</parameter>
 	<template>
 		<name>Макет1</name>
 		<template xmlns:dcsat="http://v8.1c.ru/8.1/data-composition-system/area-template" xsi:type="dcsat:AreaTemplate">
@@ -1051,15 +1051,15 @@
 		<parameter xmlns:dcsat="http://v8.1c.ru/8.1/data-composition-system/area-template" xsi:type="dcsat:ExpressionAreaTemplateParameter">
 			<dcsat:name>ПериодЗамера</dcsat:name>
 			<dcsat:expression>ВЫБОР
-    КОГДА &amp;ПереодичностьЗамеров=1 ТОГДА ФОРМАТ(ПериодЗамера, "ДФ='дд.ММ.гггг''г. '' ЧЧ:мм'")+ "-" + ФОРМАТ(ДОБАВИТЬКДАТЕ(ПериодЗамера,"Минута",59), "ДФ='ЧЧ:мм'")
-    КОГДА &amp;ПереодичностьЗамеров=2 ТОГДА ФОРМАТ(ПериодЗамера, "ДФ='дд.ММ.гггг'") + "г."
-    КОГДА &amp;ПереодичностьЗамеров=3 ТОГДА
+    КОГДА &amp;ПериодичностьЗамеров=1 ТОГДА ФОРМАТ(ПериодЗамера, "ДФ='дд.ММ.гггг''г. '' ЧЧ:мм'")+ "-" + ФОРМАТ(ДОБАВИТЬКДАТЕ(ПериодЗамера,"Минута",59), "ДФ='ЧЧ:мм'")
+    КОГДА &amp;ПериодичностьЗамеров=2 ТОГДА ФОРМАТ(ПериодЗамера, "ДФ='дд.ММ.гггг'") + "г."
+    КОГДА &amp;ПериодичностьЗамеров=3 ТОГДА
         ВЫБОР
             КОГДА НАЧАЛОПЕРИОДА(ПериодЗамера, "НЕДЕЛЯ") &lt; &amp;НачалоПериода ТОГДА ФОРМАТ(&amp;НачалоПериода, "ДФ='дд.ММ.гггг''г.'''") + " - " + ФОРМАТ(КОНЕЦПЕРИОДА(ПериодЗамера,"НЕДЕЛЯ"), "ДФ='дд.ММ.гггг''г. '''")
             КОГДА КОНЕЦПЕРИОДА(ПериодЗамера, "НЕДЕЛЯ") &gt; &amp;КонецПериода ТОГДА ФОРМАТ(НАЧАЛОПЕРИОДА(ПериодЗамера, "НЕДЕЛЯ"), "ДФ='дд.ММ.гггг''г.'''")+ " - " + ФОРМАТ(&amp;КонецПериода, "ДФ='дд.ММ.гггг''г. '''")
             ИНАЧЕ ФОРМАТ(НАЧАЛОПЕРИОДА(ПериодЗамера, "НЕДЕЛЯ"), "ДФ='дд.ММ.гггг''г.'''")+ " - " + ФОРМАТ(КОНЕЦПЕРИОДА(ПериодЗамера,"НЕДЕЛЯ"), "ДФ='дд.ММ.гггг''г. '''")
         КОНЕЦ
-    КОГДА &amp;ПереодичностьЗамеров=4 ТОГДА ФОРМАТ(&amp;НачалоПериода, "ДФ='дд.ММ.гггг'") + " - " + ФОРМАТ(&amp;КонецПериода, "ДФ='дд.ММ.гггг'")
+    КОГДА &amp;ПериодичностьЗамеров=4 ТОГДА ФОРМАТ(&amp;НачалоПериода, "ДФ='дд.ММ.гггг'") + " - " + ФОРМАТ(&amp;КонецПериода, "ДФ='дд.ММ.гггг'")
 КОНЕЦ</dcsat:expression>
 		</parameter>
 	</template>
@@ -1242,11 +1242,6 @@
 					<dcsset:userSettingID>62cf59f5-3187-4875-b607-31c125370421</dcsset:userSettingID>
 				</dcscor:item>
 				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
-					<dcscor:parameter>ПереодичностьЗамеров</dcscor:parameter>
-					<dcscor:value xsi:type="xs:string">День</dcscor:value>
-					<dcsset:userSettingID>72f8ee98-3425-49ba-ab81-37cbbb7ed01a</dcsset:userSettingID>
-				</dcscor:item>
-				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
 					<dcscor:parameter>ВидСравнения</dcscor:parameter>
 					<dcscor:value xsi:type="xs:string">Левое соединение</dcscor:value>
 					<dcsset:viewMode>Normal</dcsset:viewMode>
@@ -1270,6 +1265,11 @@
 					<dcscor:parameter>Профиль</dcscor:parameter>
 					<dcscor:value xsi:nil="true"/>
 					<dcsset:userSettingID>2c267d2a-7d45-4193-9bc7-01ca05d143e3</dcsset:userSettingID>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ПериодичностьЗамеров</dcscor:parameter>
+					<dcscor:value xsi:type="xs:decimal">2</dcscor:value>
+					<dcsset:userSettingID>2c839466-4390-4084-9578-35f2ab61d182</dcsset:userSettingID>
 				</dcscor:item>
 			</dcsset:dataParameters>
 			<dcsset:order>
@@ -1732,11 +1732,6 @@
 					<dcsset:userSettingID>62cf59f5-3187-4875-b607-31c125370421</dcsset:userSettingID>
 				</dcscor:item>
 				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
-					<dcscor:parameter>ПереодичностьЗамеров</dcscor:parameter>
-					<dcscor:value xsi:type="xs:string">День</dcscor:value>
-					<dcsset:userSettingID>72f8ee98-3425-49ba-ab81-37cbbb7ed01a</dcsset:userSettingID>
-				</dcscor:item>
-				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
 					<dcscor:parameter>ВидСравнения</dcscor:parameter>
 					<dcscor:value xsi:type="xs:string">Полное соединение</dcscor:value>
 					<dcsset:viewMode>Normal</dcsset:viewMode>
@@ -1761,6 +1756,11 @@
 					<dcscor:parameter>Профиль</dcscor:parameter>
 					<dcscor:value xsi:nil="true"/>
 					<dcsset:userSettingID>2c267d2a-7d45-4193-9bc7-01ca05d143e3</dcsset:userSettingID>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ПериодичностьЗамеров</dcscor:parameter>
+					<dcscor:value xsi:type="xs:decimal">2</dcscor:value>
+					<dcsset:userSettingID>a76b1cd1-7b0d-47c3-a1da-aad7625937be</dcsset:userSettingID>
 				</dcscor:item>
 			</dcsset:dataParameters>
 			<dcsset:order>
@@ -2106,11 +2106,6 @@
 					<dcsset:userSettingID>62cf59f5-3187-4875-b607-31c125370421</dcsset:userSettingID>
 				</dcscor:item>
 				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
-					<dcscor:parameter>ПереодичностьЗамеров</dcscor:parameter>
-					<dcscor:value xsi:type="xs:string">День</dcscor:value>
-					<dcsset:userSettingID>72f8ee98-3425-49ba-ab81-37cbbb7ed01a</dcsset:userSettingID>
-				</dcscor:item>
-				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
 					<dcscor:parameter>ВидСравнения</dcscor:parameter>
 					<dcscor:value xsi:type="xs:string">Левое соединение</dcscor:value>
 					<dcsset:viewMode>Normal</dcsset:viewMode>
@@ -2134,6 +2129,11 @@
 					<dcscor:parameter>Профиль</dcscor:parameter>
 					<dcscor:value xsi:nil="true"/>
 					<dcsset:userSettingID>2c267d2a-7d45-4193-9bc7-01ca05d143e3</dcsset:userSettingID>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ПериодичностьЗамеров</dcscor:parameter>
+					<dcscor:value xsi:type="xs:decimal">2</dcscor:value>
+					<dcsset:userSettingID>92730576-873e-473e-959c-c1b82cce9603</dcsset:userSettingID>
 				</dcscor:item>
 			</dcsset:dataParameters>
 			<dcsset:order>
