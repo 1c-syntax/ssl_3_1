@@ -33,13 +33,21 @@
 				<Type>CommandBarButton</Type>
 				<Representation>PictureAndText</Representation>
 				<CommandName>Form.StandardCommand.WriteAndClose</CommandName>
+				<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
 				<ExtendedTooltip name="ФормаЗаписатьИЗакрытьExtendedTooltip" id="233"/>
+			</Button>
+			<Button name="Записать" id="164">
+				<Type>CommandBarButton</Type>
+				<Representation>Picture</Representation>
+				<SkipOnInput>false</SkipOnInput>
+				<CommandName>Form.StandardCommand.Write</CommandName>
+				<ExtendedTooltip name="ЗаписатьExtendedTooltip" id="236"/>
 			</Button>
 			<Button name="ФормаЖурналДокументовВзаимодействияСохранитьПисьмоНаДиск" id="303">
 				<Type>CommandBarButton</Type>
+				<Representation>Picture</Representation>
 				<CommandName>DocumentJournal.Взаимодействия.Command.СохранитьПисьмоНаДиск</CommandName>
 				<DataPath>Объект.Ref</DataPath>
-				<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
 				<ExtendedTooltip name="ФормаЖурналДокументовВзаимодействияСохранитьПисьмоНаДискРасширеннаяПодсказка" id="304"/>
 			</Button>
 			<Button name="ФормаПеречитать" id="215">
@@ -53,12 +61,6 @@
 				<CommandName>Form.StandardCommand.SetDeletionMark</CommandName>
 				<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
 				<ExtendedTooltip name="ФормаУстановитьПометкуУдаленияExtendedTooltip" id="235"/>
-			</Button>
-			<Button name="Записать" id="164">
-				<Type>CommandBarButton</Type>
-				<SkipOnInput>false</SkipOnInput>
-				<CommandName>Form.StandardCommand.Write</CommandName>
-				<ExtendedTooltip name="ЗаписатьExtendedTooltip" id="236"/>
 			</Button>
 			<Popup name="ГруппаОтветитьПереслать" id="191">
 				<Title>
@@ -189,6 +191,54 @@
 					<ContextMenu name="ПолучателиКопийПредставлениеКонтекстноеМеню" id="150"/>
 					<ExtendedTooltip name="ПолучателиКопийПредставлениеExtendedTooltip" id="248"/>
 				</InputField>
+				<Pages name="СтраницыУказаныКонтакты" id="203">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Страницы указаны контакты</v8:content>
+						</v8:item>
+					</Title>
+					<GroupHorizontalAlign>Right</GroupHorizontalAlign>
+					<PagesRepresentation>None</PagesRepresentation>
+					<ExtendedTooltip name="СтраницыУказаныКонтактыExtendedTooltip" id="253"/>
+					<ChildItems>
+						<Page name="СтраницаКонтактыЗаполнены" id="206">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Страница контакты заполнены</v8:content>
+								</v8:item>
+							</Title>
+							<Group>HorizontalIfPossible</Group>
+							<ExtendedTooltip name="СтраницаКонтактыЗаполненыExtendedTooltip" id="254"/>
+							<ChildItems>
+								<LabelDecoration name="ДекорацияКонтактыНеЗаполнены" id="210">
+									<Width>12</Width>
+									<ContextMenu name="ДекорацияКонтактыНеЗаполненыКонтекстноеМеню" id="211"/>
+									<ExtendedTooltip name="ДекорацияКонтактыНеЗаполненыРасширеннаяПодсказка" id="255"/>
+								</LabelDecoration>
+							</ChildItems>
+						</Page>
+						<Page name="СтраницаКонтактыНеЗаполнены" id="204">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Страница контакты не заполнены</v8:content>
+								</v8:item>
+							</Title>
+							<Group>HorizontalIfPossible</Group>
+							<ExtendedTooltip name="СтраницаКонтактыНеЗаполненыExtendedTooltip" id="257"/>
+							<ChildItems>
+								<Button name="УточнитьКонтакты" id="205">
+									<Type>Hyperlink</Type>
+									<Representation>PictureAndText</Representation>
+									<CommandName>Form.Command.УточнитьКонтакты</CommandName>
+									<ExtendedTooltip name="УточнитьКонтактыExtendedTooltip" id="259"/>
+								</Button>
+							</ChildItems>
+						</Page>
+					</ChildItems>
+				</Pages>
 				<InputField name="Тема" id="29">
 					<DataPath>Объект.Тема</DataPath>
 					<Width>40</Width>
@@ -451,6 +501,35 @@
 						</ColumnGroup>
 					</ChildItems>
 				</Table>
+				<CommandBar name="ВложенияКоманды" id="313">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Вложения команды</v8:content>
+						</v8:item>
+					</Title>
+					<HorizontalLocation>Right</HorizontalLocation>
+					<ExtendedTooltip name="ВложенияКомандыРасширеннаяПодсказка" id="314"/>
+					<ChildItems>
+						<Button name="ОткрытьВложениеКоманда" id="315">
+							<Type>CommandBarButton</Type>
+							<SkipOnInput>false</SkipOnInput>
+							<CommandName>Form.Command.ОткрытьВложение</CommandName>
+							<ExtendedTooltip name="ОткрытьВложениеКомандаРасширеннаяПодсказка" id="316"/>
+						</Button>
+						<Button name="СохранитьВложениеКоманда" id="317">
+							<Type>CommandBarButton</Type>
+							<SkipOnInput>false</SkipOnInput>
+							<CommandName>Form.Command.СохранитьВложение</CommandName>
+							<ExtendedTooltip name="СохранитьВложениеКомандаРасширеннаяПодсказка" id="318"/>
+						</Button>
+						<Button name="СвойстваВложения" id="319">
+							<Type>CommandBarButton</Type>
+							<CommandName>Form.Command.СвойстваВложения</CommandName>
+							<ExtendedTooltip name="СвойстваВложенияРасширеннаяПодсказка" id="320"/>
+						</Button>
+					</ChildItems>
+				</CommandBar>
 				<InputField name="Предмет" id="144">
 					<DataPath>Предмет</DataPath>
 					<TitleLocation>Top</TitleLocation>
@@ -508,52 +587,6 @@
 						<Event name="ChoiceProcessing">РассмотретьПослеОбработкаВыбора</Event>
 					</Events>
 				</InputField>
-				<Pages name="СтраницыУказаныКонтакты" id="203">
-					<Title>
-						<v8:item>
-							<v8:lang>ru</v8:lang>
-							<v8:content>Страницы указаны контакты</v8:content>
-						</v8:item>
-					</Title>
-					<PagesRepresentation>None</PagesRepresentation>
-					<ExtendedTooltip name="СтраницыУказаныКонтактыExtendedTooltip" id="253"/>
-					<ChildItems>
-						<Page name="СтраницаКонтактыЗаполнены" id="206">
-							<Title>
-								<v8:item>
-									<v8:lang>ru</v8:lang>
-									<v8:content>Страница контакты заполнены</v8:content>
-								</v8:item>
-							</Title>
-							<Group>HorizontalIfPossible</Group>
-							<ExtendedTooltip name="СтраницаКонтактыЗаполненыExtendedTooltip" id="254"/>
-							<ChildItems>
-								<LabelDecoration name="ДекорацияКонтактыНеЗаполнены" id="210">
-									<Width>12</Width>
-									<ContextMenu name="ДекорацияКонтактыНеЗаполненыКонтекстноеМеню" id="211"/>
-									<ExtendedTooltip name="ДекорацияКонтактыНеЗаполненыРасширеннаяПодсказка" id="255"/>
-								</LabelDecoration>
-							</ChildItems>
-						</Page>
-						<Page name="СтраницаКонтактыНеЗаполнены" id="204">
-							<Title>
-								<v8:item>
-									<v8:lang>ru</v8:lang>
-									<v8:content>Страница контакты не заполнены</v8:content>
-								</v8:item>
-							</Title>
-							<Group>HorizontalIfPossible</Group>
-							<ExtendedTooltip name="СтраницаКонтактыНеЗаполненыExtendedTooltip" id="257"/>
-							<ChildItems>
-								<Button name="УточнитьКонтакты" id="205">
-									<Type>Hyperlink</Type>
-									<CommandName>Form.Command.УточнитьКонтакты</CommandName>
-									<ExtendedTooltip name="УточнитьКонтактыExtendedTooltip" id="259"/>
-								</Button>
-							</ChildItems>
-						</Page>
-					</ChildItems>
-				</Pages>
 				<UsualGroup name="ГруппаВажностьНомерОтправлено" id="187">
 					<Title>
 						<v8:item>
@@ -849,7 +882,7 @@
 			<Title>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Открыть</v8:content>
+					<v8:content>Открыть...</v8:content>
 				</v8:item>
 			</Title>
 			<ToolTip>
@@ -889,7 +922,7 @@
 			<Title>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Параметры письма</v8:content>
+					<v8:content>Параметры письма...</v8:content>
 				</v8:item>
 			</Title>
 			<ToolTip>
@@ -906,7 +939,7 @@
 			<Title>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Связанные взаимодействия</v8:content>
+					<v8:content>Связанные взаимодействия...</v8:content>
 				</v8:item>
 			</Title>
 			<ToolTip>
@@ -927,13 +960,13 @@
 			<Title>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Изменить кодировку</v8:content>
+					<v8:content>Изменить кодировку...</v8:content>
 				</v8:item>
 			</Title>
 			<ToolTip>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Изменить кодировку</v8:content>
+					<v8:content>Изменить кодировку письма</v8:content>
 				</v8:item>
 			</ToolTip>
 			<Action>ИзменитьКодировку</Action>
@@ -943,15 +976,19 @@
 			<Title>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Уточнить контакты</v8:content>
+					<v8:content>Сохранить адреса в контакты</v8:content>
 				</v8:item>
 			</Title>
 			<ToolTip>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Уточнить контакты</v8:content>
+					<v8:content>Внести адресаты письма в адресную книгу</v8:content>
 				</v8:item>
 			</ToolTip>
+			<Picture>
+				<xr:Ref>CommonPicture.Встреча</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
 			<Action>УточнитьКонтакты</Action>
 			<CurrentRowUse>DontUse</CurrentRowUse>
 		</Command>
@@ -959,7 +996,7 @@
 			<Title>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Свойства</v8:content>
+					<v8:content>Свойства вложения...</v8:content>
 				</v8:item>
 			</Title>
 			<ToolTip>
