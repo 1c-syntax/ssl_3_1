@@ -191,12 +191,29 @@
 						</ButtonGroup>
 					</ChildItems>
 				</Popup>
-				<Button name="ФормаСтандартныеУстановитьПометкуУдаления" id="5" DisplayImportance="High">
-					<Type>CommandBarButton</Type>
-					<CommandName>Form.Command.СтандартныеУстановитьПометкуУдаления</CommandName>
-					<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
-					<ExtendedTooltip name="ФормаСтандартныеУстановитьПометкуУдаленияExtendedTooltip" id="61"/>
-				</Button>
+				<ButtonGroup name="ФормаГруппаУдаление" id="283">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Форма группа удаление</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="ФормаГруппаУдалениеРасширеннаяПодсказка" id="284"/>
+					<ChildItems>
+						<Button name="ФормаСтандартныеУстановитьПометкуУдаления" id="5" DisplayImportance="High">
+							<Type>CommandBarButton</Type>
+							<CommandName>Form.Command.СтандартныеУстановитьПометкуУдаления</CommandName>
+							<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
+							<ExtendedTooltip name="ФормаСтандартныеУстановитьПометкуУдаленияExtendedTooltip" id="61"/>
+						</Button>
+						<Button name="ФормаУдалить" id="287">
+							<Type>CommandBarButton</Type>
+							<CommandName>Form.Command.Удалить</CommandName>
+							<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
+							<ExtendedTooltip name="ФормаУдалитьРасширеннаяПодсказка" id="288"/>
+						</Button>
+					</ChildItems>
+				</ButtonGroup>
 				<ButtonGroup name="ФормаГруппаДополнительныеКоманды" id="100" DisplayImportance="VeryHigh">
 					<Title>
 						<v8:item>
@@ -1965,6 +1982,27 @@
 			<Representation>TextPicture</Representation>
 			<ModifiesSavedData>true</ModifiesSavedData>
 			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="Удалить" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Удалить</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Удалить данные версии файла</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.DeleteDirectly</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>Удалить</Action>
+			<CurrentRowUse>Use</CurrentRowUse>
+			<AssociatedTableElementId xsi:type="xs:string">2:02023637-7868-4a5f-8576-835a76e0c9ba</AssociatedTableElementId>
 		</Command>
 	</Commands>
 	<Parameters>

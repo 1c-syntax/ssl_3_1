@@ -58,10 +58,9 @@
 							<Title>
 								<v8:item>
 									<v8:lang>ru</v8:lang>
-									<v8:content>Использование для встроенного почтового клиента:</v8:content>
+									<v8:content>Во встроенном почтовом клиенте:</v8:content>
 								</v8:item>
 							</Title>
-							<TitleFont ref="0" kind="StyleItem"/>
 							<Height>5</Height>
 							<Group>Vertical</Group>
 							<Representation>NormalSeparation</Representation>
@@ -82,7 +81,7 @@
 												<Presentation>
 													<v8:item>
 														<v8:lang>ru</v8:lang>
-														<v8:content>Получать, сохранять и отправлять письма с этой учетной записи во встроенном почтовом клиенте</v8:content>
+														<v8:content>Получать, сохранять и отправлять письма с этой учетной записи</v8:content>
 													</v8:item>
 												</Presentation>
 												<Value xsi:type="xs:decimal">1</Value>
@@ -200,26 +199,23 @@
 									<Title>
 										<v8:item>
 											<v8:lang>ru</v8:lang>
-											<v8:content>Помещать письма в папку письма основания</v8:content>
+											<v8:content>Помещать письма в папку письма-основания</v8:content>
 										</v8:item>
 									</Title>
 									<TitleLocation>Right</TitleLocation>
+									<ToolTipRepresentation>ShowBottom</ToolTipRepresentation>
 									<CheckBoxType>Auto</CheckBoxType>
 									<ContextMenu name="ПомещатьПисьмоВПапкуПисьмаОснованияКонтекстноеМеню" id="63"/>
-									<ExtendedTooltip name="ПомещатьПисьмоВПапкуПисьмаОснованияExtendedTooltip" id="96"/>
+									<ExtendedTooltip name="ПомещатьПисьмоВПапкуПисьмаОснованияExtendedTooltip" id="96">
+										<AutoMaxWidth>false</AutoMaxWidth>
+										<Title formatted="false">
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Для таких писем правила обработки электронной почты не применяются.</v8:content>
+											</v8:item>
+										</Title>
+									</ExtendedTooltip>
 								</CheckBoxField>
-								<LabelDecoration name="ПодписьПомещатьПисьмоВПапкуПисьмаОснования" id="64">
-									<AutoMaxWidth>false</AutoMaxWidth>
-									<TextColor>style:ПоясняющийТекст</TextColor>
-									<Title formatted="false">
-										<v8:item>
-											<v8:lang>ru</v8:lang>
-											<v8:content>Для таких писем правила обработки электронной почты не применяются.</v8:content>
-										</v8:item>
-									</Title>
-									<ContextMenu name="ПодписьПомещатьПисьмоВПапкуПисьмаОснованияКонтекстноеМеню" id="65"/>
-									<ExtendedTooltip name="ПодписьПомещатьПисьмоВПапкуПисьмаОснованияExtendedTooltip" id="97"/>
-								</LabelDecoration>
 							</ChildItems>
 						</UsualGroup>
 						<UsualGroup name="ГруппаГдеИдетОбработкаПисем" id="127">
@@ -229,7 +225,6 @@
 									<v8:content>Где идет обработка писем?</v8:content>
 								</v8:item>
 							</Title>
-							<TitleFont ref="0" kind="StyleItem"/>
 							<Height>6</Height>
 							<Group>Vertical</Group>
 							<Representation>NormalSeparation</Representation>
@@ -271,7 +266,7 @@
 										<Title formatted="true">
 											<v8:item>
 												<v8:lang>ru</v8:lang>
-												<v8:content>Признак "рассмотрено" всегда соответствует состоянию прочтения письма на почтовом сервере. Изменение признака "рассмотрено" в данном почтовом клиенте не приводит к изменению признака прочтения на сервере.</v8:content>
+												<v8:content>Признак "Рассмотрено" всегда соответствует состоянию прочтения письма на почтовом сервере. Изменение признака "рассмотрено" в данном почтовом клиенте не приводит к изменению признака прочтения на сервере.</v8:content>
 											</v8:item>
 										</Title>
 									</ExtendedTooltip>
@@ -304,8 +299,7 @@
 										<Title formatted="true">
 											<v8:item>
 												<v8:lang>ru</v8:lang>
-												<v8:content>Все письма загружаются не рассмотренными. Признак "рассмотрено" не синхронизируется с признаком прочтения письма на почтовом сервере.
-
+												<v8:content>Все письма загружаются не рассмотренными. Признак "Рассмотрено" не синхронизируется с признаком прочтения письма на почтовом сервере.
 </v8:content>
 											</v8:item>
 										</Title>
@@ -344,7 +338,6 @@
 											<v8:content>Для новых сообщений</v8:content>
 										</v8:item>
 									</Title>
-									<Group>Vertical</Group>
 									<Representation>None</Representation>
 									<ShowTitle>false</ShowTitle>
 									<ExtendedTooltip name="ГруппаВключатьФорматНовыеExtendedTooltip" id="101"/>
@@ -354,7 +347,7 @@
 											<Title>
 												<v8:item>
 													<v8:lang>ru</v8:lang>
-													<v8:content>Включать подпись для новых писем</v8:content>
+													<v8:content>Включать подпись для новых писем:</v8:content>
 												</v8:item>
 											</Title>
 											<TitleLocation>Right</TitleLocation>
@@ -373,6 +366,7 @@
 													<v8:content>Формат подписи</v8:content>
 												</v8:item>
 											</Title>
+											<TitleLocation>None</TitleLocation>
 											<Width>15</Width>
 											<HorizontalStretch>false</HorizontalStretch>
 											<ContextMenu name="ФорматПодписиДляНовыхСообщенийКонтекстноеМеню" id="4"/>
@@ -478,7 +472,6 @@
 											<v8:content>Включать формат ответ пересылка</v8:content>
 										</v8:item>
 									</Title>
-									<Group>Vertical</Group>
 									<Representation>None</Representation>
 									<ShowTitle>false</ShowTitle>
 									<ExtendedTooltip name="ГруппаВключатьФорматОтветПересылкаExtendedTooltip" id="111"/>
@@ -488,7 +481,7 @@
 											<Title>
 												<v8:item>
 													<v8:lang>ru</v8:lang>
-													<v8:content>Включать подпись при ответе или пересылке</v8:content>
+													<v8:content>Включать подпись при ответе или пересылке:</v8:content>
 												</v8:item>
 											</Title>
 											<TitleLocation>Right</TitleLocation>
@@ -507,6 +500,7 @@
 													<v8:content>Формат подписи</v8:content>
 												</v8:item>
 											</Title>
+											<TitleLocation>None</TitleLocation>
 											<Width>15</Width>
 											<HorizontalStretch>false</HorizontalStretch>
 											<ContextMenu name="ФорматПодписиПриОтветеПересылкеКонтекстноеМеню" id="23"/>

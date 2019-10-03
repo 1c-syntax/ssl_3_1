@@ -59,13 +59,6 @@
 					</Button>
 				</ChildItems>
 			</ButtonGroup>
-			<Button name="УстановитьАдресКонтакта1" id="324">
-				<Type>CommandBarButton</Type>
-				<Representation>PictureAndText</Representation>
-				<SkipOnInput>false</SkipOnInput>
-				<CommandName>Form.Command.УстановитьАдресКонтакта</CommandName>
-				<ExtendedTooltip name="УстановитьАдресКонтакта1РасширеннаяПодсказка" id="325"/>
-			</Button>
 		</ChildItems>
 	</AutoCommandBar>
 	<Events>
@@ -235,6 +228,11 @@
 									<ContextMenu name="НайденныеКонтактыКонтекстноеМеню" id="26">
 										<Autofill>false</Autofill>
 										<ChildItems>
+											<Button name="НайденныеКонтактыПросмотр" id="333">
+												<Type>CommandBarButton</Type>
+												<CommandName>Form.Command.Просмотр</CommandName>
+												<ExtendedTooltip name="НайденныеКонтактыПросмотрРасширеннаяПодсказка" id="334"/>
+											</Button>
 											<Button name="НайтиВСпискеИзСпискаНайденных" id="143">
 												<Type>CommandBarButton</Type>
 												<SkipOnInput>false</SkipOnInput>
@@ -653,7 +651,7 @@
 											<Type>UsualButton</Type>
 											<AutoMaxWidth>false</AutoMaxWidth>
 											<AutoMaxHeight>false</AutoMaxHeight>
-											<CommandName>Form.Command.ПереместитьИзСпискаВВыбранное</CommandName>
+											<CommandName>Form.Command.ВключитьВСписокПолучателей</CommandName>
 											<ExtendedTooltip name="ПереместитьИзСпискаВВыбранноеExtendedTooltip" id="212"/>
 										</Button>
 										<LabelDecoration name="ДекорацияПереместитьЦентр" id="159">
@@ -662,12 +660,12 @@
 										</LabelDecoration>
 										<Button name="ПереместитьИзВыбранногоВСписокВсе" id="157">
 											<Type>UsualButton</Type>
-											<CommandName>Form.Command.ПереместитьИзВыбранногоВСписокВсе</CommandName>
+											<CommandName>Form.Command.УдалитьВсехПолучателей</CommandName>
 											<ExtendedTooltip name="ПереместитьИзВыбранногоВСписокВсеExtendedTooltip" id="214"/>
 										</Button>
 										<Button name="ПереместитьИзВыбранногоВСписок" id="151">
 											<Type>UsualButton</Type>
-											<CommandName>Form.Command.ПереместитьИзВыбранногоВСписок</CommandName>
+											<CommandName>Form.Command.УдалитьПолучателя</CommandName>
 											<ExtendedTooltip name="ПереместитьИзВыбранногоВСписокExtendedTooltip" id="215"/>
 										</Button>
 										<LabelDecoration name="ДекорацияПереместитьНижняя" id="155">
@@ -693,7 +691,7 @@
 										</LabelDecoration>
 										<Button name="ПереместитьИзВерхнегоСпискаВВыбранное" id="166">
 											<Type>UsualButton</Type>
-											<CommandName>Form.Command.ПереместитьИзСпискаВВыбранное</CommandName>
+											<CommandName>Form.Command.ВключитьВСписокПолучателей</CommandName>
 											<ExtendedTooltip name="ПереместитьИзВерхнегоСпискаВВыбранноеExtendedTooltip" id="219"/>
 										</Button>
 										<LabelDecoration name="ДекорацияПромежутокВерхняя" id="167">
@@ -702,13 +700,13 @@
 										</LabelDecoration>
 										<Button name="ПереместитьИзВыбранногоВСписокДвеТаблицы" id="169">
 											<Type>UsualButton</Type>
-											<CommandName>Form.Command.ПереместитьИзВыбранногоВСписок</CommandName>
+											<CommandName>Form.Command.УдалитьПолучателя</CommandName>
 											<Font ref="style:NormalTextFont" kind="StyleItem"/>
 											<ExtendedTooltip name="ПереместитьИзВыбранногоВСписокДвеТаблицыExtendedTooltip" id="221"/>
 										</Button>
 										<Button name="ПереместитьИзВыбранногоВСписокВсеДвеТаблицы" id="170">
 											<Type>UsualButton</Type>
-											<CommandName>Form.Command.ПереместитьИзВыбранногоВСписокВсе</CommandName>
+											<CommandName>Form.Command.УдалитьВсехПолучателей</CommandName>
 											<ExtendedTooltip name="ПереместитьИзВыбранногоВСписокВсеДвеТаблицыExtendedTooltip" id="222"/>
 										</Button>
 										<LabelDecoration name="ДекорацияПромежутокНижняя" id="171">
@@ -717,7 +715,7 @@
 										</LabelDecoration>
 										<Button name="ПереместитьИзНижнегоСпискаВВыбранное" id="173">
 											<Type>UsualButton</Type>
-											<CommandName>Form.Command.ПереместитьИзСпискаВВыбранное</CommandName>
+											<CommandName>Form.Command.ВключитьВСписокПолучателей</CommandName>
 											<ExtendedTooltip name="ПереместитьИзНижнегоСпискаВВыбранноеExtendedTooltip" id="224"/>
 										</Button>
 										<LabelDecoration name="ДекорацияПереместитьНижняяДвеТаблицы" id="174">
@@ -856,7 +854,7 @@
 											<Button name="УстановитьАдресКонтакта" id="142">
 												<Type>CommandBarButton</Type>
 												<SkipOnInput>false</SkipOnInput>
-												<CommandName>Form.Command.УстановитьАдресКонтакта</CommandName>
+												<CommandName>Form.Command.ВыбратьАдресИзКонтакта</CommandName>
 												<ExtendedTooltip name="УстановитьАдресКонтактаExtendedTooltip" id="231"/>
 											</Button>
 										</ChildItems>
@@ -1505,13 +1503,13 @@
 			<Title>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Установить контакт в получателях</v8:content>
+					<v8:content>Выбрать адрес, указанный в контакте</v8:content>
 				</v8:item>
 			</Title>
 			<ToolTip>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Установить контакт в списке получателей</v8:content>
+					<v8:content>Выбрать адрес из контакта</v8:content>
 				</v8:item>
 			</ToolTip>
 			<Picture>
@@ -1622,17 +1620,17 @@
 			<Action>НайтиПоПредставлениюВыполнить</Action>
 			<CurrentRowUse>DontUse</CurrentRowUse>
 		</Command>
-		<Command name="УстановитьАдресКонтакта" id="13">
+		<Command name="ВыбратьАдресИзКонтакта" id="13">
 			<Title>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Установить адрес контакта</v8:content>
+					<v8:content>Выбрать адрес, указанный в контакте</v8:content>
 				</v8:item>
 			</Title>
 			<ToolTip>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Установить адрес контакта</v8:content>
+					<v8:content>Выбрать адрес из контакта</v8:content>
 				</v8:item>
 			</ToolTip>
 			<Picture>
@@ -1662,7 +1660,7 @@
 			<Action>НайтиВСпискеИзСпискаНайденныхВыполнить</Action>
 			<CurrentRowUse>DontUse</CurrentRowUse>
 		</Command>
-		<Command name="ПереместитьИзВыбранногоВСписок" id="15">
+		<Command name="УдалитьПолучателя" id="15">
 			<Title>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
@@ -1675,11 +1673,11 @@
 					<v8:content>Убрать из списка получателей</v8:content>
 				</v8:item>
 			</ToolTip>
-			<Action>ПереместитьИзВыбранногоВСписок</Action>
+			<Action>УдалитьПолучателя</Action>
 			<Representation>Text</Representation>
 			<CurrentRowUse>DontUse</CurrentRowUse>
 		</Command>
-		<Command name="ПереместитьИзВыбранногоВСписокВсе" id="16">
+		<Command name="УдалитьВсехПолучателей" id="16">
 			<Title>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
@@ -1692,11 +1690,11 @@
 					<v8:content>Убрать всех из списках получателей</v8:content>
 				</v8:item>
 			</ToolTip>
-			<Action>ПереместитьИзВыбранногоВСписокВсе</Action>
+			<Action>УдалитьВсехПолучателей</Action>
 			<Representation>Text</Representation>
 			<CurrentRowUse>DontUse</CurrentRowUse>
 		</Command>
-		<Command name="ПереместитьИзСпискаВВыбранное" id="17">
+		<Command name="ВключитьВСписокПолучателей" id="17">
 			<Title>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
@@ -1709,7 +1707,7 @@
 					<v8:content>Включить в список получателей</v8:content>
 				</v8:item>
 			</ToolTip>
-			<Action>ПереместитьИзСпискаВВыбранное</Action>
+			<Action>ВключитьВСписокПолучателей</Action>
 			<CurrentRowUse>DontUse</CurrentRowUse>
 		</Command>
 		<Command name="ВариантПоискаВезде" id="4">

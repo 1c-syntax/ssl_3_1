@@ -37,6 +37,12 @@
 				<CommandName>Form.Command.СохранитьКак</CommandName>
 				<ExtendedTooltip name="ФормаСохранитьКакExtendedTooltip" id="58"/>
 			</Button>
+			<Button name="ФормаУдалить" id="95">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.Удалить</CommandName>
+				<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
+				<ExtendedTooltip name="ФормаУдалитьРасширеннаяПодсказка" id="96"/>
+			</Button>
 		</ChildItems>
 	</AutoCommandBar>
 	<Events>
@@ -644,6 +650,27 @@
 			</Picture>
 			<Action>СтандартнаяПеречитать</Action>
 			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="Удалить" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Удалить</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Удалить данные версии файла</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.DeleteDirectly</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>Удалить</Action>
+			<CurrentRowUse>Use</CurrentRowUse>
+			<AssociatedTableElementId xsi:type="xs:string">Код</AssociatedTableElementId>
 		</Command>
 	</Commands>
 	<Parameters>

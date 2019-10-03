@@ -50,13 +50,25 @@
 						<CommandName>Form.Item.Список.StandardCommand.SetDeletionMark</CommandName>
 						<ExtendedTooltip name="ФормаУстановитьПометкуУдаленияРасширеннаяПодсказка" id="109"/>
 					</Button>
-					<Button name="ФормаИзменитьФорму" id="110">
+					<Button name="ФормаУдалить" id="118">
 						<Type>CommandBarButton</Type>
-						<CommandName>Form.StandardCommand.CustomizeForm</CommandName>
-						<ExtendedTooltip name="ФормаИзменитьФормуРасширеннаяПодсказка" id="111"/>
+						<CommandName>Form.Command.Удалить</CommandName>
+						<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
+						<ExtendedTooltip name="ФормаУдалитьРасширеннаяПодсказка" id="119"/>
 					</Button>
 				</ChildItems>
 			</ButtonGroup>
+			<Button name="ПоказыватьПомеченныеФайлы" id="120">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.ПоказыватьПомеченныеФайлы</CommandName>
+				<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
+				<ExtendedTooltip name="ПоказыватьПомеченныеФайлыРасширеннаяПодсказка" id="121"/>
+			</Button>
+			<Button name="ФормаИзменитьФорму" id="110">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.StandardCommand.CustomizeForm</CommandName>
+				<ExtendedTooltip name="ФормаИзменитьФормуРасширеннаяПодсказка" id="111"/>
+			</Button>
 			<Button name="ФормаСправка" id="73">
 				<Type>CommandBarButton</Type>
 				<CommandName>Form.StandardCommand.Help</CommandName>
@@ -145,16 +157,21 @@
 						<CommandName>Form.Command.СохранитьКак</CommandName>
 						<ExtendedTooltip name="КонтекстноеМенюСписокСохранитьКакExtendedTooltip" id="86"/>
 					</Button>
-					<Button name="СписокКонтекстноеМенюУстановитьПометкуУдаления" id="112">
-						<Type>CommandBarButton</Type>
-						<CommandName>Form.Item.Список.StandardCommand.SetDeletionMark</CommandName>
-						<ExtendedTooltip name="СписокКонтекстноеМенюУстановитьПометкуУдаленияРасширеннаяПодсказка" id="113"/>
-					</Button>
 					<Button name="КонтекстноеМенюСписокКопировать" id="46">
 						<Type>CommandBarButton</Type>
 						<SkipOnInput>false</SkipOnInput>
 						<CommandName>Form.Item.Список.StandardCommand.CopyToClipboard</CommandName>
 						<ExtendedTooltip name="КонтекстноеМенюСписокКопироватьExtendedTooltip" id="88"/>
+					</Button>
+					<Button name="СписокКонтекстноеМенюУстановитьПометкуУдаления" id="112">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Item.Список.StandardCommand.SetDeletionMark</CommandName>
+						<ExtendedTooltip name="СписокКонтекстноеМенюУстановитьПометкуУдаленияРасширеннаяПодсказка" id="113"/>
+					</Button>
+					<Button name="СписокКонтекстноеМенюУдалить" id="122">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Command.Удалить</CommandName>
+						<ExtendedTooltip name="СписокКонтекстноеМенюУдалитьРасширеннаяПодсказка" id="123"/>
 					</Button>
 				</ChildItems>
 			</ContextMenu>
@@ -188,6 +205,7 @@
 				<Event name="Selection">СписокВыбор</Event>
 				<Event name="BeforeAddRow">СписокПередНачаломДобавления</Event>
 				<Event name="BeforeDeleteRow">СписокПередУдалением</Event>
+				<Event name="OnActivateRow">СписокПриАктивизацииСтроки</Event>
 				<Event name="BeforeRowChange">СписокПередНачаломИзменения</Event>
 			</Events>
 			<ChildItems>
@@ -509,6 +527,42 @@
 			<Action>СохранитьКак</Action>
 			<Representation>Picture</Representation>
 			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ПоказыватьПомеченныеФайлы" id="7">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Показывать помеченные файлы</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Показывать помеченные файлы</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ПоказыватьПомеченныеФайлы</Action>
+		</Command>
+		<Command name="Удалить" id="8">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Удалить</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Удалить данные версии файла</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.DeleteDirectly</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>Удалить</Action>
+			<CurrentRowUse>Use</CurrentRowUse>
+			<AssociatedTableElementId xsi:type="xs:string">Список</AssociatedTableElementId>
 		</Command>
 	</Commands>
 	<Parameters>

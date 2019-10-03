@@ -133,6 +133,12 @@
 					<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
 					<ExtendedTooltip name="ФормаСтандартныеУстановитьПометкуУдаленияExtendedTooltip" id="61"/>
 				</Button>
+				<Button name="ФормаУдалить" id="275">
+					<Type>CommandBarButton</Type>
+					<CommandName>Form.Command.Удалить</CommandName>
+					<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
+					<ExtendedTooltip name="ФормаУдалитьРасширеннаяПодсказка" id="276"/>
+				</Button>
 				<ButtonGroup name="ФормаГруппаДополнительныеКоманды" id="100">
 					<Title>
 						<v8:item>
@@ -2157,6 +2163,27 @@
 			<Representation>TextPicture</Representation>
 			<ModifiesSavedData>true</ModifiesSavedData>
 			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="Удалить" id="30">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Удалить</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Удалить данные версии файла</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.DeleteDirectly</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>Удалить</Action>
+			<CurrentRowUse>Use</CurrentRowUse>
+			<AssociatedTableElementId xsi:type="xs:string">ФормаСтандартнаяЗаписать</AssociatedTableElementId>
 		</Command>
 	</Commands>
 	<Parameters>
