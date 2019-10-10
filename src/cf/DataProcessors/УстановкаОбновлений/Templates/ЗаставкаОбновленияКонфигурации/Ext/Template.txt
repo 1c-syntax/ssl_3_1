@@ -6,7 +6,7 @@
   <meta http-equiv="x-ua-compatible" content="IE=EmulateIE7">
   <hta:application id="oHTA" border="none" caption="no" contextmenu="no" selection="no" icon="splash.ico" innerborder="no"
     navigable="yes" showintaskbar="yes" scroll="no" version="1.0.0.0" />
-  <title>Обновление конфигурации "1С:Предприятие"...</title>
+  <title>[ЗаголовокЗаставки]</title>
   <script language="javascript" src="helpers.js"></script>
   <script language="javascript" src="main.js"></script>
   <script language="javascript">
@@ -44,14 +44,14 @@
     function doStep (step) {
       switch (step) {
         case 0:
-          setProgress('Инициализация')
+          setProgress('[Шаг1Инициализация]')
           alert('111')
           break
         case 1:
           ret = initialize()
           break
         case 2:
-          setProgress('Завершение работы пользователей')
+          setProgress('[Шаг2ЗавершениеРаботы]')
           break
         case 3:
           ret = disconnectAndBlockUsersHTA()
@@ -59,7 +59,7 @@
           break
         case 4:
           if (createBackup) {
-            setProgress('Создание резервной копии информационной базы')
+            setProgress('[Шаг3СозданиеРезервнойКопии]')
           }
           break
         case 5:
@@ -67,7 +67,7 @@
           break
         case 6:
           if (executeDeferredHandlers) {
-            setProgress('Выполнение отложенных обработчиков обновления')
+            setProgress('[Шаг6ОтложенноеОбновление]')
           }
           break
         case 7:
@@ -75,20 +75,20 @@
           break
         case endLoadStep:
           if (makeCompression) {
-            setProgress('Сжатие таблиц информационной базы')
+            setProgress('[Шаг7СжатиеТаблиц]')
           }
           break
         case endLoadStep + 1:
           ret = compressDB()
           break
         case endLoadStep + 2:
-          setProgress('Разрешение подключения новых соединений')
+          setProgress('[Шаг8РазрешениеПодключений]')
           break
         case endLoadStep + 3:
           ret = allowConnections()
           break
         case endLoadStep + 4:
-          setProgress('Завершение')
+          setProgress('[Шаг9Завершение]')
           break
         case endLoadStep + 5:
           // Все готово.
@@ -107,13 +107,13 @@
             var internalStep = step - loadStep
             switch (internalStep) {
               case 0:
-                setProgress('Обновление конфигурации информационной базы')
+                setProgress('[Шаг4ОбновлениеКонфигурации]')
                 break
               case 1:
                 ret = updateDbCfg()
                 break
               case 2:
-                setProgress('Выполнение обработчиков обновления')
+                setProgress('[Шаг5ОбновлениеИБ]')
                 break
               case 3:
                 ret = executeUpdate(true)
@@ -127,7 +127,7 @@
           var runHandlers = fileProperties.requiredVersion || (cfgFileIndex + 1 === cfgFileNames.length)
           switch (internalStep) {
             case 0:
-              setProgress(format('Загрузка файла обновления в основную базу ({0}/{1})', cfgFileIndex + 1, cfgFileNames.length))
+              setProgress(format('[Шаг41Загрузка] ({0}/{1})', cfgFileIndex + 1, cfgFileNames.length))
               break
             case 1:
               var fileName = fileProperties.filePath
@@ -138,14 +138,14 @@
               }
               break
             case 2:
-              setProgress(format('Обновление конфигурации информационной базы ({0}/{1})', cfgFileIndex + 1, cfgFileNames.length))
+              setProgress(format('[Шаг42ОбновлениеКонфигурации] ({0}/{1})', cfgFileIndex + 1, cfgFileNames.length))
               break
             case 3:
               ret = updateDbCfg()
               break;
             case 4:
               if (runHandlers) {
-                setProgress(format('Выполнение обработчиков обновления ({0}/{1})', cfgFileIndex + 1, cfgFileNames.length))
+                setProgress(format('[Шаг43ОбновлениеИБ] ({0}/{1})', cfgFileIndex + 1, cfgFileNames.length))
               }
               break
             case 5:
@@ -171,9 +171,9 @@
           log(format('Завершение с ошибкой. Код ошибки: {0}. Подробности см. в предыдущей записи.', ret), true)
 
           if (UseRestore) {
-            setProgress('Восстановление информационной базы')
+            setProgress('[Шаг10Восстановление]')
           } else {
-            setProgress('Завершение')
+            setProgress('[Шаг9Завершение]')
           }
 
           errStep++
@@ -204,8 +204,8 @@
 
     function checkClose () {
       if (!finish) {
-        event.returnValue = format('Внимание: процесс обновления был прерван, и информационная база осталась заблокированной!\n' +
-              'Для разблокирования информационной базы воспользуйтесь консолью кластера серверов или запустите "1С:Предприятие".')
+        event.returnValue = format('[ПроцессПрерван]\n' +
+              '[ПроцессПрерванПодсказка].')
       }
     }
 
@@ -232,8 +232,7 @@
   </div>
   <div id="captionText" style="font-size: 9pt; font-family: verdana,arial; font-weight: bold;
         color: #606060; position: absolute; left: 80px; top: 70px;">
-    Пожалуйста, подождите.
-    <br> Выполняется обновление конфигурации.
+    [ТекстЗаставки]
   </div>
   <div id="progressText" style="font-size: 8pt; font-family: verdana,arial; color: #000000;
         position: absolute; left: 10px; top: 240px;">

@@ -650,38 +650,84 @@
 									<v8:content>Тип значения реквизита</v8:content>
 								</v8:item>
 							</Title>
+							<Group>Vertical</Group>
 							<Representation>None</Representation>
 							<ShowTitle>false</ShowTitle>
 							<ExtendedTooltip name="ТипЗначенияРеквизитаРасширеннаяПодсказка" id="125"/>
 							<ChildItems>
-								<InputField name="ТипЗначения" id="5">
-									<DataPath>Объект.ValueType</DataPath>
+								<UsualGroup name="ГруппаТипЗначения" id="471">
 									<Title>
 										<v8:item>
 											<v8:lang>ru</v8:lang>
 											<v8:content>Тип значения</v8:content>
 										</v8:item>
 									</Title>
-									<TitleLocation>Left</TitleLocation>
-									<ToolTip>
+									<Representation>None</Representation>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="ГруппаТипЗначенияРасширеннаяПодсказка" id="472"/>
+									<ChildItems>
+										<InputField name="ТипЗначения" id="5">
+											<DataPath>Объект.ValueType</DataPath>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Тип значения</v8:content>
+												</v8:item>
+											</Title>
+											<TitleLocation>Left</TitleLocation>
+											<ToolTip>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>В реквизите будут указываться данные выбранного типа. Например, текст, дата, число и т.п.</v8:content>
+												</v8:item>
+											</ToolTip>
+											<ToolTipRepresentation>Button</ToolTipRepresentation>
+											<Wrap>false</Wrap>
+											<ContextMenu name="ТипЗначенияКонтекстноеМеню" id="6"/>
+											<ExtendedTooltip name="ТипЗначенияExtendedTooltip" id="126"/>
+											<Events>
+												<Event name="OnChange">ТипЗначенияПриИзменении</Event>
+											</Events>
+										</InputField>
+										<Button name="РедактироватьФорматЗначения" id="37">
+											<Type>Hyperlink</Type>
+											<CommandName>Form.Command.РедактироватьФорматЗначения</CommandName>
+											<ExtendedTooltip name="РедактироватьФорматЗначенияExtendedTooltip" id="127"/>
+										</Button>
+									</ChildItems>
+								</UsualGroup>
+								<UsualGroup name="ГруппаПояснениеТипаЗначения" id="476">
+									<Title>
 										<v8:item>
 											<v8:lang>ru</v8:lang>
-											<v8:content>В реквизите будут указываться данные выбранного типа. Например, текст, дата, число и т.п.</v8:content>
+											<v8:content>Пояснение типа значения</v8:content>
 										</v8:item>
-									</ToolTip>
-									<ToolTipRepresentation>Button</ToolTipRepresentation>
-									<Wrap>false</Wrap>
-									<ContextMenu name="ТипЗначенияКонтекстноеМеню" id="6"/>
-									<ExtendedTooltip name="ТипЗначенияExtendedTooltip" id="126"/>
-									<Events>
-										<Event name="OnChange">ТипЗначенияПриИзменении</Event>
-									</Events>
-								</InputField>
-								<Button name="РедактироватьФорматЗначения" id="37">
-									<Type>Hyperlink</Type>
-									<CommandName>Form.Command.РедактироватьФорматЗначения</CommandName>
-									<ExtendedTooltip name="РедактироватьФорматЗначенияExtendedTooltip" id="127"/>
-								</Button>
+									</Title>
+									<Representation>None</Representation>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="ГруппаПояснениеТипаЗначенияРасширеннаяПодсказка" id="477"/>
+									<ChildItems>
+										<PictureDecoration name="КартинкаПояснение" id="478">
+											<Picture>
+												<xr:Ref>CommonPicture.Информация</xr:Ref>
+												<xr:LoadTransparent>true</xr:LoadTransparent>
+											</Picture>
+											<ContextMenu name="КартинкаПояснениеКонтекстноеМеню" id="479"/>
+											<ExtendedTooltip name="КартинкаПояснениеРасширеннаяПодсказка" id="480"/>
+										</PictureDecoration>
+										<LabelDecoration name="ПояснениеОДлинеСтроки" id="473">
+											<AutoMaxWidth>false</AutoMaxWidth>
+											<Title formatted="false">
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Максимальная длина строки составляет 1024 символа</v8:content>
+												</v8:item>
+											</Title>
+											<ContextMenu name="ПояснениеОДлинеСтрокиКонтекстноеМеню" id="474"/>
+											<ExtendedTooltip name="ПояснениеОДлинеСтрокиРасширеннаяПодсказка" id="475"/>
+										</LabelDecoration>
+									</ChildItems>
+								</UsualGroup>
 							</ChildItems>
 						</UsualGroup>
 						<UsualGroup name="ГруппаМногострочность" id="38">

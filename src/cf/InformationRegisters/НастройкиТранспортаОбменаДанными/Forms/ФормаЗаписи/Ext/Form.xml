@@ -490,10 +490,10 @@
 							<ContextMenu name="FTPСоединениеПассивноеСоединениеКонтекстноеМеню" id="21"/>
 							<ExtendedTooltip name="FTPСоединениеПассивноеСоединениеExtendedTooltip" id="164"/>
 						</CheckBoxField>
-						<Button name="ПараметрыДоступаВИнтернет1" id="120">
+						<Button name="ПараметрыДоступаВИнтернетFTP" id="120">
 							<Type>Hyperlink</Type>
 							<CommandName>Form.Command.ПараметрыДоступаВИнтернет</CommandName>
-							<ExtendedTooltip name="ПараметрыДоступаВИнтернет1ExtendedTooltip" id="165"/>
+							<ExtendedTooltip name="ПараметрыДоступаВИнтернетFTPРасширеннаяПодсказка" id="165"/>
 						</Button>
 						<UsualGroup name="FTPАрхив" id="103">
 							<Title>
@@ -779,6 +779,27 @@
 			<Type>
 				<v8:Type>xs:boolean</v8:Type>
 			</Type>
+		</Attribute>
+		<Attribute name="ДоступныеВидыТранспорта" id="11">
+			<Type>
+				<v8:Type>v8:ValueTable</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="ВидТранспорта" id="1">
+					<Type>
+						<v8:Type>cfg:EnumRef.ВидыТранспортаСообщенийОбмена</v8:Type>
+					</Type>
+				</Column>
+				<Column name="ИмяСтраницы" id="2">
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+			</Columns>
 		</Attribute>
 	</Attributes>
 	<Commands>
