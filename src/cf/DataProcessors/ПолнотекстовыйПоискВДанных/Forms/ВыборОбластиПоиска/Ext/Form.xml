@@ -86,15 +86,11 @@
 				</RadioButtonField>
 				<CommandBar name="КоманднаяПанель" id="31">
 					<HorizontalLocation>Right</HorizontalLocation>
+					<CommandSource>Item.ДеревоРазделовПоиска</CommandSource>
 					<ExtendedTooltip name="КоманднаяПанельРасширеннаяПодсказка" id="32"/>
 					<ChildItems>
-						<Popup name="Команды" id="33">
-							<Title>
-								<v8:item>
-									<v8:lang>ru</v8:lang>
-									<v8:content>Еще</v8:content>
-								</v8:item>
-							</Title>
+						<ButtonGroup name="Команды" id="33">
+							<Representation>Compact</Representation>
 							<ExtendedTooltip name="КомандыРасширеннаяПодсказка" id="34"/>
 							<ChildItems>
 								<Button name="УстановитьФлажки" id="37">
@@ -107,24 +103,27 @@
 									<CommandName>Form.Command.СнятьФлажки</CommandName>
 									<ExtendedTooltip name="СнятьФлажкиРасширеннаяПодсказка" id="36"/>
 								</Button>
-								<Button name="РазвернутьВсе" id="41">
-									<Type>CommandBarButton</Type>
-									<CommandName>Form.Command.РазвернутьВсе</CommandName>
-									<ExtendedTooltip name="РазвернутьВсеРасширеннаяПодсказка" id="42"/>
-								</Button>
-								<Button name="СвернутьВсе" id="43">
-									<Type>CommandBarButton</Type>
-									<CommandName>Form.Command.СвернутьВсе</CommandName>
-									<ExtendedTooltip name="СвернутьВсеРасширеннаяПодсказка" id="44"/>
-								</Button>
 							</ChildItems>
-						</Popup>
+						</ButtonGroup>
+						<Button name="РазвернутьВсе" id="41">
+							<Type>CommandBarButton</Type>
+							<CommandName>Form.Command.РазвернутьВсе</CommandName>
+							<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
+							<ExtendedTooltip name="РазвернутьВсеРасширеннаяПодсказка" id="42"/>
+						</Button>
+						<Button name="СвернутьВсе" id="43">
+							<Type>CommandBarButton</Type>
+							<CommandName>Form.Command.СвернутьВсе</CommandName>
+							<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
+							<ExtendedTooltip name="СвернутьВсеРасширеннаяПодсказка" id="44"/>
+						</Button>
 					</ChildItems>
 				</CommandBar>
 			</ChildItems>
 		</UsualGroup>
 		<Table name="ДеревоРазделовПоиска" id="4">
 			<Representation>Tree</Representation>
+			<CommandBarLocation>None</CommandBarLocation>
 			<ChangeRowSet>false</ChangeRowSet>
 			<ChangeRowOrder>false</ChangeRowOrder>
 			<SelectionMode>SingleRow</SelectionMode>
@@ -138,14 +137,12 @@
 				<ExcludedCommand>Add</ExcludedCommand>
 				<ExcludedCommand>Change</ExcludedCommand>
 				<ExcludedCommand>Copy</ExcludedCommand>
-				<ExcludedCommand>CopyToClipboard</ExcludedCommand>
 				<ExcludedCommand>Delete</ExcludedCommand>
 				<ExcludedCommand>EndEdit</ExcludedCommand>
 				<ExcludedCommand>HierarchicalList</ExcludedCommand>
 				<ExcludedCommand>List</ExcludedCommand>
 				<ExcludedCommand>MoveDown</ExcludedCommand>
 				<ExcludedCommand>MoveUp</ExcludedCommand>
-				<ExcludedCommand>OutputList</ExcludedCommand>
 				<ExcludedCommand>ShowRowRearrangement</ExcludedCommand>
 				<ExcludedCommand>SortListAsc</ExcludedCommand>
 				<ExcludedCommand>SortListDesc</ExcludedCommand>

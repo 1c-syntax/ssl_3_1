@@ -303,7 +303,6 @@
 									<Representation>List</Representation>
 									<SkipOnInput>false</SkipOnInput>
 									<HeightInTableRows>2</HeightInTableRows>
-									<Header>false</Header>
 									<AutoInsertNewRow>true</AutoInsertNewRow>
 									<EnableStartDrag>true</EnableStartDrag>
 									<EnableDrag>true</EnableDrag>
@@ -358,6 +357,12 @@
 									<ChildItems>
 										<LabelField name="ЗначенияДоступаНомерСтрокиПоВиду" id="62">
 											<DataPath>ЗначенияДоступа.НомерСтрокиПоВиду</DataPath>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>N</v8:content>
+												</v8:item>
+											</Title>
 											<EditMode>EnterOnInput</EditMode>
 											<Width>3</Width>
 											<ContextMenu name="ЗначенияДоступаНомерСтрокиПоВидуКонтекстноеМеню" id="63"/>
@@ -377,6 +382,23 @@
 												<Event name="ChoiceProcessing">ЗначениеДоступаОбработкаВыбора</Event>
 											</Events>
 										</InputField>
+										<CheckBoxField name="ЗначенияДоступаВключаяНижестоящие" id="139">
+											<DataPath>ЗначенияДоступа.ВключаяНижестоящие</DataPath>
+											<TitleLocation>None</TitleLocation>
+											<ToolTip>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Включая нижестоящие (с иерархией)</v8:content>
+												</v8:item>
+											</ToolTip>
+											<HeaderPicture>
+												<xr:Ref>CommonPicture.ИерархическийСписок</xr:Ref>
+												<xr:LoadTransparent>true</xr:LoadTransparent>
+											</HeaderPicture>
+											<CheckBoxType>Auto</CheckBoxType>
+											<ContextMenu name="ЗначенияДоступаВключаяНижестоящиеКонтекстноеМеню" id="140"/>
+											<ExtendedTooltip name="ЗначенияДоступаВключаяНижестоящиеРасширеннаяПодсказка" id="141"/>
+										</CheckBoxField>
 									</ChildItems>
 								</Table>
 							</ChildItems>
@@ -545,6 +567,17 @@
 							<v8:FractionDigits>0</v8:FractionDigits>
 							<v8:AllowedSign>Nonnegative</v8:AllowedSign>
 						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+				<Column name="ВключаяНижестоящие" id="2">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Включая нижестоящие</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
 					</Type>
 				</Column>
 			</Columns>

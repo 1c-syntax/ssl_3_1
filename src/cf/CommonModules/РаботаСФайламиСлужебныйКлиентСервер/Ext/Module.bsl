@@ -322,6 +322,8 @@
 	Если Не ПустаяСтрока(Сервис) Тогда
 		Если Сервис = "https://webdav.yandex.ru" Тогда
 			АдресОбъекта = СтрЗаменить(Href, "https://webdav.yandex.ru", "https://disk.yandex.ru/client/disk");
+		ИначеЕсли Сервис = "https://webdav.yandex.com" Тогда
+			АдресОбъекта = СтрЗаменить(Href, "https://webdav.yandex.com", "https://disk.yandex.com/client/disk");
 		ИначеЕсли Сервис = "https://webdav.4shared.com" Тогда
 			АдресОбъекта = "http://www.4shared.com/folder";
 		ИначеЕсли Сервис = "https://dav.box.com/dav" Тогда
