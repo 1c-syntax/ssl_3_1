@@ -207,7 +207,7 @@
 			</ChildItems>
 		</UsualGroup>
 		<HTMLDocumentField name="РезультатыПоиска" id="39" DisplayImportance="VeryHigh">
-			<DataPath>РезультатыПоиска</DataPath>
+			<DataPath>РезультатыПоискаПредставление</DataPath>
 			<TitleLocation>None</TitleLocation>
 			<ContextMenu name="РезультатыПоискаКонтекстноеМеню" id="40"/>
 			<ExtendedTooltip name="РезультатыПоискаРасширеннаяПодсказка" id="61"/>
@@ -247,11 +247,11 @@
 				</v8:StringQualifiers>
 			</Type>
 		</Attribute>
-		<Attribute name="РезультатыПоиска" id="14">
+		<Attribute name="РезультатыПоискаПредставление" id="14">
 			<Title>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Результаты поиска</v8:content>
+					<v8:content>Результаты поиска представление</v8:content>
 				</v8:item>
 			</Title>
 			<Type>
@@ -294,6 +294,76 @@
 					<v8:AllowedLength>Variable</v8:AllowedLength>
 				</v8:StringQualifiers>
 			</Type>
+		</Attribute>
+		<Attribute name="СостояниеПоиска" id="3">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ИскатьВРазделах" id="4">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ОбластиПоиска" id="5">
+			<Type>
+				<v8:Type>v8:ValueListType</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ТекущаяПозиция" id="8">
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>10</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="Количество" id="9">
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>10</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ПолноеКоличество" id="10">
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>10</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="КодОшибки" id="11">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ОписаниеОшибки" id="12">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="РезультатыПоиска" id="15">
+			<Type/>
 		</Attribute>
 	</Attributes>
 	<Commands>
@@ -363,6 +433,20 @@
 	</Commands>
 	<Parameters>
 		<Parameter name="ПереданнаяСтрокаПоиска">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Parameter>
+		<Parameter name="ОбластиПоиска">
+			<Type>
+				<v8:Type>v8:ValueListType</v8:Type>
+			</Type>
+		</Parameter>
+		<Parameter name="ИскатьВРазделах">
 			<Type>
 				<v8:Type>xs:string</v8:Type>
 				<v8:StringQualifiers>
