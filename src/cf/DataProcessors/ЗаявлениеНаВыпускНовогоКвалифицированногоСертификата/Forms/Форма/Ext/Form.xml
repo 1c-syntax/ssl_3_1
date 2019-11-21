@@ -59,52 +59,20 @@
 							<Title>
 								<v8:item>
 									<v8:lang>ru</v8:lang>
-									<v8:content>Состояние обработки заявления</v8:content>
+									<v8:content>Состояние</v8:content>
 								</v8:item>
 							</Title>
 							<AutoMaxWidth>false</AutoMaxWidth>
+							<AutoMaxHeight>false</AutoMaxHeight>
 							<ContextMenu name="СостояниеОбработкиЗаявленияКонтекстноеМеню" id="376"/>
 							<ExtendedTooltip name="СостояниеОбработкиЗаявленияРасширеннаяПодсказка" id="377"/>
 						</LabelField>
-						<CommandBar name="ПанельТехническойИнформации" id="794">
-							<Title>
-								<v8:item>
-									<v8:lang>ru</v8:lang>
-									<v8:content>Панель технической информации</v8:content>
-								</v8:item>
-							</Title>
-							<HorizontalLocation>Right</HorizontalLocation>
-							<ExtendedTooltip name="ПанельТехническойИнформацииРасширеннаяПодсказка" id="795"/>
-							<ChildItems>
-								<Popup name="ГруппаТехническаяИнформация" id="796">
-									<Title>
-										<v8:item>
-											<v8:lang>ru</v8:lang>
-											<v8:content>Техническая информация</v8:content>
-										</v8:item>
-									</Title>
-									<ShapeRepresentation>None</ShapeRepresentation>
-									<ExtendedTooltip name="ГруппаТехническаяИнформацияРасширеннаяПодсказка" id="797"/>
-									<ChildItems>
-										<Button name="ВыгрузитьЗапросНаСертификат" id="805">
-											<Type>CommandBarButton</Type>
-											<CommandName>Form.Command.ВыгрузитьЗапросНаСертификат</CommandName>
-											<ExtendedTooltip name="ВыгрузитьЗапросНаСертификатРасширеннаяПодсказка" id="806"/>
-										</Button>
-										<Button name="ВыгрузитьКорневойСертификат" id="807">
-											<Type>CommandBarButton</Type>
-											<CommandName>Form.Command.ВыгрузитьКорневойСертификат</CommandName>
-											<ExtendedTooltip name="ВыгрузитьКорневойСертификатРасширеннаяПодсказка" id="808"/>
-										</Button>
-										<Button name="ВыгрузитьСертификат" id="809">
-											<Type>CommandBarButton</Type>
-											<CommandName>Form.Command.ВыгрузитьСертификат</CommandName>
-											<ExtendedTooltip name="ВыгрузитьСертификатРасширеннаяПодсказка" id="810"/>
-										</Button>
-									</ChildItems>
-								</Popup>
-							</ChildItems>
-						</CommandBar>
+						<Button name="ТехническаяИнформация" id="815">
+							<Type>Hyperlink</Type>
+							<CommandName>Form.Command.ТехническаяИнформация</CommandName>
+							<LocationInCommandBar>InCommandBar</LocationInCommandBar>
+							<ExtendedTooltip name="ТехническаяИнформацияРасширеннаяПодсказка" id="816"/>
+						</Button>
 					</ChildItems>
 				</UsualGroup>
 				<UsualGroup name="ГруппаОрганизация" id="728">
@@ -1395,6 +1363,15 @@
 				<v8:Type>cfg:CatalogRef.ПрограммыЭлектроннойПодписиИШифрования</v8:Type>
 			</Type>
 		</Attribute>
+		<Attribute name="АдресОтветаСервиса" id="35">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
 	</Attributes>
 	<Commands>
 		<Command name="УказатьСведенияОбОрганизации" id="7">
@@ -1472,32 +1449,20 @@
 			<Action>ОбновитьСостояниеОбработкиЗаявления</Action>
 			<Representation>Picture</Representation>
 		</Command>
-		<Command name="ВыгрузитьЗапросНаСертификат" id="1">
+		<Command name="ТехническаяИнформация" id="4">
 			<Title>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Запрос на сертификат</v8:content>
+					<v8:content>Техническая информация</v8:content>
 				</v8:item>
 			</Title>
-			<Action>ВыгрузитьЗапросНаСертификат</Action>
-		</Command>
-		<Command name="ВыгрузитьКорневойСертификат" id="2">
-			<Title>
+			<ToolTip>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Корневой сертификат</v8:content>
+					<v8:content>Техническая информация</v8:content>
 				</v8:item>
-			</Title>
-			<Action>ВыгрузитьКорневойСертификат</Action>
-		</Command>
-		<Command name="ВыгрузитьСертификат" id="3">
-			<Title>
-				<v8:item>
-					<v8:lang>ru</v8:lang>
-					<v8:content>Сертификат</v8:content>
-				</v8:item>
-			</Title>
-			<Action>ВыгрузитьСертификат</Action>
+			</ToolTip>
+			<Action>ТехническаяИнформация</Action>
 		</Command>
 	</Commands>
 	<Parameters>

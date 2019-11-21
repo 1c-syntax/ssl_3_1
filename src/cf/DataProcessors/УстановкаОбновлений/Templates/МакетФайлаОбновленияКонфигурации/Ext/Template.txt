@@ -1,6 +1,6 @@
 ﻿#Область ОбластьПараметров
 ///////////////////////////////////////////////////////////////////////////////////////////////////////
-// Copyright (c) 2018, ООО 1С-Софт
+// Copyright (c) 2019, ООО 1С-Софт
 // Все права защищены. Эта программа и сопроводительные материалы предоставляются 
 // в соответствии с условиями лицензии Attribution 4.0 International (CC BY 4.0)
 // Текст лицензии доступен по ссылке:
@@ -70,35 +70,18 @@ function runApp (sFilePath, sFileArgs, show, bWaitOnReturn) {
     sFileArgs = ''
   }
   var ret = 1
-  log(
-    format(
-      'Запускается: {0}; параметры: {1}; окно: {2}; ожидание: {3}',
+  log(format('Запускается: {0}; параметры: {1}; окно: {2}; ожидание: {3}',
       sFilePath,
       hidePass(sFileArgs),
       SWtoString(show),
       bWaitOnReturn))
   try {
-    ret = oShell.Run(
-      format(
-        '"{0}" {1}',
-        sFilePath,
-        sFileArgs),
-      show,
-      bWaitOnReturn)
+    ret = oShell.Run(format('"{0}" {1}', sFilePath, sFileArgs), show, bWaitOnReturn)
   } catch (e) {
-    log(
-      format(
-        'Исключение в runApp: {0}, {1}.',
-        e.name,
-        e.message),
-      true)
+    log(format('Исключение в runApp: {0}, {1}.', e.name, e.message), true)
     return 1
   }
-  log(
-    format(
-      'Код возврата: {0}',
-      ret),
-    ret !== 0)
+  log(format('Код возврата: {0}', ret), ret !== 0)
   return ret
 }
 
@@ -142,7 +125,7 @@ function logFile (text, failed) {
 
 // Записать текст из временного лог-файла
 function appendLog () {
-  var f
+  var f = null
   var outf
   var text
   try {
@@ -152,7 +135,9 @@ function appendLog () {
   try {
     if (!f.AtEndOfStream) {
       text = f.ReadAll()
+      outf.WriteLine('')
       outf.WriteLine(text)
+      outf.WriteLine('')
     }
   } finally {
     try {
@@ -160,7 +145,7 @@ function appendLog () {
       outf.Close()
     } catch (e) { return }
   }
-  return text
+  return (text && text.length > 0)
 }
 
 // Инициализация
@@ -495,7 +480,9 @@ function allowConnections () {
 function doExecuteUpdate (lastVersion) {
   if (useComConnector && lastVersion) {
     try {
-      addDeletePatches()
+      if (addDeletePatches() != 0) {
+        throw new Error('Не удалось обновить исправления конфигурации. Подробности см. в предыдущей записи.')
+      }
     } catch (e) {
       log(format('Исключение при вызове ОбновлениеКонфигурации.ОбновитьИсправленияИзСкрипта: {0}, {1}.', e.name, e.message), true)
       return 2
@@ -900,20 +887,21 @@ function addDeletePatches () {
   var fixFileNamesString = fixFileNames.join('\n')
   var removeFixNamesString = removeFixNames.join('\n')
 
-  var result = runApp(
-    'wscript.exe',
-    format(
-      '{0}/add-delete-patches.js /ConnectionString:"{1}" /COMConnectorName:"{2}" /FixFileNames:"{3}" /RemoveFixNames:"{4}"',
+  var result = runApp('wscript.exe',
+    format('"{0}\\add-delete-patches.js" /ConnectionString:"{1}" /COMConnectorName:"{2}" /FixFileNames:"{3}" /RemoveFixNames:"{4}" /Out:"{5}\\{6}"',
       thisFileDir,
       connectionString.replace(/"/g, '\''),
       comConnectorName,
       fixFileNamesString,
-      removeFixNamesString
+      removeFixNamesString,
+      thisFileDir,
+      tempLogFileName
     ),
-    SW_HIDE,
-    true)
+    SW_HIDE, true)
+  appendLog()
   return result
 }
+
 function registerCOM() {
   isSchedule = (taskNameScheduleService !== '')
   param = isSchedule ? format('/s "{0}"', v8comcntr) : format('/n /i:user /s "{0}"', v8comcntr)

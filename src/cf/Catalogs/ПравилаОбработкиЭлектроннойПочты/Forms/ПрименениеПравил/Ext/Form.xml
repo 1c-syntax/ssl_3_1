@@ -77,16 +77,28 @@
 						<CommandName>Form.Command.Применить</CommandName>
 						<ExtendedTooltip name="ПрименяемыеПравилаПрименитьExtendedTooltip" id="26"/>
 					</Button>
-					<Button name="ПрименяемыеПравилаУстановитьВсеПрименить" id="16">
-						<Type>CommandBarButton</Type>
-						<CommandName>Form.Command.ПрименитьВсеПравила</CommandName>
-						<ExtendedTooltip name="ПрименяемыеПравилаУстановитьВсеПрименитьExtendedTooltip" id="27"/>
-					</Button>
-					<Button name="ПрименяемыеПравилаСнятьВсеПрименить" id="15">
-						<Type>CommandBarButton</Type>
-						<CommandName>Form.Command.НеПрименятьВсеПравила</CommandName>
-						<ExtendedTooltip name="ПрименяемыеПравилаСнятьВсеПрименитьExtendedTooltip" id="28"/>
-					</Button>
+					<ButtonGroup name="ПрименяемыеПравилаГруппа" id="45">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Применяемые правила группа</v8:content>
+							</v8:item>
+						</Title>
+						<Representation>Compact</Representation>
+						<ExtendedTooltip name="ПрименяемыеПравилаГруппаРасширеннаяПодсказка" id="46"/>
+						<ChildItems>
+							<Button name="ПрименяемыеПравилаУстановитьВсеПрименить" id="16">
+								<Type>CommandBarButton</Type>
+								<CommandName>Form.Command.ПрименитьВсеПравила</CommandName>
+								<ExtendedTooltip name="ПрименяемыеПравилаУстановитьВсеПрименитьExtendedTooltip" id="27"/>
+							</Button>
+							<Button name="ПрименяемыеПравилаСнятьВсеПрименить" id="15">
+								<Type>CommandBarButton</Type>
+								<CommandName>Form.Command.НеПрименятьВсеПравила</CommandName>
+								<ExtendedTooltip name="ПрименяемыеПравилаСнятьВсеПрименитьExtendedTooltip" id="28"/>
+							</Button>
+						</ChildItems>
+					</ButtonGroup>
 					<Button name="ПрименяемыеПравилаСправочникПравилаОбработкиЭлектроннойПочтыОткрытьПоЗначению1" id="22">
 						<Type>CommandBarButton</Type>
 						<CommandName>Catalog.ПравилаОбработкиЭлектроннойПочты.StandardCommand.OpenByValue</CommandName>
@@ -142,6 +154,10 @@
 						</v8:item>
 					</ToolTip>
 					<EditMode>EnterOnInput</EditMode>
+					<HeaderPicture>
+						<xr:Ref>StdPicture.CheckAll</xr:Ref>
+						<xr:LoadTransparent>true</xr:LoadTransparent>
+					</HeaderPicture>
 					<CheckBoxType>Auto</CheckBoxType>
 					<ContextMenu name="ПрименяемыеПравилаПрименятьКонтекстноеМеню" id="7"/>
 					<ExtendedTooltip name="ПрименяемыеПравилаПрименятьExtendedTooltip" id="32"/>
@@ -185,6 +201,13 @@
 			<ContextMenu name="ПредставлениеОтбораКонтекстноеМеню" id="18"/>
 			<ExtendedTooltip name="ПредставлениеОтбораExtendedTooltip" id="35"/>
 		</InputField>
+		<Button name="ПрименяемыеПравилаСправочникПравилаОбработкиЭлектроннойПочтыОткрытьПоЗначению2" id="47">
+			<Type>Hyperlink</Type>
+			<CommandName>Catalog.ПравилаОбработкиЭлектроннойПочты.StandardCommand.OpenByValue</CommandName>
+			<DataPath>УчетнаяЗапись</DataPath>
+			<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
+			<ExtendedTooltip name="ПрименяемыеПравилаСправочникПравилаОбработкиЭлектроннойПочтыОткрытьПоЗначению2РасширеннаяПодсказка" id="48"/>
+		</Button>
 	</ChildItems>
 	<Attributes>
 		<Attribute name="ПрименяемыеПравила" id="1">
