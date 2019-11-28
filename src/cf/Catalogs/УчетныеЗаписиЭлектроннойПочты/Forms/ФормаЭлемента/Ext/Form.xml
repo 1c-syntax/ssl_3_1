@@ -34,6 +34,11 @@
 				<CommandName>Form.Command.ПроверитьНастройки</CommandName>
 				<ExtendedTooltip name="ФормаПроверитьНастройкиРасширеннаяПодсказка" id="266"/>
 			</Button>
+			<Button name="ФормаОткрытьПомощникНастройки" id="272">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.ПомощникНастройки</CommandName>
+				<ExtendedTooltip name="ФормаОткрытьПомощникНастройкиРасширеннаяПодсказка" id="273"/>
+			</Button>
 			<Button name="ФормаСправка" id="212">
 				<Type>CommandBarButton</Type>
 				<CommandName>Form.StandardCommand.Help</CommandName>
@@ -137,6 +142,9 @@
 					<CheckBoxType>Auto</CheckBoxType>
 					<ContextMenu name="ДляОтправкиКонтекстноеМеню" id="91"/>
 					<ExtendedTooltip name="ДляОтправкиРасширеннаяПодсказка" id="92"/>
+					<Events>
+						<Event name="OnChange">ИспользованиеПриИзменении</Event>
+					</Events>
 				</CheckBoxField>
 				<CheckBoxField name="ДляПолучения" id="93">
 					<DataPath>Объект.ИспользоватьДляПолучения</DataPath>
@@ -150,6 +158,9 @@
 					<CheckBoxType>Auto</CheckBoxType>
 					<ContextMenu name="ДляПолученияКонтекстноеМеню" id="94"/>
 					<ExtendedTooltip name="ДляПолученияРасширеннаяПодсказка" id="95"/>
+					<Events>
+						<Event name="OnChange">ИспользованиеПриИзменении</Event>
+					</Events>
 				</CheckBoxField>
 			</ChildItems>
 		</UsualGroup>
@@ -1127,6 +1138,21 @@
 				</v8:item>
 			</ToolTip>
 			<Action>ПроверитьНастройки</Action>
+		</Command>
+		<Command name="ПомощникНастройки" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Перенастроить...</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Помощник настройки</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ОткрытьПомощникНастройки</Action>
 		</Command>
 	</Commands>
 	<Parameters>

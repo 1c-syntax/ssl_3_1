@@ -42,6 +42,11 @@
 						<DataPath>Объект.Ref</DataPath>
 						<ExtendedTooltip name="ВыполнитьСейчасРасширеннаяПодсказка" id="997"/>
 					</Button>
+					<Button name="ФормаПроверитьВозможностьРассылки" id="1185">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Command.ПроверитьВозможностьРассылки</CommandName>
+						<ExtendedTooltip name="ФормаПроверитьВозможностьРассылкиРасширеннаяПодсказка" id="1186"/>
+					</Button>
 					<Button name="КомандаСобытияРассылки" id="1053">
 						<Type>CommandBarButton</Type>
 						<CommandName>Form.Command.КомандаСобытияРассылки</CommandName>
@@ -1623,11 +1628,6 @@
 														<Event name="ChoiceProcessing">ПапкаОбработкаВыбора</Event>
 													</Events>
 												</InputField>
-												<Button name="ПроверитьПубликацию2" id="1171">
-													<Type>UsualButton</Type>
-													<CommandName>Form.Command.ПроверитьПубликацию</CommandName>
-													<ExtendedTooltip name="ПроверитьПубликацию2РасширеннаяПодсказка" id="1172"/>
-												</Button>
 											</ChildItems>
 										</Page>
 										<Page name="ИспользоватьСетевойКаталог" id="289">
@@ -1680,11 +1680,6 @@
 														<Event name="OnChange">СетевойКаталогLinuxПриИзменении</Event>
 													</Events>
 												</InputField>
-												<Button name="ПроверитьПубликацию1" id="1169">
-													<Type>UsualButton</Type>
-													<CommandName>Form.Command.ПроверитьПубликацию</CommandName>
-													<ExtendedTooltip name="ПроверитьПубликацию1РасширеннаяПодсказка" id="1170"/>
-												</Button>
 											</ChildItems>
 										</Page>
 										<Page name="ИспользоватьFTPРесурс" id="291">
@@ -1722,11 +1717,6 @@
 														<Event name="ChoiceProcessing">FTPСерверИКаталогОбработкаВыбора</Event>
 													</Events>
 												</InputField>
-												<Button name="ПроверитьПубликацию" id="640">
-													<Type>UsualButton</Type>
-													<CommandName>Form.Command.ПроверитьПубликацию</CommandName>
-													<ExtendedTooltip name="ПроверитьПубликациюExtendedTooltip" id="820"/>
-												</Button>
 											</ChildItems>
 										</Page>
 									</ChildItems>
@@ -1799,11 +1789,6 @@
 											<ContextMenu name="УчетнаяЗаписьКонтекстноеМеню" id="32"/>
 											<ExtendedTooltip name="УчетнаяЗаписьExtendedTooltip" id="830"/>
 										</InputField>
-										<Button name="ПроверитьЭлектроннуюПочту" id="642">
-											<Type>UsualButton</Type>
-											<CommandName>Form.Command.ПроверитьЭлектроннуюПочту</CommandName>
-											<ExtendedTooltip name="ПроверитьЭлектроннуюПочтуExtendedTooltip" id="831"/>
-										</Button>
 										<CheckBoxField name="ТолькоУведомить" id="413">
 											<DataPath>Объект.ТолькоУведомить</DataPath>
 											<Title>
@@ -3707,22 +3692,6 @@
 			<Action>ДобавитьДополнительныйОтчет</Action>
 			<CurrentRowUse>DontUse</CurrentRowUse>
 		</Command>
-		<Command name="ПроверитьПубликацию" id="7">
-			<Title>
-				<v8:item>
-					<v8:lang>ru</v8:lang>
-					<v8:content>Проверить</v8:content>
-				</v8:item>
-			</Title>
-			<ToolTip>
-				<v8:item>
-					<v8:lang>ru</v8:lang>
-					<v8:content>Проверить публикацию</v8:content>
-				</v8:item>
-			</ToolTip>
-			<Action>ПроверитьПубликацию</Action>
-			<CurrentRowUse>DontUse</CurrentRowUse>
-		</Command>
 		<Command name="ДобавитьШаблонАвтора" id="8">
 			<Title>
 				<v8:item>
@@ -3940,23 +3909,6 @@
 			<Action>ИзменитьТипТекстаНаОбычный</Action>
 			<CurrentRowUse>DontUse</CurrentRowUse>
 		</Command>
-		<Command name="ПроверитьЭлектроннуюПочту" id="20">
-			<Title>
-				<v8:item>
-					<v8:lang>ru</v8:lang>
-					<v8:content>Проверить</v8:content>
-				</v8:item>
-			</Title>
-			<ToolTip>
-				<v8:item>
-					<v8:lang>ru</v8:lang>
-					<v8:content>Проверить электронную почту</v8:content>
-				</v8:item>
-			</ToolTip>
-			<Action>ПроверитьЭлектроннуюПочту</Action>
-			<Representation>TextPicture</Representation>
-			<CurrentRowUse>DontUse</CurrentRowUse>
-		</Command>
 		<Command name="ДобавитьШаблонПоУмолчанию" id="21">
 			<Title>
 				<v8:item>
@@ -4138,6 +4090,21 @@
 			</ToolTip>
 			<Action>УдалитьПолучателяРассылки</Action>
 			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ПроверитьВозможностьРассылки" id="29">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Проверить</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Проверить возможность публикации в и/или рассылки на электронную почту</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ПроверитьВозможностьРассылки</Action>
 		</Command>
 	</Commands>
 </Form>

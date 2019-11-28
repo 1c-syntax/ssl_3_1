@@ -45,7 +45,7 @@
 								<InputField name="ВариантыПоиска" id="79">
 									<DataPath>ВариантыПоиска</DataPath>
 									<TitleLocation>None</TitleLocation>
-									<Width>20</Width>
+									<Width>15</Width>
 									<HorizontalStretch>false</HorizontalStretch>
 									<Wrap>false</Wrap>
 									<ListChoiceMode>true</ListChoiceMode>
@@ -59,8 +59,16 @@
 								</InputField>
 								<InputField name="СтрокаПоиска" id="17">
 									<DataPath>СтрокаПоиска</DataPath>
+									<DefaultItem>true</DefaultItem>
 									<TitleLocation>None</TitleLocation>
+									<Width>28</Width>
 									<Wrap>false</Wrap>
+									<InputHint>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Введите часть адреса или имени контакта</v8:content>
+										</v8:item>
+									</InputHint>
 									<ContextMenu name="СтрокаПоискаКонтекстноеМеню" id="18"/>
 									<ExtendedTooltip name="СтрокаПоискаExtendedTooltip" id="110"/>
 								</InputField>
@@ -81,6 +89,7 @@
 							<ChangeRowOrder>false</ChangeRowOrder>
 							<Height>10</Height>
 							<SelectionMode>SingleRow</SelectionMode>
+							<UseAlternationRowColor>true</UseAlternationRowColor>
 							<AutoInsertNewRow>true</AutoInsertNewRow>
 							<FileDragMode>AsFile</FileDragMode>
 							<DataPath>НайденныеКонтакты</DataPath>
@@ -88,6 +97,11 @@
 							<ContextMenu name="НайденныеКонтактыКонтекстноеМеню" id="21">
 								<Autofill>false</Autofill>
 								<ChildItems>
+									<Button name="НайденныеКонтактыКонтекстноеМенюПросмотр" id="170">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.Command.Просмотр</CommandName>
+										<ExtendedTooltip name="НайденныеКонтактыКонтекстноеМенюПросмотрРасширеннаяПодсказка" id="171"/>
+									</Button>
 									<Button name="НайтиВСпискеИзСпискаНайденных" id="90">
 										<Type>CommandBarButton</Type>
 										<SkipOnInput>false</SkipOnInput>
@@ -450,7 +464,7 @@
 					<Title>
 						<v8:item>
 							<v8:lang>ru</v8:lang>
-							<v8:content>Найдено по</v8:content>
+							<v8:content>Найдено в</v8:content>
 						</v8:item>
 					</Title>
 					<Type>
@@ -790,6 +804,21 @@
 			<Action>КомандаВыбрать</Action>
 			<Representation>TextPicture</Representation>
 			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="Просмотр" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Просмотр</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Просмотреть выбранный элемент</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>Просмотр</Action>
 		</Command>
 	</Commands>
 	<Parameters>

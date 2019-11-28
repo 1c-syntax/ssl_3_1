@@ -364,6 +364,8 @@
 								<Table name="Участники" id="25">
 									<Representation>List</Representation>
 									<SkipOnInput>false</SkipOnInput>
+									<UseAlternationRowColor>true</UseAlternationRowColor>
+									<AutoInsertNewRow>true</AutoInsertNewRow>
 									<FileDragMode>AsFile</FileDragMode>
 									<DataPath>Объект.Участники</DataPath>
 									<Title>
@@ -423,35 +425,107 @@
 									<ChildItems>
 										<InputField name="ПредставлениеКонтакта" id="32">
 											<DataPath>Объект.Участники.ПредставлениеКонтакта</DataPath>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Контакт</v8:content>
+												</v8:item>
+											</Title>
 											<Width>15</Width>
 											<Wrap>false</Wrap>
+											<ChoiceButton>true</ChoiceButton>
+											<OpenButton>true</OpenButton>
 											<ContextMenu name="ПредставлениеКонтактаКонтекстноеМеню" id="33"/>
 											<ExtendedTooltip name="ПредставлениеКонтактаExtendedTooltip" id="149"/>
 											<Events>
 												<Event name="OnChange">ПредставлениеКонтактаПриИзменении</Event>
+												<Event name="AutoComplete">ПредставлениеКонтактаАвтоПодбор</Event>
+												<Event name="StartChoice">ПредставлениеКонтактаНачалоВыбора</Event>
+												<Event name="Opening">ПредставлениеКонтактаОткрытие</Event>
+												<Event name="ChoiceProcessing">ПредставлениеКонтактаОбработкаВыбора</Event>
 											</Events>
 										</InputField>
 										<InputField name="КакСвязаться" id="34">
 											<DataPath>Объект.Участники.КакСвязаться</DataPath>
+											<AutoCellHeight>true</AutoCellHeight>
 											<Width>15</Width>
-											<Wrap>false</Wrap>
 											<ContextMenu name="КакСвязатьсяКонтекстноеМеню" id="35"/>
 											<ExtendedTooltip name="КакСвязатьсяExtendedTooltip" id="150"/>
 										</InputField>
-										<InputField name="Контакт" id="30">
-											<DataPath>Объект.Участники.Контакт</DataPath>
-											<Width>15</Width>
-											<Wrap>false</Wrap>
-											<ClearButton>true</ClearButton>
-											<ContextMenu name="КонтактКонтекстноеМеню" id="31"/>
-											<ExtendedTooltip name="КонтактExtendedTooltip" id="151"/>
-											<Events>
-												<Event name="OnChange">КонтактПриИзменении</Event>
-												<Event name="StartChoice">КонтактНачалоВыбора</Event>
-											</Events>
-										</InputField>
 									</ChildItems>
 								</Table>
+								<UsualGroup name="ГруппаПодвал" id="207">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Подвал</v8:content>
+										</v8:item>
+									</Title>
+									<Representation>None</Representation>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="ГруппаПодвалРасширеннаяПодсказка" id="208"/>
+									<ChildItems>
+										<Pages name="СтраницыУказаныКонтакты" id="90">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Страницы указаны контакты</v8:content>
+												</v8:item>
+											</Title>
+											<GroupVerticalAlign>Center</GroupVerticalAlign>
+											<PagesRepresentation>None</PagesRepresentation>
+											<ExtendedTooltip name="СтраницыУказаныКонтактыExtendedTooltip" id="141"/>
+											<ChildItems>
+												<Page name="СтраницаКонтактыНеЗаполнены" id="91">
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Страница контакты не заполнены</v8:content>
+														</v8:item>
+													</Title>
+													<ExtendedTooltip name="СтраницаКонтактыНеЗаполненыExtendedTooltip" id="142"/>
+													<ChildItems>
+														<LabelDecoration name="ДекорацияКонтактыНеЗаполнены" id="95">
+															<AutoMaxWidth>false</AutoMaxWidth>
+															<TextColor>style:FieldSelectionBackColor</TextColor>
+															<Title formatted="false">
+																<v8:item>
+																	<v8:lang>ru</v8:lang>
+																	<v8:content>Не для всех участников встречи подобраны контакты.</v8:content>
+																</v8:item>
+															</Title>
+															<ContextMenu name="ДекорацияКонтактыНеЗаполненыКонтекстноеМеню" id="96"/>
+															<ExtendedTooltip name="ДекорацияКонтактыНеЗаполненыExtendedTooltip" id="143"/>
+														</LabelDecoration>
+													</ChildItems>
+												</Page>
+												<Page name="СтраницаКонтактыЗаполнены" id="93">
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Страница контакты заполнены</v8:content>
+														</v8:item>
+													</Title>
+													<ExtendedTooltip name="СтраницаКонтактыЗаполненыExtendedTooltip" id="144"/>
+													<ChildItems>
+														<LabelDecoration name="ДекорацияКонтактыЗаполнены" id="97">
+															<AutoMaxWidth>false</AutoMaxWidth>
+															<TextColor>style:ПоясняющийТекст</TextColor>
+															<Title formatted="false">
+																<v8:item>
+																	<v8:lang>ru</v8:lang>
+																	<v8:content>Участников встречи рекомендуется подбирать из списка контактов.</v8:content>
+																</v8:item>
+															</Title>
+															<ContextMenu name="ДекорацияКонтактыЗаполненыКонтекстноеМеню" id="98"/>
+															<ExtendedTooltip name="ДекорацияКонтактыЗаполненыExtendedTooltip" id="145"/>
+														</LabelDecoration>
+													</ChildItems>
+												</Page>
+											</ChildItems>
+										</Pages>
+									</ChildItems>
+								</UsualGroup>
 							</ChildItems>
 						</Page>
 						<Page name="СтраницаДополнительныеРеквизиты" id="86">
@@ -561,58 +635,6 @@
 					<ContextMenu name="ВажностьКонтекстноеМеню" id="56"/>
 					<ExtendedTooltip name="ВажностьExtendedTooltip" id="118"/>
 				</InputField>
-				<Pages name="СтраницыУказаныКонтакты" id="90">
-					<Title>
-						<v8:item>
-							<v8:lang>ru</v8:lang>
-							<v8:content>Страницы указаны контакты</v8:content>
-						</v8:item>
-					</Title>
-					<GroupVerticalAlign>Top</GroupVerticalAlign>
-					<PagesRepresentation>None</PagesRepresentation>
-					<ExtendedTooltip name="СтраницыУказаныКонтактыExtendedTooltip" id="141"/>
-					<ChildItems>
-						<Page name="СтраницаКонтактыНеЗаполнены" id="91">
-							<Title>
-								<v8:item>
-									<v8:lang>ru</v8:lang>
-									<v8:content>Страница контакты не заполнены</v8:content>
-								</v8:item>
-							</Title>
-							<ExtendedTooltip name="СтраницаКонтактыНеЗаполненыExtendedTooltip" id="142"/>
-							<ChildItems>
-								<LabelDecoration name="ДекорацияКонтактыНеЗаполнены" id="95">
-									<AutoMaxWidth>false</AutoMaxWidth>
-									<TextColor>style:FieldSelectionBackColor</TextColor>
-									<Title formatted="false">
-										<v8:item>
-											<v8:lang>ru</v8:lang>
-											<v8:content>Не все контакты подобраны</v8:content>
-										</v8:item>
-									</Title>
-									<ContextMenu name="ДекорацияКонтактыНеЗаполненыКонтекстноеМеню" id="96"/>
-									<ExtendedTooltip name="ДекорацияКонтактыНеЗаполненыExtendedTooltip" id="143"/>
-								</LabelDecoration>
-							</ChildItems>
-						</Page>
-						<Page name="СтраницаКонтактыЗаполнены" id="93">
-							<Title>
-								<v8:item>
-									<v8:lang>ru</v8:lang>
-									<v8:content>Страница контакты заполнены</v8:content>
-								</v8:item>
-							</Title>
-							<ExtendedTooltip name="СтраницаКонтактыЗаполненыExtendedTooltip" id="144"/>
-							<ChildItems>
-								<LabelDecoration name="ДекорацияКонтактыЗаполнены" id="97">
-									<TextColor>style:ПоясняющийТекст</TextColor>
-									<ContextMenu name="ДекорацияКонтактыЗаполненыКонтекстноеМеню" id="98"/>
-									<ExtendedTooltip name="ДекорацияКонтактыЗаполненыExtendedTooltip" id="145"/>
-								</LabelDecoration>
-							</ChildItems>
-						</Page>
-					</ChildItems>
-				</Pages>
 				<UsualGroup name="ГруппаАвторДатаРегистрации" id="107">
 					<Title>
 						<v8:item>
@@ -817,10 +839,9 @@
 			<ToolTip>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Создать контакт</v8:content>
+					<v8:content>Создать контакт для участника встречи</v8:content>
 				</v8:item>
 			</ToolTip>
-			<Shortcut>Ctrl+S</Shortcut>
 			<Picture>
 				<xr:Ref>StdPicture.AddListItem</xr:Ref>
 				<xr:LoadTransparent>true</xr:LoadTransparent>

@@ -335,14 +335,25 @@
 												<Event name="OnChange">АдресатыПриИзменении</Event>
 											</Events>
 											<ChildItems>
-												<InputField name="АдресатыПредставлениеКонтакта" id="59">
+												<InputField name="ПредставлениеКонтакта" id="59">
 													<DataPath>Объект.Адресаты.ПредставлениеКонтакта</DataPath>
-													<EditMode>EnterOnInput</EditMode>
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Контакт</v8:content>
+														</v8:item>
+													</Title>
 													<Width>15</Width>
-													<ContextMenu name="АдресатыПредставлениеКонтактаКонтекстноеМеню" id="60"/>
-													<ExtendedTooltip name="АдресатыПредставлениеКонтактаExtendedTooltip" id="145"/>
+													<ChoiceButton>true</ChoiceButton>
+													<OpenButton>true</OpenButton>
+													<ContextMenu name="ПредставлениеКонтактаКонтекстноеМеню" id="60"/>
+													<ExtendedTooltip name="ПредставлениеКонтактаРасширеннаяПодсказка" id="145"/>
 													<Events>
 														<Event name="OnChange">ПредставлениеКонтактаПриИзменении</Event>
+														<Event name="AutoComplete">ПредставлениеКонтактаАвтоПодбор</Event>
+														<Event name="StartChoice">ПредставлениеКонтактаНачалоВыбора</Event>
+														<Event name="Opening">ПредставлениеКонтактаОткрытие</Event>
+														<Event name="ChoiceProcessing">ПредставлениеКонтактаОбработкаВыбора</Event>
 													</Events>
 												</InputField>
 												<InputField name="АдресатыКакСвязаться" id="61">
@@ -364,18 +375,6 @@
 													<ContextMenu name="АдресатыКакСвязатьсяКонтекстноеМеню" id="62"/>
 													<ExtendedTooltip name="АдресатыКакСвязатьсяExtendedTooltip" id="146"/>
 												</InputField>
-												<InputField name="АдресатыКонтакт" id="57">
-													<DataPath>Объект.Адресаты.Контакт</DataPath>
-													<EditMode>EnterOnInput</EditMode>
-													<Width>15</Width>
-													<ChoiceButton>true</ChoiceButton>
-													<ContextMenu name="АдресатыКонтактКонтекстноеМеню" id="58"/>
-													<ExtendedTooltip name="АдресатыКонтактExtendedTooltip" id="147"/>
-													<Events>
-														<Event name="OnChange">КонтактПриИзменении</Event>
-														<Event name="StartChoice">КонтактНачалоВыбора</Event>
-													</Events>
-												</InputField>
 												<InputField name="АдресатыСостояниеСообщения" id="96">
 													<DataPath>Объект.Адресаты.СостояниеСообщения</DataPath>
 													<ReadOnly>true</ReadOnly>
@@ -392,6 +391,63 @@
 												</InputField>
 											</ChildItems>
 										</Table>
+										<Pages name="СтраницыУказаныКонтакты" id="37">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Страницы указаны контакты</v8:content>
+												</v8:item>
+											</Title>
+											<PagesRepresentation>None</PagesRepresentation>
+											<ExtendedTooltip name="СтраницыУказаныКонтактыExtendedTooltip" id="136"/>
+											<ChildItems>
+												<Page name="СтраницаКонтактыНеЗаполнены" id="38">
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Страница контакты не заполнены</v8:content>
+														</v8:item>
+													</Title>
+													<ExtendedTooltip name="СтраницаКонтактыНеЗаполненыExtendedTooltip" id="137"/>
+													<ChildItems>
+														<LabelDecoration name="ДекорацияКонтактыНеЗаполнены" id="39">
+															<AutoMaxWidth>false</AutoMaxWidth>
+															<TextColor>style:FieldSelectionBackColor</TextColor>
+															<Title formatted="false">
+																<v8:item>
+																	<v8:lang>ru</v8:lang>
+																	<v8:content>Не для всех адресатов подобраны контакты.</v8:content>
+																</v8:item>
+															</Title>
+															<ContextMenu name="ДекорацияКонтактыНеЗаполненыКонтекстноеМеню" id="40"/>
+															<ExtendedTooltip name="ДекорацияКонтактыНеЗаполненыExtendedTooltip" id="138"/>
+														</LabelDecoration>
+													</ChildItems>
+												</Page>
+												<Page name="СтраницаКонтактыЗаполнены" id="41">
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Страница контакты заполнены</v8:content>
+														</v8:item>
+													</Title>
+													<ExtendedTooltip name="СтраницаКонтактыЗаполненыExtendedTooltip" id="139"/>
+													<ChildItems>
+														<LabelDecoration name="ДекорацияКонтактыЗаполнены" id="42">
+															<TextColor>style:ПоясняющийТекст</TextColor>
+															<Title formatted="false">
+																<v8:item>
+																	<v8:lang>ru</v8:lang>
+																	<v8:content>Адресатов рекомендуется подбирать из списка контактов.</v8:content>
+																</v8:item>
+															</Title>
+															<ContextMenu name="ДекорацияКонтактыЗаполненыКонтекстноеМеню" id="43"/>
+															<ExtendedTooltip name="ДекорацияКонтактыЗаполненыExtendedTooltip" id="140"/>
+														</LabelDecoration>
+													</ChildItems>
+												</Page>
+											</ChildItems>
+										</Pages>
 									</ChildItems>
 								</UsualGroup>
 							</ChildItems>
@@ -542,57 +598,6 @@
 						</InputField>
 					</ChildItems>
 				</UsualGroup>
-				<Pages name="СтраницыУказаныКонтакты" id="37">
-					<Title>
-						<v8:item>
-							<v8:lang>ru</v8:lang>
-							<v8:content>Страницы указаны контакты</v8:content>
-						</v8:item>
-					</Title>
-					<PagesRepresentation>None</PagesRepresentation>
-					<ExtendedTooltip name="СтраницыУказаныКонтактыExtendedTooltip" id="136"/>
-					<ChildItems>
-						<Page name="СтраницаКонтактыНеЗаполнены" id="38">
-							<Title>
-								<v8:item>
-									<v8:lang>ru</v8:lang>
-									<v8:content>Страница контакты не заполнены</v8:content>
-								</v8:item>
-							</Title>
-							<ExtendedTooltip name="СтраницаКонтактыНеЗаполненыExtendedTooltip" id="137"/>
-							<ChildItems>
-								<LabelDecoration name="ДекорацияКонтактыНеЗаполнены" id="39">
-									<AutoMaxWidth>false</AutoMaxWidth>
-									<TextColor>style:FieldSelectionBackColor</TextColor>
-									<Title formatted="false">
-										<v8:item>
-											<v8:lang>ru</v8:lang>
-											<v8:content>Не все контакты подобраны</v8:content>
-										</v8:item>
-									</Title>
-									<ContextMenu name="ДекорацияКонтактыНеЗаполненыКонтекстноеМеню" id="40"/>
-									<ExtendedTooltip name="ДекорацияКонтактыНеЗаполненыExtendedTooltip" id="138"/>
-								</LabelDecoration>
-							</ChildItems>
-						</Page>
-						<Page name="СтраницаКонтактыЗаполнены" id="41">
-							<Title>
-								<v8:item>
-									<v8:lang>ru</v8:lang>
-									<v8:content>Страница контакты заполнены</v8:content>
-								</v8:item>
-							</Title>
-							<ExtendedTooltip name="СтраницаКонтактыЗаполненыExtendedTooltip" id="139"/>
-							<ChildItems>
-								<LabelDecoration name="ДекорацияКонтактыЗаполнены" id="42">
-									<TextColor>style:ПоясняющийТекст</TextColor>
-									<ContextMenu name="ДекорацияКонтактыЗаполненыКонтекстноеМеню" id="43"/>
-									<ExtendedTooltip name="ДекорацияКонтактыЗаполненыExtendedTooltip" id="140"/>
-								</LabelDecoration>
-							</ChildItems>
-						</Page>
-					</ChildItems>
-				</Pages>
 				<UsualGroup name="ГруппаСтатусДатаАвтор" id="197">
 					<Title>
 						<v8:item>
