@@ -47,6 +47,39 @@
 		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
 	</Events>
 	<ChildItems>
+		<UsualGroup name="ГруппаИнформацияОбУдаленииПатчей" id="255">
+			<Group>AlwaysHorizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаИнформацияОбУдаленииПатчейРасширеннаяПодсказка" id="256"/>
+			<ChildItems>
+				<PictureDecoration name="УдалениеПатчейКартинка" id="257">
+					<Picture>
+						<xr:Ref>CommonPicture.Предупреждение32</xr:Ref>
+						<xr:LoadTransparent>true</xr:LoadTransparent>
+					</Picture>
+					<ContextMenu name="УдалениеПатчейКартинкаКонтекстноеМеню" id="258"/>
+					<ExtendedTooltip name="УдалениеПатчейКартинкаРасширеннаяПодсказка" id="259"/>
+				</PictureDecoration>
+				<LabelDecoration name="УдалениеПатчейНадпись" id="260">
+					<AutoMaxWidth>false</AutoMaxWidth>
+					<MaxWidth>60</MaxWidth>
+					<Title formatted="false">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Удаление устаревших исправлений (патчей) не было выполнено штатно при обновлении на новую версию, поэтому они удалены при первом входе администратора в программу. 
+Возможные причины:
+• обновление выполнялось нерекомендуемыми сторонними средствами;
+• патч, который не подходит для этой версии программы, был установлен вручную, например, с помощью конфигуратора.
+
+Подобные действия могут приводить к различным ошибкам при работе программы и при ее обновлении на новую версию. Рекомендуется использовать штатные средства для обновления.</v8:content>
+						</v8:item>
+					</Title>
+					<ContextMenu name="УдалениеПатчейНадписьКонтекстноеМеню" id="261"/>
+					<ExtendedTooltip name="УдалениеПатчейНадписьРасширеннаяПодсказка" id="262"/>
+				</LabelDecoration>
+			</ChildItems>
+		</UsualGroup>
 		<UsualGroup name="Группа1" id="230">
 			<Group>Vertical</Group>
 			<Representation>NormalSeparation</Representation>

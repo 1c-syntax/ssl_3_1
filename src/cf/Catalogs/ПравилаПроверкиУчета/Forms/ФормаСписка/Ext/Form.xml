@@ -40,6 +40,16 @@
 			<CommandSource>Form</CommandSource>
 			<ExtendedTooltip name="КоманднаяПанельРасширеннаяПодсказка" id="120"/>
 			<ChildItems>
+				<Button name="ФормаВыполнитьПроверку" id="125">
+					<Type>CommandBarButton</Type>
+					<CommandName>Form.Command.ВыполнитьПроверку</CommandName>
+					<ExtendedTooltip name="ФормаВыполнитьПроверкуРасширеннаяПодсказка" id="126"/>
+				</Button>
+				<Button name="ФормаВыполнитьВсеПроверки" id="154">
+					<Type>CommandBarButton</Type>
+					<CommandName>Form.Command.ВыполнитьВсеПроверки</CommandName>
+					<ExtendedTooltip name="ФормаВыполнитьВсеПроверкиРасширеннаяПодсказка" id="155"/>
+				</Button>
 				<ButtonGroup name="ФормаГруппаДействий" id="123">
 					<Title>
 						<v8:item>
@@ -49,11 +59,6 @@
 					</Title>
 					<ExtendedTooltip name="ФормаГруппаДействийРасширеннаяПодсказка" id="124"/>
 					<ChildItems>
-						<Button name="ФормаВыполнитьПроверку" id="125">
-							<Type>CommandBarButton</Type>
-							<CommandName>Form.Command.ВыполнитьПроверку</CommandName>
-							<ExtendedTooltip name="ФормаВыполнитьПроверкуРасширеннаяПодсказка" id="126"/>
-						</Button>
 						<Button name="ФормаВосстановитьПоНачальномуЗаполнению" id="145">
 							<Type>CommandBarButton</Type>
 							<CommandName>Form.Command.ВосстановитьПоНачальномуЗаполнению</CommandName>
@@ -188,25 +193,9 @@
 										</v8:item>
 									</Title>
 									<AutoCellHeight>true</AutoCellHeight>
+									<Width>15</Width>
 									<ContextMenu name="РегламентноеЗаданиеПредставлениеКонтекстноеМеню" id="9"/>
 									<ExtendedTooltip name="РегламентноеЗаданиеПредставлениеExtendedTooltip" id="14"/>
-								</LabelField>
-								<LabelField name="Важность" id="48">
-									<DataPath>Список.ВажностьПроблемы</DataPath>
-									<Title>
-										<v8:item>
-											<v8:lang>ru</v8:lang>
-											<v8:content>Важность проблемы</v8:content>
-										</v8:item>
-									</Title>
-									<ToolTip>
-										<v8:item>
-											<v8:lang>ru</v8:lang>
-											<v8:content>Статус проблем, регистрируемых проверкой</v8:content>
-										</v8:item>
-									</ToolTip>
-									<ContextMenu name="ВажностьКонтекстноеМеню" id="49"/>
-									<ExtendedTooltip name="ВажностьРасширеннаяПодсказка" id="50"/>
 								</LabelField>
 							</ChildItems>
 						</ColumnGroup>
@@ -338,7 +327,7 @@
 			<ToolTip>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Выполнить проверку ведения учета</v8:content>
+					<v8:content>Выполнить одну или несколько выбранных проверок ведения учета</v8:content>
 				</v8:item>
 			</ToolTip>
 			<Picture>
@@ -364,6 +353,21 @@
 			</ToolTip>
 			<Action>ВосстановитьПоНачальномуЗаполнению</Action>
 			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ВыполнитьВсеПроверки" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Выполнить все</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Выполнить все проверки ведения учета</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ВыполнитьВсеПроверки</Action>
 		</Command>
 	</Commands>
 </Form>
