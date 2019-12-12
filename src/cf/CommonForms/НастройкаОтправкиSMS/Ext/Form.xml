@@ -5,58 +5,31 @@
 	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
 	<Events>
 		<Event name="AfterWrite">ПослеЗаписи</Event>
+		<Event name="OnOpen">ПриОткрытии</Event>
 		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
 		<Event name="OnWriteAtServer">ПриЗаписиНаСервере</Event>
 	</Events>
 	<ChildItems>
-		<UsualGroup name="ПровайдерИОписание" id="22">
+		<InputField name="ПровайдерSMS" id="5">
+			<DataPath>НаборКонстант.ПровайдерSMS</DataPath>
 			<Title>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Провайдер и описание</v8:content>
+					<v8:content>Провайдер</v8:content>
 				</v8:item>
 			</Title>
-			<Representation>None</Representation>
-			<ShowTitle>false</ShowTitle>
-			<ExtendedTooltip name="ПровайдерИОписаниеРасширеннаяПодсказка" id="23"/>
-			<ChildItems>
-				<InputField name="ПровайдерSMS" id="5">
-					<DataPath>НаборКонстант.ПровайдерSMS</DataPath>
-					<Title>
-						<v8:item>
-							<v8:lang>ru</v8:lang>
-							<v8:content>Провайдер</v8:content>
-						</v8:item>
-					</Title>
-					<ToolTipRepresentation>Button</ToolTipRepresentation>
-					<EditMode>EnterOnInput</EditMode>
-					<Width>30</Width>
-					<HorizontalStretch>false</HorizontalStretch>
-					<ClearButton>false</ClearButton>
-					<BackColor>style:ФонУправляющегоПоля</BackColor>
-					<ContextMenu name="ПровайдерSMSКонтекстноеМеню" id="6"/>
-					<ExtendedTooltip name="ПровайдерSMSExtendedTooltip" id="11"/>
-					<Events>
-						<Event name="OnChange">ПровайдерSMSПриИзменении</Event>
-					</Events>
-				</InputField>
-				<LabelDecoration name="ОписаниеУслуги" id="19">
-					<Font ref="style:NormalTextFont" bold="true" italic="false" underline="false" strikeout="false" kind="StyleItem"/>
-					<Title formatted="false">
-						<v8:item>
-							<v8:lang>ru</v8:lang>
-							<v8:content>?</v8:content>
-						</v8:item>
-					</Title>
-					<Hyperlink>true</Hyperlink>
-					<ContextMenu name="ОписаниеУслугиКонтекстноеМеню" id="20"/>
-					<ExtendedTooltip name="ОписаниеУслугиРасширеннаяПодсказка" id="21"/>
-					<Events>
-						<Event name="Click">ОписаниеУслугиНажатие</Event>
-					</Events>
-				</LabelDecoration>
-			</ChildItems>
-		</UsualGroup>
+			<ToolTipRepresentation>Button</ToolTipRepresentation>
+			<EditMode>EnterOnInput</EditMode>
+			<Width>30</Width>
+			<HorizontalStretch>false</HorizontalStretch>
+			<ClearButton>false</ClearButton>
+			<BackColor>style:ФонУправляющегоПоля</BackColor>
+			<ContextMenu name="ПровайдерSMSКонтекстноеМеню" id="6"/>
+			<ExtendedTooltip name="ПровайдерSMSExtendedTooltip" id="11"/>
+			<Events>
+				<Event name="OnChange">ПровайдерSMSПриИзменении</Event>
+			</Events>
+		</InputField>
 		<InputField name="СпособАвторизации" id="24">
 			<DataPath>СпособАвторизации</DataPath>
 			<Width>30</Width>
@@ -136,6 +109,25 @@
 			<ContextMenu name="ИмяОтправителяКонтекстноеМеню" id="17"/>
 			<ExtendedTooltip name="ИмяОтправителяРасширеннаяПодсказка" id="18"/>
 		</InputField>
+		<UsualGroup name="ГруппаНужнаПомощь" id="27">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Нужна помощь?</v8:content>
+				</v8:item>
+			</Title>
+			<GroupHorizontalAlign>Right</GroupHorizontalAlign>
+			<Behavior>PopUp</Behavior>
+			<Representation>None</Representation>
+			<ExtendedTooltip name="ГруппаНужнаПомощьРасширеннаяПодсказка" id="28"/>
+			<ChildItems>
+				<LabelDecoration name="ИнструкцияПоПодключениюУслуги" id="29">
+					<Width>40</Width>
+					<ContextMenu name="ИнструкцияПоПодключениюУслугиКонтекстноеМеню" id="30"/>
+					<ExtendedTooltip name="ИнструкцияПоПодключениюУслугиРасширеннаяПодсказка" id="31"/>
+				</LabelDecoration>
+			</ChildItems>
+		</UsualGroup>
 	</ChildItems>
 	<Attributes>
 		<Attribute name="НаборКонстант" id="1">
