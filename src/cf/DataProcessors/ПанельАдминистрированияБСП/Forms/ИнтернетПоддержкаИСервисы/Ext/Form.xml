@@ -1671,6 +1671,86 @@
 				</Button>
 			</ChildItems>
 		</UsualGroup>
+		<UsualGroup name="БИПГруппаИнтеграцияСКоннект" id="1925">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>1С-Коннект</v8:content>
+				</v8:item>
+			</Title>
+			<Group>AlwaysHorizontal</Group>
+			<Behavior>Collapsible</Behavior>
+			<Collapsed>true</Collapsed>
+			<ControlRepresentation>Picture</ControlRepresentation>
+			<Representation>NormalSeparation</Representation>
+			<ExtendedTooltip name="БИПГруппаИнтеграцияСКоннектРасширеннаяПодсказка" id="1926"/>
+			<ChildItems>
+				<UsualGroup name="БИПГруппаСервисКоннект" id="1927">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Сервис коннект</v8:content>
+						</v8:item>
+					</Title>
+					<Width>43</Width>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="БИПГруппаСервисКоннектРасширеннаяПодсказка" id="1928"/>
+					<ChildItems>
+						<CheckBoxField name="БИПИнтеграцияСКоннект" id="1929">
+							<DataPath>БИПИнтеграцияСКоннект</DataPath>
+							<TitleLocation>Right</TitleLocation>
+							<ToolTipRepresentation>ShowBottom</ToolTipRepresentation>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="БИПИнтеграцияСКоннектКонтекстноеМеню" id="1930"/>
+							<ExtendedTooltip name="БИПИнтеграцияСКоннектРасширеннаяПодсказка" id="1931">
+								<Title formatted="false">
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Сервис 1С-Коннект позволяет быть на связи с компанией или отделом где угодно – на рабочем месте, в дороге или из дома, видеть список коллег, писать и звонить нужными сотрудникам.</v8:content>
+									</v8:item>
+								</Title>
+							</ExtendedTooltip>
+							<Events>
+								<Event name="OnChange">БИПИнтеграцияСКоннектПриИзменении</Event>
+							</Events>
+						</CheckBoxField>
+					</ChildItems>
+				</UsualGroup>
+				<UsualGroup name="БИПГруппаНастройкаКоннект" id="1932">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>БИП Группа настройка коннект</v8:content>
+						</v8:item>
+					</Title>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="БИПГруппаНастройкаКоннектРасширеннаяПодсказка" id="1933"/>
+					<ChildItems>
+						<Button name="БИПНастройкаИнтеграцииСКоннект" id="1934">
+							<Type>Hyperlink</Type>
+							<CommandName>Form.Command.БИПНастройкаИнтеграцииСКоннект</CommandName>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Настройка интеграции</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTipRepresentation>ShowBottom</ToolTipRepresentation>
+							<ExtendedTooltip name="БИПНастройкаИнтеграцииСКоннектРасширеннаяПодсказка" id="1935">
+								<Title formatted="false">
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Настройка запуска приложения на этом компьютере.</v8:content>
+									</v8:item>
+								</Title>
+							</ExtendedTooltip>
+						</Button>
+					</ChildItems>
+				</UsualGroup>
+			</ChildItems>
+		</UsualGroup>
 	</ChildItems>
 	<Attributes>
 		<Attribute name="НаборКонстант" id="1">
@@ -1853,6 +1933,17 @@
 				</v8:NumberQualifiers>
 			</Type>
 		</Attribute>
+		<Attribute name="БИПИнтеграцияСКоннект" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сервис 1С-Коннект</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
 	</Attributes>
 	<Commands>
 		<Command name="БИПВойтиИлиВыйти" id="1">
@@ -1997,6 +2088,21 @@
 				</v8:item>
 			</Title>
 			<Action>НастройкаОнлайнПоддержки</Action>
+		</Command>
+		<Command name="БИПНастройкаИнтеграцииСКоннект" id="12">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>БИПНастройка интеграции с коннект</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>БИПНастройка интеграции с коннект</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>БИПНастройкаИнтеграцииСКоннект</Action>
 		</Command>
 	</Commands>
 </Form>

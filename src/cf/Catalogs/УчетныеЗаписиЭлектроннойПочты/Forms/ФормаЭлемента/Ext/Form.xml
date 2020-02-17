@@ -314,10 +314,17 @@
 							<DataPath>Пароль</DataPath>
 							<HorizontalStretch>false</HorizontalStretch>
 							<PasswordMode>true</PasswordMode>
+							<ChoiceButton>true</ChoiceButton>
+							<ChoiceButtonPicture>
+								<xr:Ref>CommonPicture.ВводимыеСимволыСкрыты</xr:Ref>
+								<xr:LoadTransparent>true</xr:LoadTransparent>
+							</ChoiceButtonPicture>
 							<ContextMenu name="ПарольДляПолученияПисемКонтекстноеМеню" id="106"/>
 							<ExtendedTooltip name="ПарольДляПолученияПисемРасширеннаяПодсказка" id="107"/>
 							<Events>
 								<Event name="OnChange">ПарольДляПолученияПисемПриИзменении</Event>
+								<Event name="EditTextChange">ПарольДляПолученияПисемИзменениеТекстаРедактирования</Event>
+								<Event name="StartChoice">ПарольДляПолученияПисемНачалоВыбора</Event>
 							</Events>
 						</InputField>
 					</ChildItems>

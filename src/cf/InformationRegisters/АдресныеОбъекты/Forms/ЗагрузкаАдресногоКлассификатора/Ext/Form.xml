@@ -607,15 +607,34 @@
 									<ContextMenu name="КартинкаУспешноеЗавершениеКонтекстноеМеню" id="96"/>
 									<ExtendedTooltip name="КартинкаУспешноеЗавершениеРасширеннаяПодсказка" id="97"/>
 								</PictureDecoration>
-								<LabelField name="ТекстОписанияЗагрузкиЗавершения" id="98">
-									<DataPath>ТекстОписанияЗагрузки</DataPath>
-									<ReadOnly>true</ReadOnly>
-									<TitleLocation>None</TitleLocation>
-									<ToolTipRepresentation>ShowBottom</ToolTipRepresentation>
-									<GroupVerticalAlign>Center</GroupVerticalAlign>
-									<ContextMenu name="ТекстОписанияЗагрузкиЗавершенияКонтекстноеМеню" id="99"/>
-									<ExtendedTooltip name="ТекстОписанияЗагрузкиЗавершенияРасширеннаяПодсказка" id="100"/>
-								</LabelField>
+								<UsualGroup name="ГруппаНадписиЗавершение" id="233">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Группа надписи завершение</v8:content>
+										</v8:item>
+									</Title>
+									<Group>Vertical</Group>
+									<Representation>None</Representation>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="ГруппаНадписиЗавершениеРасширеннаяПодсказка" id="234"/>
+									<ChildItems>
+										<LabelField name="ТекстОписанияЗагрузкиЗавершения" id="98">
+											<DataPath>ТекстОписанияЗагрузки</DataPath>
+											<ReadOnly>true</ReadOnly>
+											<TitleLocation>None</TitleLocation>
+											<ToolTipRepresentation>ShowBottom</ToolTipRepresentation>
+											<GroupVerticalAlign>Center</GroupVerticalAlign>
+											<ContextMenu name="ТекстОписанияЗагрузкиЗавершенияКонтекстноеМеню" id="99"/>
+											<ExtendedTooltip name="ТекстОписанияЗагрузкиЗавершенияРасширеннаяПодсказка" id="100"/>
+										</LabelField>
+										<Button name="ПроверитьВсеАдреса" id="237">
+											<Type>Hyperlink</Type>
+											<CommandName>Form.Command.ПроверитьВсеАдреса</CommandName>
+											<ExtendedTooltip name="ПроверитьВсеАдресаРасширеннаяПодсказка" id="238"/>
+										</Button>
+									</ChildItems>
+								</UsualGroup>
 							</ChildItems>
 						</UsualGroup>
 						<UsualGroup name="ГруппаКомандЗавершения" id="101">
@@ -1086,6 +1105,21 @@
 			</ToolTip>
 			<Action>ОбновитьКлассификатор</Action>
 			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ПроверитьВсеАдреса" id="8">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Проверить все адреса...</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Проверить все адреса</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ПроверитьВсеАдреса</Action>
 		</Command>
 	</Commands>
 </Form>

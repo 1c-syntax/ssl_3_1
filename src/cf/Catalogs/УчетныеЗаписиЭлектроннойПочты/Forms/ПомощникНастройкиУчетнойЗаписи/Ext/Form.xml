@@ -94,13 +94,19 @@
 											<DataPath>СообщенияОбОшибках</DataPath>
 											<ReadOnly>true</ReadOnly>
 											<TitleLocation>None</TitleLocation>
+											<AutoMaxWidth>false</AutoMaxWidth>
 											<Height>2</Height>
+											<HorizontalStretch>true</HorizontalStretch>
 											<VerticalStretch>false</VerticalStretch>
 											<MultiLine>true</MultiLine>
+											<OpenButton>true</OpenButton>
 											<BackColor>style:FormBackColor</BackColor>
 											<BorderColor>style:FormBackColor</BorderColor>
 											<ContextMenu name="СообщенияОбОшибкахКонтекстноеМеню" id="239"/>
 											<ExtendedTooltip name="СообщенияОбОшибкахРасширеннаяПодсказка" id="240"/>
+											<Events>
+												<Event name="Opening">СообщенияОбОшибкахОткрытие</Event>
+											</Events>
 										</InputField>
 										<LabelDecoration name="НужнаПомощь" id="272">
 											<Title formatted="false">
@@ -154,14 +160,20 @@
 										</v8:item>
 									</Title>
 									<TitleHeight>1</TitleHeight>
-									<Width>25</Width>
+									<Width>23</Width>
 									<HorizontalStretch>false</HorizontalStretch>
 									<PasswordMode>true</PasswordMode>
+									<ChoiceButton>true</ChoiceButton>
 									<AutoMarkIncomplete>true</AutoMarkIncomplete>
+									<ChoiceButtonPicture>
+										<xr:Ref>CommonPicture.ВводимыеСимволыСкрыты</xr:Ref>
+										<xr:LoadTransparent>true</xr:LoadTransparent>
+									</ChoiceButtonPicture>
 									<ContextMenu name="ПарольКонтекстноеМеню" id="48"/>
 									<ExtendedTooltip name="ПарольРасширеннаяПодсказка" id="49"/>
 									<Events>
 										<Event name="OnChange">ПарольПриИзменении</Event>
+										<Event name="StartChoice">ПарольНачалоВыбора</Event>
 									</Events>
 								</InputField>
 							</ChildItems>
@@ -861,6 +873,69 @@
 						</UsualGroup>
 					</ChildItems>
 				</Page>
+				<Page name="ПриПроверкеОбнаруженыОшибки" id="275">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>При проверке обнаружены ошибки</v8:content>
+						</v8:item>
+					</Title>
+					<Group>AlwaysHorizontal</Group>
+					<ExtendedTooltip name="ПриПроверкеОбнаруженыОшибкиРасширеннаяПодсказка" id="276"/>
+					<ChildItems>
+						<PictureDecoration name="КартинкаПриПроверкеОбнаруженыОшибки" id="277">
+							<Picture>
+								<xr:Ref>CommonPicture.Предупреждение32</xr:Ref>
+								<xr:LoadTransparent>false</xr:LoadTransparent>
+							</Picture>
+							<FileDragMode>AsFile</FileDragMode>
+							<ContextMenu name="КартинкаПредупреждениеКонтекстноеМеню1" id="278"/>
+							<ExtendedTooltip name="КартинкаПредупреждениеРасширеннаяПодсказка1" id="279"/>
+						</PictureDecoration>
+						<UsualGroup name="ГруппаПриПроверкеОбнаруженыОшибки" id="280">
+							<Group>Vertical</Group>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаСообщенияОбОшибкахРасширеннаяПодсказка1" id="281"/>
+							<ChildItems>
+								<InputField name="ТекстПриПроверкеОбнаруженыОшибки" id="282">
+									<DataPath>СообщенияОбОшибках</DataPath>
+									<ReadOnly>true</ReadOnly>
+									<TitleLocation>None</TitleLocation>
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<Height>7</Height>
+									<AutoMaxHeight>false</AutoMaxHeight>
+									<HorizontalStretch>true</HorizontalStretch>
+									<VerticalStretch>true</VerticalStretch>
+									<MultiLine>true</MultiLine>
+									<OpenButton>true</OpenButton>
+									<BackColor>style:FormBackColor</BackColor>
+									<BorderColor>style:FormBackColor</BorderColor>
+									<ContextMenu name="СообщенияОбОшибкахКонтекстноеМеню1" id="283"/>
+									<ExtendedTooltip name="СообщенияОбОшибкахРасширеннаяПодсказка1" id="284"/>
+									<Events>
+										<Event name="Opening">ТекстПриПроверкеОбнаруженыОшибкиОткрытие</Event>
+									</Events>
+								</InputField>
+								<LabelDecoration name="НужнаПомощьПриПроверкеОбнаруженыОшибки" id="285">
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Нужна помощь?</v8:content>
+										</v8:item>
+									</Title>
+									<GroupHorizontalAlign>Left</GroupHorizontalAlign>
+									<Hyperlink>true</Hyperlink>
+									<ContextMenu name="НужнаПомощьКонтекстноеМеню1" id="286"/>
+									<ExtendedTooltip name="НужнаПомощьРасширеннаяПодсказка1" id="287"/>
+									<Events>
+										<Event name="Click">НужнаПомощьНажатие</Event>
+									</Events>
+								</LabelDecoration>
+							</ChildItems>
+						</UsualGroup>
+					</ChildItems>
+				</Page>
 				<Page name="УчетнаяЗаписьУспешноНастроена" id="36">
 					<Title>
 						<v8:item>
@@ -923,6 +998,8 @@ vasyapupkin@example.com завершена.</v8:content>
 			</ChildItems>
 		</Pages>
 		<UsualGroup name="КоманднаяПанель" id="28">
+			<VerticalStretch>true</VerticalStretch>
+			<VerticalAlign>Bottom</VerticalAlign>
 			<Representation>None</Representation>
 			<ShowTitle>false</ShowTitle>
 			<ExtendedTooltip name="КоманднаяПанельРасширеннаяПодсказка" id="29"/>
@@ -944,11 +1021,6 @@ vasyapupkin@example.com завершена.</v8:content>
 						</Button>
 					</ChildItems>
 				</CommandBar>
-				<LabelDecoration name="Заглушка" id="168">
-					<AutoMaxWidth>false</AutoMaxWidth>
-					<ContextMenu name="ЗаглушкаКонтекстноеМеню" id="169"/>
-					<ExtendedTooltip name="ЗаглушкаРасширеннаяПодсказка" id="170"/>
-				</LabelDecoration>
 				<CommandBar name="КоманднаяПанельПраваяЧасть" id="30">
 					<HorizontalLocation>Right</HorizontalLocation>
 					<ExtendedTooltip name="КоманднаяПанельПраваяЧастьРасширеннаяПодсказка" id="31"/>

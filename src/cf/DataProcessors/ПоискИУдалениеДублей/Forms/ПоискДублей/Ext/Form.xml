@@ -199,11 +199,6 @@
 									<EnableDrag>true</EnableDrag>
 									<FileDragMode>AsFile</FileDragMode>
 									<DataPath>НайденныеДубли</DataPath>
-									<RowPictureDataPath>НайденныеДубли.НомерКартинки</RowPictureDataPath>
-									<RowsPicture>
-										<xr:Ref>CommonPicture.ПиктограммыЭлементов</xr:Ref>
-										<xr:LoadTransparent>false</xr:LoadTransparent>
-									</RowsPicture>
 									<CommandSet>
 										<ExcludedCommand>Change</ExcludedCommand>
 									</CommandSet>
@@ -280,33 +275,46 @@
 										<Event name="OnActivateRow">НайденныеДублиПриАктивизацииСтроки</Event>
 									</Events>
 									<ChildItems>
-										<PictureField name="НайденныеДублиОсновной" id="114">
-											<DataPath>НайденныеДубли.Основной</DataPath>
-											<ReadOnly>true</ReadOnly>
+										<PictureField name="НайденныеДублиПометкаУдаления" id="471">
+											<DataPath>НайденныеДубли.НомерКартинки</DataPath>
 											<TitleLocation>None</TitleLocation>
 											<ToolTip>
 												<v8:item>
 													<v8:lang>ru</v8:lang>
-													<v8:content>Это оригинальный элемент, который будет оставлен в программе</v8:content>
+													<v8:content>Состояние пометки удаления</v8:content>
 												</v8:item>
 											</ToolTip>
 											<EditMode>EnterOnInput</EditMode>
-											<HeaderPicture>
-												<xr:Ref>StdPicture.MoveRight</xr:Ref>
-												<xr:LoadTransparent>true</xr:LoadTransparent>
-											</HeaderPicture>
 											<ValuesPicture>
-												<xr:Ref>StdPicture.MoveRight</xr:Ref>
+												<xr:Ref>CommonPicture.ПиктограммыЭлементов</xr:Ref>
 												<xr:LoadTransparent>true</xr:LoadTransparent>
 											</ValuesPicture>
-											<FileDragMode>AsFile</FileDragMode>
-											<ContextMenu name="НайденныеДублиОсновнойКонтекстноеМеню" id="115"/>
-											<ExtendedTooltip name="НайденныеДублиОсновнойРасширеннаяПодсказка" id="116"/>
+											<ContextMenu name="НайденныеДублиПометкаУдаленияКонтекстноеМеню" id="472"/>
+											<ExtendedTooltip name="НайденныеДублиПометкаУдаленияРасширеннаяПодсказка" id="473"/>
 										</PictureField>
 										<ColumnGroup name="ИспользоватьНаименование" id="109">
 											<Group>InCell</Group>
 											<ExtendedTooltip name="ИспользоватьНаименованиеРасширеннаяПодсказка" id="110"/>
 											<ChildItems>
+												<PictureField name="НайденныеДублиОсновной" id="114">
+													<DataPath>НайденныеДубли.Основной</DataPath>
+													<ReadOnly>true</ReadOnly>
+													<TitleLocation>None</TitleLocation>
+													<ToolTip>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Это оригинальный элемент, который будет оставлен в программе</v8:content>
+														</v8:item>
+													</ToolTip>
+													<EditMode>EnterOnInput</EditMode>
+													<ValuesPicture>
+														<xr:Ref>StdPicture.MoveRight</xr:Ref>
+														<xr:LoadTransparent>true</xr:LoadTransparent>
+													</ValuesPicture>
+													<FileDragMode>AsFile</FileDragMode>
+													<ContextMenu name="НайденныеДублиОсновнойКонтекстноеМеню" id="115"/>
+													<ExtendedTooltip name="НайденныеДублиОсновнойРасширеннаяПодсказка" id="116"/>
+												</PictureField>
 												<CheckBoxField name="НайденныеДублиПометка" id="103">
 													<DataPath>НайденныеДубли.Пометка</DataPath>
 													<TitleLocation>None</TitleLocation>
