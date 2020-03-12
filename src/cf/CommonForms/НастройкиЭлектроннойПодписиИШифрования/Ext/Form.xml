@@ -391,6 +391,19 @@
 					</Title>
 					<ExtendedTooltip name="СтраницаПрограммыРасширеннаяПодсказка" id="104"/>
 					<ChildItems>
+						<LabelDecoration name="НадписьНастройкаВЦентральномУзле" id="355">
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<HorizontalStretch>true</HorizontalStretch>
+							<Title formatted="false">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Настройка программ электронной подписи и шифрования выполнена в главном узле</v8:content>
+								</v8:item>
+							</Title>
+							<BackColor>style:ToolTipBackColor</BackColor>
+							<ContextMenu name="НадписьНастройкаВЦентральномУзлеКонтекстноеМеню" id="356"/>
+							<ExtendedTooltip name="НадписьНастройкаВЦентральномУзлеРасширеннаяПодсказка" id="357"/>
+						</LabelDecoration>
 						<UsualGroup name="ГруппаВебКлиентРасширениеНеУстановлено" id="171">
 							<Title>
 								<v8:item>
@@ -566,6 +579,7 @@
 												<ExtendedTooltip name="ПрограммыУправлениеПоискомРасширеннаяПодсказка" id="316"/>
 											</SearchControlAddition>
 											<Events>
+												<Event name="Selection">ПрограммыВыбор</Event>
 												<Event name="BeforeAddRow">ПрограммыПередНачаломДобавления</Event>
 												<Event name="BeforeDeleteRow">ПрограммыПередУдалением</Event>
 												<Event name="OnActivateRow">ПрограммыПриАктивизацииСтроки</Event>
@@ -599,6 +613,17 @@
 													<MultiLine>true</MultiLine>
 													<ContextMenu name="ПрограммыРезультатПроверкиКонтекстноеМеню" id="224"/>
 													<ExtendedTooltip name="ПрограммыРезультатПроверкиРасширеннаяПодсказка" id="225"/>
+												</InputField>
+												<InputField name="ПрограммыПодробнее" id="358">
+													<DataPath>Программы.Подробнее</DataPath>
+													<ReadOnly>true</ReadOnly>
+													<EditMode>EnterOnInput</EditMode>
+													<CellHyperlink>true</CellHyperlink>
+													<ShowInHeader>false</ShowInHeader>
+													<Width>10</Width>
+													<HorizontalStretch>false</HorizontalStretch>
+													<ContextMenu name="ПрограммыПодробнееКонтекстноеМеню" id="359"/>
+													<ExtendedTooltip name="ПрограммыПодробнееРасширеннаяПодсказка" id="360"/>
 												</InputField>
 											</ChildItems>
 										</Table>
@@ -635,10 +660,12 @@
 													<Height>1</Height>
 													<MultiLine>true</MultiLine>
 													<ExtendedEdit>true</ExtendedEdit>
+													<DropListButton>true</DropListButton>
 													<ContextMenu name="ПрограммыLinuxПутьКПрограммеКонтекстноеМеню" id="217"/>
 													<ExtendedTooltip name="ПрограммыLinuxПутьКПрограммеРасширеннаяПодсказка" id="218"/>
 													<Events>
 														<Event name="OnChange">ПрограммыLinuxПутьКПрограммеПриИзменении</Event>
+														<Event name="ChoiceProcessing">ПрограммыLinuxПутьКПрограммеОбработкаВыбора</Event>
 													</Events>
 												</InputField>
 											</ChildItems>
@@ -1116,6 +1143,21 @@
 						<v8:Type>xs:boolean</v8:Type>
 					</Type>
 				</Column>
+				<Column name="Подробнее" id="14">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Подробнее</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
 			</Columns>
 		</Attribute>
 		<Attribute name="ПроверятьПодписиНаСервере" id="5">
@@ -1195,6 +1237,9 @@
 			<Type>
 				<v8:Type>xs:boolean</v8:Type>
 			</Type>
+		</Attribute>
+		<Attribute name="ПутиКПрограммамПоУмолчанию" id="15">
+			<Type/>
 		</Attribute>
 	</Attributes>
 	<Commands>
