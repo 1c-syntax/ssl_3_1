@@ -107,6 +107,9 @@
 					<TitleLocation>None</TitleLocation>
 					<ContextMenu name="БазовыйКалендарьКонтекстноеМеню" id="56"/>
 					<ExtendedTooltip name="БазовыйКалендарьРасширеннаяПодсказка" id="57"/>
+					<Events>
+						<Event name="OnChange">БазовыйКалендарьПриИзменении</Event>
+					</Events>
 				</InputField>
 			</ChildItems>
 		</UsualGroup>
@@ -121,6 +124,45 @@
 			<ShowTitle>false</ShowTitle>
 			<ExtendedTooltip name="КалендарьГруппаExtendedTooltip" id="34"/>
 			<ChildItems>
+				<UsualGroup name="НерабочиеПериодыГруппа" id="58">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Нерабочие периоды</v8:content>
+						</v8:item>
+					</Title>
+					<HorizontalStretch>true</HorizontalStretch>
+					<Representation>None</Representation>
+					<BackColor>style:НерабочийПериодПроизводственногоКалендаряФон</BackColor>
+					<ExtendedTooltip name="НерабочиеПериодыГруппаРасширеннаяПодсказка" id="59"/>
+					<ChildItems>
+						<PictureDecoration name="НерабочиеПериодыКартинка" id="60">
+							<Title formatted="false">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Нерабочие периоды картинка</v8:content>
+								</v8:item>
+							</Title>
+							<Picture>
+								<xr:Ref>CommonPicture.Предупреждение32</xr:Ref>
+								<xr:LoadTransparent>false</xr:LoadTransparent>
+							</Picture>
+							<ContextMenu name="НерабочиеПериодыКартинкаКонтекстноеМеню" id="61"/>
+							<ExtendedTooltip name="НерабочиеПериодыКартинкаРасширеннаяПодсказка" id="62"/>
+						</PictureDecoration>
+						<LabelDecoration name="НерабочиеПериодыТекст" id="63">
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<Title formatted="false">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Нерабочие периоды текст</v8:content>
+								</v8:item>
+							</Title>
+							<ContextMenu name="НерабочиеПериодыТекстКонтекстноеМеню" id="64"/>
+							<ExtendedTooltip name="НерабочиеПериодыТекстРасширеннаяПодсказка" id="65"/>
+						</LabelDecoration>
+					</ChildItems>
+				</UsualGroup>
 				<CalendarField name="Календарь" id="5">
 					<DataPath>Календарь</DataPath>
 					<TitleLocation>None</TitleLocation>
@@ -276,6 +318,7 @@
 			<Type>
 				<v8:Type>v8:ValueListType</v8:Type>
 			</Type>
+			<Settings xsi:type="v8:TypeDescription"/>
 		</Attribute>
 		<Attribute name="ВидыДней" id="9">
 			<Type/>
@@ -308,6 +351,7 @@
 			<Type>
 				<v8:Type>v8:ValueListType</v8:Type>
 			</Type>
+			<Settings xsi:type="v8:TypeDescription"/>
 		</Attribute>
 		<Attribute name="ЕстьБазовыйКалендарь" id="11">
 			<Title>
@@ -320,6 +364,9 @@
 				<v8:Type>xs:boolean</v8:Type>
 			</Type>
 			<SavedData>true</SavedData>
+		</Attribute>
+		<Attribute name="НерабочиеДаты" id="12">
+			<Type/>
 		</Attribute>
 	</Attributes>
 	<Commands>

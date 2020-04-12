@@ -155,6 +155,9 @@
 																	<Width>8</Width>
 																	<ContextMenu name="ДатаОкончанияКонтекстноеМеню" id="220"/>
 																	<ExtendedTooltip name="ДатаОкончанияExtendedTooltip" id="307"/>
+																	<Events>
+																		<Event name="OnChange">ДатаОкончанияПриИзменении</Event>
+																	</Events>
 																</InputField>
 															</ChildItems>
 														</UsualGroup>
@@ -366,19 +369,18 @@
 														</UsualGroup>
 													</ChildItems>
 												</UsualGroup>
-												<UsualGroup name="УчитыватьПраздникиГруппа" id="177">
+												<UsualGroup name="УчитыватьПраздникиГруппа" id="404">
 													<Title>
 														<v8:item>
 															<v8:lang>ru</v8:lang>
-															<v8:content>Учитывать праздники группа</v8:content>
+															<v8:content>Учитывать праздники</v8:content>
 														</v8:item>
 													</Title>
-													<Group>Vertical</Group>
-													<Representation>NormalSeparation</Representation>
+													<Representation>None</Representation>
 													<ShowTitle>false</ShowTitle>
-													<ExtendedTooltip name="УчитыватьПраздникиГруппаExtendedTooltip" id="323"/>
+													<ExtendedTooltip name="УчитыватьПраздникиГруппаРасширеннаяПодсказка" id="405"/>
 													<ChildItems>
-														<CheckBoxField name="УчитыватьПраздники" id="173">
+														<CheckBoxField name="УчитыватьПраздники" id="406">
 															<DataPath>Объект.УчитыватьПраздники</DataPath>
 															<TitleLocation>Right</TitleLocation>
 															<ToolTip>
@@ -390,22 +392,82 @@
 															</ToolTip>
 															<ToolTipRepresentation>ShowBottom</ToolTipRepresentation>
 															<CheckBoxType>Auto</CheckBoxType>
-															<ContextMenu name="УчитыватьПраздникиКонтекстноеМеню" id="174"/>
-															<ExtendedTooltip name="УчитыватьПраздникиExtendedTooltip" id="324"/>
+															<ContextMenu name="УчитыватьПраздникиКонтекстноеМеню" id="407"/>
+															<ExtendedTooltip name="УчитыватьПраздникиРасширеннаяПодсказка" id="408">
+																<AutoMaxWidth>false</AutoMaxWidth>
+															</ExtendedTooltip>
 															<Events>
 																<Event name="OnChange">УчитыватьПраздникиПриИзменении</Event>
 															</Events>
 														</CheckBoxField>
-														<LabelField name="РасписаниеПредпраздничногоДня" id="287">
-															<DataPath>РасписаниеПредпраздничногоДня</DataPath>
-															<HorizontalStretch>false</HorizontalStretch>
-															<Hiperlink>true</Hiperlink>
-															<ContextMenu name="РасписаниеПредпраздничногоДняКонтекстноеМеню" id="288"/>
-															<ExtendedTooltip name="РасписаниеПредпраздничногоДняExtendedTooltip" id="326"/>
+													</ChildItems>
+												</UsualGroup>
+												<UsualGroup name="УчитыватьНерабочиеПериодыГруппа" id="409">
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Учитывать нерабочие периоды</v8:content>
+														</v8:item>
+													</Title>
+													<Group>Vertical</Group>
+													<Representation>None</Representation>
+													<ShowTitle>false</ShowTitle>
+													<ExtendedTooltip name="УчитыватьНерабочиеПериодыГруппаРасширеннаяПодсказка" id="410"/>
+													<ChildItems>
+														<CheckBoxField name="УчитыватьНерабочиеПериоды" id="411">
+															<DataPath>Объект.УчитыватьНерабочиеПериоды</DataPath>
+															<TitleLocation>Right</TitleLocation>
+															<ToolTip>
+																<v8:item>
+																	<v8:lang>ru</v8:lang>
+																	<v8:content>Если установлено, то из состава рабочих дней будут исключаться дни нерабочих периодов производственного календаря</v8:content>
+																</v8:item>
+															</ToolTip>
+															<CheckBoxType>Auto</CheckBoxType>
+															<ContextMenu name="УчитыватьНерабочиеПериодыКонтекстноеМеню" id="412"/>
+															<ExtendedTooltip name="УчитыватьНерабочиеПериодыРасширеннаяПодсказка" id="413"/>
 															<Events>
-																<Event name="Click">РасписаниеПредпраздничногоДняНажатие</Event>
+																<Event name="OnChange">УчитыватьНерабочиеПериодыПриИзменении</Event>
 															</Events>
-														</LabelField>
+														</CheckBoxField>
+														<UsualGroup name="НерабочиеПериодыГруппа" id="396">
+															<Title>
+																<v8:item>
+																	<v8:lang>ru</v8:lang>
+																	<v8:content>Нерабочие периоды</v8:content>
+																</v8:item>
+															</Title>
+															<Representation>None</Representation>
+															<ShowTitle>false</ShowTitle>
+															<ExtendedTooltip name="НерабочиеПериодыГруппаРасширеннаяПодсказка" id="397"/>
+															<ChildItems>
+																<PictureDecoration name="НерабочиеПериодыКартинка" id="398">
+																	<Title formatted="false">
+																		<v8:item>
+																			<v8:lang>ru</v8:lang>
+																			<v8:content>Нерабочие периоды картинка</v8:content>
+																		</v8:item>
+																	</Title>
+																	<Picture>
+																		<xr:Ref>CommonPicture.Информация</xr:Ref>
+																		<xr:LoadTransparent>false</xr:LoadTransparent>
+																	</Picture>
+																	<ContextMenu name="НерабочиеПериодыКартинкаКонтекстноеМеню" id="399"/>
+																	<ExtendedTooltip name="НерабочиеПериодыКартинкаРасширеннаяПодсказка" id="400"/>
+																</PictureDecoration>
+																<LabelDecoration name="НерабочиеПериодыИнформация" id="401">
+																	<AutoMaxWidth>false</AutoMaxWidth>
+																	<Title formatted="false">
+																		<v8:item>
+																			<v8:lang>ru</v8:lang>
+																			<v8:content>Нерабочие периоды информация</v8:content>
+																		</v8:item>
+																	</Title>
+																	<ContextMenu name="НерабочиеПериодыИнформацияКонтекстноеМеню" id="402"/>
+																	<ExtendedTooltip name="НерабочиеПериодыИнформацияРасширеннаяПодсказка" id="403"/>
+																</LabelDecoration>
+															</ChildItems>
+														</UsualGroup>
 													</ChildItems>
 												</UsualGroup>
 											</ChildItems>
@@ -540,6 +602,16 @@
 														</ColumnGroup>
 													</ChildItems>
 												</Table>
+												<LabelField name="РасписаниеПредпраздничногоДня" id="287">
+													<DataPath>РасписаниеПредпраздничногоДня</DataPath>
+													<HorizontalStretch>false</HorizontalStretch>
+													<Hiperlink>true</Hiperlink>
+													<ContextMenu name="РасписаниеПредпраздничногоДняКонтекстноеМеню" id="288"/>
+													<ExtendedTooltip name="РасписаниеПредпраздничногоДняExtendedTooltip" id="326"/>
+													<Events>
+														<Event name="Click">РасписаниеПредпраздничногоДняНажатие</Event>
+													</Events>
+												</LabelField>
 											</ChildItems>
 										</UsualGroup>
 									</ChildItems>
@@ -1163,16 +1235,4 @@
 			<CurrentRowUse>DontUse</CurrentRowUse>
 		</Command>
 	</Commands>
-	<CommandInterface>
-		<NavigationPanel>
-			<Item>
-				<Command>2:17aadd5f-cda2-4785-a07f-3ab4b04434a6</Command>
-				<Type>Auto</Type>
-				<DefaultVisible>false</DefaultVisible>
-				<Visible>
-					<xr:Common>false</xr:Common>
-				</Visible>
-			</Item>
-		</NavigationPanel>
-	</CommandInterface>
 </Form>
