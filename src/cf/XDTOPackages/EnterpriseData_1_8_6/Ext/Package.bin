@@ -6154,6 +6154,9 @@
 		<property name="ПеречислениеВБюджет" type="xs:boolean" lowerBound="0"/>
 		<property xmlns:d3p1="http://v8.1c.ru/edi/edi_stnd/EnterpriseData/1.8" name="СтатьяДДС" type="d3p1:КлючевыеСвойстваСтатьяДДС" lowerBound="0"/>
 		<property name="ИдентификаторПлатежа" type="xs:string" lowerBound="0"/>
+		<property name="КодВидаДохода" lowerBound="0">
+			<typeDef xsi:type="ValueType" base="xs:string" variety="Atomic" maxLength="2"/>
+		</property>
 	</objectType>
 	<objectType xmlns:d2p1="http://www.1c.ru/SSL/Exchange/Message" name="Документ.ПоступлениеДенежныхДокументовОтПодотчетника" base="d2p1:Object" open="true" sequenced="true">
 		<property xmlns:d3p1="http://v8.1c.ru/edi/edi_stnd/EnterpriseData/1.8" name="КлючевыеСвойства" type="d3p1:КлючевыеСвойстваПоступлениеДенежныхДокументовОтПодотчетника"/>
@@ -6577,6 +6580,9 @@
 		<property xmlns:d3p1="http://v8.1c.ru/edi/edi_stnd/EnterpriseData/1.8" name="Контрагент" type="d3p1:КлючевыеСвойстваКонтрагент" lowerBound="0"/>
 		<property xmlns:d3p1="http://v8.1c.ru/edi/edi_stnd/EnterpriseData/1.8" name="РасшифровкаПлатежа" type="d3p1:РасшифровкаПлатежаВыплатаЗарплаты"/>
 		<property xmlns:d3p1="http://v8.1c.ru/edi/edi_stnd/EnterpriseData/1.8" name="ЗаявкаНаРасходДенежныхСредств" type="d3p1:КлючевыеСвойстваЗаявкаНаРасходДСВыплатаЗарплаты" lowerBound="0"/>
+		<property name="КодВидаДохода" lowerBound="0">
+			<typeDef xsi:type="ValueType" base="xs:string" variety="Atomic" maxLength="2"/>
+		</property>
 	</objectType>
 	<objectType xmlns:d2p1="http://www.1c.ru/SSL/Exchange/Message" name="Документ.СБДСПеречислениеЗаработнойПлатыНаЛицевыеСчета" base="d2p1:Object" open="true" sequenced="true">
 		<property xmlns:d3p1="http://v8.1c.ru/edi/edi_stnd/EnterpriseData/1.8" name="КлючевыеСвойства" type="d3p1:КлючевыеСвойстваСБДСПеречислениеЗаработнойПлатыНаЛицевыеСчета"/>
@@ -6584,6 +6590,9 @@
 		<property xmlns:d3p1="http://v8.1c.ru/edi/edi_stnd/EnterpriseData/1.8" name="Сотрудник" type="d3p1:КлючевыеСвойстваФизическоеЛицо"/>
 		<property xmlns:d3p1="http://v8.1c.ru/edi/edi_stnd/EnterpriseData/1.8" name="РасшифровкаПлатежа" type="d3p1:РасшифровкаПлатежаВыплатаЗарплатыСотруднику"/>
 		<property xmlns:d3p1="http://v8.1c.ru/edi/edi_stnd/EnterpriseData/1.8" name="ЗаявкаНаРасходДенежныхСредств" type="d3p1:КлючевыеСвойстваЗаявкаНаРасходДСВыплатаЗарплаты" lowerBound="0"/>
+		<property name="КодВидаДохода" lowerBound="0">
+			<typeDef xsi:type="ValueType" base="xs:string" variety="Atomic" maxLength="2"/>
+		</property>
 	</objectType>
 	<objectType xmlns:d2p1="http://www.1c.ru/SSL/Exchange/Message" name="Документ.СБДСПрочееСписание" base="d2p1:Object" open="true" sequenced="true">
 		<property xmlns:d3p1="http://v8.1c.ru/edi/edi_stnd/EnterpriseData/1.8" name="КлючевыеСвойства" type="d3p1:КлючевыеСвойстваСБДСПрочееСписание"/>
@@ -6592,6 +6601,9 @@
 		<property xmlns:d3p1="http://v8.1c.ru/edi/edi_stnd/EnterpriseData/1.8" name="РасшифровкаПлатежа" type="d3p1:РасшифровкаПлатежаПрочее"/>
 		<property xmlns:d3p1="http://v8.1c.ru/edi/edi_stnd/EnterpriseData/1.8" name="ВидОперации" type="d3p1:ВидыОперацийСБДСПрочее"/>
 		<property xmlns:d3p1="http://v8.1c.ru/edi/edi_stnd/EnterpriseData/1.8" name="ЗаявкаНаРасходДенежныхСредств" type="d3p1:КлючевыеСвойстваЗаявкаНаРасходДСПрочее" lowerBound="0"/>
+		<property name="КодВидаДохода" lowerBound="0">
+			<typeDef xsi:type="ValueType" base="xs:string" variety="Atomic" maxLength="2"/>
+		</property>
 	</objectType>
 	<objectType xmlns:d2p1="http://www.1c.ru/SSL/Exchange/Message" name="Документ.СБДСПлатежиВБюджет" base="d2p1:Object" open="true" sequenced="true">
 		<property xmlns:d3p1="http://v8.1c.ru/edi/edi_stnd/EnterpriseData/1.8" name="КлючевыеСвойства" type="d3p1:КлючевыеСвойстваСБДСПлатежиВБюджет"/>
@@ -6607,6 +6619,9 @@
 		<property xmlns:d3p1="http://v8.1c.ru/edi/edi_stnd/EnterpriseData/1.8" name="Контрагент" type="d3p1:КлючевыеСвойстваКонтрагент" lowerBound="0"/>
 		<property xmlns:d3p1="http://v8.1c.ru/edi/edi_stnd/EnterpriseData/1.8" name="РасшифровкаПлатежа" type="d3p1:РасшифровкаПлатежаПрочихРасходов"/>
 		<property xmlns:d3p1="http://v8.1c.ru/edi/edi_stnd/EnterpriseData/1.8" name="ЗаявкаНаРасходДенежныхСредств" type="d3p1:КлючевыеСвойстваЗаявкаНаРасходДСПрочее" lowerBound="0"/>
+		<property name="КодВидаДохода" lowerBound="0">
+			<typeDef xsi:type="ValueType" base="xs:string" variety="Atomic" maxLength="2"/>
+		</property>
 	</objectType>
 	<objectType xmlns:d2p1="http://www.1c.ru/SSL/Exchange/Message" name="Документ.СБДСРасчетыСКонтрагентами" base="d2p1:Object" open="true" sequenced="true">
 		<property xmlns:d3p1="http://v8.1c.ru/edi/edi_stnd/EnterpriseData/1.8" name="КлючевыеСвойства" type="d3p1:КлючевыеСвойстваСБДСРасчетыСКонтрагентами"/>
@@ -6625,6 +6640,9 @@
 		<property xmlns:d3p1="http://v8.1c.ru/edi/edi_stnd/EnterpriseData/1.8" name="РасшифровкаПлатежа" type="d3p1:РасшифровкаПлатежаРасчетовССотрудниками"/>
 		<property xmlns:d3p1="http://v8.1c.ru/edi/edi_stnd/EnterpriseData/1.8" name="ЗаявкаНаРасходДенежныхСредств" type="d3p1:КлючевыеСвойстваЗаявкаНаРасходДСРасчетыССотрудниками" lowerBound="0"/>
 		<property xmlns:d3p1="http://v8.1c.ru/edi/edi_stnd/EnterpriseData/1.8" name="ДепонированиеЗарплаты" type="d3p1:РасчетыССотрудниками.ДепонированиеЗарплаты" lowerBound="0"/>
+		<property name="КодВидаДохода" lowerBound="0">
+			<typeDef xsi:type="ValueType" base="xs:string" variety="Atomic" maxLength="2"/>
+		</property>
 	</objectType>
 	<objectType xmlns:d2p1="http://www.1c.ru/SSL/Exchange/Message" name="Документ.СБДССнятиеНаличных" base="d2p1:Object" open="true" sequenced="true">
 		<property xmlns:d3p1="http://v8.1c.ru/edi/edi_stnd/EnterpriseData/1.8" name="КлючевыеСвойства" type="d3p1:КлючевыеСвойстваСБДССнятиеНаличных"/>
