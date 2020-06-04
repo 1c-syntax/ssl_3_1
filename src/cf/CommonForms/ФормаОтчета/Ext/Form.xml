@@ -947,6 +947,23 @@
 								</ButtonGroup>
 							</ChildItems>
 						</Popup>
+						<ButtonGroup name="Отчеты" id="830">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Отчеты</v8:content>
+								</v8:item>
+							</Title>
+							<ExtendedTooltip name="ОтчетыРасширеннаяПодсказка" id="831"/>
+							<ChildItems>
+								<Button name="ПраваПользователей" id="832">
+									<Type>CommandBarButton</Type>
+									<CommandName>Form.Command.ПраваПользователей</CommandName>
+									<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
+									<ExtendedTooltip name="ПраваПользователейРасширеннаяПодсказка" id="833"/>
+								</Button>
+							</ChildItems>
+						</ButtonGroup>
 						<Button name="НовоеОкно" id="41">
 							<Type>CommandBarButton</Type>
 							<CommandName>Form.StandardCommand.NewWindow</CommandName>
@@ -1599,6 +1616,27 @@
 				<Field>РазвернутьОбластьПоказателей</Field>
 			</Save>
 		</Attribute>
+		<Attribute name="КонтекстВарианта" id="11">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ВариантыКонтекста" id="13">
+			<Type>
+				<v8:Type>v8:ValueListType</v8:Type>
+			</Type>
+			<Settings xsi:type="v8:TypeDescription">
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>256</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Settings>
+		</Attribute>
 	</Attributes>
 	<Commands>
 		<Command name="ВсеНастройки" id="1">
@@ -2014,6 +2052,25 @@
 				</v8:item>
 			</ToolTip>
 			<Action>ПоделитьсяНастройками</Action>
+		</Command>
+		<Command name="ПраваПользователей" id="25">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Права пользователей</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Права пользователей</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.Report</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>ПраваПользователей</Action>
 		</Command>
 	</Commands>
 	<Parameters>

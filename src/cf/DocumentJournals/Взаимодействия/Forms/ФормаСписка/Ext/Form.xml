@@ -26,6 +26,50 @@
 		<Event name="BeforeLoadDataFromSettingsAtServer">ПередЗагрузкойДанныхИзНастроекНаСервере</Event>
 	</Events>
 	<ChildItems>
+		<UsualGroup name="ПредупреждениеОНеотправленныхПисьмах" id="926">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа предупреждение</v8:content>
+				</v8:item>
+			</Title>
+			<Group>AlwaysHorizontal</Group>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ПредупреждениеБезопасностиРасширеннаяПодсказка1" id="927"/>
+			<ChildItems>
+				<PictureDecoration name="ПредупреждениеОНеотправленныхПисьмахКартинка" id="928">
+					<Title formatted="false">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Картинка предупреждение</v8:content>
+						</v8:item>
+					</Title>
+					<Picture>
+						<xr:Ref>CommonPicture.Предупреждение</xr:Ref>
+						<xr:LoadTransparent>false</xr:LoadTransparent>
+					</Picture>
+					<ContextMenu name="КартинкаПредупреждениеКонтекстноеМеню1" id="929"/>
+					<ExtendedTooltip name="КартинкаПредупреждениеРасширеннаяПодсказка1" id="930"/>
+				</PictureDecoration>
+				<LabelDecoration name="ПредупреждениеОНеотправленныхПисьмахНадпись" id="931">
+					<Width>33</Width>
+					<AutoMaxWidth>false</AutoMaxWidth>
+					<HorizontalStretch>true</HorizontalStretch>
+					<Title formatted="true">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Регламентное задание &lt;b&gt;Получение&lt;/&gt;&lt;b&gt; &lt;/&gt;&lt;b&gt;и&lt;/&gt;&lt;b&gt; &lt;/&gt;&lt;b&gt;отправка&lt;/&gt;&lt;b&gt; &lt;/&gt;&lt;b&gt;писем&lt;/&gt; отключено, доставка писем не выполняется. &lt;link ВключитьПолучениеИОтправкуПисем&gt;Включить&lt;/&gt;</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTipRepresentation>Button</ToolTipRepresentation>
+					<ContextMenu name="ПредупреждениеОНебезопасномСодержимомКонтекстноеМеню1" id="932"/>
+					<ExtendedTooltip name="ПредупреждениеОНебезопасномСодержимомРасширеннаяПодсказка1" id="933"/>
+					<Events>
+						<Event name="URLProcessing">ПредупреждениеОНеотправленныхПисьмахНадписьОбработкаНавигационнойСсылки</Event>
+					</Events>
+				</LabelDecoration>
+			</ChildItems>
+		</UsualGroup>
 		<UsualGroup name="ГруппаПользовательскихНастроек" id="832">
 			<UserVisible>
 				<xr:Common>false</xr:Common>
@@ -733,6 +777,7 @@
 							<v8:content>Основное</v8:content>
 						</v8:item>
 					</Title>
+					<Group>AlwaysHorizontal</Group>
 					<Representation>None</Representation>
 					<ChildItemsWidth>LeftNarrowest</ChildItemsWidth>
 					<ShowTitle>false</ShowTitle>
@@ -856,11 +901,6 @@
 																		<Type>CommandBarButton</Type>
 																		<CommandName>Form.Item.КонтактыПанелиНавигации.StandardCommand.CancelSearch</CommandName>
 																		<ExtendedTooltip name="КонтактыПанелиНавигацииКонтекстноеМенюОтменитьПоискРасширеннаяПодсказка" id="819"/>
-																	</Button>
-																	<Button name="КонтактыПанелиНавигацииКонтекстноеМенюТолькоЗначимыеКонтакты" id="782">
-																		<Type>CommandBarButton</Type>
-																		<CommandName>Form.Command.ТолькоЗначимыеКонтакты</CommandName>
-																		<ExtendedTooltip name="КонтактыПанелиНавигацииКонтекстноеМенюТолькоЗначимыеКонтактыРасширеннаяПодсказка" id="783"/>
 																	</Button>
 																</ChildItems>
 															</ButtonGroup>
@@ -1000,6 +1040,13 @@
 														</ColumnGroup>
 													</ChildItems>
 												</Table>
+												<LabelDecoration name="ДекорацияТолькоЗначимыеКонтакты" id="937">
+													<ContextMenu name="ДекорацияТолькоЗначимыеКонтактыКонтекстноеМеню" id="938"/>
+													<ExtendedTooltip name="ДекорацияТолькоЗначимыеКонтактыРасширеннаяПодсказка" id="939"/>
+													<Events>
+														<Event name="URLProcessing">ДекорацияТолькоЗначимыеКонтактыОбработкаНавигационнойСсылки</Event>
+													</Events>
+												</LabelDecoration>
 											</ChildItems>
 										</Page>
 										<Page name="СтраницаПредмет" id="73">
@@ -1092,11 +1139,6 @@
 																		<Type>CommandBarButton</Type>
 																		<CommandName>Form.Command.ТолькоАктивныеПредметы</CommandName>
 																		<ExtendedTooltip name="ПредметыПанельНавигацииКонтекстноеМенюТолькоАктивныеПредметыРасширеннаяПодсказка" id="791"/>
-																	</Button>
-																	<Button name="ПредметыПанельНавигацииКонтекстноеМенюТолькоЗначимыеПредметы" id="788">
-																		<Type>CommandBarButton</Type>
-																		<CommandName>Form.Command.ТолькоЗначимыеПредметы</CommandName>
-																		<ExtendedTooltip name="ПредметыПанельНавигацииКонтекстноеМенюТолькоЗначимыеПредметыРасширеннаяПодсказка" id="789"/>
 																	</Button>
 																</ChildItems>
 															</ButtonGroup>
@@ -1243,6 +1285,13 @@
 														</ColumnGroup>
 													</ChildItems>
 												</Table>
+												<LabelDecoration name="ДекорацияТолькоЗначимыеПредметы" id="934">
+													<ContextMenu name="ДекорацияТолькоЗначимыеПредметыКонтекстноеМеню" id="935"/>
+													<ExtendedTooltip name="ДекорацияТолькоЗначимыеПредметыРасширеннаяПодсказка" id="936"/>
+													<Events>
+														<Event name="URLProcessing">ДекорацияТолькоЗначимыеПредметыОбработкаНавигационнойСсылки</Event>
+													</Events>
+												</LabelDecoration>
 											</ChildItems>
 										</Page>
 										<Page name="СтраницаЗакладки" id="118">
@@ -3443,6 +3492,9 @@
 				<v8:Type>xs:boolean</v8:Type>
 			</Type>
 		</Attribute>
+		<Attribute name="ГиперссылкаЦвет" id="37">
+			<Type/>
+		</Attribute>
 	</Attributes>
 	<Commands>
 		<Command name="УстановитьВариантНавигацииПоПредмету" id="1">
@@ -3990,38 +4042,6 @@
 			<FunctionalOptions>
 				<Item>FunctionalOption.ИспользоватьПрочиеВзаимодействия</Item>
 			</FunctionalOptions>
-			<CurrentRowUse>DontUse</CurrentRowUse>
-		</Command>
-		<Command name="ТолькоЗначимыеКонтакты" id="30">
-			<Title>
-				<v8:item>
-					<v8:lang>ru</v8:lang>
-					<v8:content>Только значимые</v8:content>
-				</v8:item>
-			</Title>
-			<ToolTip>
-				<v8:item>
-					<v8:lang>ru</v8:lang>
-					<v8:content>Только значимые контакты</v8:content>
-				</v8:item>
-			</ToolTip>
-			<Action>ТолькоЗначимыеКонтакты</Action>
-			<CurrentRowUse>DontUse</CurrentRowUse>
-		</Command>
-		<Command name="ТолькоЗначимыеПредметы" id="31">
-			<Title>
-				<v8:item>
-					<v8:lang>ru</v8:lang>
-					<v8:content>Только значимые предметы</v8:content>
-				</v8:item>
-			</Title>
-			<ToolTip>
-				<v8:item>
-					<v8:lang>ru</v8:lang>
-					<v8:content>Только значимые предметы</v8:content>
-				</v8:item>
-			</ToolTip>
-			<Action>ТолькоЗначимыеПредметы</Action>
 			<CurrentRowUse>DontUse</CurrentRowUse>
 		</Command>
 		<Command name="ТолькоАктивныеПредметы" id="32">

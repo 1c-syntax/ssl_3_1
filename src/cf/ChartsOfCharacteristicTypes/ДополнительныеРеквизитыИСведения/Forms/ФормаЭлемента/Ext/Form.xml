@@ -600,6 +600,9 @@
 									<Wrap>false</Wrap>
 									<ContextMenu name="ЗаголовокКонтекстноеМеню" id="2"/>
 									<ExtendedTooltip name="ЗаголовокExtendedTooltip" id="118"/>
+									<Events>
+										<Event name="OnChange">ЗаголовокПриИзменении</Event>
+									</Events>
 								</InputField>
 								<RadioButtonField name="ЭтоДополнительноеСведение" id="20">
 									<DataPath>ЭтоДополнительноеСведение</DataPath>
@@ -1020,6 +1023,29 @@
 											<ShowTitle>false</ShowTitle>
 											<ExtendedTooltip name="ОстальныеРеквизитыExtendedTooltip" id="154"/>
 											<ChildItems>
+												<UsualGroup name="ГруппаИдентификаторДляФормул" id="481">
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Идентификатор для формул</v8:content>
+														</v8:item>
+													</Title>
+													<Representation>None</Representation>
+													<ShowTitle>false</ShowTitle>
+													<ExtendedTooltip name="ГруппаИдентификаторДляФормулРасширеннаяПодсказка" id="482"/>
+													<ChildItems>
+														<InputField name="ИдентификаторДляФормул" id="483">
+															<DataPath>Объект.ИдентификаторДляФормул</DataPath>
+															<ContextMenu name="ИдентификаторДляФормулКонтекстноеМеню" id="484"/>
+															<ExtendedTooltip name="ИдентификаторДляФормулРасширеннаяПодсказка" id="485"/>
+														</InputField>
+														<Button name="ЗаполнитьИдентификаторДляФормул" id="486">
+															<Type>UsualButton</Type>
+															<CommandName>Form.Command.ЗаполнитьИдентификаторДляФормул</CommandName>
+															<ExtendedTooltip name="ЗаполнитьИдентификаторДляФормулРасширеннаяПодсказка" id="487"/>
+														</Button>
+													</ChildItems>
+												</UsualGroup>
 												<InputField name="Подсказка" id="30">
 													<DataPath>Объект.Подсказка</DataPath>
 													<Title>
@@ -2315,6 +2341,26 @@
 			</Picture>
 			<Action>УстановитьСнятьПометкуУдаления</Action>
 			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ЗаполнитьИдентификаторДляФормул" id="11">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заполнить идентификатор для формул</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заполнить идентификатор для формул</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>CommonPicture.ЗаполнитьФорму</xr:Ref>
+				<xr:LoadTransparent>false</xr:LoadTransparent>
+			</Picture>
+			<Action>ЗаполнитьИдентификаторДляФормул</Action>
+			<Representation>Picture</Representation>
 		</Command>
 	</Commands>
 	<Parameters>

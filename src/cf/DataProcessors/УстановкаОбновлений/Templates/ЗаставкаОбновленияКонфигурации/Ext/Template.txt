@@ -27,7 +27,7 @@
     var ret = 0 // Код возврата предыдущего шага.
     var finish = false
     var errStep = 0
-    var loadStep = 8 // шаг начала загрузки первого файла обновления
+    var loadStep = 10 // шаг начала загрузки первого файла обновления
 
     var endLoadStep = loadStep + cfgFileNames.length * 6 // следующий шаг после завершения загрузки файлов обновления
     if (cfgFileNames.length === 0) {
@@ -71,6 +71,12 @@
           break
         case 7:
           ret = runDeferredHandlers()
+          break
+        case 8:
+          setProgress('[Шаг11УдалениеПатчей]')
+          break
+        case 9:
+          ret = DeletePatches()
           break
         case endLoadStep:
           if (makeCompression) {

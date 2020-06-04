@@ -22,6 +22,7 @@ try {
   var COMConnectorName = WScript.Arguments.Named.Item('COMConnectorName')
   var fixFileNames = WScript.Arguments.Named.Item('FixFileNames')
   var removeFixNames = WScript.Arguments.Named.Item('RemoveFixNames')
+  var Action = WScript.Arguments.Named.Item('Action')
   var outFileName = WScript.Arguments.Named.Item('Out')
 
   var outf = fso.OpenTextFile(outFileName, ForWriting, true, OpenAsASCII)
@@ -29,7 +30,11 @@ try {
   var COMConnector = new ActiveXObject(COMConnectorName)
   var connection = COMConnector.Connect(ConnectionString)
 
-  connection.ОбновлениеКонфигурацииВызовСервера.ОбновитьИсправленияИзСкрипта(fixFileNames, removeFixNames)
+  if (Action == 'RemoveAll') {
+    connection.ОбновлениеКонфигурацииВызовСервера.УдалитьИсправленияИзСкрипта();
+  } else {
+    connection.ОбновлениеКонфигурацииВызовСервера.ОбновитьИсправленияИзСкрипта(fixFileNames, removeFixNames)
+  }
 
 } catch (ex) {
   if (outf != null) {

@@ -15,6 +15,7 @@
 		<property name="NewFrom" type="xs:string" lowerBound="0"/>
 		<property xmlns:d3p1="http://www.1c.ru/SSL/Exchange/Message" name="AvailableObjectTypes" type="d3p1:AvailableObjectTypes" lowerBound="0" nillable="true"/>
 		<property name="Prefix" type="xs:string" lowerBound="0"/>
+		<property xmlns:d3p1="http://www.1c.ru/SSL/Exchange/Message" name="AvailableExtensions" type="d3p1:AvailableExtensions" lowerBound="0"/>
 	</objectType>
 	<objectType name="Object" open="false" abstract="true">
 		<property name="AdditionalInfo" type="xs:anyType" lowerBound="0"/>
@@ -26,5 +27,12 @@
 		<property name="Name" type="xs:string"/>
 		<property name="Sending" type="xs:string" lowerBound="0"/>
 		<property name="Receiving" type="xs:string" lowerBound="0"/>
+	</objectType>
+	<objectType name="AvailableExtensions">
+		<property xmlns:d3p1="http://www.1c.ru/SSL/Exchange/Message" name="Extension" type="d3p1:Extension" lowerBound="0" upperBound="-1"/>
+	</objectType>
+	<objectType name="Extension" open="true">
+		<property name="Namespace" type="xs:string"/>
+		<property name="BaseVersion" type="xs:string"/>
 	</objectType>
 </package>

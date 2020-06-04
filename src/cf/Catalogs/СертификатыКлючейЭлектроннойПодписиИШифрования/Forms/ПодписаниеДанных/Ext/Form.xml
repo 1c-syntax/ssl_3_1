@@ -130,17 +130,54 @@
 										<Event name="ChoiceProcessing">СертификатОбработкаВыбора</Event>
 									</Events>
 								</InputField>
-								<InputField name="Пароль" id="316">
-									<DataPath>Пароль</DataPath>
-									<HorizontalStretch>false</HorizontalStretch>
-									<Wrap>false</Wrap>
-									<PasswordMode>true</PasswordMode>
-									<ContextMenu name="ПарольКонтекстноеМеню" id="317"/>
-									<ExtendedTooltip name="ПарольРасширеннаяПодсказка" id="318"/>
-									<Events>
-										<Event name="OnChange">ПарольПриИзменении</Event>
-									</Events>
-								</InputField>
+								<UsualGroup name="ГруппаПароль" id="454">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Пароль</v8:content>
+										</v8:item>
+									</Title>
+									<Group>AlwaysHorizontal</Group>
+									<Representation>None</Representation>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="ГруппаПарольРасширеннаяПодсказка" id="455"/>
+									<ChildItems>
+										<InputField name="Пароль" id="316">
+											<DataPath>Пароль</DataPath>
+											<HorizontalStretch>false</HorizontalStretch>
+											<Wrap>false</Wrap>
+											<PasswordMode>true</PasswordMode>
+											<ContextMenu name="ПарольКонтекстноеМеню" id="317"/>
+											<ExtendedTooltip name="ПарольРасширеннаяПодсказка" id="318"/>
+											<Events>
+												<Event name="OnChange">ПарольПриИзменении</Event>
+											</Events>
+										</InputField>
+										<CheckBoxField name="ЗапомнитьПароль" id="324">
+											<DataPath>ЗапомнитьПароль</DataPath>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Запомнить на время сеанса</v8:content>
+												</v8:item>
+											</Title>
+											<TitleLocation>Right</TitleLocation>
+											<ToolTip>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Запомнить пароль сертификата до закрытия программы. При снятии флажка пароль стирается из памяти, если запоминался ранее.</v8:content>
+												</v8:item>
+											</ToolTip>
+											<ToolTipRepresentation>Button</ToolTipRepresentation>
+											<CheckBoxType>Auto</CheckBoxType>
+											<ContextMenu name="ЗапомнитьПарольКонтекстноеМеню" id="325"/>
+											<ExtendedTooltip name="ЗапомнитьПарольРасширеннаяПодсказка" id="326"/>
+											<Events>
+												<Event name="OnChange">ЗапомнитьПарольПриИзменении</Event>
+											</Events>
+										</CheckBoxField>
+									</ChildItems>
+								</UsualGroup>
 								<Pages name="Страницы" id="416">
 									<Title>
 										<v8:item>
@@ -151,34 +188,6 @@
 									<PagesRepresentation>None</PagesRepresentation>
 									<ExtendedTooltip name="СтраницыРасширеннаяПодсказка" id="417"/>
 									<ChildItems>
-										<Page name="СтраницаЗапоминаниеПароля" id="418">
-											<Title>
-												<v8:item>
-													<v8:lang>ru</v8:lang>
-													<v8:content>Страница запоминание пароля</v8:content>
-												</v8:item>
-											</Title>
-											<ExtendedTooltip name="СтраницаЗапоминаниеПароляРасширеннаяПодсказка" id="419"/>
-											<ChildItems>
-												<CheckBoxField name="ЗапомнитьПароль" id="324">
-													<DataPath>ЗапомнитьПароль</DataPath>
-													<TitleLocation>Right</TitleLocation>
-													<ToolTip>
-														<v8:item>
-															<v8:lang>ru</v8:lang>
-															<v8:content>Запомнить пароль сертификата до закрытия программы. При снятии флажка пароль стирается из памяти, если запоминался ранее.</v8:content>
-														</v8:item>
-													</ToolTip>
-													<ToolTipRepresentation>Button</ToolTipRepresentation>
-													<CheckBoxType>Auto</CheckBoxType>
-													<ContextMenu name="ЗапомнитьПарольКонтекстноеМеню" id="325"/>
-													<ExtendedTooltip name="ЗапомнитьПарольРасширеннаяПодсказка" id="326"/>
-													<Events>
-														<Event name="OnChange">ЗапомнитьПарольПриИзменении</Event>
-													</Events>
-												</CheckBoxField>
-											</ChildItems>
-										</Page>
 										<Page name="СтраницаПояснениеУсиленногоПароля" id="438">
 											<Title>
 												<v8:item>

@@ -450,6 +450,91 @@
 				</UsualGroup>
 			</ChildItems>
 		</UsualGroup>
+		<UsualGroup name="ГруппаСостояниеОригиналовПервичныхДокументов" id="1696">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа состояние оригиналов первичных документов.</v8:content>
+				</v8:item>
+			</Title>
+			<HorizontalStretch>false</HorizontalStretch>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаСостояниеОригиналовПервичныхДокументовРасширеннаяПодсказка" id="1697"/>
+			<ChildItems>
+				<UsualGroup name="ГруппаСостояниеОригиналовПервичныхДокументовИспользование" id="1698">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Состояние оригиналов первичных документов использование</v8:content>
+						</v8:item>
+					</Title>
+					<Width>43</Width>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаСостояниеОригиналовПервичныхДокументовИспользованиеРасширеннаяПодсказка" id="1699"/>
+					<ChildItems>
+						<CheckBoxField name="ОтслеживаниеСостоянийНапечатанныхДокументов" id="1700">
+							<DataPath>НаборКонстант.ИспользоватьУчетОригиналовПервичныхДокументов</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Отслеживание состояний напечатанных документов</v8:content>
+								</v8:item>
+							</Title>
+							<TitleLocation>Right</TitleLocation>
+							<ToolTipRepresentation>ShowBottom</ToolTipRepresentation>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="ОтслеживаниеСостоянийНапечатанныхДокументовКонтекстноеМеню" id="1701"/>
+							<ExtendedTooltip name="ОтслеживаниеСостоянийНапечатанныхДокументовРасширеннаяПодсказка" id="1702">
+								<Title formatted="false">
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Фиксирование наличия подписанных оригиналов первичных документов.</v8:content>
+									</v8:item>
+								</Title>
+							</ExtendedTooltip>
+							<Events>
+								<Event name="OnChange">ИспользоватьУчетОригиналовПервичныхДокументовПриИзменении</Event>
+							</Events>
+						</CheckBoxField>
+					</ChildItems>
+				</UsualGroup>
+				<UsualGroup name="ГруппаСостояниеОригиналовПервичныхДокументовНастройка" id="1703">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Состояние оригиналов первичных документов настройка</v8:content>
+						</v8:item>
+					</Title>
+					<Width>43</Width>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаСостояниеОригиналовПервичныхДокументовНастройкаРасширеннаяПодсказка" id="1704"/>
+					<ChildItems>
+						<Button name="ОткрытьСостоянияОригиналовПервичныхДокументов" id="1705">
+							<Type>Hyperlink</Type>
+							<CommandName>Form.Command.ОткрытьСостоянияОригиналовПервичныхДокументов</CommandName>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Состояния оригиналов первичных документов</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTipRepresentation>ShowBottom</ToolTipRepresentation>
+							<ExtendedTooltip name="ОткрытьСостоянияОригиналовПервичныхДокументовРасширеннаяПодсказка" id="1706">
+								<Title formatted="false">
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Настройка состояний, которые будут использоваться при отслеживании оригиналов первичных документов.</v8:content>
+									</v8:item>
+								</Title>
+							</ExtendedTooltip>
+						</Button>
+					</ChildItems>
+				</UsualGroup>
+			</ChildItems>
+		</UsualGroup>
 	</ChildItems>
 	<Attributes>
 		<Attribute name="НаборКонстант" id="1">
@@ -474,6 +559,21 @@
 				</v8:item>
 			</Title>
 			<Action>ДополнительныеОтчетыИОбработки</Action>
+		</Command>
+		<Command name="ОткрытьСостоянияОригиналовПервичныхДокументов" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Открыть состояния оригиналов первичных документов</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Открыть состояния оригиналов первичных документов</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ОткрытьСостоянияОригиналовПервичныхДокументов</Action>
 		</Command>
 	</Commands>
 </Form>

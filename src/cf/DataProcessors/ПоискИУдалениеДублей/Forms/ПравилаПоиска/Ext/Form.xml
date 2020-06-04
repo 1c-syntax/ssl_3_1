@@ -7,17 +7,29 @@
 		<HorizontalAlign>Right</HorizontalAlign>
 		<Autofill>false</Autofill>
 		<ChildItems>
-			<Button name="ЗавершитьРедактирование" id="12">
-				<Type>CommandBarButton</Type>
-				<DefaultButton>true</DefaultButton>
-				<CommandName>Form.Command.ЗавершитьРедактирование</CommandName>
-				<ExtendedTooltip name="ЗавершитьРедактированиеРасширеннаяПодсказка" id="13"/>
-			</Button>
-			<Button name="ФормаОтмена" id="16">
-				<Type>CommandBarButton</Type>
-				<CommandName>Form.StandardCommand.Cancel</CommandName>
-				<ExtendedTooltip name="ФормаОтменаРасширеннаяПодсказка" id="17"/>
-			</Button>
+			<ButtonGroup name="ГруппаСкрытоНаМобильномКлиенте" id="51">
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Скрыто на мобильном клиенте</v8:content>
+					</v8:item>
+				</Title>
+				<Representation>Usual</Representation>
+				<ExtendedTooltip name="ГруппаСкрытоНаМобильномКлиентеРасширеннаяПодсказка" id="52"/>
+				<ChildItems>
+					<Button name="ЗавершитьРедактирование" id="12">
+						<Type>CommandBarButton</Type>
+						<DefaultButton>true</DefaultButton>
+						<CommandName>Form.Command.ЗавершитьРедактирование</CommandName>
+						<ExtendedTooltip name="ЗавершитьРедактированиеРасширеннаяПодсказка" id="13"/>
+					</Button>
+					<Button name="ФормаОтмена" id="16">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.StandardCommand.Cancel</CommandName>
+						<ExtendedTooltip name="ФормаОтменаРасширеннаяПодсказка" id="17"/>
+					</Button>
+				</ChildItems>
+			</ButtonGroup>
 			<ButtonGroup name="ФормаГруппаСправка" id="14">
 				<Title>
 					<v8:item>
@@ -37,7 +49,7 @@
 		</ChildItems>
 	</AutoCommandBar>
 	<Events>
-		<Event name="OnOpen">ПриОткрытии</Event>
+		<Event name="BeforeClose">ПередЗакрытием</Event>
 		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
 	</Events>
 	<ChildItems>
@@ -148,6 +160,13 @@
 				</InputField>
 			</ChildItems>
 		</Table>
+		<CheckBoxField name="СкрыватьНезначимыеДубли" id="48">
+			<DataPath>СкрыватьНезначимыеДубли</DataPath>
+			<TitleLocation>Right</TitleLocation>
+			<CheckBoxType>Auto</CheckBoxType>
+			<ContextMenu name="СкрыватьНезначимыеДублиКонтекстноеМеню" id="49"/>
+			<ExtendedTooltip name="СкрыватьНезначимыеДублиРасширеннаяПодсказка" id="50"/>
+		</CheckBoxField>
 		<UsualGroup name="ГруппаПрикладныхОграничений" id="35">
 			<Title>
 				<v8:item>
@@ -302,6 +321,22 @@
 				<v8:Type>v8:ValueListType</v8:Type>
 			</Type>
 			<Settings xsi:type="v8:TypeDescription"/>
+		</Attribute>
+		<Attribute name="СкрыватьНезначимыеДубли" id="8">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Скрывать дубли, помеченные на удаление и без мест использования</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ЭтоМобильныйКлиент" id="9">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
 		</Attribute>
 	</Attributes>
 	<Commands>

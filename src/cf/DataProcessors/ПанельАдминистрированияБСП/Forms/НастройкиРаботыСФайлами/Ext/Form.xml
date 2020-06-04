@@ -272,12 +272,11 @@
 					<Title>
 						<v8:item>
 							<v8:lang>ru</v8:lang>
-							<v8:content>Расширения файлов в ИБ</v8:content>
+							<v8:content>Оставлять в информационной базе следующие файлы</v8:content>
 						</v8:item>
 					</Title>
 					<ToolTipRepresentation>ShowBottom</ToolTipRepresentation>
 					<Representation>None</Representation>
-					<ShowTitle>false</ShowTitle>
 					<ThroughAlign>Use</ThroughAlign>
 					<ExtendedTooltip name="ГруппаРасширенияФайловВИБРасширеннаяПодсказка" id="2179">
 						<AutoMaxWidth>false</AutoMaxWidth>
@@ -352,7 +351,8 @@
 						<Title formatted="false">
 							<v8:item>
 								<v8:lang>ru</v8:lang>
-								<v8:content>Ограничение размера файлов, хранящихся в информационной базе. Файлы больше указанного размера помещаются в тома.</v8:content>
+								<v8:content>Файлы, размер которых не превышает указанного значения, хранятся в информационной базе, а не в томах. 
+Эта настройка имеет приоритет над списком расширений.</v8:content>
 							</v8:item>
 						</Title>
 					</ExtendedTooltip>
@@ -362,10 +362,10 @@
 							<Title>
 								<v8:item>
 									<v8:lang>ru</v8:lang>
-									<v8:content>Максимальный размер файла в информационной базе</v8:content>
+									<v8:content>Размер файла не превышает</v8:content>
 								</v8:item>
 							</Title>
-							<TitleHeight>2</TitleHeight>
+							<TitleHeight>1</TitleHeight>
 							<SpinButton>true</SpinButton>
 							<ContextMenu name="МаксимальныйРазмерФайлаВИБКонтекстноеМеню" id="2188"/>
 							<ExtendedTooltip name="МаксимальныйРазмерФайлаВИБРасширеннаяПодсказка" id="2189"/>
@@ -401,6 +401,10 @@
 			<ShowTitle>false</ShowTitle>
 			<ExtendedTooltip name="ГруппаУправлениеЗагрузкойФайловExtendedTooltip" id="2056"/>
 			<ChildItems>
+				<LabelDecoration name="ДекорацияОтступ" id="2193">
+					<ContextMenu name="ДекорацияОтступКонтекстноеМеню" id="2194"/>
+					<ExtendedTooltip name="ДекорацияОтступРасширеннаяПодсказка" id="2195"/>
+				</LabelDecoration>
 				<UsualGroup name="ГруппаРасширение" id="722">
 					<Title>
 						<v8:item>
@@ -466,7 +470,7 @@
 				</v8:item>
 			</Title>
 			<HorizontalStretch>false</HorizontalStretch>
-			<Representation>None</Representation>
+			<Representation>NormalSeparation</Representation>
 			<ShowTitle>false</ShowTitle>
 			<ExtendedTooltip name="ГруппаУправлениеФайламиРасширеннаяПодсказка" id="2102"/>
 			<ChildItems>
@@ -499,7 +503,7 @@
 								<Title formatted="false">
 									<v8:item>
 										<v8:lang>ru</v8:lang>
-										<v8:content>Ограничение загрузки файлов, превышающих указанный размер.</v8:content>
+										<v8:content>Запрещать загружать файлы, превышающие указанный размер.</v8:content>
 									</v8:item>
 								</Title>
 							</ExtendedTooltip>
@@ -559,7 +563,7 @@
 								<Title formatted="false">
 									<v8:item>
 										<v8:lang>ru</v8:lang>
-										<v8:content>Настройка правил очистки файлов.</v8:content>
+										<v8:content>Очистка ненужных файлов по дате редактирования, видам владельцев файлов и другим произвольным условиям.</v8:content>
 									</v8:item>
 								</Title>
 							</ExtendedTooltip>
@@ -617,7 +621,7 @@
 							<Title formatted="false">
 								<v8:item>
 									<v8:lang>ru</v8:lang>
-									<v8:content>Расширения файлов открытого формата документов для офисных приложений.
+									<v8:content>Расширения файлов открытого формата документов (ODF) офисных приложений для возможности поиска текста в них.
 Указываются через "пробел".</v8:content>
 								</v8:item>
 							</Title>
@@ -661,7 +665,7 @@
 							<Title formatted="false">
 								<v8:item>
 									<v8:lang>ru</v8:lang>
-									<v8:content>Расширения файлов, содержащих текстовые данные.
+									<v8:content>Расширения файлов, содержащих текстовые данные, для автоопределения их кодировки.
 Указываются через "пробел".</v8:content>
 								</v8:item>
 							</Title>
@@ -680,7 +684,7 @@
 				</v8:item>
 			</Title>
 			<HorizontalStretch>false</HorizontalStretch>
-			<Representation>None</Representation>
+			<Representation>NormalSeparation</Representation>
 			<ShowTitle>false</ShowTitle>
 			<ExtendedTooltip name="ГруппаСинхронизацияФайловСОблачнымиСервисамиРасширеннаяПодсказка" id="2111"/>
 			<ChildItems>
@@ -743,7 +747,7 @@
 								<Title formatted="false">
 									<v8:item>
 										<v8:lang>ru</v8:lang>
-										<v8:content>Настройка правил синхронизации файлов.</v8:content>
+										<v8:content>Синхронизация файлов с облачными сервисами в разрезе видов владельцев файлов и по различным критериям.</v8:content>
 									</v8:item>
 								</Title>
 							</ExtendedTooltip>

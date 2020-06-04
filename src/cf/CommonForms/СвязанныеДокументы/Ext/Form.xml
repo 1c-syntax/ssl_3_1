@@ -24,6 +24,70 @@
 				<CommandName>Form.Command.ВывестиДляТекущего</CommandName>
 				<ExtendedTooltip name="ВывестиДляТекущегоExtendedTooltip" id="18"/>
 			</Button>
+			<ButtonGroup name="Поиск" id="31">
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Поиск</v8:content>
+					</v8:item>
+				</Title>
+				<Representation>Compact</Representation>
+				<ExtendedTooltip name="ПоискРасширеннаяПодсказка" id="32"/>
+				<ChildItems>
+					<Button name="ФормаНайти" id="33">
+						<Type>CommandBarButton</Type>
+						<Representation>Text</Representation>
+						<CommandName>Form.Item.ТаблицаОтчета.StandardCommand.Find</CommandName>
+						<LocationInCommandBar>InCommandBarAndInAdditionalSubmenu</LocationInCommandBar>
+						<ExtendedTooltip name="ФормаНайтиРасширеннаяПодсказка" id="34"/>
+					</Button>
+					<Button name="ФормаНайтиСледующий" id="35">
+						<Type>CommandBarButton</Type>
+						<Representation>Picture</Representation>
+						<CommandName>Form.Item.ТаблицаОтчета.StandardCommand.FindNext</CommandName>
+						<LocationInCommandBar>InCommandBarAndInAdditionalSubmenu</LocationInCommandBar>
+						<ExtendedTooltip name="ФормаНайтиСледующийРасширеннаяПодсказка" id="36"/>
+					</Button>
+				</ChildItems>
+			</ButtonGroup>
+			<ButtonGroup name="ИзменениеСостояния" id="21">
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Изменение состояния</v8:content>
+					</v8:item>
+				</Title>
+				<ExtendedTooltip name="ИзменениеСостоянияРасширеннаяПодсказка" id="22"/>
+				<ChildItems>
+					<ButtonGroup name="ИзменениеСостоянияДокумента" id="29">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Изменение состояния документа</v8:content>
+							</v8:item>
+						</Title>
+						<Representation>Compact</Representation>
+						<ExtendedTooltip name="ИзменениеСостоянияДокументаРасширеннаяПодсказка" id="30"/>
+						<ChildItems>
+							<Button name="Провести" id="25">
+								<Type>CommandBarButton</Type>
+								<CommandName>Form.Command.Провести</CommandName>
+								<ExtendedTooltip name="ПровестиРасширеннаяПодсказка" id="26"/>
+							</Button>
+							<Button name="ОтменитьПроведение" id="27">
+								<Type>CommandBarButton</Type>
+								<CommandName>Form.Command.ОтменитьПроведение</CommandName>
+								<ExtendedTooltip name="ОтменитьПроведениеРасширеннаяПодсказка" id="28"/>
+							</Button>
+						</ChildItems>
+					</ButtonGroup>
+					<Button name="ИзменитьПометкуУдаления" id="23">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Command.ИзменитьПометкуУдаления</CommandName>
+						<ExtendedTooltip name="ИзменитьПометкуУдаленияРасширеннаяПодсказка" id="24"/>
+					</Button>
+				</ChildItems>
+			</ButtonGroup>
 		</ChildItems>
 	</AutoCommandBar>
 	<Events>
@@ -108,7 +172,7 @@
 				</Column>
 			</Columns>
 		</Attribute>
-		<Attribute name="ОбъектСсылка" id="2">
+		<Attribute name="ОсновнойОбъект" id="2">
 			<Type>
 				<v8:TypeSet>cfg:DocumentRef</v8:TypeSet>
 				<v8:TypeSet>cfg:ChartOfCharacteristicTypesRef</v8:TypeSet>
@@ -221,6 +285,66 @@
 			</ToolTip>
 			<Action>ВывестиДляТекущего</Action>
 			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="Провести" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Провести</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Провести</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.Post</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>Провести</Action>
+			<Representation>Text</Representation>
+		</Command>
+		<Command name="ОтменитьПроведение" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отменить проведение</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отменить проведение</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.UndoPosting</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>ОтменитьПроведение</Action>
+			<Representation>Picture</Representation>
+		</Command>
+		<Command name="ИзменитьПометкуУдаления" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Пометить на удаление / Снять пометку</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Пометить на удаление / Снять пометку</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.MarkToDelete</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>ИзменитьПометкуУдаления</Action>
+			<Representation>Picture</Representation>
 		</Command>
 	</Commands>
 	<Parameters>

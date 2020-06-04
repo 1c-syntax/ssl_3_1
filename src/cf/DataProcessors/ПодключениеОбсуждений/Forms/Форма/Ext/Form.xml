@@ -34,7 +34,7 @@
 						<PictureDecoration name="ТребуетсяСоздатьАдминистратораКартинка" id="60">
 							<Picture>
 								<xr:Ref>CommonPicture.ПодключениеОбсуждений</xr:Ref>
-								<xr:LoadTransparent>true</xr:LoadTransparent>
+								<xr:LoadTransparent>false</xr:LoadTransparent>
 							</Picture>
 							<FileDragMode>AsFile</FileDragMode>
 							<ContextMenu name="ТребуетсяСоздатьАдминистратораКартинкаКонтекстноеМеню" id="61"/>
@@ -78,7 +78,7 @@
 							</Title>
 							<Picture>
 								<xr:Ref>CommonPicture.ПодключениеОбсуждений</xr:Ref>
-								<xr:LoadTransparent>true</xr:LoadTransparent>
+								<xr:LoadTransparent>false</xr:LoadTransparent>
 							</Picture>
 							<FileDragMode>AsFile</FileDragMode>
 							<ContextMenu name="ТребуетсяРазблокироватьКартинкаКонтекстноеМеню" id="90"/>
@@ -115,7 +115,7 @@
 						<PictureDecoration name="ПояснениеРегистрацииКартинка" id="63">
 							<Picture>
 								<xr:Ref>CommonPicture.ПодключениеОбсуждений</xr:Ref>
-								<xr:LoadTransparent>true</xr:LoadTransparent>
+								<xr:LoadTransparent>false</xr:LoadTransparent>
 							</Picture>
 							<FileDragMode>AsFile</FileDragMode>
 							<ContextMenu name="ПояснениеРегистрацииКартинкаКонтекстноеМеню" id="64"/>
@@ -140,8 +140,7 @@
 										<v8:item>
 											<v8:lang>ru</v8:lang>
 											<v8:content>Подключите обсуждения, и пользователи этой программы смогут общаться друг с другом в режиме реального времени, создавать тематические обсуждения и вести переписку по конкретным документам, например: заказам, реализациям или контрагентам.
-
-Подробнее см. &lt;link https://its.1c.ru/db/v83doc#bookmark:utx:TI000000335&gt;документацию&lt;/&gt;.</v8:content>
+</v8:content>
 										</v8:item>
 									</Title>
 									<ContextMenu name="ПредложениеРегистрацииПояснениеКонтекстноеМеню" id="18"/>
@@ -153,7 +152,7 @@
 									<ToolTip>
 										<v8:item>
 											<v8:lang>ru</v8:lang>
-											<v8:content>Информационная база будет связана с этим адресом.</v8:content>
+											<v8:content>На этот адрес электронной почты будут приходить коды активации.</v8:content>
 										</v8:item>
 									</ToolTip>
 									<ToolTipRepresentation>ShowBottom</ToolTipRepresentation>
@@ -165,8 +164,116 @@
 										</v8:item>
 									</InputHint>
 									<ContextMenu name="АдресЭлектроннойПочтыКонтекстноеМеню" id="8"/>
-									<ExtendedTooltip name="АдресЭлектроннойПочтыРасширеннаяПодсказка" id="9"/>
+									<ExtendedTooltip name="АдресЭлектроннойПочтыРасширеннаяПодсказка" id="9">
+										<Title formatted="true">
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>На этот адрес электронной почты будут приходить коды активации.
+</v8:content>
+											</v8:item>
+										</Title>
+									</ExtendedTooltip>
 								</InputField>
+								<UsualGroup name="ГруппаВыборСервераВзаимодействия" id="125">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Подключаться к 1С:Диалог</v8:content>
+										</v8:item>
+									</Title>
+									<Group>Vertical</Group>
+									<Behavior>Collapsible</Behavior>
+									<Collapsed>true</Collapsed>
+									<ControlRepresentation>Picture</ControlRepresentation>
+									<Representation>None</Representation>
+									<ExtendedTooltip name="ГруппаВыборСервераВзаимодействияРасширеннаяПодсказка" id="126"/>
+									<ChildItems>
+										<RadioButtonField name="ВыборСервераВзаимодействияДиалог" id="111">
+											<DataPath>ВыборСервераВзаимодействия</DataPath>
+											<TitleLocation>None</TitleLocation>
+											<RadioButtonType>RadioButtons</RadioButtonType>
+											<ChoiceList>
+												<xr:Item>
+													<xr:Presentation/>
+													<xr:CheckState>0</xr:CheckState>
+													<xr:Value xsi:type="FormChoiceListDesTimeValue">
+														<Presentation>
+															<v8:item>
+																<v8:lang>ru</v8:lang>
+																<v8:content>1С:Диалог (рекомендуемый вариант)</v8:content>
+															</v8:item>
+														</Presentation>
+														<Value xsi:type="xs:decimal">0</Value>
+													</xr:Value>
+												</xr:Item>
+											</ChoiceList>
+											<ContextMenu name="ВыборСервераВзаимодействияДиалогКонтекстноеМеню" id="112"/>
+											<ExtendedTooltip name="ВыборСервераВзаимодействияДиалогРасширеннаяПодсказка" id="113"/>
+											<Events>
+												<Event name="OnChange">ВыборСервераВзаимодействияДиалогПриИзменении</Event>
+											</Events>
+										</RadioButtonField>
+										<RadioButtonField name="ВыборСервераВзаимодействияЛокально" id="114">
+											<DataPath>ВыборСервераВзаимодействия</DataPath>
+											<TitleLocation>None</TitleLocation>
+											<RadioButtonType>Auto</RadioButtonType>
+											<ChoiceList>
+												<xr:Item>
+													<xr:Presentation/>
+													<xr:CheckState>0</xr:CheckState>
+													<xr:Value xsi:type="FormChoiceListDesTimeValue">
+														<Presentation>
+															<v8:item>
+																<v8:lang>ru</v8:lang>
+																<v8:content>Локальный сервер системы Взаимодействия</v8:content>
+															</v8:item>
+														</Presentation>
+														<Value xsi:type="xs:decimal">1</Value>
+													</xr:Value>
+												</xr:Item>
+											</ChoiceList>
+											<ContextMenu name="ВыборСервераВзаимодействияЛокальноКонтекстноеМеню" id="115"/>
+											<ExtendedTooltip name="ВыборСервераВзаимодействияЛокальноРасширеннаяПодсказка" id="116"/>
+											<Events>
+												<Event name="OnChange">ВыборСервераВзаимодействияЛокальноПриИзменении</Event>
+											</Events>
+										</RadioButtonField>
+										<UsualGroup name="ГруппаЛокальныйСерверВзаимодействия" id="120">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Локальный сервер взаимодействия</v8:content>
+												</v8:item>
+											</Title>
+											<Group>AlwaysHorizontal</Group>
+											<Representation>None</Representation>
+											<ShowTitle>false</ShowTitle>
+											<ExtendedTooltip name="ГруппаЛокальныйСерверВзаимодействияРасширеннаяПодсказка" id="121"/>
+											<ChildItems>
+												<LabelDecoration name="ДекорацияПропуск" id="122">
+													<Width>1</Width>
+													<ContextMenu name="ДекорацияПропускКонтекстноеМеню" id="123"/>
+													<ExtendedTooltip name="ДекорацияПропускРасширеннаяПодсказка" id="124"/>
+												</LabelDecoration>
+												<InputField name="АдресЛокальногоСервераВзаимодействия" id="117">
+													<DataPath>АдресСервераВзаимодействия</DataPath>
+													<TitleLocation>None</TitleLocation>
+													<InputHint>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>ws://localhost</v8:content>
+														</v8:item>
+													</InputHint>
+													<ContextMenu name="АдресЛокальногоСервераВзаимодействияКонтекстноеМеню" id="118"/>
+													<ExtendedTooltip name="АдресЛокальногоСервераВзаимодействияРасширеннаяПодсказка" id="119"/>
+													<Events>
+														<Event name="OnChange">АдресСервераВзаимодействияПриИзменении</Event>
+													</Events>
+												</InputField>
+											</ChildItems>
+										</UsualGroup>
+									</ChildItems>
+								</UsualGroup>
 							</ChildItems>
 						</UsualGroup>
 					</ChildItems>
@@ -225,7 +332,7 @@
 							</Title>
 							<Picture>
 								<xr:Ref>CommonPicture.ПодключениеОбсуждений</xr:Ref>
-								<xr:LoadTransparent>true</xr:LoadTransparent>
+								<xr:LoadTransparent>false</xr:LoadTransparent>
 							</Picture>
 							<FileDragMode>AsFile</FileDragMode>
 							<ContextMenu name="РегистрацияЗавершенаКартинкаКонтекстноеМеню" id="74"/>
@@ -267,7 +374,7 @@
 							</Title>
 							<Picture>
 								<xr:Ref>CommonPicture.ДлительнаяОперация48</xr:Ref>
-								<xr:LoadTransparent>true</xr:LoadTransparent>
+								<xr:LoadTransparent>false</xr:LoadTransparent>
 							</Picture>
 							<FileDragMode>AsFile</FileDragMode>
 							<ContextMenu name="ДлительнаяОперацияКартинкаКонтекстноеМеню" id="58"/>
@@ -413,6 +520,46 @@
 			</Type>
 		</Attribute>
 		<Attribute name="СостояниеРегистрации" id="7">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ВыборСервераВзаимодействия" id="9">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Выбор сервера взаимодействия</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>0</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="АдресСервераВзаимодействия" id="10">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Адрес сервера взаимодействия</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ИмяБазы" id="11">
 			<Type>
 				<v8:Type>xs:string</v8:Type>
 				<v8:StringQualifiers>

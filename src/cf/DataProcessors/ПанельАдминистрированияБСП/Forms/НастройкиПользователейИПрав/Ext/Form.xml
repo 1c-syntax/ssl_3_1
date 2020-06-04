@@ -130,35 +130,62 @@
 						</CheckBoxField>
 					</ChildItems>
 				</UsualGroup>
-				<UsualGroup name="ГруппаНастройкиВходаПользователей" id="2142">
+				<UsualGroup name="НастройкиВходаИОтчетПоПравам" id="2241">
 					<Title>
 						<v8:item>
 							<v8:lang>ru</v8:lang>
-							<v8:content>Настройки входа пользователей</v8:content>
+							<v8:content>Настройки входа и отчет по правам</v8:content>
 						</v8:item>
 					</Title>
-					<Width>43</Width>
-					<HorizontalStretch>false</HorizontalStretch>
 					<Group>Vertical</Group>
 					<Representation>None</Representation>
 					<ShowTitle>false</ShowTitle>
-					<ExtendedTooltip name="ГруппаНастройкиВходаПользователейРасширеннаяПодсказка" id="2143"/>
+					<ExtendedTooltip name="НастройкиВходаИОтчетПоПравамРасширеннаяПодсказка" id="2242"/>
 					<ChildItems>
-						<Button name="НастройкиВхода" id="2196">
-							<Type>Hyperlink</Type>
-							<CommandName>CommonForm.НастройкиВходаПользователей.StandardCommand.Open</CommandName>
+						<UsualGroup name="ГруппаНастройкиВходаПользователей" id="2142">
 							<Title>
 								<v8:item>
 									<v8:lang>ru</v8:lang>
-									<v8:content>Настройки входа</v8:content>
+									<v8:content>Настройки входа пользователей</v8:content>
 								</v8:item>
 							</Title>
+							<Width>43</Width>
+							<HorizontalStretch>false</HorizontalStretch>
+							<Group>Vertical</Group>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаНастройкиВходаПользователейРасширеннаяПодсказка" id="2143"/>
+							<ChildItems>
+								<Button name="НастройкиВхода" id="2196">
+									<Type>Hyperlink</Type>
+									<CommandName>CommonForm.НастройкиВходаПользователей.StandardCommand.Open</CommandName>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Настройки входа</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTipRepresentation>ShowBottom</ToolTipRepresentation>
+									<ExtendedTooltip name="НастройкиВходаРасширеннаяПодсказка" id="2197">
+										<Title formatted="false">
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Сложность и смена паролей, ограничение работы неактивных пользователей.</v8:content>
+											</v8:item>
+										</Title>
+									</ExtendedTooltip>
+								</Button>
+							</ChildItems>
+						</UsualGroup>
+						<Button name="ОтчетАнализПравДоступаОткрыть" id="2239">
+							<Type>Hyperlink</Type>
+							<CommandName>Report.АнализПравДоступа.StandardCommand.Open</CommandName>
 							<ToolTipRepresentation>ShowBottom</ToolTipRepresentation>
-							<ExtendedTooltip name="НастройкиВходаРасширеннаяПодсказка" id="2197">
+							<ExtendedTooltip name="ОтчетАнализПравДоступаОткрытьРасширеннаяПодсказка" id="2240">
 								<Title formatted="false">
 									<v8:item>
 										<v8:lang>ru</v8:lang>
-										<v8:content>Сложность и смена паролей, ограничение работы неактивных пользователей.</v8:content>
+										<v8:content>Показывает текущие настройки прав доступа пользователей к таблицам информационной базы.</v8:content>
 									</v8:item>
 								</Title>
 							</ExtendedTooltip>

@@ -10,6 +10,18 @@
 	<AutoTitle>false</AutoTitle>
 	<CommandBarLocation>None</CommandBarLocation>
 	<VerticalScroll>useIfNecessary</VerticalScroll>
+	<MobileDeviceCommandBarContent>
+		<xr:Item>
+			<xr:Presentation/>
+			<xr:CheckState>0</xr:CheckState>
+			<xr:Value xsi:type="xs:string">ПанельДействияМастераПраво</xr:Value>
+		</xr:Item>
+		<xr:Item>
+			<xr:Presentation/>
+			<xr:CheckState>0</xr:CheckState>
+			<xr:Value xsi:type="xs:string">КоманднаяПанель</xr:Value>
+		</xr:Item>
+	</MobileDeviceCommandBarContent>
 	<CommandSet>
 		<ExcludedCommand>CustomizeForm</ExcludedCommand>
 	</CommandSet>
@@ -240,6 +252,11 @@
 													</Button>
 												</ChildItems>
 											</ButtonGroup>
+											<Button name="НайденныеДублиКонтекстноеМенюСортироватьСписокПоУбыванию" id="519">
+												<Type>CommandBarButton</Type>
+												<CommandName>Form.Item.НайденныеДубли.StandardCommand.SortListDesc</CommandName>
+												<ExtendedTooltip name="НайденныеДублиКонтекстноеМенюСортироватьСписокПоУбываниюРасширеннаяПодсказка" id="520"/>
+											</Button>
 										</ChildItems>
 									</ContextMenu>
 									<AutoCommandBar name="НайденныеДублиКоманднаяПанель" id="69">
@@ -275,7 +292,7 @@
 										<Event name="OnActivateRow">НайденныеДублиПриАктивизацииСтроки</Event>
 									</Events>
 									<ChildItems>
-										<PictureField name="НайденныеДублиПометкаУдаления" id="471">
+										<PictureField name="НайденныеДублиПометкаУдаления" id="516">
 											<DataPath>НайденныеДубли.НомерКартинки</DataPath>
 											<TitleLocation>None</TitleLocation>
 											<ToolTip>
@@ -287,15 +304,26 @@
 											<EditMode>EnterOnInput</EditMode>
 											<ValuesPicture>
 												<xr:Ref>CommonPicture.ПиктограммыЭлементов</xr:Ref>
-												<xr:LoadTransparent>true</xr:LoadTransparent>
+												<xr:LoadTransparent>false</xr:LoadTransparent>
 											</ValuesPicture>
-											<ContextMenu name="НайденныеДублиПометкаУдаленияКонтекстноеМеню" id="472"/>
-											<ExtendedTooltip name="НайденныеДублиПометкаУдаленияРасширеннаяПодсказка" id="473"/>
+											<ContextMenu name="НайденныеДублиПометкаУдаленияКонтекстноеМеню" id="517"/>
+											<ExtendedTooltip name="НайденныеДублиПометкаУдаленияРасширеннаяПодсказка" id="518"/>
 										</PictureField>
 										<ColumnGroup name="ИспользоватьНаименование" id="109">
 											<Group>InCell</Group>
 											<ExtendedTooltip name="ИспользоватьНаименованиеРасширеннаяПодсказка" id="110"/>
 											<ChildItems>
+												<CheckBoxField name="НайденныеДублиПометка" id="103">
+													<DataPath>НайденныеДубли.Пометка</DataPath>
+													<TitleLocation>None</TitleLocation>
+													<EditMode>EnterOnInput</EditMode>
+													<ThreeState>true</ThreeState>
+													<ContextMenu name="НайденныеДублиПометкаКонтекстноеМеню" id="104"/>
+													<ExtendedTooltip name="НайденныеДублиПометкаРасширеннаяПодсказка" id="105"/>
+													<Events>
+														<Event name="OnChange">НайденныеДублиПометкаПриИзменении</Event>
+													</Events>
+												</CheckBoxField>
 												<PictureField name="НайденныеДублиОсновной" id="114">
 													<DataPath>НайденныеДубли.Основной</DataPath>
 													<ReadOnly>true</ReadOnly>
@@ -315,17 +343,6 @@
 													<ContextMenu name="НайденныеДублиОсновнойКонтекстноеМеню" id="115"/>
 													<ExtendedTooltip name="НайденныеДублиОсновнойРасширеннаяПодсказка" id="116"/>
 												</PictureField>
-												<CheckBoxField name="НайденныеДублиПометка" id="103">
-													<DataPath>НайденныеДубли.Пометка</DataPath>
-													<TitleLocation>None</TitleLocation>
-													<EditMode>EnterOnInput</EditMode>
-													<ThreeState>true</ThreeState>
-													<ContextMenu name="НайденныеДублиПометкаКонтекстноеМеню" id="104"/>
-													<ExtendedTooltip name="НайденныеДублиПометкаРасширеннаяПодсказка" id="105"/>
-													<Events>
-														<Event name="OnChange">НайденныеДублиПометкаПриИзменении</Event>
-													</Events>
-												</CheckBoxField>
 												<InputField name="НайденныеДублиНаименование" id="100">
 													<DataPath>НайденныеДубли.Наименование</DataPath>
 													<ReadOnly>true</ReadOnly>
@@ -568,31 +585,206 @@
 							<v8:content>Шаг успешное удаление</v8:content>
 						</v8:item>
 					</Title>
-					<Group>HorizontalIfPossible</Group>
 					<ExtendedTooltip name="ШагУспешноеУдалениеРасширеннаяПодсказка" id="213"/>
 					<ChildItems>
-						<PictureDecoration name="Декорация5" id="352">
-							<GroupVerticalAlign>Center</GroupVerticalAlign>
-							<Picture>
-								<xr:Ref>CommonPicture.Успешно32</xr:Ref>
-								<xr:LoadTransparent>false</xr:LoadTransparent>
-							</Picture>
-							<FileDragMode>AsFile</FileDragMode>
-							<ContextMenu name="Декорация5КонтекстноеМеню" id="353"/>
-							<ExtendedTooltip name="Декорация5РасширеннаяПодсказка" id="354"/>
-						</PictureDecoration>
-						<LabelField name="ОписаниеСостоянияНайденныхДублей1" id="344">
-							<DataPath>ОписаниеСостоянияНайденныхДублей</DataPath>
-							<TitleLocation>None</TitleLocation>
-							<HorizontalAlign>Left</HorizontalAlign>
-							<VerticalAlign>Center</VerticalAlign>
-							<GroupVerticalAlign>Center</GroupVerticalAlign>
-							<AutoMaxWidth>false</AutoMaxWidth>
-							<Height>5</Height>
-							<VerticalStretch>false</VerticalStretch>
-							<ContextMenu name="ОписаниеСостоянияНайденныхДублей1КонтекстноеМеню" id="345"/>
-							<ExtendedTooltip name="ОписаниеСостоянияНайденныхДублей1РасширеннаяПодсказка" id="346"/>
-						</LabelField>
+						<UsualGroup name="ГруппаИнформацияОбУспешномУдалении" id="471">
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаИнформацияОбУспешномУдаленииРасширеннаяПодсказка" id="472"/>
+							<ChildItems>
+								<PictureDecoration name="Декорация5" id="352">
+									<GroupVerticalAlign>Center</GroupVerticalAlign>
+									<Picture>
+										<xr:Ref>CommonPicture.Успешно32</xr:Ref>
+										<xr:LoadTransparent>false</xr:LoadTransparent>
+									</Picture>
+									<FileDragMode>AsFile</FileDragMode>
+									<ContextMenu name="Декорация5КонтекстноеМеню" id="353"/>
+									<ExtendedTooltip name="Декорация5РасширеннаяПодсказка" id="354"/>
+								</PictureDecoration>
+								<LabelField name="ОписаниеСостоянияНайденныхДублей1" id="344">
+									<DataPath>ОписаниеСостоянияНайденныхДублей</DataPath>
+									<TitleLocation>None</TitleLocation>
+									<HorizontalAlign>Left</HorizontalAlign>
+									<VerticalAlign>Center</VerticalAlign>
+									<GroupVerticalAlign>Center</GroupVerticalAlign>
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<Height>5</Height>
+									<VerticalStretch>false</VerticalStretch>
+									<ContextMenu name="ОписаниеСостоянияНайденныхДублей1КонтекстноеМеню" id="345"/>
+									<ExtendedTooltip name="ОписаниеСостоянияНайденныхДублей1РасширеннаяПодсказка" id="346"/>
+								</LabelField>
+							</ChildItems>
+						</UsualGroup>
+						<UsualGroup name="ГруппаВозможныеДубли" id="495" DisplayImportance="Low">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>В процессе работы могли возникнуть дубли в других списках</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Например, при замене дублей контрагентов могут возникнуть дубли договоров или банковский счетов.</v8:content>
+								</v8:item>
+							</ToolTip>
+							<ToolTipRepresentation>Balloon</ToolTipRepresentation>
+							<Group>Vertical</Group>
+							<ChildrenAlign>ItemsLeftTitlesLeft</ChildrenAlign>
+							<Behavior>Collapsible</Behavior>
+							<Collapsed>true</Collapsed>
+							<ControlRepresentation>Picture</ControlRepresentation>
+							<Representation>None</Representation>
+							<ExtendedTooltip name="ГруппаВозможныеДублиРасширеннаяПодсказка" id="496"/>
+							<ChildItems>
+								<UsualGroup name="ГруппаДействияВозможныеДубли" id="502">
+									<Representation>None</Representation>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="ГруппаДействияВозможныеДублиРасширеннаяПодсказка" id="503"/>
+									<ChildItems>
+										<LabelDecoration name="ДекорацияПодсказкаВозможныеДубли" id="504">
+											<AutoMaxWidth>false</AutoMaxWidth>
+											<HorizontalStretch>true</HorizontalStretch>
+											<TextColor>style:ПоясняющийТекст</TextColor>
+											<Title formatted="false">
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Для продолжения поиска выберете список и нажмите кнопку "Новый поиск"</v8:content>
+												</v8:item>
+											</Title>
+											<ContextMenu name="ДекорацияПодсказкаВозможныеДублиКонтекстноеМеню" id="505"/>
+											<ExtendedTooltip name="ДекорацияПодсказкаВозможныеДублиРасширеннаяПодсказка" id="506"/>
+										</LabelDecoration>
+										<RadioButtonField name="ОтображаемаяСтепеньРодства" id="507">
+											<DataPath>ОтображаемаяСтепеньРодства</DataPath>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Показать</v8:content>
+												</v8:item>
+											</Title>
+											<ToolTip>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Важные - места использования замененных элементов с наиболее вероятным возникновением дублей</v8:content>
+												</v8:item>
+											</ToolTip>
+											<GroupHorizontalAlign>Right</GroupHorizontalAlign>
+											<RadioButtonType>Tumbler</RadioButtonType>
+											<ChoiceList>
+												<xr:Item>
+													<xr:Presentation/>
+													<xr:CheckState>0</xr:CheckState>
+													<xr:Value xsi:type="FormChoiceListDesTimeValue">
+														<Presentation>
+															<v8:item>
+																<v8:lang>ru</v8:lang>
+																<v8:content>Важные</v8:content>
+															</v8:item>
+														</Presentation>
+														<Value xsi:type="xs:decimal">2</Value>
+													</xr:Value>
+												</xr:Item>
+												<xr:Item>
+													<xr:Presentation/>
+													<xr:CheckState>0</xr:CheckState>
+													<xr:Value xsi:type="FormChoiceListDesTimeValue">
+														<Presentation>
+															<v8:item>
+																<v8:lang>ru</v8:lang>
+																<v8:content>Все</v8:content>
+															</v8:item>
+														</Presentation>
+														<Value xsi:type="xs:decimal">1</Value>
+													</xr:Value>
+												</xr:Item>
+											</ChoiceList>
+											<ContextMenu name="ОтображаемаяСтепеньРодстваКонтекстноеМеню" id="508"/>
+											<ExtendedTooltip name="ОтображаемаяСтепеньРодстваРасширеннаяПодсказка" id="509"/>
+											<Events>
+												<Event name="OnChange">ОтображаемаяСтепеньРодстваПриИзменении</Event>
+											</Events>
+										</RadioButtonField>
+									</ChildItems>
+								</UsualGroup>
+								<Table name="ВозможныеДубли" id="473">
+									<Representation>List</Representation>
+									<ChangeRowSet>false</ChangeRowSet>
+									<ChangeRowOrder>false</ChangeRowOrder>
+									<SelectionMode>SingleRow</SelectionMode>
+									<HorizontalLines>false</HorizontalLines>
+									<VerticalLines>false</VerticalLines>
+									<AutoInsertNewRow>true</AutoInsertNewRow>
+									<DataPath>ВозможныеДубли</DataPath>
+									<ToolTipRepresentation>ShowTop</ToolTipRepresentation>
+									<RowFilter xsi:nil="true"/>
+									<ContextMenu name="ВозможныеДублиКонтекстноеМеню" id="474"/>
+									<AutoCommandBar name="ВозможныеДублиКоманднаяПанель" id="475">
+										<Autofill>false</Autofill>
+									</AutoCommandBar>
+									<ExtendedTooltip name="ВозможныеДублиРасширеннаяПодсказка" id="476"/>
+									<SearchStringAddition name="ВозможныеДублиСтрокаПоиска" id="477">
+										<AdditionSource>
+											<Item>ВозможныеДубли</Item>
+											<Type>SearchStringRepresentation</Type>
+										</AdditionSource>
+										<ContextMenu name="ВозможныеДублиСтрокаПоискаКонтекстноеМеню" id="478"/>
+										<ExtendedTooltip name="ВозможныеДублиСтрокаПоискаРасширеннаяПодсказка" id="479"/>
+									</SearchStringAddition>
+									<ViewStatusAddition name="ВозможныеДублиСостояниеПросмотра" id="480">
+										<AdditionSource>
+											<Item>ВозможныеДубли</Item>
+											<Type>ViewStatusRepresentation</Type>
+										</AdditionSource>
+										<ContextMenu name="ВозможныеДублиСостояниеПросмотраКонтекстноеМеню" id="481"/>
+										<ExtendedTooltip name="ВозможныеДублиСостояниеПросмотраРасширеннаяПодсказка" id="482"/>
+									</ViewStatusAddition>
+									<SearchControlAddition name="ВозможныеДублиУправлениеПоиском" id="483">
+										<AdditionSource>
+											<Item>ВозможныеДубли</Item>
+											<Type>SearchControl</Type>
+										</AdditionSource>
+										<ContextMenu name="ВозможныеДублиУправлениеПоискомКонтекстноеМеню" id="484"/>
+										<ExtendedTooltip name="ВозможныеДублиУправлениеПоискомРасширеннаяПодсказка" id="485"/>
+									</SearchControlAddition>
+									<ChildItems>
+										<ColumnGroup name="ВозможныеДублиГруппа" id="510">
+											<Group>InCell</Group>
+											<ExtendedTooltip name="ВозможныеДублиГруппаРасширеннаяПодсказка" id="511"/>
+											<ChildItems>
+												<CheckBoxField name="ВозможныеДублиВыбран" id="497">
+													<DataPath>ВозможныеДубли.Выбран</DataPath>
+													<TitleLocation>None</TitleLocation>
+													<EditMode>EnterOnInput</EditMode>
+													<CheckBoxType>Auto</CheckBoxType>
+													<ContextMenu name="ВозможныеДублиВыбранКонтекстноеМеню" id="498"/>
+													<ExtendedTooltip name="ВозможныеДублиВыбранРасширеннаяПодсказка" id="499"/>
+													<Events>
+														<Event name="OnChange">ВозможныеДублиВыбранПриИзменении</Event>
+													</Events>
+												</CheckBoxField>
+												<InputField name="ВозможныеДублиИмяОбъектаМетаданных" id="486">
+													<DataPath>ВозможныеДубли.ИмяОбъектаМетаданных</DataPath>
+													<ReadOnly>true</ReadOnly>
+													<EditMode>Directly</EditMode>
+													<TextEdit>false</TextEdit>
+													<ContextMenu name="ВозможныеДублиИмяОбъектаМетаданныхКонтекстноеМеню" id="487"/>
+													<ExtendedTooltip name="ВозможныеДублиИмяОбъектаМетаданныхРасширеннаяПодсказка" id="488"/>
+												</InputField>
+											</ChildItems>
+										</ColumnGroup>
+										<InputField name="ВозможныеДублиИсточники" id="492">
+											<DataPath>ВозможныеДубли.ИсточникиПредставление</DataPath>
+											<ReadOnly>true</ReadOnly>
+											<EditMode>EnterOnInput</EditMode>
+											<ContextMenu name="ВозможныеДублиИсточникиКонтекстноеМеню" id="493"/>
+											<ExtendedTooltip name="ВозможныеДублиИсточникиРасширеннаяПодсказка" id="494"/>
+										</InputField>
+									</ChildItems>
+								</Table>
+							</ChildItems>
+						</UsualGroup>
 					</ChildItems>
 				</Page>
 				<Page name="ШагНеудачныеЗамены" id="210">
@@ -1077,19 +1269,20 @@
 			<ShowTitle>false</ShowTitle>
 			<ExtendedTooltip name="ПанельДействийМастераРасширеннаяПодсказка" id="168"/>
 			<ChildItems>
-				<CommandBar name="ГруппаНазад" id="169">
-					<ExtendedTooltip name="ГруппаНазадРасширеннаяПодсказка" id="170"/>
+				<CommandBar name="ПанельДействияМастераЛево" id="512">
+					<ExtendedTooltip name="ПанельДействияМастераЛевоРасширеннаяПодсказка" id="513"/>
 					<ChildItems>
 						<Button name="ШагМастераНазад" id="171">
 							<Type>CommandBarButton</Type>
 							<CommandName>Form.Command.ШагМастераНазад</CommandName>
+							<RepresentationInContextMenu>AdditionalInContextMenu</RepresentationInContextMenu>
 							<ExtendedTooltip name="ШагМастераНазадРасширеннаяПодсказка" id="172"/>
 						</Button>
 					</ChildItems>
 				</CommandBar>
-				<CommandBar name="ГруппаВперед" id="173">
+				<CommandBar name="ПанельДействияМастераПраво" id="514">
 					<HorizontalLocation>Right</HorizontalLocation>
-					<ExtendedTooltip name="ГруппаВпередРасширеннаяПодсказка" id="174"/>
+					<ExtendedTooltip name="ПанельДействияМастераПравоРасширеннаяПодсказка" id="515"/>
 					<ChildItems>
 						<Button name="ШагМастераДалее" id="175">
 							<Type>CommandBarButton</Type>
@@ -1106,18 +1299,14 @@
 						<Button name="ШагМастераОтмена" id="177">
 							<Type>CommandBarButton</Type>
 							<CommandName>Form.Command.ШагМастераОтмена</CommandName>
+							<LocationInCommandBar>InCommandBarAndInAdditionalSubmenu</LocationInCommandBar>
 							<ExtendedTooltip name="ШагМастераОтменаРасширеннаяПодсказка" id="178"/>
 						</Button>
-						<ButtonGroup name="ГруппаСправкаФормы" id="184">
-							<ExtendedTooltip name="ГруппаСправкаФормыРасширеннаяПодсказка" id="185"/>
-							<ChildItems>
-								<Button name="Справка" id="179">
-									<Type>CommandBarButton</Type>
-									<CommandName>Form.StandardCommand.Help</CommandName>
-									<ExtendedTooltip name="СправкаРасширеннаяПодсказка" id="180"/>
-								</Button>
-							</ChildItems>
-						</ButtonGroup>
+						<Button name="Справка" id="179">
+							<Type>CommandBarButton</Type>
+							<CommandName>Form.StandardCommand.Help</CommandName>
+							<ExtendedTooltip name="СправкаРасширеннаяПодсказка" id="180"/>
+						</Button>
 					</ChildItems>
 				</CommandBar>
 			</ChildItems>
@@ -1713,6 +1902,164 @@
 				<Field>СпособУдаления</Field>
 			</Save>
 		</Attribute>
+		<Attribute name="ВозможныеДубли" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Возможные дубли</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTable</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="ИмяОбъектаМетаданных" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Возможно, возникли дубли в</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="ТипОбъектаМетаданных" id="2">
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="ИсточникиПредставление" id="3">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>при замене в</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="Порядок" id="4">
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>10</v8:Digits>
+							<v8:FractionDigits>0</v8:FractionDigits>
+							<v8:AllowedSign>Any</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+				<Column name="Обработано" id="5">
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+				<Column name="Источники" id="6">
+					<Type/>
+				</Column>
+				<Column name="Выбран" id="7">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Выбран</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+				<Column name="СтепеньРодства" id="8">
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+				<Column name="АдресОтбора" id="9">
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+		<Attribute name="ВозможныйДубльВыбран" id="26">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ВозможныйДубльВыбранныйТип" id="31">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="СкрыватьНезначимыеДубли" id="36">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ОтображаемаяСтепеньРодства" id="37">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отображаемая степень родства</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>10</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="АдресВыбранныхМестИспользования" id="38">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="АдресНайденныхДублей" id="39">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ТипыОбработанныхОбъектов" id="40">
+			<Type>
+				<v8:Type>v8:TypeDescription</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ИдентификаторОбластиПоискаДублей" id="41">
+			<Type>
+				<v8:Type>cfg:CatalogRef.ИдентификаторыОбъектовМетаданных</v8:Type>
+			</Type>
+		</Attribute>
 	</Attributes>
 	<Commands>
 		<Command name="ВыбратьОсновнойЭлемент" id="5">
@@ -1937,6 +2284,20 @@
 				</v8:item>
 			</ToolTip>
 			<Action>Подробно</Action>
+		</Command>
+		<Command name="пап" id="9">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Пап</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Пап</v8:content>
+				</v8:item>
+			</ToolTip>
 		</Command>
 	</Commands>
 </Form>

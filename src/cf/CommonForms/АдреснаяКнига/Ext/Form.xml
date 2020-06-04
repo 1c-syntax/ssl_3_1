@@ -64,6 +64,7 @@
 	<Events>
 		<Event name="NotificationProcessing">ОбработкаОповещения</Event>
 		<Event name="OnOpen">ПриОткрытии</Event>
+		<Event name="OnLoadDataFromSettingsAtServer">ПриЗагрузкеДанныхИзНастроекНаСервере</Event>
 		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
 	</Events>
 	<ChildItems>
@@ -80,535 +81,567 @@
 			<ShowTitle>false</ShowTitle>
 			<ExtendedTooltip name="ГруппаСпискиExtendedTooltip" id="182"/>
 			<ChildItems>
-				<Pages name="СтраницыСписки" id="83">
+				<UsualGroup name="ГруппаСпискаНастройки" id="338">
 					<Title>
 						<v8:item>
 							<v8:lang>ru</v8:lang>
-							<v8:content>Страницы списки</v8:content>
+							<v8:content>Списка настройки</v8:content>
 						</v8:item>
 					</Title>
-					<ExtendedTooltip name="СтраницыСпискиExtendedTooltip" id="183"/>
-					<Events>
-						<Event name="OnCurrentPageChange">СтраницыПриСменеСтраницы</Event>
-					</Events>
+					<Group>Vertical</Group>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаСпискаНастройкиРасширеннаяПодсказка" id="339"/>
 					<ChildItems>
-						<Page name="СтраницаПоискКонтактов" id="90">
+						<Pages name="СтраницыСписки" id="83">
 							<Title>
 								<v8:item>
 									<v8:lang>ru</v8:lang>
-									<v8:content>Поиск контактов</v8:content>
+									<v8:content>Страницы списки</v8:content>
 								</v8:item>
 							</Title>
-							<ExtendedTooltip name="СтраницаПоискКонтактовExtendedTooltip" id="184"/>
+							<ExtendedTooltip name="СтраницыСпискиExtendedTooltip" id="183"/>
+							<Events>
+								<Event name="OnCurrentPageChange">СтраницыПриСменеСтраницы</Event>
+							</Events>
 							<ChildItems>
-								<UsualGroup name="ГруппаСтрокаПоиска" id="51">
-									<EnableContentChange>true</EnableContentChange>
+								<Page name="СтраницаПоискКонтактов" id="90">
 									<Title>
 										<v8:item>
 											<v8:lang>ru</v8:lang>
-											<v8:content>Строка поиска</v8:content>
+											<v8:content>Поиск контактов</v8:content>
 										</v8:item>
 									</Title>
-									<Group>AlwaysHorizontal</Group>
-									<Representation>None</Representation>
-									<ShowTitle>false</ShowTitle>
-									<ExtendedTooltip name="ГруппаСтрокаПоискаExtendedTooltip" id="185"/>
+									<ExtendedTooltip name="СтраницаПоискКонтактовExtendedTooltip" id="184"/>
 									<ChildItems>
-										<InputField name="СтрокаПоиска" id="22">
-											<DataPath>СтрокаПоиска</DataPath>
-											<DefaultItem>true</DefaultItem>
-											<TitleLocation>None</TitleLocation>
-											<Width>30</Width>
-											<Wrap>false</Wrap>
-											<InputHint>
-												<v8:item>
-													<v8:lang>ru</v8:lang>
-													<v8:content>Введите часть адреса или имени контакта</v8:content>
-												</v8:item>
-											</InputHint>
-											<ContextMenu name="СтрокаПоискаКонтекстноеМеню" id="23"/>
-											<ExtendedTooltip name="СтрокаПоискаExtendedTooltip" id="187"/>
-										</InputField>
-										<CommandBar name="ГруппаНайтиКонтакт" id="304">
+										<UsualGroup name="ГруппаСтрокаПоиска" id="51">
+											<EnableContentChange>true</EnableContentChange>
 											<Title>
 												<v8:item>
 													<v8:lang>ru</v8:lang>
-													<v8:content>Найти контакт</v8:content>
+													<v8:content>Строка поиска</v8:content>
 												</v8:item>
 											</Title>
-											<HorizontalLocation>Right</HorizontalLocation>
-											<ExtendedTooltip name="ГруппаНайтиКонтактРасширеннаяПодсказка" id="305"/>
+											<Group>AlwaysHorizontal</Group>
+											<Representation>None</Representation>
+											<ShowTitle>false</ShowTitle>
+											<ExtendedTooltip name="ГруппаСтрокаПоискаExtendedTooltip" id="185"/>
 											<ChildItems>
-												<Button name="Найти" id="50">
-													<Type>CommandBarButton</Type>
-													<SkipOnInput>false</SkipOnInput>
-													<CommandName>Form.Command.НайтиКонтакты</CommandName>
-													<LocationInCommandBar>InCommandBar</LocationInCommandBar>
-													<ExtendedTooltip name="НайтиExtendedTooltip" id="188"/>
-												</Button>
-												<Popup name="ГруппаВариантыПоиска" id="306">
+												<InputField name="СтрокаПоиска" id="22">
+													<DataPath>СтрокаПоиска</DataPath>
+													<DefaultItem>true</DefaultItem>
+													<TitleLocation>None</TitleLocation>
+													<Width>30</Width>
+													<Wrap>false</Wrap>
+													<InputHint>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Введите часть адреса или имени контакта</v8:content>
+														</v8:item>
+													</InputHint>
+													<ContextMenu name="СтрокаПоискаКонтекстноеМеню" id="23"/>
+													<ExtendedTooltip name="СтрокаПоискаExtendedTooltip" id="187"/>
+												</InputField>
+												<CommandBar name="ГруппаНайтиКонтакт" id="304">
 													<Title>
 														<v8:item>
 															<v8:lang>ru</v8:lang>
-															<v8:content>Область поиска</v8:content>
+															<v8:content>Найти контакт</v8:content>
 														</v8:item>
 													</Title>
-													<Picture>
-														<xr:Ref>StdPicture.Find</xr:Ref>
-														<xr:LoadTransparent>true</xr:LoadTransparent>
-													</Picture>
-													<Representation>Picture</Representation>
-													<ExtendedTooltip name="ГруппаВариантыПоискаРасширеннаяПодсказка" id="307"/>
+													<HorizontalLocation>Right</HorizontalLocation>
+													<ExtendedTooltip name="ГруппаНайтиКонтактРасширеннаяПодсказка" id="305"/>
 													<ChildItems>
-														<Button name="ВариантПоискаВезде" id="310">
+														<Button name="Найти" id="50">
 															<Type>CommandBarButton</Type>
-															<CommandName>Form.Command.ВариантПоискаВезде</CommandName>
+															<SkipOnInput>false</SkipOnInput>
+															<CommandName>Form.Command.НайтиКонтакты</CommandName>
 															<LocationInCommandBar>InCommandBar</LocationInCommandBar>
-															<ExtendedTooltip name="ВариантПоискаВездеРасширеннаяПодсказка" id="311"/>
+															<ExtendedTooltip name="НайтиExtendedTooltip" id="188"/>
 														</Button>
-														<Button name="ВариантПоискаВАдресах" id="312">
-															<Type>CommandBarButton</Type>
-															<CommandName>Form.Command.ВариантПоискаВАдресах</CommandName>
-															<ExtendedTooltip name="ВариантПоискаВАдресахРасширеннаяПодсказка" id="313"/>
-														</Button>
-														<Button name="ВариантПоискаВНаименованияхКонтактов" id="314">
-															<Type>CommandBarButton</Type>
-															<CommandName>Form.Command.ВариантПоискаВНаименованияхКонтактов</CommandName>
-															<ExtendedTooltip name="ВариантПоискаВНаименованияхКонтактовРасширеннаяПодсказка" id="315"/>
-														</Button>
-														<Button name="ВариантПоискаПоДоменномуИмени" id="316">
-															<Type>CommandBarButton</Type>
-															<CommandName>Form.Command.ВариантПоискаПоДоменномуИмени</CommandName>
-															<ExtendedTooltip name="ВариантПоискаПоДоменномуИмениРасширеннаяПодсказка" id="317"/>
-														</Button>
+														<Popup name="ГруппаВариантыПоиска" id="306">
+															<Title>
+																<v8:item>
+																	<v8:lang>ru</v8:lang>
+																	<v8:content>Область поиска</v8:content>
+																</v8:item>
+															</Title>
+															<Picture>
+																<xr:Ref>StdPicture.Find</xr:Ref>
+																<xr:LoadTransparent>true</xr:LoadTransparent>
+															</Picture>
+															<Representation>Picture</Representation>
+															<ExtendedTooltip name="ГруппаВариантыПоискаРасширеннаяПодсказка" id="307"/>
+															<ChildItems>
+																<Button name="ВариантПоискаВезде" id="310">
+																	<Type>CommandBarButton</Type>
+																	<CommandName>Form.Command.ВариантПоискаВезде</CommandName>
+																	<LocationInCommandBar>InCommandBar</LocationInCommandBar>
+																	<ExtendedTooltip name="ВариантПоискаВездеРасширеннаяПодсказка" id="311"/>
+																</Button>
+																<Button name="ВариантПоискаВАдресах" id="312">
+																	<Type>CommandBarButton</Type>
+																	<CommandName>Form.Command.ВариантПоискаВАдресах</CommandName>
+																	<ExtendedTooltip name="ВариантПоискаВАдресахРасширеннаяПодсказка" id="313"/>
+																</Button>
+																<Button name="ВариантПоискаВНаименованияхКонтактов" id="314">
+																	<Type>CommandBarButton</Type>
+																	<CommandName>Form.Command.ВариантПоискаВНаименованияхКонтактов</CommandName>
+																	<ExtendedTooltip name="ВариантПоискаВНаименованияхКонтактовРасширеннаяПодсказка" id="315"/>
+																</Button>
+																<Button name="ВариантПоискаПоДоменномуИмени" id="316">
+																	<Type>CommandBarButton</Type>
+																	<CommandName>Form.Command.ВариантПоискаПоДоменномуИмени</CommandName>
+																	<ExtendedTooltip name="ВариантПоискаПоДоменномуИмениРасширеннаяПодсказка" id="317"/>
+																</Button>
+															</ChildItems>
+														</Popup>
 													</ChildItems>
-												</Popup>
+												</CommandBar>
+												<InputField name="ВариантыПоиска" id="119">
+													<DataPath>ВариантыПоиска</DataPath>
+													<Visible>false</Visible>
+													<TitleLocation>None</TitleLocation>
+													<Width>20</Width>
+													<Wrap>false</Wrap>
+													<ListChoiceMode>true</ListChoiceMode>
+													<ContextMenu name="ВариантыПоискаКонтекстноеМеню" id="120"/>
+													<ExtendedTooltip name="ВариантыПоискаExtendedTooltip" id="186"/>
+												</InputField>
 											</ChildItems>
-										</CommandBar>
-										<InputField name="ВариантыПоиска" id="119">
-											<DataPath>ВариантыПоиска</DataPath>
-											<Visible>false</Visible>
-											<TitleLocation>None</TitleLocation>
-											<Width>20</Width>
-											<Wrap>false</Wrap>
-											<ListChoiceMode>true</ListChoiceMode>
-											<ContextMenu name="ВариантыПоискаКонтекстноеМеню" id="120"/>
-											<ExtendedTooltip name="ВариантыПоискаExtendedTooltip" id="186"/>
-										</InputField>
+										</UsualGroup>
+										<Table name="НайденныеКонтакты" id="25">
+											<Representation>List</Representation>
+											<CommandBarLocation>None</CommandBarLocation>
+											<ReadOnly>true</ReadOnly>
+											<SkipOnInput>false</SkipOnInput>
+											<AutoMaxHeight>false</AutoMaxHeight>
+											<HeightInTableRows>5</HeightInTableRows>
+											<UseAlternationRowColor>true</UseAlternationRowColor>
+											<AutoInsertNewRow>true</AutoInsertNewRow>
+											<FileDragMode>AsFile</FileDragMode>
+											<DataPath>НайденныеКонтакты</DataPath>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Найденные контакты</v8:content>
+												</v8:item>
+											</Title>
+											<CommandSet>
+												<ExcludedCommand>CancelSearch</ExcludedCommand>
+												<ExcludedCommand>Change</ExcludedCommand>
+												<ExcludedCommand>Copy</ExcludedCommand>
+												<ExcludedCommand>Delete</ExcludedCommand>
+												<ExcludedCommand>EndEdit</ExcludedCommand>
+												<ExcludedCommand>Find</ExcludedCommand>
+												<ExcludedCommand>MoveDown</ExcludedCommand>
+												<ExcludedCommand>MoveUp</ExcludedCommand>
+											</CommandSet>
+											<RowFilter xsi:nil="true"/>
+											<ContextMenu name="НайденныеКонтактыКонтекстноеМеню" id="26">
+												<Autofill>false</Autofill>
+												<ChildItems>
+													<Button name="НайденныеКонтактыПросмотр" id="333">
+														<Type>CommandBarButton</Type>
+														<CommandName>Form.Command.Просмотр</CommandName>
+														<ExtendedTooltip name="НайденныеКонтактыПросмотрРасширеннаяПодсказка" id="334"/>
+													</Button>
+													<Button name="НайтиВСпискеИзСпискаНайденных" id="143">
+														<Type>CommandBarButton</Type>
+														<SkipOnInput>false</SkipOnInput>
+														<CommandName>Form.Command.НайтиВСпискеИзСпискаНайденных</CommandName>
+														<ExtendedTooltip name="НайтиВСпискеИзСпискаНайденныхExtendedTooltip" id="189"/>
+													</Button>
+												</ChildItems>
+											</ContextMenu>
+											<AutoCommandBar name="НайденныеКонтактыКоманднаяПанель" id="27"/>
+											<ExtendedTooltip name="НайденныеКонтактыExtendedTooltip" id="190"/>
+											<SearchStringAddition name="НайденныеКонтактыСтрокаПоиска" id="245">
+												<AdditionSource>
+													<Item>НайденныеКонтакты</Item>
+													<Type>SearchStringRepresentation</Type>
+												</AdditionSource>
+												<ContextMenu name="НайденныеКонтактыСтрокаПоискаКонтекстноеМеню" id="246"/>
+												<ExtendedTooltip name="НайденныеКонтактыСтрокаПоискаРасширеннаяПодсказка" id="247"/>
+											</SearchStringAddition>
+											<ViewStatusAddition name="НайденныеКонтактыСостояниеПросмотра" id="248">
+												<AdditionSource>
+													<Item>НайденныеКонтакты</Item>
+													<Type>ViewStatusRepresentation</Type>
+												</AdditionSource>
+												<ContextMenu name="НайденныеКонтактыСостояниеПросмотраКонтекстноеМеню" id="249"/>
+												<ExtendedTooltip name="НайденныеКонтактыСостояниеПросмотраРасширеннаяПодсказка" id="250"/>
+											</ViewStatusAddition>
+											<SearchControlAddition name="НайденныеКонтактыУправлениеПоиском" id="251">
+												<AdditionSource>
+													<Item>НайденныеКонтакты</Item>
+													<Type>SearchControl</Type>
+												</AdditionSource>
+												<ContextMenu name="НайденныеКонтактыУправлениеПоискомКонтекстноеМеню" id="252"/>
+												<ExtendedTooltip name="НайденныеКонтактыУправлениеПоискомРасширеннаяПодсказка" id="253"/>
+											</SearchControlAddition>
+											<Events>
+												<Event name="Selection">НайденныеКонтактыВыбор</Event>
+											</Events>
+											<ChildItems>
+												<InputField name="НаименованиеКонтакта" id="28">
+													<DataPath>НайденныеКонтакты.НаименованиеКонтакта</DataPath>
+													<Wrap>false</Wrap>
+													<ContextMenu name="НаименованиеКонтактаКонтекстноеМеню" id="29"/>
+													<ExtendedTooltip name="НаименованиеКонтактаExtendedTooltip" id="191"/>
+												</InputField>
+												<InputField name="АдресЭП" id="30">
+													<DataPath>НайденныеКонтакты.Представление</DataPath>
+													<Wrap>false</Wrap>
+													<ContextMenu name="АдресЭПКонтекстноеМеню" id="31"/>
+													<ExtendedTooltip name="АдресЭПExtendedTooltip" id="192"/>
+												</InputField>
+											</ChildItems>
+										</Table>
 									</ChildItems>
-								</UsualGroup>
-								<Table name="НайденныеКонтакты" id="25">
-									<Representation>List</Representation>
-									<CommandBarLocation>None</CommandBarLocation>
-									<ReadOnly>true</ReadOnly>
-									<SkipOnInput>false</SkipOnInput>
-									<AutoMaxHeight>false</AutoMaxHeight>
-									<HeightInTableRows>5</HeightInTableRows>
-									<UseAlternationRowColor>true</UseAlternationRowColor>
-									<AutoInsertNewRow>true</AutoInsertNewRow>
-									<FileDragMode>AsFile</FileDragMode>
-									<DataPath>НайденныеКонтакты</DataPath>
-									<Title>
-										<v8:item>
-											<v8:lang>ru</v8:lang>
-											<v8:content>Найденные контакты</v8:content>
-										</v8:item>
-									</Title>
-									<CommandSet>
-										<ExcludedCommand>CancelSearch</ExcludedCommand>
-										<ExcludedCommand>Change</ExcludedCommand>
-										<ExcludedCommand>Copy</ExcludedCommand>
-										<ExcludedCommand>Delete</ExcludedCommand>
-										<ExcludedCommand>EndEdit</ExcludedCommand>
-										<ExcludedCommand>Find</ExcludedCommand>
-										<ExcludedCommand>MoveDown</ExcludedCommand>
-										<ExcludedCommand>MoveUp</ExcludedCommand>
-									</CommandSet>
-									<RowFilter xsi:nil="true"/>
-									<ContextMenu name="НайденныеКонтактыКонтекстноеМеню" id="26">
-										<Autofill>false</Autofill>
-										<ChildItems>
-											<Button name="НайденныеКонтактыПросмотр" id="333">
-												<Type>CommandBarButton</Type>
-												<CommandName>Form.Command.Просмотр</CommandName>
-												<ExtendedTooltip name="НайденныеКонтактыПросмотрРасширеннаяПодсказка" id="334"/>
-											</Button>
-											<Button name="НайтиВСпискеИзСпискаНайденных" id="143">
-												<Type>CommandBarButton</Type>
-												<SkipOnInput>false</SkipOnInput>
-												<CommandName>Form.Command.НайтиВСпискеИзСпискаНайденных</CommandName>
-												<ExtendedTooltip name="НайтиВСпискеИзСпискаНайденныхExtendedTooltip" id="189"/>
-											</Button>
-										</ChildItems>
-									</ContextMenu>
-									<AutoCommandBar name="НайденныеКонтактыКоманднаяПанель" id="27"/>
-									<ExtendedTooltip name="НайденныеКонтактыExtendedTooltip" id="190"/>
-									<SearchStringAddition name="НайденныеКонтактыСтрокаПоиска" id="245">
-										<AdditionSource>
-											<Item>НайденныеКонтакты</Item>
-											<Type>SearchStringRepresentation</Type>
-										</AdditionSource>
-										<ContextMenu name="НайденныеКонтактыСтрокаПоискаКонтекстноеМеню" id="246"/>
-										<ExtendedTooltip name="НайденныеКонтактыСтрокаПоискаРасширеннаяПодсказка" id="247"/>
-									</SearchStringAddition>
-									<ViewStatusAddition name="НайденныеКонтактыСостояниеПросмотра" id="248">
-										<AdditionSource>
-											<Item>НайденныеКонтакты</Item>
-											<Type>ViewStatusRepresentation</Type>
-										</AdditionSource>
-										<ContextMenu name="НайденныеКонтактыСостояниеПросмотраКонтекстноеМеню" id="249"/>
-										<ExtendedTooltip name="НайденныеКонтактыСостояниеПросмотраРасширеннаяПодсказка" id="250"/>
-									</ViewStatusAddition>
-									<SearchControlAddition name="НайденныеКонтактыУправлениеПоиском" id="251">
-										<AdditionSource>
-											<Item>НайденныеКонтакты</Item>
-											<Type>SearchControl</Type>
-										</AdditionSource>
-										<ContextMenu name="НайденныеКонтактыУправлениеПоискомКонтекстноеМеню" id="252"/>
-										<ExtendedTooltip name="НайденныеКонтактыУправлениеПоискомРасширеннаяПодсказка" id="253"/>
-									</SearchControlAddition>
-									<Events>
-										<Event name="Selection">НайденныеКонтактыВыбор</Event>
-									</Events>
-									<ChildItems>
-										<InputField name="НаименованиеКонтакта" id="28">
-											<DataPath>НайденныеКонтакты.НаименованиеКонтакта</DataPath>
-											<Wrap>false</Wrap>
-											<ContextMenu name="НаименованиеКонтактаКонтекстноеМеню" id="29"/>
-											<ExtendedTooltip name="НаименованиеКонтактаExtendedTooltip" id="191"/>
-										</InputField>
-										<InputField name="АдресЭП" id="30">
-											<DataPath>НайденныеКонтакты.Представление</DataPath>
-											<Wrap>false</Wrap>
-											<ContextMenu name="АдресЭПКонтекстноеМеню" id="31"/>
-											<ExtendedTooltip name="АдресЭПExtendedTooltip" id="192"/>
-										</InputField>
-									</ChildItems>
-								</Table>
-							</ChildItems>
-						</Page>
-						<Page name="СтраницаВсеКонтактыПоПредмету" id="94">
-							<Title>
-								<v8:item>
-									<v8:lang>ru</v8:lang>
-									<v8:content>Контакты по предмету</v8:content>
-								</v8:item>
-							</Title>
-							<ExtendedTooltip name="СтраницаВсеКонтактыПоПредметуExtendedTooltip" id="196"/>
-							<ChildItems>
-								<Table name="КонтактыПоПредмету" id="121">
-									<Representation>List</Representation>
-									<CommandBarLocation>None</CommandBarLocation>
-									<ReadOnly>true</ReadOnly>
-									<SkipOnInput>false</SkipOnInput>
-									<AutoInsertNewRow>true</AutoInsertNewRow>
-									<FileDragMode>AsFile</FileDragMode>
-									<DataPath>КонтактыПоПредмету</DataPath>
+								</Page>
+								<Page name="СтраницаВсеКонтактыПоПредмету" id="94">
 									<Title>
 										<v8:item>
 											<v8:lang>ru</v8:lang>
 											<v8:content>Контакты по предмету</v8:content>
 										</v8:item>
 									</Title>
-									<RowFilter xsi:nil="true"/>
-									<ContextMenu name="КонтактыПоПредметуКонтекстноеМеню" id="122">
-										<Autofill>false</Autofill>
-										<ChildItems>
-											<Button name="ДобавитьИзСпискаПредметов" id="131">
-												<Type>CommandBarButton</Type>
-												<SkipOnInput>false</SkipOnInput>
-												<CommandName>Form.Command.ДобавитьИзСпискаПредметов</CommandName>
-												<ExtendedTooltip name="ДобавитьИзСпискаПредметовExtendedTooltip" id="197"/>
-											</Button>
-											<Button name="УстановитьКонтактИзСпискаПредметов" id="132">
-												<Type>CommandBarButton</Type>
-												<SkipOnInput>false</SkipOnInput>
-												<CommandName>Form.Command.УстановитьКонтактИзСпискаПредметов</CommandName>
-												<ExtendedTooltip name="УстановитьКонтактИзСпискаПредметовExtendedTooltip" id="198"/>
-											</Button>
-											<Button name="НайтиВСпискеИзСпискаПредметов" id="130">
-												<Type>CommandBarButton</Type>
-												<SkipOnInput>false</SkipOnInput>
-												<CommandName>Form.Command.НайтиВСпискеИзСпискаПредметов</CommandName>
-												<ExtendedTooltip name="НайтиВСпискеИзСпискаПредметовExtendedTooltip" id="199"/>
-											</Button>
-										</ChildItems>
-									</ContextMenu>
-									<AutoCommandBar name="КонтактыПоПредметуКоманднаяПанель" id="123"/>
-									<ExtendedTooltip name="КонтактыПоПредметуExtendedTooltip" id="200"/>
-									<SearchStringAddition name="КонтактыПоПредметуСтрокаПоиска" id="254">
-										<AdditionSource>
-											<Item>КонтактыПоПредмету</Item>
-											<Type>SearchStringRepresentation</Type>
-										</AdditionSource>
-										<ContextMenu name="КонтактыПоПредметуСтрокаПоискаКонтекстноеМеню" id="255"/>
-										<ExtendedTooltip name="КонтактыПоПредметуСтрокаПоискаРасширеннаяПодсказка" id="256"/>
-									</SearchStringAddition>
-									<ViewStatusAddition name="КонтактыПоПредметуСостояниеПросмотра" id="257">
-										<AdditionSource>
-											<Item>КонтактыПоПредмету</Item>
-											<Type>ViewStatusRepresentation</Type>
-										</AdditionSource>
-										<ContextMenu name="КонтактыПоПредметуСостояниеПросмотраКонтекстноеМеню" id="258"/>
-										<ExtendedTooltip name="КонтактыПоПредметуСостояниеПросмотраРасширеннаяПодсказка" id="259"/>
-									</ViewStatusAddition>
-									<SearchControlAddition name="КонтактыПоПредметуУправлениеПоиском" id="260">
-										<AdditionSource>
-											<Item>КонтактыПоПредмету</Item>
-											<Type>SearchControl</Type>
-										</AdditionSource>
-										<ContextMenu name="КонтактыПоПредметуУправлениеПоискомКонтекстноеМеню" id="261"/>
-										<ExtendedTooltip name="КонтактыПоПредметуУправлениеПоискомРасширеннаяПодсказка" id="262"/>
-									</SearchControlAddition>
-									<Events>
-										<Event name="Selection">КонтактыПоПредметуВыбор</Event>
-									</Events>
+									<ExtendedTooltip name="СтраницаВсеКонтактыПоПредметуExtendedTooltip" id="196"/>
 									<ChildItems>
-										<InputField name="ПредставлениеНаименования" id="128">
-											<DataPath>КонтактыПоПредмету.ПредставлениеНаименования</DataPath>
-											<Wrap>false</Wrap>
-											<ContextMenu name="ПредставлениеНаименованияКонтекстноеМеню" id="129"/>
-											<ExtendedTooltip name="ПредставлениеНаименованияExtendedTooltip" id="201"/>
-										</InputField>
-										<InputField name="АдресКонтакта" id="126">
-											<DataPath>КонтактыПоПредмету.Адрес</DataPath>
-											<Wrap>false</Wrap>
-											<ContextMenu name="АдресКонтактаКонтекстноеМеню" id="127"/>
-											<ExtendedTooltip name="АдресКонтактаExtendedTooltip" id="202"/>
-										</InputField>
-									</ChildItems>
-								</Table>
-							</ChildItems>
-						</Page>
-						<Page name="СтраницаПользователей" id="93">
-							<Title>
-								<v8:item>
-									<v8:lang>ru</v8:lang>
-									<v8:content>Пользователи</v8:content>
-								</v8:item>
-							</Title>
-							<ExtendedTooltip name="СтраницаПользователейExtendedTooltip" id="203"/>
-							<ChildItems>
-								<Table name="ГруппыПользователей" id="176">
-									<Representation>Tree</Representation>
-									<CommandBarLocation>None</CommandBarLocation>
-									<SkipOnInput>false</SkipOnInput>
-									<AutoMaxHeight>false</AutoMaxHeight>
-									<HeightInTableRows>5</HeightInTableRows>
-									<SelectionMode>SingleRow</SelectionMode>
-									<RowSelectionMode>Row</RowSelectionMode>
-									<Header>false</Header>
-									<UseAlternationRowColor>true</UseAlternationRowColor>
-									<InitialTreeView>ExpandTopLevel</InitialTreeView>
-									<EnableStartDrag>true</EnableStartDrag>
-									<EnableDrag>true</EnableDrag>
-									<FileDragMode>AsFile</FileDragMode>
-									<DataPath>ГруппыПользователей</DataPath>
-									<RowPictureDataPath>ГруппыПользователей.НомерКартинки</RowPictureDataPath>
-									<RowsPicture>
-										<xr:Ref>CommonPicture.СостоянияПользователей</xr:Ref>
-										<xr:LoadTransparent>false</xr:LoadTransparent>
-									</RowsPicture>
-									<Title>
-										<v8:item>
-											<v8:lang>ru</v8:lang>
-											<v8:content>Группы пользователей</v8:content>
-										</v8:item>
-									</Title>
-									<CommandSet>
-										<ExcludedCommand>Change</ExcludedCommand>
-										<ExcludedCommand>Copy</ExcludedCommand>
-										<ExcludedCommand>CopyToClipboard</ExcludedCommand>
-										<ExcludedCommand>Create</ExcludedCommand>
-										<ExcludedCommand>Delete</ExcludedCommand>
-										<ExcludedCommand>HierarchicalList</ExcludedCommand>
-										<ExcludedCommand>List</ExcludedCommand>
-										<ExcludedCommand>ListSettings</ExcludedCommand>
-										<ExcludedCommand>MoveItem</ExcludedCommand>
-										<ExcludedCommand>OutputList</ExcludedCommand>
-										<ExcludedCommand>Refresh</ExcludedCommand>
-										<ExcludedCommand>SetDeletionMark</ExcludedCommand>
-										<ExcludedCommand>Tree</ExcludedCommand>
-									</CommandSet>
-									<AutoRefresh>false</AutoRefresh>
-									<AutoRefreshPeriod>60</AutoRefreshPeriod>
-									<Period>
-										<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
-										<v8:startDate>0001-01-01T00:00:00</v8:startDate>
-										<v8:endDate>0001-01-01T00:00:00</v8:endDate>
-									</Period>
-									<ChoiceFoldersAndItems>Items</ChoiceFoldersAndItems>
-									<RestoreCurrentRow>false</RestoreCurrentRow>
-									<TopLevelParent xsi:nil="true"/>
-									<ShowRoot>false</ShowRoot>
-									<AllowRootChoice>false</AllowRootChoice>
-									<UpdateOnDataChange>Auto</UpdateOnDataChange>
-									<ContextMenu name="ГруппыПользователейКонтекстноеМеню" id="177"/>
-									<AutoCommandBar name="ГруппыПользователейКоманднаяПанель" id="178"/>
-									<ExtendedTooltip name="ГруппыПользователейExtendedTooltip" id="204"/>
-									<SearchStringAddition name="ГруппыПользователейСтрокаПоиска" id="263">
-										<AdditionSource>
-											<Item>ГруппыПользователей</Item>
-											<Type>SearchStringRepresentation</Type>
-										</AdditionSource>
-										<ContextMenu name="ГруппыПользователейСтрокаПоискаКонтекстноеМеню" id="264"/>
-										<ExtendedTooltip name="ГруппыПользователейСтрокаПоискаРасширеннаяПодсказка" id="265"/>
-									</SearchStringAddition>
-									<ViewStatusAddition name="ГруппыПользователейСостояниеПросмотра" id="266">
-										<AdditionSource>
-											<Item>ГруппыПользователей</Item>
-											<Type>ViewStatusRepresentation</Type>
-										</AdditionSource>
-										<ContextMenu name="ГруппыПользователейСостояниеПросмотраКонтекстноеМеню" id="267"/>
-										<ExtendedTooltip name="ГруппыПользователейСостояниеПросмотраРасширеннаяПодсказка" id="268"/>
-									</ViewStatusAddition>
-									<SearchControlAddition name="ГруппыПользователейУправлениеПоиском" id="269">
-										<AdditionSource>
-											<Item>ГруппыПользователей</Item>
-											<Type>SearchControl</Type>
-										</AdditionSource>
-										<ContextMenu name="ГруппыПользователейУправлениеПоискомКонтекстноеМеню" id="270"/>
-										<ExtendedTooltip name="ГруппыПользователейУправлениеПоискомРасширеннаяПодсказка" id="271"/>
-									</SearchControlAddition>
-									<Events>
-										<Event name="OnActivateRow">ГруппыПользователейПриАктивизацииСтроки</Event>
-									</Events>
-									<ChildItems>
-										<LabelField name="НаименованиеГруппы" id="179">
-											<DataPath>ГруппыПользователей.Description</DataPath>
-											<ContextMenu name="НаименованиеГруппыКонтекстноеМеню" id="180"/>
-											<ExtendedTooltip name="НаименованиеГруппыExtendedTooltip" id="205"/>
-										</LabelField>
-										<LabelField name="ГруппыПользователейСсылка" id="290">
-											<DataPath>ГруппыПользователей.Ref</DataPath>
-											<UserVisible>
-												<xr:Common>false</xr:Common>
-											</UserVisible>
-											<ContextMenu name="ГруппыПользователейСсылкаКонтекстноеМеню" id="291"/>
-											<ExtendedTooltip name="ГруппыПользователейСсылкаРасширеннаяПодсказка" id="292"/>
-										</LabelField>
-									</ChildItems>
-								</Table>
-								<Table name="СписокПользователей" id="95">
-									<SkipOnInput>false</SkipOnInput>
-									<HeightInTableRows>6</HeightInTableRows>
-									<UseAlternationRowColor>true</UseAlternationRowColor>
-									<FileDragMode>AsFile</FileDragMode>
-									<DataPath>СписокПользователей</DataPath>
-									<RowPictureDataPath>СписокПользователей.НомерКартинки</RowPictureDataPath>
-									<RowsPicture>
-										<xr:Ref>CommonPicture.СостоянияПользователей</xr:Ref>
-										<xr:LoadTransparent>false</xr:LoadTransparent>
-									</RowsPicture>
-									<Title>
-										<v8:item>
-											<v8:lang>ru</v8:lang>
-											<v8:content>Список пользователей</v8:content>
-										</v8:item>
-									</Title>
-									<CommandSet>
-										<ExcludedCommand>Change</ExcludedCommand>
-										<ExcludedCommand>Copy</ExcludedCommand>
-										<ExcludedCommand>Create</ExcludedCommand>
-										<ExcludedCommand>SetDeletionMark</ExcludedCommand>
-									</CommandSet>
-									<AutoRefresh>false</AutoRefresh>
-									<AutoRefreshPeriod>60</AutoRefreshPeriod>
-									<Period>
-										<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
-										<v8:startDate>0001-01-01T00:00:00</v8:startDate>
-										<v8:endDate>0001-01-01T00:00:00</v8:endDate>
-									</Period>
-									<ChoiceFoldersAndItems>Items</ChoiceFoldersAndItems>
-									<RestoreCurrentRow>false</RestoreCurrentRow>
-									<TopLevelParent xsi:nil="true"/>
-									<ShowRoot>false</ShowRoot>
-									<AllowRootChoice>false</AllowRootChoice>
-									<UpdateOnDataChange>Auto</UpdateOnDataChange>
-									<ContextMenu name="СписокПользователейКонтекстноеМеню" id="96">
-										<ChildItems>
-											<Button name="СписокПользователейКонтекстноеМенюПросмотр" id="331">
-												<Type>CommandBarButton</Type>
-												<CommandName>Form.Command.Просмотр</CommandName>
-												<ExtendedTooltip name="СписокПользователейКонтекстноеМенюПросмотрРасширеннаяПодсказка" id="332"/>
-											</Button>
-										</ChildItems>
-									</ContextMenu>
-									<AutoCommandBar name="СписокПользователейКоманднаяПанель" id="97">
-										<ChildItems>
-											<Button name="СписокПользователейПросмотр" id="329">
-												<Type>CommandBarButton</Type>
-												<CommandName>Form.Command.Просмотр</CommandName>
-												<ExtendedTooltip name="СписокПользователейПросмотрРасширеннаяПодсказка" id="330"/>
-											</Button>
-										</ChildItems>
-									</AutoCommandBar>
-									<ExtendedTooltip name="СписокПользователейExtendedTooltip" id="206"/>
-									<SearchStringAddition name="СписокПользователейСтрокаПоиска" id="272">
-										<AdditionSource>
-											<Item>СписокПользователей</Item>
-											<Type>SearchStringRepresentation</Type>
-										</AdditionSource>
-										<ContextMenu name="СписокПользователейСтрокаПоискаКонтекстноеМеню" id="273"/>
-										<ExtendedTooltip name="СписокПользователейСтрокаПоискаРасширеннаяПодсказка" id="274"/>
-									</SearchStringAddition>
-									<ViewStatusAddition name="СписокПользователейСостояниеПросмотра" id="275">
-										<AdditionSource>
-											<Item>СписокПользователей</Item>
-											<Type>ViewStatusRepresentation</Type>
-										</AdditionSource>
-										<ContextMenu name="СписокПользователейСостояниеПросмотраКонтекстноеМеню" id="276"/>
-										<ExtendedTooltip name="СписокПользователейСостояниеПросмотраРасширеннаяПодсказка" id="277"/>
-									</ViewStatusAddition>
-									<SearchControlAddition name="СписокПользователейУправлениеПоиском" id="278">
-										<AdditionSource>
-											<Item>СписокПользователей</Item>
-											<Type>SearchControl</Type>
-										</AdditionSource>
-										<ContextMenu name="СписокПользователейУправлениеПоискомКонтекстноеМеню" id="279"/>
-										<ExtendedTooltip name="СписокПользователейУправлениеПоискомРасширеннаяПодсказка" id="280"/>
-									</SearchControlAddition>
-									<Events>
-										<Event name="Selection">Подключаемый_СписокСправочникаВыбор</Event>
-									</Events>
-									<ChildItems>
-										<InputField name="Пользователь" id="98">
-											<DataPath>СписокПользователей.Ref</DataPath>
+										<Table name="КонтактыПоПредмету" id="121">
+											<Representation>List</Representation>
+											<CommandBarLocation>None</CommandBarLocation>
+											<ReadOnly>true</ReadOnly>
+											<SkipOnInput>false</SkipOnInput>
+											<AutoInsertNewRow>true</AutoInsertNewRow>
+											<FileDragMode>AsFile</FileDragMode>
+											<DataPath>КонтактыПоПредмету</DataPath>
 											<Title>
 												<v8:item>
 													<v8:lang>ru</v8:lang>
-													<v8:content>Пользователь</v8:content>
+													<v8:content>Контакты по предмету</v8:content>
 												</v8:item>
 											</Title>
-											<Wrap>false</Wrap>
-											<ContextMenu name="ПользовательКонтекстноеМеню" id="99"/>
-											<ExtendedTooltip name="ПользовательExtendedTooltip" id="207"/>
-										</InputField>
-										<LabelField name="СписокПользователейПредставление" id="326">
-											<DataPath>СписокПользователей.Представление</DataPath>
+											<RowFilter xsi:nil="true"/>
+											<ContextMenu name="КонтактыПоПредметуКонтекстноеМеню" id="122">
+												<Autofill>false</Autofill>
+												<ChildItems>
+													<Button name="ДобавитьИзСпискаПредметов" id="131">
+														<Type>CommandBarButton</Type>
+														<SkipOnInput>false</SkipOnInput>
+														<CommandName>Form.Command.ДобавитьИзСпискаПредметов</CommandName>
+														<ExtendedTooltip name="ДобавитьИзСпискаПредметовExtendedTooltip" id="197"/>
+													</Button>
+													<Button name="УстановитьКонтактИзСпискаПредметов" id="132">
+														<Type>CommandBarButton</Type>
+														<SkipOnInput>false</SkipOnInput>
+														<CommandName>Form.Command.УстановитьКонтактИзСпискаПредметов</CommandName>
+														<ExtendedTooltip name="УстановитьКонтактИзСпискаПредметовExtendedTooltip" id="198"/>
+													</Button>
+													<Button name="НайтиВСпискеИзСпискаПредметов" id="130">
+														<Type>CommandBarButton</Type>
+														<SkipOnInput>false</SkipOnInput>
+														<CommandName>Form.Command.НайтиВСпискеИзСпискаПредметов</CommandName>
+														<ExtendedTooltip name="НайтиВСпискеИзСпискаПредметовExtendedTooltip" id="199"/>
+													</Button>
+												</ChildItems>
+											</ContextMenu>
+											<AutoCommandBar name="КонтактыПоПредметуКоманднаяПанель" id="123"/>
+											<ExtendedTooltip name="КонтактыПоПредметуExtendedTooltip" id="200"/>
+											<SearchStringAddition name="КонтактыПоПредметуСтрокаПоиска" id="254">
+												<AdditionSource>
+													<Item>КонтактыПоПредмету</Item>
+													<Type>SearchStringRepresentation</Type>
+												</AdditionSource>
+												<ContextMenu name="КонтактыПоПредметуСтрокаПоискаКонтекстноеМеню" id="255"/>
+												<ExtendedTooltip name="КонтактыПоПредметуСтрокаПоискаРасширеннаяПодсказка" id="256"/>
+											</SearchStringAddition>
+											<ViewStatusAddition name="КонтактыПоПредметуСостояниеПросмотра" id="257">
+												<AdditionSource>
+													<Item>КонтактыПоПредмету</Item>
+													<Type>ViewStatusRepresentation</Type>
+												</AdditionSource>
+												<ContextMenu name="КонтактыПоПредметуСостояниеПросмотраКонтекстноеМеню" id="258"/>
+												<ExtendedTooltip name="КонтактыПоПредметуСостояниеПросмотраРасширеннаяПодсказка" id="259"/>
+											</ViewStatusAddition>
+											<SearchControlAddition name="КонтактыПоПредметуУправлениеПоиском" id="260">
+												<AdditionSource>
+													<Item>КонтактыПоПредмету</Item>
+													<Type>SearchControl</Type>
+												</AdditionSource>
+												<ContextMenu name="КонтактыПоПредметуУправлениеПоискомКонтекстноеМеню" id="261"/>
+												<ExtendedTooltip name="КонтактыПоПредметуУправлениеПоискомРасширеннаяПодсказка" id="262"/>
+											</SearchControlAddition>
+											<Events>
+												<Event name="Selection">КонтактыПоПредметуВыбор</Event>
+											</Events>
+											<ChildItems>
+												<InputField name="ПредставлениеНаименования" id="128">
+													<DataPath>КонтактыПоПредмету.ПредставлениеНаименования</DataPath>
+													<Wrap>false</Wrap>
+													<ContextMenu name="ПредставлениеНаименованияКонтекстноеМеню" id="129"/>
+													<ExtendedTooltip name="ПредставлениеНаименованияExtendedTooltip" id="201"/>
+												</InputField>
+												<InputField name="АдресКонтакта" id="126">
+													<DataPath>КонтактыПоПредмету.Адрес</DataPath>
+													<Wrap>false</Wrap>
+													<ContextMenu name="АдресКонтактаКонтекстноеМеню" id="127"/>
+													<ExtendedTooltip name="АдресКонтактаExtendedTooltip" id="202"/>
+												</InputField>
+											</ChildItems>
+										</Table>
+									</ChildItems>
+								</Page>
+								<Page name="СтраницаПользователей" id="93">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Пользователи</v8:content>
+										</v8:item>
+									</Title>
+									<ExtendedTooltip name="СтраницаПользователейExtendedTooltip" id="203"/>
+									<ChildItems>
+										<Table name="ГруппыПользователей" id="176">
+											<Representation>Tree</Representation>
+											<CommandBarLocation>None</CommandBarLocation>
+											<SkipOnInput>false</SkipOnInput>
+											<AutoMaxHeight>false</AutoMaxHeight>
+											<HeightInTableRows>5</HeightInTableRows>
+											<SelectionMode>SingleRow</SelectionMode>
+											<RowSelectionMode>Row</RowSelectionMode>
+											<Header>false</Header>
+											<UseAlternationRowColor>true</UseAlternationRowColor>
+											<InitialTreeView>ExpandTopLevel</InitialTreeView>
+											<EnableStartDrag>true</EnableStartDrag>
+											<EnableDrag>true</EnableDrag>
+											<FileDragMode>AsFile</FileDragMode>
+											<DataPath>ГруппыПользователей</DataPath>
+											<RowPictureDataPath>ГруппыПользователей.НомерКартинки</RowPictureDataPath>
+											<RowsPicture>
+												<xr:Ref>CommonPicture.СостоянияПользователей</xr:Ref>
+												<xr:LoadTransparent>false</xr:LoadTransparent>
+											</RowsPicture>
 											<Title>
 												<v8:item>
 													<v8:lang>ru</v8:lang>
-													<v8:content>Адрес</v8:content>
+													<v8:content>Группы пользователей</v8:content>
 												</v8:item>
 											</Title>
-											<ContextMenu name="СписокПользователейПредставлениеКонтекстноеМеню" id="327"/>
-											<ExtendedTooltip name="СписокПользователейПредставлениеРасширеннаяПодсказка" id="328"/>
-										</LabelField>
-										<LabelField name="СписокПользователейСсылка" id="293">
-											<DataPath>СписокПользователей.Ref</DataPath>
-											<UserVisible>
-												<xr:Common>false</xr:Common>
-											</UserVisible>
-											<ContextMenu name="СписокПользователейСсылкаКонтекстноеМеню" id="294"/>
-											<ExtendedTooltip name="СписокПользователейСсылкаРасширеннаяПодсказка" id="295"/>
-										</LabelField>
+											<CommandSet>
+												<ExcludedCommand>Change</ExcludedCommand>
+												<ExcludedCommand>Copy</ExcludedCommand>
+												<ExcludedCommand>CopyToClipboard</ExcludedCommand>
+												<ExcludedCommand>Create</ExcludedCommand>
+												<ExcludedCommand>Delete</ExcludedCommand>
+												<ExcludedCommand>HierarchicalList</ExcludedCommand>
+												<ExcludedCommand>List</ExcludedCommand>
+												<ExcludedCommand>ListSettings</ExcludedCommand>
+												<ExcludedCommand>MoveItem</ExcludedCommand>
+												<ExcludedCommand>OutputList</ExcludedCommand>
+												<ExcludedCommand>Refresh</ExcludedCommand>
+												<ExcludedCommand>SetDeletionMark</ExcludedCommand>
+												<ExcludedCommand>Tree</ExcludedCommand>
+											</CommandSet>
+											<AutoRefresh>false</AutoRefresh>
+											<AutoRefreshPeriod>60</AutoRefreshPeriod>
+											<Period>
+												<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+												<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+												<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+											</Period>
+											<ChoiceFoldersAndItems>Items</ChoiceFoldersAndItems>
+											<RestoreCurrentRow>false</RestoreCurrentRow>
+											<TopLevelParent xsi:nil="true"/>
+											<ShowRoot>false</ShowRoot>
+											<AllowRootChoice>false</AllowRootChoice>
+											<UpdateOnDataChange>Auto</UpdateOnDataChange>
+											<ContextMenu name="ГруппыПользователейКонтекстноеМеню" id="177"/>
+											<AutoCommandBar name="ГруппыПользователейКоманднаяПанель" id="178"/>
+											<ExtendedTooltip name="ГруппыПользователейExtendedTooltip" id="204"/>
+											<SearchStringAddition name="ГруппыПользователейСтрокаПоиска" id="263">
+												<AdditionSource>
+													<Item>ГруппыПользователей</Item>
+													<Type>SearchStringRepresentation</Type>
+												</AdditionSource>
+												<ContextMenu name="ГруппыПользователейСтрокаПоискаКонтекстноеМеню" id="264"/>
+												<ExtendedTooltip name="ГруппыПользователейСтрокаПоискаРасширеннаяПодсказка" id="265"/>
+											</SearchStringAddition>
+											<ViewStatusAddition name="ГруппыПользователейСостояниеПросмотра" id="266">
+												<AdditionSource>
+													<Item>ГруппыПользователей</Item>
+													<Type>ViewStatusRepresentation</Type>
+												</AdditionSource>
+												<ContextMenu name="ГруппыПользователейСостояниеПросмотраКонтекстноеМеню" id="267"/>
+												<ExtendedTooltip name="ГруппыПользователейСостояниеПросмотраРасширеннаяПодсказка" id="268"/>
+											</ViewStatusAddition>
+											<SearchControlAddition name="ГруппыПользователейУправлениеПоиском" id="269">
+												<AdditionSource>
+													<Item>ГруппыПользователей</Item>
+													<Type>SearchControl</Type>
+												</AdditionSource>
+												<ContextMenu name="ГруппыПользователейУправлениеПоискомКонтекстноеМеню" id="270"/>
+												<ExtendedTooltip name="ГруппыПользователейУправлениеПоискомРасширеннаяПодсказка" id="271"/>
+											</SearchControlAddition>
+											<Events>
+												<Event name="OnActivateRow">ГруппыПользователейПриАктивизацииСтроки</Event>
+											</Events>
+											<ChildItems>
+												<LabelField name="НаименованиеГруппы" id="179">
+													<DataPath>ГруппыПользователей.Description</DataPath>
+													<ContextMenu name="НаименованиеГруппыКонтекстноеМеню" id="180"/>
+													<ExtendedTooltip name="НаименованиеГруппыExtendedTooltip" id="205"/>
+												</LabelField>
+												<LabelField name="ГруппыПользователейСсылка" id="290">
+													<DataPath>ГруппыПользователей.Ref</DataPath>
+													<UserVisible>
+														<xr:Common>false</xr:Common>
+													</UserVisible>
+													<ContextMenu name="ГруппыПользователейСсылкаКонтекстноеМеню" id="291"/>
+													<ExtendedTooltip name="ГруппыПользователейСсылкаРасширеннаяПодсказка" id="292"/>
+												</LabelField>
+											</ChildItems>
+										</Table>
+										<Table name="СписокПользователей" id="95">
+											<SkipOnInput>false</SkipOnInput>
+											<HeightInTableRows>6</HeightInTableRows>
+											<UseAlternationRowColor>true</UseAlternationRowColor>
+											<FileDragMode>AsFile</FileDragMode>
+											<DataPath>СписокПользователей</DataPath>
+											<RowPictureDataPath>СписокПользователей.НомерКартинки</RowPictureDataPath>
+											<RowsPicture>
+												<xr:Ref>CommonPicture.СостоянияПользователей</xr:Ref>
+												<xr:LoadTransparent>false</xr:LoadTransparent>
+											</RowsPicture>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Список пользователей</v8:content>
+												</v8:item>
+											</Title>
+											<CommandSet>
+												<ExcludedCommand>Change</ExcludedCommand>
+												<ExcludedCommand>Copy</ExcludedCommand>
+												<ExcludedCommand>Create</ExcludedCommand>
+												<ExcludedCommand>SetDeletionMark</ExcludedCommand>
+											</CommandSet>
+											<AutoRefresh>false</AutoRefresh>
+											<AutoRefreshPeriod>60</AutoRefreshPeriod>
+											<Period>
+												<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+												<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+												<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+											</Period>
+											<ChoiceFoldersAndItems>Items</ChoiceFoldersAndItems>
+											<RestoreCurrentRow>false</RestoreCurrentRow>
+											<TopLevelParent xsi:nil="true"/>
+											<ShowRoot>false</ShowRoot>
+											<AllowRootChoice>false</AllowRootChoice>
+											<UpdateOnDataChange>Auto</UpdateOnDataChange>
+											<ContextMenu name="СписокПользователейКонтекстноеМеню" id="96">
+												<ChildItems>
+													<Button name="СписокПользователейКонтекстноеМенюПросмотр" id="331">
+														<Type>CommandBarButton</Type>
+														<CommandName>Form.Command.Просмотр</CommandName>
+														<ExtendedTooltip name="СписокПользователейКонтекстноеМенюПросмотрРасширеннаяПодсказка" id="332"/>
+													</Button>
+												</ChildItems>
+											</ContextMenu>
+											<AutoCommandBar name="СписокПользователейКоманднаяПанель" id="97">
+												<ChildItems>
+													<Button name="СписокПользователейПросмотр" id="329">
+														<Type>CommandBarButton</Type>
+														<CommandName>Form.Command.Просмотр</CommandName>
+														<ExtendedTooltip name="СписокПользователейПросмотрРасширеннаяПодсказка" id="330"/>
+													</Button>
+												</ChildItems>
+											</AutoCommandBar>
+											<ExtendedTooltip name="СписокПользователейExtendedTooltip" id="206"/>
+											<SearchStringAddition name="СписокПользователейСтрокаПоиска" id="272">
+												<AdditionSource>
+													<Item>СписокПользователей</Item>
+													<Type>SearchStringRepresentation</Type>
+												</AdditionSource>
+												<ContextMenu name="СписокПользователейСтрокаПоискаКонтекстноеМеню" id="273"/>
+												<ExtendedTooltip name="СписокПользователейСтрокаПоискаРасширеннаяПодсказка" id="274"/>
+											</SearchStringAddition>
+											<ViewStatusAddition name="СписокПользователейСостояниеПросмотра" id="275">
+												<AdditionSource>
+													<Item>СписокПользователей</Item>
+													<Type>ViewStatusRepresentation</Type>
+												</AdditionSource>
+												<ContextMenu name="СписокПользователейСостояниеПросмотраКонтекстноеМеню" id="276"/>
+												<ExtendedTooltip name="СписокПользователейСостояниеПросмотраРасширеннаяПодсказка" id="277"/>
+											</ViewStatusAddition>
+											<SearchControlAddition name="СписокПользователейУправлениеПоиском" id="278">
+												<AdditionSource>
+													<Item>СписокПользователей</Item>
+													<Type>SearchControl</Type>
+												</AdditionSource>
+												<ContextMenu name="СписокПользователейУправлениеПоискомКонтекстноеМеню" id="279"/>
+												<ExtendedTooltip name="СписокПользователейУправлениеПоискомРасширеннаяПодсказка" id="280"/>
+											</SearchControlAddition>
+											<Events>
+												<Event name="Selection">Подключаемый_СписокСправочникаВыбор</Event>
+											</Events>
+											<ChildItems>
+												<InputField name="Пользователь" id="98">
+													<DataPath>СписокПользователей.Ref</DataPath>
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Пользователь</v8:content>
+														</v8:item>
+													</Title>
+													<Wrap>false</Wrap>
+													<ContextMenu name="ПользовательКонтекстноеМеню" id="99"/>
+													<ExtendedTooltip name="ПользовательExtendedTooltip" id="207"/>
+												</InputField>
+												<LabelField name="СписокПользователейПредставление" id="326">
+													<DataPath>СписокПользователей.Представление</DataPath>
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Адрес</v8:content>
+														</v8:item>
+													</Title>
+													<ContextMenu name="СписокПользователейПредставлениеКонтекстноеМеню" id="327"/>
+													<ExtendedTooltip name="СписокПользователейПредставлениеРасширеннаяПодсказка" id="328"/>
+												</LabelField>
+												<LabelField name="СписокПользователейСсылка" id="293">
+													<DataPath>СписокПользователей.Ref</DataPath>
+													<UserVisible>
+														<xr:Common>false</xr:Common>
+													</UserVisible>
+													<ContextMenu name="СписокПользователейСсылкаКонтекстноеМеню" id="294"/>
+													<ExtendedTooltip name="СписокПользователейСсылкаРасширеннаяПодсказка" id="295"/>
+												</LabelField>
+											</ChildItems>
+										</Table>
 									</ChildItems>
-								</Table>
+								</Page>
 							</ChildItems>
-						</Page>
+						</Pages>
+						<CheckBoxField name="ПоказыватьТолькоКонтактыСАдресами" id="335">
+							<DataPath>ПоказыватьТолькоКонтактыСАдресами</DataPath>
+							<TitleLocation>Right</TitleLocation>
+							<ToolTipRepresentation>ShowBottom</ToolTipRepresentation>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="ПоказыватьТолькоКонтактыСАдресамиКонтекстноеМеню" id="336"/>
+							<ExtendedTooltip name="ПоказыватьТолькоКонтактыСАдресамиРасширеннаяПодсказка" id="337">
+								<AutoMaxWidth>false</AutoMaxWidth>
+								<Title formatted="false">
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>    Будет применено только к тем спискам, в которых есть колонка "Адрес"</v8:content>
+									</v8:item>
+								</Title>
+							</ExtendedTooltip>
+							<Events>
+								<Event name="OnChange">ПоказыватьТолькоКонтактыСАдресамиПриИзменении</Event>
+							</Events>
+						</CheckBoxField>
 					</ChildItems>
-				</Pages>
+				</UsualGroup>
 				<UsualGroup name="ГруппаПолучателиПереместить" id="152">
 					<Title>
 						<v8:item>
@@ -1083,6 +1116,11 @@
 						</v8:StringQualifiers>
 					</Type>
 				</Column>
+				<Column name="ПредставлениеЗаполнено" id="4">
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
 			</Columns>
 		</Attribute>
 		<Attribute name="СтрокаПоиска" id="2">
@@ -1334,6 +1372,11 @@
 						</v8:StringQualifiers>
 					</Type>
 				</Column>
+				<Column name="АдресЗаполнен" id="3">
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
 			</Columns>
 		</Attribute>
 		<Attribute name="ППДВключен" id="12">
@@ -1415,6 +1458,25 @@
 		<Attribute name="ИспользоватьГруппыПользователей" id="16">
 			<Type>
 				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ПоказыватьТолькоКонтактыСАдресами" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Только контакты с адресами</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+			<Save>
+				<Field>ПоказыватьТолькоКонтактыСАдресами</Field>
+			</Save>
+		</Attribute>
+		<Attribute name="ИменаДобавленныхТаблиц" id="8">
+			<Type>
+				<v8:Type>v8:ValueListType</v8:Type>
 			</Type>
 		</Attribute>
 	</Attributes>

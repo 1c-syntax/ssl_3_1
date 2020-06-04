@@ -9,21 +9,39 @@
 	<WindowOpeningMode>LockOwnerWindow</WindowOpeningMode>
 	<AutoTitle>false</AutoTitle>
 	<CommandBarLocation>Bottom</CommandBarLocation>
+	<MobileDeviceCommandBarContent>
+		<xr:Item>
+			<xr:Presentation/>
+			<xr:CheckState>0</xr:CheckState>
+			<xr:Value xsi:type="xs:string">КомпоновщикПредварительногоОтбораНастройкиОтборКоманднаяПанель</xr:Value>
+		</xr:Item>
+	</MobileDeviceCommandBarContent>
 	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
 		<HorizontalAlign>Right</HorizontalAlign>
 		<Autofill>false</Autofill>
 		<ChildItems>
-			<Button name="ФормаВыбрать" id="5">
-				<Type>CommandBarButton</Type>
-				<DefaultButton>true</DefaultButton>
-				<CommandName>Form.Command.Выбрать</CommandName>
-				<ExtendedTooltip name="ФормаВыбратьРасширеннаяПодсказка" id="6"/>
-			</Button>
-			<Button name="ФормаОтмена" id="9">
-				<Type>CommandBarButton</Type>
-				<CommandName>Form.StandardCommand.Cancel</CommandName>
-				<ExtendedTooltip name="ФормаОтменаРасширеннаяПодсказка" id="10"/>
-			</Button>
+			<ButtonGroup name="ГруппаСкрытоНаМобильномКлиенте" id="22">
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Скрыто на мобильном клиенте</v8:content>
+					</v8:item>
+				</Title>
+				<ExtendedTooltip name="ГруппаСкрытоНаМобильномКлиентеРасширеннаяПодсказка" id="23"/>
+				<ChildItems>
+					<Button name="ФормаВыбрать" id="5">
+						<Type>CommandBarButton</Type>
+						<DefaultButton>true</DefaultButton>
+						<CommandName>Form.Command.Выбрать</CommandName>
+						<ExtendedTooltip name="ФормаВыбратьРасширеннаяПодсказка" id="6"/>
+					</Button>
+					<Button name="ФормаОтмена" id="9">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.StandardCommand.Cancel</CommandName>
+						<ExtendedTooltip name="ФормаОтменаРасширеннаяПодсказка" id="10"/>
+					</Button>
+				</ChildItems>
+			</ButtonGroup>
 			<ButtonGroup name="ФормаГруппаСправки" id="11">
 				<Title>
 					<v8:item>
@@ -43,6 +61,7 @@
 		</ChildItems>
 	</AutoCommandBar>
 	<Events>
+		<Event name="BeforeClose">ПередЗакрытием</Event>
 		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
 	</Events>
 	<ChildItems>
@@ -108,6 +127,11 @@
 				<v8:Type>dcsset:SettingsComposer</v8:Type>
 			</Type>
 			<SavedData>true</SavedData>
+		</Attribute>
+		<Attribute name="ЭтоМобильныйКлиент" id="4">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
 		</Attribute>
 	</Attributes>
 	<Commands>

@@ -883,7 +883,7 @@ function runEnterprise () {
   return 0
 }
 
-function addDeletePatches () {
+function addDeletePatches() {
   var fixFileNamesString = fixFileNames.join('\n')
   var removeFixNamesString = removeFixNames.join('\n')
 
@@ -899,6 +899,39 @@ function addDeletePatches () {
     ),
     SW_HIDE, true)
   appendLog()
+  return result
+}
+
+function DeletePatches() {
+ 
+ if (!useComConnector) {
+    return 0
+  }
+ 
+ var Action = 'RemoveAll'
+ 
+ try {
+   var result = runApp('wscript.exe',
+      format('"{0}\\add-delete-patches.js" /ConnectionString:"{1}" /COMConnectorName:"{2}" /Action:"{3}" /Out:"{4}\\{5}"',
+        thisFileDir,
+        connectionString.replace(/"/g, '\''),
+        comConnectorName,
+        Action,
+        thisFileDir,
+        tempLogFileName
+      ),
+      SW_HIDE, true)
+    appendLog()
+
+  } catch (e) {
+    log(format('Исключение при вызове ОбновлениеКонфигурацииВызовСервера.УдалитьИсправленияИзСкрипта: {0}, {1}.', e.name, e.message), true)
+    result = 2;
+  }
+  
+  if (result != 0) {
+    log('Не удалось удалить исправления конфигурации. Подробности см. в предыдущей записи.')
+  }
+  
   return result
 }
 

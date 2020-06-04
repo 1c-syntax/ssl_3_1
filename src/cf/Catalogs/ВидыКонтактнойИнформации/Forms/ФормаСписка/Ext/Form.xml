@@ -3,7 +3,16 @@
 	<CommandSet>
 		<ExcludedCommand>CreateFolder</ExcludedCommand>
 	</CommandSet>
-	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<ChildItems>
+			<Button name="ФормаПерейтиКСписку" id="55">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.ПерейтиКСписку</CommandName>
+				<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
+				<ExtendedTooltip name="ФормаПерейтиКСпискуРасширеннаяПодсказка" id="56"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
 	<Events>
 		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
 	</Events>
@@ -61,7 +70,15 @@
 			<AllowRootChoice>false</AllowRootChoice>
 			<UpdateOnDataChange>Auto</UpdateOnDataChange>
 			<UserSettingsGroup>ГруппаПользовательскихНастроек</UserSettingsGroup>
-			<ContextMenu name="СписокКонтекстноеМеню" id="2"/>
+			<ContextMenu name="СписокКонтекстноеМеню" id="2">
+				<ChildItems>
+					<Button name="СписокКонтекстноеМенюПерейтиКСписку" id="57">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Command.ПерейтиКСписку</CommandName>
+						<ExtendedTooltip name="СписокКонтекстноеМенюПерейтиКСпискуРасширеннаяПодсказка" id="58"/>
+					</Button>
+				</ChildItems>
+			</ContextMenu>
 			<AutoCommandBar name="СписокКоманднаяПанель" id="3"/>
 			<ExtendedTooltip name="СписокExtendedTooltip" id="34"/>
 			<SearchStringAddition name="СписокСтрокаПоиска" id="46">
@@ -89,6 +106,7 @@
 				<ExtendedTooltip name="СписокУправлениеПоискомРасширеннаяПодсказка" id="54"/>
 			</SearchControlAddition>
 			<Events>
+				<Event name="Selection">СписокВыбор</Event>
 				<Event name="BeforeAddRow">СписокПередНачаломДобавления</Event>
 			</Events>
 			<ChildItems>
@@ -105,7 +123,7 @@
 					<ExtendedTooltip name="НаименованиеРасширеннаяПодсказка" id="39"/>
 				</LabelField>
 				<InputField name="Ссылка" id="30">
-					<DataPath>Список.Ref</DataPath>
+					<DataPath>Список.Ссылка</DataPath>
 					<UserVisible>
 						<xr:Common>false</xr:Common>
 					</UserVisible>
@@ -123,9 +141,10 @@
 			</Type>
 			<MainAttribute>true</MainAttribute>
 			<UseAlways>
-				<Field>Список.Ref</Field>
 				<Field>Список.ИндексПиктограммы</Field>
 				<Field>Список.РеквизитДопУпорядочивания</Field>
+				<Field>Список.Ссылка</Field>
+				<Field>Список.ЭтоГруппа</Field>
 			</UseAlways>
 			<Settings xsi:type="DynamicList">
 				<ManualQuery>true</ManualQuery>
@@ -178,22 +197,23 @@
 				ИНАЧЕ 3
 			КОНЕЦ
 	КОНЕЦ КАК ИндексПиктограммы,
-	СправочникВидыКонтактнойИнформации.Ссылка,
+	СправочникВидыКонтактнойИнформации.Ссылка КАК Ссылка,
 	ВЫБОР
 		КОГДА &amp;ЭтоОсновнойЯзык
-		ТОГДА СправочникВидыКонтактнойИнформации.Наименование
+			ТОГДА СправочникВидыКонтактнойИнформации.Наименование
 		ИНАЧЕ ВЫРАЗИТЬ(ЕСТЬNULL(ВидыКонтактнойИнформацииПредставления.Наименование, СправочникВидыКонтактнойИнформации.Наименование) КАК СТРОКА(150))
 	КОНЕЦ КАК Наименование,
-	СправочникВидыКонтактнойИнформации.РеквизитДопУпорядочивания,
-	СправочникВидыКонтактнойИнформации.Используется
+	СправочникВидыКонтактнойИнформации.РеквизитДопУпорядочивания КАК РеквизитДопУпорядочивания,
+	СправочникВидыКонтактнойИнформации.Используется КАК Используется,
+	СправочникВидыКонтактнойИнформации.ЭтоГруппа КАК ЭтоГруппа
 ИЗ
 	Справочник.ВидыКонтактнойИнформации КАК СправочникВидыКонтактнойИнформации
 		ЛЕВОЕ СОЕДИНЕНИЕ Справочник.ВидыКонтактнойИнформации.Представления КАК ВидыКонтактнойИнформацииПредставления
 		ПО (ВидыКонтактнойИнформацииПредставления.Ссылка = СправочникВидыКонтактнойИнформации.Ссылка)
-		И ВидыКонтактнойИнформацииПредставления.КодЯзыка = &amp;КодЯзыка
+			И (ВидыКонтактнойИнформацииПредставления.КодЯзыка = &amp;КодЯзыка)
 ГДЕ
-	СправочникВидыКонтактнойИнформации.Используется И ЕстьNULL(СправочникВидыКонтактнойИнформации.Родитель.Используется, Истина)
-</QueryText>
+	СправочникВидыКонтактнойИнформации.Используется
+	И ЕСТЬNULL(СправочникВидыКонтактнойИнформации.Родитель.Используется, ИСТИНА)</QueryText>
 				<MainTable>Catalog.ВидыКонтактнойИнформации</MainTable>
 				<ListSettings>
 					<dcsset:filter>
@@ -218,4 +238,21 @@
 			</Settings>
 		</Attribute>
 	</Attributes>
+	<Commands>
+		<Command name="ПерейтиКСписку" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Перейти к списку...</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Перейти к списку с контактной информацией</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ПерейтиКСписку</Action>
+		</Command>
+	</Commands>
 </Form>

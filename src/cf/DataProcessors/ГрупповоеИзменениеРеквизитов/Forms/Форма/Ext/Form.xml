@@ -37,6 +37,8 @@
 									<v8:content>Выбор элементов для изменения</v8:content>
 								</v8:item>
 							</Title>
+							<Representation>NormalSeparation</Representation>
+							<ShowTitle>false</ShowTitle>
 							<ExtendedTooltip name="ОтборОбъектовРасширеннаяПодсказка" id="111"/>
 							<ChildItems>
 								<InputField name="ПредставлениеИзменяемыхОбъектов" id="167">
@@ -47,7 +49,7 @@
 									<InputHint>
 										<v8:item>
 											<v8:lang>ru</v8:lang>
-											<v8:content>Введите первые буквы вида элементов</v8:content>
+											<v8:content>Введите первые буквы справочника или документа</v8:content>
 										</v8:item>
 									</InputHint>
 									<ContextMenu name="ПредставлениеИзменяемыхОбъектовКонтекстноеМеню" id="168"/>
@@ -59,6 +61,12 @@
 									</Events>
 								</InputField>
 								<LabelDecoration name="НастройкаОтбора" id="107">
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Все элементы</v8:content>
+										</v8:item>
+									</Title>
 									<Hyperlink>true</Hyperlink>
 									<ContextMenu name="НастройкаОтбораКонтекстноеМеню" id="108"/>
 									<ExtendedTooltip name="НастройкаОтбораРасширеннаяПодсказка" id="109"/>
@@ -1101,6 +1109,9 @@
 			<Type>
 				<v8:Type>v8:ValueTable</v8:Type>
 			</Type>
+			<Save>
+				<Field>РеквизитыОбъекта</Field>
+			</Save>
 			<Columns>
 				<Column name="Имя" id="1">
 					<Type>
@@ -1363,6 +1374,9 @@
 					<v8:AllowedLength>Variable</v8:AllowedLength>
 				</v8:StringQualifiers>
 			</Type>
+			<Save>
+				<Field>ВидыИзменяемыхОбъектов</Field>
+			</Save>
 		</Attribute>
 		<Attribute name="РежимРазработчика" id="35">
 			<Type>

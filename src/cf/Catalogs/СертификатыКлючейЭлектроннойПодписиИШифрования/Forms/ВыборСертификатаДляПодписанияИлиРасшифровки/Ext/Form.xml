@@ -80,7 +80,7 @@
 													</Title>
 													<Picture>
 														<xr:Ref>CommonPicture.Предупреждение</xr:Ref>
-														<xr:LoadTransparent>true</xr:LoadTransparent>
+														<xr:LoadTransparent>false</xr:LoadTransparent>
 													</Picture>
 													<FileDragMode>AsFile</FileDragMode>
 													<ContextMenu name="СертификатыНедоступныНаКлиентеЗначокКонтекстноеМеню" id="791"/>
@@ -117,7 +117,7 @@
 												<PictureDecoration name="СертификатыНедоступныНаСервереЗначок" id="797">
 													<Picture>
 														<xr:Ref>CommonPicture.Предупреждение</xr:Ref>
-														<xr:LoadTransparent>true</xr:LoadTransparent>
+														<xr:LoadTransparent>false</xr:LoadTransparent>
 													</Picture>
 													<FileDragMode>AsFile</FileDragMode>
 													<ContextMenu name="СертификатыНедоступныНаСервереЗначокКонтекстноеМеню" id="798"/>
@@ -562,18 +562,29 @@
 														<Event name="OnChange">ПарольПриИзменении</Event>
 													</Events>
 												</InputField>
-												<LabelDecoration name="ПарольПояснение" id="741">
-													<AutoMaxWidth>false</AutoMaxWidth>
-													<TextColor>style:ПоясняющийТекст</TextColor>
-													<Title formatted="false">
+												<CheckBoxField name="ЗапомнитьПароль" id="820">
+													<DataPath>ЗапомнитьПароль</DataPath>
+													<Title>
 														<v8:item>
 															<v8:lang>ru</v8:lang>
-															<v8:content>(для проверки)</v8:content>
+															<v8:content>Запомнить на время сеанса</v8:content>
 														</v8:item>
 													</Title>
-													<ContextMenu name="ПарольПояснениеКонтекстноеМеню" id="742"/>
-													<ExtendedTooltip name="ПарольПояснениеРасширеннаяПодсказка" id="743"/>
-												</LabelDecoration>
+													<TitleLocation>Right</TitleLocation>
+													<ToolTip>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Запомнить пароль сертификата до закрытия программы. При снятии флажка пароль стирается из памяти, если запоминался ранее.</v8:content>
+														</v8:item>
+													</ToolTip>
+													<ToolTipRepresentation>Button</ToolTipRepresentation>
+													<CheckBoxType>Auto</CheckBoxType>
+													<ContextMenu name="ЗапомнитьПарольКонтекстноеМеню" id="821"/>
+													<ExtendedTooltip name="ЗапомнитьПарольРасширеннаяПодсказка" id="822"/>
+													<Events>
+														<Event name="OnChange">ЗапомнитьПарольПриИзменении</Event>
+													</Events>
+												</CheckBoxField>
 											</ChildItems>
 										</UsualGroup>
 										<UsualGroup name="ВертикальнаяГруппа3" id="852">
@@ -610,34 +621,6 @@
 															<PagesRepresentation>None</PagesRepresentation>
 															<ExtendedTooltip name="СтраницыРасширеннаяПодсказка" id="817"/>
 															<ChildItems>
-																<Page name="СтраницаЗапоминаниеПароля" id="818">
-																	<Title>
-																		<v8:item>
-																			<v8:lang>ru</v8:lang>
-																			<v8:content>Страница запоминание пароля</v8:content>
-																		</v8:item>
-																	</Title>
-																	<ExtendedTooltip name="СтраницаЗапоминаниеПароляРасширеннаяПодсказка" id="819"/>
-																	<ChildItems>
-																		<CheckBoxField name="ЗапомнитьПароль" id="820">
-																			<DataPath>ЗапомнитьПароль</DataPath>
-																			<TitleLocation>Right</TitleLocation>
-																			<ToolTip>
-																				<v8:item>
-																					<v8:lang>ru</v8:lang>
-																					<v8:content>Запомнить пароль сертификата до закрытия программы. При снятии флажка пароль стирается из памяти, если запоминался ранее.</v8:content>
-																				</v8:item>
-																			</ToolTip>
-																			<ToolTipRepresentation>Button</ToolTipRepresentation>
-																			<CheckBoxType>Auto</CheckBoxType>
-																			<ContextMenu name="ЗапомнитьПарольКонтекстноеМеню" id="821"/>
-																			<ExtendedTooltip name="ЗапомнитьПарольРасширеннаяПодсказка" id="822"/>
-																			<Events>
-																				<Event name="OnChange">ЗапомнитьПарольПриИзменении</Event>
-																			</Events>
-																		</CheckBoxField>
-																	</ChildItems>
-																</Page>
 																<Page name="СтраницаПояснениеУсиленногоПароля" id="823">
 																	<Title>
 																		<v8:item>
@@ -1119,7 +1102,7 @@
 			</ToolTip>
 			<Picture>
 				<xr:Ref>CommonPicture.СертификатКлюча</xr:Ref>
-				<xr:LoadTransparent>true</xr:LoadTransparent>
+				<xr:LoadTransparent>false</xr:LoadTransparent>
 			</Picture>
 			<Action>ПоказатьДанныеСертификата</Action>
 			<CurrentRowUse>DontUse</CurrentRowUse>
@@ -1139,7 +1122,7 @@
 			</ToolTip>
 			<Picture>
 				<xr:Ref>CommonPicture.СертификатКлюча</xr:Ref>
-				<xr:LoadTransparent>true</xr:LoadTransparent>
+				<xr:LoadTransparent>false</xr:LoadTransparent>
 			</Picture>
 			<Action>ПоказатьДанныеТекущегоСертификата</Action>
 			<CurrentRowUse>DontUse</CurrentRowUse>
