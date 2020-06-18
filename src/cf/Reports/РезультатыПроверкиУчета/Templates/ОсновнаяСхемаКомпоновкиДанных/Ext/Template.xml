@@ -235,6 +235,7 @@
 				<group>true</group>
 				<order>true</order>
 			</attributeUseRestriction>
+			<presentationExpression>"%" + ИдентификаторПроверки + "," + ОбработчикПереходаКИсправлению + "," + Строка(XMLСтрока(ВидПроверки)) + "%"</presentationExpression>
 			<valueType>
 				<v8:Type>xs:string</v8:Type>
 				<v8:StringQualifiers>
@@ -276,28 +277,6 @@
 		<destinationExpression>ИдентификаторПроверки</destinationExpression>
 	</dataSetLink>
 	<calculatedField>
-		<dataPath>ОбработчикПереходаКИсправлениюРасчет</dataPath>
-		<expression>ОбработчикПереходаКИсправлению</expression>
-		<title xsi:type="v8:LocalStringType">
-			<v8:item>
-				<v8:lang>ru</v8:lang>
-				<v8:content>Обработчик перехода к исправлению расчет</v8:content>
-			</v8:item>
-		</title>
-		<presentationExpression>"%" + ИдентификаторПроверки + "," + ОбработчикПереходаКИсправлению + "," + Строка(XMLСтрока(ВидПроверки)) + "%"</presentationExpression>
-	</calculatedField>
-	<calculatedField>
-		<dataPath>ПроблемныйОбъектРасчет</dataPath>
-		<expression>КонтрольВеденияУчетаСлужебный.РасшифровкаЯчейки(ПроблемныйОбъект, ПравилоПроверки, ВидПроверки, УточнениеПроблемы)</expression>
-		<title xsi:type="v8:LocalStringType">
-			<v8:item>
-				<v8:lang>ru</v8:lang>
-				<v8:content>Проблемный объект расчет [ЗаголовокСкрыт]</v8:content>
-			</v8:item>
-		</title>
-		<presentationExpression>КонтрольВеденияУчетаСлужебный.ПредставлениеПроблемногоОбъекта(ПроблемныйОбъект, Представление(ПроблемныйОбъект), ДополнительнаяИнформация)</presentationExpression>
-	</calculatedField>
-	<calculatedField>
 		<dataPath>ПравилоПроверкиПричиныПроблемы</dataPath>
 		<expression>ПравилоПроверкиПричиныПроблемы + " *"</expression>
 		<title xsi:type="v8:LocalStringType">
@@ -315,26 +294,24 @@
 		</valueType>
 	</calculatedField>
 	<calculatedField>
-		<dataPath>УточнениеПроблемыРасчет</dataPath>
+		<dataPath>РасшифровкаПоля</dataPath>
 		<expression>КонтрольВеденияУчетаСлужебный.РасшифровкаЯчейки(ПроблемныйОбъект, ПравилоПроверки, ВидПроверки, УточнениеПроблемы)</expression>
 		<title xsi:type="v8:LocalStringType">
 			<v8:item>
 				<v8:lang>ru</v8:lang>
-				<v8:content>Уточнение проблемы</v8:content>
+				<v8:content>Расшифровка поля</v8:content>
 			</v8:item>
 		</title>
-		<presentationExpression>УточнениеПроблемы</presentationExpression>
 	</calculatedField>
 	<calculatedField>
-		<dataPath>ВыявленоРасчет</dataPath>
-		<expression>КонтрольВеденияУчетаСлужебный.РасшифровкаЯчейки(ПроблемныйОбъект, ПравилоПроверки, ВидПроверки, УточнениеПроблемы)</expression>
+		<dataPath>ПроблемныйОбъектПредставление</dataPath>
+		<expression>КонтрольВеденияУчетаСлужебный.ПредставлениеПроблемногоОбъекта(ПроблемныйОбъект, Представление(ПроблемныйОбъект), ДополнительнаяИнформация)</expression>
 		<title xsi:type="v8:LocalStringType">
 			<v8:item>
 				<v8:lang>ru</v8:lang>
-				<v8:content>Выявлено</v8:content>
+				<v8:content>Проблемный объект представление [ЗаголовокСкрыт]</v8:content>
 			</v8:item>
 		</title>
-		<presentationExpression>Выявлено</presentationExpression>
 	</calculatedField>
 	<totalField>
 		<dataPath>КоличествоПроблемСОбъектом</dataPath>
@@ -775,6 +752,117 @@
 			<dcsat:expression>ПараметрыДанных.ИнформацияОПоследнейПроверке</dcsat:expression>
 		</parameter>
 	</template>
+	<template>
+		<name>Макет4</name>
+		<template xmlns:dcsat="http://v8.1c.ru/8.1/data-composition-system/area-template" xsi:type="dcsat:AreaTemplate">
+			<dcsat:item xsi:type="dcsat:TableRow">
+				<dcsat:tableCell>
+					<dcsat:item xsi:type="dcsat:Field">
+						<dcsat:value xsi:type="dcscor:Parameter">ПроблемныйОбъектПредставление</dcsat:value>
+					</dcsat:item>
+					<dcsat:appearance>
+						<dcscor:item>
+							<dcscor:parameter>Размещение</dcscor:parameter>
+							<dcscor:value xsi:type="dcscor:DataCompositionTextPlacementType">Wrap</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>Расшифровка</dcscor:parameter>
+							<dcscor:value xsi:type="dcscor:Parameter">Расшифровка</dcscor:value>
+						</dcscor:item>
+					</dcsat:appearance>
+				</dcsat:tableCell>
+			</dcsat:item>
+		</template>
+		<parameter xmlns:dcsat="http://v8.1c.ru/8.1/data-composition-system/area-template" xsi:type="dcsat:DetailsAreaTemplateParameter">
+			<dcsat:name>Расшифровка</dcsat:name>
+			<dcsat:fieldExpression>
+				<dcsat:field>ПроблемныйОбъектПредставление</dcsat:field>
+				<dcsat:expression>РасшифровкаПоля</dcsat:expression>
+			</dcsat:fieldExpression>
+		</parameter>
+		<parameter xmlns:dcsat="http://v8.1c.ru/8.1/data-composition-system/area-template" xsi:type="dcsat:ExpressionAreaTemplateParameter">
+			<dcsat:name>ПроблемныйОбъектПредставление</dcsat:name>
+			<dcsat:expression>ПроблемныйОбъектПредставление</dcsat:expression>
+		</parameter>
+	</template>
+	<template>
+		<name>Макет5</name>
+		<template xmlns:dcsat="http://v8.1c.ru/8.1/data-composition-system/area-template" xsi:type="dcsat:AreaTemplate">
+			<dcsat:item xsi:type="dcsat:TableRow">
+				<dcsat:tableCell>
+					<dcsat:item xsi:type="dcsat:Field">
+						<dcsat:value xsi:type="dcscor:Parameter">УточнениеПроблемы</dcsat:value>
+					</dcsat:item>
+					<dcsat:appearance>
+						<dcscor:item>
+							<dcscor:parameter>Размещение</dcscor:parameter>
+							<dcscor:value xsi:type="dcscor:DataCompositionTextPlacementType">Wrap</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>Расшифровка</dcscor:parameter>
+							<dcscor:value xsi:type="dcscor:Parameter">Расшифровка</dcscor:value>
+						</dcscor:item>
+					</dcsat:appearance>
+				</dcsat:tableCell>
+			</dcsat:item>
+		</template>
+		<parameter xmlns:dcsat="http://v8.1c.ru/8.1/data-composition-system/area-template" xsi:type="dcsat:DetailsAreaTemplateParameter">
+			<dcsat:name>Расшифровка</dcsat:name>
+			<dcsat:fieldExpression>
+				<dcsat:field>УточнениеПроблемы</dcsat:field>
+				<dcsat:expression>РасшифровкаПоля</dcsat:expression>
+			</dcsat:fieldExpression>
+		</parameter>
+		<parameter xmlns:dcsat="http://v8.1c.ru/8.1/data-composition-system/area-template" xsi:type="dcsat:ExpressionAreaTemplateParameter">
+			<dcsat:name>УточнениеПроблемы</dcsat:name>
+			<dcsat:expression>УточнениеПроблемы</dcsat:expression>
+		</parameter>
+	</template>
+	<template>
+		<name>Макет6</name>
+		<template xmlns:dcsat="http://v8.1c.ru/8.1/data-composition-system/area-template" xsi:type="dcsat:AreaTemplate">
+			<dcsat:item xsi:type="dcsat:TableRow">
+				<dcsat:tableCell>
+					<dcsat:item xsi:type="dcsat:Field">
+						<dcsat:value xsi:type="dcscor:Parameter">Выявлено</dcsat:value>
+					</dcsat:item>
+					<dcsat:appearance>
+						<dcscor:item>
+							<dcscor:parameter>Размещение</dcscor:parameter>
+							<dcscor:value xsi:type="dcscor:DataCompositionTextPlacementType">Wrap</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>Расшифровка</dcscor:parameter>
+							<dcscor:value xsi:type="dcscor:Parameter">Расшифровка</dcscor:value>
+						</dcscor:item>
+					</dcsat:appearance>
+				</dcsat:tableCell>
+			</dcsat:item>
+		</template>
+		<parameter xmlns:dcsat="http://v8.1c.ru/8.1/data-composition-system/area-template" xsi:type="dcsat:ExpressionAreaTemplateParameter">
+			<dcsat:name>Выявлено</dcsat:name>
+			<dcsat:expression>Выявлено</dcsat:expression>
+		</parameter>
+		<parameter xmlns:dcsat="http://v8.1c.ru/8.1/data-composition-system/area-template" xsi:type="dcsat:DetailsAreaTemplateParameter">
+			<dcsat:name>Расшифровка</dcsat:name>
+			<dcsat:fieldExpression>
+				<dcsat:field>Выявлено</dcsat:field>
+				<dcsat:expression>РасшифровкаПоля</dcsat:expression>
+			</dcsat:fieldExpression>
+		</parameter>
+	</template>
+	<fieldTemplate>
+		<field>ПроблемныйОбъектПредставление</field>
+		<template>Макет4</template>
+	</fieldTemplate>
+	<fieldTemplate>
+		<field>УточнениеПроблемы</field>
+		<template>Макет5</template>
+	</fieldTemplate>
+	<fieldTemplate>
+		<field>Выявлено</field>
+		<template>Макет6</template>
+	</fieldTemplate>
 	<groupTemplate>
 		<groupName>Ответственный</groupName>
 		<templateType>OverallFooter</templateType>
@@ -1350,15 +1438,7 @@
 									<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
 								</dcsset:item>
 								<dcsset:item xsi:type="dcsset:GroupItemField">
-									<dcsset:use>false</dcsset:use>
 									<dcsset:field>ОбработчикПереходаКИсправлению</dcsset:field>
-									<dcsset:groupType>Items</dcsset:groupType>
-									<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
-									<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
-									<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
-								</dcsset:item>
-								<dcsset:item xsi:type="dcsset:GroupItemField">
-									<dcsset:field>ОбработчикПереходаКИсправлениюРасчет</dcsset:field>
 									<dcsset:groupType>Items</dcsset:groupType>
 									<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
 									<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
@@ -1405,7 +1485,14 @@
 								<dcsset:name>Детализация</dcsset:name>
 								<dcsset:groupItems>
 									<dcsset:item xsi:type="dcsset:GroupItemField">
-										<dcsset:field>ПроблемныйОбъектРасчет</dcsset:field>
+										<dcsset:field>ПроблемныйОбъектПредставление</dcsset:field>
+										<dcsset:groupType>Items</dcsset:groupType>
+										<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+										<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+										<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+									</dcsset:item>
+									<dcsset:item xsi:type="dcsset:GroupItemField">
+										<dcsset:field>РасшифровкаПоля</dcsset:field>
 										<dcsset:groupType>Items</dcsset:groupType>
 										<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
 										<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
@@ -1419,14 +1506,14 @@
 										<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
 									</dcsset:item>
 									<dcsset:item xsi:type="dcsset:GroupItemField">
-										<dcsset:field>УточнениеПроблемыРасчет</dcsset:field>
+										<dcsset:field>УточнениеПроблемы</dcsset:field>
 										<dcsset:groupType>Items</dcsset:groupType>
 										<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
 										<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
 										<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
 									</dcsset:item>
 									<dcsset:item xsi:type="dcsset:GroupItemField">
-										<dcsset:field>ВыявленоРасчет</dcsset:field>
+										<dcsset:field>Выявлено</dcsset:field>
 										<dcsset:groupType>Items</dcsset:groupType>
 										<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
 										<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
@@ -1438,6 +1525,10 @@
 								</dcsset:order>
 								<dcsset:selection>
 									<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+									<dcsset:item xsi:type="dcsset:SelectedItemField">
+										<dcsset:use>false</dcsset:use>
+										<dcsset:field>РасшифровкаПоля</dcsset:field>
+									</dcsset:item>
 								</dcsset:selection>
 							</dcsset:item>
 						</dcsset:item>

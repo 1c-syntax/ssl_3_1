@@ -34,6 +34,12 @@
 				<CommandName>Form.StandardCommand.Help</CommandName>
 				<ExtendedTooltip name="ФормаСправкаРасширеннаяПодсказка" id="350"/>
 			</Button>
+			<Button name="ФормаОчиститьФотографию" id="356">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.ОчиститьФотографию</CommandName>
+				<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
+				<ExtendedTooltip name="ФормаОчиститьФотографиюРасширеннаяПодсказка" id="357"/>
+			</Button>
 		</ChildItems>
 	</AutoCommandBar>
 	<Events>
@@ -1383,6 +1389,11 @@
 			</Type>
 			<SavedData>true</SavedData>
 		</Attribute>
+		<Attribute name="ФотографияЗадана" id="5">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
 	</Attributes>
 	<Commands>
 		<Command name="ПоказатьТолькоВыбранныеРоли" id="1">
@@ -1526,6 +1537,23 @@
 			</ToolTip>
 			<Action>ЗаписатьИЗакрыть</Action>
 			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ОчиститьФотографию" id="9">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Очистить фотографию</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Очистить фотографию</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ОчиститьФотографию</Action>
+			<Representation>Text</Representation>
+			<ModifiesSavedData>true</ModifiesSavedData>
 		</Command>
 	</Commands>
 	<Parameters>

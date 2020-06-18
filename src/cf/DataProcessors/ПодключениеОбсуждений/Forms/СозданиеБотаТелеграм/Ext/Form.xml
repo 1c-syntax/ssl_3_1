@@ -68,10 +68,10 @@
 					<Title formatted="true">
 						<v8:item>
 							<v8:lang>ru</v8:lang>
-							<v8:content>Бот в Telegram создается при помощи другого бота под названием &lt;link https://telegram.me/BotFather&gt;BotFather&lt;/&gt;. 
-1. Откройте Telegram в телефоне или на компьютере, найдите поиском BotFather.
-2. Отправьте ему команду /newbot, выберите имя, которое будет отображаться в списке контактов.
-3. Если адрес не занят, а имя введено правильно, BotFather пришлет в ответ сообщение с токеном — «ключом» для доступа к созданному боту, который понадобится далее при настройке.
+							<v8:content>Для получения сообщений из Telegram необходим бот, с которым будут общаться ваши контакты. Если у вас в Telegram еще нет бота, то создайте его: 
+1. Открыть Telegram в телефоне или на компьютере, найти с помощью поиска бота &lt;link https://telegram.me/BotFather&gt;BotFather&lt;/&gt;.
+2. Написать ему в сообщении &lt;b&gt;/newbot&lt;/&gt; и выбрать имя, которое будет отображаться в списке контактов.
+3. Если имя бота не занято и введено правильно, BotFather пришлет в ответ сообщение с токеном — «ключом» для доступа к созданному боту, который понадобится далее при настройке.
 
 Не забудьте задать описание бота и картинку, как описано &lt;link https://tlgrm.ru/docs/bots#edit-settings&gt;здесь&lt;/&gt;.</v8:content>
 						</v8:item>
@@ -89,7 +89,7 @@
 				</v8:item>
 			</Title>
 			<Group>Vertical</Group>
-			<Representation>None</Representation>
+			<Representation>NormalSeparation</Representation>
 			<ShowTitle>false</ShowTitle>
 			<ExtendedTooltip name="ГруппаПараметрыРасширеннаяПодсказка" id="4"/>
 			<ChildItems>
@@ -116,68 +116,68 @@
 					<ContextMenu name="ТокенКонтекстноеМеню" id="15"/>
 					<ExtendedTooltip name="ТокенРасширеннаяПодсказка" id="16"/>
 				</InputField>
-				<Table name="Участники" id="17">
-					<Representation>List</Representation>
-					<TitleLocation>Auto</TitleLocation>
-					<Header>false</Header>
-					<UseAlternationRowColor>true</UseAlternationRowColor>
-					<DataPath>Участники</DataPath>
-					<Title>
-						<v8:item>
-							<v8:lang>ru</v8:lang>
-							<v8:content>Участники обсуждения</v8:content>
-						</v8:item>
-					</Title>
-					<RowFilter xsi:nil="true"/>
-					<ContextMenu name="УчастникиКонтекстноеМеню" id="19"/>
-					<AutoCommandBar name="УчастникиКоманднаяПанель" id="18">
-						<Autofill>false</Autofill>
-						<ChildItems>
-							<Button name="ОтветственныеПодобрать" id="33">
-								<Type>CommandBarButton</Type>
-								<CommandName>Form.Command.Подобрать</CommandName>
-								<ExtendedTooltip name="ОтветственныеПодобратьРасширеннаяПодсказка" id="34"/>
-							</Button>
-						</ChildItems>
-					</AutoCommandBar>
-					<ExtendedTooltip name="УчастникиРасширеннаяПодсказка" id="20"/>
-					<SearchStringAddition name="УчастникиСтрокаПоиска" id="21">
-						<AdditionSource>
-							<Item>Участники</Item>
-							<Type>SearchStringRepresentation</Type>
-						</AdditionSource>
-						<ContextMenu name="УчастникиСтрокаПоискаКонтекстноеМеню" id="22"/>
-						<ExtendedTooltip name="УчастникиСтрокаПоискаРасширеннаяПодсказка" id="23"/>
-					</SearchStringAddition>
-					<ViewStatusAddition name="УчастникиСостояниеПросмотра" id="27">
-						<AdditionSource>
-							<Item>Участники</Item>
-							<Type>ViewStatusRepresentation</Type>
-						</AdditionSource>
-						<ContextMenu name="УчастникиСостояниеПросмотраКонтекстноеМеню" id="28"/>
-						<ExtendedTooltip name="УчастникиСостояниеПросмотраРасширеннаяПодсказка" id="29"/>
-					</ViewStatusAddition>
-					<SearchControlAddition name="УчастникиУправлениеПоиском" id="24">
-						<AdditionSource>
-							<Item>Участники</Item>
-							<Type>SearchControl</Type>
-						</AdditionSource>
-						<ContextMenu name="УчастникиУправлениеПоискомКонтекстноеМеню" id="25"/>
-						<ExtendedTooltip name="УчастникиУправлениеПоискомРасширеннаяПодсказка" id="26"/>
-					</SearchControlAddition>
-					<Events>
-						<Event name="ChoiceProcessing">УчастникиОбработкаВыбора</Event>
-					</Events>
-					<ChildItems>
-						<InputField name="УчастникиПользователь" id="30">
-							<DataPath>Участники.Пользователь</DataPath>
-							<ContextMenu name="УчастникиПользовательКонтекстноеМеню" id="31"/>
-							<ExtendedTooltip name="УчастникиПользовательРасширеннаяПодсказка" id="32"/>
-						</InputField>
-					</ChildItems>
-				</Table>
 			</ChildItems>
 		</UsualGroup>
+		<Table name="Участники" id="17">
+			<Representation>List</Representation>
+			<TitleLocation>Auto</TitleLocation>
+			<Header>false</Header>
+			<UseAlternationRowColor>true</UseAlternationRowColor>
+			<DataPath>Участники</DataPath>
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Кто получает и отправляет сообщения от лица бота Telegram</v8:content>
+				</v8:item>
+			</Title>
+			<RowFilter xsi:nil="true"/>
+			<ContextMenu name="УчастникиКонтекстноеМеню" id="19"/>
+			<AutoCommandBar name="УчастникиКоманднаяПанель" id="18">
+				<Autofill>false</Autofill>
+				<ChildItems>
+					<Button name="ОтветственныеПодобрать" id="33">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Command.Подобрать</CommandName>
+						<ExtendedTooltip name="ОтветственныеПодобратьРасширеннаяПодсказка" id="34"/>
+					</Button>
+				</ChildItems>
+			</AutoCommandBar>
+			<ExtendedTooltip name="УчастникиРасширеннаяПодсказка" id="20"/>
+			<SearchStringAddition name="УчастникиСтрокаПоиска" id="21">
+				<AdditionSource>
+					<Item>Участники</Item>
+					<Type>SearchStringRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="УчастникиСтрокаПоискаКонтекстноеМеню" id="22"/>
+				<ExtendedTooltip name="УчастникиСтрокаПоискаРасширеннаяПодсказка" id="23"/>
+			</SearchStringAddition>
+			<ViewStatusAddition name="УчастникиСостояниеПросмотра" id="27">
+				<AdditionSource>
+					<Item>Участники</Item>
+					<Type>ViewStatusRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="УчастникиСостояниеПросмотраКонтекстноеМеню" id="28"/>
+				<ExtendedTooltip name="УчастникиСостояниеПросмотраРасширеннаяПодсказка" id="29"/>
+			</ViewStatusAddition>
+			<SearchControlAddition name="УчастникиУправлениеПоиском" id="24">
+				<AdditionSource>
+					<Item>Участники</Item>
+					<Type>SearchControl</Type>
+				</AdditionSource>
+				<ContextMenu name="УчастникиУправлениеПоискомКонтекстноеМеню" id="25"/>
+				<ExtendedTooltip name="УчастникиУправлениеПоискомРасширеннаяПодсказка" id="26"/>
+			</SearchControlAddition>
+			<Events>
+				<Event name="ChoiceProcessing">УчастникиОбработкаВыбора</Event>
+			</Events>
+			<ChildItems>
+				<InputField name="УчастникиПользователь" id="30">
+					<DataPath>Участники.Пользователь</DataPath>
+					<ContextMenu name="УчастникиПользовательКонтекстноеМеню" id="31"/>
+					<ExtendedTooltip name="УчастникиПользовательРасширеннаяПодсказка" id="32"/>
+				</InputField>
+			</ChildItems>
+		</Table>
 	</ChildItems>
 	<Attributes>
 		<Attribute name="Наименование" id="1">

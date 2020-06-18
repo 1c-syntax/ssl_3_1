@@ -15,6 +15,7 @@
 		<ChildItems>
 			<Button name="Отключить" id="99">
 				<Type>CommandBarButton</Type>
+				<Visible>false</Visible>
 				<CommandName>Form.Command.Отключить</CommandName>
 				<ExtendedTooltip name="ОтключитьРасширеннаяПодсказка" id="100"/>
 			</Button>
@@ -28,6 +29,7 @@
 	</AutoCommandBar>
 	<Events>
 		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+		<Event name="FillCheckProcessingAtServer">ОбработкаПроверкиЗаполненияНаСервере</Event>
 	</Events>
 	<ChildItems>
 		<UsualGroup name="ГруппаОписание" id="68">
@@ -60,12 +62,12 @@
 					<Title formatted="true">
 						<v8:item>
 							<v8:lang>ru</v8:lang>
-							<v8:content>1. Перейдите в настройки сообщества
-2. На вкладке Работа с API создайте ключ и введите его в поле Ключ
-3. На вкладке Callback API найдите строчку похожую на
+							<v8:content>Для получения сообщений из социальной сети ВКонтакте, необходимо создать сообщество. Затем укажите его ключи:
+1. Перейти в настройки сообщества ВКонтакте.
+2. На вкладке &lt;b&gt;Работа с API&lt;/&gt; создать ключ и ввести его в поле &lt;b&gt;Ключ&lt;/&gt;.
+3. На вкладке &lt;b&gt;Callback API &lt;/&gt;найти строчку похожую на
 {"type":"Confirmation", "group_id": 346875149}
-4. Введите цифры group_id в поле ключ группы
-5. Добавьте пользователей, которые будут получать сообщения от бота</v8:content>
+и ввести цифры group_id в поле &lt;b&gt;Ключ группы&lt;/&gt;.</v8:content>
 						</v8:item>
 					</Title>
 					<GroupVerticalAlign>Center</GroupVerticalAlign>
@@ -82,8 +84,7 @@
 				</v8:item>
 			</Title>
 			<Group>Vertical</Group>
-			<Representation>None</Representation>
-			<United>false</United>
+			<Representation>NormalSeparation</Representation>
 			<ShowTitle>false</ShowTitle>
 			<ExtendedTooltip name="ГруппаПараметрыРасширеннаяПодсказка" id="98"/>
 			<ChildItems>
@@ -137,7 +138,7 @@
 			<Title>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Участники обсуждения</v8:content>
+					<v8:content>Кто получает и отправляет сообщения от лица сообщества ВКонтакте</v8:content>
 				</v8:item>
 			</Title>
 			<RowFilter xsi:nil="true"/>

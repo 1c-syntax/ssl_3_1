@@ -979,6 +979,7 @@
 					<v8:content>Контактная информация</v8:content>
 				</v8:item>
 			</Title>
+			<Height>4</Height>
 			<Group>AlwaysHorizontal</Group>
 			<Behavior>Collapsible</Behavior>
 			<ControlRepresentation>Picture</ControlRepresentation>
@@ -986,15 +987,16 @@
 			<ExtendedTooltip name="ГруппаКонтактнаяИнформацияРасширеннаяПодсказка" id="275"/>
 			<ChildItems>
 				<PictureField name="Фотография" id="276">
-					<DataPath>Фотография</DataPath>
+					<DataPath>АдресФотографии</DataPath>
 					<TitleLocation>None</TitleLocation>
 					<Width>7</Width>
 					<AutoMaxWidth>false</AutoMaxWidth>
 					<Height>4</Height>
-					<MaxHeight>6</MaxHeight>
+					<AutoMaxHeight>false</AutoMaxHeight>
+					<MaxHeight>4</MaxHeight>
 					<HorizontalStretch>false</HorizontalStretch>
 					<VerticalStretch>false</VerticalStretch>
-					<PictureSize>Proportionally</PictureSize>
+					<PictureSize>AutoSize</PictureSize>
 					<NonselectedPictureText>
 						<v8:item>
 							<v8:lang>ru</v8:lang>
@@ -1010,7 +1012,9 @@
 					<TitleLocation>None</TitleLocation>
 					<GroupVerticalAlign>Center</GroupVerticalAlign>
 					<AutoMaxWidth>false</AutoMaxWidth>
-					<MaxHeight>6</MaxHeight>
+					<Height>4</Height>
+					<AutoMaxHeight>false</AutoMaxHeight>
+					<MaxHeight>4</MaxHeight>
 					<MultiLine>true</MultiLine>
 					<ContextMenu name="ПредставлениеКонтактнойИнформацииКонтекстноеМеню" id="293"/>
 					<ExtendedTooltip name="ПредставлениеКонтактнойИнформацииРасширеннаяПодсказка" id="294"/>
@@ -1345,11 +1349,11 @@
 				</v8:StringQualifiers>
 			</Type>
 		</Attribute>
-		<Attribute name="Фотография" id="9">
+		<Attribute name="АдресФотографии" id="9">
 			<Title>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Фотография</v8:content>
+					<v8:content>Адрес фотографии</v8:content>
 				</v8:item>
 			</Title>
 			<Type>
@@ -1372,6 +1376,20 @@
 		<Attribute name="ВыборУчастниковОбсуждения" id="12">
 			<Type>
 				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="АдресПользовательБезФотографии" id="11">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ТекущийПользователь" id="13">
+			<Type>
+				<v8:Type>cfg:CatalogRef.Пользователи</v8:Type>
 			</Type>
 		</Attribute>
 	</Attributes>
