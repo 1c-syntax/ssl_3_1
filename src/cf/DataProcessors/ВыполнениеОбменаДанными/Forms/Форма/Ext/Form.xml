@@ -38,6 +38,53 @@
 			<PagesRepresentation>None</PagesRepresentation>
 			<ExtendedTooltip name="ВыполнениеОбменаДаннымиExtendedTooltip" id="88"/>
 			<ChildItems>
+				<Page name="ОжиданиеЗапускаСинхронизации" id="192">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Ожидание запуска синхронизации</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="ОжиданиеЗапускаСинхронизацииРасширеннаяПодсказка" id="193"/>
+					<ChildItems>
+						<UsualGroup name="Группа1" id="200">
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="Группа1РасширеннаяПодсказка" id="201"/>
+							<ChildItems>
+								<PictureDecoration name="ДлительнаяОперация1" id="194">
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Длительная операция</v8:content>
+										</v8:item>
+									</Title>
+									<Picture>
+										<xr:Ref>CommonPicture.СинхронизацияДанныхДлительнаяОперация48</xr:Ref>
+										<xr:LoadTransparent>false</xr:LoadTransparent>
+									</Picture>
+									<FileDragMode>AsFile</FileDragMode>
+									<ContextMenu name="ДлительнаяОперация1КонтекстноеМеню" id="195"/>
+									<ExtendedTooltip name="ДлительнаяОперация1РасширеннаяПодсказка" id="196"/>
+								</PictureDecoration>
+								<LabelDecoration name="СтатусОжиданияЗапускаСинхронизации" id="197">
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<Height>3</Height>
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Ожидается возможность запуска синхронизации данных.
+Пожалуйста, подождите...</v8:content>
+										</v8:item>
+									</Title>
+									<VerticalAlign>Center</VerticalAlign>
+									<ContextMenu name="СтатусОжиданияЗапускаСинхронизацииКонтекстноеМеню" id="198"/>
+									<ExtendedTooltip name="СтатусОжиданияЗапускаСинхронизацииРасширеннаяПодсказка" id="199"/>
+								</LabelDecoration>
+							</ChildItems>
+						</UsualGroup>
+					</ChildItems>
+				</Page>
 				<Page name="ЗапросПароляПользователя" id="53">
 					<Title>
 						<v8:item>
@@ -1140,6 +1187,11 @@
 					<v8:FractionDigits>0</v8:FractionDigits>
 					<v8:AllowedSign>Nonnegative</v8:AllowedSign>
 				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="БлокировкаУзлаУстановлена" id="47">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
 			</Type>
 		</Attribute>
 	</Attributes>
