@@ -155,7 +155,7 @@
 															<Type>CommandBarButton</Type>
 															<SkipOnInput>false</SkipOnInput>
 															<CommandName>Form.Command.НайтиКонтакты</CommandName>
-															<LocationInCommandBar>InCommandBar</LocationInCommandBar>
+															<LocationInCommandBar>InCommandBarAndInAdditionalSubmenu</LocationInCommandBar>
 															<ExtendedTooltip name="НайтиExtendedTooltip" id="188"/>
 														</Button>
 														<Popup name="ГруппаВариантыПоиска" id="306">
@@ -175,7 +175,7 @@
 																<Button name="ВариантПоискаВезде" id="310">
 																	<Type>CommandBarButton</Type>
 																	<CommandName>Form.Command.ВариантПоискаВезде</CommandName>
-																	<LocationInCommandBar>InCommandBar</LocationInCommandBar>
+																	<LocationInCommandBar>InCommandBarAndInAdditionalSubmenu</LocationInCommandBar>
 																	<ExtendedTooltip name="ВариантПоискаВездеРасширеннаяПодсказка" id="311"/>
 																</Button>
 																<Button name="ВариантПоискаВАдресах" id="312">
@@ -1013,7 +1013,6 @@
 															<Wrap>false</Wrap>
 															<DropListButton>true</DropListButton>
 															<TextColor>win:Highlight</TextColor>
-															<Font ref="0" kind="StyleItem"/>
 															<ContextMenu name="АдресКонтекстноеМеню" id="60"/>
 															<ExtendedTooltip name="АдресExtendedTooltip" id="242"/>
 														</InputField>
@@ -1478,6 +1477,7 @@
 			<Type>
 				<v8:Type>v8:ValueListType</v8:Type>
 			</Type>
+			<Settings xsi:type="v8:TypeDescription"/>
 		</Attribute>
 	</Attributes>
 	<Commands>
@@ -1697,7 +1697,7 @@
 			</ToolTip>
 			<Picture>
 				<xr:Ref>CommonPicture.Встреча</xr:Ref>
-				<xr:LoadTransparent>true</xr:LoadTransparent>
+				<xr:LoadTransparent>false</xr:LoadTransparent>
 			</Picture>
 			<Action>УстановитьАдресКонтактаВыполнить</Action>
 			<CurrentRowUse>DontUse</CurrentRowUse>

@@ -132,6 +132,28 @@
 				</v8:StringQualifiers>
 			</Type>
 		</Attribute>
+		<Attribute name="СостояниеОбработкиЗаявленияАктуально" id="1">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ИдентификаторДокументооборота" id="8">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ДатаОбновленияСостояния" id="9">
+			<Type>
+				<v8:Type>xs:dateTime</v8:Type>
+				<v8:DateQualifiers>
+					<v8:DateFractions>DateTime</v8:DateFractions>
+				</v8:DateQualifiers>
+			</Type>
+		</Attribute>
 	</Attributes>
 	<Parameters>
 		<Parameter name="СостояниеОбработкиЗаявления">
@@ -142,7 +164,6 @@
 					<v8:AllowedLength>Variable</v8:AllowedLength>
 				</v8:StringQualifiers>
 			</Type>
-			<KeyParameter>true</KeyParameter>
 		</Parameter>
 		<Parameter name="АдресЗапросаНаСертификат">
 			<Type>
@@ -152,7 +173,6 @@
 					<v8:AllowedLength>Variable</v8:AllowedLength>
 				</v8:StringQualifiers>
 			</Type>
-			<KeyParameter>true</KeyParameter>
 		</Parameter>
 		<Parameter name="ИмяФайла">
 			<Type>
@@ -162,7 +182,6 @@
 					<v8:AllowedLength>Variable</v8:AllowedLength>
 				</v8:StringQualifiers>
 			</Type>
-			<KeyParameter>true</KeyParameter>
 		</Parameter>
 		<Parameter name="АдресСертификата">
 			<Type>
@@ -172,7 +191,6 @@
 					<v8:AllowedLength>Variable</v8:AllowedLength>
 				</v8:StringQualifiers>
 			</Type>
-			<KeyParameter>true</KeyParameter>
 		</Parameter>
 		<Parameter name="АдресКорневогоСертификата">
 			<Type>
@@ -182,7 +200,6 @@
 					<v8:AllowedLength>Variable</v8:AllowedLength>
 				</v8:StringQualifiers>
 			</Type>
-			<KeyParameter>true</KeyParameter>
 		</Parameter>
 		<Parameter name="АдресОтветаСервиса">
 			<Type>
@@ -192,7 +209,33 @@
 					<v8:AllowedLength>Variable</v8:AllowedLength>
 				</v8:StringQualifiers>
 			</Type>
-			<KeyParameter>true</KeyParameter>
+		</Parameter>
+		<Parameter name="СостояниеЗаявления">
+			<Type>
+				<v8:Type>cfg:EnumRef.СостоянияЗаявленияНаВыпускСертификата</v8:Type>
+			</Type>
+		</Parameter>
+		<Parameter name="СостояниеОбработкиЗаявленияАктуально">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Parameter>
+		<Parameter name="ИдентификаторДокументооборота">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Parameter>
+		<Parameter name="ДатаОбновленияСостояния">
+			<Type>
+				<v8:Type>xs:dateTime</v8:Type>
+				<v8:DateQualifiers>
+					<v8:DateFractions>DateTime</v8:DateFractions>
+				</v8:DateQualifiers>
+			</Type>
 		</Parameter>
 	</Parameters>
 </Form>

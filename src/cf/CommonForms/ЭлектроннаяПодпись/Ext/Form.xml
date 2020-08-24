@@ -78,6 +78,46 @@
 			<ContextMenu name="ОписаниеОшибкиКонтекстноеМеню" id="36"/>
 			<ExtendedTooltip name="ОписаниеОшибкиРасширеннаяПодсказка" id="37"/>
 		</InputField>
+		<UsualGroup name="ТехническаяИнформация" id="41">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Техническая информация</v8:content>
+				</v8:item>
+			</Title>
+			<Group>Vertical</Group>
+			<Behavior>Collapsible</Behavior>
+			<Collapsed>true</Collapsed>
+			<ControlRepresentation>Picture</ControlRepresentation>
+			<Representation>None</Representation>
+			<ExtendedTooltip name="ТехническаяИнформацияРасширеннаяПодсказка" id="42"/>
+			<ChildItems>
+				<InputField name="АлгоритмПодписи" id="43">
+					<DataPath>АлгоритмПодписи</DataPath>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Алгоритм, которым с помощью закрытой части ключа подписана криптостойкая хеш-сумма данных, вычисленная с помощью алгоритма хеширования.</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ToolTipRepresentation>Button</ToolTipRepresentation>
+					<ContextMenu name="АлгоритмПодписиКонтекстноеМеню" id="44"/>
+					<ExtendedTooltip name="АлгоритмПодписиРасширеннаяПодсказка" id="45"/>
+				</InputField>
+				<InputField name="АлгоритмХеширования" id="46">
+					<DataPath>АлгоритмХеширования</DataPath>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Алгоритм, которым вычислена криптостойкая хеш-сумма данных и затем подписана закрытой частью ключа с помощью алгоритма подписи.</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ToolTipRepresentation>Button</ToolTipRepresentation>
+					<ContextMenu name="АлгоритмХешированияКонтекстноеМеню" id="47"/>
+					<ExtendedTooltip name="АлгоритмХешированияРасширеннаяПодсказка" id="48"/>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
 		<LabelDecoration name="Инструкция" id="38">
 			<AutoMaxWidth>false</AutoMaxWidth>
 			<Title formatted="false">
@@ -214,6 +254,36 @@
 				<v8:item>
 					<v8:lang>ru</v8:lang>
 					<v8:content>Описание ошибки</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="АлгоритмПодписи" id="8">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Алгоритм подписи</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="АлгоритмХеширования" id="13">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Алгоритм хеширования</v8:content>
 				</v8:item>
 			</Title>
 			<Type>

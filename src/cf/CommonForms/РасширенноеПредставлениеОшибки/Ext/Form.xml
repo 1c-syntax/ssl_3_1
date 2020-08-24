@@ -1,7 +1,8 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.10">
-	<Width>45</Width>
+	<Width>55</Width>
 	<WindowOpeningMode>LockOwnerWindow</WindowOpeningMode>
+	<AutoTitle>false</AutoTitle>
 	<CommandBarLocation>None</CommandBarLocation>
 	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
 	<Events>
@@ -28,6 +29,7 @@
 						</v8:item>
 					</Title>
 					<Group>AlwaysHorizontal</Group>
+					<VerticalAlign>Center</VerticalAlign>
 					<Representation>None</Representation>
 					<ShowTitle>false</ShowTitle>
 					<ExtendedTooltip name="ЗаголовокКлиентРасширеннаяПодсказка" id="2"/>
@@ -88,7 +90,7 @@
 									<v8:content>Возможные причины</v8:content>
 								</v8:item>
 							</Title>
-							<Representation>NormalSeparation</Representation>
+							<Representation>None</Representation>
 							<ExtendedTooltip name="ВозможныеПричиныКлиентРасширеннаяПодсказка" id="13"/>
 							<ChildItems>
 								<LabelDecoration name="ПричиныКлиентТекст" id="14">
@@ -111,7 +113,7 @@
 									<v8:content>Возможные способы устранения</v8:content>
 								</v8:item>
 							</Title>
-							<Representation>NormalSeparation</Representation>
+							<Representation>None</Representation>
 							<ExtendedTooltip name="ВозможныеРешенияКлиентРасширеннаяПодсказка" id="18"/>
 							<ChildItems>
 								<LabelDecoration name="РешенияКлиентТекст" id="19">
@@ -147,7 +149,7 @@
 			</ChildItems>
 		</UsualGroup>
 		<LabelDecoration name="ДекорацияРазделитель" id="57">
-			<Visible>false</Visible>
+			<Font ref="style:NormalTextFont" kind="StyleItem" scale="10"/>
 			<ContextMenu name="ДекорацияРазделительКонтекстноеМеню" id="58"/>
 			<ExtendedTooltip name="ДекорацияРазделительРасширеннаяПодсказка" id="59"/>
 		</LabelDecoration>
@@ -171,6 +173,7 @@
 						</v8:item>
 					</Title>
 					<Group>AlwaysHorizontal</Group>
+					<VerticalAlign>Center</VerticalAlign>
 					<Representation>None</Representation>
 					<ShowTitle>false</ShowTitle>
 					<ExtendedTooltip name="ЗаголовокСерверРасширеннаяПодсказка" id="30"/>
@@ -231,7 +234,7 @@
 									<v8:content>Возможные причины</v8:content>
 								</v8:item>
 							</Title>
-							<Representation>NormalSeparation</Representation>
+							<Representation>None</Representation>
 							<ExtendedTooltip name="ВозможныеПричиныСерверРасширеннаяПодсказка" id="41"/>
 							<ChildItems>
 								<LabelDecoration name="ПричиныСерверТекст" id="42">
@@ -254,7 +257,7 @@
 									<v8:content>Возможные способы устранения</v8:content>
 								</v8:item>
 							</Title>
-							<Representation>NormalSeparation</Representation>
+							<Representation>None</Representation>
 							<ExtendedTooltip name="ВозможныеРешенияСерверРасширеннаяПодсказка" id="46"/>
 							<ChildItems>
 								<LabelDecoration name="РешенияСерверТекст" id="47">
@@ -287,6 +290,100 @@
 						<Event name="Click">ИнструкцияНажатие</Event>
 					</Events>
 				</LabelDecoration>
+			</ChildItems>
+		</UsualGroup>
+		<LabelDecoration name="ДекорацияРазделитель2" id="78">
+			<Font ref="style:NormalTextFont" kind="StyleItem" scale="10"/>
+			<ContextMenu name="ДекорацияРазделитель2КонтекстноеМеню" id="79"/>
+			<ExtendedTooltip name="ДекорацияРазделитель2РасширеннаяПодсказка" id="80"/>
+		</LabelDecoration>
+		<UsualGroup name="ГруппаПодвал" id="60">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Подвал</v8:content>
+				</v8:item>
+			</Title>
+			<Group>AlwaysHorizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаПодвалРасширеннаяПодсказка" id="61"/>
+			<ChildItems>
+				<UsualGroup name="Инструкция" id="62">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Требуется помощь?</v8:content>
+						</v8:item>
+					</Title>
+					<Group>Vertical</Group>
+					<Behavior>PopUp</Behavior>
+					<ExtendedTooltip name="ИнструкцияРасширеннаяПодсказка" id="63"/>
+					<ChildItems>
+						<LabelDecoration name="ТипичныеПроблемы" id="64">
+							<Title formatted="true">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>При возникновении затруднений ознакомьтесь со списком &lt;link ТипичныеПроблемы&gt;типичных проблем при &lt;/&gt;&lt;link ИнструкцияНажатие&gt;работе&lt;/&gt;&lt;link ТипичныеПроблемы&gt; с программой электронной подписи и их решений&lt;/&gt;.</v8:content>
+								</v8:item>
+							</Title>
+							<ContextMenu name="ТипичныеПроблемыКонтекстноеМеню" id="65"/>
+							<ExtendedTooltip name="ТипичныеПроблемыРасширеннаяПодсказка" id="66"/>
+							<Events>
+								<Event name="URLProcessing">ТипичныеПроблемыОбработкаНавигационнойСсылки</Event>
+							</Events>
+						</LabelDecoration>
+						<LabelDecoration name="ИнформацияДляПоддержки" id="67">
+							<Title formatted="true">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>В иных случаях обратитесь в службу поддержки фирмы "1С", предоставив &lt;link Ссылка&gt;техническую информацию о возникшей проблеме&lt;/&gt;.</v8:content>
+								</v8:item>
+							</Title>
+							<ContextMenu name="ИнформацияДляПоддержкиКонтекстноеМеню" id="68"/>
+							<ExtendedTooltip name="ИнформацияДляПоддержкиРасширеннаяПодсказка" id="69"/>
+							<Events>
+								<Event name="URLProcessing">ИнформацияДляПоддержкиОбработкаНавигационнойСсылки</Event>
+							</Events>
+						</LabelDecoration>
+					</ChildItems>
+				</UsualGroup>
+				<CommandBar name="КоманднаяПанель" id="70">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Командная панель</v8:content>
+						</v8:item>
+					</Title>
+					<HorizontalLocation>Right</HorizontalLocation>
+					<ExtendedTooltip name="КоманднаяПанельРасширеннаяПодсказка" id="71"/>
+					<ChildItems>
+						<Button name="ФормаУстановитьРасширение" id="72">
+							<Type>CommandBarButton</Type>
+							<CommandName>Form.Command.УстановитьРасширение</CommandName>
+							<ExtendedTooltip name="ФормаУстановитьРасширениеРасширеннаяПодсказка" id="73"/>
+						</Button>
+						<Button name="ФормаПерейтиКНастройкеПрограмм" id="74">
+							<Type>CommandBarButton</Type>
+							<CommandName>Form.Command.ПерейтиКНастройкеПрограмм</CommandName>
+							<ExtendedTooltip name="ФормаПерейтиКНастройкеПрограммРасширеннаяПодсказка" id="75"/>
+						</Button>
+						<Button name="ФормаЗакрыть" id="76">
+							<Type>CommandBarButton</Type>
+							<Representation>Text</Representation>
+							<DefaultButton>true</DefaultButton>
+							<DefaultItem>true</DefaultItem>
+							<CommandName>Form.StandardCommand.Close</CommandName>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Закрыть</v8:content>
+								</v8:item>
+							</Title>
+							<ExtendedTooltip name="ФормаЗакрытьРасширеннаяПодсказка" id="77"/>
+						</Button>
+					</ChildItems>
+				</CommandBar>
 			</ChildItems>
 		</UsualGroup>
 	</ChildItems>
@@ -339,7 +436,47 @@
 				</v8:StringQualifiers>
 			</Type>
 		</Attribute>
+		<Attribute name="ОписаниеОшибки" id="5">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ДополнительныеДанные" id="6">
+			<Type/>
+		</Attribute>
 	</Attributes>
+	<Commands>
+		<Command name="ПерейтиКНастройкеПрограмм" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Перейти к настройке программ</v8:content>
+				</v8:item>
+			</Title>
+			<Action>ПерейтиКНастройкеПрограмм</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="УстановитьРасширение" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Установить расширение</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Установить расширение</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>УстановитьРасширение</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+	</Commands>
 	<Parameters>
 		<Parameter name="ЗаголовокПредупреждения">
 			<Type>
@@ -367,6 +504,38 @@
 					<v8:AllowedLength>Variable</v8:AllowedLength>
 				</v8:StringQualifiers>
 			</Type>
+		</Parameter>
+		<Parameter name="ПоказатьИнструкцию">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Parameter>
+		<Parameter name="ПоказатьПереходКНастройкеПрограмм">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Parameter>
+		<Parameter name="ПоказатьУстановкуРасширения">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Parameter>
+		<Parameter name="ПоказатьТребуетсяПомощь">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Parameter>
+		<Parameter name="ОписаниеОшибки">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Parameter>
+		<Parameter name="ДополнительныеДанные">
+			<Type/>
 		</Parameter>
 	</Parameters>
 </Form>

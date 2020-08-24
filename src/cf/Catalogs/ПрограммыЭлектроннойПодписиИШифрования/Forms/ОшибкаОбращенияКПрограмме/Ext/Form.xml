@@ -17,6 +17,7 @@
 		<Autofill>false</Autofill>
 	</AutoCommandBar>
 	<Events>
+		<Event name="OnOpen">ПриОткрытии</Event>
 		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
 	</Events>
 	<ChildItems>
@@ -269,6 +270,24 @@
 				</v8:StringQualifiers>
 			</Type>
 		</Attribute>
+		<Attribute name="ПоказатьИнструкцию" id="3">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ПоказатьПереходКНастройкеПрограмм" id="4">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ПоказатьУстановкуРасширения" id="5">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ДополнительныеДанные" id="6">
+			<Type/>
+		</Attribute>
 	</Attributes>
 	<Commands>
 		<Command name="ПерейтиКНастройкеПрограмм" id="2">
@@ -344,6 +363,9 @@
 			</Type>
 		</Parameter>
 		<Parameter name="НеподписанныеДанные">
+			<Type/>
+		</Parameter>
+		<Parameter name="ДополнительныеДанные">
 			<Type/>
 		</Parameter>
 	</Parameters>

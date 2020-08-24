@@ -40,7 +40,7 @@
 					<PictureSize>AutoSize</PictureSize>
 					<Picture>
 						<xr:Ref>CommonPicture.Информация32</xr:Ref>
-						<xr:LoadTransparent>true</xr:LoadTransparent>
+						<xr:LoadTransparent>false</xr:LoadTransparent>
 					</Picture>
 					<ContextMenu name="КартинкаИнфоКонтекстноеМеню" id="94"/>
 					<ExtendedTooltip name="КартинкаИнфоРасширеннаяПодсказка" id="95"/>
@@ -116,7 +116,7 @@
 									</ToolTip>
 									<Picture>
 										<xr:Ref>CommonPicture.УстановитьСостояниеОригиналаПервичногоДокумента</xr:Ref>
-										<xr:LoadTransparent>true</xr:LoadTransparent>
+										<xr:LoadTransparent>false</xr:LoadTransparent>
 									</Picture>
 									<Representation>PictureAndText</Representation>
 									<ExtendedTooltip name="ПодменюУстановитьНастроитьСостояниеОригиналаРасширеннаяПодсказка" id="144"/>
@@ -283,7 +283,7 @@
 									</Title>
 									<Picture>
 										<xr:Ref>CommonPicture.Отборы</xr:Ref>
-										<xr:LoadTransparent>true</xr:LoadTransparent>
+										<xr:LoadTransparent>false</xr:LoadTransparent>
 									</Picture>
 									<CommandSource>FormCommandPanelGlobalCommands</CommandSource>
 									<Representation>Picture</Representation>
@@ -300,7 +300,7 @@
 													<v8:content> Показать отслеживаемые</v8:content>
 												</v8:item>
 											</Title>
-											<LocationInCommandBar>InCommandBar</LocationInCommandBar>
+											<LocationInCommandBar>InCommandBarAndInAdditionalSubmenu</LocationInCommandBar>
 											<ExtendedTooltip name="ПоказатьОтслеживаемыеРасширеннаяПодсказка" id="88"/>
 										</Button>
 										<Button name="ПоказатьВсе" id="85">
@@ -315,7 +315,7 @@
 												</v8:item>
 											</Title>
 											<RepresentationInContextMenu>None</RepresentationInContextMenu>
-											<LocationInCommandBar>InCommandBar</LocationInCommandBar>
+											<LocationInCommandBar>InCommandBarAndInAdditionalSubmenu</LocationInCommandBar>
 											<ExtendedTooltip name="ПоказатьВсеРасширеннаяПодсказка" id="86"/>
 										</Button>
 									</ChildItems>
@@ -334,7 +334,7 @@
 			<RowPictureDataPath>КомплектПечатныхФорм.Картинка</RowPictureDataPath>
 			<RowsPicture>
 				<xr:Ref>CommonPicture.КоллекцияПиктограммПечатныеФормыОригиналаПервичногоДокумента</xr:Ref>
-				<xr:LoadTransparent>true</xr:LoadTransparent>
+				<xr:LoadTransparent>false</xr:LoadTransparent>
 			</RowsPicture>
 			<Title>
 				<v8:item>
@@ -356,7 +356,7 @@
 						<HorizontalStretch>false</HorizontalStretch>
 						<Picture>
 							<xr:Ref>CommonPicture.УстановитьСостояниеОригиналаПервичногоДокумента</xr:Ref>
-							<xr:LoadTransparent>true</xr:LoadTransparent>
+							<xr:LoadTransparent>false</xr:LoadTransparent>
 						</Picture>
 						<ExtendedTooltip name="ГруппаУстановитьСостояниеОригиналаКонтекстноеМенюРасширеннаяПодсказка" id="142"/>
 					</Popup>
@@ -438,11 +438,11 @@
 					<EditMode>EnterOnInput</EditMode>
 					<HeaderPicture>
 						<xr:Ref>CommonPicture.СостояниеОригиналаПервичногоДокументаОригиналПолучен</xr:Ref>
-						<xr:LoadTransparent>true</xr:LoadTransparent>
+						<xr:LoadTransparent>false</xr:LoadTransparent>
 					</HeaderPicture>
 					<ValuesPicture>
 						<xr:Ref>CommonPicture.КоллекцияПиктограммНаличиеОригиналаПервичногоДокумента</xr:Ref>
-						<xr:LoadTransparent>true</xr:LoadTransparent>
+						<xr:LoadTransparent>false</xr:LoadTransparent>
 					</ValuesPicture>
 					<ContextMenu name="ОригиналПолученКартинкаКонтекстноеМеню" id="139"/>
 					<ExtendedTooltip name="ОригиналПолученКартинкаРасширеннаяПодсказка" id="140"/>
@@ -668,11 +668,13 @@
 			<Type>
 				<v8:Type>v8:ValueListType</v8:Type>
 			</Type>
+			<Settings xsi:type="v8:TypeDescription"/>
 		</Attribute>
 		<Attribute name="СписокВыбораСостоянийОригинала" id="9">
 			<Type>
 				<v8:Type>v8:ValueListType</v8:Type>
 			</Type>
+			<Settings xsi:type="v8:TypeDescription"/>
 		</Attribute>
 	</Attributes>
 	<Commands>

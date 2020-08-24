@@ -101,11 +101,14 @@
 							<Width>18</Width>
 							<AutoMaxWidth>false</AutoMaxWidth>
 							<ChoiceButton>true</ChoiceButton>
+							<OpenButton>true</OpenButton>
+							<AutoMarkIncomplete>true</AutoMarkIncomplete>
 							<TextEdit>false</TextEdit>
 							<ContextMenu name="НаименованиеСокращенноеКонтекстноеМеню" id="784"/>
 							<ExtendedTooltip name="НаименованиеСокращенноеРасширеннаяПодсказка" id="785"/>
 							<Events>
 								<Event name="StartChoice">НаименованиеСокращенноеНачалоВыбора</Event>
+								<Event name="Opening">НаименованиеСокращенноеОткрытие</Event>
 								<Event name="Clearing">НаименованиеСокращенноеОчистка</Event>
 								<Event name="ChoiceProcessing">НаименованиеСокращенноеОбработкаВыбора</Event>
 							</Events>
@@ -113,13 +116,16 @@
 						<InputField name="Организация" id="50">
 							<DataPath>Организация</DataPath>
 							<TitleFont ref="style:ЗаявлениеНаВыпускСертификатаЗаголовокКлючевогоПоляШрифт" kind="StyleItem"/>
-							<TitleLocation>Left</TitleLocation>
 							<AutoMaxWidth>false</AutoMaxWidth>
+							<DropListButton>true</DropListButton>
+							<ChoiceButtonRepresentation>ShowInDropList</ChoiceButtonRepresentation>
 							<AutoMarkIncomplete>true</AutoMarkIncomplete>
+							<ChooseType>false</ChooseType>
 							<ContextMenu name="ОрганизацияКонтекстноеМеню" id="51"/>
 							<ExtendedTooltip name="ОрганизацияРасширеннаяПодсказка" id="52"/>
 							<Events>
 								<Event name="OnChange">ОрганизацияПриИзменении</Event>
+								<Event name="StartChoice">ОрганизацияНачалоВыбора</Event>
 								<Event name="Clearing">ОрганизацияОчистка</Event>
 							</Events>
 						</InputField>
@@ -164,14 +170,15 @@
 							<TitleFont ref="style:ЗаявлениеНаВыпускСертификатаЗаголовокКлючевогоПоляШрифт" kind="StyleItem"/>
 							<Width>18</Width>
 							<AutoMaxWidth>false</AutoMaxWidth>
-							<DropListButton>true</DropListButton>
 							<ChoiceButton>true</ChoiceButton>
-							<ChoiceButtonRepresentation>ShowInDropList</ChoiceButtonRepresentation>
+							<OpenButton>true</OpenButton>
+							<AutoMarkIncomplete>true</AutoMarkIncomplete>
 							<TextEdit>false</TextEdit>
 							<ContextMenu name="ВладелецСертификатаСтрокойКонтекстноеМеню" id="787"/>
 							<ExtendedTooltip name="ВладелецСертификатаСтрокойРасширеннаяПодсказка" id="788"/>
 							<Events>
 								<Event name="StartChoice">ВладелецСертификатаСтрокойНачалоВыбора</Event>
+								<Event name="Opening">ВладелецСертификатаСтрокойОткрытие</Event>
 								<Event name="Clearing">ВладелецСертификатаСтрокойОчистка</Event>
 								<Event name="ChoiceProcessing">ВладелецСертификатаСтрокойОбработкаВыбора</Event>
 							</Events>
@@ -623,7 +630,7 @@
 				</v8:item>
 			</Title>
 			<Type>
-				<v8:TypeSet>cfg:DefinedType.Организация</v8:TypeSet>
+				<v8:TypeSet>cfg:AnyRef</v8:TypeSet>
 			</Type>
 		</Attribute>
 		<Attribute name="НаименованиеСокращенное" id="6">
@@ -636,7 +643,7 @@
 			<Type>
 				<v8:Type>xs:string</v8:Type>
 				<v8:StringQualifiers>
-					<v8:Length>64</v8:Length>
+					<v8:Length>255</v8:Length>
 					<v8:AllowedLength>Variable</v8:AllowedLength>
 				</v8:StringQualifiers>
 			</Type>
@@ -708,7 +715,7 @@
 			<Type>
 				<v8:Type>xs:string</v8:Type>
 				<v8:StringQualifiers>
-					<v8:Length>64</v8:Length>
+					<v8:Length>255</v8:Length>
 					<v8:AllowedLength>Variable</v8:AllowedLength>
 				</v8:StringQualifiers>
 			</Type>
@@ -717,7 +724,7 @@
 			<Type>
 				<v8:Type>xs:string</v8:Type>
 				<v8:StringQualifiers>
-					<v8:Length>64</v8:Length>
+					<v8:Length>255</v8:Length>
 					<v8:AllowedLength>Variable</v8:AllowedLength>
 				</v8:StringQualifiers>
 			</Type>
@@ -726,7 +733,7 @@
 			<Type>
 				<v8:Type>xs:string</v8:Type>
 				<v8:StringQualifiers>
-					<v8:Length>64</v8:Length>
+					<v8:Length>255</v8:Length>
 					<v8:AllowedLength>Variable</v8:AllowedLength>
 				</v8:StringQualifiers>
 			</Type>
@@ -744,7 +751,7 @@
 			<Type>
 				<v8:Type>xs:string</v8:Type>
 				<v8:StringQualifiers>
-					<v8:Length>64</v8:Length>
+					<v8:Length>255</v8:Length>
 					<v8:AllowedLength>Variable</v8:AllowedLength>
 				</v8:StringQualifiers>
 			</Type>
@@ -753,7 +760,7 @@
 			<Type>
 				<v8:Type>xs:string</v8:Type>
 				<v8:StringQualifiers>
-					<v8:Length>64</v8:Length>
+					<v8:Length>255</v8:Length>
 					<v8:AllowedLength>Variable</v8:AllowedLength>
 				</v8:StringQualifiers>
 			</Type>
@@ -1122,7 +1129,7 @@
 			<Type>
 				<v8:Type>xs:string</v8:Type>
 				<v8:StringQualifiers>
-					<v8:Length>128</v8:Length>
+					<v8:Length>255</v8:Length>
 					<v8:AllowedLength>Variable</v8:AllowedLength>
 				</v8:StringQualifiers>
 			</Type>
@@ -1347,7 +1354,7 @@
 			<Type>
 				<v8:Type>xs:string</v8:Type>
 				<v8:StringQualifiers>
-					<v8:Length>200</v8:Length>
+					<v8:Length>0</v8:Length>
 					<v8:AllowedLength>Variable</v8:AllowedLength>
 				</v8:StringQualifiers>
 			</Type>
@@ -1362,9 +1369,7 @@
 			</Type>
 		</Attribute>
 		<Attribute name="ПрограммаОблачногоСервиса" id="27">
-			<Type>
-				<v8:Type>cfg:CatalogRef.ПрограммыЭлектроннойПодписиИШифрования</v8:Type>
-			</Type>
+			<Type/>
 		</Attribute>
 		<Attribute name="АдресОтветаСервиса" id="35">
 			<Type>
@@ -1391,6 +1396,16 @@
 					<v8:Length>0</v8:Length>
 					<v8:AllowedLength>Variable</v8:AllowedLength>
 				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ЭтоОбработкаОповещения" id="92">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="СостояниеОбработкиЗаявленияАктуально" id="91">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
 			</Type>
 		</Attribute>
 	</Attributes>
