@@ -293,6 +293,38 @@
 										</InputField>
 									</ChildItems>
 								</ColumnGroup>
+								<InputField name="РолиИмя" id="400">
+									<DataPath>Роли.Имя</DataPath>
+									<UserVisible>
+										<xr:Common>false</xr:Common>
+									</UserVisible>
+									<ReadOnly>true</ReadOnly>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="РолиИмяКонтекстноеМеню" id="401"/>
+									<ExtendedTooltip name="РолиИмяРасширеннаяПодсказка" id="402"/>
+								</InputField>
+								<CheckBoxField name="РолиЭтоНедоступнаяРоль" id="406">
+									<DataPath>Роли.ЭтоНедоступнаяРоль</DataPath>
+									<UserVisible>
+										<xr:Common>false</xr:Common>
+									</UserVisible>
+									<ReadOnly>true</ReadOnly>
+									<EditMode>EnterOnInput</EditMode>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="РолиЭтоНедоступнаяРольКонтекстноеМеню" id="407"/>
+									<ExtendedTooltip name="РолиЭтоНедоступнаяРольРасширеннаяПодсказка" id="408"/>
+								</CheckBoxField>
+								<CheckBoxField name="РолиЭтоНесуществующаяРоль" id="409">
+									<DataPath>Роли.ЭтоНесуществующаяРоль</DataPath>
+									<UserVisible>
+										<xr:Common>false</xr:Common>
+									</UserVisible>
+									<ReadOnly>true</ReadOnly>
+									<EditMode>EnterOnInput</EditMode>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="РолиЭтоНесуществующаяРольКонтекстноеМеню" id="410"/>
+									<ExtendedTooltip name="РолиЭтоНесуществующаяРольРасширеннаяПодсказка" id="411"/>
+								</CheckBoxField>
 							</ChildItems>
 						</Table>
 					</ChildItems>
@@ -762,6 +794,12 @@
 					</Type>
 				</Column>
 				<Column name="Имя" id="5">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Имя роли в конфигурации</v8:content>
+						</v8:item>
+					</Title>
 					<Type>
 						<v8:Type>xs:string</v8:Type>
 						<v8:StringQualifiers>
@@ -776,11 +814,23 @@
 					</Type>
 				</Column>
 				<Column name="ЭтоНедоступнаяРоль" id="6">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Это недоступная роль</v8:content>
+						</v8:item>
+					</Title>
 					<Type>
 						<v8:Type>xs:boolean</v8:Type>
 					</Type>
 				</Column>
 				<Column name="ЭтоНесуществующаяРоль" id="7">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Это несуществующая роль</v8:content>
+						</v8:item>
+					</Title>
 					<Type>
 						<v8:Type>xs:boolean</v8:Type>
 					</Type>
