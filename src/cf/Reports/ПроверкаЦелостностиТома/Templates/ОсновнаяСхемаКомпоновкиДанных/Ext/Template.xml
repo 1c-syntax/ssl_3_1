@@ -118,14 +118,23 @@
 	</dataSet>
 	<calculatedField>
 		<dataPath>СсылкаНаФайл</dataPath>
-		<expression>Файл</expression>
+		<expression>Имя</expression>
 		<title xsi:type="v8:LocalStringType">
 			<v8:item>
 				<v8:lang>ru</v8:lang>
 				<v8:content>Наименование</v8:content>
 			</v8:item>
 		</title>
-		<presentationExpression>Имя</presentationExpression>
+	</calculatedField>
+	<calculatedField>
+		<dataPath>СсылкаНаФайл.Расшифровка</dataPath>
+		<expression>Файл</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Наименование (расшифровка)</v8:content>
+			</v8:item>
+		</title>
 	</calculatedField>
 	<totalField>
 		<dataPath>Файл</dataPath>
@@ -147,6 +156,39 @@
 		<denyIncompleteValues>true</denyIncompleteValues>
 		<use>Always</use>
 	</parameter>
+	<template>
+		<name>Макет1</name>
+		<template xmlns:dcsat="http://v8.1c.ru/8.1/data-composition-system/area-template" xsi:type="dcsat:AreaTemplate">
+			<dcsat:item xsi:type="dcsat:TableRow">
+				<dcsat:tableCell>
+					<dcsat:item xsi:type="dcsat:Field">
+						<dcsat:value xsi:type="dcscor:Parameter">СсылкаНаФайл</dcsat:value>
+					</dcsat:item>
+					<dcsat:appearance>
+						<dcscor:item>
+							<dcscor:parameter>Расшифровка</dcscor:parameter>
+							<dcscor:value xsi:type="dcscor:Parameter">Расшифровка</dcscor:value>
+						</dcscor:item>
+					</dcsat:appearance>
+				</dcsat:tableCell>
+			</dcsat:item>
+		</template>
+		<parameter xmlns:dcsat="http://v8.1c.ru/8.1/data-composition-system/area-template" xsi:type="dcsat:ExpressionAreaTemplateParameter">
+			<dcsat:name>СсылкаНаФайл</dcsat:name>
+			<dcsat:expression>СсылкаНаФайл</dcsat:expression>
+		</parameter>
+		<parameter xmlns:dcsat="http://v8.1c.ru/8.1/data-composition-system/area-template" xsi:type="dcsat:DetailsAreaTemplateParameter">
+			<dcsat:name>Расшифровка</dcsat:name>
+			<dcsat:fieldExpression>
+				<dcsat:field>СсылкаНаФайл</dcsat:field>
+				<dcsat:expression>СсылкаНаФайл.Расшифровка</dcsat:expression>
+			</dcsat:fieldExpression>
+		</parameter>
+	</template>
+	<fieldTemplate>
+		<field>СсылкаНаФайл</field>
+		<template>Макет1</template>
+	</fieldTemplate>
 	<settingsVariant>
 		<dcsset:name>Основной</dcsset:name>
 		<dcsset:presentation xsi:type="v8:LocalStringType">

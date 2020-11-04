@@ -7,6 +7,8 @@
 				<Type>CommandBarButton</Type>
 				<DefaultButton>true</DefaultButton>
 				<CommandName>Form.Command.Выбрать</CommandName>
+				<RepresentationInContextMenu>None</RepresentationInContextMenu>
+				<LocationInCommandBar>InCommandBarAndInAdditionalSubmenu</LocationInCommandBar>
 				<ExtendedTooltip name="ФормаВыбратьРасширеннаяПодсказка" id="50"/>
 			</Button>
 			<Button name="ФормаДобавитьНастройку" id="56">
@@ -18,6 +20,20 @@
 				<Type>CommandBarButton</Type>
 				<CommandName>Form.Command.ДобавитьПолеНастройки</CommandName>
 				<ExtendedTooltip name="ФормаДобавитьПолеНастройкиРасширеннаяПодсказка" id="67"/>
+			</Button>
+			<Button name="УдаляемыеОбъекты" id="81">
+				<Type>CommandBarButton</Type>
+				<Representation>Picture</Representation>
+				<Enabled>false</Enabled>
+				<HorizontalStretch>true</HorizontalStretch>
+				<GroupHorizontalAlign>Right</GroupHorizontalAlign>
+				<CommandName>Form.Command.УдаляемыеОбъекты</CommandName>
+				<Picture>
+					<xr:Ref>CommonPicture.ДлительнаяОперация16</xr:Ref>
+					<xr:LoadTransparent>false</xr:LoadTransparent>
+				</Picture>
+				<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
+				<ExtendedTooltip name="УдаляемыеОбъектыРасширеннаяПодсказка" id="82"/>
 			</Button>
 		</ChildItems>
 	</AutoCommandBar>
@@ -475,6 +491,21 @@
 				<xr:LoadTransparent>true</xr:LoadTransparent>
 			</Picture>
 			<Action>ДобавитьПолеНастройки</Action>
+		</Command>
+		<Command name="УдаляемыеОбъекты" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заблокированные для использования объекты</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Удаляемые объекты</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>УдаляемыеОбъекты</Action>
 		</Command>
 	</Commands>
 </Form>
