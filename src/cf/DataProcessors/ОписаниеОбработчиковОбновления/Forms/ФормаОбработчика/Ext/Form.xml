@@ -935,7 +935,15 @@
 								</v8:item>
 							</Title>
 							<RowFilter xsi:nil="true"/>
-							<ContextMenu name="БлокируемыеОбъектыКонтекстноеМеню" id="182"/>
+							<ContextMenu name="БлокируемыеОбъектыКонтекстноеМеню" id="182">
+								<ChildItems>
+									<Button name="БлокируемыеОбъектыДобавитьТипыРеквизита" id="799">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.Command.ДобавитьТипыРеквизитаВБлокируемыеОбъекты</CommandName>
+										<ExtendedTooltip name="БлокируемыеОбъектыДобавитьТипыРеквизитаРасширеннаяПодсказка" id="800"/>
+									</Button>
+								</ChildItems>
+							</ContextMenu>
 							<AutoCommandBar name="БлокируемыеОбъектыКоманднаяПанель" id="183"/>
 							<ExtendedTooltip name="БлокируемыеОбъектыРасширеннаяПодсказка" id="184"/>
 							<SearchStringAddition name="БлокируемыеОбъектыСтрокаПоиска" id="185">
@@ -1913,6 +1921,22 @@
 				</v8:item>
 			</ToolTip>
 			<Action>ПриоритетПоУмолчанию</Action>
+		</Command>
+		<Command name="ДобавитьТипыРеквизитаВБлокируемыеОбъекты" id="13">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Добавить типы реквизита</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Добавить типы реквизита в блокируемые объекты</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Shortcut>Shift+R</Shortcut>
+			<Action>ДобавитьТипыРеквизитаВБлокируемыеОбъекты</Action>
 		</Command>
 	</Commands>
 	<Parameters>
