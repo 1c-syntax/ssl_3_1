@@ -15,12 +15,12 @@
 		<ChildItems>
 			<Button name="ФормаПерезапустить" id="4">
 				<Type>CommandBarButton</Type>
+				<DefaultButton>true</DefaultButton>
 				<CommandName>Form.Command.Перезапустить</CommandName>
 				<ExtendedTooltip name="ФормаПерезапуститьРасширеннаяПодсказка" id="5"/>
 			</Button>
 			<Button name="ФормаНапомнитьПозже" id="6">
 				<Type>CommandBarButton</Type>
-				<DefaultButton>true</DefaultButton>
 				<DefaultItem>true</DefaultItem>
 				<CommandName>Form.Command.НапомнитьПозже</CommandName>
 				<ExtendedTooltip name="ФормаНапомнитьПозжеРасширеннаяПодсказка" id="7"/>
@@ -33,6 +33,7 @@
 		</ChildItems>
 	</AutoCommandBar>
 	<Events>
+		<Event name="BeforeClose">ПередЗакрытием</Event>
 		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
 	</Events>
 	<ChildItems>
@@ -64,28 +65,65 @@
 					<ContextMenu name="КартинкаКонтекстноеМеню" id="11"/>
 					<ExtendedTooltip name="КартинкаРасширеннаяПодсказка" id="12"/>
 				</PictureDecoration>
-				<LabelDecoration name="Текст" id="1">
-					<AutoMaxWidth>false</AutoMaxWidth>
-					<SkipOnInput>true</SkipOnInput>
-					<Title formatted="true">
-						<v8:item>
-							<v8:lang>ru</v8:lang>
-							<v8:content>Версия программы обновлена (внесены изменения в конфигурацию информационной базы).
+				<UsualGroup name="ГруппаТекстИРасписание" id="22">
+					<Group>Vertical</Group>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаТекстИРасписаниеРасширеннаяПодсказка" id="23"/>
+					<ChildItems>
+						<UsualGroup name="ГруппаТекст" id="18">
+							<Representation>NormalSeparation</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаТекстРасширеннаяПодсказка" id="19"/>
+							<ChildItems>
+								<LabelDecoration name="Текст" id="1">
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<SkipOnInput>true</SkipOnInput>
+									<Title formatted="true">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Версия программы обновлена (внесены изменения в конфигурацию информационной базы).
 Для дальнейшей работы рекомендуется перезапустить программу</v8:content>
-						</v8:item>
-					</Title>
-					<GroupVerticalAlign>Center</GroupVerticalAlign>
-					<ContextMenu name="ТекстКонтекстноеМеню" id="2"/>
-					<ExtendedTooltip name="ТекстРасширеннаяПодсказка" id="3"/>
-					<Events>
-						<Event name="URLProcessing">ТекстОбработкаНавигационнойСсылки</Event>
-					</Events>
-				</LabelDecoration>
+										</v8:item>
+									</Title>
+									<GroupVerticalAlign>Center</GroupVerticalAlign>
+									<ContextMenu name="ТекстКонтекстноеМеню" id="2"/>
+									<ExtendedTooltip name="ТекстРасширеннаяПодсказка" id="3"/>
+									<Events>
+										<Event name="URLProcessing">ТекстОбработкаНавигационнойСсылки</Event>
+									</Events>
+								</LabelDecoration>
+							</ChildItems>
+						</UsualGroup>
+						<UsualGroup name="ГруппаРасписание" id="20">
+							<Representation>NormalSeparation</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаРасписаниеРасширеннаяПодсказка" id="21"/>
+							<ChildItems>
+								<LabelField name="Расписание" id="15">
+									<DataPath>ПредставлениеРасписания</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Напоминать о новых исправлениях</v8:content>
+										</v8:item>
+									</Title>
+									<Hiperlink>true</Hiperlink>
+									<ContextMenu name="РасписаниеКонтекстноеМеню" id="16"/>
+									<ExtendedTooltip name="РасписаниеРасширеннаяПодсказка" id="17"/>
+									<Events>
+										<Event name="Click">РасписаниеНажатие</Event>
+									</Events>
+								</LabelField>
+							</ChildItems>
+						</UsualGroup>
+					</ChildItems>
+				</UsualGroup>
 			</ChildItems>
 		</UsualGroup>
 	</ChildItems>
 	<Attributes>
-		<Attribute name="БольшеНеПоказывать" id="1">
+		<Attribute name="НажатиеНаКнопку" id="1">
 			<Type>
 				<v8:Type>xs:boolean</v8:Type>
 			</Type>
@@ -101,6 +139,32 @@
 					<v8:AllowedLength>Variable</v8:AllowedLength>
 				</v8:StringQualifiers>
 			</Type>
+		</Attribute>
+		<Attribute name="ПредставлениеРасписания" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Представление расписания</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="СтандартноеРасписание" id="5">
+			<Type/>
+		</Attribute>
+		<Attribute name="РасписаниеИзменено" id="6">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ТекущееРасписание" id="7">
+			<Type/>
 		</Attribute>
 	</Attributes>
 	<Commands>
