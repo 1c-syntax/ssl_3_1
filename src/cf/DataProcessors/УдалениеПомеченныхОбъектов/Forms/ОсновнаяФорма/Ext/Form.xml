@@ -227,11 +227,27 @@
 							</Title>
 							<ExtendedTooltip name="Группа1РасширеннаяПодсказка15" id="620"/>
 							<ChildItems>
-								<Button name="НеУдаленныеИзменить" id="621">
-									<Type>CommandBarButton</Type>
-									<CommandName>Form.Command.НеУдаленныеИзменить</CommandName>
-									<ExtendedTooltip name="НеУдаленныеИзменить1РасширеннаяПодсказка" id="622"/>
-								</Button>
+								<ButtonGroup name="ГруппаОперацииСНеудаленными" id="727">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Группа операции с неудаленными</v8:content>
+										</v8:item>
+									</Title>
+									<ExtendedTooltip name="ГруппаОперацииСНеудаленнымиРасширеннаяПодсказка" id="728"/>
+									<ChildItems>
+										<Button name="НеУдаленныеИзменить" id="621">
+											<Type>CommandBarButton</Type>
+											<CommandName>Form.Command.НеУдаленныеИзменить</CommandName>
+											<ExtendedTooltip name="НеУдаленныеИзменить1РасширеннаяПодсказка" id="622"/>
+										</Button>
+										<Button name="НеудаленныеУстановитьСнятьПометкуУдаления" id="729">
+											<Type>CommandBarButton</Type>
+											<CommandName>Form.Command.УстановитьСнятьПометкуУдаления</CommandName>
+											<ExtendedTooltip name="НеудаленныеУстановитьСнятьПометкуУдаленияРасширеннаяПодсказка" id="730"/>
+										</Button>
+									</ChildItems>
+								</ButtonGroup>
 								<Popup name="Действия" id="639">
 									<Title>
 										<v8:item>
@@ -809,6 +825,11 @@
 														<Type>CommandBarButton</Type>
 														<CommandName>Form.Item.НеУдаленные.StandardCommand.OutputList</CommandName>
 														<ExtendedTooltip name="НеУдаленныеВывестиСписокИзМенюРасширеннаяПодсказка" id="355"/>
+													</Button>
+													<Button name="НеУдаленныеКонтекстноеМенюУстановитьСнятьПометкуУдаления" id="731">
+														<Type>CommandBarButton</Type>
+														<CommandName>Form.Command.УстановитьСнятьПометкуУдаления</CommandName>
+														<ExtendedTooltip name="НеУдаленныеКонтекстноеМенюУстановитьСнятьПометкуУдаленияРасширеннаяПодсказка" id="732"/>
 													</Button>
 												</ChildItems>
 											</ContextMenu>
@@ -1716,6 +1737,12 @@
 				<v8:Type>xs:boolean</v8:Type>
 			</Type>
 		</Attribute>
+		<Attribute name="ЭлементыБезПометкиУдаления" id="2">
+			<Type>
+				<v8:Type>v8:ValueListType</v8:Type>
+			</Type>
+			<Settings xsi:type="v8:TypeDescription"/>
+		</Attribute>
 	</Attributes>
 	<Commands>
 		<Command name="ДеревоПомеченныхНаУдалениеУстановитьВсе" id="2">
@@ -1942,6 +1969,25 @@
 				<xr:LoadTransparent>true</xr:LoadTransparent>
 			</Picture>
 			<Action>РазвернутьСтрокиДереваПомеченных</Action>
+		</Command>
+		<Command name="УстановитьСнятьПометкуУдаления" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Установить / снять пометку удаления</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Установить снять пометку удаления</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.MarkToDelete</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>УстановитьСнятьПометкуУдаления</Action>
 		</Command>
 	</Commands>
 	<Parameters>
