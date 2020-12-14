@@ -25,6 +25,35 @@
 		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
 	</Events>
 	<ChildItems>
+		<UsualGroup name="КоманднаяПанель" id="9">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Командная панель</v8:content>
+				</v8:item>
+			</Title>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="КоманднаяПанельРасширеннаяПодсказка" id="10"/>
+			<ChildItems>
+				<Button name="Перевести" id="11">
+					<Type>UsualButton</Type>
+					<Representation>PictureAndText</Representation>
+					<CommandName>Form.Command.Перевести</CommandName>
+					<Picture>
+						<xr:Ref>CommonPicture.ЗаполнитьФорму</xr:Ref>
+						<xr:LoadTransparent>false</xr:LoadTransparent>
+					</Picture>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Перевести автоматически</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="ПеревестиРасширеннаяПодсказка" id="12"/>
+				</Button>
+			</ChildItems>
+		</UsualGroup>
 		<UsualGroup name="ГруппаЯзыки" id="5">
 			<Title>
 				<v8:item>
@@ -83,6 +112,15 @@
 						</v8:StringQualifiers>
 					</Type>
 				</Column>
+				<Column name="ФормаРедактирования" id="5">
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
 			</Columns>
 		</Attribute>
 		<Attribute name="МультиязычныеСтрокиВРеквизитах" id="2">
@@ -106,6 +144,21 @@
 				</v8:item>
 			</ToolTip>
 			<Action>ОК</Action>
+		</Command>
+		<Command name="Перевести" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Перевести</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Перевести</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>Перевести</Action>
 		</Command>
 	</Commands>
 	<Parameters>

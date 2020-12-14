@@ -140,6 +140,15 @@
 									<CommandName>Form.Command.ПереключитьРедактирование</CommandName>
 									<ExtendedTooltip name="КнопкаРедактированиеExtendedTooltip" id="157"/>
 								</Button>
+								<Popup name="Язык" id="284">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Язык</v8:content>
+										</v8:item>
+									</Title>
+									<ExtendedTooltip name="ЯзыкРасширеннаяПодсказка" id="285"/>
+								</Popup>
 							</ChildItems>
 						</ButtonGroup>
 						<ButtonGroup name="ГруппаСохранитьОтправить" id="108">
@@ -983,6 +992,29 @@
 						<v8:Type>xs:boolean</v8:Type>
 					</Type>
 				</Column>
+				<Column name="ДоступенВыводНаДругихЯзыках" id="13">
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+				<Column name="ТекущийЯзык" id="14">
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="ДоступныеЯзыки" id="15">
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
 			</Columns>
 		</Attribute>
 		<Attribute name="ПечатнаяФормаОбразец" id="19">
@@ -1207,6 +1239,15 @@
 			<Save>
 				<Field>РазвернутьОбластьПоказателей</Field>
 			</Save>
+		</Attribute>
+		<Attribute name="ТекущийЯзык" id="10">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
 		</Attribute>
 	</Attributes>
 	<Commands>

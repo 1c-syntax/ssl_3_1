@@ -114,20 +114,54 @@
 				<LabelField name="Версия" id="16">
 					<DataPath>Список.Версия</DataPath>
 					<DefaultItem>true</DefaultItem>
+					<Width>4</Width>
 					<ContextMenu name="ВерсияКонтекстноеМеню" id="17"/>
 					<ExtendedTooltip name="ВерсияРасширеннаяПодсказка" id="18"/>
 				</LabelField>
-				<LabelField name="ДатаСоздания" id="28">
-					<DataPath>Список.ДатаСоздания</DataPath>
-					<ContextMenu name="ДатаСозданияКонтекстноеМеню" id="29"/>
-					<ExtendedTooltip name="ДатаСозданияРасширеннаяПодсказка" id="30"/>
-				</LabelField>
-				<LabelField name="ХешСумма" id="19">
-					<DataPath>Список.ХешСумма</DataPath>
-					<DefaultItem>true</DefaultItem>
-					<ContextMenu name="ХешСуммаКонтекстноеМеню" id="20"/>
-					<ExtendedTooltip name="ХешСуммаРасширеннаяПодсказка" id="21"/>
-				</LabelField>
+				<ColumnGroup name="ДатаИХешСумма" id="37">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Дата и хеш сумма</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="ДатаИХешСуммаРасширеннаяПодсказка" id="38"/>
+					<ChildItems>
+						<LabelField name="ДатаСоздания" id="28">
+							<DataPath>Список.ДатаСоздания</DataPath>
+							<ContextMenu name="ДатаСозданияКонтекстноеМеню" id="29"/>
+							<ExtendedTooltip name="ДатаСозданияРасширеннаяПодсказка" id="30"/>
+						</LabelField>
+						<LabelField name="ХешСумма" id="19">
+							<DataPath>Список.ХешСумма</DataPath>
+							<DefaultItem>true</DefaultItem>
+							<Width>50</Width>
+							<ContextMenu name="ХешСуммаКонтекстноеМеню" id="20"/>
+							<ExtendedTooltip name="ХешСуммаРасширеннаяПодсказка" id="21"/>
+						</LabelField>
+					</ChildItems>
+				</ColumnGroup>
+				<ColumnGroup name="ДополнительныеХешСуммы" id="39">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Дополнительные хеш суммы</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="ДополнительныеХешСуммыРасширеннаяПодсказка" id="40"/>
+					<ChildItems>
+						<LabelField name="ХешСуммаПостоянныхПараметров" id="31">
+							<DataPath>Список.ХешСуммаПостоянныхПараметров</DataPath>
+							<ContextMenu name="ХешСуммаПостоянныхПараметровКонтекстноеМеню" id="32"/>
+							<ExtendedTooltip name="ХешСуммаПостоянныхПараметровРасширеннаяПодсказка" id="33"/>
+						</LabelField>
+						<LabelField name="ХешСуммаПараметровШаблонов" id="34">
+							<DataPath>Список.ХешСуммаПараметровШаблонов</DataPath>
+							<ContextMenu name="ХешСуммаПараметровШаблоновКонтекстноеМеню" id="35"/>
+							<ExtendedTooltip name="ХешСуммаПараметровШаблоновРасширеннаяПодсказка" id="36"/>
+						</LabelField>
+					</ChildItems>
+				</ColumnGroup>
 			</ChildItems>
 		</Table>
 	</ChildItems>

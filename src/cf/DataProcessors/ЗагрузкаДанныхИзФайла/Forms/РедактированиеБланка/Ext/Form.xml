@@ -55,28 +55,52 @@
 			<ContextMenu name="СписокКолонокКонтекстноеМеню" id="2"/>
 			<AutoCommandBar name="СписокКолонокКоманднаяПанель" id="3">
 				<ChildItems>
-					<Button name="СписокКолонокУстановитьФлажки" id="25">
-						<Type>CommandBarButton</Type>
-						<CommandName>Form.Command.УстановитьФлажки</CommandName>
-						<ExtendedTooltip name="СписокКолонокУстановитьФлажкиРасширеннаяПодсказка" id="26"/>
-					</Button>
-					<Button name="СписокКолонокСнятьФлажки" id="27">
-						<Type>CommandBarButton</Type>
-						<CommandName>Form.Command.СнятьФлажки</CommandName>
-						<ExtendedTooltip name="СписокКолонокСнятьФлажкиРасширеннаяПодсказка" id="28"/>
-					</Button>
-					<Button name="СписокКолонокПереместитьВверх" id="33">
-						<Type>CommandBarButton</Type>
-						<CommandName>Form.Item.СписокКолонок.StandardCommand.MoveUp</CommandName>
-						<LocationInCommandBar>InCommandBarAndInAdditionalSubmenu</LocationInCommandBar>
-						<ExtendedTooltip name="СписокКолонокПереместитьВверхРасширеннаяПодсказка" id="34"/>
-					</Button>
-					<Button name="СписокКолонокПереместитьВниз" id="35">
-						<Type>CommandBarButton</Type>
-						<CommandName>Form.Item.СписокКолонок.StandardCommand.MoveDown</CommandName>
-						<LocationInCommandBar>InCommandBarAndInAdditionalSubmenu</LocationInCommandBar>
-						<ExtendedTooltip name="СписокКолонокПереместитьВнизРасширеннаяПодсказка" id="36"/>
-					</Button>
+					<ButtonGroup name="СписокКолонокФлаги" id="58">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Список колонок флаги</v8:content>
+							</v8:item>
+						</Title>
+						<Representation>Compact</Representation>
+						<ExtendedTooltip name="СписокКолонокФлагиРасширеннаяПодсказка" id="59"/>
+						<ChildItems>
+							<Button name="СписокКолонокУстановитьФлажки" id="25">
+								<Type>CommandBarButton</Type>
+								<CommandName>Form.Command.УстановитьФлажки</CommandName>
+								<ExtendedTooltip name="СписокКолонокУстановитьФлажкиРасширеннаяПодсказка" id="26"/>
+							</Button>
+							<Button name="СписокКолонокСнятьФлажки" id="27">
+								<Type>CommandBarButton</Type>
+								<CommandName>Form.Command.СнятьФлажки</CommandName>
+								<ExtendedTooltip name="СписокКолонокСнятьФлажкиРасширеннаяПодсказка" id="28"/>
+							</Button>
+						</ChildItems>
+					</ButtonGroup>
+					<ButtonGroup name="СписокКолонокПеремещение" id="60">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Список колонок перемещение</v8:content>
+							</v8:item>
+						</Title>
+						<Representation>Compact</Representation>
+						<ExtendedTooltip name="СписокКолонокПеремещениеРасширеннаяПодсказка" id="61"/>
+						<ChildItems>
+							<Button name="СписокКолонокПереместитьВверх" id="33">
+								<Type>CommandBarButton</Type>
+								<CommandName>Form.Item.СписокКолонок.StandardCommand.MoveUp</CommandName>
+								<LocationInCommandBar>InCommandBarAndInAdditionalSubmenu</LocationInCommandBar>
+								<ExtendedTooltip name="СписокКолонокПереместитьВверхРасширеннаяПодсказка" id="34"/>
+							</Button>
+							<Button name="СписокКолонокПереместитьВниз" id="35">
+								<Type>CommandBarButton</Type>
+								<CommandName>Form.Item.СписокКолонок.StandardCommand.MoveDown</CommandName>
+								<LocationInCommandBar>InCommandBarAndInAdditionalSubmenu</LocationInCommandBar>
+								<ExtendedTooltip name="СписокКолонокПереместитьВнизРасширеннаяПодсказка" id="36"/>
+							</Button>
+						</ChildItems>
+					</ButtonGroup>
 					<Button name="ФормаСброситьВсеНастройки" id="29">
 						<Type>CommandBarButton</Type>
 						<CommandName>Form.Command.СброситьНастройки</CommandName>

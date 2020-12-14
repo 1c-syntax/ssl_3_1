@@ -9,7 +9,9 @@
 		</xr:Item>
 	</MobileDeviceCommandBarContent>
 	<CommandSet>
+		<ExcludedCommand>Close</ExcludedCommand>
 		<ExcludedCommand>Create</ExcludedCommand>
+		<ExcludedCommand>Delete</ExcludedCommand>
 	</CommandSet>
 	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
 		<Autofill>false</Autofill>
@@ -42,6 +44,37 @@
 			</Title>
 			<ExtendedTooltip name="КоманднаяПанельРасширеннаяПодсказка" id="159"/>
 			<ChildItems>
+				<ButtonGroup name="ПодменюСоздать" id="299">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Создать</v8:content>
+						</v8:item>
+					</Title>
+					<Representation>Compact</Representation>
+					<ExtendedTooltip name="ПодменюСоздатьРасширеннаяПодсказка" id="300"/>
+					<ChildItems>
+						<Button name="СоздатьПользователя" id="54">
+							<Type>CommandBarButton</Type>
+							<Representation>PictureAndText</Representation>
+							<SkipOnInput>false</SkipOnInput>
+							<CommandName>Form.Item.ПользователиСписок.StandardCommand.Create</CommandName>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Создать</v8:content>
+								</v8:item>
+							</Title>
+							<ExtendedTooltip name="СоздатьПользователяExtendedTooltip" id="101"/>
+						</Button>
+						<Button name="СоздатьГруппуПользователей" id="55">
+							<Type>CommandBarButton</Type>
+							<SkipOnInput>false</SkipOnInput>
+							<CommandName>Form.Command.СоздатьГруппуПользователей</CommandName>
+							<ExtendedTooltip name="СоздатьГруппуПользователейExtendedTooltip" id="102"/>
+						</Button>
+					</ChildItems>
+				</ButtonGroup>
 				<Button name="ЗавершитьИЗакрыть" id="95">
 					<Type>CommandBarButton</Type>
 					<Visible>false</Visible>
@@ -89,18 +122,6 @@
 					</Title>
 					<ExtendedTooltip name="ВыбратьПользователяExtendedTooltip" id="100"/>
 				</Button>
-				<Button name="СоздатьПользователя" id="54">
-					<Type>CommandBarButton</Type>
-					<SkipOnInput>false</SkipOnInput>
-					<CommandName>Form.Item.ПользователиСписок.StandardCommand.Create</CommandName>
-					<ExtendedTooltip name="СоздатьПользователяExtendedTooltip" id="101"/>
-				</Button>
-				<Button name="СоздатьГруппуПользователей" id="55">
-					<Type>CommandBarButton</Type>
-					<SkipOnInput>false</SkipOnInput>
-					<CommandName>Form.Command.СоздатьГруппуПользователей</CommandName>
-					<ExtendedTooltip name="СоздатьГруппуПользователейExtendedTooltip" id="102"/>
-				</Button>
 				<Button name="НазначитьГруппы" id="72">
 					<Type>CommandBarButton</Type>
 					<CommandName>Form.Command.НазначитьГруппы</CommandName>
@@ -125,18 +146,13 @@
 						<Button name="ФормаСкопировать" id="212">
 							<Type>CommandBarButton</Type>
 							<CommandName>Form.StandardCommand.Copy</CommandName>
+							<RepresentationInContextMenu>OnlyInContextMenu</RepresentationInContextMenu>
 							<ExtendedTooltip name="ФормаСкопироватьРасширеннаяПодсказка" id="213"/>
 						</Button>
 						<Button name="ФормаИзменить" id="214">
 							<Type>CommandBarButton</Type>
 							<CommandName>Form.StandardCommand.Change</CommandName>
 							<ExtendedTooltip name="ФормаИзменитьРасширеннаяПодсказка" id="215"/>
-						</Button>
-						<Button name="ФормаУстановитьПароль" id="198">
-							<Type>CommandBarButton</Type>
-							<CommandName>Form.Command.УстановитьПароль</CommandName>
-							<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
-							<ExtendedTooltip name="ФормаУстановитьПарольРасширеннаяПодсказка" id="199"/>
 						</Button>
 						<ButtonGroup name="ПользователиСтандартныеКоманды" id="210">
 							<Title>
@@ -148,30 +164,119 @@
 							<CommandSource>Form</CommandSource>
 							<ExtendedTooltip name="ПользователиСтандартныеКомандыРасширеннаяПодсказка" id="211"/>
 						</ButtonGroup>
-						<Button name="СведенияОПользователях" id="132">
-							<Type>CommandBarButton</Type>
-							<CommandName>Form.Command.СведенияОПользователях</CommandName>
-							<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
-							<ExtendedTooltip name="СведенияОПользователяхРасширеннаяПодсказка" id="133"/>
-						</Button>
-						<Button name="ПользователиИБ" id="6">
-							<Type>CommandBarButton</Type>
-							<CommandName>Catalog.Пользователи.Command.ПользователиИнформационнойБазы</CommandName>
-							<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
-							<ExtendedTooltip name="ПользователиИБExtendedTooltip" id="106"/>
-						</Button>
-						<Button name="ФормаИзменитьВыделенные" id="196">
-							<Type>CommandBarButton</Type>
-							<CommandName>Form.Command.ИзменитьВыделенные</CommandName>
-							<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
-							<ExtendedTooltip name="ФормаИзменитьВыделенныеРасширеннаяПодсказка" id="197"/>
-						</Button>
-						<Button name="ЗаблокироватьНедействительныхПользователейВСистемеВзаимодействий" id="297">
-							<Type>CommandBarButton</Type>
-							<Visible>false</Visible>
-							<CommandName>Form.Command.ЗаблокироватьНедействительныхПользователейВСистемеВзаимодействий</CommandName>
-							<ExtendedTooltip name="ЗаблокироватьНедействительныхПользователейВСистемеВзаимодействийРасширеннаяПодсказка" id="298"/>
-						</Button>
+						<Popup name="ПодменюСоздатьНаОсновании" id="311">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Создать на основании</v8:content>
+								</v8:item>
+							</Title>
+							<Picture>
+								<xr:Ref>StdPicture.InputOnBasis</xr:Ref>
+								<xr:LoadTransparent>true</xr:LoadTransparent>
+							</Picture>
+							<Representation>Picture</Representation>
+							<ExtendedTooltip name="ПодменюСоздатьНаОснованииРасширеннаяПодсказка" id="312"/>
+						</Popup>
+						<Popup name="ПодменюОтчеты" id="303">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Отчеты</v8:content>
+								</v8:item>
+							</Title>
+							<Picture>
+								<xr:Ref>CommonPicture.Отчеты</xr:Ref>
+								<xr:LoadTransparent>false</xr:LoadTransparent>
+							</Picture>
+							<Representation>PictureAndText</Representation>
+							<ExtendedTooltip name="ПодменюОтчетыРасширеннаяПодсказка" id="304"/>
+							<ChildItems>
+								<ButtonGroup name="ПодменюОтчетыВажное" id="305">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Подменю отчеты важное</v8:content>
+										</v8:item>
+									</Title>
+									<ExtendedTooltip name="ПодменюОтчетыВажноеРасширеннаяПодсказка" id="306"/>
+								</ButtonGroup>
+								<ButtonGroup name="ПодменюОтчетыПерейти" id="307">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Подменю отчеты перейти</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Подменю отчеты важное</v8:content>
+										</v8:item>
+									</ToolTip>
+									<ExtendedTooltip name="ПодменюОтчетыПерейтиРасширеннаяПодсказка" id="308"/>
+								</ButtonGroup>
+								<ButtonGroup name="ПодменюОтчетыСмТакже" id="309">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Подменю отчеты см также</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Подменю отчеты важное</v8:content>
+										</v8:item>
+									</ToolTip>
+									<ExtendedTooltip name="ПодменюОтчетыСмТакжеРасширеннаяПодсказка" id="310"/>
+									<ChildItems>
+										<Button name="СведенияОПользователях" id="132">
+											<Type>CommandBarButton</Type>
+											<CommandName>Form.Command.СведенияОПользователях</CommandName>
+											<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
+											<ExtendedTooltip name="СведенияОПользователяхРасширеннаяПодсказка" id="133"/>
+										</Button>
+									</ChildItems>
+								</ButtonGroup>
+							</ChildItems>
+						</Popup>
+						<Popup name="ПодменюДополнительно" id="297">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Дополнительно</v8:content>
+								</v8:item>
+							</Title>
+							<ExtendedTooltip name="ПодменюДополнительноРасширеннаяПодсказка" id="298"/>
+							<ChildItems>
+								<Button name="ФормаИзменитьВыделенные" id="196">
+									<Type>CommandBarButton</Type>
+									<CommandName>Form.Command.ИзменитьВыделенные</CommandName>
+									<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
+									<ExtendedTooltip name="ФормаИзменитьВыделенныеРасширеннаяПодсказка" id="197"/>
+								</Button>
+								<Button name="ПользователиИБ" id="6">
+									<Type>CommandBarButton</Type>
+									<CommandName>Catalog.Пользователи.Command.ПользователиИнформационнойБазы</CommandName>
+									<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
+									<ExtendedTooltip name="ПользователиИБExtendedTooltip" id="106"/>
+								</Button>
+								<Button name="ФормаУстановитьПароль" id="198">
+									<Type>CommandBarButton</Type>
+									<CommandName>Form.Command.УстановитьПароль</CommandName>
+									<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
+									<ExtendedTooltip name="ФормаУстановитьПарольРасширеннаяПодсказка" id="199"/>
+								</Button>
+								<Button name="ЗаблокироватьНедействительныхПользователейВСистемеВзаимодействий" id="301">
+									<Type>CommandBarButton</Type>
+									<Visible>false</Visible>
+									<CommandName>Form.Command.ЗаблокироватьНедействительныхПользователейВСистемеВзаимодействий</CommandName>
+									<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
+									<ExtendedTooltip name="ЗаблокироватьНедействительныхПользователейВСистемеВзаимодействийРасширеннаяПодсказка" id="302"/>
+								</Button>
+							</ChildItems>
+						</Popup>
 					</ChildItems>
 				</ButtonGroup>
 				<Button name="ФормаСправка" id="70">
