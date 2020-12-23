@@ -9,9 +9,20 @@
 		<ChildItems>
 			<Button name="ЗаписатьИЗакрыть" id="9">
 				<Type>CommandBarButton</Type>
+				<Representation>Text</Representation>
 				<DefaultButton>true</DefaultButton>
 				<CommandName>Form.Command.ЗаписатьИЗакрыть</CommandName>
+				<Picture>
+					<xr:Ref>StdPicture.WriteAndClose</xr:Ref>
+					<xr:LoadTransparent>true</xr:LoadTransparent>
+				</Picture>
 				<ExtendedTooltip name="ЗаписатьИЗакрытьРасширеннаяПодсказка" id="10"/>
+			</Button>
+			<Button name="ФормаЗаписать" id="15">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.StandardCommand.Write</CommandName>
+				<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
+				<ExtendedTooltip name="ФормаЗаписатьРасширеннаяПодсказка" id="16"/>
 			</Button>
 			<ButtonGroup name="СтандартныеКоманды" id="11">
 				<Title>
@@ -32,6 +43,7 @@
 	</AutoCommandBar>
 	<Events>
 		<Event name="OnReadAtServer">ПриЧтенииНаСервере</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
 		<Event name="OnWriteAtServer">ПриЗаписиНаСервере</Event>
 	</Events>
 	<ChildItems>

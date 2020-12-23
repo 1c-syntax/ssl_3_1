@@ -10,8 +10,13 @@
 		<ChildItems>
 			<Button name="ФормаСоздать" id="22">
 				<Type>CommandBarButton</Type>
+				<Representation>Text</Representation>
 				<DefaultButton>true</DefaultButton>
 				<CommandName>Form.Command.Создать</CommandName>
+				<Picture>
+					<xr:Ref>StdPicture.CreateListItem</xr:Ref>
+					<xr:LoadTransparent>true</xr:LoadTransparent>
+				</Picture>
 				<Title>
 					<v8:item>
 						<v8:lang>ru</v8:lang>
@@ -30,6 +35,50 @@
 		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
 	</Events>
 	<ChildItems>
+		<UsualGroup name="ГруппаДополнительнаяИнформация" id="40">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Дополнительная информация</v8:content>
+				</v8:item>
+			</Title>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаДополнительнаяИнформацияРасширеннаяПодсказка" id="41"/>
+			<ChildItems>
+				<PictureDecoration name="КартинкаИнформации" id="42">
+					<Title formatted="false">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Картинка информации</v8:content>
+						</v8:item>
+					</Title>
+					<Picture>
+						<xr:Ref>CommonPicture.Информация</xr:Ref>
+						<xr:LoadTransparent>false</xr:LoadTransparent>
+					</Picture>
+					<FileDragMode>AsFile</FileDragMode>
+					<ContextMenu name="КартинкаИнформацииКонтекстноеМеню" id="43"/>
+					<ExtendedTooltip name="КартинкаИнформацииРасширеннаяПодсказка" id="44"/>
+				</PictureDecoration>
+				<LabelDecoration name="ДополнительнаяИнформация" id="45">
+					<AutoMaxWidth>false</AutoMaxWidth>
+					<HorizontalStretch>true</HorizontalStretch>
+					<Title formatted="true">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Для того чтобы выводить печатные формы на других языках, необходимо выполнить &lt;link ПерейтиКМакетамПечатныхФорм&gt;перевод макетов&lt;/&gt;.</v8:content>
+						</v8:item>
+					</Title>
+					<VerticalAlign>Center</VerticalAlign>
+					<ContextMenu name="ДополнительнаяИнформацияКонтекстноеМеню" id="46"/>
+					<ExtendedTooltip name="ДополнительнаяИнформацияРасширеннаяПодсказка" id="47"/>
+					<Events>
+						<Event name="URLProcessing">ДополнительнаяИнформацияОбработкаНавигационнойСсылки</Event>
+					</Events>
+				</LabelDecoration>
+			</ChildItems>
+		</UsualGroup>
 		<UsualGroup name="СписокКомпоновщикНастроекПользовательскиеНастройки" id="1">
 			<Title>
 				<v8:item>
@@ -132,49 +181,6 @@
 				</LabelField>
 			</ChildItems>
 		</Table>
-		<UsualGroup name="ГруппаАвтоматическийПеревод" id="35">
-			<Title>
-				<v8:item>
-					<v8:lang>ru</v8:lang>
-					<v8:content>Автоматический перевод</v8:content>
-				</v8:item>
-			</Title>
-			<Representation>None</Representation>
-			<ShowTitle>false</ShowTitle>
-			<ExtendedTooltip name="ГруппаАвтоматическийПереводРасширеннаяПодсказка" id="36"/>
-			<ChildItems>
-				<CheckBoxField name="ВключитьАвтоматическийПеревод" id="29">
-					<DataPath>ВключитьАвтоматическийПеревод</DataPath>
-					<Title>
-						<v8:item>
-							<v8:lang>ru</v8:lang>
-							<v8:content>Автоперевод с помощью:</v8:content>
-						</v8:item>
-					</Title>
-					<TitleLocation>Right</TitleLocation>
-					<CheckBoxType>Auto</CheckBoxType>
-					<ContextMenu name="ВключитьАвтоматическийПереводКонтекстноеМеню" id="30"/>
-					<ExtendedTooltip name="ВключитьАвтоматическийПереводРасширеннаяПодсказка" id="31"/>
-					<Events>
-						<Event name="OnChange">ВключитьАвтоматическийПереводПриИзменении</Event>
-					</Events>
-				</CheckBoxField>
-				<LabelDecoration name="Параметры" id="37">
-					<Title formatted="false">
-						<v8:item>
-							<v8:lang>ru</v8:lang>
-							<v8:content>&lt;настроить&gt;</v8:content>
-						</v8:item>
-					</Title>
-					<Hyperlink>true</Hyperlink>
-					<ContextMenu name="ПараметрыКонтекстноеМеню" id="38"/>
-					<ExtendedTooltip name="ПараметрыРасширеннаяПодсказка" id="39"/>
-					<Events>
-						<Event name="Click">ПараметрыНажатие</Event>
-					</Events>
-				</LabelDecoration>
-			</ChildItems>
-		</UsualGroup>
 	</ChildItems>
 	<Attributes>
 		<Attribute name="Список" id="1">
@@ -220,22 +226,6 @@
 					<dcsset:itemsUserSettingID>911b6018-f537-43e8-a417-da56b22f9aec</dcsset:itemsUserSettingID>
 				</ListSettings>
 			</Settings>
-		</Attribute>
-		<Attribute name="ВключитьАвтоматическийПеревод" id="2">
-			<Title>
-				<v8:item>
-					<v8:lang>ru</v8:lang>
-					<v8:content>Включить автоматический перевод</v8:content>
-				</v8:item>
-			</Title>
-			<Type>
-				<v8:Type>xs:boolean</v8:Type>
-			</Type>
-		</Attribute>
-		<Attribute name="Переводчик" id="3">
-			<Type>
-				<v8:Type>cfg:EnumRef.СервисыПереводаТекста</v8:Type>
-			</Type>
 		</Attribute>
 	</Attributes>
 	<Commands>

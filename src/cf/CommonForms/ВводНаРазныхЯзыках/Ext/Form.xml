@@ -9,9 +9,14 @@
 		<ChildItems>
 			<Button name="ОК" id="7">
 				<Type>CommandBarButton</Type>
+				<Representation>Text</Representation>
 				<DefaultButton>true</DefaultButton>
 				<DefaultItem>true</DefaultItem>
 				<CommandName>Form.Command.ОК</CommandName>
+				<Picture>
+					<xr:Ref>StdPicture.WriteAndClose</xr:Ref>
+					<xr:LoadTransparent>true</xr:LoadTransparent>
+				</Picture>
 				<ExtendedTooltip name="ОКРасширеннаяПодсказка" id="8"/>
 			</Button>
 			<Button name="ФормаОтмена" id="3">
@@ -25,35 +30,22 @@
 		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
 	</Events>
 	<ChildItems>
-		<UsualGroup name="КоманднаяПанель" id="9">
+		<Button name="Перевести" id="11">
+			<Type>UsualButton</Type>
+			<Representation>PictureAndText</Representation>
+			<CommandName>Form.Command.Перевести</CommandName>
+			<Picture>
+				<xr:Ref>CommonPicture.ЗаполнитьФорму</xr:Ref>
+				<xr:LoadTransparent>false</xr:LoadTransparent>
+			</Picture>
 			<Title>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Командная панель</v8:content>
+					<v8:content>Перевести автоматически</v8:content>
 				</v8:item>
 			</Title>
-			<Representation>None</Representation>
-			<ShowTitle>false</ShowTitle>
-			<ExtendedTooltip name="КоманднаяПанельРасширеннаяПодсказка" id="10"/>
-			<ChildItems>
-				<Button name="Перевести" id="11">
-					<Type>UsualButton</Type>
-					<Representation>PictureAndText</Representation>
-					<CommandName>Form.Command.Перевести</CommandName>
-					<Picture>
-						<xr:Ref>CommonPicture.ЗаполнитьФорму</xr:Ref>
-						<xr:LoadTransparent>false</xr:LoadTransparent>
-					</Picture>
-					<Title>
-						<v8:item>
-							<v8:lang>ru</v8:lang>
-							<v8:content>Перевести автоматически</v8:content>
-						</v8:item>
-					</Title>
-					<ExtendedTooltip name="ПеревестиРасширеннаяПодсказка" id="12"/>
-				</Button>
-			</ChildItems>
-		</UsualGroup>
+			<ExtendedTooltip name="ПеревестиРасширеннаяПодсказка" id="12"/>
+		</Button>
 		<UsualGroup name="ГруппаЯзыки" id="5">
 			<Title>
 				<v8:item>

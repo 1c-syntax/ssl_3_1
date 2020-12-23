@@ -10,6 +10,13 @@
 	<WindowOpeningMode>LockOwnerWindow</WindowOpeningMode>
 	<AutoTitle>false</AutoTitle>
 	<CommandBarLocation>None</CommandBarLocation>
+	<MobileDeviceCommandBarContent>
+		<xr:Item>
+			<xr:Presentation/>
+			<xr:CheckState>0</xr:CheckState>
+			<xr:Value xsi:type="xs:string">КоманднаяПанель</xr:Value>
+		</xr:Item>
+	</MobileDeviceCommandBarContent>
 	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
 		<Autofill>false</Autofill>
 	</AutoCommandBar>
@@ -136,13 +143,14 @@
 				<Event name="Selection">СписокВыбор</Event>
 			</Events>
 			<ChildItems>
-				<InputField name="СписокНаименование" id="17">
+				<InputField name="СписокНаименование" id="17" DisplayImportance="VeryHigh">
 					<DataPath>Список.Наименование</DataPath>
 					<EditMode>EnterOnInput</EditMode>
+					<Width>40</Width>
 					<ContextMenu name="СписокНаименованиеКонтекстноеМеню" id="18"/>
 					<ExtendedTooltip name="СписокНаименованиеРасширеннаяПодсказка" id="19"/>
 				</InputField>
-				<InputField name="СписокКод" id="33">
+				<InputField name="СписокКод" id="33" DisplayImportance="VeryLow">
 					<DataPath>Список.Код</DataPath>
 					<Title>
 						<v8:item>

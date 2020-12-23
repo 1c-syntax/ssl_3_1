@@ -92,7 +92,7 @@
 										<Title formatted="false">
 											<v8:item>
 												<v8:lang>ru</v8:lang>
-												<v8:content>Доступные языки печатных форм</v8:content>
+												<v8:content>Настройка списка языков, на которых доступен вывод печатных форм.</v8:content>
 											</v8:item>
 										</Title>
 									</ExtendedTooltip>
@@ -102,6 +102,7 @@
 						<UsualGroup name="ГруппаПодменюПечать" id="1664">
 							<Width>43</Width>
 							<HorizontalStretch>false</HorizontalStretch>
+							<Group>Vertical</Group>
 							<Representation>None</Representation>
 							<ShowTitle>false</ShowTitle>
 							<ExtendedTooltip name="ГруппаПодменюПечатьРасширеннаяПодсказка" id="1665"/>
@@ -126,6 +127,51 @@
 										</Title>
 									</ExtendedTooltip>
 								</Button>
+								<UsualGroup name="ГруппаАвтоматическийПеревод" id="1709">
+									<ToolTipRepresentation>ShowBottom</ToolTipRepresentation>
+									<Group>AlwaysHorizontal</Group>
+									<Representation>None</Representation>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="ГруппаАвтоматическийПереводРасширеннаяПодсказка" id="1710">
+										<Title formatted="false">
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Предлагать автоматический перевод текста при редактировании макетов печатных форм и вводе реквизитов на выбранных языках.</v8:content>
+											</v8:item>
+										</Title>
+									</ExtendedTooltip>
+									<ChildItems>
+										<CheckBoxField name="ИспользоватьСервисПереводаТекста" id="1719">
+											<DataPath>НаборКонстант.ИспользоватьСервисПереводаТекста</DataPath>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Перевод текста</v8:content>
+												</v8:item>
+											</Title>
+											<TitleLocation>None</TitleLocation>
+											<CheckBoxType>Auto</CheckBoxType>
+											<ContextMenu name="ИспользоватьСервисПереводаТекстаКонтекстноеМеню" id="1720"/>
+											<ExtendedTooltip name="ИспользоватьСервисПереводаТекстаРасширеннаяПодсказка" id="1721"/>
+											<Events>
+												<Event name="OnChange">ИспользоватьСервисПереводаТекстаПриИзменении</Event>
+											</Events>
+										</CheckBoxField>
+										<LabelDecoration name="НастройкаСервисаПереводаТекста" id="1722">
+											<Title formatted="true">
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Перевод текста с помощью онлайн-переводчика</v8:content>
+												</v8:item>
+											</Title>
+											<ContextMenu name="НастройкаСервисаПереводаТекстаКонтекстноеМеню" id="1723"/>
+											<ExtendedTooltip name="НастройкаСервисаПереводаТекстаРасширеннаяПодсказка" id="1724"/>
+											<Events>
+												<Event name="URLProcessing">НастройкаСервисаПереводаТекстаОбработкаНавигационнойСсылки</Event>
+											</Events>
+										</LabelDecoration>
+									</ChildItems>
+								</UsualGroup>
 							</ChildItems>
 						</UsualGroup>
 					</ChildItems>
@@ -432,6 +478,7 @@
 			<MainAttribute>true</MainAttribute>
 			<UseAlways>
 				<Field>НаборКонстант.ЗаголовокСистемы</Field>
+				<Field>НаборКонстант.СервисПереводаТекста</Field>
 			</UseAlways>
 		</Attribute>
 		<Attribute name="РежимРаботы" id="15">
