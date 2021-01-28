@@ -10,6 +10,48 @@
 		<Event name="OnWriteAtServer">ПриЗаписиНаСервере</Event>
 	</Events>
 	<ChildItems>
+		<UsualGroup name="ГруппаДополнительнаяИнформация" id="32">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Дополнительная информация</v8:content>
+				</v8:item>
+			</Title>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаДополнительнаяИнформацияРасширеннаяПодсказка" id="33"/>
+			<ChildItems>
+				<PictureDecoration name="КартинкаИнформации" id="34">
+					<Title formatted="false">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Картинка информации</v8:content>
+						</v8:item>
+					</Title>
+					<Picture>
+						<xr:Ref>CommonPicture.Предупреждение</xr:Ref>
+						<xr:LoadTransparent>false</xr:LoadTransparent>
+					</Picture>
+					<FileDragMode>AsFile</FileDragMode>
+					<ContextMenu name="КартинкаИнформацииКонтекстноеМеню" id="35"/>
+					<ExtendedTooltip name="КартинкаИнформацииРасширеннаяПодсказка" id="36"/>
+				</PictureDecoration>
+				<LabelDecoration name="ДополнительнаяИнформация" id="37">
+					<Width>40</Width>
+					<AutoMaxWidth>false</AutoMaxWidth>
+					<HorizontalStretch>true</HorizontalStretch>
+					<Title formatted="true">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Дополнительная информация по способу авторизации</v8:content>
+						</v8:item>
+					</Title>
+					<VerticalAlign>Center</VerticalAlign>
+					<ContextMenu name="ДополнительнаяИнформацияКонтекстноеМеню" id="38"/>
+					<ExtendedTooltip name="ДополнительнаяИнформацияРасширеннаяПодсказка" id="39"/>
+				</LabelDecoration>
+			</ChildItems>
+		</UsualGroup>
 		<InputField name="ПровайдерSMS" id="5">
 			<DataPath>НаборКонстант.ПровайдерSMS</DataPath>
 			<Title>
@@ -201,6 +243,9 @@
 			<Type/>
 		</Attribute>
 		<Attribute name="НастройкиПровайдера" id="8">
+			<Type/>
+		</Attribute>
+		<Attribute name="ДополнительнаяИнформация" id="5">
 			<Type/>
 		</Attribute>
 	</Attributes>
