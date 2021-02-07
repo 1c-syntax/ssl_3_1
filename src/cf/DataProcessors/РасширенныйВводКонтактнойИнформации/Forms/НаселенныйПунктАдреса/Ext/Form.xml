@@ -135,20 +135,6 @@
 						<Event name="ChoiceProcessing">МуниципальныйРайонОбработкаВыбора</Event>
 					</Events>
 				</InputField>
-				<InputField name="Город" id="21">
-					<DataPath>Город</DataPath>
-					<Width>30</Width>
-					<ChoiceButton>true</ChoiceButton>
-					<EditTextUpdate>OnValueChange</EditTextUpdate>
-					<ContextMenu name="ГородКонтекстноеМеню" id="22"/>
-					<ExtendedTooltip name="ГородРасширеннаяПодсказка" id="23"/>
-					<Events>
-						<Event name="OnChange">ГородПриИзменении</Event>
-						<Event name="AutoComplete">ГородАвтоПодбор</Event>
-						<Event name="StartChoice">ГородНачалоВыбора</Event>
-						<Event name="ChoiceProcessing">ГородОбработкаВыбора</Event>
-					</Events>
-				</InputField>
 				<InputField name="Поселение" id="24">
 					<DataPath>Поселение</DataPath>
 					<Width>30</Width>
@@ -161,6 +147,20 @@
 						<Event name="AutoComplete">ПоселениеАвтоПодбор</Event>
 						<Event name="StartChoice">ПоселениеНачалоВыбора</Event>
 						<Event name="ChoiceProcessing">ПоселениеОбработкаВыбора</Event>
+					</Events>
+				</InputField>
+				<InputField name="Город" id="21">
+					<DataPath>Город</DataPath>
+					<Width>30</Width>
+					<ChoiceButton>true</ChoiceButton>
+					<EditTextUpdate>OnValueChange</EditTextUpdate>
+					<ContextMenu name="ГородКонтекстноеМеню" id="22"/>
+					<ExtendedTooltip name="ГородРасширеннаяПодсказка" id="23"/>
+					<Events>
+						<Event name="OnChange">ГородПриИзменении</Event>
+						<Event name="AutoComplete">ГородАвтоПодбор</Event>
+						<Event name="StartChoice">ГородНачалоВыбора</Event>
+						<Event name="ChoiceProcessing">ГородОбработкаВыбора</Event>
 					</Events>
 				</InputField>
 				<InputField name="ВнутригородскойРайон" id="27">
@@ -426,6 +426,15 @@
 		<Parameter name="ОтображатьКнопкиВыбора">
 			<Type>
 				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Parameter>
+		<Parameter name="ТипАдреса">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
 			</Type>
 		</Parameter>
 	</Parameters>
