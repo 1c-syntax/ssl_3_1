@@ -4,6 +4,7 @@
 	<AutoTitle>false</AutoTitle>
 	<Customizable>false</Customizable>
 	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<Autofill>false</Autofill>
 		<ChildItems>
 			<ButtonGroup name="ГруппаКоманднаяПанель" id="34">
 				<ExtendedTooltip name="ГруппаКоманднаяПанельРасширеннаяПодсказка" id="35"/>
@@ -40,40 +41,48 @@
 		<Event name="OnClose">ПриЗакрытии</Event>
 	</Events>
 	<ChildItems>
-		<CheckBoxField name="Синхронизировать" id="138">
-			<DataPath>Запись.Синхронизировать</DataPath>
-			<Title>
-				<v8:item>
-					<v8:lang>ru</v8:lang>
-					<v8:content>Синхронизировать файлы с облачным сервисом:</v8:content>
-				</v8:item>
-			</Title>
-			<TitleLocation>Right</TitleLocation>
-			<CheckBoxType>Auto</CheckBoxType>
-			<ContextMenu name="СинхронизироватьКонтекстноеМеню" id="139"/>
-			<ExtendedTooltip name="СинхронизироватьРасширеннаяПодсказка" id="140"/>
-		</CheckBoxField>
-		<InputField name="УчетнаяЗапись" id="118">
-			<DataPath>Запись.УчетнаяЗапись</DataPath>
-			<TitleLocation>None</TitleLocation>
-			<Width>40</Width>
-			<HorizontalStretch>false</HorizontalStretch>
-			<InputHint>
-				<v8:item>
-					<v8:lang>ru</v8:lang>
-					<v8:content>Учетная запись облачного сервиса</v8:content>
-				</v8:item>
-			</InputHint>
-			<ContextMenu name="УчетнаяЗаписьКонтекстноеМеню" id="119"/>
-			<ExtendedTooltip name="УчетнаяЗаписьРасширеннаяПодсказка" id="120">
-				<Title formatted="false">
-					<v8:item>
-						<v8:lang>ru</v8:lang>
-						<v8:content>Укажите учетную запись облачного сервиса, с которым будет производиться синхронизация файлов.</v8:content>
-					</v8:item>
-				</Title>
-			</ExtendedTooltip>
-		</InputField>
+		<UsualGroup name="ОсновныеПараметры" id="161">
+			<Group>Vertical</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ОсновныеПараметрыРасширеннаяПодсказка" id="162"/>
+			<ChildItems>
+				<CheckBoxField name="Синхронизировать" id="138">
+					<DataPath>Запись.Синхронизировать</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Синхронизировать файлы с облачным сервисом:</v8:content>
+						</v8:item>
+					</Title>
+					<TitleLocation>Right</TitleLocation>
+					<CheckBoxType>CheckBox</CheckBoxType>
+					<ContextMenu name="СинхронизироватьКонтекстноеМеню" id="139"/>
+					<ExtendedTooltip name="СинхронизироватьРасширеннаяПодсказка" id="140"/>
+				</CheckBoxField>
+				<InputField name="УчетнаяЗапись" id="118">
+					<DataPath>Запись.УчетнаяЗапись</DataPath>
+					<TitleLocation>None</TitleLocation>
+					<Width>40</Width>
+					<HorizontalStretch>false</HorizontalStretch>
+					<InputHint>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Учетная запись облачного сервиса</v8:content>
+						</v8:item>
+					</InputHint>
+					<ContextMenu name="УчетнаяЗаписьКонтекстноеМеню" id="119"/>
+					<ExtendedTooltip name="УчетнаяЗаписьРасширеннаяПодсказка" id="120">
+						<Title formatted="false">
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Укажите учетную запись облачного сервиса, с которым будет производиться синхронизация файлов.</v8:content>
+							</v8:item>
+						</Title>
+					</ExtendedTooltip>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
 		<UsualGroup name="ГруппаОбъектСинхронизации" id="67" DisplayImportance="VeryHigh">
 			<Title>
 				<v8:item>
