@@ -21,6 +21,7 @@
 	</AutoCommandBar>
 	<Events>
 		<Event name="NotificationProcessing">ОбработкаОповещения</Event>
+		<Event name="OnOpen">ПриОткрытии</Event>
 		<Event name="BeforeClose">ПередЗакрытием</Event>
 		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
 	</Events>
@@ -195,25 +196,54 @@
 						</RadioButtonField>
 					</ChildItems>
 				</UsualGroup>
-				<InputField name="СтраховойНомерПФР" id="24">
-					<DataPath>СтраховойНомерПФР</DataPath>
+				<UsualGroup name="ГруппаНомера" id="90">
 					<Title>
 						<v8:item>
 							<v8:lang>ru</v8:lang>
-							<v8:content>СНИЛС</v8:content>
+							<v8:content>Группа номера</v8:content>
 						</v8:item>
 					</Title>
-					<Width>15</Width>
-					<MaxWidth>15</MaxWidth>
-					<HorizontalStretch>false</HorizontalStretch>
-					<Mask>999-999-999 99</Mask>
-					<AutoMarkIncomplete>true</AutoMarkIncomplete>
-					<ContextMenu name="СтраховойНомерПФРКонтекстноеМеню" id="25"/>
-					<ExtendedTooltip name="СтраховойНомерПФРРасширеннаяПодсказка" id="26"/>
-					<Events>
-						<Event name="OnChange">СтраховойНомерПФРПриИзменении</Event>
-					</Events>
-				</InputField>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаНомераРасширеннаяПодсказка" id="91"/>
+					<ChildItems>
+						<InputField name="СтраховойНомерПФР" id="24">
+							<DataPath>СтраховойНомерПФР</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>СНИЛС</v8:content>
+								</v8:item>
+							</Title>
+							<Width>15</Width>
+							<MaxWidth>15</MaxWidth>
+							<HorizontalStretch>false</HorizontalStretch>
+							<Mask>999-999-999 99</Mask>
+							<AutoMarkIncomplete>true</AutoMarkIncomplete>
+							<ContextMenu name="СтраховойНомерПФРКонтекстноеМеню" id="25"/>
+							<ExtendedTooltip name="СтраховойНомерПФРРасширеннаяПодсказка" id="26"/>
+							<Events>
+								<Event name="OnChange">СтраховойНомерПФРПриИзменении</Event>
+							</Events>
+						</InputField>
+						<InputField name="ВладелецИНН" id="92">
+							<DataPath>ВладелецИНН</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>ИНН</v8:content>
+								</v8:item>
+							</Title>
+							<HorizontalStretch>false</HorizontalStretch>
+							<AutoMarkIncomplete>true</AutoMarkIncomplete>
+							<ContextMenu name="ВладелецИННКонтекстноеМеню" id="93"/>
+							<ExtendedTooltip name="ВладелецИННРасширеннаяПодсказка" id="94"/>
+							<Events>
+								<Event name="OnChange">РеквизитПриИзменении</Event>
+							</Events>
+						</InputField>
+					</ChildItems>
+				</UsualGroup>
 				<UsualGroup name="ГруппаГражданство" id="33">
 					<Title>
 						<v8:item>
@@ -473,25 +503,117 @@
 							<v8:content>Контактная информация</v8:content>
 						</v8:item>
 					</Title>
+					<Group>Vertical</Group>
 					<Representation>None</Representation>
 					<ExtendedTooltip name="ГруппаКонтактнаяИнформацияРасширеннаяПодсказка" id="66"/>
 					<ChildItems>
-						<InputField name="ЭлектроннаяПочта" id="58">
-							<DataPath>ЭлектроннаяПочта</DataPath>
+						<UsualGroup name="ГруппаВладелецАдресРегистрации" id="69">
 							<Title>
 								<v8:item>
 									<v8:lang>ru</v8:lang>
-									<v8:content>Электронная почта</v8:content>
+									<v8:content>Адрес регистрации</v8:content>
 								</v8:item>
 							</Title>
-							<AutoMaxWidth>false</AutoMaxWidth>
-							<AutoMarkIncomplete>true</AutoMarkIncomplete>
-							<ContextMenu name="ЭлектроннаяПочтаКонтекстноеМеню" id="59"/>
-							<ExtendedTooltip name="ЭлектроннаяПочтаРасширеннаяПодсказка" id="60"/>
-							<Events>
-								<Event name="OnChange">РеквизитПриИзменении</Event>
-							</Events>
-						</InputField>
+							<VerticalAlign>Center</VerticalAlign>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаВладелецАдресРегистрацииРасширеннаяПодсказка" id="70"/>
+							<ChildItems>
+								<InputField name="ВладелецАдресРегистрации" id="71">
+									<DataPath>ВладелецАдресРегистрации</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Адрес регистрации (регион, населенный пункт)</v8:content>
+										</v8:item>
+									</Title>
+									<Width>65</Width>
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<ChoiceButton>true</ChoiceButton>
+									<AutoMarkIncomplete>true</AutoMarkIncomplete>
+									<TextEdit>false</TextEdit>
+									<ContextMenu name="ВладелецАдресРегистрацииКонтекстноеМеню" id="72"/>
+									<ExtendedTooltip name="ВладелецАдресРегистрацииРасширеннаяПодсказка" id="73"/>
+									<Events>
+										<Event name="StartChoice">ВладелецАдресРегистрацииНачалоВыбора</Event>
+										<Event name="Clearing">ВладелецАдресРегистрацииОчистка</Event>
+										<Event name="ChoiceProcessing">ВладелецАдресРегистрацииОбработкаВыбора</Event>
+									</Events>
+								</InputField>
+								<PictureDecoration name="ВладелецАдресРегистрацииПредупреждение" id="74">
+									<Height>1</Height>
+									<SkipOnInput>true</SkipOnInput>
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Адрес регистрации (предупреждение)</v8:content>
+										</v8:item>
+									</Title>
+									<Hyperlink>true</Hyperlink>
+									<Picture>
+										<xr:Ref>CommonPicture.Предупреждение</xr:Ref>
+										<xr:LoadTransparent>false</xr:LoadTransparent>
+									</Picture>
+									<FileDragMode>AsFile</FileDragMode>
+									<ContextMenu name="ВладелецАдресРегистрацииПредупреждениеКонтекстноеМеню" id="75"/>
+									<ExtendedTooltip name="ВладелецАдресРегистрацииПредупреждениеРасширеннаяПодсказка" id="76"/>
+									<Events>
+										<Event name="Click">АдресПредупреждениеНажатие</Event>
+									</Events>
+								</PictureDecoration>
+							</ChildItems>
+						</UsualGroup>
+						<UsualGroup name="ГруппаЭлектроннаяПочтаИТелефон" id="88">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа электронная почта и телефон</v8:content>
+								</v8:item>
+							</Title>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаЭлектроннаяПочтаИТелефонРасширеннаяПодсказка" id="89"/>
+							<ChildItems>
+								<InputField name="ВладелецТелефон" id="85">
+									<DataPath>ВладелецТелефон</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Телефон</v8:content>
+										</v8:item>
+									</Title>
+									<Width>25</Width>
+									<HorizontalStretch>false</HorizontalStretch>
+									<ChoiceButton>true</ChoiceButton>
+									<AutoMarkIncomplete>true</AutoMarkIncomplete>
+									<TextEdit>false</TextEdit>
+									<ContextMenu name="ВладелецТелефонКонтекстноеМеню" id="86"/>
+									<ExtendedTooltip name="ВладелецТелефонРасширеннаяПодсказка" id="87"/>
+									<Events>
+										<Event name="StartChoice">ВладелецТелефонНачалоВыбора</Event>
+										<Event name="Clearing">ВладелецТелефонОчистка</Event>
+										<Event name="ChoiceProcessing">ВладелецТелефонОбработкаВыбора</Event>
+									</Events>
+								</InputField>
+								<InputField name="ЭлектроннаяПочта" id="58">
+									<DataPath>ЭлектроннаяПочта</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Электронная почта</v8:content>
+										</v8:item>
+									</Title>
+									<Width>20</Width>
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<AutoMarkIncomplete>true</AutoMarkIncomplete>
+									<ContextMenu name="ЭлектроннаяПочтаКонтекстноеМеню" id="59"/>
+									<ExtendedTooltip name="ЭлектроннаяПочтаРасширеннаяПодсказка" id="60"/>
+									<Events>
+										<Event name="OnChange">РеквизитПриИзменении</Event>
+									</Events>
+								</InputField>
+							</ChildItems>
+						</UsualGroup>
 					</ChildItems>
 				</UsualGroup>
 			</ChildItems>
@@ -753,6 +875,63 @@
 		</Attribute>
 		<Attribute name="СведенияОВладельце" id="20">
 			<Type/>
+		</Attribute>
+		<Attribute name="ВладелецТелефон" id="19">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>64</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ВладелецТелефонXML" id="21">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ВладелецАдресРегистрации" id="24">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Владелец адрес регистрации</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ВладелецАдресРегистрацииXML" id="25">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ВидКонтактнойИнформации" id="26">
+			<Type/>
+		</Attribute>
+		<Attribute name="ВидКонтактнойИнформацииТелефон" id="27">
+			<Type/>
+		</Attribute>
+		<Attribute name="ВладелецИНН" id="22">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>12</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
 		</Attribute>
 	</Attributes>
 	<Commands>

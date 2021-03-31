@@ -1216,6 +1216,49 @@
 									</Button>
 								</ChildItems>
 							</Popup>
+							<ButtonGroup name="КонтекстноеМенюОбластиЗаголовкаМенюОформитьСтандартныеКоманды" id="990">
+								<Title>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Стандартные команды</v8:content>
+									</v8:item>
+								</Title>
+								<ExtendedTooltip name="КонтекстноеМенюОбластиЗаголовкаМенюОформитьСтандартныеКомандыРасширеннаяПодсказка" id="991"/>
+								<ChildItems>
+									<ButtonGroup name="КонтекстноеМенюОбластиЗаголовкаМенюОформитьБуферОбмена" id="994">
+										<Title>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Буфер обмена</v8:content>
+											</v8:item>
+										</Title>
+										<ExtendedTooltip name="КонтекстноеМенюОбластиЗаголовкаМенюОформитьБуферОбменаРасширеннаяПодсказка" id="995"/>
+										<ChildItems>
+											<Button name="ОтчетТабличныйДокументКонтекстноеМенюКопироватьВБуферОбмена" id="992">
+												<Type>CommandBarButton</Type>
+												<CommandName>Form.Item.ОтчетТабличныйДокумент.StandardCommand.CopyToClipboard</CommandName>
+												<ExtendedTooltip name="ОтчетТабличныйДокументКонтекстноеМенюКопироватьВБуферОбменаРасширеннаяПодсказка" id="993"/>
+											</Button>
+										</ChildItems>
+									</ButtonGroup>
+									<Popup name="КонтекстноеМенюОбластиЗаголовкаМенюУровниГруппировок" id="986">
+										<Title>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Уровни группировок</v8:content>
+											</v8:item>
+										</Title>
+										<ExtendedTooltip name="КонтекстноеМенюОбластиЗаголовкаМенюУровниГруппировокРасширеннаяПодсказка" id="987"/>
+										<ChildItems>
+											<Button name="КонтекстноеМенюОбластиЗаголовкаМенюПоказатьУровеньГруппировок" id="988">
+												<Type>CommandBarButton</Type>
+												<CommandName>Form.Command.ПоказатьУровеньГруппировок</CommandName>
+												<ExtendedTooltip name="КонтекстноеМенюОбластиЗаголовкаМенюПоказатьУровеньГруппировокРасширеннаяПодсказка" id="989"/>
+											</Button>
+										</ChildItems>
+									</Popup>
+								</ChildItems>
+							</ButtonGroup>
 						</ChildItems>
 					</ButtonGroup>
 					<ButtonGroup name="КонтекстноеМенюОбластиДанных" id="882">
@@ -1990,6 +2033,19 @@
 				<v8:Type>xs:boolean</v8:Type>
 			</Type>
 		</Attribute>
+		<Attribute name="ВыбранныйУровеньГруппировок" id="15">
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>5</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+			<Save>
+				<Field>ВыбранныйУровеньГруппировок</Field>
+			</Save>
+		</Attribute>
 	</Attributes>
 	<Commands>
 		<Command name="ВсеНастройки" id="1">
@@ -2708,6 +2764,15 @@
 				</v8:item>
 			</Title>
 			<Action>СнятьФильтр</Action>
+		</Command>
+		<Command name="ПоказатьУровеньГруппировок" id="48">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>По умолчанию</v8:content>
+				</v8:item>
+			</Title>
+			<Action>Подключаемый_ПоказатьУровеньГруппировок</Action>
 		</Command>
 	</Commands>
 	<Parameters>

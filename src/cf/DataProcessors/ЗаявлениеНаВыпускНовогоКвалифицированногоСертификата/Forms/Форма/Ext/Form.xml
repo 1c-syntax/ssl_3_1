@@ -8,6 +8,7 @@
 	</Title>
 	<WindowOpeningMode>LockOwnerWindow</WindowOpeningMode>
 	<AutoTitle>false</AutoTitle>
+	<AutoURL>false</AutoURL>
 	<CommandBarLocation>Bottom</CommandBarLocation>
 	<VerticalScroll>useIfNecessary</VerticalScroll>
 	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
@@ -30,6 +31,7 @@
 				</v8:item>
 			</Title>
 			<VerticalStretch>true</VerticalStretch>
+			<Group>Vertical</Group>
 			<Representation>None</Representation>
 			<ShowTitle>false</ShowTitle>
 			<ExtendedTooltip name="ШапкаЗаявленияРасширеннаяПодсказка" id="814"/>
@@ -84,12 +86,59 @@
 						</v8:item>
 					</Title>
 					<GroupVerticalAlign>Top</GroupVerticalAlign>
-					<Group>AlwaysHorizontal</Group>
 					<Representation>None</Representation>
 					<ShowTitle>false</ShowTitle>
 					<ThroughAlign>Use</ThroughAlign>
 					<ExtendedTooltip name="ГруппаОрганизацияРасширеннаяПодсказка" id="729"/>
 					<ChildItems>
+						<UsualGroup name="ГруппаВидОрганизации1" id="840">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Вид организации</v8:content>
+								</v8:item>
+							</Title>
+							<Width>20</Width>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаВидОрганизации1РасширеннаяПодсказка" id="841"/>
+							<ChildItems>
+								<Button name="ВидОрганизации1" id="832">
+									<Type>UsualButton</Type>
+									<Representation>PictureAndText</Representation>
+									<CommandName>Form.Command.ВыбратьВидОрганизации</CommandName>
+									<Picture>
+										<xr:Ref>CommonPicture.ВыпадающийСписок</xr:Ref>
+										<xr:LoadTransparent>false</xr:LoadTransparent>
+									</Picture>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Организация</v8:content>
+										</v8:item>
+									</Title>
+									<PictureLocation>Right</PictureLocation>
+									<ExtendedTooltip name="ВидОрганизации1РасширеннаяПодсказка" id="833"/>
+								</Button>
+							</ChildItems>
+						</UsualGroup>
+						<InputField name="Организация" id="50">
+							<DataPath>Организация</DataPath>
+							<TitleFont ref="style:ЗаявлениеНаВыпускСертификатаЗаголовокКлючевогоПоляШрифт" kind="StyleItem"/>
+							<TitleLocation>None</TitleLocation>
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<DropListButton>true</DropListButton>
+							<ChoiceButtonRepresentation>ShowInDropList</ChoiceButtonRepresentation>
+							<AutoMarkIncomplete>true</AutoMarkIncomplete>
+							<ChooseType>false</ChooseType>
+							<ContextMenu name="ОрганизацияКонтекстноеМеню" id="51"/>
+							<ExtendedTooltip name="ОрганизацияРасширеннаяПодсказка" id="52"/>
+							<Events>
+								<Event name="OnChange">ОрганизацияПриИзменении</Event>
+								<Event name="StartChoice">ОрганизацияНачалоВыбора</Event>
+								<Event name="Clearing">ОрганизацияОчистка</Event>
+							</Events>
+						</InputField>
 						<InputField name="НаименованиеСокращенное" id="783">
 							<DataPath>НаименованиеСокращенное</DataPath>
 							<Title>
@@ -99,6 +148,7 @@
 								</v8:item>
 							</Title>
 							<TitleFont ref="style:ЗаявлениеНаВыпускСертификатаЗаголовокКлючевогоПоляШрифт" kind="StyleItem"/>
+							<TitleLocation>None</TitleLocation>
 							<Width>18</Width>
 							<AutoMaxWidth>false</AutoMaxWidth>
 							<ChoiceButton>true</ChoiceButton>
@@ -112,22 +162,6 @@
 								<Event name="Opening">НаименованиеСокращенноеОткрытие</Event>
 								<Event name="Clearing">НаименованиеСокращенноеОчистка</Event>
 								<Event name="ChoiceProcessing">НаименованиеСокращенноеОбработкаВыбора</Event>
-							</Events>
-						</InputField>
-						<InputField name="Организация" id="50">
-							<DataPath>Организация</DataPath>
-							<TitleFont ref="style:ЗаявлениеНаВыпускСертификатаЗаголовокКлючевогоПоляШрифт" kind="StyleItem"/>
-							<AutoMaxWidth>false</AutoMaxWidth>
-							<DropListButton>true</DropListButton>
-							<ChoiceButtonRepresentation>ShowInDropList</ChoiceButtonRepresentation>
-							<AutoMarkIncomplete>true</AutoMarkIncomplete>
-							<ChooseType>false</ChooseType>
-							<ContextMenu name="ОрганизацияКонтекстноеМеню" id="51"/>
-							<ExtendedTooltip name="ОрганизацияРасширеннаяПодсказка" id="52"/>
-							<Events>
-								<Event name="OnChange">ОрганизацияПриИзменении</Event>
-								<Event name="StartChoice">ОрганизацияНачалоВыбора</Event>
-								<Event name="Clearing">ОрганизацияОчистка</Event>
 							</Events>
 						</InputField>
 						<Button name="УказатьСведенияОбОрганизации" id="730">
@@ -154,12 +188,42 @@
 						</v8:item>
 					</Title>
 					<GroupVerticalAlign>Top</GroupVerticalAlign>
-					<Group>AlwaysHorizontal</Group>
 					<Representation>None</Representation>
 					<ShowTitle>false</ShowTitle>
 					<ThroughAlign>Use</ThroughAlign>
 					<ExtendedTooltip name="ГруппаВладелецСертификатаРасширеннаяПодсказка" id="733"/>
 					<ChildItems>
+						<UsualGroup name="ГруппаВидОрганизации2" id="842">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Вид организации</v8:content>
+								</v8:item>
+							</Title>
+							<Width>20</Width>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаВидОрганизации2РасширеннаяПодсказка" id="843"/>
+							<ChildItems>
+								<Button name="ВидОрганизации2" id="844">
+									<Type>UsualButton</Type>
+									<Representation>PictureAndText</Representation>
+									<CommandName>Form.Command.ВыбратьВидОрганизации</CommandName>
+									<Picture>
+										<xr:Ref>CommonPicture.ВыпадающийСписок</xr:Ref>
+										<xr:LoadTransparent>false</xr:LoadTransparent>
+									</Picture>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Физическое лицо</v8:content>
+										</v8:item>
+									</Title>
+									<PictureLocation>Right</PictureLocation>
+									<ExtendedTooltip name="ВидОрганизации2РасширеннаяПодсказка" id="845"/>
+								</Button>
+							</ChildItems>
+						</UsualGroup>
 						<InputField name="ВладелецСертификатаСтрокой" id="786">
 							<DataPath>ВладелецСертификатаСтрокой</DataPath>
 							<Title>
@@ -547,7 +611,7 @@
 								<v8:item>
 									<v8:lang>ru</v8:lang>
 									<v8:content>Нажимая кнопку &lt;b&gt;Отправить, &lt;/&gt;вы принимаете &lt;link УсловияСоглашения&gt;условия соглашения&lt;/&gt; о
-присоединении к регламенту &lt;link УдостоверяющийЦентр&gt;удостоверяющего центра&lt;/&gt;.</v8:content>
+присоединении к &lt;link ПорядокУдостоверяющегоЦентра&gt;Порядку удостоверяющего центра&lt;/&gt;.</v8:content>
 								</v8:item>
 							</Title>
 							<ContextMenu name="ДекорацияУсловияСоглашенияКонтекстноеМеню" id="764"/>
@@ -1034,12 +1098,6 @@
 				<v8:Type>xs:boolean</v8:Type>
 			</Type>
 		</Attribute>
-		<Attribute name="ФактическийАдресСтруктура" id="51">
-			<Type/>
-		</Attribute>
-		<Attribute name="ЮридическийАдресСтруктура" id="52">
-			<Type/>
-		</Attribute>
 		<Attribute name="КонтейнерКлючаПуть" id="53">
 			<Type>
 				<v8:Type>xs:string</v8:Type>
@@ -1409,6 +1467,85 @@
 				<v8:Type>xs:boolean</v8:Type>
 			</Type>
 		</Attribute>
+		<Attribute name="ЭтоФизическоеЛицо" id="94">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ВладелецИНН" id="95">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>12</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ВладелецАдресРегистрации" id="96">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ВладелецАдресРегистрацииXML" id="97">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ВладелецТелефон" id="98">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>64</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ВладелецТелефонXML" id="99">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ЗаявлениеДляОрганизацийДоступно" id="51">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ЗаявлениеДляФизическихЛицДоступно" id="52">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ВариантУдостоверяющегоЦентра" id="93">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="СозданиеПоПараметруОрганизация" id="100">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="СозданиеПоПараметруФизическоеЛицо" id="101">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
 	</Attributes>
 	<Commands>
 		<Command name="УказатьСведенияОбОрганизации" id="7">
@@ -1501,13 +1638,17 @@
 			</ToolTip>
 			<Action>ТехническаяИнформация</Action>
 		</Command>
+		<Command name="ВыбратьВидОрганизации" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Выбрать вид организации</v8:content>
+				</v8:item>
+			</Title>
+			<Action>ВыбратьВидОрганизации</Action>
+		</Command>
 	</Commands>
 	<Parameters>
-		<Parameter name="ЛичныйСписокПриДобавлении">
-			<Type>
-				<v8:Type>xs:boolean</v8:Type>
-			</Type>
-		</Parameter>
 		<Parameter name="СертификатСсылка">
 			<Type>
 				<v8:Type>cfg:CatalogRef.СертификатыКлючейЭлектроннойПодписиИШифрования</v8:Type>
@@ -1521,6 +1662,11 @@
 		<Parameter name="СертификатОснование">
 			<Type>
 				<v8:Type>cfg:CatalogRef.СертификатыКлючейЭлектроннойПодписиИШифрования</v8:Type>
+			</Type>
+		</Parameter>
+		<Parameter name="ФизическоеЛицо">
+			<Type>
+				<v8:TypeSet>cfg:AnyRef</v8:TypeSet>
 			</Type>
 		</Parameter>
 	</Parameters>
