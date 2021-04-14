@@ -16,29 +16,93 @@ var ForWriting = 2 // Open a file for writing.
 var OpenAsASCII = 0
 var outf = null
 
+var ConnectionString
+var COMConnectorName
+var fixFileNames
+var removeFixNames
+var Action
+var outFileName
+
+var COMConnector
+var connection
+
+var mainEvent = 'Удаление исправлений (патчей)'
+
 try {
 
-  var ConnectionString = WScript.Arguments.Named.Item('ConnectionString')
-  var COMConnectorName = WScript.Arguments.Named.Item('COMConnectorName')
-  var fixFileNames = WScript.Arguments.Named.Item('FixFileNames')
-  var removeFixNames = WScript.Arguments.Named.Item('RemoveFixNames')
-  var Action = WScript.Arguments.Named.Item('Action')
-  var outFileName = WScript.Arguments.Named.Item('Out')
+  ConnectionString = WScript.Arguments.Named.Item('ConnectionString')
+  COMConnectorName = WScript.Arguments.Named.Item('COMConnectorName')
+  fixFileNames = WScript.Arguments.Named.Item('FixFileNames')
+  removeFixNames = WScript.Arguments.Named.Item('RemoveFixNames')
+  Action = WScript.Arguments.Named.Item('Action')
+  outFileName = WScript.Arguments.Named.Item('Out')
 
-  var outf = fso.OpenTextFile(outFileName, ForWriting, true, OpenAsASCII)
+  outf = fso.OpenTextFile(outFileName, ForWriting, true, OpenAsASCII)
 
-  var COMConnector = new ActiveXObject(COMConnectorName)
-  var connection = COMConnector.Connect(ConnectionString)
+} catch (ex) {
+
+  if (outf != null) {
+    outf.WriteLine(mainEvent + ": Ошибка инициализации переменных: " + ex.message)
+  }
+  WScript.Quit(1)
+
+}
+
+try {
+
+  if (outf != null) {
+    outf.WriteLine(mainEvent + ": Создание объекта COM-соединителя...")
+  }
+  COMConnector = new ActiveXObject(COMConnectorName)
+  
+} catch (ex) {
+
+  if (outf != null) {
+   outf.WriteLine(mainEvent + ": Ошибка создания объекта COM-соединителя: " + ex.message)
+  }
+  WScript.Quit(1)
+
+}
+
+try {
+    
+  if (outf != null) {
+    outf.WriteLine(mainEvent + ": Установка соединения с " + ConnectionString + "...")
+  }  
+  connection = COMConnector.Connect(ConnectionString)
+
+} catch (ex) {
+
+  if (outf != null) {
+    outf.WriteLine(mainEvent + ": Ошибка установки соединения с " + ConnectionString + ": " + ex.message)
+  }
+  WScript.Quit(1)
+
+}
+
+try {
 
   if (Action == 'RemoveAll') {
+
+    if (outf != null) {
+      outf.WriteLine(mainEvent + ": Вызов ОбновлениеКонфигурацииВызовСервера.УдалитьИсправленияИзСкрипта()...")
+    }
     connection.ОбновлениеКонфигурацииВызовСервера.УдалитьИсправленияИзСкрипта();
+
   } else {
+
+    if (outf != null) {
+      outf.WriteLine(mainEvent + ": Вызов ОбновлениеКонфигурацииВызовСервера.ОбновитьИсправленияИзСкрипта()...")
+    }
     connection.ОбновлениеКонфигурацииВызовСервера.ОбновитьИсправленияИзСкрипта(fixFileNames, removeFixNames)
+
   }
 
 } catch (ex) {
-  if (outf != null) {
-    outf.WriteLine(ex.message)
+
+  if (outf != null) {    
+    outf.WriteLine(mainEvent + ": Ошибка БСП: " + ex.message)
   }
   WScript.Quit(1)
+
 }
