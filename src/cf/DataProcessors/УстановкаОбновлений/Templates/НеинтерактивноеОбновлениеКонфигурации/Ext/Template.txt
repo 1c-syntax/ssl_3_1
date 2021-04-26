@@ -77,9 +77,16 @@ if (executeDeferredHandlers) {
 }
 
 if (cfgFileNames.length === 0) {
-  setProgress('Обновление конфигурации информационной базы')
-  ret = updateDbCfg()
-  checkResult(ret)
+  if (updateConfiguration){ 		
+    setProgress('Обновление конфигурации информационной базы')
+    ret = updateDbCfg()
+    checkResult(ret)
+  } 
+  if (loadExtentions){ 		
+    setProgress('Обновление расширений информационной базы')
+    ret = executeLoadExt()
+    checkResult(ret)
+  }
 } else {
   for (var cfgFileIndex = 0; cfgFileIndex < cfgFileNames.length; cfgFileIndex++) {
     var fileProperties = GetRequired(cfgFileNames[cfgFileIndex])

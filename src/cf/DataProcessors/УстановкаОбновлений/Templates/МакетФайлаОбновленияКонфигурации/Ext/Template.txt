@@ -37,6 +37,9 @@ var tempLogFileName = 'templog.txt'
 var errorFileName = 'error.txt'
 var taskNameScheduleService = [ИмяЗадачиПланировщикаЗадач] // Если указано, то задача, которой запущен скрипт.
 var runAppAdditionalParams = [ПараметрыЗапускаПредприятия] // Аргументы командной строки, которые следует добавить к запуску 1С:Предприятия в режиме клиента.
+var updateConfiguration = true
+var loadExtentions = true
+
 #КонецОбласти
 
 #Область ОбластьОбновленияКонфигурации
@@ -940,6 +943,34 @@ function registerCOM() {
   isSchedule = (taskNameScheduleService !== '')
   param = isSchedule ? format('/s "{0}"', v8comcntr) : format('/n /i:user /s "{0}"', v8comcntr)
   return runApp('regsvr32.exe', param, SW_HIDE, true)
+}
+
+function executeLoadExt () {
+  var result = doExecuteLoadExt()
+  ComConnection = null
+  CollectGarbage()
+  return result
+}
+
+function doExecuteLoadExt() {
+
+  var result = runApp(
+    v8client,
+    format(
+      'ENTERPRISE {0} {1} /AllowExecuteScheduledJobs -Off /DisableStartupMessages /DisableStartupDialogs /C"ВыполнитьЗагрузкуРасширенийИЗавершитьРаботу;РегламентныеЗаданияОтключены;РазрешитьРаботуПользователей" /UC {2}',
+      infoBasePath,
+      infoBaseAuthorization,
+      unlockCode),
+    SW_SHOW,
+    true)
+  
+  if (result === 0 && oFileSystemObject.FileExists(errorFileName)) {
+    log('При выполнении обновления информационной базы произошла ошибка:', true)
+    appendLog()
+    result = 1
+  }  
+  
+  return result			
 }
 
 if (oHTA != null) {

@@ -31,7 +31,7 @@
 
     var endLoadStep = loadStep + cfgFileNames.length * 6 // следующий шаг после завершения загрузки файлов обновления
     if (cfgFileNames.length === 0) {
-      endLoadStep = loadStep + 4
+      endLoadStep = loadStep + 6
     }
     // Вывести сообщение о ходе обновления
     function setProgress (statusText) {
@@ -115,12 +115,22 @@
                 setProgress('[Шаг4ОбновлениеКонфигурации]')
                 break
               case 1:
-                ret = updateDbCfg()
+              	if (updateConfiguration){
+                  ret = updateDbCfg()
+                }       	
                 break
               case 2:
-                setProgress('[Шаг5ОбновлениеИБ]')
+                setProgress('[Шаг4ЗагрузкаРасширений]')
                 break
               case 3:
+               	if (loadExtentions) {
+                  ret = executeLoadExt()
+                }
+                break
+              case 4:
+                setProgress('[Шаг5ОбновлениеИБ]')
+                break
+              case 5:
                 ret = executeUpdate(true)
                 break
             }
