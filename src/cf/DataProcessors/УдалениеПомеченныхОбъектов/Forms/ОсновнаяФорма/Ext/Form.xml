@@ -79,17 +79,18 @@
 				<ButtonGroup name="КоманднаяПанельПоискПомеченных" id="681">
 					<ExtendedTooltip name="Группа1РасширеннаяПодсказка1" id="682"/>
 					<ChildItems>
-						<Button name="ДеревоПомеченныхНаУдалениеУдалитьВсе" id="517">
-							<Type>CommandBarButton</Type>
-							<DefaultButton>true</DefaultButton>
-							<CommandName>Form.Command.УдалитьВсе</CommandName>
-							<ExtendedTooltip name="ДеревоПомеченныхНаУдалениеУдалитьВсеРасширеннаяПодсказка" id="518"/>
-						</Button>
 						<ButtonGroup name="ГруппаАктивныПослеПоискаПомеченные" id="562">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Удалить</v8:content>
+								</v8:item>
+							</Title>
 							<ExtendedTooltip name="Группа1РасширеннаяПодсказка7" id="563"/>
 							<ChildItems>
 								<Button name="ДеревоПомеченныхНаУдалениеУдалитьВыбранные" id="519">
 									<Type>CommandBarButton</Type>
+									<DefaultButton>true</DefaultButton>
 									<CommandName>Form.Command.УдалитьВыбранные</CommandName>
 									<ExtendedTooltip name="ДеревоПомеченныхНаУдалениеУдалитьВыбранныеРасширеннаяПодсказка" id="520"/>
 								</Button>
@@ -1578,6 +1579,11 @@
 			</Type>
 			<Settings xsi:type="v8:TypeDescription"/>
 		</Attribute>
+		<Attribute name="ВыполняетсяЗадание" id="3">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
 	</Attributes>
 	<Commands>
 		<Command name="ДеревоПомеченныхНаУдалениеУстановитьВсе" id="2">
@@ -1662,15 +1668,6 @@
 			</Picture>
 			<Action>ДеревоПомеченныхНаУдалениеИзменить</Action>
 			<CurrentRowUse>DontUse</CurrentRowUse>
-		</Command>
-		<Command name="УдалитьВсе" id="11">
-			<Title>
-				<v8:item>
-					<v8:lang>ru</v8:lang>
-					<v8:content>Удалить все</v8:content>
-				</v8:item>
-			</Title>
-			<Action>УдалитьВсе</Action>
 		</Command>
 		<Command name="УдалитьВыбранные" id="12">
 			<Title>
