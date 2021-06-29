@@ -6,38 +6,13 @@
 			<v8:content>Расшифровка данных</v8:content>
 		</v8:item>
 	</Title>
-	<Width>45</Width>
+	<Width>56</Width>
 	<WindowOpeningMode>LockOwnerWindow</WindowOpeningMode>
 	<AutoTitle>false</AutoTitle>
 	<CommandBarLocation>Bottom</CommandBarLocation>
 	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
 		<HorizontalAlign>Right</HorizontalAlign>
 		<Autofill>false</Autofill>
-		<ChildItems>
-			<Button name="ФормаРасшифровать" id="307">
-				<Type>CommandBarButton</Type>
-				<DefaultButton>true</DefaultButton>
-				<CommandName>Form.Command.Расшифровать</CommandName>
-				<ExtendedTooltip name="ФормаРасшифроватьРасширеннаяПодсказка" id="308"/>
-			</Button>
-			<Button name="ФормаЗакрыть" id="303">
-				<Type>CommandBarButton</Type>
-				<Representation>Text</Representation>
-				<CommandName>Form.StandardCommand.Close</CommandName>
-				<Title>
-					<v8:item>
-						<v8:lang>ru</v8:lang>
-						<v8:content>Отмена</v8:content>
-					</v8:item>
-				</Title>
-				<ExtendedTooltip name="ФормаЗакрытьРасширеннаяПодсказка" id="304"/>
-			</Button>
-			<Button name="ФормаСправка" id="448">
-				<Type>CommandBarButton</Type>
-				<CommandName>Form.StandardCommand.Help</CommandName>
-				<ExtendedTooltip name="ФормаСправкаРасширеннаяПодсказка" id="449"/>
-			</Button>
-		</ChildItems>
 	</AutoCommandBar>
 	<Events>
 		<Event name="NotificationProcessing">ОбработкаОповещения</Event>
@@ -53,8 +28,10 @@
 					<v8:content>Представление данных</v8:content>
 				</v8:item>
 			</Title>
+			<Group>Vertical</Group>
 			<Representation>NormalSeparation</Representation>
 			<ShowTitle>false</ShowTitle>
+			<ThroughAlign>Use</ThroughAlign>
 			<ExtendedTooltip name="ГруппаПредставлениеДанныхРасширеннаяПодсказка" id="454"/>
 			<ChildItems>
 				<LabelField name="ПредставлениеДанных" id="18">
@@ -66,6 +43,7 @@
 						</v8:item>
 					</Title>
 					<AutoMaxWidth>false</AutoMaxWidth>
+					<HorizontalStretch>true</HorizontalStretch>
 					<Hiperlink>true</Hiperlink>
 					<ContextMenu name="ПредставлениеДанныхКонтекстноеМеню" id="19"/>
 					<ExtendedTooltip name="ПредставлениеДанныхРасширеннаяПодсказка" id="20"/>
@@ -82,6 +60,7 @@
 					<v8:content>Введите пароль закрытого ключа сертификата</v8:content>
 				</v8:item>
 			</Title>
+			<ThroughAlign>Use</ThroughAlign>
 			<ExtendedTooltip name="ГруппаРасшифровкаРасширеннаяПодсказка" id="379"/>
 			<ChildItems>
 				<UsualGroup name="ГруппаПоля" id="433">
@@ -116,17 +95,54 @@
 								<Event name="ChoiceProcessing">СертификатОбработкаВыбора</Event>
 							</Events>
 						</InputField>
-						<InputField name="Пароль" id="316">
-							<DataPath>Пароль</DataPath>
-							<HorizontalStretch>false</HorizontalStretch>
-							<Wrap>false</Wrap>
-							<PasswordMode>true</PasswordMode>
-							<ContextMenu name="ПарольКонтекстноеМеню" id="317"/>
-							<ExtendedTooltip name="ПарольРасширеннаяПодсказка" id="318"/>
-							<Events>
-								<Event name="OnChange">ПарольПриИзменении</Event>
-							</Events>
-						</InputField>
+						<UsualGroup name="ГруппаПароль" id="455">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Пароль</v8:content>
+								</v8:item>
+							</Title>
+							<Group>AlwaysHorizontal</Group>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаПарольРасширеннаяПодсказка" id="456"/>
+							<ChildItems>
+								<InputField name="Пароль" id="316">
+									<DataPath>Пароль</DataPath>
+									<HorizontalStretch>false</HorizontalStretch>
+									<Wrap>false</Wrap>
+									<PasswordMode>true</PasswordMode>
+									<ContextMenu name="ПарольКонтекстноеМеню" id="317"/>
+									<ExtendedTooltip name="ПарольРасширеннаяПодсказка" id="318"/>
+									<Events>
+										<Event name="OnChange">ПарольПриИзменении</Event>
+									</Events>
+								</InputField>
+								<CheckBoxField name="ЗапомнитьПароль" id="324">
+									<DataPath>ЗапомнитьПароль</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Запомнить на время сеанса</v8:content>
+										</v8:item>
+									</Title>
+									<TitleLocation>Right</TitleLocation>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Запомнить пароль сертификата до закрытия программы. При снятии флажка пароль стирается из памяти, если запоминался ранее.</v8:content>
+										</v8:item>
+									</ToolTip>
+									<ToolTipRepresentation>Button</ToolTipRepresentation>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="ЗапомнитьПарольКонтекстноеМеню" id="325"/>
+									<ExtendedTooltip name="ЗапомнитьПарольРасширеннаяПодсказка" id="326"/>
+									<Events>
+										<Event name="OnChange">ЗапомнитьПарольПриИзменении</Event>
+									</Events>
+								</CheckBoxField>
+							</ChildItems>
+						</UsualGroup>
 						<Pages name="Страницы" id="416">
 							<Title>
 								<v8:item>
@@ -137,35 +153,6 @@
 							<PagesRepresentation>None</PagesRepresentation>
 							<ExtendedTooltip name="СтраницыРасширеннаяПодсказка" id="417"/>
 							<ChildItems>
-								<Page name="СтраницаЗапоминаниеПароля" id="418">
-									<Title>
-										<v8:item>
-											<v8:lang>ru</v8:lang>
-											<v8:content>Страница запоминание пароля</v8:content>
-										</v8:item>
-									</Title>
-									<Group>HorizontalIfPossible</Group>
-									<ExtendedTooltip name="СтраницаЗапоминаниеПароляРасширеннаяПодсказка" id="419"/>
-									<ChildItems>
-										<CheckBoxField name="ЗапомнитьПароль" id="324">
-											<DataPath>ЗапомнитьПароль</DataPath>
-											<TitleLocation>Right</TitleLocation>
-											<ToolTip>
-												<v8:item>
-													<v8:lang>ru</v8:lang>
-													<v8:content>Запомнить пароль сертификата до закрытия программы. При снятии флажка пароль стирается из памяти, если запоминался ранее.</v8:content>
-												</v8:item>
-											</ToolTip>
-											<ToolTipRepresentation>Button</ToolTipRepresentation>
-											<CheckBoxType>Auto</CheckBoxType>
-											<ContextMenu name="ЗапомнитьПарольКонтекстноеМеню" id="325"/>
-											<ExtendedTooltip name="ЗапомнитьПарольРасширеннаяПодсказка" id="326"/>
-											<Events>
-												<Event name="OnChange">ЗапомнитьПарольПриИзменении</Event>
-											</Events>
-										</CheckBoxField>
-									</ChildItems>
-								</Page>
 								<Page name="СтраницаПояснениеУсиленногоПароля" id="438">
 									<Title>
 										<v8:item>
@@ -225,6 +212,81 @@
 						</Pages>
 					</ChildItems>
 				</UsualGroup>
+				<UsualGroup name="ГруппаКонтейнер" id="457">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Контейнер</v8:content>
+						</v8:item>
+					</Title>
+					<Group>Vertical</Group>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаКонтейнерРасширеннаяПодсказка" id="458"/>
+				</UsualGroup>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="ГруппаКоманды" id="459">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Команды</v8:content>
+				</v8:item>
+			</Title>
+			<HorizontalStretch>true</HorizontalStretch>
+			<Group>AlwaysHorizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаКомандыРасширеннаяПодсказка" id="460"/>
+			<ChildItems>
+				<UsualGroup name="ГруппаКомандыПодтверждения" id="461">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Команды</v8:content>
+						</v8:item>
+					</Title>
+					<Group>AlwaysHorizontal</Group>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаКомандыПодтвержденияРасширеннаяПодсказка" id="462"/>
+				</UsualGroup>
+				<CommandBar name="ГруппаОсновныеКоманды" id="463">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Основные команды</v8:content>
+						</v8:item>
+					</Title>
+					<HorizontalStretch>false</HorizontalStretch>
+					<GroupHorizontalAlign>Right</GroupHorizontalAlign>
+					<ExtendedTooltip name="ГруппаОсновныеКомандыРасширеннаяПодсказка" id="464"/>
+					<ChildItems>
+						<Button name="ФормаРасшифровать" id="465">
+							<Type>CommandBarButton</Type>
+							<DefaultButton>true</DefaultButton>
+							<CommandName>Form.Command.Расшифровать</CommandName>
+							<ExtendedTooltip name="ФормаРасшифроватьРасширеннаяПодсказка" id="466"/>
+						</Button>
+						<Button name="ФормаЗакрыть" id="467">
+							<Type>CommandBarButton</Type>
+							<Representation>Text</Representation>
+							<CommandName>Form.StandardCommand.Close</CommandName>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Отмена</v8:content>
+								</v8:item>
+							</Title>
+							<ExtendedTooltip name="ФормаЗакрытьРасширеннаяПодсказка" id="468"/>
+						</Button>
+						<Button name="ФормаСправка" id="469">
+							<Type>CommandBarButton</Type>
+							<CommandName>Form.StandardCommand.Help</CommandName>
+							<ExtendedTooltip name="ФормаСправкаРасширеннаяПодсказка" id="470"/>
+						</Button>
+					</ChildItems>
+				</CommandBar>
 			</ChildItems>
 		</UsualGroup>
 	</ChildItems>
@@ -317,7 +379,7 @@
 		</Attribute>
 		<Attribute name="СертификатПрограмма" id="9">
 			<Type>
-				<v8:Type>cfg:CatalogRef.ПрограммыЭлектроннойПодписиИШифрования</v8:Type>
+				<v8:TypeSet>cfg:DefinedType.ПрограммаЭлектроннойПодписи</v8:TypeSet>
 			</Type>
 		</Attribute>
 		<Attribute name="БезПодтверждения" id="10">

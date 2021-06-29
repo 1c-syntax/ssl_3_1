@@ -96,8 +96,6 @@
 										<ExcludedCommand>CopyToClipboard</ExcludedCommand>
 										<ExcludedCommand>Delete</ExcludedCommand>
 										<ExcludedCommand>EndEdit</ExcludedCommand>
-										<ExcludedCommand>MoveDown</ExcludedCommand>
-										<ExcludedCommand>MoveUp</ExcludedCommand>
 										<ExcludedCommand>Pickup</ExcludedCommand>
 										<ExcludedCommand>SelectAll</ExcludedCommand>
 										<ExcludedCommand>ShowMultipleSelection</ExcludedCommand>
@@ -117,17 +115,17 @@
 												<ChildItems>
 													<Button name="ЗначенияКонтекстноеМенюПоискПоТекущемуЗначению" id="350">
 														<Type>CommandBarButton</Type>
-														<CommandName>Form.Item.Значения.StandardCommand.FindByCurrentValue</CommandName>
+														<CommandName>Form.Item.Значения.StandardCommand.SearchEverywhere</CommandName>
 														<ExtendedTooltip name="ЗначенияКонтекстноеМенюПоискПоТекущемуЗначениюРасширеннаяПодсказка" id="351"/>
 													</Button>
 													<Button name="ЗначенияКонтекстноеМенюНайти" id="352">
 														<Type>CommandBarButton</Type>
-														<CommandName>Form.Item.Значения.StandardCommand.Find</CommandName>
+														<CommandName>Form.Item.Значения.StandardCommand.SearchEverywhere</CommandName>
 														<ExtendedTooltip name="ЗначенияКонтекстноеМенюНайтиРасширеннаяПодсказка" id="353"/>
 													</Button>
 													<Button name="ЗначенияКонтекстноеМенюОтменитьПоиск" id="354">
 														<Type>CommandBarButton</Type>
-														<CommandName>Form.Item.Значения.StandardCommand.CancelSearch</CommandName>
+														<CommandName>Form.Item.Значения.StandardCommand.SearchEverywhere</CommandName>
 														<ExtendedTooltip name="ЗначенияКонтекстноеМенюОтменитьПоискРасширеннаяПодсказка" id="355"/>
 													</Button>
 												</ChildItems>
@@ -194,22 +192,19 @@
 													<Button name="ЗначенияПоискПоТекущемуЗначению" id="330">
 														<Type>CommandBarButton</Type>
 														<Visible>false</Visible>
-														<CommandName>Form.Item.Значения.StandardCommand.FindByCurrentValue</CommandName>
-														<LocationInCommandBar>InCommandBarAndInAdditionalSubmenu</LocationInCommandBar>
+														<CommandName>Form.Item.Значения.StandardCommand.SearchEverywhere</CommandName>
 														<ExtendedTooltip name="ЗначенияПоискПоТекущемуЗначениюРасширеннаяПодсказка" id="331"/>
 													</Button>
 													<Button name="ЗначенияНайти" id="332">
 														<Type>CommandBarButton</Type>
 														<Visible>false</Visible>
-														<CommandName>Form.Item.Значения.StandardCommand.Find</CommandName>
-														<LocationInCommandBar>InCommandBarAndInAdditionalSubmenu</LocationInCommandBar>
+														<CommandName>Form.Item.Значения.StandardCommand.SearchEverywhere</CommandName>
 														<ExtendedTooltip name="ЗначенияНайтиРасширеннаяПодсказка" id="333"/>
 													</Button>
 													<Button name="ЗначенияОтменитьПоиск" id="334">
 														<Type>CommandBarButton</Type>
 														<Visible>false</Visible>
-														<CommandName>Form.Item.Значения.StandardCommand.CancelSearch</CommandName>
-														<LocationInCommandBar>InCommandBarAndInAdditionalSubmenu</LocationInCommandBar>
+														<CommandName>Form.Item.Значения.StandardCommand.SearchEverywhere</CommandName>
 														<ExtendedTooltip name="ЗначенияОтменитьПоискРасширеннаяПодсказка" id="335"/>
 													</Button>
 												</ChildItems>
@@ -228,14 +223,12 @@
 														<Type>CommandBarButton</Type>
 														<Visible>false</Visible>
 														<CommandName>Form.Item.Значения.StandardCommand.SortListAsc</CommandName>
-														<LocationInCommandBar>InCommandBarAndInAdditionalSubmenu</LocationInCommandBar>
 														<ExtendedTooltip name="ЗначенияСортироватьСписокПоВозрастаниюРасширеннаяПодсказка" id="341"/>
 													</Button>
 													<Button name="ЗначенияСортироватьСписокПоУбыванию" id="342">
 														<Type>CommandBarButton</Type>
 														<Visible>false</Visible>
 														<CommandName>Form.Item.Значения.StandardCommand.SortListDesc</CommandName>
-														<LocationInCommandBar>InCommandBarAndInAdditionalSubmenu</LocationInCommandBar>
 														<ExtendedTooltip name="ЗначенияСортироватьСписокПоУбываниюРасширеннаяПодсказка" id="343"/>
 													</Button>
 												</ChildItems>
@@ -253,15 +246,13 @@
 													<Button name="ЗначенияПереместитьВверх" id="344">
 														<Type>CommandBarButton</Type>
 														<Visible>false</Visible>
-														<CommandName>18:37740564-9e86-44a0-bea9-3f485a5a3f91</CommandName>
-														<LocationInCommandBar>InCommandBarAndInAdditionalSubmenu</LocationInCommandBar>
+														<CommandName>Form.Item.Значения.StandardCommand.MoveUp</CommandName>
 														<ExtendedTooltip name="ЗначенияПереместитьВверхРасширеннаяПодсказка" id="345"/>
 													</Button>
 													<Button name="ЗначенияПереместитьВниз" id="346">
 														<Type>CommandBarButton</Type>
 														<Visible>false</Visible>
-														<CommandName>18:fa51b106-eae6-44c7-8054-76cbb3100603</CommandName>
-														<LocationInCommandBar>InCommandBarAndInAdditionalSubmenu</LocationInCommandBar>
+														<CommandName>Form.Item.Значения.StandardCommand.MoveDown</CommandName>
 														<ExtendedTooltip name="ЗначенияПереместитьВнизРасширеннаяПодсказка" id="347"/>
 													</Button>
 												</ChildItems>
@@ -594,6 +585,21 @@
 							<ShowTitle>false</ShowTitle>
 							<ExtendedTooltip name="КомандыДополнительныхВозможностейРасширеннаяПодсказка" id="293"/>
 							<ChildItems>
+								<Button name="СгруппироватьПоВыбранномуПолю" id="440">
+									<Type>UsualButton</Type>
+									<CommandName>Form.Command.СгруппироватьПоВыбранномуПолю</CommandName>
+									<ShapeRepresentation>None</ShapeRepresentation>
+									<ExtendedTooltip name="СгруппироватьПоВыбранномуПолюРасширеннаяПодсказка" id="441"/>
+								</Button>
+								<LabelDecoration name="СгруппироватьГраницаГруппы" id="442">
+									<HorizontalStretch>true</HorizontalStretch>
+									<Font ref="style:NormalTextFont" height="1" kind="StyleItem" scale="100"/>
+									<Border width="1">
+										<v8ui:style xsi:type="v8ui:ControlBorderType">Underline</v8ui:style>
+									</Border>
+									<ContextMenu name="СгруппироватьГраницаГруппыКонтекстноеМеню" id="443"/>
+									<ExtendedTooltip name="СгруппироватьГраницаГруппыРасширеннаяПодсказка" id="444"/>
+								</LabelDecoration>
 								<UsualGroup name="Поле" id="196">
 									<Title>
 										<v8:item>
@@ -977,19 +983,16 @@
 							<Representation>Text</Representation>
 							<DefaultButton>true</DefaultButton>
 							<CommandName>Form.Command.ФильтроватьИСформировать</CommandName>
-							<LocationInCommandBar>InCommandBarAndInAdditionalSubmenu</LocationInCommandBar>
 							<ExtendedTooltip name="ФильтроватьИСформироватьРасширеннаяПодсказка" id="319"/>
 						</Button>
 						<Button name="Фильтровать" id="320">
 							<Type>CommandBarButton</Type>
 							<CommandName>Form.Command.Фильтровать</CommandName>
-							<LocationInCommandBar>InCommandBarAndInAdditionalSubmenu</LocationInCommandBar>
 							<ExtendedTooltip name="ФильтроватьРасширеннаяПодсказка" id="321"/>
 						</Button>
 						<Button name="Отмена" id="284">
 							<Type>CommandBarButton</Type>
 							<CommandName>Form.StandardCommand.Cancel</CommandName>
-							<LocationInCommandBar>InCommandBarAndInAdditionalSubmenu</LocationInCommandBar>
 							<ExtendedTooltip name="ОтменаРасширеннаяПодсказка" id="285"/>
 						</Button>
 					</ChildItems>
@@ -1441,6 +1444,26 @@
 				</v8:item>
 			</Title>
 			<Action>Фильтровать</Action>
+		</Command>
+		<Command name="СгруппироватьПоВыбранномуПолю" id="20">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сгруппировать по полю</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сгруппировать по выбранному полю</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>CommonPicture.Группировка</xr:Ref>
+				<xr:LoadTransparent>false</xr:LoadTransparent>
+			</Picture>
+			<Action>СгруппироватьПоВыбранномуПолю</Action>
+			<Representation>TextPicture</Representation>
 		</Command>
 	</Commands>
 	<Parameters>

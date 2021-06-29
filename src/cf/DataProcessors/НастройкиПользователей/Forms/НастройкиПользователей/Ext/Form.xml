@@ -168,12 +168,6 @@
 											<ExtendedTooltip name="СкопироватьВсеНастройкиExtendedTooltip" id="130"/>
 										</Button>
 										<ButtonGroup name="СкопироватьДругимВыделенные" id="111">
-											<Title>
-												<v8:item>
-													<v8:lang>ru</v8:lang>
-													<v8:content>Скопировать другим выделенные</v8:content>
-												</v8:item>
-											</Title>
 											<ExtendedTooltip name="СкопироватьДругимВыделенныеExtendedTooltip" id="131"/>
 										</ButtonGroup>
 									</ChildItems>
@@ -203,18 +197,17 @@
 											<CommandName>Form.Command.ОчиститьВсеНастройки</CommandName>
 											<ExtendedTooltip name="ОчиститьВсеНастройкиExtendedTooltip" id="134"/>
 										</Button>
+										<Button name="ОчиститьУстаревшиеНастройки" id="233">
+											<Type>CommandBarButton</Type>
+											<CommandName>Form.Command.ОчиститьУстаревшиеНастройки</CommandName>
+											<ExtendedTooltip name="ОчиститьУстаревшиеНастройкиРасширеннаяПодсказка" id="234"/>
+										</Button>
 										<Button name="ОчиститьНастройкиОтчетовИВнешнегоВида" id="100">
 											<Type>CommandBarButton</Type>
 											<CommandName>Form.Command.ОчиститьНастройкиОтчетовИВнешнегоВида</CommandName>
 											<ExtendedTooltip name="ОчиститьНастройкиОтчетовИВнешнегоВидаExtendedTooltip" id="135"/>
 										</Button>
 										<ButtonGroup name="ОчиститьВыделенные" id="110">
-											<Title>
-												<v8:item>
-													<v8:lang>ru</v8:lang>
-													<v8:content>Очистить выделенные</v8:content>
-												</v8:item>
-											</Title>
 											<ExtendedTooltip name="ОчиститьВыделенныеExtendedTooltip" id="136"/>
 											<ChildItems>
 												<Button name="ОчиститьНастройкиВыбраннымПользователям" id="108">
@@ -228,6 +221,12 @@
 													<CommandName>Form.Command.ОчиститьНастройкиВсехПользователей</CommandName>
 													<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
 													<ExtendedTooltip name="ОчиститьНастройкиВсехПользователейExtendedTooltip" id="138"/>
+												</Button>
+												<Button name="ОчиститьУстаревшиеНастройкиВсехПользователей" id="235">
+													<Type>CommandBarButton</Type>
+													<CommandName>Form.Command.ОчиститьУстаревшиеНастройкиВсехПользователей</CommandName>
+													<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
+													<ExtendedTooltip name="ОчиститьУстаревшиеНастройкиВсехПользователейРасширеннаяПодсказка" id="236"/>
 												</Button>
 											</ChildItems>
 										</ButtonGroup>
@@ -386,12 +385,6 @@
 																		<ExtendedTooltip name="ВнешнийВидКонтекстноеМенюУдалитьExtendedTooltip" id="145"/>
 																	</Button>
 																	<ButtonGroup name="ВнешнийВидКонтекстноеМенюПрочее" id="114">
-																		<Title>
-																			<v8:item>
-																				<v8:lang>ru</v8:lang>
-																				<v8:content>Внешний вид контекстное меню прочее</v8:content>
-																			</v8:item>
-																		</Title>
 																		<ExtendedTooltip name="ВнешнийВидКонтекстноеМенюПрочееExtendedTooltip" id="146"/>
 																		<ChildItems>
 																			<Button name="ВнешнийВидКонтекстноеМенюКопироватьВБуферОбмена" id="56">
@@ -553,12 +546,6 @@
 																		<ExtendedTooltip name="НастройкиОтчетовДеревоКонтекстноеМенюОчиститьExtendedTooltip" id="157"/>
 																	</Button>
 																	<ButtonGroup name="НастройкиОтчетовДеревоКонтекстноеМенюПрочее" id="113">
-																		<Title>
-																			<v8:item>
-																				<v8:lang>ru</v8:lang>
-																				<v8:content>Настройки отчетов дерево контекстное меню прочее</v8:content>
-																			</v8:item>
-																		</Title>
 																		<ExtendedTooltip name="НастройкиОтчетовДеревоКонтекстноеМенюПрочееExtendedTooltip" id="158"/>
 																		<ChildItems>
 																			<Button name="НастройкиОтчетовДеревоКонтекстноеМенюВыделитьВсе" id="53">
@@ -721,12 +708,6 @@
 																		<ExtendedTooltip name="ПрочиеНастройкиКонтекстноеМенюУдалитьExtendedTooltip" id="169"/>
 																	</Button>
 																	<ButtonGroup name="ПрочиеНастройкиКонтекстноеМенюПрочее" id="116">
-																		<Title>
-																			<v8:item>
-																				<v8:lang>ru</v8:lang>
-																				<v8:content>Прочие настройки контекстное меню прочее</v8:content>
-																			</v8:item>
-																		</Title>
 																		<ExtendedTooltip name="ПрочиеНастройкиКонтекстноеМенюПрочееExtendedTooltip" id="170"/>
 																		<ChildItems>
 																			<Button name="ПрочиеНастройкиКонтекстноеМенюВыделитьВсе" id="89">
@@ -1491,6 +1472,39 @@
 				</v8:item>
 			</ToolTip>
 			<Action>ОчиститьНастройкиВыбраннымПользователям</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ОчиститьУстаревшиеНастройки" id="18">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Устаревшие настройки</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Очистить устаревшие настройки</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ОчиститьУстаревшиеНастройки</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ОчиститьУстаревшиеНастройкиВсехПользователей" id="19">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Устаревшие настройки у всех пользователей</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Очистить устаревшие настройки у всех пользователей</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ОчиститьУстаревшиеНастройкиВсехПользователей</Action>
+			<Representation>TextPicture</Representation>
 			<CurrentRowUse>DontUse</CurrentRowUse>
 		</Command>
 	</Commands>

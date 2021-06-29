@@ -150,6 +150,7 @@
 									<EnableDrag>true</EnableDrag>
 									<FileDragMode>AsFile</FileDragMode>
 									<DataPath>Сертификаты</DataPath>
+									<RowPictureDataPath>Сертификаты.ТипРазмещения</RowPictureDataPath>
 									<Title>
 										<v8:item>
 											<v8:lang>ru</v8:lang>
@@ -619,6 +620,16 @@
 						<v8:Type>xs:boolean</v8:Type>
 					</Type>
 				</Column>
+				<Column name="ТипРазмещения" id="8">
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>10</v8:Digits>
+							<v8:FractionDigits>0</v8:FractionDigits>
+							<v8:AllowedSign>Any</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
 			</Columns>
 		</Attribute>
 		<Attribute name="СертификатНаименование" id="9">
@@ -760,6 +771,11 @@
 		<Attribute name="ОпределяемыйТипОрганизацияНастроен" id="19">
 			<Type>
 				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="УчетнаяЗапись" id="14">
+			<Type>
+				<v8:TypeSet>cfg:CatalogRef</v8:TypeSet>
 			</Type>
 		</Attribute>
 	</Attributes>

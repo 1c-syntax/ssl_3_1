@@ -26,7 +26,7 @@ var outFileName
 var COMConnector
 var connection
 
-var mainEvent = 'Удаление исправлений (патчей)'
+var mainEvent = '[СообщениеОсновноеСобытие]'
 
 try {
 
@@ -42,7 +42,7 @@ try {
 } catch (ex) {
 
   if (outf != null) {
-    outf.WriteLine(mainEvent + ": Ошибка инициализации переменных: " + ex.message)
+    outf.WriteLine(mainEvent + "[СообщениеОтказИнициализации]" + ex.message)
   }
   WScript.Quit(1)
 
@@ -51,14 +51,14 @@ try {
 try {
 
   if (outf != null) {
-    outf.WriteLine(mainEvent + ": Создание объекта COM-соединителя...")
+    outf.WriteLine(mainEvent + "[СообщениеСозданиеОбъектаCOMСоединителя]")
   }
   COMConnector = new ActiveXObject(COMConnectorName)
   
 } catch (ex) {
 
   if (outf != null) {
-   outf.WriteLine(mainEvent + ": Ошибка создания объекта COM-соединителя: " + ex.message)
+   outf.WriteLine(mainEvent + "[СообщениеОтказСозданияОбъектаCOMСоединителя]" + ex.message)
   }
   WScript.Quit(1)
 
@@ -67,14 +67,14 @@ try {
 try {
     
   if (outf != null) {
-    outf.WriteLine(mainEvent + ": Установка соединения с " + ConnectionString + "...")
+    outf.WriteLine(mainEvent + "[СообщениеУстановкаСоединенияСБазой]" + ConnectionString + "...")
   }  
   connection = COMConnector.Connect(ConnectionString)
 
 } catch (ex) {
 
   if (outf != null) {
-    outf.WriteLine(mainEvent + ": Ошибка установки соединения с " + ConnectionString + ": " + ex.message)
+    outf.WriteLine(mainEvent + "[СообщениеОтказСоединенияСБазойОбщее]" + ConnectionString + ": " + ex.message)
   }
   WScript.Quit(1)
 
@@ -85,14 +85,14 @@ try {
   if (Action == 'RemoveAll') {
 
     if (outf != null) {
-      outf.WriteLine(mainEvent + ": Вызов ОбновлениеКонфигурацииВызовСервера.УдалитьИсправленияИзСкрипта()...")
+      outf.WriteLine(mainEvent + "[СообщениеВызовУдалитьИсправленияИзСкрипта]")
     }
     connection.ОбновлениеКонфигурацииВызовСервера.УдалитьИсправленияИзСкрипта();
 
   } else {
 
     if (outf != null) {
-      outf.WriteLine(mainEvent + ": Вызов ОбновлениеКонфигурацииВызовСервера.ОбновитьИсправленияИзСкрипта()...")
+      outf.WriteLine(mainEvent + "[СообщениеВызовОбновитьИсправленияИзСкрипта]")
     }
     connection.ОбновлениеКонфигурацииВызовСервера.ОбновитьИсправленияИзСкрипта(fixFileNames, removeFixNames)
 
@@ -101,7 +101,7 @@ try {
 } catch (ex) {
 
   if (outf != null) {    
-    outf.WriteLine(mainEvent + ": Ошибка БСП: " + ex.message)
+    outf.WriteLine(mainEvent + "[СообщениеОшибкаБСП]" + ex.message)
   }
   WScript.Quit(1)
 

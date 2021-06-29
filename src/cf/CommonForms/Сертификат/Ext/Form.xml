@@ -24,6 +24,7 @@
 		</ChildItems>
 	</AutoCommandBar>
 	<Events>
+		<Event name="OnOpen">ПриОткрытии</Event>
 		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
 	</Events>
 	<ChildItems>
@@ -748,6 +749,12 @@
 				</v8:StringQualifiers>
 			</Type>
 		</Attribute>
+		<Attribute name="ОшибкаНаСервере" id="13">
+			<Type/>
+		</Attribute>
+		<Attribute name="ОшибкаНаКлиенте" id="14">
+			<Type/>
+		</Attribute>
 	</Attributes>
 	<Commands>
 		<Command name="СохранитьВФайл" id="1">
@@ -800,6 +807,9 @@
 					<v8:AllowedLength>Variable</v8:AllowedLength>
 				</v8:StringQualifiers>
 			</Type>
+		</Parameter>
+		<Parameter name="ОшибкаНаКлиенте">
+			<Type/>
 		</Parameter>
 	</Parameters>
 </Form>

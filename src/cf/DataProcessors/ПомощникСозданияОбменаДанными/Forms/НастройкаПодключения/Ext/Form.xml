@@ -1611,6 +1611,98 @@
 										</InputField>
 									</ChildItems>
 								</UsualGroup>
+								<UsualGroup name="ГруппаДублированиеНастроекСинхронизации" id="806">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Дублирование настроек синхронизации</v8:content>
+										</v8:item>
+									</Title>
+									<Group>AlwaysHorizontal</Group>
+									<Representation>NormalSeparation</Representation>
+									<ExtendedTooltip name="ГруппаДублированиеНастроекСинхронизацииРасширеннаяПодсказка" id="807"/>
+									<ChildItems>
+										<UsualGroup name="Группа4" id="819">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Группа4</v8:content>
+												</v8:item>
+											</Title>
+											<Group>AlwaysHorizontal</Group>
+											<ShowTitle>false</ShowTitle>
+											<ExtendedTooltip name="Группа4РасширеннаяПодсказка" id="820"/>
+											<ChildItems>
+												<PictureDecoration name="Декорация20" id="808">
+													<Picture>
+														<xr:Ref>CommonPicture.Предупреждение32</xr:Ref>
+														<xr:LoadTransparent>false</xr:LoadTransparent>
+													</Picture>
+													<ContextMenu name="Декорация20КонтекстноеМеню" id="809"/>
+													<ExtendedTooltip name="Декорация20РасширеннаяПодсказка" id="810"/>
+												</PictureDecoration>
+												<UsualGroup name="Группа5" id="821">
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Группа5</v8:content>
+														</v8:item>
+													</Title>
+													<Group>Vertical</Group>
+													<Representation>None</Representation>
+													<ShowTitle>false</ShowTitle>
+													<ExtendedTooltip name="Группа5РасширеннаяПодсказка" id="822"/>
+													<ChildItems>
+														<LabelDecoration name="Декорация3" id="780">
+															<Width>60</Width>
+															<Title formatted="false">
+																<v8:item>
+																	<v8:lang>ru</v8:lang>
+																	<v8:content>Уже существует настроенная синхронизация между информационными базами.</v8:content>
+																</v8:item>
+															</Title>
+															<ContextMenu name="Декорация3КонтекстноеМеню" id="781"/>
+															<ExtendedTooltip name="Декорация3РасширеннаяПодсказка" id="782"/>
+														</LabelDecoration>
+														<CheckBoxField name="ИсправитьДублированиеНастроекСинхронизации" id="823">
+															<DataPath>ИсправитьДублированиеНастроекСинхронизации</DataPath>
+															<Title>
+																<v8:item>
+																	<v8:lang>ru</v8:lang>
+																	<v8:content>Исправить</v8:content>
+																</v8:item>
+															</Title>
+															<TitleLocation>Right</TitleLocation>
+															<ToolTipRepresentation>ShowBottom</ToolTipRepresentation>
+															<CheckBoxType>Auto</CheckBoxType>
+															<ContextMenu name="ИсправитьДублированиеНастроекСинхронизацииКонтекстноеМеню" id="824"/>
+															<ExtendedTooltip name="ИсправитьДублированиеНастроекСинхронизацииРасширеннаяПодсказка" id="825">
+																<Width>50</Width>
+															</ExtendedTooltip>
+															<Events>
+																<Event name="OnChange">ИсправитьДублированиеНастроекСинхронизацииПриИзменении</Event>
+															</Events>
+														</CheckBoxField>
+														<LabelDecoration name="Декорация18" id="798">
+															<Width>70</Width>
+															<Title formatted="true">
+																<v8:item>
+																	<v8:lang>ru</v8:lang>
+																	<v8:content>&lt;color #ff0000&gt;Внимание!&lt;/&gt;
+Данная операция необратима и предназначена только для устранения ошибки синхронизации, связанной с дублированием настроек обмена в информационных базах, которые были получены путем копирования.
+
+Не рекомендуется применять для работающих синхронизаций.</v8:content>
+																</v8:item>
+															</Title>
+															<ContextMenu name="Декорация18КонтекстноеМеню" id="799"/>
+															<ExtendedTooltip name="Декорация18РасширеннаяПодсказка" id="800"/>
+														</LabelDecoration>
+													</ChildItems>
+												</UsualGroup>
+											</ChildItems>
+										</UsualGroup>
+									</ChildItems>
+								</UsualGroup>
 							</ChildItems>
 						</UsualGroup>
 					</ChildItems>
@@ -2951,6 +3043,37 @@
 			</Type>
 		</Attribute>
 		<Attribute name="ЭтоОбменСПриложениемВСервисе" id="119">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ИсправитьДублированиеНастроекСинхронизации" id="39">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Исправить дублирование настроек синхронизации</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="УзелКорреспондентаЕстьВЭтойБазе" id="19">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ЭтотУзелЕстьВКорреспонденте" id="40">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="УзелДляУдаления" id="41">
+			<Type>
+				<v8:TypeSet>cfg:ExchangePlanRef</v8:TypeSet>
+			</Type>
+		</Attribute>
+		<Attribute name="ИсправитьДублированиеНастроекСинхронизации1" id="20">
 			<Type>
 				<v8:Type>xs:boolean</v8:Type>
 			</Type>

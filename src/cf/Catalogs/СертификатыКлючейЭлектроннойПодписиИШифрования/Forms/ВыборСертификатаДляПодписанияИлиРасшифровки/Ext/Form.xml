@@ -115,6 +115,12 @@
 											<ExtendedTooltip name="ГруппаСертификатыНедоступныНаСервереРасширеннаяПодсказка" id="796"/>
 											<ChildItems>
 												<PictureDecoration name="СертификатыНедоступныНаСервереЗначок" id="797">
+													<Title formatted="false">
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Сертификаты недоступны на сервере значок</v8:content>
+														</v8:item>
+													</Title>
 													<Picture>
 														<xr:Ref>CommonPicture.Предупреждение</xr:Ref>
 														<xr:LoadTransparent>false</xr:LoadTransparent>
@@ -142,6 +148,48 @@
 										</UsualGroup>
 									</ChildItems>
 								</UsualGroup>
+								<UsualGroup name="ГруппаАвторизацииОблачнойПодписи" id="858">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Авторизации облачной подписи</v8:content>
+										</v8:item>
+									</Title>
+									<Representation>None</Representation>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="ГруппаАвторизацииОблачнойПодписиРасширеннаяПодсказка" id="859"/>
+									<ChildItems>
+										<PictureDecoration name="ТребуетсяАутентификацияОблачнойПодписиЗначок" id="860">
+											<Title formatted="false">
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Требуется аутентификация облачной подписи значок</v8:content>
+												</v8:item>
+											</Title>
+											<Picture>
+												<xr:Ref>CommonPicture.Предупреждение</xr:Ref>
+												<xr:LoadTransparent>false</xr:LoadTransparent>
+											</Picture>
+											<ContextMenu name="ТребуетсяАутентификацияОблачнойПодписиЗначокКонтекстноеМеню" id="861"/>
+											<ExtendedTooltip name="ТребуетсяАутентификацияОблачнойПодписиЗначокРасширеннаяПодсказка" id="862"/>
+										</PictureDecoration>
+										<LabelDecoration name="ТребуетсяАутентификацияОблачнойПодписиНадпись" id="863">
+											<AutoMaxWidth>false</AutoMaxWidth>
+											<Title formatted="false">
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Чтобы отобразить сертификаты необходимо авторизоваться на сервере облачной подписи</v8:content>
+												</v8:item>
+											</Title>
+											<Hyperlink>true</Hyperlink>
+											<ContextMenu name="ТребуетсяАутентификацияОблачнойПодписиНадписьКонтекстноеМеню" id="864"/>
+											<ExtendedTooltip name="ТребуетсяАутентификацияОблачнойПодписиНадписьРасширеннаяПодсказка" id="865"/>
+											<Events>
+												<Event name="Click">ТребуетсяАутентификацияОблачнойПодписиНадписьНажатие</Event>
+											</Events>
+										</LabelDecoration>
+									</ChildItems>
+								</UsualGroup>
 								<Table name="Сертификаты" id="217">
 									<Representation>List</Representation>
 									<ReadOnly>true</ReadOnly>
@@ -151,6 +199,7 @@
 									<EnableDrag>true</EnableDrag>
 									<FileDragMode>AsFile</FileDragMode>
 									<DataPath>Сертификаты</DataPath>
+									<RowPictureDataPath>Сертификаты.ТипРазмещения</RowPictureDataPath>
 									<Title>
 										<v8:item>
 											<v8:lang>ru</v8:lang>
@@ -803,6 +852,16 @@
 						<v8:Type>xs:boolean</v8:Type>
 					</Type>
 				</Column>
+				<Column name="ТипРазмещения" id="8">
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>10</v8:Digits>
+							<v8:FractionDigits>0</v8:FractionDigits>
+							<v8:AllowedSign>Any</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
 			</Columns>
 		</Attribute>
 		<Attribute name="СертификатНаименование" id="9">
@@ -1021,6 +1080,22 @@
 		</Attribute>
 		<Attribute name="ОтборПоОрганизации" id="27">
 			<Type/>
+		</Attribute>
+		<Attribute name="СписокУчетныхЗаписей" id="28">
+			<Type>
+				<v8:Type>v8:ValueListType</v8:Type>
+			</Type>
+			<Settings xsi:type="v8:TypeDescription"/>
+		</Attribute>
+		<Attribute name="СертификатОблачнойПодписи" id="29">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ЕстьОблачнаяПодпись" id="30">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
 		</Attribute>
 	</Attributes>
 	<Commands>

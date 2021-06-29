@@ -38,6 +38,57 @@
 			<PagesRepresentation>None</PagesRepresentation>
 			<ExtendedTooltip name="ВыполнениеОбменаДаннымиExtendedTooltip" id="88"/>
 			<ChildItems>
+				<Page name="СтраницаСинхронизацияДанныхНедоступна" id="202">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Синхронизация данных недоступна</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="СтраницаСинхронизацияДанныхНедоступнаРасширеннаяПодсказка" id="203"/>
+					<ChildItems>
+						<UsualGroup name="Группа2" id="204">
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="Группа2РасширеннаяПодсказка" id="205"/>
+							<ChildItems>
+								<PictureDecoration name="СинхронизацияДанныхНедоступна" id="206">
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Синхронизация данных недоступна</v8:content>
+										</v8:item>
+									</Title>
+									<Picture>
+										<xr:Ref>CommonPicture.СинхронизацияДанныхНедоступна</xr:Ref>
+										<xr:LoadTransparent>false</xr:LoadTransparent>
+									</Picture>
+									<FileDragMode>AsFile</FileDragMode>
+									<ContextMenu name="СинхронизацияДанныхНедоступнаКонтекстноеМеню" id="207"/>
+									<ExtendedTooltip name="СинхронизацияДанныхНедоступнаРасширеннаяПодсказка" id="208"/>
+								</PictureDecoration>
+								<LabelDecoration name="СтатусНедоступностьСинхронизации" id="209">
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<Height>3</Height>
+									<Title formatted="true">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>
+Невозможно запустить синхронизацию данных.
+Повторите попытку позже или &lt;link ОжидатьВозможностьСинхронизации&gt;ожидайте&lt;/&gt;&lt;link ОжидатьВозможностьСинхронизации&gt; &lt;/&gt;&lt;link ОжидатьВозможностьСинхронизации&gt;такую&lt;/&gt;&lt;link ОжидатьВозможностьСинхронизации&gt; &lt;/&gt;&lt;link ОжидатьВозможностьСинхронизации&gt;возможность...&lt;/&gt;</v8:content>
+										</v8:item>
+									</Title>
+									<VerticalAlign>Center</VerticalAlign>
+									<ContextMenu name="СтатусНедоступностьСинхронизацииКонтекстноеМеню" id="210"/>
+									<ExtendedTooltip name="СтатусНедоступностьСинхронизацииРасширеннаяПодсказка" id="211"/>
+									<Events>
+										<Event name="URLProcessing">СтатусНедоступностьСинхронизацииОбработкаНавигационнойСсылки</Event>
+									</Events>
+								</LabelDecoration>
+							</ChildItems>
+						</UsualGroup>
+					</ChildItems>
+				</Page>
 				<Page name="ОжиданиеЗапускаСинхронизации" id="192">
 					<Title>
 						<v8:item>
@@ -698,6 +749,50 @@
 										</LabelDecoration>
 									</ChildItems>
 								</Page>
+								<Page name="ОшибкаНазначениеИдентификатораДляУзла" id="212">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Ошибка назначение идентификатора для узла</v8:content>
+										</v8:item>
+									</Title>
+									<Group>HorizontalIfPossible</Group>
+									<ExtendedTooltip name="ОшибкаНазначениеИдентификатораДляУзлаРасширеннаяПодсказка" id="213"/>
+									<ChildItems>
+										<PictureDecoration name="КартинкаОшибкаНазначениеИдентификатораДляУзла" id="214">
+											<Title formatted="false">
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Картинка ошибка назначение идентификатора для узла</v8:content>
+												</v8:item>
+											</Title>
+											<Picture>
+												<xr:Ref>CommonPicture.Предупреждение32</xr:Ref>
+												<xr:LoadTransparent>false</xr:LoadTransparent>
+											</Picture>
+											<FileDragMode>AsFile</FileDragMode>
+											<ContextMenu name="КартинкаОшибкаНазначениеИдентификатораДляУзлаКонтекстноеМеню" id="215"/>
+											<ExtendedTooltip name="КартинкаОшибкаНазначениеИдентификатораДляУзлаРасширеннаяПодсказка" id="216"/>
+										</PictureDecoration>
+										<LabelDecoration name="ДекорацияОшибкаНазначениеИдентификатораДляУзла" id="217">
+											<AutoMaxWidth>false</AutoMaxWidth>
+											<Title formatted="true">
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Обнаружено дублирование настроек синхронизации данных. 
+
+Способ исправления приведен в &lt;link 1&gt;инструкции&lt;/&gt;
+</v8:content>
+												</v8:item>
+											</Title>
+											<ContextMenu name="ДекорацияОшибкаНазначениеИдентификатораДляУзлаКонтекстноеМеню" id="218"/>
+											<ExtendedTooltip name="ДекорацияОшибкаНазначениеИдентификатораДляУзлаРасширеннаяПодсказка" id="219"/>
+											<Events>
+												<Event name="URLProcessing">ДекорацияОшибкаНазначениеИдентификатораДляУзлаОбработкаНавигационнойСсылки</Event>
+											</Events>
+										</LabelDecoration>
+									</ChildItems>
+								</Page>
 							</ChildItems>
 						</Pages>
 						<Pages name="ПанельДействий" id="45">
@@ -1190,6 +1285,16 @@
 			</Type>
 		</Attribute>
 		<Attribute name="БлокировкаУзлаУстановлена" id="47">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ОжидатьВозможностьВыполнитьСинхронизацию" id="48">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ОшибкаНазначенияИдентификатораДляУзла" id="49">
 			<Type>
 				<v8:Type>xs:boolean</v8:Type>
 			</Type>

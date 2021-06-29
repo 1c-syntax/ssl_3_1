@@ -6,38 +6,13 @@
 			<v8:content>Подписание данных</v8:content>
 		</v8:item>
 	</Title>
-	<Width>45</Width>
+	<Width>56</Width>
 	<WindowOpeningMode>LockOwnerWindow</WindowOpeningMode>
 	<AutoTitle>false</AutoTitle>
-	<CommandBarLocation>Bottom</CommandBarLocation>
+	<CommandBarLocation>None</CommandBarLocation>
 	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
 		<HorizontalAlign>Right</HorizontalAlign>
 		<Autofill>false</Autofill>
-		<ChildItems>
-			<Button name="Подписать" id="307">
-				<Type>CommandBarButton</Type>
-				<DefaultButton>true</DefaultButton>
-				<CommandName>Form.Command.Подписать</CommandName>
-				<ExtendedTooltip name="ПодписатьРасширеннаяПодсказка" id="308"/>
-			</Button>
-			<Button name="Отмена" id="303">
-				<Type>CommandBarButton</Type>
-				<Representation>Text</Representation>
-				<CommandName>Form.StandardCommand.Close</CommandName>
-				<Title>
-					<v8:item>
-						<v8:lang>ru</v8:lang>
-						<v8:content>Отмена</v8:content>
-					</v8:item>
-				</Title>
-				<ExtendedTooltip name="ОтменаРасширеннаяПодсказка" id="304"/>
-			</Button>
-			<Button name="ФормаСправка" id="448">
-				<Type>CommandBarButton</Type>
-				<CommandName>Form.StandardCommand.Help</CommandName>
-				<ExtendedTooltip name="ФормаСправкаРасширеннаяПодсказка" id="449"/>
-			</Button>
-		</ChildItems>
 	</AutoCommandBar>
 	<Events>
 		<Event name="NotificationProcessing">ОбработкаОповещения</Event>
@@ -54,8 +29,9 @@
 				</v8:item>
 			</Title>
 			<Group>Vertical</Group>
-			<Representation>NormalSeparation</Representation>
+			<Representation>None</Representation>
 			<ShowTitle>false</ShowTitle>
+			<ThroughAlign>Use</ThroughAlign>
 			<ExtendedTooltip name="ГруппаПредставлениеДанныхРасширеннаяПодсказка" id="451"/>
 			<ChildItems>
 				<LabelField name="ПредставлениеДанных" id="18">
@@ -83,10 +59,12 @@
 					<v8:content>Подписание и комментарий</v8:content>
 				</v8:item>
 			</Title>
+			<HorizontalStretch>true</HorizontalStretch>
 			<Group>Vertical</Group>
 			<Representation>None</Representation>
 			<United>false</United>
 			<ShowTitle>false</ShowTitle>
+			<ThroughAlign>Use</ThroughAlign>
 			<ExtendedTooltip name="ГруппаПодписаниеИКомментарийРасширеннаяПодсказка" id="453"/>
 			<ChildItems>
 				<UsualGroup name="ГруппаПодписание" id="378">
@@ -96,6 +74,7 @@
 							<v8:content>Введите пароль закрытого ключа сертификата</v8:content>
 						</v8:item>
 					</Title>
+					<ThroughAlign>Use</ThroughAlign>
 					<ExtendedTooltip name="ГруппаПодписаниеРасширеннаяПодсказка" id="379"/>
 					<ChildItems>
 						<UsualGroup name="ГруппаПоля" id="433">
@@ -112,6 +91,7 @@
 							<ChildItems>
 								<InputField name="Сертификат" id="313">
 									<DataPath>Сертификат</DataPath>
+									<AutoMaxWidth>false</AutoMaxWidth>
 									<DropListButton>false</DropListButton>
 									<ChoiceButton>true</ChoiceButton>
 									<ChoiceButtonRepresentation>ShowInInputField</ChoiceButtonRepresentation>
@@ -155,6 +135,7 @@
 										</InputField>
 										<CheckBoxField name="ЗапомнитьПароль" id="324">
 											<DataPath>ЗапомнитьПароль</DataPath>
+											<SkipOnInput>true</SkipOnInput>
 											<Title>
 												<v8:item>
 													<v8:lang>ru</v8:lang>
@@ -250,8 +231,21 @@
 						</UsualGroup>
 					</ChildItems>
 				</UsualGroup>
+				<UsualGroup name="ГруппаКонтейнер" id="468">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Контейнер</v8:content>
+						</v8:item>
+					</Title>
+					<Group>Vertical</Group>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаКонтейнерРасширеннаяПодсказка" id="469"/>
+				</UsualGroup>
 				<InputField name="Комментарий" id="408">
 					<DataPath>Комментарий</DataPath>
+					<SkipOnInput>true</SkipOnInput>
 					<Title>
 						<v8:item>
 							<v8:lang>ru</v8:lang>
@@ -259,10 +253,86 @@
 						</v8:item>
 					</Title>
 					<TitleHeight>2</TitleHeight>
+					<AutoMaxWidth>false</AutoMaxWidth>
 					<Height>1</Height>
 					<ContextMenu name="КомментарийКонтекстноеМеню" id="409"/>
 					<ExtendedTooltip name="КомментарийРасширеннаяПодсказка" id="410"/>
 				</InputField>
+				<UsualGroup name="ГруппаКонтейнер1" id="470">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Контейнер1</v8:content>
+						</v8:item>
+					</Title>
+					<Group>Vertical</Group>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаКонтейнер1РасширеннаяПодсказка" id="471"/>
+				</UsualGroup>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="ГруппаКоманды" id="456">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Команды</v8:content>
+				</v8:item>
+			</Title>
+			<HorizontalStretch>true</HorizontalStretch>
+			<Group>AlwaysHorizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаКомандыРасширеннаяПодсказка" id="457"/>
+			<ChildItems>
+				<UsualGroup name="ГруппаКомандыПодтверждения" id="458">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Команды подтверждения</v8:content>
+						</v8:item>
+					</Title>
+					<Group>AlwaysHorizontal</Group>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаКомандыПодтвержденияРасширеннаяПодсказка" id="459"/>
+				</UsualGroup>
+				<CommandBar name="ГруппаОсновныеКоманды" id="460">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Основные команды</v8:content>
+						</v8:item>
+					</Title>
+					<HorizontalStretch>false</HorizontalStretch>
+					<GroupHorizontalAlign>Right</GroupHorizontalAlign>
+					<ExtendedTooltip name="ГруппаОсновныеКомандыРасширеннаяПодсказка" id="461"/>
+					<ChildItems>
+						<Button name="Подписать" id="462">
+							<Type>CommandBarButton</Type>
+							<DefaultButton>true</DefaultButton>
+							<CommandName>Form.Command.Подписать</CommandName>
+							<ExtendedTooltip name="ПодписатьРасширеннаяПодсказка" id="463"/>
+						</Button>
+						<Button name="Отмена" id="464">
+							<Type>CommandBarButton</Type>
+							<Representation>Text</Representation>
+							<CommandName>Form.StandardCommand.Close</CommandName>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Отмена</v8:content>
+								</v8:item>
+							</Title>
+							<ExtendedTooltip name="ОтменаРасширеннаяПодсказка" id="465"/>
+						</Button>
+						<Button name="ФормаСправка" id="466">
+							<Type>CommandBarButton</Type>
+							<CommandName>Form.StandardCommand.Help</CommandName>
+							<ExtendedTooltip name="ФормаСправкаРасширеннаяПодсказка" id="467"/>
+						</Button>
+					</ChildItems>
+				</CommandBar>
 			</ChildItems>
 		</UsualGroup>
 	</ChildItems>
@@ -358,7 +428,7 @@
 		</Attribute>
 		<Attribute name="СертификатПрограмма" id="9">
 			<Type>
-				<v8:Type>cfg:CatalogRef.ПрограммыЭлектроннойПодписиИШифрования</v8:Type>
+				<v8:TypeSet>cfg:DefinedType.ПрограммаЭлектроннойПодписи</v8:TypeSet>
 			</Type>
 		</Attribute>
 		<Attribute name="БезПодтверждения" id="10">
@@ -394,9 +464,7 @@
 			</Type>
 		</Attribute>
 		<Attribute name="ВыполнятьНаСервере" id="19">
-			<Type>
-				<v8:Type>xs:boolean</v8:Type>
-			</Type>
+			<Type/>
 		</Attribute>
 		<Attribute name="СертификатАдрес" id="3">
 			<Type>

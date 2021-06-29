@@ -81,11 +81,14 @@
       if (finish) {
         return
       }
-
+      
+      document.getElementById('ProductNameText').innerHTML = '[НаименованиеПродукта]'
+      document.getElementById('copyrightText').innerHTML = '[Копирайт]'
+      
       // Если предыдущий шаг завершился неудачно...
       if (ret !== 0 && ret !== -1) {
         if (errStep === 0) {
-          log(format('Завершение с ошибкой. Код ошибки: {0}. Подробности см. в предыдущей записи.', ret), true)
+          log(format('[СообщениеЗаставкиОшибкаШага]', ret), true)
           finalize()
           runEnterprise()
           self.close()
@@ -146,6 +149,14 @@
   </div>
   <div id="progressText" style="font-size: 8pt; font-family: verdana,arial; color: #000000;
         position: absolute; left: 10px; top: 240px;">
+    &nbsp;
+  </div>
+  <div id="productNameText" style="font-size: 12pt; font-family: sans,sans-serif; color: #50525b; font-weight: bold;
+        position: absolute; left: 20px; top: 270px;">
+    &nbsp;
+  </div>
+  <div id="copyrightText" style="font-size: 8pt; font-family: sans,sans-serif; color: #9b9b9b; font-weight: bold;
+        position: absolute; left: 20px; top: 290px;">
     &nbsp;
   </div>
 </body>

@@ -13,31 +13,6 @@
 	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
 		<HorizontalAlign>Right</HorizontalAlign>
 		<Autofill>false</Autofill>
-		<ChildItems>
-			<Button name="ФормаЗашифровать" id="307">
-				<Type>CommandBarButton</Type>
-				<DefaultButton>true</DefaultButton>
-				<CommandName>Form.Command.Зашифровать</CommandName>
-				<ExtendedTooltip name="ФормаЗашифроватьРасширеннаяПодсказка" id="308"/>
-			</Button>
-			<Button name="ФормаЗакрыть" id="303">
-				<Type>CommandBarButton</Type>
-				<Representation>Text</Representation>
-				<CommandName>Form.StandardCommand.Close</CommandName>
-				<Title>
-					<v8:item>
-						<v8:lang>ru</v8:lang>
-						<v8:content>Отмена</v8:content>
-					</v8:item>
-				</Title>
-				<ExtendedTooltip name="ФормаЗакрытьРасширеннаяПодсказка" id="304"/>
-			</Button>
-			<Button name="ФормаСправка" id="448">
-				<Type>CommandBarButton</Type>
-				<CommandName>Form.StandardCommand.Help</CommandName>
-				<ExtendedTooltip name="ФормаСправкаРасширеннаяПодсказка" id="449"/>
-			</Button>
-		</ChildItems>
 	</AutoCommandBar>
 	<Events>
 		<Event name="NotificationProcessing">ОбработкаОповещения</Event>
@@ -142,6 +117,18 @@
 								</InputField>
 							</ChildItems>
 						</UsualGroup>
+						<UsualGroup name="ГруппаКонтейнер" id="538">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Контейнер</v8:content>
+								</v8:item>
+							</Title>
+							<Group>Vertical</Group>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаКонтейнерРасширеннаяПодсказка" id="539"/>
+						</UsualGroup>
 						<UsualGroup name="ГруппаСертификатыШифрования" id="489">
 							<Title>
 								<v8:item>
@@ -155,6 +142,7 @@
 								<Table name="СертификатыШифрования" id="457">
 									<Representation>List</Representation>
 									<CommandBarLocation>Top</CommandBarLocation>
+									<SkipOnInput>true</SkipOnInput>
 									<DefaultItem>true</DefaultItem>
 									<HeightInTableRows>3</HeightInTableRows>
 									<RowSelectionMode>Row</RowSelectionMode>
@@ -195,6 +183,7 @@
 											</Button>
 											<Button name="СертификатыШифрованияДобавить" id="483">
 												<Type>CommandBarButton</Type>
+												<SkipOnInput>true</SkipOnInput>
 												<CommandName>Form.Item.СертификатыШифрования.StandardCommand.Add</CommandName>
 												<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
 												<ExtendedTooltip name="СертификатыШифрованияДобавитьРасширеннаяПодсказка" id="484"/>
@@ -362,6 +351,69 @@
 				</Page>
 			</ChildItems>
 		</Pages>
+		<UsualGroup name="ГруппаКомандыФормы" id="526">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Команды</v8:content>
+				</v8:item>
+			</Title>
+			<HorizontalStretch>true</HorizontalStretch>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаКомандыФормыРасширеннаяПодсказка" id="527"/>
+			<ChildItems>
+				<UsualGroup name="ГруппаКомандыПодтверждения" id="528">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Команды</v8:content>
+						</v8:item>
+					</Title>
+					<Group>AlwaysHorizontal</Group>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаКомандыПодтвержденияРасширеннаяПодсказка" id="529"/>
+				</UsualGroup>
+				<CommandBar name="ГруппаОсновныеКоманды" id="530">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Основные команды</v8:content>
+						</v8:item>
+					</Title>
+					<HorizontalStretch>false</HorizontalStretch>
+					<GroupHorizontalAlign>Right</GroupHorizontalAlign>
+					<ExtendedTooltip name="ГруппаОсновныеКомандыРасширеннаяПодсказка" id="531"/>
+					<ChildItems>
+						<Button name="ФормаЗашифровать" id="532">
+							<Type>CommandBarButton</Type>
+							<DefaultButton>true</DefaultButton>
+							<CommandName>Form.Command.Зашифровать</CommandName>
+							<ExtendedTooltip name="ФормаЗашифроватьРасширеннаяПодсказка" id="533"/>
+						</Button>
+						<Button name="ФормаЗакрыть" id="534">
+							<Type>CommandBarButton</Type>
+							<Representation>Text</Representation>
+							<SkipOnInput>true</SkipOnInput>
+							<CommandName>Form.StandardCommand.Close</CommandName>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Отмена</v8:content>
+								</v8:item>
+							</Title>
+							<ExtendedTooltip name="ФормаЗакрытьРасширеннаяПодсказка" id="535"/>
+						</Button>
+						<Button name="ФормаСправка" id="536">
+							<Type>CommandBarButton</Type>
+							<CommandName>Form.StandardCommand.Help</CommandName>
+							<ExtendedTooltip name="ФормаСправкаРасширеннаяПодсказка" id="537"/>
+						</Button>
+					</ChildItems>
+				</CommandBar>
+			</ChildItems>
+		</UsualGroup>
 	</ChildItems>
 	<Attributes>
 		<Attribute name="ПредставлениеДанных" id="2">
@@ -414,7 +466,7 @@
 		</Attribute>
 		<Attribute name="СертификатПрограмма" id="9">
 			<Type>
-				<v8:Type>cfg:CatalogRef.ПрограммыЭлектроннойПодписиИШифрования</v8:Type>
+				<v8:TypeSet>cfg:DefinedType.ПрограммаЭлектроннойПодписи</v8:TypeSet>
 			</Type>
 		</Attribute>
 		<Attribute name="ОповеститьОбОкончанииСрокаДействия" id="11">
@@ -556,7 +608,7 @@
 		</Attribute>
 		<Attribute name="ПерваяПрограммаНаСервере" id="19">
 			<Type>
-				<v8:Type>cfg:CatalogRef.ПрограммыЭлектроннойПодписиИШифрования</v8:Type>
+				<v8:TypeSet>cfg:DefinedType.ПрограммаЭлектроннойПодписи</v8:TypeSet>
 			</Type>
 		</Attribute>
 		<Attribute name="ВыполнятьВМоделиСервиса" id="21">

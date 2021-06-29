@@ -37,8 +37,8 @@ var tempLogFileName = 'templog.txt'
 var errorFileName = 'error.txt'
 var taskNameScheduleService = [ИмяЗадачиПланировщикаЗадач] // Если указано, то задача, которой запущен скрипт.
 var runAppAdditionalParams = [ПараметрыЗапускаПредприятия] // Аргументы командной строки, которые следует добавить к запуску 1С:Предприятия в режиме клиента.
-var updateConfiguration = true
-var loadExtentions = true
+var updateConfiguration = [ВыполнитьОбновлениеКонфигурации]
+var loadExtentions = [ВыполнитьЗагрузкуРасширений]
 
 #КонецОбласти
 
@@ -73,7 +73,7 @@ function runApp (sFilePath, sFileArgs, show, bWaitOnReturn) {
     sFileArgs = ''
   }
   var ret = 1
-  log(format('Запускается: {0}; параметры: {1}; окно: {2}; ожидание: {3}',
+  log(format('[СообщениеНачалоЗапуска]',
       sFilePath,
       hidePass(sFileArgs),
       SWtoString(show),
@@ -81,10 +81,10 @@ function runApp (sFilePath, sFileArgs, show, bWaitOnReturn) {
   try {
     ret = oShell.Run(format('"{0}" {1}', sFilePath, sFileArgs), show, bWaitOnReturn)
   } catch (e) {
-    log(format('Исключение в runApp: {0}, {1}.', e.name, e.message), true)
+    log(format('[СообщениеДеталиИсключения]', e.name, e.message), true)
     return 1
   }
-  log(format('Код возврата: {0}', ret), ret !== 0)
+  log(format('[СообщениеРезультатЗапуска]', ret), ret !== 0)
   return ret
 }
 
@@ -153,11 +153,11 @@ function appendLog () {
 
 // Инициализация
 function initialize () {
-  log(format('Файл скрипта: {0}', thisFileName))
-  log(format('Количество файлов обновления: {0}', cfgFileNames.length))
+  log(format('[СообщениеПутьКФайлуСкрипта]', thisFileName))
+  log(format('[СообщениеСчетчикФайловОбновления]', cfgFileNames.length))
   for (var i = 0; i < cfgFileNames.length; i++) {
     var fileInfo = GetRequired(cfgFileNames[i], null)
-    var required = fileInfo.requiredVersion ? '(Обязательная)' : '';
+    var required = fileInfo.requiredVersion ? '([СообщениеВажность])' : '';
     log(format('{0}. {1} {2}', i + 1, fileInfo.filePath, required))
   }
   return 0
@@ -176,7 +176,7 @@ function finalize (success) {
 
   if (!success) {
     if (UseRestore && backupCreated) {
-      log('Восстановление ИБ из временного архива')
+      log('[СообщениеВосстановлениеБазы]')
       restoreDB()
     }
     allowConnections() // Разрешение подключений
@@ -190,7 +190,7 @@ function finalize (success) {
 
 function deleteScheduleTask () {
   if (taskNameScheduleService !== '') {
-    log(format('Удаление задачи планировщика задач: "{0}"', taskNameScheduleService))
+    log(format('[СообщениеУдалениеЗадачиПланировщика]', taskNameScheduleService))
     try {
       var schedule = new ActiveXObject('Schedule.Service')
       schedule.Connect()
@@ -198,7 +198,7 @@ function deleteScheduleTask () {
       var root = schedule.GetFolder('\\')
       root.DeleteTask(taskNameScheduleService, 0)
     } catch (ex) {
-      log(format('Ошибка при удалении задачи из планировщика задач: {0}', ex.message), true)
+      log(format('[СообщениеОтказУдаленияЗадачиПланировщика]', ex.message), true)
     }
   }
 }
@@ -211,12 +211,12 @@ function createConnection () {
     return ComConnection
   }
   try {
-    log('Начат сеанс внешнего соединения с ИБ', false)
+    log('[СообщениеНачалоСеансаСоединенияСБазой]', false)
     var ComConnector = new ActiveXObject(comConnectorName)
     ComConnection = ComConnector.Connect(connectionString)
     return ComConnection
   } catch (e) {
-    log(format('Исключение в createConnection: {0}, {1}', e.name, e.message), true)
+    log(format('[СообщениеОтказСоединенияСБазой]', e.name, e.message), true)
     return null
   }
 }
@@ -229,17 +229,17 @@ function doSetResult (success) {
     }
     var res = 0
     try {
-      log(format('ОбновлениеКонфигурации.ЗавершитьОбновление({0}, {1}, {2})', success, emailAddress, adminName))
+      log(format('[СообщениеВызовЗавершитьОбновление]', success, emailAddress, adminName))
       connection.ОбновлениеКонфигурации.ЗавершитьОбновление(success, emailAddress, adminName)
     } catch (e) {
-      log(format('Исключение при вызове ОбновлениеКонфигурации.ЗавершитьОбновление: {0}, {1}.', e.name, e.message), true)
+      log(format('[СообщениеОтказПриВызовеЗавершитьОбновление]', e.name, e.message), true)
       res = 2
     }
   }
   if (success) {
-    log('ОбновлениеВыполненоУспешно (обновление выполнено)', false)
+    log('[СообщениеРезультатОбновленияБазы]', false)
   } else {
-    log('ОбновлениеНеВыполнено (обновление не выполнено)', true)
+    log('[СообщениеОтказОбновленияБазы]', true)
   }
   return res
 }
@@ -257,17 +257,17 @@ function writeEventLog (success) {
     var eventKind = success ? EVENT_SUCCESS : EVENT_CRITICAL
     var message
     if (success) {
-      message = 'Обновление информационной базы завершилась успешно.';
+      message = '[СообщениеРезультатОбновленияБазы]';
     } else {
-      message = 'Ошибка при обновлении информационной базы.';
+      message = '[СообщениеОтказОбновленияБазы]';
     }
-    message += format(' Параметры информационной базы: {0}.', infoBasePath)
+    message += format(' [СообщениеПараметрыБазы]', infoBasePath)
     if (!success) {
-      message += ' Протокол обновления сохранен в журнал регистрации.';
+      message += ' [СообщениеОбновлениеЛогирование1С]';
     }
     oShell.LogEvent(eventKind, message)
   } catch (e) {
-    log(format('Исключение в writeEventLog: {0}, {1}.', e.name, e.message), true)
+    log(format('[СообщениеОтказЛогирования]', e.name, e.message), true)
   }
 }
 
@@ -277,40 +277,22 @@ function backupDB () {
     return 0
   }
   var ret = 0
-  
-  log(
-    format('\r\n\
-      Выполняется копирование из:\r\n\
-      {0}\r\n\
-      в:\r\n\
-      {1}',
-      BaseFileName,
-      backupFileName
-    )
-  )
+  log(format('[СообщениеКопированиеБазы]', BaseFileName, backupFileName))
   
   try {
     
     if (!oFileSystemObject.FileExists(BaseFileName)) {
-      throw new Error(format('Файл базы данных 1Cv8.1CD не существует по пути: {0}', BaseFileName))
+      throw new Error(format('[СообщениеФайлБазыНеСуществует]', BaseFileName))
     }
     
     if (!oFileSystemObject.FolderExists(oFileSystemObject.GetParentFolderName(backupFileName))) {
-      throw new Error(format('Папки для сохранения резервной копии не существует: {0}', backupFileName))
+      throw new Error(format('[СообщениеКаталогРезервнойКопииБазыНеСуществует]', backupFileName))
     }
     
     if (oFileSystemObject.FileExists(backupFileName)) {
       var ThisFile = oFileSystemObject.GetFile(BaseFileName)
       throw new Error(
-        format('\r\n\
-          Файл резервной копии уже существует: {0}\r\n\
-          Создан: {1}\r\n\
-          Последнее обращение: {2}\r\n\
-          Последнее изменение: {3}\r\n\
-          Размер: {4}\r\n\
-          Тип: {5}\r\n\
-          Атрибуты:\r\n\
-          {6}',
+        format('[СообщениеПараметрыФайлаРезервнойКопии]',
           backupFileName,
           ThisFile.DateCreated,
           ThisFile.DateLastAccessed,
@@ -326,9 +308,7 @@ function backupDB () {
       var drive = oFileSystemObject.GetDrive(oFileSystemObject.GetDriveName(backupFileName))
     } catch (ex2) {
       throw new Error(
-        format('\r\n\
-          Диск не найден по пути {0}\r\n\
-          Исключение: {1}, {2}.',
+        format('[СообщениеДискНеСуществует]',
           backupFileName,
           ex2.name,
           ex2.message
@@ -337,7 +317,7 @@ function backupDB () {
     }
     
     if (!drive.IsReady) {
-      throw new Error(format('Диск не доступен по пути {0}', backupFileName))
+      throw new Error(format('[СообщениеДискНедоступен]', backupFileName))
     }
     
     var fileDB = oFileSystemObject.GetFile(BaseFileName)
@@ -346,13 +326,7 @@ function backupDB () {
     
     if (drive.FreeSpace < requiredFreeSize) {
       throw new Error(
-       format('\r\n\
-          Недостаточно свободного места для создания резервной копии.\r\n\
-          Освободите место или укажите папку на другом диске.\r\n\
-          Требуется: {0} Mb\r\n\
-          Доступно на диске {1}: {2} Mb\r\n\
-          Размер файла 1Cv8.1CD: {3} Mb\r\n\
-          Тип диска: {4}',
+       format('[СообщениеДисковогоПространстваНедостаточно]',
           requiredFreeSize / 1024 / 1024,
           drive.DriveLetter,
           drive.FreeSpace / 1024 / 1024,
@@ -364,13 +338,13 @@ function backupDB () {
     
     oFileSystemObject.CopyFile(BaseFileName, backupFileName, true)
     
-    log(format('Резервная копия базы создана', ret), ret !== 0)
+    log(format('[СообщениеРезультатСозданияРезервнойКопииБазы]', ret), ret !== 0)
     
   } catch (e) {
     CollectGarbage()
     log(
       format(
-        'Исключение при создании резервной копии базы: {0}\r\n\      {1}.',
+        '[СообщениеОтказСозданияРезервнойКопииБазыПодробно]',
         e.name,
         e.message
       ),
@@ -443,9 +417,9 @@ function restoreDB () {
   var ret = 0
   try {
     oFileSystemObject.CopyFile(backupFileName, BaseFileName, true)
-    log(format('База данных восстановлена из резервной копии', ret), ret !== 0)
+    log(format('[СообщениеРезультатВосстановленияБазы]', ret), ret !== 0)
   } catch (e) {
-    log(format('Исключение при восстановлении базы из резервной копии', e.name, e.message), true)
+    log(format('[СообщениеОтказВосстановленияБазыПодробно]', e.name, e.message), true)
     ret = -1
   }
   return ret
@@ -458,7 +432,7 @@ function doAllowConnections () {
       return (useComConnector ? 1 : 0)
     }
     try {
-      log('СоединенияИБ.РазрешитьРаботуПользователей()')
+      log('[СообщениеВызовРазрешитьРаботуПользователей]')
       connection.СоединенияИБ.РазрешитьРаботуПользователей()
       connectionsDenied = false
       connection = null
@@ -466,7 +440,7 @@ function doAllowConnections () {
     } catch (e) {
       connection = null
       CollectGarbage()
-      log(format('Исключение при вызове СоединенияИБ.РазрешитьРаботуПользователей: {0}, {1}.', e.name, e.message), true)
+      log(format('[СообщениеОтказВызоваРазрешитьРаботуПользователей]', e.name, e.message), true)
       return 3
     }
   }
@@ -485,10 +459,10 @@ function doExecuteUpdate (lastVersion) {
   if (useComConnector && lastVersion) {
     try {
       if (addDeletePatches() != 0) {
-        throw new Error('Не удалось обновить исправления конфигурации. Подробности см. в предыдущей записи.')
+        throw new Error('[СообщениеОтказОбновленияИсправлений]')
       }
     } catch (e) {
-      log(format('Исключение при вызове ОбновлениеКонфигурацииВызовСервера.ОбновитьИсправленияИзСкрипта: {0}, {1}.', e.name, e.message), true)
+      log(format('[СообщениеОтказВызоваОбновитьИсправленияИзСкрипта]', e.name, e.message), true)
       return 2
     }
   }
@@ -498,14 +472,14 @@ function doExecuteUpdate (lastVersion) {
       return 1
     }
     try {
-      log(format('ОбновлениеИнформационнойБазыВызовСервера.ВыполнитьОбновлениеИнформационнойБазы({0})', !lastVersion))
+      log(format('[СообщениеВызовВыполнитьОбновлениеИнформационнойБазы]', !lastVersion))
       connection.ОбновлениеИнформационнойБазыВызовСервера.ВыполнитьОбновлениеИнформационнойБазы(!lastVersion)
       connection = null
       CollectGarbage()
     } catch (e) {
       connection = null
       CollectGarbage()
-      log(format('Исключение при вызове ОбновлениеИнформационнойБазыВызовСервера.ВыполнитьОбновлениеИнформационнойБазы: {0}, {1}.', e.name, e.message), true)
+      log(format('[СообщениеОтказВызоваВыполнитьОбновлениеИнформационнойБазы]', e.name, e.message), true)
       return 2
     }
     return 0
@@ -519,7 +493,7 @@ function doExecuteUpdate (lastVersion) {
       SW_SHOW,
       true)
     if (result === 0 && oFileSystemObject.FileExists(errorFileName)) {
-      log('При выполнении обновления информационной базы произошла ошибка:', true)
+      log('[СообщениеОтказОбновленияБазыОбщее]', true)
       appendLog()
       result = 1
     }
@@ -546,7 +520,7 @@ function doDisconnectAndBlockUsersHTA (connection) {
         case 0:
         {
           log('СоединенияИБ.УстановитьБлокировкуСоединений()')
-          connection.СоединенияИБ.УстановитьБлокировкуСоединений('в связи с необходимостью обновления конфигурации.', unlockCode)
+          connection.СоединенияИБ.УстановитьБлокировкуСоединений('[СообщениеБлокировкаБазы]', unlockCode)
           disconnectionInterval = connection.СоединенияИБ.ПараметрыБлокировкиСеансов().ИнтервалОжиданияЗавершенияРаботыПользователей * 1000
           disconnectionStartDateTime = connection.СоединенияИБ.ПараметрыБлокировкиСеансов().Начало
           if (connection.ЗначениеЗаполнено(disconnectionStartDateTime)) {
@@ -574,7 +548,7 @@ function doDisconnectAndBlockUsersHTA (connection) {
         case 2:
         {
           if (!connection.СоединенияИБ.УстановленаБлокировкаСоединений()) {
-            log('Попытка завершения работы пользователей завершилась безуспешно: отменена блокировка ИБ.', true)
+            log('[СообщениеОтказЗавершенияРаботыПользователей]', true)
             return 3
           }
 
@@ -597,7 +571,7 @@ function doDisconnectAndBlockUsersHTA (connection) {
     }
   } catch (e) {
     CollectGarbage()
-    log(format('Исключение при вызове doDisconnectAndBlockUsersHTA: {0}, {1}.', e.name, e.message), true)
+    log(format('[СообщениеОтменаБлокировкиРаботыПользователей]', e.name, e.message), true)
     result = 2
   }
   return result
@@ -627,7 +601,7 @@ function disconnectAndBlockUsersHTA () {
         connection = null
         ComConnection = null
         CollectGarbage()
-        log('Завершен сеанс внешнего соединения с ИБ', false)
+        log('[СообщениеКонецСеансаСоединенияСБазой]', false)
       }
     }
   } else {
@@ -645,8 +619,8 @@ function doDisconnectAndBlockUsers () {
     return (useComConnector ? 1 : 0)
   }
   try {
-    log('Установка блокировки сеансов в связи с необходимостью обновления конфигурации')
-    connection.СоединенияИБ.УстановитьБлокировкуСоединений('в связи с необходимостью обновления конфигурации.', unlockCode)
+    log('[СообщениеБлокировкаРаботыПользователейЛогирование]')
+    connection.СоединенияИБ.УстановитьБлокировкуСоединений('[СообщениеБлокировкаРаботыПользователей]', unlockCode)
 
     var interval = connection.СоединенияИБ.ПараметрыБлокировкиСеансов().ИнтервалОжиданияЗавершенияРаботыПользователей * 1000
 
@@ -659,7 +633,7 @@ function doDisconnectAndBlockUsers () {
           break
         }
         connectionsNum = connection.СоединенияИБ.КоличествоСеансовИнформационнойБазы(false)
-        log(format('Количество сеансов информационной базы: {0}', connectionsNum))
+        log(format('[СообщениеСчетчикСеансовБазы]', connectionsNum))
         if (connectionsNum <= 1) {
           break
         }
@@ -669,9 +643,9 @@ function doDisconnectAndBlockUsers () {
     }
 
     var locked = connection.ПолучитьБлокировкуУстановкиСоединений().Установлена
-    log(format('Блокировка начала сеансов установлена: {0}', locked))
+    log(format('[СообщениеРезультатБлокировкиСеансов]', locked))
     if (!connection.ПолучитьБлокировкуУстановкиСоединений().Установлена) {
-      log('Попытка завершения работы пользователей завершилась безуспешно: отменена блокировка ИБ.', true)
+      log('[СообщениеОтказЗавершенияРаботыПользователей]', true)
       return 3
     }
 
@@ -679,7 +653,7 @@ function doDisconnectAndBlockUsers () {
     // если этого не произошло, пробуем принудительно прервать соединения.
     doDisconnectConnections(connection)
     connectionsNum = connection.СоединенияИБ.КоличествоСеансовИнформационнойБазы(false);
-    log(format('Количество сеансов информационной базы: {0}', connectionsNum))
+    log(format('[СообщениеСчетчикСеансовБазы]', connectionsNum))
     if (connectionsNum > 1) {
       connection.СоединенияИБ.РазрешитьРаботуПользователей()
       var message = connection.СоединенияИБ.СообщениеОНеотключенныхСеансах()
@@ -690,7 +664,7 @@ function doDisconnectAndBlockUsers () {
     CollectGarbage()
     log(
       format(
-        'Исключение при вызове doDisconnectAndBlockUsers: {0}, {1}.',
+        '[СообщениеОтменаБлокировкиРаботыПользователей]',
         e.name,
         e.message),
       true)
@@ -714,7 +688,7 @@ function doDisconnectConnections (connection) {
     if (connectionsNum <= 1) {
       break
     }
-    log(format('Количество зависших сеансов информационной базы: {0}, попытка № {1}', connectionsNum, retry))
+    log(format('[СообщениеСчетчикЗависшихСеансовБазы]', connectionsNum, retry))
     WScript.Sleep(15 * 1000) // Ждем 15 секунд до следующей проверки.
     retry = retry - 1
   }
@@ -821,7 +795,7 @@ function doDeferredHandlers () {
   }
 
   try {
-    log('ОбновлениеИнформационнойБазыСлужебный.ВыполнитьОтложенноеОбновлениеСейчас())')
+    log('[СообщениеВызовВыполнитьОтложенноеОбновлениеСейчас]')
     connection.ОбновлениеИнформационнойБазыСлужебный.ВыполнитьОтложенноеОбновлениеСейчас()
     connection = null
     CollectGarbage()
@@ -830,7 +804,7 @@ function doDeferredHandlers () {
     CollectGarbage()
     log(
       format(
-        'Исключение при вызове ОбновлениеИнформационнойБазыСлужебный.ВыполнитьОтложенноеОбновлениеСейчас: {0}, {1}.',
+        '[СообщениеОтказВызоваВыполнитьОтложенноеОбновлениеСейчас]',
         e.name,
         e.message),
       true)
@@ -928,12 +902,12 @@ function DeletePatches() {
     appendLog()
 
   } catch (e) {
-    log(format('Исключение при вызове ОбновлениеКонфигурацииВызовСервера.УдалитьИсправленияИзСкрипта: {0}, {1}.', e.name, e.message), true)
+    log(format('[СообщениеОтказВызоваУдалитьИсправленияИзСкрипта]', e.name, e.message), true)
     result = 2;
   }
   
   if (result != 0) {
-    log('Не удалось удалить исправления конфигурации. Подробности см. в предыдущей записи.')
+    log('[СообщениеОтказУдаленияИсправлений]')
   }
   
   return result
@@ -965,12 +939,12 @@ function doExecuteLoadExt() {
     true)
   
   if (result === 0 && oFileSystemObject.FileExists(errorFileName)) {
-    log('При выполнении обновления информационной базы произошла ошибка:', true)
+    log('[СообщениеОтказОбновленияБазыОбщее]', true)
     appendLog()
     result = 1
   }  
   
-  return result			
+  return result
 }
 
 if (oHTA != null) {
@@ -994,7 +968,7 @@ var oFileSystemObject = new ActiveXObject('Scripting.FileSystemObject')
 clearLogFile()
 appendLog()
 
-log(format('Используется COM соединение: {0}', useComConnector))
+log(format('[СообщениеПараметрыCOMСоединителя]', useComConnector))
 
 if (useComConnector) {
   registerCOM()

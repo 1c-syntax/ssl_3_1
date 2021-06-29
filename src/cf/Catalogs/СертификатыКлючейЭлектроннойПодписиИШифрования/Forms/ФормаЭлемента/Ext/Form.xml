@@ -39,6 +39,17 @@
 						<CommandName>Form.Command.СохранитьДанныеСертификатаВФайл</CommandName>
 						<ExtendedTooltip name="ФормаСохранитьДанныеСертификатаВФайлРасширеннаяПодсказка" id="236"/>
 					</Button>
+					<Button name="ФормаСменитьПинКод" id="269">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Command.СменитьПинКод</CommandName>
+						<ExtendedTooltip name="ФормаСменитьПинКодРасширеннаяПодсказка" id="270"/>
+					</Button>
+					<Button name="ФормаСброситьПароль" id="271">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Command.СброситьПароль</CommandName>
+						<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
+						<ExtendedTooltip name="ФормаСброситьПарольРасширеннаяПодсказка" id="272"/>
+					</Button>
 				</ChildItems>
 			</ButtonGroup>
 			<Button name="ФормаСертификатОтозван" id="63">
@@ -75,6 +86,7 @@
 	</AutoCommandBar>
 	<Events>
 		<Event name="AfterWrite">ПослеЗаписи</Event>
+		<Event name="NotificationProcessing">ОбработкаОповещения</Event>
 		<Event name="OnReadAtServer">ПриЧтенииНаСервере</Event>
 		<Event name="OnOpen">ПриОткрытии</Event>
 		<Event name="BeforeWrite">ПередЗаписью</Event>
@@ -202,6 +214,7 @@
 				</v8:item>
 			</Title>
 			<HorizontalStretch>false</HorizontalStretch>
+			<Group>Vertical</Group>
 			<Representation>None</Representation>
 			<ShowTitle>false</ShowTitle>
 			<ExtendedTooltip name="ГоризонтальнаяГруппа1РасширеннаяПодсказка" id="211"/>
@@ -322,68 +335,62 @@
 						</InputField>
 						<InputField name="Организация" id="168">
 							<DataPath>Объект.Организация</DataPath>
-							<Width>37</Width>
-							<HorizontalStretch>false</HorizontalStretch>
+							<HorizontalStretch>true</HorizontalStretch>
 							<ChoiceHistoryOnInput>DontUse</ChoiceHistoryOnInput>
 							<ContextMenu name="ОрганизацияКонтекстноеМеню" id="169"/>
 							<ExtendedTooltip name="ОрганизацияРасширеннаяПодсказка" id="170"/>
 						</InputField>
-						<UsualGroup name="ГоризонтальнаяГруппа" id="259">
-							<Title>
-								<v8:item>
-									<v8:lang>ru</v8:lang>
-									<v8:content>Горизонтальная группа</v8:content>
-								</v8:item>
-							</Title>
-							<Representation>None</Representation>
-							<ShowTitle>false</ShowTitle>
-							<ExtendedTooltip name="ГоризонтальнаяГруппаРасширеннаяПодсказка" id="260"/>
-							<ChildItems>
-								<InputField name="Пользователь" id="171">
-									<DataPath>Объект.Пользователь</DataPath>
-									<Width>37</Width>
-									<HorizontalStretch>false</HorizontalStretch>
-									<ContextMenu name="ПользовательКонтекстноеМеню" id="172"/>
-									<ExtendedTooltip name="ПользовательРасширеннаяПодсказка" id="173"/>
-								</InputField>
-								<InputField name="Добавил" id="256">
-									<DataPath>Объект.Добавил</DataPath>
-									<ContextMenu name="ДобавилКонтекстноеМеню" id="257"/>
-									<ExtendedTooltip name="ДобавилРасширеннаяПодсказка" id="258"/>
-								</InputField>
-							</ChildItems>
-						</UsualGroup>
+						<InputField name="Пользователи" id="273">
+							<DataPath>ПредставлениеПользователей</DataPath>
+							<ChoiceButton>true</ChoiceButton>
+							<ChooseType>false</ChooseType>
+							<TextEdit>false</TextEdit>
+							<ContextMenu name="ПользователиКонтекстноеМеню" id="274"/>
+							<ExtendedTooltip name="ПользователиРасширеннаяПодсказка" id="275"/>
+							<Events>
+								<Event name="StartChoice">ПользователиНачалоВыбора</Event>
+								<Event name="Opening">ПользователиОткрытие</Event>
+							</Events>
+						</InputField>
+						<InputField name="Добавил" id="256">
+							<DataPath>Объект.Добавил</DataPath>
+							<ContextMenu name="ДобавилКонтекстноеМеню" id="257"/>
+							<ExtendedTooltip name="ДобавилРасширеннаяПодсказка" id="258"/>
+						</InputField>
 					</ChildItems>
 				</UsualGroup>
-			</ChildItems>
-		</UsualGroup>
-		<UsualGroup name="ДляЭлектроннойПодписиИРасшифровки" id="221">
-			<Title>
-				<v8:item>
-					<v8:lang>ru</v8:lang>
-					<v8:content>Настройки закрытого ключа (для создания электронных подписей или расшифровки данных)</v8:content>
-				</v8:item>
-			</Title>
-			<Width>60</Width>
-			<Representation>None</Representation>
-			<ExtendedTooltip name="ДляЭлектроннойПодписиИРасшифровкиРасширеннаяПодсказка" id="222"/>
-			<ChildItems>
-				<InputField name="Программа" id="129">
-					<DataPath>Объект.Программа</DataPath>
-					<ContextMenu name="ПрограммаКонтекстноеМеню" id="130"/>
-					<ExtendedTooltip name="ПрограммаРасширеннаяПодсказка" id="131"/>
-					<Events>
-						<Event name="OnChange">ПрограммаПриИзменении</Event>
-					</Events>
-				</InputField>
-				<CheckBoxField name="УсиленнаяЗащитаЗакрытогоКлюча" id="158">
-					<DataPath>Объект.УсиленнаяЗащитаЗакрытогоКлюча</DataPath>
-					<TitleLocation>Right</TitleLocation>
-					<ToolTipRepresentation>Button</ToolTipRepresentation>
-					<CheckBoxType>Auto</CheckBoxType>
-					<ContextMenu name="УсиленнаяЗащитаЗакрытогоКлючаКонтекстноеМеню" id="159"/>
-					<ExtendedTooltip name="УсиленнаяЗащитаЗакрытогоКлючаРасширеннаяПодсказка" id="160"/>
-				</CheckBoxField>
+				<UsualGroup name="ДляЭлектроннойПодписиИРасшифровки" id="221">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Настройки закрытого ключа (для создания электронных подписей или расшифровки данных)</v8:content>
+						</v8:item>
+					</Title>
+					<Representation>None</Representation>
+					<ExtendedTooltip name="ДляЭлектроннойПодписиИРасшифровкиРасширеннаяПодсказка" id="222"/>
+					<ChildItems>
+						<InputField name="Программа" id="129">
+							<DataPath>Объект.Программа</DataPath>
+							<ChoiceButton>false</ChoiceButton>
+							<CreateButton>true</CreateButton>
+							<ListChoiceMode>true</ListChoiceMode>
+							<ChooseType>false</ChooseType>
+							<ContextMenu name="ПрограммаКонтекстноеМеню" id="130"/>
+							<ExtendedTooltip name="ПрограммаРасширеннаяПодсказка" id="131"/>
+							<Events>
+								<Event name="OnChange">ПрограммаПриИзменении</Event>
+							</Events>
+						</InputField>
+						<CheckBoxField name="УсиленнаяЗащитаЗакрытогоКлюча" id="158">
+							<DataPath>Объект.УсиленнаяЗащитаЗакрытогоКлюча</DataPath>
+							<TitleLocation>Right</TitleLocation>
+							<ToolTipRepresentation>Button</ToolTipRepresentation>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="УсиленнаяЗащитаЗакрытогоКлючаКонтекстноеМеню" id="159"/>
+							<ExtendedTooltip name="УсиленнаяЗащитаЗакрытогоКлючаРасширеннаяПодсказка" id="160"/>
+						</CheckBoxField>
+					</ChildItems>
+				</UsualGroup>
 			</ChildItems>
 		</UsualGroup>
 	</ChildItems>
@@ -474,6 +481,24 @@
 		<Attribute name="ПрограммаОблачногоСервиса" id="2">
 			<Type>
 				<v8:Type>cfg:CatalogRef.ПрограммыЭлектроннойПодписиИШифрования</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="СертификатОблачнойПодписи" id="11">
+			<Type/>
+		</Attribute>
+		<Attribute name="ПредставлениеПользователей" id="12">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Пользователи</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
 			</Type>
 		</Attribute>
 	</Attributes>
@@ -581,6 +606,36 @@
 			</Picture>
 			<Action>Скопировать</Action>
 			<Representation>Picture</Representation>
+		</Command>
+		<Command name="СменитьПинКод" id="8">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сменить пин-код</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сменить пин код</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>СменитьПинКод</Action>
+		</Command>
+		<Command name="СброситьПароль" id="9">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сбросить пароль в памяти</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сбросить пароль</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>СброситьПароль</Action>
 		</Command>
 	</Commands>
 	<CommandInterface>

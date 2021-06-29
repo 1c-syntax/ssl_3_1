@@ -602,6 +602,7 @@
 					<v8:content>Электронная подпись и шифрование</v8:content>
 				</v8:item>
 			</Title>
+			<Group>Vertical</Group>
 			<Behavior>Collapsible</Behavior>
 			<Collapsed>true</Collapsed>
 			<ControlRepresentation>Picture</ControlRepresentation>
@@ -609,19 +610,18 @@
 			<ChildItemsWidth>Equal</ChildItemsWidth>
 			<ExtendedTooltip name="ГруппаЭлектроннаяПодписьИШифрованиеРасширеннаяПодсказка" id="1950"/>
 			<ChildItems>
-				<UsualGroup name="ГруппаИспользоватьЭлектроннуюПодписьИШифрование" id="1951">
+				<UsualGroup name="ГруппаЭлектроннаяПодпись" id="1951">
 					<Title>
 						<v8:item>
 							<v8:lang>ru</v8:lang>
-							<v8:content>Использовать электронную подпись и шифрование</v8:content>
+							<v8:content>Электронная подпись</v8:content>
 						</v8:item>
 					</Title>
-					<Width>43</Width>
 					<HorizontalStretch>false</HorizontalStretch>
-					<Group>Vertical</Group>
+					<Group>AlwaysHorizontal</Group>
 					<Representation>None</Representation>
 					<ShowTitle>false</ShowTitle>
-					<ExtendedTooltip name="ГруппаИспользоватьЭлектроннуюПодписьИШифрованиеРасширеннаяПодсказка" id="1952"/>
+					<ExtendedTooltip name="ГруппаЭлектроннаяПодписьРасширеннаяПодсказка" id="1952"/>
 					<ChildItems>
 						<UsualGroup name="ГоризонтальнаяГруппа" id="1953">
 							<Title>
@@ -631,6 +631,9 @@
 								</v8:item>
 							</Title>
 							<ToolTipRepresentation>ShowBottom</ToolTipRepresentation>
+							<Width>43</Width>
+							<HorizontalStretch>false</HorizontalStretch>
+							<Group>AlwaysHorizontal</Group>
 							<Representation>None</Representation>
 							<ShowTitle>false</ShowTitle>
 							<ExtendedTooltip name="ГоризонтальнаяГруппаРасширеннаяПодсказка" id="1954">
@@ -676,22 +679,6 @@
 								</CheckBoxField>
 							</ChildItems>
 						</UsualGroup>
-					</ChildItems>
-				</UsualGroup>
-				<UsualGroup name="ГруппаНастройкиЭлектроннойПодписиИШифрования" id="1964">
-					<Title>
-						<v8:item>
-							<v8:lang>ru</v8:lang>
-							<v8:content>Настройки электронной подписи и шифрования</v8:content>
-						</v8:item>
-					</Title>
-					<Width>43</Width>
-					<HorizontalStretch>false</HorizontalStretch>
-					<Group>Vertical</Group>
-					<Representation>None</Representation>
-					<ShowTitle>false</ShowTitle>
-					<ExtendedTooltip name="ГруппаНастройкиЭлектроннойПодписиИШифрованияРасширеннаяПодсказка" id="1965"/>
-					<ChildItems>
 						<Button name="НастройкиЭлектроннойПодписиИШифрования" id="2049">
 							<Type>Hyperlink</Type>
 							<CommandName>CommonForm.НастройкиЭлектроннойПодписиИШифрования.StandardCommand.Open</CommandName>
@@ -706,6 +693,83 @@
 								</Title>
 							</ExtendedTooltip>
 						</Button>
+					</ChildItems>
+				</UsualGroup>
+				<UsualGroup name="ГруппаОблачнаяПодпись" id="2113">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Облачная подпись</v8:content>
+						</v8:item>
+					</Title>
+					<Group>Vertical</Group>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаОблачнаяПодписьРасширеннаяПодсказка" id="2114"/>
+					<ChildItems>
+						<CheckBoxField name="ИспользоватьСервисОблачнойПодписи" id="2115">
+							<DataPath>НаборКонстант.ИспользоватьСервисОблачнойПодписи</DataPath>
+							<TitleLocation>Right</TitleLocation>
+							<ToolTipRepresentation>ShowBottom</ToolTipRepresentation>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="ИспользоватьСервисОблачнойПодписиКонтекстноеМеню" id="2116"/>
+							<ExtendedTooltip name="ИспользоватьСервисОблачнойПодписиРасширеннаяПодсказка" id="2117">
+								<Title formatted="false">
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Разрешить использовать для подписания сервисы облачной подписи.</v8:content>
+									</v8:item>
+								</Title>
+							</ExtendedTooltip>
+							<Events>
+								<Event name="OnChange">Подключаемый_ПриИзмененииРеквизита</Event>
+							</Events>
+						</CheckBoxField>
+						<UsualGroup name="ГруппаОблачнаяПодписьНастройки" id="2118">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Облачная подпись настройки</v8:content>
+								</v8:item>
+							</Title>
+							<Group>AlwaysHorizontal</Group>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаОблачнаяПодписьНастройкиРасширеннаяПодсказка" id="2119"/>
+							<ChildItems>
+								<Button name="ОбработкаУправлениеПодключениемDSSСерверыОблачнойПодписи" id="2120">
+									<Type>Hyperlink</Type>
+									<Width>43</Width>
+									<HorizontalStretch>true</HorizontalStretch>
+									<CommandName>DataProcessor.УправлениеПодключениемDSS.Command.СерверыОблачнойПодписи</CommandName>
+									<ToolTipRepresentation>ShowBottom</ToolTipRepresentation>
+									<ExtendedTooltip name="ОбработкаУправлениеПодключениемDSSСерверыОблачнойПодписиРасширеннаяПодсказка" id="2121">
+										<Width>28</Width>
+										<AutoMaxWidth>false</AutoMaxWidth>
+										<Title formatted="false">
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Настройка серверов облачной подписи, 
+необходимо для организации подключения.</v8:content>
+											</v8:item>
+										</Title>
+									</ExtendedTooltip>
+								</Button>
+								<Button name="ОбработкаУправлениеПодключениемDSSУчетныеЗаписиОблачнойПодписи" id="2122">
+									<Type>Hyperlink</Type>
+									<CommandName>DataProcessor.УправлениеПодключениемDSS.Command.УчетныеЗаписиОблачнойПодписи</CommandName>
+									<ToolTipRepresentation>ShowBottom</ToolTipRepresentation>
+									<ExtendedTooltip name="ОбработкаУправлениеПодключениемDSSУчетныеЗаписиОблачнойПодписиРасширеннаяПодсказка" id="2123">
+										<Title formatted="false">
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Настройка учетных записей используемые для выполнения операций</v8:content>
+											</v8:item>
+										</Title>
+									</ExtendedTooltip>
+								</Button>
+							</ChildItems>
+						</UsualGroup>
 					</ChildItems>
 				</UsualGroup>
 			</ChildItems>
