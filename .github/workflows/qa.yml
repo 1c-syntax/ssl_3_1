@@ -34,7 +34,7 @@ jobs:
 
       - name: Извлечение версии пакета
         shell: bash
-        run: echo "##[set-output name=version;]`cat description.json | grep "\"Версия\":" | sed 's|[^"]*"Версия"||' | sed 's|[^:]*"||' | sed -r 's/".+//'`"
+        run: echo "##[set-output name=version;]`cat description.json | grep "\"Версия\":" | sed 's|[^"]*"||' | sed 's|[^"]*"||' | sed 's|[^"]*"||' | sed -r 's/".+//'
         id: extract_version
 
       - name: Установка Sonar-scanner
