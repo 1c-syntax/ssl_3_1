@@ -1,0 +1,50 @@
+# MIT License
+# Copyright (C) 2020 Tymko Oleg <olegtymko@yandex.ru> and contributors
+# All rights reserved.
+
+name: Контроль качества
+# Любой пуш и pr в проекте но с фильтром по основному проекту
+on: [push, pull_request]
+
+env:
+  ACTIONS_ALLOW_UNSECURE_COMMANDS: true
+
+jobs:
+  build:
+    if: github.repository == '1c-syntax/ssl_3_1'
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest]
+        oscript_version: ['1.4.0']
+
+    steps:
+      # Загрузка проекта
+      - name: Актуализация
+        uses: actions/checkout@v2.3.4
+        with:
+          fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
+
+      # https://stackoverflow.com/questions/58033366/how-to-get-current-branch-within-github-actions
+      - name: Извлечение имени текущей ветки
+        shell: bash
+        run: echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
+        id: extract_branch
+
+      - name: Извлечение версии пакета
+        shell: bash
+        run: echo "##[set-output name=version;]`cat description.json | grep "\"Версия\":" | sed 's|[^"]*"||' | sed -r 's/".+//'`"
+        id: extract_version
+
+      - name: Установка Sonar-scanner
+        uses: warchant/setup-sonar-scanner@v1
+
+      # Анализ проекта в SonarQube (ветка)
+      - name: Анализ в SonarQube (branch)
+        if: github.event_name == 'push'
+        run: sonar-scanner
+            -Dsonar.login=${{ secrets.SONARQUBE_TOKEN }}
+            -Dsonar.host.url=${{ secrets.SONARQUBE_HOST }}
+            -Dsonar.branch.name=${{ steps.extract_branch.outputs.branch }}
+            -Dsonar.projectVersion=${{ steps.extract_version.outputs.version }}
