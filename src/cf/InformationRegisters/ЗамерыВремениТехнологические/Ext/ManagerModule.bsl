@@ -42,7 +42,7 @@
 	|	СпрКлючевыеОперации.ИмяХеш КАК KOHash,
 	|	Ложь КАК ExecutedWithError,
 	|	//%Интервалы_Поля
-	|   Сумма(1) КАК MeasurementQuantity,
+	|   КОЛИЧЕСТВО(1) КАК MeasurementQuantity,
 	|   Среднее(Замеры.ВесЗамера) КАК AvgWeight,
 	|   Максимум(Замеры.ВесЗамера) КАК MaxWeight
 	|ИЗ
