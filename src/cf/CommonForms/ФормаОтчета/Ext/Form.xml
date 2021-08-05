@@ -1328,6 +1328,11 @@
 								</Picture>
 								<ExtendedTooltip name="КонтекстноеМенюОбластиЗаголовкаМенюОформитьРасширеннаяПодсказка" id="867"/>
 								<ChildItems>
+									<Button name="КонтекстноеМенюОбластиЗаголовкаОчиститьОформление" id="1091">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.Command.ОчиститьОформление</CommandName>
+										<ExtendedTooltip name="КонтекстноеМенюОбластиЗаголовкаОчиститьОформлениеРасширеннаяПодсказка" id="1092"/>
+									</Button>
 									<ButtonGroup name="КонтекстноеМенюОбластиЗаголовкаОформитьОтрицательныеПоложительные" id="868">
 										<Title>
 											<v8:item>
@@ -1662,6 +1667,11 @@
 								</Picture>
 								<ExtendedTooltip name="КонтекстноеМенюОбластиДанныхМенюОформитьРасширеннаяПодсказка" id="955"/>
 								<ChildItems>
+									<Button name="КонтекстноеМенюОбластиДанныхОчиститьОформление" id="1093">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.Command.ОчиститьОформление</CommandName>
+										<ExtendedTooltip name="КонтекстноеМенюОбластиДанныхОчиститьОформлениеРасширеннаяПодсказка" id="1094"/>
+									</Button>
 									<ButtonGroup name="КонтекстноеМенюОбластиДанныхОформитьКраснымЖелтымЗеленым" id="956">
 										<Title>
 											<v8:item>
@@ -1743,6 +1753,27 @@
 								<CommandName>Form.Command.Расшифровать</CommandName>
 								<ExtendedTooltip name="КонтекстноеМенюОбластиДанныхРасшифроватьРасширеннаяПодсказка" id="979"/>
 							</Button>
+							<ButtonGroup name="КонтекстноеМенюОбластиДанныхБуферОбмена" id="1095">
+								<Title>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Буфер обмена</v8:content>
+									</v8:item>
+								</Title>
+								<ExtendedTooltip name="КонтекстноеМенюОбластиДанныхБуферОбменаРасширеннаяПодсказка" id="1096"/>
+								<ChildItems>
+									<Button name="КонтекстноеМенюОбластиДанныхКопироватьВБуферОбмена" id="1097">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.Item.ОтчетТабличныйДокумент.StandardCommand.CopyToClipboard</CommandName>
+										<ExtendedTooltip name="КонтекстноеМенюОбластиДанныхКопироватьВБуферОбменаРасширеннаяПодсказка" id="1098"/>
+									</Button>
+									<Button name="КонтекстноеМенюОбластиДанныхВставитьИзБуфераОбмена" id="1099">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.Item.ОтчетТабличныйДокумент.StandardCommand.PasteFromClipboard</CommandName>
+										<ExtendedTooltip name="КонтекстноеМенюОбластиДанныхВставитьИзБуфераОбменаРасширеннаяПодсказка" id="1100"/>
+									</Button>
+								</ChildItems>
+							</ButtonGroup>
 						</ChildItems>
 					</ButtonGroup>
 					<ButtonGroup name="КонтекстноеМенюОбластиОбщее" id="1027">
@@ -3444,6 +3475,15 @@
 				<xr:LoadTransparent>false</xr:LoadTransparent>
 			</Picture>
 			<Action>СгруппироватьПоВыбранномуПолю</Action>
+		</Command>
+		<Command name="ОчиститьОформление" id="55">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Очистить оформление</v8:content>
+				</v8:item>
+			</Title>
+			<Action>ОчиститьОформление</Action>
 		</Command>
 	</Commands>
 	<Parameters>

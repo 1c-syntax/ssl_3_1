@@ -6131,8 +6131,10 @@
 	
 	Если Муниципальный Тогда
 		Результат.addressType = МуниципальныйАдрес();
+		Результат.value = Адрес.munValueWithPostalCode;
 	Иначе 
 		Результат.addressType = АдминистративноТерриториальныйАдрес();
+		Результат.value = Адрес.valueWithPostalCode;
 	КонецЕсли;
 	
 	Результат.houseType = ТРег(Результат.houseType);

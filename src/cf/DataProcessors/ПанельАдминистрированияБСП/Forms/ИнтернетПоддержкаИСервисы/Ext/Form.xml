@@ -1703,26 +1703,72 @@
 				</v8:item>
 			</Title>
 			<HorizontalStretch>true</HorizontalStretch>
-			<Group>Vertical</Group>
+			<Group>AlwaysHorizontal</Group>
 			<Behavior>Collapsible</Behavior>
 			<Collapsed>true</Collapsed>
 			<ControlRepresentation>Picture</ControlRepresentation>
 			<Representation>NormalSeparation</Representation>
 			<ExtendedTooltip name="БИПГруппаИнтеграцияСПлатежнымиСистемамиРасширеннаяПодсказка" id="1922"/>
 			<ChildItems>
-				<Button name="БИПНастройкаИнтеграцииСПлатежнымиСистемами" id="1923">
-					<Type>Hyperlink</Type>
-					<CommandName>Form.Command.БИПНастройкаИнтеграцииСПлатежнымиСистемами</CommandName>
-					<ToolTipRepresentation>ShowBottom</ToolTipRepresentation>
-					<ExtendedTooltip name="БИПНастройкаИнтеграцииСПлатежнымиСистемамиРасширеннаяПодсказка" id="1924">
-						<Title formatted="false">
-							<v8:item>
-								<v8:lang>ru</v8:lang>
-								<v8:content>Настройка подключения и обмена данными с платежными системами.</v8:content>
-							</v8:item>
-						</Title>
-					</ExtendedTooltip>
-				</Button>
+				<UsualGroup name="БИПГруппаНастройкиИнтеграции" id="1941">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Настройки интеграции</v8:content>
+						</v8:item>
+					</Title>
+					<Width>43</Width>
+					<Behavior>Usual</Behavior>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="БИПГруппаНастройкиИнтеграцииРасширеннаяПодсказка" id="1942"/>
+					<ChildItems>
+						<Button name="БИПНастройкаИнтеграцииСПлатежнымиСистемами" id="1923">
+							<Type>Hyperlink</Type>
+							<CommandName>Form.Command.БИПНастройкаИнтеграцииСПлатежнымиСистемами</CommandName>
+							<ToolTipRepresentation>ShowBottom</ToolTipRepresentation>
+							<ExtendedTooltip name="БИПНастройкаИнтеграцииСПлатежнымиСистемамиРасширеннаяПодсказка" id="1924">
+								<Title formatted="false">
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Настройка подключения и обмена данными с платежными системами.</v8:content>
+									</v8:item>
+								</Title>
+							</ExtendedTooltip>
+						</Button>
+					</ChildItems>
+				</UsualGroup>
+				<UsualGroup name="БИПГруппаДлительностьОперации" id="1943">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Длительность операции</v8:content>
+						</v8:item>
+					</Title>
+					<Behavior>Usual</Behavior>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="БИПГруппаДлительностьОперацииРасширеннаяПодсказка" id="1944"/>
+					<ChildItems>
+						<InputField name="БИПДлительностьОперацииПлатежнойСистемы" id="1945">
+							<DataPath>БИПДлительностьОперацииПлатежнойСистемы</DataPath>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Длительность ожидания подтверждения
+оплаты покупателем. (количество секунд)</v8:content>
+								</v8:item>
+							</ToolTip>
+							<ToolTipRepresentation>ShowBottom</ToolTipRepresentation>
+							<Width>14</Width>
+							<ContextMenu name="БИПДлительностьОперацииПлатежнойСистемыКонтекстноеМеню" id="1946"/>
+							<ExtendedTooltip name="БИПДлительностьОперацииПлатежнойСистемыРасширеннаяПодсказка" id="1947"/>
+							<Events>
+								<Event name="OnChange">БИПДлительностьОперацииПлатежнойСистемыПриИзменении</Event>
+							</Events>
+						</InputField>
+					</ChildItems>
+				</UsualGroup>
 			</ChildItems>
 		</UsualGroup>
 		<UsualGroup name="БИПГруппаИнтеграцияСКоннект" id="1925">
@@ -2003,6 +2049,22 @@
 		<Attribute name="ОбсужденияПодключены" id="29">
 			<Type>
 				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="БИПДлительностьОперацииПлатежнойСистемы" id="30">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Длительность операции</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>3</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
 			</Type>
 		</Attribute>
 	</Attributes>
