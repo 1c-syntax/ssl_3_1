@@ -65,6 +65,13 @@
 			<valueType>
 				<v8:Type>xs:boolean</v8:Type>
 			</valueType>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType"/>
+				</dcscor:item>
+			</appearance>
 		</field>
 		<field xsi:type="DataSetFieldField">
 			<dataPath>ПравоПросмотр</dataPath>
@@ -78,6 +85,13 @@
 			<valueType>
 				<v8:Type>xs:boolean</v8:Type>
 			</valueType>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType"/>
+				</dcscor:item>
+			</appearance>
 		</field>
 		<field xsi:type="DataSetFieldField">
 			<dataPath>ПравоРедактирование</dataPath>
@@ -91,6 +105,13 @@
 			<valueType>
 				<v8:Type>xs:boolean</v8:Type>
 			</valueType>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType"/>
+				</dcscor:item>
+			</appearance>
 		</field>
 		<field xsi:type="DataSetFieldField">
 			<dataPath>Право</dataPath>
@@ -109,6 +130,13 @@
 					<v8:AllowedSign>Nonnegative</v8:AllowedSign>
 				</v8:NumberQualifiers>
 			</valueType>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType"/>
+				</dcscor:item>
+			</appearance>
 			<availableValue>
 				<value xsi:type="xs:decimal">1</value>
 				<presentation xsi:type="v8:LocalStringType">
@@ -136,57 +164,6 @@
 					</v8:item>
 				</presentation>
 			</availableValue>
-		</field>
-		<field xsi:type="DataSetFieldField">
-			<dataPath>КартинкаПросмотр</dataPath>
-			<field>КартинкаПросмотр</field>
-			<title xsi:type="v8:LocalStringType">
-				<v8:item>
-					<v8:lang>ru</v8:lang>
-					<v8:content>Картинка просмотр</v8:content>
-				</v8:item>
-			</title>
-			<valueType>
-				<v8:Type>xs:string</v8:Type>
-				<v8:StringQualifiers>
-					<v8:Length>0</v8:Length>
-					<v8:AllowedLength>Variable</v8:AllowedLength>
-				</v8:StringQualifiers>
-			</valueType>
-		</field>
-		<field xsi:type="DataSetFieldField">
-			<dataPath>КартинкаРедактирование</dataPath>
-			<field>КартинкаРедактирование</field>
-			<title xsi:type="v8:LocalStringType">
-				<v8:item>
-					<v8:lang>ru</v8:lang>
-					<v8:content>Картинка редактирование</v8:content>
-				</v8:item>
-			</title>
-			<valueType>
-				<v8:Type>xs:string</v8:Type>
-				<v8:StringQualifiers>
-					<v8:Length>0</v8:Length>
-					<v8:AllowedLength>Variable</v8:AllowedLength>
-				</v8:StringQualifiers>
-			</valueType>
-		</field>
-		<field xsi:type="DataSetFieldField">
-			<dataPath>КартинкаСоздание</dataPath>
-			<field>КартинкаСоздание</field>
-			<title xsi:type="v8:LocalStringType">
-				<v8:item>
-					<v8:lang>ru</v8:lang>
-					<v8:content>Картинка создание</v8:content>
-				</v8:item>
-			</title>
-			<valueType>
-				<v8:Type>xs:string</v8:Type>
-				<v8:StringQualifiers>
-					<v8:Length>0</v8:Length>
-					<v8:AllowedLength>Variable</v8:AllowedLength>
-				</v8:StringQualifiers>
-			</valueType>
 		</field>
 		<field xsi:type="DataSetFieldField">
 			<dataPath>Отчет</dataPath>
@@ -253,18 +230,6 @@
 		<dataPath>Право</dataPath>
 		<expression>Максимум(Право)</expression>
 		<group>ОбъектМетаданных</group>
-	</totalField>
-	<totalField>
-		<dataPath>КартинкаПросмотр</dataPath>
-		<expression>Максимум(КартинкаПросмотр)</expression>
-	</totalField>
-	<totalField>
-		<dataPath>КартинкаРедактирование</dataPath>
-		<expression>Максимум(КартинкаРедактирование)</expression>
-	</totalField>
-	<totalField>
-		<dataPath>КартинкаСоздание</dataPath>
-		<expression>Максимум(КартинкаСоздание)</expression>
 	</totalField>
 	<totalField>
 		<dataPath>ПравоПросмотр</dataPath>
@@ -1042,6 +1007,210 @@
 			</dcsat:item>
 		</template>
 	</template>
+	<template>
+		<name>Макет10</name>
+		<template xmlns:dcsat="http://v8.1c.ru/8.1/data-composition-system/area-template" xsi:type="dcsat:AreaTemplate">
+			<dcsat:item xsi:type="dcsat:TableRow">
+				<dcsat:tableCell>
+					<dcsat:item xsi:type="dcsat:Field">
+						<dcsat:value xsi:type="dcscor:Parameter">Право</dcsat:value>
+						<dcsat:appearance>
+							<dcscor:item>
+								<dcscor:parameter>Формат</dcscor:parameter>
+								<dcscor:value xsi:type="xs:string">ЧФ=</dcscor:value>
+							</dcscor:item>
+						</dcsat:appearance>
+					</dcsat:item>
+					<dcsat:appearance>
+						<dcscor:item>
+							<dcscor:parameter>Расшифровка</dcscor:parameter>
+							<dcscor:value xsi:type="dcscor:Parameter">Расшифровка</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>РазмерКартинки</dcscor:parameter>
+							<dcscor:value xmlns:mxl="http://v8.1c.ru/8.2/data/spreadsheet" xsi:type="mxl:PictureSize">AutoSize</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>ВертикальноеПоложениеКартинки</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:VerticalAlign">Center</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>ГоризонтальноеПоложениеКартинки</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:HorizontalAlign">Center</dcscor:value>
+						</dcscor:item>
+					</dcsat:appearance>
+				</dcsat:tableCell>
+			</dcsat:item>
+		</template>
+		<parameter xmlns:dcsat="http://v8.1c.ru/8.1/data-composition-system/area-template" xsi:type="dcsat:ExpressionAreaTemplateParameter">
+			<dcsat:name>Право</dcsat:name>
+			<dcsat:expression>Право</dcsat:expression>
+		</parameter>
+		<parameter xmlns:dcsat="http://v8.1c.ru/8.1/data-composition-system/area-template" xsi:type="dcsat:DetailsAreaTemplateParameter">
+			<dcsat:name>Расшифровка</dcsat:name>
+			<dcsat:fieldExpression>
+				<dcsat:field>Право</dcsat:field>
+				<dcsat:expression>ЕстьNull(Право, 0)</dcsat:expression>
+			</dcsat:fieldExpression>
+		</parameter>
+	</template>
+	<template>
+		<name>Макет11</name>
+		<template xmlns:dcsat="http://v8.1c.ru/8.1/data-composition-system/area-template" xsi:type="dcsat:AreaTemplate">
+			<dcsat:item xsi:type="dcsat:TableRow">
+				<dcsat:tableCell>
+					<dcsat:item xsi:type="dcsat:Field">
+						<dcsat:value xsi:type="dcscor:Parameter">ПравоПросмотр</dcsat:value>
+						<dcsat:appearance>
+							<dcscor:item>
+								<dcscor:parameter>Формат</dcscor:parameter>
+								<dcscor:value xsi:type="xs:string">БЛ=; БИ=</dcscor:value>
+							</dcscor:item>
+						</dcsat:appearance>
+					</dcsat:item>
+					<dcsat:appearance>
+						<dcscor:item>
+							<dcscor:parameter>Расшифровка</dcscor:parameter>
+							<dcscor:value xsi:type="dcscor:Parameter">Расшифровка</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>РазмерКартинки</dcscor:parameter>
+							<dcscor:value xmlns:mxl="http://v8.1c.ru/8.2/data/spreadsheet" xsi:type="mxl:PictureSize">AutoSize</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>ВертикальноеПоложениеКартинки</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:VerticalAlign">Center</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>ГоризонтальноеПоложениеКартинки</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:HorizontalAlign">Center</dcscor:value>
+						</dcscor:item>
+					</dcsat:appearance>
+				</dcsat:tableCell>
+			</dcsat:item>
+		</template>
+		<parameter xmlns:dcsat="http://v8.1c.ru/8.1/data-composition-system/area-template" xsi:type="dcsat:ExpressionAreaTemplateParameter">
+			<dcsat:name>ПравоПросмотр</dcsat:name>
+			<dcsat:expression>ПравоПросмотр</dcsat:expression>
+		</parameter>
+		<parameter xmlns:dcsat="http://v8.1c.ru/8.1/data-composition-system/area-template" xsi:type="dcsat:DetailsAreaTemplateParameter">
+			<dcsat:name>Расшифровка</dcsat:name>
+			<dcsat:fieldExpression>
+				<dcsat:field>ПравоПросмотр</dcsat:field>
+				<dcsat:expression>ЕстьNull(ПравоПросмотр, Ложь)</dcsat:expression>
+			</dcsat:fieldExpression>
+		</parameter>
+	</template>
+	<template>
+		<name>Макет12</name>
+		<template xmlns:dcsat="http://v8.1c.ru/8.1/data-composition-system/area-template" xsi:type="dcsat:AreaTemplate">
+			<dcsat:item xsi:type="dcsat:TableRow">
+				<dcsat:tableCell>
+					<dcsat:item xsi:type="dcsat:Field">
+						<dcsat:value xsi:type="dcscor:Parameter">ПравоРедактирование</dcsat:value>
+						<dcsat:appearance>
+							<dcscor:item>
+								<dcscor:parameter>Формат</dcscor:parameter>
+								<dcscor:value xsi:type="xs:string">БЛ=; БИ=</dcscor:value>
+							</dcscor:item>
+						</dcsat:appearance>
+					</dcsat:item>
+					<dcsat:appearance>
+						<dcscor:item>
+							<dcscor:parameter>Расшифровка</dcscor:parameter>
+							<dcscor:value xsi:type="dcscor:Parameter">Расшифровка</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>РазмерКартинки</dcscor:parameter>
+							<dcscor:value xmlns:mxl="http://v8.1c.ru/8.2/data/spreadsheet" xsi:type="mxl:PictureSize">AutoSize</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>ВертикальноеПоложениеКартинки</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:VerticalAlign">Center</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>ГоризонтальноеПоложениеКартинки</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:HorizontalAlign">Center</dcscor:value>
+						</dcscor:item>
+					</dcsat:appearance>
+				</dcsat:tableCell>
+			</dcsat:item>
+		</template>
+		<parameter xmlns:dcsat="http://v8.1c.ru/8.1/data-composition-system/area-template" xsi:type="dcsat:ExpressionAreaTemplateParameter">
+			<dcsat:name>ПравоРедактирование</dcsat:name>
+			<dcsat:expression>ПравоРедактирование</dcsat:expression>
+		</parameter>
+		<parameter xmlns:dcsat="http://v8.1c.ru/8.1/data-composition-system/area-template" xsi:type="dcsat:DetailsAreaTemplateParameter">
+			<dcsat:name>Расшифровка</dcsat:name>
+			<dcsat:fieldExpression>
+				<dcsat:field>ПравоРедактирование</dcsat:field>
+				<dcsat:expression>ЕстьNull(ПравоРедактирование, Ложь)</dcsat:expression>
+			</dcsat:fieldExpression>
+		</parameter>
+	</template>
+	<template>
+		<name>Макет13</name>
+		<template xmlns:dcsat="http://v8.1c.ru/8.1/data-composition-system/area-template" xsi:type="dcsat:AreaTemplate">
+			<dcsat:item xsi:type="dcsat:TableRow">
+				<dcsat:tableCell>
+					<dcsat:item xsi:type="dcsat:Field">
+						<dcsat:value xsi:type="dcscor:Parameter">ПравоИнтерактивноеДобавление</dcsat:value>
+						<dcsat:appearance>
+							<dcscor:item>
+								<dcscor:parameter>Формат</dcscor:parameter>
+								<dcscor:value xsi:type="xs:string">БЛ=; БИ=</dcscor:value>
+							</dcscor:item>
+						</dcsat:appearance>
+					</dcsat:item>
+					<dcsat:appearance>
+						<dcscor:item>
+							<dcscor:parameter>Расшифровка</dcscor:parameter>
+							<dcscor:value xsi:type="dcscor:Parameter">Расшифровка</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>РазмерКартинки</dcscor:parameter>
+							<dcscor:value xmlns:mxl="http://v8.1c.ru/8.2/data/spreadsheet" xsi:type="mxl:PictureSize">AutoSize</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>ВертикальноеПоложениеКартинки</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:VerticalAlign">Center</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>ГоризонтальноеПоложениеКартинки</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:HorizontalAlign">Center</dcscor:value>
+						</dcscor:item>
+					</dcsat:appearance>
+				</dcsat:tableCell>
+			</dcsat:item>
+		</template>
+		<parameter xmlns:dcsat="http://v8.1c.ru/8.1/data-composition-system/area-template" xsi:type="dcsat:ExpressionAreaTemplateParameter">
+			<dcsat:name>ПравоИнтерактивноеДобавление</dcsat:name>
+			<dcsat:expression>ПравоИнтерактивноеДобавление</dcsat:expression>
+		</parameter>
+		<parameter xmlns:dcsat="http://v8.1c.ru/8.1/data-composition-system/area-template" xsi:type="dcsat:DetailsAreaTemplateParameter">
+			<dcsat:name>Расшифровка</dcsat:name>
+			<dcsat:fieldExpression>
+				<dcsat:field>ПравоИнтерактивноеДобавление</dcsat:field>
+				<dcsat:expression>ЕстьNull(ПравоИнтерактивноеДобавление, Ложь)</dcsat:expression>
+			</dcsat:fieldExpression>
+		</parameter>
+	</template>
+	<fieldTemplate>
+		<field>Право</field>
+		<template>Макет10</template>
+	</fieldTemplate>
+	<fieldTemplate>
+		<field>ПравоПросмотр</field>
+		<template>Макет11</template>
+	</fieldTemplate>
+	<fieldTemplate>
+		<field>ПравоРедактирование</field>
+		<template>Макет12</template>
+	</fieldTemplate>
+	<fieldTemplate>
+		<field>ПравоИнтерактивноеДобавление</field>
+		<template>Макет13</template>
+	</fieldTemplate>
 	<groupTemplate>
 		<groupField>Пользователь</groupField>
 		<groupName>КолонкаПользователь</groupName>
@@ -1076,18 +1245,12 @@
 	</groupTemplate>
 	<groupHeaderTemplate>
 		<groupField>ГруппаДоступа</groupField>
-		<groupField>КартинкаПросмотр</groupField>
-		<groupField>КартинкаРедактирование</groupField>
-		<groupField>КартинкаСоздание</groupField>
 		<groupName>ПраваПоГруппамДоступа</groupName>
 		<templateType>Header</templateType>
 		<template>Макет4</template>
 	</groupHeaderTemplate>
 	<groupHeaderTemplate>
 		<groupField>Пользователь</groupField>
-		<groupField>КартинкаПросмотр</groupField>
-		<groupField>КартинкаРедактирование</groupField>
-		<groupField>КартинкаСоздание</groupField>
 		<groupName>ПраваПользователя</groupName>
 		<templateType>Header</templateType>
 		<template>Макет9</template>
@@ -1124,6 +1287,7 @@
 					<dcsset:userSettingID>91c5e0cc-63a9-4398-b8d3-561eeecd248d</dcsset:userSettingID>
 				</dcsset:item>
 				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
 					<dcsset:left xsi:type="dcscor:Field">Право</dcsset:left>
 					<dcsset:comparisonType>GreaterOrEqual</dcsset:comparisonType>
 					<dcsset:right xsi:type="xs:decimal">1</dcsset:right>
@@ -1945,90 +2109,6 @@
 				<dcsset:item>
 					<dcsset:selection>
 						<dcsset:item>
-							<dcsset:field>КартинкаПросмотр</dcsset:field>
-						</dcsset:item>
-						<dcsset:item>
-							<dcsset:field>ПравоПросмотр</dcsset:field>
-						</dcsset:item>
-					</dcsset:selection>
-					<dcsset:filter>
-						<dcsset:item xsi:type="dcsset:FilterItemComparison">
-							<dcsset:left xsi:type="dcscor:Field">ПравоПросмотр</dcsset:left>
-							<dcsset:comparisonType>Equal</dcsset:comparisonType>
-							<dcsset:right xsi:type="xs:boolean">true</dcsset:right>
-						</dcsset:item>
-						<dcsset:item xsi:type="dcsset:FilterItemComparison">
-							<dcsset:left xsi:type="dcscor:Field">ВходВПрограммуРазрешен</dcsset:left>
-							<dcsset:comparisonType>Equal</dcsset:comparisonType>
-							<dcsset:right xsi:type="xs:boolean">false</dcsset:right>
-						</dcsset:item>
-					</dcsset:filter>
-					<dcsset:appearance>
-						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
-							<dcscor:parameter>ЦветФона</dcscor:parameter>
-							<dcscor:value xsi:type="v8ui:Color">style:ПравоНедействительногоПользователяФон</dcscor:value>
-						</dcscor:item>
-					</dcsset:appearance>
-				</dcsset:item>
-				<dcsset:item>
-					<dcsset:selection>
-						<dcsset:item>
-							<dcsset:field>КартинкаРедактирование</dcsset:field>
-						</dcsset:item>
-						<dcsset:item>
-							<dcsset:field>ПравоРедактирование</dcsset:field>
-						</dcsset:item>
-					</dcsset:selection>
-					<dcsset:filter>
-						<dcsset:item xsi:type="dcsset:FilterItemComparison">
-							<dcsset:left xsi:type="dcscor:Field">ПравоРедактирование</dcsset:left>
-							<dcsset:comparisonType>Equal</dcsset:comparisonType>
-							<dcsset:right xsi:type="xs:boolean">true</dcsset:right>
-						</dcsset:item>
-						<dcsset:item xsi:type="dcsset:FilterItemComparison">
-							<dcsset:left xsi:type="dcscor:Field">ВходВПрограммуРазрешен</dcsset:left>
-							<dcsset:comparisonType>Equal</dcsset:comparisonType>
-							<dcsset:right xsi:type="xs:boolean">false</dcsset:right>
-						</dcsset:item>
-					</dcsset:filter>
-					<dcsset:appearance>
-						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
-							<dcscor:parameter>ЦветФона</dcscor:parameter>
-							<dcscor:value xsi:type="v8ui:Color">style:ПравоНедействительногоПользователяФон</dcscor:value>
-						</dcscor:item>
-					</dcsset:appearance>
-				</dcsset:item>
-				<dcsset:item>
-					<dcsset:selection>
-						<dcsset:item>
-							<dcsset:field>КартинкаСоздание</dcsset:field>
-						</dcsset:item>
-						<dcsset:item>
-							<dcsset:field>ПравоИнтерактивноеДобавление</dcsset:field>
-						</dcsset:item>
-					</dcsset:selection>
-					<dcsset:filter>
-						<dcsset:item xsi:type="dcsset:FilterItemComparison">
-							<dcsset:left xsi:type="dcscor:Field">ПравоИнтерактивноеДобавление</dcsset:left>
-							<dcsset:comparisonType>Equal</dcsset:comparisonType>
-							<dcsset:right xsi:type="xs:boolean">true</dcsset:right>
-						</dcsset:item>
-						<dcsset:item xsi:type="dcsset:FilterItemComparison">
-							<dcsset:left xsi:type="dcscor:Field">ВходВПрограммуРазрешен</dcsset:left>
-							<dcsset:comparisonType>Equal</dcsset:comparisonType>
-							<dcsset:right xsi:type="xs:boolean">false</dcsset:right>
-						</dcsset:item>
-					</dcsset:filter>
-					<dcsset:appearance>
-						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
-							<dcscor:parameter>ЦветФона</dcscor:parameter>
-							<dcscor:value xsi:type="v8ui:Color">style:ПравоНедействительногоПользователяФон</dcscor:value>
-						</dcscor:item>
-					</dcsset:appearance>
-				</dcsset:item>
-				<dcsset:item>
-					<dcsset:selection>
-						<dcsset:item>
 							<dcsset:field>ГруппаДоступа</dcsset:field>
 						</dcsset:item>
 					</dcsset:selection>
@@ -2214,13 +2294,13 @@
 					<dcsset:field>Пользователь</dcsset:field>
 				</dcsset:item>
 				<dcsset:item xsi:type="dcsset:SelectedItemField">
-					<dcsset:field>КартинкаПросмотр</dcsset:field>
+					<dcsset:field>ПравоПросмотр</dcsset:field>
 				</dcsset:item>
 				<dcsset:item xsi:type="dcsset:SelectedItemField">
-					<dcsset:field>КартинкаРедактирование</dcsset:field>
+					<dcsset:field>ПравоРедактирование</dcsset:field>
 				</dcsset:item>
 				<dcsset:item xsi:type="dcsset:SelectedItemField">
-					<dcsset:field>КартинкаСоздание</dcsset:field>
+					<dcsset:field>ПравоИнтерактивноеДобавление</dcsset:field>
 				</dcsset:item>
 			</dcsset:selection>
 			<dcsset:filter>
@@ -2265,97 +2345,6 @@
 				<dcsset:item>
 					<dcsset:selection>
 						<dcsset:item>
-							<dcsset:field>Право</dcsset:field>
-						</dcsset:item>
-					</dcsset:selection>
-					<dcsset:filter>
-						<dcsset:item xsi:type="dcsset:FilterItemComparison">
-							<dcsset:left xsi:type="dcscor:Field">Право</dcsset:left>
-							<dcsset:comparisonType>Equal</dcsset:comparisonType>
-							<dcsset:right xsi:type="xs:decimal">1</dcsset:right>
-						</dcsset:item>
-					</dcsset:filter>
-					<dcsset:appearance>
-						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
-							<dcscor:parameter>ЦветФона</dcscor:parameter>
-							<dcscor:value xsi:type="v8ui:Color">style:ПравоПросмотраФон</dcscor:value>
-						</dcscor:item>
-					</dcsset:appearance>
-				</dcsset:item>
-				<dcsset:item>
-					<dcsset:selection>
-						<dcsset:item>
-							<dcsset:field>Право</dcsset:field>
-						</dcsset:item>
-					</dcsset:selection>
-					<dcsset:filter>
-						<dcsset:item xsi:type="dcsset:FilterItemComparison">
-							<dcsset:left xsi:type="dcscor:Field">Право</dcsset:left>
-							<dcsset:comparisonType>Equal</dcsset:comparisonType>
-							<dcsset:right xsi:type="xs:decimal">2</dcsset:right>
-						</dcsset:item>
-					</dcsset:filter>
-					<dcsset:appearance>
-						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
-							<dcscor:parameter>ЦветФона</dcscor:parameter>
-							<dcscor:value xsi:type="v8ui:Color">style:ПравоРедактированияФон</dcscor:value>
-						</dcscor:item>
-					</dcsset:appearance>
-				</dcsset:item>
-				<dcsset:item>
-					<dcsset:selection>
-						<dcsset:item>
-							<dcsset:field>Право</dcsset:field>
-						</dcsset:item>
-					</dcsset:selection>
-					<dcsset:filter>
-						<dcsset:item xsi:type="dcsset:FilterItemComparison">
-							<dcsset:left xsi:type="dcscor:Field">Право</dcsset:left>
-							<dcsset:comparisonType>Equal</dcsset:comparisonType>
-							<dcsset:right xsi:type="xs:decimal">3</dcsset:right>
-						</dcsset:item>
-					</dcsset:filter>
-					<dcsset:appearance>
-						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
-							<dcscor:parameter>ЦветФона</dcscor:parameter>
-							<dcscor:value xsi:type="v8ui:Color">style:ПравоСозданияФон</dcscor:value>
-						</dcscor:item>
-					</dcsset:appearance>
-				</dcsset:item>
-				<dcsset:item>
-					<dcsset:selection>
-						<dcsset:item>
-							<dcsset:field>КартинкаПросмотр</dcsset:field>
-						</dcsset:item>
-						<dcsset:item>
-							<dcsset:field>КартинкаРедактирование</dcsset:field>
-						</dcsset:item>
-						<dcsset:item>
-							<dcsset:field>КартинкаСоздание</dcsset:field>
-						</dcsset:item>
-					</dcsset:selection>
-					<dcsset:filter/>
-					<dcsset:appearance>
-						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
-							<dcscor:parameter>ВыводитьКартинку</dcscor:parameter>
-							<dcscor:value xsi:type="dcsset:DataCompositionPictureOutputType">Auto</dcscor:value>
-						</dcscor:item>
-						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
-							<dcscor:parameter>ВертикальноеПоложениеКартинки</dcscor:parameter>
-							<dcscor:value xsi:type="v8ui:VerticalAlign">Center</dcscor:value>
-						</dcscor:item>
-						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
-							<dcscor:parameter>ГоризонтальноеПоложениеКартинки</dcscor:parameter>
-							<dcscor:value xsi:type="v8ui:HorizontalAlign">Center</dcscor:value>
-						</dcscor:item>
-					</dcsset:appearance>
-				</dcsset:item>
-				<dcsset:item>
-					<dcsset:selection>
-						<dcsset:item>
-							<dcsset:field>КартинкаПросмотр</dcsset:field>
-						</dcsset:item>
-						<dcsset:item>
 							<dcsset:field>ПравоПросмотр</dcsset:field>
 						</dcsset:item>
 					</dcsset:selection>
@@ -2376,9 +2365,6 @@
 				<dcsset:item>
 					<dcsset:selection>
 						<dcsset:item>
-							<dcsset:field>КартинкаРедактирование</dcsset:field>
-						</dcsset:item>
-						<dcsset:item>
 							<dcsset:field>ПравоРедактирование</dcsset:field>
 						</dcsset:item>
 					</dcsset:selection>
@@ -2398,9 +2384,6 @@
 				</dcsset:item>
 				<dcsset:item>
 					<dcsset:selection>
-						<dcsset:item>
-							<dcsset:field>КартинкаСоздание</dcsset:field>
-						</dcsset:item>
 						<dcsset:item>
 							<dcsset:field>ПравоИнтерактивноеДобавление</dcsset:field>
 						</dcsset:item>
@@ -2442,33 +2425,6 @@
 				<dcsset:item>
 					<dcsset:selection>
 						<dcsset:item>
-							<dcsset:field>Право</dcsset:field>
-						</dcsset:item>
-					</dcsset:selection>
-					<dcsset:filter>
-						<dcsset:item xsi:type="dcsset:FilterItemComparison">
-							<dcsset:left xsi:type="dcscor:Field">Право</dcsset:left>
-							<dcsset:comparisonType>Filled</dcsset:comparisonType>
-						</dcsset:item>
-						<dcsset:item xsi:type="dcsset:FilterItemComparison">
-							<dcsset:left xsi:type="dcscor:Field">ВходВПрограммуРазрешен</dcsset:left>
-							<dcsset:comparisonType>Equal</dcsset:comparisonType>
-							<dcsset:right xsi:type="xs:boolean">false</dcsset:right>
-						</dcsset:item>
-					</dcsset:filter>
-					<dcsset:appearance>
-						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
-							<dcscor:parameter>ЦветФона</dcscor:parameter>
-							<dcscor:value xsi:type="v8ui:Color">style:ПравоНедействительногоПользователяФон</dcscor:value>
-						</dcscor:item>
-					</dcsset:appearance>
-				</dcsset:item>
-				<dcsset:item>
-					<dcsset:selection>
-						<dcsset:item>
-							<dcsset:field>КартинкаПросмотр</dcsset:field>
-						</dcsset:item>
-						<dcsset:item>
 							<dcsset:field>ПравоПросмотр</dcsset:field>
 						</dcsset:item>
 					</dcsset:selection>
@@ -2494,9 +2450,6 @@
 				<dcsset:item>
 					<dcsset:selection>
 						<dcsset:item>
-							<dcsset:field>КартинкаРедактирование</dcsset:field>
-						</dcsset:item>
-						<dcsset:item>
 							<dcsset:field>ПравоРедактирование</dcsset:field>
 						</dcsset:item>
 					</dcsset:selection>
@@ -2521,9 +2474,6 @@
 				</dcsset:item>
 				<dcsset:item>
 					<dcsset:selection>
-						<dcsset:item>
-							<dcsset:field>КартинкаСоздание</dcsset:field>
-						</dcsset:item>
 						<dcsset:item>
 							<dcsset:field>ПравоИнтерактивноеДобавление</dcsset:field>
 						</dcsset:item>
@@ -2661,13 +2611,13 @@
 					<dcsset:field>ГруппаДоступа</dcsset:field>
 				</dcsset:item>
 				<dcsset:item xsi:type="dcsset:SelectedItemField">
-					<dcsset:field>КартинкаПросмотр</dcsset:field>
+					<dcsset:field>ПравоПросмотр</dcsset:field>
 				</dcsset:item>
 				<dcsset:item xsi:type="dcsset:SelectedItemField">
-					<dcsset:field>КартинкаРедактирование</dcsset:field>
+					<dcsset:field>ПравоРедактирование</dcsset:field>
 				</dcsset:item>
 				<dcsset:item xsi:type="dcsset:SelectedItemField">
-					<dcsset:field>КартинкаСоздание</dcsset:field>
+					<dcsset:field>ПравоИнтерактивноеДобавление</dcsset:field>
 				</dcsset:item>
 			</dcsset:selection>
 			<dcsset:filter>
@@ -2681,30 +2631,7 @@
 				<dcsset:item>
 					<dcsset:selection>
 						<dcsset:item>
-							<dcsset:field>КартинкаПросмотр</dcsset:field>
-						</dcsset:item>
-						<dcsset:item>
-							<dcsset:field>КартинкаРедактирование</dcsset:field>
-						</dcsset:item>
-						<dcsset:item>
-							<dcsset:field>КартинкаСоздание</dcsset:field>
-						</dcsset:item>
-					</dcsset:selection>
-					<dcsset:filter/>
-					<dcsset:appearance>
-						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
-							<dcscor:parameter>ВыводитьКартинку</dcscor:parameter>
-							<dcscor:value xsi:type="dcsset:DataCompositionPictureOutputType">Auto</dcscor:value>
-						</dcscor:item>
-					</dcsset:appearance>
-				</dcsset:item>
-				<dcsset:item>
-					<dcsset:selection>
-						<dcsset:item>
 							<dcsset:field>ПравоПросмотр</dcsset:field>
-						</dcsset:item>
-						<dcsset:item>
-							<dcsset:field>КартинкаПросмотр</dcsset:field>
 						</dcsset:item>
 					</dcsset:selection>
 					<dcsset:filter>
@@ -2726,9 +2653,6 @@
 						<dcsset:item>
 							<dcsset:field>ПравоРедактирование</dcsset:field>
 						</dcsset:item>
-						<dcsset:item>
-							<dcsset:field>КартинкаРедактирование</dcsset:field>
-						</dcsset:item>
 					</dcsset:selection>
 					<dcsset:filter>
 						<dcsset:item xsi:type="dcsset:FilterItemComparison">
@@ -2749,9 +2673,6 @@
 						<dcsset:item>
 							<dcsset:field>ПравоИнтерактивноеДобавление</dcsset:field>
 						</dcsset:item>
-						<dcsset:item>
-							<dcsset:field>КартинкаСоздание</dcsset:field>
-						</dcsset:item>
 					</dcsset:selection>
 					<dcsset:filter>
 						<dcsset:item xsi:type="dcsset:FilterItemComparison">
@@ -2771,9 +2692,6 @@
 					<dcsset:selection>
 						<dcsset:item>
 							<dcsset:field>ПравоПросмотр</dcsset:field>
-						</dcsset:item>
-						<dcsset:item>
-							<dcsset:field>КартинкаПросмотр</dcsset:field>
 						</dcsset:item>
 					</dcsset:selection>
 					<dcsset:filter>
@@ -2800,9 +2718,6 @@
 						<dcsset:item>
 							<dcsset:field>ПравоРедактирование</dcsset:field>
 						</dcsset:item>
-						<dcsset:item>
-							<dcsset:field>КартинкаРедактирование</dcsset:field>
-						</dcsset:item>
 					</dcsset:selection>
 					<dcsset:filter>
 						<dcsset:item xsi:type="dcsset:FilterItemComparison">
@@ -2827,9 +2742,6 @@
 					<dcsset:selection>
 						<dcsset:item>
 							<dcsset:field>ПравоИнтерактивноеДобавление</dcsset:field>
-						</dcsset:item>
-						<dcsset:item>
-							<dcsset:field>КартинкаСоздание</dcsset:field>
 						</dcsset:item>
 					</dcsset:selection>
 					<dcsset:filter>
@@ -2965,13 +2877,13 @@
 								<dcsset:field>ГруппаДоступа</dcsset:field>
 							</dcsset:item>
 							<dcsset:item xsi:type="dcsset:SelectedItemField">
-								<dcsset:field>КартинкаПросмотр</dcsset:field>
+								<dcsset:field>ПравоПросмотр</dcsset:field>
 							</dcsset:item>
 							<dcsset:item xsi:type="dcsset:SelectedItemField">
-								<dcsset:field>КартинкаРедактирование</dcsset:field>
+								<dcsset:field>ПравоРедактирование</dcsset:field>
 							</dcsset:item>
 							<dcsset:item xsi:type="dcsset:SelectedItemField">
-								<dcsset:field>КартинкаСоздание</dcsset:field>
+								<dcsset:field>ПравоИнтерактивноеДобавление</dcsset:field>
 							</dcsset:item>
 						</dcsset:selection>
 					</dcsset:item>
@@ -3874,90 +3786,6 @@
 						<dcsset:item xsi:type="dcsset:FilterItemComparison">
 							<dcsset:left xsi:type="dcscor:Field">Право</dcsset:left>
 							<dcsset:comparisonType>Filled</dcsset:comparisonType>
-						</dcsset:item>
-						<dcsset:item xsi:type="dcsset:FilterItemComparison">
-							<dcsset:left xsi:type="dcscor:Field">ВходВПрограммуРазрешен</dcsset:left>
-							<dcsset:comparisonType>Equal</dcsset:comparisonType>
-							<dcsset:right xsi:type="xs:boolean">false</dcsset:right>
-						</dcsset:item>
-					</dcsset:filter>
-					<dcsset:appearance>
-						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
-							<dcscor:parameter>ЦветФона</dcscor:parameter>
-							<dcscor:value xsi:type="v8ui:Color">style:ПравоНедействительногоПользователяФон</dcscor:value>
-						</dcscor:item>
-					</dcsset:appearance>
-				</dcsset:item>
-				<dcsset:item>
-					<dcsset:selection>
-						<dcsset:item>
-							<dcsset:field>КартинкаПросмотр</dcsset:field>
-						</dcsset:item>
-						<dcsset:item>
-							<dcsset:field>ПравоПросмотр</dcsset:field>
-						</dcsset:item>
-					</dcsset:selection>
-					<dcsset:filter>
-						<dcsset:item xsi:type="dcsset:FilterItemComparison">
-							<dcsset:left xsi:type="dcscor:Field">ПравоПросмотр</dcsset:left>
-							<dcsset:comparisonType>Equal</dcsset:comparisonType>
-							<dcsset:right xsi:type="xs:boolean">true</dcsset:right>
-						</dcsset:item>
-						<dcsset:item xsi:type="dcsset:FilterItemComparison">
-							<dcsset:left xsi:type="dcscor:Field">ВходВПрограммуРазрешен</dcsset:left>
-							<dcsset:comparisonType>Equal</dcsset:comparisonType>
-							<dcsset:right xsi:type="xs:boolean">false</dcsset:right>
-						</dcsset:item>
-					</dcsset:filter>
-					<dcsset:appearance>
-						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
-							<dcscor:parameter>ЦветФона</dcscor:parameter>
-							<dcscor:value xsi:type="v8ui:Color">style:ПравоНедействительногоПользователяФон</dcscor:value>
-						</dcscor:item>
-					</dcsset:appearance>
-				</dcsset:item>
-				<dcsset:item>
-					<dcsset:selection>
-						<dcsset:item>
-							<dcsset:field>КартинкаРедактирование</dcsset:field>
-						</dcsset:item>
-						<dcsset:item>
-							<dcsset:field>ПравоРедактирование</dcsset:field>
-						</dcsset:item>
-					</dcsset:selection>
-					<dcsset:filter>
-						<dcsset:item xsi:type="dcsset:FilterItemComparison">
-							<dcsset:left xsi:type="dcscor:Field">ПравоРедактирование</dcsset:left>
-							<dcsset:comparisonType>Equal</dcsset:comparisonType>
-							<dcsset:right xsi:type="xs:boolean">true</dcsset:right>
-						</dcsset:item>
-						<dcsset:item xsi:type="dcsset:FilterItemComparison">
-							<dcsset:left xsi:type="dcscor:Field">ВходВПрограммуРазрешен</dcsset:left>
-							<dcsset:comparisonType>Equal</dcsset:comparisonType>
-							<dcsset:right xsi:type="xs:boolean">false</dcsset:right>
-						</dcsset:item>
-					</dcsset:filter>
-					<dcsset:appearance>
-						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
-							<dcscor:parameter>ЦветФона</dcscor:parameter>
-							<dcscor:value xsi:type="v8ui:Color">style:ПравоНедействительногоПользователяФон</dcscor:value>
-						</dcscor:item>
-					</dcsset:appearance>
-				</dcsset:item>
-				<dcsset:item>
-					<dcsset:selection>
-						<dcsset:item>
-							<dcsset:field>КартинкаСоздание</dcsset:field>
-						</dcsset:item>
-						<dcsset:item>
-							<dcsset:field>ПравоИнтерактивноеДобавление</dcsset:field>
-						</dcsset:item>
-					</dcsset:selection>
-					<dcsset:filter>
-						<dcsset:item xsi:type="dcsset:FilterItemComparison">
-							<dcsset:left xsi:type="dcscor:Field">ПравоИнтерактивноеДобавление</dcsset:left>
-							<dcsset:comparisonType>Equal</dcsset:comparisonType>
-							<dcsset:right xsi:type="xs:boolean">true</dcsset:right>
 						</dcsset:item>
 						<dcsset:item xsi:type="dcsset:FilterItemComparison">
 							<dcsset:left xsi:type="dcscor:Field">ВходВПрограммуРазрешен</dcsset:left>

@@ -752,9 +752,18 @@
 КонецФункции
 
 // Только для внутреннего использования.
-Функция ТекстОшибкиСервисаПодписьНедействительна() Экспорт
+//
+// Возвращаемое значение:
+//  Строка
+//
+Функция ТекстОшибкиСервисаПодписьНедействительна(ТекстОшибки = "") Экспорт
 	
-	Возврат НСтр("ru = 'Облачный сервис сообщил, что подпись недействительна.'");
+	Результат = НСтр("ru = 'Облачный сервис сообщил, что подпись недействительна.'");
+	Если ЗначениеЗаполнено(ТекстОшибки) Тогда
+		Результат = Результат + Символы.ПС + Символы.ПС + ТекстОшибки;
+	КонецЕсли;
+	
+	Возврат Результат;
 	
 КонецФункции
 
@@ -1358,6 +1367,9 @@
 	
 	Если Параметры.Вариант = "furs.mark.crpt.ru_v1" Тогда
 		КонвертXML = КонвертXML1();
+		
+	ИначеЕсли Параметры.Вариант = "dmdk.goznak.ru_v1" Тогда
+		КонвертXML = КонвертXML2();
 	Иначе
 		ТекстОшибки = СтроковыеФункцииКлиентСервер.ПодставитьПараметрыВСтроку(
 			НСтр("ru = 'Указано неизвестное значение ""%1"" параметра %2 в функции %3'"),
@@ -1934,6 +1946,49 @@
 	
 КонецФункции
 
+// Вариант "dmdk.goznak.ru_v1".
+Функция КонвертXML2()
+	
+	Возврат
+	"<soapenv:Envelope xmlns:soapenv=""http://schemas.xmlsoap.org/soap/envelope/""
+	|    xmlns:ns=""urn://xsd.dmdk.goznak.ru/exchange/1.0""
+	|    xmlns:ns1=""urn://xsd.dmdk.goznak.ru/batch/1.0""
+	|    xmlns:ns2=""urn://xsd.dmdk.goznak.ru/contractor/1.0""
+	|    xmlns:ns3=""urn://xsd.dmdk.goznak.ru/types/1.0"">
+	|  <soapenv:Header />
+	|  <soapenv:Body>
+	|    <ns:CheckBatchRequest>
+	|      <ns:CallerSignature>
+	|        <ds:Signature xmlns:ds=""http://www.w3.org/2000/09/xmldsig#"">
+	|          <ds:SignedInfo>
+	|            <ds:CanonicalizationMethod Algorithm=""http://www.w3.org/2001/10/xml-exc-c14n#"" />
+	|            <ds:SignatureMethod Algorithm=""%SignatureMethod%"" />
+	|            <ds:Reference URI=""#body"">
+	|              <ds:Transforms>
+	|                <ds:Transform Algorithm=""http://www.w3.org/2001/10/xml-exc-c14n#"" />
+	|                <ds:Transform Algorithm=""urn://smev-gov-ru/xmldsig/transform"" />
+	|              </ds:Transforms>
+	|              <ds:DigestMethod Algorithm=""%DigestMethod%"" />
+	|              <ds:DigestValue>%DigestValue%</ds:DigestValue>
+	|            </ds:Reference>
+	|          </ds:SignedInfo>
+	|          <ds:SignatureValue>%SignatureValue%</ds:SignatureValue>
+	|          <ds:KeyInfo>
+	|            <ds:X509Data>
+	|              <ds:X509Certificate>%BinarySecurityToken%</ds:X509Certificate>
+	|            </ds:X509Data>
+	|          </ds:KeyInfo>
+	|        </ds:Signature>
+	|      </ns:CallerSignature>
+	|      <ns:RequestData Id=""body"">
+	|        %MessageXML%
+	|      </ns:RequestData>
+	|    </ns:CheckBatchRequest>
+	|  </soapenv:Body>
+	|</soapenv:Envelope>";
+	
+КонецФункции
+
 #КонецОбласти
 
 #Область ОбластьXML
@@ -2023,11 +2078,13 @@
 // Возвращаемое значение:
 //  Строка
 //
-Функция НачалоОбластиXMLДляC14N(ОбластьXML, Алгоритм, ТекстXML) Экспорт
+Функция РасширенноеНачалоОбластиXML(ОбластьXML, Алгоритм, ТекстXML) Экспорт
 	
 	Результат = Новый Структура("Начало, ТекстОшибки", , "");
 	
-	Если Алгоритм.Версия = 1 Тогда
+	Если Алгоритм.Вид = "c14n"
+	 Или Алгоритм.Вид = "smev" Тогда
+		
 		Если ТекстXML = Неопределено Тогда
 			ТекущаяОбластьXML = ОбластьXML;
 		Иначе

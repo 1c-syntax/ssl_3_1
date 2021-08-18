@@ -1210,14 +1210,16 @@
 //   http://www.w3.org/2001/10/xml-exc-c14n#
 //   http://www.w3.org/2001/10/xml-exc-c14n#WithComments
 //  Canonical XML 1.0
-//   http://www.w3.org/TR/2001/REC-xml-c14n-20010315#
+//   http://www.w3.org/TR/2001/REC-xml-c14n-20010315
 //   http://www.w3.org/TR/2001/REC-xml-c14n-20010315#WithComments
 //  Canonical XML 1.1
-//   http://www.w3.org/2006/12/xml-c14n11#
+//   http://www.w3.org/2006/12/xml-c14n11
 //   http://www.w3.org/2006/12/xml-c14n11#WithComments
 //  Enveloped signature (по факту игнорируется, так как
 //  не поддерживается пустой URI в элементе SignedInfo.Reference):
 //   http://www.w3.org/2000/09/xmldsig#enveloped-signature
+//  СМЭВ рекомендации 3.5.0.1, "АЛГОРИТМ трансформации XML":
+//   urn://smev-gov-ru/xmldsig/transform
 //
 // Сертификат может быть указан в KeyInfo, как base64 значение:
 // - либо в виде элемента X509Data.X509Certificate
@@ -1265,7 +1267,7 @@
 // Возвращаемое значение:
 //  Структура:
 //   * Вариант - Строка - вариант типового шаблона XML для обмена с сервисом:
-//                 "furs.mark.crpt.ru_v1" (начальное значение).
+//                 "furs.mark.crpt.ru_v1" (начальное значение) или "dmdk.goznak.ru_v1".
 //                 Возможны другие форматы, если удовлетворяют требованиям,
 //                 указанным в описании функции КонвертXML.
 //
