@@ -31,103 +31,8 @@
 			<ShowTitle>false</ShowTitle>
 			<ExtendedTooltip name="ПользовательскиеОтборыРасширеннаяПодсказка" id="45"/>
 		</UsualGroup>
-		<CommandBar name="КоманднаяПанель" id="42">
-			<Title>
-				<v8:item>
-					<v8:lang>ru</v8:lang>
-					<v8:content>Командная панель</v8:content>
-				</v8:item>
-			</Title>
-			<ExtendedTooltip name="КоманднаяПанельРасширеннаяПодсказка" id="43"/>
-			<ChildItems>
-				<Button name="ФормаИзменить" id="23">
-					<Type>CommandBarButton</Type>
-					<CommandName>Form.Item.Список.StandardCommand.Change</CommandName>
-					<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
-					<ExtendedTooltip name="ФормаИзменитьExtendedTooltip" id="25"/>
-				</Button>
-				<ButtonGroup name="ФормаГруппа3" id="24">
-					<Title>
-						<v8:item>
-							<v8:lang>ru</v8:lang>
-							<v8:content>Форма группа 3</v8:content>
-						</v8:item>
-					</Title>
-					<ExtendedTooltip name="ФормаГруппа3ExtendedTooltip" id="26"/>
-					<ChildItems>
-						<Button name="ФормаИспользоватьТиповыеПравила" id="40">
-							<Type>CommandBarButton</Type>
-							<CommandName>Form.Command.ИспользоватьТиповыеПравила</CommandName>
-							<ExtendedTooltip name="ФормаИспользоватьТиповыеПравилаРасширеннаяПодсказка" id="41"/>
-						</Button>
-						<Button name="ФормаОбновитьВсеТиповыеПравила" id="14">
-							<Type>CommandBarButton</Type>
-							<CommandName>Form.Command.ОбновитьВсеТиповыеПравила</CommandName>
-							<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
-							<ExtendedTooltip name="ФормаОбновитьВсеТиповыеПравилаExtendedTooltip" id="27"/>
-						</Button>
-					</ChildItems>
-				</ButtonGroup>
-				<ButtonGroup name="ФормаГруппа1" id="15">
-					<Title>
-						<v8:item>
-							<v8:lang>ru</v8:lang>
-							<v8:content>Форма группа 1</v8:content>
-						</v8:item>
-					</Title>
-					<ExtendedTooltip name="ФормаГруппа1ExtendedTooltip" id="28"/>
-					<ChildItems>
-						<Button name="ФормаНайти" id="17">
-							<Type>CommandBarButton</Type>
-							<CommandName>Form.Item.Список.StandardCommand.Find</CommandName>
-							<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
-							<ExtendedTooltip name="ФормаНайтиExtendedTooltip" id="29"/>
-						</Button>
-						<Button name="ФормаОтменитьПоиск" id="18">
-							<Type>CommandBarButton</Type>
-							<CommandName>Form.Item.Список.StandardCommand.CancelSearch</CommandName>
-							<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
-							<ExtendedTooltip name="ФормаОтменитьПоискExtendedTooltip" id="30"/>
-						</Button>
-					</ChildItems>
-				</ButtonGroup>
-				<ButtonGroup name="ФормаГруппа2" id="16">
-					<Title>
-						<v8:item>
-							<v8:lang>ru</v8:lang>
-							<v8:content>Форма группа 2</v8:content>
-						</v8:item>
-					</Title>
-					<ExtendedTooltip name="ФормаГруппа2ExtendedTooltip" id="31"/>
-					<ChildItems>
-						<Button name="ФормаОбновить" id="21">
-							<Type>CommandBarButton</Type>
-							<CommandName>Form.Item.Список.StandardCommand.Refresh</CommandName>
-							<ExtendedTooltip name="ФормаОбновитьExtendedTooltip" id="32"/>
-						</Button>
-						<Button name="ФормаНастройкаСписка" id="19">
-							<Type>CommandBarButton</Type>
-							<CommandName>Form.Item.Список.StandardCommand.ListSettings</CommandName>
-							<ExtendedTooltip name="ФормаНастройкаСпискаExtendedTooltip" id="33"/>
-						</Button>
-						<Button name="ФормаВывестиСписок" id="20">
-							<Type>CommandBarButton</Type>
-							<CommandName>Form.Item.Список.StandardCommand.OutputList</CommandName>
-							<ExtendedTooltip name="ФормаВывестиСписокExtendedTooltip" id="34"/>
-						</Button>
-						<Button name="ФормаКопироватьВБуферОбмена" id="22">
-							<Type>CommandBarButton</Type>
-							<CommandName>Form.Item.Список.StandardCommand.CopyToClipboard</CommandName>
-							<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
-							<ExtendedTooltip name="ФормаКопироватьВБуферОбменаExtendedTooltip" id="35"/>
-						</Button>
-					</ChildItems>
-				</ButtonGroup>
-			</ChildItems>
-		</CommandBar>
 		<Table name="Список" id="1">
 			<Representation>List</Representation>
-			<CommandBarLocation>None</CommandBarLocation>
 			<DefaultItem>true</DefaultItem>
 			<ChangeRowOrder>false</ChangeRowOrder>
 			<UseAlternationRowColor>true</UseAlternationRowColor>
@@ -146,6 +51,11 @@
 				<ExcludedCommand>Copy</ExcludedCommand>
 				<ExcludedCommand>Create</ExcludedCommand>
 				<ExcludedCommand>Delete</ExcludedCommand>
+				<ExcludedCommand>DynamicListStandardSettings</ExcludedCommand>
+				<ExcludedCommand>FindByCurrentValue</ExcludedCommand>
+				<ExcludedCommand>ListSettings</ExcludedCommand>
+				<ExcludedCommand>LoadDynamicListSettings</ExcludedCommand>
+				<ExcludedCommand>SaveDynamicListSettings</ExcludedCommand>
 			</CommandSet>
 			<AutoRefresh>false</AutoRefresh>
 			<AutoRefreshPeriod>58</AutoRefreshPeriod>
@@ -163,7 +73,91 @@
 			<UserSettingsGroup>ПользовательскиеОтборы</UserSettingsGroup>
 			<ContextMenu name="СписокКонтекстноеМеню" id="2"/>
 			<AutoCommandBar name="СписокКоманднаяПанель" id="3">
-				<Autofill>false</Autofill>
+				<ChildItems>
+					<Button name="ФормаИзменить" id="23">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Item.Список.StandardCommand.Change</CommandName>
+						<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
+						<ExtendedTooltip name="ФормаИзменитьExtendedTooltip" id="25"/>
+					</Button>
+					<ButtonGroup name="ФормаГруппа3" id="24">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Форма группа 3</v8:content>
+							</v8:item>
+						</Title>
+						<ExtendedTooltip name="ФормаГруппа3ExtendedTooltip" id="26"/>
+						<ChildItems>
+							<Button name="ФормаИспользоватьТиповыеПравила" id="40">
+								<Type>CommandBarButton</Type>
+								<CommandName>Form.Command.ИспользоватьТиповыеПравила</CommandName>
+								<ExtendedTooltip name="ФормаИспользоватьТиповыеПравилаРасширеннаяПодсказка" id="41"/>
+							</Button>
+							<Button name="ФормаОбновитьВсеТиповыеПравила" id="14">
+								<Type>CommandBarButton</Type>
+								<CommandName>Form.Command.ОбновитьВсеТиповыеПравила</CommandName>
+								<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
+								<ExtendedTooltip name="ФормаОбновитьВсеТиповыеПравилаExtendedTooltip" id="27"/>
+							</Button>
+						</ChildItems>
+					</ButtonGroup>
+					<ButtonGroup name="ФормаГруппа1" id="15">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Форма группа 1</v8:content>
+							</v8:item>
+						</Title>
+						<ExtendedTooltip name="ФормаГруппа1ExtendedTooltip" id="28"/>
+						<ChildItems>
+							<Button name="ФормаНайти" id="17">
+								<Type>CommandBarButton</Type>
+								<CommandName>Form.Item.Список.StandardCommand.Find</CommandName>
+								<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
+								<ExtendedTooltip name="ФормаНайтиExtendedTooltip" id="29"/>
+							</Button>
+							<Button name="ФормаОтменитьПоиск" id="18">
+								<Type>CommandBarButton</Type>
+								<CommandName>Form.Item.Список.StandardCommand.CancelSearch</CommandName>
+								<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
+								<ExtendedTooltip name="ФормаОтменитьПоискExtendedTooltip" id="30"/>
+							</Button>
+						</ChildItems>
+					</ButtonGroup>
+					<ButtonGroup name="ФормаГруппа2" id="16">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Форма группа 2</v8:content>
+							</v8:item>
+						</Title>
+						<ExtendedTooltip name="ФормаГруппа2ExtendedTooltip" id="31"/>
+						<ChildItems>
+							<Button name="ФормаОбновить" id="21">
+								<Type>CommandBarButton</Type>
+								<CommandName>Form.Item.Список.StandardCommand.Refresh</CommandName>
+								<ExtendedTooltip name="ФормаОбновитьExtendedTooltip" id="32"/>
+							</Button>
+							<Button name="ФормаНастройкаСписка" id="19">
+								<Type>CommandBarButton</Type>
+								<CommandName>Form.Item.Список.StandardCommand.ChangeHistory</CommandName>
+								<ExtendedTooltip name="ФормаНастройкаСпискаExtendedTooltip" id="33"/>
+							</Button>
+							<Button name="ФормаВывестиСписок" id="20">
+								<Type>CommandBarButton</Type>
+								<CommandName>Form.Item.Список.StandardCommand.OutputList</CommandName>
+								<ExtendedTooltip name="ФормаВывестиСписокExtendedTooltip" id="34"/>
+							</Button>
+							<Button name="ФормаКопироватьВБуферОбмена" id="22">
+								<Type>CommandBarButton</Type>
+								<CommandName>Form.Item.Список.StandardCommand.CopyToClipboard</CommandName>
+								<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
+								<ExtendedTooltip name="ФормаКопироватьВБуферОбменаExtendedTooltip" id="35"/>
+							</Button>
+						</ChildItems>
+					</ButtonGroup>
+				</ChildItems>
 			</AutoCommandBar>
 			<ExtendedTooltip name="СписокExtendedTooltip" id="36"/>
 			<SearchStringAddition name="СписокСтрокаПоиска" id="46">

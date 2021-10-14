@@ -5,14 +5,7 @@
 		<ExcludedCommand>Create</ExcludedCommand>
 	</CommandSet>
 	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
-		<ChildItems>
-			<Button name="ФормаИзменить" id="19">
-				<Type>CommandBarButton</Type>
-				<CommandName>Form.StandardCommand.Change</CommandName>
-				<LocationInCommandBar>InCommandBarAndInAdditionalSubmenu</LocationInCommandBar>
-				<ExtendedTooltip name="ФормаИзменитьРасширеннаяПодсказка" id="20"/>
-			</Button>
-		</ChildItems>
+		<Autofill>false</Autofill>
 	</AutoCommandBar>
 	<ChildItems>
 		<UsualGroup name="СписокКомпоновщикНастроекПользовательскиеНастройки" id="1">
@@ -30,7 +23,6 @@
 		</UsualGroup>
 		<Table name="Список" id="3">
 			<Representation>List</Representation>
-			<CommandBarLocation>None</CommandBarLocation>
 			<DefaultItem>true</DefaultItem>
 			<UseAlternationRowColor>true</UseAlternationRowColor>
 			<InitialTreeView>ExpandTopLevel</InitialTreeView>
@@ -48,8 +40,6 @@
 				<ExcludedCommand>Copy</ExcludedCommand>
 				<ExcludedCommand>Create</ExcludedCommand>
 			</CommandSet>
-			<SearchStringLocation>None</SearchStringLocation>
-			<SearchControlLocation>None</SearchControlLocation>
 			<AutoRefresh>false</AutoRefresh>
 			<AutoRefreshPeriod>60</AutoRefreshPeriod>
 			<Period>
@@ -66,7 +56,14 @@
 			<UserSettingsGroup>СписокКомпоновщикНастроекПользовательскиеНастройки</UserSettingsGroup>
 			<ContextMenu name="СписокКонтекстноеМеню" id="4"/>
 			<AutoCommandBar name="СписокКоманднаяПанель" id="5">
-				<Autofill>false</Autofill>
+				<ChildItems>
+					<Button name="ФормаИзменить" id="19">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.StandardCommand.Change</CommandName>
+						<LocationInCommandBar>InCommandBarAndInAdditionalSubmenu</LocationInCommandBar>
+						<ExtendedTooltip name="ФормаИзменитьРасширеннаяПодсказка" id="20"/>
+					</Button>
+				</ChildItems>
 			</AutoCommandBar>
 			<ExtendedTooltip name="СписокРасширеннаяПодсказка" id="6"/>
 			<SearchStringAddition name="СписокСтрокаПоиска" id="7">

@@ -74,6 +74,9 @@
 							</ChoiceList>
 							<ContextMenu name="ЗапретИзмененияДанныхНеУстановленКонтекстноеМеню" id="86"/>
 							<ExtendedTooltip name="ЗапретИзмененияДанныхНеУстановленРасширеннаяПодсказка" id="87"/>
+							<Events>
+								<Event name="OnChange">ОписаниеДатыЗапретаПриИзменении</Event>
+							</Events>
 						</RadioButtonField>
 						<UsualGroup name="ГруппаПроизвольнаяДата" id="88">
 							<Title>
@@ -108,6 +111,9 @@
 									</ChoiceList>
 									<ContextMenu name="ПроизвольнаяДатаЗапретаКонтекстноеМеню" id="91"/>
 									<ExtendedTooltip name="ПроизвольнаяДатаЗапретаРасширеннаяПодсказка" id="92"/>
+									<Events>
+										<Event name="OnChange">ПроизвольнаяДатаЗапретаПриИзменении</Event>
+									</Events>
 								</RadioButtonField>
 								<InputField name="ДатаЗапретаПростойРежим" id="93">
 									<DataPath>ДатаЗапрета</DataPath>
@@ -624,6 +630,11 @@
 				</v8:StringQualifiers>
 			</Type>
 		</Attribute>
+		<Attribute name="ЗаписьСуществует" id="12">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
 	</Attributes>
 	<Commands>
 		<Command name="ОК" id="1">
@@ -704,6 +715,11 @@
 					<v8:Length>0</v8:Length>
 					<v8:AllowedLength>Variable</v8:AllowedLength>
 				</v8:StringQualifiers>
+			</Type>
+		</Parameter>
+		<Parameter name="ЗаписьСуществует">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
 			</Type>
 		</Parameter>
 	</Parameters>
