@@ -5,6 +5,7 @@
 	<AutoURL>false</AutoURL>
 	<CommandBarLocation>None</CommandBarLocation>
 	<VerticalScroll>useIfNecessary</VerticalScroll>
+	<ConversationsRepresentation>Show</ConversationsRepresentation>
 	<MobileDeviceCommandBarContent>
 		<xr:Item>
 			<xr:Presentation/>
@@ -390,22 +391,11 @@
 										</Button>
 									</ChildItems>
 								</ButtonGroup>
-								<Button name="Сохранить" id="51">
+								<Button name="СохранитьОтчет" id="1101">
 									<Type>CommandBarButton</Type>
-									<Representation>Picture</Representation>
-									<CommandName>Form.StandardCommand.Save</CommandName>
-									<Picture>
-										<xr:Ref>CommonPicture.Скачать</xr:Ref>
-										<xr:LoadTransparent>false</xr:LoadTransparent>
-									</Picture>
-									<Title>
-										<v8:item>
-											<v8:lang>ru</v8:lang>
-											<v8:content>Сохранить...</v8:content>
-										</v8:item>
-									</Title>
+									<CommandName>Form.Command.СохранитьОтчет</CommandName>
 									<LocationInCommandBar>InCommandBarAndInAdditionalSubmenu</LocationInCommandBar>
-									<ExtendedTooltip name="СохранитьРасширеннаяПодсказка" id="141"/>
+									<ExtendedTooltip name="СохранитьОтчетРасширеннаяПодсказка" id="1102"/>
 								</Button>
 								<Popup name="ГруппаОтправить" id="63">
 									<Title>
@@ -996,15 +986,11 @@
 									<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
 									<ExtendedTooltip name="ПараметрыСтраницыРасширеннаяПодсказка" id="140"/>
 								</Button>
-								<Button name="СохранитьЕще" id="752">
+								<Button name="СохранитьОтчетЕще" id="1103">
 									<Type>CommandBarButton</Type>
-									<CommandName>Form.StandardCommand.Save</CommandName>
-									<Picture>
-										<xr:Ref>CommonPicture.Скачать</xr:Ref>
-										<xr:LoadTransparent>false</xr:LoadTransparent>
-									</Picture>
+									<CommandName>Form.Command.СохранитьОтчет</CommandName>
 									<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
-									<ExtendedTooltip name="СохранитьЕщеРасширеннаяПодсказка" id="753"/>
+									<ExtendedTooltip name="СохранитьОтчетЕщеРасширеннаяПодсказка" id="1104"/>
 								</Button>
 								<Popup name="ГруппаОтправитьЕще" id="754">
 									<Title>
@@ -2667,6 +2653,11 @@
 				</v8:NumberQualifiers>
 			</Type>
 		</Attribute>
+		<Attribute name="ВыводитьЗаголовкиНастроек" id="17">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
 	</Attributes>
 	<Commands>
 		<Command name="ВсеНастройки" id="1">
@@ -2975,7 +2966,7 @@
 			</Title>
 			<Picture>
 				<xr:Ref>0</xr:Ref>
-				<xr:LoadTransparent>true</xr:LoadTransparent>
+				<xr:LoadTransparent>false</xr:LoadTransparent>
 			</Picture>
 			<Action>Подключаемый_ВыбратьПериод</Action>
 			<Representation>Picture</Representation>
@@ -2989,7 +2980,7 @@
 			</Title>
 			<Picture>
 				<xr:Ref>0</xr:Ref>
-				<xr:LoadTransparent>true</xr:LoadTransparent>
+				<xr:LoadTransparent>false</xr:LoadTransparent>
 			</Picture>
 			<Action>Подключаемый_ВыбратьПериод</Action>
 			<Representation>Picture</Representation>
@@ -3485,6 +3476,27 @@
 				</v8:item>
 			</Title>
 			<Action>ОчиститьОформление</Action>
+		</Command>
+		<Command name="СохранитьОтчет" id="56">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сохранить...</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сохранить результат отчета в файл</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Shortcut>Ctrl+S</Shortcut>
+			<Picture>
+				<xr:Ref>CommonPicture.Скачать</xr:Ref>
+				<xr:LoadTransparent>false</xr:LoadTransparent>
+			</Picture>
+			<Action>СохранитьОтчет</Action>
+			<Representation>Picture</Representation>
 		</Command>
 	</Commands>
 	<Parameters>

@@ -42,7 +42,6 @@
 				<ExcludedCommand>CopyToClipboard</ExcludedCommand>
 				<ExcludedCommand>Delete</ExcludedCommand>
 				<ExcludedCommand>EndEdit</ExcludedCommand>
-				<ExcludedCommand>SearchEverywhere</ExcludedCommand>
 				<ExcludedCommand>SelectAll</ExcludedCommand>
 				<ExcludedCommand>ShowMultipleSelection</ExcludedCommand>
 				<ExcludedCommand>ShowRowRearrangement</ExcludedCommand>
@@ -288,11 +287,33 @@
 			<ShowTitle>false</ShowTitle>
 			<ExtendedTooltip name="КоманднаяПанельРасширеннаяПодсказка" id="97"/>
 			<ChildItems>
-				<Button name="ПерейтиКРасширеннымНастройкам" id="104">
-					<Type>Hyperlink</Type>
-					<CommandName>Form.Command.ПерейтиКРасширеннымНастройкам</CommandName>
-					<ExtendedTooltip name="ПерейтиКРасширеннымНастройкамРасширеннаяПодсказка" id="105"/>
-				</Button>
+				<UsualGroup name="ДополнительныеВозможности" id="106">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Дополнительные возможности</v8:content>
+						</v8:item>
+					</Title>
+					<Group>Vertical</Group>
+					<Behavior>Usual</Behavior>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ДополнительныеВозможностиРасширеннаяПодсказка" id="107"/>
+					<ChildItems>
+						<CheckBoxField name="ВыводитьЗаголовкиНастроек" id="108">
+							<DataPath>ВыводитьЗаголовкиНастроек</DataPath>
+							<TitleLocation>Right</TitleLocation>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="ВыводитьЗаголовкиНастроекКонтекстноеМеню" id="109"/>
+							<ExtendedTooltip name="ВыводитьЗаголовкиНастроекРасширеннаяПодсказка" id="110"/>
+						</CheckBoxField>
+						<Button name="ПерейтиКРасширеннымНастройкам" id="104">
+							<Type>Hyperlink</Type>
+							<CommandName>Form.Command.ПерейтиКРасширеннымНастройкам</CommandName>
+							<ExtendedTooltip name="ПерейтиКРасширеннымНастройкамРасширеннаяПодсказка" id="105"/>
+						</Button>
+					</ChildItems>
+				</UsualGroup>
 				<CommandBar name="КомандыОсновные" id="98">
 					<Title>
 						<v8:item>
@@ -300,6 +321,7 @@
 							<v8:content>Команды основные</v8:content>
 						</v8:item>
 					</Title>
+					<GroupVerticalAlign>Bottom</GroupVerticalAlign>
 					<HorizontalLocation>Right</HorizontalLocation>
 					<ExtendedTooltip name="КомандыОсновныеРасширеннаяПодсказка" id="99"/>
 					<ChildItems>
@@ -438,6 +460,17 @@
 					<v8:Length>0</v8:Length>
 					<v8:AllowedLength>Variable</v8:AllowedLength>
 				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ВыводитьЗаголовкиНастроек" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Выводить заголовки настроек</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
 			</Type>
 		</Attribute>
 	</Attributes>
