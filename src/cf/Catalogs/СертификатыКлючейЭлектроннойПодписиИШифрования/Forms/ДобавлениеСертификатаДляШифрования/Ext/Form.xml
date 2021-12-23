@@ -154,7 +154,11 @@
 									<EnableDrag>true</EnableDrag>
 									<FileDragMode>AsFile</FileDragMode>
 									<DataPath>Сертификаты</DataPath>
-									<RowPictureDataPath>Сертификаты.ТипРазмещения</RowPictureDataPath>
+									<RowPictureDataPath>Сертификаты.СостояниеСертификата</RowPictureDataPath>
+									<RowsPicture>
+										<xr:Ref>CommonPicture.КоллекцияВидыСобытийЖурналаРегистрации</xr:Ref>
+										<xr:LoadTransparent>false</xr:LoadTransparent>
+									</RowsPicture>
 									<Title>
 										<v8:item>
 											<v8:lang>ru</v8:lang>
@@ -636,6 +640,20 @@
 						</v8:NumberQualifiers>
 					</Type>
 				</Column>
+				<Column name="СостояниеСертификата" id="20">
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="ЕстьВСправочнике" id="25">
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
 			</Columns>
 		</Attribute>
 		<Attribute name="СертификатНаименование" id="9">
@@ -782,6 +800,11 @@
 		<Attribute name="УчетнаяЗапись" id="14">
 			<Type>
 				<v8:TypeSet>cfg:CatalogRef</v8:TypeSet>
+			</Type>
+		</Attribute>
+		<Attribute name="ЕстьПравоНаДобавлениеВСправочник" id="23">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
 			</Type>
 		</Attribute>
 	</Attributes>

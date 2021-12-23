@@ -147,27 +147,61 @@
 														<Event name="OnChange">ПроцедураЗаполненияДанныхОбновленияПриИзменении</Event>
 													</Events>
 												</InputField>
-												<InputField name="ПроцедураПроверки" id="33">
-													<DataPath>Объект.ОбработчикиОбновления[0].ПроцедураПроверки</DataPath>
+												<UsualGroup name="ГруппаПроцедураПроверкиИПредупреждение" id="805">
 													<Title>
 														<v8:item>
 															<v8:lang>ru</v8:lang>
-															<v8:content>Проверка</v8:content>
+															<v8:content>Процедура проверки и предупреждение</v8:content>
 														</v8:item>
 													</Title>
-													<AutoMaxWidth>false</AutoMaxWidth>
-													<ChoiceButton>true</ChoiceButton>
-													<ChoiceButtonPicture>
-														<xr:Ref>StdPicture.MoveLeft</xr:Ref>
-														<xr:LoadTransparent>true</xr:LoadTransparent>
-													</ChoiceButtonPicture>
-													<ContextMenu name="ПроцедураПроверкиКонтекстноеМеню" id="34"/>
-													<ExtendedTooltip name="ПроцедураПроверкиРасширеннаяПодсказка" id="35"/>
-													<Events>
-														<Event name="OnChange">ПроцедураПроверкиПриИзменении</Event>
-														<Event name="StartChoice">ПроцедураПроверкиНачалоВыбора</Event>
-													</Events>
-												</InputField>
+													<Group>AlwaysHorizontal</Group>
+													<Behavior>Usual</Behavior>
+													<Representation>None</Representation>
+													<ShowTitle>false</ShowTitle>
+													<ExtendedTooltip name="ГруппаПроцедураПроверкиИПредупреждениеРасширеннаяПодсказка" id="806"/>
+													<ChildItems>
+														<InputField name="ПроцедураПроверки" id="33">
+															<DataPath>Объект.ОбработчикиОбновления[0].ПроцедураПроверки</DataPath>
+															<Title>
+																<v8:item>
+																	<v8:lang>ru</v8:lang>
+																	<v8:content>Проверка</v8:content>
+																</v8:item>
+															</Title>
+															<AutoMaxWidth>false</AutoMaxWidth>
+															<ChoiceButton>true</ChoiceButton>
+															<ChoiceButtonPicture>
+																<xr:Ref>StdPicture.MoveLeft</xr:Ref>
+																<xr:LoadTransparent>true</xr:LoadTransparent>
+															</ChoiceButtonPicture>
+															<ContextMenu name="ПроцедураПроверкиКонтекстноеМеню" id="34"/>
+															<ExtendedTooltip name="ПроцедураПроверкиРасширеннаяПодсказка" id="35"/>
+															<Events>
+																<Event name="OnChange">ПроцедураПроверкиПриИзменении</Event>
+																<Event name="StartChoice">ПроцедураПроверкиНачалоВыбора</Event>
+															</Events>
+														</InputField>
+														<PictureDecoration name="ДекорацияПредупреждение" id="807">
+															<Title formatted="false">
+																<v8:item>
+																	<v8:lang>ru</v8:lang>
+																	<v8:content>Декорация предупреждение</v8:content>
+																</v8:item>
+															</Title>
+															<GroupVerticalAlign>Center</GroupVerticalAlign>
+															<Hyperlink>true</Hyperlink>
+															<Picture>
+																<xr:Ref>CommonPicture.Предупреждение</xr:Ref>
+																<xr:LoadTransparent>false</xr:LoadTransparent>
+															</Picture>
+															<ContextMenu name="ДекорацияПредупреждениеКонтекстноеМеню" id="808"/>
+															<ExtendedTooltip name="ДекорацияПредупреждениеРасширеннаяПодсказка" id="809"/>
+															<Events>
+																<Event name="Click">ДекорацияПредупреждениеНажатие</Event>
+															</Events>
+														</PictureDecoration>
+													</ChildItems>
+												</UsualGroup>
 												<InputField name="РежимВыполнения" id="39">
 													<DataPath>Объект.ОбработчикиОбновления[0].РежимВыполнения</DataPath>
 													<EditMode>EnterOnInput</EditMode>
@@ -1134,11 +1168,6 @@
 										<CommandName>Form.Command.ЗаполнитьЛюбой</CommandName>
 										<ExtendedTooltip name="ЗаполнитьЛюбойРасширеннаяПодсказка" id="769"/>
 									</Button>
-									<Button name="ПриоритетПоУмолчанию" id="794">
-										<Type>CommandBarButton</Type>
-										<CommandName>Form.Command.ПриоритетПоУмолчанию</CommandName>
-										<ExtendedTooltip name="ПриоритетПоУмолчаниюРасширеннаяПодсказка" id="795"/>
-									</Button>
 								</ChildItems>
 							</AutoCommandBar>
 							<ExtendedTooltip name="ПриоритетыВыполненияРасширеннаяПодсказка" id="672"/>
@@ -1768,28 +1797,20 @@
 				</Column>
 			</Columns>
 		</Attribute>
-		<ConditionalAppearance>
-			<dcsset:item>
-				<dcsset:selection>
-					<dcsset:item>
-						<dcsset:field>ЗаполнятьПустые</dcsset:field>
-					</dcsset:item>
-				</dcsset:selection>
-				<dcsset:filter>
-					<dcsset:item xsi:type="dcsset:FilterItemComparison">
-						<dcsset:left xsi:type="dcscor:Field">ЗаполнятьПустые</dcsset:left>
-						<dcsset:comparisonType>Equal</dcsset:comparisonType>
-						<dcsset:right xsi:type="xs:boolean">true</dcsset:right>
-					</dcsset:item>
-				</dcsset:filter>
-				<dcsset:appearance>
-					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
-						<dcscor:parameter>Шрифт</dcscor:parameter>
-						<dcscor:value xsi:type="v8ui:Font" ref="sys:DefaultGUIFont" bold="true" italic="false" underline="false" strikeout="false" kind="WindowsFont"/>
-					</dcscor:item>
-				</dcsset:appearance>
-			</dcsset:item>
-		</ConditionalAppearance>
+		<Attribute name="ИзмененаПроцедураПроверки" id="20">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ТекущееЗначениеПроцедурыПроверки" id="21">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
 	</Attributes>
 	<Commands>
 		<Command name="ЗаписатьИЗакрыть" id="1">
@@ -1952,22 +1973,6 @@
 			</ToolTip>
 			<Shortcut>Shift+W</Shortcut>
 			<Action>ДобавитьЧитаемыйОбъектВИзменяемые</Action>
-		</Command>
-		<Command name="ПриоритетПоУмолчанию" id="12">
-			<Title>
-				<v8:item>
-					<v8:lang>ru</v8:lang>
-					<v8:content>Порядок по умолчанию</v8:content>
-				</v8:item>
-			</Title>
-			<ToolTip>
-				<v8:item>
-					<v8:lang>ru</v8:lang>
-					<v8:content>Порядок по умолчанию может не совпадать с текущими требованиями.
-Необходимо исправить его если требуется.</v8:content>
-				</v8:item>
-			</ToolTip>
-			<Action>ПриоритетПоУмолчанию</Action>
 		</Command>
 		<Command name="ДобавитьТипыРеквизитаВБлокируемыеОбъекты" id="13">
 			<Title>

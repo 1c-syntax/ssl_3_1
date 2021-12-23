@@ -12,6 +12,7 @@
 		<ExcludedCommand>Copy</ExcludedCommand>
 		<ExcludedCommand>Delete</ExcludedCommand>
 		<ExcludedCommand>Reread</ExcludedCommand>
+		<ExcludedCommand>Write</ExcludedCommand>
 		<ExcludedCommand>WriteAndClose</ExcludedCommand>
 	</CommandSet>
 	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
@@ -21,11 +22,6 @@
 				<DefaultButton>true</DefaultButton>
 				<CommandName>Form.Command.ЗаписатьИЗакрыть</CommandName>
 				<ExtendedTooltip name="ФормаЗаписатьИЗакрытьРасширеннаяПодсказка" id="83"/>
-			</Button>
-			<Button name="ФормаЗаписать" id="84">
-				<Type>CommandBarButton</Type>
-				<CommandName>Form.StandardCommand.Write</CommandName>
-				<ExtendedTooltip name="ФормаЗаписатьРасширеннаяПодсказка" id="85"/>
 			</Button>
 			<Button name="ФормаПеречитать" id="50">
 				<Type>CommandBarButton</Type>
@@ -38,6 +34,11 @@
 				<CommandName>0:c32d43de-b820-49d0-bf7a-d70829f48f40</CommandName>
 				<ExtendedTooltip name="ФормаУдалитьРасширеннаяПодсказка" id="87"/>
 			</Button>
+			<Button name="ФормаЗаписатьПравила" id="116">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.ЗаписатьПравила</CommandName>
+				<ExtendedTooltip name="ФормаЗаписатьПравилаРасширеннаяПодсказка" id="117"/>
+			</Button>
 			<Button name="СохранитьПравилаВФайл" id="20">
 				<Type>CommandBarButton</Type>
 				<SkipOnInput>true</SkipOnInput>
@@ -48,7 +49,6 @@
 	</AutoCommandBar>
 	<Events>
 		<Event name="AfterWrite">ПослеЗаписи</Event>
-		<Event name="BeforeWrite">ПередЗаписью</Event>
 		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
 	</Events>
 	<ChildItems>
@@ -611,6 +611,21 @@
 			<Action>ЗаписатьИЗакрыть</Action>
 			<Representation>Text</Representation>
 			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ЗаписатьПравила" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Записать</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Записать правила</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ЗаписатьПравила</Action>
 		</Command>
 	</Commands>
 </Form>

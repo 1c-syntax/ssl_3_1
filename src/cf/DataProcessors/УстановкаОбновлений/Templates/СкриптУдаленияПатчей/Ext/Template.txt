@@ -42,7 +42,7 @@ try {
 } catch (ex) {
 
   if (outf != null) {
-    outf.WriteLine(mainEvent + "[СообщениеОтказИнициализации]" + ex.message)
+    outf.WriteLine(mainEvent + ": [СообщениеОтказИнициализации]: " + ex.message)
   }
   WScript.Quit(1)
 
@@ -51,14 +51,14 @@ try {
 try {
 
   if (outf != null) {
-    outf.WriteLine(mainEvent + "[СообщениеСозданиеОбъектаCOMСоединителя]")
+    outf.WriteLine(mainEvent + ": [СообщениеСозданиеОбъектаCOMСоединителя]")
   }
   COMConnector = new ActiveXObject(COMConnectorName)
   
 } catch (ex) {
 
   if (outf != null) {
-   outf.WriteLine(mainEvent + "[СообщениеОтказСозданияОбъектаCOMСоединителя]" + ex.message)
+   outf.WriteLine(mainEvent + ": [СообщениеОтказСозданияОбъектаCOMСоединителя]: " + ex.message)
   }
   WScript.Quit(1)
 
@@ -67,14 +67,14 @@ try {
 try {
     
   if (outf != null) {
-    outf.WriteLine(mainEvent + "[СообщениеУстановкаСоединенияСБазой]" + ConnectionString + "...")
+    outf.WriteLine(mainEvent + ": [СообщениеУстановкаСоединенияСБазой]: " + ConnectionString)
   }  
   connection = COMConnector.Connect(ConnectionString)
 
 } catch (ex) {
 
   if (outf != null) {
-    outf.WriteLine(mainEvent + "[СообщениеОтказСоединенияСБазойОбщее]" + ConnectionString + ": " + ex.message)
+    outf.WriteLine(mainEvent + ": [СообщениеОтказСоединенияСБазойОбщее] " + ConnectionString + ": " + ex.message)
   }
   WScript.Quit(1)
 
@@ -85,14 +85,14 @@ try {
   if (Action == 'RemoveAll') {
 
     if (outf != null) {
-      outf.WriteLine(mainEvent + "[СообщениеВызовУдалитьИсправленияИзСкрипта]")
+      outf.WriteLine(mainEvent + ": [СообщениеВызовУдалитьИсправленияИзСкрипта]")
     }
     connection.ОбновлениеКонфигурацииВызовСервера.УдалитьИсправленияИзСкрипта();
 
   } else {
 
     if (outf != null) {
-      outf.WriteLine(mainEvent + "[СообщениеВызовОбновитьИсправленияИзСкрипта]")
+      outf.WriteLine(mainEvent + ": [СообщениеВызовОбновитьИсправленияИзСкрипта]")
     }
     connection.ОбновлениеКонфигурацииВызовСервера.ОбновитьИсправленияИзСкрипта(fixFileNames, removeFixNames)
 
@@ -101,7 +101,7 @@ try {
 } catch (ex) {
 
   if (outf != null) {    
-    outf.WriteLine(mainEvent + "[СообщениеОшибкаБСП]" + ex.message)
+    outf.WriteLine(mainEvent + ": [СообщениеОшибка]" + ex.message)
   }
   WScript.Quit(1)
 

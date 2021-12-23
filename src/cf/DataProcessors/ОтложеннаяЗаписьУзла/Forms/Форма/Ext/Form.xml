@@ -95,8 +95,6 @@
 							<ExtendedTooltip name="ГруппаОкончаниеРасширеннаяПодсказка" id="10"/>
 							<ChildItems>
 								<PictureDecoration name="Декорация3" id="11">
-									<Width>6</Width>
-									<Height>2</Height>
 									<Picture>
 										<xr:Ref>CommonPicture.Успешно32</xr:Ref>
 										<xr:LoadTransparent>false</xr:LoadTransparent>
@@ -138,6 +136,69 @@
 										</v8:item>
 									</Title>
 									<ExtendedTooltip name="КомандаГотовоРасширеннаяПодсказка" id="8"/>
+								</Button>
+							</ChildItems>
+						</CommandBar>
+					</ChildItems>
+				</Page>
+				<Page name="СтраницаОшибка" id="38">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Страница окончание</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="СтраницаОшибкаРасширеннаяПодсказка" id="39"/>
+					<ChildItems>
+						<UsualGroup name="ГруппаОшибка" id="40">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Ошибка</v8:content>
+								</v8:item>
+							</Title>
+							<Group>AlwaysHorizontal</Group>
+							<VerticalAlign>Center</VerticalAlign>
+							<Behavior>Usual</Behavior>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаОшибкаРасширеннаяПодсказка" id="41"/>
+							<ChildItems>
+								<PictureDecoration name="Декорация4" id="42">
+									<Picture>
+										<xr:Ref>CommonPicture.Ошибка32</xr:Ref>
+										<xr:LoadTransparent>false</xr:LoadTransparent>
+									</Picture>
+									<FileDragMode>AsFile</FileDragMode>
+									<ContextMenu name="Декорация4КонтекстноеМеню" id="43"/>
+									<ExtendedTooltip name="Декорация4РасширеннаяПодсказка" id="44"/>
+								</PictureDecoration>
+								<LabelDecoration name="ДекорацияОшибкаЗаписи" id="45">
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Ошибка при записи узла синхронизации</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="ДекорацияОшибкаЗаписиКонтекстноеМеню" id="46"/>
+									<ExtendedTooltip name="ДекорацияОшибкаЗаписиРасширеннаяПодсказка" id="47"/>
+								</LabelDecoration>
+							</ChildItems>
+						</UsualGroup>
+						<CommandBar name="КоманднаяПанельОшибка" id="48">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Командная панель ошибка</v8:content>
+								</v8:item>
+							</Title>
+							<HorizontalLocation>Right</HorizontalLocation>
+							<ExtendedTooltip name="КоманднаяПанельОшибкаРасширеннаяПодсказка" id="49"/>
+							<ChildItems>
+								<Button name="КомандаЗакрыть" id="50">
+									<Type>CommandBarButton</Type>
+									<CommandName>Form.Command.КомандаЗакрыть</CommandName>
+									<ExtendedTooltip name="КомандаЗакрытьРасширеннаяПодсказка" id="51"/>
 								</Button>
 							</ChildItems>
 						</CommandBar>
@@ -188,6 +249,21 @@
 				</v8:item>
 			</ToolTip>
 			<Action>КомандаГотово</Action>
+		</Command>
+		<Command name="КомандаЗакрыть" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Закрыть</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Команда закрыть</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>КомандаЗакрыть</Action>
 		</Command>
 	</Commands>
 </Form>

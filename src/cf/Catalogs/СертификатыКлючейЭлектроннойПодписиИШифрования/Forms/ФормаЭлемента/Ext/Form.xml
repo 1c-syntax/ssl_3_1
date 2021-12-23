@@ -94,6 +94,71 @@
 		<Event name="FillCheckProcessingAtServer">ОбработкаПроверкиЗаполненияНаСервере</Event>
 	</Events>
 	<ChildItems>
+		<UsualGroup name="СостояниеСертификатаГруппа" id="276">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Состояние сертификата группа</v8:content>
+				</v8:item>
+			</Title>
+			<HorizontalStretch>true</HorizontalStretch>
+			<Behavior>Usual</Behavior>
+			<ShowTitle>false</ShowTitle>
+			<BackColor>style:ToolTipBackColor</BackColor>
+			<ExtendedTooltip name="СостояниеСертификатаГруппаРасширеннаяПодсказка" id="277"/>
+			<ChildItems>
+				<PictureDecoration name="КартинкаСертификата" id="281">
+					<Title formatted="false">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Картинка сертификата</v8:content>
+						</v8:item>
+					</Title>
+					<GroupVerticalAlign>Center</GroupVerticalAlign>
+					<Picture>
+						<xr:Ref>CommonPicture.СертификатКлюча</xr:Ref>
+						<xr:LoadTransparent>false</xr:LoadTransparent>
+					</Picture>
+					<ContextMenu name="КартинкаСертификатаКонтекстноеМеню" id="282"/>
+					<ExtendedTooltip name="КартинкаСертификатаРасширеннаяПодсказка" id="283"/>
+				</PictureDecoration>
+				<LabelDecoration name="СостояниеСертификата" id="290">
+					<Title formatted="false">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Состояние сертификата</v8:content>
+						</v8:item>
+					</Title>
+					<ContextMenu name="СостояниеСертификатаКонтекстноеМеню" id="291"/>
+					<ExtendedTooltip name="СостояниеСертификатаРасширеннаяПодсказка" id="292"/>
+				</LabelDecoration>
+				<LabelDecoration name="ДекорацияПеревыпущен" id="305">
+					<Visible>false</Visible>
+					<Title formatted="true">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>&lt;link СертификатПеревыпущен&gt;(перевыпущен)&lt;/&gt;</v8:content>
+						</v8:item>
+					</Title>
+					<ContextMenu name="ДекорацияПеревыпущенКонтекстноеМеню" id="306"/>
+					<ExtendedTooltip name="ДекорацияПеревыпущенРасширеннаяПодсказка" id="307"/>
+					<Events>
+						<Event name="URLProcessing">ДекорацияПеревыпущенОбработкаНавигационнойСсылки</Event>
+					</Events>
+				</LabelDecoration>
+				<CheckBoxField name="НапомнитьОПеревыпуске" id="278">
+					<DataPath>НапомнитьОПеревыпуске</DataPath>
+					<TitleLocation>Right</TitleLocation>
+					<GroupHorizontalAlign>Right</GroupHorizontalAlign>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="НапомнитьОПеревыпускеКонтекстноеМеню" id="279"/>
+					<ExtendedTooltip name="НапомнитьОПеревыпускеРасширеннаяПодсказка" id="280"/>
+					<Events>
+						<Event name="OnChange">НапомнитьОПеревыпускеПриИзменении</Event>
+					</Events>
+				</CheckBoxField>
+			</ChildItems>
+		</UsualGroup>
 		<UsualGroup name="ДанныеСертификата" id="151">
 			<Title>
 				<v8:item>
@@ -215,7 +280,6 @@
 					<v8:content>Горизонтальная группа 1</v8:content>
 				</v8:item>
 			</Title>
-			<HorizontalStretch>false</HorizontalStretch>
 			<Group>Vertical</Group>
 			<Behavior>Usual</Behavior>
 			<Representation>None</Representation>
@@ -317,8 +381,8 @@
 							<DefaultItem>true</DefaultItem>
 							<ToolTipRepresentation>Button</ToolTipRepresentation>
 							<EditMode>EnterOnInput</EditMode>
-							<Width>37</Width>
-							<HorizontalStretch>false</HorizontalStretch>
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<MaxWidth>100</MaxWidth>
 							<ContextMenu name="НаименованиеКонтекстноеМеню" id="2"/>
 							<ExtendedTooltip name="НаименованиеРасширеннаяПодсказка" id="97">
 								<Title formatted="false">
@@ -340,30 +404,86 @@
 								</Title>
 							</ExtendedTooltip>
 						</InputField>
-						<InputField name="Организация" id="168">
-							<DataPath>Объект.Организация</DataPath>
-							<HorizontalStretch>true</HorizontalStretch>
-							<ChoiceHistoryOnInput>DontUse</ChoiceHistoryOnInput>
-							<ContextMenu name="ОрганизацияКонтекстноеМеню" id="169"/>
-							<ExtendedTooltip name="ОрганизацияРасширеннаяПодсказка" id="170"/>
-						</InputField>
-						<InputField name="Пользователи" id="273">
-							<DataPath>ПредставлениеПользователей</DataPath>
-							<ChoiceButton>true</ChoiceButton>
-							<ChooseType>false</ChooseType>
-							<TextEdit>false</TextEdit>
-							<ContextMenu name="ПользователиКонтекстноеМеню" id="274"/>
-							<ExtendedTooltip name="ПользователиРасширеннаяПодсказка" id="275"/>
-							<Events>
-								<Event name="StartChoice">ПользователиНачалоВыбора</Event>
-								<Event name="Opening">ПользователиОткрытие</Event>
-							</Events>
-						</InputField>
-						<InputField name="Добавил" id="256">
-							<DataPath>Объект.Добавил</DataPath>
-							<ContextMenu name="ДобавилКонтекстноеМеню" id="257"/>
-							<ExtendedTooltip name="ДобавилРасширеннаяПодсказка" id="258"/>
-						</InputField>
+						<UsualGroup name="ГруппаРеквизитыСертификата" id="300">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Реквизиты сертификата</v8:content>
+								</v8:item>
+							</Title>
+							<Group>Vertical</Group>
+							<Behavior>Usual</Behavior>
+							<Representation>NormalSeparation</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ThroughAlign>Use</ThroughAlign>
+							<ExtendedTooltip name="ГруппаРеквизитыСертификатаРасширеннаяПодсказка" id="301"/>
+							<ChildItems>
+								<UsualGroup name="ГруппаОрганизацияФизическоеЛицо" id="295">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Организация физическое лицо</v8:content>
+										</v8:item>
+									</Title>
+									<Group>Vertical</Group>
+									<Behavior>Usual</Behavior>
+									<Representation>NormalSeparation</Representation>
+									<ShowTitle>false</ShowTitle>
+									<ThroughAlign>Use</ThroughAlign>
+									<ExtendedTooltip name="ГруппаОрганизацияФизическоеЛицоРасширеннаяПодсказка" id="296"/>
+									<ChildItems>
+										<InputField name="Организация" id="168">
+											<DataPath>Объект.Организация</DataPath>
+											<HorizontalStretch>true</HorizontalStretch>
+											<ChoiceHistoryOnInput>DontUse</ChoiceHistoryOnInput>
+											<ContextMenu name="ОрганизацияКонтекстноеМеню" id="169"/>
+											<ExtendedTooltip name="ОрганизацияРасширеннаяПодсказка" id="170"/>
+										</InputField>
+										<InputField name="ФизическоеЛицо" id="287">
+											<DataPath>Объект.ФизическоеЛицо</DataPath>
+											<ContextMenu name="ФизическоеЛицоКонтекстноеМеню" id="288"/>
+											<ExtendedTooltip name="ФизическоеЛицоРасширеннаяПодсказка" id="289"/>
+										</InputField>
+									</ChildItems>
+								</UsualGroup>
+								<UsualGroup name="ГруппаПользователи" id="293">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Пользователи</v8:content>
+										</v8:item>
+									</Title>
+									<Group>Vertical</Group>
+									<Behavior>Usual</Behavior>
+									<Representation>NormalSeparation</Representation>
+									<ShowTitle>false</ShowTitle>
+									<ThroughAlign>Use</ThroughAlign>
+									<ExtendedTooltip name="ГруппаПользователиРасширеннаяПодсказка" id="294"/>
+									<ChildItems>
+										<InputField name="Пользователи" id="273">
+											<DataPath>ПредставлениеПользователей</DataPath>
+											<AutoMaxWidth>false</AutoMaxWidth>
+											<HorizontalStretch>true</HorizontalStretch>
+											<ChoiceButton>true</ChoiceButton>
+											<OpenButton>true</OpenButton>
+											<ChooseType>false</ChooseType>
+											<TextEdit>false</TextEdit>
+											<ContextMenu name="ПользователиКонтекстноеМеню" id="274"/>
+											<ExtendedTooltip name="ПользователиРасширеннаяПодсказка" id="275"/>
+											<Events>
+												<Event name="StartChoice">ПользователиНачалоВыбора</Event>
+												<Event name="Opening">ПользователиОткрытие</Event>
+											</Events>
+										</InputField>
+										<InputField name="Добавил" id="256">
+											<DataPath>Объект.Добавил</DataPath>
+											<ContextMenu name="ДобавилКонтекстноеМеню" id="257"/>
+											<ExtendedTooltip name="ДобавилРасширеннаяПодсказка" id="258"/>
+										</InputField>
+									</ChildItems>
+								</UsualGroup>
+							</ChildItems>
+						</UsualGroup>
 					</ChildItems>
 				</UsualGroup>
 				<UsualGroup name="ДляЭлектроннойПодписиИРасшифровки" id="221">
@@ -379,6 +499,7 @@
 					<ChildItems>
 						<InputField name="Программа" id="129">
 							<DataPath>Объект.Программа</DataPath>
+							<HorizontalStretch>true</HorizontalStretch>
 							<ChoiceButton>false</ChoiceButton>
 							<CreateButton>true</CreateButton>
 							<ListChoiceMode>true</ListChoiceMode>
@@ -389,13 +510,14 @@
 								<Event name="OnChange">ПрограммаПриИзменении</Event>
 							</Events>
 						</InputField>
-						<CheckBoxField name="УсиленнаяЗащитаЗакрытогоКлюча" id="158">
-							<DataPath>Объект.УсиленнаяЗащитаЗакрытогоКлюча</DataPath>
+						<CheckBoxField name="ВводитьПарольВПрограммеЭлектроннойПодписи" id="158">
+							<DataPath>Объект.ВводитьПарольВПрограммеЭлектроннойПодписи</DataPath>
 							<TitleLocation>Right</TitleLocation>
 							<ToolTipRepresentation>Button</ToolTipRepresentation>
+							<GroupHorizontalAlign>Right</GroupHorizontalAlign>
 							<CheckBoxType>Auto</CheckBoxType>
-							<ContextMenu name="УсиленнаяЗащитаЗакрытогоКлючаКонтекстноеМеню" id="159"/>
-							<ExtendedTooltip name="УсиленнаяЗащитаЗакрытогоКлючаРасширеннаяПодсказка" id="160"/>
+							<ContextMenu name="ВводитьПарольВПрограммеЭлектроннойПодписиКонтекстноеМеню" id="159"/>
+							<ExtendedTooltip name="ВводитьПарольВПрограммеЭлектроннойПодписиРасширеннаяПодсказка" id="160"/>
 						</CheckBoxField>
 					</ChildItems>
 				</UsualGroup>
@@ -498,7 +620,7 @@
 			<Title>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Пользователи</v8:content>
+					<v8:content>Используют</v8:content>
 				</v8:item>
 			</Title>
 			<Type>
@@ -508,6 +630,32 @@
 					<v8:AllowedLength>Variable</v8:AllowedLength>
 				</v8:StringQualifiers>
 			</Type>
+		</Attribute>
+		<Attribute name="НапомнитьОПеревыпуске" id="13">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Напомнить о перевыпуске</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ТекущаяДата" id="16">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ВыпущенныеСертификаты" id="17">
+			<Type>
+				<v8:Type>v8:ValueListType</v8:Type>
+			</Type>
+			<Settings xsi:type="v8:TypeDescription"/>
 		</Attribute>
 	</Attributes>
 	<Commands>
@@ -656,7 +804,7 @@
 		</NavigationPanel>
 		<CommandBar>
 			<Item>
-				<Command>0:63386b75-0cd0-4ae7-87c6-c5ea20c96cd9</Command>
+				<Command>0</Command>
 				<Type>Auto</Type>
 				<CommandGroup>FormCommandBarImportant</CommandGroup>
 				<DefaultVisible>false</DefaultVisible>

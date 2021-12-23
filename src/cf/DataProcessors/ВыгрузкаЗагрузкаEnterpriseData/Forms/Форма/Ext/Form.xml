@@ -37,6 +37,12 @@
 				</Title>
 				<ExtendedTooltip name="ФормаПрерватьРасширеннаяПодсказка" id="248"/>
 			</Button>
+			<Button name="ФормаИспользоватьВнутреннийКаталогСообщений" id="270">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.ИспользоватьВнутреннийКаталогСообщений</CommandName>
+				<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
+				<ExtendedTooltip name="ФормаИспользоватьВнутреннийКаталогСообщенийРасширеннаяПодсказка" id="271"/>
+			</Button>
 		</ChildItems>
 	</AutoCommandBar>
 	<Events>
@@ -1164,6 +1170,11 @@
 				</Column>
 			</Columns>
 		</Attribute>
+		<Attribute name="ИспользоватьКаталогСообщенийОбменаДанными" id="20">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
 	</Attributes>
 	<Commands>
 		<Command name="СохранитьXML" id="8">
@@ -1302,6 +1313,15 @@
 			</ToolTip>
 			<Action>ПрерватьВыгрузкуЗагрузку</Action>
 			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ИспользоватьВнутреннийКаталогСообщений" id="10">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Использовать внутренний каталог сообщений</v8:content>
+				</v8:item>
+			</Title>
+			<Action>ИспользоватьВнутреннийКаталогСообщений</Action>
 		</Command>
 	</Commands>
 </Form>

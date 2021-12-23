@@ -324,11 +324,22 @@
 						<InputField name="ФормулаРасчетаКурса" id="121">
 							<DataPath>Объект.ФормулаРасчетаКурса</DataPath>
 							<TitleLocation>None</TitleLocation>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Курсы других валют в формуле обозначаются в виде наименований, заключенных в квадратные скобки. Пример:
+(0.55 * [Доллар США] + 0.45 * [Евро]) / 2</v8:content>
+								</v8:item>
+							</ToolTip>
 							<ToolTipRepresentation>Button</ToolTipRepresentation>
 							<Width>35</Width>
 							<HorizontalStretch>false</HorizontalStretch>
+							<ChoiceButton>true</ChoiceButton>
 							<ContextMenu name="ФормулаРасчетаКурсаКонтекстноеМеню" id="122"/>
 							<ExtendedTooltip name="ФормулаРасчетаКурсаРасширеннаяПодсказка" id="123"/>
+							<Events>
+								<Event name="StartChoice">ФормулаРасчетаКурсаНачалоВыбора</Event>
+							</Events>
 						</InputField>
 					</ChildItems>
 				</UsualGroup>
@@ -369,6 +380,15 @@
 			</Type>
 			<Settings xsi:type="v8:TypeDescription"/>
 		</Attribute>
+		<Attribute name="ПредставлениеФормулы" id="15">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
 	</Attributes>
 	<Commands>
 		<Command name="ПараметрыПрописиВалютыНаДругихЯзыках" id="1">
@@ -390,7 +410,7 @@
 	<CommandInterface>
 		<NavigationPanel>
 			<Item>
-				<Command>0:ed6dca4d-2fba-438b-808b-da1bb875ddb7</Command>
+				<Command>0</Command>
 				<Type>Auto</Type>
 				<DefaultVisible>false</DefaultVisible>
 				<Visible>
@@ -398,7 +418,7 @@
 				</Visible>
 			</Item>
 			<Item>
-				<Command>0:57a9b6e8-2802-4064-a16b-7f933a2858a2</Command>
+				<Command>0</Command>
 				<Type>Auto</Type>
 				<DefaultVisible>false</DefaultVisible>
 				<Visible>
@@ -406,7 +426,7 @@
 				</Visible>
 			</Item>
 			<Item>
-				<Command>0:3c330050-888c-4cdf-b3fa-a9df29e63ad8</Command>
+				<Command>0</Command>
 				<Type>Auto</Type>
 				<DefaultVisible>false</DefaultVisible>
 				<Visible>

@@ -204,7 +204,11 @@
 									<EnableDrag>true</EnableDrag>
 									<FileDragMode>AsFile</FileDragMode>
 									<DataPath>Сертификаты</DataPath>
-									<RowPictureDataPath>Сертификаты.ТипРазмещения</RowPictureDataPath>
+									<RowPictureDataPath>Сертификаты.СостояниеСертификата</RowPictureDataPath>
+									<RowsPicture>
+										<xr:Ref>CommonPicture.СостоянияСертификатов</xr:Ref>
+										<xr:LoadTransparent>false</xr:LoadTransparent>
+									</RowsPicture>
 									<Title>
 										<v8:item>
 											<v8:lang>ru</v8:lang>
@@ -557,37 +561,28 @@
 									<ContextMenu name="СертификатОрганизацияКонтекстноеМеню" id="254"/>
 									<ExtendedTooltip name="СертификатОрганизацияРасширеннаяПодсказка" id="255"/>
 								</InputField>
-								<UsualGroup name="ГруппаУсиленнаяЗащитаЗакрытогоКлюча" id="856">
+								<UsualGroup name="ГруппаВводитьПарольВПрограммеЭлектроннойПодписи" id="856">
 									<Title>
 										<v8:item>
 											<v8:lang>ru</v8:lang>
-											<v8:content>Усиленная защита закрытого ключа</v8:content>
+											<v8:content>Вводить пароль в программе электронной подписи</v8:content>
 										</v8:item>
 									</Title>
 									<Group>Vertical</Group>
 									<Behavior>Usual</Behavior>
 									<Representation>None</Representation>
 									<ShowTitle>false</ShowTitle>
-									<ExtendedTooltip name="ГруппаУсиленнаяЗащитаЗакрытогоКлючаРасширеннаяПодсказка" id="857"/>
+									<ExtendedTooltip name="ГруппаВводитьПарольВПрограммеЭлектроннойПодписиРасширеннаяПодсказка" id="857"/>
 									<ChildItems>
-										<CheckBoxField name="СертификатУсиленнаяЗащитаЗакрытогоКлюча" id="528">
-											<DataPath>СертификатУсиленнаяЗащитаЗакрытогоКлюча</DataPath>
+										<CheckBoxField name="СертификатВводитьПарольВПрограммеЭлектроннойПодписи" id="528">
+											<DataPath>СертификатВводитьПарольВПрограммеЭлектроннойПодписи</DataPath>
 											<TitleLocation>Right</TitleLocation>
-											<ToolTip>
-												<v8:item>
-													<v8:lang>ru</v8:lang>
-													<v8:content>Уточняет, что пароль к закрытому ключу сертификата будет вводиться в отдельном окне
-программой электронной подписи и шифрования, а не программой 1С:Предприятие.
-
-Только для сертификатов, которые выпущены с усиленной защитой закрытого ключа.</v8:content>
-												</v8:item>
-											</ToolTip>
 											<ToolTipRepresentation>Button</ToolTipRepresentation>
 											<CheckBoxType>Auto</CheckBoxType>
-											<ContextMenu name="СертификатУсиленнаяЗащитаЗакрытогоКлючаКонтекстноеМеню" id="529"/>
-											<ExtendedTooltip name="СертификатУсиленнаяЗащитаЗакрытогоКлючаРасширеннаяПодсказка" id="530"/>
+											<ContextMenu name="СертификатВводитьПарольВПрограммеЭлектроннойПодписиКонтекстноеМеню" id="529"/>
+											<ExtendedTooltip name="СертификатВводитьПарольВПрограммеЭлектроннойПодписиРасширеннаяПодсказка" id="530"/>
 											<Events>
-												<Event name="OnChange">СертификатУсиленнаяЗащитаЗакрытогоКлючаПриИзменении</Event>
+												<Event name="OnChange">СертификатВводитьПарольВПрограммеЭлектроннойПодписиПриИзменении</Event>
 											</Events>
 										</CheckBoxField>
 										<UsualGroup name="ГоризонтальнаяГруппа2" id="835">
@@ -700,13 +695,6 @@
 </v8:content>
 																				</v8:item>
 																			</Title>
-																			<ToolTip>
-																				<v8:item>
-																					<v8:lang>ru</v8:lang>
-																					<v8:content>Пароль запрашивает программа электронной подписи, а не программа 1С:Предприятие,
-так как для выбранного сертификата указана усиленная защита закрытого ключа.</v8:content>
-																				</v8:item>
-																			</ToolTip>
 																			<ToolTipRepresentation>Button</ToolTipRepresentation>
 																			<ContextMenu name="ПояснениеУсиленногоПароляКонтекстноеМеню" id="826"/>
 																			<ExtendedTooltip name="ПояснениеУсиленногоПароляРасширеннаяПодсказка" id="827"/>
@@ -873,6 +861,21 @@
 						</v8:NumberQualifiers>
 					</Type>
 				</Column>
+				<Column name="СостояниеСертификата" id="31">
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>1</v8:Digits>
+							<v8:FractionDigits>0</v8:FractionDigits>
+							<v8:AllowedSign>Any</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+				<Column name="ЕстьВСправочнике" id="35">
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
 			</Columns>
 		</Attribute>
 		<Attribute name="СертификатНаименование" id="9">
@@ -917,11 +920,11 @@
 				</v8:StringQualifiers>
 			</Type>
 		</Attribute>
-		<Attribute name="СертификатУсиленнаяЗащитаЗакрытогоКлюча" id="16">
+		<Attribute name="СертификатВводитьПарольВПрограммеЭлектроннойПодписи" id="16">
 			<Title>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Усиленная защита закрытого ключа</v8:content>
+					<v8:content>Вводить пароль в программе электронной подписи</v8:content>
 				</v8:item>
 			</Title>
 			<Type>
@@ -1104,6 +1107,11 @@
 			</Type>
 		</Attribute>
 		<Attribute name="ЕстьОблачнаяПодпись" id="30">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ЕстьПравоНаДобавлениеВСправочник" id="34">
 			<Type>
 				<v8:Type>xs:boolean</v8:Type>
 			</Type>
