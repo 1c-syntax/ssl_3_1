@@ -4,7 +4,13 @@
 
 name: Контроль качества
 # Любой пуш и pr в проекте но с фильтром по основному проекту
-on: [push, pull_request]
+on:
+  push:
+  pull_request:
+  workflow_run:
+    workflows: ["Синхронизация конфигурации"]
+    types:
+      - completed
 
 env:
   ACTIONS_ALLOW_UNSECURE_COMMANDS: true
