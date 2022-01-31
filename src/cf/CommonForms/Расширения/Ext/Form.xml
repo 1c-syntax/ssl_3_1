@@ -92,23 +92,31 @@
 					<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
 					<ExtendedTooltip name="ФормаУстановленныеПатчиРасширеннаяПодсказка" id="178"/>
 				</Button>
-				<Button name="ФормаОбновитьКэшиРасширений" id="159">
+				<Button name="ЗапуститьОбновлениеПараметровРаботыРасширенийВФоне" id="159">
 					<Type>CommandBarButton</Type>
 					<UserVisible>
 						<xr:Common>false</xr:Common>
 					</UserVisible>
-					<CommandName>Form.Command.ОбновитьКэшиРасширений</CommandName>
+					<CommandName>Form.Command.ЗапуститьОбновлениеПараметровРаботыРасширенийВФоне</CommandName>
 					<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
-					<ExtendedTooltip name="ФормаОбновитьКэшиРасширенийРасширеннаяПодсказка" id="160"/>
+					<ExtendedTooltip name="ЗапуститьОбновлениеПараметровРаботыРасширенийВФонеРасширеннаяПодсказка" id="160"/>
 				</Button>
-				<Button name="ФормаУдалитьУстаревшиеКэшиРасширений" id="131">
+				<Button name="ПоказатьОшибкиФоновогоОбновленияПараметровРаботыРасширений" id="220">
 					<Type>CommandBarButton</Type>
 					<UserVisible>
 						<xr:Common>false</xr:Common>
 					</UserVisible>
-					<CommandName>Form.Command.УдалитьУстаревшиеКэшиРасширений</CommandName>
+					<CommandName>Form.Command.ПоказатьСобытияФоновогоОбновленияПараметровРаботыРасширений</CommandName>
+					<ExtendedTooltip name="ПоказатьОшибкиФоновогоОбновленияПараметровРаботыРасширенийРасширеннаяПодсказка" id="221"/>
+				</Button>
+				<Button name="УдалитьУстаревшиеПараметрыРаботыРасширений" id="131">
+					<Type>CommandBarButton</Type>
+					<UserVisible>
+						<xr:Common>false</xr:Common>
+					</UserVisible>
+					<CommandName>Form.Command.УдалитьУстаревшиеПараметрыРаботыРасширений</CommandName>
 					<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
-					<ExtendedTooltip name="ФормаУдалитьУстаревшиеКэшиРасширенийРасширеннаяПодсказка" id="132"/>
+					<ExtendedTooltip name="УдалитьУстаревшиеПараметрыРаботыРасширенийРасширеннаяПодсказка" id="132"/>
 				</Button>
 			</ChildItems>
 		</CommandBar>
@@ -1002,36 +1010,34 @@
 			<Action>Обновить</Action>
 			<CurrentRowUse>DontUse</CurrentRowUse>
 		</Command>
-		<Command name="УдалитьУстаревшиеКэшиРасширений" id="5">
+		<Command name="УдалитьУстаревшиеПараметрыРаботыРасширений" id="5">
 			<Title>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Удалить устаревшие кэши расширений</v8:content>
+					<v8:content>Удалить устаревшие параметры работы расширений</v8:content>
 				</v8:item>
 			</Title>
-			<ToolTip>
-				<v8:item>
-					<v8:lang>ru</v8:lang>
-					<v8:content>Удалить устаревшие версии параметров работы расширений</v8:content>
-				</v8:item>
-			</ToolTip>
-			<Action>УдалитьУстаревшиеКэшиРасширений</Action>
+			<Action>УдалитьУстаревшиеПараметровРаботыРасширений</Action>
 			<CurrentRowUse>DontUse</CurrentRowUse>
 		</Command>
-		<Command name="ОбновитьКэшиРасширений" id="4">
+		<Command name="ЗапуститьОбновлениеПараметровРаботыРасширенийВФоне" id="4">
 			<Title>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Обновить кэши расширений</v8:content>
+					<v8:content>Запустить обновление параметров работы расширений в фоне</v8:content>
 				</v8:item>
 			</Title>
 			<ToolTip>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Обновить версию параметров работы расширений, подключенных в этом сеансе.</v8:content>
+					<v8:content>Запустить обновление параметров работы расширений в фоне</v8:content>
 				</v8:item>
 			</ToolTip>
-			<Action>ОбновитьКэшиРасширений</Action>
+			<Picture>
+				<xr:Ref>CommonPicture.ВыполнитьРегламентноеЗаданиеВручную</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>ЗапуститьОбновлениеПараметровРаботыРасширенийВФоне</Action>
 			<CurrentRowUse>DontUse</CurrentRowUse>
 		</Command>
 		<Command name="УстановленныеПатчи" id="6">
@@ -1048,6 +1054,26 @@
 				</v8:item>
 			</ToolTip>
 			<Action>УстановленныеПатчи</Action>
+		</Command>
+		<Command name="ПоказатьСобытияФоновогоОбновленияПараметровРаботыРасширений" id="7">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Показать события фонового обновления параметров работы расширений</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Показать события фонового обновления параметров работы расширений</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.EventLog</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>ПоказатьСобытияФоновогоОбновленияПараметровРаботыРасширений</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
 		</Command>
 	</Commands>
 </Form>

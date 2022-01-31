@@ -345,6 +345,11 @@
 											<ContextMenu name="ОтчествоКонтекстноеМеню" id="181"/>
 											<ExtendedTooltip name="ОтчествоРасширеннаяПодсказка" id="182"/>
 										</InputField>
+										<Button name="РедактироватьИмяИОтчество" id="308">
+											<Type>UsualButton</Type>
+											<CommandName>Form.Command.РедактироватьИмяИОтчество</CommandName>
+											<ExtendedTooltip name="РедактироватьИмяИОтчествоРасширеннаяПодсказка" id="309"/>
+										</Button>
 									</ChildItems>
 								</UsualGroup>
 								<UsualGroup name="ГоризонтальнаяГруппа3" id="197">
@@ -477,6 +482,7 @@
 										</InputField>
 										<InputField name="Добавил" id="256">
 											<DataPath>Объект.Добавил</DataPath>
+											<ReadOnly>true</ReadOnly>
 											<ContextMenu name="ДобавилКонтекстноеМеню" id="257"/>
 											<ExtendedTooltip name="ДобавилРасширеннаяПодсказка" id="258"/>
 										</InputField>
@@ -608,7 +614,7 @@
 				<v8:Type>xs:boolean</v8:Type>
 			</Type>
 		</Attribute>
-		<Attribute name="ПрограммаОблачногоСервиса" id="2">
+		<Attribute name="ВстроенныйКриптопровайдер" id="2">
 			<Type>
 				<v8:Type>cfg:CatalogRef.ПрограммыЭлектроннойПодписиИШифрования</v8:Type>
 			</Type>
@@ -792,6 +798,20 @@
 				</v8:item>
 			</ToolTip>
 			<Action>СброситьПароль</Action>
+		</Command>
+		<Command name="РедактироватьИмяИОтчество" id="10">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Редактировать имя и отчество</v8:content>
+				</v8:item>
+			</Title>
+			<Picture>
+				<xr:Ref>StdPicture.Change</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>РедактироватьИмяИОтчество</Action>
+			<Representation>Picture</Representation>
 		</Command>
 	</Commands>
 	<CommandInterface>

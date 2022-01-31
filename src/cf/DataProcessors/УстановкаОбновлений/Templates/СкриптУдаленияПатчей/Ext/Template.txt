@@ -17,6 +17,8 @@ var OpenAsASCII = 0
 var outf = null
 
 var ConnectionString
+var ConnectionStringArray
+var hiddenCS
 var COMConnectorName
 var fixFileNames
 var removeFixNames
@@ -66,15 +68,25 @@ try {
 
 try {
     
+  ConnectionStringArray = ConnectionString.split(';')
+  
+  for (var i = 0; i < ConnectionStringArray.length; i++) {
+    if (ConnectionStringArray[i].slice(0,4) == "Pwd=") {
+      ConnectionStringArray[i] = "Pwd='******'"
+    }
+  }
+  
+  hiddenCS = ConnectionStringArray.join(';')
+
   if (outf != null) {
-    outf.WriteLine(mainEvent + ": [СообщениеУстановкаСоединенияСБазой]: " + ConnectionString)
+    outf.WriteLine(mainEvent + ": [СообщениеУстановкаСоединенияСБазой]: " + hiddenCS)
   }  
   connection = COMConnector.Connect(ConnectionString)
 
 } catch (ex) {
 
   if (outf != null) {
-    outf.WriteLine(mainEvent + ": [СообщениеОтказСоединенияСБазойОбщее] " + ConnectionString + ": " + ex.message)
+    outf.WriteLine(mainEvent + ": [СообщениеОтказСоединенияСБазойОбщее] " + hiddenCS + ": " + ex.message)
   }
   WScript.Quit(1)
 

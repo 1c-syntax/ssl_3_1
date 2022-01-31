@@ -663,12 +663,12 @@ function doDisconnectAndBlockUsers () {
 
     var interval = connection.СоединенияИБ.ПараметрыБлокировкиСеансов().ИнтервалОжиданияЗавершенияРаботыПользователей * 1000
 
-    var startDateTime = connection.ПолучитьБлокировкуУстановкиСоединений().Начало
+    var startDateTime = connection.ПолучитьБлокировкуСеансов().Начало
     var now = new Date()
 
     if (connection.ЗначениеЗаполнено(startDateTime)) {
       while (now - interval <= startDateTime) {
-        if (!connection.ПолучитьБлокировкуУстановкиСоединений().Установлена) {
+        if (!connection.ПолучитьБлокировкуСеансов().Установлена) {
           break
         }
         connectionsNum = connection.СоединенияИБ.КоличествоСеансовИнформационнойБазы(false)
@@ -681,9 +681,9 @@ function doDisconnectAndBlockUsers () {
       }
     }
 
-    var locked = connection.ПолучитьБлокировкуУстановкиСоединений().Установлена
+    var locked = connection.ПолучитьБлокировкуСеансов().Установлена
     log(format('[СообщениеРезультатБлокировкиСеансов]', locked))
-    if (!connection.ПолучитьБлокировкуУстановкиСоединений().Установлена) {
+    if (!connection.ПолучитьБлокировкуСеансов().Установлена) {
       log('[СообщениеОтказЗавершенияРаботыПользователей]', true)
       return 3
     }

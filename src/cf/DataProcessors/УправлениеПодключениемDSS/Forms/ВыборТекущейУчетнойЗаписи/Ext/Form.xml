@@ -3,7 +3,7 @@
 	<Title>
 		<v8:item>
 			<v8:lang>ru</v8:lang>
-			<v8:content>Выберите учетную запись облачной криптографии</v8:content>
+			<v8:content>Выберите учетную запись DSS</v8:content>
 		</v8:item>
 	</Title>
 	<WindowOpeningMode>LockOwnerWindow</WindowOpeningMode>
@@ -71,6 +71,7 @@
 				<ExtendedTooltip name="СписокУправлениеПоискомРасширеннаяПодсказка" id="59"/>
 			</SearchControlAddition>
 			<Events>
+				<Event name="ValueChoice">СписокВыборЗначения</Event>
 				<Event name="Selection">СписокУчетныхЗаписейВыбор</Event>
 			</Events>
 			<ChildItems>
@@ -81,6 +82,9 @@
 				</LabelField>
 				<LabelField name="СписокКомментарий" id="63">
 					<DataPath>Список.Комментарий</DataPath>
+					<UserVisible>
+						<xr:Common>false</xr:Common>
+					</UserVisible>
 					<ContextMenu name="СписокКомментарийКонтекстноеМеню" id="64"/>
 					<ExtendedTooltip name="СписокКомментарийРасширеннаяПодсказка" id="65"/>
 				</LabelField>

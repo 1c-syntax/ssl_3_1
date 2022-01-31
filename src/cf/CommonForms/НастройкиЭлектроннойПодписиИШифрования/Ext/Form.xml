@@ -156,21 +156,6 @@
 									<DataPath>СертификатыПоказатьЗаявления</DataPath>
 									<HorizontalStretch>false</HorizontalStretch>
 									<ListChoiceMode>true</ListChoiceMode>
-									<ChoiceList>
-										<xr:Item>
-											<xr:Presentation/>
-											<xr:CheckState>0</xr:CheckState>
-											<xr:Value xsi:type="FormChoiceListDesTimeValue">
-												<Presentation>
-													<v8:item>
-														<v8:lang>ru</v8:lang>
-														<v8:content>Любое</v8:content>
-													</v8:item>
-												</Presentation>
-												<Value xsi:type="xr:DesignTimeRef">Enum.СостоянияЗаявленияНаВыпускСертификата.EmptyRef</Value>
-											</xr:Value>
-										</xr:Item>
-									</ChoiceList>
 									<ContextMenu name="СертификатыПоказатьЗаявленияКонтекстноеМеню" id="335"/>
 									<ExtendedTooltip name="СертификатыПоказатьЗаявленияРасширеннаяПодсказка" id="336"/>
 									<Events>
@@ -485,7 +470,7 @@
 											<Title formatted="false">
 												<v8:item>
 													<v8:lang>ru</v8:lang>
-													<v8:content>Сертификат находится в личном хранилище на компьютере или доступен к использованию на сервере или в облаке</v8:content>
+													<v8:content>Сертификат находится в личном хранилище на компьютере или доступен к использованию на сервере</v8:content>
 												</v8:item>
 											</Title>
 											<ToolTipRepresentation>Button</ToolTipRepresentation>
@@ -1269,7 +1254,7 @@
 		Иначе Ложь
 	Конец КАК Действует,
 	ВЫБОР
-		КОГДА ПрограммыПереопределяемый.ЭтоПрограммаОблачногоСервиса
+		КОГДА ПрограммыПереопределяемый.ЭтоВстроенныйКриптопровайдер
 			ТОГДА 4
 		КОГДА СертификатыПереопределяемый.Программа = НЕОПРЕДЕЛЕНО
 		ИЛИ СертификатыПереопределяемый.Программа = ЗНАЧЕНИЕ(Справочник.ПрограммыЭлектроннойПодписиИШифрования.ПустаяСсылка)
@@ -1466,7 +1451,7 @@
 						<v8:Type>xs:boolean</v8:Type>
 					</Type>
 				</Column>
-				<Column name="ЭтоПрограммаОблачногоСервиса" id="13">
+				<Column name="ЭтоВстроенныйКриптопровайдер" id="13">
 					<Type>
 						<v8:Type>xs:boolean</v8:Type>
 					</Type>
