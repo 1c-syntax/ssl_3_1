@@ -164,31 +164,98 @@
 										<Event name="OnChange">АдресЭлектроннойПочтыПриИзменении</Event>
 									</Events>
 								</InputField>
-								<InputField name="Пароль" id="47">
-									<DataPath>ПарольДляПолученияПисем</DataPath>
+								<UsualGroup name="Группа1" id="298">
 									<Title>
 										<v8:item>
 											<v8:lang>ru</v8:lang>
-											<v8:content>Пароль</v8:content>
+											<v8:content>Группа1</v8:content>
 										</v8:item>
 									</Title>
-									<TitleHeight>1</TitleHeight>
-									<Width>23</Width>
-									<HorizontalStretch>false</HorizontalStretch>
-									<PasswordMode>true</PasswordMode>
-									<ChoiceButton>true</ChoiceButton>
-									<AutoMarkIncomplete>true</AutoMarkIncomplete>
-									<ChoiceButtonPicture>
-										<xr:Ref>CommonPicture.ВводимыеСимволыСкрыты</xr:Ref>
-										<xr:LoadTransparent>false</xr:LoadTransparent>
-									</ChoiceButtonPicture>
-									<ContextMenu name="ПарольКонтекстноеМеню" id="48"/>
-									<ExtendedTooltip name="ПарольРасширеннаяПодсказка" id="49"/>
+									<Behavior>Usual</Behavior>
+									<Representation>None</Representation>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="Группа1РасширеннаяПодсказка" id="299"/>
+									<ChildItems>
+										<RadioButtonField name="СпособАутентификацииПароль" id="302">
+											<DataPath>СпособАутентификации</DataPath>
+											<TitleLocation>None</TitleLocation>
+											<RadioButtonType>Auto</RadioButtonType>
+											<ColumnsCount>1</ColumnsCount>
+											<ChoiceList>
+												<xr:Item>
+													<xr:Presentation/>
+													<xr:CheckState>0</xr:CheckState>
+													<xr:Value xsi:type="FormChoiceListDesTimeValue">
+														<Presentation>
+															<v8:item>
+																<v8:lang>ru</v8:lang>
+																<v8:content>Ввести пароль:</v8:content>
+															</v8:item>
+														</Presentation>
+														<Value xsi:type="xs:string">Пароль</Value>
+													</xr:Value>
+												</xr:Item>
+											</ChoiceList>
+											<ContextMenu name="СпособАутентификацииПарольКонтекстноеМеню" id="303"/>
+											<ExtendedTooltip name="СпособАутентификацииПарольРасширеннаяПодсказка" id="304"/>
+											<Events>
+												<Event name="OnChange">СпособАутентификацииПриИзменении</Event>
+											</Events>
+										</RadioButtonField>
+										<InputField name="Пароль" id="47">
+											<DataPath>ПарольДляПолученияПисем</DataPath>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Пароль</v8:content>
+												</v8:item>
+											</Title>
+											<TitleLocation>None</TitleLocation>
+											<TitleHeight>1</TitleHeight>
+											<Width>23</Width>
+											<HorizontalStretch>false</HorizontalStretch>
+											<PasswordMode>true</PasswordMode>
+											<ChoiceButton>true</ChoiceButton>
+											<AutoMarkIncomplete>true</AutoMarkIncomplete>
+											<ChoiceButtonPicture>
+												<xr:Ref>CommonPicture.ВводимыеСимволыСкрыты</xr:Ref>
+												<xr:LoadTransparent>false</xr:LoadTransparent>
+											</ChoiceButtonPicture>
+											<ContextMenu name="ПарольКонтекстноеМеню" id="48"/>
+											<ExtendedTooltip name="ПарольРасширеннаяПодсказка" id="49"/>
+											<Events>
+												<Event name="OnChange">ПарольПриИзменении</Event>
+												<Event name="StartChoice">ПарольНачалоВыбора</Event>
+											</Events>
+										</InputField>
+									</ChildItems>
+								</UsualGroup>
+								<RadioButtonField name="СпособАутентификацииПочтовыйСервис" id="305">
+									<DataPath>СпособАутентификации</DataPath>
+									<TitleLocation>None</TitleLocation>
+									<RadioButtonType>Auto</RadioButtonType>
+									<ColumnsCount>1</ColumnsCount>
+									<ChoiceList>
+										<xr:Item>
+											<xr:Presentation/>
+											<xr:CheckState>0</xr:CheckState>
+											<xr:Value xsi:type="FormChoiceListDesTimeValue">
+												<Presentation>
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>Авторизоваться с помощью почтового сервиса</v8:content>
+													</v8:item>
+												</Presentation>
+												<Value xsi:type="xs:string">OAuth</Value>
+											</xr:Value>
+										</xr:Item>
+									</ChoiceList>
+									<ContextMenu name="СпособАутентификацииПочтовыйСервисКонтекстноеМеню" id="306"/>
+									<ExtendedTooltip name="СпособАутентификацииПочтовыйСервисРасширеннаяПодсказка" id="307"/>
 									<Events>
-										<Event name="OnChange">ПарольПриИзменении</Event>
-										<Event name="StartChoice">ПарольНачалоВыбора</Event>
+										<Event name="OnChange">СпособАутентификацииПриИзменении</Event>
 									</Events>
-								</InputField>
+								</RadioButtonField>
 							</ChildItems>
 						</UsualGroup>
 						<UsualGroup name="ИспользоватьУчетнуюЗапись" id="189">
@@ -616,6 +683,121 @@
 								</UsualGroup>
 							</ChildItems>
 						</UsualGroup>
+					</ChildItems>
+				</Page>
+				<Page name="НастройкиАвторизацииПриложения" id="310">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа2</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="НастройкиАвторизацииПриложенияРасширеннаяПодсказка" id="311"/>
+					<ChildItems>
+						<LabelDecoration name="ПояснениеПоРегистрацииПриложения" id="347">
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<MaxWidth>50</MaxWidth>
+							<Title formatted="true">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Для авторизации средствами почтового сервиса необходимо зарегистрировать это приложение в почтовом сервисе.
+</v8:content>
+								</v8:item>
+							</Title>
+							<ContextMenu name="ПояснениеПоРегистрацииПриложенияКонтекстноеМеню" id="348"/>
+							<ExtendedTooltip name="ПояснениеПоРегистрацииПриложенияРасширеннаяПодсказка" id="349"/>
+						</LabelDecoration>
+						<LabelDecoration name="ПояснениеПоАдресуПеренаправления" id="312">
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<MaxWidth>50</MaxWidth>
+							<Title formatted="true">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>
+Из настроек регистрации приложения заполните следующие поля:
+</v8:content>
+								</v8:item>
+							</Title>
+							<ContextMenu name="ПояснениеПоАдресуПеренаправленияКонтекстноеМеню" id="313"/>
+							<ExtendedTooltip name="ПояснениеПоАдресуПеренаправленияРасширеннаяПодсказка" id="314"/>
+						</LabelDecoration>
+						<InputField name="АдресПеренаправления" id="321">
+							<DataPath>АдресПеренаправления</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Адрес перенаправления (redirect_uri)</v8:content>
+								</v8:item>
+							</Title>
+							<ContextMenu name="АдресПеренаправленияКонтекстноеМеню" id="322"/>
+							<ExtendedTooltip name="АдресПеренаправленияРасширеннаяПодсказка" id="323"/>
+						</InputField>
+						<LabelDecoration name="ПояснениеПоИдентификаторуПриложения" id="330">
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<MaxWidth>50</MaxWidth>
+							<Title formatted="true">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content/>
+								</v8:item>
+							</Title>
+							<ContextMenu name="ПояснениеПоИдентификаторуПриложенияКонтекстноеМеню" id="331"/>
+							<ExtendedTooltip name="ПояснениеПоИдентификаторуПриложенияРасширеннаяПодсказка" id="332"/>
+						</LabelDecoration>
+						<InputField name="ИдентификаторПриложения" id="315">
+							<DataPath>ИдентификаторПриложения</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Идентификатор приложения (client_id)</v8:content>
+								</v8:item>
+							</Title>
+							<ContextMenu name="ИдентификаторПриложенияКонтекстноеМеню" id="316"/>
+							<ExtendedTooltip name="ИдентификаторПриложенияРасширеннаяПодсказка" id="317"/>
+						</InputField>
+						<LabelDecoration name="ПояснениеПоПаролюПриложения" id="333">
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<MaxWidth>50</MaxWidth>
+							<Title formatted="true">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content/>
+								</v8:item>
+							</Title>
+							<ContextMenu name="ПояснениеПоПаролюПриложенияКонтекстноеМеню" id="334"/>
+							<ExtendedTooltip name="ПояснениеПоПаролюПриложенияРасширеннаяПодсказка" id="335"/>
+						</LabelDecoration>
+						<InputField name="ПарольПриложения" id="318">
+							<DataPath>ПарольПриложения</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Пароль приложения (client_secret)</v8:content>
+								</v8:item>
+							</Title>
+							<ContextMenu name="ПарольПриложенияКонтекстноеМеню" id="319"/>
+							<ExtendedTooltip name="ПарольПриложенияРасширеннаяПодсказка" id="320"/>
+						</InputField>
+					</ChildItems>
+				</Page>
+				<Page name="Авторизация" id="308">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа2</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="АвторизацияРасширеннаяПодсказка" id="309"/>
+					<ChildItems>
+						<HTMLDocumentField name="ВебСтраница" id="327">
+							<DataPath>ВебСтраница</DataPath>
+							<TitleLocation>None</TitleLocation>
+							<ContextMenu name="ВебСтраницаКонтекстноеМеню" id="328"/>
+							<ExtendedTooltip name="ВебСтраницаРасширеннаяПодсказка" id="329"/>
+							<Events>
+								<Event name="DocumentComplete">ВебСтраницаДокументСформирован</Event>
+							</Events>
+						</HTMLDocumentField>
 					</ChildItems>
 				</Page>
 				<Page name="ПроверкаНастроекУчетнойЗаписи" id="34">
@@ -1267,6 +1449,128 @@ vasyapupkin@example.com завершена.</v8:content>
 				<v8:Type>xs:boolean</v8:Type>
 			</Type>
 		</Attribute>
+		<Attribute name="СпособАутентификации" id="44">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Способ аутентификации</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ИдентификаторПриложения" id="45">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Идентификатор приложения</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ПарольПриложения" id="46">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Ключ доступа приложения</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="АдресПеренаправления" id="47">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Адрес перенаправления</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ВебСтраница" id="48">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Веб страница</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ИдентификаторЗапроса" id="49">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ПроверочныйКод" id="50">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ТокенДоступа" id="51">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ТокенОбновления" id="52">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="СрокДействияТокенаДоступа" id="53">
+			<Type/>
+		</Attribute>
+		<Attribute name="НастройкиАвторизации" id="55">
+			<Type/>
+		</Attribute>
+		<Attribute name="ТолькоАвторизация" id="57">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
 	</Attributes>
 	<Commands>
 		<Command name="Назад" id="1">
@@ -1315,6 +1619,19 @@ vasyapupkin@example.com завершена.</v8:content>
 			<Action>Отмена</Action>
 			<CurrentRowUse>DontUse</CurrentRowUse>
 		</Command>
+		<Command name="ВойтиСПомощьюСервераАвторизации" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Войти с помощью сервера авторизации</v8:content>
+				</v8:item>
+			</Title>
+			<Picture>
+				<xr:Ref>0</xr:Ref>
+				<xr:LoadTransparent>false</xr:LoadTransparent>
+			</Picture>
+			<Representation>TextPicture</Representation>
+		</Command>
 	</Commands>
 	<Parameters>
 		<Parameter name="КонтекстныйРежим">
@@ -1323,6 +1640,11 @@ vasyapupkin@example.com завершена.</v8:content>
 			</Type>
 		</Parameter>
 		<Parameter name="Перенастройка">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Parameter>
+		<Parameter name="ТолькоАвторизация">
 			<Type>
 				<v8:Type>xs:boolean</v8:Type>
 			</Type>

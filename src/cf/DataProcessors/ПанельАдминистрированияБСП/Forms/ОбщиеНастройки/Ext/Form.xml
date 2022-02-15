@@ -635,6 +635,7 @@
 							<v8:content>Электронная подпись</v8:content>
 						</v8:item>
 					</Title>
+					<ToolTipRepresentation>ShowBottom</ToolTipRepresentation>
 					<HorizontalStretch>false</HorizontalStretch>
 					<Group>AlwaysHorizontal</Group>
 					<Behavior>Usual</Behavior>
@@ -908,11 +909,11 @@
 				</UsualGroup>
 			</ChildItems>
 		</UsualGroup>
-		<UsualGroup name="ГруппаМногопоточныеДлительныеОперации" id="2124">
+		<UsualGroup name="ГруппаПроизводительность" id="2124">
 			<Title>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Многопоточные длительные операции</v8:content>
+					<v8:content>Производительность</v8:content>
 				</v8:item>
 			</Title>
 			<Group>Vertical</Group>
@@ -920,84 +921,156 @@
 			<Collapsed>true</Collapsed>
 			<ControlRepresentation>Picture</ControlRepresentation>
 			<Representation>NormalSeparation</Representation>
-			<ExtendedTooltip name="ГруппаМногопоточныеДлительныеОперацииРасширеннаяПодсказка" id="2125"/>
+			<ExtendedTooltip name="ГруппаПроизводительностьРасширеннаяПодсказка" id="2125"/>
 			<ChildItems>
-				<InputField name="КоличествоПотоковДлительныхОпераций" id="2126">
-					<DataPath>НаборКонстант.КоличествоПотоковДлительныхОпераций</DataPath>
-					<ContextMenu name="КоличествоПотоковДлительныхОперацийКонтекстноеМеню" id="2127"/>
-					<ExtendedTooltip name="КоличествоПотоковДлительныхОперацийРасширеннаяПодсказка" id="2128"/>
-					<Events>
-						<Event name="OnChange">КоличествоПотоковДлительныхОперацийПриИзменении</Event>
-					</Events>
-				</InputField>
-			</ChildItems>
-		</UsualGroup>
-		<UsualGroup name="ГруппаВременныеКаталогиКластераСерверов" id="2129">
-			<Title>
-				<v8:item>
-					<v8:lang>ru</v8:lang>
-					<v8:content>Каталог временных файлов кластера серверов 1С:Предприятие</v8:content>
-				</v8:item>
-			</Title>
-			<ToolTipRepresentation>ShowBottom</ToolTipRepresentation>
-			<Behavior>Collapsible</Behavior>
-			<Collapsed>true</Collapsed>
-			<ControlRepresentation>Picture</ControlRepresentation>
-			<Representation>NormalSeparation</Representation>
-			<ExtendedTooltip name="ГруппаВременныеКаталогиКластераСерверовРасширеннаяПодсказка" id="2130">
-				<AutoMaxWidth>false</AutoMaxWidth>
-			</ExtendedTooltip>
-			<ChildItems>
-				<UsualGroup name="ГруппаПутиВременныхКаталоговКластераСерверов" id="2137">
+				<UsualGroup name="Группа1" id="2142">
 					<Title>
 						<v8:item>
 							<v8:lang>ru</v8:lang>
-							<v8:content>Пути временных каталогов кластера серверов</v8:content>
+							<v8:content>Группа1</v8:content>
 						</v8:item>
 					</Title>
-					<ToolTipRepresentation>ShowBottom</ToolTipRepresentation>
-					<Group>Vertical</Group>
 					<Behavior>Usual</Behavior>
 					<Representation>None</Representation>
 					<ShowTitle>false</ShowTitle>
-					<ExtendedTooltip name="ГруппаПутиВременныхКаталоговКластераСерверовРасширеннаяПодсказка" id="2138">
+					<ExtendedTooltip name="Группа1РасширеннаяПодсказка" id="2143"/>
+					<ChildItems>
+						<UsualGroup name="Группа2" id="2144">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа2</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTipRepresentation>ShowBottom</ToolTipRepresentation>
+							<Behavior>Usual</Behavior>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="Группа2РасширеннаяПодсказка" id="2145">
+								<Title formatted="true">
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Чем больше значение, тем быстрее выполняются длительные операции. Например, загрузка адресного классификатора. Значение по умолчанию равно 4.
+
+См. также &lt;link http://1c.ru/news/info.jsp?id=25491&gt;ограничение 12 ядер на  сервер для версии ПРОФ платформы 1С:Предприятие&lt;/&gt; и "&lt;link https://v8.1c.ru/priobretenie-i-vnedrenie/otvety-na-tipovye-voprosy-po-litsenzirovaniyu-1s-predpriyatiya-8&gt;Какие  ядра процессора следует считать — реальные или виртуальные?&lt;/&gt;".
+</v8:content>
+									</v8:item>
+								</Title>
+							</ExtendedTooltip>
+							<ChildItems>
+								<InputField name="КоличествоПотоковДлительныхОпераций" id="2126">
+									<DataPath>НаборКонстант.КоличествоПотоковДлительныхОпераций</DataPath>
+									<ToolTipRepresentation>ShowBottom</ToolTipRepresentation>
+									<ContextMenu name="КоличествоПотоковДлительныхОперацийКонтекстноеМеню" id="2127"/>
+									<ExtendedTooltip name="КоличествоПотоковДлительныхОперацийРасширеннаяПодсказка" id="2128"/>
+									<Events>
+										<Event name="OnChange">КоличествоПотоковДлительныхОперацийПриИзменении</Event>
+									</Events>
+								</InputField>
+							</ChildItems>
+						</UsualGroup>
+						<UsualGroup name="Группа3" id="2146">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа3</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTipRepresentation>ShowBottom</ToolTipRepresentation>
+							<GroupVerticalAlign>Bottom</GroupVerticalAlign>
+							<Behavior>Usual</Behavior>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="Группа3РасширеннаяПодсказка" id="2147">
+								<Title formatted="true">
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Рекомендуемое значение:
+• для штатной работы до 50-75% от количества ядер, доступных кластеру серверов; 
+• для форсированного выполнения в период минимальной активности пользователей - столько ядер, сколько доступно кластеру серверов.
+
+</v8:content>
+									</v8:item>
+								</Title>
+							</ExtendedTooltip>
+							<ChildItems>
+								<LabelDecoration name="ДекорацияЗаглушка" id="2148">
+									<Width>2</Width>
+									<ContextMenu name="ДекорацияЗаглушкаКонтекстноеМеню" id="2149"/>
+									<ExtendedTooltip name="ДекорацияЗаглушкаРасширеннаяПодсказка" id="2150"/>
+								</LabelDecoration>
+							</ChildItems>
+						</UsualGroup>
+					</ChildItems>
+				</UsualGroup>
+				<UsualGroup name="ГруппаВременныеКаталогиКластераСерверов" id="2129">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Каталог временных файлов кластера серверов 1С:Предприятие</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTipRepresentation>ShowBottom</ToolTipRepresentation>
+					<Behavior>Usual</Behavior>
+					<Collapsed>true</Collapsed>
+					<ControlRepresentation>Picture</ControlRepresentation>
+					<Representation>NormalSeparation</Representation>
+					<ExtendedTooltip name="ГруппаВременныеКаталогиКластераСерверовРасширеннаяПодсказка" id="2130">
 						<AutoMaxWidth>false</AutoMaxWidth>
-						<Title formatted="false">
-							<v8:item>
-								<v8:lang>ru</v8:lang>
-								<v8:content>Путь к единому сетевому каталогу для общих временных файлов серверов 1С:Предприятие, работающих в одном кластере.</v8:content>
-							</v8:item>
-						</Title>
 					</ExtendedTooltip>
 					<ChildItems>
-						<InputField name="КаталогВременныхФайловДляWindows" id="2131">
-							<DataPath>НаборКонстант.КаталогВременныхФайловДляWindows</DataPath>
+						<UsualGroup name="ГруппаПутиВременныхКаталоговКластераСерверов" id="2137">
 							<Title>
 								<v8:item>
 									<v8:lang>ru</v8:lang>
-									<v8:content>Под управлением ОС Windows</v8:content>
+									<v8:content>Пути временных каталогов кластера серверов</v8:content>
 								</v8:item>
 							</Title>
-							<ContextMenu name="КаталогВременныхФайловДляWindowsКонтекстноеМеню" id="2132"/>
-							<ExtendedTooltip name="КаталогВременныхФайловДляWindowsРасширеннаяПодсказка" id="2133"/>
-							<Events>
-								<Event name="OnChange">КаталогВременныхФайловДляWindowsПриИзменении</Event>
-							</Events>
-						</InputField>
-						<InputField name="КаталогВременныхФайловДляLinux" id="2139">
-							<DataPath>НаборКонстант.КаталогВременныхФайловДляLinux</DataPath>
-							<Title>
-								<v8:item>
-									<v8:lang>ru</v8:lang>
-									<v8:content>Под управлением ОС Linux</v8:content>
-								</v8:item>
-							</Title>
-							<ContextMenu name="КаталогВременныхФайловДляLinuxКонтекстноеМеню" id="2140"/>
-							<ExtendedTooltip name="КаталогВременныхФайловДляLinuxРасширеннаяПодсказка" id="2141"/>
-							<Events>
-								<Event name="OnChange">КаталогВременныхФайловДляLinuxПриИзменении</Event>
-							</Events>
-						</InputField>
+							<ToolTipRepresentation>ShowBottom</ToolTipRepresentation>
+							<Group>Vertical</Group>
+							<Behavior>Usual</Behavior>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаПутиВременныхКаталоговКластераСерверовРасширеннаяПодсказка" id="2138">
+								<Width>60</Width>
+								<Title formatted="false">
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Для многопоточных длительных операций путь к единому сетевому каталогу общих временных файлов серверов 1С:Предприятие, работающих в одном кластере.</v8:content>
+									</v8:item>
+								</Title>
+							</ExtendedTooltip>
+							<ChildItems>
+								<InputField name="КаталогВременныхФайловДляWindows" id="2131">
+									<DataPath>НаборКонстант.КаталогВременныхФайловДляWindows</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Под управлением ОС Windows</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="КаталогВременныхФайловДляWindowsКонтекстноеМеню" id="2132"/>
+									<ExtendedTooltip name="КаталогВременныхФайловДляWindowsРасширеннаяПодсказка" id="2133"/>
+									<Events>
+										<Event name="OnChange">КаталогВременныхФайловДляWindowsПриИзменении</Event>
+									</Events>
+								</InputField>
+								<InputField name="КаталогВременныхФайловДляLinux" id="2139">
+									<DataPath>НаборКонстант.КаталогВременныхФайловДляLinux</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Под управлением ОС Linux</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="КаталогВременныхФайловДляLinuxКонтекстноеМеню" id="2140"/>
+									<ExtendedTooltip name="КаталогВременныхФайловДляLinuxРасширеннаяПодсказка" id="2141"/>
+									<Events>
+										<Event name="OnChange">КаталогВременныхФайловДляLinuxПриИзменении</Event>
+									</Events>
+								</InputField>
+							</ChildItems>
+						</UsualGroup>
 					</ChildItems>
 				</UsualGroup>
 			</ChildItems>

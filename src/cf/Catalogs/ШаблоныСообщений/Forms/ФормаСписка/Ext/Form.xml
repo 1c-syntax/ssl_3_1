@@ -233,12 +233,31 @@
 							<ContextMenu name="ЕстьФайлыКонтекстноеМеню" id="60"/>
 							<ExtendedTooltip name="ЕстьФайлыРасширеннаяПодсказка" id="61"/>
 						</PictureField>
-						<LabelField name="Наименование" id="16">
-							<DataPath>Список.Description</DataPath>
-							<DefaultItem>true</DefaultItem>
-							<ContextMenu name="НаименованиеКонтекстноеМеню" id="17"/>
-							<ExtendedTooltip name="НаименованиеРасширеннаяПодсказка" id="18"/>
-						</LabelField>
+						<ColumnGroup name="ГруппаНаименование" id="73">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Наименование</v8:content>
+								</v8:item>
+							</Title>
+							<Group>InCell</Group>
+							<ExtendedTooltip name="ГруппаНаименованиеРасширеннаяПодсказка" id="74"/>
+							<ChildItems>
+								<PictureField name="СтандартнаяКартинка" id="70">
+									<DataPath>Список.DefaultPicture</DataPath>
+									<ShowInHeader>false</ShowInHeader>
+									<ShowInFooter>false</ShowInFooter>
+									<ContextMenu name="СтандартнаяКартинкаКонтекстноеМеню" id="71"/>
+									<ExtendedTooltip name="СтандартнаяКартинкаРасширеннаяПодсказка" id="72"/>
+								</PictureField>
+								<LabelField name="Наименование" id="16">
+									<DataPath>Список.Description</DataPath>
+									<DefaultItem>true</DefaultItem>
+									<ContextMenu name="НаименованиеКонтекстноеМеню" id="17"/>
+									<ExtendedTooltip name="НаименованиеРасширеннаяПодсказка" id="18"/>
+								</LabelField>
+							</ChildItems>
+						</ColumnGroup>
 					</ChildItems>
 				</ColumnGroup>
 				<LabelField name="ШаблонДля" id="30">

@@ -321,25 +321,35 @@
 							<ContextMenu name="ЛогинКонтекстноеМеню" id="103"/>
 							<ExtendedTooltip name="ЛогинРасширеннаяПодсказка" id="104"/>
 						</InputField>
-						<InputField name="Пароль" id="105">
-							<DataPath>Пароль</DataPath>
-							<HorizontalStretch>false</HorizontalStretch>
-							<PasswordMode>true</PasswordMode>
-							<ChoiceButton>true</ChoiceButton>
-							<ChoiceButtonPicture>
-								<xr:Ref>CommonPicture.ВводимыеСимволыСкрыты</xr:Ref>
-								<xr:LoadTransparent>false</xr:LoadTransparent>
-							</ChoiceButtonPicture>
-							<ContextMenu name="ПарольКонтекстноеМеню" id="106"/>
-							<ExtendedTooltip name="ПарольРасширеннаяПодсказка" id="107"/>
+						<CheckBoxField name="АвторизацияСПомощьюПочтовогоСервиса" id="274">
+							<DataPath>Объект.АвторизацияСПомощьюПочтовогоСервиса</DataPath>
+							<TitleLocation>Right</TitleLocation>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="АвторизацияСПомощьюПочтовогоСервисаКонтекстноеМеню" id="275"/>
+							<ExtendedTooltip name="АвторизацияСПомощьюПочтовогоСервисаРасширеннаяПодсказка" id="276"/>
 							<Events>
-								<Event name="OnChange">ПарольПриИзменении</Event>
-								<Event name="EditTextChange">ПарольИзменениеТекстаРедактирования</Event>
-								<Event name="StartChoice">ПарольНачалоВыбора</Event>
+								<Event name="OnChange">АвторизацияСПомощьюПочтовогоСервисаПриИзменении</Event>
 							</Events>
-						</InputField>
+						</CheckBoxField>
 					</ChildItems>
 				</UsualGroup>
+				<InputField name="Пароль" id="105">
+					<DataPath>Пароль</DataPath>
+					<HorizontalStretch>false</HorizontalStretch>
+					<PasswordMode>true</PasswordMode>
+					<ChoiceButton>true</ChoiceButton>
+					<ChoiceButtonPicture>
+						<xr:Ref>CommonPicture.ВводимыеСимволыСкрыты</xr:Ref>
+						<xr:LoadTransparent>false</xr:LoadTransparent>
+					</ChoiceButtonPicture>
+					<ContextMenu name="ПарольКонтекстноеМеню" id="106"/>
+					<ExtendedTooltip name="ПарольРасширеннаяПодсказка" id="107"/>
+					<Events>
+						<Event name="OnChange">ПарольПриИзменении</Event>
+						<Event name="EditTextChange">ПарольИзменениеТекстаРедактирования</Event>
+						<Event name="StartChoice">ПарольНачалоВыбора</Event>
+					</Events>
+				</InputField>
 				<UsualGroup name="ОставлятьПисьмаНаСервере" id="185">
 					<Title>
 						<v8:item>

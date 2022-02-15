@@ -1877,6 +1877,181 @@
 				</UsualGroup>
 			</ChildItems>
 		</UsualGroup>
+		<UsualGroup name="БИПГруппаОнлайнОплаты" id="1958">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>ЮKassa</v8:content>
+				</v8:item>
+			</Title>
+			<Group>AlwaysHorizontal</Group>
+			<Behavior>Collapsible</Behavior>
+			<Collapsed>true</Collapsed>
+			<ControlRepresentation>Picture</ControlRepresentation>
+			<Representation>NormalSeparation</Representation>
+			<ExtendedTooltip name="БИПГруппаОнлайнОплатыРасширеннаяПодсказка" id="1959"/>
+			<ChildItems>
+				<UsualGroup name="БИПОнлайнОплатыЛево" id="1960">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>БИП онлайн оплаты лево</v8:content>
+						</v8:item>
+					</Title>
+					<Group>Vertical</Group>
+					<Behavior>Usual</Behavior>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="БИПОнлайнОплатыЛевоРасширеннаяПодсказка" id="1961"/>
+					<ChildItems>
+						<CheckBoxField name="ИспользоватьОнлайнОплаты" id="1962">
+							<DataPath>БИПОнлайнОплаты</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Выставлять счета и принимать платежи</v8:content>
+								</v8:item>
+							</Title>
+							<TitleLocation>Right</TitleLocation>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Позволяет выставлять счета для оплаты через ЮKassa и получать информацию о платежах.</v8:content>
+								</v8:item>
+							</ToolTip>
+							<ToolTipRepresentation>ShowBottom</ToolTipRepresentation>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="ИспользоватьОнлайнОплатыКонтекстноеМеню" id="1963"/>
+							<ExtendedTooltip name="ИспользоватьОнлайнОплатыРасширеннаяПодсказка" id="1964"/>
+							<Events>
+								<Event name="OnChange">ИспользоватьОнлайнОплатыПриИзменении</Event>
+							</Events>
+						</CheckBoxField>
+						<UsualGroup name="ГруппаПолучениеУведомлений" id="1965">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Получение уведомлений</v8:content>
+								</v8:item>
+							</Title>
+							<Group>Vertical</Group>
+							<Behavior>Usual</Behavior>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаПолучениеУведомленийРасширеннаяПодсказка" id="1966"/>
+							<ChildItems>
+								<CheckBoxField name="ИспользоватьАвтоматическоеПолучениеУведомленияОтОнлайнОплат" id="1967">
+									<DataPath>БИПИспользоватьАвтоматическоеПолучениеУведомленияОтОнлайнОплат</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Автоматическое получение уведомлений от сервиса</v8:content>
+										</v8:item>
+									</Title>
+									<TitleLocation>Right</TitleLocation>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="ИспользоватьАвтоматическоеПолучениеУведомленияОтОнлайнОплатКонтекстноеМеню" id="1968"/>
+									<ExtendedTooltip name="ИспользоватьАвтоматическоеПолучениеУведомленияОтОнлайнОплатРасширеннаяПодсказка" id="1969"/>
+									<Events>
+										<Event name="OnChange">ИспользоватьАвтоматическоеПолучениеУведомленияОтОнлайнОплатПриИзменении</Event>
+									</Events>
+								</CheckBoxField>
+								<LabelDecoration name="ДекорацияРасписаниеПолученияУведомленийОтОнлайнОплат" id="1970">
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Настроить расписание</v8:content>
+										</v8:item>
+									</Title>
+									<Hyperlink>true</Hyperlink>
+									<ContextMenu name="ДекорацияРасписаниеПолученияУведомленийОтОнлайнОплатКонтекстноеМеню" id="1971"/>
+									<ExtendedTooltip name="ДекорацияРасписаниеПолученияУведомленийОтОнлайнОплатРасширеннаяПодсказка" id="1972"/>
+									<Events>
+										<Event name="Click">ДекорацияРасписаниеПолученияУведомленийОтОнлайнОплатНажатие</Event>
+									</Events>
+								</LabelDecoration>
+							</ChildItems>
+						</UsualGroup>
+					</ChildItems>
+				</UsualGroup>
+				<UsualGroup name="БИПОнлайнОплатыПраво" id="1973">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа онлайн оплаты право</v8:content>
+						</v8:item>
+					</Title>
+					<Group>Vertical</Group>
+					<Behavior>Usual</Behavior>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="БИПОнлайнОплатыПравоРасширеннаяПодсказка" id="1974"/>
+					<ChildItems>
+						<UsualGroup name="ГруппаНастройкиОнлайнОплатыПраво" id="1975">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа открыть профили ЮKassa</v8:content>
+								</v8:item>
+							</Title>
+							<Group>Vertical</Group>
+							<Behavior>Usual</Behavior>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаНастройкиОнлайнОплатыПравоРасширеннаяПодсказка" id="1976"/>
+							<ChildItems>
+								<Button name="ОткрытьНастройкиОнлайнОплат" id="1977">
+									<Type>Hyperlink</Type>
+									<CommandName>Form.Command.ОткрытьНастройкиОнлайнОплат</CommandName>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Настройки ЮКаssа</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTipRepresentation>ShowBottom</ToolTipRepresentation>
+									<ExtendedTooltip name="ОткрытьНастройкиОнлайнОплатРасширеннаяПодсказка" id="1978">
+										<Title formatted="false">
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Настройки выставления счетов и получения информации об оплатах через ЮKassa.</v8:content>
+											</v8:item>
+										</Title>
+									</ExtendedTooltip>
+								</Button>
+								<UsualGroup name="ГруппаНастройкаШаблоновОнлайнОплат" id="1982">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Настройка шаблонов онлайн оплат</v8:content>
+										</v8:item>
+									</Title>
+									<Group>Vertical</Group>
+									<Behavior>Usual</Behavior>
+									<Representation>None</Representation>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="ГруппаНастройкаШаблоновОнлайнОплатРасширеннаяПодсказка" id="1983"/>
+									<ChildItems>
+										<Button name="ОткрытьШаблоныСообщений" id="1984">
+											<Type>Hyperlink</Type>
+											<CommandName>Form.Command.ОткрытьШаблоныСообщений</CommandName>
+											<ToolTipRepresentation>ShowBottom</ToolTipRepresentation>
+											<ExtendedTooltip name="ОткрытьШаблоныСообщенийРасширеннаяПодсказка" id="1985">
+												<Title formatted="false">
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>Шаблоны необходимы для отправки писем со счетами на оплату через ЮKassa.</v8:content>
+													</v8:item>
+												</Title>
+											</ExtendedTooltip>
+										</Button>
+									</ChildItems>
+								</UsualGroup>
+							</ChildItems>
+						</UsualGroup>
+					</ChildItems>
+				</UsualGroup>
+			</ChildItems>
+		</UsualGroup>
 	</ChildItems>
 	<Attributes>
 		<Attribute name="НаборКонстант" id="1">
@@ -2091,6 +2266,28 @@
 				</v8:NumberQualifiers>
 			</Type>
 		</Attribute>
+		<Attribute name="БИПОнлайнОплаты" id="31">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>БИПОнлайн оплаты</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="БИПИспользоватьАвтоматическоеПолучениеУведомленияОтОнлайнОплат" id="32">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>БИПИспользовать автоматическое получение уведомления от онлайн оплат</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
 	</Attributes>
 	<Commands>
 		<Command name="БИПВойтиИлиВыйти" id="1">
@@ -2260,6 +2457,24 @@
 			</ToolTip>
 			<Action>ОбсужденияНастроитьИнтеграциюСВнешнимиСистемами</Action>
 			<Representation>Text</Representation>
+		</Command>
+		<Command name="ОткрытьНастройкиОнлайнОплат" id="14">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Открыть настройки онлайн оплат</v8:content>
+				</v8:item>
+			</Title>
+			<Action>ОткрытьНастройкиОнлайнОплат</Action>
+		</Command>
+		<Command name="ОткрытьШаблоныСообщений" id="15">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Шаблоны сообщений</v8:content>
+				</v8:item>
+			</Title>
+			<Action>ОткрытьШаблоныСообщений</Action>
 		</Command>
 	</Commands>
 </Form>

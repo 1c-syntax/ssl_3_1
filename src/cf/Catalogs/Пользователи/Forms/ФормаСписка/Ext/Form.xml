@@ -358,7 +358,7 @@
 					<InputHint>
 						<v8:item>
 							<v8:lang>ru</v8:lang>
-							<v8:content>Введите имя пользователя</v8:content>
+							<v8:content>Введите имя, адрес, телефон...</v8:content>
 						</v8:item>
 					</InputHint>
 					<ContextMenu name="СтрокаПоискаКонтекстноеМеню" id="223"/>
@@ -1027,9 +1027,6 @@
 								</v8:item>
 							</Title>
 							<CommandSet>
-								<ExcludedCommand>Add</ExcludedCommand>
-								<ExcludedCommand>Change</ExcludedCommand>
-								<ExcludedCommand>Copy</ExcludedCommand>
 								<ExcludedCommand>EndEdit</ExcludedCommand>
 								<ExcludedCommand>MoveDown</ExcludedCommand>
 								<ExcludedCommand>MoveUp</ExcludedCommand>
@@ -1067,14 +1064,19 @@
 								<ExtendedTooltip name="СписокВыбранныхПользователейИГруппУправлениеПоискомРасширеннаяПодсказка" id="191"/>
 							</SearchControlAddition>
 							<Events>
+								<Event name="OnEditEnd">СписокВыбранныхПользователейИГруппПриОкончанииРедактирования</Event>
 								<Event name="Selection">СписокВыбранныхПользователейИГруппВыбор</Event>
-								<Event name="BeforeAddRow">СписокВыбранныхПользователейИГруппПередНачаломДобавления</Event>
+								<Event name="OnActivateRow">СписокВыбранныхПользователейИГруппПриАктивизацииСтроки</Event>
+								<Event name="OnStartEdit">СписокВыбранныхПользователейИГруппПриНачалеРедактирования</Event>
 							</Events>
 							<ChildItems>
 								<InputField name="ПользователиИГруппы" id="81">
 									<DataPath>ВыбранныеПользователиИГруппы.Пользователь</DataPath>
-									<ReadOnly>true</ReadOnly>
-									<EditMode>EnterOnInput</EditMode>
+									<DefaultItem>true</DefaultItem>
+									<ChoiceButton>false</ChoiceButton>
+									<OpenButton>false</OpenButton>
+									<QuickChoice>true</QuickChoice>
+									<ChooseType>false</ChooseType>
 									<ChoiceListButton>false</ChoiceListButton>
 									<ContextMenu name="ПользователиИГруппыКонтекстноеМеню" id="82"/>
 									<ExtendedTooltip name="ПользователиИГруппыExtendedTooltip" id="129"/>
@@ -1444,8 +1446,6 @@
 						</v8:item>
 					</Title>
 					<Type>
-						<v8:Type>cfg:CatalogRef.ВнешниеПользователи</v8:Type>
-						<v8:Type>cfg:CatalogRef.ГруппыВнешнихПользователей</v8:Type>
 						<v8:Type>cfg:CatalogRef.ГруппыПользователей</v8:Type>
 						<v8:Type>cfg:CatalogRef.Пользователи</v8:Type>
 					</Type>
