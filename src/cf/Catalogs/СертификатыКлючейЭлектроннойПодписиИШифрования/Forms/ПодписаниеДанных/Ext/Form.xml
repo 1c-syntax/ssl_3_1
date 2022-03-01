@@ -53,6 +53,26 @@
 				</LabelField>
 			</ChildItems>
 		</UsualGroup>
+		<UsualGroup name="ГруппаТипПодписи" id="475">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Тип подписи</v8:content>
+				</v8:item>
+			</Title>
+			<Behavior>Usual</Behavior>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаТипПодписиРасширеннаяПодсказка" id="476"/>
+			<ChildItems>
+				<InputField name="ТипПодписи" id="477">
+					<DataPath>ТипПодписи</DataPath>
+					<ToolTipRepresentation>Button</ToolTipRepresentation>
+					<ListChoiceMode>true</ListChoiceMode>
+					<ContextMenu name="ТипПодписиКонтекстноеМеню" id="478"/>
+					<ExtendedTooltip name="ТипПодписиРасширеннаяПодсказка" id="479"/>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
 		<UsualGroup name="ГруппаПодписаниеИКомментарий" id="452">
 			<Title>
 				<v8:item>
@@ -501,6 +521,17 @@
 				<v8:Type>xs:boolean</v8:Type>
 			</Type>
 		</Attribute>
+		<Attribute name="ТипПодписи" id="24">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Тип подписи</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:EnumRef.ТипыПодписиКриптографии</v8:Type>
+			</Type>
+		</Attribute>
 	</Attributes>
 	<Commands>
 		<Command name="Подписать" id="5">
@@ -572,6 +603,11 @@
 		<Parameter name="ОповеститьОбОкончанииСрокаДействия">
 			<Type>
 				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Parameter>
+		<Parameter name="ТипПодписи">
+			<Type>
+				<v8:Type>cfg:EnumRef.ТипыПодписиКриптографии</v8:Type>
 			</Type>
 		</Parameter>
 	</Parameters>

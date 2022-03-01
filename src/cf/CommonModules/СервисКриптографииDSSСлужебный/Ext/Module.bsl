@@ -1116,7 +1116,8 @@
 						ПараметрыЗапроса.АдресПодключения,
 						ПараметрыЗапроса.ПараметрыЗапроса,
 						ПараметрыЗапроса.HTTPМетод,
-						ПараметрыЗапроса.ТипСодержания);
+						ПараметрыЗапроса.ТипСодержания,
+						ВсеПараметры.ПараметрыОперации);
 						
 	Иначе
 		РезультатЗапроса	= СервисКриптографииDSS.ПодключитьВыполнитьМетодСервиса(
@@ -1320,6 +1321,28 @@
 					ВсеПараметры.СвойствоПодписи,
 					ВсеПараметры.ИдентификаторСертификата,
 					ПинКод,
+					ВсеПараметры.ПараметрыОперации);
+					
+	ТрансформироватьДанныеДокумента(РезультатЗапроса, ПараметрыВызова);
+	
+	РезультатЗапроса.Вставить("НастройкиПользователя", ВсеПараметры.НастройкиПользователя);
+					
+	ПоместитьВоВременноеХранилище(РезультатЗапроса, АдресРезультата);
+	
+КонецПроцедуры
+
+// Описание и параметры вызова см. СервисКриптографииDSS.УсовершенствоватьПодпись()
+Процедура УсовершенствоватьПодпись(ПараметрыВызова, АдресРезультата) Экспорт
+
+	ВсеПараметры = ПодготовитьПеременныеВызова(
+						"ДанныеПодписи,
+							|СвойствоПодписи,
+							|НастройкиПользователя", ПараметрыВызова);
+	
+	РезультатЗапроса	= СервисКриптографииDSS.УсовершенствоватьПодпись(
+					ВсеПараметры.НастройкиПользователя,
+					ВсеПараметры.ДанныеПодписи,
+					ВсеПараметры.СвойствоПодписи,
 					ВсеПараметры.ПараметрыОперации);
 					
 	ТрансформироватьДанныеДокумента(РезультатЗапроса, ПараметрыВызова);
@@ -3681,11 +3704,13 @@
 //    * Порт 			- Число - номер порта подключения
 //    * ТаймАут 		- Число - ограничение времени для выполнения одного запроса
 //  СертификатКлиента 	- СертификатКлиентаФайл - необходим для одного из варианта аутентификации пользователя
+//  ПараметрыОперации	- Неопределено
+//                   	- Структура
 //
 // Возвращаемое значение:
 //   см. ОтветСервисаПоУмолчанию
 // 
-Функция ПодготовитьПодключение(СвойстваПодключения, СертификатКлиента = Неопределено) Экспорт
+Функция ПодготовитьПодключение(СвойстваПодключения, СертификатКлиента = Неопределено, ПараметрыОперации = Неопределено) Экспорт
 	
 	Результат	= ОтветСервисаПоУмолчанию(Ложь);
 	
@@ -3697,10 +3722,10 @@
 	Прокси 		= ПолучениеФайловИзИнтернета.ПолучитьПрокси(ПротоколПодключения(СвойстваПодключения.ЗащищенноеСоединение));
 	
 	Попытка
-		СертификатыУЦ 	= Новый СертификатыУдостоверяющихЦентровОС;
 		ТипСоединения	= Неопределено;
 		Если СертификатКлиента = Неопределено 
 			И СвойстваПодключения.ЗащищенноеСоединение Тогда
+			СертификатыУЦ = СертификатыУЦПодключения(СвойстваПодключения.Сервер, ПараметрыОперации);
 			ТипСоединения = ОбщегоНазначенияКлиентСервер.НовоеЗащищенноеСоединение(Неопределено, СертификатыУЦ);
 		ИначеЕсли СвойстваПодключения.ЗащищенноеСоединение Тогда	
 			ТипСоединения = ОбщегоНазначенияКлиентСервер.НовоеЗащищенноеСоединение(СертификатКлиента, Неопределено);
@@ -3727,6 +3752,44 @@
 								ИнформацияОбОшибке());
 		
 	КонецПопытки;
+	
+	Возврат Результат;
+	
+КонецФункции
+
+// Подготавливает объект СертификатыУдостоверяющихЦентровОС
+//
+// Параметры:
+//  АдресСервера	  - Строка
+//  ПараметрыОперации - Структура - проверяется на наличие поля "СертификатыУЦПодключения" в Base64 в формате PEM
+//
+Функция СертификатыУЦПодключения(АдресСервера, ПараметрыОперации = Неопределено)
+	
+	Результат = Новый СертификатыУдостоверяющихЦентровОС;
+	
+	НашлиПараметр = ПолучитьПолеСтруктуры(ПараметрыОперации, "СертификатыУЦПодключения");
+	Если НЕ ЗначениеЗаполнено(НашлиПараметр)
+		И ВРег(АдресСервера) = ВРег("dss.1stdss.1c.ru")
+		И ОбщегоНазначения.РазделениеВключено() Тогда
+		НашлиПараметр = СертификатыПодключенияСервиса1СDSS();
+	КонецЕсли;
+	
+	Если ЗначениеЗаполнено(НашлиПараметр) Тогда
+		Попытка
+			ДанныеФайла = Base64Значение(НашлиПараметр);
+			ИмяФайла = ПолучитьИмяВременногоФайла("pem");
+			ДанныеФайла.Записать(ИмяФайла);
+			Результат = Новый СертификатыУдостоверяющихЦентровФайл(ИмяФайла);
+			УдалитьФайлы(ИмяФайла);
+			
+		Исключение
+			ПротоколОшибкиПриВызове(НСтр("ru = 'Не удалось создать файл с сертификатами'"),
+									"ПодключениеСертификатовУЦ", 
+									"",
+									ИнформацияОбОшибке());
+			Результат = Новый СертификатыУдостоверяющихЦентровОС;
+		КонецПопытки;
+	КонецЕсли;
 	
 	Возврат Результат;
 	
@@ -6100,7 +6163,8 @@
 						АдресПодключения,
 						ПараметрыЗапроса,
 						"POST",
-						"json");
+						"json",
+						ПараметрыОперации);
 						
 	Иначе
 		РезультатЗапроса = СервисКриптографииDSS.ПодключитьВыполнитьМетодСервиса(
@@ -6108,7 +6172,8 @@
 						АдресПодключения, 
 						ПараметрыЗапроса, 
 						"POST", 
-						"json");
+						"json",
+						, ПараметрыОперации);
 	КонецЕсли;
 	
 	Если РезультатЗапроса.Выполнено Тогда
@@ -7368,6 +7433,109 @@
 	
 	Возврат Результат;
 	
+КонецФункции
+
+Функция СертификатыПодключенияСервиса1СDSS()
+	
+	Результат =
+	"LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tDQpNSUlIZXpDQ0J5aWdBd0lCQWdJ
+	|TEFQRzRVK3dBQUFBQUJKc3dDZ1lJS29VREJ3RUJBd0l3Z2dFa01SNHdIQVlKDQpL
+	|b1pJaHZjTkFRa0JGZzlrYVhSQWJXbHVjM1o1WVhvdWNuVXhDekFKQmdOVkJBWVRB
+	|bEpWTVJnd0ZnWURWUVFJDQpEQTgzTnlEUW5OQyswWUhRdXRDeTBMQXhHVEFYQmdO
+	|VkJBY01FTkN6TGlEUW5OQyswWUhRdXRDeTBMQXhMakFzDQpCZ05WQkFrTUpkR0Qw
+	|THZRdU5HRzBMQWcwS0xRc3RDMTBZRFJnZEM2MExEUmp5d2cwTFRRdnRDOElEY3hM
+	|REFxDQpCZ05WQkFvTUk5Q2MwTGpRdmRDNjBMN1F2TkdCMExMUmo5QzMwWXdnMEtE
+	|UXZ0R0IwWUhRdU5DNE1SZ3dGZ1lGDQpLb1VEWkFFU0RURXdORGMzTURJd01qWTNN
+	|REV4R2pBWUJnZ3FoUU1EZ1FNQkFSSU1NREEzTnpFd05EYzBNemMxDQpNU3d3S2dZ
+	|RFZRUUREQ1BRbk5DNDBMM1F1dEMrMEx6UmdkQ3kwWS9RdDlHTUlOQ2cwTDdSZ2RH
+	|QjBMalF1REFlDQpGdzB5TURFd01UVXhNVFF5TlRGYUZ3MHpOVEV3TVRVeE1UUXlO
+	|VEZhTUlJQk5qRVlNQllHQlNxRkEyUUJFZzB4DQpNRFEzTnprMk5USTJOVFEyTVJv
+	|d0dBWUlLb1VEQTRFREFRRVNEREF3TnpjeU9UVXhNREl4TURFTE1Ba0dBMVVFDQpC
+	|aE1DVWxVeEdEQVdCZ05WQkFnTUR6YzNJTkNjMEw3UmdkQzYwTExRc0RFVk1CTUdB
+	|MVVFQnd3TTBKelF2dEdCDQowTHJRc3RDd01Xa3dad1lEVlFRSkRHRFJnOUM3MExq
+	|Umh0Q3dJTkNjMEw3UmdkR0UwTGpRdTlHTTBMelF2dEN5DQowWUhRdXRDdzBZOHNJ
+	|TkMwMEw3UXZDQTBNaXdnMFlIUmd0R0EwTDdRdGRDOTBMalF0U0F4TENEUmpkR0NM
+	|OUMvDQowTDdRdkMvUXV0QyswTHdnTVM4eEx6Y3hGekFWQmdrcWhraUc5dzBCQ1FF
+	|V0NHTmhRREZqTG5KMU1SMHdHd1lEDQpWUVFLREJUUW50Q2UwSjRnSXRDZDBKL1Fw
+	|aUFpTWRDaElqRWRNQnNHQTFVRUF3d1UwSjdRbnRDZUlDTFFuZENmDQowS1lnSWpI
+	|UW9TSXdaakFmQmdncWhRTUhBUUVCQVRBVEJnY3FoUU1DQWlNQkJnZ3FoUU1IQVFF
+	|Q0FnTkRBQVJBDQpVZEw0dHdsc1B2NjF2OG9hQkM2NUpvQTZBSE9hMUVqU3RiSDN6
+	|eHlnbnA1cFZwVklYVlYwc0FJSm4vMWhZRU5wDQpoTTFXUGZRTXJxWGZqSlg2YWRk
+	|NFNhT0NCQnd3Z2dRWU1Bc0dBMVVkRHdRRUF3SUJoakFkQmdOVkhRNEVGZ1FVDQpw
+	|UE5WT3UxZWxIMG1vUzVDU0F3TldNZ2ZBMkl3RWdZRFZSMFRBUUgvQkFnd0JnRUIv
+	|d0lCQURBbEJnTlZIU0FFDQpIakFjTUFnR0JpcUZBMlJ4QVRBSUJnWXFoUU5rY1FJ
+	|d0JnWUVWUjBnQURCU0JnVXFoUU5rYndSSkRFY2kwSnJSDQpnTkM0MEwvUmd0Qysw
+	|Si9SZ05DK0lFTlRVQ0lnMExMUXRkR0EwWUhRdU5HUElEUXVNQ0FvMExqUmdkQy8w
+	|TDdRDQp1OUM5MExYUXZkQzQwTFVnTWkxQ1lYTmxLVEFVQmdrckJnRUVBWUkzRkFJ
+	|RUJ3d0ZVM1ZpUTBFd0VBWUpLd1lCDQpCQUdDTnhVQkJBTUNBUUF3Z2dGbEJnTlZI
+	|U01FZ2dGY01JSUJXSUFVd2xUeHRHdlVUTGZnYlRhMEk1RHgvc004DQptd2FoZ2dF
+	|c3BJSUJLRENDQVNReEhqQWNCZ2txaGtpRzl3MEJDUUVXRDJScGRFQnRhVzV6ZG5s
+	|aGVpNXlkVEVMDQpNQWtHQTFVRUJoTUNVbFV4R0RBV0JnTlZCQWdNRHpjM0lOQ2Mw
+	|TDdSZ2RDNjBMTFFzREVaTUJjR0ExVUVCd3dRDQowTE11SU5DYzBMN1JnZEM2MExM
+	|UXNERXVNQ3dHQTFVRUNRd2wwWVBRdTlDNDBZYlFzQ0RRb3RDeTBMWFJnTkdCDQow
+	|THJRc05HUExDRFF0TkMrMEx3Z056RXNNQ29HQTFVRUNnd2owSnpRdU5DOTBMclF2
+	|dEM4MFlIUXN0R1AwTGZSDQpqQ0RRb05DKzBZSFJnZEM0MExneEdEQVdCZ1VxaFFO
+	|a0FSSU5NVEEwTnpjd01qQXlOamN3TVRFYU1CZ0dDQ3FGDQpBd09CQXdFQkVnd3dN
+	|RGMzTVRBME56UXpOelV4TERBcUJnTlZCQU1NSTlDYzBMalF2ZEM2MEw3UXZOR0Iw
+	|TExSDQpqOUMzMFl3ZzBLRFF2dEdCMFlIUXVOQzRnaEJPYlVlTEp2SjlaWDkyamdK
+	|YzQ5T1RNSUdQQmdOVkhSOEVnWWN3DQpnWVF3S3FBb29DYUdKR2gwZEhBNkx5OXla
+	|V1Z6ZEhJdGNHdHBMbkoxTDJOa2NDOW5kV015TURJd0xtTnliREFxDQpvQ2lnSm9Z
+	|a2FIUjBjRG92TDJOdmJYQmhibmt1Y25RdWNuVXZZMlJ3TDJkMVl6SXdNakF1WTNK
+	|c01DcWdLS0FtDQpoaVJvZEhSd09pOHZjbTl6ZEdWc1pXTnZiUzV5ZFM5alpIQXZa
+	|M1ZqTWpBeU1DNWpjbXd3UUFZSUt3WUJCUVVIDQpBUUVFTkRBeU1EQUdDQ3NHQVFV
+	|RkJ6QUNoaVJvZEhSd09pOHZjbVZsYzNSeUxYQnJhUzV5ZFM5alpIQXZaM1ZqDQpN
+	|akF5TUM1amNuUXdnZlVHQlNxRkEyUndCSUhyTUlIb0REVFFuOUNRMEpyUW5DRENx
+	|OUNhMFlEUXVOQy8wWUxRDQp2dENmMFlEUXZpQklVMDNDdXlEUXN0QzEwWURSZ2RD
+	|NDBMZ2dNaTR3REVQUW45Q1EwSm9nd3F2UWs5QyswTHZRDQp2dEN5MEwzUXZ0QzVJ
+	|TkdEMExUUXZ0R0IwWUxRdnRDeTBMWFJnTkdQMFk3UmlkQzQwTGtnMFliUXRkQzkw
+	|WUxSDQpnTUs3RERYUWw5Q3cwTHJRdTlHTzBZZlF0ZEM5MExqUXRTRGloSllnTVRR
+	|NUx6TXZNaTh5THpJeklOQyswWUlnDQpNREl1TURNdU1qQXhPQXcwMEpmUXNOQzYw
+	|THZSanRHSDBMWFF2ZEM0MExVZzRvU1dJREUwT1M4M0x6WXZNVEExDQpJTkMrMFlJ
+	|Z01qY3VNRFl1TWpBeE9EQUtCZ2dxaFFNSEFRRURBZ05CQU9TNjZCbjRsUnJXdjRT
+	|VXFDcVh5NjV6DQpjTDVKMnFnVmwxKzNYVzhobnNuT3pSVTJndWZoWmlvcTBLZDJr
+	|dXQ2WGZMVjhIeE42Zms5bjdOUExzNk45OFk9DQotLS0tLUVORCBDRVJUSUZJQ0FU
+	|RS0tLS0tDQotLS0tLUJFR0lOIENFUlRJRklDQVRFLS0tLS0NCk1JSUZGRENDQk1H
+	|Z0F3SUJBZ0lRVG0xSGl5YnlmV1YvZG80Q1hPUFRrekFLQmdncWhRTUhBUUVEQWpD
+	|Q0FTUXgNCkhqQWNCZ2txaGtpRzl3MEJDUUVXRDJScGRFQnRhVzV6ZG5saGVpNXlk
+	|VEVMTUFrR0ExVUVCaE1DVWxVeEdEQVcNCkJnTlZCQWdNRHpjM0lOQ2MwTDdSZ2RD
+	|NjBMTFFzREVaTUJjR0ExVUVCd3dRMExNdUlOQ2MwTDdSZ2RDNjBMTFENCnNERXVN
+	|Q3dHQTFVRUNRd2wwWVBRdTlDNDBZYlFzQ0RRb3RDeTBMWFJnTkdCMExyUXNOR1BM
+	|Q0RRdE5DKzBMd2cNCk56RXNNQ29HQTFVRUNnd2owSnpRdU5DOTBMclF2dEM4MFlI
+	|UXN0R1AwTGZSakNEUW9OQyswWUhSZ2RDNDBMZ3gNCkdEQVdCZ1VxaFFOa0FSSU5N
+	|VEEwTnpjd01qQXlOamN3TVRFYU1CZ0dDQ3FGQXdPQkF3RUJFZ3d3TURjM01UQTAN
+	|Ck56UXpOelV4TERBcUJnTlZCQU1NSTlDYzBMalF2ZEM2MEw3UXZOR0IwTExSajlD
+	|MzBZd2cwS0RRdnRHQjBZSFENCnVOQzRNQjRYRFRFNE1EY3dOakV5TVRnd05sb1hE
+	|VE0yTURjd01URXlNVGd3Tmxvd2dnRWtNUjR3SEFZSktvWkkNCmh2Y05BUWtCRmc5
+	|a2FYUkFiV2x1YzNaNVlYb3VjblV4Q3pBSkJnTlZCQVlUQWxKVk1SZ3dGZ1lEVlFR
+	|SURBODMNCk55RFFuTkMrMFlIUXV0Q3kwTEF4R1RBWEJnTlZCQWNNRU5DekxpRFFu
+	|TkMrMFlIUXV0Q3kwTEF4TGpBc0JnTlYNCkJBa01KZEdEMEx2UXVOR0cwTEFnMEtM
+	|UXN0QzEwWURSZ2RDNjBMRFJqeXdnMExUUXZ0QzhJRGN4TERBcUJnTlYNCkJBb01J
+	|OUNjMExqUXZkQzYwTDdRdk5HQjBMTFJqOUMzMFl3ZzBLRFF2dEdCMFlIUXVOQzRN
+	|Umd3RmdZRktvVUQNClpBRVNEVEV3TkRjM01ESXdNalkzTURFeEdqQVlCZ2dxaFFN
+	|RGdRTUJBUklNTURBM056RXdORGMwTXpjMU1Td3cNCktnWURWUVFERENQUW5OQzQw
+	|TDNRdXRDKzBMelJnZEN5MFkvUXQ5R01JTkNnMEw3UmdkR0IwTGpRdURCbU1COEcN
+	|CkNDcUZBd2NCQVFFQk1CTUdCeXFGQXdJQ0l3RUdDQ3FGQXdjQkFRSUNBME1BQkVC
+	|MU9TcEZwN21pbFgzM0VQMGkNCmtnZTZIYlphY1lwOWZWajhzVWE1UldGWHJCMjdT
+	|S1g1U3Z0SUdlcHFLZXY2OVJTWWVISEtSK2pUOVlYMk51U0sNCjl3T05vNElCd2pD
+	|Q0FiNHdnZlVHQlNxRkEyUndCSUhyTUlIb0REVFFuOUNRMEpyUW5DRENxOUNhMFlE
+	|UXVOQy8NCjBZTFF2dENmMFlEUXZpQklVMDNDdXlEUXN0QzEwWURSZ2RDNDBMZ2dN
+	|aTR3REVQUW45Q1EwSm9nd3F2UWs5QysNCjBMdlF2dEN5MEwzUXZ0QzVJTkdEMExU
+	|UXZ0R0IwWUxRdnRDeTBMWFJnTkdQMFk3UmlkQzQwTGtnMFliUXRkQzkNCjBZTFJn
+	|TUs3RERYUWw5Q3cwTHJRdTlHTzBZZlF0ZEM5MExqUXRTRGloSllnTVRRNUx6TXZN
+	|aTh5THpJeklOQysNCjBZSWdNREl1TURNdU1qQXhPQXcwMEpmUXNOQzYwTHZSanRH
+	|SDBMWFF2ZEM0MExVZzRvU1dJREUwT1M4M0x6WXYNCk1UQTFJTkMrMFlJZ01qY3VN
+	|RFl1TWpBeE9EQS9CZ1VxaFFOa2J3UTJERFRRbjlDUTBKclFuQ0RDcTlDYTBZRFEN
+	|CnVOQy8wWUxRdnRDZjBZRFF2aUJJVTAzQ3V5RFFzdEMxMFlEUmdkQzQwTGdnTWk0
+	|d01FTUdBMVVkSUFROE1Eb3cNCkNBWUdLb1VEWkhFQk1BZ0dCaXFGQTJSeEFqQUlC
+	|Z1lxaFFOa2NRTXdDQVlHS29VRFpIRUVNQWdHQmlxRkEyUngNCkJUQUdCZ1JWSFNB
+	|QU1BNEdBMVVkRHdFQi93UUVBd0lCQmpBUEJnTlZIUk1CQWY4RUJUQURBUUgvTUIw
+	|R0ExVWQNCkRnUVdCQlRDVlBHMGE5Uk10K0J0TnJRamtQSCt3enliQmpBS0JnZ3Fo
+	|UU1IQVFFREFnTkJBSnI2L2VJN3JITDcNCitGc1Fub0gyaTZEVnhxYWxiSXhMS2ow
+	|NWVkcFpHUExMYjZCMlBUQU15YTdwU3Q5aGI4UW5GQUJnc1I0SUU1Z1QNCjRWVmtE
+	|V2JYL240PQ0KLS0tLS1FTkQgQ0VSVElGSUNBVEUtLS0tLQ0K";
+
+	Возврат Результат;
+		
 КонецФункции
 
 #КонецОбласти

@@ -729,6 +729,7 @@
 									<v8:content>Адрес перенаправления (redirect_uri)</v8:content>
 								</v8:item>
 							</Title>
+							<AutoMarkIncomplete>true</AutoMarkIncomplete>
 							<ContextMenu name="АдресПеренаправленияКонтекстноеМеню" id="322"/>
 							<ExtendedTooltip name="АдресПеренаправленияРасширеннаяПодсказка" id="323"/>
 						</InputField>
@@ -752,6 +753,7 @@
 									<v8:content>Идентификатор приложения (client_id)</v8:content>
 								</v8:item>
 							</Title>
+							<AutoMarkIncomplete>true</AutoMarkIncomplete>
 							<ContextMenu name="ИдентификаторПриложенияКонтекстноеМеню" id="316"/>
 							<ExtendedTooltip name="ИдентификаторПриложенияРасширеннаяПодсказка" id="317"/>
 						</InputField>
@@ -775,6 +777,7 @@
 									<v8:content>Пароль приложения (client_secret)</v8:content>
 								</v8:item>
 							</Title>
+							<AutoMarkIncomplete>true</AutoMarkIncomplete>
 							<ContextMenu name="ПарольПриложенияКонтекстноеМеню" id="319"/>
 							<ExtendedTooltip name="ПарольПриложенияРасширеннаяПодсказка" id="320"/>
 						</InputField>
@@ -789,15 +792,64 @@
 					</Title>
 					<ExtendedTooltip name="АвторизацияРасширеннаяПодсказка" id="309"/>
 					<ChildItems>
-						<HTMLDocumentField name="ВебСтраница" id="327">
-							<DataPath>ВебСтраница</DataPath>
-							<TitleLocation>None</TitleLocation>
-							<ContextMenu name="ВебСтраницаКонтекстноеМеню" id="328"/>
-							<ExtendedTooltip name="ВебСтраницаРасширеннаяПодсказка" id="329"/>
-							<Events>
-								<Event name="DocumentComplete">ВебСтраницаДокументСформирован</Event>
-							</Events>
-						</HTMLDocumentField>
+						<Pages name="ВариантыАвторизации" id="350">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Варианты авторизации</v8:content>
+								</v8:item>
+							</Title>
+							<PagesRepresentation>None</PagesRepresentation>
+							<ExtendedTooltip name="ВариантыАвторизацииРасширеннаяПодсказка" id="351"/>
+							<ChildItems>
+								<Page name="ВстроенныйБраузер" id="352">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Встроенный браузер</v8:content>
+										</v8:item>
+									</Title>
+									<ExtendedTooltip name="ВстроенныйБраузерРасширеннаяПодсказка" id="353"/>
+									<ChildItems>
+										<HTMLDocumentField name="ВебСтраница" id="327">
+											<DataPath>ВебСтраница</DataPath>
+											<TitleLocation>None</TitleLocation>
+											<ContextMenu name="ВебСтраницаКонтекстноеМеню" id="328"/>
+											<ExtendedTooltip name="ВебСтраницаРасширеннаяПодсказка" id="329"/>
+											<Events>
+												<Event name="DocumentComplete">ВебСтраницаДокументСформирован</Event>
+											</Events>
+										</HTMLDocumentField>
+									</ChildItems>
+								</Page>
+								<Page name="БраузерОперационнойСистемы" id="354">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Браузер операционной системы</v8:content>
+										</v8:item>
+									</Title>
+									<ExtendedTooltip name="БраузерОперационнойСистемыРасширеннаяПодсказка" id="355"/>
+									<ChildItems>
+										<LabelDecoration name="ПояснениеПоКодуПодтверждения" id="359">
+											<Title formatted="true">
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Авторизуйтесь на странице почтового сервиса и введите полученный код в поле ниже:</v8:content>
+												</v8:item>
+											</Title>
+											<ContextMenu name="ПояснениеПоКодуПодтвержденияКонтекстноеМеню" id="360"/>
+											<ExtendedTooltip name="ПояснениеПоКодуПодтвержденияРасширеннаяПодсказка" id="361"/>
+										</LabelDecoration>
+										<InputField name="КодПодтверждения" id="356">
+											<DataPath>КодПодтверждения</DataPath>
+											<ContextMenu name="КодПодтвержденияКонтекстноеМеню" id="357"/>
+											<ExtendedTooltip name="КодПодтвержденияРасширеннаяПодсказка" id="358"/>
+										</InputField>
+									</ChildItems>
+								</Page>
+							</ChildItems>
+						</Pages>
 					</ChildItems>
 				</Page>
 				<Page name="ПроверкаНастроекУчетнойЗаписи" id="34">
@@ -1023,7 +1075,7 @@ vasyapupkin@example.com завершена.</v8:content>
 						<Button name="ФормаИзменитьФорму" id="171">
 							<Type>CommandBarButton</Type>
 							<Visible>false</Visible>
-							<CommandName>0:198ea630-fda2-4cda-8a23-f999f4c67ee6</CommandName>
+							<CommandName>0</CommandName>
 							<LocationInCommandBar>InCommandBarAndInAdditionalSubmenu</LocationInCommandBar>
 							<ExtendedTooltip name="ФормаИзменитьФормуРасширеннаяПодсказка" id="172"/>
 						</Button>
@@ -1569,6 +1621,52 @@ vasyapupkin@example.com завершена.</v8:content>
 		<Attribute name="ТолькоАвторизация" id="57">
 			<Type>
 				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ИдентификаторУстройства" id="59">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="КодПодтверждения" id="60">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Код подтверждения</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="СрокДействияИдентификатораУстройства" id="61">
+			<Type/>
+		</Attribute>
+		<Attribute name="ИнтервалВыполненияЗапросов" id="62">
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>2</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="АдресАвторизацииПользователя" id="63">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
 			</Type>
 		</Attribute>
 	</Attributes>

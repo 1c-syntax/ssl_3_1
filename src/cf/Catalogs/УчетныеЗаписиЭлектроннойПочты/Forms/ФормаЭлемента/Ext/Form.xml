@@ -321,35 +321,90 @@
 							<ContextMenu name="ЛогинКонтекстноеМеню" id="103"/>
 							<ExtendedTooltip name="ЛогинРасширеннаяПодсказка" id="104"/>
 						</InputField>
-						<CheckBoxField name="АвторизацияСПомощьюПочтовогоСервиса" id="274">
-							<DataPath>Объект.АвторизацияСПомощьюПочтовогоСервиса</DataPath>
-							<TitleLocation>Right</TitleLocation>
-							<CheckBoxType>Auto</CheckBoxType>
-							<ContextMenu name="АвторизацияСПомощьюПочтовогоСервисаКонтекстноеМеню" id="275"/>
-							<ExtendedTooltip name="АвторизацияСПомощьюПочтовогоСервисаРасширеннаяПодсказка" id="276"/>
-							<Events>
-								<Event name="OnChange">АвторизацияСПомощьюПочтовогоСервисаПриИзменении</Event>
-							</Events>
-						</CheckBoxField>
 					</ChildItems>
 				</UsualGroup>
-				<InputField name="Пароль" id="105">
-					<DataPath>Пароль</DataPath>
-					<HorizontalStretch>false</HorizontalStretch>
-					<PasswordMode>true</PasswordMode>
-					<ChoiceButton>true</ChoiceButton>
-					<ChoiceButtonPicture>
-						<xr:Ref>CommonPicture.ВводимыеСимволыСкрыты</xr:Ref>
-						<xr:LoadTransparent>false</xr:LoadTransparent>
-					</ChoiceButtonPicture>
-					<ContextMenu name="ПарольКонтекстноеМеню" id="106"/>
-					<ExtendedTooltip name="ПарольРасширеннаяПодсказка" id="107"/>
+				<UsualGroup name="Группа1" id="283">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа1</v8:content>
+						</v8:item>
+					</Title>
+					<Behavior>Usual</Behavior>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="Группа1РасширеннаяПодсказка" id="284"/>
+					<ChildItems>
+						<RadioButtonField name="СпособАутентификацииПароль" id="280">
+							<DataPath>СпособАутентификации</DataPath>
+							<TitleLocation>None</TitleLocation>
+							<RadioButtonType>Auto</RadioButtonType>
+							<ChoiceList>
+								<xr:Item>
+									<xr:Presentation/>
+									<xr:CheckState>0</xr:CheckState>
+									<xr:Value xsi:type="FormChoiceListDesTimeValue">
+										<Presentation>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Пароль:</v8:content>
+											</v8:item>
+										</Presentation>
+										<Value xsi:type="xs:string">Пароль</Value>
+									</xr:Value>
+								</xr:Item>
+							</ChoiceList>
+							<ContextMenu name="СпособАутентификацииПарольКонтекстноеМеню" id="281"/>
+							<ExtendedTooltip name="СпособАутентификацииПарольРасширеннаяПодсказка" id="282"/>
+							<Events>
+								<Event name="OnChange">СпособАутентификацииПриИзменении</Event>
+							</Events>
+						</RadioButtonField>
+						<InputField name="Пароль" id="105">
+							<DataPath>Пароль</DataPath>
+							<TitleLocation>None</TitleLocation>
+							<HorizontalStretch>false</HorizontalStretch>
+							<PasswordMode>true</PasswordMode>
+							<ChoiceButton>true</ChoiceButton>
+							<ChoiceButtonPicture>
+								<xr:Ref>CommonPicture.ВводимыеСимволыСкрыты</xr:Ref>
+								<xr:LoadTransparent>false</xr:LoadTransparent>
+							</ChoiceButtonPicture>
+							<ContextMenu name="ПарольКонтекстноеМеню" id="106"/>
+							<ExtendedTooltip name="ПарольРасширеннаяПодсказка" id="107"/>
+							<Events>
+								<Event name="OnChange">ПарольПриИзменении</Event>
+								<Event name="EditTextChange">ПарольИзменениеТекстаРедактирования</Event>
+								<Event name="StartChoice">ПарольНачалоВыбора</Event>
+							</Events>
+						</InputField>
+					</ChildItems>
+				</UsualGroup>
+				<RadioButtonField name="СпособАутентификации" id="285">
+					<DataPath>СпособАутентификации</DataPath>
+					<TitleLocation>None</TitleLocation>
+					<RadioButtonType>Auto</RadioButtonType>
+					<ChoiceList>
+						<xr:Item>
+							<xr:Presentation/>
+							<xr:CheckState>0</xr:CheckState>
+							<xr:Value xsi:type="FormChoiceListDesTimeValue">
+								<Presentation>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Авторизоваться с помощью почтового сервиса</v8:content>
+									</v8:item>
+								</Presentation>
+								<Value xsi:type="xs:string">OAuth</Value>
+							</xr:Value>
+						</xr:Item>
+					</ChoiceList>
+					<ContextMenu name="СпособАутентификацииКонтекстноеМеню" id="286"/>
+					<ExtendedTooltip name="СпособАутентификацииРасширеннаяПодсказка" id="287"/>
 					<Events>
-						<Event name="OnChange">ПарольПриИзменении</Event>
-						<Event name="EditTextChange">ПарольИзменениеТекстаРедактирования</Event>
-						<Event name="StartChoice">ПарольНачалоВыбора</Event>
+						<Event name="OnChange">СпособАутентификацииПриИзменении</Event>
 					</Events>
-				</InputField>
+				</RadioButtonField>
 				<UsualGroup name="ОставлятьПисьмаНаСервере" id="185">
 					<Title>
 						<v8:item>
@@ -897,6 +952,22 @@
 					<v8:AllowedLength>Variable</v8:AllowedLength>
 				</v8:StringQualifiers>
 			</Type>
+		</Attribute>
+		<Attribute name="СпособАутентификации" id="22">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Способ аутентификации</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+			<SavedData>true</SavedData>
 		</Attribute>
 	</Attributes>
 	<Commands>
