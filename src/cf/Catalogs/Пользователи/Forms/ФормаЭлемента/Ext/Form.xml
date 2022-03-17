@@ -29,10 +29,10 @@
 				<CommandSource>Form</CommandSource>
 				<ExtendedTooltip name="КомандыФормыРасширеннаяПодсказка" id="348"/>
 			</ButtonGroup>
-			<Button name="ФормаСправка" id="349">
+			<Button name="ФормаВыбратьФотографию" id="373">
 				<Type>CommandBarButton</Type>
-				<CommandName>Form.StandardCommand.Help</CommandName>
-				<ExtendedTooltip name="ФормаСправкаРасширеннаяПодсказка" id="350"/>
+				<CommandName>Form.Command.ВыбратьФотографию</CommandName>
+				<ExtendedTooltip name="ФормаВыбратьФотографиюРасширеннаяПодсказка" id="374"/>
 			</Button>
 			<Button name="ФормаОчиститьФотографию" id="356">
 				<Type>CommandBarButton</Type>
@@ -95,6 +95,11 @@
 					</ButtonGroup>
 				</ChildItems>
 			</Popup>
+			<Button name="ФормаСправка" id="349">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.StandardCommand.Help</CommandName>
+				<ExtendedTooltip name="ФормаСправкаРасширеннаяПодсказка" id="350"/>
+			</Button>
 		</ChildItems>
 	</AutoCommandBar>
 	<Events>
@@ -318,6 +323,12 @@
 				<PictureField name="Фотография" id="353">
 					<DataPath>АдресФотографии</DataPath>
 					<TitleLocation>None</TitleLocation>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Выбрать фото</v8:content>
+						</v8:item>
+					</ToolTip>
 					<GroupVerticalAlign>Center</GroupVerticalAlign>
 					<Width>7</Width>
 					<Height>4</Height>
@@ -331,7 +342,20 @@
 							<v8:content>Добавить фото</v8:content>
 						</v8:item>
 					</NonselectedPictureText>
-					<ContextMenu name="ФотографияКонтекстноеМеню" id="354"/>
+					<ContextMenu name="ФотографияКонтекстноеМеню" id="354">
+						<ChildItems>
+							<Button name="ФотографияКонтекстноеМенюВыбратьФотографию" id="371">
+								<Type>CommandBarButton</Type>
+								<CommandName>Form.Command.ВыбратьФотографию</CommandName>
+								<ExtendedTooltip name="ФотографияКонтекстноеМенюВыбратьФотографиюРасширеннаяПодсказка" id="372"/>
+							</Button>
+							<Button name="ФотографияКонтекстноеМенюОчиститьФотографию" id="369">
+								<Type>CommandBarButton</Type>
+								<CommandName>Form.Command.ОчиститьФотографию</CommandName>
+								<ExtendedTooltip name="ФотографияКонтекстноеМенюОчиститьФотографиюРасширеннаяПодсказка" id="370"/>
+							</Button>
+						</ChildItems>
+					</ContextMenu>
 					<ExtendedTooltip name="ФотографияРасширеннаяПодсказка" id="355"/>
 					<Events>
 						<Event name="Click">ФотографияНажатие</Event>
@@ -1673,6 +1697,15 @@
 			<Action>ОчиститьФотографию</Action>
 			<Representation>Text</Representation>
 			<ModifiesSavedData>true</ModifiesSavedData>
+		</Command>
+		<Command name="ВыбратьФотографию" id="10">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Выбрать фотографию...</v8:content>
+				</v8:item>
+			</Title>
+			<Action>ВыбратьФотографию</Action>
 		</Command>
 	</Commands>
 	<Parameters>

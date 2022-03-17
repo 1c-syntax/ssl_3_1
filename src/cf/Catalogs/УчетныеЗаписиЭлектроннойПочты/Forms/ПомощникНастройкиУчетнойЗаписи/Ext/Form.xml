@@ -164,17 +164,54 @@
 										<Event name="OnChange">АдресЭлектроннойПочтыПриИзменении</Event>
 									</Events>
 								</InputField>
-								<UsualGroup name="Группа1" id="298">
+								<RadioButtonField name="СпособАутентификации" id="362">
+									<DataPath>СпособАутентификации</DataPath>
+									<Visible>false</Visible>
+									<TitleLocation>None</TitleLocation>
+									<RadioButtonType>RadioButtons</RadioButtonType>
+									<ColumnsCount>1</ColumnsCount>
+									<ChoiceList>
+										<xr:Item>
+											<xr:Presentation/>
+											<xr:CheckState>0</xr:CheckState>
+											<xr:Value xsi:type="FormChoiceListDesTimeValue">
+												<Presentation>
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>Авторизоваться на почтовом сервисе</v8:content>
+													</v8:item>
+												</Presentation>
+												<Value xsi:type="xs:string">OAuth</Value>
+											</xr:Value>
+										</xr:Item>
+										<xr:Item>
+											<xr:Presentation/>
+											<xr:CheckState>0</xr:CheckState>
+											<xr:Value xsi:type="FormChoiceListDesTimeValue">
+												<Presentation>
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>Ввести пароль</v8:content>
+													</v8:item>
+												</Presentation>
+												<Value xsi:type="xs:string">Пароль</Value>
+											</xr:Value>
+										</xr:Item>
+									</ChoiceList>
+									<ContextMenu name="СпособАутентификацииКонтекстноеМеню" id="363"/>
+									<ExtendedTooltip name="СпособАутентификацииРасширеннаяПодсказка" id="364"/>
+								</RadioButtonField>
+								<UsualGroup name="ГруппаСпособАутентификацииПароль" id="298">
 									<Title>
 										<v8:item>
 											<v8:lang>ru</v8:lang>
-											<v8:content>Группа1</v8:content>
+											<v8:content>Способ аутентификации пароль</v8:content>
 										</v8:item>
 									</Title>
 									<Behavior>Usual</Behavior>
 									<Representation>None</Representation>
 									<ShowTitle>false</ShowTitle>
-									<ExtendedTooltip name="Группа1РасширеннаяПодсказка" id="299"/>
+									<ExtendedTooltip name="ГруппаСпособАутентификацииПарольРасширеннаяПодсказка" id="299"/>
 									<ChildItems>
 										<RadioButtonField name="СпособАутентификацииПароль" id="302">
 											<DataPath>СпособАутентификации</DataPath>
@@ -233,6 +270,7 @@
 								<RadioButtonField name="СпособАутентификацииПочтовыйСервис" id="305">
 									<DataPath>СпособАутентификации</DataPath>
 									<TitleLocation>None</TitleLocation>
+									<Shortcut>Ctrl+S</Shortcut>
 									<RadioButtonType>Auto</RadioButtonType>
 									<ColumnsCount>1</ColumnsCount>
 									<ChoiceList>
@@ -243,7 +281,7 @@
 												<Presentation>
 													<v8:item>
 														<v8:lang>ru</v8:lang>
-														<v8:content>Авторизоваться с помощью почтового сервиса</v8:content>
+														<v8:content>Авторизоваться на почтовом сервисе</v8:content>
 													</v8:item>
 												</Presentation>
 												<Value xsi:type="xs:string">OAuth</Value>
@@ -710,6 +748,7 @@
 						<LabelDecoration name="ПояснениеПоАдресуПеренаправления" id="312">
 							<AutoMaxWidth>false</AutoMaxWidth>
 							<MaxWidth>50</MaxWidth>
+							<AutoMaxHeight>false</AutoMaxHeight>
 							<Title formatted="true">
 								<v8:item>
 									<v8:lang>ru</v8:lang>
@@ -736,6 +775,7 @@
 						<LabelDecoration name="ПояснениеПоИдентификаторуПриложения" id="330">
 							<AutoMaxWidth>false</AutoMaxWidth>
 							<MaxWidth>50</MaxWidth>
+							<AutoMaxHeight>false</AutoMaxHeight>
 							<Title formatted="true">
 								<v8:item>
 									<v8:lang>ru</v8:lang>
@@ -760,6 +800,7 @@
 						<LabelDecoration name="ПояснениеПоПаролюПриложения" id="333">
 							<AutoMaxWidth>false</AutoMaxWidth>
 							<MaxWidth>50</MaxWidth>
+							<AutoMaxHeight>false</AutoMaxHeight>
 							<Title formatted="true">
 								<v8:item>
 									<v8:lang>ru</v8:lang>
