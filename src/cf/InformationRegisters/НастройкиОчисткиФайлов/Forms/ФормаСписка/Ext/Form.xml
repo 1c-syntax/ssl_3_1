@@ -139,6 +139,13 @@
 			<CurrentRowUse>SelectionPresentationAndChoice</CurrentRowUse>
 			<ContextMenu name="ДеревоОбъектовМетаданныхКонтекстноеМеню" id="4">
 				<Autofill>false</Autofill>
+				<ChildItems>
+					<Button name="ДеревоОбъектовМетаданныхКонтекстноеМенюПерейтиКСписку" id="149">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Command.ПерейтиКСписку</CommandName>
+						<ExtendedTooltip name="ДеревоОбъектовМетаданныхКонтекстноеМенюПерейтиКСпискуРасширеннаяПодсказка" id="150"/>
+					</Button>
+				</ChildItems>
 			</ContextMenu>
 			<AutoCommandBar name="ДеревоОбъектовМетаданныхКоманднаяПанель" id="5">
 				<Autofill>false</Autofill>
@@ -711,6 +718,18 @@
 				<v8:Type>xs:boolean</v8:Type>
 			</Type>
 		</Attribute>
+		<Attribute name="Список" id="12">
+			<Type>
+				<v8:Type>cfg:DynamicList</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<Settings xsi:type="DynamicList">
+				<ManualQuery>false</ManualQuery>
+				<DynamicDataRead>true</DynamicDataRead>
+				<MainTable>InformationRegister.НастройкиОчисткиФайлов</MainTable>
+				<ListSettings/>
+			</Settings>
+		</Attribute>
 	</Attributes>
 	<Commands>
 		<Command name="УстановитьДействиеОчиститьФайлыИВерсии" id="2">
@@ -881,6 +900,21 @@
 				</v8:item>
 			</Title>
 			<Action>ОбъемУдаленныхФайлов</Action>
+		</Command>
+		<Command name="ПерейтиКСписку" id="13">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Перейти к списку...</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Перейти к списку файлов</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ПерейтиКСписку</Action>
 		</Command>
 	</Commands>
 </Form>

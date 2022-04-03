@@ -80,46 +80,21 @@
 					<ContextMenu name="Владелец0КонтекстноеМеню" id="7"/>
 					<ExtendedTooltip name="Владелец0РасширеннаяПодсказка" id="59"/>
 				</InputField>
-				<UsualGroup name="НаименованиеКод" id="31">
+				<InputField name="Наименование0" id="29">
+					<DataPath>ОбъектПрототип[0].Наименование</DataPath>
 					<Title>
 						<v8:item>
 							<v8:lang>ru</v8:lang>
-							<v8:content>Наименование код</v8:content>
+							<v8:content>Наименование</v8:content>
 						</v8:item>
 					</Title>
-					<Behavior>Usual</Behavior>
-					<Representation>None</Representation>
-					<ShowTitle>false</ShowTitle>
-					<ExtendedTooltip name="НаименованиеКодExtendedTooltip" id="60"/>
-					<ChildItems>
-						<InputField name="ПолноеНаименование" id="29">
-							<DataPath>ОбъектПрототип[0].ПолноеНаименование</DataPath>
-							<Title>
-								<v8:item>
-									<v8:lang>ru</v8:lang>
-									<v8:content>Наименование</v8:content>
-								</v8:item>
-							</Title>
-							<AutoMaxWidth>false</AutoMaxWidth>
-							<MaxWidth>46</MaxWidth>
-							<Wrap>false</Wrap>
-							<BorderColor>style:BorderColor</BorderColor>
-							<ContextMenu name="ПолноеНаименованиеКонтекстноеМеню" id="30"/>
-							<ExtendedTooltip name="ПолноеНаименованиеExtendedTooltip" id="61"/>
-							<Events>
-								<Event name="OnChange">ПолноеНаименованиеПриИзменении</Event>
-							</Events>
-						</InputField>
-						<InputField name="Код" id="2">
-							<FooterHorizontalAlign>Left</FooterHorizontalAlign>
-							<HorizontalStretch>false</HorizontalStretch>
-							<Wrap>false</Wrap>
-							<BorderColor>style:BorderColor</BorderColor>
-							<ContextMenu name="КодКонтекстноеМеню" id="3"/>
-							<ExtendedTooltip name="КодExtendedTooltip" id="62"/>
-						</InputField>
-					</ChildItems>
-				</UsualGroup>
+					<AutoMaxWidth>false</AutoMaxWidth>
+					<MaxWidth>46</MaxWidth>
+					<Wrap>false</Wrap>
+					<BorderColor>style:BorderColor</BorderColor>
+					<ContextMenu name="Наименование0КонтекстноеМеню" id="30"/>
+					<ExtendedTooltip name="Наименование0РасширеннаяПодсказка" id="61"/>
+				</InputField>
 			</ChildItems>
 		</UsualGroup>
 		<UsualGroup name="РасширениеКартинка" id="32">
@@ -382,11 +357,11 @@
 						<v8:TypeSet>cfg:DefinedType.ПрисоединенныйФайл</v8:TypeSet>
 					</Type>
 				</Column>
-				<Column name="ПолноеНаименование" id="2">
+				<Column name="Наименование" id="2">
 					<Title>
 						<v8:item>
 							<v8:lang>ru</v8:lang>
-							<v8:content>Полное наименование</v8:content>
+							<v8:content>Наименование</v8:content>
 						</v8:item>
 					</Title>
 					<Type>
@@ -676,7 +651,6 @@
 				<xr:LoadTransparent>true</xr:LoadTransparent>
 			</Picture>
 			<Action>Удалить</Action>
-			<AssociatedTableElementId xsi:type="xs:string">Код</AssociatedTableElementId>
 		</Command>
 	</Commands>
 	<Parameters>
