@@ -228,9 +228,12 @@
 	
 	Настройки.ИнструкцияПоПодключению = СтроковыеФункции.ФорматированнаяСтрока(НСтр(
 		"ru = 'Как настроить:
-		|1. Подключите сервис <a href = ""https://cloud.yandex.com/"">Yandex.Cloud</a> и активируйте <a href = ""https://console.cloud.yandex.com/billing"">платежный аккаунт</a>.
-		|2. Перейдите на страницу <a href = ""https://oauth.yandex.com/authorize?response_type=token&client_id=1a6990aa636648e9b2ef855fa7bec2fb"">Яндекс OAuth</a> и скопируйте строку из букв и цифр в поле <b>OAuth-токен</b>.
-		|3. Перейдите в <a href = ""https://console.cloud.yandex.com/"">консоль управления Yandex Cloud</a>, в списке <b>Ваши ресурсы</b> справа от каталога <b>default</b> скопируйте строку из букв и цифр и вставьте в поле <b>Идентификатор каталога</b>.'"));
+		|1. Подключите сервис <a href = ""%1"">Yandex.Cloud</a> и активируйте <a href = ""%2"">платежный аккаунт</a>.
+		|2. Перейдите на страницу <a href = ""%3"">Яндекс OAuth</a> и скопируйте строку из букв и цифр в поле <b>OAuth-токен</b>.
+		|3. Перейдите в <a href = ""%4"">консоль управления Yandex Cloud</a>, в списке <b>Ваши ресурсы</b> справа от каталога <b>default</b> скопируйте строку из букв и цифр и вставьте в поле <b>Идентификатор каталога</b>.'"),
+		"https://cloud.yandex.com/", "https://console.cloud.yandex.com/billing",
+		"https://oauth.yandex.com/authorize?response_type=token&client_id=1a6990aa636648e9b2ef855fa7bec2fb",
+		"https://console.cloud.yandex.com/");
 	
 	Параметр = Настройки.ПараметрыАвторизации.Добавить();
 	Параметр.Имя = "OAuthТокен";
