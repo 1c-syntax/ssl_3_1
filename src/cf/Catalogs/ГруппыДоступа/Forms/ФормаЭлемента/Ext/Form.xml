@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.10">
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.13">
 	<CommandSet>
 		<ExcludedCommand>WriteAndClose</ExcludedCommand>
 	</CommandSet>
@@ -42,6 +42,7 @@
 		<Event name="AfterWriteAtServer">ПослеЗаписиНаСервере</Event>
 		<Event name="OnReadAtServer">ПриЧтенииНаСервере</Event>
 		<Event name="OnOpen">ПриОткрытии</Event>
+		<Event name="OnReopen">ПриПовторномОткрытии</Event>
 		<Event name="BeforeWrite">ПередЗаписью</Event>
 		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
 		<Event name="BeforeWriteAtServer">ПередЗаписьюНаСервере</Event>
@@ -67,6 +68,7 @@
 				</v8:item>
 			</Title>
 			<Group>Vertical</Group>
+			<Behavior>Usual</Behavior>
 			<Representation>None</Representation>
 			<ShowTitle>false</ShowTitle>
 			<ExtendedTooltip name="ГруппаПрофильНазначениеРасширеннаяПодсказка" id="439"/>
@@ -89,6 +91,7 @@
 					<v8:content>Пользователи и доступ</v8:content>
 				</v8:item>
 			</Title>
+			<PagesRepresentation>TabsOnTop</PagesRepresentation>
 			<ExtendedTooltip name="ПользователиИДоступExtendedTooltip" id="343"/>
 			<ChildItems>
 				<Page name="ПользователиГруппы" id="212">
@@ -402,6 +405,7 @@
 								</v8:item>
 							</Title>
 							<Group>Vertical</Group>
+							<Behavior>Usual</Behavior>
 							<Representation>None</Representation>
 							<ShowTitle>false</ShowTitle>
 							<TitleDataPath>НадписьВидДоступа</TitleDataPath>
@@ -556,6 +560,7 @@
 					<v8:content>Свойства персональной группы</v8:content>
 				</v8:item>
 			</Title>
+			<Behavior>Usual</Behavior>
 			<Representation>None</Representation>
 			<ShowTitle>false</ShowTitle>
 			<ExtendedTooltip name="СвойстваПерсональнойГруппыExtendedTooltip" id="340"/>
@@ -817,6 +822,16 @@
 		<Attribute name="ГруппаДоступаАдминистраторы" id="10">
 			<Type>
 				<v8:Type>cfg:CatalogRef.ГруппыДоступа</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ПерейтиКВидуДоступа" id="11">
+			<Type>
+				<v8:TypeSet>cfg:AnyRef</v8:TypeSet>
+			</Type>
+		</Attribute>
+		<Attribute name="ПерейтиКЗначениюДоступа" id="12">
+			<Type>
+				<v8:TypeSet>cfg:AnyRef</v8:TypeSet>
 			</Type>
 		</Attribute>
 	</Attributes>

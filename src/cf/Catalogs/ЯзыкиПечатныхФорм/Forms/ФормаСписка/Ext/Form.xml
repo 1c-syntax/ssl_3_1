@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.10">
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.13">
 	<CommandSet>
 		<ExcludedCommand>Change</ExcludedCommand>
 		<ExcludedCommand>Copy</ExcludedCommand>
@@ -25,6 +25,46 @@
 				</Title>
 				<ExtendedTooltip name="ФормаСоздатьРасширеннаяПодсказка" id="23"/>
 			</Button>
+			<ButtonGroup name="НастройкаПорядкаЭлементов" id="58">
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Настройка порядка элементов</v8:content>
+					</v8:item>
+				</Title>
+				<ExtendedTooltip name="НастройкаПорядкаЭлементовРасширеннаяПодсказка" id="59"/>
+			</ButtonGroup>
+			<ButtonGroup name="СтандартныеКомандыФормы" id="48">
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Стандартные команды формы</v8:content>
+					</v8:item>
+				</Title>
+				<CommandSource>Form</CommandSource>
+				<ExtendedTooltip name="СтандартныеКомандыФормыРасширеннаяПодсказка" id="49"/>
+			</ButtonGroup>
+			<Button name="ФормаСправка" id="50">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.StandardCommand.Help</CommandName>
+				<ExtendedTooltip name="ФормаСправкаРасширеннаяПодсказка" id="51"/>
+			</Button>
+			<SearchStringAddition name="СтрокаПоиска" id="52">
+				<AdditionSource>
+					<Item>Список</Item>
+					<Type>SearchStringRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="СтрокаПоискаКонтекстноеМеню" id="53"/>
+				<ExtendedTooltip name="СтрокаПоискаРасширеннаяПодсказка" id="54"/>
+			</SearchStringAddition>
+			<SearchControlAddition name="УправлениеПоиском" id="55">
+				<AdditionSource>
+					<Item>Список</Item>
+					<Type>SearchControl</Type>
+				</AdditionSource>
+				<ContextMenu name="УправлениеПоискомКонтекстноеМеню" id="56"/>
+				<ExtendedTooltip name="УправлениеПоискомРасширеннаяПодсказка" id="57"/>
+			</SearchControlAddition>
 		</ChildItems>
 	</AutoCommandBar>
 	<Events>
@@ -38,6 +78,7 @@
 					<v8:content>Дополнительная информация</v8:content>
 				</v8:item>
 			</Title>
+			<Behavior>Usual</Behavior>
 			<Representation>None</Representation>
 			<ShowTitle>false</ShowTitle>
 			<ExtendedTooltip name="ГруппаДополнительнаяИнформацияРасширеннаяПодсказка" id="41"/>
@@ -50,8 +91,8 @@
 						</v8:item>
 					</Title>
 					<Picture>
-						<xr:Ref>CommonPicture.Информация</xr:Ref>
-						<xr:LoadTransparent>false</xr:LoadTransparent>
+						<xr:Ref>StdPicture.Information</xr:Ref>
+						<xr:LoadTransparent>true</xr:LoadTransparent>
 					</Picture>
 					<FileDragMode>AsFile</FileDragMode>
 					<ContextMenu name="КартинкаИнформацииКонтекстноеМеню" id="43"/>
@@ -84,6 +125,7 @@
 			</Title>
 			<VerticalStretch>false</VerticalStretch>
 			<Group>Vertical</Group>
+			<Behavior>Usual</Behavior>
 			<ShowTitle>false</ShowTitle>
 			<ExtendedTooltip name="СписокКомпоновщикНастроекПользовательскиеНастройкиРасширеннаяПодсказка" id="2"/>
 		</UsualGroup>
@@ -102,6 +144,9 @@
 					<v8:content>Список</v8:content>
 				</v8:item>
 			</Title>
+			<CommandSet>
+				<ExcludedCommand>Copy</ExcludedCommand>
+			</CommandSet>
 			<AutoRefresh>false</AutoRefresh>
 			<AutoRefreshPeriod>60</AutoRefreshPeriod>
 			<Period>
@@ -146,6 +191,7 @@
 				<ExtendedTooltip name="СписокУправлениеПоискомРасширеннаяПодсказка" id="15"/>
 			</SearchControlAddition>
 			<Events>
+				<Event name="BeforeAddRow">СписокПередНачаломДобавления</Event>
 				<Event name="OnActivateRow">СписокПриАктивизацииСтроки</Event>
 				<Event name="OnGetDataAtServer">СписокПриПолученииДанныхНаСервере</Event>
 			</Events>

@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.10">
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.13">
 	<Title>
 		<v8:item>
 			<v8:lang>ru</v8:lang>
@@ -203,20 +203,20 @@
 						</Title>
 						<ExtendedTooltip name="ФормаГруппаКомандЭлектроннаяПодписьРасширеннаяПодсказка" id="245"/>
 						<ChildItems>
-							<Button name="ФормаЭППодписать" id="75">
+							<Button name="ФормаПодписать" id="75">
 								<Type>CommandBarButton</Type>
 								<CommandName>Form.Command.Подписать</CommandName>
-								<ExtendedTooltip name="ФормаЭППодписатьРасширеннаяПодсказка" id="111"/>
+								<ExtendedTooltip name="ФормаПодписатьРасширеннаяПодсказка" id="111"/>
 							</Button>
-							<Button name="ФормаСохранитьВместеСЭП" id="73">
-								<Type>CommandBarButton</Type>
-								<CommandName>Form.Command.СохранитьВместеСЭП</CommandName>
-								<ExtendedTooltip name="ФормаСохранитьВместеСЭПРасширеннаяПодсказка" id="112"/>
-							</Button>
-							<Button name="ФормаДобавитьЭПИзФайла" id="74">
+							<Button name="ФормаДобавитьПодписьИзФайла" id="74">
 								<Type>CommandBarButton</Type>
 								<CommandName>Form.Command.ДобавитьЭПИзФайла</CommandName>
-								<ExtendedTooltip name="ФормаДобавитьЭПИзФайлаРасширеннаяПодсказка" id="113"/>
+								<ExtendedTooltip name="ФормаДобавитьПодписьИзФайлаРасширеннаяПодсказка" id="113"/>
+							</Button>
+							<Button name="ФормаСохранитьВместеСПодписью" id="73">
+								<Type>CommandBarButton</Type>
+								<CommandName>Form.Command.СохранитьВместеСЭП</CommandName>
+								<ExtendedTooltip name="ФормаСохранитьВместеСПодписьюРасширеннаяПодсказка" id="112"/>
 							</Button>
 						</ChildItems>
 					</ButtonGroup>
@@ -471,6 +471,77 @@
 				<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
 				<ExtendedTooltip name="ПоказыватьСлужебныеФайлыРасширеннаяПодсказка" id="351"/>
 			</Button>
+			<Popup name="ПодменюОтчеты" id="362">
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Отчеты</v8:content>
+					</v8:item>
+				</Title>
+				<Picture>
+					<xr:Ref>StdPicture.Report</xr:Ref>
+					<xr:LoadTransparent>true</xr:LoadTransparent>
+				</Picture>
+				<Representation>Picture</Representation>
+				<ExtendedTooltip name="ПодменюОтчетыРасширеннаяПодсказка" id="363"/>
+			</Popup>
+			<Popup name="ПодменюЗаполнить" id="364">
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Заполнить</v8:content>
+					</v8:item>
+				</Title>
+				<Picture>
+					<xr:Ref>CommonPicture.ЗаполнитьФорму</xr:Ref>
+					<xr:LoadTransparent>false</xr:LoadTransparent>
+				</Picture>
+				<Representation>Picture</Representation>
+				<ExtendedTooltip name="ПодменюЗаполнитьРасширеннаяПодсказка" id="365"/>
+				<ChildItems>
+					<ButtonGroup name="ПодменюЗаполнитьВажное" id="366">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Подменю заполнить важное</v8:content>
+							</v8:item>
+						</Title>
+						<ExtendedTooltip name="ПодменюЗаполнитьВажноеРасширеннаяПодсказка" id="367"/>
+					</ButtonGroup>
+					<ButtonGroup name="ПодменюЗаполнитьОбычное" id="368">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Подменю заполнить обычное</v8:content>
+							</v8:item>
+						</Title>
+						<ExtendedTooltip name="ПодменюЗаполнитьОбычноеРасширеннаяПодсказка" id="369"/>
+					</ButtonGroup>
+					<ButtonGroup name="ПодменюЗаполнитьСмТакже" id="370">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Подменю заполнить см также</v8:content>
+							</v8:item>
+						</Title>
+						<ExtendedTooltip name="ПодменюЗаполнитьСмТакжеРасширеннаяПодсказка" id="371"/>
+					</ButtonGroup>
+				</ChildItems>
+			</Popup>
+			<Popup name="ПодменюСоздатьНаОсновании" id="372">
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Создать на основании</v8:content>
+					</v8:item>
+				</Title>
+				<Picture>
+					<xr:Ref>StdPicture.InputOnBasis</xr:Ref>
+					<xr:LoadTransparent>true</xr:LoadTransparent>
+				</Picture>
+				<Representation>Picture</Representation>
+				<ExtendedTooltip name="ПодменюСоздатьНаОснованииРасширеннаяПодсказка" id="373"/>
+			</Popup>
 			<Button name="ФормаСправка" id="9">
 				<Type>CommandBarButton</Type>
 				<CommandName>Form.StandardCommand.Help</CommandName>
@@ -500,6 +571,7 @@
 				</v8:item>
 			</Title>
 			<Group>Vertical</Group>
+			<Behavior>Usual</Behavior>
 			<ShowTitle>false</ShowTitle>
 			<ExtendedTooltip name="ГруппаПользовательскихНастроекРасширеннаяПодсказка" id="241"/>
 		</UsualGroup>
@@ -520,6 +592,7 @@
 				</v8:item>
 			</Title>
 			<Group>Vertical</Group>
+			<Behavior>Usual</Behavior>
 			<Representation>None</Representation>
 			<ShowTitle>false</ShowTitle>
 			<ExtendedTooltip name="ГруппаОблачныйСервисРасширеннаяПодсказка" id="286"/>
@@ -533,6 +606,7 @@
 					</Title>
 					<HorizontalStretch>true</HorizontalStretch>
 					<VerticalAlign>Center</VerticalAlign>
+					<Behavior>Usual</Behavior>
 					<Representation>None</Representation>
 					<ShowTitle>false</ShowTitle>
 					<ExtendedTooltip name="ГруппаПояснениеОблачногоСервисаРасширеннаяПодсказка" id="288"/>
@@ -614,6 +688,7 @@
 							<v8:content>Файлы</v8:content>
 						</v8:item>
 					</Title>
+					<Behavior>Usual</Behavior>
 					<Representation>None</Representation>
 					<ShowTitle>false</ShowTitle>
 					<ExtendedTooltip name="ГруппаФайлыРасширеннаяПодсказка" id="271"/>
@@ -784,20 +859,20 @@
 												</Title>
 												<ExtendedTooltip name="СписокКонтекстноеМенюГруппаКомандЭлектроннаяПодписьРасширеннаяПодсказка" id="247"/>
 												<ChildItems>
-													<Button name="СписокКонтекстноеМенюЭППодписать" id="80">
+													<Button name="СписокКонтекстноеМенюПодписать" id="80">
 														<Type>CommandBarButton</Type>
 														<CommandName>Form.Command.Подписать</CommandName>
-														<ExtendedTooltip name="СписокКонтекстноеМенюЭППодписатьРасширеннаяПодсказка" id="150"/>
+														<ExtendedTooltip name="СписокКонтекстноеМенюПодписатьРасширеннаяПодсказка" id="150"/>
 													</Button>
-													<Button name="СписокКонтекстноеМенюДобавитьЭПИзФайла" id="81">
+													<Button name="СписокКонтекстноеМенюДобавитьПодписьИзФайла" id="81">
 														<Type>CommandBarButton</Type>
 														<CommandName>Form.Command.ДобавитьЭПИзФайла</CommandName>
-														<ExtendedTooltip name="СписокКонтекстноеМенюДобавитьЭПИзФайлаРасширеннаяПодсказка" id="151"/>
+														<ExtendedTooltip name="СписокКонтекстноеМенюДобавитьПодписьИзФайлаРасширеннаяПодсказка" id="151"/>
 													</Button>
-													<Button name="СписокКонтекстноеМенюСохранитьВместеСЭП" id="82">
+													<Button name="СписокКонтекстноеМенюСохранитьВместеСПодписью" id="82">
 														<Type>CommandBarButton</Type>
 														<CommandName>Form.Command.СохранитьВместеСЭП</CommandName>
-														<ExtendedTooltip name="СписокКонтекстноеМенюСохранитьВместеСЭПРасширеннаяПодсказка" id="152"/>
+														<ExtendedTooltip name="СписокКонтекстноеМенюСохранитьВместеСПодписьюРасширеннаяПодсказка" id="152"/>
 													</Button>
 												</ChildItems>
 											</ButtonGroup>
@@ -886,12 +961,12 @@
 										<ChildItems>
 											<Button name="СписокКонтекстноеМенюНайти" id="70">
 												<Type>CommandBarButton</Type>
-												<CommandName>6:c0519548-2a9a-44de-a25e-faf01e089d4d</CommandName>
+												<CommandName>0</CommandName>
 												<ExtendedTooltip name="СписокКонтекстноеМенюНайтиExtendedTooltip" id="147"/>
 											</Button>
 											<Button name="СписокКонтекстноеМенюОтменитьПоиск" id="71">
 												<Type>CommandBarButton</Type>
-												<CommandName>6:44ad3ec9-f3c2-4913-9224-5f9fb6418743</CommandName>
+												<CommandName>0</CommandName>
 												<ExtendedTooltip name="СписокКонтекстноеМенюОтменитьПоискExtendedTooltip" id="148"/>
 											</Button>
 										</ChildItems>
@@ -1330,11 +1405,6 @@
 				<v8:Type>xs:boolean</v8:Type>
 			</Type>
 		</Attribute>
-		<Attribute name="ВозможностьСоздаватьГруппыФайлов" id="12">
-			<Type>
-				<v8:Type>xs:boolean</v8:Type>
-			</Type>
-		</Attribute>
 		<Attribute name="ИмяСправочникаХранилищаФайлов" id="13">
 			<Type>
 				<v8:Type>xs:string</v8:Type>
@@ -1344,7 +1414,7 @@
 				</v8:StringQualifiers>
 			</Type>
 		</Attribute>
-		<Attribute name="ВозможностьСоздаватьВерсииФайлов" id="14">
+		<Attribute name="ЕстьВерсииФайлов" id="14">
 			<Type>
 				<v8:Type>xs:boolean</v8:Type>
 			</Type>
@@ -1386,6 +1456,16 @@
 		<Attribute name="УчетнаяЗапись" id="20">
 			<Type>
 				<v8:Type>cfg:CatalogRef.УчетныеЗаписиСинхронизацииФайлов</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ЕстьРеквизитСлужебный" id="21">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ЕстьГруппыФайлов" id="22">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
 			</Type>
 		</Attribute>
 	</Attributes>

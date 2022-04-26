@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.10">
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.13">
 	<WindowOpeningMode>LockOwnerWindow</WindowOpeningMode>
+	<AutoSaveDataInSettings>Use</AutoSaveDataInSettings>
 	<CommandBarLocation>Top</CommandBarLocation>
 	<CommandSet>
 		<ExcludedCommand>CustomizeForm</ExcludedCommand>
@@ -11,6 +12,7 @@
 	<Events>
 		<Event name="OnOpen">ПриОткрытии</Event>
 		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+		<Event name="BeforeLoadDataFromSettingsAtServer">ПередЗагрузкойДанныхИзНастроекНаСервере</Event>
 	</Events>
 	<ChildItems>
 		<UsualGroup name="КоманднаяПанель" id="36">
@@ -20,6 +22,7 @@
 					<v8:content>Командная панель</v8:content>
 				</v8:item>
 			</Title>
+			<Behavior>Usual</Behavior>
 			<Representation>None</Representation>
 			<ShowTitle>false</ShowTitle>
 			<ExtendedTooltip name="КоманднаяПанельРасширеннаяПодсказка" id="37"/>
@@ -277,6 +280,11 @@
 						</v8:StringQualifiers>
 					</Type>
 				</Column>
+				<Column name="ЭтоКоллекцияОбъектов" id="9">
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
 			</Columns>
 		</Attribute>
 		<Attribute name="ВыбранныеОбъектыМетаданных" id="2">
@@ -348,12 +356,63 @@
 					<v8:AllowedLength>Variable</v8:AllowedLength>
 				</v8:StringQualifiers>
 			</Type>
+			<Save>
+				<Field>СпособГруппировкиОбъектов</Field>
+			</Save>
 		</Attribute>
 		<Attribute name="АдресаВыбранныхОбъектов" id="11">
 			<Type>
 				<v8:Type>v8:ValueListType</v8:Type>
 			</Type>
 			<Settings xsi:type="v8:TypeDescription"/>
+		</Attribute>
+		<Attribute name="ВыбиратьКоллекцииКогдаВыбраныВсеОбъекты" id="12">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ЗапоминатьРазделыВыбранныхОбъектов" id="13">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="КоллекцииВыбираемыхОбъектовМетаданных" id="14">
+			<Type>
+				<v8:Type>v8:ValueListType</v8:Type>
+			</Type>
+			<Settings xsi:type="v8:TypeDescription"/>
+		</Attribute>
+		<Attribute name="РодительскиеПодсистемы" id="15">
+			<Type>
+				<v8:Type>v8:ValueListType</v8:Type>
+			</Type>
+			<Settings xsi:type="v8:TypeDescription"/>
+		</Attribute>
+		<Attribute name="ФильтрПоОбъектамМетаданных" id="16">
+			<Type>
+				<v8:Type>v8:ValueListType</v8:Type>
+			</Type>
+			<Settings xsi:type="v8:TypeDescription"/>
+		</Attribute>
+		<Attribute name="УникальныйИдентификаторИсточник" id="17">
+			<Type>
+				<v8:Type>v8:UUID</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ИдентификаторСтрокиПервогоВыбранногоОбъекта" id="18">
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>10</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ПометкаВыполнялась" id="20">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
 		</Attribute>
 	</Attributes>
 	<Commands>
@@ -400,25 +459,21 @@
 			<Type>
 				<v8:Type>v8:UUID</v8:Type>
 			</Type>
-			<KeyParameter>true</KeyParameter>
 		</Parameter>
 		<Parameter name="КоллекцииВыбираемыхОбъектовМетаданных">
 			<Type>
 				<v8:Type>v8:ValueListType</v8:Type>
 			</Type>
-			<KeyParameter>true</KeyParameter>
 		</Parameter>
 		<Parameter name="ФильтрПоОбъектамМетаданных">
 			<Type>
 				<v8:Type>v8:ValueListType</v8:Type>
 			</Type>
-			<KeyParameter>true</KeyParameter>
 		</Parameter>
 		<Parameter name="РодительскиеПодсистемы">
 			<Type>
 				<v8:Type>v8:ValueListType</v8:Type>
 			</Type>
-			<KeyParameter>true</KeyParameter>
 		</Parameter>
 		<Parameter name="Заголовок">
 			<Type>
@@ -442,7 +497,11 @@
 			<Type>
 				<v8:Type>xs:boolean</v8:Type>
 			</Type>
-			<KeyParameter>true</KeyParameter>
+		</Parameter>
+		<Parameter name="ВыбиратьКоллекцииКогдаВыбраныВсеОбъекты">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
 		</Parameter>
 	</Parameters>
 </Form>

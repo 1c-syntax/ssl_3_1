@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.10">
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.13">
 	<AutoSaveDataInSettings>Use</AutoSaveDataInSettings>
 	<MobileDeviceCommandBarContent>
 		<xr:Item>
@@ -31,6 +31,7 @@
 				</v8:item>
 			</Title>
 			<Group>Vertical</Group>
+			<Behavior>Usual</Behavior>
 			<Representation>None</Representation>
 			<ShowTitle>false</ShowTitle>
 			<ExtendedTooltip name="ГруппаПользовательскихНастроекРасширеннаяПодсказка" id="161"/>
@@ -284,6 +285,28 @@
 					<CommandName>Form.StandardCommand.Help</CommandName>
 					<ExtendedTooltip name="ФормаСправкаExtendedTooltip" id="107"/>
 				</Button>
+				<SearchStringAddition name="ПользователиПоиск" id="319">
+					<AdditionSource>
+						<Item>ПользователиСписок</Item>
+						<Type>SearchStringRepresentation</Type>
+					</AdditionSource>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Пользователи поиск</v8:content>
+						</v8:item>
+					</Title>
+					<ContextMenu name="ПользователиПоискКонтекстноеМеню" id="320"/>
+					<ExtendedTooltip name="ПользователиПоискРасширеннаяПодсказка" id="321"/>
+				</SearchStringAddition>
+				<SearchControlAddition name="ПользователиПоискУправление" id="322">
+					<AdditionSource>
+						<Item>ПользователиСписок</Item>
+						<Type>SearchControl</Type>
+					</AdditionSource>
+					<ContextMenu name="ПользователиПоискУправлениеКонтекстноеМеню" id="323"/>
+					<ExtendedTooltip name="ПользователиПоискУправлениеРасширеннаяПодсказка" id="324"/>
+				</SearchControlAddition>
 			</ChildItems>
 		</CommandBar>
 		<UsualGroup name="ГруппаКоманднаяПанельВыбора" id="218">
@@ -293,6 +316,7 @@
 					<v8:content>Командная панель выбора</v8:content>
 				</v8:item>
 			</Title>
+			<Behavior>Usual</Behavior>
 			<Representation>None</Representation>
 			<ShowTitle>false</ShowTitle>
 			<ExtendedTooltip name="ГруппаКоманднаяПанельВыбораРасширеннаяПодсказка" id="219"/>
@@ -319,7 +343,6 @@
 					<DataPath>СтрокаПоиска</DataPath>
 					<DefaultItem>true</DefaultItem>
 					<TitleLocation>None</TitleLocation>
-					<Shortcut>Shift+F</Shortcut>
 					<HorizontalAlign>Right</HorizontalAlign>
 					<GroupHorizontalAlign>Right</GroupHorizontalAlign>
 					<Width>24</Width>
@@ -329,7 +352,7 @@
 					<InputHint>
 						<v8:item>
 							<v8:lang>ru</v8:lang>
-							<v8:content>Поиск (Shift + F) </v8:content>
+							<v8:content>Введите имя, адрес, телефон...</v8:content>
 						</v8:item>
 					</InputHint>
 					<ContextMenu name="СтрокаПоискаКонтекстноеМеню" id="223"/>
@@ -354,6 +377,7 @@
 					</Title>
 					<GroupHorizontalAlign>Right</GroupHorizontalAlign>
 					<HorizontalAlign>Right</HorizontalAlign>
+					<Behavior>Usual</Behavior>
 					<Representation>None</Representation>
 					<ShowTitle>false</ShowTitle>
 					<ExtendedTooltip name="ГруппаРасширенныйВыборПравоРасширеннаяПодсказка" id="226"/>
@@ -396,6 +420,7 @@
 					<v8:content>Содержимое</v8:content>
 				</v8:item>
 			</Title>
+			<Behavior>Usual</Behavior>
 			<Representation>None</Representation>
 			<ChildItemsWidth>Equal</ChildItemsWidth>
 			<ShowTitle>false</ShowTitle>
@@ -428,6 +453,7 @@
 											<v8:content>Группы и пользователи</v8:content>
 										</v8:item>
 									</Title>
+									<Behavior>Usual</Behavior>
 									<Representation>None</Representation>
 									<ChildItemsWidth>LeftNarrowest</ChildItemsWidth>
 									<ShowTitle>false</ShowTitle>
@@ -440,6 +466,7 @@
 													<v8:content>Группы пользователей</v8:content>
 												</v8:item>
 											</Title>
+											<Behavior>Usual</Behavior>
 											<Representation>None</Representation>
 											<ShowTitle>false</ShowTitle>
 											<ExtendedTooltip name="ГруппаГруппыExtendedTooltip" id="110"/>
@@ -557,6 +584,7 @@
 													<VerticalStretch>true</VerticalStretch>
 													<Group>Vertical</Group>
 													<VerticalAlign>Center</VerticalAlign>
+													<Behavior>Usual</Behavior>
 													<Representation>None</Representation>
 													<ShowTitle>false</ShowTitle>
 													<ExtendedTooltip name="ГруппаВыбратьГруппуExtendedTooltip" id="113"/>
@@ -590,6 +618,7 @@
 													<v8:content>Пользователи</v8:content>
 												</v8:item>
 											</Title>
+											<Behavior>Usual</Behavior>
 											<Representation>None</Representation>
 											<ShowTitle>false</ShowTitle>
 											<ExtendedTooltip name="ГруппаПользователиExtendedTooltip" id="118"/>
@@ -620,8 +649,6 @@
 													<CommandSet>
 														<ExcludedCommand>Delete</ExcludedCommand>
 													</CommandSet>
-													<SearchStringLocation>None</SearchStringLocation>
-													<SearchControlLocation>None</SearchControlLocation>
 													<AutoRefresh>false</AutoRefresh>
 													<AutoRefreshPeriod>60</AutoRefreshPeriod>
 													<Period>
@@ -742,6 +769,7 @@
 													<VerticalStretch>true</VerticalStretch>
 													<Group>Vertical</Group>
 													<VerticalAlign>Center</VerticalAlign>
+													<Behavior>Usual</Behavior>
 													<Representation>None</Representation>
 													<ShowTitle>false</ShowTitle>
 													<ExtendedTooltip name="ГруппаВыбратьПользователяExtendedTooltip" id="122"/>
@@ -930,6 +958,7 @@
 									</Title>
 									<GroupVerticalAlign>Center</GroupVerticalAlign>
 									<Group>Vertical</Group>
+									<Behavior>Usual</Behavior>
 									<Representation>None</Representation>
 									<ShowTitle>false</ShowTitle>
 									<ExtendedTooltip name="ГруппаКнопкиВыбораПоискаРасширеннаяПодсказка" id="287"/>
@@ -966,6 +995,7 @@
 						</v8:item>
 					</Title>
 					<Group>Vertical</Group>
+					<Behavior>Usual</Behavior>
 					<Representation>None</Representation>
 					<ShowTitle>false</ShowTitle>
 					<ExtendedTooltip name="ВыбранныеПользователиИГруппыExtendedTooltip" id="127"/>
@@ -991,9 +1021,6 @@
 								</v8:item>
 							</Title>
 							<CommandSet>
-								<ExcludedCommand>Add</ExcludedCommand>
-								<ExcludedCommand>Change</ExcludedCommand>
-								<ExcludedCommand>Copy</ExcludedCommand>
 								<ExcludedCommand>EndEdit</ExcludedCommand>
 								<ExcludedCommand>MoveDown</ExcludedCommand>
 								<ExcludedCommand>MoveUp</ExcludedCommand>
@@ -1031,14 +1058,19 @@
 								<ExtendedTooltip name="СписокВыбранныхПользователейИГруппУправлениеПоискомРасширеннаяПодсказка" id="191"/>
 							</SearchControlAddition>
 							<Events>
+								<Event name="OnEditEnd">СписокВыбранныхПользователейИГруппПриОкончанииРедактирования</Event>
 								<Event name="Selection">СписокВыбранныхПользователейИГруппВыбор</Event>
-								<Event name="BeforeAddRow">СписокВыбранныхПользователейИГруппПередНачаломДобавления</Event>
+								<Event name="OnActivateRow">СписокВыбранныхПользователейИГруппПриАктивизацииСтроки</Event>
+								<Event name="OnStartEdit">СписокВыбранныхПользователейИГруппПриНачалеРедактирования</Event>
 							</Events>
 							<ChildItems>
 								<InputField name="ПользователиИГруппы" id="81">
 									<DataPath>ВыбранныеПользователиИГруппы.Пользователь</DataPath>
-									<ReadOnly>true</ReadOnly>
-									<EditMode>EnterOnInput</EditMode>
+									<DefaultItem>true</DefaultItem>
+									<ChoiceButton>false</ChoiceButton>
+									<OpenButton>false</OpenButton>
+									<QuickChoice>true</QuickChoice>
+									<ChooseType>false</ChooseType>
 									<ChoiceListButton>false</ChoiceListButton>
 									<ContextMenu name="ПользователиИГруппыКонтекстноеМеню" id="82"/>
 									<ExtendedTooltip name="ПользователиИГруппыExtendedTooltip" id="129"/>
@@ -1056,6 +1088,7 @@
 					<v8:content>Показывать пользователей дочерних групп и недействительных</v8:content>
 				</v8:item>
 			</Title>
+			<Behavior>Usual</Behavior>
 			<Representation>None</Representation>
 			<ShowTitle>false</ShowTitle>
 			<ExtendedTooltip name="ГруппаПоказыватьПользователейДочернихГруппИНедействительныхРасширеннаяПодсказка" id="130"/>
@@ -1162,6 +1195,7 @@
 								</v8:item>
 							</Title>
 							<Group>Vertical</Group>
+							<Behavior>Usual</Behavior>
 							<Representation>NormalSeparation</Representation>
 							<ShowTitle>false</ShowTitle>
 							<TitleDataPath>Items.ГруппыПользователей.CurrentData.Description</TitleDataPath>
@@ -1200,6 +1234,7 @@
 								</v8:item>
 							</Title>
 							<Group>Vertical</Group>
+							<Behavior>Usual</Behavior>
 							<Representation>NormalSeparation</Representation>
 							<ShowTitle>false</ShowTitle>
 							<TitleDataPath>Items.ПользователиСписок.CurrentData.Description</TitleDataPath>
@@ -1405,8 +1440,6 @@
 						</v8:item>
 					</Title>
 					<Type>
-						<v8:Type>cfg:CatalogRef.ВнешниеПользователи</v8:Type>
-						<v8:Type>cfg:CatalogRef.ГруппыВнешнихПользователей</v8:Type>
 						<v8:Type>cfg:CatalogRef.ГруппыПользователей</v8:Type>
 						<v8:Type>cfg:CatalogRef.Пользователи</v8:Type>
 					</Type>

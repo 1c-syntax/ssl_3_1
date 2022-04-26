@@ -4,7 +4,13 @@
 
 name: Контроль качества
 # Любой пуш и pr в проекте но с фильтром по основному проекту
-on: [push, pull_request]
+on:
+  push:
+  pull_request:
+  workflow_run:
+    workflows: ["Синхронизация конфигурации"]
+    types:
+      - completed
 
 env:
   ACTIONS_ALLOW_UNSECURE_COMMANDS: true
@@ -49,7 +55,7 @@ jobs:
 
       # Анализ проекта в SonarQube (ветка)
       - name: Анализ в SonarQube (branch)
-        if: github.event_name == 'push'
+        if: github.event_name == 'push' || github.event_name == 'workflow_run'
         run: sonar-scanner
             -Dsonar.login=${{ secrets.SONARQUBE_TOKEN }}
             -Dsonar.host.url=${{ secrets.SONARQUBE_HOST }}

@@ -1,0 +1,41 @@
+name: Синхронизация конфигурации
+
+on: 
+  schedule:
+    - cron: 0 12 * * * # каждый день в 12:00
+  workflow_dispatch:
+
+env:
+  YARD_RELEASES_USER: ${{ secrets.YARD_RELEASES_USER }}
+  YARD_RELEASES_PWD:  ${{ secrets.YARD_RELEASES_PWD }}
+
+jobs:
+  build:
+    runs-on: self-hosted
+    if: ${{ github.ref == 'refs/heads/master' }}
+
+    steps:
+      - name: Актуализация git
+        uses: actions/checkout@v2.4.0
+
+      - name: Подготовка окружения
+        shell: cmd
+        run: |
+          chcp 65001
+          mkdir distr
+          copy description.json distr
+          cd distr
+          mkdir SSL31
+          copy description.json SSL31
+
+      - name: Синхронизация с помощью yard
+        shell: cmd
+        run: |
+          chcp 65001
+          yard process --work-dir ./ ./yardsettings.json
+
+      - name: Отправка изменений в github репо
+        shell: cmd
+        run: |
+          chcp 65001
+          git push --set-upstream origin master

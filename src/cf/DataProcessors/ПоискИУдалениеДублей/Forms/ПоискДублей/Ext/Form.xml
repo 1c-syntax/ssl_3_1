@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.10">
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.13">
 	<Title>
 		<v8:item>
 			<v8:lang>ru</v8:lang>
@@ -40,6 +40,7 @@
 				</v8:item>
 			</Title>
 			<Group>Vertical</Group>
+			<Behavior>Usual</Behavior>
 			<Representation>None</Representation>
 			<ShowTitle>false</ShowTitle>
 			<ExtendedTooltip name="ШапкаРасширеннаяПодсказка" id="407"/>
@@ -156,10 +157,10 @@
 							</Title>
 							<ExtendedTooltip name="КоманднаяПанельРасширеннаяПодсказка" id="97"/>
 							<ChildItems>
-								<Button name="ВыбратьОсновнойЭлемент" id="88">
+								<Button name="ОтметитьКакОригинал" id="88">
 									<Type>CommandBarButton</Type>
-									<CommandName>Form.Command.ВыбратьОсновнойЭлемент</CommandName>
-									<ExtendedTooltip name="ВыбратьОсновнойЭлементРасширеннаяПодсказка" id="89"/>
+									<CommandName>Form.Command.ОтметитьКакОригинал</CommandName>
+									<ExtendedTooltip name="ОтметитьКакОригиналРасширеннаяПодсказка" id="89"/>
 								</Button>
 								<ButtonGroup name="ГруппаУстановитьСнятьФлажки" id="461">
 									<Representation>Compact</Representation>
@@ -218,6 +219,7 @@
 								</v8:item>
 							</Title>
 							<Group>AlwaysHorizontal</Group>
+							<Behavior>Usual</Behavior>
 							<Representation>None</Representation>
 							<ShowTitle>false</ShowTitle>
 							<ExtendedTooltip name="ГруппаНайденныеДублиРасширеннаяПодсказка" id="156"/>
@@ -248,7 +250,7 @@
 										<ChildItems>
 											<Button name="НайденныеДублиКонтекстноеМенюВыбратьОсновнойЭлемент" id="117">
 												<Type>CommandBarButton</Type>
-												<CommandName>Form.Command.ВыбратьОсновнойЭлемент</CommandName>
+												<CommandName>Form.Command.ОтметитьКакОригинал</CommandName>
 												<ExtendedTooltip name="НайденныеДублиКонтекстноеМенюВыбратьОсновнойЭлементРасширеннаяПодсказка" id="118"/>
 											</Button>
 											<ButtonGroup name="НайденныеДублиКонтекстноеМенюГруппаИзменить" id="422">
@@ -276,7 +278,7 @@
 												<ChildItems>
 													<Button name="НайденныеДублиКонтекстноеМенюИзменитьФорму" id="424">
 														<Type>CommandBarButton</Type>
-														<CommandName>0:198ea630-fda2-4cda-8a23-f999f4c67ee6</CommandName>
+														<CommandName>0</CommandName>
 														<ExtendedTooltip name="НайденныеДублиКонтекстноеМенюИзменитьФормуРасширеннаяПодсказка" id="425"/>
 													</Button>
 												</ChildItems>
@@ -413,8 +415,8 @@
 											<HorizontalAlign>Left</HorizontalAlign>
 											<EditMode>EnterOnInput</EditMode>
 											<HeaderPicture>
-												<xr:Ref>CommonPicture.Информация</xr:Ref>
-												<xr:LoadTransparent>false</xr:LoadTransparent>
+												<xr:Ref>StdPicture.Information</xr:Ref>
+												<xr:LoadTransparent>true</xr:LoadTransparent>
 											</HeaderPicture>
 											<Width>4</Width>
 											<HorizontalStretch>false</HorizontalStretch>
@@ -430,6 +432,7 @@
 											<v8:content>Сведения:</v8:content>
 										</v8:item>
 									</Title>
+									<Behavior>Usual</Behavior>
 									<CollapsedRepresentationTitle>
 										<v8:item>
 											<v8:lang>ru</v8:lang>
@@ -571,6 +574,7 @@
 								</v8:item>
 							</Title>
 							<Height>2</Height>
+							<Behavior>Usual</Behavior>
 							<Representation>None</Representation>
 							<ShowTitle>false</ShowTitle>
 							<ExtendedTooltip name="ГруппаСостояниеРасширеннаяПодсказка" id="158"/>
@@ -647,6 +651,7 @@
 									<v8:content>Информация об успешном удалении</v8:content>
 								</v8:item>
 							</Title>
+							<Behavior>Usual</Behavior>
 							<Representation>None</Representation>
 							<ShowTitle>false</ShowTitle>
 							<ExtendedTooltip name="ГруппаИнформацияОбУспешномУдаленииРасширеннаяПодсказка" id="472"/>
@@ -704,6 +709,7 @@
 											<v8:content>Действия возможные дубли</v8:content>
 										</v8:item>
 									</Title>
+									<Behavior>Usual</Behavior>
 									<Representation>None</Representation>
 									<ShowTitle>false</ShowTitle>
 									<ExtendedTooltip name="ГруппаДействияВозможныеДублиРасширеннаяПодсказка" id="503"/>
@@ -887,6 +893,7 @@
 								</v8:item>
 							</ToolTip>
 							<Group>Vertical</Group>
+							<Behavior>Usual</Behavior>
 							<Representation>None</Representation>
 							<ShowTitle>false</ShowTitle>
 							<ExtendedTooltip name="ГруппаВертикальнаяНеобработанныеДублиРасширеннаяПодсказка" id="239"/>
@@ -916,6 +923,7 @@
 											<v8:content>Группа горизонтальная найденные дубли</v8:content>
 										</v8:item>
 									</ToolTip>
+									<Behavior>Usual</Behavior>
 									<Representation>None</Representation>
 									<ShowTitle>false</ShowTitle>
 									<ExtendedTooltip name="ГруппаГоризонтальнаяНеобработанныеДублиРасширеннаяПодсказка" id="241"/>
@@ -970,7 +978,7 @@
 														<ChildItems>
 															<Button name="НеобработанныеДублиКонтекстноеМенюИзменитьФорму" id="438">
 																<Type>CommandBarButton</Type>
-																<CommandName>0:198ea630-fda2-4cda-8a23-f999f4c67ee6</CommandName>
+																<CommandName>0</CommandName>
 																<ExtendedTooltip name="НеобработанныеДублиКонтекстноеМенюИзменитьФормуРасширеннаяПодсказка" id="439"/>
 															</Button>
 														</ChildItems>
@@ -1253,6 +1261,7 @@
 										</v8:item>
 									</Title>
 									<Shortcut>Ctrl+S</Shortcut>
+									<Behavior>Usual</Behavior>
 									<Representation>None</Representation>
 									<ShowTitle>false</ShowTitle>
 									<ExtendedTooltip name="ГруппаПояснениеКНеобработаннымРасширеннаяПодсказка" id="284"/>
@@ -1383,6 +1392,7 @@
 					<v8:content>Панель действий мастера</v8:content>
 				</v8:item>
 			</Title>
+			<Behavior>Usual</Behavior>
 			<Representation>NormalSeparation</Representation>
 			<ShowTitle>false</ShowTitle>
 			<ExtendedTooltip name="ПанельДействийМастераРасширеннаяПодсказка" id="168"/>
@@ -1451,6 +1461,7 @@
 				</v8:item>
 			</Title>
 			<Group>Vertical</Group>
+			<Behavior>Usual</Behavior>
 			<Representation>None</Representation>
 			<ShowTitle>false</ShowTitle>
 			<ExtendedTooltip name="ГруппаКартинокРасширеннаяПодсказка" id="76"/>
@@ -1511,8 +1522,8 @@
 						</v8:item>
 					</Title>
 					<Picture>
-						<xr:Ref>CommonPicture.Информация</xr:Ref>
-						<xr:LoadTransparent>false</xr:LoadTransparent>
+						<xr:Ref>StdPicture.Information</xr:Ref>
+						<xr:LoadTransparent>true</xr:LoadTransparent>
 					</Picture>
 					<FileDragMode>AsFile</FileDragMode>
 					<ContextMenu name="Информация16КонтекстноеМеню" id="215"/>
@@ -2196,9 +2207,14 @@
 				<v8:Type>cfg:CatalogRef.ИдентификаторыОбъектовМетаданных</v8:Type>
 			</Type>
 		</Attribute>
+		<Attribute name="ВозвращеноМеньшеЧемНайдено" id="42">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
 	</Attributes>
 	<Commands>
-		<Command name="ВыбратьОсновнойЭлемент" id="5">
+		<Command name="ОтметитьКакОригинал" id="5">
 			<Title>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
@@ -2215,7 +2231,7 @@
 				<xr:Ref>StdPicture.MoveRight</xr:Ref>
 				<xr:LoadTransparent>true</xr:LoadTransparent>
 			</Picture>
-			<Action>ВыбратьОсновнойЭлемент</Action>
+			<Action>ОтметитьКакОригинал</Action>
 			<Representation>TextPicture</Representation>
 			<CurrentRowUse>DontUse</CurrentRowUse>
 		</Command>

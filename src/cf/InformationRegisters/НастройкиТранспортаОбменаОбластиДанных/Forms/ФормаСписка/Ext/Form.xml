@@ -1,18 +1,11 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.10">
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.13">
 	<CommandSet>
 		<ExcludedCommand>Copy</ExcludedCommand>
 		<ExcludedCommand>Create</ExcludedCommand>
 	</CommandSet>
 	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
-		<ChildItems>
-			<Button name="ФормаИзменить" id="19">
-				<Type>CommandBarButton</Type>
-				<CommandName>Form.Item.Список.StandardCommand.Change</CommandName>
-				<LocationInCommandBar>InCommandBarAndInAdditionalSubmenu</LocationInCommandBar>
-				<ExtendedTooltip name="ФормаИзменитьРасширеннаяПодсказка" id="20"/>
-			</Button>
-		</ChildItems>
+		<Autofill>false</Autofill>
 	</AutoCommandBar>
 	<ChildItems>
 		<UsualGroup name="СписокКомпоновщикНастроекПользовательскиеНастройки" id="1">
@@ -24,12 +17,12 @@
 			</Title>
 			<VerticalStretch>false</VerticalStretch>
 			<Group>Vertical</Group>
+			<Behavior>Usual</Behavior>
 			<ShowTitle>false</ShowTitle>
 			<ExtendedTooltip name="СписокКомпоновщикНастроекПользовательскиеНастройкиРасширеннаяПодсказка" id="2"/>
 		</UsualGroup>
 		<Table name="Список" id="3">
 			<Representation>List</Representation>
-			<CommandBarLocation>None</CommandBarLocation>
 			<DefaultItem>true</DefaultItem>
 			<UseAlternationRowColor>true</UseAlternationRowColor>
 			<InitialTreeView>ExpandTopLevel</InitialTreeView>
@@ -47,8 +40,6 @@
 				<ExcludedCommand>Copy</ExcludedCommand>
 				<ExcludedCommand>Create</ExcludedCommand>
 			</CommandSet>
-			<SearchStringLocation>None</SearchStringLocation>
-			<SearchControlLocation>None</SearchControlLocation>
 			<AutoRefresh>false</AutoRefresh>
 			<AutoRefreshPeriod>60</AutoRefreshPeriod>
 			<Period>
@@ -65,7 +56,14 @@
 			<UserSettingsGroup>СписокКомпоновщикНастроекПользовательскиеНастройки</UserSettingsGroup>
 			<ContextMenu name="СписокКонтекстноеМеню" id="4"/>
 			<AutoCommandBar name="СписокКоманднаяПанель" id="5">
-				<Autofill>false</Autofill>
+				<ChildItems>
+					<Button name="ФормаИзменить" id="19">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Item.Список.StandardCommand.Change</CommandName>
+						<LocationInCommandBar>InCommandBarAndInAdditionalSubmenu</LocationInCommandBar>
+						<ExtendedTooltip name="ФормаИзменитьРасширеннаяПодсказка" id="20"/>
+					</Button>
+				</ChildItems>
 			</AutoCommandBar>
 			<ExtendedTooltip name="СписокРасширеннаяПодсказка" id="6"/>
 			<SearchStringAddition name="СписокСтрокаПоиска" id="7">

@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.10">
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.13">
 	<Title>
 		<v8:item>
 			<v8:lang>ru</v8:lang>
@@ -47,6 +47,7 @@
 					<v8:content>Настройки отбора поиска</v8:content>
 				</v8:item>
 			</Title>
+			<Behavior>Usual</Behavior>
 			<Representation>None</Representation>
 			<ShowTitle>false</ShowTitle>
 			<ExtendedTooltip name="Группа1РасширеннаяПодсказка" id="524"/>
@@ -104,6 +105,7 @@
 									<Type>CommandBarButton</Type>
 									<DefaultButton>true</DefaultButton>
 									<CommandName>Form.Command.УдалитьВыбранные</CommandName>
+									<RepresentationInContextMenu>None</RepresentationInContextMenu>
 									<ExtendedTooltip name="ДеревоПомеченныхНаУдалениеУдалитьВыбранныеРасширеннаяПодсказка" id="520"/>
 								</Button>
 								<ButtonGroup name="КомандыВыбора" id="57">
@@ -149,16 +151,17 @@
 								<Button name="ДеревоПомеченныхНаУдалениеИзменить" id="339">
 									<Type>CommandBarButton</Type>
 									<CommandName>Form.Command.ДеревоПомеченныхНаУдалениеИзменить</CommandName>
-									<ExtendedTooltip name="ДеревоПомеченныхНаУдалениеИзменитьРасширеннаяПодсказка" id="340"/>
-								</Button>
-								<Button name="Обновить" id="573">
-									<Type>CommandBarButton</Type>
-									<CommandName>Form.Command.Обновить</CommandName>
 									<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
-									<ExtendedTooltip name="ОбновитьРасширеннаяПодсказка" id="574"/>
+									<ExtendedTooltip name="ДеревоПомеченныхНаУдалениеИзменитьРасширеннаяПодсказка" id="340"/>
 								</Button>
 							</ChildItems>
 						</ButtonGroup>
+						<Button name="Обновить" id="573">
+							<Type>CommandBarButton</Type>
+							<CommandName>Form.Command.Обновить</CommandName>
+							<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
+							<ExtendedTooltip name="ОбновитьРасширеннаяПодсказка" id="574"/>
+						</Button>
 					</ChildItems>
 				</ButtonGroup>
 				<ButtonGroup name="КоманднаяПанельОбработкаОшибок" id="685">
@@ -286,6 +289,7 @@
 								</v8:item>
 							</Title>
 							<Group>Vertical</Group>
+							<Behavior>Usual</Behavior>
 							<Representation>None</Representation>
 							<ShowTitle>false</ShowTitle>
 							<ExtendedTooltip name="Группа1РасширеннаяПодсказка5" id="712"/>
@@ -686,6 +690,7 @@
 									<v8:content>Не удаленные</v8:content>
 								</v8:item>
 							</Title>
+							<Behavior>Usual</Behavior>
 							<Representation>None</Representation>
 							<ChildItemsWidth>Equal</ChildItemsWidth>
 							<ShowTitle>false</ShowTitle>
@@ -699,6 +704,7 @@
 										</v8:item>
 									</Title>
 									<Group>Vertical</Group>
+									<Behavior>Usual</Behavior>
 									<Representation>None</Representation>
 									<ShowTitle>false</ShowTitle>
 									<ExtendedTooltip name="ГруппаНеУдаленныеТаблицаРасширеннаяПодсказка" id="314"/>
@@ -840,6 +846,7 @@
 										</v8:item>
 									</Title>
 									<Group>Vertical</Group>
+									<Behavior>Usual</Behavior>
 									<Representation>None</Representation>
 									<ShowTitle>false</ShowTitle>
 									<ExtendedTooltip name="ГруппаПричиныРасширеннаяПодсказка" id="316"/>
@@ -1026,6 +1033,7 @@
 																</v8:item>
 															</Title>
 															<Group>Vertical</Group>
+															<Behavior>Usual</Behavior>
 															<Representation>None</Representation>
 															<ShowTitle>false</ShowTitle>
 															<ExtendedTooltip name="Группа1РасширеннаяПодсказка17" id="635"/>
@@ -1080,6 +1088,7 @@
 				</v8:item>
 			</Title>
 			<Group>Vertical</Group>
+			<Behavior>Usual</Behavior>
 			<Representation>None</Representation>
 			<ShowTitle>false</ShowTitle>
 			<ExtendedTooltip name="ГруппаКартинокРасширеннаяПодсказка" id="546"/>
@@ -1140,8 +1149,8 @@
 						</v8:item>
 					</Title>
 					<Picture>
-						<xr:Ref>CommonPicture.Информация</xr:Ref>
-						<xr:LoadTransparent>false</xr:LoadTransparent>
+						<xr:Ref>StdPicture.Information</xr:Ref>
+						<xr:LoadTransparent>true</xr:LoadTransparent>
 					</Picture>
 					<FileDragMode>AsFile</FileDragMode>
 					<ContextMenu name="Информация16КонтекстноеМеню" id="560"/>

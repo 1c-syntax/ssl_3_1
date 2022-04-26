@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.10">
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.13">
 	<AutoSaveDataInSettings>Use</AutoSaveDataInSettings>
 	<CommandBarLocation>None</CommandBarLocation>
 	<CommandSet>
@@ -20,6 +20,7 @@
 				</v8:item>
 			</Title>
 			<Group>Vertical</Group>
+			<Behavior>Usual</Behavior>
 			<Representation>None</Representation>
 			<ShowTitle>false</ShowTitle>
 			<ExtendedTooltip name="ГруппаПользовательскихНастроекРасширеннаяПодсказка" id="79"/>
@@ -32,6 +33,7 @@
 				</v8:item>
 			</Title>
 			<Group>Horizontal</Group>
+			<Behavior>Usual</Behavior>
 			<Representation>None</Representation>
 			<ShowTitle>false</ShowTitle>
 			<ExtendedTooltip name="БыстрыеОтборыExtendedTooltip" id="32"/>
@@ -86,6 +88,7 @@
 					<v8:content>Пояснение для сервиса</v8:content>
 				</v8:item>
 			</Title>
+			<Behavior>Usual</Behavior>
 			<Representation>None</Representation>
 			<ShowTitle>false</ShowTitle>
 			<ExtendedTooltip name="ГруппаПояснениеСервисРасширеннаяПодсказка" id="131"/>
@@ -242,6 +245,34 @@
 					<CommandName>Form.StandardCommand.Help</CommandName>
 					<ExtendedTooltip name="СправкаExtendedTooltip" id="41"/>
 				</Button>
+				<SearchStringAddition name="СписокПоиск" id="135">
+					<AdditionSource>
+						<Item>Список</Item>
+						<Type>SearchStringRepresentation</Type>
+					</AdditionSource>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Список поиск</v8:content>
+						</v8:item>
+					</Title>
+					<ContextMenu name="СписокПоискКонтекстноеМеню" id="136"/>
+					<ExtendedTooltip name="СписокПоискРасширеннаяПодсказка" id="137"/>
+				</SearchStringAddition>
+				<SearchControlAddition name="СписокПоискУправление" id="138">
+					<AdditionSource>
+						<Item>Список</Item>
+						<Type>SearchControl</Type>
+					</AdditionSource>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Список поиск управление</v8:content>
+						</v8:item>
+					</Title>
+					<ContextMenu name="СписокПоискУправлениеКонтекстноеМеню" id="139"/>
+					<ExtendedTooltip name="СписокПоискУправлениеРасширеннаяПодсказка" id="140"/>
+				</SearchControlAddition>
 			</ChildItems>
 		</CommandBar>
 		<Table name="Список" id="1">
@@ -684,7 +715,7 @@
 	<CommandInterface>
 		<CommandBar>
 			<Item>
-				<Command>0:4ef362ee-0350-49fe-b40a-3ffa1576aa36</Command>
+				<Command>0</Command>
 				<Type>Auto</Type>
 				<CommandGroup>FormCommandBarImportant</CommandGroup>
 				<DefaultVisible>false</DefaultVisible>
@@ -693,7 +724,7 @@
 				</Visible>
 			</Item>
 			<Item>
-				<Command>0:4769b1a9-c88a-4d5e-9520-ea46da1ac861</Command>
+				<Command>0</Command>
 				<Type>Auto</Type>
 				<CommandGroup>FormCommandBarImportant</CommandGroup>
 				<Index>2</Index>
@@ -703,7 +734,7 @@
 				</Visible>
 			</Item>
 			<Item>
-				<Command>0:1ea304f6-8e8f-4479-aceb-086cf9709ce7</Command>
+				<Command>0</Command>
 				<Type>Auto</Type>
 				<CommandGroup>FormCommandBarImportant</CommandGroup>
 				<Index>1</Index>

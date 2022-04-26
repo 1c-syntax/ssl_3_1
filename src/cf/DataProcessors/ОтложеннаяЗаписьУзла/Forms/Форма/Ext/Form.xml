@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.10">
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.13">
 	<Title>
 		<v8:item>
 			<v8:lang>ru</v8:lang>
@@ -44,6 +44,7 @@
 							</Title>
 							<Group>AlwaysHorizontal</Group>
 							<VerticalAlign>Center</VerticalAlign>
+							<Behavior>Usual</Behavior>
 							<ShowTitle>false</ShowTitle>
 							<ExtendedTooltip name="ГруппаОжиданиеРасширеннаяПодсказка" id="18"/>
 							<ChildItems>
@@ -88,13 +89,12 @@
 							</Title>
 							<Group>AlwaysHorizontal</Group>
 							<VerticalAlign>Center</VerticalAlign>
+							<Behavior>Usual</Behavior>
 							<Representation>None</Representation>
 							<ShowTitle>false</ShowTitle>
 							<ExtendedTooltip name="ГруппаОкончаниеРасширеннаяПодсказка" id="10"/>
 							<ChildItems>
 								<PictureDecoration name="Декорация3" id="11">
-									<Width>6</Width>
-									<Height>2</Height>
 									<Picture>
 										<xr:Ref>CommonPicture.Успешно32</xr:Ref>
 										<xr:LoadTransparent>false</xr:LoadTransparent>
@@ -136,6 +136,69 @@
 										</v8:item>
 									</Title>
 									<ExtendedTooltip name="КомандаГотовоРасширеннаяПодсказка" id="8"/>
+								</Button>
+							</ChildItems>
+						</CommandBar>
+					</ChildItems>
+				</Page>
+				<Page name="СтраницаОшибка" id="38">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Страница окончание</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="СтраницаОшибкаРасширеннаяПодсказка" id="39"/>
+					<ChildItems>
+						<UsualGroup name="ГруппаОшибка" id="40">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Ошибка</v8:content>
+								</v8:item>
+							</Title>
+							<Group>AlwaysHorizontal</Group>
+							<VerticalAlign>Center</VerticalAlign>
+							<Behavior>Usual</Behavior>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаОшибкаРасширеннаяПодсказка" id="41"/>
+							<ChildItems>
+								<PictureDecoration name="Декорация4" id="42">
+									<Picture>
+										<xr:Ref>CommonPicture.Ошибка32</xr:Ref>
+										<xr:LoadTransparent>false</xr:LoadTransparent>
+									</Picture>
+									<FileDragMode>AsFile</FileDragMode>
+									<ContextMenu name="Декорация4КонтекстноеМеню" id="43"/>
+									<ExtendedTooltip name="Декорация4РасширеннаяПодсказка" id="44"/>
+								</PictureDecoration>
+								<LabelDecoration name="ДекорацияОшибкаЗаписи" id="45">
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Ошибка при записи узла синхронизации</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="ДекорацияОшибкаЗаписиКонтекстноеМеню" id="46"/>
+									<ExtendedTooltip name="ДекорацияОшибкаЗаписиРасширеннаяПодсказка" id="47"/>
+								</LabelDecoration>
+							</ChildItems>
+						</UsualGroup>
+						<CommandBar name="КоманднаяПанельОшибка" id="48">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Командная панель ошибка</v8:content>
+								</v8:item>
+							</Title>
+							<HorizontalLocation>Right</HorizontalLocation>
+							<ExtendedTooltip name="КоманднаяПанельОшибкаРасширеннаяПодсказка" id="49"/>
+							<ChildItems>
+								<Button name="КомандаЗакрыть" id="50">
+									<Type>CommandBarButton</Type>
+									<CommandName>Form.Command.КомандаЗакрыть</CommandName>
+									<ExtendedTooltip name="КомандаЗакрытьРасширеннаяПодсказка" id="51"/>
 								</Button>
 							</ChildItems>
 						</CommandBar>
@@ -186,6 +249,21 @@
 				</v8:item>
 			</ToolTip>
 			<Action>КомандаГотово</Action>
+		</Command>
+		<Command name="КомандаЗакрыть" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Закрыть</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Команда закрыть</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>КомандаЗакрыть</Action>
 		</Command>
 	</Commands>
 </Form>

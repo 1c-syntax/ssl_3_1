@@ -36,6 +36,8 @@
 				<condition>true</condition>
 			</attributeUseRestriction>
 			<valueType>
+				<v8:Type xmlns:d5p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d5p1:CatalogRef.ВнешниеПользователи</v8:Type>
+				<v8:Type xmlns:d5p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d5p1:CatalogRef.ГруппыВнешнихПользователей</v8:Type>
 				<v8:Type xmlns:d5p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d5p1:CatalogRef.ГруппыПользователей</v8:Type>
 				<v8:Type xmlns:d5p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d5p1:CatalogRef.Пользователи</v8:Type>
 			</valueType>
@@ -65,6 +67,13 @@
 			<valueType>
 				<v8:Type>xs:boolean</v8:Type>
 			</valueType>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType"/>
+				</dcscor:item>
+			</appearance>
 		</field>
 		<field xsi:type="DataSetFieldField">
 			<dataPath>ПравоПросмотр</dataPath>
@@ -78,6 +87,13 @@
 			<valueType>
 				<v8:Type>xs:boolean</v8:Type>
 			</valueType>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType"/>
+				</dcscor:item>
+			</appearance>
 		</field>
 		<field xsi:type="DataSetFieldField">
 			<dataPath>ПравоРедактирование</dataPath>
@@ -91,6 +107,13 @@
 			<valueType>
 				<v8:Type>xs:boolean</v8:Type>
 			</valueType>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType"/>
+				</dcscor:item>
+			</appearance>
 		</field>
 		<field xsi:type="DataSetFieldField">
 			<dataPath>Право</dataPath>
@@ -109,6 +132,13 @@
 					<v8:AllowedSign>Nonnegative</v8:AllowedSign>
 				</v8:NumberQualifiers>
 			</valueType>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType"/>
+				</dcscor:item>
+			</appearance>
 			<availableValue>
 				<value xsi:type="xs:decimal">1</value>
 				<presentation xsi:type="v8:LocalStringType">
@@ -136,57 +166,6 @@
 					</v8:item>
 				</presentation>
 			</availableValue>
-		</field>
-		<field xsi:type="DataSetFieldField">
-			<dataPath>КартинкаПросмотр</dataPath>
-			<field>КартинкаПросмотр</field>
-			<title xsi:type="v8:LocalStringType">
-				<v8:item>
-					<v8:lang>ru</v8:lang>
-					<v8:content>Картинка просмотр</v8:content>
-				</v8:item>
-			</title>
-			<valueType>
-				<v8:Type>xs:string</v8:Type>
-				<v8:StringQualifiers>
-					<v8:Length>0</v8:Length>
-					<v8:AllowedLength>Variable</v8:AllowedLength>
-				</v8:StringQualifiers>
-			</valueType>
-		</field>
-		<field xsi:type="DataSetFieldField">
-			<dataPath>КартинкаРедактирование</dataPath>
-			<field>КартинкаРедактирование</field>
-			<title xsi:type="v8:LocalStringType">
-				<v8:item>
-					<v8:lang>ru</v8:lang>
-					<v8:content>Картинка редактирование</v8:content>
-				</v8:item>
-			</title>
-			<valueType>
-				<v8:Type>xs:string</v8:Type>
-				<v8:StringQualifiers>
-					<v8:Length>0</v8:Length>
-					<v8:AllowedLength>Variable</v8:AllowedLength>
-				</v8:StringQualifiers>
-			</valueType>
-		</field>
-		<field xsi:type="DataSetFieldField">
-			<dataPath>КартинкаСоздание</dataPath>
-			<field>КартинкаСоздание</field>
-			<title xsi:type="v8:LocalStringType">
-				<v8:item>
-					<v8:lang>ru</v8:lang>
-					<v8:content>Картинка создание</v8:content>
-				</v8:item>
-			</title>
-			<valueType>
-				<v8:Type>xs:string</v8:Type>
-				<v8:StringQualifiers>
-					<v8:Length>0</v8:Length>
-					<v8:AllowedLength>Variable</v8:AllowedLength>
-				</v8:StringQualifiers>
-			</valueType>
 		</field>
 		<field xsi:type="DataSetFieldField">
 			<dataPath>Отчет</dataPath>
@@ -246,25 +225,589 @@
 				<v8:Type>xs:boolean</v8:Type>
 			</valueType>
 		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ВидДоступа</dataPath>
+			<field>ВидДоступа</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Вид доступа</v8:content>
+				</v8:item>
+			</title>
+			<presentationExpression>ВидДоступаПредставление</presentationExpression>
+			<valueType>
+				<v8:TypeId>9a33b5dc-a8f1-496e-9961-95890984cd86</v8:TypeId>
+			</valueType>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ВсеРазрешены</dataPath>
+			<field>ВсеРазрешены</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Все разрешены</v8:content>
+				</v8:item>
+			</title>
+			<valueType>
+				<v8:Type>xs:boolean</v8:Type>
+			</valueType>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>БЛ=Разрешенные; БИ=Запрещенные</v8:content>
+						</v8:item>
+					</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ЗначениеДоступа</dataPath>
+			<field>ЗначениеДоступа</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Значение доступа</v8:content>
+				</v8:item>
+			</title>
+			<valueType>
+				<v8:TypeId>9a33b5dc-a8f1-496e-9961-95890984cd86</v8:TypeId>
+			</valueType>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ВидДоступаПредставление</dataPath>
+			<field>ВидДоступаПредставление</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Вид доступа представление</v8:content>
+				</v8:item>
+			</title>
+			<valueType>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>150</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</valueType>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ПравоЧтениеБезОграничения</dataPath>
+			<field>ПравоЧтениеБезОграничения</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Право чтение без ограничения</v8:content>
+				</v8:item>
+			</title>
+			<valueType>
+				<v8:Type>xs:boolean</v8:Type>
+			</valueType>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType"/>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ПравоИзменениеБезОграничения</dataPath>
+			<field>ПравоИзменениеБезОграничения</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Право изменение без ограничения</v8:content>
+				</v8:item>
+			</title>
+			<valueType>
+				<v8:Type>xs:boolean</v8:Type>
+			</valueType>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType"/>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ПравоДобавлениеБезОграничения</dataPath>
+			<field>ПравоДобавлениеБезОграничения</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Право добавление без ограничения</v8:content>
+				</v8:item>
+			</title>
+			<valueType>
+				<v8:Type>xs:boolean</v8:Type>
+			</valueType>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType"/>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ПравоБезОграничения</dataPath>
+			<field>ПравоБезОграничения</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Право без ограничения</v8:content>
+				</v8:item>
+			</title>
+			<valueType>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>1</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</valueType>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType"/>
+				</dcscor:item>
+			</appearance>
+			<availableValue>
+				<value xsi:type="xs:decimal">1</value>
+				<presentation xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Просмотр без ограничения</v8:content>
+					</v8:item>
+				</presentation>
+			</availableValue>
+			<availableValue>
+				<value xsi:type="xs:decimal">2</value>
+				<presentation xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Редактирование без ограничения</v8:content>
+					</v8:item>
+				</presentation>
+			</availableValue>
+			<availableValue>
+				<value xsi:type="xs:decimal">3</value>
+				<presentation xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Создание без ограничения</v8:content>
+					</v8:item>
+				</presentation>
+			</availableValue>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ВидДоступаПравоЧтениеБезОграничения</dataPath>
+			<field>ВидДоступаПравоЧтениеБезОграничения</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Вид доступа право чтение без ограничения</v8:content>
+				</v8:item>
+			</title>
+			<valueType>
+				<v8:Type>xs:boolean</v8:Type>
+			</valueType>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType"/>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ВидДоступаПравоИзменениеБезОграничения</dataPath>
+			<field>ВидДоступаПравоИзменениеБезОграничения</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Вид доступа право изменение без ограничения</v8:content>
+				</v8:item>
+			</title>
+			<valueType>
+				<v8:Type>xs:boolean</v8:Type>
+			</valueType>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType"/>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ВидДоступаПравоДобавлениеБезОграничения</dataPath>
+			<field>ВидДоступаПравоДобавлениеБезОграничения</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Вид доступа право добавление без ограничения</v8:content>
+				</v8:item>
+			</title>
+			<valueType>
+				<v8:Type>xs:boolean</v8:Type>
+			</valueType>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType"/>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ВидДоступаПравоПросмотр</dataPath>
+			<field>ВидДоступаПравоПросмотр</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Вид доступа право просмотр</v8:content>
+				</v8:item>
+			</title>
+			<valueType>
+				<v8:Type>xs:boolean</v8:Type>
+			</valueType>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType"/>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ВидДоступаПравоРедактирование</dataPath>
+			<field>ВидДоступаПравоРедактирование</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Вид доступа право редактирование</v8:content>
+				</v8:item>
+			</title>
+			<valueType>
+				<v8:Type>xs:boolean</v8:Type>
+			</valueType>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType"/>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ВидДоступаПравоИнтерактивноеДобавление</dataPath>
+			<field>ВидДоступаПравоИнтерактивноеДобавление</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Вид доступа право интерактивное добавление</v8:content>
+				</v8:item>
+			</title>
+			<valueType>
+				<v8:Type>xs:boolean</v8:Type>
+			</valueType>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType"/>
+				</dcscor:item>
+			</appearance>
+		</field>
 		<dataSource>ИсточникДанных1</dataSource>
 		<objectName>ПраваПользователей</objectName>
 	</dataSet>
+	<dataSet xsi:type="DataSetObject">
+		<name>НастройкиПравПоОбъектам</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ВладелецНастроек</dataPath>
+			<field>ВладелецНастроек</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Владелец настроек</v8:content>
+				</v8:item>
+			</title>
+			<valueType>
+				<v8:TypeId>a02405f8-0a56-4b5a-a885-91715df29d5c</v8:TypeId>
+			</valueType>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ВладелецИлиПользовательНастроек</dataPath>
+			<field>ВладелецИлиПользовательНастроек</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Владелец или пользователь настроек</v8:content>
+				</v8:item>
+			</title>
+			<valueType>
+				<v8:TypeSet xmlns:d5p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d5p1:AnyRef</v8:TypeSet>
+			</valueType>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ЭтоВладелецНастроек</dataPath>
+			<field>ЭтоВладелецНастроек</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Это владелец настроек</v8:content>
+				</v8:item>
+			</title>
+			<valueType>
+				<v8:Type>xs:boolean</v8:Type>
+			</valueType>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>НаследованиеНастроекВладельцем</dataPath>
+			<field>НаследованиеНастроекВладельцем</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Наследование настроек владельцем</v8:content>
+				</v8:item>
+			</title>
+			<valueType>
+				<v8:Type>xs:boolean</v8:Type>
+			</valueType>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>НастроенноеПраво</dataPath>
+			<field>НастроенноеПраво</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Настроенное право</v8:content>
+				</v8:item>
+			</title>
+			<valueType>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>60</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</valueType>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ЗначениеПрава</dataPath>
+			<field>ЗначениеПрава</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Значение права</v8:content>
+				</v8:item>
+			</title>
+			<valueType>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>1</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</valueType>
+			<availableValue>
+				<value xsi:nil="true"/>
+				<presentation xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Не назначено</v8:content>
+					</v8:item>
+				</presentation>
+			</availableValue>
+			<availableValue>
+				<value xsi:type="xs:decimal">1</value>
+				<presentation xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Разрешено</v8:content>
+					</v8:item>
+				</presentation>
+			</availableValue>
+			<availableValue>
+				<value xsi:type="xs:decimal">2</value>
+				<presentation xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Запрещено</v8:content>
+					</v8:item>
+				</presentation>
+			</availableValue>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ИндексПрава</dataPath>
+			<field>ИндексПрава</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Индекс права</v8:content>
+				</v8:item>
+			</title>
+			<valueType>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>2</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</valueType>
+		</field>
+		<dataSource>ИсточникДанных1</dataSource>
+		<objectName>НастройкиПравПоОбъектам</objectName>
+	</dataSet>
+	<dataSet xsi:type="DataSetObject">
+		<name>НастройкиПравЛегенда</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ЗаголовокПрава</dataPath>
+			<field>ЗаголовокПрава</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заголовок права</v8:content>
+				</v8:item>
+			</title>
+			<valueType>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>60</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</valueType>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ПодсказкаПрава</dataPath>
+			<field>ПодсказкаПрава</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Подсказка права</v8:content>
+				</v8:item>
+			</title>
+			<valueType>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>150</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</valueType>
+		</field>
+		<dataSource>ИсточникДанных1</dataSource>
+		<objectName>НастройкиПравЛегенда</objectName>
+	</dataSet>
+	<dataSet xsi:type="DataSetObject">
+		<name>НастройкиПравИерархия</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>РодительВладельцаИлиПользователяНастроек</dataPath>
+			<field>РодительВладельцаИлиПользователяНастроек</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Родитель владельца или пользователя настроек</v8:content>
+				</v8:item>
+			</title>
+			<valueType>
+				<v8:TypeId>a02405f8-0a56-4b5a-a885-91715df29d5c</v8:TypeId>
+			</valueType>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ВладелецИлиПользовательНастроек</dataPath>
+			<field>ВладелецИлиПользовательНастроек</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Владелец или пользователь настроек</v8:content>
+				</v8:item>
+			</title>
+			<presentationExpression>ВладелецИлиПользовательНастроекПредставление</presentationExpression>
+			<valueType>
+				<v8:TypeSet xmlns:d5p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d5p1:AnyRef</v8:TypeSet>
+			</valueType>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ВладелецНастроек</dataPath>
+			<field>ВладелецНастроек</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Владелец настроек</v8:content>
+				</v8:item>
+			</title>
+			<valueType>
+				<v8:TypeId>a02405f8-0a56-4b5a-a885-91715df29d5c</v8:TypeId>
+			</valueType>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ЭтоВладелецНастроек</dataPath>
+			<field>ЭтоВладелецНастроек</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Это владелец настроек</v8:content>
+				</v8:item>
+			</title>
+			<valueType>
+				<v8:Type>xs:boolean</v8:Type>
+			</valueType>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ВладелецИлиПользовательНастроекПредставление</dataPath>
+			<field>ВладелецИлиПользовательНастроекПредставление</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Владелец или пользователь настроек представление</v8:content>
+				</v8:item>
+			</title>
+			<valueType>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>250</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</valueType>
+		</field>
+		<dataSource>ИсточникДанных1</dataSource>
+		<objectName>НастройкиПравИерархия</objectName>
+	</dataSet>
+	<dataSetLink>
+		<sourceDataSet>НастройкиПравИерархия</sourceDataSet>
+		<destinationDataSet>НастройкиПравИерархия</destinationDataSet>
+		<sourceExpression>ВладелецИлиПользовательНастроек</sourceExpression>
+		<destinationExpression>РодительВладельцаИлиПользователяНастроек</destinationExpression>
+		<startExpression>Неопределено</startExpression>
+	</dataSetLink>
+	<dataSetLink>
+		<sourceDataSet>НастройкиПравИерархия</sourceDataSet>
+		<destinationDataSet>НастройкиПравПоОбъектам</destinationDataSet>
+		<sourceExpression>ВладелецИлиПользовательНастроек</sourceExpression>
+		<destinationExpression>ВладелецИлиПользовательНастроек</destinationExpression>
+	</dataSetLink>
+	<dataSetLink>
+		<sourceDataSet>НастройкиПравИерархия</sourceDataSet>
+		<destinationDataSet>НастройкиПравПоОбъектам</destinationDataSet>
+		<sourceExpression>ВладелецНастроек</sourceExpression>
+		<destinationExpression>ВладелецНастроек</destinationExpression>
+	</dataSetLink>
+	<dataSetLink>
+		<sourceDataSet>НастройкиПравИерархия</sourceDataSet>
+		<destinationDataSet>НастройкиПравПоОбъектам</destinationDataSet>
+		<sourceExpression>ЭтоВладелецНастроек</sourceExpression>
+		<destinationExpression>ЭтоВладелецНастроек</destinationExpression>
+	</dataSetLink>
 	<totalField>
 		<dataPath>Право</dataPath>
 		<expression>Максимум(Право)</expression>
 		<group>ОбъектМетаданных</group>
-	</totalField>
-	<totalField>
-		<dataPath>КартинкаПросмотр</dataPath>
-		<expression>Максимум(КартинкаПросмотр)</expression>
-	</totalField>
-	<totalField>
-		<dataPath>КартинкаРедактирование</dataPath>
-		<expression>Максимум(КартинкаРедактирование)</expression>
-	</totalField>
-	<totalField>
-		<dataPath>КартинкаСоздание</dataPath>
-		<expression>Максимум(КартинкаСоздание)</expression>
 	</totalField>
 	<totalField>
 		<dataPath>ПравоПросмотр</dataPath>
@@ -287,6 +830,51 @@
 		<dataPath>ВходВПрограммуРазрешен</dataPath>
 		<expression>Минимум(ВходВПрограммуРазрешен)</expression>
 	</totalField>
+	<totalField>
+		<dataPath>ПравоБезОграничения</dataPath>
+		<expression>Максимум(ПравоБезОграничения)</expression>
+		<group>ОбъектМетаданных</group>
+	</totalField>
+	<totalField>
+		<dataPath>ПравоЧтениеБезОграничения</dataPath>
+		<expression>Максимум(ПравоЧтениеБезОграничения)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ПравоИзменениеБезОграничения</dataPath>
+		<expression>Максимум(ПравоИзменениеБезОграничения)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ПравоДобавлениеБезОграничения</dataPath>
+		<expression>Максимум(ПравоДобавлениеБезОграничения)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ВидДоступаПравоЧтениеБезОграничения</dataPath>
+		<expression>Максимум(ВидДоступаПравоЧтениеБезОграничения)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ВидДоступаПравоИзменениеБезОграничения</dataPath>
+		<expression>Максимум(ВидДоступаПравоИзменениеБезОграничения)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ВидДоступаПравоДобавлениеБезОграничения</dataPath>
+		<expression>Максимум(ВидДоступаПравоДобавлениеБезОграничения)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ВидДоступаПравоПросмотр</dataPath>
+		<expression>Максимум(ВидДоступаПравоПросмотр)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ВидДоступаПравоРедактирование</dataPath>
+		<expression>Максимум(ВидДоступаПравоРедактирование)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ВидДоступаПравоИнтерактивноеДобавление</dataPath>
+		<expression>Максимум(ВидДоступаПравоИнтерактивноеДобавление)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ЗначениеПрава</dataPath>
+		<expression>ЗначениеПрава</expression>
+	</totalField>
 	<parameter>
 		<name>Пользователь</name>
 		<title xsi:type="v8:LocalStringType">
@@ -296,11 +884,50 @@
 			</v8:item>
 		</title>
 		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.ВнешниеПользователи</v8:Type>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.ГруппыВнешнихПользователей</v8:Type>
 			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.ГруппыПользователей</v8:Type>
 			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.Пользователи</v8:Type>
 		</valueType>
 		<useRestriction>false</useRestriction>
 		<valueListAllowed>true</valueListAllowed>
+	</parameter>
+	<parameter>
+		<name>ВидПользователей</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Вид пользователей</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:decimal</v8:Type>
+			<v8:NumberQualifiers>
+				<v8:Digits>1</v8:Digits>
+				<v8:FractionDigits>0</v8:FractionDigits>
+				<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+			</v8:NumberQualifiers>
+		</valueType>
+		<value xsi:nil="true"/>
+		<useRestriction>false</useRestriction>
+		<availableValue>
+			<value xsi:nil="true"/>
+			<presentation xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Внутренние</v8:content>
+				</v8:item>
+			</presentation>
+		</availableValue>
+		<availableValue>
+			<value xsi:type="xs:decimal">1</value>
+			<presentation xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Внешние</v8:content>
+				</v8:item>
+			</presentation>
+		</availableValue>
 	</parameter>
 	<template>
 		<name>Макет1</name>
@@ -415,11 +1042,11 @@
 						</dcscor:item>
 						<dcscor:item>
 							<dcscor:parameter>МинимальнаяШирина</dcscor:parameter>
-							<dcscor:value xsi:type="xs:decimal">32.75</dcscor:value>
+							<dcscor:value xsi:type="xs:decimal">62.375</dcscor:value>
 						</dcscor:item>
 						<dcscor:item>
 							<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
-							<dcscor:value xsi:type="xs:decimal">32.75</dcscor:value>
+							<dcscor:value xsi:type="xs:decimal">62.375</dcscor:value>
 						</dcscor:item>
 					</dcsat:appearance>
 				</dcsat:tableCell>
@@ -508,6 +1135,162 @@
 					</dcsat:appearance>
 				</dcsat:tableCell>
 			</dcsat:item>
+			<dcsat:item xsi:type="dcsat:TableRow">
+				<dcsat:tableCell>
+					<dcsat:item xsi:type="dcsat:Field">
+						<dcsat:value xsi:type="v8:LocalStringType">
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Вид доступа</v8:content>
+							</v8:item>
+						</dcsat:value>
+					</dcsat:item>
+					<dcsat:appearance>
+						<dcscor:item>
+							<dcscor:parameter>Отступ</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">2</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>ВертикальноеПоложение</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:VerticalAlign">Bottom</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>МинимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">62.375</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">62.375</dcscor:value>
+						</dcscor:item>
+					</dcsat:appearance>
+				</dcsat:tableCell>
+				<dcsat:tableCell>
+					<dcsat:appearance>
+						<dcscor:item>
+							<dcscor:parameter>МинимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">2.5</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">2.5</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>ОбъединятьПоВертикали</dcscor:parameter>
+							<dcscor:value xsi:type="xs:boolean">true</dcscor:value>
+						</dcscor:item>
+					</dcsat:appearance>
+				</dcsat:tableCell>
+				<dcsat:tableCell>
+					<dcsat:appearance>
+						<dcscor:item>
+							<dcscor:parameter>МинимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">2.5</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">2.5</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>ОбъединятьПоВертикали</dcscor:parameter>
+							<dcscor:value xsi:type="xs:boolean">true</dcscor:value>
+						</dcscor:item>
+					</dcsat:appearance>
+				</dcsat:tableCell>
+				<dcsat:tableCell>
+					<dcsat:appearance>
+						<dcscor:item>
+							<dcscor:parameter>МинимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">2.5</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">2.5</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>ОбъединятьПоВертикали</dcscor:parameter>
+							<dcscor:value xsi:type="xs:boolean">true</dcscor:value>
+						</dcscor:item>
+					</dcsat:appearance>
+				</dcsat:tableCell>
+			</dcsat:item>
+			<dcsat:item xsi:type="dcsat:TableRow">
+				<dcsat:tableCell>
+					<dcsat:item xsi:type="dcsat:Field">
+						<dcsat:value xsi:type="v8:LocalStringType">
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Значение доступа</v8:content>
+							</v8:item>
+						</dcsat:value>
+					</dcsat:item>
+					<dcsat:appearance>
+						<dcscor:item>
+							<dcscor:parameter>Отступ</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">4</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>ВертикальноеПоложение</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:VerticalAlign">Bottom</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>МинимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">62.375</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">62.375</dcscor:value>
+						</dcscor:item>
+					</dcsat:appearance>
+				</dcsat:tableCell>
+				<dcsat:tableCell>
+					<dcsat:appearance>
+						<dcscor:item>
+							<dcscor:parameter>МинимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">2.5</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">2.5</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>ОбъединятьПоВертикали</dcscor:parameter>
+							<dcscor:value xsi:type="xs:boolean">true</dcscor:value>
+						</dcscor:item>
+					</dcsat:appearance>
+				</dcsat:tableCell>
+				<dcsat:tableCell>
+					<dcsat:appearance>
+						<dcscor:item>
+							<dcscor:parameter>МинимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">2.5</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">2.5</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>ОбъединятьПоВертикали</dcscor:parameter>
+							<dcscor:value xsi:type="xs:boolean">true</dcscor:value>
+						</dcscor:item>
+					</dcsat:appearance>
+				</dcsat:tableCell>
+				<dcsat:tableCell>
+					<dcsat:appearance>
+						<dcscor:item>
+							<dcscor:parameter>МинимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">2.5</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">2.5</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>ОбъединятьПоВертикали</dcscor:parameter>
+							<dcscor:value xsi:type="xs:boolean">true</dcscor:value>
+						</dcscor:item>
+					</dcsat:appearance>
+				</dcsat:tableCell>
+			</dcsat:item>
 		</template>
 		<parameter xmlns:dcsat="http://v8.1c.ru/8.1/data-composition-system/area-template" xsi:type="dcsat:ExpressionAreaTemplateParameter">
 			<dcsat:name>ГруппаДоступаЗаголовок</dcsat:name>
@@ -583,12 +1366,20 @@
 				<dcsat:tableCell>
 					<dcsat:appearance>
 						<dcscor:item>
+							<dcscor:parameter>ВертикальноеПоложение</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:VerticalAlign">Center</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
 							<dcscor:parameter>МинимальнаяШирина</dcscor:parameter>
 							<dcscor:value xsi:type="xs:decimal">3</dcscor:value>
 						</dcscor:item>
 						<dcscor:item>
 							<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
 							<dcscor:value xsi:type="xs:decimal">3</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>ВертикальноеПоложениеКартинки</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:VerticalAlign">Center</dcscor:value>
 						</dcscor:item>
 					</dcsat:appearance>
 				</dcsat:tableCell>
@@ -597,6 +1388,10 @@
 						<dcscor:item>
 							<dcscor:parameter>ЦветФона</dcscor:parameter>
 							<dcscor:value xmlns:d8p1="http://v8.1c.ru/8.1/data/ui/style" xsi:type="v8ui:Color">d8p1:ПравоПросмотраФон</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>ВертикальноеПоложение</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:VerticalAlign">Center</dcscor:value>
 						</dcscor:item>
 						<dcscor:item>
 							<dcscor:parameter>МинимальнаяШирина</dcscor:parameter>
@@ -608,7 +1403,11 @@
 						</dcscor:item>
 						<dcscor:item>
 							<dcscor:parameter>Картинка</dcscor:parameter>
-							<dcscor:value xsi:type="v8ui:Picture" ref="v8ui:Просмотр"/>
+							<dcscor:value xsi:type="v8ui:Picture" ref="v8ui:УровеньДоступаПросмотр"/>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>ВертикальноеПоложениеКартинки</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:VerticalAlign">Center</dcscor:value>
 						</dcscor:item>
 					</dcsat:appearance>
 				</dcsat:tableCell>
@@ -623,12 +1422,20 @@
 					</dcsat:item>
 					<dcsat:appearance>
 						<dcscor:item>
+							<dcscor:parameter>ВертикальноеПоложение</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:VerticalAlign">Center</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
 							<dcscor:parameter>МинимальнаяШирина</dcscor:parameter>
 							<dcscor:value xsi:type="xs:decimal">12.5</dcscor:value>
 						</dcscor:item>
 						<dcscor:item>
 							<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
 							<dcscor:value xsi:type="xs:decimal">12.5</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>ВертикальноеПоложениеКартинки</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:VerticalAlign">Center</dcscor:value>
 						</dcscor:item>
 					</dcsat:appearance>
 				</dcsat:tableCell>
@@ -637,6 +1444,10 @@
 						<dcscor:item>
 							<dcscor:parameter>ЦветФона</dcscor:parameter>
 							<dcscor:value xmlns:d8p1="http://v8.1c.ru/8.1/data/ui/style" xsi:type="v8ui:Color">d8p1:ПравоРедактированияФон</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>ВертикальноеПоложение</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:VerticalAlign">Center</dcscor:value>
 						</dcscor:item>
 						<dcscor:item>
 							<dcscor:parameter>МинимальнаяШирина</dcscor:parameter>
@@ -648,7 +1459,11 @@
 						</dcscor:item>
 						<dcscor:item>
 							<dcscor:parameter>Картинка</dcscor:parameter>
-							<dcscor:value xsi:type="v8ui:Picture" ref="v8ui:Редактирование"/>
+							<dcscor:value xsi:type="v8ui:Picture" ref="v8ui:УровеньДоступаРедактирование"/>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>ВертикальноеПоложениеКартинки</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:VerticalAlign">Center</dcscor:value>
 						</dcscor:item>
 					</dcsat:appearance>
 				</dcsat:tableCell>
@@ -663,12 +1478,68 @@
 					</dcsat:item>
 					<dcsat:appearance>
 						<dcscor:item>
+							<dcscor:parameter>ВертикальноеПоложение</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:VerticalAlign">Center</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
 							<dcscor:parameter>МинимальнаяШирина</dcscor:parameter>
-							<dcscor:value xsi:type="xs:decimal">26.75</dcscor:value>
+							<dcscor:value xsi:type="xs:decimal">6.25</dcscor:value>
 						</dcscor:item>
 						<dcscor:item>
 							<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
-							<dcscor:value xsi:type="xs:decimal">26.75</dcscor:value>
+							<dcscor:value xsi:type="xs:decimal">6.25</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>ВертикальноеПоложениеКартинки</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:VerticalAlign">Center</dcscor:value>
+						</dcscor:item>
+					</dcsat:appearance>
+				</dcsat:tableCell>
+				<dcsat:tableCell>
+					<dcsat:appearance>
+						<dcscor:item>
+							<dcscor:parameter>ВертикальноеПоложение</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:VerticalAlign">Center</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>МинимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">2.5</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">2.5</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>ОбъединятьПоГоризонтали</dcscor:parameter>
+							<dcscor:value xsi:type="xs:boolean">true</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>ВертикальноеПоложениеКартинки</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:VerticalAlign">Center</dcscor:value>
+						</dcscor:item>
+					</dcsat:appearance>
+				</dcsat:tableCell>
+				<dcsat:tableCell>
+					<dcsat:appearance>
+						<dcscor:item>
+							<dcscor:parameter>ВертикальноеПоложение</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:VerticalAlign">Center</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>МинимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">17.875</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">17.875</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>ОбъединятьПоГоризонтали</dcscor:parameter>
+							<dcscor:value xsi:type="xs:boolean">true</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>ВертикальноеПоложениеКартинки</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:VerticalAlign">Center</dcscor:value>
 						</dcscor:item>
 					</dcsat:appearance>
 				</dcsat:tableCell>
@@ -677,6 +1548,10 @@
 						<dcscor:item>
 							<dcscor:parameter>ЦветФона</dcscor:parameter>
 							<dcscor:value xmlns:d8p1="http://v8.1c.ru/8.1/data/ui/style" xsi:type="v8ui:Color">d8p1:ПравоСозданияФон</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>ВертикальноеПоложение</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:VerticalAlign">Center</dcscor:value>
 						</dcscor:item>
 						<dcscor:item>
 							<dcscor:parameter>МинимальнаяШирина</dcscor:parameter>
@@ -688,7 +1563,11 @@
 						</dcscor:item>
 						<dcscor:item>
 							<dcscor:parameter>Картинка</dcscor:parameter>
-							<dcscor:value xsi:type="v8ui:Picture" ref="v8ui:Создание"/>
+							<dcscor:value xsi:type="v8ui:Picture" ref="v8ui:УровеньДоступаСоздание"/>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>ВертикальноеПоложениеКартинки</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:VerticalAlign">Center</dcscor:value>
 						</dcscor:item>
 					</dcsat:appearance>
 				</dcsat:tableCell>
@@ -703,12 +1582,20 @@
 					</dcsat:item>
 					<dcsat:appearance>
 						<dcscor:item>
+							<dcscor:parameter>ВертикальноеПоложение</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:VerticalAlign">Center</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
 							<dcscor:parameter>МинимальнаяШирина</dcscor:parameter>
 							<dcscor:value xsi:type="xs:decimal">33.625</dcscor:value>
 						</dcscor:item>
 						<dcscor:item>
 							<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
 							<dcscor:value xsi:type="xs:decimal">33.625</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>ВертикальноеПоложениеКартинки</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:VerticalAlign">Center</dcscor:value>
 						</dcscor:item>
 					</dcsat:appearance>
 				</dcsat:tableCell>
@@ -717,6 +1604,10 @@
 				<dcsat:tableCell>
 					<dcsat:appearance>
 						<dcscor:item>
+							<dcscor:parameter>ВертикальноеПоложение</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:VerticalAlign">Center</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
 							<dcscor:parameter>МинимальнаяШирина</dcscor:parameter>
 							<dcscor:value xsi:type="xs:decimal">3</dcscor:value>
 						</dcscor:item>
@@ -728,10 +1619,18 @@
 							<dcscor:parameter>МинимальнаяВысота</dcscor:parameter>
 							<dcscor:value xsi:type="xs:decimal">4.25</dcscor:value>
 						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>ВертикальноеПоложениеКартинки</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:VerticalAlign">Center</dcscor:value>
+						</dcscor:item>
 					</dcsat:appearance>
 				</dcsat:tableCell>
 				<dcsat:tableCell>
 					<dcsat:appearance>
+						<dcscor:item>
+							<dcscor:parameter>ВертикальноеПоложение</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:VerticalAlign">Center</dcscor:value>
+						</dcscor:item>
 						<dcscor:item>
 							<dcscor:parameter>МинимальнаяШирина</dcscor:parameter>
 							<dcscor:value xsi:type="xs:decimal">2.5</dcscor:value>
@@ -744,10 +1643,18 @@
 							<dcscor:parameter>МинимальнаяВысота</dcscor:parameter>
 							<dcscor:value xsi:type="xs:decimal">4.25</dcscor:value>
 						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>ВертикальноеПоложениеКартинки</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:VerticalAlign">Center</dcscor:value>
+						</dcscor:item>
 					</dcsat:appearance>
 				</dcsat:tableCell>
 				<dcsat:tableCell>
 					<dcsat:appearance>
+						<dcscor:item>
+							<dcscor:parameter>ВертикальноеПоложение</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:VerticalAlign">Center</dcscor:value>
+						</dcscor:item>
 						<dcscor:item>
 							<dcscor:parameter>МинимальнаяШирина</dcscor:parameter>
 							<dcscor:value xsi:type="xs:decimal">12.5</dcscor:value>
@@ -760,10 +1667,18 @@
 							<dcscor:parameter>МинимальнаяВысота</dcscor:parameter>
 							<dcscor:value xsi:type="xs:decimal">4.25</dcscor:value>
 						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>ВертикальноеПоложениеКартинки</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:VerticalAlign">Center</dcscor:value>
+						</dcscor:item>
 					</dcsat:appearance>
 				</dcsat:tableCell>
 				<dcsat:tableCell>
 					<dcsat:appearance>
+						<dcscor:item>
+							<dcscor:parameter>ВертикальноеПоложение</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:VerticalAlign">Center</dcscor:value>
+						</dcscor:item>
 						<dcscor:item>
 							<dcscor:parameter>МинимальнаяШирина</dcscor:parameter>
 							<dcscor:value xsi:type="xs:decimal">2.5</dcscor:value>
@@ -776,26 +1691,42 @@
 							<dcscor:parameter>МинимальнаяВысота</dcscor:parameter>
 							<dcscor:value xsi:type="xs:decimal">4.25</dcscor:value>
 						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>ВертикальноеПоложениеКартинки</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:VerticalAlign">Center</dcscor:value>
+						</dcscor:item>
 					</dcsat:appearance>
 				</dcsat:tableCell>
 				<dcsat:tableCell>
 					<dcsat:appearance>
 						<dcscor:item>
+							<dcscor:parameter>ВертикальноеПоложение</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:VerticalAlign">Center</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
 							<dcscor:parameter>МинимальнаяШирина</dcscor:parameter>
-							<dcscor:value xsi:type="xs:decimal">26.75</dcscor:value>
+							<dcscor:value xsi:type="xs:decimal">6.25</dcscor:value>
 						</dcscor:item>
 						<dcscor:item>
 							<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
-							<dcscor:value xsi:type="xs:decimal">26.75</dcscor:value>
+							<dcscor:value xsi:type="xs:decimal">6.25</dcscor:value>
 						</dcscor:item>
 						<dcscor:item>
 							<dcscor:parameter>МинимальнаяВысота</dcscor:parameter>
 							<dcscor:value xsi:type="xs:decimal">4.25</dcscor:value>
 						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>ВертикальноеПоложениеКартинки</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:VerticalAlign">Center</dcscor:value>
+						</dcscor:item>
 					</dcsat:appearance>
 				</dcsat:tableCell>
 				<dcsat:tableCell>
 					<dcsat:appearance>
+						<dcscor:item>
+							<dcscor:parameter>ВертикальноеПоложение</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:VerticalAlign">Center</dcscor:value>
+						</dcscor:item>
 						<dcscor:item>
 							<dcscor:parameter>МинимальнаяШирина</dcscor:parameter>
 							<dcscor:value xsi:type="xs:decimal">2.5</dcscor:value>
@@ -808,10 +1739,66 @@
 							<dcscor:parameter>МинимальнаяВысота</dcscor:parameter>
 							<dcscor:value xsi:type="xs:decimal">4.25</dcscor:value>
 						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>ВертикальноеПоложениеКартинки</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:VerticalAlign">Center</dcscor:value>
+						</dcscor:item>
 					</dcsat:appearance>
 				</dcsat:tableCell>
 				<dcsat:tableCell>
 					<dcsat:appearance>
+						<dcscor:item>
+							<dcscor:parameter>ВертикальноеПоложение</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:VerticalAlign">Center</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>МинимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">17.875</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">17.875</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>МинимальнаяВысота</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">4.25</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>ВертикальноеПоложениеКартинки</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:VerticalAlign">Center</dcscor:value>
+						</dcscor:item>
+					</dcsat:appearance>
+				</dcsat:tableCell>
+				<dcsat:tableCell>
+					<dcsat:appearance>
+						<dcscor:item>
+							<dcscor:parameter>ВертикальноеПоложение</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:VerticalAlign">Center</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>МинимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">2.5</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">2.5</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>МинимальнаяВысота</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">4.25</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>ВертикальноеПоложениеКартинки</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:VerticalAlign">Center</dcscor:value>
+						</dcscor:item>
+					</dcsat:appearance>
+				</dcsat:tableCell>
+				<dcsat:tableCell>
+					<dcsat:appearance>
+						<dcscor:item>
+							<dcscor:parameter>ВертикальноеПоложение</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:VerticalAlign">Center</dcscor:value>
+						</dcscor:item>
 						<dcscor:item>
 							<dcscor:parameter>МинимальнаяШирина</dcscor:parameter>
 							<dcscor:value xsi:type="xs:decimal">33.625</dcscor:value>
@@ -823,6 +1810,10 @@
 						<dcscor:item>
 							<dcscor:parameter>МинимальнаяВысота</dcscor:parameter>
 							<dcscor:value xsi:type="xs:decimal">4.25</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>ВертикальноеПоложениеКартинки</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:VerticalAlign">Center</dcscor:value>
 						</dcscor:item>
 					</dcsat:appearance>
 				</dcsat:tableCell>
@@ -831,12 +1822,124 @@
 				<dcsat:tableCell>
 					<dcsat:appearance>
 						<dcscor:item>
+							<dcscor:parameter>ВертикальноеПоложение</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:VerticalAlign">Center</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
 							<dcscor:parameter>МинимальнаяШирина</dcscor:parameter>
 							<dcscor:value xsi:type="xs:decimal">3</dcscor:value>
 						</dcscor:item>
 						<dcscor:item>
 							<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
 							<dcscor:value xsi:type="xs:decimal">3</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>ВертикальноеПоложениеКартинки</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:VerticalAlign">Center</dcscor:value>
+						</dcscor:item>
+					</dcsat:appearance>
+				</dcsat:tableCell>
+				<dcsat:tableCell>
+					<dcsat:item xsi:type="dcsat:Field">
+						<dcsat:value xsi:type="v8:LocalStringType">
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>*</v8:content>
+							</v8:item>
+						</dcsat:value>
+					</dcsat:item>
+					<dcsat:appearance>
+						<dcscor:item>
+							<dcscor:parameter>ЦветФона</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:Color">#F0FFF0</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>ВертикальноеПоложение</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:VerticalAlign">Center</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>МинимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">2.5</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">2.5</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>Картинка</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:Picture" ref="v8ui:УровеньДоступаПросмотр"/>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>ВертикальноеПоложениеКартинки</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:VerticalAlign">Center</dcscor:value>
+						</dcscor:item>
+					</dcsat:appearance>
+				</dcsat:tableCell>
+				<dcsat:tableCell>
+					<dcsat:item xsi:type="dcsat:Field">
+						<dcsat:value xsi:type="v8:LocalStringType">
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>- просмотр ограничен</v8:content>
+							</v8:item>
+						</dcsat:value>
+					</dcsat:item>
+					<dcsat:appearance>
+						<dcscor:item>
+							<dcscor:parameter>ВертикальноеПоложение</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:VerticalAlign">Center</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>МинимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">12.5</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">12.5</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>ВертикальноеПоложениеКартинки</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:VerticalAlign">Center</dcscor:value>
+						</dcscor:item>
+					</dcsat:appearance>
+				</dcsat:tableCell>
+				<dcsat:tableCell>
+					<dcsat:appearance>
+						<dcscor:item>
+							<dcscor:parameter>ВертикальноеПоложение</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:VerticalAlign">Center</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>МинимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">2.5</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">2.5</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>ВертикальноеПоложениеКартинки</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:VerticalAlign">Center</dcscor:value>
+						</dcscor:item>
+					</dcsat:appearance>
+				</dcsat:tableCell>
+				<dcsat:tableCell>
+					<dcsat:appearance>
+						<dcscor:item>
+							<dcscor:parameter>ВертикальноеПоложение</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:VerticalAlign">Center</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>МинимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">6.25</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">6.25</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>ВертикальноеПоложениеКартинки</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:VerticalAlign">Center</dcscor:value>
 						</dcscor:item>
 					</dcsat:appearance>
 				</dcsat:tableCell>
@@ -844,7 +1947,11 @@
 					<dcsat:appearance>
 						<dcscor:item>
 							<dcscor:parameter>ЦветФона</dcscor:parameter>
-							<dcscor:value xmlns:d8p1="http://v8.1c.ru/8.1/data/ui/style" xsi:type="v8ui:Color">d8p1:ПравоНедействительногоПользователяФон</dcscor:value>
+							<dcscor:value xsi:type="v8ui:Color">#F5F5F5</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>ВертикальноеПоложение</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:VerticalAlign">Center</dcscor:value>
 						</dcscor:item>
 						<dcscor:item>
 							<dcscor:parameter>МинимальнаяШирина</dcscor:parameter>
@@ -853,6 +1960,10 @@
 						<dcscor:item>
 							<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
 							<dcscor:value xsi:type="xs:decimal">2.5</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>ВертикальноеПоложениеКартинки</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:VerticalAlign">Center</dcscor:value>
 						</dcscor:item>
 					</dcsat:appearance>
 				</dcsat:tableCell>
@@ -867,41 +1978,29 @@
 					</dcsat:item>
 					<dcsat:appearance>
 						<dcscor:item>
+							<dcscor:parameter>ВертикальноеПоложение</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:VerticalAlign">Center</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
 							<dcscor:parameter>МинимальнаяШирина</dcscor:parameter>
-							<dcscor:value xsi:type="xs:decimal">12.5</dcscor:value>
+							<dcscor:value xsi:type="xs:decimal">17.875</dcscor:value>
 						</dcscor:item>
 						<dcscor:item>
 							<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
-							<dcscor:value xsi:type="xs:decimal">12.5</dcscor:value>
+							<dcscor:value xsi:type="xs:decimal">17.875</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>ВертикальноеПоложениеКартинки</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:VerticalAlign">Center</dcscor:value>
 						</dcscor:item>
 					</dcsat:appearance>
 				</dcsat:tableCell>
 				<dcsat:tableCell>
 					<dcsat:appearance>
 						<dcscor:item>
-							<dcscor:parameter>МинимальнаяШирина</dcscor:parameter>
-							<dcscor:value xsi:type="xs:decimal">2.5</dcscor:value>
+							<dcscor:parameter>ВертикальноеПоложение</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:VerticalAlign">Center</dcscor:value>
 						</dcscor:item>
-						<dcscor:item>
-							<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
-							<dcscor:value xsi:type="xs:decimal">2.5</dcscor:value>
-						</dcscor:item>
-					</dcsat:appearance>
-				</dcsat:tableCell>
-				<dcsat:tableCell>
-					<dcsat:appearance>
-						<dcscor:item>
-							<dcscor:parameter>МинимальнаяШирина</dcscor:parameter>
-							<dcscor:value xsi:type="xs:decimal">26.75</dcscor:value>
-						</dcscor:item>
-						<dcscor:item>
-							<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
-							<dcscor:value xsi:type="xs:decimal">26.75</dcscor:value>
-						</dcscor:item>
-					</dcsat:appearance>
-				</dcsat:tableCell>
-				<dcsat:tableCell>
-					<dcsat:appearance>
 						<dcscor:item>
 							<dcscor:parameter>МинимальнаяШирина</dcscor:parameter>
 							<dcscor:value xsi:type="xs:decimal">2.5</dcscor:value>
@@ -910,10 +2009,18 @@
 							<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
 							<dcscor:value xsi:type="xs:decimal">2.5</dcscor:value>
 						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>ВертикальноеПоложениеКартинки</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:VerticalAlign">Center</dcscor:value>
+						</dcscor:item>
 					</dcsat:appearance>
 				</dcsat:tableCell>
 				<dcsat:tableCell>
 					<dcsat:appearance>
+						<dcscor:item>
+							<dcscor:parameter>ВертикальноеПоложение</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:VerticalAlign">Center</dcscor:value>
+						</dcscor:item>
 						<dcscor:item>
 							<dcscor:parameter>МинимальнаяШирина</dcscor:parameter>
 							<dcscor:value xsi:type="xs:decimal">33.625</dcscor:value>
@@ -921,6 +2028,10 @@
 						<dcscor:item>
 							<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
 							<dcscor:value xsi:type="xs:decimal">33.625</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>ВертикальноеПоложениеКартинки</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:VerticalAlign">Center</dcscor:value>
 						</dcscor:item>
 					</dcsat:appearance>
 				</dcsat:tableCell>
@@ -929,6 +2040,493 @@
 	</template>
 	<template>
 		<name>Макет9</name>
+		<template xmlns:dcsat="http://v8.1c.ru/8.1/data-composition-system/area-template" xsi:type="dcsat:AreaTemplate">
+			<dcsat:item xsi:type="dcsat:TableRow">
+				<dcsat:tableCell>
+					<dcsat:item xsi:type="dcsat:Field">
+						<dcsat:value xsi:type="dcscor:Parameter">ВидДоступа</dcsat:value>
+					</dcsat:item>
+					<dcsat:appearance>
+						<dcscor:item>
+							<dcscor:parameter>Отступ</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">2</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>Размещение</dcscor:parameter>
+							<dcscor:value xsi:type="dcscor:DataCompositionTextPlacementType">Wrap</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>МинимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">62.375</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">62.375</dcscor:value>
+						</dcscor:item>
+					</dcsat:appearance>
+				</dcsat:tableCell>
+				<dcsat:tableCell>
+					<dcsat:item xsi:type="dcsat:Field">
+						<dcsat:value xsi:type="dcscor:Parameter">ВидДоступаПравоПросмотр</dcsat:value>
+						<dcsat:appearance>
+							<dcscor:item>
+								<dcscor:parameter>Формат</dcscor:parameter>
+								<dcscor:value xsi:type="xs:string">БЛ=; БИ=</dcscor:value>
+							</dcscor:item>
+						</dcsat:appearance>
+					</dcsat:item>
+					<dcsat:appearance>
+						<dcscor:item>
+							<dcscor:parameter>МинимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">2.5</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">2.5</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>Расшифровка</dcscor:parameter>
+							<dcscor:value xsi:type="dcscor:Parameter">ВидДоступаПравоПросмотрРасшифровка</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>РазмерКартинки</dcscor:parameter>
+							<dcscor:value xmlns:mxl="http://v8.1c.ru/8.2/data/spreadsheet" xsi:type="mxl:PictureSize">AutoSize</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>ВертикальноеПоложениеКартинки</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:VerticalAlign">Center</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>ГоризонтальноеПоложениеКартинки</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:HorizontalAlign">Center</dcscor:value>
+						</dcscor:item>
+					</dcsat:appearance>
+				</dcsat:tableCell>
+				<dcsat:tableCell>
+					<dcsat:item xsi:type="dcsat:Field">
+						<dcsat:value xsi:type="dcscor:Parameter">ВидДоступаПравоРедактирование</dcsat:value>
+						<dcsat:appearance>
+							<dcscor:item>
+								<dcscor:parameter>Формат</dcscor:parameter>
+								<dcscor:value xsi:type="xs:string">БЛ=; БИ=</dcscor:value>
+							</dcscor:item>
+						</dcsat:appearance>
+					</dcsat:item>
+					<dcsat:appearance>
+						<dcscor:item>
+							<dcscor:parameter>МинимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">2.5</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">2.5</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>Расшифровка</dcscor:parameter>
+							<dcscor:value xsi:type="dcscor:Parameter">ВидДоступаПравоРедактированиеРасшифровка</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>РазмерКартинки</dcscor:parameter>
+							<dcscor:value xmlns:mxl="http://v8.1c.ru/8.2/data/spreadsheet" xsi:type="mxl:PictureSize">AutoSize</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>ВертикальноеПоложениеКартинки</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:VerticalAlign">Center</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>ГоризонтальноеПоложениеКартинки</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:HorizontalAlign">Center</dcscor:value>
+						</dcscor:item>
+					</dcsat:appearance>
+				</dcsat:tableCell>
+				<dcsat:tableCell>
+					<dcsat:item xsi:type="dcsat:Field">
+						<dcsat:value xsi:type="dcscor:Parameter">ВидДоступаПравоИнтерактивноеДобавление</dcsat:value>
+						<dcsat:appearance>
+							<dcscor:item>
+								<dcscor:parameter>Формат</dcscor:parameter>
+								<dcscor:value xsi:type="xs:string">БЛ=; БИ=</dcscor:value>
+							</dcscor:item>
+						</dcsat:appearance>
+					</dcsat:item>
+					<dcsat:appearance>
+						<dcscor:item>
+							<dcscor:parameter>МинимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">2.5</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">2.5</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>Расшифровка</dcscor:parameter>
+							<dcscor:value xsi:type="dcscor:Parameter">ВидДоступаПравоИнтерактивноеДобавлениеРасшифровка</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>РазмерКартинки</dcscor:parameter>
+							<dcscor:value xmlns:mxl="http://v8.1c.ru/8.2/data/spreadsheet" xsi:type="mxl:PictureSize">AutoSize</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>ВертикальноеПоложениеКартинки</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:VerticalAlign">Center</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>ГоризонтальноеПоложениеКартинки</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:HorizontalAlign">Center</dcscor:value>
+						</dcscor:item>
+					</dcsat:appearance>
+				</dcsat:tableCell>
+			</dcsat:item>
+		</template>
+		<parameter xmlns:dcsat="http://v8.1c.ru/8.1/data-composition-system/area-template" xsi:type="dcsat:ExpressionAreaTemplateParameter">
+			<dcsat:name>ВидДоступа</dcsat:name>
+			<dcsat:expression>Представление(ВидДоступа)</dcsat:expression>
+		</parameter>
+		<parameter xmlns:dcsat="http://v8.1c.ru/8.1/data-composition-system/area-template" xsi:type="dcsat:DetailsAreaTemplateParameter">
+			<dcsat:name>ВидДоступаПравоПросмотрРасшифровка</dcsat:name>
+			<dcsat:fieldExpression>
+				<dcsat:field>ПравоПросмотр</dcsat:field>
+				<dcsat:expression>ЕстьNull(ВидДоступаПравоПросмотр, Ложь)</dcsat:expression>
+			</dcsat:fieldExpression>
+			<dcsat:fieldExpression>
+				<dcsat:field>ПравоЧтениеБезОграничения</dcsat:field>
+				<dcsat:expression>ЕстьNull(ВидДоступаПравоЧтениеБезОграничения, Ложь)</dcsat:expression>
+			</dcsat:fieldExpression>
+		</parameter>
+		<parameter xmlns:dcsat="http://v8.1c.ru/8.1/data-composition-system/area-template" xsi:type="dcsat:DetailsAreaTemplateParameter">
+			<dcsat:name>ВидДоступаПравоРедактированиеРасшифровка</dcsat:name>
+			<dcsat:fieldExpression>
+				<dcsat:field>ПравоРедактирование</dcsat:field>
+				<dcsat:expression>ЕстьNull(ВидДоступаПравоРедактирование, Ложь)</dcsat:expression>
+			</dcsat:fieldExpression>
+			<dcsat:fieldExpression>
+				<dcsat:field>ПравоИзменениеБезОграничения</dcsat:field>
+				<dcsat:expression>ЕстьNull(ВидДоступаПравоИзменениеБезОграничения, Ложь)</dcsat:expression>
+			</dcsat:fieldExpression>
+		</parameter>
+		<parameter xmlns:dcsat="http://v8.1c.ru/8.1/data-composition-system/area-template" xsi:type="dcsat:DetailsAreaTemplateParameter">
+			<dcsat:name>ВидДоступаПравоИнтерактивноеДобавлениеРасшифровка</dcsat:name>
+			<dcsat:fieldExpression>
+				<dcsat:field>ПравоИнтерактивноеДобавление</dcsat:field>
+				<dcsat:expression>ЕстьNull(ВидДоступаПравоИнтерактивноеДобавление, Ложь)</dcsat:expression>
+			</dcsat:fieldExpression>
+			<dcsat:fieldExpression>
+				<dcsat:field>ПравоДобавлениеБезОграничения</dcsat:field>
+				<dcsat:expression>ЕстьNull(ВидДоступаПравоДобавлениеБезОграничения, Ложь)</dcsat:expression>
+			</dcsat:fieldExpression>
+		</parameter>
+		<parameter xmlns:dcsat="http://v8.1c.ru/8.1/data-composition-system/area-template" xsi:type="dcsat:ExpressionAreaTemplateParameter">
+			<dcsat:name>ВидДоступаПравоПросмотр</dcsat:name>
+			<dcsat:expression>ВидДоступаПравоПросмотр</dcsat:expression>
+		</parameter>
+		<parameter xmlns:dcsat="http://v8.1c.ru/8.1/data-composition-system/area-template" xsi:type="dcsat:ExpressionAreaTemplateParameter">
+			<dcsat:name>ВидДоступаПравоРедактирование</dcsat:name>
+			<dcsat:expression>ВидДоступаПравоРедактирование</dcsat:expression>
+		</parameter>
+		<parameter xmlns:dcsat="http://v8.1c.ru/8.1/data-composition-system/area-template" xsi:type="dcsat:ExpressionAreaTemplateParameter">
+			<dcsat:name>ВидДоступаПравоИнтерактивноеДобавление</dcsat:name>
+			<dcsat:expression>ВидДоступаПравоИнтерактивноеДобавление</dcsat:expression>
+		</parameter>
+	</template>
+	<template>
+		<name>Макет10</name>
+		<template xmlns:dcsat="http://v8.1c.ru/8.1/data-composition-system/area-template" xsi:type="dcsat:AreaTemplate">
+			<dcsat:item xsi:type="dcsat:TableRow">
+				<dcsat:tableCell>
+					<dcsat:item xsi:type="dcsat:Field">
+						<dcsat:value xsi:type="dcscor:Parameter">Право</dcsat:value>
+						<dcsat:appearance>
+							<dcscor:item>
+								<dcscor:parameter>Формат</dcscor:parameter>
+								<dcscor:value xsi:type="xs:string">ЧФ=</dcscor:value>
+							</dcscor:item>
+						</dcsat:appearance>
+					</dcsat:item>
+					<dcsat:appearance>
+						<dcscor:item>
+							<dcscor:parameter>Расшифровка</dcscor:parameter>
+							<dcscor:value xsi:type="dcscor:Parameter">Расшифровка</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>РазмерКартинки</dcscor:parameter>
+							<dcscor:value xmlns:mxl="http://v8.1c.ru/8.2/data/spreadsheet" xsi:type="mxl:PictureSize">AutoSize</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>ВертикальноеПоложениеКартинки</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:VerticalAlign">Center</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>ГоризонтальноеПоложениеКартинки</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:HorizontalAlign">Center</dcscor:value>
+						</dcscor:item>
+					</dcsat:appearance>
+				</dcsat:tableCell>
+			</dcsat:item>
+		</template>
+		<parameter xmlns:dcsat="http://v8.1c.ru/8.1/data-composition-system/area-template" xsi:type="dcsat:ExpressionAreaTemplateParameter">
+			<dcsat:name>Право</dcsat:name>
+			<dcsat:expression>Право</dcsat:expression>
+		</parameter>
+		<parameter xmlns:dcsat="http://v8.1c.ru/8.1/data-composition-system/area-template" xsi:type="dcsat:DetailsAreaTemplateParameter">
+			<dcsat:name>Расшифровка</dcsat:name>
+			<dcsat:fieldExpression>
+				<dcsat:field>Право</dcsat:field>
+				<dcsat:expression>ЕстьNull(Право, 0)</dcsat:expression>
+			</dcsat:fieldExpression>
+			<dcsat:fieldExpression>
+				<dcsat:field>ПравоБезОграничения</dcsat:field>
+				<dcsat:expression>ЕстьNull(ПравоБезОграничения, Ложь)</dcsat:expression>
+			</dcsat:fieldExpression>
+		</parameter>
+	</template>
+	<template>
+		<name>Макет11</name>
+		<template xmlns:dcsat="http://v8.1c.ru/8.1/data-composition-system/area-template" xsi:type="dcsat:AreaTemplate">
+			<dcsat:item xsi:type="dcsat:TableRow">
+				<dcsat:tableCell>
+					<dcsat:item xsi:type="dcsat:Field">
+						<dcsat:value xsi:type="dcscor:Parameter">ПравоПросмотр</dcsat:value>
+						<dcsat:appearance>
+							<dcscor:item>
+								<dcscor:parameter>Формат</dcscor:parameter>
+								<dcscor:value xsi:type="xs:string">БЛ=; БИ=</dcscor:value>
+							</dcscor:item>
+						</dcsat:appearance>
+					</dcsat:item>
+					<dcsat:appearance>
+						<dcscor:item>
+							<dcscor:parameter>Расшифровка</dcscor:parameter>
+							<dcscor:value xsi:type="dcscor:Parameter">Расшифровка</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>РазмерКартинки</dcscor:parameter>
+							<dcscor:value xmlns:mxl="http://v8.1c.ru/8.2/data/spreadsheet" xsi:type="mxl:PictureSize">AutoSize</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>ВертикальноеПоложениеКартинки</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:VerticalAlign">Center</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>ГоризонтальноеПоложениеКартинки</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:HorizontalAlign">Center</dcscor:value>
+						</dcscor:item>
+					</dcsat:appearance>
+				</dcsat:tableCell>
+			</dcsat:item>
+		</template>
+		<parameter xmlns:dcsat="http://v8.1c.ru/8.1/data-composition-system/area-template" xsi:type="dcsat:ExpressionAreaTemplateParameter">
+			<dcsat:name>ПравоПросмотр</dcsat:name>
+			<dcsat:expression>ПравоПросмотр</dcsat:expression>
+		</parameter>
+		<parameter xmlns:dcsat="http://v8.1c.ru/8.1/data-composition-system/area-template" xsi:type="dcsat:DetailsAreaTemplateParameter">
+			<dcsat:name>Расшифровка</dcsat:name>
+			<dcsat:fieldExpression>
+				<dcsat:field>ПравоПросмотр</dcsat:field>
+				<dcsat:expression>ЕстьNull(ПравоПросмотр, Ложь)</dcsat:expression>
+			</dcsat:fieldExpression>
+			<dcsat:fieldExpression>
+				<dcsat:field>ПравоЧтениеБезОграничения</dcsat:field>
+				<dcsat:expression>ЕстьNull(ПравоЧтениеБезОграничения, Ложь)</dcsat:expression>
+			</dcsat:fieldExpression>
+		</parameter>
+	</template>
+	<template>
+		<name>Макет12</name>
+		<template xmlns:dcsat="http://v8.1c.ru/8.1/data-composition-system/area-template" xsi:type="dcsat:AreaTemplate">
+			<dcsat:item xsi:type="dcsat:TableRow">
+				<dcsat:tableCell>
+					<dcsat:item xsi:type="dcsat:Field">
+						<dcsat:value xsi:type="dcscor:Parameter">ПравоРедактирование</dcsat:value>
+						<dcsat:appearance>
+							<dcscor:item>
+								<dcscor:parameter>Формат</dcscor:parameter>
+								<dcscor:value xsi:type="xs:string">БЛ=; БИ=</dcscor:value>
+							</dcscor:item>
+						</dcsat:appearance>
+					</dcsat:item>
+					<dcsat:appearance>
+						<dcscor:item>
+							<dcscor:parameter>Расшифровка</dcscor:parameter>
+							<dcscor:value xsi:type="dcscor:Parameter">Расшифровка</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>РазмерКартинки</dcscor:parameter>
+							<dcscor:value xmlns:mxl="http://v8.1c.ru/8.2/data/spreadsheet" xsi:type="mxl:PictureSize">AutoSize</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>ВертикальноеПоложениеКартинки</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:VerticalAlign">Center</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>ГоризонтальноеПоложениеКартинки</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:HorizontalAlign">Center</dcscor:value>
+						</dcscor:item>
+					</dcsat:appearance>
+				</dcsat:tableCell>
+			</dcsat:item>
+		</template>
+		<parameter xmlns:dcsat="http://v8.1c.ru/8.1/data-composition-system/area-template" xsi:type="dcsat:ExpressionAreaTemplateParameter">
+			<dcsat:name>ПравоРедактирование</dcsat:name>
+			<dcsat:expression>ПравоРедактирование</dcsat:expression>
+		</parameter>
+		<parameter xmlns:dcsat="http://v8.1c.ru/8.1/data-composition-system/area-template" xsi:type="dcsat:DetailsAreaTemplateParameter">
+			<dcsat:name>Расшифровка</dcsat:name>
+			<dcsat:fieldExpression>
+				<dcsat:field>ПравоРедактирование</dcsat:field>
+				<dcsat:expression>ЕстьNull(ПравоРедактирование, Ложь)</dcsat:expression>
+			</dcsat:fieldExpression>
+			<dcsat:fieldExpression>
+				<dcsat:field>ПравоИзменениеБезОграничения</dcsat:field>
+				<dcsat:expression>ЕстьNull(ПравоИзменениеБезОграничения, Ложь)</dcsat:expression>
+			</dcsat:fieldExpression>
+		</parameter>
+	</template>
+	<template>
+		<name>Макет13</name>
+		<template xmlns:dcsat="http://v8.1c.ru/8.1/data-composition-system/area-template" xsi:type="dcsat:AreaTemplate">
+			<dcsat:item xsi:type="dcsat:TableRow">
+				<dcsat:tableCell>
+					<dcsat:item xsi:type="dcsat:Field">
+						<dcsat:value xsi:type="dcscor:Parameter">ПравоИнтерактивноеДобавление</dcsat:value>
+						<dcsat:appearance>
+							<dcscor:item>
+								<dcscor:parameter>Формат</dcscor:parameter>
+								<dcscor:value xsi:type="xs:string">БЛ=; БИ=</dcscor:value>
+							</dcscor:item>
+						</dcsat:appearance>
+					</dcsat:item>
+					<dcsat:appearance>
+						<dcscor:item>
+							<dcscor:parameter>Расшифровка</dcscor:parameter>
+							<dcscor:value xsi:type="dcscor:Parameter">Расшифровка</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>РазмерКартинки</dcscor:parameter>
+							<dcscor:value xmlns:mxl="http://v8.1c.ru/8.2/data/spreadsheet" xsi:type="mxl:PictureSize">AutoSize</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>ВертикальноеПоложениеКартинки</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:VerticalAlign">Center</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>ГоризонтальноеПоложениеКартинки</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:HorizontalAlign">Center</dcscor:value>
+						</dcscor:item>
+					</dcsat:appearance>
+				</dcsat:tableCell>
+			</dcsat:item>
+		</template>
+		<parameter xmlns:dcsat="http://v8.1c.ru/8.1/data-composition-system/area-template" xsi:type="dcsat:ExpressionAreaTemplateParameter">
+			<dcsat:name>ПравоИнтерактивноеДобавление</dcsat:name>
+			<dcsat:expression>ПравоИнтерактивноеДобавление</dcsat:expression>
+		</parameter>
+		<parameter xmlns:dcsat="http://v8.1c.ru/8.1/data-composition-system/area-template" xsi:type="dcsat:DetailsAreaTemplateParameter">
+			<dcsat:name>Расшифровка</dcsat:name>
+			<dcsat:fieldExpression>
+				<dcsat:field>ПравоИнтерактивноеДобавление</dcsat:field>
+				<dcsat:expression>ЕстьNull(ПравоИнтерактивноеДобавление, Ложь)</dcsat:expression>
+			</dcsat:fieldExpression>
+			<dcsat:fieldExpression>
+				<dcsat:field>ПравоДобавлениеБезОграничения</dcsat:field>
+				<dcsat:expression>ЕстьNull(ПравоДобавлениеБезОграничения, Ложь)</dcsat:expression>
+			</dcsat:fieldExpression>
+		</parameter>
+	</template>
+	<template>
+		<name>Макет14</name>
+		<template xmlns:dcsat="http://v8.1c.ru/8.1/data-composition-system/area-template" xsi:type="dcsat:AreaTemplate">
+			<dcsat:item xsi:type="dcsat:TableRow">
+				<dcsat:tableCell>
+					<dcsat:item xsi:type="dcsat:Field">
+						<dcsat:value xsi:type="dcscor:Parameter">ЗначениеДоступа</dcsat:value>
+					</dcsat:item>
+					<dcsat:appearance>
+						<dcscor:item>
+							<dcscor:parameter>Отступ</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">4</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>Размещение</dcscor:parameter>
+							<dcscor:value xsi:type="dcscor:DataCompositionTextPlacementType">Wrap</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>МинимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">62.375</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">62.375</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>Расшифровка</dcscor:parameter>
+							<dcscor:value xsi:type="dcscor:Parameter">ЗначениеДоступаРасшифровка</dcscor:value>
+						</dcscor:item>
+					</dcsat:appearance>
+				</dcsat:tableCell>
+				<dcsat:tableCell>
+					<dcsat:appearance>
+						<dcscor:item>
+							<dcscor:parameter>МинимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">2.5</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">2.5</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>ОбъединятьПоГоризонтали</dcscor:parameter>
+							<dcscor:value xsi:type="xs:boolean">true</dcscor:value>
+						</dcscor:item>
+					</dcsat:appearance>
+				</dcsat:tableCell>
+				<dcsat:tableCell>
+					<dcsat:appearance>
+						<dcscor:item>
+							<dcscor:parameter>МинимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">2.5</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">2.5</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>ОбъединятьПоГоризонтали</dcscor:parameter>
+							<dcscor:value xsi:type="xs:boolean">true</dcscor:value>
+						</dcscor:item>
+					</dcsat:appearance>
+				</dcsat:tableCell>
+				<dcsat:tableCell>
+					<dcsat:appearance>
+						<dcscor:item>
+							<dcscor:parameter>МинимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">2.5</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">2.5</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>ОбъединятьПоГоризонтали</dcscor:parameter>
+							<dcscor:value xsi:type="xs:boolean">true</dcscor:value>
+						</dcscor:item>
+					</dcsat:appearance>
+				</dcsat:tableCell>
+			</dcsat:item>
+		</template>
+		<parameter xmlns:dcsat="http://v8.1c.ru/8.1/data-composition-system/area-template" xsi:type="dcsat:ExpressionAreaTemplateParameter">
+			<dcsat:name>ЗначениеДоступа</dcsat:name>
+			<dcsat:expression>Представление(ЗначениеДоступа)</dcsat:expression>
+		</parameter>
+		<parameter xmlns:dcsat="http://v8.1c.ru/8.1/data-composition-system/area-template" xsi:type="dcsat:DetailsAreaTemplateParameter">
+			<dcsat:name>ЗначениеДоступаРасшифровка</dcsat:name>
+			<dcsat:fieldExpression>
+				<dcsat:field>ЗначениеДоступа</dcsat:field>
+				<dcsat:expression>ЗначениеДоступа</dcsat:expression>
+			</dcsat:fieldExpression>
+		</parameter>
+	</template>
+	<template>
+		<name>Макет15</name>
 		<template xmlns:dcsat="http://v8.1c.ru/8.1/data-composition-system/area-template" xsi:type="dcsat:AreaTemplate">
 			<dcsat:item xsi:type="dcsat:TableRow">
 				<dcsat:tableCell>
@@ -1042,14 +2640,532 @@
 			</dcsat:item>
 		</template>
 	</template>
+	<template>
+		<name>Макет16</name>
+		<template xmlns:dcsat="http://v8.1c.ru/8.1/data-composition-system/area-template" xsi:type="dcsat:AreaTemplate">
+			<dcsat:item xsi:type="dcsat:TableRow">
+				<dcsat:tableCell>
+					<dcsat:item xsi:type="dcsat:Field">
+						<dcsat:value xsi:type="dcscor:Parameter">ГруппаДоступа</dcsat:value>
+					</dcsat:item>
+					<dcsat:appearance>
+						<dcscor:item>
+							<dcscor:parameter>Размещение</dcscor:parameter>
+							<dcscor:value xsi:type="dcscor:DataCompositionTextPlacementType">Wrap</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>МинимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">62.375</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">62.375</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>Расшифровка</dcscor:parameter>
+							<dcscor:value xsi:type="dcscor:Parameter">ГруппаДоступаРасшифровка</dcscor:value>
+						</dcscor:item>
+					</dcsat:appearance>
+				</dcsat:tableCell>
+				<dcsat:tableCell>
+					<dcsat:item xsi:type="dcsat:Field">
+						<dcsat:value xsi:type="dcscor:Parameter">ПравоПросмотр</dcsat:value>
+						<dcsat:appearance>
+							<dcscor:item>
+								<dcscor:parameter>Формат</dcscor:parameter>
+								<dcscor:value xsi:type="xs:string">БЛ=; БИ=</dcscor:value>
+							</dcscor:item>
+						</dcsat:appearance>
+					</dcsat:item>
+					<dcsat:appearance>
+						<dcscor:item>
+							<dcscor:parameter>МинимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">2.5</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">2.5</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>Расшифровка</dcscor:parameter>
+							<dcscor:value xsi:type="dcscor:Parameter">ПравоПросмотрРасшифровка</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>РазмерКартинки</dcscor:parameter>
+							<dcscor:value xmlns:mxl="http://v8.1c.ru/8.2/data/spreadsheet" xsi:type="mxl:PictureSize">AutoSize</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>ВертикальноеПоложениеКартинки</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:VerticalAlign">Center</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>ГоризонтальноеПоложениеКартинки</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:HorizontalAlign">Center</dcscor:value>
+						</dcscor:item>
+					</dcsat:appearance>
+				</dcsat:tableCell>
+				<dcsat:tableCell>
+					<dcsat:item xsi:type="dcsat:Field">
+						<dcsat:value xsi:type="dcscor:Parameter">ПравоРедактирование</dcsat:value>
+						<dcsat:appearance>
+							<dcscor:item>
+								<dcscor:parameter>Формат</dcscor:parameter>
+								<dcscor:value xsi:type="xs:string">БЛ=; БИ=</dcscor:value>
+							</dcscor:item>
+						</dcsat:appearance>
+					</dcsat:item>
+					<dcsat:appearance>
+						<dcscor:item>
+							<dcscor:parameter>МинимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">2.5</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">2.5</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>Расшифровка</dcscor:parameter>
+							<dcscor:value xsi:type="dcscor:Parameter">ПравоРедактированиеРасшифровка</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>РазмерКартинки</dcscor:parameter>
+							<dcscor:value xmlns:mxl="http://v8.1c.ru/8.2/data/spreadsheet" xsi:type="mxl:PictureSize">AutoSize</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>ВертикальноеПоложениеКартинки</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:VerticalAlign">Center</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>ГоризонтальноеПоложениеКартинки</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:HorizontalAlign">Center</dcscor:value>
+						</dcscor:item>
+					</dcsat:appearance>
+				</dcsat:tableCell>
+				<dcsat:tableCell>
+					<dcsat:item xsi:type="dcsat:Field">
+						<dcsat:value xsi:type="dcscor:Parameter">ПравоИнтерактивноеДобавление</dcsat:value>
+						<dcsat:appearance>
+							<dcscor:item>
+								<dcscor:parameter>Формат</dcscor:parameter>
+								<dcscor:value xsi:type="xs:string">БЛ=; БИ=</dcscor:value>
+							</dcscor:item>
+						</dcsat:appearance>
+					</dcsat:item>
+					<dcsat:appearance>
+						<dcscor:item>
+							<dcscor:parameter>МинимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">2.5</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">2.5</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>Расшифровка</dcscor:parameter>
+							<dcscor:value xsi:type="dcscor:Parameter">ПравоИнтерактивноеДобавлениеРасшифровка</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>РазмерКартинки</dcscor:parameter>
+							<dcscor:value xmlns:mxl="http://v8.1c.ru/8.2/data/spreadsheet" xsi:type="mxl:PictureSize">AutoSize</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>ВертикальноеПоложениеКартинки</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:VerticalAlign">Center</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>ГоризонтальноеПоложениеКартинки</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:HorizontalAlign">Center</dcscor:value>
+						</dcscor:item>
+					</dcsat:appearance>
+				</dcsat:tableCell>
+			</dcsat:item>
+		</template>
+		<parameter xmlns:dcsat="http://v8.1c.ru/8.1/data-composition-system/area-template" xsi:type="dcsat:ExpressionAreaTemplateParameter">
+			<dcsat:name>ГруппаДоступа</dcsat:name>
+			<dcsat:expression>Представление(ГруппаДоступа)</dcsat:expression>
+		</parameter>
+		<parameter xmlns:dcsat="http://v8.1c.ru/8.1/data-composition-system/area-template" xsi:type="dcsat:ExpressionAreaTemplateParameter">
+			<dcsat:name>ПравоПросмотр</dcsat:name>
+			<dcsat:expression>ПравоПросмотр</dcsat:expression>
+		</parameter>
+		<parameter xmlns:dcsat="http://v8.1c.ru/8.1/data-composition-system/area-template" xsi:type="dcsat:ExpressionAreaTemplateParameter">
+			<dcsat:name>ПравоРедактирование</dcsat:name>
+			<dcsat:expression>ПравоРедактирование</dcsat:expression>
+		</parameter>
+		<parameter xmlns:dcsat="http://v8.1c.ru/8.1/data-composition-system/area-template" xsi:type="dcsat:ExpressionAreaTemplateParameter">
+			<dcsat:name>ПравоИнтерактивноеДобавление</dcsat:name>
+			<dcsat:expression>ПравоИнтерактивноеДобавление</dcsat:expression>
+		</parameter>
+		<parameter xmlns:dcsat="http://v8.1c.ru/8.1/data-composition-system/area-template" xsi:type="dcsat:DetailsAreaTemplateParameter">
+			<dcsat:name>ПравоПросмотрРасшифровка</dcsat:name>
+			<dcsat:fieldExpression>
+				<dcsat:field>ПравоПросмотр</dcsat:field>
+				<dcsat:expression>ЕстьNull(ПравоПросмотр, Ложь)</dcsat:expression>
+			</dcsat:fieldExpression>
+			<dcsat:fieldExpression>
+				<dcsat:field>ПравоЧтениеБезОграничения</dcsat:field>
+				<dcsat:expression>ЕстьNull(ПравоЧтениеБезОграничения, Ложь)</dcsat:expression>
+			</dcsat:fieldExpression>
+		</parameter>
+		<parameter xmlns:dcsat="http://v8.1c.ru/8.1/data-composition-system/area-template" xsi:type="dcsat:DetailsAreaTemplateParameter">
+			<dcsat:name>ПравоРедактированиеРасшифровка</dcsat:name>
+			<dcsat:fieldExpression>
+				<dcsat:field>ПравоРедактирование</dcsat:field>
+				<dcsat:expression>ЕстьNull(ПравоРедактирование, Ложь)</dcsat:expression>
+			</dcsat:fieldExpression>
+			<dcsat:fieldExpression>
+				<dcsat:field>ПравоИзменениеБезОграничения</dcsat:field>
+				<dcsat:expression>ЕстьNull(ПравоИзменениеБезОграничения, Ложь)</dcsat:expression>
+			</dcsat:fieldExpression>
+		</parameter>
+		<parameter xmlns:dcsat="http://v8.1c.ru/8.1/data-composition-system/area-template" xsi:type="dcsat:DetailsAreaTemplateParameter">
+			<dcsat:name>ПравоИнтерактивноеДобавлениеРасшифровка</dcsat:name>
+			<dcsat:fieldExpression>
+				<dcsat:field>ПравоИнтерактивноеДобавление</dcsat:field>
+				<dcsat:expression>ЕстьNull(ПравоИнтерактивноеДобавление, Ложь)</dcsat:expression>
+			</dcsat:fieldExpression>
+			<dcsat:fieldExpression>
+				<dcsat:field>ПравоДобавлениеБезОграничения</dcsat:field>
+				<dcsat:expression>ЕстьNull(ПравоДобавлениеБезОграничения, Ложь)</dcsat:expression>
+			</dcsat:fieldExpression>
+		</parameter>
+		<parameter xmlns:dcsat="http://v8.1c.ru/8.1/data-composition-system/area-template" xsi:type="dcsat:DetailsAreaTemplateParameter">
+			<dcsat:name>ГруппаДоступаРасшифровка</dcsat:name>
+			<dcsat:fieldExpression>
+				<dcsat:field>ГруппаДоступа</dcsat:field>
+				<dcsat:expression>ГруппаДоступа</dcsat:expression>
+			</dcsat:fieldExpression>
+		</parameter>
+	</template>
+	<template>
+		<name>Макет17</name>
+		<template xmlns:dcsat="http://v8.1c.ru/8.1/data-composition-system/area-template" xsi:type="dcsat:AreaTemplate">
+			<dcsat:item xsi:type="dcsat:TableRow">
+				<dcsat:tableCell>
+					<dcsat:appearance>
+						<dcscor:item>
+							<dcscor:parameter>ВертикальноеПоложение</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:VerticalAlign">Center</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>МинимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">5.125</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">5.125</dcscor:value>
+						</dcscor:item>
+					</dcsat:appearance>
+				</dcsat:tableCell>
+				<dcsat:tableCell>
+					<dcsat:item xsi:type="dcsat:Field">
+						<dcsat:value xsi:type="dcscor:Parameter">ЗаголовокПрава</dcsat:value>
+					</dcsat:item>
+					<dcsat:appearance>
+						<dcscor:item>
+							<dcscor:parameter>ВертикальноеПоложение</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:VerticalAlign">Center</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>МинимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">18.625</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">18.625</dcscor:value>
+						</dcscor:item>
+					</dcsat:appearance>
+				</dcsat:tableCell>
+				<dcsat:tableCell>
+					<dcsat:item xsi:type="dcsat:Field">
+						<dcsat:value xsi:type="dcscor:Parameter">ПодсказкаПрава</dcsat:value>
+					</dcsat:item>
+					<dcsat:appearance>
+						<dcscor:item>
+							<dcscor:parameter>ВертикальноеПоложение</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:VerticalAlign">Center</dcscor:value>
+						</dcscor:item>
+					</dcsat:appearance>
+				</dcsat:tableCell>
+			</dcsat:item>
+		</template>
+		<parameter xmlns:dcsat="http://v8.1c.ru/8.1/data-composition-system/area-template" xsi:type="dcsat:ExpressionAreaTemplateParameter">
+			<dcsat:name>ПодсказкаПрава</dcsat:name>
+			<dcsat:expression>ПодсказкаПрава</dcsat:expression>
+		</parameter>
+		<parameter xmlns:dcsat="http://v8.1c.ru/8.1/data-composition-system/area-template" xsi:type="dcsat:ExpressionAreaTemplateParameter">
+			<dcsat:name>ЗаголовокПрава</dcsat:name>
+			<dcsat:expression>ЗаголовокПрава</dcsat:expression>
+		</parameter>
+	</template>
+	<template>
+		<name>Макет18</name>
+		<template xsi:nil="true"/>
+	</template>
+	<template>
+		<name>Макет19</name>
+		<template xmlns:dcsat="http://v8.1c.ru/8.1/data-composition-system/area-template" xsi:type="dcsat:AreaTemplate">
+			<dcsat:item xsi:type="dcsat:TableRow">
+				<dcsat:tableCell>
+					<dcsat:item xsi:type="dcsat:Field">
+						<dcsat:value xsi:type="v8:LocalStringType">
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Права на таблицу </v8:content>
+							</v8:item>
+						</dcsat:value>
+					</dcsat:item>
+					<dcsat:item xsi:type="dcsat:Field">
+						<dcsat:value xsi:type="dcscor:Parameter">ОбъектМетаданных</dcsat:value>
+					</dcsat:item>
+				</dcsat:tableCell>
+			</dcsat:item>
+		</template>
+		<parameter xmlns:dcsat="http://v8.1c.ru/8.1/data-composition-system/area-template" xsi:type="dcsat:ExpressionAreaTemplateParameter">
+			<dcsat:name>ОбъектМетаданных</dcsat:name>
+			<dcsat:expression>Представление(ОбъектМетаданных)</dcsat:expression>
+		</parameter>
+	</template>
+	<template>
+		<name>Макет21</name>
+		<template xmlns:dcsat="http://v8.1c.ru/8.1/data-composition-system/area-template" xsi:type="dcsat:AreaTemplate">
+			<dcsat:item xsi:type="dcsat:TableRow">
+				<dcsat:tableCell>
+					<dcsat:item xsi:type="dcsat:Field">
+						<dcsat:value xsi:type="dcscor:Parameter">ВладелецНастроекЗаголовок</dcsat:value>
+					</dcsat:item>
+				</dcsat:tableCell>
+			</dcsat:item>
+			<dcsat:item xsi:type="dcsat:TableRow">
+				<dcsat:tableCell>
+					<dcsat:item xsi:type="dcsat:Field">
+						<dcsat:value xsi:type="v8:LocalStringType">
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Права назначены</v8:content>
+							</v8:item>
+						</dcsat:value>
+					</dcsat:item>
+				</dcsat:tableCell>
+			</dcsat:item>
+		</template>
+		<parameter xmlns:dcsat="http://v8.1c.ru/8.1/data-composition-system/area-template" xsi:type="dcsat:ExpressionAreaTemplateParameter">
+			<dcsat:name>ВладелецНастроекЗаголовок</dcsat:name>
+			<dcsat:expression>"&amp;ВладелецНастроекЗаголовок"</dcsat:expression>
+		</parameter>
+	</template>
+	<template>
+		<name>Макет20</name>
+		<template xmlns:dcsat="http://v8.1c.ru/8.1/data-composition-system/area-template" xsi:type="dcsat:AreaTemplate">
+			<dcsat:item xsi:type="dcsat:TableRow">
+				<dcsat:tableCell>
+					<dcsat:item xsi:type="dcsat:Field">
+						<dcsat:value xsi:type="dcscor:Parameter">НастроенноеПраво</dcsat:value>
+					</dcsat:item>
+					<dcsat:appearance>
+						<dcscor:item>
+							<dcscor:parameter>ВертикальноеПоложение</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:VerticalAlign">Bottom</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>Размещение</dcscor:parameter>
+							<dcscor:value xsi:type="dcscor:DataCompositionTextPlacementType">Wrap</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>ОриентацияТекста</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">90</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>МинимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">2.5</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">2.5</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>Расшифровка</dcscor:parameter>
+							<dcscor:value xsi:type="dcscor:Parameter">Расшифровка</dcscor:value>
+						</dcscor:item>
+					</dcsat:appearance>
+				</dcsat:tableCell>
+			</dcsat:item>
+		</template>
+		<parameter xmlns:dcsat="http://v8.1c.ru/8.1/data-composition-system/area-template" xsi:type="dcsat:ExpressionAreaTemplateParameter">
+			<dcsat:name>НастроенноеПраво</dcsat:name>
+			<dcsat:expression>НастроенноеПраво</dcsat:expression>
+		</parameter>
+		<parameter xmlns:dcsat="http://v8.1c.ru/8.1/data-composition-system/area-template" xsi:type="dcsat:DetailsAreaTemplateParameter">
+			<dcsat:name>Расшифровка</dcsat:name>
+			<dcsat:fieldExpression>
+				<dcsat:field>НастроенноеПраво</dcsat:field>
+				<dcsat:expression>НастроенноеПраво</dcsat:expression>
+			</dcsat:fieldExpression>
+		</parameter>
+	</template>
+	<template>
+		<name>Макет22</name>
+		<template xmlns:dcsat="http://v8.1c.ru/8.1/data-composition-system/area-template" xsi:type="dcsat:AreaTemplate">
+			<dcsat:item xsi:type="dcsat:TableRow">
+				<dcsat:tableCell>
+					<dcsat:item xsi:type="dcsat:Field">
+						<dcsat:value xsi:type="dcscor:Parameter">ЗначениеПрава</dcsat:value>
+						<dcsat:appearance>
+							<dcscor:item>
+								<dcscor:parameter>Формат</dcscor:parameter>
+								<dcscor:value xsi:type="xs:string">ЧФ=</dcscor:value>
+							</dcscor:item>
+						</dcsat:appearance>
+					</dcsat:item>
+					<dcsat:appearance>
+						<dcscor:item>
+							<dcscor:parameter>ГоризонтальноеПоложение</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:HorizontalAlign">Center</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>ВертикальноеПоложение</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:VerticalAlign">Center</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>Расшифровка</dcscor:parameter>
+							<dcscor:value xsi:type="dcscor:Parameter">Расшифровка</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>РазмерКартинки</dcscor:parameter>
+							<dcscor:value xmlns:mxl="http://v8.1c.ru/8.2/data/spreadsheet" xsi:type="mxl:PictureSize">AutoSize</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>ВертикальноеПоложениеКартинки</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:VerticalAlign">Center</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>ГоризонтальноеПоложениеКартинки</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:HorizontalAlign">Center</dcscor:value>
+						</dcscor:item>
+					</dcsat:appearance>
+				</dcsat:tableCell>
+			</dcsat:item>
+		</template>
+		<parameter xmlns:dcsat="http://v8.1c.ru/8.1/data-composition-system/area-template" xsi:type="dcsat:DetailsAreaTemplateParameter">
+			<dcsat:name>Расшифровка</dcsat:name>
+			<dcsat:fieldExpression>
+				<dcsat:field>ЗначениеПрава</dcsat:field>
+				<dcsat:expression>ЗначениеПрава</dcsat:expression>
+			</dcsat:fieldExpression>
+			<dcsat:fieldExpression>
+				<dcsat:field>ЭтоВладелецНастроек</dcsat:field>
+				<dcsat:expression>ЭтоВладелецНастроек</dcsat:expression>
+			</dcsat:fieldExpression>
+			<dcsat:fieldExpression>
+				<dcsat:field>НастроенноеПраво</dcsat:field>
+				<dcsat:expression>Максимум(НастроенноеПраво)</dcsat:expression>
+			</dcsat:fieldExpression>
+		</parameter>
+		<parameter xmlns:dcsat="http://v8.1c.ru/8.1/data-composition-system/area-template" xsi:type="dcsat:ExpressionAreaTemplateParameter">
+			<dcsat:name>ЗначениеПрава</dcsat:name>
+			<dcsat:expression>ЗначениеПрава</dcsat:expression>
+		</parameter>
+	</template>
+	<template>
+		<name>Макет23</name>
+		<template xmlns:dcsat="http://v8.1c.ru/8.1/data-composition-system/area-template" xsi:type="dcsat:AreaTemplate">
+			<dcsat:item xsi:type="dcsat:TableRow">
+				<dcsat:tableCell>
+					<dcsat:appearance>
+						<dcscor:item>
+							<dcscor:parameter>ВертикальноеПоложение</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:VerticalAlign">Center</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>МинимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">3.375</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">3.375</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>РазмерКартинки</dcscor:parameter>
+							<dcscor:value xmlns:mxl="http://v8.1c.ru/8.2/data/spreadsheet" xsi:type="mxl:PictureSize">AutoSize</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>ВертикальноеПоложениеКартинки</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:VerticalAlign">Center</dcscor:value>
+						</dcscor:item>
+					</dcsat:appearance>
+				</dcsat:tableCell>
+				<dcsat:tableCell>
+					<dcsat:item xsi:type="dcsat:Field">
+						<dcsat:value xsi:type="dcscor:Parameter">ВладелецИлиПользовательНастроек</dcsat:value>
+					</dcsat:item>
+					<dcsat:appearance>
+						<dcscor:item>
+							<dcscor:parameter>ВертикальноеПоложение</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:VerticalAlign">Center</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>Расшифровка</dcscor:parameter>
+							<dcscor:value xsi:type="dcscor:Parameter">Расшифровка</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>РазмерКартинки</dcscor:parameter>
+							<dcscor:value xmlns:mxl="http://v8.1c.ru/8.2/data/spreadsheet" xsi:type="mxl:PictureSize">AutoSize</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>ВертикальноеПоложениеКартинки</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:VerticalAlign">Center</dcscor:value>
+						</dcscor:item>
+					</dcsat:appearance>
+				</dcsat:tableCell>
+			</dcsat:item>
+		</template>
+		<parameter xmlns:dcsat="http://v8.1c.ru/8.1/data-composition-system/area-template" xsi:type="dcsat:ExpressionAreaTemplateParameter">
+			<dcsat:name>ВладелецИлиПользовательНастроек</dcsat:name>
+			<dcsat:expression>Представление(ВладелецИлиПользовательНастроек)</dcsat:expression>
+		</parameter>
+		<parameter xmlns:dcsat="http://v8.1c.ru/8.1/data-composition-system/area-template" xsi:type="dcsat:DetailsAreaTemplateParameter">
+			<dcsat:name>Расшифровка</dcsat:name>
+			<dcsat:fieldExpression>
+				<dcsat:field>ВладелецИлиПользовательНастроек</dcsat:field>
+				<dcsat:expression>ВладелецИлиПользовательНастроек</dcsat:expression>
+			</dcsat:fieldExpression>
+			<dcsat:fieldExpression>
+				<dcsat:field>ЭтоВладелецНастроек</dcsat:field>
+				<dcsat:expression>ЭтоВладелецНастроек</dcsat:expression>
+			</dcsat:fieldExpression>
+			<dcsat:fieldExpression>
+				<dcsat:field>Уровень</dcsat:field>
+				<dcsat:expression>СистемныеПоля.Уровень</dcsat:expression>
+			</dcsat:fieldExpression>
+			<dcsat:mainAction>OpenValue</dcsat:mainAction>
+		</parameter>
+	</template>
+	<fieldTemplate>
+		<field>Право</field>
+		<template>Макет10</template>
+	</fieldTemplate>
+	<fieldTemplate>
+		<field>ПравоПросмотр</field>
+		<template>Макет11</template>
+	</fieldTemplate>
+	<fieldTemplate>
+		<field>ПравоРедактирование</field>
+		<template>Макет12</template>
+	</fieldTemplate>
+	<fieldTemplate>
+		<field>ПравоИнтерактивноеДобавление</field>
+		<template>Макет13</template>
+	</fieldTemplate>
+	<fieldTemplate>
+		<field>ЗначениеПрава</field>
+		<template>Макет22</template>
+	</fieldTemplate>
 	<groupTemplate>
-		<groupField>Пользователь</groupField>
 		<groupName>КолонкаПользователь</groupName>
 		<templateType>Header</templateType>
 		<template>Макет1</template>
 	</groupTemplate>
 	<groupTemplate>
-		<groupField>ГруппаДоступа</groupField>
 		<groupName>КолонкаГруппаДоступа</groupName>
 		<templateType>Header</templateType>
 		<template>Макет2</template>
@@ -1074,23 +3190,60 @@
 		<templateType>Header</templateType>
 		<template>Макет5</template>
 	</groupTemplate>
+	<groupTemplate>
+		<groupName>ВидДоступа</groupName>
+		<templateType>Header</templateType>
+		<template>Макет9</template>
+	</groupTemplate>
+	<groupTemplate>
+		<groupName>ЗначениеДоступа</groupName>
+		<templateType>Header</templateType>
+		<template>Макет14</template>
+	</groupTemplate>
+	<groupTemplate>
+		<groupName>ПраваПоГруппамДоступа</groupName>
+		<templateType>Header</templateType>
+		<template>Макет16</template>
+	</groupTemplate>
+	<groupTemplate>
+		<groupName>ЛегендаНастроекПрав</groupName>
+		<templateType>Header</templateType>
+		<template>Макет17</template>
+	</groupTemplate>
+	<groupTemplate>
+		<groupName>ТаблицаЗаголовок</groupName>
+		<templateType>Header</templateType>
+		<template>Макет19</template>
+	</groupTemplate>
+	<groupTemplate>
+		<groupName>НастроенноеПраво</groupName>
+		<templateType>Header</templateType>
+		<template>Макет20</template>
+	</groupTemplate>
+	<groupTemplate>
+		<groupName>ВладелецИлиПользовательНастроек</groupName>
+		<templateType>Header</templateType>
+		<template>Макет23</template>
+	</groupTemplate>
 	<groupHeaderTemplate>
-		<groupField>ГруппаДоступа</groupField>
-		<groupField>КартинкаПросмотр</groupField>
-		<groupField>КартинкаРедактирование</groupField>
-		<groupField>КартинкаСоздание</groupField>
 		<groupName>ПраваПоГруппамДоступа</groupName>
 		<templateType>Header</templateType>
 		<template>Макет4</template>
 	</groupHeaderTemplate>
 	<groupHeaderTemplate>
-		<groupField>Пользователь</groupField>
-		<groupField>КартинкаПросмотр</groupField>
-		<groupField>КартинкаРедактирование</groupField>
-		<groupField>КартинкаСоздание</groupField>
 		<groupName>ПраваПользователя</groupName>
 		<templateType>Header</templateType>
-		<template>Макет9</template>
+		<template>Макет15</template>
+	</groupHeaderTemplate>
+	<groupHeaderTemplate>
+		<groupName>ЛегендаНастроекПрав</groupName>
+		<templateType>Header</templateType>
+		<template>Макет18</template>
+	</groupHeaderTemplate>
+	<groupHeaderTemplate>
+		<groupName>ВладелецИлиПользовательНастроек</groupName>
+		<templateType>Header</templateType>
+		<template>Макет21</template>
 	</groupHeaderTemplate>
 	<settingsVariant>
 		<dcsset:name>АнализПравДоступа</dcsset:name>
@@ -1124,6 +3277,7 @@
 					<dcsset:userSettingID>91c5e0cc-63a9-4398-b8d3-561eeecd248d</dcsset:userSettingID>
 				</dcsset:item>
 				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
 					<dcsset:left xsi:type="dcscor:Field">Право</dcsset:left>
 					<dcsset:comparisonType>GreaterOrEqual</dcsset:comparisonType>
 					<dcsset:right xsi:type="xs:decimal">1</dcsset:right>
@@ -1151,6 +3305,12 @@
 					<dcscor:value xsi:nil="true"/>
 					<dcsset:userSettingID>f699765c-29a8-4cf9-8733-316b24f75277</dcsset:userSettingID>
 				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ВидПользователей</dcscor:parameter>
+					<dcscor:value xsi:type="xs:decimal">0</dcscor:value>
+					<dcsset:viewMode>Normal</dcsset:viewMode>
+					<dcsset:userSettingID>1c9ede17-956a-4268-8492-d46be7468fb8</dcsset:userSettingID>
+				</dcscor:item>
 			</dcsset:dataParameters>
 			<dcsset:conditionalAppearance>
 				<dcsset:item>
@@ -1170,6 +3330,10 @@
 						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
 							<dcscor:parameter>ЦветФона</dcscor:parameter>
 							<dcscor:value xsi:type="v8ui:Color">style:ПравоПросмотраФон</dcscor:value>
+						</dcscor:item>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>Картинка</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:Picture" ref="v8ui:УровеньДоступаПросмотр"/>
 						</dcscor:item>
 					</dcsset:appearance>
 				</dcsset:item>
@@ -1191,6 +3355,10 @@
 							<dcscor:parameter>ЦветФона</dcscor:parameter>
 							<dcscor:value xsi:type="v8ui:Color">style:ПравоРедактированияФон</dcscor:value>
 						</dcscor:item>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>Картинка</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:Picture" ref="v8ui:УровеньДоступаРедактирование"/>
+						</dcscor:item>
 					</dcsset:appearance>
 				</dcsset:item>
 				<dcsset:item>
@@ -1210,6 +3378,10 @@
 						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
 							<dcscor:parameter>ЦветФона</dcscor:parameter>
 							<dcscor:value xsi:type="v8ui:Color">style:ПравоСозданияФон</dcscor:value>
+						</dcscor:item>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>Картинка</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:Picture" ref="v8ui:УровеньДоступаСоздание"/>
 						</dcscor:item>
 					</dcsset:appearance>
 				</dcsset:item>
@@ -1321,6 +3493,14 @@
 					<dcscor:use>false</dcscor:use>
 					<dcscor:parameter>ТипЗаголовкаПолей</dcscor:parameter>
 					<dcscor:value xsi:type="dcscor:DataCompositionFieldsTitleType">Short</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ВыводитьПараметрыДанных</dcscor:parameter>
+					<dcscor:value xsi:type="dcsset:DataCompositionTextOutputType">DontOutput</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ВыводитьОтбор</dcscor:parameter>
+					<dcscor:value xsi:type="dcsset:DataCompositionTextOutputType">DontOutput</dcscor:value>
 				</dcscor:item>
 			</dcsset:outputParameters>
 			<dcsset:item xsi:type="dcsset:StructureItemTable">
@@ -1536,6 +3716,12 @@
 					<dcscor:value xsi:nil="true"/>
 					<dcsset:userSettingID>013c6526-4184-4012-a7e3-c7ce958fbb8c</dcsset:userSettingID>
 				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ВидПользователей</dcscor:parameter>
+					<dcscor:value xsi:type="xs:decimal">0</dcscor:value>
+					<dcsset:viewMode>Normal</dcsset:viewMode>
+					<dcsset:userSettingID>c3b63d35-6238-452e-89e6-7592c7814b30</dcsset:userSettingID>
+				</dcscor:item>
 			</dcsset:dataParameters>
 			<dcsset:conditionalAppearance>
 				<dcsset:item>
@@ -1555,6 +3741,10 @@
 						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
 							<dcscor:parameter>ЦветФона</dcscor:parameter>
 							<dcscor:value xsi:type="v8ui:Color">style:ПравоПросмотраФон</dcscor:value>
+						</dcscor:item>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>Картинка</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:Picture" ref="v8ui:УровеньДоступаПросмотр"/>
 						</dcscor:item>
 					</dcsset:appearance>
 				</dcsset:item>
@@ -1576,6 +3766,10 @@
 							<dcscor:parameter>ЦветФона</dcscor:parameter>
 							<dcscor:value xsi:type="v8ui:Color">style:ПравоРедактированияФон</dcscor:value>
 						</dcscor:item>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>Картинка</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:Picture" ref="v8ui:УровеньДоступаРедактирование"/>
+						</dcscor:item>
 					</dcsset:appearance>
 				</dcsset:item>
 				<dcsset:item>
@@ -1595,6 +3789,10 @@
 						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
 							<dcscor:parameter>ЦветФона</dcscor:parameter>
 							<dcscor:value xsi:type="v8ui:Color">style:ПравоСозданияФон</dcscor:value>
+						</dcscor:item>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>Картинка</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:Picture" ref="v8ui:УровеньДоступаСоздание"/>
 						</dcscor:item>
 					</dcsset:appearance>
 				</dcsset:item>
@@ -1837,6 +4035,14 @@
 					<dcsset:userSettingID>12d5529f-b584-44b3-b37e-ffa717fce6f1</dcsset:userSettingID>
 				</dcsset:item>
 			</dcsset:filter>
+			<dcsset:dataParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ВидПользователей</dcscor:parameter>
+					<dcscor:value xsi:type="xs:decimal">0</dcscor:value>
+					<dcsset:viewMode>Normal</dcsset:viewMode>
+					<dcsset:userSettingID>559f128d-0c9c-47c6-829e-1fd1869add29</dcsset:userSettingID>
+				</dcscor:item>
+			</dcsset:dataParameters>
 			<dcsset:conditionalAppearance>
 				<dcsset:item>
 					<dcsset:selection>
@@ -1855,6 +4061,10 @@
 						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
 							<dcscor:parameter>ЦветФона</dcscor:parameter>
 							<dcscor:value xsi:type="v8ui:Color">style:ПравоПросмотраФон</dcscor:value>
+						</dcscor:item>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>Картинка</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:Picture" ref="v8ui:УровеньДоступаПросмотр"/>
 						</dcscor:item>
 					</dcsset:appearance>
 				</dcsset:item>
@@ -1876,6 +4086,10 @@
 							<dcscor:parameter>ЦветФона</dcscor:parameter>
 							<dcscor:value xsi:type="v8ui:Color">style:ПравоРедактированияФон</dcscor:value>
 						</dcscor:item>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>Картинка</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:Picture" ref="v8ui:УровеньДоступаРедактирование"/>
+						</dcscor:item>
 					</dcsset:appearance>
 				</dcsset:item>
 				<dcsset:item>
@@ -1895,6 +4109,10 @@
 						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
 							<dcscor:parameter>ЦветФона</dcscor:parameter>
 							<dcscor:value xsi:type="v8ui:Color">style:ПравоСозданияФон</dcscor:value>
+						</dcscor:item>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>Картинка</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:Picture" ref="v8ui:УровеньДоступаСоздание"/>
 						</dcscor:item>
 					</dcsset:appearance>
 				</dcsset:item>
@@ -1928,90 +4146,6 @@
 						<dcsset:item xsi:type="dcsset:FilterItemComparison">
 							<dcsset:left xsi:type="dcscor:Field">Право</dcsset:left>
 							<dcsset:comparisonType>Filled</dcsset:comparisonType>
-						</dcsset:item>
-						<dcsset:item xsi:type="dcsset:FilterItemComparison">
-							<dcsset:left xsi:type="dcscor:Field">ВходВПрограммуРазрешен</dcsset:left>
-							<dcsset:comparisonType>Equal</dcsset:comparisonType>
-							<dcsset:right xsi:type="xs:boolean">false</dcsset:right>
-						</dcsset:item>
-					</dcsset:filter>
-					<dcsset:appearance>
-						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
-							<dcscor:parameter>ЦветФона</dcscor:parameter>
-							<dcscor:value xsi:type="v8ui:Color">style:ПравоНедействительногоПользователяФон</dcscor:value>
-						</dcscor:item>
-					</dcsset:appearance>
-				</dcsset:item>
-				<dcsset:item>
-					<dcsset:selection>
-						<dcsset:item>
-							<dcsset:field>КартинкаПросмотр</dcsset:field>
-						</dcsset:item>
-						<dcsset:item>
-							<dcsset:field>ПравоПросмотр</dcsset:field>
-						</dcsset:item>
-					</dcsset:selection>
-					<dcsset:filter>
-						<dcsset:item xsi:type="dcsset:FilterItemComparison">
-							<dcsset:left xsi:type="dcscor:Field">ПравоПросмотр</dcsset:left>
-							<dcsset:comparisonType>Equal</dcsset:comparisonType>
-							<dcsset:right xsi:type="xs:boolean">true</dcsset:right>
-						</dcsset:item>
-						<dcsset:item xsi:type="dcsset:FilterItemComparison">
-							<dcsset:left xsi:type="dcscor:Field">ВходВПрограммуРазрешен</dcsset:left>
-							<dcsset:comparisonType>Equal</dcsset:comparisonType>
-							<dcsset:right xsi:type="xs:boolean">false</dcsset:right>
-						</dcsset:item>
-					</dcsset:filter>
-					<dcsset:appearance>
-						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
-							<dcscor:parameter>ЦветФона</dcscor:parameter>
-							<dcscor:value xsi:type="v8ui:Color">style:ПравоНедействительногоПользователяФон</dcscor:value>
-						</dcscor:item>
-					</dcsset:appearance>
-				</dcsset:item>
-				<dcsset:item>
-					<dcsset:selection>
-						<dcsset:item>
-							<dcsset:field>КартинкаРедактирование</dcsset:field>
-						</dcsset:item>
-						<dcsset:item>
-							<dcsset:field>ПравоРедактирование</dcsset:field>
-						</dcsset:item>
-					</dcsset:selection>
-					<dcsset:filter>
-						<dcsset:item xsi:type="dcsset:FilterItemComparison">
-							<dcsset:left xsi:type="dcscor:Field">ПравоРедактирование</dcsset:left>
-							<dcsset:comparisonType>Equal</dcsset:comparisonType>
-							<dcsset:right xsi:type="xs:boolean">true</dcsset:right>
-						</dcsset:item>
-						<dcsset:item xsi:type="dcsset:FilterItemComparison">
-							<dcsset:left xsi:type="dcscor:Field">ВходВПрограммуРазрешен</dcsset:left>
-							<dcsset:comparisonType>Equal</dcsset:comparisonType>
-							<dcsset:right xsi:type="xs:boolean">false</dcsset:right>
-						</dcsset:item>
-					</dcsset:filter>
-					<dcsset:appearance>
-						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
-							<dcscor:parameter>ЦветФона</dcscor:parameter>
-							<dcscor:value xsi:type="v8ui:Color">style:ПравоНедействительногоПользователяФон</dcscor:value>
-						</dcscor:item>
-					</dcsset:appearance>
-				</dcsset:item>
-				<dcsset:item>
-					<dcsset:selection>
-						<dcsset:item>
-							<dcsset:field>КартинкаСоздание</dcsset:field>
-						</dcsset:item>
-						<dcsset:item>
-							<dcsset:field>ПравоИнтерактивноеДобавление</dcsset:field>
-						</dcsset:item>
-					</dcsset:selection>
-					<dcsset:filter>
-						<dcsset:item xsi:type="dcsset:FilterItemComparison">
-							<dcsset:left xsi:type="dcscor:Field">ПравоИнтерактивноеДобавление</dcsset:left>
-							<dcsset:comparisonType>Equal</dcsset:comparisonType>
-							<dcsset:right xsi:type="xs:boolean">true</dcsset:right>
 						</dcsset:item>
 						<dcsset:item xsi:type="dcsset:FilterItemComparison">
 							<dcsset:left xsi:type="dcscor:Field">ВходВПрограммуРазрешен</dcsset:left>
@@ -2214,13 +4348,13 @@
 					<dcsset:field>Пользователь</dcsset:field>
 				</dcsset:item>
 				<dcsset:item xsi:type="dcsset:SelectedItemField">
-					<dcsset:field>КартинкаПросмотр</dcsset:field>
+					<dcsset:field>ПравоПросмотр</dcsset:field>
 				</dcsset:item>
 				<dcsset:item xsi:type="dcsset:SelectedItemField">
-					<dcsset:field>КартинкаРедактирование</dcsset:field>
+					<dcsset:field>ПравоРедактирование</dcsset:field>
 				</dcsset:item>
 				<dcsset:item xsi:type="dcsset:SelectedItemField">
-					<dcsset:field>КартинкаСоздание</dcsset:field>
+					<dcsset:field>ПравоИнтерактивноеДобавление</dcsset:field>
 				</dcsset:item>
 			</dcsset:selection>
 			<dcsset:filter>
@@ -2260,101 +4394,16 @@
 					<dcscor:value xsi:nil="true"/>
 					<dcsset:userSettingID>69d002a9-72ff-4a80-aa42-a72e9efaa842</dcsset:userSettingID>
 				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ВидПользователей</dcscor:parameter>
+					<dcscor:value xsi:type="xs:decimal">0</dcscor:value>
+					<dcsset:viewMode>Normal</dcsset:viewMode>
+					<dcsset:userSettingID>56cc2aed-3185-47d6-9681-1de850bcb26c</dcsset:userSettingID>
+				</dcscor:item>
 			</dcsset:dataParameters>
 			<dcsset:conditionalAppearance>
 				<dcsset:item>
 					<dcsset:selection>
-						<dcsset:item>
-							<dcsset:field>Право</dcsset:field>
-						</dcsset:item>
-					</dcsset:selection>
-					<dcsset:filter>
-						<dcsset:item xsi:type="dcsset:FilterItemComparison">
-							<dcsset:left xsi:type="dcscor:Field">Право</dcsset:left>
-							<dcsset:comparisonType>Equal</dcsset:comparisonType>
-							<dcsset:right xsi:type="xs:decimal">1</dcsset:right>
-						</dcsset:item>
-					</dcsset:filter>
-					<dcsset:appearance>
-						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
-							<dcscor:parameter>ЦветФона</dcscor:parameter>
-							<dcscor:value xsi:type="v8ui:Color">style:ПравоПросмотраФон</dcscor:value>
-						</dcscor:item>
-					</dcsset:appearance>
-				</dcsset:item>
-				<dcsset:item>
-					<dcsset:selection>
-						<dcsset:item>
-							<dcsset:field>Право</dcsset:field>
-						</dcsset:item>
-					</dcsset:selection>
-					<dcsset:filter>
-						<dcsset:item xsi:type="dcsset:FilterItemComparison">
-							<dcsset:left xsi:type="dcscor:Field">Право</dcsset:left>
-							<dcsset:comparisonType>Equal</dcsset:comparisonType>
-							<dcsset:right xsi:type="xs:decimal">2</dcsset:right>
-						</dcsset:item>
-					</dcsset:filter>
-					<dcsset:appearance>
-						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
-							<dcscor:parameter>ЦветФона</dcscor:parameter>
-							<dcscor:value xsi:type="v8ui:Color">style:ПравоРедактированияФон</dcscor:value>
-						</dcscor:item>
-					</dcsset:appearance>
-				</dcsset:item>
-				<dcsset:item>
-					<dcsset:selection>
-						<dcsset:item>
-							<dcsset:field>Право</dcsset:field>
-						</dcsset:item>
-					</dcsset:selection>
-					<dcsset:filter>
-						<dcsset:item xsi:type="dcsset:FilterItemComparison">
-							<dcsset:left xsi:type="dcscor:Field">Право</dcsset:left>
-							<dcsset:comparisonType>Equal</dcsset:comparisonType>
-							<dcsset:right xsi:type="xs:decimal">3</dcsset:right>
-						</dcsset:item>
-					</dcsset:filter>
-					<dcsset:appearance>
-						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
-							<dcscor:parameter>ЦветФона</dcscor:parameter>
-							<dcscor:value xsi:type="v8ui:Color">style:ПравоСозданияФон</dcscor:value>
-						</dcscor:item>
-					</dcsset:appearance>
-				</dcsset:item>
-				<dcsset:item>
-					<dcsset:selection>
-						<dcsset:item>
-							<dcsset:field>КартинкаПросмотр</dcsset:field>
-						</dcsset:item>
-						<dcsset:item>
-							<dcsset:field>КартинкаРедактирование</dcsset:field>
-						</dcsset:item>
-						<dcsset:item>
-							<dcsset:field>КартинкаСоздание</dcsset:field>
-						</dcsset:item>
-					</dcsset:selection>
-					<dcsset:filter/>
-					<dcsset:appearance>
-						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
-							<dcscor:parameter>ВыводитьКартинку</dcscor:parameter>
-							<dcscor:value xsi:type="dcsset:DataCompositionPictureOutputType">Auto</dcscor:value>
-						</dcscor:item>
-						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
-							<dcscor:parameter>ВертикальноеПоложениеКартинки</dcscor:parameter>
-							<dcscor:value xsi:type="v8ui:VerticalAlign">Center</dcscor:value>
-						</dcscor:item>
-						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
-							<dcscor:parameter>ГоризонтальноеПоложениеКартинки</dcscor:parameter>
-							<dcscor:value xsi:type="v8ui:HorizontalAlign">Center</dcscor:value>
-						</dcscor:item>
-					</dcsset:appearance>
-				</dcsset:item>
-				<dcsset:item>
-					<dcsset:selection>
-						<dcsset:item>
-							<dcsset:field>КартинкаПросмотр</dcsset:field>
-						</dcsset:item>
 						<dcsset:item>
 							<dcsset:field>ПравоПросмотр</dcsset:field>
 						</dcsset:item>
@@ -2371,13 +4420,14 @@
 							<dcscor:parameter>ЦветФона</dcscor:parameter>
 							<dcscor:value xsi:type="v8ui:Color">style:ПравоПросмотраФон</dcscor:value>
 						</dcscor:item>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>Картинка</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:Picture" ref="v8ui:УровеньДоступаПросмотр"/>
+						</dcscor:item>
 					</dcsset:appearance>
 				</dcsset:item>
 				<dcsset:item>
 					<dcsset:selection>
-						<dcsset:item>
-							<dcsset:field>КартинкаРедактирование</dcsset:field>
-						</dcsset:item>
 						<dcsset:item>
 							<dcsset:field>ПравоРедактирование</dcsset:field>
 						</dcsset:item>
@@ -2394,13 +4444,14 @@
 							<dcscor:parameter>ЦветФона</dcscor:parameter>
 							<dcscor:value xsi:type="v8ui:Color">style:ПравоРедактированияФон</dcscor:value>
 						</dcscor:item>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>Картинка</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:Picture" ref="v8ui:УровеньДоступаРедактирование"/>
+						</dcscor:item>
 					</dcsset:appearance>
 				</dcsset:item>
 				<dcsset:item>
 					<dcsset:selection>
-						<dcsset:item>
-							<dcsset:field>КартинкаСоздание</dcsset:field>
-						</dcsset:item>
 						<dcsset:item>
 							<dcsset:field>ПравоИнтерактивноеДобавление</dcsset:field>
 						</dcsset:item>
@@ -2416,6 +4467,10 @@
 						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
 							<dcscor:parameter>ЦветФона</dcscor:parameter>
 							<dcscor:value xsi:type="v8ui:Color">style:ПравоСозданияФон</dcscor:value>
+						</dcscor:item>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>Картинка</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:Picture" ref="v8ui:УровеньДоступаСоздание"/>
 						</dcscor:item>
 					</dcsset:appearance>
 				</dcsset:item>
@@ -2442,33 +4497,6 @@
 				<dcsset:item>
 					<dcsset:selection>
 						<dcsset:item>
-							<dcsset:field>Право</dcsset:field>
-						</dcsset:item>
-					</dcsset:selection>
-					<dcsset:filter>
-						<dcsset:item xsi:type="dcsset:FilterItemComparison">
-							<dcsset:left xsi:type="dcscor:Field">Право</dcsset:left>
-							<dcsset:comparisonType>Filled</dcsset:comparisonType>
-						</dcsset:item>
-						<dcsset:item xsi:type="dcsset:FilterItemComparison">
-							<dcsset:left xsi:type="dcscor:Field">ВходВПрограммуРазрешен</dcsset:left>
-							<dcsset:comparisonType>Equal</dcsset:comparisonType>
-							<dcsset:right xsi:type="xs:boolean">false</dcsset:right>
-						</dcsset:item>
-					</dcsset:filter>
-					<dcsset:appearance>
-						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
-							<dcscor:parameter>ЦветФона</dcscor:parameter>
-							<dcscor:value xsi:type="v8ui:Color">style:ПравоНедействительногоПользователяФон</dcscor:value>
-						</dcscor:item>
-					</dcsset:appearance>
-				</dcsset:item>
-				<dcsset:item>
-					<dcsset:selection>
-						<dcsset:item>
-							<dcsset:field>КартинкаПросмотр</dcsset:field>
-						</dcsset:item>
-						<dcsset:item>
 							<dcsset:field>ПравоПросмотр</dcsset:field>
 						</dcsset:item>
 					</dcsset:selection>
@@ -2494,9 +4522,6 @@
 				<dcsset:item>
 					<dcsset:selection>
 						<dcsset:item>
-							<dcsset:field>КартинкаРедактирование</dcsset:field>
-						</dcsset:item>
-						<dcsset:item>
 							<dcsset:field>ПравоРедактирование</dcsset:field>
 						</dcsset:item>
 					</dcsset:selection>
@@ -2521,9 +4546,6 @@
 				</dcsset:item>
 				<dcsset:item>
 					<dcsset:selection>
-						<dcsset:item>
-							<dcsset:field>КартинкаСоздание</dcsset:field>
-						</dcsset:item>
 						<dcsset:item>
 							<dcsset:field>ПравоИнтерактивноеДобавление</dcsset:field>
 						</dcsset:item>
@@ -2661,13 +4683,22 @@
 					<dcsset:field>ГруппаДоступа</dcsset:field>
 				</dcsset:item>
 				<dcsset:item xsi:type="dcsset:SelectedItemField">
-					<dcsset:field>КартинкаПросмотр</dcsset:field>
+					<dcsset:field>ПравоПросмотр</dcsset:field>
 				</dcsset:item>
 				<dcsset:item xsi:type="dcsset:SelectedItemField">
-					<dcsset:field>КартинкаРедактирование</dcsset:field>
+					<dcsset:field>ПравоРедактирование</dcsset:field>
 				</dcsset:item>
 				<dcsset:item xsi:type="dcsset:SelectedItemField">
-					<dcsset:field>КартинкаСоздание</dcsset:field>
+					<dcsset:field>ПравоИнтерактивноеДобавление</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ВидДоступа</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ВсеРазрешены</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ЗначениеДоступа</dcsset:field>
 				</dcsset:item>
 			</dcsset:selection>
 			<dcsset:filter>
@@ -2677,34 +4708,19 @@
 					<dcsset:viewMode>Normal</dcsset:viewMode>
 				</dcsset:item>
 			</dcsset:filter>
+			<dcsset:dataParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ВидПользователей</dcscor:parameter>
+					<dcscor:value xsi:type="xs:decimal">0</dcscor:value>
+					<dcsset:viewMode>Normal</dcsset:viewMode>
+					<dcsset:userSettingID>b980b679-2ce5-4c74-8984-eff50fcd1562</dcsset:userSettingID>
+				</dcscor:item>
+			</dcsset:dataParameters>
 			<dcsset:conditionalAppearance>
 				<dcsset:item>
 					<dcsset:selection>
 						<dcsset:item>
-							<dcsset:field>КартинкаПросмотр</dcsset:field>
-						</dcsset:item>
-						<dcsset:item>
-							<dcsset:field>КартинкаРедактирование</dcsset:field>
-						</dcsset:item>
-						<dcsset:item>
-							<dcsset:field>КартинкаСоздание</dcsset:field>
-						</dcsset:item>
-					</dcsset:selection>
-					<dcsset:filter/>
-					<dcsset:appearance>
-						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
-							<dcscor:parameter>ВыводитьКартинку</dcscor:parameter>
-							<dcscor:value xsi:type="dcsset:DataCompositionPictureOutputType">Auto</dcscor:value>
-						</dcscor:item>
-					</dcsset:appearance>
-				</dcsset:item>
-				<dcsset:item>
-					<dcsset:selection>
-						<dcsset:item>
 							<dcsset:field>ПравоПросмотр</dcsset:field>
-						</dcsset:item>
-						<dcsset:item>
-							<dcsset:field>КартинкаПросмотр</dcsset:field>
 						</dcsset:item>
 					</dcsset:selection>
 					<dcsset:filter>
@@ -2719,15 +4735,16 @@
 							<dcscor:parameter>ЦветФона</dcscor:parameter>
 							<dcscor:value xsi:type="v8ui:Color">style:ПравоПросмотраФон</dcscor:value>
 						</dcscor:item>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>Картинка</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:Picture" ref="v8ui:УровеньДоступаПросмотр"/>
+						</dcscor:item>
 					</dcsset:appearance>
 				</dcsset:item>
 				<dcsset:item>
 					<dcsset:selection>
 						<dcsset:item>
 							<dcsset:field>ПравоРедактирование</dcsset:field>
-						</dcsset:item>
-						<dcsset:item>
-							<dcsset:field>КартинкаРедактирование</dcsset:field>
 						</dcsset:item>
 					</dcsset:selection>
 					<dcsset:filter>
@@ -2742,15 +4759,16 @@
 							<dcscor:parameter>ЦветФона</dcscor:parameter>
 							<dcscor:value xsi:type="v8ui:Color">style:ПравоРедактированияФон</dcscor:value>
 						</dcscor:item>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>Картинка</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:Picture" ref="v8ui:УровеньДоступаРедактирование"/>
+						</dcscor:item>
 					</dcsset:appearance>
 				</dcsset:item>
 				<dcsset:item>
 					<dcsset:selection>
 						<dcsset:item>
 							<dcsset:field>ПравоИнтерактивноеДобавление</dcsset:field>
-						</dcsset:item>
-						<dcsset:item>
-							<dcsset:field>КартинкаСоздание</dcsset:field>
 						</dcsset:item>
 					</dcsset:selection>
 					<dcsset:filter>
@@ -2765,15 +4783,16 @@
 							<dcscor:parameter>ЦветФона</dcscor:parameter>
 							<dcscor:value xsi:type="v8ui:Color">style:ПравоСозданияФон</dcscor:value>
 						</dcscor:item>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>Картинка</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:Picture" ref="v8ui:УровеньДоступаСоздание"/>
+						</dcscor:item>
 					</dcsset:appearance>
 				</dcsset:item>
 				<dcsset:item>
 					<dcsset:selection>
 						<dcsset:item>
 							<dcsset:field>ПравоПросмотр</dcsset:field>
-						</dcsset:item>
-						<dcsset:item>
-							<dcsset:field>КартинкаПросмотр</dcsset:field>
 						</dcsset:item>
 					</dcsset:selection>
 					<dcsset:filter>
@@ -2800,9 +4819,6 @@
 						<dcsset:item>
 							<dcsset:field>ПравоРедактирование</dcsset:field>
 						</dcsset:item>
-						<dcsset:item>
-							<dcsset:field>КартинкаРедактирование</dcsset:field>
-						</dcsset:item>
 					</dcsset:selection>
 					<dcsset:filter>
 						<dcsset:item xsi:type="dcsset:FilterItemComparison">
@@ -2828,13 +4844,157 @@
 						<dcsset:item>
 							<dcsset:field>ПравоИнтерактивноеДобавление</dcsset:field>
 						</dcsset:item>
-						<dcsset:item>
-							<dcsset:field>КартинкаСоздание</dcsset:field>
-						</dcsset:item>
 					</dcsset:selection>
 					<dcsset:filter>
 						<dcsset:item xsi:type="dcsset:FilterItemComparison">
 							<dcsset:left xsi:type="dcscor:Field">ПравоИнтерактивноеДобавление</dcsset:left>
+							<dcsset:comparisonType>Equal</dcsset:comparisonType>
+							<dcsset:right xsi:type="xs:boolean">true</dcsset:right>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:FilterItemComparison">
+							<dcsset:left xsi:type="dcscor:Field">ВходВПрограммуРазрешен</dcsset:left>
+							<dcsset:comparisonType>Equal</dcsset:comparisonType>
+							<dcsset:right xsi:type="xs:boolean">false</dcsset:right>
+						</dcsset:item>
+					</dcsset:filter>
+					<dcsset:appearance>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>ЦветФона</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:Color">style:ПравоНедействительногоПользователяФон</dcscor:value>
+						</dcscor:item>
+					</dcsset:appearance>
+				</dcsset:item>
+				<dcsset:item>
+					<dcsset:selection>
+						<dcsset:item>
+							<dcsset:field>ВидДоступаПравоПросмотр</dcsset:field>
+						</dcsset:item>
+					</dcsset:selection>
+					<dcsset:filter>
+						<dcsset:item xsi:type="dcsset:FilterItemComparison">
+							<dcsset:left xsi:type="dcscor:Field">ВидДоступаПравоПросмотр</dcsset:left>
+							<dcsset:comparisonType>Equal</dcsset:comparisonType>
+							<dcsset:right xsi:type="xs:boolean">true</dcsset:right>
+						</dcsset:item>
+					</dcsset:filter>
+					<dcsset:appearance>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>ЦветФона</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:Color">style:ПравоПросмотраФон</dcscor:value>
+						</dcscor:item>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>Картинка</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:Picture" ref="v8ui:УровеньДоступаПросмотр"/>
+						</dcscor:item>
+					</dcsset:appearance>
+				</dcsset:item>
+				<dcsset:item>
+					<dcsset:selection>
+						<dcsset:item>
+							<dcsset:field>ВидДоступаПравоРедактирование</dcsset:field>
+						</dcsset:item>
+					</dcsset:selection>
+					<dcsset:filter>
+						<dcsset:item xsi:type="dcsset:FilterItemComparison">
+							<dcsset:left xsi:type="dcscor:Field">ВидДоступаПравоРедактирование</dcsset:left>
+							<dcsset:comparisonType>Equal</dcsset:comparisonType>
+							<dcsset:right xsi:type="xs:boolean">true</dcsset:right>
+						</dcsset:item>
+					</dcsset:filter>
+					<dcsset:appearance>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>ЦветФона</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:Color">style:ПравоРедактированияФон</dcscor:value>
+						</dcscor:item>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>Картинка</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:Picture" ref="v8ui:УровеньДоступаРедактирование"/>
+						</dcscor:item>
+					</dcsset:appearance>
+				</dcsset:item>
+				<dcsset:item>
+					<dcsset:selection>
+						<dcsset:item>
+							<dcsset:field>ВидДоступаПравоИнтерактивноеДобавление</dcsset:field>
+						</dcsset:item>
+					</dcsset:selection>
+					<dcsset:filter>
+						<dcsset:item xsi:type="dcsset:FilterItemComparison">
+							<dcsset:left xsi:type="dcscor:Field">ВидДоступаПравоИнтерактивноеДобавление</dcsset:left>
+							<dcsset:comparisonType>Equal</dcsset:comparisonType>
+							<dcsset:right xsi:type="xs:boolean">true</dcsset:right>
+						</dcsset:item>
+					</dcsset:filter>
+					<dcsset:appearance>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>ЦветФона</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:Color">style:ПравоСозданияФон</dcscor:value>
+						</dcscor:item>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>Картинка</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:Picture" ref="v8ui:УровеньДоступаСоздание"/>
+						</dcscor:item>
+					</dcsset:appearance>
+				</dcsset:item>
+				<dcsset:item>
+					<dcsset:selection>
+						<dcsset:item>
+							<dcsset:field>ВидДоступаПравоПросмотр</dcsset:field>
+						</dcsset:item>
+					</dcsset:selection>
+					<dcsset:filter>
+						<dcsset:item xsi:type="dcsset:FilterItemComparison">
+							<dcsset:left xsi:type="dcscor:Field">ВидДоступаПравоПросмотр</dcsset:left>
+							<dcsset:comparisonType>Equal</dcsset:comparisonType>
+							<dcsset:right xsi:type="xs:boolean">true</dcsset:right>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:FilterItemComparison">
+							<dcsset:left xsi:type="dcscor:Field">ВходВПрограммуРазрешен</dcsset:left>
+							<dcsset:comparisonType>Equal</dcsset:comparisonType>
+							<dcsset:right xsi:type="xs:boolean">false</dcsset:right>
+						</dcsset:item>
+					</dcsset:filter>
+					<dcsset:appearance>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>ЦветФона</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:Color">style:ПравоНедействительногоПользователяФон</dcscor:value>
+						</dcscor:item>
+					</dcsset:appearance>
+				</dcsset:item>
+				<dcsset:item>
+					<dcsset:selection>
+						<dcsset:item>
+							<dcsset:field>ВидДоступаПравоРедактирование</dcsset:field>
+						</dcsset:item>
+					</dcsset:selection>
+					<dcsset:filter>
+						<dcsset:item xsi:type="dcsset:FilterItemComparison">
+							<dcsset:left xsi:type="dcscor:Field">ВидДоступаПравоРедактирование</dcsset:left>
+							<dcsset:comparisonType>Equal</dcsset:comparisonType>
+							<dcsset:right xsi:type="xs:boolean">true</dcsset:right>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:FilterItemComparison">
+							<dcsset:left xsi:type="dcscor:Field">ВходВПрограммуРазрешен</dcsset:left>
+							<dcsset:comparisonType>Equal</dcsset:comparisonType>
+							<dcsset:right xsi:type="xs:boolean">false</dcsset:right>
+						</dcsset:item>
+					</dcsset:filter>
+					<dcsset:appearance>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>ЦветФона</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:Color">style:ПравоНедействительногоПользователяФон</dcscor:value>
+						</dcscor:item>
+					</dcsset:appearance>
+				</dcsset:item>
+				<dcsset:item>
+					<dcsset:selection>
+						<dcsset:item>
+							<dcsset:field>ВидДоступаПравоИнтерактивноеДобавление</dcsset:field>
+						</dcsset:item>
+					</dcsset:selection>
+					<dcsset:filter>
+						<dcsset:item xsi:type="dcsset:FilterItemComparison">
+							<dcsset:left xsi:type="dcscor:Field">ВидДоступаПравоИнтерактивноеДобавление</dcsset:left>
 							<dcsset:comparisonType>Equal</dcsset:comparisonType>
 							<dcsset:right xsi:type="xs:boolean">true</dcsset:right>
 						</dcsset:item>
@@ -2946,11 +5106,307 @@
 						</dcscor:item>
 					</dcsset:outputParameters>
 					<dcsset:item xsi:type="dcsset:StructureItemTable"/>
+				</dcsset:item>
+			</dcsset:item>
+			<dcsset:item xsi:type="dcsset:StructureItemTable">
+				<dcsset:name>НастройкиПрав</dcsset:name>
+				<dcsset:column>
+					<dcsset:name>НастроенноеПраво</dcsset:name>
+					<dcsset:groupItems>
+						<dcsset:item xsi:type="dcsset:GroupItemField">
+							<dcsset:field>НастроенноеПраво</dcsset:field>
+							<dcsset:groupType>Items</dcsset:groupType>
+							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+							<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+						</dcsset:item>
+					</dcsset:groupItems>
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemField">
+							<dcsset:field>ИндексПрава</dcsset:field>
+							<dcsset:orderType>Asc</dcsset:orderType>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+					</dcsset:order>
+					<dcsset:selection>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:field>НастроенноеПраво</dcsset:field>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:field>ЗначениеПрава</dcsset:field>
+						</dcsset:item>
+					</dcsset:selection>
+				</dcsset:column>
+				<dcsset:row>
+					<dcsset:name>ВладелецИлиПользовательНастроек</dcsset:name>
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemField">
+							<dcsset:field>ЭтоВладелецНастроек</dcsset:field>
+							<dcsset:orderType>Asc</dcsset:orderType>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:OrderItemField">
+							<dcsset:field>ВладелецИлиПользовательНастроек</dcsset:field>
+							<dcsset:orderType>Asc</dcsset:orderType>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+					</dcsset:order>
+					<dcsset:selection>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:field>ВладелецИлиПользовательНастроек</dcsset:field>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:use>false</dcsset:use>
+							<dcsset:field>ВладелецНастроек</dcsset:field>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:use>false</dcsset:use>
+							<dcsset:field>ЭтоВладелецНастроек</dcsset:field>
+						</dcsset:item>
+					</dcsset:selection>
+					<dcsset:conditionalAppearance>
+						<dcsset:item>
+							<dcsset:selection>
+								<dcsset:item>
+									<dcsset:field>ВладелецИлиПользовательНастроек</dcsset:field>
+								</dcsset:item>
+							</dcsset:selection>
+							<dcsset:filter>
+								<dcsset:item xsi:type="dcsset:FilterItemComparison">
+									<dcsset:left xsi:type="dcscor:Field">ЭтоВладелецНастроек</dcsset:left>
+									<dcsset:comparisonType>Equal</dcsset:comparisonType>
+									<dcsset:right xsi:type="xs:boolean">true</dcsset:right>
+								</dcsset:item>
+								<dcsset:item xsi:type="dcsset:FilterItemComparison">
+									<dcsset:left xsi:type="dcscor:Field">ВладелецНастроек</dcsset:left>
+									<dcsset:comparisonType>NotFilled</dcsset:comparisonType>
+								</dcsset:item>
+							</dcsset:filter>
+							<dcsset:appearance>
+								<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+									<dcscor:parameter>Картинка</dcscor:parameter>
+									<dcscor:value xsi:type="v8ui:Picture" ref="v8ui:Папка"/>
+								</dcscor:item>
+							</dcsset:appearance>
+						</dcsset:item>
+						<dcsset:item>
+							<dcsset:selection>
+								<dcsset:item>
+									<dcsset:field>ВладелецИлиПользовательНастроек</dcsset:field>
+								</dcsset:item>
+							</dcsset:selection>
+							<dcsset:filter>
+								<dcsset:item xsi:type="dcsset:FilterItemComparison">
+									<dcsset:left xsi:type="dcscor:Field">ЭтоВладелецНастроек</dcsset:left>
+									<dcsset:comparisonType>Equal</dcsset:comparisonType>
+									<dcsset:right xsi:type="xs:boolean">true</dcsset:right>
+								</dcsset:item>
+								<dcsset:item xsi:type="dcsset:FilterItemComparison">
+									<dcsset:left xsi:type="dcscor:Field">ВладелецНастроек</dcsset:left>
+									<dcsset:comparisonType>Filled</dcsset:comparisonType>
+								</dcsset:item>
+								<dcsset:item xsi:type="dcsset:FilterItemComparison">
+									<dcsset:left xsi:type="dcscor:Field">НаследованиеНастроекВладельцем</dcsset:left>
+									<dcsset:comparisonType>Equal</dcsset:comparisonType>
+									<dcsset:right xsi:type="xs:boolean">false</dcsset:right>
+								</dcsset:item>
+							</dcsset:filter>
+							<dcsset:appearance>
+								<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+									<dcscor:parameter>Картинка</dcscor:parameter>
+									<dcscor:value xsi:type="v8ui:Picture" ref="v8ui:НаследованиеОтключеноСПапкой"/>
+								</dcscor:item>
+							</dcsset:appearance>
+						</dcsset:item>
+						<dcsset:item>
+							<dcsset:selection>
+								<dcsset:item>
+									<dcsset:field>ВладелецИлиПользовательНастроек</dcsset:field>
+								</dcsset:item>
+							</dcsset:selection>
+							<dcsset:filter>
+								<dcsset:item xsi:type="dcsset:FilterItemComparison">
+									<dcsset:left xsi:type="dcscor:Field">ЭтоВладелецНастроек</dcsset:left>
+									<dcsset:comparisonType>Equal</dcsset:comparisonType>
+									<dcsset:right xsi:type="xs:boolean">true</dcsset:right>
+								</dcsset:item>
+								<dcsset:item xsi:type="dcsset:FilterItemComparison">
+									<dcsset:left xsi:type="dcscor:Field">ВладелецНастроек</dcsset:left>
+									<dcsset:comparisonType>Filled</dcsset:comparisonType>
+								</dcsset:item>
+								<dcsset:item xsi:type="dcsset:FilterItemComparison">
+									<dcsset:left xsi:type="dcscor:Field">НаследованиеНастроекВладельцем</dcsset:left>
+									<dcsset:comparisonType>Equal</dcsset:comparisonType>
+									<dcsset:right xsi:type="xs:boolean">true</dcsset:right>
+								</dcsset:item>
+							</dcsset:filter>
+							<dcsset:appearance>
+								<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+									<dcscor:parameter>Картинка</dcscor:parameter>
+									<dcscor:value xsi:type="v8ui:Picture" ref="v8ui:НаследованиеВключеноСПапкой"/>
+								</dcscor:item>
+							</dcsset:appearance>
+						</dcsset:item>
+					</dcsset:conditionalAppearance>
+					<dcsset:outputParameters>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>ВыводитьОтбор</dcscor:parameter>
+							<dcscor:value xsi:type="dcsset:DataCompositionTextOutputType">DontOutput</dcscor:value>
+						</dcscor:item>
+					</dcsset:outputParameters>
+				</dcsset:row>
+			</dcsset:item>
+			<dcsset:item xsi:type="dcsset:StructureItemGroup">
+				<dcsset:name>ЛегендаНастроекПрав</dcsset:name>
+				<dcsset:order>
+					<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+				</dcsset:order>
+				<dcsset:selection>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ЗаголовокПрава</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ПодсказкаПрава</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:conditionalAppearance>
+					<dcsset:item>
+						<dcsset:selection>
+							<dcsset:item>
+								<dcsset:field>ЗаголовокПрава</dcsset:field>
+							</dcsset:item>
+						</dcsset:selection>
+						<dcsset:filter>
+							<dcsset:item xsi:type="dcsset:FilterItemComparison">
+								<dcsset:left xsi:type="dcscor:Field">ЗаголовокПрава</dcsset:left>
+								<dcsset:comparisonType>NotFilled</dcsset:comparisonType>
+							</dcsset:item>
+						</dcsset:filter>
+						<dcsset:appearance>
+							<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+								<dcscor:parameter>Картинка</dcscor:parameter>
+								<dcscor:value xsi:type="v8ui:Picture" ref="v8ui:НаследованиеВключено"/>
+							</dcscor:item>
+						</dcsset:appearance>
+					</dcsset:item>
+				</dcsset:conditionalAppearance>
+				<dcsset:outputParameters>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>МакетОформления</dcscor:parameter>
+						<dcscor:value xsi:type="xs:string">БезОформления</dcscor:value>
+					</dcscor:item>
+				</dcsset:outputParameters>
+			</dcsset:item>
+			<dcsset:item xsi:type="dcsset:StructureItemGroup">
+				<dcsset:name>ДополнительныйЗаголовокТаблицы</dcsset:name>
+				<dcsset:order>
+					<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+				</dcsset:order>
+				<dcsset:item xsi:type="dcsset:StructureItemGroup">
+					<dcsset:name>ТаблицаЗаголовок</dcsset:name>
+					<dcsset:groupItems>
+						<dcsset:item xsi:type="dcsset:GroupItemField">
+							<dcsset:field>ОбъектМетаданных</dcsset:field>
+							<dcsset:groupType>Items</dcsset:groupType>
+							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+							<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+						</dcsset:item>
+					</dcsset:groupItems>
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+					</dcsset:order>
+					<dcsset:selection>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:field>ОбъектМетаданных</dcsset:field>
+						</dcsset:item>
+					</dcsset:selection>
+					<dcsset:outputParameters>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:use>false</dcscor:use>
+							<dcscor:parameter>ВариантИспользованияГруппировки</dcscor:parameter>
+							<dcscor:value xsi:type="dcsset:DataCompositionGroupUseVariant">AdditionalInformation</dcscor:value>
+						</dcscor:item>
+					</dcsset:outputParameters>
+					<dcsset:item xsi:type="dcsset:StructureItemTable">
+						<dcsset:outputParameters>
+							<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+								<dcscor:use>false</dcscor:use>
+								<dcscor:parameter>МакетОформления</dcscor:parameter>
+								<dcscor:value xsi:type="xs:string">Основной</dcscor:value>
+							</dcscor:item>
+						</dcsset:outputParameters>
+					</dcsset:item>
+				</dcsset:item>
+			</dcsset:item>
+			<dcsset:item xsi:type="dcsset:StructureItemGroup">
+				<dcsset:name>ПраваПоГруппамДоступа</dcsset:name>
+				<dcsset:groupItems>
+					<dcsset:item xsi:type="dcsset:GroupItemField">
+						<dcsset:field>ГруппаДоступа</dcsset:field>
+						<dcsset:groupType>Items</dcsset:groupType>
+						<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+						<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+						<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+					</dcsset:item>
+				</dcsset:groupItems>
+				<dcsset:order>
+					<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+				</dcsset:order>
+				<dcsset:selection>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ГруппаДоступа</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ПравоПросмотр</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ПравоРедактирование</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ПравоИнтерактивноеДобавление</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:outputParameters>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:use>false</dcscor:use>
+						<dcscor:parameter>Заголовок</dcscor:parameter>
+						<dcscor:value xsi:type="v8:LocalStringType"/>
+					</dcscor:item>
+				</dcsset:outputParameters>
+				<dcsset:item xsi:type="dcsset:StructureItemGroup">
+					<dcsset:name>ВидДоступа</dcsset:name>
+					<dcsset:groupItems>
+						<dcsset:item xsi:type="dcsset:GroupItemField">
+							<dcsset:field>ВидДоступа</dcsset:field>
+							<dcsset:groupType>Items</dcsset:groupType>
+							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+							<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:GroupItemField">
+							<dcsset:field>ВсеРазрешены</dcsset:field>
+							<dcsset:groupType>Items</dcsset:groupType>
+							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+							<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+						</dcsset:item>
+					</dcsset:groupItems>
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+					</dcsset:order>
+					<dcsset:selection>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:field>ВидДоступа</dcsset:field>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:field>ВсеРазрешены</dcsset:field>
+						</dcsset:item>
+					</dcsset:selection>
 					<dcsset:item xsi:type="dcsset:StructureItemGroup">
-						<dcsset:name>ПраваПоГруппамДоступа</dcsset:name>
+						<dcsset:name>ЗначениеДоступа</dcsset:name>
 						<dcsset:groupItems>
 							<dcsset:item xsi:type="dcsset:GroupItemField">
-								<dcsset:field>ГруппаДоступа</dcsset:field>
+								<dcsset:field>ЗначениеДоступа</dcsset:field>
 								<dcsset:groupType>Items</dcsset:groupType>
 								<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
 								<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
@@ -2962,16 +5418,7 @@
 						</dcsset:order>
 						<dcsset:selection>
 							<dcsset:item xsi:type="dcsset:SelectedItemField">
-								<dcsset:field>ГруппаДоступа</dcsset:field>
-							</dcsset:item>
-							<dcsset:item xsi:type="dcsset:SelectedItemField">
-								<dcsset:field>КартинкаПросмотр</dcsset:field>
-							</dcsset:item>
-							<dcsset:item xsi:type="dcsset:SelectedItemField">
-								<dcsset:field>КартинкаРедактирование</dcsset:field>
-							</dcsset:item>
-							<dcsset:item xsi:type="dcsset:SelectedItemField">
-								<dcsset:field>КартинкаСоздание</dcsset:field>
+								<dcsset:field>ЗначениеДоступа</dcsset:field>
 							</dcsset:item>
 						</dcsset:selection>
 					</dcsset:item>
@@ -2996,7 +5443,7 @@
 					</dcscor:item>
 				</dcsset:outputParameters>
 				<dcsset:viewMode>Normal</dcsset:viewMode>
-				<dcsset:userSettingID>15bee542-8025-4ad8-8ebd-ca7d183762d6</dcsset:userSettingID>
+				<dcsset:userSettingID>1c5a2aa3-3c3f-4b38-8f0d-1117ac248d88</dcsset:userSettingID>
 				<dcsset:userSettingPresentation xsi:type="v8:LocalStringType">
 					<v8:item>
 						<v8:lang>ru</v8:lang>
@@ -3066,6 +5513,12 @@
 					<dcscor:value xsi:nil="true"/>
 					<dcsset:userSettingID>a5565897-a948-4c70-b4f2-343cde9a3e20</dcsset:userSettingID>
 				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ВидПользователей</dcscor:parameter>
+					<dcscor:value xsi:type="xs:decimal">0</dcscor:value>
+					<dcsset:viewMode>Normal</dcsset:viewMode>
+					<dcsset:userSettingID>b28f4d3a-c3c8-4e91-97a9-c2e588ec62a5</dcsset:userSettingID>
+				</dcscor:item>
 			</dcsset:dataParameters>
 			<dcsset:conditionalAppearance>
 				<dcsset:item>
@@ -3107,6 +5560,10 @@
 							<dcscor:parameter>ЦветФона</dcscor:parameter>
 							<dcscor:value xsi:type="v8ui:Color">style:ПравоПросмотраФон</dcscor:value>
 						</dcscor:item>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>Картинка</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:Picture" ref="v8ui:УровеньДоступаПросмотр"/>
+						</dcscor:item>
 					</dcsset:appearance>
 				</dcsset:item>
 				<dcsset:item>
@@ -3127,6 +5584,10 @@
 							<dcscor:parameter>ЦветФона</dcscor:parameter>
 							<dcscor:value xsi:type="v8ui:Color">style:ПравоРедактированияФон</dcscor:value>
 						</dcscor:item>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>Картинка</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:Picture" ref="v8ui:УровеньДоступаРедактирование"/>
+						</dcscor:item>
 					</dcsset:appearance>
 				</dcsset:item>
 				<dcsset:item>
@@ -3146,6 +5607,10 @@
 						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
 							<dcscor:parameter>ЦветФона</dcscor:parameter>
 							<dcscor:value xsi:type="v8ui:Color">style:ПравоСозданияФон</dcscor:value>
+						</dcscor:item>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>Картинка</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:Picture" ref="v8ui:УровеньДоступаСоздание"/>
 						</dcscor:item>
 					</dcsset:appearance>
 				</dcsset:item>
@@ -3417,6 +5882,14 @@
 					<dcsset:userSettingID>cfb5d8b8-61bf-438c-8847-a39255e414e6</dcsset:userSettingID>
 				</dcsset:item>
 			</dcsset:filter>
+			<dcsset:dataParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ВидПользователей</dcscor:parameter>
+					<dcscor:value xsi:type="xs:decimal">0</dcscor:value>
+					<dcsset:viewMode>Normal</dcsset:viewMode>
+					<dcsset:userSettingID>d37172e6-092b-47a8-b287-8465fd08b0f8</dcsset:userSettingID>
+				</dcscor:item>
+			</dcsset:dataParameters>
 			<dcsset:conditionalAppearance>
 				<dcsset:item>
 					<dcsset:use>false</dcsset:use>
@@ -3457,6 +5930,10 @@
 							<dcscor:parameter>ЦветФона</dcscor:parameter>
 							<dcscor:value xsi:type="v8ui:Color">style:ПравоПросмотраФон</dcscor:value>
 						</dcscor:item>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>Картинка</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:Picture" ref="v8ui:УровеньДоступаПросмотр"/>
+						</dcscor:item>
 					</dcsset:appearance>
 				</dcsset:item>
 				<dcsset:item>
@@ -3477,6 +5954,10 @@
 							<dcscor:parameter>ЦветФона</dcscor:parameter>
 							<dcscor:value xsi:type="v8ui:Color">style:ПравоРедактированияФон</dcscor:value>
 						</dcscor:item>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>Картинка</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:Picture" ref="v8ui:УровеньДоступаРедактирование"/>
+						</dcscor:item>
 					</dcsset:appearance>
 				</dcsset:item>
 				<dcsset:item>
@@ -3496,6 +5977,10 @@
 						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
 							<dcscor:parameter>ЦветФона</dcscor:parameter>
 							<dcscor:value xsi:type="v8ui:Color">style:ПравоСозданияФон</dcscor:value>
+						</dcscor:item>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>Картинка</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:Picture" ref="v8ui:УровеньДоступаСоздание"/>
 						</dcscor:item>
 					</dcsset:appearance>
 				</dcsset:item>
@@ -3783,6 +6268,14 @@
 					<dcsset:userSettingID>12d5529f-b584-44b3-b37e-ffa717fce6f1</dcsset:userSettingID>
 				</dcsset:item>
 			</dcsset:filter>
+			<dcsset:dataParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ВидПользователей</dcscor:parameter>
+					<dcscor:value xsi:type="xs:decimal">0</dcscor:value>
+					<dcsset:viewMode>Normal</dcsset:viewMode>
+					<dcsset:userSettingID>d654583a-1cb6-48ac-9ef8-0428fe19d3c9</dcsset:userSettingID>
+				</dcscor:item>
+			</dcsset:dataParameters>
 			<dcsset:conditionalAppearance>
 				<dcsset:item>
 					<dcsset:selection>
@@ -3801,6 +6294,10 @@
 						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
 							<dcscor:parameter>ЦветФона</dcscor:parameter>
 							<dcscor:value xsi:type="v8ui:Color">style:ПравоПросмотраФон</dcscor:value>
+						</dcscor:item>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>Картинка</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:Picture" ref="v8ui:УровеньДоступаПросмотр"/>
 						</dcscor:item>
 					</dcsset:appearance>
 				</dcsset:item>
@@ -3822,6 +6319,10 @@
 							<dcscor:parameter>ЦветФона</dcscor:parameter>
 							<dcscor:value xsi:type="v8ui:Color">style:ПравоРедактированияФон</dcscor:value>
 						</dcscor:item>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>Картинка</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:Picture" ref="v8ui:УровеньДоступаРедактирование"/>
+						</dcscor:item>
 					</dcsset:appearance>
 				</dcsset:item>
 				<dcsset:item>
@@ -3841,6 +6342,10 @@
 						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
 							<dcscor:parameter>ЦветФона</dcscor:parameter>
 							<dcscor:value xsi:type="v8ui:Color">style:ПравоСозданияФон</dcscor:value>
+						</dcscor:item>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>Картинка</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:Picture" ref="v8ui:УровеньДоступаСоздание"/>
 						</dcscor:item>
 					</dcsset:appearance>
 				</dcsset:item>
@@ -3874,90 +6379,6 @@
 						<dcsset:item xsi:type="dcsset:FilterItemComparison">
 							<dcsset:left xsi:type="dcscor:Field">Право</dcsset:left>
 							<dcsset:comparisonType>Filled</dcsset:comparisonType>
-						</dcsset:item>
-						<dcsset:item xsi:type="dcsset:FilterItemComparison">
-							<dcsset:left xsi:type="dcscor:Field">ВходВПрограммуРазрешен</dcsset:left>
-							<dcsset:comparisonType>Equal</dcsset:comparisonType>
-							<dcsset:right xsi:type="xs:boolean">false</dcsset:right>
-						</dcsset:item>
-					</dcsset:filter>
-					<dcsset:appearance>
-						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
-							<dcscor:parameter>ЦветФона</dcscor:parameter>
-							<dcscor:value xsi:type="v8ui:Color">style:ПравоНедействительногоПользователяФон</dcscor:value>
-						</dcscor:item>
-					</dcsset:appearance>
-				</dcsset:item>
-				<dcsset:item>
-					<dcsset:selection>
-						<dcsset:item>
-							<dcsset:field>КартинкаПросмотр</dcsset:field>
-						</dcsset:item>
-						<dcsset:item>
-							<dcsset:field>ПравоПросмотр</dcsset:field>
-						</dcsset:item>
-					</dcsset:selection>
-					<dcsset:filter>
-						<dcsset:item xsi:type="dcsset:FilterItemComparison">
-							<dcsset:left xsi:type="dcscor:Field">ПравоПросмотр</dcsset:left>
-							<dcsset:comparisonType>Equal</dcsset:comparisonType>
-							<dcsset:right xsi:type="xs:boolean">true</dcsset:right>
-						</dcsset:item>
-						<dcsset:item xsi:type="dcsset:FilterItemComparison">
-							<dcsset:left xsi:type="dcscor:Field">ВходВПрограммуРазрешен</dcsset:left>
-							<dcsset:comparisonType>Equal</dcsset:comparisonType>
-							<dcsset:right xsi:type="xs:boolean">false</dcsset:right>
-						</dcsset:item>
-					</dcsset:filter>
-					<dcsset:appearance>
-						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
-							<dcscor:parameter>ЦветФона</dcscor:parameter>
-							<dcscor:value xsi:type="v8ui:Color">style:ПравоНедействительногоПользователяФон</dcscor:value>
-						</dcscor:item>
-					</dcsset:appearance>
-				</dcsset:item>
-				<dcsset:item>
-					<dcsset:selection>
-						<dcsset:item>
-							<dcsset:field>КартинкаРедактирование</dcsset:field>
-						</dcsset:item>
-						<dcsset:item>
-							<dcsset:field>ПравоРедактирование</dcsset:field>
-						</dcsset:item>
-					</dcsset:selection>
-					<dcsset:filter>
-						<dcsset:item xsi:type="dcsset:FilterItemComparison">
-							<dcsset:left xsi:type="dcscor:Field">ПравоРедактирование</dcsset:left>
-							<dcsset:comparisonType>Equal</dcsset:comparisonType>
-							<dcsset:right xsi:type="xs:boolean">true</dcsset:right>
-						</dcsset:item>
-						<dcsset:item xsi:type="dcsset:FilterItemComparison">
-							<dcsset:left xsi:type="dcscor:Field">ВходВПрограммуРазрешен</dcsset:left>
-							<dcsset:comparisonType>Equal</dcsset:comparisonType>
-							<dcsset:right xsi:type="xs:boolean">false</dcsset:right>
-						</dcsset:item>
-					</dcsset:filter>
-					<dcsset:appearance>
-						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
-							<dcscor:parameter>ЦветФона</dcscor:parameter>
-							<dcscor:value xsi:type="v8ui:Color">style:ПравоНедействительногоПользователяФон</dcscor:value>
-						</dcscor:item>
-					</dcsset:appearance>
-				</dcsset:item>
-				<dcsset:item>
-					<dcsset:selection>
-						<dcsset:item>
-							<dcsset:field>КартинкаСоздание</dcsset:field>
-						</dcsset:item>
-						<dcsset:item>
-							<dcsset:field>ПравоИнтерактивноеДобавление</dcsset:field>
-						</dcsset:item>
-					</dcsset:selection>
-					<dcsset:filter>
-						<dcsset:item xsi:type="dcsset:FilterItemComparison">
-							<dcsset:left xsi:type="dcscor:Field">ПравоИнтерактивноеДобавление</dcsset:left>
-							<dcsset:comparisonType>Equal</dcsset:comparisonType>
-							<dcsset:right xsi:type="xs:boolean">true</dcsset:right>
 						</dcsset:item>
 						<dcsset:item xsi:type="dcsset:FilterItemComparison">
 							<dcsset:left xsi:type="dcscor:Field">ВходВПрограммуРазрешен</dcsset:left>

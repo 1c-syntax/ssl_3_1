@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.10">
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.13">
 	<Title>
 		<v8:item>
 			<v8:lang>ru</v8:lang>
@@ -37,6 +37,12 @@
 				</Title>
 				<ExtendedTooltip name="ФормаПрерватьРасширеннаяПодсказка" id="248"/>
 			</Button>
+			<Button name="ФормаИспользоватьВнутреннийКаталогСообщений" id="270">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.ИспользоватьВнутреннийКаталогСообщений</CommandName>
+				<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
+				<ExtendedTooltip name="ФормаИспользоватьВнутреннийКаталогСообщенийРасширеннаяПодсказка" id="271"/>
+			</Button>
 		</ChildItems>
 	</AutoCommandBar>
 	<Events>
@@ -53,6 +59,7 @@
 				</v8:item>
 			</Title>
 			<Group>Horizontal</Group>
+			<Behavior>Usual</Behavior>
 			<Representation>None</Representation>
 			<ShowTitle>false</ShowTitle>
 			<ExtendedTooltip name="ГруппаВерхняяРасширеннаяПодсказка" id="98"/>
@@ -216,6 +223,39 @@
 							<ContextMenu name="СтрокаПоддерживаемыеВерсииФорматаКонтекстноеМеню" id="240"/>
 							<ExtendedTooltip name="СтрокаПоддерживаемыеВерсииФорматаРасширеннаяПодсказка" id="241"/>
 						</LabelField>
+						<UsualGroup name="ВерсияФорматаГруппаЗагрузка" id="262">
+							<UserVisible>
+								<xr:Common>false</xr:Common>
+							</UserVisible>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Версия формата группа загрузка</v8:content>
+								</v8:item>
+							</Title>
+							<Group>Vertical</Group>
+							<Behavior>Usual</Behavior>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ВерсияФорматаГруппаЗагрузкаРасширеннаяПодсказка" id="263"/>
+							<ChildItems>
+								<InputField name="ВерсияФорматаЗагрузка" id="264">
+									<DataPath>Объект.ВерсияФормата</DataPath>
+									<ListChoiceMode>true</ListChoiceMode>
+									<ContextMenu name="ВерсияФорматаЗагрузкаКонтекстноеМеню" id="265"/>
+									<ExtendedTooltip name="ВерсияФорматаЗагрузкаРасширеннаяПодсказка" id="266"/>
+									<Events>
+										<Event name="OnChange">ВерсияФорматаЗагрузкаПриИзменении</Event>
+									</Events>
+								</InputField>
+								<InputField name="РасширениеФорматаЗагрузка" id="267">
+									<DataPath>Объект.РасширениеФормата</DataPath>
+									<ListChoiceMode>true</ListChoiceMode>
+									<ContextMenu name="РасширениеФорматаЗагрузкаКонтекстноеМеню" id="268"/>
+									<ExtendedTooltip name="РасширениеФорматаЗагрузкаРасширеннаяПодсказка" id="269"/>
+								</InputField>
+							</ChildItems>
+						</UsualGroup>
 						<UsualGroup name="ГруппаДанныеДляЗагрузки" id="151">
 							<Title>
 								<v8:item>
@@ -224,6 +264,7 @@
 								</v8:item>
 							</Title>
 							<Group>Horizontal</Group>
+							<Behavior>Usual</Behavior>
 							<Representation>None</Representation>
 							<ShowTitle>false</ShowTitle>
 							<ExtendedTooltip name="ГруппаДанныеДляЗагрузкиРасширеннаяПодсказка" id="152"/>
@@ -248,6 +289,7 @@
 										</v8:item>
 									</Title>
 									<Group>Vertical</Group>
+									<Behavior>Usual</Behavior>
 									<Representation>None</Representation>
 									<ShowTitle>false</ShowTitle>
 									<ExtendedTooltip name="КомандыЗагрузкиРасширеннаяПодсказка" id="158"/>
@@ -317,6 +359,7 @@
 								</v8:item>
 							</Title>
 							<Group>Vertical</Group>
+							<Behavior>Usual</Behavior>
 							<Representation>None</Representation>
 							<ShowTitle>false</ShowTitle>
 							<ExtendedTooltip name="ВерсияФорматаГруппаРасширеннаяПодсказка" id="243"/>
@@ -368,6 +411,7 @@
 								</v8:item>
 							</Title>
 							<Group>Vertical</Group>
+							<Behavior>Usual</Behavior>
 							<Representation>None</Representation>
 							<ShowTitle>false</ShowTitle>
 							<ExtendedTooltip name="ВыгрузкаДополнительноРазработчикРасширеннаяПодсказка" id="211"/>
@@ -466,6 +510,7 @@
 									<v8:content>Выгрузка основное</v8:content>
 								</v8:item>
 							</Title>
+							<PagesRepresentation>TabsOnTop</PagesRepresentation>
 							<ExtendedTooltip name="ВыгрузкаОсновноеРасширеннаяПодсказка" id="169"/>
 							<ChildItems>
 								<Page name="ВыгружаемыеДанные" id="170">
@@ -485,6 +530,7 @@
 												</v8:item>
 											</Title>
 											<Group>Horizontal</Group>
+											<Behavior>Usual</Behavior>
 											<ShowTitle>false</ShowTitle>
 											<ExtendedTooltip name="ГруппаНастройкиОтборовРасширеннаяПодсказка" id="233"/>
 											<ChildItems>
@@ -611,6 +657,7 @@
 												</v8:item>
 											</Title>
 											<Group>Horizontal</Group>
+											<Behavior>Usual</Behavior>
 											<Representation>None</Representation>
 											<ShowTitle>false</ShowTitle>
 											<ExtendedTooltip name="ГруппаДанныеВыгрузкиРасширеннаяПодсказка" id="163"/>
@@ -636,6 +683,7 @@
 													</Title>
 													<Group>Vertical</Group>
 													<VerticalAlign>Bottom</VerticalAlign>
+													<Behavior>Usual</Behavior>
 													<Representation>None</Representation>
 													<ShowTitle>false</ShowTitle>
 													<ExtendedTooltip name="КомандыXMLРасширеннаяПодсказка" id="90"/>
@@ -673,6 +721,7 @@
 							</Title>
 							<Group>Horizontal</Group>
 							<VerticalAlign>Center</VerticalAlign>
+							<Behavior>Usual</Behavior>
 							<Representation>None</Representation>
 							<ShowTitle>false</ShowTitle>
 							<ExtendedTooltip name="ДлительнаяОперацияКартинкаИТекстРасширеннаяПодсказка" id="252"/>
@@ -1121,6 +1170,11 @@
 				</Column>
 			</Columns>
 		</Attribute>
+		<Attribute name="ИспользоватьКаталогСообщенийОбменаДанными" id="20">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
 	</Attributes>
 	<Commands>
 		<Command name="СохранитьXML" id="8">
@@ -1259,6 +1313,15 @@
 			</ToolTip>
 			<Action>ПрерватьВыгрузкуЗагрузку</Action>
 			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ИспользоватьВнутреннийКаталогСообщений" id="10">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Использовать внутренний каталог сообщений</v8:content>
+				</v8:item>
+			</Title>
+			<Action>ИспользоватьВнутреннийКаталогСообщений</Action>
 		</Command>
 	</Commands>
 </Form>

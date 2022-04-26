@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.10">
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.13">
 	<Width>55</Width>
 	<WindowOpeningMode>LockOwnerWindow</WindowOpeningMode>
 	<AutoTitle>false</AutoTitle>
@@ -17,6 +17,7 @@
 				</v8:item>
 			</Title>
 			<Group>Vertical</Group>
+			<Behavior>Usual</Behavior>
 			<Representation>None</Representation>
 			<ShowTitle>false</ShowTitle>
 			<ExtendedTooltip name="ОшибкаКлиентРасширеннаяПодсказка" id="23"/>
@@ -30,6 +31,7 @@
 					</Title>
 					<Group>AlwaysHorizontal</Group>
 					<VerticalAlign>Center</VerticalAlign>
+					<Behavior>Usual</Behavior>
 					<Representation>None</Representation>
 					<ShowTitle>false</ShowTitle>
 					<ExtendedTooltip name="ЗаголовокКлиентРасширеннаяПодсказка" id="2"/>
@@ -79,6 +81,7 @@
 						</v8:item>
 					</Title>
 					<Group>Vertical</Group>
+					<Behavior>Usual</Behavior>
 					<Representation>None</Representation>
 					<ShowTitle>false</ShowTitle>
 					<ExtendedTooltip name="ВозможныеПричиныИРешенияКлиентРасширеннаяПодсказка" id="54"/>
@@ -90,6 +93,7 @@
 									<v8:content>Возможные причины</v8:content>
 								</v8:item>
 							</Title>
+							<Behavior>Usual</Behavior>
 							<Representation>None</Representation>
 							<ExtendedTooltip name="ВозможныеПричиныКлиентРасширеннаяПодсказка" id="13"/>
 							<ChildItems>
@@ -103,6 +107,9 @@
 									</Title>
 									<ContextMenu name="ПричиныКлиентТекстКонтекстноеМеню" id="15"/>
 									<ExtendedTooltip name="ПричиныКлиентТекстРасширеннаяПодсказка" id="16"/>
+									<Events>
+										<Event name="URLProcessing">ПричиныКлиентТекстОбработкаНавигационнойСсылки</Event>
+									</Events>
 								</LabelDecoration>
 							</ChildItems>
 						</UsualGroup>
@@ -113,6 +120,7 @@
 									<v8:content>Возможные способы устранения</v8:content>
 								</v8:item>
 							</Title>
+							<Behavior>Usual</Behavior>
 							<Representation>None</Representation>
 							<ExtendedTooltip name="ВозможныеРешенияКлиентРасширеннаяПодсказка" id="18"/>
 							<ChildItems>
@@ -126,6 +134,9 @@
 									</Title>
 									<ContextMenu name="РешенияКлиентТекстКонтекстноеМеню" id="20"/>
 									<ExtendedTooltip name="РешенияКлиентТекстРасширеннаяПодсказка" id="21"/>
+									<Events>
+										<Event name="URLProcessing">РешенияКлиентТекстОбработкаНавигационнойСсылки</Event>
+									</Events>
 								</LabelDecoration>
 							</ChildItems>
 						</UsualGroup>
@@ -161,6 +172,7 @@
 				</v8:item>
 			</Title>
 			<Group>Vertical</Group>
+			<Behavior>Usual</Behavior>
 			<Representation>None</Representation>
 			<ShowTitle>false</ShowTitle>
 			<ExtendedTooltip name="ОшибкаСерверРасширеннаяПодсказка" id="28"/>
@@ -174,6 +186,7 @@
 					</Title>
 					<Group>AlwaysHorizontal</Group>
 					<VerticalAlign>Center</VerticalAlign>
+					<Behavior>Usual</Behavior>
 					<Representation>None</Representation>
 					<ShowTitle>false</ShowTitle>
 					<ExtendedTooltip name="ЗаголовокСерверРасширеннаяПодсказка" id="30"/>
@@ -223,6 +236,7 @@
 						</v8:item>
 					</Title>
 					<Group>Vertical</Group>
+					<Behavior>Usual</Behavior>
 					<Representation>None</Representation>
 					<ShowTitle>false</ShowTitle>
 					<ExtendedTooltip name="ВозможныеПричиныИРешенияСерверРасширеннаяПодсказка" id="56"/>
@@ -234,6 +248,7 @@
 									<v8:content>Возможные причины</v8:content>
 								</v8:item>
 							</Title>
+							<Behavior>Usual</Behavior>
 							<Representation>None</Representation>
 							<ExtendedTooltip name="ВозможныеПричиныСерверРасширеннаяПодсказка" id="41"/>
 							<ChildItems>
@@ -247,6 +262,9 @@
 									</Title>
 									<ContextMenu name="ПричиныСерверТекстКонтекстноеМеню" id="43"/>
 									<ExtendedTooltip name="ПричиныСерверТекстРасширеннаяПодсказка" id="44"/>
+									<Events>
+										<Event name="URLProcessing">ПричиныСерверТекстОбработкаНавигационнойСсылки</Event>
+									</Events>
 								</LabelDecoration>
 							</ChildItems>
 						</UsualGroup>
@@ -257,6 +275,7 @@
 									<v8:content>Возможные способы устранения</v8:content>
 								</v8:item>
 							</Title>
+							<Behavior>Usual</Behavior>
 							<Representation>None</Representation>
 							<ExtendedTooltip name="ВозможныеРешенияСерверРасширеннаяПодсказка" id="46"/>
 							<ChildItems>
@@ -270,6 +289,9 @@
 									</Title>
 									<ContextMenu name="РешенияСерверТекстКонтекстноеМеню" id="48"/>
 									<ExtendedTooltip name="РешенияСерверТекстРасширеннаяПодсказка" id="49"/>
+									<Events>
+										<Event name="URLProcessing">РешенияСерверТекстОбработкаНавигационнойСсылки</Event>
+									</Events>
 								</LabelDecoration>
 							</ChildItems>
 						</UsualGroup>
@@ -305,6 +327,7 @@
 				</v8:item>
 			</Title>
 			<Group>AlwaysHorizontal</Group>
+			<Behavior>Usual</Behavior>
 			<Representation>None</Representation>
 			<ShowTitle>false</ShowTitle>
 			<ExtendedTooltip name="ГруппаПодвалРасширеннаяПодсказка" id="61"/>

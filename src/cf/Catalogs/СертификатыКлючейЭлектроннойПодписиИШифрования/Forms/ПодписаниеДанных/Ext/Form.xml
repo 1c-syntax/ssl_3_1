@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.10">
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.13">
 	<Title>
 		<v8:item>
 			<v8:lang>ru</v8:lang>
@@ -29,6 +29,7 @@
 				</v8:item>
 			</Title>
 			<Group>Vertical</Group>
+			<Behavior>Usual</Behavior>
 			<Representation>None</Representation>
 			<ShowTitle>false</ShowTitle>
 			<ThroughAlign>Use</ThroughAlign>
@@ -52,6 +53,26 @@
 				</LabelField>
 			</ChildItems>
 		</UsualGroup>
+		<UsualGroup name="ГруппаТипПодписи" id="475">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Тип подписи</v8:content>
+				</v8:item>
+			</Title>
+			<Behavior>Usual</Behavior>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаТипПодписиРасширеннаяПодсказка" id="476"/>
+			<ChildItems>
+				<InputField name="ТипПодписи" id="477">
+					<DataPath>ТипПодписи</DataPath>
+					<ToolTipRepresentation>Button</ToolTipRepresentation>
+					<ListChoiceMode>true</ListChoiceMode>
+					<ContextMenu name="ТипПодписиКонтекстноеМеню" id="478"/>
+					<ExtendedTooltip name="ТипПодписиРасширеннаяПодсказка" id="479"/>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
 		<UsualGroup name="ГруппаПодписаниеИКомментарий" id="452">
 			<Title>
 				<v8:item>
@@ -61,6 +82,7 @@
 			</Title>
 			<HorizontalStretch>true</HorizontalStretch>
 			<Group>Vertical</Group>
+			<Behavior>Usual</Behavior>
 			<Representation>None</Representation>
 			<United>false</United>
 			<ShowTitle>false</ShowTitle>
@@ -74,6 +96,7 @@
 							<v8:content>Введите пароль закрытого ключа сертификата</v8:content>
 						</v8:item>
 					</Title>
+					<Behavior>Usual</Behavior>
 					<ThroughAlign>Use</ThroughAlign>
 					<ExtendedTooltip name="ГруппаПодписаниеРасширеннаяПодсказка" id="379"/>
 					<ChildItems>
@@ -85,6 +108,7 @@
 								</v8:item>
 							</Title>
 							<Group>Vertical</Group>
+							<Behavior>Usual</Behavior>
 							<Representation>None</Representation>
 							<ShowTitle>false</ShowTitle>
 							<ExtendedTooltip name="ГруппаПоляРасширеннаяПодсказка" id="434"/>
@@ -118,6 +142,7 @@
 										</v8:item>
 									</Title>
 									<Group>AlwaysHorizontal</Group>
+									<Behavior>Usual</Behavior>
 									<Representation>None</Representation>
 									<ShowTitle>false</ShowTitle>
 									<ExtendedTooltip name="ГруппаПарольРасширеннаяПодсказка" id="455"/>
@@ -188,13 +213,6 @@
 </v8:content>
 														</v8:item>
 													</Title>
-													<ToolTip>
-														<v8:item>
-															<v8:lang>ru</v8:lang>
-															<v8:content>Пароль запрашивает программа электронной подписи, а не программа 1С:Предприятие,
-так как для выбранного сертификата указана усиленная защита закрытого ключа.</v8:content>
-														</v8:item>
-													</ToolTip>
 													<ToolTipRepresentation>Button</ToolTipRepresentation>
 													<ContextMenu name="ПояснениеУсиленногоПароляКонтекстноеМеню" id="441"/>
 													<ExtendedTooltip name="ПояснениеУсиленногоПароляРасширеннаяПодсказка" id="442"/>
@@ -239,6 +257,7 @@
 						</v8:item>
 					</Title>
 					<Group>Vertical</Group>
+					<Behavior>Usual</Behavior>
 					<Representation>None</Representation>
 					<ShowTitle>false</ShowTitle>
 					<ExtendedTooltip name="ГруппаКонтейнерРасширеннаяПодсказка" id="469"/>
@@ -266,6 +285,7 @@
 						</v8:item>
 					</Title>
 					<Group>Vertical</Group>
+					<Behavior>Usual</Behavior>
 					<Representation>None</Representation>
 					<ShowTitle>false</ShowTitle>
 					<ExtendedTooltip name="ГруппаКонтейнер1РасширеннаяПодсказка" id="471"/>
@@ -281,6 +301,7 @@
 			</Title>
 			<HorizontalStretch>true</HorizontalStretch>
 			<Group>AlwaysHorizontal</Group>
+			<Behavior>Usual</Behavior>
 			<Representation>None</Representation>
 			<ShowTitle>false</ShowTitle>
 			<ExtendedTooltip name="ГруппаКомандыРасширеннаяПодсказка" id="457"/>
@@ -293,6 +314,7 @@
 						</v8:item>
 					</Title>
 					<Group>AlwaysHorizontal</Group>
+					<Behavior>Usual</Behavior>
 					<Representation>None</Representation>
 					<ShowTitle>false</ShowTitle>
 					<ExtendedTooltip name="ГруппаКомандыПодтвержденияРасширеннаяПодсказка" id="459"/>
@@ -458,7 +480,7 @@
 		<Attribute name="ОтборОтпечатков" id="17">
 			<Type/>
 		</Attribute>
-		<Attribute name="СертификатУсиленнаяЗащитаЗакрытогоКлюча" id="18">
+		<Attribute name="СертификатВводитьПарольВПрограммеЭлектроннойПодписи" id="18">
 			<Type>
 				<v8:Type>xs:boolean</v8:Type>
 			</Type>
@@ -497,6 +519,17 @@
 		<Attribute name="ОблачныйПарольПодтвержден" id="23">
 			<Type>
 				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ТипПодписи" id="24">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Тип подписи</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:EnumRef.ТипыПодписиКриптографии</v8:Type>
 			</Type>
 		</Attribute>
 	</Attributes>
@@ -566,6 +599,16 @@
 		</Parameter>
 		<Parameter name="ВыполнятьНаСервере">
 			<Type/>
+		</Parameter>
+		<Parameter name="ОповеститьОбОкончанииСрокаДействия">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Parameter>
+		<Parameter name="ТипПодписи">
+			<Type>
+				<v8:Type>cfg:EnumRef.ТипыПодписиКриптографии</v8:Type>
+			</Type>
 		</Parameter>
 	</Parameters>
 </Form>

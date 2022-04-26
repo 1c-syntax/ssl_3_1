@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.10">
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.13">
 	<AutoSaveDataInSettings>Use</AutoSaveDataInSettings>
 	<MobileDeviceCommandBarContent>
 		<xr:Item>
@@ -29,6 +29,7 @@
 				</v8:item>
 			</Title>
 			<Group>Vertical</Group>
+			<Behavior>Usual</Behavior>
 			<Representation>None</Representation>
 			<ShowTitle>false</ShowTitle>
 			<ExtendedTooltip name="ГруппаНастроекРасширеннаяПодсказка" id="220"/>
@@ -62,6 +63,7 @@
 				</v8:item>
 			</Title>
 			<Group>Vertical</Group>
+			<Behavior>Usual</Behavior>
 			<Representation>None</Representation>
 			<ShowTitle>false</ShowTitle>
 			<ExtendedTooltip name="ГруппаПользовательскихНастроекРасширеннаяПодсказка" id="166"/>
@@ -196,6 +198,34 @@
 					<CommandName>Form.StandardCommand.Help</CommandName>
 					<ExtendedTooltip name="ФормаСправкаExtendedTooltip" id="108"/>
 				</Button>
+				<SearchStringAddition name="ВнешниеПользователиПоиск" id="229">
+					<AdditionSource>
+						<Item>ВнешниеПользователиСписок</Item>
+						<Type>SearchStringRepresentation</Type>
+					</AdditionSource>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Внешние пользователи поиск</v8:content>
+						</v8:item>
+					</Title>
+					<ContextMenu name="ВнешниеПользователиПоискКонтекстноеМеню" id="230"/>
+					<ExtendedTooltip name="ВнешниеПользователиПоискРасширеннаяПодсказка" id="231"/>
+				</SearchStringAddition>
+				<SearchControlAddition name="ВнешниеПользователиПоискУправление" id="232">
+					<AdditionSource>
+						<Item>ВнешниеПользователиСписок</Item>
+						<Type>SearchControl</Type>
+					</AdditionSource>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Внешние пользователи поиск управление</v8:content>
+						</v8:item>
+					</Title>
+					<ContextMenu name="ВнешниеПользователиПоискУправлениеКонтекстноеМеню" id="233"/>
+					<ExtendedTooltip name="ВнешниеПользователиПоискУправлениеРасширеннаяПодсказка" id="234"/>
+				</SearchControlAddition>
 			</ChildItems>
 		</CommandBar>
 		<UsualGroup name="ГруппаСодержимое" id="24">
@@ -205,6 +235,7 @@
 					<v8:content>Содержимое</v8:content>
 				</v8:item>
 			</Title>
+			<Behavior>Usual</Behavior>
 			<Representation>None</Representation>
 			<ChildItemsWidth>Equal</ChildItemsWidth>
 			<ShowTitle>false</ShowTitle>
@@ -217,6 +248,7 @@
 							<v8:content>Группы и пользователи</v8:content>
 						</v8:item>
 					</Title>
+					<Behavior>Usual</Behavior>
 					<Representation>None</Representation>
 					<ChildItemsWidth>LeftNarrowest</ChildItemsWidth>
 					<ShowTitle>false</ShowTitle>
@@ -229,6 +261,7 @@
 									<v8:content>Группы пользователей</v8:content>
 								</v8:item>
 							</Title>
+							<Behavior>Usual</Behavior>
 							<Representation>None</Representation>
 							<ShowTitle>false</ShowTitle>
 							<ExtendedTooltip name="ГруппаГруппыExtendedTooltip" id="111"/>
@@ -346,6 +379,7 @@
 									<VerticalStretch>true</VerticalStretch>
 									<Group>Vertical</Group>
 									<VerticalAlign>Center</VerticalAlign>
+									<Behavior>Usual</Behavior>
 									<Representation>None</Representation>
 									<ShowTitle>false</ShowTitle>
 									<ExtendedTooltip name="ГруппаВыбратьГруппуExtendedTooltip" id="114"/>
@@ -379,6 +413,7 @@
 									<v8:content>Пользователи</v8:content>
 								</v8:item>
 							</Title>
+							<Behavior>Usual</Behavior>
 							<Representation>None</Representation>
 							<ShowTitle>false</ShowTitle>
 							<ExtendedTooltip name="ГруппаПользователиExtendedTooltip" id="119"/>
@@ -531,6 +566,7 @@
 									<VerticalStretch>true</VerticalStretch>
 									<Group>Vertical</Group>
 									<VerticalAlign>Center</VerticalAlign>
+									<Behavior>Usual</Behavior>
 									<Representation>None</Representation>
 									<ShowTitle>false</ShowTitle>
 									<ExtendedTooltip name="ГруппаВыбратьПользователяExtendedTooltip" id="123"/>
@@ -569,6 +605,7 @@
 						</v8:item>
 					</Title>
 					<Group>Vertical</Group>
+					<Behavior>Usual</Behavior>
 					<Representation>None</Representation>
 					<ShowTitle>false</ShowTitle>
 					<ExtendedTooltip name="ВыбранныеПользователиИГруппыExtendedTooltip" id="128"/>
@@ -657,6 +694,7 @@
 					<v8:content>Показывать внешних пользователей дочерних групп</v8:content>
 				</v8:item>
 			</Title>
+			<Behavior>Usual</Behavior>
 			<Representation>None</Representation>
 			<ShowTitle>false</ShowTitle>
 			<ExtendedTooltip name="ГруппаПоказыватьВнешнихПользователейДочернихГруппExtendedTooltip" id="131"/>
@@ -714,6 +752,7 @@
 								</v8:item>
 							</Title>
 							<Group>Vertical</Group>
+							<Behavior>Usual</Behavior>
 							<Representation>None</Representation>
 							<ShowTitle>false</ShowTitle>
 							<TitleDataPath>Items.ГруппыВнешнихПользователей.CurrentData.Description</TitleDataPath>
@@ -748,6 +787,7 @@
 								</v8:item>
 							</Title>
 							<Group>Vertical</Group>
+							<Behavior>Usual</Behavior>
 							<Representation>None</Representation>
 							<ShowTitle>false</ShowTitle>
 							<TitleDataPath>Items.ВнешниеПользователиСписок.CurrentData.Description</TitleDataPath>

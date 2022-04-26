@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.10">
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.13">
 	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
 		<ChildItems>
 			<Button name="ФормаЗаписатьИЗакрыть" id="231">
@@ -12,14 +12,6 @@
 				<Type>CommandBarButton</Type>
 				<CommandName>Form.Command.ЗаписатьОбработчик</CommandName>
 				<ExtendedTooltip name="ФормаЗаписатьРасширеннаяПодсказка" id="230"/>
-			</Button>
-			<Button name="ФормаПроверитьЦиклВПорядкеОбработчиков" id="779">
-				<Type>CommandBarButton</Type>
-				<UserVisible>
-					<xr:Common>false</xr:Common>
-				</UserVisible>
-				<CommandName>Form.Command.ПроверитьЦиклВПорядкеОбработчиков</CommandName>
-				<ExtendedTooltip name="ФормаПроверитьЦиклВПорядкеОбработчиковРасширеннаяПодсказка" id="780"/>
 			</Button>
 		</ChildItems>
 	</AutoCommandBar>
@@ -36,6 +28,7 @@
 					<v8:content>Страницы формы</v8:content>
 				</v8:item>
 			</Title>
+			<PagesRepresentation>TabsOnTop</PagesRepresentation>
 			<ExtendedTooltip name="СтраницыФормыРасширеннаяПодсказка" id="2"/>
 			<Events>
 				<Event name="OnCurrentPageChange">СтраницыФормыПриСменеСтраницы</Event>
@@ -48,6 +41,7 @@
 							<v8:content>Описание</v8:content>
 						</v8:item>
 					</Title>
+					<Shortcut>Alt+1</Shortcut>
 					<ExtendedTooltip name="СтраницаОписаниеРасширеннаяПодсказка" id="4"/>
 					<ChildItems>
 						<UsualGroup name="ГруппаШапка" id="10">
@@ -58,6 +52,7 @@
 								</v8:item>
 							</Title>
 							<Group>Vertical</Group>
+							<Behavior>Usual</Behavior>
 							<Representation>None</Representation>
 							<ShowTitle>false</ShowTitle>
 							<ExtendedTooltip name="ГруппаШапкаРасширеннаяПодсказка" id="11"/>
@@ -70,6 +65,7 @@
 										</v8:item>
 									</Title>
 									<Group>AlwaysHorizontal</Group>
+									<Behavior>Usual</Behavior>
 									<Representation>None</Representation>
 									<ShowTitle>false</ShowTitle>
 									<ExtendedTooltip name="ГруппаШапкаЛевоПравоРасширеннаяПодсказка" id="94"/>
@@ -82,6 +78,7 @@
 												</v8:item>
 											</Title>
 											<Group>Vertical</Group>
+											<Behavior>Usual</Behavior>
 											<Representation>None</Representation>
 											<ShowTitle>false</ShowTitle>
 											<ExtendedTooltip name="ГруппаШапкаЛевоРасширеннаяПодсказка" id="13"/>
@@ -142,27 +139,61 @@
 														<Event name="OnChange">ПроцедураЗаполненияДанныхОбновленияПриИзменении</Event>
 													</Events>
 												</InputField>
-												<InputField name="ПроцедураПроверки" id="33">
-													<DataPath>Объект.ОбработчикиОбновления[0].ПроцедураПроверки</DataPath>
+												<UsualGroup name="ГруппаПроцедураПроверкиИПредупреждение" id="805">
 													<Title>
 														<v8:item>
 															<v8:lang>ru</v8:lang>
-															<v8:content>Проверка</v8:content>
+															<v8:content>Процедура проверки и предупреждение</v8:content>
 														</v8:item>
 													</Title>
-													<AutoMaxWidth>false</AutoMaxWidth>
-													<ChoiceButton>true</ChoiceButton>
-													<ChoiceButtonPicture>
-														<xr:Ref>StdPicture.MoveLeft</xr:Ref>
-														<xr:LoadTransparent>true</xr:LoadTransparent>
-													</ChoiceButtonPicture>
-													<ContextMenu name="ПроцедураПроверкиКонтекстноеМеню" id="34"/>
-													<ExtendedTooltip name="ПроцедураПроверкиРасширеннаяПодсказка" id="35"/>
-													<Events>
-														<Event name="OnChange">ПроцедураПроверкиПриИзменении</Event>
-														<Event name="StartChoice">ПроцедураПроверкиНачалоВыбора</Event>
-													</Events>
-												</InputField>
+													<Group>AlwaysHorizontal</Group>
+													<Behavior>Usual</Behavior>
+													<Representation>None</Representation>
+													<ShowTitle>false</ShowTitle>
+													<ExtendedTooltip name="ГруппаПроцедураПроверкиИПредупреждениеРасширеннаяПодсказка" id="806"/>
+													<ChildItems>
+														<InputField name="ПроцедураПроверки" id="33">
+															<DataPath>Объект.ОбработчикиОбновления[0].ПроцедураПроверки</DataPath>
+															<Title>
+																<v8:item>
+																	<v8:lang>ru</v8:lang>
+																	<v8:content>Проверка</v8:content>
+																</v8:item>
+															</Title>
+															<AutoMaxWidth>false</AutoMaxWidth>
+															<ChoiceButton>true</ChoiceButton>
+															<ChoiceButtonPicture>
+																<xr:Ref>StdPicture.MoveLeft</xr:Ref>
+																<xr:LoadTransparent>true</xr:LoadTransparent>
+															</ChoiceButtonPicture>
+															<ContextMenu name="ПроцедураПроверкиКонтекстноеМеню" id="34"/>
+															<ExtendedTooltip name="ПроцедураПроверкиРасширеннаяПодсказка" id="35"/>
+															<Events>
+																<Event name="OnChange">ПроцедураПроверкиПриИзменении</Event>
+																<Event name="StartChoice">ПроцедураПроверкиНачалоВыбора</Event>
+															</Events>
+														</InputField>
+														<PictureDecoration name="ДекорацияПредупреждение" id="807">
+															<Title formatted="false">
+																<v8:item>
+																	<v8:lang>ru</v8:lang>
+																	<v8:content>Декорация предупреждение</v8:content>
+																</v8:item>
+															</Title>
+															<GroupVerticalAlign>Center</GroupVerticalAlign>
+															<Hyperlink>true</Hyperlink>
+															<Picture>
+																<xr:Ref>CommonPicture.Предупреждение</xr:Ref>
+																<xr:LoadTransparent>false</xr:LoadTransparent>
+															</Picture>
+															<ContextMenu name="ДекорацияПредупреждениеКонтекстноеМеню" id="808"/>
+															<ExtendedTooltip name="ДекорацияПредупреждениеРасширеннаяПодсказка" id="809"/>
+															<Events>
+																<Event name="Click">ДекорацияПредупреждениеНажатие</Event>
+															</Events>
+														</PictureDecoration>
+													</ChildItems>
+												</UsualGroup>
 												<InputField name="РежимВыполнения" id="39">
 													<DataPath>Объект.ОбработчикиОбновления[0].РежимВыполнения</DataPath>
 													<EditMode>EnterOnInput</EditMode>
@@ -227,6 +258,7 @@
 													<v8:content>Шапка право</v8:content>
 												</v8:item>
 											</Title>
+											<Behavior>Usual</Behavior>
 											<Representation>None</Representation>
 											<ShowTitle>false</ShowTitle>
 											<ExtendedTooltip name="ГруппаШапкаПравоРасширеннаяПодсказка" id="15"/>
@@ -239,6 +271,7 @@
 														</v8:item>
 													</Title>
 													<Width>27</Width>
+													<Behavior>Usual</Behavior>
 													<Representation>None</Representation>
 													<ShowTitle>false</ShowTitle>
 													<ExtendedTooltip name="ГруппаПодсистемаРасширеннаяПодсказка" id="23"/>
@@ -315,6 +348,7 @@
 										</v8:item>
 									</Title>
 									<Group>AlwaysHorizontal</Group>
+									<Behavior>Usual</Behavior>
 									<Representation>None</Representation>
 									<ShowTitle>false</ShowTitle>
 									<ExtendedTooltip name="ГруппаПрочиеСвойстваРасширеннаяПодсказка" id="92"/>
@@ -328,6 +362,7 @@
 												</v8:item>
 											</Title>
 											<Group>Vertical</Group>
+											<Behavior>Usual</Behavior>
 											<Representation>None</Representation>
 											<ShowTitle>false</ShowTitle>
 											<ExtendedTooltip name="ГруппаПрочиеСвойстваЗаголовкиРасширеннаяПодсказка" id="43"/>
@@ -439,6 +474,7 @@
 												</v8:item>
 											</Title>
 											<Group>Vertical</Group>
+											<Behavior>Usual</Behavior>
 											<Representation>None</Representation>
 											<ExtendedTooltip name="ГруппаПрочиеСвойстваЗначенияРасширеннаяПодсказка" id="69"/>
 											<ChildItems>
@@ -551,6 +587,7 @@
 							<v8:content>Объекты</v8:content>
 						</v8:item>
 					</Title>
+					<Shortcut>Alt+2</Shortcut>
 					<ExtendedTooltip name="СтраницаОбъектыРасширеннаяПодсказка" id="6"/>
 					<ChildItems>
 						<UsualGroup name="ГруппаИспользуемыеДанные" id="95">
@@ -561,6 +598,7 @@
 								</v8:item>
 							</Title>
 							<Group>Vertical</Group>
+							<Behavior>Usual</Behavior>
 							<Representation>NormalSeparation</Representation>
 							<ShowTitle>false</ShowTitle>
 							<ExtendedTooltip name="ГруппаИспользуемыеДанныеРасширеннаяПодсказка" id="96"/>
@@ -573,6 +611,7 @@
 										</v8:item>
 									</Title>
 									<Group>Horizontal</Group>
+									<Behavior>Usual</Behavior>
 									<Representation>None</Representation>
 									<ShowTitle>false</ShowTitle>
 									<ExtendedTooltip name="ГруппаИспользуемыеДанныеТаблицыРасширеннаяПодсказка" id="101"/>
@@ -726,6 +765,7 @@
 												</v8:item>
 											</Title>
 											<Group>Vertical</Group>
+											<Behavior>Usual</Behavior>
 											<Representation>None</Representation>
 											<ShowTitle>false</ShowTitle>
 											<ExtendedTooltip name="ГруппаИспользуемыеДанныеТаблицыКнопкиРасширеннаяПодсказка" id="132"/>
@@ -1032,6 +1072,7 @@
 							<v8:content>Конфликты</v8:content>
 						</v8:item>
 					</Title>
+					<Shortcut>Alt+3</Shortcut>
 					<ExtendedTooltip name="СтраницаКонфликтыРасширеннаяПодсказка" id="276"/>
 					<ChildItems>
 						<LabelDecoration name="Объявление" id="277">
@@ -1054,6 +1095,7 @@
 									<v8:content>Приоритеты и пересечения</v8:content>
 								</v8:item>
 							</Title>
+							<PagesRepresentation>TabsOnTop</PagesRepresentation>
 							<ExtendedTooltip name="СтраницыПриоритетыИПересеченияРасширеннаяПодсказка" id="759"/>
 							<ChildItems>
 								<Page name="СтраницаПриоритеты" id="760">
@@ -1091,7 +1133,15 @@
 								</v8:item>
 							</Title>
 							<RowFilter xsi:nil="true"/>
-							<ContextMenu name="ПриоритетыВыполненияКонтекстноеМеню" id="670"/>
+							<ContextMenu name="ПриоритетыВыполненияКонтекстноеМеню" id="670">
+								<ChildItems>
+									<Button name="ВыделитьПустойПорядок" id="803">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.Command.ВыделитьПустойПорядок</CommandName>
+										<ExtendedTooltip name="ВыделитьПустойПорядокРасширеннаяПодсказка" id="804"/>
+									</Button>
+								</ChildItems>
+							</ContextMenu>
 							<AutoCommandBar name="ПриоритетыВыполненияКоманднаяПанель" id="671">
 								<Autofill>false</Autofill>
 								<ChildItems>
@@ -1109,11 +1159,6 @@
 										<Type>CommandBarButton</Type>
 										<CommandName>Form.Command.ЗаполнитьЛюбой</CommandName>
 										<ExtendedTooltip name="ЗаполнитьЛюбойРасширеннаяПодсказка" id="769"/>
-									</Button>
-									<Button name="ПриоритетПоУмолчанию" id="794">
-										<Type>CommandBarButton</Type>
-										<CommandName>Form.Command.ПриоритетПоУмолчанию</CommandName>
-										<ExtendedTooltip name="ПриоритетПоУмолчаниюРасширеннаяПодсказка" id="795"/>
 									</Button>
 								</ChildItems>
 							</AutoCommandBar>
@@ -1327,6 +1372,7 @@
 							<Height>6</Height>
 							<GroupVerticalAlign>Bottom</GroupVerticalAlign>
 							<Group>Vertical</Group>
+							<Behavior>Usual</Behavior>
 							<Representation>None</Representation>
 							<ShowTitle>false</ShowTitle>
 							<ExtendedTooltip name="ГруппаОписаниеОбработчиковРасширеннаяПодсказка" id="495"/>
@@ -1743,6 +1789,20 @@
 				</Column>
 			</Columns>
 		</Attribute>
+		<Attribute name="ИзмененаПроцедураПроверки" id="20">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ТекущееЗначениеПроцедурыПроверки" id="21">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
 	</Attributes>
 	<Commands>
 		<Command name="ЗаписатьИЗакрыть" id="1">
@@ -1843,21 +1903,6 @@
 			<Shortcut>Shift+V</Shortcut>
 			<Action>ДобавитьОбъектОбработчикаВИзменяемые</Action>
 		</Command>
-		<Command name="ПроверитьЦиклВПорядкеОбработчиков" id="8">
-			<Title>
-				<v8:item>
-					<v8:lang>ru</v8:lang>
-					<v8:content>Есть цикл в порядке обработчиков</v8:content>
-				</v8:item>
-			</Title>
-			<ToolTip>
-				<v8:item>
-					<v8:lang>ru</v8:lang>
-					<v8:content>Проверить цикл в порядке обработчиков</v8:content>
-				</v8:item>
-			</ToolTip>
-			<Action>ПроверитьЦиклВПорядкеОбработчиков</Action>
-		</Command>
 		<Command name="ДобавитьИзменяемыйОбъектВЧитаемые" id="9">
 			<Title>
 				<v8:item>
@@ -1906,22 +1951,6 @@
 			<Shortcut>Shift+W</Shortcut>
 			<Action>ДобавитьЧитаемыйОбъектВИзменяемые</Action>
 		</Command>
-		<Command name="ПриоритетПоУмолчанию" id="12">
-			<Title>
-				<v8:item>
-					<v8:lang>ru</v8:lang>
-					<v8:content>Порядок по умолчанию</v8:content>
-				</v8:item>
-			</Title>
-			<ToolTip>
-				<v8:item>
-					<v8:lang>ru</v8:lang>
-					<v8:content>Порядок по умолчанию может не совпадать с текущими требованиями.
-Необходимо исправить его если требуется.</v8:content>
-				</v8:item>
-			</ToolTip>
-			<Action>ПриоритетПоУмолчанию</Action>
-		</Command>
 		<Command name="ДобавитьТипыРеквизитаВБлокируемыеОбъекты" id="13">
 			<Title>
 				<v8:item>
@@ -1937,6 +1966,22 @@
 			</ToolTip>
 			<Shortcut>Shift+R</Shortcut>
 			<Action>ДобавитьТипыРеквизитаВБлокируемыеОбъекты</Action>
+		</Command>
+		<Command name="ВыделитьПустойПорядок" id="15">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Выделить пустой порядок</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Выделить пустой порядок</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Shortcut>Ctrl+Shift+A</Shortcut>
+			<Action>ВыделитьПустойПорядок</Action>
 		</Command>
 	</Commands>
 	<Parameters>

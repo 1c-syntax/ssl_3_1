@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.10">
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.13">
 	<MobileDeviceCommandBarContent>
 		<xr:Item>
 			<xr:Presentation/>
@@ -22,6 +22,7 @@
 					<v8:content>Отборы</v8:content>
 				</v8:item>
 			</Title>
+			<Behavior>Usual</Behavior>
 			<Representation>None</Representation>
 			<ShowTitle>false</ShowTitle>
 			<ExtendedTooltip name="ГруппаОтборыРасширеннаяПодсказка" id="158"/>
@@ -129,6 +130,7 @@
 				</v8:item>
 			</Title>
 			<Group>Vertical</Group>
+			<Behavior>Usual</Behavior>
 			<Representation>None</Representation>
 			<ShowTitle>false</ShowTitle>
 			<ExtendedTooltip name="ГруппаПользовательскихНастроекРасширеннаяПодсказка" id="84"/>
@@ -153,7 +155,7 @@
 					<ChildItems>
 						<Button name="ФормаВыбрать" id="152">
 							<Type>CommandBarButton</Type>
-							<CommandName>1:8969c93a-23e5-4bef-941d-aaef315858d2</CommandName>
+							<CommandName>0</CommandName>
 							<ExtendedTooltip name="ФормаВыбратьРасширеннаяПодсказка" id="153"/>
 						</Button>
 						<Button name="ФормаСоздать" id="91">
@@ -358,6 +360,28 @@
 					<CommandName>Form.StandardCommand.Help</CommandName>
 					<ExtendedTooltip name="СправкаРасширеннаяПодсказка" id="59"/>
 				</Button>
+				<SearchStringAddition name="СписокПоиск" id="171">
+					<AdditionSource>
+						<Item>Список</Item>
+						<Type>SearchStringRepresentation</Type>
+					</AdditionSource>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Список поиск</v8:content>
+						</v8:item>
+					</Title>
+					<ContextMenu name="СписокПоискКонтекстноеМеню" id="172"/>
+					<ExtendedTooltip name="СписокПоискРасширеннаяПодсказка" id="173"/>
+				</SearchStringAddition>
+				<SearchControlAddition name="СписокПоискУправление" id="168">
+					<AdditionSource>
+						<Item>Список</Item>
+						<Type>SearchControl</Type>
+					</AdditionSource>
+					<ContextMenu name="СписокПоискУправлениеКонтекстноеМеню" id="169"/>
+					<ExtendedTooltip name="СписокПоискУправлениеРасширеннаяПодсказка" id="170"/>
+				</SearchControlAddition>
 			</ChildItems>
 		</CommandBar>
 		<Table name="Список" id="1">

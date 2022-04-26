@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<MetaDataObject xmlns="http://v8.1c.ru/8.3/MDClasses" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:cmi="http://v8.1c.ru/8.2/managed-application/cmi" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xen="http://v8.1c.ru/8.3/xcf/enums" xmlns:xpr="http://v8.1c.ru/8.3/xcf/predef" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.10">
+<MetaDataObject xmlns="http://v8.1c.ru/8.3/MDClasses" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:cmi="http://v8.1c.ru/8.2/managed-application/cmi" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xen="http://v8.1c.ru/8.3/xcf/enums" xmlns:xpr="http://v8.1c.ru/8.3/xcf/predef" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.13">
 	<Subsystem uuid="1514eaff-faea-4d82-9465-d0d5292bb31d">
 		<Properties>
 			<Name>УправлениеДоступом</Name>
@@ -51,7 +51,7 @@
 				<xr:Item xsi:type="xr:MDObjectRef">CommonCommand.ПраваДоступа</xr:Item>
 				<xr:Item xsi:type="xr:MDObjectRef">DefinedType.ВладелецСОграничениемПоНаборамЗначенийДоступаОбъект</xr:Item>
 				<xr:Item xsi:type="xr:MDObjectRef">InformationRegister.ПраваРолей</xr:Item>
-				<xr:Item xsi:type="xr:MDObjectRef">StyleItem.ЗапрещенноеПравоДоступа</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">StyleItem.ЗапрещенноеПравоДоступаЦвет</xr:Item>
 				<xr:Item xsi:type="xr:MDObjectRef">SessionParameter.СпискиСОграничениемЧерезКлючиДоступаПользователей</xr:Item>
 				<xr:Item xsi:type="xr:MDObjectRef">CommonCommand.НастроитьПрава</xr:Item>
 				<xr:Item xsi:type="xr:MDObjectRef">SessionParameter.РазрешенныйНаборГруппПользователей</xr:Item>
@@ -118,9 +118,9 @@
 				<xr:Item xsi:type="xr:MDObjectRef">Constant.ПервоеОбновлениеДоступаЗавершилось</xr:Item>
 				<xr:Item xsi:type="xr:MDObjectRef">EventSubscription.ОбновитьЗначенияГруппДоступа</xr:Item>
 				<xr:Item xsi:type="xr:MDObjectRef">Report.АнализПравДоступа</xr:Item>
-				<xr:Item xsi:type="xr:MDObjectRef">CommonPicture.Создание</xr:Item>
-				<xr:Item xsi:type="xr:MDObjectRef">CommonPicture.Редактирование</xr:Item>
-				<xr:Item xsi:type="xr:MDObjectRef">CommonPicture.Просмотр</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonPicture.УровеньДоступаСоздание</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonPicture.УровеньДоступаРедактирование</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonPicture.УровеньДоступаПросмотр</xr:Item>
 				<xr:Item xsi:type="xr:MDObjectRef">StyleItem.ПравоПросмотраФон</xr:Item>
 				<xr:Item xsi:type="xr:MDObjectRef">StyleItem.ПравоРедактированияФон</xr:Item>
 				<xr:Item xsi:type="xr:MDObjectRef">StyleItem.ПравоСозданияФон</xr:Item>
@@ -129,6 +129,22 @@
 				<xr:Item xsi:type="xr:MDObjectRef">EventSubscription.ЗаполнитьНаборыЗначенийДоступаТабличныхЧастейДокументов</xr:Item>
 				<xr:Item xsi:type="xr:MDObjectRef">InformationRegister.ИспользуемыеВидыДоступаПоТаблицам</xr:Item>
 				<xr:Item xsi:type="xr:MDObjectRef">InformationRegister.ИспользуемыеВидыДоступа</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonPicture.НаследованиеВключено</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonPicture.НаследованиеОтключено</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonPicture.НаследованиеВключеноСПапкой</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonPicture.НаследованиеОтключеноСПапкой</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Report.ПраваРолей</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonPicture.УровеньДоступаАдминистрированиеИсточника</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonPicture.УровеньДоступаЕстьПраво</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonPicture.УровеньДоступаИспользование</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonPicture.УровеньДоступаИспользованиеИАдминистрированиеИсточника</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonPicture.УровеньДоступаИспользованиеИсточника</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonPicture.УровеньДоступаПолучение</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonPicture.УровеньДоступаПолучениеИУстановка</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonPicture.УровеньДоступаУстановка</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">StyleItem.ВычисленноеПравоДоступаЦвет</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">StyleItem.НеназначенноеПравоДоступаЦвет</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">StyleItem.РазрешенноеПравоДоступаЦвет</xr:Item>
 			</Content>
 		</Properties>
 		<ChildObjects/>

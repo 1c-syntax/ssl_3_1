@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.10">
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.13">
 	<AutoSaveDataInSettings>Use</AutoSaveDataInSettings>
 	<CommandSet>
 		<ExcludedCommand>WriteAndClose</ExcludedCommand>
@@ -29,10 +29,10 @@
 				<CommandSource>Form</CommandSource>
 				<ExtendedTooltip name="КомандыФормыРасширеннаяПодсказка" id="348"/>
 			</ButtonGroup>
-			<Button name="ФормаСправка" id="349">
+			<Button name="ФормаВыбратьФотографию" id="373">
 				<Type>CommandBarButton</Type>
-				<CommandName>Form.StandardCommand.Help</CommandName>
-				<ExtendedTooltip name="ФормаСправкаРасширеннаяПодсказка" id="350"/>
+				<CommandName>Form.Command.ВыбратьФотографию</CommandName>
+				<ExtendedTooltip name="ФормаВыбратьФотографиюРасширеннаяПодсказка" id="374"/>
 			</Button>
 			<Button name="ФормаОчиститьФотографию" id="356">
 				<Type>CommandBarButton</Type>
@@ -95,6 +95,11 @@
 					</ButtonGroup>
 				</ChildItems>
 			</Popup>
+			<Button name="ФормаСправка" id="349">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.StandardCommand.Help</CommandName>
+				<ExtendedTooltip name="ФормаСправкаРасширеннаяПодсказка" id="350"/>
+			</Button>
 		</ChildItems>
 	</AutoCommandBar>
 	<Events>
@@ -119,6 +124,7 @@
 					<v8:content>Служебный пользователь</v8:content>
 				</v8:item>
 			</Title>
+			<Behavior>Usual</Behavior>
 			<Representation>None</Representation>
 			<ShowTitle>false</ShowTitle>
 			<ExtendedTooltip name="ГруппаСлужебныйПользовательРасширеннаяПодсказка" id="339"/>
@@ -166,6 +172,7 @@
 					<v8:content>Свойства обработка несоответствия</v8:content>
 				</v8:item>
 			</Title>
+			<Behavior>Usual</Behavior>
 			<Representation>NormalSeparation</Representation>
 			<ShowTitle>false</ShowTitle>
 			<ExtendedTooltip name="СвойстваОбработкаНесоответствияРасширеннаяПодсказка" id="208"/>
@@ -194,6 +201,7 @@
 						</v8:item>
 					</Title>
 					<Group>Vertical</Group>
+					<Behavior>Usual</Behavior>
 					<Representation>None</Representation>
 					<ShowTitle>false</ShowTitle>
 					<ExtendedTooltip name="СвойстваПояснениеИКомандыРасширеннаяПодсказка" id="210"/>
@@ -226,6 +234,7 @@
 									<v8:content>Свойства команды устранения различий</v8:content>
 								</v8:item>
 							</Title>
+							<Behavior>Usual</Behavior>
 							<Representation>None</Representation>
 							<ShowTitle>false</ShowTitle>
 							<ExtendedTooltip name="СвойстваКомандыУстраненияРазличийРасширеннаяПодсказка" id="264"/>
@@ -260,6 +269,7 @@
 					<v8:content>Сопоставление обработка несоответствия</v8:content>
 				</v8:item>
 			</Title>
+			<Behavior>Usual</Behavior>
 			<Representation>NormalSeparation</Representation>
 			<ShowTitle>false</ShowTitle>
 			<ExtendedTooltip name="СопоставлениеОбработкаНесоответствияРасширеннаяПодсказка" id="213"/>
@@ -305,6 +315,7 @@
 				</v8:item>
 			</Title>
 			<Group>AlwaysHorizontal</Group>
+			<Behavior>Usual</Behavior>
 			<Representation>None</Representation>
 			<ShowTitle>false</ShowTitle>
 			<ExtendedTooltip name="ГруппаШапкаРасширеннаяПодсказка" id="278"/>
@@ -312,6 +323,12 @@
 				<PictureField name="Фотография" id="353">
 					<DataPath>АдресФотографии</DataPath>
 					<TitleLocation>None</TitleLocation>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Выбрать фото</v8:content>
+						</v8:item>
+					</ToolTip>
 					<GroupVerticalAlign>Center</GroupVerticalAlign>
 					<Width>7</Width>
 					<Height>4</Height>
@@ -325,7 +342,20 @@
 							<v8:content>Добавить фото</v8:content>
 						</v8:item>
 					</NonselectedPictureText>
-					<ContextMenu name="ФотографияКонтекстноеМеню" id="354"/>
+					<ContextMenu name="ФотографияКонтекстноеМеню" id="354">
+						<ChildItems>
+							<Button name="ФотографияКонтекстноеМенюВыбратьФотографию" id="371">
+								<Type>CommandBarButton</Type>
+								<CommandName>Form.Command.ВыбратьФотографию</CommandName>
+								<ExtendedTooltip name="ФотографияКонтекстноеМенюВыбратьФотографиюРасширеннаяПодсказка" id="372"/>
+							</Button>
+							<Button name="ФотографияКонтекстноеМенюОчиститьФотографию" id="369">
+								<Type>CommandBarButton</Type>
+								<CommandName>Form.Command.ОчиститьФотографию</CommandName>
+								<ExtendedTooltip name="ФотографияКонтекстноеМенюОчиститьФотографиюРасширеннаяПодсказка" id="370"/>
+							</Button>
+						</ChildItems>
+					</ContextMenu>
 					<ExtendedTooltip name="ФотографияРасширеннаяПодсказка" id="355"/>
 					<Events>
 						<Event name="Click">ФотографияНажатие</Event>
@@ -339,6 +369,7 @@
 						</v8:item>
 					</Title>
 					<Group>Vertical</Group>
+					<Behavior>Usual</Behavior>
 					<Representation>None</Representation>
 					<ShowTitle>false</ShowTitle>
 					<ExtendedTooltip name="ГруппаДанныеШапкиРасширеннаяПодсказка" id="352"/>
@@ -350,6 +381,7 @@
 									<v8:content>Наименование</v8:content>
 								</v8:item>
 							</Title>
+							<Behavior>Usual</Behavior>
 							<Representation>None</Representation>
 							<ShowTitle>false</ShowTitle>
 							<ExtendedTooltip name="ГруппаНаименованиеРасширеннаяПодсказка" id="330"/>
@@ -399,6 +431,7 @@
 					<v8:content>Вход в программу разрешен</v8:content>
 				</v8:item>
 			</Title>
+			<Behavior>Usual</Behavior>
 			<Representation>None</Representation>
 			<ShowTitle>false</ShowTitle>
 			<ExtendedTooltip name="ГруппаВходВПрограммуРазрешенРасширеннаяПодсказка" id="266"/>
@@ -428,6 +461,7 @@
 						</v8:item>
 					</Title>
 					<Group>Vertical</Group>
+					<Behavior>Usual</Behavior>
 					<Representation>None</Representation>
 					<ShowTitle>false</ShowTitle>
 					<ExtendedTooltip name="ГруппаИзменитьОграничениеРасширеннаяПодсказка" id="332"/>
@@ -468,6 +502,7 @@
 					<v8:content>Страницы</v8:content>
 				</v8:item>
 			</Title>
+			<PagesRepresentation>TabsOnTop</PagesRepresentation>
 			<ExtendedTooltip name="СтраницыExtendedTooltip" id="219"/>
 			<Events>
 				<Event name="OnCurrentPageChange">СтраницыПриСменеСтраницы</Event>
@@ -491,6 +526,7 @@
 								</v8:item>
 							</Title>
 							<Group>Vertical</Group>
+							<Behavior>Usual</Behavior>
 							<Representation>None</Representation>
 							<ShowTitle>false</ShowTitle>
 							<ExtendedTooltip name="ОсновныеСвойстваExtendedTooltip" id="221"/>
@@ -554,6 +590,7 @@
 										</v8:item>
 									</Title>
 									<Group>Vertical</Group>
+									<Behavior>Usual</Behavior>
 									<Representation>NormalSeparation</Representation>
 									<ShowTitle>false</ShowTitle>
 									<ExtendedTooltip name="СвойстваАутентификации1СПредприятияExtendedTooltip" id="223"/>
@@ -583,6 +620,7 @@
 													<v8:content>Отступ</v8:content>
 												</v8:item>
 											</Title>
+											<Behavior>Usual</Behavior>
 											<Representation>None</Representation>
 											<ShowTitle>false</ShowTitle>
 											<ExtendedTooltip name="ГруппаОтступРасширеннаяПодсказка" id="271"/>
@@ -599,6 +637,7 @@
 														</v8:item>
 													</Title>
 													<Group>Vertical</Group>
+													<Behavior>Usual</Behavior>
 													<Representation>None</Representation>
 													<ShowTitle>false</ShowTitle>
 													<ExtendedTooltip name="ПараметрыАутентификации1СПредприятияРасширеннаяПодсказка" id="225"/>
@@ -610,6 +649,7 @@
 																	<v8:content>Пароль</v8:content>
 																</v8:item>
 															</Title>
+															<Behavior>Usual</Behavior>
 															<Representation>None</Representation>
 															<ShowTitle>false</ShowTitle>
 															<ExtendedTooltip name="ГруппаПарольРасширеннаяПодсказка" id="320"/>
@@ -699,6 +739,7 @@
 										</v8:item>
 									</Title>
 									<Group>Vertical</Group>
+									<Behavior>Usual</Behavior>
 									<Representation>None</Representation>
 									<ShowTitle>false</ShowTitle>
 									<ExtendedTooltip name="СвойстваАутентификацииOpenIDРасширеннаяПодсказка" id="276"/>
@@ -731,6 +772,7 @@
 										</v8:item>
 									</Title>
 									<Group>Vertical</Group>
+									<Behavior>Usual</Behavior>
 									<Representation>None</Representation>
 									<ShowTitle>false</ShowTitle>
 									<ExtendedTooltip name="СвойстваАутентификацииОСExtendedTooltip" id="231"/>
@@ -761,6 +803,7 @@
 													<v8:content>Свойства параметры аутентификации ОС</v8:content>
 												</v8:item>
 											</Title>
+											<Behavior>Usual</Behavior>
 											<Representation>None</Representation>
 											<ShowTitle>false</ShowTitle>
 											<ExtendedTooltip name="СвойстваПараметрыАутентификацииОСExtendedTooltip" id="233"/>
@@ -803,6 +846,7 @@
 									</Title>
 									<HorizontalStretch>false</HorizontalStretch>
 									<Group>Vertical</Group>
+									<Behavior>Usual</Behavior>
 									<Representation>NormalSeparation</Representation>
 									<ChildItemsWidth>Equal</ChildItemsWidth>
 									<ShowTitle>false</ShowTitle>
@@ -843,6 +887,7 @@
 								</v8:item>
 							</Title>
 							<Group>Vertical</Group>
+							<Behavior>Usual</Behavior>
 							<Representation>None</Representation>
 							<ShowTitle>false</ShowTitle>
 							<ExtendedTooltip name="ОтображениеРолейExtendedTooltip" id="239"/>
@@ -1653,6 +1698,15 @@
 			<Representation>Text</Representation>
 			<ModifiesSavedData>true</ModifiesSavedData>
 		</Command>
+		<Command name="ВыбратьФотографию" id="10">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Выбрать фотографию...</v8:content>
+				</v8:item>
+			</Title>
+			<Action>ВыбратьФотографию</Action>
+		</Command>
 	</Commands>
 	<Parameters>
 		<Parameter name="ГруппаНовогоПользователя">
@@ -1669,7 +1723,7 @@
 	<CommandInterface>
 		<NavigationPanel>
 			<Item>
-				<Command>4:440d115d-a769-427e-891a-88d65fba2057</Command>
+				<Command>0</Command>
 				<Type>Auto</Type>
 				<DefaultVisible>false</DefaultVisible>
 				<Visible>

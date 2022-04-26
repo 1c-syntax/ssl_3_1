@@ -1,11 +1,12 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.10">
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.13">
 	<Title>
 		<v8:item>
 			<v8:lang>ru</v8:lang>
 			<v8:content>Объединение элементов в один</v8:content>
 		</v8:item>
 	</Title>
+	<Width>60</Width>
 	<WindowOpeningMode>LockOwnerWindow</WindowOpeningMode>
 	<AutoTitle>false</AutoTitle>
 	<CommandSet>
@@ -99,10 +100,10 @@
 							</Title>
 							<ExtendedTooltip name="КоманднаяПанельВыбораОсновногоРасширеннаяПодсказка" id="67"/>
 							<ChildItems>
-								<Button name="МестаИспользованияОбъединить" id="27">
+								<Button name="ОтметитьКакОригинал" id="27">
 									<Type>CommandBarButton</Type>
-									<CommandName>Form.Command.УстановитьОсновным</CommandName>
-									<ExtendedTooltip name="МестаИспользованияОбъединитьРасширеннаяПодсказка" id="28"/>
+									<CommandName>Form.Command.ОтметитьКакОригинал</CommandName>
+									<ExtendedTooltip name="ОтметитьКакОригиналРасширеннаяПодсказка" id="28"/>
 								</Button>
 								<Button name="ОткрытьЭлемент" id="152">
 									<Type>CommandBarButton</Type>
@@ -138,18 +139,24 @@
 										</Button>
 									</ChildItems>
 								</ButtonGroup>
-								<Button name="СортироватьСписокПоВозрастанию" id="194">
-									<Type>CommandBarButton</Type>
-									<CommandName>Form.Item.МестаИспользования.StandardCommand.SortListAsc</CommandName>
-									<LocationInCommandBar>InCommandBarAndInAdditionalSubmenu</LocationInCommandBar>
-									<ExtendedTooltip name="СортироватьСписокПоВозрастаниюРасширеннаяПодсказка" id="195"/>
-								</Button>
-								<Button name="СортироватьСписокПоУбыванию" id="196">
-									<Type>CommandBarButton</Type>
-									<CommandName>Form.Item.МестаИспользования.StandardCommand.SortListDesc</CommandName>
-									<LocationInCommandBar>InCommandBarAndInAdditionalSubmenu</LocationInCommandBar>
-									<ExtendedTooltip name="СортироватьСписокПоУбываниюРасширеннаяПодсказка" id="197"/>
-								</Button>
+								<ButtonGroup name="ГруппаСортировать" id="241">
+									<Representation>Compact</Representation>
+									<ExtendedTooltip name="ГруппаСортироватьРасширеннаяПодсказка" id="242"/>
+									<ChildItems>
+										<Button name="СортироватьСписокПоВозрастанию" id="194">
+											<Type>CommandBarButton</Type>
+											<CommandName>Form.Item.МестаИспользования.StandardCommand.SortListAsc</CommandName>
+											<LocationInCommandBar>InCommandBarAndInAdditionalSubmenu</LocationInCommandBar>
+											<ExtendedTooltip name="СортироватьСписокПоВозрастаниюРасширеннаяПодсказка" id="195"/>
+										</Button>
+										<Button name="СортироватьСписокПоУбыванию" id="196">
+											<Type>CommandBarButton</Type>
+											<CommandName>Form.Item.МестаИспользования.StandardCommand.SortListDesc</CommandName>
+											<LocationInCommandBar>InCommandBarAndInAdditionalSubmenu</LocationInCommandBar>
+											<ExtendedTooltip name="СортироватьСписокПоУбываниюРасширеннаяПодсказка" id="197"/>
+										</Button>
+									</ChildItems>
+								</ButtonGroup>
 								<ButtonGroup name="ВсеДействия" id="60">
 									<Title>
 										<v8:item>
@@ -209,7 +216,7 @@
 										<ChildItems>
 											<Button name="МестаИспользованияКонтекстноеМенюУстановитьОсновным" id="154">
 												<Type>CommandBarButton</Type>
-												<CommandName>Form.Command.УстановитьОсновным</CommandName>
+												<CommandName>Form.Command.ОтметитьКакОригинал</CommandName>
 												<ExtendedTooltip name="МестаИспользованияКонтекстноеМенюУстановитьОсновнымРасширеннаяПодсказка" id="155"/>
 											</Button>
 											<Button name="МестаИспользованияКонтекстноеМенюОткрытьЭлемент" id="156">
@@ -389,6 +396,7 @@
 									<v8:content>Подсказка</v8:content>
 								</v8:item>
 							</Title>
+							<Behavior>Usual</Behavior>
 							<Representation>None</Representation>
 							<ShowTitle>false</ShowTitle>
 							<ExtendedTooltip name="ГруппаПодсказкаРасширеннаяПодсказка" id="37"/>
@@ -763,6 +771,7 @@
 					<v8:content>Панель действий мастера</v8:content>
 				</v8:item>
 			</Title>
+			<Behavior>Usual</Behavior>
 			<Representation>None</Representation>
 			<ShowTitle>false</ShowTitle>
 			<ExtendedTooltip name="ПанельДействийМастераРасширеннаяПодсказка" id="42"/>
@@ -1055,7 +1064,7 @@
 		</Attribute>
 	</Attributes>
 	<Commands>
-		<Command name="УстановитьОсновным" id="1">
+		<Command name="ОтметитьКакОригинал" id="1">
 			<Title>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
@@ -1072,7 +1081,7 @@
 				<xr:Ref>StdPicture.MoveRight</xr:Ref>
 				<xr:LoadTransparent>true</xr:LoadTransparent>
 			</Picture>
-			<Action>УстановитьОсновным</Action>
+			<Action>ОтметитьКакОригинал</Action>
 			<Representation>TextPicture</Representation>
 			<CurrentRowUse>DontUse</CurrentRowUse>
 		</Command>
