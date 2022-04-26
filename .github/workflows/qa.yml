@@ -32,9 +32,16 @@ jobs:
         run: echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
         id: extract_branch
 
-      - name: Извлечение версии пакета
+      - name: Получение description
         shell: bash
-        run: echo "##[set-output name=version;]`cat description.json | grep "\"Версия\":" | sed 's|[^"]*"||' | sed 's|[^"]*"||' | sed 's|[^"]*"||' | sed -r 's/".+//'`"
+        run: echo "##[set-output name=data;]$(cat description.json)\n"
+        id: description_data
+
+      - name: Извлечение версии пакета
+        uses: actions-ecosystem/action-regex-match@v2
+        with:
+          text: ${{ steps.description_data.outputs.data }}
+          regex: '"Версия".*\:.*"((?:\d+\.)+\d+)"'
         id: extract_version
 
       - name: Установка Sonar-scanner
@@ -47,4 +54,4 @@ jobs:
             -Dsonar.login=${{ secrets.SONARQUBE_TOKEN }}
             -Dsonar.host.url=${{ secrets.SONARQUBE_HOST }}
             -Dsonar.branch.name=${{ steps.extract_branch.outputs.branch }}
-            -Dsonar.projectVersion=${{ steps.extract_version.outputs.version }}
+            -Dsonar.projectVersion=${{ steps.extract_version.outputs.group1 }}
