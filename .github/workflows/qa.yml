@@ -40,7 +40,7 @@ jobs:
 
       - name: Получение description
         shell: bash
-        run: echo "##[set-output name=data;]$(cat description.json)\n"
+        run: echo "::set-output name=data::$(cat description.json | grep "\"Версия\"")"
         id: description_data
 
       - name: Извлечение версии пакета
