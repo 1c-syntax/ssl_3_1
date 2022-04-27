@@ -134,6 +134,45 @@
 										<Event name="ChoiceProcessing">СертификатОбработкаВыбора</Event>
 									</Events>
 								</InputField>
+								<UsualGroup name="ГруппаОтозван" id="483">
+									<Visible>false</Visible>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Группа отозван</v8:content>
+										</v8:item>
+									</Title>
+									<Behavior>Usual</Behavior>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="ГруппаОтозванРасширеннаяПодсказка" id="484"/>
+									<ChildItems>
+										<PictureDecoration name="ДекорацияОтозван" id="480">
+											<Title formatted="false">
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Декорация отозван</v8:content>
+												</v8:item>
+											</Title>
+											<Picture>
+												<xr:Ref>CommonPicture.Предупреждение</xr:Ref>
+												<xr:LoadTransparent>false</xr:LoadTransparent>
+											</Picture>
+											<ContextMenu name="ДекорацияОтозванКонтекстноеМеню" id="481"/>
+											<ExtendedTooltip name="ДекорацияОтозванРасширеннаяПодсказка" id="482"/>
+										</PictureDecoration>
+										<LabelDecoration name="ДекорацияОтозванНадпись" id="485">
+											<AutoMaxWidth>false</AutoMaxWidth>
+											<Title formatted="false">
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Сертификат помечен в программе как отозванный. Выберите другой сертификат.</v8:content>
+												</v8:item>
+											</Title>
+											<ContextMenu name="ДекорацияОтозванНадписьКонтекстноеМеню" id="486"/>
+											<ExtendedTooltip name="ДекорацияОтозванНадписьРасширеннаяПодсказка" id="487"/>
+										</LabelDecoration>
+									</ChildItems>
+								</UsualGroup>
 								<UsualGroup name="ГруппаПароль" id="454">
 									<Title>
 										<v8:item>
@@ -530,6 +569,11 @@
 			</Title>
 			<Type>
 				<v8:Type>cfg:EnumRef.ТипыПодписиКриптографии</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="СертификатОтозван" id="25">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
 			</Type>
 		</Attribute>
 	</Attributes>
