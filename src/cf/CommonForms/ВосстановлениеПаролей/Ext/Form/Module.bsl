@@ -165,7 +165,7 @@
 &НаКлиенте
 Процедура НаименованиеКонфигурации(Команда)
 	
-	ВставитьПараметрВШаблон("&ConfigurationPresentation");
+	ВставитьПараметрВШаблон("&ApplicationPresentation");
 	
 КонецПроцедуры
 
@@ -531,7 +531,7 @@
 	|Если восстановление пароля не запрашивалось, сообщите об этом техническому специалисту.'");
 	
 	ТекстСообщенияHTML = СтроковыеФункцииКлиентСервер.ПодставитьПараметрыВСтроку(ШаблонСообщенияHTML,
-		"&UserPresentation", "&ConfigurationPresentation", "&VerificationCode");
+		"&UserPresentation", "&ApplicationPresentation", "&VerificationCode");
 	
 	Возврат ТекстСообщенияHTML;
 	
