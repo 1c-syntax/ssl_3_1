@@ -21,20 +21,31 @@
 				<CommandName>Form.Command.ДобавитьПолеНастройки</CommandName>
 				<ExtendedTooltip name="ФормаДобавитьПолеНастройкиРасширеннаяПодсказка" id="67"/>
 			</Button>
-			<Button name="УдаляемыеОбъекты" id="81">
-				<Type>CommandBarButton</Type>
-				<Representation>Picture</Representation>
-				<Enabled>false</Enabled>
-				<HorizontalStretch>true</HorizontalStretch>
-				<GroupHorizontalAlign>Right</GroupHorizontalAlign>
-				<CommandName>Form.Command.УдаляемыеОбъекты</CommandName>
-				<Picture>
-					<xr:Ref>CommonPicture.ДлительнаяОперация16</xr:Ref>
-					<xr:LoadTransparent>false</xr:LoadTransparent>
-				</Picture>
-				<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
-				<ExtendedTooltip name="УдаляемыеОбъектыРасширеннаяПодсказка" id="82"/>
-			</Button>
+			<ButtonGroup name="ФормаГруппаУдаляемыеОбъекты" id="83">
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Удаляемые объекты</v8:content>
+					</v8:item>
+				</Title>
+				<ExtendedTooltip name="ФормаГруппаУдаляемыеОбъектыРасширеннаяПодсказка" id="84"/>
+				<ChildItems>
+					<Button name="УдаляемыеОбъекты" id="81">
+						<Type>CommandBarButton</Type>
+						<Representation>Picture</Representation>
+						<Enabled>false</Enabled>
+						<HorizontalStretch>true</HorizontalStretch>
+						<GroupHorizontalAlign>Right</GroupHorizontalAlign>
+						<CommandName>Form.Command.УдаляемыеОбъекты</CommandName>
+						<Picture>
+							<xr:Ref>CommonPicture.ДлительнаяОперация16</xr:Ref>
+							<xr:LoadTransparent>false</xr:LoadTransparent>
+						</Picture>
+						<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
+						<ExtendedTooltip name="УдаляемыеОбъектыРасширеннаяПодсказка" id="82"/>
+					</Button>
+				</ChildItems>
+			</ButtonGroup>
 		</ChildItems>
 	</AutoCommandBar>
 	<Events>
@@ -44,13 +55,14 @@
 	<ChildItems>
 		<Table name="НастройкиОтображенияОбъектов" id="19" DisplayImportance="Usual">
 			<Representation>Tree</Representation>
+			<TitleLocation>Auto</TitleLocation>
 			<ChangeRowOrder>false</ChangeRowOrder>
 			<RowSelectionMode>Row</RowSelectionMode>
 			<DataPath>НастройкиОтображенияОбъектов</DataPath>
 			<Title>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Настройки отображения объектов</v8:content>
+					<v8:content>Выводить реквизиты в списке помеченных на удаление</v8:content>
 				</v8:item>
 			</Title>
 			<ContextMenu name="КонтекстноеМеню" id="21">
@@ -140,22 +152,10 @@
 					<v8:content>Способ удаления</v8:content>
 				</v8:item>
 			</Title>
-			<ToolTip>
-				<v8:item>
-					<v8:lang>ru</v8:lang>
-					<v8:content>Стандартный - удалить с контролем ссылочной целостности.
-
-Упрощенный - не проверять помеченные на удаление места использования и удалить с контролем ссылочной целостности.
-В помеченных на удалениях местах использования ссылки на удаляемые объекты будут очищены.
-
-Ускоренный - удалить в монопольном режиме.</v8:content>
-				</v8:item>
-			</ToolTip>
-			<ToolTipRepresentation>Button</ToolTipRepresentation>
 			<Group>Vertical</Group>
-			<Behavior>Collapsible</Behavior>
+			<Behavior>Usual</Behavior>
 			<ControlRepresentation>Picture</ControlRepresentation>
-			<Representation>None</Representation>
+			<Representation>NormalSeparation</Representation>
 			<ExtendedTooltip name="Группа1РасширеннаяПодсказка1" id="59"/>
 			<ChildItems>
 				<RadioButtonField name="ОбычноеУдаление" id="63">
@@ -274,7 +274,7 @@
 			</Title>
 			<Group>Vertical</Group>
 			<Behavior>Usual</Behavior>
-			<Representation>None</Representation>
+			<Representation>NormalSeparation</Representation>
 			<ShowTitle>false</ShowTitle>
 			<ExtendedTooltip name="Группа1РасширеннаяПодсказка" id="48"/>
 			<ChildItems>
@@ -472,9 +472,15 @@
 			<Title>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Добавить настройку</v8:content>
+					<v8:content>Добавить настройку...</v8:content>
 				</v8:item>
 			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Добавить настройку для выводимых реквизитов</v8:content>
+				</v8:item>
+			</ToolTip>
 			<Picture>
 				<xr:Ref>StdPicture.CreateFolder</xr:Ref>
 				<xr:LoadTransparent>true</xr:LoadTransparent>
@@ -485,9 +491,15 @@
 			<Title>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Добавить поле настройки</v8:content>
+					<v8:content>Добавить выводимый реквизит...</v8:content>
 				</v8:item>
 			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Добавить выводимый реквизит</v8:content>
+				</v8:item>
+			</ToolTip>
 			<Picture>
 				<xr:Ref>StdPicture.CreateListItem</xr:Ref>
 				<xr:LoadTransparent>true</xr:LoadTransparent>

@@ -94,6 +94,44 @@
 		<Event name="FillCheckProcessingAtServer">ОбработкаПроверкиЗаполненияНаСервере</Event>
 	</Events>
 	<ChildItems>
+		<UsualGroup name="ПредупреждениеГруппа" id="310">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Предупреждение группа</v8:content>
+				</v8:item>
+			</Title>
+			<Behavior>Usual</Behavior>
+			<ShowTitle>false</ShowTitle>
+			<BackColor>style:ЦветФонаВнимание</BackColor>
+			<ExtendedTooltip name="ПредупреждениеГруппаРасширеннаяПодсказка" id="311"/>
+			<ChildItems>
+				<PictureDecoration name="ПредупреждениеКартинка" id="315">
+					<Picture>
+						<xr:Ref>CommonPicture.Предупреждение</xr:Ref>
+						<xr:LoadTransparent>false</xr:LoadTransparent>
+					</Picture>
+					<ContextMenu name="ПредупреждениеКартинкаКонтекстноеМеню" id="316"/>
+					<ExtendedTooltip name="ПредупреждениеКартинкаРасширеннаяПодсказка" id="317"/>
+				</PictureDecoration>
+				<LabelDecoration name="Предупреждение" id="312">
+					<AutoMaxWidth>false</AutoMaxWidth>
+					<MaxWidth>84</MaxWidth>
+					<HorizontalStretch>true</HorizontalStretch>
+					<Title formatted="false">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Предупреждение</v8:content>
+						</v8:item>
+					</Title>
+					<ContextMenu name="ПредупреждениеКонтекстноеМеню" id="313"/>
+					<ExtendedTooltip name="ПредупреждениеРасширеннаяПодсказка" id="314"/>
+					<Events>
+						<Event name="URLProcessing">ПредупреждениеОбработкаНавигационнойСсылки</Event>
+					</Events>
+				</LabelDecoration>
+			</ChildItems>
+		</UsualGroup>
 		<UsualGroup name="СостояниеСертификатаГруппа" id="276">
 			<Title>
 				<v8:item>

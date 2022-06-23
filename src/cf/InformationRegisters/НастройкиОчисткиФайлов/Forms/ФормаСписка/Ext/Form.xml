@@ -90,6 +90,7 @@
 		</ChildItems>
 	</AutoCommandBar>
 	<Events>
+		<Event name="NotificationProcessing">ОбработкаОповещения</Event>
 		<Event name="OnOpen">ПриОткрытии</Event>
 		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
 	</Events>
@@ -424,8 +425,7 @@
 					<ChildItems>
 						<CheckBoxField name="АвтоматическиОчищатьНенужныеФайлы" id="66">
 							<DataPath>АвтоматическиОчищатьНенужныеФайлы</DataPath>
-							<ReadOnly>true</ReadOnly>
-							<TitleLocation>None</TitleLocation>
+							<TitleLocation>Right</TitleLocation>
 							<CheckBoxType>Auto</CheckBoxType>
 							<ContextMenu name="АвтоматическиОчищатьНенужныеФайлыКонтекстноеМеню" id="67"/>
 							<ExtendedTooltip name="АвтоматическиОчищатьНенужныеФайлыРасширеннаяПодсказка" id="68"/>
@@ -433,110 +433,46 @@
 								<Event name="OnChange">АвтоматическиОчищатьНенужныеФайлыПриИзменении</Event>
 							</Events>
 						</CheckBoxField>
-						<UsualGroup name="НастройкаОчисткиФайла" id="132">
-							<Title>
-								<v8:item>
-									<v8:lang>ru</v8:lang>
-									<v8:content>Настройка</v8:content>
-								</v8:item>
-							</Title>
-							<TitleTextColor>style:ГиперссылкаЦвет</TitleTextColor>
-							<Group>Vertical</Group>
-							<Behavior>PopUp</Behavior>
-							<Representation>None</Representation>
-							<ExtendedTooltip name="НастройкаОчисткиФайлаРасширеннаяПодсказка" id="133"/>
-							<ChildItems>
-								<RadioButtonField name="РежимОчисткиФайловНеОчищать" id="134">
-									<DataPath>РежимОчисткиФайлов</DataPath>
-									<TitleLocation>None</TitleLocation>
-									<RadioButtonType>RadioButtons</RadioButtonType>
-									<ChoiceList>
-										<xr:Item>
-											<xr:Presentation/>
-											<xr:CheckState>0</xr:CheckState>
-											<xr:Value xsi:type="FormChoiceListDesTimeValue">
-												<Presentation>
-													<v8:item>
-														<v8:lang>ru</v8:lang>
-														<v8:content>Не очищать</v8:content>
-													</v8:item>
-												</Presentation>
-												<Value xsi:type="xr:DesignTimeRef">Enum.РежимыОчисткиФайлов.EnumValue.НеОчищать</Value>
-											</xr:Value>
-										</xr:Item>
-									</ChoiceList>
-									<ContextMenu name="РежимОчисткиФайловНеОчищатьКонтекстноеМеню" id="135"/>
-									<ExtendedTooltip name="РежимОчисткиФайловНеОчищатьРасширеннаяПодсказка" id="136"/>
-									<Events>
-										<Event name="OnChange">РежимОчисткиФайловПриИзменении</Event>
-									</Events>
-								</RadioButtonField>
-								<RadioButtonField name="РежимОчисткиФайловОчищатьУдаленные" id="146">
-									<DataPath>РежимОчисткиФайлов</DataPath>
-									<TitleLocation>None</TitleLocation>
-									<RadioButtonType>RadioButtons</RadioButtonType>
-									<ChoiceList>
-										<xr:Item>
-											<xr:Presentation/>
-											<xr:CheckState>0</xr:CheckState>
-											<xr:Value xsi:type="FormChoiceListDesTimeValue">
-												<Presentation>
-													<v8:item>
-														<v8:lang>ru</v8:lang>
-														<v8:content>Очищать удаленные</v8:content>
-													</v8:item>
-												</Presentation>
-												<Value xsi:type="xr:DesignTimeRef">Enum.РежимыОчисткиФайлов.EnumValue.ОчищатьУдаленные</Value>
-											</xr:Value>
-										</xr:Item>
-									</ChoiceList>
-									<ContextMenu name="РежимОчисткиФайловОчищатьУдаленныеКонтекстноеМеню" id="147"/>
-									<ExtendedTooltip name="РежимОчисткиФайловОчищатьУдаленныеРасширеннаяПодсказка" id="148"/>
-									<Events>
-										<Event name="OnChange">РежимОчисткиФайловПриИзменении</Event>
-									</Events>
-								</RadioButtonField>
-								<RadioButtonField name="РежимОчисткиФайловОчищатьУдаленныеИНенужные" id="143">
-									<DataPath>РежимОчисткиФайлов</DataPath>
-									<TitleLocation>None</TitleLocation>
-									<RadioButtonType>RadioButtons</RadioButtonType>
-									<ChoiceList>
-										<xr:Item>
-											<xr:Presentation/>
-											<xr:CheckState>0</xr:CheckState>
-											<xr:Value xsi:type="FormChoiceListDesTimeValue">
-												<Presentation>
-													<v8:item>
-														<v8:lang>ru</v8:lang>
-														<v8:content>Очищать удаленные и ненужные</v8:content>
-													</v8:item>
-												</Presentation>
-												<Value xsi:type="xr:DesignTimeRef">Enum.РежимыОчисткиФайлов.EnumValue.ОчищатьУдаленныеИНенужные</Value>
-											</xr:Value>
-										</xr:Item>
-									</ChoiceList>
-									<ContextMenu name="РежимОчисткиФайловОчищатьУдаленныеИНенужныеКонтекстноеМеню" id="144"/>
-									<ExtendedTooltip name="РежимОчисткиФайловОчищатьУдаленныеИНенужныеРасширеннаяПодсказка" id="145"/>
-									<Events>
-										<Event name="OnChange">РежимОчисткиФайловПриИзменении</Event>
-									</Events>
-								</RadioButtonField>
-							</ChildItems>
-						</UsualGroup>
-						<LabelDecoration name="НадписьНастройкаОчистки" id="137">
-							<Visible>false</Visible>
-							<Title formatted="true">
-								<v8:item>
-									<v8:lang>ru</v8:lang>
-									<v8:content>Автоматически очищать удаленные файлы</v8:content>
-								</v8:item>
-							</Title>
-							<ContextMenu name="НадписьНастройкаОчисткиКонтекстноеМеню" id="138"/>
-							<ExtendedTooltip name="НадписьНастройкаОчисткиРасширеннаяПодсказка" id="139"/>
+						<InputField name="РежимОчисткиФайлов" id="143">
+							<DataPath>РежимОчисткиФайлов</DataPath>
+							<TitleLocation>None</TitleLocation>
+							<Width>20</Width>
+							<HorizontalStretch>false</HorizontalStretch>
+							<ListChoiceMode>true</ListChoiceMode>
+							<ChoiceList>
+								<xr:Item>
+									<xr:Presentation/>
+									<xr:CheckState>0</xr:CheckState>
+									<xr:Value xsi:type="FormChoiceListDesTimeValue">
+										<Presentation>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Удаленные и ненужные файлы</v8:content>
+											</v8:item>
+										</Presentation>
+										<Value xsi:type="xr:DesignTimeRef">Enum.РежимыОчисткиФайлов.EnumValue.ОчищатьУдаленныеИНенужные</Value>
+									</xr:Value>
+								</xr:Item>
+								<xr:Item>
+									<xr:Presentation/>
+									<xr:CheckState>0</xr:CheckState>
+									<xr:Value xsi:type="FormChoiceListDesTimeValue">
+										<Presentation>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Только удаленные файлы</v8:content>
+											</v8:item>
+										</Presentation>
+										<Value xsi:type="xr:DesignTimeRef">Enum.РежимыОчисткиФайлов.EnumValue.ОчищатьУдаленные</Value>
+									</xr:Value>
+								</xr:Item>
+							</ChoiceList>
+							<ContextMenu name="РежимОчисткиФайловКонтекстноеМеню" id="144"/>
+							<ExtendedTooltip name="РежимОчисткиФайловРасширеннаяПодсказка" id="145"/>
 							<Events>
-								<Event name="URLProcessing">НадписьНастройкаОчисткиОбработкаНавигационнойСсылки</Event>
+								<Event name="OnChange">РежимОчисткиФайловПриИзменении</Event>
 							</Events>
-						</LabelDecoration>
+						</InputField>
 						<Button name="НастроитьРасписание" id="76">
 							<Type>Hyperlink</Type>
 							<CommandName>Form.Command.НастроитьРасписание</CommandName>
@@ -668,7 +604,7 @@
 			<Title>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Автоматически очищать ненужные файлы</v8:content>
+					<v8:content>Автоматически очищать ненужные файлы:</v8:content>
 				</v8:item>
 			</Title>
 			<Type>
@@ -870,7 +806,7 @@
 			<ToolTip>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Объем ненужных файлов</v8:content>
+					<v8:content>Файлы, которые подлежат очистке согласно настройкам</v8:content>
 				</v8:item>
 			</ToolTip>
 			<Action>ОбъемНенужныхФайлов</Action>
@@ -880,7 +816,7 @@
 			<Title>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Настроить расписание</v8:content>
+					<v8:content>настроить расписание</v8:content>
 				</v8:item>
 			</Title>
 			<ToolTip>
@@ -899,6 +835,12 @@
 					<v8:content>Объем удаленных файлов</v8:content>
 				</v8:item>
 			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Файлы, которых не существует в программе, но имеются в томе на диске</v8:content>
+				</v8:item>
+			</ToolTip>
 			<Action>ОбъемУдаленныхФайлов</Action>
 		</Command>
 		<Command name="ПерейтиКСписку" id="13">

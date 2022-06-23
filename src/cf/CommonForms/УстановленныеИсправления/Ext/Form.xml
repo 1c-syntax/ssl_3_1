@@ -119,6 +119,11 @@
 						<LocationInCommandBar>InCommandBarAndInAdditionalSubmenu</LocationInCommandBar>
 						<ExtendedTooltip name="ФормаУдалитьИсправлениеРасширеннаяПодсказка" id="49"/>
 					</Button>
+					<Button name="УстановленныеИсправленияЗакрыть" id="110">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.StandardCommand.Close</CommandName>
+						<ExtendedTooltip name="УстановленныеИсправленияЗакрытьРасширеннаяПодсказка" id="111"/>
+					</Button>
 					<Button name="УстановленныеИсправленияСправка" id="72">
 						<Type>CommandBarButton</Type>
 						<CommandName>Form.StandardCommand.Help</CommandName>
@@ -504,7 +509,10 @@
 			</Columns>
 		</Attribute>
 		<Attribute name="Фильтр" id="3">
-			<Type/>
+			<Type>
+				<v8:Type>v8:ValueListType</v8:Type>
+			</Type>
+			<Settings xsi:type="v8:TypeDescription"/>
 		</Attribute>
 		<Attribute name="РазделениеВключено" id="9">
 			<Type>
@@ -512,6 +520,11 @@
 			</Type>
 		</Attribute>
 		<Attribute name="ЭтоПодчиненныйУзелРИБ" id="10">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ПриОбновлении" id="11">
 			<Type>
 				<v8:Type>xs:boolean</v8:Type>
 			</Type>
@@ -542,6 +555,11 @@
 	<Parameters>
 		<Parameter name="Исправления">
 			<Type/>
+		</Parameter>
+		<Parameter name="ПриОбновлении">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
 		</Parameter>
 	</Parameters>
 </Form>
