@@ -144,6 +144,11 @@
 				<Event name="Selection">СписокВыбор</Event>
 			</Events>
 			<ChildItems>
+				<InputField name="ОбластьДанныхВспомогательныеДанные" id="71">
+					<DataPath>Список.ОбластьДанныхВспомогательныеДанные</DataPath>
+					<ContextMenu name="ОбластьДанныхВспомогательныеДанныеКонтекстноеМеню" id="72"/>
+					<ExtendedTooltip name="ОбластьДанныхВспомогательныеДанныеРасширеннаяПодсказка" id="73"/>
+				</InputField>
 				<LabelField name="ИмяОбработчика" id="16">
 					<DataPath>Список.ИмяОбработчика</DataPath>
 					<DefaultItem>true</DefaultItem>
@@ -182,6 +187,20 @@
 				</LabelField>
 			</ChildItems>
 		</Table>
+		<LabelDecoration name="ПрогрессОбновленияОбластейДанных" id="74">
+			<Title formatted="false">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Прогресс обновления областей данных</v8:content>
+				</v8:item>
+			</Title>
+			<Hyperlink>true</Hyperlink>
+			<ContextMenu name="ПрогрессОбновленияОбластейДанныхКонтекстноеМеню" id="75"/>
+			<ExtendedTooltip name="ПрогрессОбновленияОбластейДанныхРасширеннаяПодсказка" id="76"/>
+			<Events>
+				<Event name="Click">ПрогрессОбновленияОбластейДанныхНажатие</Event>
+			</Events>
+		</LabelDecoration>
 	</ChildItems>
 	<Attributes>
 		<Attribute name="Список" id="1">
@@ -218,7 +237,8 @@
        ОбработчикиОбновления.ИтерацияЗапуска, 
        ОбработчикиОбновления.ОбрабатываемыеДанные, 
        ОбработчикиОбновления.РежимВыполненияОтложенногоОбработчика, 
-       ОбработчикиОбновления.ИзменяемыеОбъекты
+       ОбработчикиОбновления.ИзменяемыеОбъекты,
+       ОбработчикиОбновления.ОбластьДанныхВспомогательныеДанные
  ИЗ 
        РегистрСведений.ОбработчикиОбновления
  КАК 
@@ -261,6 +281,20 @@
 			</Title>
 			<Type>
 				<v8:Type>cfg:EnumRef.РежимыВыполненияОбработчиков</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ДоступноИспользованиеРазделенныхДанных" id="4">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ОтчетПрогрессОбновления" id="5">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
 			</Type>
 		</Attribute>
 	</Attributes>
