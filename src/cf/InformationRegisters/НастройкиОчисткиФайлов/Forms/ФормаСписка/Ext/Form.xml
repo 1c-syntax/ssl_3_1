@@ -339,6 +339,7 @@
 											<ChildItems>
 												<Button name="Очистить" id="69">
 													<Type>UsualButton</Type>
+													<Representation>PictureAndText</Representation>
 													<CommandName>Form.Command.Очистить</CommandName>
 													<ExtendedTooltip name="ОчиститьРасширеннаяПодсказка" id="70"/>
 												</Button>
@@ -368,6 +369,11 @@
 										</Page>
 									</ChildItems>
 								</Pages>
+								<Button name="ОбновитьСведения" id="151">
+									<Type>UsualButton</Type>
+									<CommandName>Form.Command.ОбновитьСведения</CommandName>
+									<ExtendedTooltip name="ОбновитьСведенияРасширеннаяПодсказка" id="152"/>
+								</Button>
 								<UsualGroup name="ИнформацияОРазмереФайлов" id="130">
 									<Title>
 										<v8:item>
@@ -408,6 +414,7 @@
 			</Title>
 			<Group>Vertical</Group>
 			<Behavior>Usual</Behavior>
+			<Representation>NormalSeparation</Representation>
 			<ShowTitle>false</ShowTitle>
 			<ExtendedTooltip name="ОчисткаПоРасписаниюРасширеннаяПодсказка" id="63"/>
 			<ChildItems>
@@ -790,9 +797,13 @@
 			<ToolTip>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Очистить</v8:content>
+					<v8:content>Очистить ненужные файлы</v8:content>
 				</v8:item>
 			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.Delete</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
 			<Action>Очистить</Action>
 			<CurrentRowUse>DontUse</CurrentRowUse>
 		</Command>
@@ -857,6 +868,26 @@
 				</v8:item>
 			</ToolTip>
 			<Action>ПерейтиКСписку</Action>
+		</Command>
+		<Command name="ОбновитьСведения" id="14">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Обновить</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Обновить сведения об удаляемых файлах</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.Refresh</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>ОбновитьСведения</Action>
+			<Representation>Picture</Representation>
 		</Command>
 	</Commands>
 </Form>

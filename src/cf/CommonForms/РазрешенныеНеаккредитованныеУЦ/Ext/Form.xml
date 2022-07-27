@@ -4,8 +4,22 @@
 	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
 	<Events>
 		<Event name="AfterWrite">ПослеЗаписи</Event>
+		<Event name="OnOpen">ПриОткрытии</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
 	</Events>
 	<ChildItems>
+		<LabelDecoration name="ДекорацияНадпись" id="6">
+			<Visible>false</Visible>
+			<Title formatted="false">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>УЦ сертификата добавлен в список разрешенных УЦ</v8:content>
+				</v8:item>
+			</Title>
+			<BackColor>style:ToolTipBackColor</BackColor>
+			<ContextMenu name="ДекорацияНадписьКонтекстноеМеню" id="7"/>
+			<ExtendedTooltip name="ДекорацияНадписьРасширеннаяПодсказка" id="8"/>
+		</LabelDecoration>
 		<UsualGroup name="ГруппаРазрешенныеНеаккредитованныеУЦ" id="4">
 			<Title>
 				<v8:item>
@@ -21,16 +35,21 @@
 					<DataPath>НаборКонстант.РазрешенныеНеаккредитованныеУЦ</DataPath>
 					<ToolTipRepresentation>ShowBottom</ToolTipRepresentation>
 					<EditMode>EnterOnInput</EditMode>
+					<Height>5</Height>
 					<MultiLine>true</MultiLine>
+					<EditTextUpdate>OnValueChange</EditTextUpdate>
 					<ContextMenu name="РазрешенныеНеаккредитованныеУЦКонтекстноеМеню" id="2"/>
 					<ExtendedTooltip name="РазрешенныеНеаккредитованныеУЦРасширеннаяПодсказка" id="3">
 						<Title formatted="false">
 							<v8:item>
 								<v8:lang>ru</v8:lang>
-								<v8:content>Список ОГРН (через запятую) удостоверяющих центров, потерявших аккредитацию, подписание сертификатами которых разрешено, подписи считаются верными.</v8:content>
+								<v8:content>Список ОГРН (с новой строки или через запятую) удостоверяющих центров, потерявших аккредитацию, подписание сертификатами которых разрешено, подписи считаются верными.</v8:content>
 							</v8:item>
 						</Title>
 					</ExtendedTooltip>
+					<Events>
+						<Event name="EditTextChange">РазрешенныеНеаккредитованныеУЦИзменениеТекстаРедактирования</Event>
+					</Events>
 				</InputField>
 			</ChildItems>
 		</UsualGroup>
@@ -43,5 +62,20 @@
 			<MainAttribute>true</MainAttribute>
 			<SavedData>true</SavedData>
 		</Attribute>
+		<Attribute name="ТекстПредупреждения" id="7">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
 	</Attributes>
+	<Parameters>
+		<Parameter name="Сертификат">
+			<Type/>
+			<KeyParameter>true</KeyParameter>
+		</Parameter>
+	</Parameters>
 </Form>

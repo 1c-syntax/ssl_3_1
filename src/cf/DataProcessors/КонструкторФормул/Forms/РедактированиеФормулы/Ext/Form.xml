@@ -21,6 +21,7 @@
 	<Events>
 		<Event name="BeforeClose">ПередЗакрытием</Event>
 		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+		<Event name="FillCheckProcessingAtServer">ОбработкаПроверкиЗаполненияНаСервере</Event>
 	</Events>
 	<ChildItems>
 		<TextDocumentField name="ПредставлениеФормулы" id="289">
@@ -88,6 +89,7 @@
 		</UsualGroup>
 		<InputField name="Наименование" id="560">
 			<DataPath>Наименование</DataPath>
+			<AutoMarkIncomplete>true</AutoMarkIncomplete>
 			<ContextMenu name="НаименованиеКонтекстноеМеню" id="561"/>
 			<ExtendedTooltip name="НаименованиеРасширеннаяПодсказка" id="562"/>
 		</InputField>
@@ -133,6 +135,7 @@
 				</v8:StringQualifiers>
 			</Type>
 			<SavedData>true</SavedData>
+			<FillCheck>ShowError</FillCheck>
 		</Attribute>
 		<Attribute name="ДляЗапроса" id="14">
 			<Type>

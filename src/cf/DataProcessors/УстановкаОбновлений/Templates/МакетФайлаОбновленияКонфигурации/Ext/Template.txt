@@ -360,9 +360,7 @@ function backupDB () {
     }
     
     var fileDB = oFileSystemObject.GetFile(BaseFileName)
-    
     requiredFreeSize = fileDB.size * 2
-    
     if (drive.FreeSpace < requiredFreeSize) {
       throw new Error(
        format('[СообщениеДисковогоПространстваНедостаточно]',
@@ -373,11 +371,18 @@ function backupDB () {
           DriveTypeName(drive.DriveType)
         )
       )
+    } else {
+      log(format('[СообщениеДисковогоПространстваДостаточно]',
+          drive.DriveLetter,
+          drive.FreeSpace / 1024 / 1024,
+          fileDB.size / 1024 / 1024,
+          DriveTypeName(drive.DriveType)
+        ), 
+        false)
     }
     
     oFileSystemObject.CopyFile(BaseFileName, backupFileName, true)
-    
-    log(format('[СообщениеРезультатСозданияРезервнойКопииБазы]', ret), ret !== 0)
+    log('[СообщениеРезультатСозданияРезервнойКопииБазы]', false)
     
   } catch (e) {
     CollectGarbage()
