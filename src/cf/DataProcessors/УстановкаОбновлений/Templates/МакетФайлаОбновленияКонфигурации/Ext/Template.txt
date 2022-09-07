@@ -329,7 +329,7 @@ function backupDB () {
     }
     
     if (oFileSystemObject.FileExists(backupFileName)) {
-      var ThisFile = oFileSystemObject.GetFile(BaseFileName)
+      var ThisFile = oFileSystemObject.GetFile(backupFileName)
       throw new Error(
         format('[СообщениеПараметрыФайлаРезервнойКопии]',
           backupFileName,
@@ -359,8 +359,25 @@ function backupDB () {
       throw new Error(format('[СообщениеДискНедоступен]', backupFileName))
     }
     
+    var waitBaseFile = true
+    while (waitBaseFile) {
+      try {
+        var oFile = oFileSystemObject.OpenTextFile(BaseFileName, ForAppending, true, TristateFalse)
+      } catch (ex) {
+        if (oHTA != null) {
+          return -1
+        } else {
+          WScript.Echo(ex.message) 
+          WScript.Sleep(18 * 1000) // Ждем и повторяем проверку, освободился ли файл ИБ.
+        }
+        continue;
+      }
+      oFile.Close()
+      waitBaseFile = false
+    }
+
     var fileDB = oFileSystemObject.GetFile(BaseFileName)
-    requiredFreeSize = fileDB.size * 2
+    var requiredFreeSize = fileDB.size * 2
     if (drive.FreeSpace < requiredFreeSize) {
       throw new Error(
        format('[СообщениеДисковогоПространстваНедостаточно]',
@@ -989,6 +1006,21 @@ function doExecuteLoadExt() {
   }  
   
   return result
+}
+
+
+function ClearTempFiles () {
+  var tempFiles = ['main.js', 'helpers.js', 'add-delete-patches.js', 'templog.txt', // общие файлы
+    'addsheduletask.js', 'updater.js',                         // неинтерактивный запуск
+    'splash.png', 'splash.ico', 'progress.gif', 'splash.hta']; // интерактивный запуск
+  
+  for (var i = 0; i < tempFiles.length; i++) {
+    try {
+      if (oFileSystemObject.FileExists(thisFileDir + '\\' + tempFiles[i])) {
+        oFileSystemObject.DeleteFile(thisFileDir + '\\' + tempFiles[i])
+      }
+    } catch (e) { }
+  }
 }
 
 if (oHTA != null) {

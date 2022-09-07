@@ -115,15 +115,15 @@
                 setProgress('[Шаг4ОбновлениеКонфигурации]')
                 break
               case 1:
-              	if (updateConfiguration){
+                if (updateConfiguration){
                   ret = updateDbCfg()
-                }       	
+                }
                 break
               case 2:
                 setProgress('[Шаг4ЗагрузкаРасширений]')
                 break
               case 3:
-               	if (loadExtentions) {
+                if (loadExtentions) {
                   ret = executeLoadExt()
                 }
                 break
@@ -208,7 +208,7 @@
       }
 
       // Последовательное выполнение шагов процедуры обновления.
-      // При отключении пользователей необходимо возвращаться на тот же шаг
+      // При резервном копировании и отключении пользователей может быть необходимо повторить попытку.
       if (ret !== -1) {
         step++
       }

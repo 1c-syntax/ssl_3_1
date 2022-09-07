@@ -44,18 +44,6 @@ function checkResult (ret) {
   WScript.Quit(ret)
 }
 
-function ClearTempFiles () {
-  // Удаляем временные файлы
-  try {
-    oFileSystemObject.DeleteFile(thisFileDir + '\\main.js')
-    oFileSystemObject.DeleteFile(thisFileDir + '\\helpers.js')
-    oFileSystemObject.DeleteFile(thisFileDir + '\\add-delete-patches.js')
-    oFileSystemObject.DeleteFile(thisFileDir + '\\addsheduletask.js')
-    oFileSystemObject.DeleteFile(thisFileDir + '\\templog.txt')
-    oFileSystemObject.DeleteFile(thisFileDir + '\\updater.js')
-  } catch (e) { }
-}
-
 setProgress('[СообщениеИнициализация]')
 var ret = initialize()
 checkResult(ret)
@@ -77,12 +65,12 @@ if (executeDeferredHandlers) {
 }
 
 if (cfgFileNames.length === 0) {
-  if (updateConfiguration){ 		
+  if (updateConfiguration){
     setProgress('[СообщениеОбновлениеКонфигурации]')
     ret = updateDbCfg()
     checkResult(ret)
   } 
-  if (loadExtentions){ 		
+  if (loadExtentions){
     setProgress('[СообщениеЗагрузкаРасширений]')
     ret = executeLoadExt()
     checkResult(ret)
