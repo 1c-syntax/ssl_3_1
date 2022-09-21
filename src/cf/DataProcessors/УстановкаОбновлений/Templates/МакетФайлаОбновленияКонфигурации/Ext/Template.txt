@@ -926,6 +926,8 @@ function addDeletePatches() {
   var fixFileNamesString = fixFileNames.join('\n')
   var removeFixNamesString = removeFixNames.join('\n')
 
+  registerCOM()
+  
   var result = runApp('wscript.exe',
     format('"{0}\\add-delete-patches.js" /ConnectionString:"{1}" /COMConnectorName:"{2}" /FixFileNames:"{3}" /RemoveFixNames:"{4}" /Out:"{5}\\{6}"',
       thisFileDir,
@@ -948,6 +950,8 @@ function DeletePatches() {
   }
  
  var Action = 'RemoveAll'
+ 
+ registerCOM()
  
  try {
    var result = runApp('wscript.exe',
