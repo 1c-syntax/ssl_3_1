@@ -80,27 +80,6 @@
 		</right>
 	</object>
 	<object>
-		<name>InformationRegister.ДанныеБизнесПроцессов</name>
-		<right>
-			<name>Read</name>
-			<value>true</value>
-			<restrictionByCondition>
-				<condition>#Если &amp;ОграничениеДоступаНаУровнеЗаписейУниверсально #Тогда
-#ДляОбъекта("Владелец")
-#Иначе
-#ПоЗначениямИНаборамРасширенный( "РегистрСведений.ДанныеБизнесПроцессов", "", "",
-"",
-"",
-"Объект","Т.Владелец","", "","","", "","","", "","","", "","","", "","","", "","","", "","","", "","","", "","","", "","","", "","","", "","","", "","","", "","","", "","","")
-#КонецЕсли</condition>
-			</restrictionByCondition>
-		</right>
-		<right>
-			<name>View</name>
-			<value>true</value>
-		</right>
-	</object>
-	<object>
 		<name>Configuration.БиблиотекаСтандартныхПодсистем</name>
 		<right>
 			<name>MainWindowModeNormal</name>
@@ -124,6 +103,27 @@
 		</right>
 		<right>
 			<name>AnalyticsSystemClient</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
+		<name>InformationRegister.ДанныеБизнесПроцессов</name>
+		<right>
+			<name>Read</name>
+			<value>true</value>
+			<restrictionByCondition>
+				<condition>#Если &amp;ОграничениеДоступаНаУровнеЗаписейУниверсально #Тогда
+#ДляОбъекта("Владелец")
+#Иначе
+#ПоЗначениямИНаборамРасширенный( "РегистрСведений.ДанныеБизнесПроцессов", "", "",
+"",
+"",
+"Объект","Т.Владелец","", "","","", "","","", "","","", "","","", "","","", "","","", "","","", "","","", "","","", "","","", "","","", "","","", "","","", "","","", "","","")
+#КонецЕсли</condition>
+			</restrictionByCondition>
+		</right>
+		<right>
+			<name>View</name>
 			<value>true</value>
 		</right>
 	</object>

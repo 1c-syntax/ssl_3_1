@@ -190,7 +190,7 @@
 					<ExtendedTooltip name="ГруппаПодтверждениеРасширеннаяПодсказка" id="37"/>
 					<ChildItems>
 						<CheckBoxField name="СогласиеСПодтверждаемойИнформацией1" id="27">
-							<DataPath>СогласиеСПодтверждаемойИнформацией</DataPath>
+							<DataPath>СогласиеСПодтверждаемойИнформацией1</DataPath>
 							<Title>
 								<v8:item>
 									<v8:lang>ru</v8:lang>
@@ -208,13 +208,58 @@
 							<Title formatted="true">
 								<v8:item>
 									<v8:lang>ru</v8:lang>
-									<v8:content>Подтверждаю ознакомление с информацией, содержащейся в квалифицированном сертификате
+									<v8:content>Подтверждаю ознакомление с информацией, содержащейся в &lt;link ПечатьСертификата&gt;квалифицированном сертификате&lt;/&gt;
 </v8:content>
 								</v8:item>
 							</Title>
 							<TitleHeight>2</TitleHeight>
 							<ContextMenu name="ДекорацияПодтверждениеКонтекстноеМеню" id="31"/>
 							<ExtendedTooltip name="ДекорацияПодтверждениеРасширеннаяПодсказка" id="32"/>
+							<Events>
+								<Event name="URLProcessing">ДекорацияПодтверждениеОбработкаНавигационнойСсылки</Event>
+							</Events>
+						</LabelDecoration>
+					</ChildItems>
+				</UsualGroup>
+				<UsualGroup name="ГруппаПодтверждение1" id="92">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Подтверждение</v8:content>
+						</v8:item>
+					</Title>
+					<Group>AlwaysHorizontal</Group>
+					<Behavior>Usual</Behavior>
+					<Representation>NormalSeparation</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаПодтверждение1РасширеннаяПодсказка" id="93"/>
+					<ChildItems>
+						<CheckBoxField name="СогласиеСПодтверждаемойИнформацией2" id="94">
+							<DataPath>СогласиеСПодтверждаемойИнформацией2</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Согласие</v8:content>
+								</v8:item>
+							</Title>
+							<TitleLocation>None</TitleLocation>
+							<TitleHeight>2</TitleHeight>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="СогласиеСПодтверждаемойИнформацией2КонтекстноеМеню" id="95"/>
+							<ExtendedTooltip name="СогласиеСПодтверждаемойИнформацией2РасширеннаяПодсказка" id="96"/>
+						</CheckBoxField>
+						<LabelDecoration name="ДекорацияПодтверждение1" id="97">
+							<Width>50</Width>
+							<Title formatted="true">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Подтверждаю ознакомление с &lt;link http://ca.1c.ru/rukovodstvo.pdf&gt;руководством по обеспечению безопасности &lt;/&gt;использования квалифицированной электронной подписи и средств квалифицированной электронной подписи
+</v8:content>
+								</v8:item>
+							</Title>
+							<TitleHeight>2</TitleHeight>
+							<ContextMenu name="ДекорацияПодтверждение1КонтекстноеМеню" id="98"/>
+							<ExtendedTooltip name="ДекорацияПодтверждение1РасширеннаяПодсказка" id="99"/>
 						</LabelDecoration>
 					</ChildItems>
 				</UsualGroup>
@@ -347,6 +392,30 @@
 				</v8:StringQualifiers>
 			</Type>
 		</Attribute>
+		<Attribute name="СогласиеСПодтверждаемойИнформацией1" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Согласие с подтверждаемой информацией</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+			<FillCheck>ShowError</FillCheck>
+		</Attribute>
+		<Attribute name="СогласиеСПодтверждаемойИнформацией2" id="7">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Согласие с подтверждаемой информацией</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+			<FillCheck>ShowError</FillCheck>
+		</Attribute>
 	</Attributes>
 	<Commands>
 		<Command name="Подтверждаю" id="1">
@@ -370,6 +439,11 @@
 		</Parameter>
 		<Parameter name="ОписаниеОшибки">
 			<Type/>
+		</Parameter>
+		<Parameter name="ДляПодтвержденияВЭлектронномВиде">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
 		</Parameter>
 	</Parameters>
 </Form>
