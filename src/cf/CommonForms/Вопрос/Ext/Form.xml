@@ -70,6 +70,33 @@
 					<ShowTitle>false</ShowTitle>
 					<ExtendedTooltip name="СтрокиExtendedTooltip" id="19"/>
 					<ChildItems>
+						<UsualGroup name="ТекстСообщенияФорматированнаяСтрокаГруппа" id="26">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Текст сообщения форматированная строка (группа)</v8:content>
+								</v8:item>
+							</Title>
+							<Behavior>Usual</Behavior>
+							<Representation>NormalSeparation</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ТекстСообщенияФорматированнаяСтрокаГруппаРасширеннаяПодсказка" id="27"/>
+							<ChildItems>
+								<LabelDecoration name="ТекстСообщенияФорматированнаяСтрока" id="23">
+									<Visible>false</Visible>
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<AutoMaxHeight>false</AutoMaxHeight>
+									<Title formatted="true">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content/>
+										</v8:item>
+									</Title>
+									<ContextMenu name="ТекстСообщенияФорматированнаяСтрокаКонтекстноеМеню" id="24"/>
+									<ExtendedTooltip name="ТекстСообщенияФорматированнаяСтрокаРасширеннаяПодсказка" id="25"/>
+								</LabelDecoration>
+							</ChildItems>
+						</UsualGroup>
 						<InputField name="МногострочныйТекстСообщения" id="10">
 							<DataPath>ТекстСообщения</DataPath>
 							<ReadOnly>true</ReadOnly>
@@ -170,6 +197,7 @@
 		</Parameter>
 		<Parameter name="ТекстСообщения">
 			<Type>
+				<v8:Type>v8ui:FormattedString</v8:Type>
 				<v8:Type>xs:string</v8:Type>
 				<v8:StringQualifiers>
 					<v8:Length>0</v8:Length>
