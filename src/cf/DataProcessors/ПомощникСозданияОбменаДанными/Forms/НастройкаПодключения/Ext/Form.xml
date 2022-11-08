@@ -1760,6 +1760,46 @@
 										</UsualGroup>
 									</ChildItems>
 								</UsualGroup>
+								<UsualGroup name="ГруппаВосстановлениеНастроекОбмена" id="834">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Восстановление настроек</v8:content>
+										</v8:item>
+									</Title>
+									<Behavior>Usual</Behavior>
+									<ExtendedTooltip name="ГруппаВосстановлениеНастроекОбменаРасширеннаяПодсказка" id="835"/>
+									<ChildItems>
+										<UsualGroup name="Группа7" id="836">
+											<Behavior>Usual</Behavior>
+											<Representation>None</Representation>
+											<ShowTitle>false</ShowTitle>
+											<ExtendedTooltip name="Группа7РасширеннаяПодсказка" id="837"/>
+											<ChildItems>
+												<PictureDecoration name="Декорация21" id="838">
+													<Picture>
+														<xr:Ref>CommonPicture.Предупреждение32</xr:Ref>
+														<xr:LoadTransparent>false</xr:LoadTransparent>
+													</Picture>
+													<ContextMenu name="Декорация21КонтекстноеМеню" id="839"/>
+													<ExtendedTooltip name="Декорация21РасширеннаяПодсказка" id="840"/>
+												</PictureDecoration>
+												<LabelDecoration name="Декорация12" id="841">
+													<Width>70</Width>
+													<Title formatted="true">
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>&lt;colorstyle -16&gt;Внимание!&lt;/&gt;
+Продолжение настройки приведет к изменению кода узла обмена для этой информационной базы. Если в базе уже существуют настроенные обмены, то это может привезти к их неработоспособности.</v8:content>
+														</v8:item>
+													</Title>
+													<ContextMenu name="Декорация12КонтекстноеМеню" id="842"/>
+													<ExtendedTooltip name="Декорация12РасширеннаяПодсказка" id="843"/>
+												</LabelDecoration>
+											</ChildItems>
+										</UsualGroup>
+									</ChildItems>
+								</UsualGroup>
 							</ChildItems>
 						</UsualGroup>
 					</ChildItems>
@@ -3131,6 +3171,34 @@
 		<Attribute name="УзелДляУдаления" id="41">
 			<Type>
 				<v8:TypeSet>cfg:ExchangePlanRef</v8:TypeSet>
+			</Type>
+		</Attribute>
+		<Attribute name="ВосстановлениеНастроекОбмена" id="20">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="НомерОтправленного" id="21">
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>10</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="НомерПринятого" id="29">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
 			</Type>
 		</Attribute>
 	</Attributes>

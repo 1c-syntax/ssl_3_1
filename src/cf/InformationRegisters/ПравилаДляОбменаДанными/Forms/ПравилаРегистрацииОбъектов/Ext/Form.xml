@@ -38,6 +38,12 @@
 				<CommandName>Form.Command.СохранитьПравилаРегистрацииВФайл</CommandName>
 				<ExtendedTooltip name="ФормаСохранитьПравилаРегистрацииВФайлРасширеннаяПодсказка" id="59"/>
 			</Button>
+			<Button name="ФормаСохранитьПравилаРегистрацииИзМакета" id="125">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.СохранитьПравилаРегистрацииИзМакета</CommandName>
+				<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
+				<ExtendedTooltip name="ФормаСохранитьПравилаРегистрацииИзМакетаРасширеннаяПодсказка" id="126"/>
+			</Button>
 		</ChildItems>
 	</AutoCommandBar>
 	<Events>
@@ -114,7 +120,7 @@
 										<Presentation>
 											<v8:item>
 												<v8:lang>ru</v8:lang>
-												<v8:content>Использовать типовые правила</v8:content>
+												<v8:content>Типовые правила из макета</v8:content>
 											</v8:item>
 										</Presentation>
 										<Value xsi:type="xr:DesignTimeRef">Enum.ИсточникиПравилДляОбменаДанными.EnumValue.МакетКонфигурации</Value>
@@ -205,7 +211,7 @@
 										<Presentation>
 											<v8:item>
 												<v8:lang>ru</v8:lang>
-												<v8:content>Использовать типовые правила</v8:content>
+												<v8:content>Правила из типового модуля</v8:content>
 											</v8:item>
 										</Presentation>
 										<Value xsi:type="xr:DesignTimeRef">Enum.ИсточникиПравилДляОбменаДанными.EnumValue.МенеджерТиповой</Value>
@@ -218,6 +224,34 @@
 								<Event name="OnChange">ИсточникПравилПриИзменении</Event>
 							</Events>
 						</RadioButtonField>
+						<InputField name="ИмяТиповогоМенеджераРегистрации" id="122">
+							<DataPath>ИмяТиповогоМенеджераРегистрации</DataPath>
+							<ReadOnly>true</ReadOnly>
+							<TitleLocation>None</TitleLocation>
+							<ToolTipRepresentation>Button</ToolTipRepresentation>
+							<ContextMenu name="ИмяТиповогоМенеджераРегистрацииКонтекстноеМеню" id="123"/>
+							<ExtendedTooltip name="ИмяТиповогоМенеджераРегистрацииРасширеннаяПодсказка" id="124">
+								<Title formatted="false">
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>В текущей конфигурации правила регистрации поставляются в общем модуле - менеджере регистрации. 
+
+Для того чтобы отредактировать правила регистрации мы предлагаем использовать механизм расширений конфигураций. При этом в расширении вы можете определить полностью свой модуль (рекомендуется при большом объеме правок) или применить расширение "поверх" текущего модуля регистрации.
+
+Для того чтобы использовать полностью свои правила регистрации, необходимо выбрать опцию "Правила из пользовательского модуля" и указать имя модуля с правилами регистрации. 
+
+При применении расширения "поверх" текущего модуля каких либо дополнительных настроек не требуется.
+
+Так же  сохранена возможность использовать "классические" правила из макета xml. Для этого необходимо выбрать опцию "Загрузить из правил на компьютере", и загрузить файл с правилами регистрации.
+
+Для того чтобы сохранить типовой макет с правилами регистрации xml, необходимо воспользоваться командой "Сохранить правила регистрации из макета (XML)" из меню "Еще".</v8:content>
+									</v8:item>
+								</Title>
+							</ExtendedTooltip>
+							<Events>
+								<Event name="OnChange">ИмяМенеджераРегистрацииПриИзменении</Event>
+							</Events>
+						</InputField>
 					</ChildItems>
 				</UsualGroup>
 				<UsualGroup name="ГруппаПравилаМенеджер" id="91">
@@ -246,7 +280,7 @@
 										<Presentation>
 											<v8:item>
 												<v8:lang>ru</v8:lang>
-												<v8:content>Использовать пользовательский модуль:</v8:content>
+												<v8:content>Правила из пользовательского модуля</v8:content>
 											</v8:item>
 										</Presentation>
 										<Value xsi:type="xr:DesignTimeRef">Enum.ИсточникиПравилДляОбменаДанными.EnumValue.МенеджерПользовательский</Value>
@@ -348,6 +382,37 @@
 										</Button>
 									</ChildItems>
 								</UsualGroup>
+								<UsualGroup name="ГруппаДействияСПравиламиИзФайлаМенеджер" id="116">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Действия с правилами из файла</v8:content>
+										</v8:item>
+									</Title>
+									<Behavior>Usual</Behavior>
+									<Representation>None</Representation>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="ГруппаДействияСПравиламиИзФайлаМенеджерРасширеннаяПодсказка" id="117"/>
+									<ChildItems>
+										<Button name="ЗагрузитьПравилаИзФайла1" id="118">
+											<Type>UsualButton</Type>
+											<Representation>Picture</Representation>
+											<SkipOnInput>true</SkipOnInput>
+											<CommandName>Form.Command.ЗагрузитьПравила</CommandName>
+											<ExtendedTooltip name="ЗагрузитьПравилаИзФайла1РасширеннаяПодсказка" id="119"/>
+										</Button>
+										<Button name="СохранитьПравилаВФайл" id="120">
+											<Type>UsualButton</Type>
+											<Representation>Picture</Representation>
+											<CommandName>Form.Command.СохранитьПравилаРегистрацииВФайл</CommandName>
+											<Picture>
+												<xr:Ref>StdPicture.SaveFile</xr:Ref>
+												<xr:LoadTransparent>true</xr:LoadTransparent>
+											</Picture>
+											<ExtendedTooltip name="СохранитьПравилаВФайлРасширеннаяПодсказка" id="121"/>
+										</Button>
+									</ChildItems>
+								</UsualGroup>
 							</ChildItems>
 						</UsualGroup>
 					</ChildItems>
@@ -400,6 +465,21 @@
 			<SavedData>true</SavedData>
 		</Attribute>
 		<Attribute name="СобытиеЖурналаРегистрацииЗагрузкаПравилДляОбменаДанными" id="4">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ИмяТиповогоМенеджераРегистрации" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Имя типового менеджера регистрации</v8:content>
+				</v8:item>
+			</Title>
 			<Type>
 				<v8:Type>xs:string</v8:Type>
 				<v8:StringQualifiers>
@@ -484,6 +564,21 @@
 				</v8:item>
 			</ToolTip>
 			<Action>ЗаписатьПравила</Action>
+		</Command>
+		<Command name="СохранитьПравилаРегистрацииИзМакета" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сохранить правила регистрации из макета (XML)</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сохранить правила регистрации из макета</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>СохранитьПравилаРегистрацииИзМакета</Action>
 		</Command>
 	</Commands>
 </Form>

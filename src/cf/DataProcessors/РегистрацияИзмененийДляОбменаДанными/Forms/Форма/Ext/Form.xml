@@ -1840,14 +1840,12 @@
 				</Page>
 			</ChildItems>
 		</Pages>
-		<UsualGroup name="ГруппаСкрытыхДанных" id="174">
-			<Visible>false</Visible>
-			<Enabled>false</Enabled>
+		<UsualGroup name="ГруппаДополнительнаяИнформация" id="174">
 			<EnableContentChange>true</EnableContentChange>
 			<Title>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Скрытых данных</v8:content>
+					<v8:content>Дополнительная информация</v8:content>
 				</v8:item>
 			</Title>
 			<ToolTip>
@@ -1856,10 +1854,11 @@
 					<v8:content>Группа скрытые данные</v8:content>
 				</v8:item>
 			</ToolTip>
-			<Group>Vertical</Group>
-			<Behavior>Usual</Behavior>
+			<Behavior>Collapsible</Behavior>
+			<Collapsed>true</Collapsed>
+			<ControlRepresentation>Picture</ControlRepresentation>
 			<Representation>None</Representation>
-			<ExtendedTooltip name="ГруппаСкрытыхДанныхExtendedTooltip" id="312"/>
+			<ExtendedTooltip name="ГруппаДополнительнаяИнформацияРасширеннаяПодсказка" id="312"/>
 			<ChildItems>
 				<PictureDecoration name="СкрытаяКартинкаИнформация32" id="175">
 					<Title formatted="false">
@@ -1869,13 +1868,35 @@
 						</v8:item>
 					</Title>
 					<Picture>
-						<xr:Abs>Picture.png</xr:Abs>
-						<xr:LoadTransparent>false</xr:LoadTransparent>
+						<xr:Ref>StdPicture.Information</xr:Ref>
+						<xr:LoadTransparent>true</xr:LoadTransparent>
 					</Picture>
 					<FileDragMode>AsFile</FileDragMode>
 					<ContextMenu name="СкрытаяКартинкаИнформация32КонтекстноеМеню" id="176"/>
 					<ExtendedTooltip name="СкрытаяКартинкаИнформация32ExtendedTooltip" id="313"/>
 				</PictureDecoration>
+				<LabelDecoration name="ДекорацияРежимВыборочнойРегистрации" id="380">
+					<AutoMaxWidth>false</AutoMaxWidth>
+					<Title formatted="false">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Режим выборочной регистрации: информация доступна после выбора настройки синхронизации.</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTipRepresentation>Button</ToolTipRepresentation>
+					<ContextMenu name="ДекорацияРежимВыборочнойРегистрацииКонтекстноеМеню" id="381"/>
+					<ExtendedTooltip name="ДекорацияРежимВыборочнойРегистрацииРасширеннаяПодсказка" id="382">
+						<Title formatted="false">
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Выборочная регистрация объектов – это режим дополнительной проверки, который используется при регистрации объектов (настраивается разработчиками программы).
+Режим "Отключен" – все записываемые объекты считаются измененными и будут зарегистрированы к обмену;
+Режим "Модифицированность" – регистрируем к обмену объекты, у которых были изменения в данных;
+Режим "Согласно правилам xml" – к обменам регистрируем объекты, у которых есть изменения в реквизитах. Список реквизитов получается из правил конвертаций.</v8:content>
+							</v8:item>
+						</Title>
+					</ExtendedTooltip>
+				</LabelDecoration>
 			</ChildItems>
 		</UsualGroup>
 	</ChildItems>
