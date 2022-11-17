@@ -1,0 +1,149 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.13">
+	<WindowOpeningMode>LockOwnerWindow</WindowOpeningMode>
+	<CommandBarLocation>Bottom</CommandBarLocation>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<HorizontalAlign>Right</HorizontalAlign>
+		<Autofill>false</Autofill>
+		<ChildItems>
+			<Button name="ФормаПерезапустить" id="22">
+				<Type>CommandBarButton</Type>
+				<Visible>false</Visible>
+				<CommandName>Form.Command.Перезапустить</CommandName>
+				<ExtendedTooltip name="ФормаПерезапуститьРасширеннаяПодсказка" id="23"/>
+			</Button>
+			<Button name="ОК" id="24">
+				<Type>CommandBarButton</Type>
+				<DefaultButton>true</DefaultButton>
+				<CommandName>Form.StandardCommand.OK</CommandName>
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Продолжить</v8:content>
+					</v8:item>
+				</Title>
+				<ExtendedTooltip name="ОКРасширеннаяПодсказка" id="25"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="ГруппаПредупреждение" id="1">
+			<Behavior>Usual</Behavior>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаПредупреждениеРасширеннаяПодсказка" id="2"/>
+			<ChildItems>
+				<PictureDecoration name="КартинкаПредупреждение" id="3">
+					<Picture>
+						<xr:Ref>StdPicture.DialogExclamation</xr:Ref>
+						<xr:LoadTransparent>true</xr:LoadTransparent>
+					</Picture>
+					<ContextMenu name="КартинкаПредупреждениеКонтекстноеМеню" id="4"/>
+					<ExtendedTooltip name="КартинкаПредупреждениеРасширеннаяПодсказка" id="5"/>
+				</PictureDecoration>
+				<UsualGroup name="ГруппаИнструкции" id="6">
+					<Group>Vertical</Group>
+					<Behavior>Usual</Behavior>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаИнструкцииРасширеннаяПодсказка" id="7"/>
+					<ChildItems>
+						<LabelDecoration name="Предупреждение" id="8">
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<Title formatted="true">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Используемая версия платформы %1 может работать некорректно.%2
+
+Рекомендуется удалить текущую платформу и установить более новую версию
+или предыдущую версию выше минимально допустимой %3.
+
+%4</v8:content>
+								</v8:item>
+							</Title>
+							<ContextMenu name="ПредупреждениеКонтекстноеМеню" id="9"/>
+							<ExtendedTooltip name="ПредупреждениеРасширеннаяПодсказка" id="10"/>
+						</LabelDecoration>
+						<LabelDecoration name="ДекорацияОтступ" id="11">
+							<ContextMenu name="ДекорацияОтступКонтекстноеМеню" id="12"/>
+							<ExtendedTooltip name="ДекорацияОтступРасширеннаяПодсказка" id="13"/>
+						</LabelDecoration>
+						<UsualGroup name="ГруппаСсылки" id="14">
+							<Group>Vertical</Group>
+							<Behavior>Usual</Behavior>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаСсылкиРасширеннаяПодсказка" id="15"/>
+							<ChildItems>
+								<LabelDecoration name="ИнструкцияПоУдалениюПлатформы" id="16">
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Порядок удаления версии платформы 1С:Предприятие</v8:content>
+										</v8:item>
+									</Title>
+									<Hyperlink>true</Hyperlink>
+									<ContextMenu name="ИнструкцияПоУдалениюПлатформыКонтекстноеМеню" id="17"/>
+									<ExtendedTooltip name="ИнструкцияПоУдалениюПлатформыРасширеннаяПодсказка" id="18"/>
+									<Events>
+										<Event name="Click">ИнструкцияПоУдалениюПлатформыНажатие</Event>
+									</Events>
+								</LabelDecoration>
+								<LabelDecoration name="ИнструкцияПоОбновлению" id="19">
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Порядок обновления на новую версию платформы 1С:Предприятие</v8:content>
+										</v8:item>
+									</Title>
+									<Hyperlink>true</Hyperlink>
+									<ContextMenu name="ИнструкцияПоОбновлениюКонтекстноеМеню" id="20"/>
+									<ExtendedTooltip name="ИнструкцияПоОбновлениюРасширеннаяПодсказка" id="21"/>
+									<Events>
+										<Event name="Click">ИнструкцияПоОбновлениюНажатие</Event>
+									</Events>
+								</LabelDecoration>
+							</ChildItems>
+						</UsualGroup>
+					</ChildItems>
+				</UsualGroup>
+			</ChildItems>
+		</UsualGroup>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="КаталогПлатформы" id="3">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ТекущаяВерсия" id="4">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="Перезапустить" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Перезапустить</v8:content>
+				</v8:item>
+			</Title>
+			<Action>Перезапустить</Action>
+		</Command>
+	</Commands>
+</Form>
