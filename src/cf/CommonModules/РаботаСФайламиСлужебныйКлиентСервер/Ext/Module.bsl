@@ -1,5 +1,5 @@
 ﻿///////////////////////////////////////////////////////////////////////////////////////////////////////
-// Copyright (c) 2022, ООО 1С-Софт
+// Copyright (c) 2023, ООО 1С-Софт
 // Все права защищены. Эта программа и сопроводительные материалы предоставляются 
 // в соответствии с условиями лицензии Attribution 4.0 International (CC BY 4.0)
 // Текст лицензии доступен по ссылке:
@@ -331,8 +331,6 @@
 			АдресОбъекта = СтрЗаменить(Href, "https://webdav.yandex.ru", "https://disk.yandex.ru/client/disk");
 		ИначеЕсли Сервис = "https://webdav.yandex.com" Тогда
 			АдресОбъекта = СтрЗаменить(Href, "https://webdav.yandex.com", "https://disk.yandex.com/client/disk");
-		ИначеЕсли Сервис = "https://webdav.4shared.com" Тогда
-			АдресОбъекта = "http://www.4shared.com/folder";
 		ИначеЕсли Сервис = "https://dav.box.com/dav" Тогда
 			АдресОбъекта = "https://app.box.com/files/0/";
 		ИначеЕсли Сервис = "https://dav.dropdav.com" Тогда

@@ -77,7 +77,7 @@
 		<enumeration>DESC</enumeration>
 	</valueType>
 	<valueType name="StringBlob" variety="Union" memberTypes="{http://www.w3.org/2001/XMLSchema}base64Binary {http://www.w3.org/2001/XMLSchema}string"/>
-	<valueType name="UUID" variety="Union" memberTypes="{http://v8.1c.ru/8.1/data/core}UUID {http://www.w3.org/2001/XMLSchema}base64Binary"/>
+	<valueType xmlns:d2p1="http://v8.1c.ru/8.1/data/core" name="UUID" variety="Union" memberTypes="{http://v8.1c.ru/8.1/data/core}UUID {http://www.w3.org/2001/XMLSchema}base64Binary"/>
 	<valueType name="Levels" variety="List" itemType="xs:int"/>
 	<objectType name="Object">
 		<property name="REGIONCODE" type="xs:int" form="Attribute"/>
@@ -167,6 +167,7 @@
 				<property name="Region" lowerBound="0" upperBound="-1" nillable="true">
 					<typeDef xsi:type="ObjectType">
 						<property name="REGIONCODE" type="xs:int" form="Attribute"/>
+						<property name="NAME" type="xs:string" form="Attribute"/>
 						<property name="FORMALNAME" type="xs:string" form="Attribute"/>
 						<property name="SHORTNAME" type="xs:string" form="Attribute"/>
 						<property name="POSTALCODE" type="xs:int" lowerBound="0" nillable="true" form="Attribute"/>
