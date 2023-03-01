@@ -924,6 +924,20 @@
 										<Event name="OnChange">ДетализироватьОбновлениеИБВЖурналеРегистрацииПриИзменении</Event>
 									</Events>
 								</CheckBoxField>
+								<Button name="ОчисткаУстаревшихДанных" id="2245">
+									<Type>Hyperlink</Type>
+									<CommandName>Form.Command.ОчисткаУстаревшихДанных</CommandName>
+									<ToolTipRepresentation>ShowBottom</ToolTipRepresentation>
+									<ExtendedTooltip name="ОчисткаУстаревшихДанныхРасширеннаяПодсказка" id="2246">
+										<AutoMaxWidth>false</AutoMaxWidth>
+										<Title formatted="false">
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Очистка данных вручную, когда при реструктуризации произошла ошибка «Записи регистра стали неуникальными»</v8:content>
+											</v8:item>
+										</Title>
+									</ExtendedTooltip>
+								</Button>
 							</ChildItems>
 						</UsualGroup>
 					</ChildItems>
@@ -1206,6 +1220,21 @@
 			</ToolTip>
 			<Action>ОтложеннаяОбработкаДанных</Action>
 			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ОчисткаУстаревшихДанных" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Очистка устаревших данных</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Очистка устаревших данных перед обновление конфигурации</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ОчисткаУстаревшихДанных</Action>
 		</Command>
 	</Commands>
 </Form>
