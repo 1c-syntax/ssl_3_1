@@ -329,7 +329,7 @@ function restoreDB () {
     retryCount++
     CollectGarbage() // предотвращает исключение out of memory
     if (retryCount > 5) {
-      log(format('СообщениеОтказПереносаФайлаБазыВоВременныйКаталог', e.name, e.message), true)
+      log(format('[СообщениеОтказПереносаФайлаБазыВоВременныйКаталог]', e.name, e.message), true)
       return 1
     } else {
       log(format('[СообщениеПопыткаПереносаФайлаБазыВоВременныйКаталог]', retryCount, e.name, e.message))
