@@ -42,6 +42,7 @@
 			<Representation>List</Representation>
 			<CommandBarLocation>None</CommandBarLocation>
 			<DefaultItem>true</DefaultItem>
+			<HeaderHeight>2</HeaderHeight>
 			<UseAlternationRowColor>true</UseAlternationRowColor>
 			<InitialTreeView>ExpandTopLevel</InitialTreeView>
 			<EnableStartDrag>true</EnableStartDrag>
@@ -116,34 +117,83 @@
 				</LabelField>
 				<LabelField name="ДатаДобавления" id="19">
 					<DataPath>Список.ДатаДобавления</DataPath>
-					<DefaultItem>true</DefaultItem>
 					<ContextMenu name="ДатаДобавленияКонтекстноеМеню" id="20"/>
 					<ExtendedTooltip name="ДатаДобавленияРасширеннаяПодсказка" id="21"/>
 				</LabelField>
 				<LabelField name="ДатаДобавленияМиллисекунды" id="22">
 					<DataPath>Список.ДатаДобавленияМиллисекунды</DataPath>
 					<DefaultItem>true</DefaultItem>
-					<ContextMenu name="ДатаДобавленияМиллисекундыКонтекстноеМеню" id="23"/>
-					<ExtendedTooltip name="ДатаДобавленияМиллисекундыРасширеннаяПодсказка" id="24"/>
-				</LabelField>
-				<CheckBoxField name="ЗаписаноВСистемуВзаимодействия" id="25">
-					<DataPath>Список.ЗаписаноВСистемуВзаимодействия</DataPath>
-					<DefaultItem>true</DefaultItem>
 					<Title>
 						<v8:item>
 							<v8:lang>ru</v8:lang>
-							<v8:content>Записано в СВ</v8:content>
+							<v8:content>мс</v8:content>
 						</v8:item>
 					</Title>
-					<CheckBoxType>Auto</CheckBoxType>
-					<ContextMenu name="ЗаписаноВСистемуВзаимодействияКонтекстноеМеню" id="26"/>
-					<ExtendedTooltip name="ЗаписаноВСистемуВзаимодействияРасширеннаяПодсказка" id="27"/>
-				</CheckBoxField>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Дата добавления (миллисекунды)</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ContextMenu name="ДатаДобавленияМиллисекундыКонтекстноеМеню" id="23"/>
+					<ExtendedTooltip name="ДатаДобавленияМиллисекундыРасширеннаяПодсказка" id="24"/>
+				</LabelField>
+				<LabelField name="ОтсрочкаЗаписиВСистемуВзаимодействия" id="38">
+					<DataPath>Список.ОтсрочкаЗаписиВСистемуВзаимодействия</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Отсрочка
+записи в СВ</v8:content>
+						</v8:item>
+					</Title>
+					<ContextMenu name="ОтсрочкаЗаписиВСистемуВзаимодействияКонтекстноеМеню" id="39"/>
+					<ExtendedTooltip name="ОтсрочкаЗаписиВСистемуВзаимодействияРасширеннаяПодсказка" id="40"/>
+				</LabelField>
+				<LabelField name="ДатаЗаписиВСистемуВзаимодействия" id="44">
+					<DataPath>Список.ДатаЗаписиВСистемуВзаимодействия</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Дата записи
+в СВ</v8:content>
+						</v8:item>
+					</Title>
+					<ContextMenu name="ДатаЗаписиВСистемуВзаимодействияКонтекстноеМеню" id="45"/>
+					<ExtendedTooltip name="ДатаЗаписиВСистемуВзаимодействияРасширеннаяПодсказка" id="46"/>
+				</LabelField>
+				<LabelField name="ДатаЗаписиВСистемуВзаимодействияМиллисекунды" id="47">
+					<DataPath>Список.ДатаЗаписиВСистемуВзаимодействияМиллисекунды</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>мс</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Дата записи в СВ (миллисекунды)</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ContextMenu name="ДатаЗаписиВСистемуВзаимодействияМиллисекундыКонтекстноеМеню" id="48"/>
+					<ExtendedTooltip name="ДатаЗаписиВСистемуВзаимодействияМиллисекундыРасширеннаяПодсказка" id="49"/>
+				</LabelField>
 				<LabelField name="ИдентификаторГруппы" id="28">
 					<DataPath>Список.ИдентификаторГруппы</DataPath>
 					<DefaultItem>true</DefaultItem>
 					<ContextMenu name="ИдентификаторГруппыКонтекстноеМеню" id="29"/>
 					<ExtendedTooltip name="ИдентификаторГруппыРасширеннаяПодсказка" id="30"/>
+				</LabelField>
+				<LabelField name="ВидОповещенияВГруппе" id="41">
+					<DataPath>Список.ВидОповещенияВГруппе</DataPath>
+					<ContextMenu name="ВидОповещенияВГруппеКонтекстноеМеню" id="42"/>
+					<ExtendedTooltip name="ВидОповещенияВГруппеРасширеннаяПодсказка" id="43"/>
+				</LabelField>
+				<LabelField name="Адресаты" id="50">
+					<DataPath>Список.Адресаты</DataPath>
+					<ContextMenu name="АдресатыКонтекстноеМеню" id="51"/>
+					<ExtendedTooltip name="АдресатыРасширеннаяПодсказка" id="52"/>
 				</LabelField>
 			</ChildItems>
 		</Table>
