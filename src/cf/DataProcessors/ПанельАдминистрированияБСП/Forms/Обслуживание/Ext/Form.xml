@@ -1,9 +1,19 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.15">
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.16">
 	<Customizable>false</Customizable>
 	<VerticalScroll>useIfNecessary</VerticalScroll>
 	<CommandSet>
+		<ExcludedCommand>Abort</ExcludedCommand>
+		<ExcludedCommand>Cancel</ExcludedCommand>
+		<ExcludedCommand>Ignore</ExcludedCommand>
+		<ExcludedCommand>No</ExcludedCommand>
+		<ExcludedCommand>OK</ExcludedCommand>
+		<ExcludedCommand>RestoreValues</ExcludedCommand>
+		<ExcludedCommand>Retry</ExcludedCommand>
+		<ExcludedCommand>SaveValues</ExcludedCommand>
+		<ExcludedCommand>Write</ExcludedCommand>
 		<ExcludedCommand>WriteAndClose</ExcludedCommand>
+		<ExcludedCommand>Yes</ExcludedCommand>
 	</CommandSet>
 	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
 		<Autofill>false</Autofill>
@@ -357,6 +367,33 @@
 			<ChildItemsWidth>Equal</ChildItemsWidth>
 			<ExtendedTooltip name="ГруппаРезервноеКопированиеИВосстановлениеExtendedTooltip" id="1657"/>
 			<ChildItems>
+				<UsualGroup name="ГруппаВыборВариантаХраненияРезервныхКопий" id="2245">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Выбор варианта хранения резервных копий</v8:content>
+						</v8:item>
+					</Title>
+					<HorizontalStretch>true</HorizontalStretch>
+					<Group>Vertical</Group>
+					<Behavior>Usual</Behavior>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаВыборВариантаХраненияРезервныхКопийРасширеннаяПодсказка" id="2246"/>
+					<ChildItems>
+						<InputField name="ХранениеРезервныхКопий" id="2247">
+							<DataPath>ХранениеРезервныхКопий</DataPath>
+							<Visible>false</Visible>
+							<ListChoiceMode>true</ListChoiceMode>
+							<ContextMenu name="ХранениеРезервныхКопийКонтекстноеМеню" id="2248"/>
+							<ExtendedTooltip name="ХранениеРезервныхКопийРасширеннаяПодсказка" id="2249"/>
+							<Events>
+								<Event name="OnChange">ХранениеРезервныхКопийПриИзменении</Event>
+								<Event name="Clearing">ХранениеРезервныхКопийОчистка</Event>
+							</Events>
+						</InputField>
+					</ChildItems>
+				</UsualGroup>
 				<Pages name="СтраницыРезервноеКопированиеИВосстановление" id="2119">
 					<Title>
 						<v8:item>
@@ -478,6 +515,276 @@
 										</UsualGroup>
 									</ChildItems>
 								</UsualGroup>
+								<UsualGroup name="ГруппаОблачныйАрхивРаботает" id="2283">
+									<Visible>false</Visible>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Облачный архив работает</v8:content>
+										</v8:item>
+									</Title>
+									<Width>86</Width>
+									<HorizontalStretch>false</HorizontalStretch>
+									<Group>AlwaysHorizontal</Group>
+									<Behavior>Usual</Behavior>
+									<Representation>NormalSeparation</Representation>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="ГруппаОблачныйАрхивРаботаетРасширеннаяПодсказка" id="2284"/>
+									<ChildItems>
+										<PictureDecoration name="ИконкаОблачныйАрхивРаботает" id="2285">
+											<Width>2</Width>
+											<Height>1</Height>
+											<Title formatted="false">
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Иконка облачный архив работает</v8:content>
+												</v8:item>
+											</Title>
+											<FileDragMode>AsFile</FileDragMode>
+											<ContextMenu name="ИконкаОблачныйАрхивРаботаетКонтекстноеМеню" id="2286"/>
+											<ExtendedTooltip name="ИконкаОблачныйАрхивРаботаетРасширеннаяПодсказка" id="2287"/>
+										</PictureDecoration>
+										<LabelDecoration name="ПояснениеОблачныйАрхивРаботает" id="2288">
+											<AutoMaxWidth>false</AutoMaxWidth>
+											<AutoMaxHeight>false</AutoMaxHeight>
+											<TextColor>style:ПоясняющийТекст</TextColor>
+											<Title formatted="true">
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Выгрузка &lt;link setting&gt;резервных копий&lt;/&gt; в облако Фирмы "1C" включена.</v8:content>
+												</v8:item>
+											</Title>
+											<ContextMenu name="ПояснениеОблачныйАрхивРаботаетКонтекстноеМеню" id="2289"/>
+											<ExtendedTooltip name="ПояснениеОблачныйАрхивРаботаетРасширеннаяПодсказка" id="2290"/>
+											<Events>
+												<Event name="URLProcessing">ПояснениеОблачныйАрхивРаботаетОбработкаНавигационнойСсылки</Event>
+											</Events>
+										</LabelDecoration>
+									</ChildItems>
+								</UsualGroup>
+							</ChildItems>
+						</Page>
+						<Page name="СтраницаОблачныйАрхив" id="2250">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Страница облачный архив</v8:content>
+								</v8:item>
+							</Title>
+							<ExtendedTooltip name="СтраницаОблачныйАрхивРасширеннаяПодсказка" id="2251"/>
+							<ChildItems>
+								<Pages name="СтраницыСостоянийОблачныйАрхив" id="2252">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Страницы состояний облачный архив</v8:content>
+										</v8:item>
+									</Title>
+									<HorizontalStretch>true</HorizontalStretch>
+									<PagesRepresentation>None</PagesRepresentation>
+									<ExtendedTooltip name="СтраницыСостоянийОблачныйАрхивРасширеннаяПодсказка" id="2253"/>
+									<ChildItems>
+										<Page name="СтраницаОблачныйАрхивРаботает" id="2254">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Страница облачный архив работает</v8:content>
+												</v8:item>
+											</Title>
+											<HorizontalStretch>true</HorizontalStretch>
+											<Group>HorizontalIfPossible</Group>
+											<ExtendedTooltip name="СтраницаОблачныйАрхивРаботаетРасширеннаяПодсказка" id="2255"/>
+											<ChildItems>
+												<UsualGroup name="ГруппаОблачныйАрхивСохранениеВосстановление" id="2256">
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Облачный архив сохранение восстановление</v8:content>
+														</v8:item>
+													</Title>
+													<Group>Vertical</Group>
+													<Behavior>Usual</Behavior>
+													<Representation>None</Representation>
+													<ShowTitle>false</ShowTitle>
+													<ExtendedTooltip name="ГруппаОблачныйАрхивСохранениеВосстановлениеРасширеннаяПодсказка" id="2257"/>
+													<ChildItems>
+														<UsualGroup name="ГруппаОблачныйАрхивРезервноеКопированиеПрограммы" id="2258">
+															<Title>
+																<v8:item>
+																	<v8:lang>ru</v8:lang>
+																	<v8:content>Группа резервное копирование программы</v8:content>
+																</v8:item>
+															</Title>
+															<Width>43</Width>
+															<HorizontalStretch>false</HorizontalStretch>
+															<Group>Vertical</Group>
+															<Behavior>Usual</Behavior>
+															<Representation>None</Representation>
+															<ShowTitle>false</ShowTitle>
+															<ExtendedTooltip name="ГруппаОблачныйАрхивРезервноеКопированиеПрограммыРасширеннаяПодсказка" id="2259"/>
+															<ChildItems>
+																<LabelDecoration name="ОблачныйАрхивСозданиеРезервнойКопии" id="2260">
+																	<Title formatted="false">
+																		<v8:item>
+																			<v8:lang>ru</v8:lang>
+																			<v8:content>Создание резервной копии</v8:content>
+																		</v8:item>
+																	</Title>
+																	<ToolTipRepresentation>ShowBottom</ToolTipRepresentation>
+																	<Hyperlink>true</Hyperlink>
+																	<ContextMenu name="ОблачныйАрхивСозданиеРезервнойКопииКонтекстноеМеню" id="2261"/>
+																	<ExtendedTooltip name="ОблачныйАрхивСозданиеРезервнойКопииРасширеннаяПодсказка" id="2262">
+																		<Title formatted="false">
+																			<v8:item>
+																				<v8:lang>ru</v8:lang>
+																				<v8:content>Запуск процедуры создания резервной копии.</v8:content>
+																			</v8:item>
+																		</Title>
+																	</ExtendedTooltip>
+																	<Events>
+																		<Event name="Click">ОблачныйАрхивСозданиеРезервнойКопииНажатие</Event>
+																	</Events>
+																</LabelDecoration>
+															</ChildItems>
+														</UsualGroup>
+														<UsualGroup name="ГруппаОблачныйАрхивВосстановлениеРезервнойКопии" id="2263">
+															<Title>
+																<v8:item>
+																	<v8:lang>ru</v8:lang>
+																	<v8:content>Группа восстановление резервной копии</v8:content>
+																</v8:item>
+															</Title>
+															<Width>43</Width>
+															<HorizontalStretch>false</HorizontalStretch>
+															<Group>Vertical</Group>
+															<Behavior>Usual</Behavior>
+															<Representation>None</Representation>
+															<ShowTitle>false</ShowTitle>
+															<ExtendedTooltip name="ГруппаОблачныйАрхивВосстановлениеРезервнойКопииРасширеннаяПодсказка" id="2264"/>
+															<ChildItems>
+																<LabelDecoration name="ОблачныйАрхивОткрытьАрхивныеКопии" id="2265">
+																	<Title formatted="false">
+																		<v8:item>
+																			<v8:lang>ru</v8:lang>
+																			<v8:content>Архивные копии</v8:content>
+																		</v8:item>
+																	</Title>
+																	<ToolTipRepresentation>ShowBottom</ToolTipRepresentation>
+																	<Hyperlink>true</Hyperlink>
+																	<ContextMenu name="ОблачныйАрхивОткрытьАрхивныеКопииКонтекстноеМеню" id="2266"/>
+																	<ExtendedTooltip name="ОблачныйАрхивОткрытьАрхивныеКопииРасширеннаяПодсказка" id="2267">
+																		<AutoMaxWidth>false</AutoMaxWidth>
+																		<Title formatted="false">
+																			<v8:item>
+																				<v8:lang>ru</v8:lang>
+																				<v8:content>Переход к списку резервных копий.</v8:content>
+																			</v8:item>
+																		</Title>
+																	</ExtendedTooltip>
+																	<Events>
+																		<Event name="Click">ОблачныйАрхивОткрытьАрхивныеКопииНажатие</Event>
+																	</Events>
+																</LabelDecoration>
+															</ChildItems>
+														</UsualGroup>
+													</ChildItems>
+												</UsualGroup>
+												<UsualGroup name="ГруппаОблачныйАрхивНастройкаРезервногоКопирования" id="2268">
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Группа настройка резервного копирования</v8:content>
+														</v8:item>
+													</Title>
+													<Width>43</Width>
+													<HorizontalStretch>false</HorizontalStretch>
+													<Group>Vertical</Group>
+													<Behavior>Usual</Behavior>
+													<Representation>None</Representation>
+													<ShowTitle>false</ShowTitle>
+													<ExtendedTooltip name="ГруппаОблачныйАрхивНастройкаРезервногоКопированияРасширеннаяПодсказка" id="2269"/>
+													<ChildItems>
+														<Button name="ОблачныйАрхивНастройкаРезервногоКопирования" id="2291">
+															<Type>Hyperlink</Type>
+															<CommandName>Form.Command.ОблачныйАрхивНастройкаРезервногоКопирования</CommandName>
+															<ToolTipRepresentation>ShowBottom</ToolTipRepresentation>
+															<ExtendedTooltip name="ОблачныйАрхивНастройкаРезервногоКопированияРасширеннаяПодсказка" id="2292">
+																<Title formatted="false">
+																	<v8:item>
+																		<v8:lang>ru</v8:lang>
+																		<v8:content>Параметры выполнения резервных копий информационной базы.</v8:content>
+																	</v8:item>
+																</Title>
+															</ExtendedTooltip>
+														</Button>
+													</ChildItems>
+												</UsualGroup>
+											</ChildItems>
+										</Page>
+										<Page name="СтраницаОблачныйАрхивНеПодключен" id="2273">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Страница облачный архив не подключен</v8:content>
+												</v8:item>
+											</Title>
+											<HorizontalStretch>true</HorizontalStretch>
+											<ExtendedTooltip name="СтраницаОблачныйАрхивНеПодключенРасширеннаяПодсказка" id="2274"/>
+											<ChildItems>
+												<Button name="ОблачныйАрхивПодключитьСервис" id="2293">
+													<Type>Hyperlink</Type>
+													<CommandName>Form.Command.ОблачныйАрхивНастройкаРезервногоКопирования</CommandName>
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Подключить сервис</v8:content>
+														</v8:item>
+													</Title>
+													<ToolTipRepresentation>ShowBottom</ToolTipRepresentation>
+													<ExtendedTooltip name="ОблачныйАрхивПодключитьСервисРасширеннаяПодсказка" id="2294">
+														<Title formatted="false">
+															<v8:item>
+																<v8:lang>ru</v8:lang>
+																<v8:content>Подключиться к сервису 1С:Облачный архив.</v8:content>
+															</v8:item>
+														</Title>
+													</ExtendedTooltip>
+												</Button>
+											</ChildItems>
+										</Page>
+										<Page name="СтраницаОблачныйАрхивЗаблокирован" id="2278">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Страница облачный архив заблокирован</v8:content>
+												</v8:item>
+											</Title>
+											<HorizontalStretch>true</HorizontalStretch>
+											<ExtendedTooltip name="СтраницаОблачныйАрхивЗаблокированРасширеннаяПодсказка" id="2279"/>
+											<ChildItems>
+												<Button name="ОблачныйАрхивВосстановитьРаботуСервиса" id="2295">
+													<Type>Hyperlink</Type>
+													<CommandName>Form.Command.ОблачныйАрхивНастройкаРезервногоКопирования</CommandName>
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Восстановить работу сервиса</v8:content>
+														</v8:item>
+													</Title>
+													<ToolTipRepresentation>ShowBottom</ToolTipRepresentation>
+													<ExtendedTooltip name="ОблачныйАрхивВосстановитьРаботуСервисаРасширеннаяПодсказка" id="2296">
+														<Title formatted="false">
+															<v8:item>
+																<v8:lang>ru</v8:lang>
+																<v8:content>Обновить настройки резервного копирования в облако Фирмы 1С.</v8:content>
+															</v8:item>
+														</Title>
+													</ExtendedTooltip>
+												</Button>
+											</ChildItems>
+										</Page>
+									</ChildItems>
+								</Pages>
 							</ChildItems>
 						</Page>
 					</ChildItems>
@@ -914,11 +1221,11 @@
 										<Event name="OnChange">ДетализироватьОбновлениеИБВЖурналеРегистрацииПриИзменении</Event>
 									</Events>
 								</CheckBoxField>
-								<Button name="ОчисткаУстаревшихДанных" id="2245">
+								<Button name="ОчисткаУстаревшихДанных" id="2297">
 									<Type>Hyperlink</Type>
 									<CommandName>Form.Command.ОчисткаУстаревшихДанных</CommandName>
 									<ToolTipRepresentation>ShowBottom</ToolTipRepresentation>
-									<ExtendedTooltip name="ОчисткаУстаревшихДанныхРасширеннаяПодсказка" id="2246">
+									<ExtendedTooltip name="ОчисткаУстаревшихДанныхРасширеннаяПодсказка" id="2298">
 										<AutoMaxWidth>false</AutoMaxWidth>
 										<Title formatted="false">
 											<v8:item>
@@ -1127,25 +1434,6 @@
 		<Attribute name="ПараметрыОблачногоАрхива" id="17">
 			<Type/>
 		</Attribute>
-		<Attribute name="ПрогрессПроверкиОблачногоАрхива" id="18">
-			<Type>
-				<v8:Type>xs:decimal</v8:Type>
-				<v8:NumberQualifiers>
-					<v8:Digits>3</v8:Digits>
-					<v8:FractionDigits>0</v8:FractionDigits>
-					<v8:AllowedSign>Nonnegative</v8:AllowedSign>
-				</v8:NumberQualifiers>
-			</Type>
-		</Attribute>
-		<Attribute name="СпособРезервногоКопирования" id="19">
-			<Type>
-				<v8:Type>xs:string</v8:Type>
-				<v8:StringQualifiers>
-					<v8:Length>30</v8:Length>
-					<v8:AllowedLength>Variable</v8:AllowedLength>
-				</v8:StringQualifiers>
-			</Type>
-		</Attribute>
 		<Attribute name="КоличествоПотоковОбновления" id="5">
 			<Title>
 				<v8:item>
@@ -1173,6 +1461,21 @@
 				<v8:Type>xs:string</v8:Type>
 				<v8:StringQualifiers>
 					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ХранениеРезервныхКопий" id="20">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Хранение резервных копий</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>100</v8:Length>
 					<v8:AllowedLength>Variable</v8:AllowedLength>
 				</v8:StringQualifiers>
 			</Type>
@@ -1210,6 +1513,15 @@
 			</ToolTip>
 			<Action>ОтложеннаяОбработкаДанных</Action>
 			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ОблачныйАрхивНастройкаРезервногоКопирования" id="9">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Настройка резервного копирования</v8:content>
+				</v8:item>
+			</Title>
+			<Action>ОблачныйАрхивНастройкаРезервногоКопирования</Action>
 		</Command>
 		<Command name="ОчисткаУстаревшихДанных" id="1">
 			<Title>

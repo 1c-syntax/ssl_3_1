@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.15">
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.16">
 	<Title>
 		<v8:item>
 			<v8:lang>ru</v8:lang>
@@ -223,7 +223,15 @@
 								</v8:item>
 							</Title>
 							<CommandSet>
+								<ExcludedCommand>CancelSearch</ExcludedCommand>
 								<ExcludedCommand>Copy</ExcludedCommand>
+								<ExcludedCommand>EndEdit</ExcludedCommand>
+								<ExcludedCommand>Find</ExcludedCommand>
+								<ExcludedCommand>MoveDown</ExcludedCommand>
+								<ExcludedCommand>MoveUp</ExcludedCommand>
+								<ExcludedCommand>OutputList</ExcludedCommand>
+								<ExcludedCommand>SortListAsc</ExcludedCommand>
+								<ExcludedCommand>SortListDesc</ExcludedCommand>
 							</CommandSet>
 							<RowFilter xsi:nil="true"/>
 							<ContextMenu name="ПользователиКонтекстноеМеню" id="125"/>
@@ -245,6 +253,20 @@
 										<CommandSource>Item.Пользователи</CommandSource>
 										<ExtendedTooltip name="ПользователиСтандартныеКомандыExtendedTooltip" id="326"/>
 									</ButtonGroup>
+									<SearchStringAddition name="ПользователиСтрокаПоиск" id="496">
+										<AdditionSource>
+											<Item>Пользователи</Item>
+											<Type>SearchStringRepresentation</Type>
+										</AdditionSource>
+										<Title>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Поиск</v8:content>
+											</v8:item>
+										</Title>
+										<ContextMenu name="ПользователиСтрокаПоискКонтекстноеМеню" id="497"/>
+										<ExtendedTooltip name="ПользователиСтрокаПоискРасширеннаяПодсказка" id="498"/>
+									</SearchStringAddition>
 								</ChildItems>
 							</AutoCommandBar>
 							<ExtendedTooltip name="ПользователиExtendedTooltip" id="327"/>
@@ -310,12 +332,6 @@
 								</InputField>
 								<InputField name="ПользователиКомментарий" id="129">
 									<DataPath>ПользователиДатЗапрета.Комментарий</DataPath>
-									<ToolTip>
-										<v8:item>
-											<v8:lang>ru</v8:lang>
-											<v8:content>Причина отдельного запрета для пользователя или группы пользователей</v8:content>
-										</v8:item>
-									</ToolTip>
 									<EditMode>EnterOnInput</EditMode>
 									<Width>31</Width>
 									<ExtendedEdit>true</ExtendedEdit>
@@ -855,6 +871,15 @@
 															</Title>
 															<CommandSet>
 																<ExcludedCommand>Copy</ExcludedCommand>
+																<ExcludedCommand>EndEdit</ExcludedCommand>
+																<ExcludedCommand>HierarchicalList</ExcludedCommand>
+																<ExcludedCommand>List</ExcludedCommand>
+																<ExcludedCommand>MoveDown</ExcludedCommand>
+																<ExcludedCommand>MoveUp</ExcludedCommand>
+																<ExcludedCommand>OutputList</ExcludedCommand>
+																<ExcludedCommand>SortListAsc</ExcludedCommand>
+																<ExcludedCommand>SortListDesc</ExcludedCommand>
+																<ExcludedCommand>Tree</ExcludedCommand>
 															</CommandSet>
 															<ContextMenu name="ДатыЗапретаКонтекстноеМеню" id="133">
 																<Autofill>false</Autofill>
@@ -923,6 +948,20 @@
 																		<CommandSource>Item.ДатыЗапрета</CommandSource>
 																		<ExtendedTooltip name="ДатыЗапретаСтандартныеКомандыРасширеннаяПодсказка" id="404"/>
 																	</ButtonGroup>
+																	<SearchStringAddition name="ДатыЗапретаСтрокаПоиск" id="499">
+																		<AdditionSource>
+																			<Item>ДатыЗапрета</Item>
+																			<Type>SearchStringRepresentation</Type>
+																		</AdditionSource>
+																		<Title>
+																			<v8:item>
+																				<v8:lang>ru</v8:lang>
+																				<v8:content>Поиск</v8:content>
+																			</v8:item>
+																		</Title>
+																		<ContextMenu name="ДатыЗапретаСтрокаПоискКонтекстноеМеню" id="500"/>
+																		<ExtendedTooltip name="ДатыЗапретаСтрокаПоискРасширеннаяПодсказка" id="501"/>
+																	</SearchStringAddition>
 																</ChildItems>
 															</AutoCommandBar>
 															<ExtendedTooltip name="ДатыЗапретаExtendedTooltip" id="393"/>
@@ -1300,7 +1339,7 @@
 					<Type>
 						<v8:Type>xs:decimal</v8:Type>
 						<v8:NumberQualifiers>
-							<v8:Digits>1</v8:Digits>
+							<v8:Digits>2</v8:Digits>
 							<v8:FractionDigits>0</v8:FractionDigits>
 							<v8:AllowedSign>Any</v8:AllowedSign>
 						</v8:NumberQualifiers>
@@ -1529,6 +1568,11 @@
 					<v8:Length>0</v8:Length>
 					<v8:AllowedLength>Variable</v8:AllowedLength>
 				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ЕстьНедоступныеОбъектыПоПользователям" id="8">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
 			</Type>
 		</Attribute>
 	</Attributes>

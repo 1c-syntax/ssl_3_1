@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.15">
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.16">
 	<AutoURL>false</AutoURL>
 	<CommandBarLocation>Top</CommandBarLocation>
 	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
@@ -27,6 +27,12 @@
 				<CommandName>Form.Command.УстановитьКомпонентуExtraCryptoAPI</CommandName>
 				<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
 				<ExtendedTooltip name="ФормаУстановитьКомпонентуExtraCryptoAPIРасширеннаяПодсказка" id="431"/>
+			</Button>
+			<Button name="ФормаУстановитьРасширение" id="450">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.УстановитьРасширение</CommandName>
+				<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
+				<ExtendedTooltip name="ФормаУстановитьРасширениеРасширеннаяПодсказка" id="451"/>
 			</Button>
 			<Button name="ФормаТехническаяИнформация" id="432">
 				<Type>CommandBarButton</Type>
@@ -135,6 +141,12 @@
 								<CheckBoxField name="СертификатыТолькоДействующие" id="421">
 									<DataPath>СертификатыТолькоДействующие</DataPath>
 									<TitleLocation>Right</TitleLocation>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Только действующие сертификаты</v8:content>
+										</v8:item>
+									</ToolTip>
 									<CheckBoxType>Auto</CheckBoxType>
 									<ContextMenu name="СертификатыТолькоДействующиеКонтекстноеМеню" id="422"/>
 									<ExtendedTooltip name="СертификатыТолькоДействующиеРасширеннаяПодсказка" id="423"/>
@@ -191,43 +203,73 @@
 							</Title>
 							<ExtendedTooltip name="СертификатыКоманднаяПанельСпискаРасширеннаяПодсказка" id="267"/>
 							<ChildItems>
-								<Button name="СертификатыСоздать" id="135">
-									<Type>CommandBarButton</Type>
-									<Visible>false</Visible>
-									<CommandName>Form.Item.Сертификаты.StandardCommand.Create</CommandName>
+								<Popup name="ГруппаДобавитьСертификаты" id="463">
 									<Title>
 										<v8:item>
 											<v8:lang>ru</v8:lang>
 											<v8:content>Добавить...</v8:content>
 										</v8:item>
 									</Title>
-									<ExtendedTooltip name="СертификатыСоздатьРасширеннаяПодсказка" id="136"/>
-								</Button>
-								<Popup name="СертификатыДобавить" id="344">
-									<Title>
-										<v8:item>
-											<v8:lang>ru</v8:lang>
-											<v8:content>Добавить</v8:content>
-										</v8:item>
-									</Title>
-									<ExtendedTooltip name="СертификатыДобавитьРасширеннаяПодсказка" id="345"/>
+									<Picture>
+										<xr:Ref>StdPicture.CreateListItem</xr:Ref>
+										<xr:LoadTransparent>true</xr:LoadTransparent>
+									</Picture>
+									<Representation>PictureAndText</Representation>
+									<ExtendedTooltip name="ГруппаДобавитьСертификатыРасширеннаяПодсказка" id="464"/>
 									<ChildItems>
-										<Button name="ДобавитьЗаявлениеНаВыпускСертификата" id="346">
+										<Button name="ДобавитьДляПодписанияИШифрования" id="348">
 											<Type>CommandBarButton</Type>
-											<CommandName>Form.Command.ДобавитьЗаявлениеНаВыпускСертификата</CommandName>
-											<ExtendedTooltip name="ДобавитьЗаявлениеНаВыпускСертификатаРасширеннаяПодсказка" id="347"/>
+											<CommandName>Form.Command.ДобавитьДляПодписанияИШифрования</CommandName>
+											<ToolTipRepresentation>Balloon</ToolTipRepresentation>
+											<ExtendedTooltip name="ДобавитьДляПодписанияИШифрованияРасширеннаяПодсказка" id="349"/>
 										</Button>
-										<Button name="ДобавитьИзУстановленныхНаКомпьютере" id="348">
+										<ButtonGroup name="ГруппаТолькоДляШифрования" id="455">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Добавить только для шифрования</v8:content>
+												</v8:item>
+											</Title>
+											<ExtendedTooltip name="ГруппаТолькоДляШифрованияРасширеннаяПодсказка" id="456"/>
+											<ChildItems>
+												<Button name="ДобавитьТолькоДляШифрования" id="457">
+													<Type>CommandBarButton</Type>
+													<CommandName>Form.Command.ДобавитьТолькоДляШифрования</CommandName>
+													<ExtendedTooltip name="ДобавитьТолькоДляШифрованияРасширеннаяПодсказка" id="458"/>
+												</Button>
+												<Button name="ДобавитьИзФайлов" id="459">
+													<Type>CommandBarButton</Type>
+													<CommandName>Form.Command.ДобавитьИзФайлов</CommandName>
+													<ExtendedTooltip name="ДобавитьИзФайловРасширеннаяПодсказка" id="460"/>
+												</Button>
+												<Button name="ДобавитьИзКаталога" id="461">
+													<Type>CommandBarButton</Type>
+													<CommandName>Form.Command.ДобавитьИзКаталога</CommandName>
+													<ExtendedTooltip name="ДобавитьИзКаталогаРасширеннаяПодсказка" id="462"/>
+												</Button>
+											</ChildItems>
+										</ButtonGroup>
+										<Button name="Создать" id="465">
 											<Type>CommandBarButton</Type>
-											<CommandName>Form.Command.ДобавитьИзУстановленныхНаКомпьютере</CommandName>
-											<ExtendedTooltip name="ДобавитьИзУстановленныхНаКомпьютереРасширеннаяПодсказка" id="349"/>
+											<Visible>false</Visible>
+											<CommandName>Form.Item.Сертификаты.StandardCommand.Create</CommandName>
+											<ExtendedTooltip name="СоздатьРасширеннаяПодсказка" id="466"/>
 										</Button>
 									</ChildItems>
 								</Popup>
+								<Button name="ДобавитьЗаявлениеНаВыпускСертификата" id="346">
+									<Type>CommandBarButton</Type>
+									<CommandName>Form.Command.ДобавитьЗаявлениеНаВыпускСертификата</CommandName>
+									<ExtendedTooltip name="ДобавитьЗаявлениеНаВыпускСертификатаРасширеннаяПодсказка" id="347"/>
+								</Button>
 								<Button name="ПеревыпуститьСертификат" id="353">
 									<Type>CommandBarButton</Type>
-									<Representation>Text</Representation>
+									<Representation>PictureAndText</Representation>
 									<CommandName>Form.Item.Сертификаты.StandardCommand.Copy</CommandName>
+									<Picture>
+										<xr:Ref>StdPicture.CloneListItem</xr:Ref>
+										<xr:LoadTransparent>true</xr:LoadTransparent>
+									</Picture>
 									<Title>
 										<v8:item>
 											<v8:lang>ru</v8:lang>
@@ -318,7 +360,7 @@
 							<AllowRootChoice>false</AllowRootChoice>
 							<UpdateOnDataChange>Auto</UpdateOnDataChange>
 							<UserSettingsGroup>ГруппаПользовательскихНастроек</UserSettingsGroup>
-							<AllowGettingCurrentRowURL>true</AllowGettingCurrentRowURL>
+							<AllowGettingCurrentRowURL>false</AllowGettingCurrentRowURL>
 							<ContextMenu name="СертификатыКонтекстноеМеню" id="47">
 								<Autofill>false</Autofill>
 								<ChildItems>
@@ -629,35 +671,49 @@
 							<ContextMenu name="НадписьНастройкаВЦентральномУзлеКонтекстноеМеню" id="356"/>
 							<ExtendedTooltip name="НадписьНастройкаВЦентральномУзлеРасширеннаяПодсказка" id="357"/>
 						</LabelDecoration>
-						<UsualGroup name="ГруппаВебКлиентРасширениеНеУстановлено" id="171">
+						<UsualGroup name="ГруппаПодсказкаКриптопровайдеры" id="436">
 							<Title>
 								<v8:item>
 									<v8:lang>ru</v8:lang>
-									<v8:content>Веб клиент расширение не установлено</v8:content>
+									<v8:content>Подсказка о криптопровайдерах</v8:content>
 								</v8:item>
 							</Title>
+							<Group>AlwaysHorizontal</Group>
 							<Behavior>Usual</Behavior>
-							<Representation>None</Representation>
+							<Representation>NormalSeparation</Representation>
 							<ShowTitle>false</ShowTitle>
-							<ExtendedTooltip name="ГруппаВебКлиентРасширениеНеУстановленоРасширеннаяПодсказка" id="172"/>
+							<ExtendedTooltip name="ГруппаПодсказкаКриптопровайдерыРасширеннаяПодсказка" id="437"/>
 							<ChildItems>
-								<LabelDecoration name="ПояснениеВебКлиентРасширениеНеУстановлено" id="165">
+								<PictureDecoration name="ДекорацияИнформацияКриптопровайдеры" id="438">
 									<AutoMaxWidth>false</AutoMaxWidth>
-									<TextColor>style:ПоясняющийОшибкуТекст</TextColor>
 									<Title formatted="false">
 										<v8:item>
 											<v8:lang>ru</v8:lang>
-											<v8:content>В браузере не установлено расширение для работы с электронной подписью и шифрованием. Невозможно проверить, какие из программ установлены на компьютере.</v8:content>
+											<v8:content>Декорация информация</v8:content>
 										</v8:item>
 									</Title>
-									<ContextMenu name="ПояснениеВебКлиентРасширениеНеУстановленоКонтекстноеМеню" id="166"/>
-									<ExtendedTooltip name="ПояснениеВебКлиентРасширениеНеУстановленоРасширеннаяПодсказка" id="167"/>
+									<Picture>
+										<xr:Ref>StdPicture.Information</xr:Ref>
+										<xr:LoadTransparent>true</xr:LoadTransparent>
+									</Picture>
+									<ContextMenu name="ДекорацияИнформацияКриптопровайдерыКонтекстноеМеню" id="439"/>
+									<ExtendedTooltip name="ДекорацияИнформацияКриптопровайдерыРасширеннаяПодсказка" id="440"/>
+								</PictureDecoration>
+								<LabelDecoration name="ДекорацияПроверкаУстановкиКриптопровайдера" id="447">
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<MaxWidth>100</MaxWidth>
+									<Title formatted="true">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>&lt;link ПроверитьУстановкуПрограммКриптографии&gt;Нажмите здесь&lt;/&gt;, чтобы увидеть все установленные на компьютере программы для работы с электронной подписью. </v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="ДекорацияПроверкаУстановкиКриптопровайдераКонтекстноеМеню" id="448"/>
+									<ExtendedTooltip name="ДекорацияПроверкаУстановкиКриптопровайдераРасширеннаяПодсказка" id="449"/>
+									<Events>
+										<Event name="URLProcessing">ДекорацияПроверкаУстановкиКриптопровайдераОбработкаНавигационнойСсылки</Event>
+									</Events>
 								</LabelDecoration>
-								<Button name="УстановитьРасширение" id="297">
-									<Type>UsualButton</Type>
-									<CommandName>Form.Command.УстановитьРасширение</CommandName>
-									<ExtendedTooltip name="УстановитьРасширениеРасширеннаяПодсказка" id="298"/>
-								</Button>
 							</ChildItems>
 						</UsualGroup>
 						<CommandBar name="ПрограммыКоманднаяПанельОтдельно" id="181">
@@ -695,6 +751,34 @@
 									<CommandName>Form.Item.Программы.StandardCommand.OutputList</CommandName>
 									<ExtendedTooltip name="ПрограммыВывестиСписокРасширеннаяПодсказка" id="256"/>
 								</Button>
+								<SearchStringAddition name="ПрограммыПоиск" id="467">
+									<AdditionSource>
+										<Item>Программы</Item>
+										<Type>SearchStringRepresentation</Type>
+									</AdditionSource>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Программы поиск</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="ПрограммыПоискКонтекстноеМеню" id="468"/>
+									<ExtendedTooltip name="ПрограммыПоискРасширеннаяПодсказка" id="469"/>
+								</SearchStringAddition>
+								<SearchControlAddition name="ПрограммыПоискУправление" id="470">
+									<AdditionSource>
+										<Item>Программы</Item>
+										<Type>SearchControl</Type>
+									</AdditionSource>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Программы поиск управление</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="ПрограммыПоискУправлениеКонтекстноеМеню" id="471"/>
+									<ExtendedTooltip name="ПрограммыПоискУправлениеРасширеннаяПодсказка" id="472"/>
+								</SearchControlAddition>
 							</ChildItems>
 						</CommandBar>
 						<Pages name="СтраницыПрограммыИОбновление" id="320">
@@ -724,9 +808,9 @@
 											<EnableStartDrag>true</EnableStartDrag>
 											<FileDragMode>AsFile</FileDragMode>
 											<DataPath>Программы</DataPath>
-											<RowPictureDataPath>Программы.НомерКартинки</RowPictureDataPath>
+											<RowPictureDataPath>Программы.ТипРазмещения</RowPictureDataPath>
 											<RowsPicture>
-												<xr:Ref>CommonPicture.ПиктограммыЭлементов</xr:Ref>
+												<xr:Ref>CommonPicture.ТипыСертификатов</xr:Ref>
 												<xr:LoadTransparent>false</xr:LoadTransparent>
 											</RowsPicture>
 											<Title>
@@ -826,21 +910,67 @@
 													<ContextMenu name="ПрограммыНаименованиеКонтекстноеМеню" id="214"/>
 													<ExtendedTooltip name="ПрограммыНаименованиеРасширеннаяПодсказка" id="215"/>
 												</InputField>
-												<InputField name="ПрограммыРезультатПроверки" id="223">
-													<DataPath>Программы.РезультатПроверки</DataPath>
+												<PictureField name="ПрограммыРежимИспользованияКартинка" id="452">
+													<DataPath>Программы.РежимИспользованияКартинка</DataPath>
+													<TitleLocation>None</TitleLocation>
+													<HeaderPicture>
+														<xr:Ref>StdPicture.Change</xr:Ref>
+														<xr:LoadTransparent>true</xr:LoadTransparent>
+													</HeaderPicture>
+													<ShowInFooter>false</ShowInFooter>
+													<AutoMaxWidth>false</AutoMaxWidth>
+													<AutoMaxHeight>false</AutoMaxHeight>
+													<HorizontalStretch>false</HorizontalStretch>
+													<VerticalStretch>false</VerticalStretch>
+													<ValuesPicture>
+														<xr:Ref>StdPicture.Change</xr:Ref>
+														<xr:LoadTransparent>true</xr:LoadTransparent>
+													</ValuesPicture>
+													<ContextMenu name="ПрограммыРежимИспользованияКартинкаКонтекстноеМеню" id="453"/>
+													<ExtendedTooltip name="ПрограммыРежимИспользованияКартинкаРасширеннаяПодсказка" id="454"/>
+												</PictureField>
+												<ColumnGroup name="ПрограммыГруппаРезультатПроверки" id="445">
 													<Title>
 														<v8:item>
 															<v8:lang>ru</v8:lang>
 															<v8:content>Результат проверки</v8:content>
 														</v8:item>
 													</Title>
-													<EditMode>EnterOnInput</EditMode>
-													<AutoCellHeight>true</AutoCellHeight>
-													<Width>40</Width>
-													<MultiLine>true</MultiLine>
-													<ContextMenu name="ПрограммыРезультатПроверкиКонтекстноеМеню" id="224"/>
-													<ExtendedTooltip name="ПрограммыРезультатПроверкиРасширеннаяПодсказка" id="225"/>
-												</InputField>
+													<ShowInHeader>true</ShowInHeader>
+													<ExtendedTooltip name="ПрограммыГруппаРезультатПроверкиРасширеннаяПодсказка" id="446"/>
+													<ChildItems>
+														<InputField name="ПрограммыРезультатПроверки" id="223">
+															<DataPath>Программы.РезультатПроверки</DataPath>
+															<Title>
+																<v8:item>
+																	<v8:lang>ru</v8:lang>
+																	<v8:content>На компьютере</v8:content>
+																</v8:item>
+															</Title>
+															<TitleLocation>None</TitleLocation>
+															<EditMode>EnterOnInput</EditMode>
+															<AutoCellHeight>true</AutoCellHeight>
+															<ShowInHeader>false</ShowInHeader>
+															<Width>40</Width>
+															<MultiLine>true</MultiLine>
+															<ContextMenu name="ПрограммыРезультатПроверкиКонтекстноеМеню" id="224"/>
+															<ExtendedTooltip name="ПрограммыРезультатПроверкиРасширеннаяПодсказка" id="225"/>
+														</InputField>
+														<InputField name="ПрограммыРезультатПроверкиНаСервере" id="442">
+															<DataPath>Программы.РезультатПроверкиНаСервере</DataPath>
+															<Title>
+																<v8:item>
+																	<v8:lang>ru</v8:lang>
+																	<v8:content>На сервере</v8:content>
+																</v8:item>
+															</Title>
+															<TitleLocation>None</TitleLocation>
+															<ShowInHeader>false</ShowInHeader>
+															<ContextMenu name="ПрограммыРезультатПроверкиНаСервереКонтекстноеМеню" id="443"/>
+															<ExtendedTooltip name="ПрограммыРезультатПроверкиНаСервереРасширеннаяПодсказка" id="444"/>
+														</InputField>
+													</ChildItems>
+												</ColumnGroup>
 												<InputField name="ПрограммыПодробнее" id="358">
 													<DataPath>Программы.Подробнее</DataPath>
 													<ReadOnly>true</ReadOnly>
@@ -1372,16 +1502,6 @@
 						</v8:StringQualifiers>
 					</Type>
 				</Column>
-				<Column name="НомерКартинки" id="10">
-					<Type>
-						<v8:Type>xs:decimal</v8:Type>
-						<v8:NumberQualifiers>
-							<v8:Digits>1</v8:Digits>
-							<v8:FractionDigits>0</v8:FractionDigits>
-							<v8:AllowedSign>Nonnegative</v8:AllowedSign>
-						</v8:NumberQualifiers>
-					</Type>
-				</Column>
 				<Column name="ПометкаУдаления" id="12">
 					<Type>
 						<v8:Type>xs:boolean</v8:Type>
@@ -1408,6 +1528,75 @@
 					</Type>
 				</Column>
 				<Column name="ТипРазмещения" id="15">
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>10</v8:Digits>
+							<v8:FractionDigits>0</v8:FractionDigits>
+							<v8:AllowedSign>Any</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+				<Column name="РезультатПроверкиНаСервере" id="23">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Результат проверки на сервере</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="ПутьКПрограммеАвто" id="26">
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="ПутьКПрограммеНаСервереАвто" id="27">
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="УстановленаНаСервере" id="29">
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="РежимИспользования" id="31">
+					<Type>
+						<v8:Type>cfg:EnumRef.РежимыИспользованияПрограммыЭлектроннойПодписи</v8:Type>
+					</Type>
+				</Column>
+				<Column name="Автоопределение" id="33">
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+				<Column name="РежимИспользованияКартинка" id="34">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Режим использования картинка</v8:content>
+						</v8:item>
+					</Title>
 					<Type>
 						<v8:Type>xs:decimal</v8:Type>
 						<v8:NumberQualifiers>
@@ -1522,7 +1711,7 @@
 			<Title>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Только действующие сертификаты</v8:content>
+					<v8:content>Только действующие</v8:content>
 				</v8:item>
 			</Title>
 			<Type>
@@ -1534,6 +1723,25 @@
 				<v8:Type>v8:ValueListType</v8:Type>
 			</Type>
 			<Settings xsi:type="v8:TypeDescription"/>
+		</Attribute>
+		<Attribute name="ЕстьПравоНаДобавлениеСертификатов" id="36">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="НазначениеДляПодписанияИШифрования" id="38">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ЕстьПроверяемыеПрограммы" id="39">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
 		</Attribute>
 	</Attributes>
 	<Commands>
@@ -1583,7 +1791,7 @@
 			<Title>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Установить расширение</v8:content>
+					<v8:content>Установить расширение для работы с криптографией</v8:content>
 				</v8:item>
 			</Title>
 			<ToolTip>
@@ -1599,32 +1807,36 @@
 			<Title>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Заявление на выпуск сертификата</v8:content>
+					<v8:content>Оформить заявление...</v8:content>
 				</v8:item>
 			</Title>
 			<ToolTip>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Заявление на выпуск сертификата</v8:content>
+					<v8:content>Оформить заявление на выпуск сертификата</v8:content>
 				</v8:item>
 			</ToolTip>
+			<Picture>
+				<xr:Ref>CommonPicture.ЗаявлениеНаВыпускСертификатаКлюча</xr:Ref>
+				<xr:LoadTransparent>false</xr:LoadTransparent>
+			</Picture>
 			<Action>ДобавитьЗаявлениеНаВыпускСертификата</Action>
+			<Representation>TextPicture</Representation>
 			<CurrentRowUse>DontUse</CurrentRowUse>
 		</Command>
-		<Command name="ДобавитьИзУстановленныхНаКомпьютере" id="5">
+		<Command name="ДобавитьДляПодписанияИШифрования" id="5">
 			<Title>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Из установленных на компьютере...</v8:content>
+					<v8:content>Для подписания и шифрования...</v8:content>
 				</v8:item>
 			</Title>
-			<ToolTip>
-				<v8:item>
-					<v8:lang>ru</v8:lang>
-					<v8:content>Из установленных на компьютере ...</v8:content>
-				</v8:item>
-			</ToolTip>
-			<Action>ДобавитьИзУстановленныхНаКомпьютере</Action>
+			<Picture>
+				<xr:Ref>CommonPicture.СертификатВЛичномХранилище</xr:Ref>
+				<xr:LoadTransparent>false</xr:LoadTransparent>
+			</Picture>
+			<Action>ДобавитьДляПодписанияИШифрования</Action>
+			<Representation>TextPicture</Representation>
 			<CurrentRowUse>DontUse</CurrentRowUse>
 		</Command>
 		<Command name="ПоказатьВерсиюКомпонентыExtraCryptoAPI" id="6">
@@ -1665,6 +1877,49 @@
 				</v8:item>
 			</Title>
 			<Action>ТехническаяИнформация</Action>
+		</Command>
+		<Command name="ДобавитьИзКаталога" id="9">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Только для шифрования из каталога...</v8:content>
+				</v8:item>
+			</Title>
+			<Picture>
+				<xr:Ref>CommonPicture.СертификатКлюча</xr:Ref>
+				<xr:LoadTransparent>false</xr:LoadTransparent>
+			</Picture>
+			<Action>ДобавитьИзКаталога</Action>
+			<Representation>TextPicture</Representation>
+		</Command>
+		<Command name="ДобавитьИзФайлов" id="10">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Только для шифрования из файлов...</v8:content>
+				</v8:item>
+			</Title>
+			<Picture>
+				<xr:Ref>CommonPicture.СертификатКлюча</xr:Ref>
+				<xr:LoadTransparent>false</xr:LoadTransparent>
+			</Picture>
+			<Action>ДобавитьИзФайлов</Action>
+			<Representation>TextPicture</Representation>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ДобавитьТолькоДляШифрования" id="11">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Только для шифрования из личного хранилища...</v8:content>
+				</v8:item>
+			</Title>
+			<Picture>
+				<xr:Ref>CommonPicture.СертификатВЛичномХранилище</xr:Ref>
+				<xr:LoadTransparent>false</xr:LoadTransparent>
+			</Picture>
+			<Action>ДобавитьТолькоДляШифрования</Action>
+			<Representation>TextPicture</Representation>
 		</Command>
 	</Commands>
 	<Parameters>

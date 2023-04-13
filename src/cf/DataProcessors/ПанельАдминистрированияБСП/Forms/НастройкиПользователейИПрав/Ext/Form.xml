@@ -1,8 +1,18 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.15">
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.16">
 	<Customizable>false</Customizable>
 	<CommandSet>
+		<ExcludedCommand>Abort</ExcludedCommand>
+		<ExcludedCommand>Cancel</ExcludedCommand>
+		<ExcludedCommand>Ignore</ExcludedCommand>
+		<ExcludedCommand>No</ExcludedCommand>
+		<ExcludedCommand>OK</ExcludedCommand>
+		<ExcludedCommand>RestoreValues</ExcludedCommand>
+		<ExcludedCommand>Retry</ExcludedCommand>
+		<ExcludedCommand>SaveValues</ExcludedCommand>
+		<ExcludedCommand>Write</ExcludedCommand>
 		<ExcludedCommand>WriteAndClose</ExcludedCommand>
+		<ExcludedCommand>Yes</ExcludedCommand>
 	</CommandSet>
 	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
 		<Autofill>false</Autofill>
@@ -120,6 +130,58 @@
 								<Event name="OnChange">ИспользоватьГруппыПользователейПриИзменении</Event>
 							</Events>
 						</CheckBoxField>
+						<UsualGroup name="ГруппаВнешниеПользователи" id="852">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Внешние пользователи</v8:content>
+								</v8:item>
+							</Title>
+							<Group>Vertical</Group>
+							<Behavior>Usual</Behavior>
+							<ControlRepresentation>Picture</ControlRepresentation>
+							<Representation>NormalSeparation</Representation>
+							<ChildItemsWidth>Equal</ChildItemsWidth>
+							<ExtendedTooltip name="ГруппаВнешниеПользователиРасширеннаяПодсказка" id="2070"/>
+							<ChildItems>
+								<CheckBoxField name="ИспользоватьВнешнихПользователей" id="699">
+									<DataPath>НаборКонстант.ИспользоватьВнешнихПользователей</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Разрешить доступ внешним пользователям</v8:content>
+										</v8:item>
+									</Title>
+									<TitleLocation>Right</TitleLocation>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Предоставление удаленного доступа партнерам к программе.</v8:content>
+										</v8:item>
+									</ToolTip>
+									<ToolTipRepresentation>ShowBottom</ToolTipRepresentation>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="ИспользоватьВнешнихПользователейКонтекстноеМеню" id="700"/>
+									<ExtendedTooltip name="ИспользоватьВнешнихПользователейExtendedTooltip" id="2072"/>
+									<Events>
+										<Event name="OnChange">ИспользоватьВнешнихПользователейПриИзменении</Event>
+									</Events>
+								</CheckBoxField>
+								<Button name="ОткрытьВнешниеПользователи" id="2031">
+									<Type>Hyperlink</Type>
+									<CommandName>Form.Command.ВнешниеПользователи</CommandName>
+									<ToolTipRepresentation>ShowBottom</ToolTipRepresentation>
+									<ExtendedTooltip name="ОткрытьВнешниеПользователиРасширеннаяПодсказка" id="2075">
+										<Title formatted="false">
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Ведение списка внешних пользователей, которым предоставлен удаленный доступ к программе.</v8:content>
+											</v8:item>
+										</Title>
+									</ExtendedTooltip>
+								</Button>
+							</ChildItems>
+						</UsualGroup>
 					</ChildItems>
 				</UsualGroup>
 				<UsualGroup name="НастройкиВходаИОтчетПоПравам" id="2241">
@@ -197,156 +259,6 @@
 								</Title>
 							</ExtendedTooltip>
 						</Button>
-					</ChildItems>
-				</UsualGroup>
-			</ChildItems>
-		</UsualGroup>
-		<UsualGroup name="ГруппаВнешниеПользователи" id="852">
-			<Title>
-				<v8:item>
-					<v8:lang>ru</v8:lang>
-					<v8:content>Внешние пользователи</v8:content>
-				</v8:item>
-			</Title>
-			<Group>Vertical</Group>
-			<Behavior>Collapsible</Behavior>
-			<ControlRepresentation>Picture</ControlRepresentation>
-			<Representation>NormalSeparation</Representation>
-			<ChildItemsWidth>Equal</ChildItemsWidth>
-			<ExtendedTooltip name="ГруппаВнешниеПользователиРасширеннаяПодсказка" id="2070"/>
-			<ChildItems>
-				<UsualGroup name="ГруппаИспользоватьВнешнихПользователей" id="1883">
-					<Title>
-						<v8:item>
-							<v8:lang>ru</v8:lang>
-							<v8:content>Использовать внешних пользователей</v8:content>
-						</v8:item>
-					</Title>
-					<Width>43</Width>
-					<HorizontalStretch>false</HorizontalStretch>
-					<Group>Vertical</Group>
-					<Behavior>Usual</Behavior>
-					<Representation>NormalSeparation</Representation>
-					<ShowTitle>false</ShowTitle>
-					<ExtendedTooltip name="ГруппаИспользоватьВнешнихПользователейРасширеннаяПодсказка" id="2071"/>
-					<ChildItems>
-						<CheckBoxField name="ИспользоватьВнешнихПользователей" id="699">
-							<DataPath>НаборКонстант.ИспользоватьВнешнихПользователей</DataPath>
-							<Title>
-								<v8:item>
-									<v8:lang>ru</v8:lang>
-									<v8:content>Разрешить доступ внешним пользователям</v8:content>
-								</v8:item>
-							</Title>
-							<TitleLocation>Right</TitleLocation>
-							<ToolTip>
-								<v8:item>
-									<v8:lang>ru</v8:lang>
-									<v8:content>Предоставление удаленного доступа партнерам к программе.</v8:content>
-								</v8:item>
-							</ToolTip>
-							<ToolTipRepresentation>ShowBottom</ToolTipRepresentation>
-							<CheckBoxType>Auto</CheckBoxType>
-							<ContextMenu name="ИспользоватьВнешнихПользователейКонтекстноеМеню" id="700"/>
-							<ExtendedTooltip name="ИспользоватьВнешнихПользователейExtendedTooltip" id="2072"/>
-							<Events>
-								<Event name="OnChange">ИспользоватьВнешнихПользователейПриИзменении</Event>
-							</Events>
-						</CheckBoxField>
-					</ChildItems>
-				</UsualGroup>
-				<UsualGroup name="ГруппаВнешниеПользователиИНастройкиВхода" id="2192">
-					<Title>
-						<v8:item>
-							<v8:lang>ru</v8:lang>
-							<v8:content>Внешние пользователи и настройки входа</v8:content>
-						</v8:item>
-					</Title>
-					<HorizontalStretch>false</HorizontalStretch>
-					<Behavior>Usual</Behavior>
-					<Representation>None</Representation>
-					<ShowTitle>false</ShowTitle>
-					<ExtendedTooltip name="ГруппаВнешниеПользователиИНастройкиВходаРасширеннаяПодсказка" id="2193"/>
-					<ChildItems>
-						<PictureDecoration name="ГруппаСписокВнешнихПользователейОтступ" id="2158">
-							<Width>1</Width>
-							<Height>1</Height>
-							<Title formatted="false">
-								<v8:item>
-									<v8:lang>ru</v8:lang>
-									<v8:content>Горизонтальный отступ</v8:content>
-								</v8:item>
-							</Title>
-							<FileDragMode>AsFile</FileDragMode>
-							<ContextMenu name="ГруппаСписокВнешнихПользователейОтступКонтекстноеМеню" id="2159"/>
-							<ExtendedTooltip name="ГруппаСписокВнешнихПользователейОтступРасширеннаяПодсказка" id="2160"/>
-						</PictureDecoration>
-						<UsualGroup name="ГруппаСписокВнешнихПользователей" id="2186">
-							<Title>
-								<v8:item>
-									<v8:lang>ru</v8:lang>
-									<v8:content>Список внешних пользователей</v8:content>
-								</v8:item>
-							</Title>
-							<Width>41</Width>
-							<HorizontalStretch>false</HorizontalStretch>
-							<Group>Vertical</Group>
-							<Behavior>Usual</Behavior>
-							<Representation>None</Representation>
-							<ShowTitle>false</ShowTitle>
-							<ExtendedTooltip name="ГруппаСписокВнешнихПользователейРасширеннаяПодсказка" id="2187"/>
-							<ChildItems>
-								<Button name="ОткрытьВнешниеПользователи" id="2031">
-									<Type>Hyperlink</Type>
-									<CommandName>Form.Command.ВнешниеПользователи</CommandName>
-									<ToolTipRepresentation>ShowBottom</ToolTipRepresentation>
-									<ExtendedTooltip name="ОткрытьВнешниеПользователиРасширеннаяПодсказка" id="2075">
-										<Title formatted="false">
-											<v8:item>
-												<v8:lang>ru</v8:lang>
-												<v8:content>Ведение списка внешних пользователей, которым предоставлен удаленный доступ к программе.</v8:content>
-											</v8:item>
-										</Title>
-									</ExtendedTooltip>
-								</Button>
-							</ChildItems>
-						</UsualGroup>
-						<UsualGroup name="ГруппаНастройкиВходаВнешнихПользователей" id="2147">
-							<Title>
-								<v8:item>
-									<v8:lang>ru</v8:lang>
-									<v8:content>Настройки входа внешних пользователей</v8:content>
-								</v8:item>
-							</Title>
-							<Width>43</Width>
-							<HorizontalStretch>false</HorizontalStretch>
-							<Group>Vertical</Group>
-							<Behavior>Usual</Behavior>
-							<Representation>None</Representation>
-							<ShowTitle>false</ShowTitle>
-							<ExtendedTooltip name="ГруппаНастройкиВходаВнешнихПользователейРасширеннаяПодсказка" id="2148"/>
-							<ChildItems>
-								<Button name="НастройкиВходаВнешнихПользователей" id="2149">
-									<Type>Hyperlink</Type>
-									<CommandName>Form.Command.НастройкиВходаВнешнихПользователей</CommandName>
-									<Title>
-										<v8:item>
-											<v8:lang>ru</v8:lang>
-											<v8:content>Настройки входа</v8:content>
-										</v8:item>
-									</Title>
-									<ToolTipRepresentation>ShowBottom</ToolTipRepresentation>
-									<ExtendedTooltip name="НастройкиВходаВнешнихПользователейРасширеннаяПодсказка" id="2150">
-										<Title formatted="false">
-											<v8:item>
-												<v8:lang>ru</v8:lang>
-												<v8:content>Сложность и смена паролей, ограничение работы неактивных внешних пользователей.</v8:content>
-											</v8:item>
-										</Title>
-									</ExtendedTooltip>
-								</Button>
-							</ChildItems>
-						</UsualGroup>
 					</ChildItems>
 				</UsualGroup>
 			</ChildItems>
@@ -969,16 +881,6 @@
 				</v8:item>
 			</ToolTip>
 			<Action>СправочникВнешниеПользователи</Action>
-			<CurrentRowUse>DontUse</CurrentRowUse>
-		</Command>
-		<Command name="НастройкиВходаВнешнихПользователей" id="3">
-			<Title>
-				<v8:item>
-					<v8:lang>ru</v8:lang>
-					<v8:content>Настройки входа внешних пользователей</v8:content>
-				</v8:item>
-			</Title>
-			<Action>НастройкиВходаВнешнихПользователей</Action>
 			<CurrentRowUse>DontUse</CurrentRowUse>
 		</Command>
 		<Command name="ОбновлениеДоступаНаУровнеЗаписей" id="2">

@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.15">
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.16">
 	<Title>
 		<v8:item>
 			<v8:lang>ru</v8:lang>
@@ -16,7 +16,16 @@
 		</xr:Item>
 	</MobileDeviceCommandBarContent>
 	<CommandSet>
+		<ExcludedCommand>Abort</ExcludedCommand>
+		<ExcludedCommand>Cancel</ExcludedCommand>
 		<ExcludedCommand>Close</ExcludedCommand>
+		<ExcludedCommand>Ignore</ExcludedCommand>
+		<ExcludedCommand>No</ExcludedCommand>
+		<ExcludedCommand>OK</ExcludedCommand>
+		<ExcludedCommand>RestoreValues</ExcludedCommand>
+		<ExcludedCommand>Retry</ExcludedCommand>
+		<ExcludedCommand>SaveValues</ExcludedCommand>
+		<ExcludedCommand>Yes</ExcludedCommand>
 	</CommandSet>
 	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
 		<Autofill>false</Autofill>
@@ -45,16 +54,28 @@
 					<CommandName>Form.Command.Выбрать</CommandName>
 					<ExtendedTooltip name="ВыбратьExtendedTooltip" id="52"/>
 				</Button>
-				<Button name="ПометитьВсе" id="27">
-					<Type>CommandBarButton</Type>
-					<CommandName>Form.Command.ПометитьВсе</CommandName>
-					<ExtendedTooltip name="ПометитьВсеExtendedTooltip" id="53"/>
-				</Button>
-				<Button name="СнятьПометкуСоВсех" id="28">
-					<Type>CommandBarButton</Type>
-					<CommandName>Form.Command.СнятьПометкуСоВсех</CommandName>
-					<ExtendedTooltip name="СнятьПометкуСоВсехExtendedTooltip" id="54"/>
-				</Button>
+				<ButtonGroup name="ГруппаКомандФлажки" id="107">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа команд флажки</v8:content>
+						</v8:item>
+					</Title>
+					<Representation>Compact</Representation>
+					<ExtendedTooltip name="ГруппаКомандФлажкиРасширеннаяПодсказка" id="108"/>
+					<ChildItems>
+						<Button name="ПометитьВсе" id="27">
+							<Type>CommandBarButton</Type>
+							<CommandName>Form.Command.ПометитьВсе</CommandName>
+							<ExtendedTooltip name="ПометитьВсеExtendedTooltip" id="53"/>
+						</Button>
+						<Button name="СнятьПометкуСоВсех" id="28">
+							<Type>CommandBarButton</Type>
+							<CommandName>Form.Command.СнятьПометкуСоВсех</CommandName>
+							<ExtendedTooltip name="СнятьПометкуСоВсехExtendedTooltip" id="54"/>
+						</Button>
+					</ChildItems>
+				</ButtonGroup>
 				<Button name="ПометитьВыбранные" id="21">
 					<Type>CommandBarButton</Type>
 					<CommandName>Form.Command.ПометитьВыбранные</CommandName>
@@ -72,6 +93,20 @@
 					<CommandName>Form.Command.АктивныеПользователи</CommandName>
 					<ExtendedTooltip name="ФормаАктивныеПользователиExtendedTooltip" id="57"/>
 				</Button>
+				<SearchStringAddition name="СтрокаПоиск" id="104">
+					<AdditionSource>
+						<Item>СписокПользователей</Item>
+						<Type>SearchStringRepresentation</Type>
+					</AdditionSource>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Поиск</v8:content>
+						</v8:item>
+					</Title>
+					<ContextMenu name="СтрокаПоискКонтекстноеМеню" id="105"/>
+					<ExtendedTooltip name="СтрокаПоискРасширеннаяПодсказка" id="106"/>
+				</SearchStringAddition>
 			</ChildItems>
 		</CommandBar>
 		<LabelDecoration name="Надпись" id="23">
@@ -124,6 +159,17 @@
 					</Title>
 					<CommandSet>
 						<ExcludedCommand>Add</ExcludedCommand>
+						<ExcludedCommand>Change</ExcludedCommand>
+						<ExcludedCommand>Copy</ExcludedCommand>
+						<ExcludedCommand>Delete</ExcludedCommand>
+						<ExcludedCommand>EndEdit</ExcludedCommand>
+						<ExcludedCommand>HierarchicalList</ExcludedCommand>
+						<ExcludedCommand>List</ExcludedCommand>
+						<ExcludedCommand>MoveDown</ExcludedCommand>
+						<ExcludedCommand>MoveUp</ExcludedCommand>
+						<ExcludedCommand>SortListAsc</ExcludedCommand>
+						<ExcludedCommand>SortListDesc</ExcludedCommand>
+						<ExcludedCommand>Tree</ExcludedCommand>
 					</CommandSet>
 					<CurrentRowUse>SelectionPresentation</CurrentRowUse>
 					<ContextMenu name="ГруппыПользователейКонтекстноеМеню" id="13">
@@ -228,6 +274,14 @@
 					</Title>
 					<CommandSet>
 						<ExcludedCommand>Add</ExcludedCommand>
+						<ExcludedCommand>Change</ExcludedCommand>
+						<ExcludedCommand>Copy</ExcludedCommand>
+						<ExcludedCommand>Delete</ExcludedCommand>
+						<ExcludedCommand>EndEdit</ExcludedCommand>
+						<ExcludedCommand>MoveDown</ExcludedCommand>
+						<ExcludedCommand>MoveUp</ExcludedCommand>
+						<ExcludedCommand>SortListAsc</ExcludedCommand>
+						<ExcludedCommand>SortListDesc</ExcludedCommand>
 					</CommandSet>
 					<RowFilter xsi:nil="true"/>
 					<ContextMenu name="СписокПользователейКонтекстноеМеню" id="2">

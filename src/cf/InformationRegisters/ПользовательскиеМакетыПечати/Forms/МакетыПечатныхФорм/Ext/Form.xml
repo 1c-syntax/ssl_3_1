@@ -1,18 +1,13 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.15">
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.16">
+	<AutoSaveDataInSettings>Use</AutoSaveDataInSettings>
 	<CommandBarLocation>None</CommandBarLocation>
-	<MobileDeviceCommandBarContent>
-		<xr:Item>
-			<xr:Presentation/>
-			<xr:CheckState>0</xr:CheckState>
-			<xr:Value xsi:type="xs:string"/>
-		</xr:Item>
-	</MobileDeviceCommandBarContent>
 	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
 	<Events>
 		<Event name="NotificationProcessing">ОбработкаОповещения</Event>
 		<Event name="OnOpen">ПриОткрытии</Event>
 		<Event name="BeforeClose">ПередЗакрытием</Event>
+		<Event name="OnLoadDataFromSettingsAtServer">ПриЗагрузкеДанныхИзНастроекНаСервере</Event>
 		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
 	</Events>
 	<ChildItems>
@@ -122,6 +117,9 @@
 					<TextEdit>false</TextEdit>
 					<ContextMenu name="ОтборПоЯзыкуКонтекстноеМеню" id="112"/>
 					<ExtendedTooltip name="ОтборПоЯзыкуРасширеннаяПодсказка" id="113"/>
+					<Events>
+						<Event name="OnChange">ОтборПоЯзыкуПриИзменении</Event>
+					</Events>
 				</InputField>
 				<InputField name="СтрокаПоиска" id="47">
 					<DataPath>СтрокаПоиска</DataPath>
@@ -142,8 +140,22 @@
 					<Events>
 						<Event name="OnChange">СтрокаПоискаПриИзменении</Event>
 						<Event name="EditTextChange">СтрокаПоискаИзменениеТекстаРедактирования</Event>
+						<Event name="Clearing">СтрокаПоискаОчистка</Event>
 					</Events>
 				</InputField>
+				<PictureDecoration name="ВыполняетсяПоиск" id="237">
+					<Visible>false</Visible>
+					<Width>2</Width>
+					<Height>1</Height>
+					<HorizontalStretch>false</HorizontalStretch>
+					<VerticalStretch>false</VerticalStretch>
+					<Picture>
+						<xr:Ref>CommonPicture.ДлительнаяОперация16</xr:Ref>
+						<xr:LoadTransparent>false</xr:LoadTransparent>
+					</Picture>
+					<ContextMenu name="ВыполняетсяПоискКонтекстноеМеню" id="238"/>
+					<ExtendedTooltip name="ВыполняетсяПоискРасширеннаяПодсказка" id="239"/>
+				</PictureDecoration>
 			</ChildItems>
 		</UsualGroup>
 		<Table name="Макеты" id="122">
@@ -151,7 +163,6 @@
 			<ChangeRowSet>false</ChangeRowSet>
 			<ChangeRowOrder>false</ChangeRowOrder>
 			<AutoInsertNewRow>true</AutoInsertNewRow>
-			<InitialTreeView>ExpandTopLevel</InitialTreeView>
 			<EnableStartDrag>true</EnableStartDrag>
 			<EnableDrag>true</EnableDrag>
 			<DataPath>Макеты</DataPath>
@@ -163,6 +174,21 @@
 			</Title>
 			<CommandSet>
 				<ExcludedCommand>Add</ExcludedCommand>
+				<ExcludedCommand>Change</ExcludedCommand>
+				<ExcludedCommand>Copy</ExcludedCommand>
+				<ExcludedCommand>Delete</ExcludedCommand>
+				<ExcludedCommand>EndEdit</ExcludedCommand>
+				<ExcludedCommand>HierarchicalList</ExcludedCommand>
+				<ExcludedCommand>List</ExcludedCommand>
+				<ExcludedCommand>MoveDown</ExcludedCommand>
+				<ExcludedCommand>MoveUp</ExcludedCommand>
+				<ExcludedCommand>OutputList</ExcludedCommand>
+				<ExcludedCommand>SelectAll</ExcludedCommand>
+				<ExcludedCommand>ShowMultipleSelection</ExcludedCommand>
+				<ExcludedCommand>ShowRowRearrangement</ExcludedCommand>
+				<ExcludedCommand>SortListAsc</ExcludedCommand>
+				<ExcludedCommand>SortListDesc</ExcludedCommand>
+				<ExcludedCommand>Tree</ExcludedCommand>
 			</CommandSet>
 			<ContextMenu name="МакетыКонтекстноеМеню" id="123">
 				<ChildItems>
@@ -180,17 +206,33 @@
 			</ContextMenu>
 			<AutoCommandBar name="МакетыКоманднаяПанель" id="124">
 				<ChildItems>
-					<Button name="МакетыДобавитьМакет" id="162">
-						<Type>CommandBarButton</Type>
-						<CommandName>Form.Command.ДобавитьМакет</CommandName>
+					<Popup name="МакетыГруппаДобавитьМакет" id="200">
 						<Title>
 							<v8:item>
 								<v8:lang>ru</v8:lang>
 								<v8:content>Создать</v8:content>
 							</v8:item>
 						</Title>
-						<ExtendedTooltip name="МакетыДобавитьМакетРасширеннаяПодсказка" id="163"/>
-					</Button>
+						<ExtendedTooltip name="МакетыГруппаДобавитьМакетРасширеннаяПодсказка" id="201"/>
+						<ChildItems>
+							<Button name="МакетыДобавитьМакет" id="162">
+								<Type>CommandBarButton</Type>
+								<CommandName>Form.Command.ДобавитьМакет</CommandName>
+								<Title>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Создать макет табличного документа</v8:content>
+									</v8:item>
+								</Title>
+								<ExtendedTooltip name="МакетыДобавитьМакетРасширеннаяПодсказка" id="163"/>
+							</Button>
+							<Button name="МакетыДобавитьМакетOfficeOpenXML" id="202">
+								<Type>CommandBarButton</Type>
+								<CommandName>Form.Command.ДобавитьМакетOfficeOpenXML</CommandName>
+								<ExtendedTooltip name="МакетыДобавитьМакетOfficeOpenXMLРасширеннаяПодсказка" id="203"/>
+							</Button>
+						</ChildItems>
+					</Popup>
 					<Button name="МакетыСкопировать" id="170">
 						<Type>CommandBarButton</Type>
 						<CommandName>Form.Command.Скопировать</CommandName>
@@ -232,6 +274,11 @@
 							</Button>
 						</ChildItems>
 					</ButtonGroup>
+					<Button name="ФормаПоказатьВСписке" id="204">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Command.ПоказатьВСписке</CommandName>
+						<ExtendedTooltip name="ФормаПоказатьВСпискеРасширеннаяПодсказка" id="205"/>
+					</Button>
 					<Button name="МакетыПечатныхФормУдалитьИзмененныйМакет" id="160">
 						<Type>CommandBarButton</Type>
 						<CommandName>Form.Command.УдалитьИзмененныйМакет</CommandName>
@@ -295,40 +342,30 @@
 			<Events>
 				<Event name="Selection">МакетыВыбор</Event>
 				<Event name="OnActivateRow">МакетыПриАктивизацииСтроки</Event>
+				<Event name="BeforeExpand">МакетыПередРазворачиванием</Event>
 				<Event name="OnChange">МакетыПриИзменении</Event>
 			</Events>
 			<ChildItems>
-				<PictureField name="МакетыКартинкаГруппы" id="135">
-					<DataPath>Макеты.КартинкаГруппы</DataPath>
-					<Visible>false</Visible>
-					<EditMode>EnterOnInput</EditMode>
-					<ShowInHeader>false</ShowInHeader>
-					<ContextMenu name="МакетыКартинкаГруппыКонтекстноеМеню" id="136"/>
-					<ExtendedTooltip name="МакетыКартинкаГруппыРасширеннаяПодсказка" id="137"/>
-				</PictureField>
-				<ColumnGroup name="МакетыГруппа1" id="144">
+				<ColumnGroup name="ГруппаКартинкаИМакет" id="144">
 					<Title>
 						<v8:item>
 							<v8:lang>ru</v8:lang>
-							<v8:content>Макеты группа 1</v8:content>
+							<v8:content>Картинка и макет</v8:content>
 						</v8:item>
 					</Title>
 					<Group>InCell</Group>
-					<ExtendedTooltip name="МакетыГруппа1РасширеннаяПодсказка" id="145"/>
+					<ExtendedTooltip name="ГруппаКартинкаИМакетРасширеннаяПодсказка" id="145"/>
 					<ChildItems>
-						<PictureField name="МакетыКартинка" id="149">
-							<DataPath>Макеты.Картинка</DataPath>
+						<PictureField name="МакетыКартинкаГруппы" id="240">
+							<DataPath>Макеты.КартинкаГруппы</DataPath>
 							<EditMode>EnterOnInput</EditMode>
 							<ShowInHeader>false</ShowInHeader>
-							<ValuesPicture>
-								<xr:Ref>CommonPicture.ТипыМакетов</xr:Ref>
-								<xr:LoadTransparent>false</xr:LoadTransparent>
-							</ValuesPicture>
-							<ContextMenu name="МакетыКартинкаКонтекстноеМеню" id="150"/>
-							<ExtendedTooltip name="МакетыКартинкаРасширеннаяПодсказка" id="151"/>
+							<ContextMenu name="МакетыКартинкаГруппыКонтекстноеМеню" id="241"/>
+							<ExtendedTooltip name="МакетыКартинкаГруппыРасширеннаяПодсказка" id="242"/>
 						</PictureField>
 						<InputField name="МакетыПредставление" id="138">
 							<DataPath>Макеты.Представление</DataPath>
+							<ReadOnly>true</ReadOnly>
 							<Title>
 								<v8:item>
 									<v8:lang>ru</v8:lang>
@@ -345,12 +382,19 @@
 				</ColumnGroup>
 				<CheckBoxField name="МакетыИспользуется" id="188">
 					<DataPath>Макеты.Используется</DataPath>
+					<TitleLocation>None</TitleLocation>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Показывать в подменю "Печать"</v8:content>
+						</v8:item>
+					</ToolTip>
 					<EditMode>EnterOnInput</EditMode>
-					<ShowInHeader>false</ShowInHeader>
 					<HeaderPicture>
 						<xr:Ref>CommonPicture.ВводимыеСимволыВидны</xr:Ref>
 						<xr:LoadTransparent>false</xr:LoadTransparent>
 					</HeaderPicture>
+					<ShowInFooter>false</ShowInFooter>
 					<CheckBoxType>Auto</CheckBoxType>
 					<ContextMenu name="МакетыИспользуетсяКонтекстноеМеню" id="189"/>
 					<ExtendedTooltip name="МакетыИспользуетсяРасширеннаяПодсказка" id="190"/>
@@ -358,6 +402,7 @@
 				<PictureField name="МакетыКартинкаИспользования" id="146">
 					<DataPath>Макеты.КартинкаИспользования</DataPath>
 					<ReadOnly>true</ReadOnly>
+					<TitleLocation>None</TitleLocation>
 					<ToolTip>
 						<v8:item>
 							<v8:lang>ru</v8:lang>
@@ -365,11 +410,11 @@
 						</v8:item>
 					</ToolTip>
 					<EditMode>EnterOnInput</EditMode>
-					<ShowInHeader>false</ShowInHeader>
 					<HeaderPicture>
 						<xr:Ref>CommonPicture.РедактироватьМакет</xr:Ref>
 						<xr:LoadTransparent>false</xr:LoadTransparent>
 					</HeaderPicture>
+					<ShowInFooter>false</ShowInFooter>
 					<HorizontalStretch>false</HorizontalStretch>
 					<ValuesPicture>
 						<xr:Ref>CommonPicture.ИспользованиеМакета</xr:Ref>
@@ -380,13 +425,20 @@
 				</PictureField>
 				<PictureField name="МакетыКнопкаНастройкиДоступности" id="182">
 					<DataPath>Макеты.ДоступнаНастройкаВидимости</DataPath>
+					<TitleLocation>None</TitleLocation>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Условия видимости</v8:content>
+						</v8:item>
+					</ToolTip>
 					<EditMode>EnterOnInput</EditMode>
 					<CellHyperlink>true</CellHyperlink>
-					<ShowInHeader>false</ShowInHeader>
 					<HeaderPicture>
 						<xr:Ref>StdPicture.DataCompositionOutputParameters</xr:Ref>
 						<xr:LoadTransparent>true</xr:LoadTransparent>
 					</HeaderPicture>
+					<ShowInFooter>false</ShowInFooter>
 					<HorizontalStretch>false</HorizontalStretch>
 					<ValuesPicture>
 						<xr:Ref>StdPicture.DataCompositionOutputParameters</xr:Ref>
@@ -405,6 +457,7 @@
 				</CheckBoxField>
 				<PictureField name="МакетыДоступенПеревод" id="176">
 					<DataPath>Макеты.ДоступенПеревод</DataPath>
+					<TitleLocation>None</TitleLocation>
 					<ToolTip>
 						<v8:item>
 							<v8:lang>ru</v8:lang>
@@ -413,11 +466,11 @@
 					</ToolTip>
 					<ToolTipRepresentation>Balloon</ToolTipRepresentation>
 					<EditMode>EnterOnInput</EditMode>
-					<ShowInHeader>false</ShowInHeader>
 					<HeaderPicture>
 						<xr:Ref>CommonPicture.ПереводТекста</xr:Ref>
 						<xr:LoadTransparent>false</xr:LoadTransparent>
 					</HeaderPicture>
+					<ShowInFooter>false</ShowInFooter>
 					<HorizontalStretch>false</HorizontalStretch>
 					<ValuesPicture>
 						<xr:Ref>CommonPicture.ПереводТекста</xr:Ref>
@@ -428,6 +481,7 @@
 				</PictureField>
 				<InputField name="МакетыДоступныеЯзыки" id="141">
 					<DataPath>Макеты.ДоступныеЯзыки</DataPath>
+					<ReadOnly>true</ReadOnly>
 					<EditMode>EnterOnInput</EditMode>
 					<Width>30</Width>
 					<HorizontalStretch>false</HorizontalStretch>
@@ -601,12 +655,6 @@
 					</Type>
 				</Column>
 				<Column name="Картинка" id="4">
-					<Title>
-						<v8:item>
-							<v8:lang>ru</v8:lang>
-							<v8:content>Картинка</v8:content>
-						</v8:item>
-					</Title>
 					<Type>
 						<v8:Type>xs:decimal</v8:Type>
 						<v8:NumberQualifiers>
@@ -766,6 +814,39 @@
 						<v8:Type>xs:boolean</v8:Type>
 					</Type>
 				</Column>
+				<Column name="ЭтоПодраздел" id="28">
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+				<Column name="СоответствуетОтбору" id="30">
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+				<Column name="ИсточникМакета" id="36">
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="ЕстьЭлементыСоответствующиеОтбору" id="38">
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+				<Column name="ИсточникиДанных" id="42">
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
 			</Columns>
 		</Attribute>
 		<Attribute name="ПоказыватьИзмененные" id="23">
@@ -784,6 +865,38 @@
 			</Type>
 		</Attribute>
 		<Attribute name="ПоказыватьНеиспользуемые" id="26">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ОбъектыСКомандамиПечати" id="32">
+			<Type>
+				<v8:Type>v8:ValueListType</v8:Type>
+			</Type>
+			<Settings xsi:type="v8:TypeDescription"/>
+		</Attribute>
+		<Attribute name="ПозицияВДереве" id="34">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+			<Save>
+				<Field>ПозицияВДереве</Field>
+			</Save>
+		</Attribute>
+		<Attribute name="РазворачиваемыеВетки" id="37">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ВыполняетсяЗагрузкаДанных" id="43">
 			<Type>
 				<v8:Type>xs:boolean</v8:Type>
 			</Type>
@@ -859,6 +972,7 @@
 					<v8:content>Изменить макет</v8:content>
 				</v8:item>
 			</ToolTip>
+			<Shortcut>F2</Shortcut>
 			<Picture>
 				<xr:Ref>CommonPicture.РедактироватьМакет</xr:Ref>
 				<xr:LoadTransparent>false</xr:LoadTransparent>
@@ -937,6 +1051,7 @@
 					<v8:content>Скопировать</v8:content>
 				</v8:item>
 			</ToolTip>
+			<Shortcut>F9</Shortcut>
 			<Picture>
 				<xr:Ref>StdPicture.CloneListItem</xr:Ref>
 				<xr:LoadTransparent>true</xr:LoadTransparent>
@@ -965,13 +1080,23 @@
 			</Picture>
 			<Action>УдалитьМакет</Action>
 		</Command>
-		<Command name="СоздатьМакетOfficeOpenXML" id="12">
+		<Command name="ДобавитьМакетOfficeOpenXML" id="12">
 			<Title>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Создать макет office open XML</v8:content>
+					<v8:content>Создать макет Office Open XML</v8:content>
 				</v8:item>
 			</Title>
+			<Action>ДобавитьМакетOfficeOpenXML</Action>
+		</Command>
+		<Command name="ПоказатьВСписке" id="13">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Показать в списке</v8:content>
+				</v8:item>
+			</Title>
+			<Action>ПерейтиВСписок</Action>
 		</Command>
 	</Commands>
 </Form>

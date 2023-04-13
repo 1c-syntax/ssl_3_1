@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.15">
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.16">
 	<WindowOpeningMode>LockOwnerWindow</WindowOpeningMode>
 	<Customizable>false</Customizable>
 	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
@@ -37,6 +37,9 @@
 			</Title>
 			<PagesRepresentation>TabsOnTop</PagesRepresentation>
 			<ExtendedTooltip name="СтраницыРасширеннаяПодсказка" id="21"/>
+			<Events>
+				<Event name="OnCurrentPageChange">СтраницыПриСменеСтраницы</Event>
+			</Events>
 			<ChildItems>
 				<Page name="СтраницаОсновное" id="28">
 					<Title>
@@ -203,6 +206,14 @@
 							</Title>
 							<CommandSet>
 								<ExcludedCommand>Add</ExcludedCommand>
+								<ExcludedCommand>Change</ExcludedCommand>
+								<ExcludedCommand>Copy</ExcludedCommand>
+								<ExcludedCommand>Delete</ExcludedCommand>
+								<ExcludedCommand>EndEdit</ExcludedCommand>
+								<ExcludedCommand>MoveDown</ExcludedCommand>
+								<ExcludedCommand>MoveUp</ExcludedCommand>
+								<ExcludedCommand>SortListAsc</ExcludedCommand>
+								<ExcludedCommand>SortListDesc</ExcludedCommand>
 							</CommandSet>
 							<RowFilter xsi:nil="true"/>
 							<ContextMenu name="СубъектКонтекстноеМеню" id="106"/>
@@ -278,6 +289,14 @@
 							</Title>
 							<CommandSet>
 								<ExcludedCommand>Add</ExcludedCommand>
+								<ExcludedCommand>Change</ExcludedCommand>
+								<ExcludedCommand>Copy</ExcludedCommand>
+								<ExcludedCommand>Delete</ExcludedCommand>
+								<ExcludedCommand>EndEdit</ExcludedCommand>
+								<ExcludedCommand>MoveDown</ExcludedCommand>
+								<ExcludedCommand>MoveUp</ExcludedCommand>
+								<ExcludedCommand>SortListAsc</ExcludedCommand>
+								<ExcludedCommand>SortListDesc</ExcludedCommand>
 							</CommandSet>
 							<RowFilter xsi:nil="true"/>
 							<ContextMenu name="ИздательКонтекстноеМеню" id="116"/>
@@ -419,6 +438,14 @@
 							</Title>
 							<CommandSet>
 								<ExcludedCommand>Add</ExcludedCommand>
+								<ExcludedCommand>Change</ExcludedCommand>
+								<ExcludedCommand>Copy</ExcludedCommand>
+								<ExcludedCommand>Delete</ExcludedCommand>
+								<ExcludedCommand>EndEdit</ExcludedCommand>
+								<ExcludedCommand>MoveDown</ExcludedCommand>
+								<ExcludedCommand>MoveUp</ExcludedCommand>
+								<ExcludedCommand>SortListAsc</ExcludedCommand>
+								<ExcludedCommand>SortListDesc</ExcludedCommand>
 							</CommandSet>
 							<RowFilter xsi:nil="true"/>
 							<ContextMenu name="ВнутреннееСодержаниеКонтекстноеМеню" id="96"/>
@@ -482,6 +509,198 @@
 								</InputField>
 							</ChildItems>
 						</Table>
+					</ChildItems>
+				</Page>
+				<Page name="СтраницаКорневыеСертификаты" id="240">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Путь сертификации</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="СтраницаКорневыеСертификатыРасширеннаяПодсказка" id="241"/>
+					<ChildItems>
+						<UsualGroup name="ГруппаОшибкаПолученияЦепочкиСертификатов" id="267">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа ошибка</v8:content>
+								</v8:item>
+							</Title>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаОшибкаПолученияЦепочкиСертификатовРасширеннаяПодсказка" id="268"/>
+							<ChildItems>
+								<PictureDecoration name="КартинкаОшибкаПолученияЦепочкиСертификатов" id="269">
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Картинка ошибка получения цепочки сертификатов</v8:content>
+										</v8:item>
+									</Title>
+									<Picture>
+										<xr:Ref>CommonPicture.Предупреждение</xr:Ref>
+										<xr:LoadTransparent>false</xr:LoadTransparent>
+									</Picture>
+									<FileDragMode>AsFile</FileDragMode>
+									<ContextMenu name="КартинкаОшибкаПолученияЦепочкиСертификатовКонтекстноеМеню" id="270"/>
+									<ExtendedTooltip name="КартинкаОшибкаПолученияЦепочкиСертификатовРасширеннаяПодсказка" id="271"/>
+								</PictureDecoration>
+								<LabelDecoration name="ДекорацияОшибкаПолученияЦепочкиСертификатов" id="264">
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Не удалось получить цепочку сертификатов</v8:content>
+										</v8:item>
+									</Title>
+									<Hyperlink>true</Hyperlink>
+									<ContextMenu name="ДекорацияОшибкаПолученияЦепочкиСертификатовКонтекстноеМеню" id="265"/>
+									<ExtendedTooltip name="ДекорацияОшибкаПолученияЦепочкиСертификатовРасширеннаяПодсказка" id="266"/>
+									<Events>
+										<Event name="Click">ДекорацияОшибкаПолученияЦепочкиСертификатовНажатие</Event>
+									</Events>
+								</LabelDecoration>
+							</ChildItems>
+						</UsualGroup>
+						<Table name="ПутьСертификации" id="200">
+							<Representation>List</Representation>
+							<ChangeRowSet>false</ChangeRowSet>
+							<ChangeRowOrder>false</ChangeRowOrder>
+							<Width>40</Width>
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<DataPath>ПутьСертификации</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Корневые сертификаты</v8:content>
+								</v8:item>
+							</Title>
+							<RowFilter xsi:nil="true"/>
+							<ContextMenu name="ПутьСертификацииКонтекстноеМеню" id="202"/>
+							<AutoCommandBar name="ПутьСертификацииКоманднаяПанель" id="201">
+								<Autofill>false</Autofill>
+								<ChildItems>
+									<Button name="ПутьСертификацииУстановитьСертификат" id="259">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.Command.УстановитьСертификат</CommandName>
+										<ExtendedTooltip name="ПутьСертификацииУстановитьСертификатРасширеннаяПодсказка" id="260"/>
+									</Button>
+								</ChildItems>
+							</AutoCommandBar>
+							<ExtendedTooltip name="ПутьСертификацииРасширеннаяПодсказка" id="203"/>
+							<SearchStringAddition name="ПутьСертификацииСтрокаПоиска" id="204">
+								<AdditionSource>
+									<Item>ПутьСертификации</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ПутьСертификацииСтрокаПоискаКонтекстноеМеню" id="205"/>
+								<ExtendedTooltip name="ПутьСертификацииСтрокаПоискаРасширеннаяПодсказка" id="206"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="ПутьСертификацииСостояниеПросмотра" id="210">
+								<AdditionSource>
+									<Item>ПутьСертификации</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ПутьСертификацииСостояниеПросмотраКонтекстноеМеню" id="211"/>
+								<ExtendedTooltip name="ПутьСертификацииСостояниеПросмотраРасширеннаяПодсказка" id="212"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="ПутьСертификацииУправлениеПоиском" id="207">
+								<AdditionSource>
+									<Item>ПутьСертификации</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="ПутьСертификацииУправлениеПоискомКонтекстноеМеню" id="208"/>
+								<ExtendedTooltip name="ПутьСертификацииУправлениеПоискомРасширеннаяПодсказка" id="209"/>
+							</SearchControlAddition>
+							<Events>
+								<Event name="Selection">КорневыеСертификатыВыбор</Event>
+							</Events>
+							<ChildItems>
+								<InputField name="ПутьСертификацииПредставление" id="242">
+									<DataPath>ПутьСертификации.Представление</DataPath>
+									<ContextMenu name="ПутьСертификацииПредставлениеКонтекстноеМеню" id="243"/>
+									<ExtendedTooltip name="ПутьСертификацииПредставлениеРасширеннаяПодсказка" id="244"/>
+								</InputField>
+							</ChildItems>
+						</Table>
+					</ChildItems>
+				</Page>
+				<Page name="СтраницаСпискиОтзыва" id="238">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Списки отзыва</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="СтраницаСпискиОтзываРасширеннаяПодсказка" id="239"/>
+					<ChildItems>
+						<Table name="СпискиОтзыва" id="219">
+							<Representation>List</Representation>
+							<ChangeRowSet>false</ChangeRowSet>
+							<ChangeRowOrder>false</ChangeRowOrder>
+							<Width>40</Width>
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<DataPath>СпискиОтзыва</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Списки отзыва</v8:content>
+								</v8:item>
+							</Title>
+							<RowFilter xsi:nil="true"/>
+							<ContextMenu name="СпискиОтзываКонтекстноеМеню" id="221"/>
+							<AutoCommandBar name="СпискиОтзываКоманднаяПанель" id="220">
+								<Autofill>false</Autofill>
+								<ChildItems>
+									<Button name="УстановитьСписокОтзыва" id="257">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.Command.УстановитьСписокОтзыва</CommandName>
+										<ExtendedTooltip name="УстановитьСписокОтзываРасширеннаяПодсказка" id="258"/>
+									</Button>
+								</ChildItems>
+							</AutoCommandBar>
+							<ExtendedTooltip name="СпискиОтзываРасширеннаяПодсказка" id="222"/>
+							<SearchStringAddition name="СпискиОтзываСтрокаПоиска" id="223">
+								<AdditionSource>
+									<Item>СпискиОтзыва</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="СпискиОтзываСтрокаПоискаКонтекстноеМеню" id="224"/>
+								<ExtendedTooltip name="СпискиОтзываСтрокаПоискаРасширеннаяПодсказка" id="225"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="СпискиОтзываСостояниеПросмотра" id="229">
+								<AdditionSource>
+									<Item>СпискиОтзыва</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="СпискиОтзываСостояниеПросмотраКонтекстноеМеню" id="230"/>
+								<ExtendedTooltip name="СпискиОтзываСостояниеПросмотраРасширеннаяПодсказка" id="231"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="СпискиОтзываУправлениеПоиском" id="226">
+								<AdditionSource>
+									<Item>СпискиОтзыва</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="СпискиОтзываУправлениеПоискомКонтекстноеМеню" id="227"/>
+								<ExtendedTooltip name="СпискиОтзываУправлениеПоискомРасширеннаяПодсказка" id="228"/>
+							</SearchControlAddition>
+							<Events>
+								<Event name="Selection">СпискиОтзываВыбор</Event>
+							</Events>
+							<ChildItems>
+								<InputField name="СпискиОтзываАдрес" id="232">
+									<DataPath>СпискиОтзыва.Адрес</DataPath>
+									<ReadOnly>true</ReadOnly>
+									<ContextMenu name="СпискиОтзываАдресКонтекстноеМеню" id="233"/>
+									<ExtendedTooltip name="СпискиОтзываАдресРасширеннаяПодсказка" id="234"/>
+								</InputField>
+							</ChildItems>
+						</Table>
+						<LabelField name="ОшибкаПриПолученииАдресовСписковОтзыва" id="254">
+							<DataPath>ОшибкаПриПолученииАдресовСписковОтзыва</DataPath>
+							<Hiperlink>true</Hiperlink>
+							<ContextMenu name="ОшибкаПриПолученииАдресовСписковОтзываКонтекстноеМеню" id="255"/>
+							<ExtendedTooltip name="ОшибкаПриПолученииАдресовСписковОтзываРасширеннаяПодсказка" id="256"/>
+						</LabelField>
 					</ChildItems>
 				</Page>
 			</ChildItems>
@@ -772,6 +991,118 @@
 		<Attribute name="ОшибкаНаКлиенте" id="14">
 			<Type/>
 		</Attribute>
+		<Attribute name="ПутьСертификации" id="30">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Путь сертификации</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTable</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="Представление" id="31">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Сертификат</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="ДанныеСертификата" id="32">
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="УстановленНаКлиенте" id="41">
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+		<Attribute name="СпискиОтзыва" id="35">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Списки отзыва</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTable</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="Адрес" id="36">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Адрес</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="ДанныеСпискаОтзыва" id="37">
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+		<Attribute name="ОшибкаПриПолученииПутиСертификации" id="38">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ОшибкаПриПолученииАдресовСписковОтзыва" id="39">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Не удалось получить адреса списков отзыва</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ОшибкаПриПолученииПутиСертификацииНаСервере" id="42">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
 	</Attributes>
 	<Commands>
 		<Command name="СохранитьВФайл" id="1">
@@ -799,6 +1130,24 @@
 			</ToolTip>
 			<Action>Проверить</Action>
 			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="УстановитьСписокОтзыва" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Установить список отзыва</v8:content>
+				</v8:item>
+			</Title>
+			<Action>УстановитьСписокОтзыва</Action>
+		</Command>
+		<Command name="УстановитьСертификат" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Установить сертификат</v8:content>
+				</v8:item>
+			</Title>
+			<Action>УстановитьСертификат</Action>
 		</Command>
 	</Commands>
 	<Parameters>

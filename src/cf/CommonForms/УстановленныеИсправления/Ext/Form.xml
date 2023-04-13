@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.15">
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.16">
 	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
 		<Autofill>false</Autofill>
 	</AutoCommandBar>
@@ -7,48 +7,93 @@
 		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
 	</Events>
 	<ChildItems>
-		<UsualGroup name="ГруппаИнформация" id="76">
+		<Pages name="СтраницыИнформация" id="115">
 			<Title>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Информация</v8:content>
+					<v8:content>Страницы информация</v8:content>
 				</v8:item>
 			</Title>
-			<Behavior>Usual</Behavior>
-			<Representation>None</Representation>
-			<ShowTitle>false</ShowTitle>
-			<ExtendedTooltip name="ГруппаИнформацияРасширеннаяПодсказка" id="77"/>
+			<PagesRepresentation>None</PagesRepresentation>
+			<ExtendedTooltip name="СтраницыИнформацияРасширеннаяПодсказка" id="116"/>
 			<ChildItems>
-				<PictureDecoration name="ИнформацияКартинка" id="62">
-					<Title formatted="false">
+				<Page name="СтраницаИнформация" id="76">
+					<Title>
 						<v8:item>
 							<v8:lang>ru</v8:lang>
-							<v8:content>Информация картинка</v8:content>
+							<v8:content>Информация</v8:content>
 						</v8:item>
 					</Title>
-					<Picture>
-						<xr:Ref>CommonPicture.Информация32</xr:Ref>
-						<xr:LoadTransparent>false</xr:LoadTransparent>
-					</Picture>
-					<FileDragMode>AsFile</FileDragMode>
-					<ContextMenu name="ИнформацияКартинкаКонтекстноеМеню" id="63"/>
-					<ExtendedTooltip name="ИнформацияКартинкаРасширеннаяПодсказка" id="64"/>
-				</PictureDecoration>
-				<LabelDecoration name="ИнформацияОписание" id="67">
-					<AutoMaxWidth>false</AutoMaxWidth>
-					<Title formatted="false">
+					<Group>HorizontalIfPossible</Group>
+					<ExtendedTooltip name="СтраницаИнформацияРасширеннаяПодсказка" id="77"/>
+					<ChildItems>
+						<PictureDecoration name="ИнформацияКартинка" id="62">
+							<Title formatted="false">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Информация картинка</v8:content>
+								</v8:item>
+							</Title>
+							<Picture>
+								<xr:Ref>CommonPicture.Информация32</xr:Ref>
+								<xr:LoadTransparent>false</xr:LoadTransparent>
+							</Picture>
+							<FileDragMode>AsFile</FileDragMode>
+							<ContextMenu name="ИнформацияКартинкаКонтекстноеМеню" id="63"/>
+							<ExtendedTooltip name="ИнформацияКартинкаРасширеннаяПодсказка" id="64"/>
+						</PictureDecoration>
+						<LabelDecoration name="ИнформацияОписание" id="67">
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<Title formatted="false">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Изменения, которые будут сделаны, вступят в силу при следующем входе в программу.</v8:content>
+								</v8:item>
+							</Title>
+							<VerticalAlign>Center</VerticalAlign>
+							<TitleHeight>2</TitleHeight>
+							<ContextMenu name="ИнформацияОписаниеКонтекстноеМеню" id="68"/>
+							<ExtendedTooltip name="ИнформацияОписаниеРасширеннаяПодсказка" id="69"/>
+						</LabelDecoration>
+					</ChildItems>
+				</Page>
+				<Page name="СтраницаДлительнаяОперация" id="117">
+					<Title>
 						<v8:item>
 							<v8:lang>ru</v8:lang>
-							<v8:content>Изменения, которые будут сделаны, вступят в силу при следующем входе в программу.</v8:content>
+							<v8:content>Страница длительная операция</v8:content>
 						</v8:item>
 					</Title>
-					<VerticalAlign>Center</VerticalAlign>
-					<TitleHeight>2</TitleHeight>
-					<ContextMenu name="ИнформацияОписаниеКонтекстноеМеню" id="68"/>
-					<ExtendedTooltip name="ИнформацияОписаниеРасширеннаяПодсказка" id="69"/>
-				</LabelDecoration>
+					<Group>AlwaysHorizontal</Group>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="СтраницаДлительнаяОперацияРасширеннаяПодсказка" id="118"/>
+					<ChildItems>
+						<PictureDecoration name="ДлительнаяОперация" id="119">
+							<Picture>
+								<xr:Ref>CommonPicture.ДлительнаяОперация48</xr:Ref>
+								<xr:LoadTransparent>false</xr:LoadTransparent>
+							</Picture>
+							<FileDragMode>AsFile</FileDragMode>
+							<ContextMenu name="ДлительнаяОперацияКонтекстноеМеню" id="120"/>
+							<ExtendedTooltip name="ДлительнаяОперацияРасширеннаяПодсказка" id="121"/>
+						</PictureDecoration>
+						<LabelDecoration name="ПожалуйстаПодождите" id="122">
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<Height>3</Height>
+							<Title formatted="false">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Выполняется подготовка исправлений к использованию. Пожалуйста, подождите...</v8:content>
+								</v8:item>
+							</Title>
+							<VerticalAlign>Center</VerticalAlign>
+							<ContextMenu name="ПожалуйстаПодождитеКонтекстноеМеню" id="123"/>
+							<ExtendedTooltip name="ПожалуйстаПодождитеРасширеннаяПодсказка" id="124"/>
+						</LabelDecoration>
+					</ChildItems>
+				</Page>
 			</ChildItems>
-		</UsualGroup>
+		</Pages>
 		<Table name="УстановленныеИсправления" id="1">
 			<Representation>List</Representation>
 			<AutoInsertNewRow>true</AutoInsertNewRow>
@@ -68,7 +113,15 @@
 				</v8:item>
 			</Title>
 			<CommandSet>
+				<ExcludedCommand>Change</ExcludedCommand>
 				<ExcludedCommand>Copy</ExcludedCommand>
+				<ExcludedCommand>EndEdit</ExcludedCommand>
+				<ExcludedCommand>MoveDown</ExcludedCommand>
+				<ExcludedCommand>MoveUp</ExcludedCommand>
+				<ExcludedCommand>ShowMultipleSelection</ExcludedCommand>
+				<ExcludedCommand>ShowRowRearrangement</ExcludedCommand>
+				<ExcludedCommand>SortListAsc</ExcludedCommand>
+				<ExcludedCommand>SortListDesc</ExcludedCommand>
 			</CommandSet>
 			<RowFilter xsi:nil="true"/>
 			<ContextMenu name="УстановленныеИсправленияКонтекстноеМеню" id="2">
@@ -111,6 +164,11 @@
 						<LocationInCommandBar>InCommandBarAndInAdditionalSubmenu</LocationInCommandBar>
 						<ExtendedTooltip name="ФормаУдалитьИсправлениеРасширеннаяПодсказка" id="49"/>
 					</Button>
+					<Button name="УстановленныеИсправленияВыгрузитьПодключенныеИсправления" id="125">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Command.ВыгрузитьПодключенныеИсправления</CommandName>
+						<ExtendedTooltip name="УстановленныеИсправленияВыгрузитьПодключенныеИсправленияРасширеннаяПодсказка" id="126"/>
+					</Button>
 					<Button name="УстановленныеИсправленияЗакрыть" id="110">
 						<Type>CommandBarButton</Type>
 						<CommandName>Form.StandardCommand.Close</CommandName>
@@ -137,6 +195,20 @@
 						<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
 						<ExtendedTooltip name="УстановленныеИсправленияСохранитьКакРасширеннаяПодсказка" id="105"/>
 					</Button>
+					<SearchStringAddition name="СтрокаПоиска" id="127">
+						<AdditionSource>
+							<Item>УстановленныеИсправления</Item>
+							<Type>SearchStringRepresentation</Type>
+						</AdditionSource>
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Поиск</v8:content>
+							</v8:item>
+						</Title>
+						<ContextMenu name="СтрокаПоискаКонтекстноеМеню" id="128"/>
+						<ExtendedTooltip name="СтрокаПоискаРасширеннаяПодсказка" id="129"/>
+					</SearchStringAddition>
 				</ChildItems>
 			</AutoCommandBar>
 			<ExtendedTooltip name="УстановленныеИсправленияРасширеннаяПодсказка" id="4"/>
@@ -169,6 +241,26 @@
 				<Event name="BeforeDeleteRow">УстановленныеИсправленияПередУдалением</Event>
 			</Events>
 			<ChildItems>
+				<CheckBoxField name="УстановленныеИсправленияПодключать" id="112">
+					<DataPath>УстановленныеИсправления.Подключать</DataPath>
+					<TitleLocation>None</TitleLocation>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Подключать исправление при входе в программу</v8:content>
+						</v8:item>
+					</ToolTip>
+					<HeaderPicture>
+						<xr:Ref>StdPicture.CheckAll</xr:Ref>
+						<xr:LoadTransparent>true</xr:LoadTransparent>
+					</HeaderPicture>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="УстановленныеИсправленияПодключатьКонтекстноеМеню" id="113"/>
+					<ExtendedTooltip name="УстановленныеИсправленияПодключатьРасширеннаяПодсказка" id="114"/>
+					<Events>
+						<Event name="OnChange">УстановленныеИсправленияПодключатьПриИзменении</Event>
+					</Events>
+				</CheckBoxField>
 				<ColumnGroup name="УстановленныеИсправленияГруппаКартинки" id="32">
 					<Title>
 						<v8:item>
@@ -498,6 +590,17 @@
 						</v8:StringQualifiers>
 					</Type>
 				</Column>
+				<Column name="Подключать" id="12">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Подключать</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
 			</Columns>
 		</Attribute>
 		<Attribute name="Фильтр" id="3">
@@ -521,6 +624,9 @@
 				<v8:Type>xs:boolean</v8:Type>
 			</Type>
 		</Attribute>
+		<Attribute name="Контекст" id="13">
+			<Type/>
+		</Attribute>
 	</Attributes>
 	<Commands>
 		<Command name="СохранитьКак" id="1">
@@ -542,6 +648,15 @@
 			</Picture>
 			<Action>СохранитьКак</Action>
 			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ВыгрузитьПодключенныеИсправления" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Выгрузить подключенные исправления</v8:content>
+				</v8:item>
+			</Title>
+			<Action>ВыгрузитьПодключенныеИсправления</Action>
 		</Command>
 	</Commands>
 	<Parameters>

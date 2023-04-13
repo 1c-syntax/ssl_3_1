@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.15">
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.16">
 	<AutoSaveDataInSettings>Use</AutoSaveDataInSettings>
 	<CommandBarLocation>Top</CommandBarLocation>
 	<UseForFoldersAndItems>Items</UseForFoldersAndItems>
@@ -184,6 +184,10 @@
 							</Title>
 							<CommandSet>
 								<ExcludedCommand>Copy</ExcludedCommand>
+								<ExcludedCommand>MoveDown</ExcludedCommand>
+								<ExcludedCommand>MoveUp</ExcludedCommand>
+								<ExcludedCommand>SortListAsc</ExcludedCommand>
+								<ExcludedCommand>SortListDesc</ExcludedCommand>
 							</CommandSet>
 							<RowFilter xsi:nil="true"/>
 							<ContextMenu name="СоставКонтекстноеМеню" id="11">
@@ -205,12 +209,6 @@
 										<Type>CommandBarButton</Type>
 										<CommandName>Form.Item.Состав.StandardCommand.Change</CommandName>
 										<ExtendedTooltip name="СоставКонтекстноеМенюИзменитьРасширеннаяПодсказка" id="213"/>
-									</Button>
-									<Button name="СоставКонтекстноеМенюСкопировать" id="50">
-										<Type>CommandBarButton</Type>
-										<SkipOnInput>false</SkipOnInput>
-										<CommandName>0</CommandName>
-										<ExtendedTooltip name="СоставКонтекстноеМенюСкопироватьРасширеннаяПодсказка" id="161"/>
 									</Button>
 									<Button name="СоставКонтекстноеМенюУдалить" id="46">
 										<Type>CommandBarButton</Type>
@@ -261,12 +259,6 @@
 										<CommandName>Form.Item.Состав.StandardCommand.Change</CommandName>
 										<ExtendedTooltip name="СоставИзменитьРасширеннаяПодсказка" id="215"/>
 									</Button>
-									<Button name="СоставСкопировать" id="49">
-										<Type>CommandBarButton</Type>
-										<SkipOnInput>false</SkipOnInput>
-										<CommandName>0</CommandName>
-										<ExtendedTooltip name="СоставСкопироватьExtendedTooltip" id="165"/>
-									</Button>
 									<Button name="СоставУдалить" id="33">
 										<Type>CommandBarButton</Type>
 										<SkipOnInput>false</SkipOnInput>
@@ -286,16 +278,28 @@
 										<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
 										<ExtendedTooltip name="СоставПереместитьВнизРасширеннаяПодсказка" id="205"/>
 									</Button>
-									<Button name="СоставСортироватьПоВозрастанию" id="198">
-										<Type>CommandBarButton</Type>
-										<CommandName>Form.Command.СортироватьПоВозрастанию</CommandName>
-										<ExtendedTooltip name="СоставСортироватьПоВозрастаниюРасширеннаяПодсказка" id="199"/>
-									</Button>
-									<Button name="СоставСортироватьПоУбыванию" id="200">
-										<Type>CommandBarButton</Type>
-										<CommandName>Form.Command.СортироватьПоУбыванию</CommandName>
-										<ExtendedTooltip name="СоставСортироватьПоУбываниюРасширеннаяПодсказка" id="201"/>
-									</Button>
+									<ButtonGroup name="СоставГруппаКомандСортировать" id="245">
+										<Title>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Состав группа команд сортировать</v8:content>
+											</v8:item>
+										</Title>
+										<Representation>Compact</Representation>
+										<ExtendedTooltip name="СоставГруппаКомандСортироватьРасширеннаяПодсказка" id="246"/>
+										<ChildItems>
+											<Button name="СоставСортироватьПоВозрастанию" id="198">
+												<Type>CommandBarButton</Type>
+												<CommandName>Form.Command.СортироватьПоВозрастанию</CommandName>
+												<ExtendedTooltip name="СоставСортироватьПоВозрастаниюРасширеннаяПодсказка" id="199"/>
+											</Button>
+											<Button name="СоставСортироватьПоУбыванию" id="200">
+												<Type>CommandBarButton</Type>
+												<CommandName>Form.Command.СортироватьПоУбыванию</CommandName>
+												<ExtendedTooltip name="СоставСортироватьПоУбываниюРасширеннаяПодсказка" id="201"/>
+											</Button>
+										</ChildItems>
+									</ButtonGroup>
 									<ButtonGroup name="СоставСтандартныеКоманды" id="194">
 										<Title>
 											<v8:item>
@@ -314,6 +318,20 @@
 											</Button>
 										</ChildItems>
 									</ButtonGroup>
+									<SearchStringAddition name="СоставСтрокаПоиск" id="247">
+										<AdditionSource>
+											<Item>Состав</Item>
+											<Type>SearchStringRepresentation</Type>
+										</AdditionSource>
+										<Title>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Поиск</v8:content>
+											</v8:item>
+										</Title>
+										<ContextMenu name="СоставСтрокаПоискКонтекстноеМеню" id="248"/>
+										<ExtendedTooltip name="СоставСтрокаПоискРасширеннаяПодсказка" id="249"/>
+									</SearchStringAddition>
 								</ChildItems>
 							</AutoCommandBar>
 							<ExtendedTooltip name="СоставExtendedTooltip" id="171"/>
@@ -416,23 +434,46 @@
 									</Title>
 									<CommandSet>
 										<ExcludedCommand>Add</ExcludedCommand>
+										<ExcludedCommand>Change</ExcludedCommand>
+										<ExcludedCommand>Copy</ExcludedCommand>
+										<ExcludedCommand>Delete</ExcludedCommand>
+										<ExcludedCommand>EndEdit</ExcludedCommand>
+										<ExcludedCommand>HierarchicalList</ExcludedCommand>
+										<ExcludedCommand>List</ExcludedCommand>
+										<ExcludedCommand>MoveDown</ExcludedCommand>
+										<ExcludedCommand>MoveUp</ExcludedCommand>
+										<ExcludedCommand>SortListAsc</ExcludedCommand>
+										<ExcludedCommand>SortListDesc</ExcludedCommand>
+										<ExcludedCommand>Tree</ExcludedCommand>
 									</CommandSet>
 									<ContextMenu name="РолиКонтекстноеМеню" id="132"/>
 									<AutoCommandBar name="РолиКоманднаяПанель" id="133">
 										<Autofill>false</Autofill>
 										<ChildItems>
-											<Button name="РолиУстановитьФлажки" id="139">
-												<Type>CommandBarButton</Type>
-												<SkipOnInput>false</SkipOnInput>
-												<CommandName>Form.Command.ВключитьРоли</CommandName>
-												<ExtendedTooltip name="РолиУстановитьФлажкиExtendedTooltip" id="176"/>
-											</Button>
-											<Button name="РолиСнятьФлажки" id="140">
-												<Type>CommandBarButton</Type>
-												<SkipOnInput>false</SkipOnInput>
-												<CommandName>Form.Command.ИсключитьРоли</CommandName>
-												<ExtendedTooltip name="РолиСнятьФлажкиExtendedTooltip" id="177"/>
-											</Button>
+											<ButtonGroup name="РолиГруппаКомандФлажки" id="243">
+												<Title>
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>Роли группа команд флажки</v8:content>
+													</v8:item>
+												</Title>
+												<Representation>Compact</Representation>
+												<ExtendedTooltip name="РолиГруппаКомандФлажкиРасширеннаяПодсказка" id="244"/>
+												<ChildItems>
+													<Button name="РолиУстановитьФлажки" id="139">
+														<Type>CommandBarButton</Type>
+														<SkipOnInput>false</SkipOnInput>
+														<CommandName>Form.Command.ВключитьРоли</CommandName>
+														<ExtendedTooltip name="РолиУстановитьФлажкиExtendedTooltip" id="176"/>
+													</Button>
+													<Button name="РолиСнятьФлажки" id="140">
+														<Type>CommandBarButton</Type>
+														<SkipOnInput>false</SkipOnInput>
+														<CommandName>Form.Command.ИсключитьРоли</CommandName>
+														<ExtendedTooltip name="РолиСнятьФлажкиExtendedTooltip" id="177"/>
+													</Button>
+												</ChildItems>
+											</ButtonGroup>
 											<Button name="РолиПоказатьТолькоВыбранныеРоли" id="141">
 												<Type>CommandBarButton</Type>
 												<SkipOnInput>false</SkipOnInput>
@@ -456,6 +497,20 @@
 												<CommandSource>Item.Роли</CommandSource>
 												<ExtendedTooltip name="РолиСтандартныеКомандыРасширеннаяПодсказка" id="211"/>
 											</ButtonGroup>
+											<SearchStringAddition name="РолиСтрокаПоиск" id="250">
+												<AdditionSource>
+													<Item>Роли</Item>
+													<Type>SearchStringRepresentation</Type>
+												</AdditionSource>
+												<Title>
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>Поиск</v8:content>
+													</v8:item>
+												</Title>
+												<ContextMenu name="РолиСтрокаПоискКонтекстноеМеню" id="251"/>
+												<ExtendedTooltip name="РолиСтрокаПоискРасширеннаяПодсказка" id="252"/>
+											</SearchStringAddition>
 										</ChildItems>
 									</AutoCommandBar>
 									<ExtendedTooltip name="РолиExtendedTooltip" id="180"/>

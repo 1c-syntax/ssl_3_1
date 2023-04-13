@@ -146,7 +146,26 @@
 	КонецЕсли;
 	
 	ЗаполнитьИНН(Свойства, Издатель);
+	// Конец Локализация
+	
+КонецПроцедуры
 
+Процедура ПриПолученииКонвертаXML(Параметры, КонвертXML) Экспорт
+	
+	// Локализация
+	Если Параметры.Вариант = КонвертПоУмолчанию() Тогда
+		КонвертXML = КонвертXML1();
+	ИначеЕсли Параметры.Вариант = "dmdk.goznak.ru_v1" Тогда
+		КонвертXML = КонвертXML2();
+	КонецЕсли;
+	// Конец Локализация
+	
+КонецПроцедуры
+
+Процедура ПриПолученииВариантаКонвертаПоУмолчанию(КонвертXML) Экспорт
+
+	// Локализация
+	КонвертXML = КонвертПоУмолчанию();
 	// Конец Локализация
 	
 КонецПроцедуры
@@ -262,7 +281,138 @@
 	
 КонецФункции
 
+Процедура ПриОпределенииСсылкиНаИнструкциюПоРаботеСПрограммами(Раздел, НавигационнаяСсылка) Экспорт
+	
+	// Локализация
+	
+	Если Раздел = "УчетВГосударственныхУчреждениях" Тогда
+		НавигационнаяСсылка = "http://its.1c.ru/bmk/bud/digsig";
+	Иначе
+		НавигационнаяСсылка = "http://its.1c.ru/bmk/comm/digsig";
+	КонецЕсли;
+	
+	// Конец Локализация
+	
+КонецПроцедуры
+
+Процедура ПриОпределенииСсылкиНаИнструкциюПоТипичнымПроблемамПриРаботеСПрограммами(НавигационнаяСсылка, ИмяРаздела = "") Экспорт
+	
+	// Локализация
+	
+	НавигационнаяСсылка = "https://its.1c.ru/db/metod81#content:5784:hdoc"
+		+ ?(ПустаяСтрока(ИмяРаздела), "", ":" + ИмяРаздела);
+	
+	// Конец Локализация
+	
+КонецПроцедуры
+
 // Локализация
+
+#Область ШаблоныКонвертаXML
+
+Функция КонвертПоУмолчанию()
+	
+	Возврат "furs.mark.crpt.ru_v1";
+	
+КонецФункции
+
+// Вариант "furs.mark.crpt.ru_v1".
+Функция КонвертXML1()
+	
+	Возврат
+	"<soap:Envelope
+	|    xmlns:wsse=""http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd""
+	|    xmlns:wsu=""http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd""
+	|    xmlns:soap=""http://schemas.xmlsoap.org/soap/envelope/"">
+	|  <soap:Header>
+	|    <wsse:Security soap:actor=""http://smev.gosuslugi.ru/actors/smev"">
+	|      <ds:Signature xmlns:ds=""http://www.w3.org/2000/09/xmldsig#"">
+	|        <SignedInfo xmlns=""http://www.w3.org/2000/09/xmldsig#"">
+	|          <CanonicalizationMethod Algorithm=""http://www.w3.org/2001/10/xml-exc-c14n#""/>
+	|          <SignatureMethod Algorithm=""%SignatureMethod%""/>
+	|          <Reference URI=""#body"">
+	|            <Transforms>
+	|              <Transform Algorithm=""http://www.w3.org/2000/09/xmldsig#enveloped-signature""/>
+	|              <Transform Algorithm=""http://www.w3.org/2001/10/xml-exc-c14n#""/>
+	|            </Transforms>
+	|            <DigestMethod Algorithm=""%DigestMethod%""/>
+	|            <DigestValue>%DigestValue%</DigestValue>
+	|          </Reference>
+	|        </SignedInfo>
+	|        <SignatureValue xmlns=""http://www.w3.org/2000/09/xmldsig#"">
+	|          %SignatureValue%
+	|        </SignatureValue>
+	|        <ds:KeyInfo>
+	|          <wsse:SecurityTokenReference>
+	|            <wsse:Reference URI=""#SenderCertificate""
+	|                            ValueType=""http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-x509-token-profile-1.0#X509v3""/>
+	|          </wsse:SecurityTokenReference>
+	|        </ds:KeyInfo>
+	|      </ds:Signature>
+	|      <wsse:BinarySecurityToken
+	|              EncodingType=""http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-soap-message-security-1.0#Base64Binary""
+	|              ValueType=""http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-x509-token-profile-1.0#X509v3""
+	|              wsu:Id=""SenderCertificate"">
+	|        %BinarySecurityToken%
+	|      </wsse:BinarySecurityToken>
+	|    </wsse:Security>
+	|  </soap:Header>
+	|  <soap:Body wsu:Id=""body"">
+	|    %MessageXML%
+	|  </soap:Body>
+	|</soap:Envelope>";
+	
+КонецФункции
+
+// Вариант "dmdk.goznak.ru_v1".
+Функция КонвертXML2()
+	
+	Возврат
+	"<soapenv:Envelope xmlns:soapenv=""http://schemas.xmlsoap.org/soap/envelope/""
+	|    xmlns:ns=""urn://xsd.dmdk.goznak.ru/exchange/1.0""
+	|    xmlns:ns1=""urn://xsd.dmdk.goznak.ru/batch/1.0""
+	|    xmlns:ns2=""urn://xsd.dmdk.goznak.ru/contractor/1.0""
+	|    xmlns:ns3=""urn://xsd.dmdk.goznak.ru/types/1.0"">
+	|  <soapenv:Header />
+	|  <soapenv:Body>
+	|    <ns:CheckBatchRequest>
+	|      <ns:CallerSignature>
+	|        <ds:Signature xmlns:ds=""http://www.w3.org/2000/09/xmldsig#"">
+	|          <ds:SignedInfo>
+	|            <ds:CanonicalizationMethod Algorithm=""http://www.w3.org/2001/10/xml-exc-c14n#"" />
+	|            <ds:SignatureMethod Algorithm=""%SignatureMethod%"" />
+	|            <ds:Reference URI=""#body"">
+	|              <ds:Transforms>
+	|                <ds:Transform Algorithm=""http://www.w3.org/2001/10/xml-exc-c14n#"" />
+	|                <ds:Transform Algorithm=""urn://smev-gov-ru/xmldsig/transform"" />
+	|              </ds:Transforms>
+	|              <ds:DigestMethod Algorithm=""%DigestMethod%"" />
+	|              <ds:DigestValue>%DigestValue%</ds:DigestValue>
+	|            </ds:Reference>
+	|          </ds:SignedInfo>
+	|          <ds:SignatureValue>%SignatureValue%</ds:SignatureValue>
+	|          <ds:KeyInfo>
+	|            <ds:X509Data>
+	|              <ds:X509Certificate>%BinarySecurityToken%</ds:X509Certificate>
+	|            </ds:X509Data>
+	|          </ds:KeyInfo>
+	|        </ds:Signature>
+	|      </ns:CallerSignature>
+	|      <ns:RequestData Id=""body"">
+	|        %MessageXML%
+	|      </ns:RequestData>
+	|    </ns:CheckBatchRequest>
+	|  </soapenv:Body>
+	|</soapenv:Envelope>";
+	
+КонецФункции
+
+#КонецОбласти
+
+// Конец Локализация
+
+// Локализация
+
 Функция ПредставлениеСубъекта(Знач Сертификат, Знач Отчество) 
 	
 	Субъект = ЭлектроннаяПодписьСлужебныйКлиентСервер.СвойстваСубъектаСертификата(Сертификат);
@@ -663,6 +813,14 @@
 		
 	Возврат ВозможенПеревыпуск;
 	
+КонецФункции
+
+Функция ИмяПрограммыVipNet() Экспорт
+	Возврат "ViPNet CSP";
+КонецФункции
+
+Функция ИмяПрограммыКриптоПро() Экспорт
+	Возврат "КриптоПро CSP";
 КонецФункции
 
 // Конец Локализация

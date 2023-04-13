@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.15">
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.16">
 	<WindowOpeningMode>LockOwnerWindow</WindowOpeningMode>
 	<UseForFoldersAndItems>Items</UseForFoldersAndItems>
 	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
@@ -103,12 +103,23 @@
 					<ShowTitle>false</ShowTitle>
 					<ExtendedTooltip name="ГруппаТипОбщиеДляВсехExtendedTooltip" id="91"/>
 					<ChildItems>
+						<CheckBoxField name="ОтображатьВсегда" id="189">
+							<DataPath>Объект.ОтображатьВсегда</DataPath>
+							<TitleLocation>Right</TitleLocation>
+							<ToolTipRepresentation>Button</ToolTipRepresentation>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="ОтображатьВсегдаКонтекстноеМеню" id="190"/>
+							<ExtendedTooltip name="ОтображатьВсегдаРасширеннаяПодсказка" id="191"/>
+						</CheckBoxField>
 						<CheckBoxField name="ОбязательноеЗаполнение" id="18">
 							<DataPath>Объект.ОбязательноеЗаполнение</DataPath>
 							<TitleLocation>Right</TitleLocation>
 							<CheckBoxType>Auto</CheckBoxType>
 							<ContextMenu name="ОбязательноеЗаполнениеКонтекстноеМеню" id="19"/>
 							<ExtendedTooltip name="ОбязательноеЗаполнениеExtendedTooltip" id="92"/>
+							<Events>
+								<Event name="OnChange">ОбязательноеЗаполнениеПриИзменении</Event>
+							</Events>
 						</CheckBoxField>
 						<InputField name="ВидРедактирования" id="168">
 							<DataPath>Объект.ВидРедактирования</DataPath>
@@ -318,6 +329,9 @@
 											<CheckBoxType>Auto</CheckBoxType>
 											<ContextMenu name="ТелефонCДобавочнымНомеромКонтекстноеМеню" id="135"/>
 											<ExtendedTooltip name="ТелефонCДобавочнымНомеромРасширеннаяПодсказка" id="136"/>
+											<Events>
+												<Event name="OnChange">ТелефонCДобавочнымНомеромПриИзменении</Event>
+											</Events>
 										</CheckBoxField>
 										<CheckBoxField name="ПроверятьКорректностьТелефон" id="137">
 											<DataPath>Объект.ПроверятьКорректность</DataPath>
@@ -344,6 +358,9 @@
 											<CheckBoxType>Auto</CheckBoxType>
 											<ContextMenu name="МаскаПриВводеНомераТелефонаКонтекстноеМеню" id="179"/>
 											<ExtendedTooltip name="МаскаПриВводеНомераТелефонаРасширеннаяПодсказка" id="180"/>
+											<Events>
+												<Event name="OnChange">МаскаПриВводеНомераТелефонаПриИзменении</Event>
+											</Events>
 										</CheckBoxField>
 										<UsualGroup name="МаскаТелефона" id="184">
 											<Title>
@@ -380,16 +397,14 @@
 														<Title formatted="true">
 															<v8:item>
 																<v8:lang>ru</v8:lang>
-																<v8:content>&lt;font Arial&gt;&lt;fontsize 8&gt;&lt;color #333333&gt;&lt;bgcolor #FFFFFF&gt;В строке маски допустимо использование следующих специальных символов:&lt;/&gt;&lt;/&gt;&lt;/&gt;&lt;/&gt;
-&lt;font Arial&gt;&lt;fontsize 8&gt;&lt;color #333333&gt;&lt;bgcolor #FFFFFF&gt;! - любой введенный символ преобразуется в верхний регистр;&lt;/&gt;&lt;/&gt;&lt;/&gt;&lt;/&gt;
-&lt;font Arial&gt;&lt;fontsize 8&gt;&lt;color #333333&gt;&lt;bgcolor #FFFFFF&gt;9 - допустимо ввести произвольный символ цифры;&lt;/&gt;&lt;/&gt;&lt;/&gt;&lt;/&gt;
-&lt;font Arial&gt;&lt;fontsize 8&gt;&lt;color #333333&gt;&lt;bgcolor #FFFFFF&gt;# - допустимо ввести произвольный символ цифры или - (знак минус) или + (знак плюс) или пробел;&lt;/&gt;&lt;/&gt;&lt;/&gt;&lt;/&gt;
-&lt;font Arial&gt;&lt;fontsize 8&gt;&lt;color #333333&gt;&lt;bgcolor #FFFFFF&gt;N - допустимо ввести любые алфавитно-цифровые символы (буквы или цифры);&lt;/&gt;&lt;/&gt;&lt;/&gt;&lt;/&gt;
-&lt;font Arial&gt;&lt;fontsize 8&gt;&lt;color #333333&gt;&lt;bgcolor #FFFFFF&gt;U - допустимо ввести любые алфавитно-цифровые символы (буквы или цифры) и любой введенный символ преобразуется в верхний регистр;&lt;/&gt;&lt;/&gt;&lt;/&gt;&lt;/&gt;
-&lt;font Arial&gt;&lt;fontsize 8&gt;&lt;color #333333&gt;&lt;bgcolor #FFFFFF&gt;X (латинского алфавита) - допустимо ввести произвольный символ;&lt;/&gt;&lt;/&gt;&lt;/&gt;&lt;/&gt;
-&lt;font Arial&gt;&lt;fontsize 8&gt;&lt;color #333333&gt;&lt;bgcolor #FFFFFF&gt;^ - недопустимо вводить этот символ интерактивно пользователем, он может устанавливаться только из языка;&lt;/&gt;&lt;/&gt;&lt;/&gt;&lt;/&gt;
-&lt;font Arial&gt;&lt;fontsize 8&gt;&lt;color #333333&gt;&lt;bgcolor #FFFFFF&gt;@ – допустимо ввести любые алфавитно-цифровые символы (буквы или цифры) в верхнем регистре или пробел.&lt;/&gt;&lt;/&gt;&lt;/&gt;&lt;/&gt;
-</v8:content>
+																<v8:content>&lt;font Arial&gt;&lt;fontsize 8&gt;&lt;bgcolor #ffffff&gt;&lt;color #333333&gt;В строке маски допустимо использование следующих специальных символов:&lt;/&gt;&lt;/&gt;&lt;/&gt;&lt;/&gt;
+&lt;font Arial&gt;&lt;fontsize 8&gt;&lt;bgcolor #ffffff&gt;&lt;color #333333&gt;! - любой введенный символ преобразуется в верхний регистр;&lt;/&gt;&lt;/&gt;&lt;/&gt;&lt;/&gt;
+&lt;font Arial&gt;&lt;fontsize 8&gt;&lt;bgcolor #ffffff&gt;&lt;color #333333&gt;9 - допустимо ввести произвольный символ цифры;&lt;/&gt;&lt;/&gt;&lt;/&gt;&lt;/&gt;
+&lt;font Arial&gt;&lt;fontsize 8&gt;&lt;bgcolor #ffffff&gt;&lt;color #333333&gt;# - допустимо ввести произвольный символ цифры или - (знак минус) или + (знак плюс) или пробел;&lt;/&gt;&lt;/&gt;&lt;/&gt;&lt;/&gt;
+&lt;font Arial&gt;&lt;fontsize 8&gt;&lt;bgcolor #ffffff&gt;&lt;color #333333&gt;N - допустимо ввести любой алфавитно-цифровой символ (буква или цифра);&lt;/&gt;&lt;/&gt;&lt;/&gt;&lt;/&gt;
+&lt;font Arial&gt;&lt;fontsize 8&gt;&lt;bgcolor #ffffff&gt;&lt;color #333333&gt;U - допустимо ввести любой алфавитно-цифровой символ (буква или цифра) и любой введенный символ преобразуется в верхний регистр;&lt;/&gt;&lt;/&gt;&lt;/&gt;&lt;/&gt;
+&lt;font Arial&gt;&lt;fontsize 8&gt;&lt;bgcolor #ffffff&gt;&lt;color #333333&gt;X (латинского алфавита) - допустимо ввести произвольный символ;&lt;/&gt;&lt;/&gt;&lt;/&gt;&lt;/&gt;
+&lt;font Arial&gt;&lt;fontsize 8&gt;&lt;bgcolor #ffffff&gt;&lt;color #333333&gt;@ – допустимо ввести любой алфавитно-цифровой символ (буква или цифра) в верхнем регистре или пробел.&lt;/&gt;&lt;/&gt;&lt;/&gt;&lt;/&gt;</v8:content>
 															</v8:item>
 														</Title>
 													</ExtendedTooltip>
@@ -514,6 +529,7 @@
 			<ChildItems>
 				<InputField name="ИдентификаторДляФормул" id="173">
 					<DataPath>Объект.ИдентификаторДляФормул</DataPath>
+					<TitleHeight>2</TitleHeight>
 					<ContextMenu name="ИдентификаторДляФормулКонтекстноеМеню" id="174"/>
 					<ExtendedTooltip name="ИдентификаторДляФормулРасширеннаяПодсказка" id="175"/>
 				</InputField>

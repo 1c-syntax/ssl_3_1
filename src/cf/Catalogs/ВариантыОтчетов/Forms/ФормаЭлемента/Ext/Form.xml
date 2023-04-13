@@ -1,8 +1,9 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.15">
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.16">
 	<ConversationsRepresentation>Show</ConversationsRepresentation>
 	<CommandSet>
 		<ExcludedCommand>Copy</ExcludedCommand>
+		<ExcludedCommand>Delete</ExcludedCommand>
 	</CommandSet>
 	<UseForFoldersAndItems>Items</UseForFoldersAndItems>
 	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
@@ -162,10 +163,10 @@
 												<Presentation>
 													<v8:item>
 														<v8:lang>ru</v8:lang>
-														<v8:content>Только автору</v8:content>
+														<v8:content>Автору</v8:content>
 													</v8:item>
 												</Presentation>
-												<Value xsi:type="xs:string">ТолькоДляАвтора</Value>
+												<Value xsi:type="xs:string">Автору</Value>
 											</xr:Value>
 										</xr:Item>
 										<xr:Item>
@@ -175,10 +176,10 @@
 												<Presentation>
 													<v8:item>
 														<v8:lang>ru</v8:lang>
-														<v8:content>Указанным пользователям</v8:content>
+														<v8:content>Всем</v8:content>
 													</v8:item>
 												</Presentation>
-												<Value xsi:type="xs:string">УказаннымПользователям</Value>
+												<Value xsi:type="xs:string">Всем</Value>
 											</xr:Value>
 										</xr:Item>
 									</ChoiceList>
@@ -192,6 +193,7 @@
 						</UsualGroup>
 						<Table name="ПользователиВарианта" id="275">
 							<Representation>List</Representation>
+							<TitleLocation>Top</TitleLocation>
 							<RowSelectionMode>Row</RowSelectionMode>
 							<Header>false</Header>
 							<HorizontalLines>false</HorizontalLines>
@@ -202,11 +204,16 @@
 							<Title>
 								<v8:item>
 									<v8:lang>ru</v8:lang>
-									<v8:content>Пользователи варианта</v8:content>
+									<v8:content>Показать в панелях отчетов пользователей (начальная настройка)</v8:content>
 								</v8:item>
 							</Title>
 							<CommandSet>
 								<ExcludedCommand>Add</ExcludedCommand>
+								<ExcludedCommand>Change</ExcludedCommand>
+								<ExcludedCommand>Copy</ExcludedCommand>
+								<ExcludedCommand>CopyToClipboard</ExcludedCommand>
+								<ExcludedCommand>EndEdit</ExcludedCommand>
+								<ExcludedCommand>Pickup</ExcludedCommand>
 							</CommandSet>
 							<ContextMenu name="ПользователиВариантаКонтекстноеМеню" id="276"/>
 							<AutoCommandBar name="ПользователиВариантаКоманднаяПанель" id="277">
@@ -262,6 +269,14 @@
 										<LocationInCommandBar>InCommandBarAndInAdditionalSubmenu</LocationInCommandBar>
 										<ExtendedTooltip name="ПользователиВариантаУдалитьРасширеннаяПодсказка" id="303"/>
 									</Button>
+									<SearchStringAddition name="СтрокаПоиска" id="309">
+										<AdditionSource>
+											<Item>ПользователиВарианта</Item>
+											<Type>SearchStringRepresentation</Type>
+										</AdditionSource>
+										<ContextMenu name="СтрокаПоискаКонтекстноеМеню" id="310"/>
+										<ExtendedTooltip name="СтрокаПоискаРасширеннаяПодсказка" id="311"/>
+									</SearchStringAddition>
 								</ChildItems>
 							</AutoCommandBar>
 							<ExtendedTooltip name="ПользователиВариантаРасширеннаяПодсказка" id="278"/>
@@ -367,11 +382,30 @@
 							</Title>
 							<CommandSet>
 								<ExcludedCommand>Add</ExcludedCommand>
+								<ExcludedCommand>Copy</ExcludedCommand>
+								<ExcludedCommand>Delete</ExcludedCommand>
+								<ExcludedCommand>HierarchicalList</ExcludedCommand>
+								<ExcludedCommand>List</ExcludedCommand>
+								<ExcludedCommand>MoveDown</ExcludedCommand>
+								<ExcludedCommand>MoveUp</ExcludedCommand>
+								<ExcludedCommand>SortListAsc</ExcludedCommand>
+								<ExcludedCommand>SortListDesc</ExcludedCommand>
+								<ExcludedCommand>Tree</ExcludedCommand>
 							</CommandSet>
 							<CurrentRowUse>SelectionPresentationAndChoice</CurrentRowUse>
 							<ContextMenu name="ДеревоПодсистемКонтекстноеМеню" id="81"/>
 							<AutoCommandBar name="ДеревоПодсистемКоманднаяПанель" id="82">
 								<Autofill>false</Autofill>
+								<ChildItems>
+									<SearchStringAddition name="СтрокаПоискаРазделов" id="312">
+										<AdditionSource>
+											<Item>ДеревоПодсистем</Item>
+											<Type>SearchStringRepresentation</Type>
+										</AdditionSource>
+										<ContextMenu name="СтрокаПоискаРазделовКонтекстноеМеню" id="313"/>
+										<ExtendedTooltip name="СтрокаПоискаРазделовРасширеннаяПодсказка" id="314"/>
+									</SearchStringAddition>
+								</ChildItems>
 							</AutoCommandBar>
 							<ExtendedTooltip name="ДеревоПодсистемExtendedTooltip" id="169"/>
 							<SearchStringAddition name="ДеревоПодсистемSearchString" id="206">
@@ -512,6 +546,19 @@
 					</Title>
 					<CommandSet>
 						<ExcludedCommand>Add</ExcludedCommand>
+						<ExcludedCommand>CancelSearch</ExcludedCommand>
+						<ExcludedCommand>Change</ExcludedCommand>
+						<ExcludedCommand>Copy</ExcludedCommand>
+						<ExcludedCommand>CopyToClipboard</ExcludedCommand>
+						<ExcludedCommand>Delete</ExcludedCommand>
+						<ExcludedCommand>EndEdit</ExcludedCommand>
+						<ExcludedCommand>Find</ExcludedCommand>
+						<ExcludedCommand>MoveDown</ExcludedCommand>
+						<ExcludedCommand>MoveUp</ExcludedCommand>
+						<ExcludedCommand>OutputList</ExcludedCommand>
+						<ExcludedCommand>SelectAll</ExcludedCommand>
+						<ExcludedCommand>SortListAsc</ExcludedCommand>
+						<ExcludedCommand>SortListDesc</ExcludedCommand>
 					</CommandSet>
 					<RowFilter xsi:nil="true"/>
 					<ContextMenu name="РазмещениеКонтекстноеМеню" id="123"/>

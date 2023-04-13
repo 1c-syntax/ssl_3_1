@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.15">
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.16">
 	<AutoSaveDataInSettings>Use</AutoSaveDataInSettings>
 	<CommandSet>
 		<ExcludedCommand>WriteAndClose</ExcludedCommand>
@@ -188,6 +188,17 @@
 							</Title>
 							<CommandSet>
 								<ExcludedCommand>Add</ExcludedCommand>
+								<ExcludedCommand>Change</ExcludedCommand>
+								<ExcludedCommand>Copy</ExcludedCommand>
+								<ExcludedCommand>Delete</ExcludedCommand>
+								<ExcludedCommand>EndEdit</ExcludedCommand>
+								<ExcludedCommand>HierarchicalList</ExcludedCommand>
+								<ExcludedCommand>List</ExcludedCommand>
+								<ExcludedCommand>MoveDown</ExcludedCommand>
+								<ExcludedCommand>MoveUp</ExcludedCommand>
+								<ExcludedCommand>SortListAsc</ExcludedCommand>
+								<ExcludedCommand>SortListDesc</ExcludedCommand>
+								<ExcludedCommand>Tree</ExcludedCommand>
 							</CommandSet>
 							<ContextMenu name="РолиКонтекстноеМеню" id="198">
 								<Autofill>false</Autofill>
@@ -195,18 +206,30 @@
 							<AutoCommandBar name="РолиКоманднаяПанель" id="199">
 								<Autofill>false</Autofill>
 								<ChildItems>
-									<Button name="РолиУстановитьФлажки" id="212">
-										<Type>CommandBarButton</Type>
-										<SkipOnInput>false</SkipOnInput>
-										<CommandName>Form.Command.ВключитьРоли</CommandName>
-										<ExtendedTooltip name="РолиУстановитьФлажкиExtendedTooltip" id="257"/>
-									</Button>
-									<Button name="РолиСнятьФлажки" id="213">
-										<Type>CommandBarButton</Type>
-										<SkipOnInput>false</SkipOnInput>
-										<CommandName>Form.Command.ИсключитьРоли</CommandName>
-										<ExtendedTooltip name="РолиСнятьФлажкиExtendedTooltip" id="258"/>
-									</Button>
+									<ButtonGroup name="РолиГруппаКомандФлажки" id="412">
+										<Title>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Роли группа команд флажки</v8:content>
+											</v8:item>
+										</Title>
+										<Representation>Compact</Representation>
+										<ExtendedTooltip name="РолиГруппаКомандФлажкиРасширеннаяПодсказка" id="413"/>
+										<ChildItems>
+											<Button name="РолиУстановитьФлажки" id="212">
+												<Type>CommandBarButton</Type>
+												<SkipOnInput>false</SkipOnInput>
+												<CommandName>Form.Command.ВключитьРоли</CommandName>
+												<ExtendedTooltip name="РолиУстановитьФлажкиExtendedTooltip" id="257"/>
+											</Button>
+											<Button name="РолиСнятьФлажки" id="213">
+												<Type>CommandBarButton</Type>
+												<SkipOnInput>false</SkipOnInput>
+												<CommandName>Form.Command.ИсключитьРоли</CommandName>
+												<ExtendedTooltip name="РолиСнятьФлажкиExtendedTooltip" id="258"/>
+											</Button>
+										</ChildItems>
+									</ButtonGroup>
 									<Button name="РолиПоказатьТолькоВыбранныеРоли" id="218">
 										<Type>CommandBarButton</Type>
 										<SkipOnInput>false</SkipOnInput>
@@ -229,6 +252,20 @@
 										<CommandSource>Item.Роли</CommandSource>
 										<ExtendedTooltip name="РолиСтандартныеКомандыРасширеннаяПодсказка" id="304"/>
 									</ButtonGroup>
+									<SearchStringAddition name="РолиСтрокаПоиск" id="414">
+										<AdditionSource>
+											<Item>Роли</Item>
+											<Type>SearchStringRepresentation</Type>
+										</AdditionSource>
+										<Title>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Поиск</v8:content>
+											</v8:item>
+										</Title>
+										<ContextMenu name="РолиСтрокаПоискКонтекстноеМеню" id="415"/>
+										<ExtendedTooltip name="РолиСтрокаПоискРасширеннаяПодсказка" id="416"/>
+									</SearchStringAddition>
 								</ChildItems>
 							</AutoCommandBar>
 							<ExtendedTooltip name="РолиExtendedTooltip" id="261"/>
@@ -347,7 +384,13 @@
 								</v8:item>
 							</Title>
 							<CommandSet>
+								<ExcludedCommand>CancelSearch</ExcludedCommand>
+								<ExcludedCommand>Change</ExcludedCommand>
 								<ExcludedCommand>Copy</ExcludedCommand>
+								<ExcludedCommand>CopyToClipboard</ExcludedCommand>
+								<ExcludedCommand>EndEdit</ExcludedCommand>
+								<ExcludedCommand>Find</ExcludedCommand>
+								<ExcludedCommand>OutputList</ExcludedCommand>
 							</CommandSet>
 							<RowFilter xsi:nil="true"/>
 							<ContextMenu name="ВидыДоступаКонтекстноеМеню" id="23"/>
@@ -485,6 +528,8 @@
 													</Title>
 													<CommandSet>
 														<ExcludedCommand>Copy</ExcludedCommand>
+														<ExcludedCommand>EndEdit</ExcludedCommand>
+														<ExcludedCommand>OutputList</ExcludedCommand>
 													</CommandSet>
 													<RowFilter xsi:nil="true"/>
 													<ContextMenu name="ЗначенияДоступаКонтекстноеМеню" id="234"/>

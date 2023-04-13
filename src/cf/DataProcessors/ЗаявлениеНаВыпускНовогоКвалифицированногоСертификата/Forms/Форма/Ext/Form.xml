@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.15">
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.16">
 	<Title>
 		<v8:item>
 			<v8:lang>ru</v8:lang>
@@ -560,6 +560,58 @@
 						</UsualGroup>
 					</ChildItems>
 				</UsualGroup>
+				<UsualGroup name="ГруппаПодсказкаКриптопровайдеры" id="941">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Подсказка о криптопровайдерах</v8:content>
+						</v8:item>
+					</Title>
+					<Group>AlwaysHorizontal</Group>
+					<Behavior>Usual</Behavior>
+					<Representation>NormalSeparation</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаПодсказкаКриптопровайдерыРасширеннаяПодсказка" id="942"/>
+					<ChildItems>
+						<PictureDecoration name="ДекорацияИнформацияКриптопровайдеры" id="943">
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<Title formatted="false">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Декорация информация</v8:content>
+								</v8:item>
+							</Title>
+							<Picture>
+								<xr:Ref>StdPicture.Information</xr:Ref>
+								<xr:LoadTransparent>true</xr:LoadTransparent>
+							</Picture>
+							<ContextMenu name="ДекорацияИнформацияКриптопровайдерыКонтекстноеМеню" id="944"/>
+							<ExtendedTooltip name="ДекорацияИнформацияКриптопровайдерыРасширеннаяПодсказка" id="945"/>
+						</PictureDecoration>
+						<LabelDecoration name="ДекорацияПроверкаУстановкиКриптопровайдера" id="946">
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<Title formatted="true">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>&lt;link ПроверитьУстановкуПрограммКриптографии&gt;Нажмите здесь&lt;/&gt;, чтобы выбрать программу для работы с электронной подписью, установленную на компьютере. </v8:content>
+								</v8:item>
+							</Title>
+							<ToolTipRepresentation>Button</ToolTipRepresentation>
+							<ContextMenu name="ДекорацияПроверкаУстановкиКриптопровайдераКонтекстноеМеню" id="947"/>
+							<ExtendedTooltip name="ДекорацияПроверкаУстановкиКриптопровайдераРасширеннаяПодсказка" id="948">
+								<Title formatted="false">
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Не удалось определить программу автоматически по причине:</v8:content>
+									</v8:item>
+								</Title>
+							</ExtendedTooltip>
+							<Events>
+								<Event name="URLProcessing">ДекорацияПроверкаУстановкиКриптопровайдераОбработкаНавигационнойСсылки</Event>
+							</Events>
+						</LabelDecoration>
+					</ChildItems>
+				</UsualGroup>
 				<UsualGroup name="ГруппаПрограмма" id="740">
 					<Title>
 						<v8:item>
@@ -599,6 +651,42 @@
 								</Title>
 							</ExtendedTooltip>
 						</LabelDecoration>
+						<InputField name="ПредставлениеПрограммы" id="949">
+							<DataPath>ПредставлениеПрограммы</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>с помощью программы</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTipRepresentation>Button</ToolTipRepresentation>
+							<Width>30</Width>
+							<HorizontalStretch>false</HorizontalStretch>
+							<DropListButton>true</DropListButton>
+							<ChoiceButton>false</ChoiceButton>
+							<OpenButton>false</OpenButton>
+							<CreateButton>false</CreateButton>
+							<AutoMarkIncomplete>true</AutoMarkIncomplete>
+							<ChoiceHistoryOnInput>DontUse</ChoiceHistoryOnInput>
+							<ContextMenu name="ПредставлениеПрограммыКонтекстноеМеню" id="950"/>
+							<ExtendedTooltip name="ПредставлениеПрограммыРасширеннаяПодсказка" id="951">
+								<Title formatted="false">
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Программа для работы с электронной подписью должна быть установлена на компьютере</v8:content>
+									</v8:item>
+								</Title>
+								<Events>
+									<Event name="URLProcessing">ПрограммаРасширеннаяПодсказкаОбработкаНавигационнойСсылки</Event>
+								</Events>
+							</ExtendedTooltip>
+							<Events>
+								<Event name="AutoComplete">ПрограммаАвтоПодбор</Event>
+								<Event name="StartChoice">ПрограммаНачалоВыбора</Event>
+								<Event name="TextEditEnd">ПрограммаОкончаниеВводаТекста</Event>
+								<Event name="ChoiceProcessing">ПрограммаОбработкаВыбора</Event>
+							</Events>
+						</InputField>
 						<InputField name="Программа" id="1">
 							<DataPath>Объект.Программа</DataPath>
 							<Title>
@@ -618,16 +706,10 @@
 							<ChoiceHistoryOnInput>DontUse</ChoiceHistoryOnInput>
 							<ContextMenu name="ПрограммаКонтекстноеМеню" id="2"/>
 							<ExtendedTooltip name="ПрограммаРасширеннаяПодсказка" id="3">
-								<Title formatted="true">
+								<Title formatted="false">
 									<v8:item>
 										<v8:lang>ru</v8:lang>
-										<v8:content>&lt;color #807A59&gt;Если не установлена программа электронной подписи, установите КриптоПро CSP или VipNet CSP.&lt;/&gt;&lt;color #807A59&gt;
-
-По вопросам работы программы обратитесь к ее документации. Или воспользуйтесь &lt;/&gt;&lt;link %1&gt;дополнительной инструкцией на сайте 1С&lt;/&gt;&lt;color #807A59&gt;.
-
-&lt;/&gt;&lt;b&gt;&lt;color #807A59&gt;Ключ электронной подписи&lt;/&gt;&lt;/&gt;&lt;color #807A59&gt; - это секретная информация, которая сохраняется на компьютер, флешку, дискету или другой носитель информации и используется в дальнейшем для создания электронных подписей.
-
-&lt;/&gt;&lt;b&gt;&lt;color #807A59&gt;Запрос на сертификат&lt;/&gt;&lt;/&gt;&lt;color #807A59&gt; - это не секретная информация, которая создается на основе ключа электронной подписи, отправляется вместе с заявлением на выпуск сертификата и требуется для выпуска сертификата.&lt;/&gt;</v8:content>
+										<v8:content>Программа для работы с электронной подписью должна быть установлена на компьютере</v8:content>
 									</v8:item>
 								</Title>
 								<Events>
@@ -641,6 +723,16 @@
 								<Event name="ChoiceProcessing">ПрограммаОбработкаВыбора</Event>
 							</Events>
 						</InputField>
+						<LabelDecoration name="ДекорацияПрограмма" id="952">
+							<Title formatted="false">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Программа определена автоматически</v8:content>
+								</v8:item>
+							</Title>
+							<ContextMenu name="ДекорацияПрограммаКонтекстноеМеню" id="953"/>
+							<ExtendedTooltip name="ДекорацияПрограммаРасширеннаяПодсказка" id="954"/>
+						</LabelDecoration>
 					</ChildItems>
 				</UsualGroup>
 				<UsualGroup name="ГруппаЭлектронноеПродление" id="863">
@@ -1894,6 +1986,15 @@
 			</Type>
 		</Attribute>
 		<Attribute name="АдресФайлаДоверенность" id="127">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ПрограммаИдентификатор" id="128">
 			<Type>
 				<v8:Type>xs:string</v8:Type>
 				<v8:StringQualifiers>

@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.15">
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.16">
 	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
 		<ChildItems>
 			<Button name="ФормаЗаписатьИЗакрыть" id="231">
@@ -334,6 +334,11 @@
 																<Event name="OnChange">РежимВыполненияПриИзменении</Event>
 															</Events>
 														</InputField>
+														<InputField name="ПриоритетВыполнения" id="810">
+															<DataPath>Объект.ОбработчикиОбновления[0].Порядок</DataPath>
+															<ContextMenu name="ПриоритетВыполненияКонтекстноеМеню" id="811"/>
+															<ExtendedTooltip name="ПриоритетВыполненияРасширеннаяПодсказка" id="812"/>
+														</InputField>
 													</ChildItems>
 												</UsualGroup>
 											</ChildItems>
@@ -653,11 +658,6 @@
 														<CommandName>Form.Command.ДобавитьЧитаемыйОбъектВИзменяемые</CommandName>
 														<ExtendedTooltip name="ЧитаемыеОбъектыДобавитьЧитаемыйОбъектВИзменяемыеРасширеннаяПодсказка" id="793"/>
 													</Button>
-													<Button name="ЧитаемыеОбъектыДобавитьОбъектОбработчика" id="777">
-														<Type>CommandBarButton</Type>
-														<CommandName>Form.Command.ДобавитьОбъектОбработчикаВЧитаемые</CommandName>
-														<ExtendedTooltip name="ЧитаемыеОбъектыДобавитьОбъектОбработчикаРасширеннаяПодсказка" id="778"/>
-													</Button>
 													<Button name="ЧитаемыеОбъектыДобавитьТипыРеквизита" id="784">
 														<Type>CommandBarButton</Type>
 														<CommandName>Form.Command.ДобавитьТипыРеквизитаВЧитаемые</CommandName>
@@ -665,7 +665,15 @@
 													</Button>
 												</ChildItems>
 											</ContextMenu>
-											<AutoCommandBar name="ЧитаемыеОбъектыКоманднаяПанель" id="104"/>
+											<AutoCommandBar name="ЧитаемыеОбъектыКоманднаяПанель" id="104">
+												<ChildItems>
+													<Button name="ЧитаемыеОбъектыСведенияОБлокировке" id="819">
+														<Type>CommandBarButton</Type>
+														<CommandName>Form.Command.СведенияОБлокировке</CommandName>
+														<ExtendedTooltip name="ЧитаемыеОбъектыСведенияОБлокировкеРасширеннаяПодсказка" id="820"/>
+													</Button>
+												</ChildItems>
+											</AutoCommandBar>
 											<ExtendedTooltip name="ЧитаемыеОбъектыРасширеннаяПодсказка" id="105"/>
 											<SearchStringAddition name="ЧитаемыеОбъектыСтрокаПоиска" id="106">
 												<AdditionSource>
@@ -692,6 +700,7 @@
 												<ExtendedTooltip name="ЧитаемыеОбъектыУправлениеПоискомРасширеннаяПодсказка" id="114"/>
 											</SearchControlAddition>
 											<Events>
+												<Event name="Selection">ЧитаемыеОбъектыВыбор</Event>
 												<Event name="OnStartEdit">ОбъектыПриНачалеРедактирования</Event>
 												<Event name="AfterDeleteRow">ОбъектыПослеУдаления</Event>
 											</Events>
@@ -742,6 +751,20 @@
 														</InputField>
 													</ChildItems>
 												</ColumnGroup>
+												<PictureField name="ЧитаемыеОбъектыПредупреждение" id="813">
+													<DataPath>Объект.ЧитаемыеОбъекты.Предупреждение</DataPath>
+													<ToolTip>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Обработчики с низкими приоритетом</v8:content>
+														</v8:item>
+													</ToolTip>
+													<ToolTipRepresentation>Balloon</ToolTipRepresentation>
+													<EditMode>EnterOnInput</EditMode>
+													<ShowInHeader>false</ShowInHeader>
+													<ContextMenu name="ЧитаемыеОбъектыПредупреждениеКонтекстноеМеню" id="814"/>
+													<ExtendedTooltip name="ЧитаемыеОбъектыПредупреждениеРасширеннаяПодсказка" id="815"/>
+												</PictureField>
 												<CheckBoxField name="ЧитаемыеОбъектыБлокироватьИнтерфейс" id="269">
 													<DataPath>Объект.ЧитаемыеОбъекты.БлокироватьИнтерфейс</DataPath>
 													<Title>
@@ -950,6 +973,25 @@
 													<ContextMenu name="ИзменяемыеОбъектыБлокироватьИнтерфейсКонтекстноеМеню" id="273"/>
 													<ExtendedTooltip name="ИзменяемыеОбъектыБлокироватьИнтерфейсРасширеннаяПодсказка" id="274"/>
 												</CheckBoxField>
+												<CheckBoxField name="ИзменяемыеОбъектыНовыеОбъекты" id="816">
+													<DataPath>Объект.ИзменяемыеОбъекты.НовыеОбъекты</DataPath>
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Нов.</v8:content>
+														</v8:item>
+													</Title>
+													<ToolTip>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Создаются новые объекты</v8:content>
+														</v8:item>
+													</ToolTip>
+													<EditMode>EnterOnInput</EditMode>
+													<CheckBoxType>Auto</CheckBoxType>
+													<ContextMenu name="ИзменяемыеОбъектыНовыеОбъектыКонтекстноеМеню" id="817"/>
+													<ExtendedTooltip name="ИзменяемыеОбъектыНовыеОбъектыРасширеннаяПодсказка" id="818"/>
+												</CheckBoxField>
 											</ChildItems>
 										</Table>
 									</ChildItems>
@@ -1073,6 +1115,7 @@
 						</v8:item>
 					</Title>
 					<Shortcut>Alt+3</Shortcut>
+					<TitleDataPath>Объект.ПриоритетыВыполнения.RowsCount</TitleDataPath>
 					<ExtendedTooltip name="СтраницаКонфликтыРасширеннаяПодсказка" id="276"/>
 					<ChildItems>
 						<LabelDecoration name="Объявление" id="277">
@@ -1575,6 +1618,47 @@
 			</Type>
 			<MainAttribute>true</MainAttribute>
 			<SavedData>true</SavedData>
+			<Columns>
+				<AdditionalColumns table="Объект.ЧитаемыеОбъекты">
+					<Column name="Порядок" id="1">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Порядок</v8:content>
+							</v8:item>
+						</Title>
+						<Type>
+							<v8:Type>xs:string</v8:Type>
+							<v8:StringQualifiers>
+								<v8:Length>30</v8:Length>
+								<v8:AllowedLength>Variable</v8:AllowedLength>
+							</v8:StringQualifiers>
+						</Type>
+					</Column>
+					<Column name="ЕстьПисательНизкогоПорядка" id="2">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Есть писатель низкого порядка</v8:content>
+							</v8:item>
+						</Title>
+						<Type>
+							<v8:Type>xs:boolean</v8:Type>
+						</Type>
+					</Column>
+					<Column name="Предупреждение" id="3">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Предупреждение</v8:content>
+							</v8:item>
+						</Title>
+						<Type>
+							<v8:Type>v8ui:Picture</v8:Type>
+						</Type>
+					</Column>
+				</AdditionalColumns>
+			</Columns>
 		</Attribute>
 		<Attribute name="МодулиПодсистем" id="2">
 			<Type/>
@@ -1803,6 +1887,41 @@
 				</v8:StringQualifiers>
 			</Type>
 		</Attribute>
+		<Attribute name="ПисателиНизкогоПорядка" id="22">
+			<Type>
+				<v8:Type>v8:ValueTable</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="ПроцедураПисатель" id="1">
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>350</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="ОбъектМетаданных" id="2">
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>300</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="Порядок" id="3">
+					<Type>
+						<v8:Type>cfg:EnumRef.ПорядокОбработчиковОбновления</v8:Type>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+		<Attribute name="ЕстьЧтениеНизкогоПорядка" id="23">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
 	</Attributes>
 	<Commands>
 		<Command name="ЗаписатьИЗакрыть" id="1">
@@ -1982,6 +2101,21 @@
 			</ToolTip>
 			<Shortcut>Ctrl+Shift+A</Shortcut>
 			<Action>ВыделитьПустойПорядок</Action>
+		</Command>
+		<Command name="СведенияОБлокировке" id="8">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сведения о блокировке</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сведения о блокировке</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>СведенияОБлокировке</Action>
 		</Command>
 	</Commands>
 	<Parameters>

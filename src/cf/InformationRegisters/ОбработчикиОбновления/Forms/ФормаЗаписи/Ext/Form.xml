@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.15">
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.16">
 	<AutoTitle>false</AutoTitle>
 	<CommandSet>
 		<ExcludedCommand>Copy</ExcludedCommand>
@@ -151,6 +151,11 @@
 					<ContextMenu name="ОбрабатываемыеДанныеКонтекстноеМеню" id="98"/>
 					<ExtendedTooltip name="ОбрабатываемыеДанныеРасширеннаяПодсказка" id="99"/>
 				</LabelField>
+				<InputField name="Порядок" id="100">
+					<DataPath>Запись.Порядок</DataPath>
+					<ContextMenu name="ПорядокКонтекстноеМеню" id="101"/>
+					<ExtendedTooltip name="ПорядокРасширеннаяПодсказка" id="102"/>
+				</InputField>
 			</ChildItems>
 		</UsualGroup>
 		<UsualGroup name="ГруппаКомментарий" id="81">
@@ -354,6 +359,29 @@
 					<ContextMenu name="ОбластьДанныхВспомогательныеДанныеКонтекстноеМеню" id="2"/>
 					<ExtendedTooltip name="ОбластьДанныхВспомогательныеДанныеРасширеннаяПодсказка" id="3"/>
 				</InputField>
+				<InputField name="ДлительностьРегистрацииДанных" id="103">
+					<DataPath>Запись.ДлительностьРегистрацииДанных</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Длительность регистрации, секунд</v8:content>
+						</v8:item>
+					</Title>
+					<ContextMenu name="ДлительностьРегистрацииДанныхКонтекстноеМеню" id="104"/>
+					<ExtendedTooltip name="ДлительностьРегистрацииДанныхРасширеннаяПодсказка" id="105"/>
+				</InputField>
+				<CheckBoxField name="ИспользуетсяРазделениеПоКритичности" id="106">
+					<DataPath>Запись.ИспользуетсяРазделениеПоКритичности</DataPath>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="ИспользуетсяРазделениеПоКритичностиКонтекстноеМеню" id="107"/>
+					<ExtendedTooltip name="ИспользуетсяРазделениеПоКритичностиРасширеннаяПодсказка" id="108"/>
+				</CheckBoxField>
+				<CheckBoxField name="ОбработаныАктуальныеДанные" id="109">
+					<DataPath>Запись.ОбработаныАктуальныеДанные</DataPath>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="ОбработаныАктуальныеДанныеКонтекстноеМеню" id="110"/>
+					<ExtendedTooltip name="ОбработаныАктуальныеДанныеРасширеннаяПодсказка" id="111"/>
+				</CheckBoxField>
 			</ChildItems>
 		</UsualGroup>
 	</ChildItems>

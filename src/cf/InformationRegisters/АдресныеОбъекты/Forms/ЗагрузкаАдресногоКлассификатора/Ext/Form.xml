@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.15">
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.16">
 	<Title>
 		<v8:item>
 			<v8:lang>ru</v8:lang>
@@ -51,101 +51,6 @@
 							<Representation>None</Representation>
 							<ShowTitle>false</ShowTitle>
 							<ExtendedTooltip name="ГруппаКоманднаяПанельРегионовРасширеннаяПодсказка" id="207"/>
-							<ChildItems>
-								<CommandBar name="ГруппаУстановитьСнятьФлажки" id="208">
-									<Title>
-										<v8:item>
-											<v8:lang>ru</v8:lang>
-											<v8:content>Установить снять флажки</v8:content>
-										</v8:item>
-									</Title>
-									<ExtendedTooltip name="ГруппаУстановитьСнятьФлажкиРасширеннаяПодсказка" id="209"/>
-									<ChildItems>
-										<ButtonGroup name="КнопкиВыбора" id="239">
-											<Title>
-												<v8:item>
-													<v8:lang>ru</v8:lang>
-													<v8:content>Выбрать все</v8:content>
-												</v8:item>
-											</Title>
-											<Representation>Compact</Representation>
-											<ExtendedTooltip name="КнопкиВыбораРасширеннаяПодсказка" id="240"/>
-											<ChildItems>
-												<Button name="СубъектыРФУстановитьФлажки" id="47">
-													<Type>CommandBarButton</Type>
-													<CommandName>Form.Command.УстановитьФлажки</CommandName>
-													<ExtendedTooltip name="СубъектыРФУстановитьФлажкиРасширеннаяПодсказка" id="48"/>
-												</Button>
-												<Button name="СубъектыРФСнятьФлажки" id="49">
-													<Type>CommandBarButton</Type>
-													<CommandName>Form.Command.СнятьФлажки</CommandName>
-													<ExtendedTooltip name="СубъектыРФСнятьФлажкиРасширеннаяПодсказка" id="50"/>
-												</Button>
-											</ChildItems>
-										</ButtonGroup>
-									</ChildItems>
-								</CommandBar>
-								<InputField name="Поиск" id="203">
-									<DataPath>Поиск</DataPath>
-									<TitleLocation>None</TitleLocation>
-									<ClearButton>true</ClearButton>
-									<InputHint>
-										<v8:item>
-											<v8:lang>ru</v8:lang>
-											<v8:content>Введите первые буквы названия региона</v8:content>
-										</v8:item>
-									</InputHint>
-									<ContextMenu name="ПоискКонтекстноеМеню" id="204"/>
-									<ExtendedTooltip name="ПоискРасширеннаяПодсказка" id="205"/>
-									<Events>
-										<Event name="AutoComplete">ПоискАвтоПодбор</Event>
-										<Event name="Clearing">ПоискОчистка</Event>
-										<Event name="TextEditEnd">ПоискОкончаниеВводаТекста</Event>
-									</Events>
-								</InputField>
-								<CommandBar name="ГруппаЕще" id="210">
-									<Title>
-										<v8:item>
-											<v8:lang>ru</v8:lang>
-											<v8:content>Еще</v8:content>
-										</v8:item>
-									</Title>
-									<HorizontalStretch>false</HorizontalStretch>
-									<GroupHorizontalAlign>Right</GroupHorizontalAlign>
-									<ExtendedTooltip name="ГруппаЕщеРасширеннаяПодсказка" id="211"/>
-									<ChildItems>
-										<Button name="СубъектыРФУстановитьФлажки1" id="241">
-											<Type>CommandBarButton</Type>
-											<CommandName>Form.Command.УстановитьФлажки</CommandName>
-											<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
-											<ExtendedTooltip name="СубъектыРФУстановитьФлажки1РасширеннаяПодсказка" id="242"/>
-										</Button>
-										<Button name="СубъектыРФСнятьФлажки1" id="243">
-											<Type>CommandBarButton</Type>
-											<CommandName>Form.Command.СнятьФлажки</CommandName>
-											<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
-											<ExtendedTooltip name="СубъектыРФСнятьФлажки1РасширеннаяПодсказка" id="244"/>
-										</Button>
-										<Button name="СубъектыРФНайти" id="43">
-											<Type>CommandBarButton</Type>
-											<CommandName>Form.Item.СубъектыРФ.StandardCommand.Find</CommandName>
-											<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
-											<ExtendedTooltip name="СубъектыРФНайтиРасширеннаяПодсказка" id="44"/>
-										</Button>
-										<Button name="СубъектыРФОтменитьПоиск" id="45">
-											<Type>CommandBarButton</Type>
-											<CommandName>Form.Item.СубъектыРФ.StandardCommand.CancelSearch</CommandName>
-											<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
-											<ExtendedTooltip name="СубъектыРФОтменитьПоискРасширеннаяПодсказка" id="46"/>
-										</Button>
-										<Button name="Справка" id="217">
-											<Type>CommandBarButton</Type>
-											<CommandName>Form.StandardCommand.Help</CommandName>
-											<ExtendedTooltip name="СправкаРасширеннаяПодсказка" id="218"/>
-										</Button>
-									</ChildItems>
-								</CommandBar>
-							</ChildItems>
 						</UsualGroup>
 						<Table name="СубъектыРФ" id="1">
 							<Representation>List</Representation>
@@ -167,12 +72,52 @@
 							</Title>
 							<CommandSet>
 								<ExcludedCommand>Add</ExcludedCommand>
+								<ExcludedCommand>Change</ExcludedCommand>
+								<ExcludedCommand>Copy</ExcludedCommand>
+								<ExcludedCommand>Delete</ExcludedCommand>
+								<ExcludedCommand>EndEdit</ExcludedCommand>
+								<ExcludedCommand>MoveDown</ExcludedCommand>
+								<ExcludedCommand>MoveUp</ExcludedCommand>
 							</CommandSet>
 							<GroupHorizontalAlign>Left</GroupHorizontalAlign>
 							<RowFilter xsi:nil="true"/>
 							<ContextMenu name="СубъектыРФКонтекстноеМеню" id="2"/>
 							<AutoCommandBar name="СубъектыРФКоманднаяПанель" id="3">
-								<Autofill>false</Autofill>
+								<ChildItems>
+									<ButtonGroup name="ГруппаУстановитьСнятьФлажки" id="208">
+										<Title>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Установить снять флажки</v8:content>
+											</v8:item>
+										</Title>
+										<ExtendedTooltip name="ГруппаУстановитьСнятьФлажкиРасширеннаяПодсказка" id="209"/>
+										<ChildItems>
+											<ButtonGroup name="КнопкиВыбора" id="239">
+												<Title>
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>Выбрать все</v8:content>
+													</v8:item>
+												</Title>
+												<Representation>Compact</Representation>
+												<ExtendedTooltip name="КнопкиВыбораРасширеннаяПодсказка" id="240"/>
+												<ChildItems>
+													<Button name="СубъектыРФУстановитьФлажки" id="47">
+														<Type>CommandBarButton</Type>
+														<CommandName>Form.Command.УстановитьФлажки</CommandName>
+														<ExtendedTooltip name="СубъектыРФУстановитьФлажкиРасширеннаяПодсказка" id="48"/>
+													</Button>
+													<Button name="СубъектыРФСнятьФлажки" id="49">
+														<Type>CommandBarButton</Type>
+														<CommandName>Form.Command.СнятьФлажки</CommandName>
+														<ExtendedTooltip name="СубъектыРФСнятьФлажкиРасширеннаяПодсказка" id="50"/>
+													</Button>
+												</ChildItems>
+											</ButtonGroup>
+										</ChildItems>
+									</ButtonGroup>
+								</ChildItems>
 							</AutoCommandBar>
 							<ExtendedTooltip name="СубъектыРФРасширеннаяПодсказка" id="4"/>
 							<SearchStringAddition name="СубъектыРФСтрокаПоиска" id="135">
@@ -1016,12 +961,6 @@
 			</Type>
 		</Attribute>
 		<Attribute name="Поиск" id="17">
-			<Title>
-				<v8:item>
-					<v8:lang>ru</v8:lang>
-					<v8:content>Поиск</v8:content>
-				</v8:item>
-			</Title>
 			<Type>
 				<v8:Type>xs:string</v8:Type>
 				<v8:StringQualifiers>

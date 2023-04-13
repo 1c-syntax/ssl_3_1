@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<Rights xmlns="http://v8.1c.ru/8.2/roles" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="Rights" version="2.15">
+<Rights xmlns="http://v8.1c.ru/8.2/roles" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="Rights" version="2.16">
 	<setForNewObjects>false</setForNewObjects>
 	<setForAttributesByDefault>true</setForAttributesByDefault>
 	<independentRightsOfChildObjects>false</independentRightsOfChildObjects>
@@ -7,6 +7,17 @@
 		<name>SessionParameter.КомментарийЗамераВремени</name>
 		<right>
 			<name>Get</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
+		<name>InformationRegister.ИсторияРассылкиОтчетов</name>
+		<right>
+			<name>Read</name>
+			<value>true</value>
+		</right>
+		<right>
+			<name>Update</name>
 			<value>true</value>
 		</right>
 	</object>
@@ -1191,13 +1202,6 @@
 		</right>
 	</object>
 	<object>
-		<name>SessionParameter.ПравилаВыборочнойРегистрацииОбъектов</name>
-		<right>
-			<name>Get</name>
-			<value>true</value>
-		</right>
-	</object>
-	<object>
 		<name>SessionParameter.ВыполняетсяУдалениеОбъектов</name>
 		<right>
 			<name>Get</name>
@@ -1407,6 +1411,17 @@
 		</right>
 	</object>
 	<object>
+		<name>Constant.ХранитьИсториюРассылкиОтчетов</name>
+		<right>
+			<name>Read</name>
+			<value>true</value>
+		</right>
+		<right>
+			<name>Update</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
 		<name>InformationRegister.ОповещенияПользователейСертификатов</name>
 		<right>
 			<name>Read</name>
@@ -1577,6 +1592,17 @@
 	</object>
 	<object>
 		<name>Constant.ПараметрыБлокировкиРаботыСВнешнимиРесурсами</name>
+		<right>
+			<name>Read</name>
+			<value>true</value>
+		</right>
+		<right>
+			<name>Update</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
+		<name>InformationRegister.СертификатыПолучателейРассылкиОтчетов</name>
 		<right>
 			<name>Read</name>
 			<value>true</value>
@@ -1876,6 +1902,33 @@
 		</right>
 	</object>
 	<object>
+		<name>Configuration.БиблиотекаСтандартныхПодсистем</name>
+		<right>
+			<name>MainWindowModeNormal</name>
+			<value>true</value>
+		</right>
+		<right>
+			<name>MainWindowModeWorkplace</name>
+			<value>true</value>
+		</right>
+		<right>
+			<name>MainWindowModeEmbeddedWorkplace</name>
+			<value>true</value>
+		</right>
+		<right>
+			<name>MainWindowModeFullscreenWorkplace</name>
+			<value>true</value>
+		</right>
+		<right>
+			<name>MainWindowModeKiosk</name>
+			<value>true</value>
+		</right>
+		<right>
+			<name>AnalyticsSystemClient</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
 		<name>Catalog.СертификатыКлючейЭлектроннойПодписиИШифрования</name>
 		<right>
 			<name>Read</name>
@@ -2059,6 +2112,17 @@
 	</object>
 	<object>
 		<name>Constant.АдресаСерверовМетокВремени</name>
+		<right>
+			<name>Read</name>
+			<value>true</value>
+		</right>
+		<right>
+			<name>Update</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
+		<name>Constant.КоличествоМесяцевХраненияИсторииРассылкиОтчетов</name>
 		<right>
 			<name>Read</name>
 			<value>true</value>
@@ -2295,33 +2359,6 @@
 		</right>
 	</object>
 	<object>
-		<name>Configuration.БиблиотекаСтандартныхПодсистем</name>
-		<right>
-			<name>MainWindowModeNormal</name>
-			<value>true</value>
-		</right>
-		<right>
-			<name>MainWindowModeWorkplace</name>
-			<value>true</value>
-		</right>
-		<right>
-			<name>MainWindowModeEmbeddedWorkplace</name>
-			<value>true</value>
-		</right>
-		<right>
-			<name>MainWindowModeFullscreenWorkplace</name>
-			<value>true</value>
-		</right>
-		<right>
-			<name>MainWindowModeKiosk</name>
-			<value>true</value>
-		</right>
-		<right>
-			<name>AnalyticsSystemClient</name>
-			<value>true</value>
-		</right>
-	</object>
-	<object>
 		<name>Catalog.ПредопределенныеВариантыОтчетов</name>
 		<right>
 			<name>Read</name>
@@ -2512,17 +2549,6 @@
 	</object>
 	<object>
 		<name>Constant.НастройкиКолонтитулов</name>
-		<right>
-			<name>Read</name>
-			<value>true</value>
-		</right>
-		<right>
-			<name>Update</name>
-			<value>true</value>
-		</right>
-	</object>
-	<object>
-		<name>Constant.ИспользоватьОнлайнПоддержку</name>
 		<right>
 			<name>Read</name>
 			<value>true</value>
@@ -3141,6 +3167,17 @@
 		</right>
 	</object>
 	<object>
+		<name>InformationRegister.ФиксацияОбработкиДанныхОбработчиками</name>
+		<right>
+			<name>Read</name>
+			<value>true</value>
+		</right>
+		<right>
+			<name>Update</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
 		<name>SessionParameter.ТекущийВнешнийПользователь</name>
 		<right>
 			<name>Get</name>
@@ -3173,6 +3210,13 @@
 		</right>
 		<right>
 			<name>Update</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
+		<name>SessionParameter.ПраваДоступаКДатамЗапрета</name>
+		<right>
+			<name>Get</name>
 			<value>true</value>
 		</right>
 	</object>
@@ -3305,6 +3349,13 @@
 		</right>
 		<right>
 			<name>Update</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
+		<name>SessionParameter.ОбновлениеСправочниковПользователей</name>
+		<right>
+			<name>Get</name>
 			<value>true</value>
 		</right>
 	</object>

@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.15">
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.16">
 	<AutoSaveDataInSettings>Use</AutoSaveDataInSettings>
 	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
 		<ChildItems>
@@ -762,6 +762,44 @@
 					<ContextMenu name="ОбработчикиОбновленияЗаданПорядокВыполненияКонтекстноеМеню" id="150"/>
 					<ExtendedTooltip name="ОбработчикиОбновленияЗаданПорядокВыполненияРасширеннаяПодсказка" id="151"/>
 				</CheckBoxField>
+				<CheckBoxField name="ОбработчикиОбновленияИзмененаПроцедураПроверки" id="262">
+					<DataPath>Объект.ОбработчикиОбновления.ИзмененаПроцедураПроверки</DataPath>
+					<UserVisible>
+						<xr:Common>false</xr:Common>
+					</UserVisible>
+					<ReadOnly>true</ReadOnly>
+					<TitleLocation>None</TitleLocation>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Изменена процедура проверки</v8:content>
+						</v8:item>
+					</ToolTip>
+					<EditMode>EnterOnInput</EditMode>
+					<HeaderPicture>
+						<xr:Ref>CommonPicture.ВидыСравнения</xr:Ref>
+						<xr:LoadTransparent>false</xr:LoadTransparent>
+					</HeaderPicture>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="ОбработчикиОбновленияИзмененаПроцедураПроверкиКонтекстноеМеню" id="263"/>
+					<ExtendedTooltip name="ОбработчикиОбновленияИзмененаПроцедураПроверкиРасширеннаяПодсказка" id="264"/>
+				</CheckBoxField>
+				<CheckBoxField name="ОбработчикиОбновленияЧтениеНизкогоПорядка" id="265">
+					<DataPath>Объект.ОбработчикиОбновления.ЧтениеНизкогоПорядка</DataPath>
+					<UserVisible>
+						<xr:Common>false</xr:Common>
+					</UserVisible>
+					<ReadOnly>true</ReadOnly>
+					<TitleLocation>None</TitleLocation>
+					<EditMode>EnterOnInput</EditMode>
+					<HeaderPicture>
+						<xr:Ref>CommonPicture.ЗнакСтоп</xr:Ref>
+						<xr:LoadTransparent>false</xr:LoadTransparent>
+					</HeaderPicture>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="ОбработчикиОбновленияЧтениеНизкогоПорядкаКонтекстноеМеню" id="266"/>
+					<ExtendedTooltip name="ОбработчикиОбновленияЧтениеНизкогоПорядкаРасширеннаяПодсказка" id="267"/>
+				</CheckBoxField>
 				<CheckBoxField name="ОбработчикиОбновленияИзменен" id="198">
 					<DataPath>Объект.ОбработчикиОбновления.Изменен</DataPath>
 					<UserVisible>
@@ -823,6 +861,13 @@
 					<EditMode>EnterOnInput</EditMode>
 					<ContextMenu name="ОбработчикиОбновленияПорядокБиблиотекиКонтекстноеМеню" id="249"/>
 					<ExtendedTooltip name="ОбработчикиОбновленияПорядокБиблиотекиРасширеннаяПодсказка" id="250"/>
+				</InputField>
+				<InputField name="ОбработчикиОбновленияПорядок" id="259">
+					<DataPath>Объект.ОбработчикиОбновления.Порядок</DataPath>
+					<ReadOnly>true</ReadOnly>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ОбработчикиОбновленияПорядокКонтекстноеМеню" id="260"/>
+					<ExtendedTooltip name="ОбработчикиОбновленияПорядокРасширеннаяПодсказка" id="261"/>
 				</InputField>
 				<InputField name="ОбработчикиОбновленияИмяОбъекта" id="239">
 					<DataPath>Объект.ОбработчикиОбновления.ИмяОбъекта</DataPath>
@@ -922,15 +967,6 @@
 					<v8:FractionDigits>0</v8:FractionDigits>
 					<v8:AllowedSign>Any</v8:AllowedSign>
 				</v8:NumberQualifiers>
-			</Type>
-		</Attribute>
-		<Attribute name="СтатусНетПроблем" id="14">
-			<Type>
-				<v8:Type>xs:string</v8:Type>
-				<v8:StringQualifiers>
-					<v8:Length>30</v8:Length>
-					<v8:AllowedLength>Variable</v8:AllowedLength>
-				</v8:StringQualifiers>
 			</Type>
 		</Attribute>
 		<Attribute name="СтатусНеобходимАнализ" id="15">
@@ -1050,6 +1086,24 @@
 			<Save>
 				<Field>РасширенныйРежимФормы</Field>
 			</Save>
+		</Attribute>
+		<Attribute name="СтатусИзмененаПроцедураПроверки" id="27">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>30</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="СтатусЧтениеНизкогоПорядка" id="28">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>30</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
 		</Attribute>
 	</Attributes>
 	<Commands>
