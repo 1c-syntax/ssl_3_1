@@ -32,6 +32,7 @@
 			<Button name="ФормаВыбратьФотографию" id="373">
 				<Type>CommandBarButton</Type>
 				<CommandName>Form.Command.ВыбратьФотографию</CommandName>
+				<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
 				<ExtendedTooltip name="ФормаВыбратьФотографиюРасширеннаяПодсказка" id="374"/>
 			</Button>
 			<Button name="ФормаОчиститьФотографию" id="356">
@@ -526,11 +527,58 @@
 							<ToolTip>
 								<v8:item>
 									<v8:lang>ru</v8:lang>
-									<v8:content>У пользователя нет ни одного права запуска (тонкий клиент, веб-клиент)</v8:content>
+									<v8:content>У пользователя нет ни одного права запуска
+(например, тонкий клиент, веб-клиент)</v8:content>
 								</v8:item>
 							</ToolTip>
 							<ContextMenu name="НетПравНаЗапускНадписьКонтекстноеМеню" id="425"/>
 							<ExtendedTooltip name="НетПравНаЗапускНадписьРасширеннаяПодсказка" id="426"/>
+						</LabelDecoration>
+					</ChildItems>
+				</UsualGroup>
+				<UsualGroup name="ГруппаНетПравНаВход" id="440">
+					<Visible>false</Visible>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Нет прав на вход</v8:content>
+						</v8:item>
+					</Title>
+					<Group>AlwaysHorizontal</Group>
+					<Behavior>Usual</Behavior>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаНетПравНаВходРасширеннаяПодсказка" id="441"/>
+					<ChildItems>
+						<PictureDecoration name="НетПравНаВходКартинка" id="442">
+							<Title formatted="false">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Нет прав на вход картинка</v8:content>
+								</v8:item>
+							</Title>
+							<Picture>
+								<xr:Ref>CommonPicture.Предупреждение</xr:Ref>
+								<xr:LoadTransparent>false</xr:LoadTransparent>
+							</Picture>
+							<ContextMenu name="НетПравНаВходКартинкаКонтекстноеМеню" id="443"/>
+							<ExtendedTooltip name="НетПравНаВходКартинкаРасширеннаяПодсказка" id="444"/>
+						</PictureDecoration>
+						<LabelDecoration name="НетПравНаВходНадпись" id="445">
+							<Title formatted="false">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Нет прав для входа</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Пользователю не назначены минимальные права для работы в программе</v8:content>
+								</v8:item>
+							</ToolTip>
+							<ContextMenu name="НетПравНаВходНадписьКонтекстноеМеню" id="446"/>
+							<ExtendedTooltip name="НетПравНаВходНадписьРасширеннаяПодсказка" id="447"/>
 						</LabelDecoration>
 					</ChildItems>
 				</UsualGroup>

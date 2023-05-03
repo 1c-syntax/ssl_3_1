@@ -701,30 +701,30 @@
 								</Button>
 							</ChildItems>
 						</UsualGroup>
-						<UsualGroup name="ГруппаСкрытиеПерсональныхДанныхИспользование" id="2223">
+						<UsualGroup name="ГруппаУничтожениеПерсональныхДанныхИспользование" id="2223">
 							<Title>
 								<v8:item>
 									<v8:lang>ru</v8:lang>
-									<v8:content>Скрытие персональных данных использование</v8:content>
+									<v8:content>Уничтожение персональных данных использование</v8:content>
 								</v8:item>
 							</Title>
 							<Group>Vertical</Group>
 							<Behavior>Usual</Behavior>
 							<Representation>None</Representation>
 							<ShowTitle>false</ShowTitle>
-							<ExtendedTooltip name="ГруппаСкрытиеПерсональныхДанныхИспользованиеРасширеннаяПодсказка" id="2224"/>
+							<ExtendedTooltip name="ГруппаУничтожениеПерсональныхДанныхИспользованиеРасширеннаяПодсказка" id="2224"/>
 							<ChildItems>
-								<UsualGroup name="ГруппаДнейДоСкрытия" id="2225">
+								<UsualGroup name="ГруппаДнейДоУничтожения" id="2225">
 									<Title>
 										<v8:item>
 											<v8:lang>ru</v8:lang>
-											<v8:content>Дней до скрытия</v8:content>
+											<v8:content>Дней до уничтожения</v8:content>
 										</v8:item>
 									</Title>
 									<ToolTip>
 										<v8:item>
 											<v8:lang>ru</v8:lang>
-											<v8:content>Причиной скрытия данных может быть истечение срока действия согласия субъекта или его отсутствие.</v8:content>
+											<v8:content>Причиной уничтожения данных может быть истечение срока действия согласия субъекта или его отсутствие.</v8:content>
 										</v8:item>
 									</ToolTip>
 									<ToolTipRepresentation>ShowBottom</ToolTipRepresentation>
@@ -734,48 +734,33 @@
 									<Behavior>Usual</Behavior>
 									<Representation>None</Representation>
 									<ShowTitle>false</ShowTitle>
-									<ExtendedTooltip name="ГруппаДнейДоСкрытияРасширеннаяПодсказка" id="2226"/>
+									<ExtendedTooltip name="ГруппаДнейДоУничтоженияРасширеннаяПодсказка" id="2226"/>
 									<ChildItems>
-										<CheckBoxField name="ИспользоватьСкрытиеПерсональныхДанных" id="2227">
+										<CheckBoxField name="ИспользоватьУничтожениеПерсональныхДанных" id="2227">
 											<DataPath>НаборКонстант.ИспользоватьСкрытиеПерсональныхДанныхСубъектов</DataPath>
 											<Title>
 												<v8:item>
 													<v8:lang>ru</v8:lang>
-													<v8:content>Скрывать персональные данные через</v8:content>
+													<v8:content>Уничтожать персональные данные</v8:content>
 												</v8:item>
 											</Title>
 											<TitleLocation>Right</TitleLocation>
 											<ToolTipRepresentation>ShowBottom</ToolTipRepresentation>
 											<CheckBoxType>Auto</CheckBoxType>
-											<ContextMenu name="ИспользоватьСкрытиеПерсональныхДанныхКонтекстноеМеню" id="2228"/>
-											<ExtendedTooltip name="ИспользоватьСкрытиеПерсональныхДанныхРасширеннаяПодсказка" id="2229"/>
+											<ContextMenu name="ИспользоватьУничтожениеПерсональныхДанныхКонтекстноеМеню" id="2228"/>
+											<ExtendedTooltip name="ИспользоватьУничтожениеПерсональныхДанныхРасширеннаяПодсказка" id="2229"/>
 											<Events>
-												<Event name="OnChange">Подключаемый_НастройкиСкрытияПДнПриИзменении</Event>
+												<Event name="OnChange">Подключаемый_НастройкиУничтоженияПДнПриИзменении</Event>
 											</Events>
 										</CheckBoxField>
-										<InputField name="ДнейДоСкрытияПерсональныхДанныхСубъектов" id="2230">
-											<DataPath>НаборКонстант.ДнейДоСкрытияПерсональныхДанныхСубъектов</DataPath>
-											<Title>
-												<v8:item>
-													<v8:lang>ru</v8:lang>
-													<v8:content>дней</v8:content>
-												</v8:item>
-											</Title>
-											<TitleLocation>Right</TitleLocation>
-											<ContextMenu name="ДнейДоСкрытияПерсональныхДанныхСубъектовКонтекстноеМеню" id="2231"/>
-											<ExtendedTooltip name="ДнейДоСкрытияПерсональныхДанныхСубъектовРасширеннаяПодсказка" id="2232"/>
-											<Events>
-												<Event name="OnChange">Подключаемый_НастройкиСкрытияПДнПриИзменении</Event>
-											</Events>
-										</InputField>
-										<PictureDecoration name="ДекорацияОжиданиеИзмененияИспользованияСкрытияПДн" id="2233">
+										<PictureDecoration name="ДекорацияОжиданиеИзмененияИспользованияУничтоженияПДн" id="2233">
 											<Visible>false</Visible>
 											<Width>2</Width>
 											<Height>1</Height>
 											<Title formatted="false">
 												<v8:item>
 													<v8:lang>ru</v8:lang>
-													<v8:content>Декорация ожидание изменения использования скрытия ПДн</v8:content>
+													<v8:content>Декорация ожидание изменения использования уничтожения ПДн</v8:content>
 												</v8:item>
 											</Title>
 											<Picture>
@@ -783,8 +768,8 @@
 												<xr:LoadTransparent>false</xr:LoadTransparent>
 											</Picture>
 											<FileDragMode>AsFile</FileDragMode>
-											<ContextMenu name="ДекорацияОжиданиеИзмененияИспользованияСкрытияПДнКонтекстноеМеню" id="2234"/>
-											<ExtendedTooltip name="ДекорацияОжиданиеИзмененияИспользованияСкрытияПДнРасширеннаяПодсказка" id="2235"/>
+											<ContextMenu name="ДекорацияОжиданиеИзмененияИспользованияУничтоженияПДнКонтекстноеМеню" id="2234"/>
+											<ExtendedTooltip name="ДекорацияОжиданиеИзмененияИспользованияУничтоженияПДнРасширеннаяПодсказка" id="2235"/>
 										</PictureDecoration>
 									</ChildItems>
 								</UsualGroup>
