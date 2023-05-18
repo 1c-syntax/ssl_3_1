@@ -184,11 +184,11 @@
 							<ExtendedTooltip name="СоставРасширеннаяПодсказка" id="109">
 								<AutoMaxWidth>false</AutoMaxWidth>
 								<HorizontalStretch>true</HorizontalStretch>
-								<Title formatted="false">
+								<Title formatted="true">
 									<v8:item>
 										<v8:lang>ru</v8:lang>
 										<v8:content>В списке перечислены объекты, доступ к которым может быть предоставлен через автоматический REST-сервис.
-Требуемый состав объектов можно уточнить у разработчика сторонней программы, которая будет подключаться к приложению через автоматический REST-сервис.</v8:content>
+Требуемый состав объектов можно уточнить у разработчика сторонней программы, которая будет подключаться к приложению через автоматический REST-сервис. &lt;link https://its.1c.eu/db/v8323doc#bookmark:dev:ti000001358&gt;Информация для разработчиков&lt;/&gt;</v8:content>
 									</v8:item>
 								</Title>
 							</ExtendedTooltip>
@@ -231,16 +231,6 @@
 									<ExtendedTooltip name="ОбъектыМетаданныхРасширеннаяПодсказка" id="4">
 										<AutoMaxWidth>false</AutoMaxWidth>
 										<HorizontalStretch>true</HorizontalStretch>
-										<Title formatted="false">
-											<v8:item>
-												<v8:lang>ru</v8:lang>
-												<v8:content>Легенда для колонки Примечание:
-· Подчиненный объект - объект используется при работе пользователей с приложением не непосредственно, а при работе с другими объектами. Предоставление доступа к таким объектам является штатной ситуацией.
-· Доступен только для чтения - данные объекта могут быть только прочитаны через REST-сервис.
-
-В списке отображаются только объекты, доступные при текущих настройках программы.</v8:content>
-											</v8:item>
-										</Title>
 										<VerticalAlign>Top</VerticalAlign>
 									</ExtendedTooltip>
 									<SearchStringAddition name="ОбъектыМетаданныхСтрокаПоиска" id="118">
@@ -364,37 +354,40 @@
 										</ColumnGroup>
 									</ChildItems>
 								</Table>
+								<UsualGroup name="ГруппаПодсказка" id="129">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Легенда для колонки Примечание</v8:content>
+										</v8:item>
+									</Title>
+									<Behavior>Collapsible</Behavior>
+									<Collapsed>true</Collapsed>
+									<ControlRepresentation>Picture</ControlRepresentation>
+									<Representation>None</Representation>
+									<ExtendedTooltip name="ГруппаПодсказкаРасширеннаяПодсказка" id="130"/>
+									<ChildItems>
+										<LabelDecoration name="ДекорацияПодсказка" id="131">
+											<AutoMaxWidth>false</AutoMaxWidth>
+											<TextColor>style:ПоясняющийТекст</TextColor>
+											<Title formatted="true">
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>· &lt;b&gt;Подчиненный объект&lt;/&gt; - объект используется при работе пользователей с приложением не непосредственно, а при работе с другими объектами. Предоставление доступа к таким объектам является штатной ситуацией.
+· &lt;b&gt;Доступен только для чтения&lt;/&gt; - данные объекта могут быть только прочитаны через REST-сервис.
+
+В списке отображаются только объекты, доступные при текущих настройках программы.</v8:content>
+												</v8:item>
+											</Title>
+											<ContextMenu name="ДекорацияПодсказкаКонтекстноеМеню" id="132"/>
+											<ExtendedTooltip name="ДекорацияПодсказкаРасширеннаяПодсказка" id="133"/>
+										</LabelDecoration>
+									</ChildItems>
+								</UsualGroup>
 							</ChildItems>
 						</Page>
 					</ChildItems>
 				</Pages>
-				<UsualGroup name="ИнформацияДляРазработчиков" id="55">
-					<Title>
-						<v8:item>
-							<v8:lang>ru</v8:lang>
-							<v8:content>Информация для разработчиков</v8:content>
-						</v8:item>
-					</Title>
-					<HorizontalStretch>true</HorizontalStretch>
-					<Group>Horizontal</Group>
-					<Behavior>Collapsible</Behavior>
-					<Collapsed>true</Collapsed>
-					<ControlRepresentation>Picture</ControlRepresentation>
-					<ExtendedTooltip name="ИнформацияДляРазработчиковРасширеннаяПодсказка" id="56"/>
-					<ChildItems>
-						<LabelDecoration name="ДекорацияДокументация" id="67">
-							<AutoMaxWidth>false</AutoMaxWidth>
-							<Title formatted="true">
-								<v8:item>
-									<v8:lang>ru</v8:lang>
-									<v8:content>&lt;link Ссылка&gt;Документация по использованию автоматического REST-сервиса&lt;/&gt;</v8:content>
-								</v8:item>
-							</Title>
-							<ContextMenu name="ДекорацияДокументацияКонтекстноеМеню" id="68"/>
-							<ExtendedTooltip name="ДекорацияДокументацияРасширеннаяПодсказка" id="69"/>
-						</LabelDecoration>
-					</ChildItems>
-				</UsualGroup>
 			</ChildItems>
 		</UsualGroup>
 	</ChildItems>
