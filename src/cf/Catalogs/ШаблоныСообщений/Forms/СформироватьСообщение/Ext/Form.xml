@@ -352,6 +352,13 @@
 											<ContextMenu name="ПодписьИПечатьКонтекстноеМеню" id="116"/>
 											<ExtendedTooltip name="ПодписьИПечатьРасширеннаяПодсказка" id="117"/>
 										</CheckBoxField>
+										<CheckBoxField name="Подписать" id="118">
+											<DataPath>Подписать</DataPath>
+											<TitleLocation>Right</TitleLocation>
+											<CheckBoxType>Auto</CheckBoxType>
+											<ContextMenu name="ПодписатьКонтекстноеМеню" id="119"/>
+											<ExtendedTooltip name="ПодписатьРасширеннаяПодсказка" id="120"/>
+										</CheckBoxField>
 									</ChildItems>
 								</UsualGroup>
 							</ChildItems>
@@ -597,6 +604,23 @@
 			<Type>
 				<v8:Type>xs:boolean</v8:Type>
 			</Type>
+		</Attribute>
+		<Attribute name="Подписать" id="23">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Подписать</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+			<Save>
+				<Field>Подписать</Field>
+			</Save>
+			<FunctionalOptions>
+				<Item>FunctionalOption.ИспользоватьЭлектронныеПодписи</Item>
+			</FunctionalOptions>
 		</Attribute>
 	</Attributes>
 	<Commands>
