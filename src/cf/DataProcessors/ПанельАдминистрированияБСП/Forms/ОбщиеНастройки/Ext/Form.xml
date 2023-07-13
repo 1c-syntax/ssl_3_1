@@ -373,11 +373,11 @@
 				</Button>
 			</ChildItems>
 		</UsualGroup>
-		<UsualGroup name="ГруппаДополнительныеРеквизитыИСведения" id="1801">
+		<UsualGroup name="ГруппаСвойства" id="1801">
 			<Title>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Дополнительные реквизиты и сведения</v8:content>
+					<v8:content>Свойства</v8:content>
 				</v8:item>
 			</Title>
 			<Behavior>Collapsible</Behavior>
@@ -385,13 +385,13 @@
 			<ControlRepresentation>Picture</ControlRepresentation>
 			<Representation>NormalSeparation</Representation>
 			<ChildItemsWidth>Equal</ChildItemsWidth>
-			<ExtendedTooltip name="ГруппаДополнительныеРеквизитыИСведенияExtendedTooltip" id="1846"/>
+			<ExtendedTooltip name="ГруппаСвойстваРасширеннаяПодсказка" id="1846"/>
 			<ChildItems>
-				<UsualGroup name="ГруппаИспользоватьДополнительныеРеквизитыИСведения" id="1802">
+				<UsualGroup name="ГруппаСвойстваЛевая" id="1802">
 					<Title>
 						<v8:item>
 							<v8:lang>ru</v8:lang>
-							<v8:content>Использовать дополнительные реквизиты и сведения</v8:content>
+							<v8:content>Свойства левая</v8:content>
 						</v8:item>
 					</Title>
 					<Width>43</Width>
@@ -400,34 +400,63 @@
 					<Behavior>Usual</Behavior>
 					<Representation>None</Representation>
 					<ShowTitle>false</ShowTitle>
-					<ExtendedTooltip name="ГруппаИспользоватьДополнительныеРеквизитыИСведенияExtendedTooltip" id="1847"/>
+					<ExtendedTooltip name="ГруппаСвойстваЛеваяРасширеннаяПодсказка" id="1847"/>
 					<ChildItems>
-						<CheckBoxField name="ИспользоватьДополнительныеРеквизитыИСведения" id="1803">
+						<CheckBoxField name="ИспользоватьСвойства" id="1803">
 							<DataPath>НаборКонстант.ИспользоватьДополнительныеРеквизитыИСведения</DataPath>
 							<Title>
 								<v8:item>
 									<v8:lang>ru</v8:lang>
-									<v8:content>Дополнительные реквизиты и сведения</v8:content>
+									<v8:content>Свойства</v8:content>
 								</v8:item>
 							</Title>
 							<TitleLocation>Right</TitleLocation>
 							<ToolTip>
 								<v8:item>
 									<v8:lang>ru</v8:lang>
-									<v8:content>Добавление реквизитов и сведений к объектам программы.</v8:content>
+									<v8:content>Создание и настройка дополнительных текстовых, числовых и прочих свойств у справочников, документов и других объектов программы.</v8:content>
 								</v8:item>
 							</ToolTip>
 							<ToolTipRepresentation>ShowBottom</ToolTipRepresentation>
 							<CheckBoxType>Auto</CheckBoxType>
-							<ContextMenu name="ИспользоватьДополнительныеРеквизитыИСведенияКонтекстноеМеню" id="1804"/>
-							<ExtendedTooltip name="ИспользоватьДополнительныеРеквизитыИСведенияExtendedTooltip" id="1848"/>
+							<ContextMenu name="ИспользоватьСвойстваКонтекстноеМеню" id="1804"/>
+							<ExtendedTooltip name="ИспользоватьСвойстваРасширеннаяПодсказка" id="1848"/>
 							<Events>
-								<Event name="OnChange">ИспользоватьДополнительныеРеквизитыИСведенияПриИзменении</Event>
+								<Event name="OnChange">ИспользоватьСвойстваПриИзменении</Event>
 							</Events>
 						</CheckBoxField>
+						<UsualGroup name="ГруппаДополнительныеСведения" id="1825">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Дополнительные сведения</v8:content>
+								</v8:item>
+							</Title>
+							<Group>Vertical</Group>
+							<Behavior>Usual</Behavior>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаДополнительныеСведенияExtendedTooltip" id="1862"/>
+							<ChildItems>
+								<Button name="ДополнительныеСведения" id="2053">
+									<Type>Hyperlink</Type>
+									<CommandName>Form.Command.ДополнительныеСведения</CommandName>
+									<ToolTipRepresentation>ShowBottom</ToolTipRepresentation>
+									<ExtendedTooltip name="ДополнительныеСведенияРасширеннаяПодсказка" id="2054">
+										<AutoMaxWidth>false</AutoMaxWidth>
+										<Title formatted="false">
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Редактируются в отдельной форме, открываемой из справочника или документа. Права на их редактирование и просмотр настраиваются независимо от прав на объект-владелец.</v8:content>
+											</v8:item>
+										</Title>
+									</ExtendedTooltip>
+								</Button>
+							</ChildItems>
+						</UsualGroup>
 					</ChildItems>
 				</UsualGroup>
-				<UsualGroup name="ГруппаДополнительныеРеквизитыИлиСведения" id="1820">
+				<UsualGroup name="ГруппаСвойстваПравая" id="1820">
 					<Title>
 						<v8:item>
 							<v8:lang>ru</v8:lang>
@@ -441,7 +470,7 @@
 					<Representation>None</Representation>
 					<ChildItemsWidth>Equal</ChildItemsWidth>
 					<ShowTitle>false</ShowTitle>
-					<ExtendedTooltip name="ГруппаДополнительныеРеквизитыИлиСведенияExtendedTooltip" id="1858"/>
+					<ExtendedTooltip name="ГруппаСвойстваПраваяРасширеннаяПодсказка" id="1858"/>
 					<ChildItems>
 						<UsualGroup name="ГруппаДополнительныеРеквизиты" id="1821">
 							<Title>
@@ -465,38 +494,36 @@
 										<Title formatted="false">
 											<v8:item>
 												<v8:lang>ru</v8:lang>
-												<v8:content>Создание реквизитов, их изменение, описание свойств.
-Эти реквизиты отображаются в формах.</v8:content>
+												<v8:content>Размещаются в виде полей в формах справочников и документов. Их редактирование и просмотр определены правами на объект-владелец.</v8:content>
 											</v8:item>
 										</Title>
 									</ExtendedTooltip>
 								</Button>
 							</ChildItems>
 						</UsualGroup>
-						<UsualGroup name="ГруппаДополнительныеСведения" id="1825">
+						<UsualGroup name="ГруппаМетки" id="2258">
 							<Title>
 								<v8:item>
 									<v8:lang>ru</v8:lang>
-									<v8:content>Дополнительные сведения</v8:content>
+									<v8:content>Метки</v8:content>
 								</v8:item>
 							</Title>
 							<Group>Vertical</Group>
 							<Behavior>Usual</Behavior>
 							<Representation>None</Representation>
 							<ShowTitle>false</ShowTitle>
-							<ExtendedTooltip name="ГруппаДополнительныеСведенияExtendedTooltip" id="1862"/>
+							<ExtendedTooltip name="ГруппаМеткиРасширеннаяПодсказка" id="2259"/>
 							<ChildItems>
-								<Button name="ДополнительныеСведения" id="2053">
+								<Button name="Метки" id="2260">
 									<Type>Hyperlink</Type>
-									<CommandName>Form.Command.ДополнительныеСведения</CommandName>
+									<CommandName>Form.Command.Метки</CommandName>
 									<ToolTipRepresentation>ShowBottom</ToolTipRepresentation>
-									<ExtendedTooltip name="ДополнительныеСведенияРасширеннаяПодсказка" id="2054">
+									<ExtendedTooltip name="МеткиРасширеннаяПодсказка" id="2261">
 										<AutoMaxWidth>false</AutoMaxWidth>
 										<Title formatted="false">
 											<v8:item>
 												<v8:lang>ru</v8:lang>
-												<v8:content>Создание сведений, их изменение, описание свойств.
-Эти сведения отображаются в отдельной форме, которая открывается специальной командой.</v8:content>
+												<v8:content>Позволяют помечать справочники и документы разноцветными значками-метками. Их редактирование и просмотр определены правами на объект-владелец.</v8:content>
 											</v8:item>
 										</Title>
 									</ExtendedTooltip>
@@ -1839,6 +1866,15 @@
 				</v8:item>
 			</Title>
 			<Action>ПосмотретьПомеченныеНаУдаление</Action>
+		</Command>
+		<Command name="Метки" id="9">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Метки</v8:content>
+				</v8:item>
+			</Title>
+			<Action>Метки</Action>
 		</Command>
 	</Commands>
 </Form>

@@ -250,6 +250,7 @@
 									<v8:content>Реквизиты числа</v8:content>
 								</v8:item>
 							</Title>
+							<Group>Vertical</Group>
 							<Behavior>Usual</Behavior>
 							<Representation>None</Representation>
 							<ShowTitle>false</ShowTitle>
@@ -259,6 +260,7 @@
 									<DataPath>Объект.Длина</DataPath>
 									<Width>5</Width>
 									<HorizontalStretch>false</HorizontalStretch>
+									<SpinButton>true</SpinButton>
 									<ContextMenu name="ДлинаКонтекстноеМеню" id="76"/>
 									<ExtendedTooltip name="ДлинаExtendedTooltip" id="107"/>
 									<Events>
@@ -268,23 +270,146 @@
 								<InputField name="Точность" id="82">
 									<DataPath>Объект.Точность</DataPath>
 									<Width>4</Width>
+									<SpinButton>true</SpinButton>
 									<ContextMenu name="ТочностьКонтекстноеМеню" id="83"/>
 									<ExtendedTooltip name="ТочностьExtendedTooltip" id="108"/>
 									<Events>
 										<Event name="OnChange">ТочностьПриИзменении</Event>
 									</Events>
 								</InputField>
-								<InputField name="МинимальноеЗначение" id="24">
-									<DataPath>Объект.МинимальноеЗначение</DataPath>
-									<ChoiceButton>true</ChoiceButton>
-									<ContextMenu name="МинимальноеЗначениеКонтекстноеМеню" id="25"/>
-									<ExtendedTooltip name="МинимальноеЗначениеExtendedTooltip" id="109"/>
-								</InputField>
-								<InputField name="МаксимальноеЗначение" id="26">
-									<DataPath>Объект.МаксимальноеЗначение</DataPath>
-									<ChoiceButton>true</ChoiceButton>
-									<ContextMenu name="МаксимальноеЗначениеКонтекстноеМеню" id="27"/>
-									<ExtendedTooltip name="МаксимальноеЗначениеExtendedTooltip" id="110"/>
+								<UsualGroup name="НастройкиГраницЗначений" id="177">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Настройки границ значений</v8:content>
+										</v8:item>
+									</Title>
+									<Group>Vertical</Group>
+									<Behavior>Usual</Behavior>
+									<Representation>None</Representation>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="НастройкиГраницЗначенийРасширеннаяПодсказка" id="178"/>
+									<ChildItems>
+										<UsualGroup name="НастройкаМинимальногоЗначения" id="167">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Настройка минимального значения</v8:content>
+												</v8:item>
+											</Title>
+											<Group>AlwaysHorizontal</Group>
+											<Behavior>Usual</Behavior>
+											<Representation>None</Representation>
+											<United>false</United>
+											<ShowTitle>false</ShowTitle>
+											<ExtendedTooltip name="НастройкаМинимальногоЗначенияРасширеннаяПодсказка" id="168"/>
+											<ChildItems>
+												<CheckBoxField name="ИспользоватьМинимальноеЗначение" id="171">
+													<DataPath>Объект.ИспользоватьМинимальноеЗначение</DataPath>
+													<TitleLocation>None</TitleLocation>
+													<CheckBoxType>Auto</CheckBoxType>
+													<ContextMenu name="ИспользоватьМинимальноеЗначениеКонтекстноеМеню" id="172"/>
+													<ExtendedTooltip name="ИспользоватьМинимальноеЗначениеРасширеннаяПодсказка" id="173"/>
+													<Events>
+														<Event name="OnChange">ИспользоватьМинимальноеЗначениеПриИзменении</Event>
+													</Events>
+												</CheckBoxField>
+												<InputField name="МинимальноеЗначение" id="24">
+													<DataPath>Объект.МинимальноеЗначение</DataPath>
+													<ChoiceButton>false</ChoiceButton>
+													<SpinButton>true</SpinButton>
+													<ContextMenu name="МинимальноеЗначениеКонтекстноеМеню" id="25"/>
+													<ExtendedTooltip name="МинимальноеЗначениеExtendedTooltip" id="109"/>
+													<Events>
+														<Event name="OnChange">МинимальноеЗначениеПриИзменении</Event>
+													</Events>
+												</InputField>
+											</ChildItems>
+										</UsualGroup>
+										<UsualGroup name="НастройкаМаксимальногоЗначения" id="169">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Настройка максимального значения</v8:content>
+												</v8:item>
+											</Title>
+											<Group>AlwaysHorizontal</Group>
+											<Behavior>Usual</Behavior>
+											<Representation>None</Representation>
+											<United>false</United>
+											<ShowTitle>false</ShowTitle>
+											<ExtendedTooltip name="НастройкаМаксимальногоЗначенияРасширеннаяПодсказка" id="170"/>
+											<ChildItems>
+												<CheckBoxField name="ИспользоватьМаксимальноеЗначение" id="174">
+													<DataPath>Объект.ИспользоватьМаксимальноеЗначение</DataPath>
+													<TitleLocation>None</TitleLocation>
+													<CheckBoxType>Auto</CheckBoxType>
+													<ContextMenu name="ИспользоватьМаксимальноеЗначениеКонтекстноеМеню" id="175"/>
+													<ExtendedTooltip name="ИспользоватьМаксимальноеЗначениеРасширеннаяПодсказка" id="176"/>
+													<Events>
+														<Event name="OnChange">ИспользоватьМаксимальноеЗначениеПриИзменении</Event>
+													</Events>
+												</CheckBoxField>
+												<InputField name="МаксимальноеЗначение" id="26">
+													<DataPath>Объект.МаксимальноеЗначение</DataPath>
+													<ChoiceButton>false</ChoiceButton>
+													<SpinButton>true</SpinButton>
+													<ContextMenu name="МаксимальноеЗначениеКонтекстноеМеню" id="27"/>
+													<ExtendedTooltip name="МаксимальноеЗначениеExtendedTooltip" id="110"/>
+													<Events>
+														<Event name="OnChange">МаксимальноеЗначениеПриИзменении</Event>
+													</Events>
+												</InputField>
+											</ChildItems>
+										</UsualGroup>
+									</ChildItems>
+								</UsualGroup>
+							</ChildItems>
+						</UsualGroup>
+						<UsualGroup name="ГруппаПолосаРегулирования" id="185">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа полоса регулирования</v8:content>
+								</v8:item>
+							</Title>
+							<Group>AlwaysHorizontal</Group>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаПолосаРегулированияРасширеннаяПодсказка" id="186"/>
+							<ChildItems>
+								<CheckBoxField name="ПоказыватьПолосуРегулирования" id="179">
+									<DataPath>Объект.ПоказыватьПолосуРегулирования</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Показывать полосу регулирования с шагом:</v8:content>
+										</v8:item>
+									</Title>
+									<TitleLocation>Right</TitleLocation>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="ПоказыватьПолосуРегулированияКонтекстноеМеню" id="180"/>
+									<ExtendedTooltip name="ПоказыватьПолосуРегулированияРасширеннаяПодсказка" id="181"/>
+									<Events>
+										<Event name="OnChange">ПоказыватьПолосуРегулированияПриИзменении</Event>
+									</Events>
+								</CheckBoxField>
+								<InputField name="ШагПолосыРегулирования" id="187">
+									<DataPath>Объект.ШагПолосыРегулирования</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Шаг</v8:content>
+										</v8:item>
+									</Title>
+									<TitleLocation>None</TitleLocation>
+									<ChoiceButton>false</ChoiceButton>
+									<SpinButton>true</SpinButton>
+									<ContextMenu name="ШагПолосыРегулированияКонтекстноеМеню" id="188"/>
+									<ExtendedTooltip name="ШагПолосыРегулированияРасширеннаяПодсказка" id="189"/>
+									<Events>
+										<Event name="OnChange">ШагПриращенияПолосыРегулированияПриИзменении</Event>
+									</Events>
 								</InputField>
 							</ChildItems>
 						</UsualGroup>
@@ -295,6 +420,101 @@
 							<ContextMenu name="АгрегироватьСуммуВОтчетахКонтекстноеМеню" id="86"/>
 							<ExtendedTooltip name="АгрегироватьСуммуВОтчетахExtendedTooltip" id="111"/>
 						</CheckBoxField>
+						<UsualGroup name="ГруппаДиапазонПодсказок" id="212">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа диапазон подсказок</v8:content>
+								</v8:item>
+							</Title>
+							<Group>Vertical</Group>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаДиапазонПодсказокРасширеннаяПодсказка" id="213"/>
+							<ChildItems>
+								<CheckBoxField name="ВыводитьПодсказкуУЧисловыхВопросов" id="214">
+									<DataPath>Объект.ВыводитьПодсказкуУЧисловыхВопросов</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Выводить подсказку</v8:content>
+										</v8:item>
+									</Title>
+									<TitleLocation>Right</TitleLocation>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="ВыводитьПодсказкуУЧисловыхВопросовКонтекстноеМеню" id="215"/>
+									<ExtendedTooltip name="ВыводитьПодсказкуУЧисловыхВопросовРасширеннаяПодсказка" id="216"/>
+									<Events>
+										<Event name="OnChange">ВыводитьПодсказкуУЧисловыхВопросовПриИзменении</Event>
+									</Events>
+								</CheckBoxField>
+								<Table name="ДиапазонПодсказок" id="190">
+									<Representation>List</Representation>
+									<Width>60</Width>
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<AutoMaxHeight>false</AutoMaxHeight>
+									<MaxHeight>7</MaxHeight>
+									<HorizontalStretch>false</HorizontalStretch>
+									<VerticalStretch>false</VerticalStretch>
+									<DataPath>Объект.ДиапазонПодсказокЧисловогоВопроса</DataPath>
+									<CommandSet>
+										<ExcludedCommand>MoveDown</ExcludedCommand>
+										<ExcludedCommand>MoveUp</ExcludedCommand>
+										<ExcludedCommand>SortListAsc</ExcludedCommand>
+										<ExcludedCommand>SortListDesc</ExcludedCommand>
+									</CommandSet>
+									<RowFilter xsi:nil="true"/>
+									<ContextMenu name="ДиапазонПодсказокКонтекстноеМеню" id="191"/>
+									<AutoCommandBar name="ДиапазонПодсказокКоманднаяПанель" id="192"/>
+									<ExtendedTooltip name="ДиапазонПодсказокРасширеннаяПодсказка" id="193"/>
+									<SearchStringAddition name="ДиапазонПодсказокСтрокаПоиска" id="194">
+										<AdditionSource>
+											<Item>ДиапазонПодсказок</Item>
+											<Type>SearchStringRepresentation</Type>
+										</AdditionSource>
+										<ContextMenu name="ДиапазонПодсказокСтрокаПоискаКонтекстноеМеню" id="195"/>
+										<ExtendedTooltip name="ДиапазонПодсказокСтрокаПоискаРасширеннаяПодсказка" id="196"/>
+									</SearchStringAddition>
+									<ViewStatusAddition name="ДиапазонПодсказокСостояниеПросмотра" id="197">
+										<AdditionSource>
+											<Item>ДиапазонПодсказок</Item>
+											<Type>ViewStatusRepresentation</Type>
+										</AdditionSource>
+										<ContextMenu name="ДиапазонПодсказокСостояниеПросмотраКонтекстноеМеню" id="198"/>
+										<ExtendedTooltip name="ДиапазонПодсказокСостояниеПросмотраРасширеннаяПодсказка" id="199"/>
+									</ViewStatusAddition>
+									<SearchControlAddition name="ДиапазонПодсказокУправлениеПоиском" id="200">
+										<AdditionSource>
+											<Item>ДиапазонПодсказок</Item>
+											<Type>SearchControl</Type>
+										</AdditionSource>
+										<ContextMenu name="ДиапазонПодсказокУправлениеПоискомКонтекстноеМеню" id="201"/>
+										<ExtendedTooltip name="ДиапазонПодсказокУправлениеПоискомРасширеннаяПодсказка" id="202"/>
+									</SearchControlAddition>
+									<Events>
+										<Event name="BeforeDeleteRow">ДиапазонПодсказокПередУдалением</Event>
+										<Event name="BeforeEditEnd">ДиапазонПодсказокПередОкончаниемРедактирования</Event>
+										<Event name="OnStartEdit">ДиапазонПодсказокПриНачалеРедактирования</Event>
+										<Event name="AfterDeleteRow">ДиапазонПодсказокПослеУдаления</Event>
+									</Events>
+									<ChildItems>
+										<InputField name="ДиапазонПодсказокЗначениеДо" id="206">
+											<DataPath>Объект.ДиапазонПодсказокЧисловогоВопроса.ЗначениеДо</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<Width>10</Width>
+											<ContextMenu name="ДиапазонПодсказокЗначениеДоКонтекстноеМеню" id="207"/>
+											<ExtendedTooltip name="ДиапазонПодсказокЗначениеДоРасширеннаяПодсказка" id="208"/>
+										</InputField>
+										<InputField name="ДиапазонПодсказокПодсказка" id="209">
+											<DataPath>Объект.ДиапазонПодсказокЧисловогоВопроса.Подсказка</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<ContextMenu name="ДиапазонПодсказокПодсказкаКонтекстноеМеню" id="210"/>
+											<ExtendedTooltip name="ДиапазонПодсказокПодсказкаРасширеннаяПодсказка" id="211"/>
+										</InputField>
+									</ChildItems>
+								</Table>
+							</ChildItems>
+						</UsualGroup>
 					</ChildItems>
 				</Page>
 				<Page name="СтраницаСтрока" id="72">
@@ -496,6 +716,36 @@
 			</Type>
 			<MainAttribute>true</MainAttribute>
 			<SavedData>true</SavedData>
+			<Columns>
+				<AdditionalColumns table="Объект.ДиапазонПодсказокЧисловогоВопроса">
+					<Column name="ЗначениеПредставление" id="8">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Значение представление</v8:content>
+							</v8:item>
+						</Title>
+						<Type>
+							<v8:Type>xs:string</v8:Type>
+							<v8:StringQualifiers>
+								<v8:Length>0</v8:Length>
+								<v8:AllowedLength>Variable</v8:AllowedLength>
+							</v8:StringQualifiers>
+						</Type>
+					</Column>
+					<Column name="ОтключитьУсловноеОформление" id="10">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Отключить условное оформление</v8:content>
+							</v8:item>
+						</Title>
+						<Type>
+							<v8:Type>xs:boolean</v8:Type>
+						</Type>
+					</Column>
+				</AdditionalColumns>
+			</Columns>
 		</Attribute>
 		<Attribute name="ВариантыОтветов" id="3">
 			<Title>
@@ -589,6 +839,21 @@
 					<v8:Length>0</v8:Length>
 					<v8:AllowedLength>Variable</v8:AllowedLength>
 				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ДиапазонПодсказокПрежнееЗначение" id="9">
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>15</v8:Digits>
+					<v8:FractionDigits>2</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ВернутьЗначениеДиапазону" id="11">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
 			</Type>
 		</Attribute>
 	</Attributes>

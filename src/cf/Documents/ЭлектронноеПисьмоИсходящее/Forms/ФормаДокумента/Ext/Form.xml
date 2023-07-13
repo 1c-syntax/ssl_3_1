@@ -450,21 +450,97 @@
 								</Page>
 							</ChildItems>
 						</Pages>
-						<InputField name="Тема" id="29">
-							<DataPath>Объект.Тема</DataPath>
-							<TitleLocation>None</TitleLocation>
-							<Width>40</Width>
-							<AutoMaxWidth>false</AutoMaxWidth>
-							<Wrap>false</Wrap>
-							<InputHint>
+						<UsualGroup name="ГруппаТема" id="484">
+							<Title>
 								<v8:item>
 									<v8:lang>ru</v8:lang>
-									<v8:content>Тема</v8:content>
+									<v8:content>Группа тема</v8:content>
 								</v8:item>
-							</InputHint>
-							<ContextMenu name="ТемаКонтекстноеМеню" id="30"/>
-							<ExtendedTooltip name="ТемаExtendedTooltip" id="327"/>
-						</InputField>
+							</Title>
+							<Group>AlwaysHorizontal</Group>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаТемаРасширеннаяПодсказка" id="485"/>
+							<ChildItems>
+								<InputField name="Тема" id="29">
+									<DataPath>Объект.Тема</DataPath>
+									<TitleLocation>None</TitleLocation>
+									<Width>40</Width>
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<Wrap>false</Wrap>
+									<InputHint>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Тема</v8:content>
+										</v8:item>
+									</InputHint>
+									<ContextMenu name="ТемаКонтекстноеМеню" id="30"/>
+									<ExtendedTooltip name="ТемаExtendedTooltip" id="327"/>
+								</InputField>
+								<PictureDecoration name="ВажностьДекорация" id="496">
+									<Visible>false</Visible>
+									<Width>3</Width>
+									<Height>1</Height>
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Важность</v8:content>
+										</v8:item>
+									</Title>
+									<Picture>
+										<xr:Ref>CommonPicture.ВажностьНеЗадана</xr:Ref>
+										<xr:LoadTransparent>false</xr:LoadTransparent>
+									</Picture>
+									<ContextMenu name="ВажностьДекорацияКонтекстноеМеню" id="497"/>
+									<ExtendedTooltip name="ВажностьДекорацияРасширеннаяПодсказка" id="498"/>
+								</PictureDecoration>
+								<CommandBar name="КоманднаяПанельТема" id="486">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Командная панель тема</v8:content>
+										</v8:item>
+									</Title>
+									<Width>5</Width>
+									<HorizontalStretch>false</HorizontalStretch>
+									<ExtendedTooltip name="КоманднаяПанельТемаРасширеннаяПодсказка" id="487"/>
+									<ChildItems>
+										<Popup name="ГруппаВажность" id="488">
+											<EnableContentChange>true</EnableContentChange>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Важность</v8:content>
+												</v8:item>
+											</Title>
+											<Picture>
+												<xr:Ref>CommonPicture.ВажностьНеЗадана</xr:Ref>
+												<xr:LoadTransparent>false</xr:LoadTransparent>
+											</Picture>
+											<Representation>Picture</Representation>
+											<ExtendedTooltip name="ГруппаВажностьРасширеннаяПодсказка" id="489"/>
+											<ChildItems>
+												<Button name="ВажностьВысокая" id="490">
+													<Type>CommandBarButton</Type>
+													<CommandName>Form.Command.ВажностьВысокая</CommandName>
+													<ExtendedTooltip name="ВажностьВысокаяРасширеннаяПодсказка" id="491"/>
+												</Button>
+												<Button name="ВажностьОбычная" id="492">
+													<Type>CommandBarButton</Type>
+													<CommandName>Form.Command.ВажностьОбычная</CommandName>
+													<ExtendedTooltip name="ВажностьОбычнаяРасширеннаяПодсказка" id="493"/>
+												</Button>
+												<Button name="ВажностьНизкая" id="494">
+													<Type>CommandBarButton</Type>
+													<CommandName>Form.Command.ВажностьНизкая</CommandName>
+													<ExtendedTooltip name="ВажностьНизкаяРасширеннаяПодсказка" id="495"/>
+												</Button>
+											</ChildItems>
+										</Popup>
+									</ChildItems>
+								</CommandBar>
+							</ChildItems>
+						</UsualGroup>
 						<Pages name="СтраницыОписаниеДополнительно" id="248">
 							<Title>
 								<v8:item>
@@ -941,6 +1017,7 @@
 									<v8:content>Команды вложений</v8:content>
 								</v8:item>
 							</Title>
+							<HorizontalStretch>false</HorizontalStretch>
 							<HorizontalLocation>Right</HorizontalLocation>
 							<ExtendedTooltip name="КомандыВложенийРасширеннаяПодсказка" id="451"/>
 							<ChildItems>
@@ -1020,7 +1097,6 @@
 							<DataPath>Объект.Ответственный</DataPath>
 							<TitleLocation>Top</TitleLocation>
 							<Width>32</Width>
-							<AutoMaxWidth>false</AutoMaxWidth>
 							<HorizontalStretch>false</HorizontalStretch>
 							<Wrap>false</Wrap>
 							<ContextMenu name="ОтветственныйКонтекстноеМеню" id="166"/>
@@ -1036,6 +1112,8 @@
 							</Title>
 							<TitleLocation>Top</TitleLocation>
 							<Width>32</Width>
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<MaxWidth>36</MaxWidth>
 							<Wrap>false</Wrap>
 							<DropListButton>true</DropListButton>
 							<TextEdit>false</TextEdit>
@@ -1072,15 +1150,6 @@
 							<Events>
 								<Event name="ChoiceProcessing">РассмотретьПослеОбработкаВыбора</Event>
 							</Events>
-						</InputField>
-						<InputField name="Важность" id="264">
-							<DataPath>Объект.Важность</DataPath>
-							<TitleLocation>Top</TitleLocation>
-							<Width>17</Width>
-							<HorizontalStretch>false</HorizontalStretch>
-							<Wrap>false</Wrap>
-							<ContextMenu name="ВажностьКонтекстноеМеню" id="265"/>
-							<ExtendedTooltip name="ВажностьExtendedTooltip" id="320"/>
 						</InputField>
 						<UsualGroup name="ГруппаДатаОтправкиАктуальность" id="368">
 							<Title>
@@ -1871,6 +1940,66 @@
 				</v8:item>
 			</Title>
 			<Action>СохранитьВложение</Action>
+		</Command>
+		<Command name="ВажностьВысокая" id="15">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Высокая важность</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Важность высокая</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>CommonPicture.ВажностьВысокая</xr:Ref>
+				<xr:LoadTransparent>false</xr:LoadTransparent>
+			</Picture>
+			<Action>ВажностьВысокая</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ВажностьНизкая" id="16">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Низкая важность</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Важность низкая</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>CommonPicture.ВажностьНизкая</xr:Ref>
+				<xr:LoadTransparent>false</xr:LoadTransparent>
+			</Picture>
+			<Action>ВажностьНизкая</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ВажностьОбычная" id="17">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Обычная важность</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Важность обычная</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>CommonPicture.ВажностьНеЗадана</xr:Ref>
+				<xr:LoadTransparent>false</xr:LoadTransparent>
+			</Picture>
+			<Action>ВажностьОбычная</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
 		</Command>
 	</Commands>
 	<Parameters>

@@ -59,12 +59,73 @@
 					<ChildItems>
 						<InputField name="Сервис" id="69">
 							<DataPath>Объект.Сервис</DataPath>
-							<DropListButton>false</DropListButton>
-							<ChoiceButton>true</ChoiceButton>
+							<DropListButton>true</DropListButton>
+							<ChooseType>false</ChooseType>
+							<ChoiceList>
+								<xr:Item>
+									<xr:Presentation/>
+									<xr:CheckState>0</xr:CheckState>
+									<xr:Value xsi:type="FormChoiceListDesTimeValue">
+										<Presentation>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Яндекс.Диск</v8:content>
+											</v8:item>
+										</Presentation>
+										<Value xsi:type="xs:string">https://webdav.yandex.com</Value>
+									</xr:Value>
+								</xr:Item>
+								<xr:Item>
+									<xr:Presentation/>
+									<xr:CheckState>0</xr:CheckState>
+									<xr:Value xsi:type="FormChoiceListDesTimeValue">
+										<Presentation>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Box</v8:content>
+											</v8:item>
+										</Presentation>
+										<Value xsi:type="xs:string">https://dav.box.com/dav</Value>
+									</xr:Value>
+								</xr:Item>
+								<xr:Item>
+									<xr:Presentation/>
+									<xr:CheckState>0</xr:CheckState>
+									<xr:Value xsi:type="FormChoiceListDesTimeValue">
+										<Presentation>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Dropbox (через dropdav.com)</v8:content>
+											</v8:item>
+										</Presentation>
+										<Value xsi:type="xs:string">https://dav.dropdav.com</Value>
+									</xr:Value>
+								</xr:Item>
+								<xr:Item>
+									<xr:Presentation/>
+									<xr:CheckState>0</xr:CheckState>
+									<xr:Value xsi:type="FormChoiceListDesTimeValue">
+										<Presentation>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Ввести свой адрес сервиса</v8:content>
+											</v8:item>
+										</Presentation>
+										<Value xsi:type="xs:string"/>
+									</xr:Value>
+								</xr:Item>
+							</ChoiceList>
+							<AutoCorrectionOnTextInput>DontUse</AutoCorrectionOnTextInput>
+							<InputHint>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Введите адрес сервиса или выберите из списка</v8:content>
+								</v8:item>
+							</InputHint>
 							<ContextMenu name="СервисКонтекстноеМеню" id="70"/>
 							<ExtendedTooltip name="СервисРасширеннаяПодсказка" id="71"/>
 							<Events>
-								<Event name="StartChoice">СервисНачалоВыбора</Event>
+								<Event name="ChoiceProcessing">СервисОбработкаВыбора</Event>
 							</Events>
 						</InputField>
 						<InputField name="КорневаяПапка" id="37">
@@ -279,12 +340,12 @@
 			</Type>
 			<SavedData>true</SavedData>
 		</Attribute>
-		<Attribute name="АвтоНаименование" id="7">
+		<Attribute name="ПарольИзменен" id="2">
 			<Type>
 				<v8:Type>xs:boolean</v8:Type>
 			</Type>
 		</Attribute>
-		<Attribute name="ПарольИзменен" id="2">
+		<Attribute name="АвтоНаименование" id="6">
 			<Type>
 				<v8:Type>xs:boolean</v8:Type>
 			</Type>

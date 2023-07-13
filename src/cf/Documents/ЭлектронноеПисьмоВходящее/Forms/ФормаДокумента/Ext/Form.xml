@@ -241,15 +241,45 @@
 						</Page>
 					</ChildItems>
 				</Pages>
-				<InputField name="Тема" id="29">
-					<DataPath>Объект.Тема</DataPath>
-					<Width>40</Width>
-					<AutoMaxWidth>false</AutoMaxWidth>
-					<Wrap>false</Wrap>
-					<TextEdit>false</TextEdit>
-					<ContextMenu name="ТемаКонтекстноеМеню" id="30"/>
-					<ExtendedTooltip name="ТемаExtendedTooltip" id="249"/>
-				</InputField>
+				<UsualGroup name="ГруппаТема" id="321">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа тема</v8:content>
+						</v8:item>
+					</Title>
+					<Group>AlwaysHorizontal</Group>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаТемаРасширеннаяПодсказка" id="322"/>
+					<ChildItems>
+						<InputField name="Тема" id="29">
+							<DataPath>Объект.Тема</DataPath>
+							<Width>40</Width>
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<Wrap>false</Wrap>
+							<TextEdit>false</TextEdit>
+							<ContextMenu name="ТемаКонтекстноеМеню" id="30"/>
+							<ExtendedTooltip name="ТемаExtendedTooltip" id="249"/>
+						</InputField>
+						<PictureDecoration name="ВажностьДекорация" id="323">
+							<Width>3</Width>
+							<Height>1</Height>
+							<Title formatted="false">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Важность</v8:content>
+								</v8:item>
+							</Title>
+							<Picture>
+								<xr:Ref>CommonPicture.ВажностьНеЗадана</xr:Ref>
+								<xr:LoadTransparent>false</xr:LoadTransparent>
+							</Picture>
+							<ContextMenu name="ВажностьДекорацияКонтекстноеМеню" id="324"/>
+							<ExtendedTooltip name="ВажностьДекорацияРасширеннаяПодсказка" id="325"/>
+						</PictureDecoration>
+					</ChildItems>
+				</UsualGroup>
 				<Pages name="СтраницыОписаниеДополнительно" id="197">
 					<Title>
 						<v8:item>
@@ -609,12 +639,6 @@
 					<ShowTitle>false</ShowTitle>
 					<ExtendedTooltip name="ГруппаВажностьНомерОтправленоРасширеннаяПодсказка" id="244"/>
 					<ChildItems>
-						<LabelField name="Важность" id="167">
-							<DataPath>Объект.Важность</DataPath>
-							<TitleLocation>Left</TitleLocation>
-							<ContextMenu name="ВажностьКонтекстноеМеню" id="168"/>
-							<ExtendedTooltip name="ВажностьExtendedTooltip" id="260"/>
-						</LabelField>
 						<LabelField name="Номер" id="219">
 							<DataPath>Объект.Number</DataPath>
 							<Width>11</Width>

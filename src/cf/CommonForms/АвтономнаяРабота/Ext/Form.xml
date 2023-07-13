@@ -369,6 +369,80 @@
 						</UsualGroup>
 					</ChildItems>
 				</Page>
+				<Page name="ПолученыРасширения" id="116">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Получены расширения</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="ПолученыРасширенияРасширеннаяПодсказка" id="117"/>
+					<ChildItems>
+						<UsualGroup name="Группа8" id="118">
+							<Group>Horizontal</Group>
+							<Behavior>Usual</Behavior>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="Группа8РасширеннаяПодсказка" id="119"/>
+							<ChildItems>
+								<PictureDecoration name="Декорация6" id="120">
+									<Width>5</Width>
+									<Height>2</Height>
+									<Picture>
+										<xr:Ref>CommonPicture.Предупреждение32</xr:Ref>
+										<xr:LoadTransparent>false</xr:LoadTransparent>
+									</Picture>
+									<FileDragMode>AsFile</FileDragMode>
+									<ContextMenu name="Декорация6КонтекстноеМеню" id="121"/>
+									<ExtendedTooltip name="Декорация6РасширеннаяПодсказка" id="122"/>
+								</PictureDecoration>
+								<LabelDecoration name="ПоясняющаяНадписьПолученыРасширения" id="123">
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Изменены расширения конфигурации.
+Чтобы продолжить работу с учетом сделанных изменений, необходимо перезапустить программу.</v8:content>
+										</v8:item>
+									</Title>
+									<VerticalAlign>Center</VerticalAlign>
+									<ContextMenu name="ПоясняющаяНадписьПолученыРасширенияКонтекстноеМеню" id="124"/>
+									<ExtendedTooltip name="ПоясняющаяНадписьПолученыРасширенияРасширеннаяПодсказка" id="125"/>
+								</LabelDecoration>
+							</ChildItems>
+						</UsualGroup>
+						<Button name="ПерезапуститьПрограмму" id="135">
+							<Type>UsualButton</Type>
+							<CommandName>Form.Command.ПерезапуститьПрограмму</CommandName>
+							<ExtendedTooltip name="ПерезапуститьПрограммуРасширеннаяПодсказка" id="136"/>
+						</Button>
+						<UsualGroup name="Группа12" id="128">
+							<Group>Horizontal</Group>
+							<Behavior>Usual</Behavior>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="Группа12РасширеннаяПодсказка" id="129"/>
+							<ChildItems>
+								<LabelDecoration name="ИнформацияОПоследнейСинхронизации2" id="130">
+									<TextColor>style:ПоясняющийТекст</TextColor>
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Последняя синхронизация: &lt;Дата&gt;.</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="ИнформацияОПоследнейСинхронизации2КонтекстноеМеню" id="131"/>
+									<ExtendedTooltip name="ИнформацияОПоследнейСинхронизации2РасширеннаяПодсказка" id="132"/>
+								</LabelDecoration>
+								<Button name="ПерейтиККонфликтам2" id="133">
+									<Type>Hyperlink</Type>
+									<CommandName>Form.Command.ПерейтиККонфликтам</CommandName>
+									<ExtendedTooltip name="ПерейтиККонфликтам2РасширеннаяПодсказка" id="134"/>
+								</Button>
+							</ChildItems>
+						</UsualGroup>
+					</ChildItems>
+				</Page>
 			</ChildItems>
 		</Pages>
 	</ChildItems>
@@ -547,6 +621,21 @@
 				</v8:item>
 			</ToolTip>
 			<Action>АрхивСообщенийОбменов</Action>
+		</Command>
+		<Command name="ПерезапуститьПрограмму" id="7">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Перезапустить программу</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Перезапустить программу</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ПерезапуститьПрограмму</Action>
 		</Command>
 	</Commands>
 </Form>

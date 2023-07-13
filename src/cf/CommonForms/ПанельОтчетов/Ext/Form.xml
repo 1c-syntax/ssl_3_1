@@ -89,6 +89,24 @@
 					<ShowTitle>false</ShowTitle>
 					<ExtendedTooltip name="ГруппаКоманднаяПанельПраваяРасширеннаяПодсказка" id="406"/>
 					<ChildItems>
+						<CheckBoxField name="ОтображатьВсеВариантыОтчетов" id="447">
+							<DataPath>ОтображатьВсеВариантыОтчетов</DataPath>
+							<Visible>false</Visible>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Отображать для смартфонов</v8:content>
+								</v8:item>
+							</Title>
+							<TitleLocation>Right</TitleLocation>
+							<GroupVerticalAlign>Center</GroupVerticalAlign>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="ОтображатьВсеВариантыОтчетовКонтекстноеМеню" id="448"/>
+							<ExtendedTooltip name="ОтображатьВсеВариантыОтчетовРасширеннаяПодсказка" id="449"/>
+							<Events>
+								<Event name="OnChange">ОтображатьВсеВариантыОтчетовПриИзменении</Event>
+							</Events>
+						</CheckBoxField>
 						<CheckBoxField name="ПоказыватьПодсказки" id="407">
 							<DataPath>ПоказыватьПодсказки</DataPath>
 							<Visible>false</Visible>
@@ -133,6 +151,22 @@
 									<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
 									<ExtendedTooltip name="ФормаВсеОтчетыРасширеннаяПодсказка" id="417"/>
 								</Button>
+								<ButtonGroup name="ГруппаСнимкиОтчетов" id="450">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Снимки отчетов</v8:content>
+										</v8:item>
+									</Title>
+									<ExtendedTooltip name="ГруппаСнимкиОтчетовРасширеннаяПодсказка" id="451"/>
+									<ChildItems>
+										<Button name="СнимкиОтчетов" id="454">
+											<Type>CommandBarButton</Type>
+											<CommandName>Form.Command.СнимкиОтчетов</CommandName>
+											<ExtendedTooltip name="СнимкиОтчетовРасширеннаяПодсказка" id="455"/>
+										</Button>
+									</ChildItems>
+								</ButtonGroup>
 								<ButtonGroup name="Настройки" id="418">
 									<Title>
 										<v8:item>
@@ -167,15 +201,17 @@
 				</UsualGroup>
 			</ChildItems>
 		</UsualGroup>
-		<CommandBar name="ВерхняяПанельМобильныйКлиент" id="445">
+		<UsualGroup name="ВерхняяПанельМобильныйКлиент" id="445">
 			<Title>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
 					<v8:content>Верхняя панель</v8:content>
 				</v8:item>
 			</Title>
+			<Behavior>Usual</Behavior>
+			<ShowTitle>false</ShowTitle>
 			<ExtendedTooltip name="ВерхняяПанельМобильныйКлиентРасширеннаяПодсказка" id="446"/>
-		</CommandBar>
+		</UsualGroup>
 		<Pages name="Страницы" id="431">
 			<Title>
 				<v8:item>
@@ -807,6 +843,11 @@
 						</v8:StringQualifiers>
 					</Type>
 				</Column>
+				<Column name="ВидимостьПоНазначению" id="29">
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
 			</Columns>
 		</Attribute>
 		<Attribute name="ПостоянныеРеквизиты" id="14">
@@ -1009,6 +1050,22 @@
 		<Attribute name="ДлительнаяОперация" id="28">
 			<Type/>
 		</Attribute>
+		<Attribute name="ОтображатьВсеВариантыОтчетов" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Все варианты отчетов</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ЦветСкрытыхПоНазначениюВариантов" id="13">
+			<Type>
+				<v8:Type>v8ui:Color</v8:Type>
+			</Type>
+		</Attribute>
 	</Attributes>
 	<Commands>
 		<Command name="Настроить" id="1">
@@ -1167,6 +1224,26 @@
 			<Action>ВыполнитьПоиск</Action>
 			<Representation>Picture</Representation>
 			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="СнимкиОтчетов" id="10">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Снимки отчетов</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Список снимков отчетов</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.ListViewModeList</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>СнимкиОтчетов</Action>
+			<Representation>TextPicture</Representation>
 		</Command>
 	</Commands>
 	<Parameters>

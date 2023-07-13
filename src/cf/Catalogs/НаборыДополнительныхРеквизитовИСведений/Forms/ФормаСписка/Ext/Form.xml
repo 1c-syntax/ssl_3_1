@@ -133,8 +133,9 @@
 		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
 	</Events>
 	<ChildItems>
-		<InputField name="ЭтоНаборыДополнительныхСведений" id="71">
-			<DataPath>ЭтоНаборыДополнительныхСведений</DataPath>
+		<InputField name="ВидСвойств" id="71">
+			<DataPath>ВидСвойств</DataPath>
+			<Shortcut>Ctrl+S</Shortcut>
 			<Width>30</Width>
 			<ListChoiceMode>true</ListChoiceMode>
 			<ChoiceList>
@@ -148,7 +149,7 @@
 								<v8:content>Дополнительные реквизиты</v8:content>
 							</v8:item>
 						</Presentation>
-						<Value xsi:type="xs:boolean">false</Value>
+						<Value xsi:type="xr:DesignTimeRef">Enum.ВидыСвойств.EnumValue.ДополнительныеРеквизиты</Value>
 					</xr:Value>
 				</xr:Item>
 				<xr:Item>
@@ -161,15 +162,28 @@
 								<v8:content>Дополнительные сведения</v8:content>
 							</v8:item>
 						</Presentation>
-						<Value xsi:type="xs:boolean">true</Value>
+						<Value xsi:type="xr:DesignTimeRef">Enum.ВидыСвойств.EnumValue.ДополнительныеСведения</Value>
+					</xr:Value>
+				</xr:Item>
+				<xr:Item>
+					<xr:Presentation/>
+					<xr:CheckState>0</xr:CheckState>
+					<xr:Value xsi:type="FormChoiceListDesTimeValue">
+						<Presentation>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Метки</v8:content>
+							</v8:item>
+						</Presentation>
+						<Value xsi:type="xr:DesignTimeRef">Enum.ВидыСвойств.EnumValue.Метки</Value>
 					</xr:Value>
 				</xr:Item>
 			</ChoiceList>
 			<BackColor>style:ФонУправляющегоПоля</BackColor>
-			<ContextMenu name="ЭтоНаборыДополнительныхСведенийКонтекстноеМеню" id="72"/>
-			<ExtendedTooltip name="ЭтоНаборыДополнительныхСведенийExtendedTooltip" id="103"/>
+			<ContextMenu name="ВидСвойствКонтекстноеМеню" id="72"/>
+			<ExtendedTooltip name="ВидСвойствРасширеннаяПодсказка" id="103"/>
 			<Events>
-				<Event name="OnChange">ЭтоНаборыДополнительныхСведенийПриИзменении</Event>
+				<Event name="OnChange">ВидСвойствПриИзменении</Event>
 			</Events>
 		</InputField>
 		<UsualGroup name="ГруппаПользовательскихНастроек" id="145">
@@ -363,7 +377,7 @@
 									<EnableStartDrag>true</EnableStartDrag>
 									<FileDragMode>AsFile</FileDragMode>
 									<DataPath>НеиспользуемыеНаборы</DataPath>
-									<RowPictureDataPath>~НеиспользуемыеНаборы.DefaultPicture</RowPictureDataPath>
+									<RowPictureDataPath>НеиспользуемыеНаборы.НомерКартинки</RowPictureDataPath>
 									<RowsPicture>
 										<xr:Ref>CommonPicture.ПиктограммыЭлементов</xr:Ref>
 										<xr:LoadTransparent>false</xr:LoadTransparent>
@@ -448,7 +462,7 @@
 					<DataPath>Свойства</DataPath>
 					<RowPictureDataPath>Свойства.НомерКартинки</RowPictureDataPath>
 					<RowsPicture>
-						<xr:Ref>CommonPicture.ПиктограммыЭлементов</xr:Ref>
+						<xr:Ref>CommonPicture.ПиктограммыСвойств</xr:Ref>
 						<xr:LoadTransparent>false</xr:LoadTransparent>
 					</RowsPicture>
 					<BackColor>style:FormBackColor</BackColor>
@@ -683,12 +697,14 @@
 			</Type>
 			<MainAttribute>true</MainAttribute>
 			<UseAlways>
+				<Field>~НаборыСвойств.ЭтоСведения</Field>
+				<Field>НаборыСвойств.ВидСвойств</Field>
+				<Field>НаборыСвойств.КоличествоМеток</Field>
 				<Field>НаборыСвойств.КоличествоРеквизитов</Field>
 				<Field>НаборыСвойств.КоличествоСведений</Field>
 				<Field>НаборыСвойств.Родитель</Field>
 				<Field>НаборыСвойств.Ссылка</Field>
 				<Field>НаборыСвойств.ЭтоГруппа</Field>
-				<Field>НаборыСвойств.ЭтоСведения</Field>
 			</UseAlways>
 			<Settings xsi:type="DynamicList">
 				<ManualQuery>true</ManualQuery>
@@ -703,7 +719,7 @@
 	НаборыПереопределяемый.Наименование КАК Наименование,
 	НаборыПереопределяемый.Используется КАК Используется,
 	ВЫРАЗИТЬ("" КАК СТРОКА(150)) КАК Представление,
-	&amp;ЭтоНаборыДополнительныхСведений КАК ЭтоСведения,
+	&amp;ВидСвойств КАК ВидСвойств,
 	ВЫБОР
 		КОГДА НаборыПереопределяемый.ПометкаУдаления
 			ТОГДА 1
@@ -714,7 +730,8 @@
 		ИНАЧЕ 0
 	КОНЕЦ КАК НомерКартинки,
 	НаборыПереопределяемый.КоличествоРеквизитов КАК КоличествоРеквизитов,
-	НаборыПереопределяемый.КоличествоСведений КАК КоличествоСведений
+	НаборыПереопределяемый.КоличествоСведений КАК КоличествоСведений,
+	НаборыПереопределяемый.КоличествоМеток КАК КоличествоМеток
 ИЗ
 	Справочник.НаборыДополнительныхРеквизитовИСведений КАК НаборыПереопределяемый
 ГДЕ
@@ -726,34 +743,6 @@
 	И НаборыПереопределяемый.Используется
 	И ЕСТЬNULL(НаборыПереопределяемый.Родитель.Используется, ИСТИНА)
 	И НЕ НаборыПереопределяемый.ПометкаУдаления</QueryText>
-				<Field xsi:type="dcssch:DataSetFieldField">
-					<dcssch:dataPath>ИмяПредопределенногоНабора</dcssch:dataPath>
-					<dcssch:field>ИмяПредопределенногоНабора</dcssch:field>
-				</Field>
-				<Field xsi:type="dcssch:DataSetFieldField">
-					<dcssch:dataPath>НаименованиеЯзык1</dcssch:dataPath>
-					<dcssch:field>НаименованиеЯзык1</dcssch:field>
-				</Field>
-				<Field xsi:type="dcssch:DataSetFieldField">
-					<dcssch:dataPath>НаименованиеЯзык2</dcssch:dataPath>
-					<dcssch:field>НаименованиеЯзык2</dcssch:field>
-				</Field>
-				<Field xsi:type="dcssch:DataSetFieldField">
-					<dcssch:dataPath>ДополнительныеРеквизиты</dcssch:dataPath>
-					<dcssch:field>ДополнительныеРеквизиты</dcssch:field>
-				</Field>
-				<Field xsi:type="dcssch:DataSetFieldField">
-					<dcssch:dataPath>ДополнительныеСведения</dcssch:dataPath>
-					<dcssch:field>ДополнительныеСведения</dcssch:field>
-				</Field>
-				<Field xsi:type="dcssch:DataSetFieldField">
-					<dcssch:dataPath>Представления</dcssch:dataPath>
-					<dcssch:field>Представления</dcssch:field>
-				</Field>
-				<Field xsi:type="dcssch:DataSetFieldField">
-					<dcssch:dataPath>ИмяПредопределенныхДанных</dcssch:dataPath>
-					<dcssch:field>ИмяПредопределенныхДанных</dcssch:field>
-				</Field>
 				<Field xsi:type="dcssch:DataSetFieldField">
 					<dcssch:dataPath>Ссылка</dcssch:dataPath>
 					<dcssch:field>Ссылка</dcssch:field>
@@ -797,16 +786,6 @@
 					</dcssch:title>
 				</Field>
 				<Field xsi:type="dcssch:DataSetFieldField">
-					<dcssch:dataPath>ЭтоСведения</dcssch:dataPath>
-					<dcssch:field>ЭтоСведения</dcssch:field>
-					<dcssch:title xsi:type="v8:LocalStringType">
-						<v8:item>
-							<v8:lang>ru</v8:lang>
-							<v8:content>Это сведения</v8:content>
-						</v8:item>
-					</dcssch:title>
-				</Field>
-				<Field xsi:type="dcssch:DataSetFieldField">
 					<dcssch:dataPath>НомерКартинки</dcssch:dataPath>
 					<dcssch:field>НомерКартинки</dcssch:field>
 					<dcssch:title xsi:type="v8:LocalStringType">
@@ -824,6 +803,42 @@
 					<dcssch:dataPath>КоличествоСведений</dcssch:dataPath>
 					<dcssch:field>КоличествоСведений</dcssch:field>
 				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>КоличествоМеток</dcssch:dataPath>
+					<dcssch:field>КоличествоМеток</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ИмяПредопределенногоНабора</dcssch:dataPath>
+					<dcssch:field>ИмяПредопределенногоНабора</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>НаименованиеЯзык1</dcssch:dataPath>
+					<dcssch:field>НаименованиеЯзык1</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>НаименованиеЯзык2</dcssch:dataPath>
+					<dcssch:field>НаименованиеЯзык2</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ДополнительныеРеквизиты</dcssch:dataPath>
+					<dcssch:field>ДополнительныеРеквизиты</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ДополнительныеСведения</dcssch:dataPath>
+					<dcssch:field>ДополнительныеСведения</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>Представления</dcssch:dataPath>
+					<dcssch:field>Представления</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ИмяПредопределенныхДанных</dcssch:dataPath>
+					<dcssch:field>ИмяПредопределенныхДанных</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ВидСвойств</dcssch:dataPath>
+					<dcssch:field>ВидСвойств</dcssch:field>
+				</Field>
 				<Parameter>
 					<dcssch:name>Наборы</dcssch:name>
 					<dcssch:title xsi:type="v8:LocalStringType">
@@ -836,11 +851,11 @@
 					<dcssch:valueListAllowed>true</dcssch:valueListAllowed>
 				</Parameter>
 				<Parameter>
-					<dcssch:name>ЭтоНаборыДополнительныхСведений</dcssch:name>
+					<dcssch:name>ВидСвойств</dcssch:name>
 					<dcssch:title xsi:type="v8:LocalStringType">
 						<v8:item>
 							<v8:lang>ru</v8:lang>
-							<v8:content>Это наборы дополнительных сведений</v8:content>
+							<v8:content>Вид свойств</v8:content>
 						</v8:item>
 					</dcssch:title>
 					<dcssch:value xsi:nil="true"/>
@@ -937,7 +952,7 @@
 					<Type>
 						<v8:Type>xs:decimal</v8:Type>
 						<v8:NumberQualifiers>
-							<v8:Digits>1</v8:Digits>
+							<v8:Digits>2</v8:Digits>
 							<v8:FractionDigits>0</v8:FractionDigits>
 							<v8:AllowedSign>Nonnegative</v8:AllowedSign>
 						</v8:NumberQualifiers>
@@ -982,13 +997,18 @@
 				</Column>
 			</Columns>
 		</Attribute>
-		<Attribute name="ЭтоНаборыДополнительныхСведений" id="3">
+		<Attribute name="ВидСвойств" id="3">
 			<Title>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
 					<v8:content>Показать</v8:content>
 				</v8:item>
 			</Title>
+			<Type>
+				<v8:Type>cfg:EnumRef.ВидыСвойств</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ЭтоНаборыДополнительныхСведений" id="16">
 			<Type>
 				<v8:Type>xs:boolean</v8:Type>
 			</Type>
@@ -1059,12 +1079,39 @@
 				<ManualQuery>true</ManualQuery>
 				<DynamicDataRead>false</DynamicDataRead>
 				<QueryText>ВЫБРАТЬ
-	ВЫБОР
-		КОГДА &amp;ЭтоДополнительноеСведение
-			ТОГДА &amp;ОбщиеДополнительныеСведения
-		ИНАЧЕ &amp;ОбщиеДополнительныеРеквизиты
-	КОНЕЦ КАК Представление,
+	&amp;ПредставлениеСписка КАК Представление,
 	0 КАК НомерКартинки</QueryText>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>Представление</dcssch:dataPath>
+					<dcssch:field>Представление</dcssch:field>
+					<dcssch:title xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Представление</v8:content>
+						</v8:item>
+					</dcssch:title>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>НомерКартинки</dcssch:dataPath>
+					<dcssch:field>НомерКартинки</dcssch:field>
+					<dcssch:title xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Номер картинки</v8:content>
+						</v8:item>
+					</dcssch:title>
+				</Field>
+				<Parameter>
+					<dcssch:name>ПредставлениеСписка</dcssch:name>
+					<dcssch:title xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Представление списка</v8:content>
+						</v8:item>
+					</dcssch:title>
+					<dcssch:value xsi:nil="true"/>
+					<dcssch:useRestriction>true</dcssch:useRestriction>
+				</Parameter>
 				<ListSettings>
 					<dcsset:filter>
 						<dcsset:viewMode>Normal</dcsset:viewMode>

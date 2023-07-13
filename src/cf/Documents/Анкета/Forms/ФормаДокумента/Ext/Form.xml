@@ -33,6 +33,61 @@
 				<ButtonGroup name="ФормаГруппаКомандыФормы" id="190">
 					<CommandSource>Form</CommandSource>
 					<ExtendedTooltip name="ФормаГруппаКомандыФормыРасширеннаяПодсказка" id="191"/>
+					<ChildItems>
+						<Button name="СкрытьПоказатьДеревоРазделовДокумент" id="156">
+							<Type>CommandBarButton</Type>
+							<CommandName>Form.Command.ПоказатьРазделы</CommandName>
+							<Picture>
+								<xr:Ref>StdPicture.ShowInList</xr:Ref>
+								<xr:LoadTransparent>true</xr:LoadTransparent>
+							</Picture>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Показать разделы</v8:content>
+								</v8:item>
+							</Title>
+							<ExtendedTooltip name="СкрытьПоказатьДеревоРазделовДокументРасширеннаяПодсказка" id="157"/>
+						</Button>
+						<Button name="ПредыдущийРаздел" id="163">
+							<Type>CommandBarButton</Type>
+							<Width>10</Width>
+							<CommandName>Form.Command.ПредыдущийРаздел</CommandName>
+							<ExtendedTooltip name="ПредыдущийРазделРасширеннаяПодсказка" id="164"/>
+						</Button>
+						<Button name="СледующийРаздел" id="165">
+							<Type>CommandBarButton</Type>
+							<Width>10</Width>
+							<CommandName>Form.Command.СледующийРаздел</CommandName>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Далее &gt;</v8:content>
+								</v8:item>
+							</Title>
+							<ExtendedTooltip name="СледующийРазделРасширеннаяПодсказка" id="166"/>
+						</Button>
+						<Button name="ФормаЗаполненияЗавершитьИЗакрыть" id="92">
+							<Type>CommandBarButton</Type>
+							<Representation>PictureAndText</Representation>
+							<SkipOnInput>false</SkipOnInput>
+							<CommandName>Form.Command.ФормаЗаполненияЗавершитьИЗакрыть</CommandName>
+							<ExtendedTooltip name="ФормаЗаполненияЗавершитьИЗакрытьРасширеннаяПодсказка" id="115"/>
+						</Button>
+						<Button name="ФормаЗаполненияЗаписать" id="91">
+							<Type>CommandBarButton</Type>
+							<Representation>Text</Representation>
+							<SkipOnInput>false</SkipOnInput>
+							<CommandName>Form.Command.ФормаЗаполненияЗаписать</CommandName>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Сохранить анкету</v8:content>
+								</v8:item>
+							</Title>
+							<ExtendedTooltip name="ФормаЗаполненияЗаписатьExtendedTooltip" id="116"/>
+						</Button>
+					</ChildItems>
 				</ButtonGroup>
 				<Button name="ФормаКоманднаяПанельПровестиИЗакрыть" id="86">
 					<Type>CommandBarButton</Type>
@@ -46,36 +101,6 @@
 					<Representation>Picture</Representation>
 					<CommandName>Form.StandardCommand.Post</CommandName>
 					<ExtendedTooltip name="ПровестиРасширеннаяПодсказка" id="193"/>
-				</Button>
-				<Button name="ФормаЗаполненияЗаписать" id="91">
-					<Type>CommandBarButton</Type>
-					<Representation>Picture</Representation>
-					<SkipOnInput>false</SkipOnInput>
-					<CommandName>Form.Command.ФормаЗаполненияЗаписать</CommandName>
-					<Picture>
-						<xr:Ref>StdPicture.Write</xr:Ref>
-						<xr:LoadTransparent>true</xr:LoadTransparent>
-					</Picture>
-					<Title>
-						<v8:item>
-							<v8:lang>ru</v8:lang>
-							<v8:content>Записать</v8:content>
-						</v8:item>
-					</Title>
-					<ExtendedTooltip name="ФормаЗаполненияЗаписатьExtendedTooltip" id="116"/>
-				</Button>
-				<Button name="ФормаЗаполненияПровестиЗакрыть" id="92">
-					<Type>CommandBarButton</Type>
-					<Representation>PictureAndText</Representation>
-					<SkipOnInput>false</SkipOnInput>
-					<CommandName>Form.Command.ФормаЗаполненияПровестиЗакрыть</CommandName>
-					<Title>
-						<v8:item>
-							<v8:lang>ru</v8:lang>
-							<v8:content>Завершить и закрыть</v8:content>
-						</v8:item>
-					</Title>
-					<ExtendedTooltip name="ФормаЗаполненияПровестиЗакрытьExtendedTooltip" id="115"/>
 				</Button>
 				<Button name="ФормаКоманднаяПанельЗаписать" id="87">
 					<Type>CommandBarButton</Type>
@@ -159,7 +184,7 @@
 				</v8:item>
 			</Title>
 			<Behavior>Usual</Behavior>
-			<Representation>None</Representation>
+			<Representation>NormalSeparation</Representation>
 			<ShowTitle>false</ShowTitle>
 			<ExtendedTooltip name="ГруппаОсновныеРеквизитыExtendedTooltip" id="119"/>
 			<ChildItems>
@@ -282,60 +307,6 @@
 			<Representation>None</Representation>
 			<ShowTitle>false</ShowTitle>
 			<ExtendedTooltip name="ГруппаЗаполнениеРасширеннаяПодсказка" id="159"/>
-			<ChildItems>
-				<CommandBar name="КоманднаяПанельДокументАнкетаЛево" id="178">
-					<Title>
-						<v8:item>
-							<v8:lang>ru</v8:lang>
-							<v8:content>Командная панель документ анкета лево</v8:content>
-						</v8:item>
-					</Title>
-					<ExtendedTooltip name="КоманднаяПанельДокументАнкетаЛевоРасширеннаяПодсказка" id="179"/>
-					<ChildItems>
-						<Button name="СкрытьПоказатьДеревоРазделовДокумент" id="156">
-							<Type>CommandBarButton</Type>
-							<CommandName>Form.Command.СкрытьПоказатьДеревоРазделов</CommandName>
-							<Title>
-								<v8:item>
-									<v8:lang>ru</v8:lang>
-									<v8:content>Показать разделы</v8:content>
-								</v8:item>
-							</Title>
-							<ExtendedTooltip name="СкрытьПоказатьДеревоРазделовДокументРасширеннаяПодсказка" id="157"/>
-						</Button>
-					</ChildItems>
-				</CommandBar>
-				<CommandBar name="КоманднаяПанельДокументаАнкетаПраво" id="180">
-					<Title>
-						<v8:item>
-							<v8:lang>ru</v8:lang>
-							<v8:content>Командная панель документа анкета право</v8:content>
-						</v8:item>
-					</Title>
-					<HorizontalLocation>Right</HorizontalLocation>
-					<ExtendedTooltip name="КоманднаяПанельДокументаАнкетаПравоРасширеннаяПодсказка" id="181"/>
-					<ChildItems>
-						<Button name="ПредыдущийРаздел" id="163">
-							<Type>CommandBarButton</Type>
-							<Width>10</Width>
-							<CommandName>Form.Command.ПредыдущийРаздел</CommandName>
-							<ExtendedTooltip name="ПредыдущийРазделРасширеннаяПодсказка" id="164"/>
-						</Button>
-						<Button name="СледующийРаздел" id="165">
-							<Type>CommandBarButton</Type>
-							<Width>10</Width>
-							<CommandName>Form.Command.СледующийРаздел</CommandName>
-							<Title>
-								<v8:item>
-									<v8:lang>ru</v8:lang>
-									<v8:content>Далее &gt;</v8:content>
-								</v8:item>
-							</Title>
-							<ExtendedTooltip name="СледующийРазделРасширеннаяПодсказка" id="166"/>
-						</Button>
-					</ChildItems>
-				</CommandBar>
-			</ChildItems>
 		</UsualGroup>
 		<UsualGroup name="ГруппаДеревоРазделовФормаЗаполнения" id="68">
 			<Title>
@@ -598,7 +569,7 @@
 					<v8:content>Командная панель подвал</v8:content>
 				</v8:item>
 			</Title>
-			<HorizontalLocation>Right</HorizontalLocation>
+			<HorizontalLocation>Auto</HorizontalLocation>
 			<ExtendedTooltip name="КоманднаяПанельПодвалРасширеннаяПодсказка" id="177"/>
 			<ChildItems>
 				<Button name="ПредыдущийРазделПодвал" id="107">
@@ -629,19 +600,26 @@
 				</Button>
 			</ChildItems>
 		</CommandBar>
-		<InputField name="Комментарий" id="111">
-			<DataPath>Объект.Комментарий</DataPath>
-			<TitleLocation>Left</TitleLocation>
-			<AutoMaxWidth>false</AutoMaxWidth>
-			<Height>2</Height>
-			<VerticalStretch>false</VerticalStretch>
-			<ChoiceButton>true</ChoiceButton>
-			<ContextMenu name="КомментарийКонтекстноеМеню" id="112"/>
-			<ExtendedTooltip name="КомментарийExtendedTooltip" id="153"/>
-			<Events>
-				<Event name="StartChoice">КомментарийНачалоВыбора</Event>
-			</Events>
-		</InputField>
+		<UsualGroup name="ГруппаПодвал" id="221">
+			<Representation>NormalSeparation</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаПодвалРасширеннаяПодсказка" id="222"/>
+			<ChildItems>
+				<InputField name="Комментарий" id="111">
+					<DataPath>Объект.Комментарий</DataPath>
+					<TitleLocation>Left</TitleLocation>
+					<AutoMaxWidth>false</AutoMaxWidth>
+					<Height>2</Height>
+					<VerticalStretch>false</VerticalStretch>
+					<ChoiceButton>true</ChoiceButton>
+					<ContextMenu name="КомментарийКонтекстноеМеню" id="112"/>
+					<ExtendedTooltip name="КомментарийExtendedTooltip" id="153"/>
+					<Events>
+						<Event name="StartChoice">КомментарийНачалоВыбора</Event>
+					</Events>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
 	</ChildItems>
 	<Attributes>
 		<Attribute name="Объект" id="1">
@@ -736,6 +714,16 @@
 				<Column name="ВидФлажка" id="8">
 					<Type>
 						<v8:Type>cfg:EnumRef.ВидыФлажкаВАнкетах</v8:Type>
+					</Type>
+				</Column>
+				<Column name="ИспользоватьМаксимальноеЗначение" id="9">
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+				<Column name="ИспользоватьМинимальноеЗначение" id="10">
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
 					</Type>
 				</Column>
 			</Columns>
@@ -929,6 +917,50 @@
 						<v8:Type>cfg:EnumRef.ВидыФлажкаВАнкетах</v8:Type>
 					</Type>
 				</Column>
+				<Column name="ИспользоватьМаксимальноеЗначение" id="28">
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+				<Column name="ИспользоватьМинимальноеЗначение" id="29">
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+				<Column name="ПоказыватьПолосуРегулирования" id="30">
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+				<Column name="ШагПолосыРегулирования" id="31">
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>15</v8:Digits>
+							<v8:FractionDigits>2</v8:FractionDigits>
+							<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+				<Column name="ИспользоватьОтказОтОтвета" id="32">
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+				<Column name="ФормулировкаОтказаОтОтвета" id="33">
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>50</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="ДиапазонПодсказокЧисловогоВопроса" id="34">
+					<Type>
+						<v8:Type>v8:ValueTable</v8:Type>
+					</Type>
+				</Column>
 				<AdditionalColumns table="ТаблицаВопросовРаздела.СоставТабличногоВопроса">
 					<Column name="ЭлементарныйВопрос" id="1">
 						<Title>
@@ -1053,6 +1085,55 @@
 						</Type>
 					</Column>
 				</AdditionalColumns>
+				<AdditionalColumns table="ТаблицаВопросовРаздела.ДиапазонПодсказокЧисловогоВопроса">
+					<Column name="ЗначениеДо" id="1">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Значение до</v8:content>
+							</v8:item>
+						</Title>
+						<Type>
+							<v8:Type>xs:decimal</v8:Type>
+							<v8:NumberQualifiers>
+								<v8:Digits>15</v8:Digits>
+								<v8:FractionDigits>2</v8:FractionDigits>
+								<v8:AllowedSign>Any</v8:AllowedSign>
+							</v8:NumberQualifiers>
+						</Type>
+					</Column>
+					<Column name="Подсказка" id="2">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Подсказка</v8:content>
+							</v8:item>
+						</Title>
+						<Type>
+							<v8:Type>xs:string</v8:Type>
+							<v8:StringQualifiers>
+								<v8:Length>250</v8:Length>
+								<v8:AllowedLength>Variable</v8:AllowedLength>
+							</v8:StringQualifiers>
+						</Type>
+					</Column>
+					<Column name="НомерСтроки" id="3">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Номер строки</v8:content>
+							</v8:item>
+						</Title>
+						<Type>
+							<v8:Type>xs:decimal</v8:Type>
+							<v8:NumberQualifiers>
+								<v8:Digits>10</v8:Digits>
+								<v8:FractionDigits>0</v8:FractionDigits>
+								<v8:AllowedSign>Any</v8:AllowedSign>
+							</v8:NumberQualifiers>
+						</Type>
+					</Column>
+				</AdditionalColumns>
 			</Columns>
 		</Attribute>
 		<Attribute name="ВариантыОтветовНаВопросы" id="9">
@@ -1082,6 +1163,15 @@
 				<Column name="ТребуетОткрытогоОтвета" id="4">
 					<Type>
 						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+				<Column name="Подсказка" id="5">
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>250</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
 					</Type>
 				</Column>
 			</Columns>
@@ -1278,15 +1368,19 @@
 				</v8:item>
 			</ToolTip>
 			<Shortcut>Ctrl+S</Shortcut>
+			<Picture>
+				<xr:Ref>StdPicture.Write</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
 			<Action>ФормаЗаполненияЗаписать</Action>
 			<ModifiesSavedData>true</ModifiesSavedData>
 			<CurrentRowUse>DontUse</CurrentRowUse>
 		</Command>
-		<Command name="ФормаЗаполненияПровестиЗакрыть" id="2">
+		<Command name="ФормаЗаполненияЗавершитьИЗакрыть" id="2">
 			<Title>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Форма заполнения провести закрыть</v8:content>
+					<v8:content>Завершить и закрыть</v8:content>
 				</v8:item>
 			</Title>
 			<ToolTip>
@@ -1295,17 +1389,27 @@
 					<v8:content>Завершить редактирование анкеты и закрыть</v8:content>
 				</v8:item>
 			</ToolTip>
-			<Action>ФормаЗаполненияПровестиЗакрыть</Action>
+			<Picture>
+				<xr:Ref>StdPicture.WriteAndClose</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>ФормаЗаполненияЗавершитьИЗакрыть</Action>
 			<CurrentRowUse>DontUse</CurrentRowUse>
 		</Command>
-		<Command name="СкрытьПоказатьДеревоРазделов" id="3">
+		<Command name="ПоказатьРазделы" id="3">
 			<Title>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
 					<v8:content>Показать разделы</v8:content>
 				</v8:item>
 			</Title>
-			<Action>СкрытьПоказатьДеревоРазделов</Action>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Показать или скрыть разделы анкеты</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ПоказатьРазделы</Action>
 			<CurrentRowUse>DontUse</CurrentRowUse>
 		</Command>
 		<Command name="СледующийРаздел" id="4">
@@ -1357,4 +1461,25 @@
 			<CurrentRowUse>DontUse</CurrentRowUse>
 		</Command>
 	</Commands>
+	<Parameters>
+		<Parameter name="ВозможностьПредварительногоСохранения">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Parameter>
+		<Parameter name="ТолькоФормаЗаполнения">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Parameter>
+		<Parameter name="Заголовок">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Parameter>
+	</Parameters>
 </Form>

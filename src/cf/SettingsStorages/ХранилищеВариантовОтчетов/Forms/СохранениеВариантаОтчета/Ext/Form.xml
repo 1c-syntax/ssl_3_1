@@ -3,6 +3,23 @@
 	<WindowOpeningMode>LockOwnerWindow</WindowOpeningMode>
 	<AutoSaveDataInSettings>Use</AutoSaveDataInSettings>
 	<CommandBarLocation>Bottom</CommandBarLocation>
+	<MobileDeviceCommandBarContent>
+		<xr:Item>
+			<xr:Presentation/>
+			<xr:CheckState>0</xr:CheckState>
+			<xr:Value xsi:type="xs:string"/>
+		</xr:Item>
+		<xr:Item>
+			<xr:Presentation/>
+			<xr:CheckState>0</xr:CheckState>
+			<xr:Value xsi:type="xs:string"/>
+		</xr:Item>
+		<xr:Item>
+			<xr:Presentation/>
+			<xr:CheckState>0</xr:CheckState>
+			<xr:Value xsi:type="xs:string"/>
+		</xr:Item>
+	</MobileDeviceCommandBarContent>
 	<CommandSet>
 		<ExcludedCommand>Abort</ExcludedCommand>
 		<ExcludedCommand>Close</ExcludedCommand>
@@ -57,6 +74,11 @@
 							<Events>
 								<Event name="OnChange">НаименованиеПриИзменении</Event>
 							</Events>
+						</InputField>
+						<InputField name="Назначение" id="252">
+							<DataPath>Объект.Назначение</DataPath>
+							<ContextMenu name="НазначениеКонтекстноеМеню" id="253"/>
+							<ExtendedTooltip name="НазначениеРасширеннаяПодсказка" id="254"/>
 						</InputField>
 						<UsualGroup name="ГруппаДоступность" id="268">
 							<Title>
@@ -754,6 +776,11 @@
 				<Column name="Порядок" id="11">
 					<Type>
 						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+				<Column name="Назначение" id="14">
+					<Type>
+						<v8:Type>cfg:EnumRef.НазначенияВариантовОтчетов</v8:Type>
 					</Type>
 				</Column>
 			</Columns>

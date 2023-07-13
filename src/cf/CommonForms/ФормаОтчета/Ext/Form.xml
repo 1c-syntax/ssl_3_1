@@ -6,6 +6,13 @@
 	<CommandBarLocation>None</CommandBarLocation>
 	<VerticalScroll>useIfNecessary</VerticalScroll>
 	<ConversationsRepresentation>Show</ConversationsRepresentation>
+	<MobileDeviceCommandBarContent>
+		<xr:Item>
+			<xr:Presentation/>
+			<xr:CheckState>0</xr:CheckState>
+			<xr:Value xsi:type="xs:string">КоманднаяПанельЕще</xr:Value>
+		</xr:Item>
+	</MobileDeviceCommandBarContent>
 	<CommandSet>
 		<ExcludedCommand>ReportSettings</ExcludedCommand>
 	</CommandSet>
@@ -32,6 +39,7 @@
 		<Event name="OnLoadVariantAtServer">ПриЗагрузкеВариантаНаСервере</Event>
 		<Event name="OnSaveUserSettingsAtServer">ПриСохраненииПользовательскихНастроекНаСервере</Event>
 		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+		<Event name="OnMainServerAvailabilityChange">ПриИзмененииДоступностиОсновногоСервера</Event>
 		<Event name="OnUpdateUserSettingSetAtServer">ПриОбновленииСоставаПользовательскихНастроекНаСервере</Event>
 		<Event name="FillCheckProcessingAtServer">ОбработкаПроверкиЗаполненияНаСервере</Event>
 	</Events>
@@ -1043,6 +1051,30 @@
 								</Popup>
 							</ChildItems>
 						</ButtonGroup>
+						<ButtonGroup name="ГруппаСнимкиОтчетов" id="1172">
+							<Visible>false</Visible>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Снимки отчетов</v8:content>
+								</v8:item>
+							</Title>
+							<ExtendedTooltip name="ГруппаСнимкиОтчетовРасширеннаяПодсказка" id="1173"/>
+							<ChildItems>
+								<Button name="СохранитьСнимокОтчета" id="1174">
+									<Type>CommandBarButton</Type>
+									<CommandName>Form.Command.СохранитьСнимокОтчета</CommandName>
+									<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
+									<ExtendedTooltip name="СохранитьСнимокОтчетаРасширеннаяПодсказка" id="1175"/>
+								</Button>
+								<Button name="СнимкиОтчетов" id="1178">
+									<Type>CommandBarButton</Type>
+									<CommandName>Form.Command.СнимкиОтчетов</CommandName>
+									<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
+									<ExtendedTooltip name="СнимкиОтчетовРасширеннаяПодсказка" id="1179"/>
+								</Button>
+							</ChildItems>
+						</ButtonGroup>
 						<Popup name="КомандыВидовПоказателейЕще" id="760">
 							<Title>
 								<v8:item>
@@ -1978,6 +2010,214 @@
 				</CheckBoxField>
 			</ChildItems>
 		</UsualGroup>
+		<UsualGroup name="ГруппаКнопокМобильныйКлиент" id="1224">
+			<Visible>false</Visible>
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Кнопок мобильный клиент</v8:content>
+				</v8:item>
+			</Title>
+			<Group>AlwaysHorizontal</Group>
+			<HorizontalSpacing>None</HorizontalSpacing>
+			<VerticalSpacing>None</VerticalSpacing>
+			<Behavior>Usual</Behavior>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаКнопокМобильныйКлиентРасширеннаяПодсказка" id="1225"/>
+			<ChildItems>
+				<UsualGroup name="ГруппаКнопокМобильныйКлиентВложенная" id="1170">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Кнопок мобильный клиент вложенная</v8:content>
+						</v8:item>
+					</Title>
+					<Group>AlwaysHorizontal</Group>
+					<HorizontalAlign>Center</HorizontalAlign>
+					<Behavior>Usual</Behavior>
+					<Representation>None</Representation>
+					<United>false</United>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаКнопокМобильныйКлиентВложеннаяРасширеннаяПодсказка" id="1171"/>
+					<ChildItems>
+						<UsualGroup name="ГруппаИзменитьРасположениеРесурсов" id="1155">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Изменить расположение ресурсов</v8:content>
+								</v8:item>
+							</Title>
+							<HorizontalStretch>true</HorizontalStretch>
+							<Group>Vertical</Group>
+							<HorizontalSpacing>None</HorizontalSpacing>
+							<VerticalSpacing>None</VerticalSpacing>
+							<HorizontalAlign>Center</HorizontalAlign>
+							<Behavior>Usual</Behavior>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаИзменитьРасположениеРесурсовРасширеннаяПодсказка" id="1156"/>
+							<ChildItems>
+								<Button name="КнопкаИзменитьРасположениеРесурсов" id="1162">
+									<Type>UsualButton</Type>
+									<Representation>Picture</Representation>
+									<CommandName>Form.Command.ИзменитьРасположениеРесурсов</CommandName>
+									<Picture>
+										<xr:Ref>StdPicture.Dimension</xr:Ref>
+										<xr:LoadTransparent>true</xr:LoadTransparent>
+									</Picture>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Вертикально</v8:content>
+										</v8:item>
+									</Title>
+									<ShapeRepresentation>None</ShapeRepresentation>
+									<ExtendedTooltip name="КнопкаИзменитьРасположениеРесурсовРасширеннаяПодсказка" id="1163"/>
+								</Button>
+								<LabelDecoration name="ДекорацияИзменитьРасположениеРесурсов" id="1212">
+									<Height>1</Height>
+									<Font ref="style:SmallTextFont" kind="StyleItem"/>
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Вертикально</v8:content>
+										</v8:item>
+									</Title>
+									<GroupHorizontalAlign>Center</GroupHorizontalAlign>
+									<ContextMenu name="ДекорацияИзменитьРасположениеРесурсовКонтекстноеМеню" id="1213"/>
+									<ExtendedTooltip name="ДекорацияИзменитьРасположениеРесурсовРасширеннаяПодсказка" id="1214"/>
+								</LabelDecoration>
+							</ChildItems>
+						</UsualGroup>
+						<UsualGroup name="ГруппаПоказатьВариантыОтчета" id="1134">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Показать варианты отчета</v8:content>
+								</v8:item>
+							</Title>
+							<HorizontalStretch>true</HorizontalStretch>
+							<Group>Vertical</Group>
+							<HorizontalSpacing>None</HorizontalSpacing>
+							<VerticalSpacing>None</VerticalSpacing>
+							<HorizontalAlign>Center</HorizontalAlign>
+							<Behavior>Usual</Behavior>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаПоказатьВариантыОтчетаРасширеннаяПодсказка" id="1135"/>
+							<ChildItems>
+								<Button name="КнопкаПоказатьВариантыОтчета" id="1164">
+									<Type>UsualButton</Type>
+									<Representation>Picture</Representation>
+									<CommandName>Form.StandardCommand.LoadVariant</CommandName>
+									<Picture>
+										<xr:Ref>CommonPicture.ВыбратьВариантОтчета</xr:Ref>
+										<xr:LoadTransparent>false</xr:LoadTransparent>
+									</Picture>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Варианты отчета</v8:content>
+										</v8:item>
+									</Title>
+									<ShapeRepresentation>None</ShapeRepresentation>
+									<ExtendedTooltip name="КнопкаПоказатьВариантыОтчетаРасширеннаяПодсказка" id="1165"/>
+								</Button>
+								<LabelDecoration name="ДекорацияПоказатьВариантыОтчета" id="1215">
+									<Height>1</Height>
+									<Font ref="style:SmallTextFont" kind="StyleItem"/>
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Варианты</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="ДекорацияПоказатьВариантыОтчетаКонтекстноеМеню" id="1216"/>
+									<ExtendedTooltip name="ДекорацияПоказатьВариантыОтчетаРасширеннаяПодсказка" id="1217"/>
+								</LabelDecoration>
+							</ChildItems>
+						</UsualGroup>
+						<UsualGroup name="ГруппаПоказатьНастройки" id="1141">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Показать настройки</v8:content>
+								</v8:item>
+							</Title>
+							<HorizontalStretch>true</HorizontalStretch>
+							<Group>Vertical</Group>
+							<HorizontalSpacing>None</HorizontalSpacing>
+							<VerticalSpacing>None</VerticalSpacing>
+							<HorizontalAlign>Center</HorizontalAlign>
+							<Behavior>Usual</Behavior>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаПоказатьНастройкиРасширеннаяПодсказка" id="1142"/>
+							<ChildItems>
+								<Button name="КнопкаПоказатьНастройки" id="1166">
+									<Type>UsualButton</Type>
+									<Representation>Picture</Representation>
+									<CommandName>Form.Command.ВсеНастройки</CommandName>
+									<ShapeRepresentation>None</ShapeRepresentation>
+									<ExtendedTooltip name="КнопкаПоказатьНастройкиРасширеннаяПодсказка" id="1167"/>
+								</Button>
+								<LabelDecoration name="ДекорацияПоказатьНастройки" id="1218">
+									<Height>1</Height>
+									<Font ref="style:SmallTextFont" kind="StyleItem"/>
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Настройки</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="ДекорацияПоказатьНастройкиКонтекстноеМеню" id="1219"/>
+									<ExtendedTooltip name="ДекорацияПоказатьНастройкиРасширеннаяПодсказка" id="1220"/>
+								</LabelDecoration>
+							</ChildItems>
+						</UsualGroup>
+						<UsualGroup name="ГруппаСформироватьОтчет" id="1148">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Сформировать отчет</v8:content>
+								</v8:item>
+							</Title>
+							<HorizontalStretch>true</HorizontalStretch>
+							<Group>Vertical</Group>
+							<HorizontalSpacing>None</HorizontalSpacing>
+							<VerticalSpacing>None</VerticalSpacing>
+							<HorizontalAlign>Center</HorizontalAlign>
+							<Behavior>Usual</Behavior>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаСформироватьОтчетРасширеннаяПодсказка" id="1149"/>
+							<ChildItems>
+								<Button name="КнопкаСформироватьОтчет" id="1168">
+									<Type>UsualButton</Type>
+									<Representation>Picture</Representation>
+									<CommandName>Form.Command.ОтчетСкомпоноватьРезультат</CommandName>
+									<ShapeRepresentation>None</ShapeRepresentation>
+									<ExtendedTooltip name="КнопкаСформироватьОтчетРасширеннаяПодсказка" id="1169"/>
+								</Button>
+								<LabelDecoration name="ДекорацияСформироватьОтчет" id="1221">
+									<Height>1</Height>
+									<Font ref="style:SmallTextFont" kind="StyleItem"/>
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Сформировать</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="ДекорацияСформироватьОтчетКонтекстноеМеню" id="1222"/>
+									<ExtendedTooltip name="ДекорацияСформироватьОтчетРасширеннаяПодсказка" id="1223"/>
+								</LabelDecoration>
+							</ChildItems>
+						</UsualGroup>
+					</ChildItems>
+				</UsualGroup>
+			</ChildItems>
+		</UsualGroup>
 	</ChildItems>
 	<Attributes>
 		<Attribute name="Отчет" id="1">
@@ -2395,9 +2635,32 @@
 				<v8:Type>xs:boolean</v8:Type>
 			</Type>
 		</Attribute>
+		<Attribute name="ЭтоМобильныйКлиент" id="23">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
 		<Attribute name="ПараметрыИзменены" id="50">
 			<Type>
 				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="АдресДвоичныхДанныхВнешнегоОтчета" id="51">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ПутьКФайлуВнешнегоОтчетаНаКлиенте" id="52">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
 			</Type>
 		</Attribute>
 	</Attributes>
@@ -3139,7 +3402,7 @@
 			<Title>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Сохранить</v8:content>
+					<v8:content>Сохранить в файл</v8:content>
 				</v8:item>
 			</Title>
 			<ToolTip>
@@ -3184,6 +3447,62 @@
 			<Action>ВставитьГруппировкуВыше</Action>
 			<Representation>TextPicture</Representation>
 		</Command>
+		<Command name="ИзменитьРасположениеРесурсов" id="58">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Изменить расположение ресурсов</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Изменить расположение ресурсов</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ИзменитьРасположениеРесурсов</Action>
+		</Command>
+		<Command name="СохранитьСнимокОтчета" id="60">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сохранить снимок отчета</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сохранить снимок отчета</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.FixTable</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>СохранитьСнимокОтчета</Action>
+			<Representation>TextPicture</Representation>
+		</Command>
+		<Command name="СнимкиОтчетов" id="62">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Снимки отчетов</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Список снимков отчетов</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Shortcut>Ctrl+S</Shortcut>
+			<Picture>
+				<xr:Ref>StdPicture.ListViewModeList</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>СнимкиОтчетов</Action>
+			<Representation>TextPicture</Representation>
+		</Command>
 	</Commands>
 	<Parameters>
 		<Parameter name="Ссылка">
@@ -3193,6 +3512,33 @@
 		</Parameter>
 		<Parameter name="Отчет">
 			<Type/>
+		</Parameter>
+		<Parameter name="Расшифровка">
+			<Type/>
+			<KeyParameter>true</KeyParameter>
+		</Parameter>
+		<Parameter name="ПредставлениеВарианта">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Parameter>
+		<Parameter name="СформироватьПриОткрытии">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Parameter>
+		<Parameter name="КонтекстВарианта">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
 		</Parameter>
 	</Parameters>
 </Form>

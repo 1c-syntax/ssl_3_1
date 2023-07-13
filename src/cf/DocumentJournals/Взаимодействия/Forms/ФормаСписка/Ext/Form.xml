@@ -2331,7 +2331,7 @@
 															<ExtendedTooltip name="ПолученоОтправленоРасширеннаяПодсказка" id="778"/>
 														</LabelField>
 														<InputField name="Дата" id="8">
-															<DataPath>Список.Date</DataPath>
+															<DataPath>Список.Дата</DataPath>
 															<HorizontalAlign>Left</HorizontalAlign>
 															<ShowInFooter>false</ShowInFooter>
 															<Width>9</Width>
@@ -2341,6 +2341,12 @@
 														</InputField>
 														<PictureField name="ЕстьВложения" id="108">
 															<DataPath>Список.ЕстьВложения</DataPath>
+															<Title>
+																<v8:item>
+																	<v8:lang>ru</v8:lang>
+																	<v8:content>Есть вложения</v8:content>
+																</v8:item>
+															</Title>
 															<TitleLocation>None</TitleLocation>
 															<ToolTip>
 																<v8:item>
@@ -2399,7 +2405,7 @@
 											<ExtendedTooltip name="УчетнаяЗаписьРасширеннаяПодсказка" id="746"/>
 										</LabelField>
 										<LabelField name="Ссылка" id="761">
-											<DataPath>Список.Ref</DataPath>
+											<DataPath>Список.Ссылка</DataPath>
 											<UserVisible>
 												<xr:Common>false</xr:Common>
 											</UserVisible>
@@ -2536,18 +2542,18 @@
 			</Type>
 			<MainAttribute>true</MainAttribute>
 			<UseAlways>
-				<Field>Список.Date</Field>
-				<Field>Список.DeletionMark</Field>
-				<Field>Список.Ref</Field>
-				<Field>Список.Type</Field>
 				<Field>Список.ВажностьНомерКартинки</Field>
+				<Field>Список.Дата</Field>
 				<Field>Список.ЕстьВложения</Field>
 				<Field>Список.НомерКартинки</Field>
 				<Field>Список.Ответственный</Field>
 				<Field>Список.Папка</Field>
+				<Field>Список.ПометкаУдаления</Field>
 				<Field>Список.Предмет</Field>
 				<Field>Список.Рассмотрено</Field>
+				<Field>Список.Ссылка</Field>
 				<Field>Список.СтатусИсходящегоПисьма</Field>
+				<Field>Список.Тип</Field>
 				<Field>Список.УчетнаяЗапись</Field>
 			</UseAlways>
 			<Settings xsi:type="DynamicList">
@@ -2625,7 +2631,13 @@
 	ЖурналДокументовВзаимодействияПереопределяемый.Участники,
 	ЖурналДокументовВзаимодействияПереопределяемый.Тип,
 	ЖурналДокументовВзаимодействияПереопределяемый.СтатусИсходящегоПисьма,
-	ЖурналДокументовВзаимодействияПереопределяемый.ЕстьВложения,
+	ВЫБОР
+		КОГДА ЕСТЬNULL(ЖурналДокументовВзаимодействияПереопределяемый.ЕстьВложения, НаличиеФайловПереопределяемый.ЕстьФайлы) ЕСТЬ NULL
+			ТОГДА ЛОЖЬ
+		КОГДА ЕСТЬNULL(ЖурналДокументовВзаимодействияПереопределяемый.ЕстьВложения, НаличиеФайловПереопределяемый.ЕстьФайлы)
+			ТОГДА ИСТИНА
+		ИНАЧЕ ЛОЖЬ
+	КОНЕЦ КАК ЕстьВложения,
 	ЕСТЬNULL(ПредметыВзаимодействийПереопределяемый.Предмет, НЕОПРЕДЕЛЕНО) КАК Предмет,
 	ТИПЗНАЧЕНИЯ(ПредметыВзаимодействийПереопределяемый.Предмет) КАК ТипПредмета,
 	ЖурналДокументовВзаимодействияПереопределяемый.УчетнаяЗапись,
@@ -2644,8 +2656,174 @@
 	ЖурналДокументов.Взаимодействия КАК ЖурналДокументовВзаимодействияПереопределяемый
 		ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.ПредметыПапкиВзаимодействий КАК ПредметыВзаимодействийПереопределяемый
 		ПО ЖурналДокументовВзаимодействияПереопределяемый.Ссылка = ПредметыВзаимодействийПереопределяемый.Взаимодействие
+		ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.НаличиеФайлов КАК НаличиеФайловПереопределяемый
+		ПО ЖурналДокументовВзаимодействияПереопределяемый.Ссылка = НаличиеФайловПереопределяемый.ОбъектСФайлами
 {ГДЕ
 	ЖурналДокументовВзаимодействияПереопределяемый.Ссылка КАК Поиск}</QueryText>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>Поиск</dcssch:dataPath>
+					<dcssch:field>Поиск</dcssch:field>
+					<dcssch:title xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Поиск</v8:content>
+						</v8:item>
+					</dcssch:title>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ЕстьВложения</dcssch:dataPath>
+					<dcssch:field>ЕстьВложения</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ВзаимодействиеОснование</dcssch:dataPath>
+					<dcssch:field>ВзаимодействиеОснование</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>Размер</dcssch:dataPath>
+					<dcssch:field>Размер</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ДатаКогдаОтправить</dcssch:dataPath>
+					<dcssch:field>ДатаКогдаОтправить</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ДатаАктуальностиОтправки</dcssch:dataPath>
+					<dcssch:field>ДатаАктуальностиОтправки</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ИдентификаторСообщения</dcssch:dataPath>
+					<dcssch:field>ИдентификаторСообщения</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>НомерКартинки</dcssch:dataPath>
+					<dcssch:field>НомерКартинки</dcssch:field>
+					<dcssch:title xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Номер картинки</v8:content>
+						</v8:item>
+					</dcssch:title>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>Ссылка</dcssch:dataPath>
+					<dcssch:field>Ссылка</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>Дата</dcssch:dataPath>
+					<dcssch:field>Дата</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ПометкаУдаления</dcssch:dataPath>
+					<dcssch:field>ПометкаУдаления</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>Номер</dcssch:dataPath>
+					<dcssch:field>Номер</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>Автор</dcssch:dataPath>
+					<dcssch:field>Автор</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>Входящий</dcssch:dataPath>
+					<dcssch:field>Входящий</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>Тема</dcssch:dataPath>
+					<dcssch:field>Тема</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>Ответственный</dcssch:dataPath>
+					<dcssch:field>Ответственный</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>Рассмотрено</dcssch:dataPath>
+					<dcssch:field>Рассмотрено</dcssch:field>
+					<dcssch:title xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Рассмотрено</v8:content>
+						</v8:item>
+					</dcssch:title>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>РассмотретьПосле</dcssch:dataPath>
+					<dcssch:field>РассмотретьПосле</dcssch:field>
+					<dcssch:title xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Рассмотреть после</v8:content>
+						</v8:item>
+					</dcssch:title>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>Участники</dcssch:dataPath>
+					<dcssch:field>Участники</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>Тип</dcssch:dataPath>
+					<dcssch:field>Тип</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>СтатусИсходящегоПисьма</dcssch:dataPath>
+					<dcssch:field>СтатусИсходящегоПисьма</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>Предмет</dcssch:dataPath>
+					<dcssch:field>Предмет</dcssch:field>
+					<dcssch:title xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Предмет</v8:content>
+						</v8:item>
+					</dcssch:title>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ТипПредмета</dcssch:dataPath>
+					<dcssch:field>ТипПредмета</dcssch:field>
+					<dcssch:title xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Тип предмета</v8:content>
+						</v8:item>
+					</dcssch:title>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>УчетнаяЗапись</dcssch:dataPath>
+					<dcssch:field>УчетнаяЗапись</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>Папка</dcssch:dataPath>
+					<dcssch:field>Папка</dcssch:field>
+					<dcssch:title xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Папка</v8:content>
+						</v8:item>
+					</dcssch:title>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ПолученоОтправлено</dcssch:dataPath>
+					<dcssch:field>ПолученоОтправлено</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>Важность</dcssch:dataPath>
+					<dcssch:field>Важность</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ВажностьНомерКартинки</dcssch:dataPath>
+					<dcssch:field>ВажностьНомерКартинки</dcssch:field>
+					<dcssch:title xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Важность номер картинки</v8:content>
+						</v8:item>
+					</dcssch:title>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>Проведен</dcssch:dataPath>
+					<dcssch:field>Проведен</dcssch:field>
+				</Field>
 				<MainTable>DocumentJournal.Взаимодействия</MainTable>
 				<ListSettings>
 					<dcsset:filter>

@@ -37,7 +37,7 @@
 						<Title>
 							<v8:item>
 								<v8:lang>ru</v8:lang>
-								<v8:content>Файл с диска...</v8:content>
+								<v8:content>Файл с компьютера...</v8:content>
 							</v8:item>
 						</Title>
 						<ExtendedTooltip name="ФормаСоздатьИзФайлаРасширеннаяПодсказка" id="148"/>
@@ -1591,11 +1591,6 @@
 				</v8:StringQualifiers>
 			</Type>
 		</Attribute>
-		<Attribute name="ПапкаПриОткрытии" id="4">
-			<Type>
-				<v8:Type>cfg:CatalogRef.ПапкиФайлов</v8:Type>
-			</Type>
-		</Attribute>
 		<Attribute name="ИспользоватьИерархию" id="5">
 			<Type>
 				<v8:Type>xs:boolean</v8:Type>
@@ -1731,13 +1726,13 @@
 			<Title>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Из файла на диске ...</v8:content>
+					<v8:content>Из файла на компьютере ...</v8:content>
 				</v8:item>
 			</Title>
 			<ToolTip>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Создать файл из файла на диске</v8:content>
+					<v8:content>Загрузить файл из компьютера или другого устройства</v8:content>
 				</v8:item>
 			</ToolTip>
 			<Action>ДобавитьФайл</Action>
@@ -1924,7 +1919,7 @@
 			<ToolTip>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Сохранить файл на диск или другое устройство</v8:content>
+					<v8:content>Сохранить файл на компьютер или другое устройство</v8:content>
 				</v8:item>
 			</ToolTip>
 			<Picture>
@@ -1973,13 +1968,13 @@
 			<Title>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Обновить из файла на диске...</v8:content>
+					<v8:content>Обновить из файла на компьютере...</v8:content>
 				</v8:item>
 			</Title>
 			<ToolTip>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Обновить из файла на диске</v8:content>
+					<v8:content>Обновить из файла на компьютере или другого устройства</v8:content>
 				</v8:item>
 			</ToolTip>
 			<Picture>
@@ -2300,6 +2295,16 @@
 			<AssociatedTableElementId xsi:type="xs:string">Список</AssociatedTableElementId>
 		</Command>
 	</Commands>
+	<Parameters>
+		<Parameter name="Папка">
+			<Type>
+				<v8:Type>cfg:CatalogRef.ПапкиФайлов</v8:Type>
+			</Type>
+		</Parameter>
+		<Parameter name="ПараметрыОтправки">
+			<Type/>
+		</Parameter>
+	</Parameters>
 	<CommandInterface>
 		<CommandBar>
 			<Item>

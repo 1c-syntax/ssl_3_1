@@ -38,7 +38,7 @@
 					<Title>
 						<v8:item>
 							<v8:lang>ru</v8:lang>
-							<v8:content>Настройка учетной записи</v8:content>
+							<v8:content>Настройка почты</v8:content>
 						</v8:item>
 					</Title>
 					<ExtendedTooltip name="НастройкаУчетнойЗаписиРасширеннаяПодсказка" id="33"/>
@@ -144,27 +144,65 @@
 							<Behavior>Usual</Behavior>
 							<Representation>NormalSeparation</Representation>
 							<ShowTitle>false</ShowTitle>
-							<ThroughAlign>Use</ThroughAlign>
+							<ThroughAlign>DontUse</ThroughAlign>
 							<ExtendedTooltip name="АутентификацияРасширеннаяПодсказка" id="201"/>
 							<ChildItems>
-								<InputField name="АдресЭлектроннойПочты" id="44">
-									<DataPath>АдресЭлектроннойПочты</DataPath>
+								<UsualGroup name="ГруппаАдресПочты" id="426">
 									<Title>
 										<v8:item>
 											<v8:lang>ru</v8:lang>
 											<v8:content>Адрес почты</v8:content>
 										</v8:item>
 									</Title>
-									<Width>25</Width>
-									<HorizontalStretch>false</HorizontalStretch>
-									<AutoMarkIncomplete>true</AutoMarkIncomplete>
-									<EditTextUpdate>OnValueChange</EditTextUpdate>
-									<ContextMenu name="АдресЭлектроннойПочтыКонтекстноеМеню" id="45"/>
-									<ExtendedTooltip name="АдресЭлектроннойПочтыРасширеннаяПодсказка" id="46"/>
-									<Events>
-										<Event name="OnChange">АдресЭлектроннойПочтыПриИзменении</Event>
-									</Events>
-								</InputField>
+									<Group>AlwaysHorizontal</Group>
+									<Representation>None</Representation>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="ГруппаАдресПочтыРасширеннаяПодсказка" id="427"/>
+									<ChildItems>
+										<LabelDecoration name="ДекорацияАдресПочты" id="428">
+											<Width>11</Width>
+											<Title formatted="false">
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Адрес почты:</v8:content>
+												</v8:item>
+											</Title>
+											<ContextMenu name="ДекорацияАдресПочтыКонтекстноеМеню" id="429"/>
+											<ExtendedTooltip name="ДекорацияАдресПочтыРасширеннаяПодсказка" id="430">
+												<AutoMaxWidth>false</AutoMaxWidth>
+											</ExtendedTooltip>
+										</LabelDecoration>
+										<InputField name="АдресЭлектроннойПочты" id="44">
+											<DataPath>АдресЭлектроннойПочты</DataPath>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Адрес почты</v8:content>
+												</v8:item>
+											</Title>
+											<TitleLocation>None</TitleLocation>
+											<ToolTipRepresentation>ShowBottom</ToolTipRepresentation>
+											<Width>25</Width>
+											<HorizontalStretch>false</HorizontalStretch>
+											<AutoMarkIncomplete>true</AutoMarkIncomplete>
+											<EditTextUpdate>OnValueChange</EditTextUpdate>
+											<ContextMenu name="АдресЭлектроннойПочтыКонтекстноеМеню" id="45"/>
+											<ExtendedTooltip name="АдресЭлектроннойПочтыРасширеннаяПодсказка" id="46">
+												<AutoMaxWidth>false</AutoMaxWidth>
+												<MaxWidth>30</MaxWidth>
+												<Title formatted="false">
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>Электронная почта для рассылки уведомлений из программы.</v8:content>
+													</v8:item>
+												</Title>
+											</ExtendedTooltip>
+											<Events>
+												<Event name="OnChange">АдресЭлектроннойПочтыПриИзменении</Event>
+											</Events>
+										</InputField>
+									</ChildItems>
+								</UsualGroup>
 								<RadioButtonField name="СпособАутентификации" id="362">
 									<DataPath>СпособАутентификации</DataPath>
 									<Visible>false</Visible>
@@ -227,7 +265,7 @@
 														<Presentation>
 															<v8:item>
 																<v8:lang>ru</v8:lang>
-																<v8:content>Ввести пароль:</v8:content>
+																<v8:content>Пароль почты:</v8:content>
 															</v8:item>
 														</Presentation>
 														<Value xsi:type="xs:string">Пароль</Value>
@@ -463,7 +501,7 @@
 							<Title>
 								<v8:item>
 									<v8:lang>ru</v8:lang>
-									<v8:content>Тип учетной записи</v8:content>
+									<v8:content>Тип почты</v8:content>
 								</v8:item>
 							</Title>
 							<Width>8</Width>
@@ -909,7 +947,7 @@
 					<Title>
 						<v8:item>
 							<v8:lang>ru</v8:lang>
-							<v8:content>Проверка настроек учетной записи</v8:content>
+							<v8:content>Проверка настроек почты</v8:content>
 						</v8:item>
 					</Title>
 					<ExtendedTooltip name="ПроверкаНастроекУчетнойЗаписиРасширеннаяПодсказка" id="35"/>
@@ -918,7 +956,7 @@
 							<Title>
 								<v8:item>
 									<v8:lang>ru</v8:lang>
-									<v8:content>Проверка настроек учетной записи картинка и надпись</v8:content>
+									<v8:content>Проверка настроек почты.</v8:content>
 								</v8:item>
 							</Title>
 							<Behavior>Usual</Behavior>
@@ -1032,7 +1070,7 @@
 					<Title>
 						<v8:item>
 							<v8:lang>ru</v8:lang>
-							<v8:content>Учетная запись успешно настроена</v8:content>
+							<v8:content>Почта успешно настроена</v8:content>
 						</v8:item>
 					</Title>
 					<ExtendedTooltip name="УчетнаяЗаписьУспешноНастроенаРасширеннаяПодсказка" id="37"/>
@@ -1054,7 +1092,7 @@
 							<Title>
 								<v8:item>
 									<v8:lang>ru</v8:lang>
-									<v8:content>Учетная запись успешно настроена картинка и надпись</v8:content>
+									<v8:content>Почта успешно настроена.</v8:content>
 								</v8:item>
 							</Title>
 							<Behavior>Usual</Behavior>
@@ -1083,8 +1121,7 @@
 									<Title formatted="false">
 										<v8:item>
 											<v8:lang>ru</v8:lang>
-											<v8:content>Настройка параметров почты
-vasyapupkin@example.com завершена.</v8:content>
+											<v8:content>Настройка параметров почты завершена.</v8:content>
 										</v8:item>
 									</Title>
 									<GroupVerticalAlign>Center</GroupVerticalAlign>
@@ -1284,6 +1321,12 @@ vasyapupkin@example.com завершена.</v8:content>
 							<Type>CommandBarButton</Type>
 							<DefaultButton>true</DefaultButton>
 							<CommandName>Form.Command.Далее</CommandName>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Создать</v8:content>
+								</v8:item>
+							</Title>
 							<ExtendedTooltip name="КнопкаДалееРасширеннаяПодсказка" id="23"/>
 						</Button>
 						<Button name="КнопкаОтмена" id="268">
@@ -1629,7 +1672,7 @@ vasyapupkin@example.com завершена.</v8:content>
 			<Title>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Вид учетной записи</v8:content>
+					<v8:content>Вид почты</v8:content>
 				</v8:item>
 			</Title>
 			<Type>

@@ -875,6 +875,45 @@
 										</LabelDecoration>
 									</ChildItems>
 								</Page>
+								<Page name="ОбменЗавершенСОшибкойТребуетсяПерезагрузка" id="236">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Обмен завершен с ошибкой требуется перезагрузка</v8:content>
+										</v8:item>
+									</Title>
+									<Group>HorizontalIfPossible</Group>
+									<ExtendedTooltip name="ОбменЗавершенСОшибкойТребуетсяПерезагрузкаРасширеннаяПодсказка" id="237"/>
+									<ChildItems>
+										<PictureDecoration name="КартинкаТребуетсяПерезагрузка" id="238">
+											<Title formatted="false">
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Картинка требуется перезагрузка</v8:content>
+												</v8:item>
+											</Title>
+											<Picture>
+												<xr:Ref>CommonPicture.Предупреждение32</xr:Ref>
+												<xr:LoadTransparent>false</xr:LoadTransparent>
+											</Picture>
+											<FileDragMode>AsFile</FileDragMode>
+											<ContextMenu name="КартинкаТребуетсяПерезагрузкаКонтекстноеМеню" id="239"/>
+											<ExtendedTooltip name="КартинкаТребуетсяПерезагрузкаРасширеннаяПодсказка" id="240"/>
+										</PictureDecoration>
+										<LabelDecoration name="ТекстТребуетсяПерезагрузка" id="250">
+											<Title formatted="false">
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Изменены расширения конфигурации.
+Чтобы продолжить работу с учетом сделанных изменений, необходимо перезапустить программу.</v8:content>
+												</v8:item>
+											</Title>
+											<VerticalAlign>Center</VerticalAlign>
+											<ContextMenu name="ТекстТребуетсяПерезагрузкаКонтекстноеМеню" id="251"/>
+											<ExtendedTooltip name="ТекстТребуетсяПерезагрузкаРасширеннаяПодсказка" id="252"/>
+										</LabelDecoration>
+									</ChildItems>
+								</Page>
 							</ChildItems>
 						</Pages>
 						<Pages name="ПанельДействий" id="45">
@@ -985,6 +1024,40 @@
 														</v8:item>
 													</Title>
 													<ExtendedTooltip name="ЗакрытьРасширеннаяПодсказка" id="167"/>
+												</Button>
+											</ChildItems>
+										</CommandBar>
+									</ChildItems>
+								</Page>
+								<Page name="ДействияПерезагрузить" id="253">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Действия перезагрузить</v8:content>
+										</v8:item>
+									</Title>
+									<ExtendedTooltip name="ДействияПерезагрузитьРасширеннаяПодсказка" id="254"/>
+									<ChildItems>
+										<CommandBar name="КоманднаяПанельПерезагрузить" id="255">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Командная панель установить закрыть</v8:content>
+												</v8:item>
+											</Title>
+											<HorizontalLocation>Right</HorizontalLocation>
+											<ExtendedTooltip name="КоманднаяПанельПерезагрузитьРасширеннаяПодсказка" id="256"/>
+											<ChildItems>
+												<Button name="ПерезапуститьПрограмму" id="261">
+													<Type>CommandBarButton</Type>
+													<CommandName>Form.Command.ПерезапуститьПрограмму</CommandName>
+													<ExtendedTooltip name="ПерезапуститьПрограммуРасширеннаяПодсказка" id="262"/>
+												</Button>
+												<Button name="ФормаЗакрыть3" id="259">
+													<Type>CommandBarButton</Type>
+													<Representation>Text</Representation>
+													<CommandName>Form.StandardCommand.Close</CommandName>
+													<ExtendedTooltip name="ФормаЗакрыть3РасширеннаяПодсказка" id="260"/>
 												</Button>
 											</ChildItems>
 										</CommandBar>
@@ -1504,6 +1577,21 @@
 				</v8:item>
 			</ToolTip>
 			<Action>ОтменитьОчередьИПродолжить</Action>
+		</Command>
+		<Command name="ПерезапуститьПрограмму" id="7">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Перезапустить программу</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Перезапустить программу</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ПерезапуститьПрограмму</Action>
 		</Command>
 	</Commands>
 	<Parameters>
