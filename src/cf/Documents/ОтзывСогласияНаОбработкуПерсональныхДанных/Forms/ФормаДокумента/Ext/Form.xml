@@ -144,22 +144,38 @@
 			<Representation>NormalSeparation</Representation>
 			<ExtendedTooltip name="СубъектГруппаРасширеннаяПодсказка" id="58"/>
 			<ChildItems>
-				<UsualGroup name="СубъектФИОГруппа" id="73">
+				<UsualGroup name="СубъектТипСубъектаГруппа" id="73">
 					<Title>
 						<v8:item>
 							<v8:lang>ru</v8:lang>
-							<v8:content>Субъект и ФИО</v8:content>
+							<v8:content>Субъект и тип субъекта</v8:content>
 						</v8:item>
 					</Title>
+					<Group>AlwaysHorizontal</Group>
 					<Behavior>Usual</Behavior>
 					<Representation>None</Representation>
 					<ShowTitle>false</ShowTitle>
-					<ExtendedTooltip name="СубъектФИОГруппаРасширеннаяПодсказка" id="74"/>
+					<ExtendedTooltip name="СубъектТипСубъектаГруппаРасширеннаяПодсказка" id="74"/>
 					<ChildItems>
+						<InputField name="ТипСубъекта" id="98">
+							<DataPath>ТипСубъекта</DataPath>
+							<TitleLocation>None</TitleLocation>
+							<HorizontalStretch>false</HorizontalStretch>
+							<ListChoiceMode>true</ListChoiceMode>
+							<ContextMenu name="ТипСубъектаКонтекстноеМеню" id="99"/>
+							<ExtendedTooltip name="ТипСубъектаРасширеннаяПодсказка" id="100"/>
+							<Events>
+								<Event name="OnChange">ТипСубъектаПриИзменении</Event>
+								<Event name="Clearing">ТипСубъектаОчистка</Event>
+							</Events>
+						</InputField>
 						<InputField name="Субъект" id="16">
 							<DataPath>Объект.Субъект</DataPath>
+							<TitleLocation>None</TitleLocation>
 							<EditMode>EnterOnInput</EditMode>
-							<HorizontalStretch>false</HorizontalStretch>
+							<ChoiceButton>true</ChoiceButton>
+							<ChoiceButtonRepresentation>ShowInInputField</ChoiceButtonRepresentation>
+							<ChooseType>false</ChooseType>
 							<ContextMenu name="СубъектКонтекстноеМеню" id="17"/>
 							<ExtendedTooltip name="СубъектРасширеннаяПодсказка" id="18"/>
 							<Events>
@@ -294,6 +310,17 @@
 			<UseAlways>
 				<Field>Объект.RegisterRecords</Field>
 			</UseAlways>
+		</Attribute>
+		<Attribute name="ТипСубъекта" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Тип субъекта</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:TypeDescription</v8:Type>
+			</Type>
 		</Attribute>
 	</Attributes>
 </Form>

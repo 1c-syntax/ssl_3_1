@@ -230,15 +230,45 @@
 					<ShowTitle>false</ShowTitle>
 					<ExtendedTooltip name="СубъектФИОГруппаРасширеннаяПодсказка" id="74"/>
 					<ChildItems>
-						<InputField name="Субъект" id="16">
-							<DataPath>Объект.Субъект</DataPath>
-							<EditMode>EnterOnInput</EditMode>
-							<ContextMenu name="СубъектКонтекстноеМеню" id="17"/>
-							<ExtendedTooltip name="СубъектРасширеннаяПодсказка" id="18"/>
-							<Events>
-								<Event name="OnChange">СубъектПриИзменении</Event>
-							</Events>
-						</InputField>
+						<UsualGroup name="СубъектТипСубъектаГруппа" id="108">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Субъект и тип субъекта</v8:content>
+								</v8:item>
+							</Title>
+							<Group>AlwaysHorizontal</Group>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="СубъектТипСубъектаГруппаРасширеннаяПодсказка" id="109"/>
+							<ChildItems>
+								<InputField name="ТипСубъекта" id="105">
+									<DataPath>ТипСубъекта</DataPath>
+									<TitleLocation>None</TitleLocation>
+									<HorizontalStretch>false</HorizontalStretch>
+									<ListChoiceMode>true</ListChoiceMode>
+									<ContextMenu name="ТипСубъектаКонтекстноеМеню" id="106"/>
+									<ExtendedTooltip name="ТипСубъектаРасширеннаяПодсказка" id="107"/>
+									<Events>
+										<Event name="OnChange">ТипСубъектаПриИзменении</Event>
+										<Event name="Clearing">ТипСубъектаОчистка</Event>
+									</Events>
+								</InputField>
+								<InputField name="Субъект" id="16">
+									<DataPath>Объект.Субъект</DataPath>
+									<TitleLocation>None</TitleLocation>
+									<EditMode>EnterOnInput</EditMode>
+									<ChoiceButton>true</ChoiceButton>
+									<ChoiceButtonRepresentation>ShowInInputField</ChoiceButtonRepresentation>
+									<ChooseType>false</ChooseType>
+									<ContextMenu name="СубъектКонтекстноеМеню" id="17"/>
+									<ExtendedTooltip name="СубъектРасширеннаяПодсказка" id="18"/>
+									<Events>
+										<Event name="OnChange">СубъектПриИзменении</Event>
+									</Events>
+								</InputField>
+							</ChildItems>
+						</UsualGroup>
 						<InputField name="ФИОСубъекта" id="19">
 							<DataPath>Объект.ФИОСубъекта</DataPath>
 							<Title>
@@ -406,6 +436,17 @@
 		</Attribute>
 		<Attribute name="ПараметрыПодключаемыхКоманд" id="2">
 			<Type/>
+		</Attribute>
+		<Attribute name="ТипСубъекта" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Тип субъекта</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:TypeDescription</v8:Type>
+			</Type>
 		</Attribute>
 	</Attributes>
 </Form>

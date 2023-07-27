@@ -145,7 +145,7 @@
 							<ExtendedTooltip name="МеткиЗначениеРасширеннаяПодсказка" id="19"/>
 						</CheckBoxField>
 						<InputField name="МеткиНаименование" id="29">
-							<DataPath>Метки.Свойство.Description</DataPath>
+							<DataPath>Метки.Наименование</DataPath>
 							<ReadOnly>true</ReadOnly>
 							<ContextMenu name="МеткиНаименованиеКонтекстноеМеню" id="30"/>
 							<ExtendedTooltip name="МеткиНаименованиеРасширеннаяПодсказка" id="31"/>
@@ -196,6 +196,21 @@
 				<Column name="Набор" id="8">
 					<Type>
 						<v8:Type>cfg:CatalogRef.НаборыДополнительныхРеквизитовИСведений</v8:Type>
+					</Type>
+				</Column>
+				<Column name="Наименование" id="11">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Наименование</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
 					</Type>
 				</Column>
 			</Columns>
@@ -306,4 +321,9 @@
 			<Action>СнятьВсе</Action>
 		</Command>
 	</Commands>
+	<Parameters>
+		<Parameter name="ОписаниеОбъекта">
+			<Type/>
+		</Parameter>
+	</Parameters>
 </Form>

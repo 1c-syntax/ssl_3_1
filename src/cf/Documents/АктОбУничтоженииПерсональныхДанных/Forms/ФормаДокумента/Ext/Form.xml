@@ -104,6 +104,12 @@
 							<CommandSource>Form</CommandSource>
 							<ExtendedTooltip name="КоманднаяПанельФормыРасширеннаяПодсказка" id="244"/>
 							<ChildItems>
+								<Button name="Справка" id="247">
+									<Type>CommandBarButton</Type>
+									<CommandName>Form.StandardCommand.Help</CommandName>
+									<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
+									<ExtendedTooltip name="СправкаРасширеннаяПодсказка" id="248"/>
+								</Button>
 								<Button name="ФормаПровестиИЗакрыть" id="233">
 									<Type>CommandBarButton</Type>
 									<CommandName>Form.Command.ПровестиИЗакрыть</CommandName>
@@ -320,21 +326,48 @@
 			<Representation>NormalSeparation</Representation>
 			<ExtendedTooltip name="СубъектГруппаРасширеннаяПодсказка" id="184"/>
 			<ChildItems>
-				<InputField name="Субъект" id="142">
-					<DataPath>Объект.Субъект</DataPath>
-					<EditMode>EnterOnInput</EditMode>
-					<ContextMenu name="СубъектКонтекстноеМеню" id="143"/>
-					<ExtendedTooltip name="СубъектРасширеннаяПодсказка" id="144"/>
-					<Events>
-						<Event name="OnChange">СубъектПриИзменении</Event>
-					</Events>
-				</InputField>
+				<UsualGroup name="СубъектТипСубъектаГруппа" id="252">
+					<Group>AlwaysHorizontal</Group>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="СубъектТипСубъектаГруппаРасширеннаяПодсказка" id="253"/>
+					<ChildItems>
+						<InputField name="ТипСубъекта" id="249">
+							<DataPath>ТипСубъекта</DataPath>
+							<TitleLocation>None</TitleLocation>
+							<HorizontalStretch>false</HorizontalStretch>
+							<ListChoiceMode>true</ListChoiceMode>
+							<ContextMenu name="ТипСубъектаКонтекстноеМеню" id="250"/>
+							<ExtendedTooltip name="ТипСубъектаРасширеннаяПодсказка" id="251"/>
+							<Events>
+								<Event name="OnChange">ТипСубъектаПриИзменении</Event>
+								<Event name="Clearing">ТипСубъектаОчистка</Event>
+							</Events>
+						</InputField>
+						<InputField name="Субъект" id="142">
+							<DataPath>Объект.Субъект</DataPath>
+							<TitleLocation>None</TitleLocation>
+							<EditMode>EnterOnInput</EditMode>
+							<DropListButton>false</DropListButton>
+							<ChoiceButton>true</ChoiceButton>
+							<ChoiceButtonRepresentation>ShowInInputField</ChoiceButtonRepresentation>
+							<QuickChoice>false</QuickChoice>
+							<ChooseType>false</ChooseType>
+							<ChoiceHistoryOnInput>DontUse</ChoiceHistoryOnInput>
+							<ContextMenu name="СубъектКонтекстноеМеню" id="143"/>
+							<ExtendedTooltip name="СубъектРасширеннаяПодсказка" id="144"/>
+							<Events>
+								<Event name="OnChange">СубъектПриИзменении</Event>
+							</Events>
+						</InputField>
+					</ChildItems>
+				</UsualGroup>
 				<InputField name="ФИОСубъекта" id="145">
 					<DataPath>Объект.ФИОСубъекта</DataPath>
 					<Title>
 						<v8:item>
 							<v8:lang>ru</v8:lang>
-							<v8:content>ФИО</v8:content>
+							<v8:content>ФИО субъекта</v8:content>
 						</v8:item>
 					</Title>
 					<EditMode>EnterOnInput</EditMode>
@@ -547,6 +580,17 @@
 					</Type>
 				</Column>
 			</Columns>
+		</Attribute>
+		<Attribute name="ТипСубъекта" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Тип субъекта</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:TypeDescription</v8:Type>
+			</Type>
 		</Attribute>
 	</Attributes>
 	<Commands>

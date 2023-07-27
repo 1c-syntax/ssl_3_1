@@ -112,7 +112,7 @@
 					<ExtendedTooltip name="КартинкаИНаименованиеExtendedTooltip" id="16"/>
 					<ChildItems>
 						<PictureField name="СсылкаИндексКартинки" id="6">
-							<DataPath>Список.Ref.ИндексКартинки</DataPath>
+							<DataPath>Список.ИндексКартинки</DataPath>
 							<ShowInHeader>false</ShowInHeader>
 							<ValuesPicture>
 								<xr:Ref>CommonPicture.КоллекцияПиктограммФайлов</xr:Ref>
@@ -123,20 +123,20 @@
 							<ExtendedTooltip name="СсылкаИндексКартинкиExtendedTooltip" id="17"/>
 						</PictureField>
 						<LabelField name="СсылкаПутьКФайлу" id="8">
-							<DataPath>Список.Ref.ПутьКФайлу</DataPath>
+							<DataPath>Список.ПутьКФайлу</DataPath>
 							<ContextMenu name="СсылкаПутьКФайлуКонтекстноеМеню" id="9"/>
 							<ExtendedTooltip name="СсылкаПутьКФайлуExtendedTooltip" id="18"/>
 						</LabelField>
 					</ChildItems>
 				</ColumnGroup>
 				<LabelField name="СсылкаРазмер" id="10">
-					<DataPath>Список.Ref.Размер</DataPath>
+					<DataPath>Список.Размер</DataPath>
 					<Width>11</Width>
 					<ContextMenu name="СсылкаРазмерКонтекстноеМеню" id="11"/>
 					<ExtendedTooltip name="СсылкаРазмерExtendedTooltip" id="19"/>
 				</LabelField>
 				<LabelField name="СсылкаАвтор" id="12">
-					<DataPath>Список.Ref.Автор</DataPath>
+					<DataPath>Список.Автор</DataPath>
 					<ContextMenu name="СсылкаАвторКонтекстноеМеню" id="13"/>
 					<ExtendedTooltip name="СсылкаАвторExtendedTooltip" id="20"/>
 				</LabelField>
@@ -150,8 +150,52 @@
 			</Type>
 			<MainAttribute>true</MainAttribute>
 			<Settings xsi:type="DynamicList">
-				<ManualQuery>false</ManualQuery>
+				<ManualQuery>true</ManualQuery>
 				<DynamicDataRead>false</DynamicDataRead>
+				<QueryText>ВЫБРАТЬ
+	ФайлыВТоме.Ссылка,
+	ВерсииФайлов.ИндексКартинки,
+	ВерсииФайлов.ПутьКФайлу,
+	ВерсииФайлов.Автор,
+	ВерсииФайлов.Размер
+ИЗ
+	КритерийОтбора.ФайлыВТоме КАК ФайлыВТоме
+		ЛЕВОЕ СОЕДИНЕНИЕ Справочник.ВерсииФайлов КАК ВерсииФайлов
+		ПО ФайлыВТоме.Ссылка = ВерсииФайлов.Ссылка</QueryText>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>Ссылка</dcssch:dataPath>
+					<dcssch:field>Ссылка</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ИндексКартинки</dcssch:dataPath>
+					<dcssch:field>ИндексКартинки</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ПутьКФайлу</dcssch:dataPath>
+					<dcssch:field>ПутьКФайлу</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>Автор</dcssch:dataPath>
+					<dcssch:field>Автор</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>Размер</dcssch:dataPath>
+					<dcssch:field>Размер</dcssch:field>
+				</Field>
+				<Parameter>
+					<dcssch:name>Значение</dcssch:name>
+					<dcssch:title xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Значение</v8:content>
+						</v8:item>
+					</dcssch:title>
+					<dcssch:valueType>
+						<v8:Type>cfg:CatalogRef.ТомаХраненияФайлов</v8:Type>
+					</dcssch:valueType>
+					<dcssch:value xsi:nil="true"/>
+					<dcssch:useRestriction>false</dcssch:useRestriction>
+				</Parameter>
 				<MainTable>FilterCriterion.ФайлыВТоме</MainTable>
 				<ListSettings>
 					<dcsset:filter>
