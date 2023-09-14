@@ -107,14 +107,15 @@
 			</SearchControlAddition>
 			<Events>
 				<Event name="OnActivateRow">УсловияВидимостиПриАктивизацииСтроки</Event>
+				<Event name="OnStartEdit">УсловияВидимостиПриНачалеРедактирования</Event>
 			</Events>
 			<ChildItems>
 				<InputField name="УсловияВидимостиПоле" id="29">
 					<DataPath>УсловияВидимости.ПредставлениеПоля</DataPath>
-					<ListChoiceMode>true</ListChoiceMode>
 					<ContextMenu name="УсловияВидимостиПолеКонтекстноеМеню" id="30"/>
 					<ExtendedTooltip name="УсловияВидимостиПолеРасширеннаяПодсказка" id="31"/>
 					<Events>
+						<Event name="OnChange">УсловияВидимостиПолеПриИзменении</Event>
 						<Event name="ChoiceProcessing">УсловияВидимостиПолеОбработкаВыбора</Event>
 					</Events>
 				</InputField>

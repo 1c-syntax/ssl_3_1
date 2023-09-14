@@ -16,22 +16,7 @@
 		</xr:Item>
 	</MobileDeviceCommandBarContent>
 	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
-		<ChildItems>
-			<Button name="Выбрать" id="70">
-				<Type>CommandBarButton</Type>
-				<DefaultButton>true</DefaultButton>
-				<CommandName>Form.Item.ВариантыАдреса.StandardCommand.Choose</CommandName>
-				<ExtendedTooltip name="ВыбратьРасширеннаяПодсказка" id="71"/>
-			</Button>
-			<SearchStringAddition name="ДополнениеПоиск" id="92">
-				<AdditionSource>
-					<Item>ВариантыАдреса</Item>
-					<Type>SearchStringRepresentation</Type>
-				</AdditionSource>
-				<ContextMenu name="ДополнениеПоискКонтекстноеМеню" id="93"/>
-				<ExtendedTooltip name="ДополнениеПоискРасширеннаяПодсказка" id="94"/>
-			</SearchStringAddition>
-		</ChildItems>
+		<Autofill>false</Autofill>
 	</AutoCommandBar>
 	<Events>
 		<Event name="OnOpen">ПриОткрытии</Event>
@@ -39,6 +24,64 @@
 		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
 	</Events>
 	<ChildItems>
+		<UsualGroup name="ГруппаКоманднаяПанельСПоиском" id="98">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа1</v8:content>
+				</v8:item>
+			</Title>
+			<Shortcut>Ctrl+F</Shortcut>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаКоманднаяПанельСПоискомРасширеннаяПодсказка" id="99"/>
+			<ChildItems>
+				<Button name="Выбрать" id="70">
+					<Type>UsualButton</Type>
+					<DefaultButton>true</DefaultButton>
+					<CommandName>Form.Item.ВариантыАдреса.StandardCommand.Choose</CommandName>
+					<ExtendedTooltip name="ВыбратьРасширеннаяПодсказка" id="71"/>
+				</Button>
+				<SearchStringAddition name="ДополнениеПоиск" id="92">
+					<AdditionSource>
+						<Item>ВариантыАдреса</Item>
+						<Type>SearchStringRepresentation</Type>
+					</AdditionSource>
+					<ContextMenu name="ДополнениеПоискКонтекстноеМеню" id="93"/>
+					<ExtendedTooltip name="ДополнениеПоискРасширеннаяПодсказка" id="94"/>
+				</SearchStringAddition>
+				<InputField name="ПоискВВебСервисе" id="95">
+					<DataPath>ПоискВВебСервисе</DataPath>
+					<Visible>false</Visible>
+					<TitleLocation>None</TitleLocation>
+					<Shortcut>Ctrl+F</Shortcut>
+					<ClearButton>true</ClearButton>
+					<EditTextUpdate>DontUse</EditTextUpdate>
+					<InputHint>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Поиск (Ctrl+F)</v8:content>
+						</v8:item>
+					</InputHint>
+					<ContextMenu name="ПоискВВебСервисеКонтекстноеМеню" id="96"/>
+					<ExtendedTooltip name="ПоискВВебСервисеРасширеннаяПодсказка" id="97"/>
+					<Events>
+						<Event name="AutoComplete">ПоискВВебСервисеАвтоПодбор</Event>
+						<Event name="Clearing">ПоискВВебСервисеОчистка</Event>
+					</Events>
+				</InputField>
+				<CommandBar name="ГруппаЕще" id="100">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Еще</v8:content>
+						</v8:item>
+					</Title>
+					<CommandSource>Form</CommandSource>
+					<ExtendedTooltip name="ГруппаЕщеРасширеннаяПодсказка" id="101"/>
+				</CommandBar>
+			</ChildItems>
+		</UsualGroup>
 		<Table name="ВариантыАдреса" id="8">
 			<Representation>List</Representation>
 			<ReadOnly>true</ReadOnly>
@@ -294,6 +337,21 @@
 		<Attribute name="ЗакрытьФорму" id="11">
 			<Type>
 				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ПоискВВебСервисе" id="14">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Поиск в веб сервисе</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
 			</Type>
 		</Attribute>
 	</Attributes>

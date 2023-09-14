@@ -285,6 +285,19 @@
 								</Title>
 							</ExtendedTooltip>
 						</Button>
+						<Button name="УдалениеПредупрежденийСинхронизацииДанных" id="2082">
+							<Type>Hyperlink</Type>
+							<CommandName>Form.Command.УдалениеПредупрежденийСинхронизацииДанных</CommandName>
+							<ToolTipRepresentation>ShowBottom</ToolTipRepresentation>
+							<ExtendedTooltip name="УдалениеПредупрежденийСинхронизацииДанныхРасширеннаяПодсказка" id="2083">
+								<Title formatted="false">
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Обработка актуальна для списка предупреждений синхронизации, который содержит большое количество записей, приводящих к долгому открытию или невозможности работать</v8:content>
+									</v8:item>
+								</Title>
+							</ExtendedTooltip>
+						</Button>
 					</ChildItems>
 				</UsualGroup>
 				<UsualGroup name="ГруппаЗагрузкаДанныхEnterpriseData" id="2069">
@@ -321,6 +334,54 @@
 								</Title>
 							</ExtendedTooltip>
 						</Button>
+						<UsualGroup name="ГруппаОценкаПроизводительности" id="2087">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Оценка производительности</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Включение оценки производительности для синхронизации в формате EnterpriseData.</v8:content>
+								</v8:item>
+							</ToolTip>
+							<ToolTipRepresentation>ShowBottom</ToolTipRepresentation>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаОценкаПроизводительностиРасширеннаяПодсказка" id="2088"/>
+							<ChildItems>
+								<CheckBoxField name="ИспользоватьОценкуПроизводительности" id="2084">
+									<DataPath>НаборКонстант.ИспользоватьОценкуПроизводительностиСинхронизацииДанных</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Оценка производительности</v8:content>
+										</v8:item>
+									</Title>
+									<TitleLocation>Right</TitleLocation>
+									<ToolTipRepresentation>ShowBottom</ToolTipRepresentation>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="ИспользоватьОценкуПроизводительностиКонтекстноеМеню" id="2085"/>
+									<ExtendedTooltip name="ИспользоватьОценкуПроизводительностиРасширеннаяПодсказка" id="2086"/>
+									<Events>
+										<Event name="OnChange">Подключаемый_ПриИзмененииРеквизита</Event>
+									</Events>
+								</CheckBoxField>
+								<Button name="СеансыОбменов" id="2089">
+									<Type>Hyperlink</Type>
+									<CommandName>Catalog.СеансыОбменовДанными.Command.СеансыОбменовДанными</CommandName>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Сеансы обменов</v8:content>
+										</v8:item>
+									</Title>
+									<ExtendedTooltip name="СеансыОбменовРасширеннаяПодсказка" id="2090"/>
+								</Button>
+							</ChildItems>
+						</UsualGroup>
 					</ChildItems>
 				</UsualGroup>
 			</ChildItems>
@@ -334,6 +395,7 @@
 			</Title>
 			<ToolTipRepresentation>ShowBottom</ToolTipRepresentation>
 			<Width>43</Width>
+			<Group>AlwaysHorizontal</Group>
 			<Behavior>Usual</Behavior>
 			<Representation>None</Representation>
 			<ShowTitle>false</ShowTitle>
@@ -344,6 +406,7 @@
 			<ChildItems>
 				<InputField name="ПрефиксУзлаРаспределеннойИнформационнойБазы" id="1995">
 					<DataPath>НаборКонстант.ПрефиксУзлаРаспределеннойИнформационнойБазы</DataPath>
+					<ReadOnly>true</ReadOnly>
 					<Title>
 						<v8:item>
 							<v8:lang>ru</v8:lang>
@@ -355,27 +418,12 @@
 					<ExtendedTooltip name="ПрефиксУзлаРаспределеннойИнформационнойБазыExtendedTooltip" id="2035">
 						<AutoMaxWidth>false</AutoMaxWidth>
 					</ExtendedTooltip>
-					<Events>
-						<Event name="OnChange">ПрефиксУзлаРаспределеннойИнформационнойБазыПриИзменении</Event>
-					</Events>
 				</InputField>
-				<PictureDecoration name="ДекорацияОжиданиеИзмененияПрефикса" id="2073">
-					<Width>2</Width>
-					<Height>1</Height>
-					<Title formatted="false">
-						<v8:item>
-							<v8:lang>ru</v8:lang>
-							<v8:content>Декорация ожидание изменения префикса</v8:content>
-						</v8:item>
-					</Title>
-					<Picture>
-						<xr:Ref>CommonPicture.НезавершившаясяПроверка</xr:Ref>
-						<xr:LoadTransparent>false</xr:LoadTransparent>
-					</Picture>
-					<FileDragMode>AsFile</FileDragMode>
-					<ContextMenu name="ДекорацияОжиданиеИзмененияПрефиксаКонтекстноеМеню" id="2074"/>
-					<ExtendedTooltip name="ДекорацияОжиданиеИзмененияПрефиксаРасширеннаяПодсказка" id="2075"/>
-				</PictureDecoration>
+				<Button name="ИзменитьПрефиксИБ" id="2080">
+					<Type>Hyperlink</Type>
+					<CommandName>Form.Command.ИзменитьПрефиксИБ</CommandName>
+					<ExtendedTooltip name="ИзменитьПрефиксИБРасширеннаяПодсказка" id="2081"/>
+				</Button>
 			</ChildItems>
 		</UsualGroup>
 		<UsualGroup name="ГруппаВременныеКаталогиКластераСерверов" id="2040">
@@ -478,6 +526,7 @@
 				<Field>НаборКонстант.ИспользоватьДополнительныеРеквизитыИСведения</Field>
 				<Field>НаборКонстант.ИспользоватьЗаметки</Field>
 				<Field>НаборКонстант.ИспользоватьНапоминанияПользователя</Field>
+				<Field>НаборКонстант.ИспользоватьОценкуПроизводительностиСинхронизацииДанных</Field>
 				<Field>НаборКонстант.ИспользоватьПочтовыйКлиент</Field>
 				<Field>НаборКонстант.ИспользоватьПризнакРассмотрено</Field>
 				<Field>НаборКонстант.ИспользоватьПрочиеВзаимодействия</Field>
@@ -541,6 +590,30 @@
 				</v8:item>
 			</ToolTip>
 			<Action>НастройкиСинхронизацииДанных</Action>
+		</Command>
+		<Command name="ИзменитьПрефиксИБ" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Изменить</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Изменить префикс ИБ</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ИзменитьПрефиксИБ</Action>
+		</Command>
+		<Command name="УдалениеПредупрежденийСинхронизацииДанных" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Удаление предупреждений синхронизации данных</v8:content>
+				</v8:item>
+			</Title>
+			<Action>УдалениеПредупрежденийСинхронизацииДанных</Action>
 		</Command>
 	</Commands>
 </Form>

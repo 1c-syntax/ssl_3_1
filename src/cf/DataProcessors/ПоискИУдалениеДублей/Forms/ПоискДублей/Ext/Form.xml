@@ -22,9 +22,6 @@
 			<xr:Value xsi:type="xs:string">КоманднаяПанель</xr:Value>
 		</xr:Item>
 	</MobileDeviceCommandBarContent>
-	<CommandSet>
-		<ExcludedCommand>CustomizeForm</ExcludedCommand>
-	</CommandSet>
 	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
 	<Events>
 		<Event name="OnOpen">ПриОткрытии</Event>
@@ -77,6 +74,8 @@
 				<LabelField name="ПредставлениеПравилПоиска" id="408">
 					<DataPath>ПредставлениеПравилПоиска</DataPath>
 					<AutoMaxWidth>false</AutoMaxWidth>
+					<Height>2</Height>
+					<VerticalStretch>true</VerticalStretch>
 					<Hiperlink>true</Hiperlink>
 					<ContextMenu name="ПредставлениеПравилПоискаКонтекстноеМеню" id="409"/>
 					<ExtendedTooltip name="ПредставлениеПравилПоискаРасширеннаяПодсказка" id="410"/>
@@ -98,6 +97,7 @@
 			<ExtendedTooltip name="ШагиМастераРасширеннаяПодсказка" id="59"/>
 			<ChildItems>
 				<Page name="ШагПоискНеВыполнялся" id="62">
+					<EnableContentChange>true</EnableContentChange>
 					<Title>
 						<v8:item>
 							<v8:lang>ru</v8:lang>
@@ -119,6 +119,7 @@
 					</ChildItems>
 				</Page>
 				<Page name="ШагВыполнениеПоиска" id="186">
+					<EnableContentChange>true</EnableContentChange>
 					<Title>
 						<v8:item>
 							<v8:lang>ru</v8:lang>
@@ -279,7 +280,7 @@
 												<ChildItems>
 													<Button name="НайденныеДублиКонтекстноеМенюИзменитьФорму" id="424">
 														<Type>CommandBarButton</Type>
-														<CommandName>Form.Item.НайденныеДубли.StandardCommand.OutputList</CommandName>
+														<CommandName>Form.StandardCommand.CustomizeForm</CommandName>
 														<ExtendedTooltip name="НайденныеДублиКонтекстноеМенюИзменитьФормуРасширеннаяПодсказка" id="425"/>
 													</Button>
 												</ChildItems>
@@ -334,6 +335,10 @@
 												</v8:item>
 											</ToolTip>
 											<EditMode>EnterOnInput</EditMode>
+											<HeaderPicture>
+												<xr:Ref>CommonPicture.МетаданныеРеквизиты</xr:Ref>
+												<xr:LoadTransparent>false</xr:LoadTransparent>
+											</HeaderPicture>
 											<ValuesPicture>
 												<xr:Ref>CommonPicture.ПиктограммыЭлементов</xr:Ref>
 												<xr:LoadTransparent>false</xr:LoadTransparent>
@@ -617,6 +622,7 @@
 					</ChildItems>
 				</Page>
 				<Page name="ШагВыполнениеУдаления" id="205">
+					<EnableContentChange>true</EnableContentChange>
 					<Title>
 						<v8:item>
 							<v8:lang>ru</v8:lang>
@@ -977,6 +983,11 @@
 														<CommandName>Form.Item.НеобработанныеДубли.StandardCommand.OutputList</CommandName>
 														<ExtendedTooltip name="НеобработанныеДублиКонтекстноеМенюВывестиСписокРасширеннаяПодсказка" id="437"/>
 													</Button>
+													<Button name="НеобработанныеДублиКонтекстноеМенюИзменитьФорму" id="521">
+														<Type>CommandBarButton</Type>
+														<CommandName>Form.StandardCommand.CustomizeForm</CommandName>
+														<ExtendedTooltip name="НеобработанныеДублиКонтекстноеМенюИзменитьФормуРасширеннаяПодсказка" id="522"/>
+													</Button>
 												</ChildItems>
 											</ContextMenu>
 											<AutoCommandBar name="НеобработанныеДублиКоманднаяПанель" id="244">
@@ -1298,6 +1309,7 @@
 					</ChildItems>
 				</Page>
 				<Page name="ШагДублейНеНайдено" id="227">
+					<EnableContentChange>true</EnableContentChange>
 					<Title>
 						<v8:item>
 							<v8:lang>ru</v8:lang>
@@ -1319,6 +1331,7 @@
 					</ChildItems>
 				</Page>
 				<Page name="ШагВозниклаОшибка" id="448">
+					<EnableContentChange>true</EnableContentChange>
 					<Title>
 						<v8:item>
 							<v8:lang>ru</v8:lang>
@@ -1381,6 +1394,7 @@
 			</ChildItems>
 		</Pages>
 		<UsualGroup name="ПанельДействийМастера" id="167">
+			<EnableContentChange>true</EnableContentChange>
 			<Title>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
@@ -1449,6 +1463,7 @@
 		<UsualGroup name="ГруппаКартинок" id="75">
 			<Visible>false</Visible>
 			<Enabled>false</Enabled>
+			<EnableContentChange>true</EnableContentChange>
 			<Title>
 				<v8:item>
 					<v8:lang>ru</v8:lang>

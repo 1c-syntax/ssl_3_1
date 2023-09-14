@@ -100,6 +100,7 @@
 							<v8:content>Введите пароль закрытого ключа сертификата</v8:content>
 						</v8:item>
 					</Title>
+					<Group>Vertical</Group>
 					<Behavior>Usual</Behavior>
 					<ThroughAlign>Use</ThroughAlign>
 					<ExtendedTooltip name="ГруппаПодписаниеРасширеннаяПодсказка" id="379"/>
@@ -310,6 +311,111 @@
 														<Event name="Click">ПояснениеУстановленногоПароляНажатие</Event>
 													</Events>
 												</LabelDecoration>
+											</ChildItems>
+										</Page>
+									</ChildItems>
+								</Pages>
+							</ChildItems>
+						</UsualGroup>
+						<UsualGroup name="ГруппаДоверенность" id="496">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа доверенность</v8:content>
+								</v8:item>
+							</Title>
+							<Representation>NormalSeparation</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаДоверенностьРасширеннаяПодсказка" id="497"/>
+							<ChildItems>
+								<Pages name="ГруппаСтраницы" id="504">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Страницы</v8:content>
+										</v8:item>
+									</Title>
+									<PagesRepresentation>None</PagesRepresentation>
+									<ExtendedTooltip name="ГруппаСтраницыРасширеннаяПодсказка" id="505"/>
+									<ChildItems>
+										<Page name="СтраницаБезДоверенности" id="510">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Страница выбор доверенности</v8:content>
+												</v8:item>
+											</Title>
+											<Group>AlwaysHorizontal</Group>
+											<ExtendedTooltip name="СтраницаБезДоверенностиРасширеннаяПодсказка" id="511"/>
+											<ChildItems>
+												<CheckBoxField name="ПоДоверенности1" id="515">
+													<DataPath>ПоДоверенности</DataPath>
+													<TitleLocation>Right</TitleLocation>
+													<GroupVerticalAlign>Center</GroupVerticalAlign>
+													<CheckBoxType>Auto</CheckBoxType>
+													<ContextMenu name="ПоДоверенности1КонтекстноеМеню" id="516"/>
+													<ExtendedTooltip name="ПоДоверенности1РасширеннаяПодсказка" id="517"/>
+													<Events>
+														<Event name="OnChange">ВыборДоверенностиПриИзменении</Event>
+													</Events>
+												</CheckBoxField>
+											</ChildItems>
+										</Page>
+										<Page name="СтраницаВыборДоверенности" id="508">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Страница выбор доверенности</v8:content>
+												</v8:item>
+											</Title>
+											<ToolTip>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Страница без доверенности</v8:content>
+												</v8:item>
+											</ToolTip>
+											<Group>AlwaysHorizontal</Group>
+											<ExtendedTooltip name="СтраницаВыборДоверенностиРасширеннаяПодсказка" id="509"/>
+											<ChildItems>
+												<CheckBoxField name="ПоДоверенности" id="498">
+													<DataPath>ПоДоверенности</DataPath>
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>По доверенности:</v8:content>
+														</v8:item>
+													</Title>
+													<TitleLocation>Right</TitleLocation>
+													<GroupVerticalAlign>Center</GroupVerticalAlign>
+													<CheckBoxType>Auto</CheckBoxType>
+													<ContextMenu name="ПоДоверенностиКонтекстноеМеню" id="499"/>
+													<ExtendedTooltip name="ПоДоверенностиРасширеннаяПодсказка" id="500"/>
+													<Events>
+														<Event name="OnChange">ВыборДоверенностиПриИзменении</Event>
+													</Events>
+												</CheckBoxField>
+												<InputField name="МашиночитаемаяДоверенность" id="501">
+													<DataPath>МашиночитаемаяДоверенность</DataPath>
+													<TitleLocation>None</TitleLocation>
+													<AutoMaxWidth>false</AutoMaxWidth>
+													<ChoiceParameterLinks>
+														<xr:Link>
+															<xr:Name>СертификатПредставителя</xr:Name>
+															<xr:DataPath xsi:type="xs:string">Сертификат</xr:DataPath>
+															<xr:ValueChange>Clear</xr:ValueChange>
+														</xr:Link>
+													</ChoiceParameterLinks>
+													<ChoiceParameters>
+														<app:item name="ТолькоДействующие">
+															<app:value xsi:type="FormChoiceListDesTimeValue">
+																<Presentation/>
+																<Value xsi:type="xs:boolean">true</Value>
+															</app:value>
+														</app:item>
+													</ChoiceParameters>
+													<ContextMenu name="МашиночитаемаяДоверенностьКонтекстноеМеню" id="502"/>
+													<ExtendedTooltip name="МашиночитаемаяДоверенностьРасширеннаяПодсказка" id="503"/>
+												</InputField>
 											</ChildItems>
 										</Page>
 									</ChildItems>
@@ -608,6 +714,28 @@
 		</Attribute>
 		<Attribute name="РезультатПроверкиУдостоверяющегоЦентра" id="26">
 			<Type/>
+		</Attribute>
+		<Attribute name="ПоДоверенности" id="27">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>По доверенности</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="МашиночитаемаяДоверенность" id="28">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Машиночитаемая доверенность</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:TypeSet>cfg:DefinedType.МашиночитаемаяДоверенность</v8:TypeSet>
+			</Type>
 		</Attribute>
 	</Attributes>
 	<Commands>
