@@ -37,11 +37,6 @@
 				<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
 				<ExtendedTooltip name="ФормаПроверитьДоверенностьРасширеннаяПодсказка" id="1051"/>
 			</Button>
-			<Button name="ФормаОбновить" id="518">
-				<Type>CommandBarButton</Type>
-				<CommandName>Form.Command.Обновить</CommandName>
-				<ExtendedTooltip name="ФормаОбновитьРасширеннаяПодсказка" id="519"/>
-			</Button>
 			<Button name="ФормаДобавитьПодпись" id="1042">
 				<Type>CommandBarButton</Type>
 				<CommandName>Form.Command.ДобавитьПодпись</CommandName>
@@ -65,6 +60,13 @@
 				</Title>
 				<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
 				<ExtendedTooltip name="ФормаДоверенностьПроверенаВручнуюРасширеннаяПодсказка" id="1053"/>
+			</Button>
+			<Button name="ФормаСправочникМашиночитаемыеДоверенностиОтменаДоверенности" id="1066">
+				<Type>CommandBarButton</Type>
+				<CommandName>Catalog.МашиночитаемыеДоверенности.Command.Отменить</CommandName>
+				<DataPath>Объект.Ref</DataPath>
+				<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
+				<ExtendedTooltip name="ФормаСправочникМашиночитаемыеДоверенностиОтменаДоверенностиРасширеннаяПодсказка" id="1067"/>
 			</Button>
 		</ChildItems>
 	</AutoCommandBar>
@@ -103,6 +105,21 @@
 					<ShowTitle>false</ShowTitle>
 					<ExtendedTooltip name="ГруппаПредставлениеСтатусовРасширеннаяПодсказка" id="770"/>
 					<ChildItems>
+						<PictureDecoration name="ДекорацияСозданиеБезРегистрации" id="1069">
+							<Visible>false</Visible>
+							<Title formatted="false">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Декорация создание без регистрации</v8:content>
+								</v8:item>
+							</Title>
+							<Picture>
+								<xr:Ref>CommonPicture.МЧДСозданиеБезРегистрации</xr:Ref>
+								<xr:LoadTransparent>false</xr:LoadTransparent>
+							</Picture>
+							<ContextMenu name="ДекорацияСозданиеБезРегистрацииКонтекстноеМеню" id="1070"/>
+							<ExtendedTooltip name="ДекорацияСозданиеБезРегистрацииРасширеннаяПодсказка" id="1071"/>
+						</PictureDecoration>
 						<PictureDecoration name="ДекорацияСоздание" id="493">
 							<Visible>false</Visible>
 							<Title formatted="false">
@@ -118,12 +135,27 @@
 							<ContextMenu name="ДекорацияСозданиеКонтекстноеМеню" id="494"/>
 							<ExtendedTooltip name="ДекорацияСозданиеРасширеннаяПодсказка" id="495"/>
 						</PictureDecoration>
+						<PictureDecoration name="ДекорацияПодписаниеБезРегистрации" id="1066">
+							<Visible>false</Visible>
+							<Title formatted="false">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Декорация подписание без регистрации</v8:content>
+								</v8:item>
+							</Title>
+							<Picture>
+								<xr:Ref>CommonPicture.МЧДСозданаПодписаниеБезРегистрации</xr:Ref>
+								<xr:LoadTransparent>false</xr:LoadTransparent>
+							</Picture>
+							<ContextMenu name="ДекорацияПодписаниеБезРегистрацииКонтекстноеМеню" id="1067"/>
+							<ExtendedTooltip name="ДекорацияПодписаниеБезРегистрацииРасширеннаяПодсказка" id="1068"/>
+						</PictureDecoration>
 						<PictureDecoration name="ДекорацияПодписание" id="496">
 							<Visible>false</Visible>
 							<Title formatted="false">
 								<v8:item>
 									<v8:lang>ru</v8:lang>
-									<v8:content>Декорация создание</v8:content>
+									<v8:content>Декорация подписание</v8:content>
 								</v8:item>
 							</Title>
 							<Picture>
@@ -138,7 +170,7 @@
 							<Title formatted="false">
 								<v8:item>
 									<v8:lang>ru</v8:lang>
-									<v8:content>Декорация создание</v8:content>
+									<v8:content>Декорация подписана</v8:content>
 								</v8:item>
 							</Title>
 							<Picture>
@@ -153,7 +185,7 @@
 							<Title formatted="false">
 								<v8:item>
 									<v8:lang>ru</v8:lang>
-									<v8:content>Декорация создание</v8:content>
+									<v8:content>Декорация регистрация</v8:content>
 								</v8:item>
 							</Title>
 							<Picture>
@@ -168,7 +200,7 @@
 							<Title formatted="false">
 								<v8:item>
 									<v8:lang>ru</v8:lang>
-									<v8:content>Декорация создание</v8:content>
+									<v8:content>Декорация зарегистрирована</v8:content>
 								</v8:item>
 							</Title>
 							<Picture>
@@ -183,7 +215,7 @@
 							<Title formatted="false">
 								<v8:item>
 									<v8:lang>ru</v8:lang>
-									<v8:content>Декорация создание</v8:content>
+									<v8:content>Декорация отменена</v8:content>
 								</v8:item>
 							</Title>
 							<Picture>
@@ -198,7 +230,7 @@
 							<Title formatted="false">
 								<v8:item>
 									<v8:lang>ru</v8:lang>
-									<v8:content>Декорация создание</v8:content>
+									<v8:content>Декорация просрочена</v8:content>
 								</v8:item>
 							</Title>
 							<Picture>
@@ -213,7 +245,7 @@
 							<Title formatted="false">
 								<v8:item>
 									<v8:lang>ru</v8:lang>
-									<v8:content>Декорация создание</v8:content>
+									<v8:content>Декорация готово</v8:content>
 								</v8:item>
 							</Title>
 							<Picture>
@@ -2524,6 +2556,7 @@
 				</v8:item>
 			</Title>
 			<Action>Подписать</Action>
+			<ModifiesSavedData>true</ModifiesSavedData>
 		</Command>
 		<Command name="Отправить" id="12">
 			<Title>
@@ -2539,21 +2572,6 @@
 				</v8:item>
 			</ToolTip>
 			<Action>Отправить</Action>
-		</Command>
-		<Command name="Обновить" id="13">
-			<Title>
-				<v8:item>
-					<v8:lang>ru</v8:lang>
-					<v8:content>Обновить</v8:content>
-				</v8:item>
-			</Title>
-			<ToolTip>
-				<v8:item>
-					<v8:lang>ru</v8:lang>
-					<v8:content>Обновить</v8:content>
-				</v8:item>
-			</ToolTip>
-			<Action>Обновить</Action>
 		</Command>
 		<Command name="УдалитьПодпись" id="14">
 			<Title>
@@ -2688,6 +2706,7 @@
 				</v8:item>
 			</ToolTip>
 			<Action>ДобавитьПодписьИзФайла</Action>
+			<ModifiesSavedData>true</ModifiesSavedData>
 		</Command>
 		<Command name="ПроверитьПодпись" id="21">
 			<Title>
@@ -2712,6 +2731,7 @@
 				</v8:item>
 			</Title>
 			<Action>ПроверитьДоверенность</Action>
+			<ModifiesSavedData>true</ModifiesSavedData>
 		</Command>
 		<Command name="ДоверенностьПроверенаВручную" id="8">
 			<Title>
@@ -2727,6 +2747,7 @@
 				</v8:item>
 			</ToolTip>
 			<Action>ДоверенностьПроверенаВручную</Action>
+			<ModifiesSavedData>true</ModifiesSavedData>
 		</Command>
 	</Commands>
 	<CommandInterface>
@@ -2735,6 +2756,14 @@
 				<Command>CommonCommand.ПрисоединенныеФайлы</Command>
 				<Type>Auto</Type>
 				<CommandGroup>FormNavigationPanelGoTo</CommandGroup>
+				<DefaultVisible>false</DefaultVisible>
+				<Visible>
+					<xr:Common>false</xr:Common>
+				</Visible>
+			</Item>
+			<Item>
+				<Command>Catalog.МашиночитаемыеДоверенности.Command.Отменить</Command>
+				<Type>Auto</Type>
 				<DefaultVisible>false</DefaultVisible>
 				<Visible>
 					<xr:Common>false</xr:Common>

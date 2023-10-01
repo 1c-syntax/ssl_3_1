@@ -443,9 +443,9 @@
 {
 "Anchor": "",
 "Reason": "Неправильно строится цепочка доверия сертификата. Возможно, в сертификате указана неверная ссылка на сведения центра сертификации.",
-"Solution": "Скачайте с сайта удостоверяющего центра, выдавшего сертификат, промежуточные и корневые сертификаты и установите их.",
+"Solution": "Обратитесь за корневым или промежуточным сертификатом и технической поддержкой в выдавший его удостоверяющий центр.",
 "ErrorText": "Подпись сертификата не может быть проверена",
-"RepairMethods": "",
+"RepairMethods": "{\"МетодикиУстранения\": [\"УказатьВРешенииСсылкуНаУдостоверяющийЦентр\"]}",
 "Category": "chaining"
 },
 {
@@ -478,8 +478,344 @@
 "ErrorText": "Цепочка сертификатов не может быть построена до доверенного корневого сертификата",
 "RepairMethods": "",
 "Category": "chaining"
+},
+{
+"Anchor": "",
+"Reason": "Введен некорректный логин или пароль.",
+"Solution": "Проверьте подключение к <a href = \"e1cib/command/Обработка.ПанельАдминистрированияБИП.Команда.ИнтернетПоддержкаИСервисы\">интернет-поддержке</a>.",
+"ErrorText": "/token|invalid_grant",
+"RepairMethods": ""
+},
+{
+"Anchor": "",
+"Reason": "Не верно указаны параметры авторизации.",
+"Solution": "Обратитесь в службу поддержки.",
+"ErrorText": "/token|unsupported_grant_type",
+"RepairMethods": ""
+},
+{
+"Anchor": "",
+"Reason": "Запрос выполнен от не аутентифицированного пользователя.",
+"Solution": "",
+"ErrorText": "/number|/errors/unauthenticated",
+"RepairMethods": ""
+},
+{
+"Anchor": "",
+"Reason": "Запрос выполнен не от пользователя с ролью Оператор ЭДО.",
+"Solution": "",
+"ErrorText": "/number|/errors/unauthorized",
+"RepairMethods": ""
+},
+{
+"Anchor": "",
+"Reason": "Запрос выполнен от не аутентифицированного пользователя.",
+"Solution": "",
+"ErrorText": "/poa|/errors/unauthenticated",
+"RepairMethods": ""
+},
+{
+"Anchor": "",
+"Reason": "Запрос выполнен не от пользователя с ролью Оператор ЭДО.",
+"Solution": "",
+"ErrorText": "/poa|/errors/unauthorized",
+"RepairMethods": ""
+},
+{
+"Anchor": "",
+"Reason": "Номер загружаемой доверенности [НомерДоверенности] уже используется.",
+"Solution": "Установите новый номер доверенности.",
+"ErrorText": "/poa|/contract/pre_validation/failed",
+"RepairMethods": ""
+},
+{
+"Anchor": "",
+"Reason": "Некорректный префикс «ИдФайл»=\"ON_DOVBB\" или \"ON_DOVEL\" невозможно определить тип (B2B или B2G).",
+"Solution": "",
+"ErrorText": "/poa|/errors/unknown-poa-type",
+"RepairMethods": ""
+},
+{
+"Anchor": "",
+"Reason": "Не пройдена проверка валидности электронной подписи.",
+"Solution": "Убедитесь, что сертификат электронной подписи действует.",
+"ErrorText": "/poa|/errors/poa.signature_is_invalid",
+"RepairMethods": ""
+},
+{
+"Anchor": "",
+"Reason": "В сертификате ЭЦП не заполнены ФИО владельца электронной подписи.",
+"Solution": "Проверьте данные сертификата электронной подписи.",
+"ErrorText": "/poa|/errors/certificate_cn_not_specified",
+"RepairMethods": ""
+},
+{
+"Anchor": "",
+"Reason": "В сертификате электронной подписи не заполнен СНИЛС.",
+"Solution": "Проверьте данные сертификата электронной подписи.",
+"ErrorText": "/poa|/errors/certificate_snils_not_specified",
+"RepairMethods": ""
+},
+{
+"Anchor": "",
+"Reason": "ОГРН отсутствует в сертификате электронной подписи.",
+"Solution": "В сертификате электронной подписи не заполнен ОГРН организации.",
+"ErrorText": "/poa|/errors/certificate_ogrn_not_specified",
+"RepairMethods": ""
+},
+{
+"Anchor": "",
+"Reason": "В сертификате электронной подписи не заполнен ОГРНИП.",
+"Solution": "Проверьте данные сертификата электронной подписи.",
+"ErrorText": "/poa|/errors/certificate_ogrnip_not_specified",
+"RepairMethods": ""
+},
+{
+"Anchor": "",
+"Reason": "ФИО подписанта доверенности не совпадает с ФИО в сертификате электронной подписи.",
+"Solution": "Проверьте данные доверенности и сертификата электронной подписи. Ошибка возникает, если в качестве доверителя в загружаемой доверенности указан ИП.",
+"ErrorText": "/poa|/errors/individual_entrepreneur_signer_check_failed",
+"RepairMethods": ""
+},
+{
+"Anchor": "",
+"Reason": "СНИЛС подписанта доверенности не совпадает со СНИЛС в сертификате электронной подписи.",
+"Solution": "Проверьте данные доверенности и сертификата электронной подписи.",
+"ErrorText": "/poa|/errors/individual_entrepreneur_snils_check_failed",
+"RepairMethods": ""
+},
+{
+"Anchor": "",
+"Reason": "ОГРНИП доверителя не указан в доверенности.",
+"Solution": "Проверьте данные доверенности.",
+"ErrorText": "/poa|/errors/individual_entrepreneur_ogrnip_not_specified",
+"RepairMethods": ""
+},
+{
+"Anchor": "",
+"Reason": "ОГРНИП доверителя в доверенности не совпадает с ОГРНИП в сертификате электронной подписи.",
+"Solution": "Проверьте данные доверенности и сертификата электронной подписи.",
+"ErrorText": "/poa|/errors/individual_entrepreneur_ogrnip_check_failed",
+"RepairMethods": ""
+},
+{
+"Anchor": "",
+"Reason": "СНИЛС подписанта доверенности не совпадает со СНИЛС в сертификате электронной подписи.",
+"Solution": "Проверьте данные доверенности и сертификата электронной подписи.",
+"ErrorText": "/poa|/errors/russian_legal_entity_snils_check_failed",
+"RepairMethods": ""
+},
+{
+"Anchor": "",
+"Reason": "ОГРН доверителя в доверенности не совпадает с ОГРН в сертификате электронной подписи.",
+"Solution": "Проверьте данные доверенности и сертификата электронной подписи.",
+"ErrorText": "/poa|/errors/russian_legal_entity_ogrn_check_failed",
+"RepairMethods": ""
+},
+{
+"Anchor": "",
+"Reason": "ОГРН организации-доверителя не совпадает с ОГРН в сертификате электронной подписи.",
+"Solution": "Проверьте данные доверенности и сертификата электронной подписи.",
+"ErrorText": "/poa|/errors/russian_legal_entity_inner_ogrn_check_failed",
+"RepairMethods": ""
+},
+{
+"Anchor": "",
+"Reason": "Данные доверителя и подписанта в доверенности не соответствуют данным из ЕГРЮЛ.",
+"Solution": "Не пройдена проверка подписанта (ЕИО) на соответствие данным ЕГРЮЛ. Ошибка возникает, если в качестве доверителя в загружаемой доверенности указано ЮЛ.",
+"ErrorText": "/poa|/errors/russian_legal_entity_signer_check_failed",
+"RepairMethods": ""
+},
+{
+"Anchor": "",
+"Reason": "Доверенность с указанным идентификатором файла уже существует в распределенном реестре ФНС.",
+"Solution": "Проверьте регистрацию доверенности на сайте распределенного реестра ФНС <a href = \"https://m4d.nalog.gov.ru/EMCHD/check-status\">распределенного реестра</a>.",
+"ErrorText": "/poa|/contract/pre_validation/failed",
+"RepairMethods": ""
+},
+{
+"Anchor": "",
+"Reason": "Доверенность с указанным идентификатором файла уже существует в распределенном реестре ФНС.",
+"Solution": "Проверьте регистрацию доверенности на сайте распределенного реестра ФНС <a href = \"https://m4d.nalog.gov.ru/EMCHD/check-status\">распределенного реестра</a>.",
+"ErrorText": "/poa|/errors/poa.poa_number_already_exists",
+"RepairMethods": ""
+},
+{
+"Anchor": "",
+"Reason": "Запрос выполнен от не аутентифицированного пользователя.",
+"Solution": "",
+"ErrorText": "/transactions|/errors/unauthenticated",
+"RepairMethods": ""
+},
+{
+"Anchor": "",
+"Reason": "Запрос выполнен не от пользователя с ролью Оператор ЭДО.",
+"Solution": "",
+"ErrorText": "/transactions|/errors/unauthorized",
+"RepairMethods": ""
+},
+{
+"Anchor": "",
+"Reason": "Передан номер транзакции, по которому не найдено транзакций в распределенном реестре ФНС.",
+"Solution": "Повторите операцию регистрации доверенности.",
+"ErrorText": "/transactions|/errors/not-found",
+"RepairMethods": ""
+},
+{
+"Anchor": "",
+"Reason": "Запрос выполнен от не аутентифицированного пользователя",
+"Solution": "Проверьте подключение к <a href = \"e1cib/command/Обработка.ПанельАдминистрированияБИП.Команда.ИнтернетПоддержкаИСервисы\">интернет-поддержке</a>.",
+"ErrorText": "/poaopen|/errors/unauthenticated",
+"RepairMethods": ""
+},
+{
+"Anchor": "",
+"Reason": "Запрос выполнен не от пользователя с ролью Оператор ЭДО.",
+"Solution": "",
+"ErrorText": "/poaopen|/errors/unauthorized",
+"RepairMethods": ""
+},
+{
+"Anchor": "",
+"Reason": "По номеру доверенности [НомерДоверенности] данных в распределенном реестре ФНС не найдено.",
+"Solution": "Проверьте регистрацию доверенности на сайте распределенного реестра ФНС <a href = \"https://m4d.nalog.gov.ru/EMCHD/check-status\">распределенного реестра</a>.",
+"ErrorText": "/poaopen|/errors/not-found",
+"RepairMethods": ""
+},
+{
+"Anchor": "",
+"Reason": "По номеру доверенности [НомерДоверенности] данных в распределенном реестре ФНС не найдено.",
+"Solution": "Проверьте регистрацию доверенности на сайте распределенного реестра ФНС <a href = \"https://m4d.nalog.gov.ru/EMCHD/check-status\">распределенного реестра</a>.",
+"ErrorText": "/poaopen|/errors/resource_not_found",
+"RepairMethods": "{\"МетодикиУстранения\": [\"ИспользоватьТаймаут\"]}"
+},
+{
+"Anchor": "",
+"Reason": "Запрос выполнен от не аутентифицированного пользователя.",
+"Solution": "Проверьте подключение к <a href = \"e1cib/command/Обработка.ПанельАдминистрированияБИП.Команда.ИнтернетПоддержкаИСервисы\">интернет-поддержке</a>.",
+"ErrorText": "/poazip|/errors/unauthenticated",
+"RepairMethods": ""
+},
+{
+"Anchor": "",
+"Reason": "Запрос выполнен не от пользователя с ролью Оператор ЭДО.",
+"Solution": "",
+"ErrorText": "/poazip|/errors/unauthorized",
+"RepairMethods": ""
+},
+{
+"Anchor": "",
+"Reason": "По номеру доверенности [НомерДоверенности] данных в распределенном реестре ФНС не найдено.",
+"Solution": "Проверьте правильность ввода номера доверенности и ИНН.",
+"ErrorText": "/poazip|/errors/not-found",
+"RepairMethods": ""
+},
+{
+"Anchor": "",
+"Reason": "По номеру доверенности [НомерДоверенности] данных в распределенном реестре ФНС не найдено.",
+"Solution": "Проверьте правильность ввода номера доверенности и ИНН.",
+"ErrorText": "/poazip|Not Found",
+"RepairMethods": ""
+},
+{
+"Anchor": "",
+"Reason": "По номеру доверенности [НомерДоверенности] данных в распределенном реестре ФНС не найдено.",
+"Solution": "Проверьте правильность ввода номера доверенности и ИНН.",
+"ErrorText": "/poazip|/errors/resource_not_found",
+"RepairMethods": ""
+},
+{
+"Anchor": "",
+"Reason": "Запрос выполнен от не аутентифицированного пользователя.",
+"Solution": "",
+"ErrorText": "/poacancel|/errors/unauthenticated",
+"RepairMethods": ""
+},
+{
+"Anchor": "",
+"Reason": "Запрос выполнен не от пользователя с ролью Оператор ЭДО.",
+"Solution": "",
+"ErrorText": "/poacancel|/errors/unauthorized",
+"RepairMethods": ""
+},
+{
+"Anchor": "",
+"Reason": "Указанной в заявлении на отмену доверенности, с номером [НомерДоверенности] не существует.",
+"Solution": "Проверьте регистрацию доверенности на сайте распределенного реестра ФНС <a href = \"https://m4d.nalog.gov.ru/EMCHD/check-status\">распределенного реестра</a>.",
+"ErrorText": "/poacancel|/errors/not-found",
+"RepairMethods": ""
+},
+{
+"Anchor": "",
+"Reason": "Отмена доверенности в статусе, отличном от «Зарегистрирована» или «Активна», недоступна.",
+"Solution": "Проверьте статус доверенности.",
+"ErrorText": "/poacancel|/errors/revoke_terminal_poa_status",
+"RepairMethods": ""
+},
+{
+"Anchor": "",
+"Reason": "Не пройдена проверка валидности электронной подписи.",
+"Solution": "Проверьте сертификат электронной подписи отзыва.",
+"ErrorText": "/poacancel|/errors/revoke_signature_check_failed",
+"RepairMethods": ""
+},
+{
+"Anchor": "",
+"Reason": "Не пройдена проверка полномочий подписанта, так как ОГРН/ОГРНИП доверителя в отменяемой доверенности не соответствуют ОГРН/ОГРНИП в сертификате электронной подписи.",
+"Solution": "Проверьте сертификат электронной подписи отзыва.",
+"ErrorText": "/poacancel|/errors/revoke_ogrn_or_ogrnip_check_failed",
+"RepairMethods": ""
+},
+{
+"Anchor": "",
+"Reason": "Не пройдена проверка полномочий подписанта, так как в сертификате электронной подписи на заполнен ОГРН/ОГРНИП.",
+"Solution": "Проверьте сертификат электронной подписи отзыва.",
+"ErrorText": "/poacancel|/errors/revoke_certificate_ogrn_or_ogrnip_not_specified",
+"RepairMethods": ""
+},
+{
+"Anchor": "",
+"Reason": "Не пройдена проверка полномочий подписанта, так как в сертификате электронной подписи не заполнен СНИЛС владельца.",
+"Solution": "Проверьте сертификат электронной подписи отзыва.",
+"ErrorText": "/poacancel|/errors/revoke_certificate_snils_not_specified",
+"RepairMethods": ""
+},
+{
+"Anchor": "",
+"Reason": "Не пройдена проверка полномочий подписанта, так как СНИЛС подписанта в отменяемой доверенности не соответствуют СНИЛС в сертификате электронной подписи.",
+"Solution": "Проверьте правильность выбора электронной подписи при подписании отзыва доверенности.",
+"ErrorText": "/poacancel|/errors/revoke_snils_check_failed",
+"RepairMethods": ""
+},
+{
+"Anchor": "",
+"Reason": "Файл выгрузки доверенности не соответствует ожидаемой схеме документа",
+"Solution": "",
+"ErrorText": "/poacancel|/errors/invalid_poa_revoke_xml",
+"RepairMethods": ""
+},
+{
+"Anchor": "",
+"Reason": "Доверенности с номером [НомерДоверенности] не найдено.",
+"Solution": "",
+"ErrorText": "/pdf|/errors/resource_not_found",
+"RepairMethods": ""
+},
+{
+"Anchor": "",
+"Reason": "Не заданы логин и пароль авторизации на Портале 1С:ИТС.",
+"Solution": "Выполните подключение к <a href = \"e1cib/command/Обработка.ПанельАдминистрированияБИП.Команда.ИнтернетПоддержкаИСервисы\">интернет-поддержке</a>.",
+"ErrorText": "/token|",
+"RepairMethods": ""
+},
+{
+"Anchor": "",
+"Reason": "Не заданы логин и пароль авторизации на Портале 1С:ИТС.",
+"Solution": "Выполните подключение к <a href = \"e1cib/command/Обработка.ПанельАдминистрированияБИП.Команда.ИнтернетПоддержкаИСервисы\">интернет-поддержке</a>.",
+"ErrorText": "не удается авторизоваться на сайте интернет поддержки",
+"RepairMethods": ""
 }
 ],
-"LastChangeDate": "2023-07-06T10:42:24",
-"Version": "3.0.1.3"
+"LastChangeDate": "2023-09-29T17:26:12",
+"Version": "3.0.1.11"
 }

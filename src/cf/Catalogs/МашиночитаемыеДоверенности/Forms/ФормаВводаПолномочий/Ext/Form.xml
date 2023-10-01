@@ -84,6 +84,32 @@
 									</Title>
 									<ExtendedTooltip name="КнопкиВыбораИзКлассификатораРасширеннаяПодсказка" id="93"/>
 									<ChildItems>
+										<Popup name="ГруппаКнопокВидПолномочий" id="193">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Вид полномочий</v8:content>
+												</v8:item>
+											</Title>
+											<ExtendedTooltip name="ГруппаКнопокВидПолномочийРасширеннаяПодсказка" id="194"/>
+											<ChildItems>
+												<Button name="ПолномочияИзКлассификатора" id="195">
+													<Type>CommandBarButton</Type>
+													<CommandName>Form.Command.ПолномочияИзКлассификатора</CommandName>
+													<ExtendedTooltip name="ПолномочияИзКлассификатораРасширеннаяПодсказка" id="196"/>
+												</Button>
+												<Button name="ПолномочияВТекстовомВиде" id="199">
+													<Type>CommandBarButton</Type>
+													<CommandName>Form.Command.ПолномочияВТекстовомВиде</CommandName>
+													<ExtendedTooltip name="ПолномочияВТекстовомВидеРасширеннаяПодсказка" id="200"/>
+												</Button>
+												<Button name="ПолномочияНеОграничены" id="197">
+													<Type>CommandBarButton</Type>
+													<CommandName>Form.Command.ПолномочияНеОграничены</CommandName>
+													<ExtendedTooltip name="ПолномочияНеОграниченыРасширеннаяПодсказка" id="198"/>
+												</Button>
+											</ChildItems>
+										</Popup>
 										<ButtonGroup name="ГруппаКомпактная" id="233">
 											<Title>
 												<v8:item>
@@ -94,41 +120,15 @@
 											<Representation>Compact</Representation>
 											<ExtendedTooltip name="ГруппаКомпактнаяРасширеннаяПодсказка" id="234"/>
 											<ChildItems>
-												<Popup name="ГруппаКнопокВидПолномочий" id="193">
-													<Title>
-														<v8:item>
-															<v8:lang>ru</v8:lang>
-															<v8:content>Вид полномочий</v8:content>
-														</v8:item>
-													</Title>
-													<ExtendedTooltip name="ГруппаКнопокВидПолномочийРасширеннаяПодсказка" id="194"/>
-													<ChildItems>
-														<Button name="ПолномочияИзКлассификатора" id="195">
-															<Type>CommandBarButton</Type>
-															<CommandName>Form.Command.ПолномочияИзКлассификатора</CommandName>
-															<ExtendedTooltip name="ПолномочияИзКлассификатораРасширеннаяПодсказка" id="196"/>
-														</Button>
-														<Button name="ПолномочияВТекстовомВиде" id="199">
-															<Type>CommandBarButton</Type>
-															<CommandName>Form.Command.ПолномочияВТекстовомВиде</CommandName>
-															<ExtendedTooltip name="ПолномочияВТекстовомВидеРасширеннаяПодсказка" id="200"/>
-														</Button>
-														<Button name="ПолномочияНеОграничены" id="197">
-															<Type>CommandBarButton</Type>
-															<CommandName>Form.Command.ПолномочияНеОграничены</CommandName>
-															<ExtendedTooltip name="ПолномочияНеОграниченыРасширеннаяПодсказка" id="198"/>
-														</Button>
-													</ChildItems>
-												</Popup>
-												<Button name="СнятьФлажки" id="96">
-													<Type>CommandBarButton</Type>
-													<CommandName>Form.Command.СнятьФлажки</CommandName>
-													<ExtendedTooltip name="СнятьФлажкиРасширеннаяПодсказка" id="97"/>
-												</Button>
 												<Button name="УстановитьФлажки" id="98">
 													<Type>CommandBarButton</Type>
 													<CommandName>Form.Command.УстановитьФлажки</CommandName>
 													<ExtendedTooltip name="УстановитьФлажкиРасширеннаяПодсказка" id="99"/>
+												</Button>
+												<Button name="СнятьФлажки" id="96">
+													<Type>CommandBarButton</Type>
+													<CommandName>Form.Command.СнятьФлажки</CommandName>
+													<ExtendedTooltip name="СнятьФлажкиРасширеннаяПодсказка" id="97"/>
 												</Button>
 											</ChildItems>
 										</ButtonGroup>
@@ -796,15 +796,6 @@
 							<v8:content>Мнемокод</v8:content>
 						</v8:item>
 					</Title>
-					<Type>
-						<v8:Type>xs:string</v8:Type>
-						<v8:StringQualifiers>
-							<v8:Length>255</v8:Length>
-							<v8:AllowedLength>Variable</v8:AllowedLength>
-						</v8:StringQualifiers>
-					</Type>
-				</Column>
-				<Column name="КодГруппы" id="7">
 					<Type>
 						<v8:Type>xs:string</v8:Type>
 						<v8:StringQualifiers>

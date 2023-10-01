@@ -397,6 +397,28 @@
 								</Button>
 							</ChildItems>
 						</CommandBar>
+						<CommandBar name="КомандыВыборОтмена" id="876">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Команды выбор отмена</v8:content>
+								</v8:item>
+							</Title>
+							<HorizontalLocation>Right</HorizontalLocation>
+							<ExtendedTooltip name="КомандыВыборОтменаРасширеннаяПодсказка" id="877"/>
+							<ChildItems>
+								<Button name="ВыбратьСсылку" id="880">
+									<Type>CommandBarButton</Type>
+									<CommandName>Form.Command.ВыбратьСсылку</CommandName>
+									<ExtendedTooltip name="ВыбратьСсылкуРасширеннаяПодсказка" id="881"/>
+								</Button>
+								<Button name="Отмена" id="878">
+									<Type>CommandBarButton</Type>
+									<CommandName>Form.StandardCommand.Cancel</CommandName>
+									<ExtendedTooltip name="ОтменаРасширеннаяПодсказка" id="879"/>
+								</Button>
+							</ChildItems>
+						</CommandBar>
 					</ChildItems>
 				</Page>
 				<Page name="СтраницаУточнениеСвойствСертификата" id="241">
@@ -1162,6 +1184,11 @@
 				<v8:TypeSet>cfg:DefinedType.ФизическоеЛицо</v8:TypeSet>
 			</Type>
 		</Attribute>
+		<Attribute name="РежимВыбораСсылки" id="31">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
 	</Attributes>
 	<Commands>
 		<Command name="Далее" id="1">
@@ -1286,6 +1313,21 @@
 			</Picture>
 			<Action>ПодобратьФизическоеЛицо</Action>
 		</Command>
+		<Command name="ВыбратьСсылку" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Выбрать</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Выбрать ссылку</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ВыбратьСсылку</Action>
+		</Command>
 	</Commands>
 	<Parameters>
 		<Parameter name="ДляШифрованияИРасшифровки">
@@ -1331,6 +1373,11 @@
 		</Parameter>
 		<Parameter name="ОтборПоОрганизации">
 			<Type/>
+		</Parameter>
+		<Parameter name="РежимВыбораСсылки">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
 		</Parameter>
 	</Parameters>
 </Form>

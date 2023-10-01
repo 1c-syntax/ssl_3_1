@@ -55,11 +55,54 @@
 			<DataPath>ОписаниеОшибки</DataPath>
 			<TitleLocation>None</TitleLocation>
 			<AutoMaxWidth>false</AutoMaxWidth>
+			<AutoMaxHeight>false</AutoMaxHeight>
+			<MaxHeight>4</MaxHeight>
 			<MultiLine>true</MultiLine>
 			<BackColor>style:ЦветФонаВнимание</BackColor>
 			<ContextMenu name="ОписаниеОшибкиКонтекстноеМеню" id="36"/>
 			<ExtendedTooltip name="ОписаниеОшибкиРасширеннаяПодсказка" id="37"/>
 		</InputField>
+		<UsualGroup name="ГруппаМЧД" id="69">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Машиночитаемая доверенность</v8:content>
+				</v8:item>
+			</Title>
+			<Group>Vertical</Group>
+			<Behavior>Usual</Behavior>
+			<Collapsed>true</Collapsed>
+			<Representation>NormalSeparation</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаМЧДРасширеннаяПодсказка" id="70"/>
+			<ChildItems>
+				<LabelDecoration name="МашиночитаемаяДоверенностьДекорация" id="66">
+					<AutoMaxWidth>false</AutoMaxWidth>
+					<HorizontalStretch>true</HorizontalStretch>
+					<Title formatted="false">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Машиночитаемая доверенность</v8:content>
+						</v8:item>
+					</Title>
+					<ContextMenu name="МашиночитаемаяДоверенностьДекорацияКонтекстноеМеню" id="67"/>
+					<ExtendedTooltip name="МашиночитаемаяДоверенностьДекорацияРасширеннаяПодсказка" id="68"/>
+				</LabelDecoration>
+				<UsualGroup name="ГруппаПротоколПроверки" id="73">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Протокол проверки МЧД</v8:content>
+						</v8:item>
+					</Title>
+					<Group>Vertical</Group>
+					<Behavior>Collapsible</Behavior>
+					<Collapsed>true</Collapsed>
+					<ControlRepresentation>Picture</ControlRepresentation>
+					<ExtendedTooltip name="ГруппаПротоколПроверкиРасширеннаяПодсказка" id="74"/>
+				</UsualGroup>
+			</ChildItems>
+		</UsualGroup>
 		<InputField name="КомуВыданСертификат" id="2">
 			<DataPath>КомуВыданСертификат</DataPath>
 			<ReadOnly>true</ReadOnly>
@@ -387,6 +430,15 @@
 			</Type>
 		</Attribute>
 		<Attribute name="ОшибкаЧтенияПодписи" id="25">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="РезультатПроверкиПодписиПоМЧД" id="27">
 			<Type>
 				<v8:Type>xs:string</v8:Type>
 				<v8:StringQualifiers>
