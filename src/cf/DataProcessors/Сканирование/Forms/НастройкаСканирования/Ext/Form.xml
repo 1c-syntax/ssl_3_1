@@ -53,6 +53,7 @@
 	<Events>
 		<Event name="OnOpen">ПриОткрытии</Event>
 		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+		<Event name="FillCheckProcessingAtServer">ОбработкаПроверкиЗаполненияНаСервере</Event>
 	</Events>
 	<ChildItems>
 		<UsualGroup name="ГруппаНастройки" id="24">
@@ -104,6 +105,69 @@
 							</Title>
 							<ExtendedTooltip name="ОткрытьНомераОтсканированныхФайловРасширеннаяПодсказка" id="80"/>
 						</Button>
+					</ChildItems>
+				</UsualGroup>
+				<UsualGroup name="ГруппаДиалога" id="137">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа диалога</v8:content>
+						</v8:item>
+					</Title>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаДиалогаРасширеннаяПодсказка" id="138"/>
+					<ChildItems>
+						<InputField name="ПоказыватьДиалогСканера" id="142">
+							<DataPath>ПоказыватьДиалогСканера</DataPath>
+							<ToolTipRepresentation>Button</ToolTipRepresentation>
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<MaxWidth>37</MaxWidth>
+							<ListChoiceMode>true</ListChoiceMode>
+							<ChooseType>false</ChooseType>
+							<ChoiceList>
+								<xr:Item>
+									<xr:Presentation/>
+									<xr:CheckState>0</xr:CheckState>
+									<xr:Value xsi:type="FormChoiceListDesTimeValue">
+										<Presentation>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Основные в приложении</v8:content>
+											</v8:item>
+										</Presentation>
+										<Value xsi:type="xs:boolean">false</Value>
+									</xr:Value>
+								</xr:Item>
+								<xr:Item>
+									<xr:Presentation/>
+									<xr:CheckState>0</xr:CheckState>
+									<xr:Value xsi:type="FormChoiceListDesTimeValue">
+										<Presentation>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Расширенные в диалоге сканера</v8:content>
+											</v8:item>
+										</Presentation>
+										<Value xsi:type="xs:boolean">true</Value>
+									</xr:Value>
+								</xr:Item>
+							</ChoiceList>
+							<ContextMenu name="ПоказыватьДиалогСканераКонтекстноеМеню" id="143"/>
+							<ExtendedTooltip name="ПоказыватьДиалогСканераРасширеннаяПодсказка" id="144">
+								<Title formatted="true">
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>&lt;b&gt;Основные&lt;/&gt;&lt;b&gt; &lt;/&gt;&lt;b&gt;в&lt;/&gt;&lt;b&gt; &lt;/&gt;&lt;b&gt;приложении&lt;/&gt;&lt;b&gt; &lt;/&gt;&lt;b&gt;-&lt;/&gt; диалог сканера не открывается, а применяются настройки, заданные в приложении.
+&lt;b&gt;Расширенные&lt;/&gt;&lt;b&gt; &lt;/&gt;&lt;b&gt;в&lt;/&gt;&lt;b&gt; &lt;/&gt;&lt;b&gt;диалоге&lt;/&gt;&lt;b&gt; &lt;/&gt;&lt;b&gt;сканера&lt;/&gt; - отображается диалог сканера, в котором можно задать другие дополнительные настройки, специфичные для конкретного устройства.
+</v8:content>
+									</v8:item>
+								</Title>
+							</ExtendedTooltip>
+							<Events>
+								<Event name="OnChange">ПоказыватьДиалогСканераПриИзменении</Event>
+							</Events>
+						</InputField>
 					</ChildItems>
 				</UsualGroup>
 				<UsualGroup name="ГруппаПараметры" id="106">
@@ -198,25 +262,6 @@
 											<CheckBoxType>Auto</CheckBoxType>
 											<ContextMenu name="ДвустороннееСканированиеКонтекстноеМеню" id="29"/>
 											<ExtendedTooltip name="ДвустороннееСканированиеExtendedTooltip" id="76"/>
-										</CheckBoxField>
-										<CheckBoxField name="ПоказыватьДиалогСканера" id="1">
-											<DataPath>ПоказыватьДиалогСканера</DataPath>
-											<TitleLocation>Right</TitleLocation>
-											<TitleHeight>2</TitleHeight>
-											<ToolTipRepresentation>Button</ToolTipRepresentation>
-											<CheckBoxType>Auto</CheckBoxType>
-											<ContextMenu name="ПоказыватьДиалогСканераКонтекстноеМеню" id="2"/>
-											<ExtendedTooltip name="ПоказыватьДиалогСканераExtendedTooltip" id="77">
-												<Title formatted="true">
-													<v8:item>
-														<v8:lang>ru</v8:lang>
-														<v8:content>При использовании диалога сканера, будут использованы настройки, установленные в диалоге сканера.</v8:content>
-													</v8:item>
-												</Title>
-											</ExtendedTooltip>
-											<Events>
-												<Event name="OnChange">ПоказыватьДиалогСканераПриИзменении</Event>
-											</Events>
 										</CheckBoxField>
 									</ChildItems>
 								</UsualGroup>
@@ -553,7 +598,7 @@ TIF - Не все браузеры отображают этот формат.</
 			<Title>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Показывать диалог сканера перед сканированием</v8:content>
+					<v8:content>Задать настройки</v8:content>
 				</v8:item>
 			</Title>
 			<Type>
@@ -787,6 +832,11 @@ TIF - Не все браузеры отображают этот формат.</
 			<SavedData>true</SavedData>
 		</Attribute>
 		<Attribute name="ПовторноеСканирование" id="28">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ЗадатьНастройки" id="19">
 			<Type>
 				<v8:Type>xs:boolean</v8:Type>
 			</Type>

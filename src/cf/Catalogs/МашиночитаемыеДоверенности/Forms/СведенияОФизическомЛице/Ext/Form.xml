@@ -59,10 +59,10 @@
 					<ShowTitle>false</ShowTitle>
 					<ExtendedTooltip name="ГруппаДолжностноеЛицоРасширеннаяПодсказка" id="99"/>
 					<ChildItems>
-						<InputField name="ДолжностьЛицаБезДоверенности" id="100">
-							<DataPath>ДолжностьЛицаБезДоверенности</DataPath>
-							<ContextMenu name="ДолжностьЛицаБезДоверенностиКонтекстноеМеню" id="101"/>
-							<ExtendedTooltip name="ДолжностьЛицаБезДоверенностиРасширеннаяПодсказка" id="102"/>
+						<InputField name="ДолжностьЛицаДоверителя" id="100">
+							<DataPath>ДолжностьЛицаДоверителя</DataPath>
+							<ContextMenu name="ДолжностьЛицаДоверителяКонтекстноеМеню" id="101"/>
+							<ExtendedTooltip name="ДолжностьЛицаДоверителяРасширеннаяПодсказка" id="102"/>
 							<Events>
 								<Event name="OnChange">РеквизитПриИзменении</Event>
 							</Events>
@@ -784,7 +784,7 @@
 				</v8:StringQualifiers>
 			</Type>
 		</Attribute>
-		<Attribute name="ДолжностьЛицаБезДоверенности" id="11">
+		<Attribute name="ДолжностьЛицаДоверителя" id="11">
 			<Title>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
@@ -1056,6 +1056,11 @@
 				<v8:Type>xs:boolean</v8:Type>
 			</Type>
 		</Attribute>
+		<Attribute name="ПоказыватьПерсональныеДанные" id="36">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
 	</Attributes>
 	<Commands>
 		<Command name="ОК" id="1">
@@ -1123,6 +1128,11 @@
 				<v8:Type>xs:boolean</v8:Type>
 			</Type>
 			<KeyParameter>true</KeyParameter>
+		</Parameter>
+		<Parameter name="ПоказыватьПерсональныеДанные">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
 		</Parameter>
 	</Parameters>
 </Form>

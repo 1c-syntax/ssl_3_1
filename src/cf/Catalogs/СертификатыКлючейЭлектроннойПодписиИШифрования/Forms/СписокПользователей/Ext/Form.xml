@@ -92,7 +92,7 @@
 										<Presentation>
 											<v8:item>
 												<v8:lang>ru</v8:lang>
-												<v8:content>Указанные пользователи</v8:content>
+												<v8:content>Указанные пользователи:</v8:content>
 											</v8:item>
 										</Presentation>
 										<Value xsi:type="xs:string">СписокПользователей</Value>
@@ -136,16 +136,28 @@
 							<ContextMenu name="ТаблицаПользователейКонтекстноеМеню" id="8"/>
 							<AutoCommandBar name="ТаблицаПользователейКоманднаяПанель" id="9">
 								<ChildItems>
-									<Button name="ПользователиПометитьВсе" id="26">
-										<Type>CommandBarButton</Type>
-										<CommandName>Form.Command.ПометитьВсе</CommandName>
-										<ExtendedTooltip name="ПользователиПометитьВсеРасширеннаяПодсказка" id="27"/>
-									</Button>
-									<Button name="ПользователиОтменитьПометку" id="28">
-										<Type>CommandBarButton</Type>
-										<CommandName>Form.Command.ОтменитьПометку</CommandName>
-										<ExtendedTooltip name="ПользователиОтменитьПометкуРасширеннаяПодсказка" id="29"/>
-									</Button>
+									<ButtonGroup name="ГруппаКнопок" id="47">
+										<Title>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Группа кнопок</v8:content>
+											</v8:item>
+										</Title>
+										<Representation>Compact</Representation>
+										<ExtendedTooltip name="ГруппаКнопокРасширеннаяПодсказка" id="48"/>
+										<ChildItems>
+											<Button name="ПользователиПометитьВсе" id="26">
+												<Type>CommandBarButton</Type>
+												<CommandName>Form.Command.ПометитьВсе</CommandName>
+												<ExtendedTooltip name="ПользователиПометитьВсеРасширеннаяПодсказка" id="27"/>
+											</Button>
+											<Button name="ПользователиОтменитьПометку" id="28">
+												<Type>CommandBarButton</Type>
+												<CommandName>Form.Command.ОтменитьПометку</CommandName>
+												<ExtendedTooltip name="ПользователиОтменитьПометкуРасширеннаяПодсказка" id="29"/>
+											</Button>
+										</ChildItems>
+									</ButtonGroup>
 								</ChildItems>
 							</AutoCommandBar>
 							<ExtendedTooltip name="ТаблицаПользователейРасширеннаяПодсказка" id="10"/>
@@ -192,6 +204,72 @@
 						</Table>
 					</ChildItems>
 				</UsualGroup>
+				<UsualGroup name="ГруппаПодбор" id="49">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа подбор</v8:content>
+						</v8:item>
+					</Title>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаПодборРасширеннаяПодсказка" id="50"/>
+					<ChildItems>
+						<Table name="ВыбранныеПользователи" id="51">
+							<Representation>List</Representation>
+							<Header>false</Header>
+							<DataPath>ВыбранныеПользователи</DataPath>
+							<RowFilter xsi:nil="true"/>
+							<ContextMenu name="ВыбранныеПользователиКонтекстноеМеню" id="53"/>
+							<AutoCommandBar name="ВыбранныеПользователиКоманднаяПанель" id="52"/>
+							<ExtendedTooltip name="ВыбранныеПользователиРасширеннаяПодсказка" id="54"/>
+							<SearchStringAddition name="ВыбранныеПользователиСтрокаПоиска" id="55">
+								<AdditionSource>
+									<Item>ВыбранныеПользователи</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ВыбранныеПользователиСтрокаПоискаКонтекстноеМеню" id="56"/>
+								<ExtendedTooltip name="ВыбранныеПользователиСтрокаПоискаРасширеннаяПодсказка" id="57"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="ВыбранныеПользователиСостояниеПросмотра" id="61">
+								<AdditionSource>
+									<Item>ВыбранныеПользователи</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ВыбранныеПользователиСостояниеПросмотраКонтекстноеМеню" id="62"/>
+								<ExtendedTooltip name="ВыбранныеПользователиСостояниеПросмотраРасширеннаяПодсказка" id="63"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="ВыбранныеПользователиУправлениеПоиском" id="58">
+								<AdditionSource>
+									<Item>ВыбранныеПользователи</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="ВыбранныеПользователиУправлениеПоискомКонтекстноеМеню" id="59"/>
+								<ExtendedTooltip name="ВыбранныеПользователиУправлениеПоискомРасширеннаяПодсказка" id="60"/>
+							</SearchControlAddition>
+							<Events>
+								<Event name="BeforeAddRow">ВыбранныеПользователиПередНачаломДобавления</Event>
+							</Events>
+							<ChildItems>
+								<InputField name="ВыбранныеПользователиПользователь" id="67">
+									<DataPath>ВыбранныеПользователи.Пользователь</DataPath>
+									<ContextMenu name="ВыбранныеПользователиПользовательКонтекстноеМеню" id="68"/>
+									<ExtendedTooltip name="ВыбранныеПользователиПользовательРасширеннаяПодсказка" id="69"/>
+								</InputField>
+							</ChildItems>
+						</Table>
+					</ChildItems>
+				</UsualGroup>
+				<LabelDecoration name="ДекорацияПредупреждение" id="44">
+					<TextColor>style:ПоясняющийТекст</TextColor>
+					<Title formatted="false">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Список заполняется автоматически при операциях с использованием ключа электронной подписи. Передавать личный ключ электронной подписи другим лицам не рекомендуется.</v8:content>
+						</v8:item>
+					</Title>
+					<ContextMenu name="ДекорацияПредупреждениеКонтекстноеМеню" id="45"/>
+					<ExtendedTooltip name="ДекорацияПредупреждениеРасширеннаяПодсказка" id="46"/>
+				</LabelDecoration>
 			</ChildItems>
 		</UsualGroup>
 		<CommandBar name="ГруппаКоманды" id="1">
@@ -279,6 +357,38 @@
 			<Type>
 				<v8:Type>xs:boolean</v8:Type>
 			</Type>
+		</Attribute>
+		<Attribute name="ВыбранныеПользователи" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Выбранные пользователи</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTable</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="Основной" id="5">
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+				<Column name="Пользователь" id="6">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Пользователь</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.Пользователи</v8:Type>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+		<Attribute name="ВладелецСертификата" id="7">
+			<Type/>
 		</Attribute>
 	</Attributes>
 	<Commands>

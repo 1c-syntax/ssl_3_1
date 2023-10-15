@@ -352,20 +352,14 @@
 							<Representation>None</Representation>
 							<ExtendedTooltip name="ВозможныеПричиныРасширеннаяПодсказка" id="87"/>
 							<ChildItems>
-								<LabelDecoration name="ПричиныТекст" id="88">
+								<InputField name="ПричиныТекст" id="101">
+									<DataPath>ПричиныТекст</DataPath>
+									<TitleLocation>None</TitleLocation>
 									<AutoMaxWidth>false</AutoMaxWidth>
-									<Title formatted="false">
-										<v8:item>
-											<v8:lang>ru</v8:lang>
-											<v8:content>Возможные причины </v8:content>
-										</v8:item>
-									</Title>
-									<ContextMenu name="ПричиныТекстКонтекстноеМеню" id="89"/>
-									<ExtendedTooltip name="ПричиныТекстРасширеннаяПодсказка" id="90"/>
-									<Events>
-										<Event name="URLProcessing">ПричиныКлиентТекстОбработкаНавигационнойСсылки</Event>
-									</Events>
-								</LabelDecoration>
+									<MultiLine>true</MultiLine>
+									<ContextMenu name="ПричиныТекстКонтекстноеМеню" id="102"/>
+									<ExtendedTooltip name="ПричиныТекстРасширеннаяПодсказка" id="103"/>
+								</InputField>
 							</ChildItems>
 						</UsualGroup>
 						<UsualGroup name="ВозможныеРешения" id="91">
@@ -594,6 +588,21 @@
 			</Type>
 		</Attribute>
 		<Attribute name="ЯкорьОшибки" id="8">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ПричиныТекст" id="9">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Причины текст</v8:content>
+				</v8:item>
+			</Title>
 			<Type>
 				<v8:Type>xs:string</v8:Type>
 				<v8:StringQualifiers>
