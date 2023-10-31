@@ -200,6 +200,47 @@
 				</PictureField>
 			</ChildItems>
 		</UsualGroup>
+		<UsualGroup name="ОшибкаСканирования" id="66">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Ошибка сканирования</v8:content>
+				</v8:item>
+			</Title>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ОшибкаСканированияРасширеннаяПодсказка" id="67"/>
+			<ChildItems>
+				<PictureDecoration name="КартинкаОшибкиСканирования" id="68">
+					<Title formatted="false">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Картинка ошибки сканирования</v8:content>
+						</v8:item>
+					</Title>
+					<Picture>
+						<xr:Ref>CommonPicture.Предупреждение</xr:Ref>
+						<xr:LoadTransparent>false</xr:LoadTransparent>
+					</Picture>
+					<ContextMenu name="КартинкаОшибкиСканированияКонтекстноеМеню" id="69"/>
+					<ExtendedTooltip name="КартинкаОшибкиСканированияРасширеннаяПодсказка" id="70"/>
+				</PictureDecoration>
+				<LabelDecoration name="ТекстОшибкиСканирования" id="71">
+					<AutoMaxWidth>false</AutoMaxWidth>
+					<Title formatted="true">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Сканирование завершилось аварийно, сохранить &lt;link ТехническаяИнформация&gt;информацию для технической поддержки&lt;/&gt;.</v8:content>
+						</v8:item>
+					</Title>
+					<ContextMenu name="ТекстОшибкиСканированияКонтекстноеМеню" id="72"/>
+					<ExtendedTooltip name="ТекстОшибкиСканированияРасширеннаяПодсказка" id="73"/>
+					<Events>
+						<Event name="URLProcessing">ТекстОшибкиСканированияОбработкаНавигационнойСсылки</Event>
+					</Events>
+				</LabelDecoration>
+			</ChildItems>
+		</UsualGroup>
 		<UsualGroup name="ГруппаСообщение" id="20">
 			<Title>
 				<v8:item>
@@ -272,6 +313,20 @@
 						</Button>
 					</ChildItems>
 				</UsualGroup>
+				<LabelDecoration name="ТребуетсяПомощь" id="74">
+					<Title formatted="false">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Требуется помощь</v8:content>
+						</v8:item>
+					</Title>
+					<Hyperlink>true</Hyperlink>
+					<ContextMenu name="ТребуетсяПомощьКонтекстноеМеню" id="75"/>
+					<ExtendedTooltip name="ТребуетсяПомощьРасширеннаяПодсказка" id="76"/>
+					<Events>
+						<Event name="Click">ТребуетсяПомощьНажатие</Event>
+					</Events>
+				</LabelDecoration>
 			</ChildItems>
 		</UsualGroup>
 	</ChildItems>
@@ -588,6 +643,19 @@
 					<v8:Length>0</v8:Length>
 					<v8:AllowedLength>Variable</v8:AllowedLength>
 				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="НачалоСканирования" id="18">
+			<Type>
+				<v8:Type>xs:dateTime</v8:Type>
+				<v8:DateQualifiers>
+					<v8:DateFractions>DateTime</v8:DateFractions>
+				</v8:DateQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="СканированиеЗапущено" id="33">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
 			</Type>
 		</Attribute>
 	</Attributes>

@@ -1028,6 +1028,7 @@
 											<v8:content>Параметры выполнения по расписанию</v8:content>
 										</v8:item>
 									</Title>
+									<Group>AlwaysHorizontal</Group>
 									<Behavior>Usual</Behavior>
 									<Representation>None</Representation>
 									<ShowTitle>false</ShowTitle>
@@ -1050,66 +1051,110 @@
 												<Event name="OnChange">ПериодичностьРасписанияПриИзменении</Event>
 											</Events>
 										</InputField>
-										<Pages name="СтраницыВремяИлиИзменить" id="427">
-											<Title>
-												<v8:item>
-													<v8:lang>ru</v8:lang>
-													<v8:content>Страницы время или изменить</v8:content>
-												</v8:item>
-											</Title>
-											<PagesRepresentation>None</PagesRepresentation>
-											<ExtendedTooltip name="СтраницыВремяИлиИзменитьExtendedTooltip" id="748"/>
-											<ChildItems>
-												<Page name="СтраницаВремяНачала" id="428">
-													<Title>
-														<v8:item>
-															<v8:lang>ru</v8:lang>
-															<v8:content>Страница время начала</v8:content>
-														</v8:item>
-													</Title>
-													<ExtendedTooltip name="СтраницаВремяНачалаExtendedTooltip" id="749"/>
-													<ChildItems>
-														<InputField name="ВремяНачала" id="429">
-															<DataPath>ВремяНачала</DataPath>
-															<EditFormat>
-																<v8:item>
-																	<v8:lang>ru</v8:lang>
-																	<v8:content>ДФ=HH:mm</v8:content>
-																</v8:item>
-															</EditFormat>
-															<ContextMenu name="ВремяНачалаКонтекстноеМеню" id="430"/>
-															<ExtendedTooltip name="ВремяНачалаExtendedTooltip" id="750"/>
-															<Events>
-																<Event name="OnChange">ВремяНачалаПриИзменении</Event>
-															</Events>
-														</InputField>
-													</ChildItems>
-												</Page>
-												<Page name="СтраницаИзменитьРасписание" id="431">
-													<Title>
-														<v8:item>
-															<v8:lang>ru</v8:lang>
-															<v8:content>Страница изменить расписание</v8:content>
-														</v8:item>
-													</Title>
-													<ExtendedTooltip name="СтраницаИзменитьРасписаниеExtendedTooltip" id="751"/>
-													<ChildItems>
-														<Button name="ИзменитьРасписание" id="432">
-															<Type>UsualButton</Type>
-															<Representation>Text</Representation>
-															<CommandName>Form.Command.ИзменитьРасписание</CommandName>
-															<ExtendedTooltip name="ИзменитьРасписаниеExtendedTooltip" id="752"/>
-														</Button>
-													</ChildItems>
-												</Page>
-											</ChildItems>
-										</Pages>
+										<Button name="ИзменитьРасписание" id="432">
+											<Type>UsualButton</Type>
+											<Representation>Text</Representation>
+											<CommandName>Form.Command.ИзменитьРасписание</CommandName>
+											<ExtendedTooltip name="ИзменитьРасписаниеExtendedTooltip" id="752"/>
+										</Button>
 										<Button name="ЗаполнитьРасписаниеПоШаблону" id="526">
 											<Type>UsualButton</Type>
 											<Representation>Text</Representation>
 											<CommandName>Form.Command.ЗаполнитьРасписаниеПоШаблону</CommandName>
 											<ExtendedTooltip name="ЗаполнитьРасписаниеПоШаблонуExtendedTooltip" id="754"/>
 										</Button>
+									</ChildItems>
+								</UsualGroup>
+							</ChildItems>
+						</UsualGroup>
+						<UsualGroup name="ГруппаВремяВыполнения" id="428">
+							<Group>AlwaysHorizontal</Group>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаВремяВыполненияРасширеннаяПодсказка" id="749"/>
+							<ChildItems>
+								<InputField name="ВремяНачала" id="429">
+									<DataPath>ВремяНачала</DataPath>
+									<EditFormat>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>ДФ=HH:mm</v8:content>
+										</v8:item>
+									</EditFormat>
+									<ContextMenu name="ВремяНачалаКонтекстноеМеню" id="430"/>
+									<ExtendedTooltip name="ВремяНачалаExtendedTooltip" id="750"/>
+									<Events>
+										<Event name="OnChange">ВремяНачалаПриИзменении</Event>
+									</Events>
+								</InputField>
+								<UsualGroup name="ГруппаПериодПовтораВТечениеДня" id="1303">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Группа период повтора в течение дня</v8:content>
+										</v8:item>
+									</Title>
+									<Representation>None</Representation>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="ГруппаПериодПовтораВТечениеДняРасширеннаяПодсказка" id="1304"/>
+									<ChildItems>
+										<CheckBoxField name="ИспользоватьПериодПовтораВТечениеДня" id="1310">
+											<DataPath>ИспользоватьПериодПовтораВТечениеДня</DataPath>
+											<TitleLocation>None</TitleLocation>
+											<CheckBoxType>Auto</CheckBoxType>
+											<ContextMenu name="ИспользоватьПериодПовтораВТечениеДняКонтекстноеМеню" id="1311"/>
+											<ExtendedTooltip name="ИспользоватьПериодПовтораВТечениеДняРасширеннаяПодсказка" id="1312"/>
+											<Events>
+												<Event name="OnChange">ИспользоватьПериодПовтораВТечениеДняПриИзменении</Event>
+											</Events>
+										</CheckBoxField>
+										<InputField name="ПериодПовтораВТечениеДня" id="1300">
+											<DataPath>ПериодПовтораВТечениеДня</DataPath>
+											<ToolTip>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Период повтора в течение дня</v8:content>
+												</v8:item>
+											</ToolTip>
+											<SpinButton>true</SpinButton>
+											<MinValue xsi:type="xs:decimal">1</MinValue>
+											<MaxValue xsi:type="xs:decimal">12</MaxValue>
+											<ContextMenu name="ПериодПовтораВТечениеДняКонтекстноеМеню" id="1301"/>
+											<ExtendedTooltip name="ПериодПовтораВТечениеДняРасширеннаяПодсказка" id="1302"/>
+											<Events>
+												<Event name="OnChange">ПериодПовтораВТечениеДняПриИзменении</Event>
+											</Events>
+										</InputField>
+										<LabelDecoration name="ДекорацияЧасов" id="1305">
+											<AutoMaxWidth>false</AutoMaxWidth>
+											<Title formatted="false">
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>(ч.)</v8:content>
+												</v8:item>
+											</Title>
+											<ToolTip>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Часов</v8:content>
+												</v8:item>
+											</ToolTip>
+											<ContextMenu name="ДекорацияЧасовКонтекстноеМеню" id="1306"/>
+											<ExtendedTooltip name="ДекорацияЧасовРасширеннаяПодсказка" id="1307"/>
+										</LabelDecoration>
+										<InputField name="ВремяОкончания" id="1313">
+											<DataPath>ВремяОкончания</DataPath>
+											<EditFormat>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>ДФ=HH:mm</v8:content>
+												</v8:item>
+											</EditFormat>
+											<ContextMenu name="ВремяОкончанияКонтекстноеМеню" id="1314"/>
+											<ExtendedTooltip name="ВремяОкончанияРасширеннаяПодсказка" id="1315"/>
+											<Events>
+												<Event name="OnChange">ВремяОкончанияПриИзменении</Event>
+											</Events>
+										</InputField>
 									</ChildItems>
 								</UsualGroup>
 							</ChildItems>
@@ -1578,17 +1623,22 @@
 							<ContextMenu name="ПредставлениеРасписанияКонтекстноеМеню" id="1176"/>
 							<ExtendedTooltip name="ПредставлениеРасписанияРасширеннаяПодсказка" id="1177"/>
 						</LabelDecoration>
-						<InputField name="Автор" id="3">
-							<DataPath>Объект.Автор</DataPath>
-							<ToolTipRepresentation>Button</ToolTipRepresentation>
-							<EditMode>EnterOnInput</EditMode>
-							<AutoMarkIncomplete>true</AutoMarkIncomplete>
-							<ContextMenu name="АвторКонтекстноеМеню" id="4"/>
-							<ExtendedTooltip name="АвторExtendedTooltip" id="806"/>
-							<Events>
-								<Event name="OnChange">АвторПриИзменении</Event>
-							</Events>
-						</InputField>
+						<UsualGroup name="ГруппаАвтор" id="1308">
+							<ExtendedTooltip name="ГруппаАвторРасширеннаяПодсказка" id="1309"/>
+							<ChildItems>
+								<InputField name="Автор" id="3">
+									<DataPath>Объект.Автор</DataPath>
+									<ToolTipRepresentation>Button</ToolTipRepresentation>
+									<EditMode>EnterOnInput</EditMode>
+									<AutoMarkIncomplete>true</AutoMarkIncomplete>
+									<ContextMenu name="АвторКонтекстноеМеню" id="4"/>
+									<ExtendedTooltip name="АвторExtendedTooltip" id="806"/>
+									<Events>
+										<Event name="OnChange">АвторПриИзменении</Event>
+									</Events>
+								</InputField>
+							</ChildItems>
+						</UsualGroup>
 					</ChildItems>
 				</Page>
 				<Page name="СтраницаДоставка" id="79">
@@ -4026,6 +4076,52 @@
 			<Type>
 				<v8:Type>xs:boolean</v8:Type>
 			</Type>
+		</Attribute>
+		<Attribute name="ПериодПовтораВТечениеДня" id="54">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Повторять каждые</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>2</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+			<SavedData>true</SavedData>
+		</Attribute>
+		<Attribute name="ИспользоватьПериодПовтораВТечениеДня" id="55">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Использовать период повтора в течение дня</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ВремяОкончания" id="63">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Время окончания</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:dateTime</v8:Type>
+				<v8:DateQualifiers>
+					<v8:DateFractions>Time</v8:DateFractions>
+				</v8:DateQualifiers>
+			</Type>
+			<SavedData>true</SavedData>
+		</Attribute>
+		<Attribute name="ПараметрыТекстаПисьмаИФайлов" id="67">
+			<Type/>
 		</Attribute>
 	</Attributes>
 	<Commands>
