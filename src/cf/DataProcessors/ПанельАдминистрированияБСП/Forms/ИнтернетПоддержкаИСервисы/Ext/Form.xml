@@ -94,34 +94,57 @@
 					<ShowTitle>false</ShowTitle>
 					<ExtendedTooltip name="АдресныйКлассификаторНастройкиРасширеннаяПодсказка" id="1875"/>
 					<ChildItems>
-						<Button name="ЗагрузкаАдресногоКлассификатора" id="1876">
-							<Type>Hyperlink</Type>
-							<CommandName>Form.Command.ЗагрузкаАдресногоКлассификатора</CommandName>
+						<UsualGroup name="ЗагрузкаИОчисткаАдресногоКлассификатора" id="1941">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа1</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Для экономии трафика при автоподборе и проверке адресов, а также при работе без доступа к Интернету возможно загружать и обновлять адресные сведения в программу. Требуется до 2 Гб места на компьютере.</v8:content>
+								</v8:item>
+							</ToolTip>
 							<ToolTipRepresentation>ShowBottom</ToolTipRepresentation>
-							<ExtendedTooltip name="ЗагрузкаАдресногоКлассификатораРасширеннаяПодсказка" id="1877">
-								<AutoMaxWidth>false</AutoMaxWidth>
-								<Title formatted="false">
-									<v8:item>
-										<v8:lang>ru</v8:lang>
-										<v8:content>Для экономии трафика при автоподборе и проверке адресов, а также при работе без доступа к Интернету возможно загружать и обновлять адресные сведения в программу. Требуется до 2 Гб места на компьютере.</v8:content>
-									</v8:item>
-								</Title>
-							</ExtendedTooltip>
-						</Button>
-						<Button name="ОчисткаАдресныхСведений" id="1878">
-							<Type>Hyperlink</Type>
-							<CommandName>Form.Command.ОчисткаАдресныхСведений</CommandName>
-							<ToolTipRepresentation>ShowBottom</ToolTipRepresentation>
-							<ExtendedTooltip name="ОчисткаАдресныхСведенийРасширеннаяПодсказка" id="1879">
-								<AutoMaxWidth>false</AutoMaxWidth>
-								<Title formatted="false">
-									<v8:item>
-										<v8:lang>ru</v8:lang>
-										<v8:content>Очистка адресного классификатора.</v8:content>
-									</v8:item>
-								</Title>
-							</ExtendedTooltip>
-						</Button>
+							<Group>AlwaysHorizontal</Group>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ЗагрузкаИОчисткаАдресногоКлассификатораРасширеннаяПодсказка" id="1942"/>
+							<ChildItems>
+								<Button name="ЗагрузкаАдресногоКлассификатора" id="1876">
+									<Type>Hyperlink</Type>
+									<CommandName>Form.Command.ЗагрузкаАдресногоКлассификатора</CommandName>
+									<ExtendedTooltip name="ЗагрузкаАдресногоКлассификатораРасширеннаяПодсказка" id="1877">
+										<AutoMaxWidth>false</AutoMaxWidth>
+									</ExtendedTooltip>
+								</Button>
+								<Button name="ОчисткаАдресныхСведений" id="1878">
+									<Type>Hyperlink</Type>
+									<CommandName>Form.Command.ОчисткаАдресныхСведений</CommandName>
+									<ExtendedTooltip name="ОчисткаАдресныхСведенийРасширеннаяПодсказка" id="1879">
+										<AutoMaxWidth>false</AutoMaxWidth>
+										<Title formatted="false">
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Очистка адресного классификатора.</v8:content>
+											</v8:item>
+										</Title>
+									</ExtendedTooltip>
+								</Button>
+							</ChildItems>
+						</UsualGroup>
+						<CheckBoxField name="ИспользоватьВебСервисАдресов" id="1943">
+							<DataPath>ИспользоватьВебСервисАдресов</DataPath>
+							<TitleLocation>Right</TitleLocation>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="ИспользоватьВебСервисАдресовКонтекстноеМеню" id="1944"/>
+							<ExtendedTooltip name="ИспользоватьВебСервисАдресовРасширеннаяПодсказка" id="1945"/>
+							<Events>
+								<Event name="OnChange">ИспользоватьВебСервисАдресовПриИзменении</Event>
+							</Events>
+						</CheckBoxField>
 					</ChildItems>
 				</UsualGroup>
 				<UsualGroup name="ГруппаОбработкаЗагрузкаКурсовВалют" id="1643">
@@ -719,6 +742,17 @@
 				<v8:Type>xs:boolean</v8:Type>
 			</Type>
 		</Attribute>
+		<Attribute name="ИспользоватьВебСервисАдресов" id="34">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Подбирать и проверять адреса через Интернет, которые не загружены в приложение</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
 	</Attributes>
 	<Commands>
 		<Command name="ПодключитьОтключитьОбсуждения" id="8">
@@ -760,7 +794,7 @@
 			<Title>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Очистка адресных сведений</v8:content>
+					<v8:content>Очистка</v8:content>
 				</v8:item>
 			</Title>
 			<Action>ОчисткаАдресныхСведений</Action>
