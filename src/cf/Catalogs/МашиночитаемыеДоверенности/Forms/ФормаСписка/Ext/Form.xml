@@ -417,6 +417,7 @@
 			</SearchControlAddition>
 			<Events>
 				<Event name="OnActivateRow">СписокПриАктивизацииСтроки</Event>
+				<Event name="OnGetDataAtServer">СписокПриПолученииДанныхНаСервере</Event>
 				<Event name="OnChange">ПриОткрытии</Event>
 			</Events>
 			<ChildItems>
@@ -462,6 +463,41 @@
 					<ContextMenu name="КодНалоговогоОрганаПредставленияКонтекстноеМеню" id="132"/>
 					<ExtendedTooltip name="КодНалоговогоОрганаПредставленияРасширеннаяПодсказка" id="133"/>
 				</LabelField>
+				<ColumnGroup name="ГруппаСтатусВДругомРеестре" id="232">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Статус в другом реестре</v8:content>
+						</v8:item>
+					</Title>
+					<Group>InCell</Group>
+					<ExtendedTooltip name="ГруппаСтатусВДругомРеестреРасширеннаяПодсказка" id="233"/>
+					<ChildItems>
+						<PictureField name="ИндексСтатусаВДругомРеестре" id="229">
+							<DataPath>Список.ИндексСтатусаВДругомРеестре</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Индекс статуса в другом реестре</v8:content>
+								</v8:item>
+							</Title>
+							<TitleLocation>None</TitleLocation>
+							<ContextMenu name="ИндексСтатусаВДругомРеестреКонтекстноеМеню" id="230"/>
+							<ExtendedTooltip name="ИндексСтатусаВДругомРеестреРасширеннаяПодсказка" id="231"/>
+						</PictureField>
+						<InputField name="СтатусВДругомРеестре" id="226">
+							<DataPath>Список.СтатусВДругомРеестре</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Статус в другом реестре</v8:content>
+								</v8:item>
+							</Title>
+							<ContextMenu name="СтатусВДругомРеестреКонтекстноеМеню" id="227"/>
+							<ExtendedTooltip name="СтатусВДругомРеестреРасширеннаяПодсказка" id="228"/>
+						</InputField>
+					</ChildItems>
+				</ColumnGroup>
 				<LabelField name="Код" id="128">
 					<DataPath>Список.Код</DataPath>
 					<Title>
@@ -731,6 +767,8 @@
 	СправочникМашиночитаемыеДоверенности.ДляНалоговыхОрганов КАК ДляНалоговыхОрганов,
 	СправочникМашиночитаемыеДоверенности.РегистрироватьВРеестре КАК РегистрироватьВРеестре,
 	СправочникМашиночитаемыеДоверенности.Статус КАК Статус,
+	&amp;СтатусВДругомРеестре КАК СтатусВДругомРеестре,
+	99 КАК ИндексСтатусаВДругомРеестре,
 	МашиночитаемыеДоверенностиСтатусы.ТехническийСтатус КАК ТехническийСтатус,
 	СправочникМашиночитаемыеДоверенности.Верна КАК Верна,
 	ВЫБОР
@@ -974,10 +1012,6 @@
 					<dcssch:field>Статус</dcssch:field>
 				</Field>
 				<Field xsi:type="dcssch:DataSetFieldField">
-					<dcssch:dataPath>ТехническийСтатус</dcssch:dataPath>
-					<dcssch:field>ТехническийСтатус</dcssch:field>
-				</Field>
-				<Field xsi:type="dcssch:DataSetFieldField">
 					<dcssch:dataPath>ИндексСтатуса</dcssch:dataPath>
 					<dcssch:field>ИндексСтатуса</dcssch:field>
 					<dcssch:title xsi:type="v8:LocalStringType">
@@ -1020,14 +1054,6 @@
 					<dcssch:field>ВерсияФормата</dcssch:field>
 				</Field>
 				<Field xsi:type="dcssch:DataSetFieldField">
-					<dcssch:dataPath>УстановившийСтатус</dcssch:dataPath>
-					<dcssch:field>УстановившийСтатус</dcssch:field>
-				</Field>
-				<Field xsi:type="dcssch:DataSetFieldField">
-					<dcssch:dataPath>СтатусУстановленВручную</dcssch:dataPath>
-					<dcssch:field>СтатусУстановленВручную</dcssch:field>
-				</Field>
-				<Field xsi:type="dcssch:DataSetFieldField">
 					<dcssch:dataPath>ПолномочияВТекстовомВиде</dcssch:dataPath>
 					<dcssch:field>ПолномочияВТекстовомВиде</dcssch:field>
 				</Field>
@@ -1064,6 +1090,14 @@
 					<dcssch:field>ДатаПроверки</dcssch:field>
 				</Field>
 				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ДатаОтмены</dcssch:dataPath>
+					<dcssch:field>ДатаОтмены</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ФайлЗаявленияНаОтмену</dcssch:dataPath>
+					<dcssch:field>ФайлЗаявленияНаОтмену</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
 					<dcssch:dataPath>Доверители</dcssch:dataPath>
 					<dcssch:field>Доверители</dcssch:field>
 				</Field>
@@ -1092,12 +1126,22 @@
 					<dcssch:field>ИмяПредопределенныхДанных</dcssch:field>
 				</Field>
 				<Field xsi:type="dcssch:DataSetFieldField">
-					<dcssch:dataPath>Ответственный</dcssch:dataPath>
-					<dcssch:field>Ответственный</dcssch:field>
+					<dcssch:dataPath>СтатусВДругомРеестре</dcssch:dataPath>
+					<dcssch:field>СтатусВДругомРеестре</dcssch:field>
 				</Field>
 				<Field xsi:type="dcssch:DataSetFieldField">
-					<dcssch:dataPath>ДатаПроверки</dcssch:dataPath>
-					<dcssch:field>ДатаПроверки</dcssch:field>
+					<dcssch:dataPath>ИндексСтатусаВДругомРеестре</dcssch:dataPath>
+					<dcssch:field>ИндексСтатусаВДругомРеестре</dcssch:field>
+					<dcssch:title xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Индекс статуса в другом реестре</v8:content>
+						</v8:item>
+					</dcssch:title>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ТехническийСтатус</dcssch:dataPath>
+					<dcssch:field>ТехническийСтатус</dcssch:field>
 				</Field>
 				<Parameter>
 					<dcssch:name>Доверитель</dcssch:name>
@@ -1404,6 +1448,17 @@
 						</v8:DateQualifiers>
 					</dcssch:valueType>
 					<dcssch:value xsi:type="xs:dateTime">0001-01-01T00:00:00</dcssch:value>
+					<dcssch:useRestriction>true</dcssch:useRestriction>
+				</Parameter>
+				<Parameter>
+					<dcssch:name>СтатусВДругомРеестре</dcssch:name>
+					<dcssch:title xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Статус в другом реестре</v8:content>
+						</v8:item>
+					</dcssch:title>
+					<dcssch:value xsi:nil="true"/>
 					<dcssch:useRestriction>true</dcssch:useRestriction>
 				</Parameter>
 				<MainTable>Catalog.МашиночитаемыеДоверенности</MainTable>

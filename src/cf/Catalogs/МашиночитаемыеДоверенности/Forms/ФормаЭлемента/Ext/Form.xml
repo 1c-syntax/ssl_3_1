@@ -89,37 +89,25 @@
 					<v8:content>Группа статусы</v8:content>
 				</v8:item>
 			</Title>
-			<HorizontalStretch>true</HorizontalStretch>
+			<Width>75</Width>
+			<HorizontalStretch>false</HorizontalStretch>
 			<Representation>None</Representation>
 			<ShowTitle>false</ShowTitle>
 			<ExtendedTooltip name="ГруппаСтатусыРасширеннаяПодсказка" id="768"/>
 			<ChildItems>
-				<UsualGroup name="ГруппаПредставлениеСтатусов" id="769">
+				<UsualGroup name="ГруппаСтатусВРеестреФНС" id="1111">
 					<Title>
 						<v8:item>
 							<v8:lang>ru</v8:lang>
-							<v8:content>Группа представление статусов</v8:content>
+							<v8:content>Группа статус в реестре ФНС</v8:content>
 						</v8:item>
 					</Title>
-					<Representation>NormalSeparation</Representation>
+					<HorizontalStretch>true</HorizontalStretch>
+					<VerticalAlign>Center</VerticalAlign>
 					<ShowTitle>false</ShowTitle>
-					<ExtendedTooltip name="ГруппаПредставлениеСтатусовРасширеннаяПодсказка" id="770"/>
+					<BackColor>style:ToolTipBackColor</BackColor>
+					<ExtendedTooltip name="ГруппаСтатусВРеестреФНСРасширеннаяПодсказка" id="1112"/>
 					<ChildItems>
-						<PictureDecoration name="ДекорацияСозданиеБезРегистрации" id="1069">
-							<Visible>false</Visible>
-							<Title formatted="false">
-								<v8:item>
-									<v8:lang>ru</v8:lang>
-									<v8:content>Декорация создание без регистрации</v8:content>
-								</v8:item>
-							</Title>
-							<Picture>
-								<xr:Ref>CommonPicture.МЧДСозданиеБезРегистрации</xr:Ref>
-								<xr:LoadTransparent>false</xr:LoadTransparent>
-							</Picture>
-							<ContextMenu name="ДекорацияСозданиеБезРегистрацииКонтекстноеМеню" id="1070"/>
-							<ExtendedTooltip name="ДекорацияСозданиеБезРегистрацииРасширеннаяПодсказка" id="1071"/>
-						</PictureDecoration>
 						<PictureDecoration name="ДекорацияСоздание" id="493">
 							<Visible>false</Visible>
 							<Title formatted="false">
@@ -128,27 +116,13 @@
 									<v8:content>Декорация создание</v8:content>
 								</v8:item>
 							</Title>
+							<PictureSize>AutoSize</PictureSize>
 							<Picture>
 								<xr:Ref>CommonPicture.МЧДСоздание</xr:Ref>
 								<xr:LoadTransparent>false</xr:LoadTransparent>
 							</Picture>
 							<ContextMenu name="ДекорацияСозданиеКонтекстноеМеню" id="494"/>
 							<ExtendedTooltip name="ДекорацияСозданиеРасширеннаяПодсказка" id="495"/>
-						</PictureDecoration>
-						<PictureDecoration name="ДекорацияПодписаниеБезРегистрации" id="1089">
-							<Visible>false</Visible>
-							<Title formatted="false">
-								<v8:item>
-									<v8:lang>ru</v8:lang>
-									<v8:content>Декорация подписание без регистрации</v8:content>
-								</v8:item>
-							</Title>
-							<Picture>
-								<xr:Ref>CommonPicture.МЧДСозданаПодписаниеБезРегистрации</xr:Ref>
-								<xr:LoadTransparent>false</xr:LoadTransparent>
-							</Picture>
-							<ContextMenu name="ДекорацияПодписаниеБезРегистрацииКонтекстноеМеню" id="1090"/>
-							<ExtendedTooltip name="ДекорацияПодписаниеБезРегистрацииРасширеннаяПодсказка" id="1068"/>
 						</PictureDecoration>
 						<PictureDecoration name="ДекорацияПодписание" id="496">
 							<Visible>false</Visible>
@@ -158,27 +132,13 @@
 									<v8:content>Декорация подписание</v8:content>
 								</v8:item>
 							</Title>
+							<PictureSize>AutoSize</PictureSize>
 							<Picture>
 								<xr:Ref>CommonPicture.МЧДСозданаПодписание</xr:Ref>
 								<xr:LoadTransparent>false</xr:LoadTransparent>
 							</Picture>
 							<ContextMenu name="ДекорацияПодписаниеКонтекстноеМеню" id="497"/>
 							<ExtendedTooltip name="ДекорацияПодписаниеРасширеннаяПодсказка" id="498"/>
-						</PictureDecoration>
-						<PictureDecoration name="ДекорацияПодписана" id="510">
-							<Visible>false</Visible>
-							<Title formatted="false">
-								<v8:item>
-									<v8:lang>ru</v8:lang>
-									<v8:content>Декорация подписана</v8:content>
-								</v8:item>
-							</Title>
-							<Picture>
-								<xr:Ref>CommonPicture.МЧДПодписана</xr:Ref>
-								<xr:LoadTransparent>false</xr:LoadTransparent>
-							</Picture>
-							<ContextMenu name="ДекорацияПодписанаКонтекстноеМеню" id="511"/>
-							<ExtendedTooltip name="ДекорацияПодписанаРасширеннаяПодсказка" id="512"/>
 						</PictureDecoration>
 						<PictureDecoration name="ДекорацияРегистрация" id="499">
 							<Visible>false</Visible>
@@ -188,6 +148,7 @@
 									<v8:content>Декорация регистрация</v8:content>
 								</v8:item>
 							</Title>
+							<PictureSize>AutoSize</PictureSize>
 							<Picture>
 								<xr:Ref>CommonPicture.МЧДНаРегистрации</xr:Ref>
 								<xr:LoadTransparent>false</xr:LoadTransparent>
@@ -203,6 +164,7 @@
 									<v8:content>Декорация зарегистрирована</v8:content>
 								</v8:item>
 							</Title>
+							<PictureSize>AutoSize</PictureSize>
 							<Picture>
 								<xr:Ref>CommonPicture.МЧДВРеестре</xr:Ref>
 								<xr:LoadTransparent>false</xr:LoadTransparent>
@@ -218,6 +180,7 @@
 									<v8:content>Декорация отменена</v8:content>
 								</v8:item>
 							</Title>
+							<PictureSize>AutoSize</PictureSize>
 							<Picture>
 								<xr:Ref>CommonPicture.МЧДОтменена</xr:Ref>
 								<xr:LoadTransparent>false</xr:LoadTransparent>
@@ -233,12 +196,61 @@
 									<v8:content>Декорация просрочена</v8:content>
 								</v8:item>
 							</Title>
+							<PictureSize>AutoSize</PictureSize>
 							<Picture>
 								<xr:Ref>CommonPicture.МЧДИстекСрокДействия</xr:Ref>
 								<xr:LoadTransparent>false</xr:LoadTransparent>
 							</Picture>
 							<ContextMenu name="ДекорацияПросроченаКонтекстноеМеню" id="975"/>
 							<ExtendedTooltip name="ДекорацияПросроченаРасширеннаяПодсказка" id="976"/>
+						</PictureDecoration>
+						<PictureDecoration name="ДекорацияПодписана" id="510">
+							<Visible>false</Visible>
+							<Title formatted="false">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Декорация подписана</v8:content>
+								</v8:item>
+							</Title>
+							<PictureSize>AutoSize</PictureSize>
+							<Picture>
+								<xr:Ref>CommonPicture.МЧДПодписана</xr:Ref>
+								<xr:LoadTransparent>false</xr:LoadTransparent>
+							</Picture>
+							<ContextMenu name="ДекорацияПодписанаКонтекстноеМеню" id="511"/>
+							<ExtendedTooltip name="ДекорацияПодписанаРасширеннаяПодсказка" id="512"/>
+						</PictureDecoration>
+						<PictureDecoration name="ДекорацияСозданиеБезРегистрации" id="1069">
+							<Visible>false</Visible>
+							<Title formatted="false">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Декорация создание без регистрации</v8:content>
+								</v8:item>
+							</Title>
+							<PictureSize>AutoSize</PictureSize>
+							<Picture>
+								<xr:Ref>CommonPicture.МЧДСозданиеБезРегистрации</xr:Ref>
+								<xr:LoadTransparent>false</xr:LoadTransparent>
+							</Picture>
+							<ContextMenu name="ДекорацияСозданиеБезРегистрацииКонтекстноеМеню" id="1070"/>
+							<ExtendedTooltip name="ДекорацияСозданиеБезРегистрацииРасширеннаяПодсказка" id="1071"/>
+						</PictureDecoration>
+						<PictureDecoration name="ДекорацияПодписаниеБезРегистрации" id="1089">
+							<Visible>false</Visible>
+							<Title formatted="false">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Декорация подписание без регистрации</v8:content>
+								</v8:item>
+							</Title>
+							<PictureSize>AutoSize</PictureSize>
+							<Picture>
+								<xr:Ref>CommonPicture.МЧДСозданаПодписаниеБезРегистрации</xr:Ref>
+								<xr:LoadTransparent>false</xr:LoadTransparent>
+							</Picture>
+							<ContextMenu name="ДекорацияПодписаниеБезРегистрацииКонтекстноеМеню" id="1090"/>
+							<ExtendedTooltip name="ДекорацияПодписаниеБезРегистрацииРасширеннаяПодсказка" id="1068"/>
 						</PictureDecoration>
 						<PictureDecoration name="ДекорацияГотово" id="502">
 							<Visible>false</Visible>
@@ -248,6 +260,7 @@
 									<v8:content>Декорация готово</v8:content>
 								</v8:item>
 							</Title>
+							<PictureSize>AutoSize</PictureSize>
 							<Picture>
 								<xr:Ref>CommonPicture.МЧДАктивна</xr:Ref>
 								<xr:LoadTransparent>false</xr:LoadTransparent>
@@ -255,48 +268,73 @@
 							<ContextMenu name="ДекорацияГотовоКонтекстноеМеню" id="503"/>
 							<ExtendedTooltip name="ДекорацияГотовоРасширеннаяПодсказка" id="504"/>
 						</PictureDecoration>
-					</ChildItems>
-				</UsualGroup>
-				<UsualGroup name="ГруппаОписаниеСостояния" id="771">
-					<Title>
-						<v8:item>
-							<v8:lang>ru</v8:lang>
-							<v8:content>Группа описание состояния</v8:content>
-						</v8:item>
-					</Title>
-					<Representation>NormalSeparation</Representation>
-					<ShowTitle>false</ShowTitle>
-					<ExtendedTooltip name="ГруппаОписаниеСостоянияРасширеннаяПодсказка" id="772"/>
-					<ChildItems>
 						<LabelDecoration name="ОписаниеСостояния" id="773">
 							<AutoMaxWidth>false</AutoMaxWidth>
+							<AutoMaxHeight>false</AutoMaxHeight>
 							<Title formatted="true">
 								<v8:item>
 									<v8:lang>ru</v8:lang>
 									<v8:content>Статус регистрации в реестре ФНС</v8:content>
 								</v8:item>
 							</Title>
+							<ToolTipRepresentation>None</ToolTipRepresentation>
+							<VerticalAlign>Center</VerticalAlign>
 							<ContextMenu name="ОписаниеСостоянияКонтекстноеМеню" id="774"/>
 							<ExtendedTooltip name="ОписаниеСостоянияРасширеннаяПодсказка" id="775"/>
 							<Events>
 								<Event name="URLProcessing">ОписаниеСостоянияОбработкаНавигационнойСсылки</Event>
 							</Events>
 						</LabelDecoration>
-						<LabelDecoration name="ДекорацияРазделитель" id="1091">
-							<Width>1</Width>
-							<AutoMaxWidth>false</AutoMaxWidth>
-							<ContextMenu name="ДекорацияРазделительКонтекстноеМеню" id="1092"/>
-							<ExtendedTooltip name="ДекорацияРазделительРасширеннаяПодсказка" id="1093"/>
-						</LabelDecoration>
+					</ChildItems>
+				</UsualGroup>
+				<LabelDecoration name="ДекорацияРазделитель" id="1091">
+					<Width>1</Width>
+					<AutoMaxWidth>false</AutoMaxWidth>
+					<AutoMaxHeight>false</AutoMaxHeight>
+					<HorizontalStretch>false</HorizontalStretch>
+					<ContextMenu name="ДекорацияРазделительКонтекстноеМеню" id="1092"/>
+					<ExtendedTooltip name="ДекорацияРазделительРасширеннаяПодсказка" id="1093"/>
+				</LabelDecoration>
+				<UsualGroup name="ГруппаСтатусВДругомРеестре" id="1113">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа статус в другом реестре</v8:content>
+						</v8:item>
+					</Title>
+					<Width>35</Width>
+					<VerticalAlign>Center</VerticalAlign>
+					<ShowTitle>false</ShowTitle>
+					<BackColor>style:ToolTipBackColor</BackColor>
+					<ExtendedTooltip name="ГруппаСтатусВДругомРеестреРасширеннаяПодсказка" id="1114"/>
+					<ChildItems>
+						<PictureDecoration name="ДекорацияКартинкаДругойРеестр" id="1099">
+							<Visible>false</Visible>
+							<Title formatted="false">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Декорация регистрация</v8:content>
+								</v8:item>
+							</Title>
+							<PictureSize>AutoSize</PictureSize>
+							<Picture>
+								<xr:Ref>CommonPicture.МЧДНаРегистрации</xr:Ref>
+								<xr:LoadTransparent>false</xr:LoadTransparent>
+							</Picture>
+							<ContextMenu name="ДекорацияКартинкаДругойРеестрКонтекстноеМеню" id="1100"/>
+							<ExtendedTooltip name="ДекорацияКартинкаДругойРеестрРасширеннаяПодсказка" id="1101"/>
+						</PictureDecoration>
 						<LabelDecoration name="ОписаниеСостоянияВДругомРеестре" id="1086">
 							<AutoMaxWidth>false</AutoMaxWidth>
-							<MaxWidth>50</MaxWidth>
+							<MaxWidth>40</MaxWidth>
 							<Title formatted="true">
 								<v8:item>
 									<v8:lang>ru</v8:lang>
 									<v8:content>Описание состояния в другом реестре</v8:content>
 								</v8:item>
 							</Title>
+							<ToolTipRepresentation>None</ToolTipRepresentation>
+							<VerticalAlign>Center</VerticalAlign>
 							<ContextMenu name="ОписаниеСостоянияВДругомРеестреКонтекстноеМеню" id="1087"/>
 							<ExtendedTooltip name="ОписаниеСостоянияВДругомРеестреРасширеннаяПодсказка" id="1088"/>
 							<Events>
@@ -391,6 +429,8 @@
 									<v8:content>Верна</v8:content>
 								</v8:item>
 							</Title>
+							<HorizontalAlign>Center</HorizontalAlign>
+							<VerticalAlign>Center</VerticalAlign>
 							<ContextMenu name="ДекорацияВернаКонтекстноеМеню" id="1055"/>
 							<ExtendedTooltip name="ДекорацияВернаРасширеннаяПодсказка" id="1056"/>
 						</LabelDecoration>
@@ -402,16 +442,11 @@
 									<v8:content>Неверна</v8:content>
 								</v8:item>
 							</Title>
+							<HorizontalAlign>Center</HorizontalAlign>
+							<VerticalAlign>Center</VerticalAlign>
 							<ContextMenu name="ДекорацияНевернаКонтекстноеМеню" id="1062"/>
 							<ExtendedTooltip name="ДекорацияНевернаРасширеннаяПодсказка" id="1063"/>
 						</LabelDecoration>
-						<InputField name="Код" id="66">
-							<DataPath>Объект.Code</DataPath>
-							<AutoMaxWidth>false</AutoMaxWidth>
-							<MaxWidth>11</MaxWidth>
-							<ContextMenu name="КодКонтекстноеМеню" id="67"/>
-							<ExtendedTooltip name="КодРасширеннаяПодсказка" id="68"/>
-						</InputField>
 					</ChildItems>
 				</UsualGroup>
 			</ChildItems>
@@ -518,22 +553,39 @@
 								</Button>
 							</ChildItems>
 						</UsualGroup>
-						<LabelDecoration name="ДоверительДекорация" id="52">
-							<AutoMaxWidth>false</AutoMaxWidth>
-							<AutoMaxHeight>false</AutoMaxHeight>
-							<TextColor>style:ПоясняющийТекст</TextColor>
-							<Title formatted="false">
+						<UsualGroup name="ГруппаДоверительДекорация" id="1132">
+							<Title>
 								<v8:item>
 									<v8:lang>ru</v8:lang>
-									<v8:content>Реквизиты организации</v8:content>
+									<v8:content>Группа доверитель декорация</v8:content>
 								</v8:item>
 							</Title>
-							<ContextMenu name="ДоверительДекорацияКонтекстноеМеню" id="53"/>
-							<ExtendedTooltip name="ДоверительДекорацияРасширеннаяПодсказка" id="54"/>
-							<Events>
-								<Event name="URLProcessing">ДекорацияОбработкаНавигационнойСсылки</Event>
-							</Events>
-						</LabelDecoration>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаДоверительДекорацияРасширеннаяПодсказка" id="1133"/>
+							<ChildItems>
+								<LabelDecoration name="ДоверительДекорацияОтступ" id="1134">
+									<Width>1</Width>
+									<ContextMenu name="ДоверительДекорацияОтступКонтекстноеМеню" id="1135"/>
+									<ExtendedTooltip name="ДоверительДекорацияОтступРасширеннаяПодсказка" id="1136"/>
+								</LabelDecoration>
+								<LabelDecoration name="ДоверительДекорация" id="52">
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<AutoMaxHeight>false</AutoMaxHeight>
+									<TextColor>style:ПоясняющийТекст</TextColor>
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Реквизиты организации</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="ДоверительДекорацияКонтекстноеМеню" id="53"/>
+									<ExtendedTooltip name="ДоверительДекорацияРасширеннаяПодсказка" id="54"/>
+									<Events>
+										<Event name="URLProcessing">ДекорацияОбработкаНавигационнойСсылки</Event>
+									</Events>
+								</LabelDecoration>
+							</ChildItems>
+						</UsualGroup>
 						<UsualGroup name="ГруппаЛицоДоверителя" id="13">
 							<Title>
 								<v8:item>
@@ -657,22 +709,39 @@
 												</Button>
 											</ChildItems>
 										</UsualGroup>
-										<LabelDecoration name="ЛицоДоверителяДекорация" id="55">
-											<AutoMaxWidth>false</AutoMaxWidth>
-											<AutoMaxHeight>false</AutoMaxHeight>
-											<TextColor>style:ПоясняющийТекст</TextColor>
-											<Title formatted="false">
+										<UsualGroup name="ГруппаЛицоДоверителяДекорация" id="1137">
+											<Title>
 												<v8:item>
 													<v8:lang>ru</v8:lang>
-													<v8:content>Реквизиты лица без доверенности</v8:content>
+													<v8:content>Группа лицо доверителя декорация</v8:content>
 												</v8:item>
 											</Title>
-											<ContextMenu name="ЛицоДоверителяДекорацияКонтекстноеМеню" id="56"/>
-											<ExtendedTooltip name="ЛицоДоверителяДекорацияРасширеннаяПодсказка" id="57"/>
-											<Events>
-												<Event name="URLProcessing">ДекорацияОбработкаНавигационнойСсылки</Event>
-											</Events>
-										</LabelDecoration>
+											<ShowTitle>false</ShowTitle>
+											<ExtendedTooltip name="ГруппаЛицоДоверителяДекорацияРасширеннаяПодсказка" id="1138"/>
+											<ChildItems>
+												<LabelDecoration name="ЛицоДоверителяДекорацияОтступ" id="1139">
+													<Width>1</Width>
+													<ContextMenu name="ЛицоДоверителяДекорацияОтступКонтекстноеМеню" id="1140"/>
+													<ExtendedTooltip name="ЛицоДоверителяДекорацияОтступРасширеннаяПодсказка" id="1141"/>
+												</LabelDecoration>
+												<LabelDecoration name="ЛицоДоверителяДекорация" id="55">
+													<AutoMaxWidth>false</AutoMaxWidth>
+													<AutoMaxHeight>false</AutoMaxHeight>
+													<TextColor>style:ПоясняющийТекст</TextColor>
+													<Title formatted="false">
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Реквизиты лица без доверенности</v8:content>
+														</v8:item>
+													</Title>
+													<ContextMenu name="ЛицоДоверителяДекорацияКонтекстноеМеню" id="56"/>
+													<ExtendedTooltip name="ЛицоДоверителяДекорацияРасширеннаяПодсказка" id="57"/>
+													<Events>
+														<Event name="URLProcessing">ДекорацияОбработкаНавигационнойСсылки</Event>
+													</Events>
+												</LabelDecoration>
+											</ChildItems>
+										</UsualGroup>
 										<UsualGroup name="ГруппаЛицоДоверителяПредставитель" id="159">
 											<ToolTip>
 												<v8:item>
@@ -700,7 +769,7 @@
 															<Title formatted="false">
 																<v8:item>
 																	<v8:lang>ru</v8:lang>
-																	<v8:content>Лицо без доверенности упр. компании:</v8:content>
+																	<v8:content>Лицо, действующее от имени упр. компании:</v8:content>
 																</v8:item>
 															</Title>
 															<ContextMenu name="ПредставительУправляющейКомпанииТипДекорацияКонтекстноеМеню" id="172"/>
@@ -752,22 +821,45 @@
 														</Button>
 													</ChildItems>
 												</UsualGroup>
-												<LabelDecoration name="ПредставительУправляющейКомпанииДекорация" id="367">
-													<AutoMaxWidth>false</AutoMaxWidth>
-													<AutoMaxHeight>false</AutoMaxHeight>
-													<TextColor>style:ПоясняющийТекст</TextColor>
-													<Title formatted="false">
+												<UsualGroup name="ГруппаПредставительУправляющейКомпанииДекорация" id="1142">
+													<Title>
 														<v8:item>
 															<v8:lang>ru</v8:lang>
-															<v8:content>Реквизиты лица без доверенности управляющей компании</v8:content>
+															<v8:content>Группа представитель управляющей компании декорация</v8:content>
 														</v8:item>
 													</Title>
-													<ContextMenu name="ПредставительУправляющейКомпанииДекорацияКонтекстноеМеню" id="368"/>
-													<ExtendedTooltip name="ПредставительУправляющейКомпанииДекорацияРасширеннаяПодсказка" id="369"/>
-													<Events>
-														<Event name="URLProcessing">ДекорацияОбработкаНавигационнойСсылки</Event>
-													</Events>
-												</LabelDecoration>
+													<ToolTip>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Группа лицо доверителя представитель декорация</v8:content>
+														</v8:item>
+													</ToolTip>
+													<ShowTitle>false</ShowTitle>
+													<ExtendedTooltip name="ГруппаПредставительУправляющейКомпанииДекорацияРасширеннаяПодсказка" id="1143"/>
+													<ChildItems>
+														<LabelDecoration name="ПредставительУправляющейКомпанииДекорацияОтступ" id="1144">
+															<Width>1</Width>
+															<ContextMenu name="ПредставительУправляющейКомпанииДекорацияОтступКонтекстноеМеню" id="1145"/>
+															<ExtendedTooltip name="ПредставительУправляющейКомпанииДекорацияОтступРасширеннаяПодсказка" id="1146"/>
+														</LabelDecoration>
+														<LabelDecoration name="ПредставительУправляющейКомпанииДекорация" id="367">
+															<AutoMaxWidth>false</AutoMaxWidth>
+															<AutoMaxHeight>false</AutoMaxHeight>
+															<TextColor>style:ПоясняющийТекст</TextColor>
+															<Title formatted="false">
+																<v8:item>
+																	<v8:lang>ru</v8:lang>
+																	<v8:content>Реквизиты лица без доверенности управляющей компании</v8:content>
+																</v8:item>
+															</Title>
+															<ContextMenu name="ПредставительУправляющейКомпанииДекорацияКонтекстноеМеню" id="368"/>
+															<ExtendedTooltip name="ПредставительУправляющейКомпанииДекорацияРасширеннаяПодсказка" id="369"/>
+															<Events>
+																<Event name="URLProcessing">ДекорацияОбработкаНавигационнойСсылки</Event>
+															</Events>
+														</LabelDecoration>
+													</ChildItems>
+												</UsualGroup>
 											</ChildItems>
 										</UsualGroup>
 										<UsualGroup name="ГруппаДоверенностьОснование" id="1097">
@@ -782,7 +874,7 @@
 											<ShowTitle>false</ShowTitle>
 											<ExtendedTooltip name="ГруппаДоверенностьОснованиеРасширеннаяПодсказка" id="1098"/>
 											<ChildItems>
-												<LabelDecoration name="НадписьПоДоверенности" id="1099">
+												<LabelDecoration name="НадписьПоДоверенности" id="1129">
 													<Width>15</Width>
 													<Title formatted="false">
 														<v8:item>
@@ -790,8 +882,8 @@
 															<v8:content>По доверенности:</v8:content>
 														</v8:item>
 													</Title>
-													<ContextMenu name="НадписьПоДоверенностиКонтекстноеМеню" id="1100"/>
-													<ExtendedTooltip name="НадписьПоДоверенностиРасширеннаяПодсказка" id="1101"/>
+													<ContextMenu name="НадписьПоДоверенностиКонтекстноеМеню" id="1130"/>
+													<ExtendedTooltip name="НадписьПоДоверенностиРасширеннаяПодсказка" id="1131"/>
 												</LabelDecoration>
 												<UsualGroup name="ГруппаДоверенностьИПредставление" id="1105">
 													<Title>
@@ -874,8 +966,10 @@
 							<v8:content>Подписи доверителей</v8:content>
 						</v8:item>
 					</Title>
+					<TitleFont ref="style:NormalTextFont" kind="StyleItem"/>
 					<Behavior>Collapsible</Behavior>
 					<Collapsed>true</Collapsed>
+					<ControlRepresentation>Picture</ControlRepresentation>
 					<ExtendedTooltip name="ГруппаЭлектронныеПодписиРасширеннаяПодсказка" id="801"/>
 					<ChildItems>
 						<Table name="ЭлектронныеПодписи" id="802">
@@ -1137,22 +1231,39 @@
 								</Button>
 							</ChildItems>
 						</UsualGroup>
-						<LabelDecoration name="ПредставительДекорация" id="259">
-							<AutoMaxWidth>false</AutoMaxWidth>
-							<AutoMaxHeight>false</AutoMaxHeight>
-							<TextColor>style:ПоясняющийТекст</TextColor>
-							<Title formatted="false">
+						<UsualGroup name="ГруппаПредставительДекорация" id="1147">
+							<Title>
 								<v8:item>
 									<v8:lang>ru</v8:lang>
-									<v8:content>Реквизиты представителя</v8:content>
+									<v8:content>Группа представитель декорация</v8:content>
 								</v8:item>
 							</Title>
-							<ContextMenu name="ПредставительДекорацияКонтекстноеМеню" id="260"/>
-							<ExtendedTooltip name="ПредставительДекорацияРасширеннаяПодсказка" id="261"/>
-							<Events>
-								<Event name="URLProcessing">ДекорацияОбработкаНавигационнойСсылки</Event>
-							</Events>
-						</LabelDecoration>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаПредставительДекорацияРасширеннаяПодсказка" id="1148"/>
+							<ChildItems>
+								<LabelDecoration name="ПредставительДекорацияОтступ" id="1149">
+									<Width>1</Width>
+									<ContextMenu name="ПредставительДекорацияОтступКонтекстноеМеню" id="1150"/>
+									<ExtendedTooltip name="ПредставительДекорацияОтступРасширеннаяПодсказка" id="1151"/>
+								</LabelDecoration>
+								<LabelDecoration name="ПредставительДекорация" id="259">
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<AutoMaxHeight>false</AutoMaxHeight>
+									<TextColor>style:ПоясняющийТекст</TextColor>
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Реквизиты представителя</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="ПредставительДекорацияКонтекстноеМеню" id="260"/>
+									<ExtendedTooltip name="ПредставительДекорацияРасширеннаяПодсказка" id="261"/>
+									<Events>
+										<Event name="URLProcessing">ДекорацияОбработкаНавигационнойСсылки</Event>
+									</Events>
+								</LabelDecoration>
+							</ChildItems>
+						</UsualGroup>
 						<UsualGroup name="ГруппаЛицоПредставителя" id="761">
 							<Title>
 								<v8:item>
@@ -1180,7 +1291,7 @@
 											<Title formatted="false">
 												<v8:item>
 													<v8:lang>ru</v8:lang>
-													<v8:content>Представитель</v8:content>
+													<v8:content>Представитель:</v8:content>
 												</v8:item>
 											</Title>
 											<ContextMenu name="ЛицоПредставителяТипДекорацияКонтекстноеМеню" id="746"/>
@@ -1229,22 +1340,39 @@
 										</Button>
 									</ChildItems>
 								</UsualGroup>
-								<LabelDecoration name="ЛицоПредставителяДекорация" id="742">
-									<AutoMaxWidth>false</AutoMaxWidth>
-									<AutoMaxHeight>false</AutoMaxHeight>
-									<TextColor>style:ПоясняющийТекст</TextColor>
-									<Title formatted="false">
+								<UsualGroup name="ГруппаЛицоПредставителяДекорация" id="1152">
+									<Title>
 										<v8:item>
 											<v8:lang>ru</v8:lang>
-											<v8:content>Реквизиты представителя</v8:content>
+											<v8:content>Группа лицо представителя декорация</v8:content>
 										</v8:item>
 									</Title>
-									<ContextMenu name="ЛицоПредставителяДекорацияКонтекстноеМеню" id="743"/>
-									<ExtendedTooltip name="ЛицоПредставителяДекорацияРасширеннаяПодсказка" id="744"/>
-									<Events>
-										<Event name="URLProcessing">ДекорацияОбработкаНавигационнойСсылки</Event>
-									</Events>
-								</LabelDecoration>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="ГруппаЛицоПредставителяДекорацияРасширеннаяПодсказка" id="1153"/>
+									<ChildItems>
+										<LabelDecoration name="ЛицоПредставителяОтступ" id="1154">
+											<Width>1</Width>
+											<ContextMenu name="ЛицоПредставителяОтступКонтекстноеМеню" id="1155"/>
+											<ExtendedTooltip name="ЛицоПредставителяОтступРасширеннаяПодсказка" id="1156"/>
+										</LabelDecoration>
+										<LabelDecoration name="ЛицоПредставителяДекорация" id="742">
+											<AutoMaxWidth>false</AutoMaxWidth>
+											<AutoMaxHeight>false</AutoMaxHeight>
+											<TextColor>style:ПоясняющийТекст</TextColor>
+											<Title formatted="false">
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Реквизиты представителя</v8:content>
+												</v8:item>
+											</Title>
+											<ContextMenu name="ЛицоПредставителяДекорацияКонтекстноеМеню" id="743"/>
+											<ExtendedTooltip name="ЛицоПредставителяДекорацияРасширеннаяПодсказка" id="744"/>
+											<Events>
+												<Event name="URLProcessing">ДекорацияОбработкаНавигационнойСсылки</Event>
+											</Events>
+										</LabelDecoration>
+									</ChildItems>
+								</UsualGroup>
 							</ChildItems>
 						</UsualGroup>
 					</ChildItems>
@@ -1445,6 +1573,8 @@
 					<v8:content>Группа полномочия</v8:content>
 				</v8:item>
 			</Title>
+			<Width>80</Width>
+			<HorizontalStretch>false</HorizontalStretch>
 			<Group>AlwaysHorizontal</Group>
 			<Representation>NormalSeparation</Representation>
 			<ShowTitle>false</ShowTitle>
@@ -1655,6 +1785,7 @@
 					<ToolTipRepresentation>None</ToolTipRepresentation>
 					<Behavior>Collapsible</Behavior>
 					<Collapsed>true</Collapsed>
+					<ControlRepresentation>Picture</ControlRepresentation>
 					<ExtendedTooltip name="ГруппаИныеСведенияРасширеннаяПодсказка" id="799">
 						<AutoMaxWidth>false</AutoMaxWidth>
 						<MaxWidth>80</MaxWidth>
@@ -1682,7 +1813,7 @@
 						</InputField>
 					</ChildItems>
 				</UsualGroup>
-				<UsualGroup name="ГруппаВозможностьПередоверия" id="1113">
+				<UsualGroup name="ГруппаВозможностьПередоверия" id="1122">
 					<Visible>false</Visible>
 					<Title>
 						<v8:item>
@@ -1690,10 +1821,11 @@
 							<v8:content>Группа возможность передоверия</v8:content>
 						</v8:item>
 					</Title>
+					<VerticalStretch>true</VerticalStretch>
 					<Group>AlwaysHorizontal</Group>
 					<Representation>None</Representation>
 					<ShowTitle>false</ShowTitle>
-					<ExtendedTooltip name="ГруппаВозможностьПередоверияРасширеннаяПодсказка" id="1114"/>
+					<ExtendedTooltip name="ГруппаВозможностьПередоверияРасширеннаяПодсказка" id="1123"/>
 					<ChildItems>
 						<CheckBoxField name="ФлажокВозможностьПередоверия" id="1110">
 							<DataPath>РазрешитьПередоверие</DataPath>
@@ -1705,13 +1837,13 @@
 							</Title>
 							<TitleLocation>Right</TitleLocation>
 							<CheckBoxType>Auto</CheckBoxType>
-							<ContextMenu name="ФлажокВозможностьПередоверияКонтекстноеМеню" id="1111"/>
-							<ExtendedTooltip name="ФлажокВозможностьПередоверияРасширеннаяПодсказка" id="1112"/>
+							<ContextMenu name="ФлажокВозможностьПередоверияКонтекстноеМеню" id="1125"/>
+							<ExtendedTooltip name="ФлажокВозможностьПередоверияРасширеннаяПодсказка" id="1126"/>
 							<Events>
 								<Event name="OnChange">ФлажокВозможностьПередоверияПриИзменении</Event>
 							</Events>
 						</CheckBoxField>
-						<InputField name="ВозможностьПередоверия" id="1115">
+						<InputField name="ВозможностьПередоверия" id="1124">
 							<DataPath>Объект.ВозможностьПередоверия</DataPath>
 							<TitleLocation>None</TitleLocation>
 							<ListChoiceMode>true</ListChoiceMode>
@@ -1734,41 +1866,65 @@
 									</xr:Value>
 								</xr:Item>
 							</ChoiceList>
-							<ContextMenu name="ВозможностьПередоверияКонтекстноеМеню" id="1116"/>
-							<ExtendedTooltip name="ВозможностьПередоверияРасширеннаяПодсказка" id="1117"/>
+							<ContextMenu name="ВозможностьПередоверияКонтекстноеМеню" id="1127"/>
+							<ExtendedTooltip name="ВозможностьПередоверияРасширеннаяПодсказка" id="1128"/>
 						</InputField>
 					</ChildItems>
 				</UsualGroup>
 			</ChildItems>
 		</UsualGroup>
-		<UsualGroup name="ГруппаНомерВРеестре" id="74">
+		<UsualGroup name="ГруппаРегистрацияВРеестре" id="74">
 			<Title>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Группа номер в реестре</v8:content>
+					<v8:content>Группа регистрация в реестре</v8:content>
 				</v8:item>
 			</Title>
 			<Group>Vertical</Group>
 			<Representation>NormalSeparation</Representation>
 			<ShowTitle>false</ShowTitle>
-			<ExtendedTooltip name="ГруппаНомерВРеестреРасширеннаяПодсказка" id="75"/>
+			<ExtendedTooltip name="ГруппаРегистрацияВРеестреРасширеннаяПодсказка" id="75"/>
 			<ChildItems>
-				<CheckBoxField name="РегистрироватьВРеестре" id="71">
-					<DataPath>Объект.РегистрироватьВРеестре</DataPath>
+				<UsualGroup name="ГруппаРегистрацияВРеестреФНС" id="1115">
 					<Title>
 						<v8:item>
 							<v8:lang>ru</v8:lang>
-							<v8:content>Регистрировать в Распределенном реестре ФНС России</v8:content>
+							<v8:content>Группа регистрация в реестре ФНС</v8:content>
 						</v8:item>
 					</Title>
-					<TitleLocation>Right</TitleLocation>
-					<CheckBoxType>Auto</CheckBoxType>
-					<ContextMenu name="РегистрироватьВРеестреКонтекстноеМеню" id="72"/>
-					<ExtendedTooltip name="РегистрироватьВРеестреРасширеннаяПодсказка" id="73"/>
-					<Events>
-						<Event name="OnChange">РегистрироватьВРеестреПриИзменении</Event>
-					</Events>
-				</CheckBoxField>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаРегистрацияВРеестреФНСРасширеннаяПодсказка" id="1116"/>
+					<ChildItems>
+						<CheckBoxField name="РегистрироватьВРеестре" id="71">
+							<DataPath>Объект.РегистрироватьВРеестре</DataPath>
+							<TitleLocation>None</TitleLocation>
+							<ToolTipRepresentation>None</ToolTipRepresentation>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="РегистрироватьВРеестреКонтекстноеМеню" id="72"/>
+							<ExtendedTooltip name="РегистрироватьВРеестреРасширеннаяПодсказка" id="73"/>
+							<Events>
+								<Event name="OnChange">РегистрироватьВРеестреПриИзменении</Event>
+							</Events>
+						</CheckBoxField>
+						<LabelDecoration name="ДекорацияРегистрироватьВРеестреФНС" id="1117">
+							<Title formatted="false">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Регистрировать в распределенном реестре ФНС России</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Распределенный реестр ФНС России объединяет информационные системы организаций, которым разрешено хранение МЧД, и обеспечивает единую точку доступа для получения статуса МЧД, размещенной любым участником.</v8:content>
+								</v8:item>
+							</ToolTip>
+							<ToolTipRepresentation>Button</ToolTipRepresentation>
+							<ContextMenu name="ДекорацияРегистрироватьВРеестреФНСКонтекстноеМеню" id="1118"/>
+							<ExtendedTooltip name="ДекорацияРегистрироватьВРеестреФНСРасширеннаяПодсказка" id="1119"/>
+						</LabelDecoration>
+					</ChildItems>
+				</UsualGroup>
 				<UsualGroup name="ГруппаРегистрацияВДругомРеестре" id="1072">
 					<Title>
 						<v8:item>
@@ -1787,7 +1943,7 @@
 									<v8:content>Регистрировать в другом реестре</v8:content>
 								</v8:item>
 							</Title>
-							<TitleLocation>Right</TitleLocation>
+							<TitleLocation>None</TitleLocation>
 							<CheckBoxType>Auto</CheckBoxType>
 							<ContextMenu name="РегистрироватьВДругомРеестреКонтекстноеМеню" id="1084"/>
 							<ExtendedTooltip name="РегистрироватьВДругомРеестреРасширеннаяПодсказка" id="1085"/>
@@ -1795,15 +1951,16 @@
 								<Event name="OnChange">РегистрироватьВДругомРеестреПриИзменении</Event>
 							</Events>
 						</CheckBoxField>
-						<LabelDecoration name="ДекорацияРегистрироватьВДругомРеестре" id="1094">
+						<LabelDecoration name="ОписаниеРегистрацииВДругомРеестре" id="1094">
 							<Title formatted="false">
 								<v8:item>
 									<v8:lang>ru</v8:lang>
 									<v8:content>Описание регистрации в другом реестре</v8:content>
 								</v8:item>
 							</Title>
-							<ContextMenu name="ДекорацияРегистрироватьВДругомРеестреКонтекстноеМеню" id="1095"/>
-							<ExtendedTooltip name="ДекорацияРегистрироватьВДругомРеестреРасширеннаяПодсказка" id="1096"/>
+							<ToolTipRepresentation>Button</ToolTipRepresentation>
+							<ContextMenu name="ОписаниеРегистрацииВДругомРеестреКонтекстноеМеню" id="1095"/>
+							<ExtendedTooltip name="ОписаниеРегистрацииВДругомРеестреРасширеннаяПодсказка" id="1096"/>
 							<Events>
 								<Event name="URLProcessing">ДругойРеестрОбработкаНавигационнойСсылки</Event>
 							</Events>
@@ -1812,25 +1969,45 @@
 				</UsualGroup>
 			</ChildItems>
 		</UsualGroup>
-		<InputField name="НомерДоверенности" id="38">
-			<DataPath>Объект.НомерДоверенности</DataPath>
+		<UsualGroup name="ГруппаНомера" id="1120">
 			<Title>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Единый регистрационный номер доверенности</v8:content>
+					<v8:content>Группа номера</v8:content>
 				</v8:item>
 			</Title>
-			<TitleLocation>Top</TitleLocation>
-			<TextEdit>false</TextEdit>
-			<InputHint>
-				<v8:item>
-					<v8:lang>ru</v8:lang>
-					<v8:content>Номер будет получен при подписании</v8:content>
-				</v8:item>
-			</InputHint>
-			<ContextMenu name="НомерДоверенностиКонтекстноеМеню" id="39"/>
-			<ExtendedTooltip name="НомерДоверенностиРасширеннаяПодсказка" id="40"/>
-		</InputField>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаНомераРасширеннаяПодсказка" id="1121"/>
+			<ChildItems>
+				<InputField name="НомерДоверенности" id="38">
+					<DataPath>Объект.НомерДоверенности</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Единый регистрационный номер доверенности</v8:content>
+						</v8:item>
+					</Title>
+					<TitleLocation>Top</TitleLocation>
+					<TextEdit>false</TextEdit>
+					<InputHint>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Номер будет получен при подписании</v8:content>
+						</v8:item>
+					</InputHint>
+					<ContextMenu name="НомерДоверенностиКонтекстноеМеню" id="39"/>
+					<ExtendedTooltip name="НомерДоверенностиРасширеннаяПодсказка" id="40"/>
+				</InputField>
+				<InputField name="Код" id="66">
+					<DataPath>Объект.Code</DataPath>
+					<TitleLocation>Top</TitleLocation>
+					<AutoMaxWidth>false</AutoMaxWidth>
+					<MaxWidth>11</MaxWidth>
+					<ContextMenu name="КодКонтекстноеМеню" id="67"/>
+					<ExtendedTooltip name="КодРасширеннаяПодсказка" id="68"/>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
 		<InputField name="Наименование" id="364">
 			<DataPath>Объект.Description</DataPath>
 			<Title>
@@ -2626,6 +2803,11 @@
 				<v8:Type>xs:boolean</v8:Type>
 			</Type>
 		</Attribute>
+		<Attribute name="ЗарегистрированаВДругомРеестре" id="56">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
 	</Attributes>
 	<Commands>
 		<Command name="ВыборТипаДоверителя" id="1">
@@ -2754,6 +2936,7 @@
 				</v8:item>
 			</ToolTip>
 			<Action>Отправить</Action>
+			<ModifiesSavedData>true</ModifiesSavedData>
 		</Command>
 		<Command name="УдалитьПодпись" id="14">
 			<Title>

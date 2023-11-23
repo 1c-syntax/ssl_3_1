@@ -450,38 +450,54 @@
 						</InputField>
 					</ChildItems>
 				</ColumnGroup>
-				<PictureField name="ОригиналПолученКартинка" id="138">
-					<DataPath>КомплектПечатныхФорм.ОригиналПолученКартинка</DataPath>
-					<TitleLocation>None</TitleLocation>
-					<EditMode>EnterOnInput</EditMode>
-					<HeaderPicture>
-						<xr:Ref>CommonPicture.СостояниеОригиналаПервичногоДокументаОригиналПолучен</xr:Ref>
-						<xr:LoadTransparent>false</xr:LoadTransparent>
-					</HeaderPicture>
-					<ValuesPicture>
-						<xr:Ref>CommonPicture.КоллекцияПиктограммНаличиеОригиналаПервичногоДокумента</xr:Ref>
-						<xr:LoadTransparent>false</xr:LoadTransparent>
-					</ValuesPicture>
-					<ContextMenu name="ОригиналПолученКартинкаКонтекстноеМеню" id="139"/>
-					<ExtendedTooltip name="ОригиналПолученКартинкаРасширеннаяПодсказка" id="140"/>
-				</PictureField>
-				<InputField name="КомплектПечатныхФормСостояние" id="64">
-					<DataPath>КомплектПечатныхФорм.Состояние</DataPath>
+				<ColumnGroup name="КомплектПечатныхФормГруппаСостояние" id="166">
 					<Title>
 						<v8:item>
 							<v8:lang>ru</v8:lang>
-							<v8:content>Состояние оригинала</v8:content>
+							<v8:content>Состояние</v8:content>
 						</v8:item>
 					</Title>
-					<EditMode>EnterOnInput</EditMode>
-					<DropListWidth>5</DropListWidth>
-					<ContextMenu name="КомплектПечатныхФормСостояниеКонтекстноеМеню" id="65"/>
-					<ExtendedTooltip name="КомплектПечатныхФормСостояниеРасширеннаяПодсказка" id="66"/>
-					<Events>
-						<Event name="OnChange">КомплектПечатныхФормСостояниеПриИзменении</Event>
-						<Event name="ChoiceProcessing">КомплектПечатныхФормСостояниеОбработкаВыбора</Event>
-					</Events>
-				</InputField>
+					<Group>InCell</Group>
+					<ExtendedTooltip name="КомплектПечатныхФормГруппаСостояниеРасширеннаяПодсказка" id="167"/>
+					<ChildItems>
+						<PictureField name="ОригиналПолученКартинка" id="138">
+							<DataPath>КомплектПечатныхФорм.ОригиналПолученКартинка</DataPath>
+							<TitleLocation>None</TitleLocation>
+							<EditMode>EnterOnInput</EditMode>
+							<HeaderPicture>
+								<xr:Ref>CommonPicture.СостояниеОригиналаПервичногоДокументаОригиналПолучен</xr:Ref>
+								<xr:LoadTransparent>false</xr:LoadTransparent>
+							</HeaderPicture>
+							<ValuesPicture>
+								<xr:Ref>CommonPicture.КоллекцияПиктограммНаличиеОригиналаПервичногоДокумента</xr:Ref>
+								<xr:LoadTransparent>false</xr:LoadTransparent>
+							</ValuesPicture>
+							<ContextMenu name="ОригиналПолученКартинкаКонтекстноеМеню" id="139"/>
+							<ExtendedTooltip name="ОригиналПолученКартинкаРасширеннаяПодсказка" id="140"/>
+						</PictureField>
+						<InputField name="КомплектПечатныхФормСостояние" id="64">
+							<DataPath>КомплектПечатныхФорм.Состояние</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Состояние оригинала</v8:content>
+								</v8:item>
+							</Title>
+							<EditMode>EnterOnInput</EditMode>
+							<HeaderPicture>
+								<xr:Ref>CommonPicture.СостояниеОригиналаПервичногоДокументаОригиналПолучен</xr:Ref>
+								<xr:LoadTransparent>false</xr:LoadTransparent>
+							</HeaderPicture>
+							<DropListWidth>5</DropListWidth>
+							<ContextMenu name="КомплектПечатныхФормСостояниеКонтекстноеМеню" id="65"/>
+							<ExtendedTooltip name="КомплектПечатныхФормСостояниеРасширеннаяПодсказка" id="66"/>
+							<Events>
+								<Event name="OnChange">КомплектПечатныхФормСостояниеПриИзменении</Event>
+								<Event name="ChoiceProcessing">КомплектПечатныхФормСостояниеОбработкаВыбора</Event>
+							</Events>
+						</InputField>
+					</ChildItems>
+				</ColumnGroup>
 				<InputField name="КомплектПечатныхФормДатаПоследнегоИзменения" id="157">
 					<DataPath>КомплектПечатныхФорм.ДатаПоследнегоИзменения</DataPath>
 					<ReadOnly>true</ReadOnly>
@@ -795,4 +811,11 @@
 			<Action>ОК</Action>
 		</Command>
 	</Commands>
+	<Parameters>
+		<Parameter name="ДокументСсылка">
+			<Type>
+				<v8:TypeSet>cfg:AnyRef</v8:TypeSet>
+			</Type>
+		</Parameter>
+	</Parameters>
 </Form>
