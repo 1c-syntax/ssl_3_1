@@ -66,13 +66,39 @@
 							<ContextMenu name="КемВыданКонтекстноеМеню" id="5"/>
 							<ExtendedTooltip name="КемВыданExtendedTooltip" id="17"/>
 						</InputField>
-						<InputField name="СрокДействия" id="6">
-							<DataPath>ДействителенДо</DataPath>
-							<ReadOnly>true</ReadOnly>
-							<SkipOnInput>true</SkipOnInput>
-							<ContextMenu name="СрокДействияКонтекстноеМеню" id="7"/>
-							<ExtendedTooltip name="СрокДействияExtendedTooltip" id="18"/>
-						</InputField>
+						<UsualGroup name="ГруппаСрокДействия" id="272">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа срок действия</v8:content>
+								</v8:item>
+							</Title>
+							<ShowTitle>false</ShowTitle>
+							<ThroughAlign>Use</ThroughAlign>
+							<ExtendedTooltip name="ГруппаСрокДействияРасширеннаяПодсказка" id="273"/>
+							<ChildItems>
+								<InputField name="СрокДействия" id="6">
+									<DataPath>ДатаОкончания</DataPath>
+									<ReadOnly>true</ReadOnly>
+									<SkipOnInput>true</SkipOnInput>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Срок действия
+сертификата</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="СрокДействияКонтекстноеМеню" id="7"/>
+									<ExtendedTooltip name="СрокДействияExtendedTooltip" id="18"/>
+								</InputField>
+								<InputField name="ДатаОкончанияЗакрытогоКлюча" id="274">
+									<DataPath>ДатаОкончанияЗакрытогоКлюча</DataPath>
+									<ReadOnly>true</ReadOnly>
+									<ContextMenu name="ДатаОкончанияЗакрытогоКлючаКонтекстноеМеню" id="275"/>
+									<ExtendedTooltip name="ДатаОкончанияЗакрытогоКлючаРасширеннаяПодсказка" id="276"/>
+								</InputField>
+							</ChildItems>
+						</UsualGroup>
 						<InputField name="АлгоритмПодписи" id="168">
 							<DataPath>АлгоритмПодписи</DataPath>
 							<ReadOnly>true</ReadOnly>
@@ -347,170 +373,6 @@
 						</Table>
 					</ChildItems>
 				</Page>
-				<Page name="СтраницаВнутреннееСодержание" id="26">
-					<Title>
-						<v8:item>
-							<v8:lang>ru</v8:lang>
-							<v8:content>Внутреннее содержание</v8:content>
-						</v8:item>
-					</Title>
-					<ExtendedTooltip name="СтраницаВнутреннееСодержаниеРасширеннаяПодсказка" id="27"/>
-					<ChildItems>
-						<InputField name="ГруппаВнутреннихПолей" id="92">
-							<DataPath>ГруппаВнутреннихПолей</DataPath>
-							<HorizontalStretch>false</HorizontalStretch>
-							<ListChoiceMode>true</ListChoiceMode>
-							<ChoiceList>
-								<xr:Item>
-									<xr:Presentation/>
-									<xr:CheckState>0</xr:CheckState>
-									<xr:Value xsi:type="FormChoiceListDesTimeValue">
-										<Presentation>
-											<v8:item>
-												<v8:lang>ru</v8:lang>
-												<v8:content>Общие</v8:content>
-											</v8:item>
-										</Presentation>
-										<Value xsi:type="xs:string">Общие</Value>
-									</xr:Value>
-								</xr:Item>
-								<xr:Item>
-									<xr:Presentation/>
-									<xr:CheckState>0</xr:CheckState>
-									<xr:Value xsi:type="FormChoiceListDesTimeValue">
-										<Presentation>
-											<v8:item>
-												<v8:lang>ru</v8:lang>
-												<v8:content>Субъект</v8:content>
-											</v8:item>
-										</Presentation>
-										<Value xsi:type="xs:string">Субъект</Value>
-									</xr:Value>
-								</xr:Item>
-								<xr:Item>
-									<xr:Presentation/>
-									<xr:CheckState>0</xr:CheckState>
-									<xr:Value xsi:type="FormChoiceListDesTimeValue">
-										<Presentation>
-											<v8:item>
-												<v8:lang>ru</v8:lang>
-												<v8:content>Издатель</v8:content>
-											</v8:item>
-										</Presentation>
-										<Value xsi:type="xs:string">Издатель</Value>
-									</xr:Value>
-								</xr:Item>
-								<xr:Item>
-									<xr:Presentation/>
-									<xr:CheckState>0</xr:CheckState>
-									<xr:Value xsi:type="FormChoiceListDesTimeValue">
-										<Presentation>
-											<v8:item>
-												<v8:lang>ru</v8:lang>
-												<v8:content>Расширенные свойства</v8:content>
-											</v8:item>
-										</Presentation>
-										<Value xsi:type="xs:string">РасширенныеСвойства</Value>
-									</xr:Value>
-								</xr:Item>
-							</ChoiceList>
-							<BackColor>style:ФонУправляющегоПоля</BackColor>
-							<ContextMenu name="ГруппаВнутреннихПолейКонтекстноеМеню" id="93"/>
-							<ExtendedTooltip name="ГруппаВнутреннихПолейРасширеннаяПодсказка" id="94"/>
-							<Events>
-								<Event name="OnChange">ГруппаВнутреннихПолейПриИзменении</Event>
-								<Event name="Clearing">ГруппаВнутреннихПолейОчистка</Event>
-							</Events>
-						</InputField>
-						<Table name="ВнутреннееСодержание" id="95">
-							<Representation>List</Representation>
-							<ReadOnly>true</ReadOnly>
-							<AutoInsertNewRow>true</AutoInsertNewRow>
-							<EnableStartDrag>true</EnableStartDrag>
-							<EnableDrag>true</EnableDrag>
-							<FileDragMode>AsFile</FileDragMode>
-							<DataPath>ВнутреннееСодержание</DataPath>
-							<Title>
-								<v8:item>
-									<v8:lang>ru</v8:lang>
-									<v8:content>Внутреннее содержание</v8:content>
-								</v8:item>
-							</Title>
-							<CommandSet>
-								<ExcludedCommand>Add</ExcludedCommand>
-								<ExcludedCommand>Change</ExcludedCommand>
-								<ExcludedCommand>Copy</ExcludedCommand>
-								<ExcludedCommand>Delete</ExcludedCommand>
-								<ExcludedCommand>EndEdit</ExcludedCommand>
-								<ExcludedCommand>MoveDown</ExcludedCommand>
-								<ExcludedCommand>MoveUp</ExcludedCommand>
-								<ExcludedCommand>SortListAsc</ExcludedCommand>
-								<ExcludedCommand>SortListDesc</ExcludedCommand>
-							</CommandSet>
-							<RowFilter xsi:nil="true"/>
-							<ContextMenu name="ВнутреннееСодержаниеКонтекстноеМеню" id="96"/>
-							<AutoCommandBar name="ВнутреннееСодержаниеКоманднаяПанель" id="97">
-								<Autofill>false</Autofill>
-							</AutoCommandBar>
-							<ExtendedTooltip name="ВнутреннееСодержаниеРасширеннаяПодсказка" id="98"/>
-							<SearchStringAddition name="ВнутреннееСодержаниеСтрокаПоиска" id="156">
-								<AdditionSource>
-									<Item>ВнутреннееСодержание</Item>
-									<Type>SearchStringRepresentation</Type>
-								</AdditionSource>
-								<ContextMenu name="ВнутреннееСодержаниеСтрокаПоискаКонтекстноеМеню" id="157"/>
-								<ExtendedTooltip name="ВнутреннееСодержаниеСтрокаПоискаРасширеннаяПодсказка" id="158"/>
-							</SearchStringAddition>
-							<ViewStatusAddition name="ВнутреннееСодержаниеСостояниеПросмотра" id="159">
-								<AdditionSource>
-									<Item>ВнутреннееСодержание</Item>
-									<Type>ViewStatusRepresentation</Type>
-								</AdditionSource>
-								<ContextMenu name="ВнутреннееСодержаниеСостояниеПросмотраКонтекстноеМеню" id="160"/>
-								<ExtendedTooltip name="ВнутреннееСодержаниеСостояниеПросмотраРасширеннаяПодсказка" id="161"/>
-							</ViewStatusAddition>
-							<SearchControlAddition name="ВнутреннееСодержаниеУправлениеПоиском" id="162">
-								<AdditionSource>
-									<Item>ВнутреннееСодержание</Item>
-									<Type>SearchControl</Type>
-								</AdditionSource>
-								<ContextMenu name="ВнутреннееСодержаниеУправлениеПоискомКонтекстноеМеню" id="163"/>
-								<ExtendedTooltip name="ВнутреннееСодержаниеУправлениеПоискомРасширеннаяПодсказка" id="164"/>
-							</SearchControlAddition>
-							<ChildItems>
-								<InputField name="ВнутреннееСодержаниеСвойство" id="99">
-									<DataPath>ВнутреннееСодержание.Свойство</DataPath>
-									<EditMode>EnterOnInput</EditMode>
-									<Width>15</Width>
-									<ContextMenu name="ВнутреннееСодержаниеСвойствоКонтекстноеМеню" id="100"/>
-									<ExtendedTooltip name="ВнутреннееСодержаниеСвойствоРасширеннаяПодсказка" id="101"/>
-								</InputField>
-								<InputField name="ВнутреннееСодержаниеИдентификатор" id="165">
-									<DataPath>ВнутреннееСодержание.Идентификатор</DataPath>
-									<Title>
-										<v8:item>
-											<v8:lang>ru</v8:lang>
-											<v8:content>OID</v8:content>
-										</v8:item>
-									</Title>
-									<EditMode>EnterOnInput</EditMode>
-									<Width>15</Width>
-									<HorizontalStretch>false</HorizontalStretch>
-									<ContextMenu name="ВнутреннееСодержаниеИдентификаторКонтекстноеМеню" id="166"/>
-									<ExtendedTooltip name="ВнутреннееСодержаниеИдентификаторРасширеннаяПодсказка" id="167"/>
-								</InputField>
-								<InputField name="ВнутреннееСодержаниеЗначение" id="102">
-									<DataPath>ВнутреннееСодержание.Значение</DataPath>
-									<EditMode>EnterOnInput</EditMode>
-									<AutoCellHeight>true</AutoCellHeight>
-									<Width>30</Width>
-									<ContextMenu name="ВнутреннееСодержаниеЗначениеКонтекстноеМеню" id="103"/>
-									<ExtendedTooltip name="ВнутреннееСодержаниеЗначениеРасширеннаяПодсказка" id="104"/>
-								</InputField>
-							</ChildItems>
-						</Table>
-					</ChildItems>
-				</Page>
 				<Page name="СтраницаКорневыеСертификаты" id="240">
 					<Title>
 						<v8:item>
@@ -703,6 +565,170 @@
 						</LabelField>
 					</ChildItems>
 				</Page>
+				<Page name="СтраницаВнутреннееСодержание" id="26">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Внутреннее содержание</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="СтраницаВнутреннееСодержаниеРасширеннаяПодсказка" id="27"/>
+					<ChildItems>
+						<InputField name="ГруппаВнутреннихПолей" id="92">
+							<DataPath>ГруппаВнутреннихПолей</DataPath>
+							<HorizontalStretch>false</HorizontalStretch>
+							<ListChoiceMode>true</ListChoiceMode>
+							<ChoiceList>
+								<xr:Item>
+									<xr:Presentation/>
+									<xr:CheckState>0</xr:CheckState>
+									<xr:Value xsi:type="FormChoiceListDesTimeValue">
+										<Presentation>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Общие</v8:content>
+											</v8:item>
+										</Presentation>
+										<Value xsi:type="xs:string">Общие</Value>
+									</xr:Value>
+								</xr:Item>
+								<xr:Item>
+									<xr:Presentation/>
+									<xr:CheckState>0</xr:CheckState>
+									<xr:Value xsi:type="FormChoiceListDesTimeValue">
+										<Presentation>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Субъект</v8:content>
+											</v8:item>
+										</Presentation>
+										<Value xsi:type="xs:string">Субъект</Value>
+									</xr:Value>
+								</xr:Item>
+								<xr:Item>
+									<xr:Presentation/>
+									<xr:CheckState>0</xr:CheckState>
+									<xr:Value xsi:type="FormChoiceListDesTimeValue">
+										<Presentation>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Издатель</v8:content>
+											</v8:item>
+										</Presentation>
+										<Value xsi:type="xs:string">Издатель</Value>
+									</xr:Value>
+								</xr:Item>
+								<xr:Item>
+									<xr:Presentation/>
+									<xr:CheckState>0</xr:CheckState>
+									<xr:Value xsi:type="FormChoiceListDesTimeValue">
+										<Presentation>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Расширенные свойства</v8:content>
+											</v8:item>
+										</Presentation>
+										<Value xsi:type="xs:string">РасширенныеСвойства</Value>
+									</xr:Value>
+								</xr:Item>
+							</ChoiceList>
+							<BackColor>style:ФонУправляющегоПоля</BackColor>
+							<ContextMenu name="ГруппаВнутреннихПолейКонтекстноеМеню" id="93"/>
+							<ExtendedTooltip name="ГруппаВнутреннихПолейРасширеннаяПодсказка" id="94"/>
+							<Events>
+								<Event name="OnChange">ГруппаВнутреннихПолейПриИзменении</Event>
+								<Event name="Clearing">ГруппаВнутреннихПолейОчистка</Event>
+							</Events>
+						</InputField>
+						<Table name="ВнутреннееСодержание" id="95">
+							<Representation>List</Representation>
+							<ReadOnly>true</ReadOnly>
+							<AutoInsertNewRow>true</AutoInsertNewRow>
+							<EnableStartDrag>true</EnableStartDrag>
+							<EnableDrag>true</EnableDrag>
+							<FileDragMode>AsFile</FileDragMode>
+							<DataPath>ВнутреннееСодержание</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Внутреннее содержание</v8:content>
+								</v8:item>
+							</Title>
+							<CommandSet>
+								<ExcludedCommand>Add</ExcludedCommand>
+								<ExcludedCommand>Change</ExcludedCommand>
+								<ExcludedCommand>Copy</ExcludedCommand>
+								<ExcludedCommand>Delete</ExcludedCommand>
+								<ExcludedCommand>EndEdit</ExcludedCommand>
+								<ExcludedCommand>MoveDown</ExcludedCommand>
+								<ExcludedCommand>MoveUp</ExcludedCommand>
+								<ExcludedCommand>SortListAsc</ExcludedCommand>
+								<ExcludedCommand>SortListDesc</ExcludedCommand>
+							</CommandSet>
+							<RowFilter xsi:nil="true"/>
+							<ContextMenu name="ВнутреннееСодержаниеКонтекстноеМеню" id="96"/>
+							<AutoCommandBar name="ВнутреннееСодержаниеКоманднаяПанель" id="97">
+								<Autofill>false</Autofill>
+							</AutoCommandBar>
+							<ExtendedTooltip name="ВнутреннееСодержаниеРасширеннаяПодсказка" id="98"/>
+							<SearchStringAddition name="ВнутреннееСодержаниеСтрокаПоиска" id="156">
+								<AdditionSource>
+									<Item>ВнутреннееСодержание</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ВнутреннееСодержаниеСтрокаПоискаКонтекстноеМеню" id="157"/>
+								<ExtendedTooltip name="ВнутреннееСодержаниеСтрокаПоискаРасширеннаяПодсказка" id="158"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="ВнутреннееСодержаниеСостояниеПросмотра" id="159">
+								<AdditionSource>
+									<Item>ВнутреннееСодержание</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ВнутреннееСодержаниеСостояниеПросмотраКонтекстноеМеню" id="160"/>
+								<ExtendedTooltip name="ВнутреннееСодержаниеСостояниеПросмотраРасширеннаяПодсказка" id="161"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="ВнутреннееСодержаниеУправлениеПоиском" id="162">
+								<AdditionSource>
+									<Item>ВнутреннееСодержание</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="ВнутреннееСодержаниеУправлениеПоискомКонтекстноеМеню" id="163"/>
+								<ExtendedTooltip name="ВнутреннееСодержаниеУправлениеПоискомРасширеннаяПодсказка" id="164"/>
+							</SearchControlAddition>
+							<ChildItems>
+								<InputField name="ВнутреннееСодержаниеСвойство" id="99">
+									<DataPath>ВнутреннееСодержание.Свойство</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<Width>15</Width>
+									<ContextMenu name="ВнутреннееСодержаниеСвойствоКонтекстноеМеню" id="100"/>
+									<ExtendedTooltip name="ВнутреннееСодержаниеСвойствоРасширеннаяПодсказка" id="101"/>
+								</InputField>
+								<InputField name="ВнутреннееСодержаниеИдентификатор" id="165">
+									<DataPath>ВнутреннееСодержание.Идентификатор</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>OID</v8:content>
+										</v8:item>
+									</Title>
+									<EditMode>EnterOnInput</EditMode>
+									<Width>15</Width>
+									<HorizontalStretch>false</HorizontalStretch>
+									<ContextMenu name="ВнутреннееСодержаниеИдентификаторКонтекстноеМеню" id="166"/>
+									<ExtendedTooltip name="ВнутреннееСодержаниеИдентификаторРасширеннаяПодсказка" id="167"/>
+								</InputField>
+								<InputField name="ВнутреннееСодержаниеЗначение" id="102">
+									<DataPath>ВнутреннееСодержание.Значение</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<AutoCellHeight>true</AutoCellHeight>
+									<Width>30</Width>
+									<ContextMenu name="ВнутреннееСодержаниеЗначениеКонтекстноеМеню" id="103"/>
+									<ExtendedTooltip name="ВнутреннееСодержаниеЗначениеРасширеннаяПодсказка" id="104"/>
+								</InputField>
+							</ChildItems>
+						</Table>
+					</ChildItems>
+				</Page>
 			</ChildItems>
 		</Pages>
 	</ChildItems>
@@ -737,11 +763,12 @@
 				</v8:StringQualifiers>
 			</Type>
 		</Attribute>
-		<Attribute name="ДействителенДо" id="3">
+		<Attribute name="ДатаОкончания" id="3">
 			<Title>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Действителен до</v8:content>
+					<v8:content>Срок действия
+сертификата</v8:content>
 				</v8:item>
 			</Title>
 			<Type>
@@ -1102,6 +1129,24 @@
 					<v8:AllowedLength>Variable</v8:AllowedLength>
 				</v8:StringQualifiers>
 			</Type>
+		</Attribute>
+		<Attribute name="ДатаОкончанияЗакрытогоКлюча" id="43">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Срок действия
+закрытого ключа</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:dateTime</v8:Type>
+				<v8:DateQualifiers>
+					<v8:DateFractions>Date</v8:DateFractions>
+				</v8:DateQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ДополнительныеСвойстваСертификата" id="44">
+			<Type/>
 		</Attribute>
 	</Attributes>
 	<Commands>
