@@ -138,6 +138,8 @@ function logFile (text, failed) {
 function appendLog (logEncoding) {
   if (logEncoding == 'ASCII' || v8logEncoding == 'ASCII') { 
     return appendLogASCII()
+  } else if (logEncoding == 'unicode') {
+    return appendLogUnicode()
   } else {
     return appendLogUTF8()
   }
@@ -175,6 +177,29 @@ function appendLogUTF8 () {
   } finally {
     try {
       oADODBStream.Close()
+    } catch (e) { return } 
+  }
+  try { 
+    outf = oFileSystemObject.OpenTextFile(outFileName, ForAppending, true, TristateTrue)
+    outf.WriteLine('')
+    outf.WriteLine(text)
+    outf.WriteLine('')
+    } finally {
+    try {
+      outf.Close()
+    } catch (e) { return } 
+  }
+  return (text && text.length > 0)
+}
+
+function appendLogUnicode () {
+  try {
+    oADODBStreamUnicode.Open()
+    oADODBStreamUnicode.LoadFromFile(tempLogFileName)
+    text = oADODBStreamUnicode.ReadText()
+  } finally {
+    try {
+      oADODBStreamUnicode.Close()
     } catch (e) { return } 
   }
   try { 
@@ -939,7 +964,7 @@ function addDeletePatches() {
       tempLogFileName
     ),
     SW_HIDE, true)
-  appendLog('ASCII')
+  appendLog('unicode')
   return result
 }
 
@@ -964,7 +989,7 @@ function DeletePatches() {
         tempLogFileName
       ),
       SW_HIDE, true)
-    appendLog('ASCII')
+    appendLog('unicode')
 
   } catch (e) {
     log(format('[СообщениеОтказВызоваУдалитьИсправленияИзСкрипта]', e.name, e.message), true)

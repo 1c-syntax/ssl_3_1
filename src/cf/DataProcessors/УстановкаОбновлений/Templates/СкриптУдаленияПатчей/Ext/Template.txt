@@ -13,7 +13,7 @@
 
 var fso = new ActiveXObject('Scripting.FileSystemObject')
 var ForWriting = 2 // Open a file for writing.
-var OpenAsASCII = 0
+var OpenAsUnicode = -1
 var outf = null
 
 var ConnectionString
@@ -39,7 +39,7 @@ try {
   Action = WScript.Arguments.Named.Item('Action')
   outFileName = WScript.Arguments.Named.Item('Out')
 
-  outf = fso.OpenTextFile(outFileName, ForWriting, true, OpenAsASCII)
+  outf = fso.OpenTextFile(outFileName, ForWriting, true, OpenAsUnicode)
 
 } catch (ex) {
 
