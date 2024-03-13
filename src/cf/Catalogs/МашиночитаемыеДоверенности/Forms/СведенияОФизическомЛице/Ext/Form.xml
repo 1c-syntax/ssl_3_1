@@ -4,18 +4,41 @@
 	<CommandBarLocation>Bottom</CommandBarLocation>
 	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
 		<HorizontalAlign>Right</HorizontalAlign>
-		<Autofill>false</Autofill>
 		<ChildItems>
 			<Button name="ФормаОК" id="12">
 				<Type>CommandBarButton</Type>
 				<DefaultButton>true</DefaultButton>
 				<CommandName>Form.Command.ОК</CommandName>
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>ОК</v8:content>
+					</v8:item>
+				</Title>
 				<ExtendedTooltip name="ФормаОКРасширеннаяПодсказка" id="13"/>
 			</Button>
 			<Button name="ФормаОтмена" id="14">
 				<Type>CommandBarButton</Type>
 				<CommandName>Form.Command.Отмена</CommandName>
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Отмена</v8:content>
+					</v8:item>
+				</Title>
 				<ExtendedTooltip name="ФормаОтменаРасширеннаяПодсказка" id="15"/>
+			</Button>
+			<Button name="ФормаЗаполнить" id="123">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.Заполнить</CommandName>
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Заполнить все поля</v8:content>
+					</v8:item>
+				</Title>
+				<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
+				<ExtendedTooltip name="ФормаЗаполнитьРасширеннаяПодсказка" id="124"/>
 			</Button>
 		</ChildItems>
 	</AutoCommandBar>
@@ -42,6 +65,12 @@
 				<InputField name="Ссылка1" id="109">
 					<DataPath>Ссылка</DataPath>
 					<Visible>false</Visible>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Физическое лицо</v8:content>
+						</v8:item>
+					</Title>
 					<ContextMenu name="Ссылка1КонтекстноеМеню" id="110"/>
 					<ExtendedTooltip name="Ссылка1РасширеннаяПодсказка" id="111"/>
 					<Events>
@@ -52,7 +81,7 @@
 					<Title>
 						<v8:item>
 							<v8:lang>ru</v8:lang>
-							<v8:content>Группа должностное лицо</v8:content>
+							<v8:content>Должностное лицо</v8:content>
 						</v8:item>
 					</Title>
 					<United>false</United>
@@ -61,6 +90,12 @@
 					<ChildItems>
 						<InputField name="ДолжностьЛицаДоверителя" id="100">
 							<DataPath>ДолжностьЛицаДоверителя</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Должность </v8:content>
+								</v8:item>
+							</Title>
 							<ContextMenu name="ДолжностьЛицаДоверителяКонтекстноеМеню" id="101"/>
 							<ExtendedTooltip name="ДолжностьЛицаДоверителяРасширеннаяПодсказка" id="102"/>
 							<Events>
@@ -314,6 +349,12 @@
 						</InputField>
 						<CheckBoxField name="БезГражданства" id="112">
 							<DataPath>БезГражданства</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Без гражданства</v8:content>
+								</v8:item>
+							</Title>
 							<TitleLocation>Right</TitleLocation>
 							<CheckBoxType>Auto</CheckBoxType>
 							<ContextMenu name="БезГражданстваКонтекстноеМеню" id="113"/>
@@ -515,6 +556,12 @@
 								</InputField>
 								<InputField name="ДокументСрокДействия" id="106">
 									<DataPath>ДокументСрокДействия</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Срок действия</v8:content>
+										</v8:item>
+									</Title>
 									<ContextMenu name="ДокументСрокДействияКонтекстноеМеню" id="107"/>
 									<ExtendedTooltip name="ДокументСрокДействияРасширеннаяПодсказка" id="108"/>
 									<Events>
@@ -650,6 +697,12 @@
 				</UsualGroup>
 				<InputField name="НомерЗаписиЕдиногоРегистраНаселения" id="95">
 					<DataPath>НомерЗаписиЕдиногоРегистраНаселения</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Номер записи единого регистра населения</v8:content>
+						</v8:item>
+					</Title>
 					<TitleHeight>2</TitleHeight>
 					<ContextMenu name="НомерЗаписиЕдиногоРегистраНаселенияКонтекстноеМеню" id="96"/>
 					<ExtendedTooltip name="НомерЗаписиЕдиногоРегистраНаселенияРасширеннаяПодсказка" id="97"/>
@@ -657,13 +710,31 @@
 						<Event name="OnChange">РеквизитПриИзменении</Event>
 					</Events>
 				</InputField>
-				<LabelField name="Ссылка" id="103">
-					<DataPath>Ссылка</DataPath>
-					<ReadOnly>true</ReadOnly>
-					<Hiperlink>true</Hiperlink>
-					<ContextMenu name="СсылкаКонтекстноеМеню" id="104"/>
-					<ExtendedTooltip name="СсылкаРасширеннаяПодсказка" id="105"/>
-				</LabelField>
+				<UsualGroup name="ГруппаСсылка" id="119">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Ссылка</v8:content>
+						</v8:item>
+					</Title>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаСсылкаРасширеннаяПодсказка" id="120"/>
+					<ChildItems>
+						<LabelField name="Ссылка" id="103">
+							<DataPath>Ссылка</DataPath>
+							<ReadOnly>true</ReadOnly>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Физическое лицо</v8:content>
+								</v8:item>
+							</Title>
+							<Hiperlink>true</Hiperlink>
+							<ContextMenu name="СсылкаКонтекстноеМеню" id="104"/>
+							<ExtendedTooltip name="СсылкаРасширеннаяПодсказка" id="105"/>
+						</LabelField>
+					</ChildItems>
+				</UsualGroup>
 			</ChildItems>
 		</UsualGroup>
 	</ChildItems>
@@ -1036,15 +1107,6 @@
 		<Attribute name="ТипСсылки" id="34">
 			<Type/>
 		</Attribute>
-		<Attribute name="ТипСсылкиСтрока" id="35">
-			<Type>
-				<v8:Type>xs:string</v8:Type>
-				<v8:StringQualifiers>
-					<v8:Length>0</v8:Length>
-					<v8:AllowedLength>Variable</v8:AllowedLength>
-				</v8:StringQualifiers>
-			</Type>
-		</Attribute>
 		<Attribute name="БезГражданства" id="9">
 			<Title>
 				<v8:item>
@@ -1059,6 +1121,15 @@
 		<Attribute name="ПоказыватьПерсональныеДанные" id="36">
 			<Type>
 				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="Тип" id="37">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
 			</Type>
 		</Attribute>
 	</Attributes>
@@ -1093,6 +1164,21 @@
 			</ToolTip>
 			<Action>Отмена</Action>
 		</Command>
+		<Command name="Заполнить" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заполнить все поля</v8:content>
+				</v8:item>
+			</Title>
+			<Picture>
+				<xr:Ref>StdPicture.MoveLeft</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>Заполнить</Action>
+			<Representation>TextPicture</Representation>
+			<ModifiesSavedData>true</ModifiesSavedData>
+		</Command>
 	</Commands>
 	<Parameters>
 		<Parameter name="Реквизиты">
@@ -1118,11 +1204,6 @@
 			</Type>
 			<KeyParameter>true</KeyParameter>
 		</Parameter>
-		<Parameter name="ТипУчастникаМЧД">
-			<Type>
-				<v8:Type>cfg:EnumRef.ТипыУчастниковМЧД</v8:Type>
-			</Type>
-		</Parameter>
 		<Parameter name="РедактированиеТаблицы">
 			<Type>
 				<v8:Type>xs:boolean</v8:Type>
@@ -1133,6 +1214,10 @@
 			<Type>
 				<v8:Type>xs:boolean</v8:Type>
 			</Type>
+		</Parameter>
+		<Parameter name="Назначение">
+			<Type/>
+			<KeyParameter>true</KeyParameter>
 		</Parameter>
 	</Parameters>
 </Form>
