@@ -4,18 +4,35 @@
 	<CommandBarLocation>Bottom</CommandBarLocation>
 	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
 		<HorizontalAlign>Right</HorizontalAlign>
-		<Autofill>false</Autofill>
 		<ChildItems>
 			<Button name="ФормаОК" id="1">
 				<Type>CommandBarButton</Type>
 				<DefaultButton>true</DefaultButton>
 				<CommandName>Form.Command.ОК</CommandName>
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>ОК</v8:content>
+					</v8:item>
+				</Title>
 				<ExtendedTooltip name="ФормаОКРасширеннаяПодсказка" id="2"/>
 			</Button>
 			<Button name="ФормаОтмена" id="3">
 				<Type>CommandBarButton</Type>
 				<CommandName>Form.Command.Отмена</CommandName>
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Отмена</v8:content>
+					</v8:item>
+				</Title>
 				<ExtendedTooltip name="ФормаОтменаРасширеннаяПодсказка" id="4"/>
+			</Button>
+			<Button name="ФормаЗаполнить" id="202">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.Заполнить</CommandName>
+				<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
+				<ExtendedTooltip name="ФормаЗаполнитьРасширеннаяПодсказка" id="203"/>
 			</Button>
 		</ChildItems>
 	</AutoCommandBar>
@@ -25,11 +42,11 @@
 		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
 	</Events>
 	<ChildItems>
-		<UsualGroup name="ТипСсылкиСтрока" id="61">
+		<UsualGroup name="ВсеЭлементы" id="61">
 			<Title>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Тип ссылки строка</v8:content>
+					<v8:content>Все элементы</v8:content>
 				</v8:item>
 			</Title>
 			<Group>Vertical</Group>
@@ -38,10 +55,16 @@
 			<Representation>None</Representation>
 			<ShowTitle>false</ShowTitle>
 			<ThroughAlign>Use</ThroughAlign>
-			<ExtendedTooltip name="ТипСсылкиСтрокаРасширеннаяПодсказка" id="62"/>
+			<ExtendedTooltip name="ВсеЭлементыРасширеннаяПодсказка" id="62"/>
 			<ChildItems>
 				<InputField name="Ссылка1" id="108">
 					<DataPath>Ссылка</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Организация</v8:content>
+						</v8:item>
+					</Title>
 					<ContextMenu name="Ссылка1КонтекстноеМеню" id="109"/>
 					<ExtendedTooltip name="Ссылка1РасширеннаяПодсказка" id="110"/>
 					<Events>
@@ -106,6 +129,12 @@
 						</InputField>
 						<CheckBoxField name="ЭтоИностраннаяОрганизация" id="63">
 							<DataPath>ЭтоИностраннаяОрганизация</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Это иностранная организация</v8:content>
+								</v8:item>
+							</Title>
 							<TitleLocation>Right</TitleLocation>
 							<CheckBoxType>Auto</CheckBoxType>
 							<ContextMenu name="ЭтоИностраннаяОрганизацияКонтекстноеМеню" id="64"/>
@@ -116,6 +145,12 @@
 						</CheckBoxField>
 						<CheckBoxField name="ЭтоФилиал" id="93">
 							<DataPath>ЭтоФилиал</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Это филиал</v8:content>
+								</v8:item>
+							</Title>
 							<TitleLocation>Right</TitleLocation>
 							<CheckBoxType>Auto</CheckBoxType>
 							<ContextMenu name="ЭтоФилиалКонтекстноеМеню" id="94"/>
@@ -226,7 +261,7 @@
 					<Title>
 						<v8:item>
 							<v8:lang>ru</v8:lang>
-							<v8:content>Группа реквизиты филиала</v8:content>
+							<v8:content>Реквизиты филиала</v8:content>
 						</v8:item>
 					</Title>
 					<ShowTitle>false</ShowTitle>
@@ -235,6 +270,12 @@
 					<ChildItems>
 						<InputField name="РегистрационныйНомерФилиала" id="90">
 							<DataPath>РегистрационныйНомерФилиала</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Регистрационный номер филиала</v8:content>
+								</v8:item>
+							</Title>
 							<TitleHeight>2</TitleHeight>
 							<ContextMenu name="РегистрационныйНомерФилиалаКонтекстноеМеню" id="91"/>
 							<ExtendedTooltip name="РегистрационныйНомерФилиалаРасширеннаяПодсказка" id="92"/>
@@ -259,6 +300,12 @@
 					<ChildItems>
 						<InputField name="НаименованиеУчредительногоДокумента" id="102">
 							<DataPath>НаименованиеУчредительногоДокумента</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Наименование учредительного документа</v8:content>
+								</v8:item>
+							</Title>
 							<TitleHeight>2</TitleHeight>
 							<ContextMenu name="НаименованиеУчредительногоДокументаКонтекстноеМеню" id="103"/>
 							<ExtendedTooltip name="НаименованиеУчредительногоДокументаРасширеннаяПодсказка" id="104"/>
@@ -306,7 +353,7 @@
 					<Title>
 						<v8:item>
 							<v8:lang>ru</v8:lang>
-							<v8:content>Группа реквизиты иностранной организации</v8:content>
+							<v8:content>Реквизиты иностранной организации</v8:content>
 						</v8:item>
 					</Title>
 					<United>false</United>
@@ -315,6 +362,12 @@
 					<ChildItems>
 						<InputField name="ФактическийАдрес" id="82">
 							<DataPath>ФактическийАдрес</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Фактический адрес</v8:content>
+								</v8:item>
+							</Title>
 							<Width>65</Width>
 							<ChoiceButton>true</ChoiceButton>
 							<ContextMenu name="ФактическийАдресКонтекстноеМеню" id="83"/>
@@ -328,6 +381,12 @@
 						</InputField>
 						<InputField name="ЮридическийАдресВСтранеРегистрации" id="85">
 							<DataPath>ЮридическийАдресВСтранеРегистрации</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Юридический адрес в стране регистрации</v8:content>
+								</v8:item>
+							</Title>
 							<TitleHeight>2</TitleHeight>
 							<Width>65</Width>
 							<ChoiceButton>true</ChoiceButton>
@@ -342,6 +401,12 @@
 						</InputField>
 						<InputField name="СтранаРегистрации" id="96">
 							<DataPath>СтранаРегистрации</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Страна регистрации</v8:content>
+								</v8:item>
+							</Title>
 							<ContextMenu name="СтранаРегистрацииКонтекстноеМеню" id="97"/>
 							<ExtendedTooltip name="СтранаРегистрацииРасширеннаяПодсказка" id="98"/>
 							<Events>
@@ -351,6 +416,12 @@
 						</InputField>
 						<InputField name="РегистрационныйНомерВСтранеРегистрации" id="73">
 							<DataPath>РегистрационныйНомерВСтранеРегистрации</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Регистрационный номер в стране регистрации</v8:content>
+								</v8:item>
+							</Title>
 							<TitleHeight>2</TitleHeight>
 							<ContextMenu name="РегистрационныйНомерВСтранеРегистрацииКонтекстноеМеню" id="74"/>
 							<ExtendedTooltip name="РегистрационныйНомерВСтранеРегистрацииРасширеннаяПодсказка" id="75"/>
@@ -360,6 +431,12 @@
 						</InputField>
 						<InputField name="КодНалогоплательщикаВСтранеРегистрации" id="79">
 							<DataPath>КодНалогоплательщикаВСтранеРегистрации</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Код налогоплательщика в стране регистрации</v8:content>
+								</v8:item>
+							</Title>
 							<TitleHeight>2</TitleHeight>
 							<ContextMenu name="КодНалогоплательщикаВСтранеРегистрацииКонтекстноеМеню" id="80"/>
 							<ExtendedTooltip name="КодНалогоплательщикаВСтранеРегистрацииРасширеннаяПодсказка" id="81"/>
@@ -369,6 +446,12 @@
 						</InputField>
 						<InputField name="НомерЗаписиОбАккредитации" id="70">
 							<DataPath>НомерЗаписиОбАккредитации</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Номер записи об аккредитации</v8:content>
+								</v8:item>
+							</Title>
 							<TitleHeight>2</TitleHeight>
 							<ContextMenu name="НомерЗаписиОбАккредитацииКонтекстноеМеню" id="71"/>
 							<ExtendedTooltip name="НомерЗаписиОбАккредитацииРасширеннаяПодсказка" id="72"/>
@@ -378,6 +461,12 @@
 						</InputField>
 						<InputField name="НаименованиеРегистрирующегоОргана" id="76">
 							<DataPath>НаименованиеРегистрирующегоОргана</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Наименование регистрирующего органа</v8:content>
+								</v8:item>
+							</Title>
 							<TitleHeight>2</TitleHeight>
 							<ContextMenu name="НаименованиеРегистрирующегоОрганаКонтекстноеМеню" id="77"/>
 							<ExtendedTooltip name="НаименованиеРегистрирующегоОрганаРасширеннаяПодсказка" id="78"/>
@@ -391,7 +480,7 @@
 					<Title>
 						<v8:item>
 							<v8:lang>ru</v8:lang>
-							<v8:content>Группа телефон электронная почта</v8:content>
+							<v8:content>Телефон электронная почта</v8:content>
 						</v8:item>
 					</Title>
 					<Group>AlwaysHorizontal</Group>
@@ -419,6 +508,12 @@
 						</InputField>
 						<InputField name="ЭлектроннаяПочта" id="105">
 							<DataPath>ЭлектроннаяПочта</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Электронная почта</v8:content>
+								</v8:item>
+							</Title>
 							<ContextMenu name="ЭлектроннаяПочтаКонтекстноеМеню" id="106"/>
 							<ExtendedTooltip name="ЭлектроннаяПочтаРасширеннаяПодсказка" id="107"/>
 							<Events>
@@ -430,6 +525,12 @@
 				<LabelField name="Ссылка" id="99">
 					<DataPath>Ссылка</DataPath>
 					<ReadOnly>true</ReadOnly>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Организация</v8:content>
+						</v8:item>
+					</Title>
 					<Hiperlink>true</Hiperlink>
 					<ContextMenu name="СсылкаКонтекстноеМеню" id="100"/>
 					<ExtendedTooltip name="СсылкаРасширеннаяПодсказка" id="101"/>
@@ -448,7 +549,7 @@
 							<Title>
 								<v8:item>
 									<v8:lang>ru</v8:lang>
-									<v8:content>Группа один представитель</v8:content>
+									<v8:content>Один представитель</v8:content>
 								</v8:item>
 							</Title>
 							<Group>AlwaysHorizontal</Group>
@@ -466,6 +567,12 @@
 								<Button name="РеквизитыПредставителя" id="121">
 									<Type>Hyperlink</Type>
 									<CommandName>Form.Command.РеквизитыПредставителя</CommandName>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Уточнить реквизиты</v8:content>
+										</v8:item>
+									</Title>
 									<ExtendedTooltip name="РеквизитыПредставителяРасширеннаяПодсказка" id="122"/>
 								</Button>
 							</ChildItems>
@@ -491,7 +598,7 @@
 							<Title>
 								<v8:item>
 									<v8:lang>ru</v8:lang>
-									<v8:content>Группа несколько представителей</v8:content>
+									<v8:content>Несколько представителей</v8:content>
 								</v8:item>
 							</Title>
 							<Group>Vertical</Group>
@@ -511,6 +618,12 @@
 									<EnableStartDrag>true</EnableStartDrag>
 									<EnableDrag>true</EnableDrag>
 									<DataPath>ТаблицаПредставительНесколько</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Таблица представитель несколько</v8:content>
+										</v8:item>
+									</Title>
 									<CommandSet>
 										<ExcludedCommand>CancelSearch</ExcludedCommand>
 										<ExcludedCommand>Copy</ExcludedCommand>
@@ -572,12 +685,24 @@
 											<ChildItems>
 												<InputField name="ТаблицаПредставительНесколькоПредставительСтрока" id="196">
 													<DataPath>ТаблицаПредставительНесколько.ПредставительСтрока</DataPath>
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Не заполнены реквизиты</v8:content>
+														</v8:item>
+													</Title>
 													<EditMode>EnterOnInput</EditMode>
 													<ContextMenu name="ТаблицаПредставительНесколькоПредставительСтрокаКонтекстноеМеню" id="197"/>
 													<ExtendedTooltip name="ТаблицаПредставительНесколькоПредставительСтрокаРасширеннаяПодсказка" id="198"/>
 												</InputField>
 												<InputField name="ТаблицаПредставительНесколькоЛицоПредставителяСтрока" id="199">
 													<DataPath>ТаблицаПредставительНесколько.ЛицоПредставителяСтрока</DataPath>
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Не заполнены реквизиты</v8:content>
+														</v8:item>
+													</Title>
 													<EditMode>EnterOnInput</EditMode>
 													<ContextMenu name="ТаблицаПредставительНесколькоЛицоПредставителяСтрокаКонтекстноеМеню" id="200"/>
 													<ExtendedTooltip name="ТаблицаПредставительНесколькоЛицоПредставителяСтрокаРасширеннаяПодсказка" id="201"/>
@@ -596,6 +721,12 @@
 											<ChildItems>
 												<InputField name="ТаблицаПредставительНесколькоНеЗаполненыРеквизиты" id="187">
 													<DataPath>ТаблицаПредставительНесколько.НеЗаполненыРеквизиты</DataPath>
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Не заполнены реквизиты</v8:content>
+														</v8:item>
+													</Title>
 													<EditMode>EnterOnInput</EditMode>
 													<AutoCellHeight>true</AutoCellHeight>
 													<ContextMenu name="ТаблицаПредставительНесколькоНеЗаполненыРеквизитыКонтекстноеМеню" id="188"/>
@@ -603,6 +734,12 @@
 												</InputField>
 												<InputField name="ТаблицаПредставительНесколькоНеЗаполненыРеквизитыФЛ" id="190">
 													<DataPath>ТаблицаПредставительНесколько.НеЗаполненыРеквизитыФЛ</DataPath>
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Не заполнены реквизиты</v8:content>
+														</v8:item>
+													</Title>
 													<EditMode>EnterOnInput</EditMode>
 													<AutoCellHeight>true</AutoCellHeight>
 													<ContextMenu name="ТаблицаПредставительНесколькоНеЗаполненыРеквизитыФЛКонтекстноеМеню" id="191"/>
@@ -614,6 +751,12 @@
 								</Table>
 								<CheckBoxField name="ПредставительНесколько1" id="144">
 									<DataPath>ПредставительНесколько</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Более одного</v8:content>
+										</v8:item>
+									</Title>
 									<TitleLocation>Right</TitleLocation>
 									<CheckBoxType>Auto</CheckBoxType>
 									<ContextMenu name="ПредставительНесколько1КонтекстноеМеню" id="145"/>
@@ -1149,6 +1292,15 @@
 		<Attribute name="ТипСсылкиПредставительСтрока" id="40">
 			<Type/>
 		</Attribute>
+		<Attribute name="Тип" id="41">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
 	</Attributes>
 	<Commands>
 		<Command name="ОК" id="1">
@@ -1196,6 +1348,21 @@
 			</ToolTip>
 			<Action>РеквизитыПредставителя</Action>
 		</Command>
+		<Command name="Заполнить" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заполнить все поля</v8:content>
+				</v8:item>
+			</Title>
+			<Picture>
+				<xr:Ref>StdPicture.MoveLeft</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>Заполнить</Action>
+			<Representation>TextPicture</Representation>
+			<ModifiesSavedData>true</ModifiesSavedData>
+		</Command>
 	</Commands>
 	<Parameters>
 		<Parameter name="Реквизиты">
@@ -1221,10 +1388,9 @@
 			</Type>
 			<KeyParameter>true</KeyParameter>
 		</Parameter>
-		<Parameter name="ТипУчастникаМЧД">
-			<Type>
-				<v8:Type>cfg:EnumRef.ТипыУчастниковМЧД</v8:Type>
-			</Type>
+		<Parameter name="Назначение">
+			<Type/>
+			<KeyParameter>true</KeyParameter>
 		</Parameter>
 		<Parameter name="Представители">
 			<Type/>

@@ -240,6 +240,7 @@
 					<v8:content>Данные сертификата</v8:content>
 				</v8:item>
 			</Title>
+			<Group>Vertical</Group>
 			<Behavior>Usual</Behavior>
 			<Representation>None</Representation>
 			<ShowTitle>false</ShowTitle>
@@ -249,7 +250,7 @@
 					<Representation>List</Representation>
 					<ReadOnly>true</ReadOnly>
 					<SkipOnInput>true</SkipOnInput>
-					<Height>4</Height>
+					<HeightControlVariant>UseContentHeight</HeightControlVariant>
 					<RowSelectionMode>Row</RowSelectionMode>
 					<Header>false</Header>
 					<HorizontalScrollBar>DontUse</HorizontalScrollBar>
@@ -317,30 +318,41 @@
 						</InputField>
 					</ChildItems>
 				</Table>
-				<UsualGroup name="ВертикальнаяГруппа3" id="261">
+				<UsualGroup name="ГруппаОткрытияСвойств" id="327">
 					<Title>
 						<v8:item>
 							<v8:lang>ru</v8:lang>
-							<v8:content>Вертикальная группа</v8:content>
+							<v8:content>Группа открытия свойств</v8:content>
 						</v8:item>
 					</Title>
-					<Group>Vertical</Group>
-					<Behavior>Usual</Behavior>
-					<Representation>None</Representation>
 					<ShowTitle>false</ShowTitle>
-					<ExtendedTooltip name="ВертикальнаяГруппа3РасширеннаяПодсказка" id="262"/>
+					<ExtendedTooltip name="ГруппаОткрытияСвойствРасширеннаяПодсказка" id="328"/>
 					<ChildItems>
 						<Button name="ПоказатьДанныеСертификата" id="153">
-							<Type>UsualButton</Type>
-							<Representation>Picture</Representation>
+							<Type>Hyperlink</Type>
+							<Representation>PictureAndText</Representation>
 							<SkipOnInput>true</SkipOnInput>
 							<CommandName>Form.Command.ПоказатьДанныеСертификата</CommandName>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Все свойства сертификата</v8:content>
+								</v8:item>
+							</Title>
 							<ExtendedTooltip name="ПоказатьДанныеСертификатаРасширеннаяПодсказка" id="154"/>
 						</Button>
 						<Button name="ПоказатьЗаявлениеПоКоторомуБылПолученСертификат" id="263">
-							<Type>UsualButton</Type>
+							<Type>Hyperlink</Type>
+							<Visible>false</Visible>
+							<Representation>PictureAndText</Representation>
 							<Enabled>false</Enabled>
 							<CommandName>Form.Command.ПоказатьЗаявлениеПоКоторомуБылПолученСертификат</CommandName>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Заявление, по которому получен сертификат</v8:content>
+								</v8:item>
+							</Title>
 							<ExtendedTooltip name="ПоказатьЗаявлениеПоКоторомуБылПолученСертификатРасширеннаяПодсказка" id="264"/>
 						</Button>
 					</ChildItems>
