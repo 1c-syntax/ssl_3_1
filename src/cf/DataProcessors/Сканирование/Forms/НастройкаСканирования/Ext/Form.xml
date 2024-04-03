@@ -563,6 +563,7 @@ TIF - Не все браузеры отображают этот формат.</
 						</v8:item>
 					</Title>
 					<HorizontalStretch>true</HorizontalStretch>
+					<Group>Vertical</Group>
 					<Behavior>Collapsible</Behavior>
 					<CollapsedRepresentationTitle>
 						<v8:item>
@@ -575,56 +576,83 @@ TIF - Не все браузеры отображают этот формат.</
 					<Representation>NormalSeparation</Representation>
 					<ExtendedTooltip name="ГруппаЖурналРасширеннаяПодсказка" id="161"/>
 					<ChildItems>
-						<CheckBoxField name="ИспользоватьКаталогЖурналаСканирования" id="162">
-							<DataPath>ИспользоватьКаталогЖурналаСканирования</DataPath>
+						<UsualGroup name="ГруппаНастройкиЖурнала" id="165">
 							<Title>
 								<v8:item>
 									<v8:lang>ru</v8:lang>
-									<v8:content>Сохранять информацию для технической поддержки:</v8:content>
+									<v8:content>Группа1</v8:content>
 								</v8:item>
 							</Title>
-							<TitleLocation>Right</TitleLocation>
-							<CheckBoxType>Auto</CheckBoxType>
-							<ContextMenu name="ИспользоватьКаталогЖурналаСканированияКонтекстноеМеню" id="163"/>
-							<ExtendedTooltip name="ИспользоватьКаталогЖурналаСканированияРасширеннаяПодсказка" id="164"/>
-							<Events>
-								<Event name="OnChange">ИспользоватьКаталогЖурналаСканированияПриИзменении</Event>
-							</Events>
-						</CheckBoxField>
-						<InputField name="КаталогЖурналаСканирования" id="157">
-							<DataPath>КаталогЖурналаСканирования</DataPath>
-							<Title>
-								<v8:item>
-									<v8:lang>ru</v8:lang>
-									<v8:content>Каталог журнала сканирования</v8:content>
-								</v8:item>
-							</Title>
-							<TitleLocation>None</TitleLocation>
-							<ToolTipRepresentation>Button</ToolTipRepresentation>
-							<Width>40</Width>
-							<AutoMaxWidth>false</AutoMaxWidth>
-							<HorizontalStretch>false</HorizontalStretch>
-							<ChoiceButton>true</ChoiceButton>
-							<InputHint>
-								<v8:item>
-									<v8:lang>ru</v8:lang>
-									<v8:content>Каталог журнала диагностики</v8:content>
-								</v8:item>
-							</InputHint>
-							<ContextMenu name="КаталогЖурналаСканированияКонтекстноеМеню" id="158"/>
-							<ExtendedTooltip name="КаталогЖурналаСканированияРасширеннаяПодсказка" id="159">
-								<Title formatted="false">
-									<v8:item>
-										<v8:lang>ru</v8:lang>
-										<v8:content>При аварийном завершении приложения в указанный каталог будет сохранена информация для технической поддержки. 
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаНастройкиЖурналаРасширеннаяПодсказка" id="166"/>
+							<ChildItems>
+								<CheckBoxField name="ИспользоватьКаталогЖурналаСканирования" id="162">
+									<DataPath>ИспользоватьКаталогЖурналаСканирования</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Сохранять информацию для технической поддержки:</v8:content>
+										</v8:item>
+									</Title>
+									<TitleLocation>Right</TitleLocation>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="ИспользоватьКаталогЖурналаСканированияКонтекстноеМеню" id="163"/>
+									<ExtendedTooltip name="ИспользоватьКаталогЖурналаСканированияРасширеннаяПодсказка" id="164"/>
+									<Events>
+										<Event name="OnChange">ИспользоватьКаталогЖурналаСканированияПриИзменении</Event>
+									</Events>
+								</CheckBoxField>
+								<InputField name="КаталогЖурналаСканирования" id="157">
+									<DataPath>КаталогЖурналаСканирования</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Каталог журнала сканирования</v8:content>
+										</v8:item>
+									</Title>
+									<TitleLocation>None</TitleLocation>
+									<ToolTipRepresentation>Button</ToolTipRepresentation>
+									<Width>40</Width>
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<HorizontalStretch>false</HorizontalStretch>
+									<ChoiceButton>true</ChoiceButton>
+									<InputHint>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Каталог журнала диагностики</v8:content>
+										</v8:item>
+									</InputHint>
+									<ContextMenu name="КаталогЖурналаСканированияКонтекстноеМеню" id="158"/>
+									<ExtendedTooltip name="КаталогЖурналаСканированияРасширеннаяПодсказка" id="159">
+										<Title formatted="false">
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>При аварийном завершении приложения в указанный каталог будет сохранена информация для технической поддержки. 
 Предоставьте ее в службу поддержки фирмы "1С".</v8:content>
-									</v8:item>
-								</Title>
-							</ExtendedTooltip>
+											</v8:item>
+										</Title>
+									</ExtendedTooltip>
+									<Events>
+										<Event name="StartChoice">КаталогЖурналаСканированияНачалоВыбора</Event>
+									</Events>
+								</InputField>
+							</ChildItems>
+						</UsualGroup>
+						<LabelDecoration name="ИнформацияДляТехническойПоддержки" id="167">
+							<Title formatted="false">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Информация для технической поддержки</v8:content>
+								</v8:item>
+							</Title>
+							<Hyperlink>true</Hyperlink>
+							<ContextMenu name="ИнформацияДляТехническойПоддержкиКонтекстноеМеню" id="168"/>
+							<ExtendedTooltip name="ИнформацияДляТехническойПоддержкиРасширеннаяПодсказка" id="169"/>
 							<Events>
-								<Event name="StartChoice">КаталогЖурналаСканированияНачалоВыбора</Event>
+								<Event name="Click">ИнформацияДляТехническойПоддержкиНажатие</Event>
 							</Events>
-						</InputField>
+						</LabelDecoration>
 					</ChildItems>
 				</UsualGroup>
 			</ChildItems>

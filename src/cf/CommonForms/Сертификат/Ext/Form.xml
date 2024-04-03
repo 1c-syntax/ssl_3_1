@@ -557,12 +557,47 @@
 								</InputField>
 							</ChildItems>
 						</Table>
-						<LabelField name="ОшибкаПриПолученииАдресовСписковОтзыва" id="254">
-							<DataPath>ОшибкаПриПолученииАдресовСписковОтзыва</DataPath>
-							<Hiperlink>true</Hiperlink>
-							<ContextMenu name="ОшибкаПриПолученииАдресовСписковОтзываКонтекстноеМеню" id="255"/>
-							<ExtendedTooltip name="ОшибкаПриПолученииАдресовСписковОтзываРасширеннаяПодсказка" id="256"/>
-						</LabelField>
+						<UsualGroup name="ГруппаОшибкаПолученияСписковОтзыва" id="277">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа ошибка</v8:content>
+								</v8:item>
+							</Title>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаОшибкаПолученияСписковОтзываРасширеннаяПодсказка" id="278"/>
+							<ChildItems>
+								<PictureDecoration name="КартинкаОшибкаПолученияАдресовСписковОтзыва" id="285">
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Картинка ошибка получения цепочки сертификатов</v8:content>
+										</v8:item>
+									</Title>
+									<Picture>
+										<xr:Ref>CommonPicture.Предупреждение</xr:Ref>
+										<xr:LoadTransparent>false</xr:LoadTransparent>
+									</Picture>
+									<FileDragMode>AsFile</FileDragMode>
+									<ContextMenu name="КартинкаОшибкаПолученияАдресовСписковОтзываКонтекстноеМеню" id="286"/>
+									<ExtendedTooltip name="КартинкаОшибкаПолученияАдресовСписковОтзываРасширеннаяПодсказка" id="287"/>
+								</PictureDecoration>
+								<LabelDecoration name="ДекорацияОшибкаПолученияАдресовСписковОтзыва" id="288">
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Не удалось получить адреса списков отзыва</v8:content>
+										</v8:item>
+									</Title>
+									<Hyperlink>true</Hyperlink>
+									<ContextMenu name="ДекорацияОшибкаПолученияАдресовСписковОтзываКонтекстноеМеню" id="289"/>
+									<ExtendedTooltip name="ДекорацияОшибкаПолученияАдресовСписковОтзываРасширеннаяПодсказка" id="290"/>
+									<Events>
+										<Event name="Click">ДекорацияОшибкаПолученияСписковОтзываНажатие</Event>
+									</Events>
+								</LabelDecoration>
+							</ChildItems>
+						</UsualGroup>
 					</ChildItems>
 				</Page>
 				<Page name="СтраницаВнутреннееСодержание" id="26">
@@ -1107,12 +1142,6 @@
 			</Type>
 		</Attribute>
 		<Attribute name="ОшибкаПриПолученииАдресовСписковОтзыва" id="39">
-			<Title>
-				<v8:item>
-					<v8:lang>ru</v8:lang>
-					<v8:content>Не удалось получить адреса списков отзыва</v8:content>
-				</v8:item>
-			</Title>
 			<Type>
 				<v8:Type>xs:string</v8:Type>
 				<v8:StringQualifiers>
@@ -1147,6 +1176,15 @@
 		</Attribute>
 		<Attribute name="ДополнительныеСвойстваСертификата" id="44">
 			<Type/>
+		</Attribute>
+		<Attribute name="ОшибкаПриПолученииАдресовСписковОтзываНаСервере" id="45">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
 		</Attribute>
 	</Attributes>
 	<Commands>
