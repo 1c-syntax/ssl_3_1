@@ -16,7 +16,13 @@
 				<DefaultButton>true</DefaultButton>
 				<SkipOnInput>false</SkipOnInput>
 				<CommandName>Form.Command.ЗаписатьИЗакрыть</CommandName>
-				<ExtendedTooltip name="ЗаписатьИЗакрытьExtendedTooltip" id="166"/>
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Записать и закрыть</v8:content>
+					</v8:item>
+				</Title>
+				<ExtendedTooltip name="ЗаписатьИЗакрытьРасширеннаяПодсказка" id="166"/>
 			</Button>
 			<ButtonGroup name="ОсновнаяКоманднаяПанель" id="1">
 				<Title>
@@ -26,31 +32,49 @@
 					</v8:item>
 				</Title>
 				<CommandSource>Form</CommandSource>
-				<ExtendedTooltip name="ОсновнаяКоманднаяПанельExtendedTooltip" id="167"/>
+				<ExtendedTooltip name="ОсновнаяКоманднаяПанельРасширеннаяПодсказка" id="167"/>
 			</ButtonGroup>
 			<Button name="ФормаПринятьКИсполнению" id="158">
 				<Type>CommandBarButton</Type>
 				<CommandName>Form.Command.ПринятьКИсполнению</CommandName>
-				<ExtendedTooltip name="ФормаПринятьКИсполнениюExtendedTooltip" id="168"/>
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Принять к исполнению</v8:content>
+					</v8:item>
+				</Title>
+				<ExtendedTooltip name="ФормаПринятьКИсполнениюРасширеннаяПодсказка" id="168"/>
 			</Button>
 			<Button name="ФормаОтменитьПринятиеКИсполнению" id="159">
 				<Type>CommandBarButton</Type>
 				<CommandName>Form.Command.ОтменитьПринятиеКИсполнению</CommandName>
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Отменить принятие к исполнению</v8:content>
+					</v8:item>
+				</Title>
 				<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
-				<ExtendedTooltip name="ФормаОтменитьПринятиеКИсполнениюExtendedTooltip" id="169"/>
+				<ExtendedTooltip name="ФормаОтменитьПринятиеКИсполнениюРасширеннаяПодсказка" id="169"/>
 			</Button>
 			<Button name="Дополнительно" id="148">
 				<Type>CommandBarButton</Type>
 				<SkipOnInput>false</SkipOnInput>
 				<CommandName>Form.Command.Дополнительно</CommandName>
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Дополнительно...</v8:content>
+					</v8:item>
+				</Title>
 				<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
-				<ExtendedTooltip name="ДополнительноExtendedTooltip" id="170"/>
+				<ExtendedTooltip name="ДополнительноРасширеннаяПодсказка" id="170"/>
 			</Button>
 			<Button name="Справка" id="151">
 				<Type>CommandBarButton</Type>
 				<SkipOnInput>false</SkipOnInput>
 				<CommandName>Form.StandardCommand.Help</CommandName>
-				<ExtendedTooltip name="СправкаExtendedTooltip" id="171"/>
+				<ExtendedTooltip name="СправкаРасширеннаяПодсказка" id="171"/>
 			</Button>
 		</ChildItems>
 	</AutoCommandBar>
@@ -88,7 +112,7 @@
 					<Behavior>Usual</Behavior>
 					<Representation>NormalSeparation</Representation>
 					<ShowTitle>false</ShowTitle>
-					<ExtendedTooltip name="ШапкаExtendedTooltip" id="173"/>
+					<ExtendedTooltip name="ШапкаРасширеннаяПодсказка" id="173"/>
 					<ChildItems>
 						<UsualGroup name="ГруппыШапки" id="165">
 							<Title>
@@ -100,7 +124,7 @@
 							<Behavior>Usual</Behavior>
 							<Representation>None</Representation>
 							<ShowTitle>false</ShowTitle>
-							<ExtendedTooltip name="ГруппыШапкиExtendedTooltip" id="174"/>
+							<ExtendedTooltip name="ГруппыШапкиРасширеннаяПодсказка" id="174"/>
 							<ChildItems>
 								<UsualGroup name="ГруппаАвторИсполнитель" id="160">
 									<Title>
@@ -113,17 +137,23 @@
 									<Behavior>Usual</Behavior>
 									<Representation>None</Representation>
 									<ShowTitle>false</ShowTitle>
-									<ExtendedTooltip name="ГруппаАвторИсполнительExtendedTooltip" id="175"/>
+									<ExtendedTooltip name="ГруппаАвторИсполнительРасширеннаяПодсказка" id="175"/>
 									<ChildItems>
 										<InputField name="Автор" id="161">
 											<DataPath>Объект.Автор</DataPath>
 											<ReadOnly>true</ReadOnly>
 											<ContextMenu name="АвторКонтекстноеМеню" id="162"/>
-											<ExtendedTooltip name="АвторExtendedTooltip" id="176"/>
+											<ExtendedTooltip name="АвторРасширеннаяПодсказка" id="176"/>
 										</InputField>
 										<InputField name="Исполнитель" id="163">
 											<DataPath>Исполнитель</DataPath>
 											<ReadOnly>true</ReadOnly>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Исполнитель</v8:content>
+												</v8:item>
+											</Title>
 											<ToolTip>
 												<v8:item>
 													<v8:lang>ru</v8:lang>
@@ -135,7 +165,7 @@
 											<ChoiceButton>true</ChoiceButton>
 											<ChoiceButtonRepresentation>ShowInInputField</ChoiceButtonRepresentation>
 											<ContextMenu name="ИсполнительКонтекстноеМеню" id="164"/>
-											<ExtendedTooltip name="ИсполнительExtendedTooltip" id="177"/>
+											<ExtendedTooltip name="ИсполнительРасширеннаяПодсказка" id="177"/>
 										</InputField>
 									</ChildItems>
 								</UsualGroup>
@@ -150,14 +180,14 @@
 									<Behavior>Usual</Behavior>
 									<Representation>None</Representation>
 									<ShowTitle>false</ShowTitle>
-									<ExtendedTooltip name="ГруппаДатаИСрокExtendedTooltip" id="178"/>
+									<ExtendedTooltip name="ГруппаДатаИСрокРасширеннаяПодсказка" id="178"/>
 									<ChildItems>
 										<InputField name="Дата" id="152">
 											<DataPath>Объект.Date</DataPath>
 											<ReadOnly>true</ReadOnly>
 											<HorizontalStretch>false</HorizontalStretch>
 											<ContextMenu name="ДатаКонтекстноеМеню" id="153"/>
-											<ExtendedTooltip name="ДатаExtendedTooltip" id="179"/>
+											<ExtendedTooltip name="ДатаРасширеннаяПодсказка" id="179"/>
 										</InputField>
 										<InputField name="СрокИсполнения" id="12">
 											<DataPath>Объект.СрокИсполнения</DataPath>
@@ -171,7 +201,7 @@
 											<FooterHorizontalAlign>Left</FooterHorizontalAlign>
 											<HorizontalStretch>false</HorizontalStretch>
 											<ContextMenu name="СрокИсполненияКонтекстноеМеню" id="13"/>
-											<ExtendedTooltip name="СрокИсполненияExtendedTooltip" id="180"/>
+											<ExtendedTooltip name="СрокИсполненияРасширеннаяПодсказка" id="180"/>
 										</InputField>
 									</ChildItems>
 								</UsualGroup>
@@ -186,14 +216,14 @@
 									<Behavior>Usual</Behavior>
 									<Representation>None</Representation>
 									<ShowTitle>false</ShowTitle>
-									<ExtendedTooltip name="ГруппаНомерИВажностьExtendedTooltip" id="181"/>
+									<ExtendedTooltip name="ГруппаНомерИВажностьРасширеннаяПодсказка" id="181"/>
 									<ChildItems>
 										<InputField name="Номер" id="149">
 											<DataPath>Объект.Number</DataPath>
 											<Width>14</Width>
 											<HorizontalStretch>false</HorizontalStretch>
 											<ContextMenu name="НомерКонтекстноеМеню" id="150"/>
-											<ExtendedTooltip name="НомерExtendedTooltip" id="182"/>
+											<ExtendedTooltip name="НомерРасширеннаяПодсказка" id="182"/>
 										</InputField>
 										<InputField name="Важность" id="16">
 											<DataPath>Объект.Важность</DataPath>
@@ -202,7 +232,7 @@
 											<HorizontalStretch>false</HorizontalStretch>
 											<Wrap>false</Wrap>
 											<ContextMenu name="ВажностьКонтекстноеМеню" id="17"/>
-											<ExtendedTooltip name="ВажностьExtendedTooltip" id="183"/>
+											<ExtendedTooltip name="ВажностьРасширеннаяПодсказка" id="183"/>
 										</InputField>
 									</ChildItems>
 								</UsualGroup>
@@ -218,7 +248,7 @@
 							<Behavior>Usual</Behavior>
 							<Representation>None</Representation>
 							<ShowTitle>false</ShowTitle>
-							<ExtendedTooltip name="ГруппаПриоритетExtendedTooltip" id="184"/>
+							<ExtendedTooltip name="ГруппаПриоритетРасширеннаяПодсказка" id="184"/>
 							<ChildItems>
 								<InputField name="СрокНачалаИсполнения" id="119">
 									<DataPath>Объект.ДатаНачала</DataPath>
@@ -237,7 +267,7 @@
 										</v8:item>
 									</EditFormat>
 									<ContextMenu name="СрокНачалаИсполненияКонтекстноеМеню" id="120"/>
-									<ExtendedTooltip name="СрокНачалаИсполненияExtendedTooltip" id="185"/>
+									<ExtendedTooltip name="СрокНачалаИсполненияРасширеннаяПодсказка" id="185"/>
 									<Events>
 										<Event name="OnChange">СрокНачалаИсполненияПриИзменении</Event>
 									</Events>
@@ -261,7 +291,7 @@
 										</v8:item>
 									</EditFormat>
 									<ContextMenu name="СрокНачалаИсполненияВремяКонтекстноеМеню" id="136"/>
-									<ExtendedTooltip name="СрокНачалаИсполненияВремяExtendedTooltip" id="186"/>
+									<ExtendedTooltip name="СрокНачалаИсполненияВремяРасширеннаяПодсказка" id="186"/>
 								</InputField>
 							</ChildItems>
 						</UsualGroup>
@@ -297,21 +327,27 @@
 									<Behavior>Usual</Behavior>
 									<Representation>NormalSeparation</Representation>
 									<ShowTitle>false</ShowTitle>
-									<ExtendedTooltip name="ГруппаСодержаниеExtendedTooltip" id="187"/>
+									<ExtendedTooltip name="ГруппаСодержаниеРасширеннаяПодсказка" id="187"/>
 									<ChildItems>
 										<InputField name="Наименование" id="156">
 											<DataPath>Объект.Description</DataPath>
 											<ReadOnly>true</ReadOnly>
 											<AutoMaxWidth>false</AutoMaxWidth>
 											<ContextMenu name="НаименованиеКонтекстноеМеню" id="157"/>
-											<ExtendedTooltip name="НаименованиеExtendedTooltip" id="188"/>
+											<ExtendedTooltip name="НаименованиеРасширеннаяПодсказка" id="188"/>
 										</InputField>
 										<LabelField name="Предмет" id="129">
 											<DataPath>ПредметСтрокой</DataPath>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Предмет</v8:content>
+												</v8:item>
+											</Title>
 											<Width>60</Width>
 											<Hiperlink>true</Hiperlink>
 											<ContextMenu name="ПредметКонтекстноеМеню" id="130"/>
-											<ExtendedTooltip name="ПредметExtendedTooltip" id="189"/>
+											<ExtendedTooltip name="ПредметРасширеннаяПодсказка" id="189"/>
 											<Events>
 												<Event name="Click">ПредметНажатие</Event>
 											</Events>
@@ -319,6 +355,12 @@
 										<InputField name="Содержание" id="18">
 											<DataPath>ЗаданиеСодержание</DataPath>
 											<ReadOnly>true</ReadOnly>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Содержание</v8:content>
+												</v8:item>
+											</Title>
 											<TitleLocation>None</TitleLocation>
 											<FooterHorizontalAlign>Left</FooterHorizontalAlign>
 											<AutoMaxWidth>false</AutoMaxWidth>
@@ -326,7 +368,7 @@
 											<ExtendedEdit>true</ExtendedEdit>
 											<BorderColor>style:BorderColor</BorderColor>
 											<ContextMenu name="СодержаниеКонтекстноеМеню" id="19"/>
-											<ExtendedTooltip name="СодержаниеExtendedTooltip" id="190"/>
+											<ExtendedTooltip name="СодержаниеРасширеннаяПодсказка" id="190"/>
 										</InputField>
 									</ChildItems>
 								</UsualGroup>
@@ -355,7 +397,7 @@
 									<MultiLine>true</MultiLine>
 									<ExtendedEdit>true</ExtendedEdit>
 									<ContextMenu name="РезультатВыполненияКонтекстноеМеню" id="127"/>
-									<ExtendedTooltip name="РезультатВыполненияExtendedTooltip" id="191"/>
+									<ExtendedTooltip name="РезультатВыполненияРасширеннаяПодсказка" id="191"/>
 								</InputField>
 							</ChildItems>
 						</Page>
@@ -372,7 +414,7 @@
 					<Behavior>Usual</Behavior>
 					<Representation>NormalSeparation</Representation>
 					<ShowTitle>false</ShowTitle>
-					<ExtendedTooltip name="ГруппаСостояниеExtendedTooltip" id="172"/>
+					<ExtendedTooltip name="ГруппаСостояниеРасширеннаяПодсказка" id="172"/>
 				</UsualGroup>
 				<UsualGroup name="ГруппаРезультат" id="27">
 					<Title>
@@ -384,7 +426,7 @@
 					<Group>Vertical</Group>
 					<Behavior>Usual</Behavior>
 					<Representation>None</Representation>
-					<ExtendedTooltip name="ГруппаРезультатExtendedTooltip" id="192"/>
+					<ExtendedTooltip name="ГруппаРезультатРасширеннаяПодсказка" id="192"/>
 					<ChildItems>
 						<InputField name="ОписаниеРезультата" id="78">
 							<DataPath>Объект.РезультатВыполнения</DataPath>
@@ -398,7 +440,7 @@
 							</ToolTip>
 							<AutoMaxWidth>false</AutoMaxWidth>
 							<ContextMenu name="ОписаниеРезультатаКонтекстноеМеню" id="79"/>
-							<ExtendedTooltip name="ОписаниеРезультатаExtendedTooltip" id="193"/>
+							<ExtendedTooltip name="ОписаниеРезультатаРасширеннаяПодсказка" id="193"/>
 						</InputField>
 						<UsualGroup name="ГруппаВыполненоДата" id="54">
 							<Title>
@@ -410,7 +452,7 @@
 							<Behavior>Usual</Behavior>
 							<Representation>None</Representation>
 							<ShowTitle>false</ShowTitle>
-							<ExtendedTooltip name="ГруппаВыполненоДатаExtendedTooltip" id="194"/>
+							<ExtendedTooltip name="ГруппаВыполненоДатаРасширеннаяПодсказка" id="194"/>
 							<ChildItems>
 								<Button name="Выполнено" id="123">
 									<Type>UsualButton</Type>
@@ -418,7 +460,13 @@
 									<SkipOnInput>false</SkipOnInput>
 									<Height>1</Height>
 									<CommandName>Form.Command.Выполнено</CommandName>
-									<ExtendedTooltip name="ВыполненоExtendedTooltip" id="195"/>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Выполнено</v8:content>
+										</v8:item>
+									</Title>
+									<ExtendedTooltip name="ВыполненоРасширеннаяПодсказка" id="195"/>
 								</Button>
 								<Button name="Отклонено" id="137">
 									<Type>UsualButton</Type>
@@ -430,7 +478,13 @@
 										<xr:Ref>StdPicture.Stop</xr:Ref>
 										<xr:LoadTransparent>true</xr:LoadTransparent>
 									</Picture>
-									<ExtendedTooltip name="ОтклоненоExtendedTooltip" id="196"/>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Отменено</v8:content>
+										</v8:item>
+									</Title>
+									<ExtendedTooltip name="ОтклоненоРасширеннаяПодсказка" id="196"/>
 								</Button>
 								<InputField name="ДатаИсполнения" id="55">
 									<DataPath>Объект.ДатаИсполнения</DataPath>
@@ -450,7 +504,7 @@
 										</v8:item>
 									</EditFormat>
 									<ContextMenu name="ДатаИсполненияКонтекстноеМеню" id="56"/>
-									<ExtendedTooltip name="ДатаИсполненияExtendedTooltip" id="197"/>
+									<ExtendedTooltip name="ДатаИсполненияРасширеннаяПодсказка" id="197"/>
 									<Events>
 										<Event name="OnChange">ДатаИсполненияПриИзменении</Event>
 									</Events>
@@ -474,11 +528,17 @@
 										</v8:item>
 									</EditFormat>
 									<ContextMenu name="ДатаИсполненияВремяКонтекстноеМеню" id="147"/>
-									<ExtendedTooltip name="ДатаИсполненияВремяExtendedTooltip" id="198"/>
+									<ExtendedTooltip name="ДатаИсполненияВремяРасширеннаяПодсказка" id="198"/>
 								</InputField>
 								<Button name="ИзменитьЗадание" id="199">
 									<Type>Hyperlink</Type>
 									<CommandName>Form.Command.ИзменитьЗадание</CommandName>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Изменить задание</v8:content>
+										</v8:item>
+									</Title>
 									<ExtendedTooltip name="ИзменитьЗаданиеРасширеннаяПодсказка" id="200"/>
 								</Button>
 							</ChildItems>

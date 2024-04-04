@@ -19,22 +19,34 @@
 				<DefaultButton>true</DefaultButton>
 				<SkipOnInput>false</SkipOnInput>
 				<CommandName>Form.Command.Перенаправить</CommandName>
-				<ExtendedTooltip name="ПеренаправитьExtendedTooltip" id="43"/>
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Перенаправить</v8:content>
+					</v8:item>
+				</Title>
+				<ExtendedTooltip name="ПеренаправитьРасширеннаяПодсказка" id="43"/>
 			</Button>
 			<Button name="Отмена" id="4">
 				<Type>CommandBarButton</Type>
 				<SkipOnInput>false</SkipOnInput>
 				<CommandName>Form.StandardCommand.Cancel</CommandName>
-				<ExtendedTooltip name="ОтменаExtendedTooltip" id="44"/>
+				<ExtendedTooltip name="ОтменаРасширеннаяПодсказка" id="44"/>
 			</Button>
 			<ButtonGroup name="ГруппаСправка" id="28">
-				<ExtendedTooltip name="ГруппаСправкаExtendedTooltip" id="45"/>
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Справка</v8:content>
+					</v8:item>
+				</Title>
+				<ExtendedTooltip name="ГруппаСправкаРасширеннаяПодсказка" id="45"/>
 				<ChildItems>
 					<Button name="Справка" id="27">
 						<Type>CommandBarButton</Type>
 						<SkipOnInput>false</SkipOnInput>
 						<CommandName>Form.StandardCommand.Help</CommandName>
-						<ExtendedTooltip name="СправкаExtendedTooltip" id="46"/>
+						<ExtendedTooltip name="СправкаРасширеннаяПодсказка" id="46"/>
 					</Button>
 				</ChildItems>
 			</ButtonGroup>
@@ -56,7 +68,7 @@
 				</v8:item>
 			</Title>
 			<ContextMenu name="ДекорацияЗаголовокКонтекстноеМеню" id="6"/>
-			<ExtendedTooltip name="ДекорацияЗаголовокExtendedTooltip" id="47"/>
+			<ExtendedTooltip name="ДекорацияЗаголовокРасширеннаяПодсказка" id="47"/>
 		</LabelDecoration>
 		<UsualGroup name="Документ" id="72">
 			<Title>
@@ -83,7 +95,7 @@
 					<Behavior>Usual</Behavior>
 					<Representation>None</Representation>
 					<ShowTitle>false</ShowTitle>
-					<ExtendedTooltip name="ГруппаАдресацияExtendedTooltip" id="48"/>
+					<ExtendedTooltip name="ГруппаАдресацияРасширеннаяПодсказка" id="48"/>
 					<ChildItems>
 						<UsualGroup name="ГруппаАдресацияИсполнитель" id="12">
 							<Title>
@@ -100,6 +112,12 @@
 							<ChildItems>
 								<RadioButtonField name="ТипАдресацииИсполнитель" id="9">
 									<DataPath>ТипАдресации</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Тип адресации</v8:content>
+										</v8:item>
+									</Title>
 									<TitleLocation>None</TitleLocation>
 									<RadioButtonType>Auto</RadioButtonType>
 									<ColumnsCount>1</ColumnsCount>
@@ -127,12 +145,18 @@
 								<InputField name="Исполнитель" id="1">
 									<DataPath>Исполнитель</DataPath>
 									<DefaultItem>true</DefaultItem>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Исполнитель</v8:content>
+										</v8:item>
+									</Title>
 									<TitleLocation>None</TitleLocation>
 									<Width>35</Width>
 									<OpenButton>false</OpenButton>
 									<ChoiceFoldersAndItems>Items</ChoiceFoldersAndItems>
 									<ContextMenu name="ИсполнительКонтекстноеМеню" id="2"/>
-									<ExtendedTooltip name="ИсполнительExtendedTooltip" id="51"/>
+									<ExtendedTooltip name="ИсполнительРасширеннаяПодсказка" id="51"/>
 									<Events>
 										<Event name="OnChange">ИсполнительПриИзменении</Event>
 									</Events>
@@ -154,6 +178,12 @@
 							<ChildItems>
 								<RadioButtonField name="ТипАдресацииРоль" id="69">
 									<DataPath>ТипАдресации</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Тип адресации</v8:content>
+										</v8:item>
+									</Title>
 									<TitleLocation>None</TitleLocation>
 									<RadioButtonType>Auto</RadioButtonType>
 									<ChoiceList>
@@ -179,6 +209,12 @@
 								</RadioButtonField>
 								<InputField name="Роль" id="13">
 									<DataPath>Роль</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Роль</v8:content>
+										</v8:item>
+									</Title>
 									<TitleLocation>None</TitleLocation>
 									<DropListButton>false</DropListButton>
 									<ChoiceButton>true</ChoiceButton>
@@ -186,7 +222,7 @@
 									<OpenButton>false</OpenButton>
 									<ChoiceFoldersAndItems>Items</ChoiceFoldersAndItems>
 									<ContextMenu name="РольКонтекстноеМеню" id="14"/>
-									<ExtendedTooltip name="РольExtendedTooltip" id="52"/>
+									<ExtendedTooltip name="РольРасширеннаяПодсказка" id="52"/>
 									<Events>
 										<Event name="OnChange">РольПриИзменении</Event>
 									</Events>
@@ -235,13 +271,19 @@
 									<Behavior>Usual</Behavior>
 									<Representation>None</Representation>
 									<ShowTitle>false</ShowTitle>
-									<ExtendedTooltip name="ГруппаОдинОбъектАдресацииExtendedTooltip" id="53"/>
+									<ExtendedTooltip name="ГруппаОдинОбъектАдресацииРасширеннаяПодсказка" id="53"/>
 									<ChildItems>
 										<InputField name="ОдинОсновнойОбъектАдресации" id="34">
 											<DataPath>ОсновнойОбъектАдресации</DataPath>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Основной объект адресации</v8:content>
+												</v8:item>
+											</Title>
 											<Wrap>false</Wrap>
 											<ContextMenu name="ОдинОсновнойОбъектАдресацииКонтекстноеМеню" id="35"/>
-											<ExtendedTooltip name="ОдинОсновнойОбъектАдресацииExtendedTooltip" id="54"/>
+											<ExtendedTooltip name="ОдинОсновнойОбъектАдресацииРасширеннаяПодсказка" id="54"/>
 										</InputField>
 									</ChildItems>
 								</UsualGroup>
@@ -256,19 +298,31 @@
 									<Behavior>Usual</Behavior>
 									<Representation>None</Representation>
 									<ShowTitle>false</ShowTitle>
-									<ExtendedTooltip name="ГруппаДваОбъектаАдресацииExtendedTooltip" id="55"/>
+									<ExtendedTooltip name="ГруппаДваОбъектаАдресацииРасширеннаяПодсказка" id="55"/>
 									<ChildItems>
 										<InputField name="ОсновнойОбъектАдресации" id="37">
 											<DataPath>ОсновнойОбъектАдресации</DataPath>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Основной объект адресации</v8:content>
+												</v8:item>
+											</Title>
 											<Wrap>false</Wrap>
 											<ContextMenu name="ОсновнойОбъектАдресацииКонтекстноеМеню" id="38"/>
-											<ExtendedTooltip name="ОсновнойОбъектАдресацииExtendedTooltip" id="56"/>
+											<ExtendedTooltip name="ОсновнойОбъектАдресацииРасширеннаяПодсказка" id="56"/>
 										</InputField>
 										<InputField name="ДополнительныйОбъектАдресации" id="39">
 											<DataPath>ДополнительныйОбъектАдресации</DataPath>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Доп. объект адресации</v8:content>
+												</v8:item>
+											</Title>
 											<Wrap>false</Wrap>
 											<ContextMenu name="ДополнительныйОбъектАдресацииКонтекстноеМеню" id="40"/>
-											<ExtendedTooltip name="ДополнительныйОбъектАдресацииExtendedTooltip" id="57"/>
+											<ExtendedTooltip name="ДополнительныйОбъектАдресацииРасширеннаяПодсказка" id="57"/>
 										</InputField>
 									</ChildItems>
 								</UsualGroup>
@@ -278,20 +332,32 @@
 				</UsualGroup>
 				<InputField name="Комментарий" id="7">
 					<DataPath>Комментарий</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Комментарий</v8:content>
+						</v8:item>
+					</Title>
 					<TitleLocation>Left</TitleLocation>
 					<AutoMaxWidth>false</AutoMaxWidth>
 					<Height>2</Height>
 					<MultiLine>true</MultiLine>
 					<ContextMenu name="КомментарийКонтекстноеМеню" id="8"/>
-					<ExtendedTooltip name="КомментарийExtendedTooltip" id="58"/>
+					<ExtendedTooltip name="КомментарийРасширеннаяПодсказка" id="58"/>
 				</InputField>
 				<CheckBoxField name="ИгнорироватьПредупреждения" id="41">
 					<DataPath>ИгнорироватьПредупреждения</DataPath>
 					<Visible>false</Visible>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Игнорировать предупреждения</v8:content>
+						</v8:item>
+					</Title>
 					<TitleLocation>Right</TitleLocation>
 					<CheckBoxType>Auto</CheckBoxType>
 					<ContextMenu name="ИгнорироватьПредупрежденияКонтекстноеМеню" id="42"/>
-					<ExtendedTooltip name="ИгнорироватьПредупрежденияExtendedTooltip" id="59"/>
+					<ExtendedTooltip name="ИгнорироватьПредупрежденияРасширеннаяПодсказка" id="59"/>
 				</CheckBoxField>
 			</ChildItems>
 		</UsualGroup>

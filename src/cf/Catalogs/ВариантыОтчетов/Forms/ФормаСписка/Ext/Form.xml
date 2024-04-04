@@ -76,10 +76,16 @@
 			<Behavior>Usual</Behavior>
 			<Representation>None</Representation>
 			<ShowTitle>false</ShowTitle>
-			<ExtendedTooltip name="БыстрыеОтборыExtendedTooltip" id="98"/>
+			<ExtendedTooltip name="БыстрыеОтборыРасширеннаяПодсказка" id="98"/>
 			<ChildItems>
 				<InputField name="СтрокаПоиска" id="60">
 					<DataPath>СтрокаПоиска</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Поиск</v8:content>
+						</v8:item>
+					</Title>
 					<TitleLocation>None</TitleLocation>
 					<ToolTip>
 						<v8:item>
@@ -109,6 +115,12 @@
 				<Button name="ВыполнитьПоиск" id="132">
 					<Type>UsualButton</Type>
 					<CommandName>Form.Command.ВыполнитьПоиск</CommandName>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Найти</v8:content>
+						</v8:item>
+					</Title>
 					<ExtendedTooltip name="ВыполнитьПоискРасширеннаяПодсказка" id="133"/>
 				</Button>
 				<InputField name="ОтборТипОтчета" id="45">
@@ -116,6 +128,12 @@
 					<UserVisible>
 						<xr:Common>false</xr:Common>
 					</UserVisible>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Тип</v8:content>
+						</v8:item>
+					</Title>
 					<ToolTip>
 						<v8:item>
 							<v8:lang>ru</v8:lang>
@@ -143,7 +161,7 @@
 					</InputHint>
 					<ChoiceHistoryOnInput>DontUse</ChoiceHistoryOnInput>
 					<ContextMenu name="ОтборТипОтчетаКонтекстноеМеню" id="46"/>
-					<ExtendedTooltip name="ОтборТипОтчетаExtendedTooltip" id="101"/>
+					<ExtendedTooltip name="ОтборТипОтчетаРасширеннаяПодсказка" id="101"/>
 					<Events>
 						<Event name="OnChange">ОтборТипОтчетаПриИзменении</Event>
 						<Event name="Clearing">ОтборТипОтчетаОчистка</Event>
@@ -171,41 +189,41 @@
 					<v8:content>Командная панель</v8:content>
 				</v8:item>
 			</Title>
-			<ExtendedTooltip name="КоманднаяПанельExtendedTooltip" id="102"/>
+			<ExtendedTooltip name="КоманднаяПанельРасширеннаяПодсказка" id="102"/>
 			<ChildItems>
 				<Button name="Выбрать" id="84">
 					<Type>CommandBarButton</Type>
 					<CommandName>Form.Item.Список.StandardCommand.Choose</CommandName>
-					<ExtendedTooltip name="ВыбратьExtendedTooltip" id="103"/>
+					<ExtendedTooltip name="ВыбратьРасширеннаяПодсказка" id="103"/>
 				</Button>
 				<Button name="Просмотр" id="22">
 					<Type>CommandBarButton</Type>
 					<CommandName>Catalog.ВариантыОтчетов.Command.Открыть</CommandName>
-					<DataPath>Items.Список.CurrentData.Ref</DataPath>
-					<ExtendedTooltip name="ПросмотрExtendedTooltip" id="104"/>
+					<DataPath>Items.Список.CurrentData.Ссылка</DataPath>
+					<ExtendedTooltip name="ПросмотрРасширеннаяПодсказка" id="104"/>
 				</Button>
 				<Button name="Изменить" id="164">
 					<Type>CommandBarButton</Type>
 					<CommandName>Catalog.ВариантыОтчетов.Command.Изменить</CommandName>
-					<DataPath>Items.Список.CurrentData.Ref</DataPath>
+					<DataPath>Items.Список.CurrentData.Ссылка</DataPath>
 					<ExtendedTooltip name="ИзменитьРасширеннаяПодсказка" id="165"/>
 				</Button>
 				<Button name="РазместитьВРазделах" id="36">
 					<Type>CommandBarButton</Type>
 					<CommandName>Catalog.ВариантыОтчетов.Command.РазместитьВРазделах</CommandName>
-					<DataPath>Items.Список.CurrentData.Ref</DataPath>
+					<DataPath>Items.Список.CurrentData.Ссылка</DataPath>
 					<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
-					<ExtendedTooltip name="РазместитьВРазделахExtendedTooltip" id="106"/>
+					<ExtendedTooltip name="РазместитьВРазделахРасширеннаяПодсказка" id="106"/>
 				</Button>
 				<Button name="ИзменитьФорму" id="15">
 					<Type>CommandBarButton</Type>
 					<CommandName>Form.StandardCommand.CustomizeForm</CommandName>
-					<ExtendedTooltip name="ИзменитьФормуExtendedTooltip" id="107"/>
+					<ExtendedTooltip name="ИзменитьФормуРасширеннаяПодсказка" id="107"/>
 				</Button>
 				<Button name="Справка" id="14">
 					<Type>CommandBarButton</Type>
 					<CommandName>Form.StandardCommand.Help</CommandName>
-					<ExtendedTooltip name="СправкаExtendedTooltip" id="108"/>
+					<ExtendedTooltip name="СправкаРасширеннаяПодсказка" id="108"/>
 				</Button>
 				<ButtonGroup name="СписокГруппаПоиск" id="188">
 					<Title>
@@ -244,27 +262,27 @@
 						</v8:item>
 					</Title>
 					<CommandSource>Item.Список</CommandSource>
-					<ExtendedTooltip name="КомандыСпискаExtendedTooltip" id="109"/>
+					<ExtendedTooltip name="КомандыСпискаРасширеннаяПодсказка" id="109"/>
 				</ButtonGroup>
 				<Button name="СброситьНастройкиРазмещения" id="95">
 					<Type>CommandBarButton</Type>
 					<CommandName>Catalog.ВариантыОтчетов.Command.СброситьНастройкиРазмещения</CommandName>
-					<DataPath>Items.Список.CurrentData.Ref</DataPath>
+					<DataPath>Items.Список.CurrentData.Ссылка</DataPath>
 					<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
 					<ExtendedTooltip name="СброситьНастройкиРазмещенияРасширеннаяПодсказка" id="110"/>
 				</Button>
 				<Button name="СброситьНастройкиПользователей" id="70">
 					<Type>CommandBarButton</Type>
 					<CommandName>Catalog.ВариантыОтчетов.Command.СброситьНастройкиПользователей</CommandName>
-					<DataPath>Items.Список.CurrentData.Ref</DataPath>
+					<DataPath>Items.Список.CurrentData.Ссылка</DataPath>
 					<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
-					<ExtendedTooltip name="СброситьНастройкиПользователейExtendedTooltip" id="111"/>
+					<ExtendedTooltip name="СброситьНастройкиПользователейРасширеннаяПодсказка" id="111"/>
 				</Button>
 				<Button name="УстановитьПометкуУдаления" id="83">
 					<Type>CommandBarButton</Type>
 					<CommandName>Form.Item.Список.StandardCommand.SetDeletionMark</CommandName>
 					<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
-					<ExtendedTooltip name="УстановитьПометкуУдаленияExtendedTooltip" id="112"/>
+					<ExtendedTooltip name="УстановитьПометкуУдаленияРасширеннаяПодсказка" id="112"/>
 				</Button>
 				<ButtonGroup name="ГруппаОбменВариантамиОтчетов" id="200">
 					<Title>
@@ -278,11 +296,23 @@
 						<Button name="ОбновитьВариантОтчетаИзФайла" id="196">
 							<Type>CommandBarButton</Type>
 							<CommandName>Form.Command.ОбновитьВариантОтчетаИзФайла</CommandName>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Обновить из файла...</v8:content>
+								</v8:item>
+							</Title>
 							<ExtendedTooltip name="ОбновитьВариантОтчетаИзФайлаРасширеннаяПодсказка" id="197"/>
 						</Button>
 						<Button name="СохранитьВариантОтчетаВФайл" id="198">
 							<Type>CommandBarButton</Type>
 							<CommandName>Form.Command.СохранитьВариантОтчетаВФайл</CommandName>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Сохранить в файл...</v8:content>
+								</v8:item>
+							</Title>
 							<ExtendedTooltip name="СохранитьВариантОтчетаВФайлРасширеннаяПодсказка" id="199"/>
 						</Button>
 					</ChildItems>
@@ -299,7 +329,7 @@
 			<Behavior>Usual</Behavior>
 			<Representation>None</Representation>
 			<ShowTitle>false</ShowTitle>
-			<ExtendedTooltip name="ГруппаГоризонтальнаяExtendedTooltip" id="113"/>
+			<ExtendedTooltip name="ГруппаГоризонтальнаяРасширеннаяПодсказка" id="113"/>
 			<ChildItems>
 				<UsualGroup name="ГруппаРазделы" id="92">
 					<Title>
@@ -346,7 +376,7 @@
 							<AutoCommandBar name="ДеревоПодсистемКоманднаяПанель" id="67">
 								<Autofill>false</Autofill>
 							</AutoCommandBar>
-							<ExtendedTooltip name="ДеревоПодсистемExtendedTooltip" id="115"/>
+							<ExtendedTooltip name="ДеревоПодсистемРасширеннаяПодсказка" id="115"/>
 							<SearchStringAddition name="ДеревоПодсистемСтрокаПоиска" id="170">
 								<AdditionSource>
 									<Item>ДеревоПодсистем</Item>
@@ -381,19 +411,31 @@
 							<ChildItems>
 								<InputField name="ДеревоПодсистемПредставление" id="68">
 									<DataPath>ДеревоПодсистем.Представление</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Раздел, Группа</v8:content>
+										</v8:item>
+									</Title>
 									<EditMode>EnterOnInput</EditMode>
 									<TextEdit>false</TextEdit>
 									<ContextMenu name="ДеревоПодсистемПредставлениеКонтекстноеМеню" id="69"/>
-									<ExtendedTooltip name="ДеревоПодсистемПредставлениеExtendedTooltip" id="116"/>
+									<ExtendedTooltip name="ДеревоПодсистемПредставлениеРасширеннаяПодсказка" id="116"/>
 								</InputField>
 							</ChildItems>
 						</Table>
 						<CheckBoxField name="ВключаяПодчиненные" id="93">
 							<DataPath>ВключаяПодчиненные</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Включая подчиненные</v8:content>
+								</v8:item>
+							</Title>
 							<TitleLocation>Right</TitleLocation>
 							<CheckBoxType>Auto</CheckBoxType>
 							<ContextMenu name="ВключаяПодчиненныеКонтекстноеМеню" id="94"/>
-							<ExtendedTooltip name="ВключаяПодчиненныеExtendedTooltip" id="117"/>
+							<ExtendedTooltip name="ВключаяПодчиненныеРасширеннаяПодсказка" id="117"/>
 							<Events>
 								<Event name="OnChange">ВключаяПодчиненныеПриИзменении</Event>
 							</Events>
@@ -449,20 +491,20 @@
 							<Button name="ПросмотрСписок" id="43">
 								<Type>CommandBarButton</Type>
 								<CommandName>Catalog.ВариантыОтчетов.Command.Открыть</CommandName>
-								<DataPath>Items.Список.CurrentData.Ref</DataPath>
-								<ExtendedTooltip name="ПросмотрСписокExtendedTooltip" id="118"/>
+								<DataPath>Items.Список.CurrentData.Ссылка</DataPath>
+								<ExtendedTooltip name="ПросмотрСписокРасширеннаяПодсказка" id="118"/>
 							</Button>
 							<Button name="ИзменитьКонтекстноеМеню" id="166">
 								<Type>CommandBarButton</Type>
 								<CommandName>Catalog.ВариантыОтчетов.Command.Изменить</CommandName>
-								<DataPath>Items.Список.CurrentData.Ref</DataPath>
+								<DataPath>Items.Список.CurrentData.Ссылка</DataPath>
 								<ExtendedTooltip name="ИзменитьКонтекстноеМенюРасширеннаяПодсказка" id="167"/>
 							</Button>
 							<Button name="РазместитьВРазделахСписок" id="62">
 								<Type>CommandBarButton</Type>
 								<CommandName>Catalog.ВариантыОтчетов.Command.РазместитьВРазделах</CommandName>
-								<DataPath>Items.Список.CurrentData.Ref</DataPath>
-								<ExtendedTooltip name="РазместитьВРазделахСписокExtendedTooltip" id="120"/>
+								<DataPath>Items.Список.CurrentData.Ссылка</DataPath>
+								<ExtendedTooltip name="РазместитьВРазделахСписокРасширеннаяПодсказка" id="120"/>
 							</Button>
 							<ButtonGroup name="КомандыСпискаСписок" id="89">
 								<Title>
@@ -472,18 +514,18 @@
 									</v8:item>
 								</Title>
 								<CommandSource>Item.Список</CommandSource>
-								<ExtendedTooltip name="КомандыСпискаСписокExtendedTooltip" id="121"/>
+								<ExtendedTooltip name="КомандыСпискаСписокРасширеннаяПодсказка" id="121"/>
 							</ButtonGroup>
 							<Button name="УстановитьПометкуУдаленияСписок" id="91">
 								<Type>CommandBarButton</Type>
 								<CommandName>Form.Item.Список.StandardCommand.SetDeletionMark</CommandName>
 								<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
-								<ExtendedTooltip name="УстановитьПометкуУдаленияСписокExtendedTooltip" id="122"/>
+								<ExtendedTooltip name="УстановитьПометкуУдаленияСписокРасширеннаяПодсказка" id="122"/>
 							</Button>
 						</ChildItems>
 					</ContextMenu>
 					<AutoCommandBar name="СписокКоманднаяПанель" id="3"/>
-					<ExtendedTooltip name="СписокExtendedTooltip" id="123"/>
+					<ExtendedTooltip name="СписокРасширеннаяПодсказка" id="123"/>
 					<SearchStringAddition name="СписокСтрокаПоиска" id="179">
 						<AdditionSource>
 							<Item>Список</Item>
@@ -542,12 +584,12 @@
 											</Title>
 											<Width>40</Width>
 											<ContextMenu name="НаименованиеКонтекстноеМеню" id="5"/>
-											<ExtendedTooltip name="НаименованиеExtendedTooltip" id="124"/>
+											<ExtendedTooltip name="НаименованиеРасширеннаяПодсказка" id="124"/>
 										</LabelField>
 										<LabelField name="Автор" id="12" DisplayImportance="Low">
 											<DataPath>Список.Автор</DataPath>
 											<ContextMenu name="АвторКонтекстноеМеню" id="13"/>
-											<ExtendedTooltip name="АвторExtendedTooltip" id="125"/>
+											<ExtendedTooltip name="АвторРасширеннаяПодсказка" id="125"/>
 										</LabelField>
 										<LabelField name="Назначение" id="202">
 											<DataPath>Список.Назначение</DataPath>
@@ -578,7 +620,7 @@
 											</ValuesPicture>
 											<FileDragMode>AsFile</FileDragMode>
 											<ContextMenu name="ДоступенВсемПользователямКонтекстноеМеню" id="97"/>
-											<ExtendedTooltip name="ДоступенВсемПользователямExtendedTooltip" id="126"/>
+											<ExtendedTooltip name="ДоступенВсемПользователямРасширеннаяПодсказка" id="126"/>
 										</PictureField>
 										<CheckBoxField name="ВидимостьПоУмолчанию" id="71">
 											<UserVisible>
@@ -593,7 +635,7 @@
 											</ToolTip>
 											<CheckBoxType>Auto</CheckBoxType>
 											<ContextMenu name="ВидимостьПоУмолчаниюКонтекстноеМеню" id="72"/>
-											<ExtendedTooltip name="ВидимостьПоУмолчаниюExtendedTooltip" id="127"/>
+											<ExtendedTooltip name="ВидимостьПоУмолчаниюРасширеннаяПодсказка" id="127"/>
 										</CheckBoxField>
 									</ChildItems>
 								</ColumnGroup>
@@ -649,7 +691,7 @@
 										</v8:item>
 									</Title>
 									<ContextMenu name="ИмяОтчетаКонтекстноеМеню" id="74"/>
-									<ExtendedTooltip name="ИмяОтчетаExtendedTooltip" id="128"/>
+									<ExtendedTooltip name="ИмяОтчетаРасширеннаяПодсказка" id="128"/>
 								</LabelField>
 								<LabelField name="Отчет" id="77">
 									<DataPath>Список.Отчет</DataPath>
@@ -657,7 +699,7 @@
 										<xr:Common>false</xr:Common>
 									</UserVisible>
 									<ContextMenu name="ОтчетКонтекстноеМеню" id="78"/>
-									<ExtendedTooltip name="ОтчетExtendedTooltip" id="129"/>
+									<ExtendedTooltip name="ОтчетРасширеннаяПодсказка" id="129"/>
 								</LabelField>
 								<LabelField name="ТипОтчета" id="81">
 									<DataPath>Список.ТипОтчета</DataPath>
@@ -665,7 +707,7 @@
 										<xr:Common>false</xr:Common>
 									</UserVisible>
 									<ContextMenu name="ТипОтчетаКонтекстноеМеню" id="82"/>
-									<ExtendedTooltip name="ТипОтчетаExtendedTooltip" id="130"/>
+									<ExtendedTooltip name="ТипОтчетаРасширеннаяПодсказка" id="130"/>
 								</LabelField>
 								<LabelField name="КлючВарианта" id="75">
 									<DataPath>Список.КлючВарианта</DataPath>
@@ -673,12 +715,12 @@
 										<xr:Common>false</xr:Common>
 									</UserVisible>
 									<ContextMenu name="КлючВариантаКонтекстноеМеню" id="76"/>
-									<ExtendedTooltip name="КлючВариантаExtendedTooltip" id="131"/>
+									<ExtendedTooltip name="КлючВариантаРасширеннаяПодсказка" id="131"/>
 								</LabelField>
 							</ChildItems>
 						</ColumnGroup>
 						<LabelField name="Ссылка" id="134">
-							<DataPath>Список.Ref</DataPath>
+							<DataPath>Список.Ссылка</DataPath>
 							<UserVisible>
 								<xr:Common>false</xr:Common>
 							</UserVisible>
@@ -697,7 +739,6 @@
 			</Type>
 			<MainAttribute>true</MainAttribute>
 			<UseAlways>
-				<Field>Список.Ref</Field>
 				<Field>Список.Автор</Field>
 				<Field>Список.ИмяОтчета</Field>
 				<Field>Список.КлючВарианта</Field>
@@ -705,6 +746,7 @@
 				<Field>Список.Наименование</Field>
 				<Field>Список.Отчет</Field>
 				<Field>Список.ПолноеИмяОтчета</Field>
+				<Field>Список.Ссылка</Field>
 				<Field>Список.ТипОтчета</Field>
 			</UseAlways>
 			<Settings xsi:type="DynamicList">
@@ -783,6 +825,271 @@
 						РодителиПереопределяемый.Отчет В (&amp;ДоступныеОтчеты)
 						И НЕ РодителиПереопределяемый.Ссылка В (&amp;ВариантыПользователя))
 		КОНЕЦ</QueryText>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>Наименование</dcssch:dataPath>
+					<dcssch:field>Наименование</dcssch:field>
+					<dcssch:title xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Наименование</v8:content>
+						</v8:item>
+					</dcssch:title>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ВидимостьПоУмолчанию</dcssch:dataPath>
+					<dcssch:field>ВидимостьПоУмолчанию</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ВидимостьПоУмолчаниюПереопределена</dcssch:dataPath>
+					<dcssch:field>ВидимостьПоУмолчаниюПереопределена</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ИнтерактивнаяПометкаУдаления</dcssch:dataPath>
+					<dcssch:field>ИнтерактивнаяПометкаУдаления</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>КлючевыеСлова</dcssch:dataPath>
+					<dcssch:field>КлючевыеСлова</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>Контекст</dcssch:dataPath>
+					<dcssch:field>Контекст</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>НаименованияПараметровИОтборов</dcssch:dataPath>
+					<dcssch:field>НаименованияПараметровИОтборов</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>НаименованияПолей</dcssch:dataPath>
+					<dcssch:field>НаименованияПолей</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>Настройки</dcssch:dataPath>
+					<dcssch:field>Настройки</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>Описание</dcssch:dataPath>
+					<dcssch:field>Описание</dcssch:field>
+					<dcssch:title xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Описание</v8:content>
+						</v8:item>
+					</dcssch:title>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ОписаниеЯзык1</dcssch:dataPath>
+					<dcssch:field>ОписаниеЯзык1</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ОписаниеЯзык2</dcssch:dataPath>
+					<dcssch:field>ОписаниеЯзык2</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ПредопределенныйВариант</dcssch:dataPath>
+					<dcssch:field>ПредопределенныйВариант</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ТолькоДляАвтора</dcssch:dataPath>
+					<dcssch:field>ТолькоДляАвтора</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ХешНастроек</dcssch:dataPath>
+					<dcssch:field>ХешНастроек</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>Размещение</dcssch:dataPath>
+					<dcssch:field>Размещение</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>Представления</dcssch:dataPath>
+					<dcssch:field>Представления</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>Предопределенный</dcssch:dataPath>
+					<dcssch:field>Предопределенный</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ИмяПредопределенныхДанных</dcssch:dataPath>
+					<dcssch:field>ИмяПредопределенныхДанных</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>НаименованиеЯзык2</dcssch:dataPath>
+					<dcssch:field>НаименованиеЯзык2</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>НаименованиеЯзык1</dcssch:dataPath>
+					<dcssch:field>НаименованиеЯзык1</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>Ссылка</dcssch:dataPath>
+					<dcssch:field>Ссылка</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ПометкаУдаления</dcssch:dataPath>
+					<dcssch:field>ПометкаУдаления</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>КлючЗамеров</dcssch:dataPath>
+					<dcssch:field>КлючЗамеров</dcssch:field>
+					<dcssch:title xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Ключ замеров</v8:content>
+						</v8:item>
+					</dcssch:title>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>Пользовательский</dcssch:dataPath>
+					<dcssch:field>Пользовательский</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ДоступенВсемПользователям</dcssch:dataPath>
+					<dcssch:field>ДоступенВсемПользователям</dcssch:field>
+					<dcssch:title xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Доступен всем пользователям</v8:content>
+						</v8:item>
+					</dcssch:title>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>Отчет</dcssch:dataPath>
+					<dcssch:field>Отчет</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>КлючВарианта</dcssch:dataPath>
+					<dcssch:field>КлючВарианта</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ТипОтчета</dcssch:dataPath>
+					<dcssch:field>ТипОтчета</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>Автор</dcssch:dataPath>
+					<dcssch:field>Автор</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>Назначение</dcssch:dataPath>
+					<dcssch:field>Назначение</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ИмяОтчета</dcssch:dataPath>
+					<dcssch:field>ИмяОтчета</dcssch:field>
+					<dcssch:title xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Имя отчета</v8:content>
+						</v8:item>
+					</dcssch:title>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ПолноеИмяОтчета</dcssch:dataPath>
+					<dcssch:field>ПолноеИмяОтчета</dcssch:field>
+					<dcssch:title xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Полное имя отчета</v8:content>
+						</v8:item>
+					</dcssch:title>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ИндексКартинки</dcssch:dataPath>
+					<dcssch:field>ИндексКартинки</dcssch:field>
+					<dcssch:title xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Индекс картинки</v8:content>
+						</v8:item>
+					</dcssch:title>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>Родитель</dcssch:dataPath>
+					<dcssch:field>Родитель</dcssch:field>
+				</Field>
+				<Parameter>
+					<dcssch:name>ВариантыПользователя</dcssch:name>
+					<dcssch:title xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Варианты пользователя</v8:content>
+						</v8:item>
+					</dcssch:title>
+					<dcssch:useRestriction>true</dcssch:useRestriction>
+					<dcssch:valueListAllowed>true</dcssch:valueListAllowed>
+				</Parameter>
+				<Parameter>
+					<dcssch:name>ЭтоОсновнойЯзык</dcssch:name>
+					<dcssch:title xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Это основной язык</v8:content>
+						</v8:item>
+					</dcssch:title>
+					<dcssch:valueType>
+						<v8:Type>xs:boolean</v8:Type>
+					</dcssch:valueType>
+					<dcssch:value xsi:nil="true"/>
+					<dcssch:useRestriction>true</dcssch:useRestriction>
+				</Parameter>
+				<Parameter>
+					<dcssch:name>ВерсияРасширений</dcssch:name>
+					<dcssch:title xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Версия расширений</v8:content>
+						</v8:item>
+					</dcssch:title>
+					<dcssch:valueType>
+						<v8:Type>cfg:CatalogRef.ВерсииРасширений</v8:Type>
+					</dcssch:valueType>
+					<dcssch:value xsi:nil="true"/>
+					<dcssch:useRestriction>true</dcssch:useRestriction>
+				</Parameter>
+				<Parameter>
+					<dcssch:name>ИмяОтчета</dcssch:name>
+					<dcssch:title xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Имя отчета</v8:content>
+						</v8:item>
+					</dcssch:title>
+					<dcssch:value xsi:nil="true"/>
+					<dcssch:useRestriction>true</dcssch:useRestriction>
+				</Parameter>
+				<Parameter>
+					<dcssch:name>ЕстьОтборПоВариантам</dcssch:name>
+					<dcssch:title xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Есть отбор по вариантам</v8:content>
+						</v8:item>
+					</dcssch:title>
+					<dcssch:value xsi:nil="true"/>
+					<dcssch:useRestriction>true</dcssch:useRestriction>
+				</Parameter>
+				<Parameter>
+					<dcssch:name>ОтключенныеВариантыПрограммы</dcssch:name>
+					<dcssch:title xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Отключенные варианты отчетов</v8:content>
+						</v8:item>
+					</dcssch:title>
+					<dcssch:useRestriction>true</dcssch:useRestriction>
+					<dcssch:valueListAllowed>true</dcssch:valueListAllowed>
+				</Parameter>
+				<Parameter>
+					<dcssch:name>ДоступныеОтчеты</dcssch:name>
+					<dcssch:title xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Доступные отчеты</v8:content>
+						</v8:item>
+					</dcssch:title>
+					<dcssch:useRestriction>true</dcssch:useRestriction>
+					<dcssch:valueListAllowed>true</dcssch:valueListAllowed>
+				</Parameter>
 				<MainTable>Catalog.ВариантыОтчетов</MainTable>
 				<ListSettings>
 					<dcsset:filter>

@@ -20,7 +20,7 @@
 			<Title>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Группа рассылки могут работать быстрее</v8:content>
+					<v8:content>Рассылки могут работать быстрее</v8:content>
 				</v8:item>
 			</Title>
 			<ToolTipRepresentation>ShowLeft</ToolTipRepresentation>
@@ -78,6 +78,12 @@
 			<ChildItems>
 				<InputField name="СостояниеОтбор" id="165">
 					<DataPath>СостояниеОтбор</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Состояние</v8:content>
+						</v8:item>
+					</Title>
 					<TitleLocation>None</TitleLocation>
 					<Width>12</Width>
 					<MaxWidth>15</MaxWidth>
@@ -137,6 +143,12 @@
 				</InputField>
 				<InputField name="ОтветственныйОтбор" id="159">
 					<DataPath>ОтветственныйОтбор</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Ответственный</v8:content>
+						</v8:item>
+					</Title>
 					<Width>25</Width>
 					<ClearButton>true</ClearButton>
 					<OpenButton>false</OpenButton>
@@ -154,6 +166,12 @@
 				</InputField>
 				<InputField name="ОтчетОтбор" id="162">
 					<DataPath>ОтчетОтбор</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Отчет</v8:content>
+						</v8:item>
+					</Title>
 					<Width>25</Width>
 					<ClearButton>true</ClearButton>
 					<OpenButton>false</OpenButton>
@@ -264,11 +282,17 @@
 							<Type>CommandBarButton</Type>
 							<CommandName>Catalog.РассылкиОтчетов.Command.ВыполнитьСейчас</CommandName>
 							<DataPath>Items.Список.CurrentData.Ref</DataPath>
-							<ExtendedTooltip name="ВыполнитьСейчасExtendedTooltip" id="57"/>
+							<ExtendedTooltip name="ВыполнитьСейчасРасширеннаяПодсказка" id="57"/>
 						</Button>
 						<Button name="ИзменитьВыделенные" id="79">
 							<Type>CommandBarButton</Type>
 							<CommandName>Form.Command.ИзменитьВыделенные</CommandName>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Изменить выделенные...</v8:content>
+								</v8:item>
+							</Title>
 							<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
 							<ExtendedTooltip name="ИзменитьВыделенныеРасширеннаяПодсказка" id="80"/>
 						</Button>
@@ -292,7 +316,7 @@
 							<Type>CommandBarButton</Type>
 							<CommandName>Catalog.РассылкиОтчетов.Command.СобытияРассылки</CommandName>
 							<DataPath>Items.Список.CurrentData.Ref</DataPath>
-							<ExtendedTooltip name="СобытияРассылкиExtendedTooltip" id="58"/>
+							<ExtendedTooltip name="СобытияРассылкиРасширеннаяПодсказка" id="58"/>
 						</Button>
 					</ChildItems>
 				</Popup>
@@ -496,6 +520,12 @@
 					<Button name="ИзменитьВыделенныеСписок" id="81">
 						<Type>CommandBarButton</Type>
 						<CommandName>Form.Command.ИзменитьВыделенные</CommandName>
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Изменить выделенные...</v8:content>
+							</v8:item>
+						</Title>
 						<ExtendedTooltip name="ИзменитьВыделенныеСписокРасширеннаяПодсказка" id="82"/>
 					</Button>
 				</ChildItems>
@@ -503,7 +533,7 @@
 			<AutoCommandBar name="СписокКоманднаяПанель" id="3">
 				<Autofill>false</Autofill>
 			</AutoCommandBar>
-			<ExtendedTooltip name="СписокExtendedTooltip" id="62"/>
+			<ExtendedTooltip name="СписокРасширеннаяПодсказка" id="62"/>
 			<SearchStringAddition name="СписокСтрокаПоиска" id="139">
 				<AdditionSource>
 					<Item>Список</Item>
@@ -538,7 +568,7 @@
 					<Width>25</Width>
 					<MaxWidth>35</MaxWidth>
 					<ContextMenu name="НаименованиеКонтекстноеМеню" id="7"/>
-					<ExtendedTooltip name="НаименованиеExtendedTooltip" id="63"/>
+					<ExtendedTooltip name="НаименованиеРасширеннаяПодсказка" id="63"/>
 				</LabelField>
 				<CheckBoxField name="Подготовлена" id="14" DisplayImportance="VeryHigh">
 					<DataPath>Список.Подготовлена</DataPath>
@@ -549,7 +579,7 @@
 					</HeaderPicture>
 					<CheckBoxType>Auto</CheckBoxType>
 					<ContextMenu name="ПодготовленаКонтекстноеМеню" id="15"/>
-					<ExtendedTooltip name="ПодготовленаExtendedTooltip" id="71"/>
+					<ExtendedTooltip name="ПодготовленаРасширеннаяПодсказка" id="71"/>
 				</CheckBoxField>
 				<ColumnGroup name="ПоследнийЗапускСКартинкой" id="31">
 					<Title>
@@ -559,7 +589,7 @@
 						</v8:item>
 					</Title>
 					<Group>InCell</Group>
-					<ExtendedTooltip name="ПоследнийЗапускСКартинкойExtendedTooltip" id="64"/>
+					<ExtendedTooltip name="ПоследнийЗапускСКартинкойРасширеннаяПодсказка" id="64"/>
 					<ChildItems>
 						<PictureField name="Картинка" id="32">
 							<DataPath>Список.ИндексКартинкиПоследнегоЗапуска</DataPath>
@@ -578,7 +608,7 @@
 							</ValuesPicture>
 							<FileDragMode>AsFile</FileDragMode>
 							<ContextMenu name="КартинкаКонтекстноеМеню" id="33"/>
-							<ExtendedTooltip name="КартинкаExtendedTooltip" id="65"/>
+							<ExtendedTooltip name="КартинкаРасширеннаяПодсказка" id="65"/>
 						</PictureField>
 						<LabelField name="ПоследнийЗапуск" id="24">
 							<DataPath>Список.ПоследнийЗапуск</DataPath>
@@ -592,7 +622,7 @@
 							<MaxWidth>4</MaxWidth>
 							<HorizontalStretch>false</HorizontalStretch>
 							<ContextMenu name="ПоследнийЗапускКонтекстноеМеню" id="25"/>
-							<ExtendedTooltip name="ПоследнийЗапускExtendedTooltip" id="66"/>
+							<ExtendedTooltip name="ПоследнийЗапускРасширеннаяПодсказка" id="66"/>
 						</LabelField>
 					</ChildItems>
 				</ColumnGroup>
@@ -604,7 +634,7 @@
 						</v8:item>
 					</Title>
 					<Group>InCell</Group>
-					<ExtendedTooltip name="РасписаниеСКартинкойExtendedTooltip" id="67"/>
+					<ExtendedTooltip name="РасписаниеСКартинкойРасширеннаяПодсказка" id="67"/>
 					<ChildItems>
 						<PictureField name="Расписание" id="18">
 							<DataPath>Список.ИндексКартинкиРасписания</DataPath>
@@ -622,7 +652,7 @@
 							</ValuesPicture>
 							<FileDragMode>AsFile</FileDragMode>
 							<ContextMenu name="РасписаниеКонтекстноеМеню" id="19"/>
-							<ExtendedTooltip name="РасписаниеExtendedTooltip" id="68"/>
+							<ExtendedTooltip name="РасписаниеРасширеннаяПодсказка" id="68"/>
 						</PictureField>
 						<LabelField name="ПериодичностьРасписания" id="51">
 							<DataPath>Список.ПериодичностьРасписания</DataPath>
@@ -637,7 +667,7 @@
 							<Width>2</Width>
 							<HorizontalStretch>false</HorizontalStretch>
 							<ContextMenu name="ПериодичностьРасписанияКонтекстноеМеню" id="52"/>
-							<ExtendedTooltip name="ПериодичностьРасписанияExtendedTooltip" id="69"/>
+							<ExtendedTooltip name="ПериодичностьРасписанияРасширеннаяПодсказка" id="69"/>
 						</LabelField>
 					</ChildItems>
 				</ColumnGroup>
@@ -659,7 +689,7 @@
 						<xr:Common>false</xr:Common>
 					</UserVisible>
 					<ContextMenu name="АвторКонтекстноеМеню" id="13"/>
-					<ExtendedTooltip name="АвторExtendedTooltip" id="70"/>
+					<ExtendedTooltip name="АвторРасширеннаяПодсказка" id="70"/>
 				</LabelField>
 				<LabelField name="Состояние" id="26">
 					<DataPath>Список.Состояние</DataPath>
@@ -674,7 +704,7 @@
 					</Title>
 					<Width>15</Width>
 					<ContextMenu name="СостояниеКонтекстноеМеню" id="27"/>
-					<ExtendedTooltip name="СостояниеExtendedTooltip" id="72"/>
+					<ExtendedTooltip name="СостояниеРасширеннаяПодсказка" id="72"/>
 				</LabelField>
 				<CheckBoxField name="Архивировать" id="39">
 					<DataPath>Список.Архивировать</DataPath>
@@ -683,7 +713,7 @@
 					</UserVisible>
 					<CheckBoxType>Auto</CheckBoxType>
 					<ContextMenu name="АрхивироватьКонтекстноеМеню" id="40"/>
-					<ExtendedTooltip name="АрхивироватьExtendedTooltip" id="73"/>
+					<ExtendedTooltip name="АрхивироватьРасширеннаяПодсказка" id="73"/>
 				</CheckBoxField>
 				<LabelField name="ТипПолучателейРассылки" id="43">
 					<DataPath>Список.ТипПолучателейРассылки</DataPath>
@@ -692,7 +722,7 @@
 					</UserVisible>
 					<Width>5</Width>
 					<ContextMenu name="ТипПолучателейРассылкиКонтекстноеМеню" id="44"/>
-					<ExtendedTooltip name="ТипПолучателейРассылкиExtendedTooltip" id="74"/>
+					<ExtendedTooltip name="ТипПолучателейРассылкиРасширеннаяПодсказка" id="74"/>
 				</LabelField>
 				<LabelField name="ВидПочтовогоАдресаПолучателей" id="41">
 					<DataPath>Список.ВидПочтовогоАдресаПолучателей</DataPath>
@@ -701,7 +731,7 @@
 					</UserVisible>
 					<Width>5</Width>
 					<ContextMenu name="ВидПочтовогоАдресаПолучателейКонтекстноеМеню" id="42"/>
-					<ExtendedTooltip name="ВидПочтовогоАдресаПолучателейExtendedTooltip" id="75"/>
+					<ExtendedTooltip name="ВидПочтовогоАдресаПолучателейРасширеннаяПодсказка" id="75"/>
 				</LabelField>
 				<LabelField name="Ссылка" id="76">
 					<DataPath>Список.Ref</DataPath>
@@ -905,6 +935,31 @@
 				<v8:Type>cfg:CatalogRef.ВариантыОтчетов</v8:Type>
 			</Type>
 			<KeyParameter>true</KeyParameter>
+		</Parameter>
+		<Parameter name="Отображение">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Parameter>
+		<Parameter name="МножественныйВыбор">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Parameter>
+		<Parameter name="ВыборГруппИЭлементов">
+			<Type/>
+		</Parameter>
+		<Parameter name="ТекущаяСтрока">
+			<Type/>
+		</Parameter>
+		<Parameter name="РежимВыбора">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
 		</Parameter>
 	</Parameters>
 </Form>

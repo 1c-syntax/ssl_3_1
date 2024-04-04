@@ -181,6 +181,12 @@
 					<ChildItems>
 						<RadioButtonField name="ВариантЗагрузки" id="652">
 							<DataPath>ВариантЗагрузки</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Вариант загрузки</v8:content>
+								</v8:item>
+							</Title>
 							<RadioButtonType>Tumbler</RadioButtonType>
 							<ChoiceList>
 								<xr:Item>
@@ -324,6 +330,12 @@
 										<Button name="ИзменитьБланкЗаполнениеТаблицы" id="657">
 											<Type>Hyperlink</Type>
 											<CommandName>Form.Command.ИзменитьБланк</CommandName>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Изменить бланк</v8:content>
+												</v8:item>
+											</Title>
 											<ToolTipRepresentation>Button</ToolTipRepresentation>
 											<ExtendedTooltip name="ИзменитьБланкЗаполнениеТаблицыРасширеннаяПодсказка" id="658"/>
 										</Button>
@@ -344,7 +356,7 @@
 											<Title formatted="true">
 												<v8:item>
 													<v8:lang>ru</v8:lang>
-													<v8:content>Для загрузки данных необходимо, сохранить бланк в файл для заполнения в другой программе. 
+													<v8:content>Для загрузки данных необходимо, сохранить бланк в файл для заполнения в другом приложении. 
 Затем загрузить заполненную таблицу в одном из форматов:
 • Книги Microsoft Excel 97 (.xls) и Excel 2007 (.xlsx)
 • Электронные таблицы LibreOffice Calc (.ods)
@@ -360,6 +372,12 @@
 											<Width>25</Width>
 											<Height>2</Height>
 											<CommandName>Form.Command.ЗагрузитьТаблицуИзФайла</CommandName>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Загрузить таблицу из файла...</v8:content>
+												</v8:item>
+											</Title>
 											<ExtendedTooltip name="ЗагрузитьТаблицуИзФайлаРасширеннаяПодсказка" id="128"/>
 										</Button>
 										<Button name="СохранитьБланкДляЗаполнения" id="125">
@@ -368,11 +386,23 @@
 											<Width>25</Width>
 											<Height>2</Height>
 											<CommandName>Form.Command.СохранитьБланкДляЗаполнения</CommandName>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Сохранить бланк для заполнения...</v8:content>
+												</v8:item>
+											</Title>
 											<ExtendedTooltip name="СохранитьБланкДляЗаполненияРасширеннаяПодсказка" id="126"/>
 										</Button>
 										<Button name="ИзменитьБланк" id="581">
 											<Type>Hyperlink</Type>
 											<CommandName>Form.Command.ИзменитьБланк</CommandName>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Изменить бланк</v8:content>
+												</v8:item>
+											</Title>
 											<ToolTipRepresentation>Button</ToolTipRepresentation>
 											<ExtendedTooltip name="ИзменитьБланкРасширеннаяПодсказка" id="582"/>
 										</Button>
@@ -401,6 +431,12 @@
 										</LabelDecoration>
 										<InputField name="ШаблонСДаннымиОднаКолонка" id="489">
 											<DataPath>ШаблонСДаннымиОднаКолонка</DataPath>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Шаблон с данными одна колонка</v8:content>
+												</v8:item>
+											</Title>
 											<TitleLocation>None</TitleLocation>
 											<AutoMaxWidth>false</AutoMaxWidth>
 											<MultiLine>true</MultiLine>
@@ -442,8 +478,8 @@
 										</v8:item>
 									</Title>
 									<Picture>
-										<xr:Ref>CommonPicture.Информация32</xr:Ref>
-										<xr:LoadTransparent>false</xr:LoadTransparent>
+										<xr:Ref>StdPicture.DialogInformation</xr:Ref>
+										<xr:LoadTransparent>true</xr:LoadTransparent>
 									</Picture>
 									<FileDragMode>AsFile</FileDragMode>
 									<ContextMenu name="ДекорацияИнформация32КонтекстноеМеню" id="549"/>
@@ -455,7 +491,7 @@
 									<Title formatted="false">
 										<v8:item>
 											<v8:lang>ru</v8:lang>
-											<v8:content>Не удалось вставить введенные данные в список, т.к. в программе нет соответствующих данных. </v8:content>
+											<v8:content>Не удалось вставить введенные данные в список, т.к. в приложении нет соответствующих данных. </v8:content>
 										</v8:item>
 									</Title>
 									<ContextMenu name="ДекорацияНичегоНеНайденоКонтекстноеМеню" id="546"/>
@@ -504,7 +540,7 @@
 										<v8:item>
 											<v8:lang>ru</v8:lang>
 											<v8:content>Будут пропущены:
-- Нет данных в программе: 8
+- Нет данных в приложении: 8
 - Несколько вариантов для вставки: 2
 Для просмотра пропущенных строк и подбора данных для вставки нажмите "Далее".</v8:content>
 										</v8:item>
@@ -543,7 +579,7 @@
 									<Title formatted="false">
 										<v8:item>
 											<v8:lang>ru</v8:lang>
-											<v8:content>Для некоторых введенных строк не найдено данных в программе, либо имеется несколько вариантов.
+											<v8:content>Для некоторых введенных строк не найдено данных в приложении, либо имеется несколько вариантов.
 Для вставки таких строк следует выбрать соответствующие объекты, щелкнув левой кнопкой мыши в колонке "Объект".</v8:content>
 										</v8:item>
 									</Title>
@@ -557,7 +593,7 @@
 									<Title formatted="false">
 										<v8:item>
 											<v8:lang>ru</v8:lang>
-											<v8:content>Для некоторых загруженных данных в программе не найдено однозначного соответствия.  Для несопоставленных данных будут созданы
+											<v8:content>Для некоторых загруженных данных в приложении не найдено однозначного соответствия.  Для несопоставленных данных будут созданы
 новые записи, либо они будут пропущены (в зависимости от настройки). При необходимости возможно сопоставить данные вручную, 
 заполнив колонку "%1".</v8:content>
 										</v8:item>
@@ -572,9 +608,9 @@
 									<Title formatted="true">
 										<v8:item>
 											<v8:lang>ru</v8:lang>
-											<v8:content>Для некоторых значений в колонках таблицы не найдены однозначные соответствия в данных программы (выделены &lt;colorstyle -16&gt;красным цветом&lt;/&gt;).
-Необходимо сопоставить эти значения с данными в программе вручную. 
-В случае если в программе отсутствуют необходимые данные, то ввести их.</v8:content>
+											<v8:content>Для некоторых значений в колонках таблицы не найдены однозначные соответствия в данных приложении (выделены &lt;colorstyle -16&gt;красным цветом&lt;/&gt;).
+Необходимо сопоставить эти значения с данными в приложении вручную. 
+В случае если в приложении отсутствуют необходимые данные, то ввести их.</v8:content>
 										</v8:item>
 									</Title>
 									<ContextMenu name="ПояснениеДляТабличнойЧастиКонтекстноеМеню" id="465"/>
@@ -593,7 +629,7 @@
 							<ToolTip>
 								<v8:item>
 									<v8:lang>ru</v8:lang>
-									<v8:content>Выберите одну или несколько колонок, по которым будут сопоставлены загруженные данные с данными из программы</v8:content>
+									<v8:content>Выберите одну или несколько колонок, по которым будут сопоставлены загруженные данные с данными из приложения</v8:content>
 								</v8:item>
 							</ToolTip>
 							<ToolTipRepresentation>Button</ToolTipRepresentation>
@@ -689,6 +725,12 @@
 									<Type>UsualButton</Type>
 									<Enabled>false</Enabled>
 									<CommandName>Form.Command.УстранитьНеоднозначностьНеоднозначность</CommandName>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Устранить неоднозначность...</v8:content>
+										</v8:item>
+									</Title>
 									<ExtendedTooltip name="УстранитьНеоднозначностьРасширеннаяПодсказка" id="460"/>
 								</Button>
 								<CommandBar name="ГруппаКоманднаяПанель" id="431">
@@ -715,6 +757,12 @@
 										<Button name="ТаблицаСопоставленияДанныхОтменитьСопоставление" id="659">
 											<Type>CommandBarButton</Type>
 											<CommandName>Form.Command.ОтменитьСопоставление</CommandName>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Отменить сопоставление</v8:content>
+												</v8:item>
+											</Title>
 											<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
 											<ExtendedTooltip name="ТаблицаСопоставленияДанныхОтменитьСопоставлениеРасширеннаяПодсказка" id="660"/>
 										</Button>
@@ -766,6 +814,12 @@
 											<Button name="ТаблицаСопоставленияДанныхКонтекстноеМенюРазрешитьНеоднозначность" id="487">
 												<Type>CommandBarButton</Type>
 												<CommandName>Form.Command.УстранитьНеоднозначностьНеоднозначность</CommandName>
+												<Title>
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>Устранить неоднозначность...</v8:content>
+													</v8:item>
+												</Title>
 												<ExtendedTooltip name="ТаблицаСопоставленияДанныхКонтекстноеМенюРазрешитьНеоднозначностьРасширеннаяПодсказка" id="488"/>
 											</Button>
 										</ChildItems>
@@ -983,6 +1037,12 @@
 											<ChildItems>
 												<LabelField name="ИтогоОтчетСоздано" id="475">
 													<DataPath>ИтогоОтчетСоздано</DataPath>
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Создано новых элементов</v8:content>
+														</v8:item>
+													</Title>
 													<Format>
 														<v8:item>
 															<v8:lang>ru</v8:lang>
@@ -994,6 +1054,12 @@
 												</LabelField>
 												<LabelField name="ИтогоОтчетПропущено" id="481">
 													<DataPath>ИтогоОтчетПропущено</DataPath>
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Пропущено</v8:content>
+														</v8:item>
+													</Title>
 													<Format>
 														<v8:item>
 															<v8:lang>ru</v8:lang>
@@ -1020,6 +1086,12 @@
 											<ChildItems>
 												<LabelField name="ИтогоОтчетОбновлено" id="478">
 													<DataPath>ИтогоОтчетОбновлено</DataPath>
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Обновлено существующих</v8:content>
+														</v8:item>
+													</Title>
 													<Format>
 														<v8:item>
 															<v8:lang>ru</v8:lang>
@@ -1031,6 +1103,12 @@
 												</LabelField>
 												<LabelField name="ИтогоОтчетНекорректных" id="484">
 													<DataPath>ИтогоОтчетНекорректных</DataPath>
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>в т.ч. из-за некорректных данных</v8:content>
+														</v8:item>
+													</Title>
 													<Format>
 														<v8:item>
 															<v8:lang>ru</v8:lang>
@@ -1194,6 +1272,12 @@
 											<Type>CommandBarButton</Type>
 											<Representation>Text</Representation>
 											<CommandName>Form.Command.ИзменитьРеквизиты</CommandName>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Изменить реквизиты...</v8:content>
+												</v8:item>
+											</Title>
 											<ExtendedTooltip name="ИзменитьРеквизитыРасширеннаяПодсказка" id="379"/>
 										</Button>
 									</ChildItems>
@@ -1259,6 +1343,12 @@
 								</LabelDecoration>
 								<ProgressBarField name="ФоновоеЗаданиеПроцент" id="566">
 									<DataPath>ФоновоеЗаданиеПроцент</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Фоновое задание процент</v8:content>
+										</v8:item>
+									</Title>
 									<TitleLocation>None</TitleLocation>
 									<ShowPercent>true</ShowPercent>
 									<ContextMenu name="ФоновоеЗаданиеПроцентКонтекстноеМеню" id="567"/>
@@ -1333,12 +1423,24 @@
 							<Type>CommandBarButton</Type>
 							<Visible>false</Visible>
 							<CommandName>Form.Command.ВставитьВСписок</CommandName>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Вставить в список</v8:content>
+								</v8:item>
+							</Title>
 							<ExtendedTooltip name="ВставитьВСписокРасширеннаяПодсказка" id="542"/>
 						</Button>
 						<Button name="Далее" id="43">
 							<Type>CommandBarButton</Type>
 							<DefaultButton>true</DefaultButton>
 							<CommandName>Form.Command.Далее</CommandName>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Далее &gt;</v8:content>
+								</v8:item>
+							</Title>
 							<ExtendedTooltip name="ДалееРасширеннаяПодсказка" id="44"/>
 						</Button>
 						<Button name="Закрыть" id="45">
@@ -1994,6 +2096,15 @@
 		<Parameter name="ОписаниеТипов">
 			<Type>
 				<v8:Type>v8:TypeDescription</v8:Type>
+			</Type>
+		</Parameter>
+		<Parameter name="ПредставлениеПоля">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
 			</Type>
 		</Parameter>
 		<Parameter name="КолонкиМакета">

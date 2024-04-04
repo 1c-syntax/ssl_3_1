@@ -7,17 +7,35 @@
 			<Button name="ФормаВыполнитьПроверку" id="17">
 				<Type>CommandBarButton</Type>
 				<CommandName>Form.Command.ВыполнитьПроверку</CommandName>
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Выполнить проверку</v8:content>
+					</v8:item>
+				</Title>
 				<ExtendedTooltip name="ФормаВыполнитьПроверкуРасширеннаяПодсказка" id="18"/>
 			</Button>
 			<Button name="ФормаУстановитьСтандартныеНастройки" id="208">
 				<Type>CommandBarButton</Type>
 				<CommandName>Form.Command.УстановитьСтандартныеНастройки</CommandName>
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Установить стандартные настройки</v8:content>
+					</v8:item>
+				</Title>
 				<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
 				<ExtendedTooltip name="ФормаУстановитьСтандартныеНастройкиРасширеннаяПодсказка" id="209"/>
 			</Button>
 			<Button name="ФормаОчиститьРезультатыПроверки" id="227">
 				<Type>CommandBarButton</Type>
 				<CommandName>Form.Command.ОчиститьРезультатыПроверки</CommandName>
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Очистить результаты проверки</v8:content>
+					</v8:item>
+				</Title>
 				<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
 				<ExtendedTooltip name="ФормаОчиститьРезультатыПроверкиРасширеннаяПодсказка" id="228"/>
 			</Button>
@@ -49,7 +67,7 @@
 					<AutoMaxWidth>false</AutoMaxWidth>
 					<MaxWidth>60</MaxWidth>
 					<ContextMenu name="НаименованиеКонтекстноеМеню" id="2"/>
-					<ExtendedTooltip name="НаименованиеExtendedTooltip" id="11"/>
+					<ExtendedTooltip name="НаименованиеРасширеннаяПодсказка" id="11"/>
 				</InputField>
 				<CheckBoxField name="Использование" id="155">
 					<DataPath>Объект.Использование</DataPath>
@@ -159,6 +177,12 @@
 							<ChildItems>
 								<CheckBoxField name="ВыполняетсяВФонеПоРасписанию" id="217">
 									<DataPath>ВыполняетсяВФонеПоРасписанию</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Выполняется в фоне по расписанию</v8:content>
+										</v8:item>
+									</Title>
 									<TitleLocation>Right</TitleLocation>
 									<CheckBoxType>Auto</CheckBoxType>
 									<ContextMenu name="ВыполняетсяВФонеПоРасписаниюКонтекстноеМеню" id="218"/>
@@ -180,6 +204,12 @@
 									<ChildItems>
 										<RadioButtonField name="СелекторРасписания" id="222">
 											<DataPath>СелекторРасписания</DataPath>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Селектор расписания</v8:content>
+												</v8:item>
+											</Title>
 											<TitleLocation>None</TitleLocation>
 											<RadioButtonType>Auto</RadioButtonType>
 											<ColumnsCount>1</ColumnsCount>
@@ -460,40 +490,4 @@
 			<Action>ОчиститьРезультатыПроверки</Action>
 		</Command>
 	</Commands>
-	<CommandInterface>
-		<NavigationPanel>
-			<Item>
-				<Command>0</Command>
-				<Type>Auto</Type>
-				<DefaultVisible>false</DefaultVisible>
-				<Visible>
-					<xr:Common>false</xr:Common>
-				</Visible>
-			</Item>
-			<Item>
-				<Command>0</Command>
-				<Type>Auto</Type>
-				<DefaultVisible>false</DefaultVisible>
-				<Visible>
-					<xr:Common>false</xr:Common>
-				</Visible>
-			</Item>
-			<Item>
-				<Command>0</Command>
-				<Type>Auto</Type>
-				<DefaultVisible>false</DefaultVisible>
-				<Visible>
-					<xr:Common>false</xr:Common>
-				</Visible>
-			</Item>
-			<Item>
-				<Command>0</Command>
-				<Type>Auto</Type>
-				<DefaultVisible>false</DefaultVisible>
-				<Visible>
-					<xr:Common>false</xr:Common>
-				</Visible>
-			</Item>
-		</NavigationPanel>
-	</CommandInterface>
 </Form>

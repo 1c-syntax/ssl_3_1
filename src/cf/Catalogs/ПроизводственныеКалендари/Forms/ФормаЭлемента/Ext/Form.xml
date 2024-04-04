@@ -6,22 +6,46 @@
 			<Button name="ФормаИзменитьДень" id="11">
 				<Type>CommandBarButton</Type>
 				<CommandName>Form.Command.ИзменитьДень</CommandName>
-				<ExtendedTooltip name="ФормаИзменитьДеньExtendedTooltip" id="26"/>
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Изменить день</v8:content>
+					</v8:item>
+				</Title>
+				<ExtendedTooltip name="ФормаИзменитьДеньРасширеннаяПодсказка" id="26"/>
 			</Button>
 			<Button name="ФормаПеренестиВыходнойДень" id="12">
 				<Type>CommandBarButton</Type>
 				<CommandName>Form.Command.ПеренестиДень</CommandName>
-				<ExtendedTooltip name="ФормаПеренестиВыходнойДеньExtendedTooltip" id="27"/>
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Перенести день</v8:content>
+					</v8:item>
+				</Title>
+				<ExtendedTooltip name="ФормаПеренестиВыходнойДеньРасширеннаяПодсказка" id="27"/>
 			</Button>
 			<Button name="ФормаЗаполнитьПоУмолчанию" id="16">
 				<Type>CommandBarButton</Type>
 				<CommandName>Form.Command.ЗаполнитьПоУмолчанию</CommandName>
-				<ExtendedTooltip name="ФормаЗаполнитьПоУмолчаниюExtendedTooltip" id="28"/>
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Заполнить по умолчанию</v8:content>
+					</v8:item>
+				</Title>
+				<ExtendedTooltip name="ФормаЗаполнитьПоУмолчаниюРасширеннаяПодсказка" id="28"/>
 			</Button>
 			<Button name="ФормаПечать" id="25">
 				<Type>CommandBarButton</Type>
 				<CommandName>Form.Command.Печать</CommandName>
-				<ExtendedTooltip name="ФормаПечатьExtendedTooltip" id="29"/>
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Печать</v8:content>
+					</v8:item>
+				</Title>
+				<ExtendedTooltip name="ФормаПечатьРасширеннаяПодсказка" id="29"/>
 			</Button>
 		</ChildItems>
 	</AutoCommandBar>
@@ -44,21 +68,27 @@
 			<Behavior>Usual</Behavior>
 			<Representation>None</Representation>
 			<ShowTitle>false</ShowTitle>
-			<ExtendedTooltip name="ГруппаОсновныеРеквизитыExtendedTooltip" id="30"/>
+			<ExtendedTooltip name="ГруппаОсновныеРеквизитыРасширеннаяПодсказка" id="30"/>
 			<ChildItems>
 				<InputField name="Наименование" id="3">
 					<DataPath>Объект.Description</DataPath>
 					<EditMode>EnterOnInput</EditMode>
 					<ContextMenu name="НаименованиеКонтекстноеМеню" id="4"/>
-					<ExtendedTooltip name="НаименованиеExtendedTooltip" id="31"/>
+					<ExtendedTooltip name="НаименованиеРасширеннаяПодсказка" id="31"/>
 				</InputField>
 				<InputField name="Код" id="14">
 					<DataPath>Объект.Code</DataPath>
 					<ContextMenu name="КодКонтекстноеМеню" id="15"/>
-					<ExtendedTooltip name="КодExtendedTooltip" id="32"/>
+					<ExtendedTooltip name="КодРасширеннаяПодсказка" id="32"/>
 				</InputField>
 				<InputField name="НомерТекущегоГода" id="8">
 					<DataPath>НомерТекущегоГода</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Год</v8:content>
+						</v8:item>
+					</Title>
 					<SpinButton>true</SpinButton>
 					<EditFormat>
 						<v8:item>
@@ -68,7 +98,7 @@
 					</EditFormat>
 					<MinValue xsi:type="xs:decimal">1900</MinValue>
 					<ContextMenu name="НомерТекущегоГодаКонтекстноеМеню" id="9"/>
-					<ExtendedTooltip name="НомерТекущегоГодаExtendedTooltip" id="33"/>
+					<ExtendedTooltip name="НомерТекущегоГодаРасширеннаяПодсказка" id="33"/>
 					<Events>
 						<Event name="OnChange">НомерТекущегоГодаПриИзменении</Event>
 					</Events>
@@ -125,7 +155,7 @@
 			<Behavior>Usual</Behavior>
 			<Representation>None</Representation>
 			<ShowTitle>false</ShowTitle>
-			<ExtendedTooltip name="КалендарьГруппаExtendedTooltip" id="34"/>
+			<ExtendedTooltip name="КалендарьГруппаРасширеннаяПодсказка" id="34"/>
 			<ChildItems>
 				<UsualGroup name="НерабочиеПериодыГруппа" id="58">
 					<Title>
@@ -148,8 +178,8 @@
 								</v8:item>
 							</Title>
 							<Picture>
-								<xr:Ref>CommonPicture.Предупреждение32</xr:Ref>
-								<xr:LoadTransparent>false</xr:LoadTransparent>
+								<xr:Ref>StdPicture.DialogExclamation</xr:Ref>
+								<xr:LoadTransparent>true</xr:LoadTransparent>
 							</Picture>
 							<ContextMenu name="НерабочиеПериодыКартинкаКонтекстноеМеню" id="61"/>
 							<ExtendedTooltip name="НерабочиеПериодыКартинкаРасширеннаяПодсказка" id="62"/>
@@ -169,6 +199,12 @@
 				</UsualGroup>
 				<CalendarField name="Календарь" id="5">
 					<DataPath>Календарь</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Календарь</v8:content>
+						</v8:item>
+					</Title>
 					<TitleLocation>None</TitleLocation>
 					<Width>1</Width>
 					<Height>1</Height>
@@ -180,16 +216,28 @@
 							<Button name="КалендарьКонтекстноеМенюИзменитьДень" id="10">
 								<Type>CommandBarButton</Type>
 								<CommandName>Form.Command.ИзменитьДень</CommandName>
-								<ExtendedTooltip name="КалендарьКонтекстноеМенюИзменитьДеньExtendedTooltip" id="35"/>
+								<Title>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Изменить день</v8:content>
+									</v8:item>
+								</Title>
+								<ExtendedTooltip name="КалендарьКонтекстноеМенюИзменитьДеньРасширеннаяПодсказка" id="35"/>
 							</Button>
 							<Button name="КалендарьКонтекстноеМенюПеренестиДень" id="13">
 								<Type>CommandBarButton</Type>
 								<CommandName>Form.Command.ПеренестиДень</CommandName>
-								<ExtendedTooltip name="КалендарьКонтекстноеМенюПеренестиДеньExtendedTooltip" id="36"/>
+								<Title>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Перенести день</v8:content>
+									</v8:item>
+								</Title>
+								<ExtendedTooltip name="КалендарьКонтекстноеМенюПеренестиДеньРасширеннаяПодсказка" id="36"/>
 							</Button>
 						</ChildItems>
 					</ContextMenu>
-					<ExtendedTooltip name="КалендарьExtendedTooltip" id="37"/>
+					<ExtendedTooltip name="КалендарьРасширеннаяПодсказка" id="37"/>
 					<Events>
 						<Event name="OnPeriodOutput">КалендарьПриВыводеПериода</Event>
 					</Events>
@@ -198,10 +246,16 @@
 					<DataPath>ПредставлениеПереносов</DataPath>
 					<Visible>false</Visible>
 					<ReadOnly>true</ReadOnly>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Переносы дней</v8:content>
+						</v8:item>
+					</Title>
 					<TitleLocation>Top</TitleLocation>
 					<TextColor>style:ПоясняющийТекст</TextColor>
 					<ContextMenu name="ПредставлениеПереносовКонтекстноеМеню" id="19"/>
-					<ExtendedTooltip name="ПредставлениеПереносовExtendedTooltip" id="38"/>
+					<ExtendedTooltip name="ПредставлениеПереносовРасширеннаяПодсказка" id="38"/>
 				</LabelField>
 				<Table name="СписокПереносов" id="20">
 					<Representation>List</Representation>
@@ -227,7 +281,7 @@
 						<Autofill>false</Autofill>
 					</ContextMenu>
 					<AutoCommandBar name="СписокПереносовКоманднаяПанель" id="22"/>
-					<ExtendedTooltip name="СписокПереносовExtendedTooltip" id="39"/>
+					<ExtendedTooltip name="СписокПереносовРасширеннаяПодсказка" id="39"/>
 					<SearchStringAddition name="СписокПереносовСтрокаПоиска" id="41">
 						<AdditionSource>
 							<Item>СписокПереносов</Item>
@@ -265,7 +319,7 @@
 							<EditMode>EnterOnInput</EditMode>
 							<Height>2</Height>
 							<ContextMenu name="СписокПереносовПредставлениеКонтекстноеМеню" id="24"/>
-							<ExtendedTooltip name="СписокПереносовПредставлениеExtendedTooltip" id="40"/>
+							<ExtendedTooltip name="СписокПереносовПредставлениеРасширеннаяПодсказка" id="40"/>
 						</LabelField>
 					</ChildItems>
 				</Table>
@@ -458,16 +512,4 @@
 			<CurrentRowUse>DontUse</CurrentRowUse>
 		</Command>
 	</Commands>
-	<CommandInterface>
-		<NavigationPanel>
-			<Item>
-				<Command>0</Command>
-				<Type>Auto</Type>
-				<DefaultVisible>false</DefaultVisible>
-				<Visible>
-					<xr:Common>false</xr:Common>
-				</Visible>
-			</Item>
-		</NavigationPanel>
-	</CommandInterface>
 </Form>

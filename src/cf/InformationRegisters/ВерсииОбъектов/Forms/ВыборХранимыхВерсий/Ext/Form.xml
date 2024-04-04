@@ -81,25 +81,49 @@
 							<DefaultButton>true</DefaultButton>
 							<SkipOnInput>false</SkipOnInput>
 							<CommandName>Form.Command.ОткрытьВерсиюОбъекта</CommandName>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Открыть версию</v8:content>
+								</v8:item>
+							</Title>
 							<ExtendedTooltip name="ОткрытьВерсиюРасширеннаяПодсказка" id="39"/>
 						</Button>
 						<Button name="Сравнить" id="9">
 							<Type>CommandBarButton</Type>
 							<SkipOnInput>false</SkipOnInput>
 							<CommandName>Form.Command.СформироватьОтчетПоИзменениям</CommandName>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Сравнить</v8:content>
+								</v8:item>
+							</Title>
 							<ExtendedTooltip name="СравнитьРасширеннаяПодсказка" id="40"/>
 						</Button>
 						<Button name="ПерейтиНаВерсию" id="34">
 							<Type>CommandBarButton</Type>
 							<Representation>PictureAndText</Representation>
 							<CommandName>Form.Command.ПерейтиНаВерсию</CommandName>
-							<ExtendedTooltip name="ПерейтиНаВерсиюExtendedTooltip" id="41"/>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Перейти на версию</v8:content>
+								</v8:item>
+							</Title>
+							<ExtendedTooltip name="ПерейтиНаВерсиюРасширеннаяПодсказка" id="41"/>
 						</Button>
 					</ChildItems>
 				</ButtonGroup>
 				<Button name="ФормаОбновить" id="117">
 					<Type>CommandBarButton</Type>
 					<CommandName>Form.Command.Обновить</CommandName>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Обновить</v8:content>
+						</v8:item>
+					</Title>
 					<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
 					<ExtendedTooltip name="ФормаОбновитьРасширеннаяПодсказка" id="118"/>
 				</Button>
@@ -127,7 +151,7 @@
 				</v8:item>
 			</Title>
 			<PagesRepresentation>None</PagesRepresentation>
-			<ExtendedTooltip name="ОсновнаяСтраницаExtendedTooltip" id="44"/>
+			<ExtendedTooltip name="ОсновнаяСтраницаРасширеннаяПодсказка" id="44"/>
 			<ChildItems>
 				<Page name="ВыборВерсийДляСравнения" id="22">
 					<Title>
@@ -137,7 +161,7 @@
 						</v8:item>
 					</Title>
 					<ShowTitle>false</ShowTitle>
-					<ExtendedTooltip name="ВыборВерсийДляСравненияExtendedTooltip" id="45"/>
+					<ExtendedTooltip name="ВыборВерсийДляСравненияРасширеннаяПодсказка" id="45"/>
 					<ChildItems>
 						<Table name="ДеревоВерсий" id="74">
 							<Representation>Tree</Representation>
@@ -175,16 +199,34 @@
 									<Button name="ДеревоВерсийКонтекстноеМенюОткрытьВерсию" id="108">
 										<Type>CommandBarButton</Type>
 										<CommandName>Form.Command.ОткрытьВерсиюОбъекта</CommandName>
+										<Title>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Открыть версию</v8:content>
+											</v8:item>
+										</Title>
 										<ExtendedTooltip name="ДеревоВерсийКонтекстноеМенюОткрытьВерсиюРасширеннаяПодсказка" id="109"/>
 									</Button>
 									<Button name="ДеревоВерсийКонтекстноеМенюСравнитьВерсии" id="112">
 										<Type>CommandBarButton</Type>
 										<CommandName>Form.Command.СформироватьОтчетПоИзменениям</CommandName>
+										<Title>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Сравнить</v8:content>
+											</v8:item>
+										</Title>
 										<ExtendedTooltip name="ДеревоВерсийКонтекстноеМенюСравнитьВерсииРасширеннаяПодсказка" id="113"/>
 									</Button>
 									<Button name="ДеревоВерсийКонтекстноеМенюПерейтиНаВерсию" id="110">
 										<Type>CommandBarButton</Type>
 										<CommandName>Form.Command.ПерейтиНаВерсию</CommandName>
+										<Title>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Перейти на версию</v8:content>
+											</v8:item>
+										</Title>
 										<ExtendedTooltip name="ДеревоВерсийКонтекстноеМенюПерейтиНаВерсиюРасширеннаяПодсказка" id="111"/>
 									</Button>
 								</ChildItems>
@@ -226,6 +268,12 @@
 								<InputField name="ДеревоВерсийПредставлениеНомераВерсии" id="105">
 									<DataPath>ДеревоВерсий.ПредставлениеНомераВерсии</DataPath>
 									<ReadOnly>true</ReadOnly>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>№</v8:content>
+										</v8:item>
+									</Title>
 									<EditMode>EnterOnInput</EditMode>
 									<Width>5</Width>
 									<HorizontalStretch>false</HorizontalStretch>
@@ -235,6 +283,12 @@
 								<InputField name="ДеревоВерсийАвторВерсии" id="90">
 									<DataPath>ДеревоВерсий.АвторВерсии</DataPath>
 									<ReadOnly>true</ReadOnly>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Автор изменений</v8:content>
+										</v8:item>
+									</Title>
 									<EditMode>EnterOnInput</EditMode>
 									<ContextMenu name="ДеревоВерсийАвторВерсииКонтекстноеМеню" id="91"/>
 									<ExtendedTooltip name="ДеревоВерсийАвторВерсииРасширеннаяПодсказка" id="92"/>
@@ -242,6 +296,12 @@
 								<InputField name="ДеревоВерсийДатаВерсии" id="93">
 									<DataPath>ДеревоВерсий.ДатаВерсии</DataPath>
 									<ReadOnly>true</ReadOnly>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Дата</v8:content>
+										</v8:item>
+									</Title>
 									<EditMode>EnterOnInput</EditMode>
 									<ContextMenu name="ДеревоВерсийДатаВерсииКонтекстноеМеню" id="94"/>
 									<ExtendedTooltip name="ДеревоВерсийДатаВерсииРасширеннаяПодсказка" id="95"/>
@@ -262,6 +322,12 @@
 								</InputField>
 								<InputField name="ДеревоВерсийКомментарий" id="96">
 									<DataPath>ДеревоВерсий.Комментарий</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Комментарий</v8:content>
+										</v8:item>
+									</Title>
 									<EditMode>Directly</EditMode>
 									<ContextMenu name="ДеревоВерсийКомментарийКонтекстноеМеню" id="97"/>
 									<ExtendedTooltip name="ДеревоВерсийКомментарийРасширеннаяПодсказка" id="98"/>
@@ -282,7 +348,7 @@
 					</Title>
 					<Group>HorizontalIfPossible</Group>
 					<ShowTitle>false</ShowTitle>
-					<ExtendedTooltip name="ВерсииДляСравненияОтсутствуютExtendedTooltip" id="54"/>
+					<ExtendedTooltip name="ВерсииДляСравненияОтсутствуютРасширеннаяПодсказка" id="54"/>
 					<ChildItems>
 						<PictureDecoration name="Картинка" id="37">
 							<Title formatted="false">
@@ -292,12 +358,12 @@
 								</v8:item>
 							</Title>
 							<Picture>
-								<xr:Ref>CommonPicture.Информация32</xr:Ref>
-								<xr:LoadTransparent>false</xr:LoadTransparent>
+								<xr:Ref>StdPicture.DialogInformation</xr:Ref>
+								<xr:LoadTransparent>true</xr:LoadTransparent>
 							</Picture>
 							<FileDragMode>AsFile</FileDragMode>
 							<ContextMenu name="КартинкаКонтекстноеМеню" id="38"/>
-							<ExtendedTooltip name="КартинкаExtendedTooltip" id="55"/>
+							<ExtendedTooltip name="КартинкаРасширеннаяПодсказка" id="55"/>
 						</PictureDecoration>
 						<LabelDecoration name="НетВерсий" id="35">
 							<AutoMaxWidth>false</AutoMaxWidth>
@@ -309,7 +375,7 @@
 								</v8:item>
 							</Title>
 							<ContextMenu name="НетВерсийКонтекстноеМеню" id="36"/>
-							<ExtendedTooltip name="НетВерсийExtendedTooltip" id="56"/>
+							<ExtendedTooltip name="НетВерсийРасширеннаяПодсказка" id="56"/>
 						</LabelDecoration>
 					</ChildItems>
 				</Page>

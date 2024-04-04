@@ -39,7 +39,7 @@
 			<AutoMarkIncomplete>true</AutoMarkIncomplete>
 			<BorderColor>style:BorderColor</BorderColor>
 			<ContextMenu name="ВыбранныйКаталогКонтекстноеМеню" id="24"/>
-			<ExtendedTooltip name="ВыбранныйКаталогExtendedTooltip" id="31"/>
+			<ExtendedTooltip name="ВыбранныйКаталогРасширеннаяПодсказка" id="31"/>
 			<Events>
 				<Event name="StartChoice">ВыбранныйКаталогНачалоВыбора</Event>
 			</Events>
@@ -54,15 +54,21 @@
 			</Title>
 			<FooterHorizontalAlign>Left</FooterHorizontalAlign>
 			<ContextMenu name="ПапкаКонтекстноеМеню" id="15"/>
-			<ExtendedTooltip name="ПапкаExtendedTooltip" id="32"/>
+			<ExtendedTooltip name="ПапкаРасширеннаяПодсказка" id="32"/>
 		</LabelField>
 		<CheckBoxField name="УдалятьПослеДобавления" id="3">
 			<DataPath>УдалятьФайлыПослеДобавления</DataPath>
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Удалять файлы после добавления</v8:content>
+				</v8:item>
+			</Title>
 			<TitleLocation>Right</TitleLocation>
 			<FooterHorizontalAlign>Left</FooterHorizontalAlign>
 			<CheckBoxType>Auto</CheckBoxType>
 			<ContextMenu name="УдалятьПослеДобавленияКонтекстноеМеню" id="10"/>
-			<ExtendedTooltip name="УдалятьПослеДобавленияExtendedTooltip" id="33"/>
+			<ExtendedTooltip name="УдалятьПослеДобавленияРасширеннаяПодсказка" id="33"/>
 		</CheckBoxField>
 		<UsualGroup name="ГруппаСвойствФайлов" id="25">
 			<Title>
@@ -75,7 +81,7 @@
 			<Behavior>Usual</Behavior>
 			<Representation>NormalSeparation</Representation>
 			<ShowTitle>false</ShowTitle>
-			<ExtendedTooltip name="ГруппаСвойствФайловExtendedTooltip" id="34"/>
+			<ExtendedTooltip name="ГруппаСвойствФайловРасширеннаяПодсказка" id="34"/>
 			<ChildItems>
 				<InputField name="Описание" id="2">
 					<DataPath>Описание</DataPath>
@@ -91,15 +97,21 @@
 					<MultiLine>true</MultiLine>
 					<BorderColor>style:BorderColor</BorderColor>
 					<ContextMenu name="ОписаниеКонтекстноеМеню" id="9"/>
-					<ExtendedTooltip name="ОписаниеExtendedTooltip" id="35"/>
+					<ExtendedTooltip name="ОписаниеРасширеннаяПодсказка" id="35"/>
 				</InputField>
 				<CheckBoxField name="ХранитьВерсии" id="21">
 					<DataPath>ХранитьВерсии</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Хранить версии</v8:content>
+						</v8:item>
+					</Title>
 					<TitleLocation>Right</TitleLocation>
 					<FooterHorizontalAlign>Left</FooterHorizontalAlign>
 					<CheckBoxType>Auto</CheckBoxType>
 					<ContextMenu name="ХранитьВерсииКонтекстноеМеню" id="22"/>
-					<ExtendedTooltip name="ХранитьВерсииExtendedTooltip" id="36"/>
+					<ExtendedTooltip name="ХранитьВерсииРасширеннаяПодсказка" id="36"/>
 				</CheckBoxField>
 			</ChildItems>
 		</UsualGroup>
@@ -113,7 +125,7 @@
 			<Behavior>Usual</Behavior>
 			<Representation>None</Representation>
 			<ShowTitle>false</ShowTitle>
-			<ExtendedTooltip name="ГруппаКодировкаExtendedTooltip" id="37"/>
+			<ExtendedTooltip name="ГруппаКодировкаРасширеннаяПодсказка" id="37"/>
 			<ChildItems>
 				<LabelDecoration name="ДекорацияКодировка" id="28">
 					<AutoMaxWidth>false</AutoMaxWidth>
@@ -124,12 +136,18 @@
 						</v8:item>
 					</Title>
 					<ContextMenu name="ДекорацияКодировкаКонтекстноеМеню" id="29"/>
-					<ExtendedTooltip name="ДекорацияКодировкаExtendedTooltip" id="38"/>
+					<ExtendedTooltip name="ДекорацияКодировкаРасширеннаяПодсказка" id="38"/>
 				</LabelDecoration>
 				<Button name="ВыбратьКодировку" id="30">
 					<Type>Hyperlink</Type>
 					<CommandName>Form.Command.ВыбратьКодировку</CommandName>
-					<ExtendedTooltip name="ВыбратьКодировкуExtendedTooltip" id="39"/>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Выбрать кодировку</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="ВыбратьКодировкуРасширеннаяПодсказка" id="39"/>
 				</Button>
 			</ChildItems>
 		</UsualGroup>
@@ -142,7 +160,7 @@
 			</Title>
 			<HorizontalLocation>Right</HorizontalLocation>
 			<CommandSource>Form</CommandSource>
-			<ExtendedTooltip name="ОсновнаяКоманднаяПанельExtendedTooltip" id="40"/>
+			<ExtendedTooltip name="ОсновнаяКоманднаяПанельРасширеннаяПодсказка" id="40"/>
 			<ChildItems>
 				<Button name="Импорт" id="4">
 					<Type>CommandBarButton</Type>
@@ -153,7 +171,13 @@
 					<TextColor>style:ButtonTextColor</TextColor>
 					<BackColor>style:ButtonBackColor</BackColor>
 					<BorderColor>style:BorderColor</BorderColor>
-					<ExtendedTooltip name="ИмпортExtendedTooltip" id="41"/>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Загрузить папку</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="ИмпортРасширеннаяПодсказка" id="41"/>
 				</Button>
 				<Button name="Закрыть" id="26">
 					<Type>CommandBarButton</Type>
@@ -169,7 +193,7 @@
 							<v8:content>Отмена</v8:content>
 						</v8:item>
 					</Title>
-					<ExtendedTooltip name="ЗакрытьExtendedTooltip" id="42"/>
+					<ExtendedTooltip name="ЗакрытьРасширеннаяПодсказка" id="42"/>
 				</Button>
 			</ChildItems>
 		</CommandBar>
@@ -307,7 +331,7 @@
 			<ToolTip>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Загрузить папку с файлами в программу</v8:content>
+					<v8:content>Загрузить папку с файлами в приложение</v8:content>
 				</v8:item>
 			</ToolTip>
 			<Action>ИмпортВыполнить</Action>

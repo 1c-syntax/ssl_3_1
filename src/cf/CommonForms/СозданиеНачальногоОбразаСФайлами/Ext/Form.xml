@@ -18,12 +18,24 @@
 				<DefaultButton>true</DefaultButton>
 				<SkipOnInput>false</SkipOnInput>
 				<CommandName>Form.Command.СоздатьНачальныйОбраз</CommandName>
-				<ExtendedTooltip name="СоздатьНачальныйОбразExtendedTooltip" id="48"/>
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Создать начальный образ</v8:content>
+					</v8:item>
+				</Title>
+				<ExtendedTooltip name="СоздатьНачальныйОбразРасширеннаяПодсказка" id="48"/>
 			</Button>
 			<Button name="Назад" id="105">
 				<Type>CommandBarButton</Type>
 				<Visible>false</Visible>
 				<CommandName>Form.Command.Назад</CommandName>
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>&lt; Назад</v8:content>
+					</v8:item>
+				</Title>
 				<ExtendedTooltip name="НазадРасширеннаяПодсказка" id="106"/>
 			</Button>
 			<Button name="Закрыть" id="44">
@@ -37,13 +49,13 @@
 						<v8:content>Закрыть</v8:content>
 					</v8:item>
 				</Title>
-				<ExtendedTooltip name="ЗакрытьExtendedTooltip" id="49"/>
+				<ExtendedTooltip name="ЗакрытьРасширеннаяПодсказка" id="49"/>
 			</Button>
 			<Button name="Справка" id="45">
 				<Type>CommandBarButton</Type>
 				<SkipOnInput>false</SkipOnInput>
 				<CommandName>Form.StandardCommand.Help</CommandName>
-				<ExtendedTooltip name="СправкаExtendedTooltip" id="50"/>
+				<ExtendedTooltip name="СправкаРасширеннаяПодсказка" id="50"/>
 			</Button>
 		</ChildItems>
 	</AutoCommandBar>
@@ -73,6 +85,12 @@
 					<ChildItems>
 						<RadioButtonField name="ВидБазы" id="1">
 							<DataPath>ВидБазы</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Вариант информационной базы</v8:content>
+								</v8:item>
+							</Title>
 							<TitleLocation>None</TitleLocation>
 							<RadioButtonType>Auto</RadioButtonType>
 							<ColumnsCount>1</ColumnsCount>
@@ -105,7 +123,7 @@
 								</xr:Item>
 							</ChoiceList>
 							<ContextMenu name="ВидБазыКонтекстноеМеню" id="2"/>
-							<ExtendedTooltip name="ВидБазыExtendedTooltip" id="51"/>
+							<ExtendedTooltip name="ВидБазыРасширеннаяПодсказка" id="51"/>
 							<Events>
 								<Event name="OnChange">ВидБазыПриИзменении</Event>
 							</Events>
@@ -119,7 +137,7 @@
 							</Title>
 							<Group>Vertical</Group>
 							<Behavior>Usual</Behavior>
-							<ExtendedTooltip name="ПараметрыExtendedTooltip" id="52"/>
+							<ExtendedTooltip name="ПараметрыРасширеннаяПодсказка" id="52"/>
 							<ChildItems>
 								<Pages name="Страницы" id="4">
 									<Title>
@@ -129,7 +147,7 @@
 										</v8:item>
 									</Title>
 									<PagesRepresentation>None</PagesRepresentation>
-									<ExtendedTooltip name="СтраницыExtendedTooltip" id="53"/>
+									<ExtendedTooltip name="СтраницыРасширеннаяПодсказка" id="53"/>
 									<ChildItems>
 										<Page name="ЗаполнитьПараметрыФайловойБазы" id="5">
 											<Title>
@@ -138,15 +156,21 @@
 													<v8:content>Заполнить параметры файловой базы</v8:content>
 												</v8:item>
 											</Title>
-											<ExtendedTooltip name="ЗаполнитьПараметрыФайловойБазыExtendedTooltip" id="54"/>
+											<ExtendedTooltip name="ЗаполнитьПараметрыФайловойБазыРасширеннаяПодсказка" id="54"/>
 											<ChildItems>
 												<InputField name="ЯзыкФайловойБазы" id="7">
 													<DataPath>Язык</DataPath>
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Язык (Страна)</v8:content>
+														</v8:item>
+													</Title>
 													<Wrap>false</Wrap>
 													<ListChoiceMode>true</ListChoiceMode>
 													<ChooseType>false</ChooseType>
 													<ContextMenu name="ЯзыкФайловойБазыКонтекстноеМеню" id="8"/>
-													<ExtendedTooltip name="ЯзыкФайловойБазыExtendedTooltip" id="55"/>
+													<ExtendedTooltip name="ЯзыкФайловойБазыРасширеннаяПодсказка" id="55"/>
 												</InputField>
 												<UsualGroup name="ГруппаПутьФайловойБазы" id="37">
 													<Title>
@@ -157,7 +181,7 @@
 													</Title>
 													<Group>Vertical</Group>
 													<Behavior>Usual</Behavior>
-													<ExtendedTooltip name="ГруппаПутьФайловойБазыExtendedTooltip" id="56"/>
+													<ExtendedTooltip name="ГруппаПутьФайловойБазыРасширеннаяПодсказка" id="56"/>
 													<ChildItems>
 														<InputField name="ПолноеИмяФайловойБазы" id="35">
 															<DataPath>ПолноеИмяФайловойБазыWindows</DataPath>
@@ -173,7 +197,7 @@
 															<MaxWidth>90</MaxWidth>
 															<ChoiceButton>true</ChoiceButton>
 															<ContextMenu name="ПолноеИмяФайловойБазыКонтекстноеМеню" id="36"/>
-															<ExtendedTooltip name="ПолноеИмяФайловойБазыExtendedTooltip" id="57"/>
+															<ExtendedTooltip name="ПолноеИмяФайловойБазыРасширеннаяПодсказка" id="57"/>
 															<Events>
 																<Event name="OnChange">ПолноеИмяФайловойБазыПриИзменении</Event>
 																<Event name="StartChoice">ПолноеИмяФайловойБазыНачалоВыбора</Event>
@@ -191,7 +215,7 @@
 															<AutoMaxWidth>false</AutoMaxWidth>
 															<MaxWidth>90</MaxWidth>
 															<ContextMenu name="ПолноеИмяФайловойБазыLinuxКонтекстноеМеню" id="39"/>
-															<ExtendedTooltip name="ПолноеИмяФайловойБазыLinuxExtendedTooltip" id="58"/>
+															<ExtendedTooltip name="ПолноеИмяФайловойБазыLinuxРасширеннаяПодсказка" id="58"/>
 														</InputField>
 													</ChildItems>
 												</UsualGroup>
@@ -205,7 +229,7 @@
 												</v8:item>
 											</Title>
 											<Group>HorizontalIfPossible</Group>
-											<ExtendedTooltip name="ЗаполнитьПараметрыСервернойБазыExtendedTooltip" id="59"/>
+											<ExtendedTooltip name="ЗаполнитьПараметрыСервернойБазыРасширеннаяПодсказка" id="59"/>
 											<ChildItems>
 												<UsualGroup name="ОсновныеПараметрыСервернойБазы" id="75">
 													<Title>
@@ -222,28 +246,58 @@
 													<ChildItems>
 														<InputField name="Сервер" id="9">
 															<DataPath>Сервер</DataPath>
+															<Title>
+																<v8:item>
+																	<v8:lang>ru</v8:lang>
+																	<v8:content>Кластер серверов 1С:Предприятия</v8:content>
+																</v8:item>
+															</Title>
 															<ContextMenu name="СерверКонтекстноеМеню" id="10"/>
-															<ExtendedTooltip name="СерверExtendedTooltip" id="60"/>
+															<ExtendedTooltip name="СерверРасширеннаяПодсказка" id="60"/>
 														</InputField>
 														<InputField name="ИмяАдминистратораКластера" id="99">
 															<DataPath>ИмяАдминистратораКластера</DataPath>
+															<Title>
+																<v8:item>
+																	<v8:lang>ru</v8:lang>
+																	<v8:content>Имя администратора кластера</v8:content>
+																</v8:item>
+															</Title>
 															<Wrap>false</Wrap>
 															<ContextMenu name="ИмяАдминистратораКластераКонтекстноеМеню" id="100"/>
-															<ExtendedTooltip name="ИмяАдминистратораКластераExtendedTooltip" id="101"/>
+															<ExtendedTooltip name="ИмяАдминистратораКластераРасширеннаяПодсказка" id="101"/>
 														</InputField>
 														<InputField name="ПарольАдминистратораКластера" id="102">
 															<DataPath>ПарольАдминистратораКластера</DataPath>
+															<Title>
+																<v8:item>
+																	<v8:lang>ru</v8:lang>
+																	<v8:content>Пароль администратора кластера</v8:content>
+																</v8:item>
+															</Title>
 															<PasswordMode>true</PasswordMode>
 															<ContextMenu name="ПарольАдминистратораКластераКонтекстноеМеню" id="103"/>
-															<ExtendedTooltip name="ПарольАдминистратораКластераExtendedTooltip" id="104"/>
+															<ExtendedTooltip name="ПарольАдминистратораКластераРасширеннаяПодсказка" id="104"/>
 														</InputField>
 														<InputField name="ИмяБазы" id="11">
 															<DataPath>ИмяБазы</DataPath>
+															<Title>
+																<v8:item>
+																	<v8:lang>ru</v8:lang>
+																	<v8:content>Имя информационной базы в кластере</v8:content>
+																</v8:item>
+															</Title>
 															<ContextMenu name="ИмяБазыКонтекстноеМеню" id="12"/>
-															<ExtendedTooltip name="ИмяБазыExtendedTooltip" id="61"/>
+															<ExtendedTooltip name="ИмяБазыРасширеннаяПодсказка" id="61"/>
 														</InputField>
 														<InputField name="ЗащищенноеСоединение" id="13">
 															<DataPath>ЗащищенноеСоединение</DataPath>
+															<Title>
+																<v8:item>
+																	<v8:lang>ru</v8:lang>
+																	<v8:content>Защищенное соединение</v8:content>
+																</v8:item>
+															</Title>
 															<WarningOnEditRepresentation>DontShow</WarningOnEditRepresentation>
 															<Width>20</Width>
 															<ListChoiceMode>true</ListChoiceMode>
@@ -290,22 +344,34 @@
 																</xr:Item>
 															</ChoiceList>
 															<ContextMenu name="ЗащищенноеСоединениеКонтекстноеМеню" id="14"/>
-															<ExtendedTooltip name="ЗащищенноеСоединениеExtendedTooltip" id="62"/>
+															<ExtendedTooltip name="ЗащищенноеСоединениеРасширеннаяПодсказка" id="62"/>
 														</InputField>
 														<InputField name="ЯзыкБазыСервера" id="27">
 															<DataPath>Язык</DataPath>
+															<Title>
+																<v8:item>
+																	<v8:lang>ru</v8:lang>
+																	<v8:content>Язык (Страна)</v8:content>
+																</v8:item>
+															</Title>
 															<Wrap>false</Wrap>
 															<ListChoiceMode>true</ListChoiceMode>
 															<ChooseType>false</ChooseType>
 															<ContextMenu name="ЯзыкБазыСервераКонтекстноеМеню" id="28"/>
-															<ExtendedTooltip name="ЯзыкБазыСервераExtendedTooltip" id="69"/>
+															<ExtendedTooltip name="ЯзыкБазыСервераРасширеннаяПодсказка" id="69"/>
 														</InputField>
 														<CheckBoxField name="УстановитьБлокировкуРегламентныхЗаданий" id="46">
 															<DataPath>УстановитьБлокировкуРегламентныхЗаданий</DataPath>
+															<Title>
+																<v8:item>
+																	<v8:lang>ru</v8:lang>
+																	<v8:content>Установить блокировку регламентных заданий</v8:content>
+																</v8:item>
+															</Title>
 															<TitleLocation>Right</TitleLocation>
 															<CheckBoxType>Auto</CheckBoxType>
 															<ContextMenu name="УстановитьБлокировкуРегламентныхЗаданийКонтекстноеМеню" id="47"/>
-															<ExtendedTooltip name="УстановитьБлокировкуРегламентныхЗаданийExtendedTooltip" id="70"/>
+															<ExtendedTooltip name="УстановитьБлокировкуРегламентныхЗаданийРасширеннаяПодсказка" id="70"/>
 														</CheckBoxField>
 													</ChildItems>
 												</UsualGroup>
@@ -324,6 +390,12 @@
 													<ChildItems>
 														<InputField name="ТипСУБД" id="15">
 															<DataPath>ТипСУБД</DataPath>
+															<Title>
+																<v8:item>
+																	<v8:lang>ru</v8:lang>
+																	<v8:content>Тип СУБД</v8:content>
+																</v8:item>
+															</Title>
 															<WarningOnEditRepresentation>DontShow</WarningOnEditRepresentation>
 															<Wrap>false</Wrap>
 															<ListChoiceMode>true</ListChoiceMode>
@@ -383,39 +455,69 @@
 																</xr:Item>
 															</ChoiceList>
 															<ContextMenu name="ТипСУБДКонтекстноеМеню" id="16"/>
-															<ExtendedTooltip name="ТипСУБДExtendedTooltip" id="63"/>
+															<ExtendedTooltip name="ТипСУБДРасширеннаяПодсказка" id="63"/>
 															<Events>
 																<Event name="OnChange">ТипСУБДПриИзменении</Event>
 															</Events>
 														</InputField>
 														<InputField name="СерверБазыДанных" id="17">
 															<DataPath>СерверБазыДанных</DataPath>
+															<Title>
+																<v8:item>
+																	<v8:lang>ru</v8:lang>
+																	<v8:content>Сервер базы данных</v8:content>
+																</v8:item>
+															</Title>
 															<WarningOnEditRepresentation>DontShow</WarningOnEditRepresentation>
 															<Wrap>false</Wrap>
 															<ContextMenu name="СерверБазыДанныхКонтекстноеМеню" id="18"/>
-															<ExtendedTooltip name="СерверБазыДанныхExtendedTooltip" id="64"/>
+															<ExtendedTooltip name="СерверБазыДанныхРасширеннаяПодсказка" id="64"/>
 														</InputField>
 														<InputField name="ИмяБазыДанных" id="19">
 															<DataPath>ИмяБазыДанных</DataPath>
+															<Title>
+																<v8:item>
+																	<v8:lang>ru</v8:lang>
+																	<v8:content>Имя базы данных</v8:content>
+																</v8:item>
+															</Title>
 															<Wrap>false</Wrap>
 															<ContextMenu name="ИмяБазыДанныхКонтекстноеМеню" id="20"/>
-															<ExtendedTooltip name="ИмяБазыДанныхExtendedTooltip" id="65"/>
+															<ExtendedTooltip name="ИмяБазыДанныхРасширеннаяПодсказка" id="65"/>
 														</InputField>
 														<InputField name="ПользовательБазыДанных" id="21">
 															<DataPath>ПользовательБазыДанных</DataPath>
+															<Title>
+																<v8:item>
+																	<v8:lang>ru</v8:lang>
+																	<v8:content>Пользователь базы данных</v8:content>
+																</v8:item>
+															</Title>
 															<Wrap>false</Wrap>
 															<ContextMenu name="ПользовательБазыДанныхКонтекстноеМеню" id="22"/>
-															<ExtendedTooltip name="ПользовательБазыДанныхExtendedTooltip" id="66"/>
+															<ExtendedTooltip name="ПользовательБазыДанныхРасширеннаяПодсказка" id="66"/>
 														</InputField>
 														<InputField name="ПарольПользователя" id="23">
 															<DataPath>ПарольПользователя</DataPath>
+															<Title>
+																<v8:item>
+																	<v8:lang>ru</v8:lang>
+																	<v8:content>Пароль пользователя</v8:content>
+																</v8:item>
+															</Title>
 															<Wrap>false</Wrap>
 															<PasswordMode>true</PasswordMode>
 															<ContextMenu name="ПарольПользователяКонтекстноеМеню" id="24"/>
-															<ExtendedTooltip name="ПарольПользователяExtendedTooltip" id="67"/>
+															<ExtendedTooltip name="ПарольПользователяРасширеннаяПодсказка" id="67"/>
 														</InputField>
 														<InputField name="СмещениеДат" id="25">
 															<DataPath>СмещениеДат</DataPath>
+															<Title>
+																<v8:item>
+																	<v8:lang>ru</v8:lang>
+																	<v8:content>Смещение дат</v8:content>
+																</v8:item>
+															</Title>
 															<ListChoiceMode>true</ListChoiceMode>
 															<ChooseType>false</ChooseType>
 															<ChoiceList>
@@ -447,7 +549,7 @@
 																</xr:Item>
 															</ChoiceList>
 															<ContextMenu name="СмещениеДатКонтекстноеМеню" id="26"/>
-															<ExtendedTooltip name="СмещениеДатExtendedTooltip" id="68"/>
+															<ExtendedTooltip name="СмещениеДатРасширеннаяПодсказка" id="68"/>
 														</InputField>
 													</ChildItems>
 												</UsualGroup>
@@ -466,7 +568,7 @@
 							</Title>
 							<Group>Vertical</Group>
 							<Behavior>Usual</Behavior>
-							<ExtendedTooltip name="ГруппаПутьКАрхивуСФайламиТомовExtendedTooltip" id="71"/>
+							<ExtendedTooltip name="ГруппаПутьКАрхивуСФайламиТомовРасширеннаяПодсказка" id="71"/>
 							<ChildItems>
 								<InputField name="ПутьКАрхивуСФайламиТомов" id="33">
 									<DataPath>ПутьКАрхивуСФайламиТомовWindows</DataPath>
@@ -481,7 +583,7 @@
 									<MaxWidth>90</MaxWidth>
 									<ChoiceButton>true</ChoiceButton>
 									<ContextMenu name="ПутьКАрхивуСФайламиТомовКонтекстноеМеню" id="34"/>
-									<ExtendedTooltip name="ПутьКАрхивуСФайламиТомовExtendedTooltip" id="72"/>
+									<ExtendedTooltip name="ПутьКАрхивуСФайламиТомовРасширеннаяПодсказка" id="72"/>
 									<Events>
 										<Event name="StartChoice">ПутьКАрхивуСФайламиТомовНачалоВыбора</Event>
 									</Events>
@@ -498,7 +600,7 @@
 									<AutoMaxWidth>false</AutoMaxWidth>
 									<MaxWidth>90</MaxWidth>
 									<ContextMenu name="ПутьКАрхивуСФайламиТомовLinuxКонтекстноеМеню" id="42"/>
-									<ExtendedTooltip name="ПутьКАрхивуСФайламиТомовLinuxExtendedTooltip" id="73"/>
+									<ExtendedTooltip name="ПутьКАрхивуСФайламиТомовLinuxРасширеннаяПодсказка" id="73"/>
 								</InputField>
 							</ChildItems>
 						</UsualGroup>
@@ -510,7 +612,7 @@
 								</v8:item>
 							</Title>
 							<HorizontalLocation>Right</HorizontalLocation>
-							<ExtendedTooltip name="ПанельДействийExtendedTooltip" id="74"/>
+							<ExtendedTooltip name="ПанельДействийРасширеннаяПодсказка" id="74"/>
 						</CommandBar>
 					</ChildItems>
 				</Page>
@@ -537,6 +639,12 @@
 						</LabelDecoration>
 						<ProgressBarField name="ПроцентВыполнения" id="88">
 							<DataPath>ПроцентВыполнения</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Процент выполнения</v8:content>
+								</v8:item>
+							</Title>
 							<TitleLocation>None</TitleLocation>
 							<ShowPercent>true</ShowPercent>
 							<ContextMenu name="ПроцентВыполненияКонтекстноеМеню" id="89"/>
@@ -544,6 +652,12 @@
 						</ProgressBarField>
 						<LabelField name="ДопИнформацияВыполнениеЗагрузка" id="91">
 							<DataPath>ДопИнформацияВыполнение</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Доп информация выполнение</v8:content>
+								</v8:item>
+							</Title>
 							<TitleLocation>None</TitleLocation>
 							<ContextMenu name="ДопИнформацияВыполнениеЗагрузкаКонтекстноеМеню" id="92"/>
 							<ExtendedTooltip name="ДопИнформацияВыполнениеЗагрузкаРасширеннаяПодсказка" id="93"/>
@@ -937,4 +1051,11 @@
 			<Action>Назад</Action>
 		</Command>
 	</Commands>
+	<Parameters>
+		<Parameter name="Узел">
+			<Type>
+				<v8:TypeSet>cfg:ExchangePlanRef</v8:TypeSet>
+			</Type>
+		</Parameter>
+	</Parameters>
 </Form>

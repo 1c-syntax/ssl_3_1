@@ -18,12 +18,24 @@
 			<Button name="ЗаполнитьИзФайла" id="114">
 				<Type>CommandBarButton</Type>
 				<CommandName>Form.Command.ЗаполнитьИзФайла</CommandName>
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Заполнить данные из файла</v8:content>
+					</v8:item>
+				</Title>
 				<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
 				<ExtendedTooltip name="ЗаполнитьИзФайлаРасширеннаяПодсказка" id="115"/>
 			</Button>
 			<Button name="ФормаРасширенныеНастройки" id="160">
 				<Type>CommandBarHyperlink</Type>
 				<CommandName>Form.Command.РасширенныеНастройки</CommandName>
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Расширенные настройки</v8:content>
+					</v8:item>
+				</Title>
 				<ExtendedTooltip name="ФормаРасширенныеНастройкиРасширеннаяПодсказка" id="161"/>
 			</Button>
 		</ChildItems>
@@ -56,6 +68,7 @@
 							<v8:content>Адрес сервера</v8:content>
 						</v8:item>
 					</Title>
+					<Group>AlwaysHorizontal</Group>
 					<Behavior>Usual</Behavior>
 					<Representation>None</Representation>
 					<ShowTitle>false</ShowTitle>
@@ -80,31 +93,71 @@
 								<Event name="AutoComplete">АдресСервераАвтоПодбор</Event>
 							</Events>
 						</InputField>
-						<UsualGroup name="ГруппаДлительнаяОперация" id="132">
+						<UsualGroup name="ГруппаЗащищенноеСоединение" id="165">
 							<Title>
 								<v8:item>
 									<v8:lang>ru</v8:lang>
-									<v8:content>Длительная операция</v8:content>
+									<v8:content>Защищенное соединение</v8:content>
 								</v8:item>
 							</Title>
-							<GroupVerticalAlign>Center</GroupVerticalAlign>
-							<Behavior>Usual</Behavior>
-							<Representation>None</Representation>
+							<Width>40</Width>
 							<ShowTitle>false</ShowTitle>
-							<ExtendedTooltip name="ГруппаДлительнаяОперацияРасширеннаяПодсказка" id="133"/>
+							<ExtendedTooltip name="ГруппаЗащищенноеСоединениеРасширеннаяПодсказка" id="166"/>
 							<ChildItems>
-								<LabelDecoration name="ДекорацияПояснение" id="137">
-									<Title formatted="false">
+								<CheckBoxField name="ЗащищенноеСоединениеГОСТ" id="162">
+									<DataPath>Объект.ЗащищенноеСоединениеГОСТ</DataPath>
+									<Title>
 										<v8:item>
 											<v8:lang>ru</v8:lang>
-											<v8:content>запрос информации с сервера</v8:content>
+											<v8:content>Защищенное соединение ГОСТ (рекомендуется)</v8:content>
 										</v8:item>
 									</Title>
-									<ContextMenu name="ДекорацияПояснениеКонтекстноеМеню" id="138"/>
-									<ExtendedTooltip name="ДекорацияПояснениеРасширеннаяПодсказка" id="139"/>
-								</LabelDecoration>
+									<TitleLocation>Right</TitleLocation>
+									<ToolTipRepresentation>Button</ToolTipRepresentation>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="ЗащищенноеСоединениеГОСТКонтекстноеМеню" id="163"/>
+									<ExtendedTooltip name="ЗащищенноеСоединениеГОСТРасширеннаяПодсказка" id="164">
+										<Width>40</Width>
+										<AutoMaxWidth>false</AutoMaxWidth>
+										<Title formatted="false">
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Согласно требованиям безопасности соединение с сервером DSS должно быть защищенным с использованием сертифицированных средств криптографии.
+Для этого на сервере должен быть установлен криптопровайдер КриптоПро CSP и сертификат доверенного удостоверяющего центра.</v8:content>
+											</v8:item>
+										</Title>
+									</ExtendedTooltip>
+									<Events>
+										<Event name="OnChange">ЗащищенноеСоединениеГОСТПриИзменении</Event>
+									</Events>
+								</CheckBoxField>
 							</ChildItems>
 						</UsualGroup>
+					</ChildItems>
+				</UsualGroup>
+				<UsualGroup name="ГруппаДлительнаяОперация" id="132">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Длительная операция</v8:content>
+						</v8:item>
+					</Title>
+					<GroupVerticalAlign>Center</GroupVerticalAlign>
+					<Behavior>Usual</Behavior>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаДлительнаяОперацияРасширеннаяПодсказка" id="133"/>
+					<ChildItems>
+						<LabelDecoration name="ДекорацияПояснение" id="137">
+							<Title formatted="false">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>запрос информации с сервера</v8:content>
+								</v8:item>
+							</Title>
+							<ContextMenu name="ДекорацияПояснениеКонтекстноеМеню" id="138"/>
+							<ExtendedTooltip name="ДекорацияПояснениеРасширеннаяПодсказка" id="139"/>
+						</LabelDecoration>
 					</ChildItems>
 				</UsualGroup>
 				<UsualGroup name="ГруппаЦИ" id="126">

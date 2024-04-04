@@ -6,7 +6,7 @@
 			<v8:content>Права доступа обновлены</v8:content>
 		</v8:item>
 	</Title>
-	<WindowOpeningMode>LockOwnerWindow</WindowOpeningMode>
+	<WindowOpeningMode>LockWholeInterface</WindowOpeningMode>
 	<AutoTitle>false</AutoTitle>
 	<CommandBarLocation>Bottom</CommandBarLocation>
 	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
@@ -17,15 +17,30 @@
 				<Type>CommandBarButton</Type>
 				<DefaultButton>true</DefaultButton>
 				<CommandName>Form.Command.Перезапустить</CommandName>
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Перезапустить</v8:content>
+					</v8:item>
+				</Title>
 				<ExtendedTooltip name="ФормаПерезапуститьРасширеннаяПодсказка" id="10"/>
 			</Button>
 			<Button name="ФормаНапомнитьЗавтра" id="11">
 				<Type>CommandBarButton</Type>
 				<CommandName>Form.Command.НапомнитьЗавтра</CommandName>
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Напомнить завтра</v8:content>
+					</v8:item>
+				</Title>
 				<ExtendedTooltip name="ФормаНапомнитьЗавтраРасширеннаяПодсказка" id="12"/>
 			</Button>
 		</ChildItems>
 	</AutoCommandBar>
+	<Events>
+		<Event name="OnOpen">ПриОткрытии</Event>
+	</Events>
 	<ChildItems>
 		<UsualGroup name="КартинкаИНадпись" id="1">
 			<Title>
@@ -43,8 +58,8 @@
 			<ChildItems>
 				<PictureDecoration name="Картинка" id="3">
 					<Picture>
-						<xr:Ref>CommonPicture.Информация32</xr:Ref>
-						<xr:LoadTransparent>false</xr:LoadTransparent>
+						<xr:Ref>StdPicture.DialogInformation</xr:Ref>
+						<xr:LoadTransparent>true</xr:LoadTransparent>
 					</Picture>
 					<ContextMenu name="КартинкаКонтекстноеМеню" id="4"/>
 					<ExtendedTooltip name="КартинкаРасширеннаяПодсказка" id="5"/>
@@ -54,7 +69,7 @@
 						<v8:item>
 							<v8:lang>ru</v8:lang>
 							<v8:content>Администратор изменил права доступа.
-Перезапустите программу, чтобы они вступили в силу.</v8:content>
+Перезапустите приложение, чтобы они вступили в силу.</v8:content>
 						</v8:item>
 					</Title>
 					<ToolTipRepresentation>Button</ToolTipRepresentation>

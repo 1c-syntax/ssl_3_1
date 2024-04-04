@@ -9,26 +9,50 @@
 				<Representation>Text</Representation>
 				<DefaultButton>true</DefaultButton>
 				<CommandName>Form.StandardCommand.Close</CommandName>
-				<ExtendedTooltip name="ФормаЗакрытьExtendedTooltip" id="21"/>
+				<ExtendedTooltip name="ФормаЗакрытьРасширеннаяПодсказка" id="21"/>
 			</Button>
 			<Button name="ФормаСохранитьВФайл" id="10">
 				<Type>CommandBarButton</Type>
 				<CommandName>Form.Command.СохранитьВФайл</CommandName>
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Сохранить в файл...</v8:content>
+					</v8:item>
+				</Title>
 				<ExtendedTooltip name="ФормаСохранитьВФайлРасширеннаяПодсказка" id="22"/>
 			</Button>
 			<Button name="ФормаОткрытьСертификат" id="16">
 				<Type>CommandBarButton</Type>
 				<CommandName>Form.Command.ОткрытьСертификат</CommandName>
-				<ExtendedTooltip name="ФормаОткрытьСертификатExtendedTooltip" id="23"/>
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Открыть сертификат...</v8:content>
+					</v8:item>
+				</Title>
+				<ExtendedTooltip name="ФормаОткрытьСертификатРасширеннаяПодсказка" id="23"/>
 			</Button>
 			<Button name="ФормаПродлитьДействиеПодписи" id="55">
 				<Type>CommandBarButton</Type>
 				<CommandName>Form.Command.ПродлитьДействиеПодписи</CommandName>
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Продлить действие...</v8:content>
+					</v8:item>
+				</Title>
 				<ExtendedTooltip name="ФормаПродлитьДействиеПодписиРасширеннаяПодсказка" id="56"/>
 			</Button>
 			<Button name="ФормаОткрытьСертификатДляПроверкиПодписи" id="64">
 				<Type>CommandBarButton</Type>
 				<CommandName>Form.Command.ОткрытьСертификатДляПроверкиПодписи</CommandName>
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Открыть сертификаты подписи...</v8:content>
+					</v8:item>
+				</Title>
 				<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
 				<ExtendedTooltip name="ФормаОткрытьСертификатДляПроверкиПодписиРасширеннаяПодсказка" id="65"/>
 			</Button>
@@ -40,6 +64,7 @@
 	<ChildItems>
 		<LabelDecoration name="ДекорацияСтатус" id="59">
 			<AutoMaxWidth>false</AutoMaxWidth>
+			<MaxWidth>80</MaxWidth>
 			<HorizontalStretch>true</HorizontalStretch>
 			<Title formatted="false">
 				<v8:item>
@@ -51,8 +76,31 @@
 			<ContextMenu name="ДекорацияСтатусКонтекстноеМеню" id="60"/>
 			<ExtendedTooltip name="ДекорацияСтатусРасширеннаяПодсказка" id="61"/>
 		</LabelDecoration>
+		<InputField name="ОбоснованиеРучнойПроверкиДополнительныхАтрибутов" id="87">
+			<DataPath>ОбоснованиеРучнойПроверкиДополнительныхАтрибутов</DataPath>
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Обоснование достоверности подписи</v8:content>
+				</v8:item>
+			</Title>
+			<TitleLocation>Top</TitleLocation>
+			<AutoMaxWidth>false</AutoMaxWidth>
+			<AutoMaxHeight>false</AutoMaxHeight>
+			<MaxHeight>4</MaxHeight>
+			<MultiLine>true</MultiLine>
+			<TextEdit>false</TextEdit>
+			<ContextMenu name="ОбоснованиеРучнойПроверкиДополнительныхАтрибутовКонтекстноеМеню" id="88"/>
+			<ExtendedTooltip name="ОбоснованиеРучнойПроверкиДополнительныхАтрибутовРасширеннаяПодсказка" id="89"/>
+		</InputField>
 		<InputField name="ОписаниеОшибки" id="35">
 			<DataPath>ОписаниеОшибки</DataPath>
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Описание ошибки</v8:content>
+				</v8:item>
+			</Title>
 			<TitleLocation>None</TitleLocation>
 			<AutoMaxWidth>false</AutoMaxWidth>
 			<AutoMaxHeight>false</AutoMaxHeight>
@@ -108,12 +156,24 @@
 			<DataPath>КомуВыданСертификат</DataPath>
 			<ReadOnly>true</ReadOnly>
 			<SkipOnInput>true</SkipOnInput>
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Автор подписи</v8:content>
+				</v8:item>
+			</Title>
 			<ContextMenu name="КомуВыданСертификатКонтекстноеМеню" id="3"/>
 			<ExtendedTooltip name="КомуВыданСертификатРасширеннаяПодсказка" id="24"/>
 		</InputField>
 		<InputField name="ТипПодписи" id="52">
 			<DataPath>ТипПодписи</DataPath>
 			<ReadOnly>true</ReadOnly>
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Тип подписи</v8:content>
+				</v8:item>
+			</Title>
 			<ContextMenu name="ТипПодписиКонтекстноеМеню" id="53"/>
 			<ExtendedTooltip name="ТипПодписиРасширеннаяПодсказка" id="54"/>
 		</InputField>
@@ -121,28 +181,55 @@
 			<DataPath>УстановившийПодпись</DataPath>
 			<ReadOnly>true</ReadOnly>
 			<SkipOnInput>true</SkipOnInput>
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Установивший подпись</v8:content>
+				</v8:item>
+			</Title>
 			<Width>35</Width>
 			<HorizontalStretch>false</HorizontalStretch>
 			<ContextMenu name="УстановившийПодписьКонтекстноеМеню" id="13"/>
-			<ExtendedTooltip name="УстановившийПодписьExtendedTooltip" id="26"/>
+			<ExtendedTooltip name="УстановившийПодписьРасширеннаяПодсказка" id="26"/>
 		</InputField>
 		<InputField name="ДатаПодписи" id="17">
 			<DataPath>ДатаПодписи</DataPath>
 			<ReadOnly>true</ReadOnly>
 			<SkipOnInput>true</SkipOnInput>
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Дата подписи</v8:content>
+				</v8:item>
+			</Title>
 			<ContextMenu name="ДатаПодписиКонтекстноеМеню" id="18"/>
-			<ExtendedTooltip name="ДатаПодписиExtendedTooltip" id="27"/>
+			<ExtendedTooltip name="ДатаПодписиРасширеннаяПодсказка" id="27"/>
 		</InputField>
 		<InputField name="Комментарий" id="14">
 			<DataPath>Комментарий</DataPath>
 			<ReadOnly>true</ReadOnly>
 			<SkipOnInput>true</SkipOnInput>
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Комментарий</v8:content>
+				</v8:item>
+			</Title>
+			<AutoMaxWidth>false</AutoMaxWidth>
+			<MultiLine>true</MultiLine>
+			<TextEdit>false</TextEdit>
 			<ContextMenu name="КомментарийКонтекстноеМеню" id="15"/>
-			<ExtendedTooltip name="КомментарийExtendedTooltip" id="28"/>
+			<ExtendedTooltip name="КомментарийРасширеннаяПодсказка" id="28"/>
 		</InputField>
 		<InputField name="СрокДействияПоследнейМеткиВремени" id="49">
 			<DataPath>СрокДействияПоследнейМеткиВремени</DataPath>
 			<ReadOnly>true</ReadOnly>
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Срок действия последней метки времени</v8:content>
+				</v8:item>
+			</Title>
 			<TitleHeight>2</TitleHeight>
 			<ContextMenu name="СрокДействияПоследнейМеткиВремениКонтекстноеМеню" id="50"/>
 			<ExtendedTooltip name="СрокДействияПоследнейМеткиВремениРасширеннаяПодсказка" id="51"/>
@@ -163,6 +250,12 @@
 			<ChildItems>
 				<InputField name="АлгоритмПодписиПредупреждение" id="75">
 					<DataPath>АлгоритмПодписи</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Алгоритм подписи</v8:content>
+						</v8:item>
+					</Title>
 					<ToolTip>
 						<v8:item>
 							<v8:lang>ru</v8:lang>
@@ -181,6 +274,12 @@
 				</InputField>
 				<InputField name="АлгоритмПодписи" id="43">
 					<DataPath>АлгоритмПодписи</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Алгоритм подписи</v8:content>
+						</v8:item>
+					</Title>
 					<ToolTip>
 						<v8:item>
 							<v8:lang>ru</v8:lang>
@@ -188,12 +287,19 @@
 						</v8:item>
 					</ToolTip>
 					<ToolTipRepresentation>Button</ToolTipRepresentation>
+					<AutoMaxWidth>false</AutoMaxWidth>
 					<TextEdit>false</TextEdit>
 					<ContextMenu name="АлгоритмПодписиКонтекстноеМеню" id="44"/>
 					<ExtendedTooltip name="АлгоритмПодписиРасширеннаяПодсказка" id="45"/>
 				</InputField>
 				<InputField name="АлгоритмХеширования" id="46">
 					<DataPath>АлгоритмХеширования</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Алгоритм хеширования</v8:content>
+						</v8:item>
+					</Title>
 					<ToolTip>
 						<v8:item>
 							<v8:lang>ru</v8:lang>
@@ -201,10 +307,91 @@
 						</v8:item>
 					</ToolTip>
 					<ToolTipRepresentation>Button</ToolTipRepresentation>
+					<AutoMaxWidth>false</AutoMaxWidth>
 					<TextEdit>false</TextEdit>
 					<ContextMenu name="АлгоритмХешированияКонтекстноеМеню" id="47"/>
 					<ExtendedTooltip name="АлгоритмХешированияРасширеннаяПодсказка" id="48"/>
 				</InputField>
+				<UsualGroup name="ГруппаОшибкаМатематическойПроверки" id="90">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Ошибка математической проверки</v8:content>
+						</v8:item>
+					</Title>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаОшибкаМатематическойПроверкиРасширеннаяПодсказка" id="91"/>
+					<ChildItems>
+						<InputField name="ОшибкаМатематическойПроверкиПодписи" id="78">
+							<DataPath>ОшибкаМатематическойПроверкиПодписи</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Ошибка при проверке соответствия подписи документу</v8:content>
+								</v8:item>
+							</Title>
+							<TitleLocation>Top</TitleLocation>
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<AutoMaxHeight>false</AutoMaxHeight>
+							<MaxHeight>2</MaxHeight>
+							<MultiLine>true</MultiLine>
+							<TextEdit>false</TextEdit>
+							<ContextMenu name="ОшибкаМатематическойПроверкиПодписиКонтекстноеМеню" id="79"/>
+							<ExtendedTooltip name="ОшибкаМатематическойПроверкиПодписиРасширеннаяПодсказка" id="80"/>
+						</InputField>
+						<Button name="ОткрытьОписаниеОшибки" id="97">
+							<Type>Hyperlink</Type>
+							<CommandName>Form.Command.ОткрытьОписаниеОшибкиМатематическойПроверки</CommandName>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Подробнее</v8:content>
+								</v8:item>
+							</Title>
+							<ExtendedTooltip name="ОткрытьОписаниеОшибкиРасширеннаяПодсказка" id="98"/>
+						</Button>
+					</ChildItems>
+				</UsualGroup>
+				<UsualGroup name="ГруппаОшибкаПроверкиДополнительныхАтрибутов" id="92">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Ошибка проверки дополнительных атрибутов</v8:content>
+						</v8:item>
+					</Title>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаОшибкаПроверкиДополнительныхАтрибутовРасширеннаяПодсказка" id="93"/>
+					<ChildItems>
+						<InputField name="ОшибкаПроверкиДополнительныхАтрибутов" id="81">
+							<DataPath>ОшибкаПроверкиДополнительныхАтрибутов</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Ошибка при проверке сертификата подписи</v8:content>
+								</v8:item>
+							</Title>
+							<TitleLocation>Top</TitleLocation>
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<AutoMaxHeight>false</AutoMaxHeight>
+							<MaxHeight>2</MaxHeight>
+							<MultiLine>true</MultiLine>
+							<TextEdit>false</TextEdit>
+							<ContextMenu name="ОшибкаПроверкиДополнительныхАтрибутовКонтекстноеМеню" id="82"/>
+							<ExtendedTooltip name="ОшибкаПроверкиДополнительныхАтрибутовРасширеннаяПодсказка" id="83"/>
+						</InputField>
+						<Button name="ОткрытьОписаниеОшибкиДополнительныхАтрибутов" id="99">
+							<Type>Hyperlink</Type>
+							<CommandName>Form.Command.ОткрытьОписаниеОшибкиДополнительныхАтрибутов</CommandName>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Подробнее</v8:content>
+								</v8:item>
+							</Title>
+							<ExtendedTooltip name="ОткрытьОписаниеОшибкиДополнительныхАтрибутовРасширеннаяПодсказка" id="100"/>
+						</Button>
+					</ChildItems>
+				</UsualGroup>
 			</ChildItems>
 		</UsualGroup>
 		<LabelDecoration name="Инструкция" id="38">
@@ -212,7 +399,7 @@
 			<Title formatted="false">
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Решение типовых проблем при работе с программами электронной подписи</v8:content>
+					<v8:content>Решение типовых проблем при работе с приложениями электронной подписи</v8:content>
 				</v8:item>
 			</Title>
 			<Hyperlink>true</Hyperlink>
@@ -469,6 +656,84 @@
 				</v8:StringQualifiers>
 			</Type>
 		</Attribute>
+		<Attribute name="ПодписьМатематическиВерна" id="28">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ОшибкаМатематическойПроверкиПодписи" id="29">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Ошибка при проверке соответствия подписи документу</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ОшибкаПроверкиДополнительныхАтрибутов" id="30">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Ошибка при проверке сертификата подписи</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ДополнительныеАтрибутыПровереныВручную" id="31">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="АвторРучнойПроверкиДополнительныхАтрибутов" id="32">
+			<Type>
+				<v8:Type>cfg:CatalogRef.Пользователи</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ОбоснованиеРучнойПроверкиДополнительныхАтрибутов" id="33">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Обоснование ручной проверки дополнительных атрибутов</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="РезультатПроверки" id="34">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="РезультатПроверкиКраткий" id="35">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
 	</Attributes>
 	<Commands>
 		<Command name="СохранитьВФайл" id="1">
@@ -526,6 +791,24 @@
 				</v8:item>
 			</ToolTip>
 			<Action>ОткрытьСертификатДляПроверкиПодписи</Action>
+		</Command>
+		<Command name="ОткрытьОписаниеОшибкиМатематическойПроверки" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Подробнее</v8:content>
+				</v8:item>
+			</Title>
+			<Action>ОткрытьОписаниеОшибкиМатематическойПроверки</Action>
+		</Command>
+		<Command name="ОткрытьОписаниеОшибкиДополнительныхАтрибутов" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Подробнее</v8:content>
+				</v8:item>
+			</Title>
+			<Action>ОткрытьОписаниеОшибкиДополнительныхАтрибутов</Action>
 		</Command>
 	</Commands>
 	<Parameters>

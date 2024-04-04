@@ -21,6 +21,12 @@
 						<Type>CommandBarButton</Type>
 						<DefaultButton>true</DefaultButton>
 						<CommandName>Form.Command.ЗавершитьРедактирование</CommandName>
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>ОК</v8:content>
+							</v8:item>
+						</Title>
 						<ExtendedTooltip name="ЗавершитьРедактированиеРасширеннаяПодсказка" id="13"/>
 					</Button>
 					<Button name="ФормаОтмена" id="16">
@@ -118,6 +124,12 @@
 					<ChildItems>
 						<CheckBoxField name="ПравилаПоискаИспользовать" id="30">
 							<DataPath>ПравилаПоиска.Использовать</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Использовать</v8:content>
+								</v8:item>
+							</Title>
 							<TitleLocation>None</TitleLocation>
 							<EditMode>EnterOnInput</EditMode>
 							<CheckBoxType>Auto</CheckBoxType>
@@ -130,6 +142,12 @@
 						<InputField name="ПравилаПоискаПредставлениеРеквизита" id="24">
 							<DataPath>ПравилаПоиска.ПредставлениеРеквизита</DataPath>
 							<ReadOnly>true</ReadOnly>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Поле</v8:content>
+								</v8:item>
+							</Title>
 							<EditMode>EnterOnInput</EditMode>
 							<TextEdit>false</TextEdit>
 							<ContextMenu name="ПравилаПоискаПредставлениеРеквизитаКонтекстноеМеню" id="25"/>
@@ -140,6 +158,12 @@
 				<InputField name="ПравилаПоискаВидСравнения" id="27">
 					<DataPath>ПравилаПоиска.Правило</DataPath>
 					<ReadOnly>true</ReadOnly>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Правило</v8:content>
+						</v8:item>
+					</Title>
 					<Width>21</Width>
 					<HorizontalStretch>false</HorizontalStretch>
 					<ChoiceButton>false</ChoiceButton>
@@ -163,6 +187,12 @@
 		</Table>
 		<CheckBoxField name="СкрыватьНезначимыеДубли" id="48">
 			<DataPath>СкрыватьНезначимыеДубли</DataPath>
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Скрывать дубли, помеченные на удаление и без мест использования</v8:content>
+				</v8:item>
+			</Title>
 			<TitleLocation>Right</TitleLocation>
 			<CheckBoxType>Auto</CheckBoxType>
 			<ContextMenu name="СкрыватьНезначимыеДублиКонтекстноеМеню" id="49"/>
@@ -183,6 +213,12 @@
 			<ChildItems>
 				<CheckBoxField name="УчитыватьПрикладныеПравила" id="1">
 					<DataPath>УчитыватьПрикладныеПравила</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Учитывать ограничения:</v8:content>
+						</v8:item>
+					</Title>
 					<TitleLocation>Right</TitleLocation>
 					<CheckBoxType>Auto</CheckBoxType>
 					<ContextMenu name="УчитыватьПрикладныеПравилаКонтекстноеМеню" id="2"/>
@@ -193,6 +229,12 @@
 				</CheckBoxField>
 				<LabelField name="ОписаниеПрикладныхПравил" id="7">
 					<DataPath>ОписаниеПрикладныхПравил</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>С учетом ограничений</v8:content>
+						</v8:item>
+					</Title>
 					<TitleLocation>None</TitleLocation>
 					<VerticalAlign>Top</VerticalAlign>
 					<AutoMaxWidth>false</AutoMaxWidth>
@@ -359,4 +401,33 @@
 			<CurrentRowUse>DontUse</CurrentRowUse>
 		</Command>
 	</Commands>
+	<Parameters>
+		<Parameter name="ОбластьПоискаДублей">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Parameter>
+		<Parameter name="ПредставлениеОбластиОтбора">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Parameter>
+		<Parameter name="АдресНастроек">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Parameter>
+	</Parameters>
 </Form>

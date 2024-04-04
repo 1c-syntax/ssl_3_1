@@ -51,17 +51,23 @@
 					<Button name="СписокВалютКонтекстноеМенюВыбрать" id="18">
 						<Type>CommandBarButton</Type>
 						<CommandName>Form.Command.Выбрать</CommandName>
-						<ExtendedTooltip name="СписокВалютКонтекстноеМенюВыбратьExtendedTooltip" id="21"/>
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Выбрать</v8:content>
+							</v8:item>
+						</Title>
+						<ExtendedTooltip name="СписокВалютКонтекстноеМенюВыбратьРасширеннаяПодсказка" id="21"/>
 					</Button>
 					<Button name="СписокВалютКонтекстноеМенюНайти" id="19">
 						<Type>CommandBarButton</Type>
 						<CommandName>Form.Item.СписокВалют.StandardCommand.Find</CommandName>
-						<ExtendedTooltip name="СписокВалютКонтекстноеМенюНайтиExtendedTooltip" id="22"/>
+						<ExtendedTooltip name="СписокВалютКонтекстноеМенюНайтиРасширеннаяПодсказка" id="22"/>
 					</Button>
 					<Button name="СписокВалютКонтекстноеМенюОтменитьПоиск" id="20">
 						<Type>CommandBarButton</Type>
 						<CommandName>Form.Item.СписокВалют.StandardCommand.CancelSearch</CommandName>
-						<ExtendedTooltip name="СписокВалютКонтекстноеМенюОтменитьПоискExtendedTooltip" id="23"/>
+						<ExtendedTooltip name="СписокВалютКонтекстноеМенюОтменитьПоискРасширеннаяПодсказка" id="23"/>
 					</Button>
 				</ChildItems>
 			</ContextMenu>
@@ -73,28 +79,34 @@
 						<DefaultButton>true</DefaultButton>
 						<SkipOnInput>false</SkipOnInput>
 						<CommandName>Form.Command.Выбрать</CommandName>
-						<ExtendedTooltip name="ВыбратьExtendedTooltip" id="24"/>
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Выбрать</v8:content>
+							</v8:item>
+						</Title>
+						<ExtendedTooltip name="ВыбратьРасширеннаяПодсказка" id="24"/>
 					</Button>
 					<Button name="Найти" id="12">
 						<Type>CommandBarButton</Type>
 						<SkipOnInput>false</SkipOnInput>
 						<CommandName>Form.Item.СписокВалют.StandardCommand.Find</CommandName>
-						<ExtendedTooltip name="НайтиExtendedTooltip" id="25"/>
+						<ExtendedTooltip name="НайтиРасширеннаяПодсказка" id="25"/>
 					</Button>
 					<Button name="ОтменитьПоиск" id="13">
 						<Type>CommandBarButton</Type>
 						<SkipOnInput>false</SkipOnInput>
 						<CommandName>Form.Item.СписокВалют.StandardCommand.CancelSearch</CommandName>
-						<ExtendedTooltip name="ОтменитьПоискExtendedTooltip" id="26"/>
+						<ExtendedTooltip name="ОтменитьПоискРасширеннаяПодсказка" id="26"/>
 					</Button>
 					<Button name="ФормаСправка" id="17">
 						<Type>CommandBarButton</Type>
 						<CommandName>Form.StandardCommand.Help</CommandName>
-						<ExtendedTooltip name="ФормаСправкаExtendedTooltip" id="27"/>
+						<ExtendedTooltip name="ФормаСправкаРасширеннаяПодсказка" id="27"/>
 					</Button>
 				</ChildItems>
 			</AutoCommandBar>
-			<ExtendedTooltip name="СписокВалютExtendedTooltip" id="28"/>
+			<ExtendedTooltip name="СписокВалютРасширеннаяПодсказка" id="28"/>
 			<SearchStringAddition name="СписокВалютSearchString" id="34">
 				<AdditionSource>
 					<Item>СписокВалют</Item>
@@ -135,7 +147,7 @@
 					<HorizontalStretch>false</HorizontalStretch>
 					<Wrap>false</Wrap>
 					<ContextMenu name="КодВалютыКонтекстноеМеню" id="5"/>
-					<ExtendedTooltip name="КодВалютыExtendedTooltip" id="29"/>
+					<ExtendedTooltip name="КодВалютыРасширеннаяПодсказка" id="29"/>
 				</InputField>
 				<InputField name="КраткоеНаименование" id="6" DisplayImportance="VeryLow">
 					<DataPath>Валюты.КодВалютыБуквенный</DataPath>
@@ -149,24 +161,42 @@
 					<HorizontalStretch>false</HorizontalStretch>
 					<Wrap>false</Wrap>
 					<ContextMenu name="КраткоеНаименованиеКонтекстноеМеню" id="7"/>
-					<ExtendedTooltip name="КраткоеНаименованиеExtendedTooltip" id="30"/>
+					<ExtendedTooltip name="КраткоеНаименованиеРасширеннаяПодсказка" id="30"/>
 				</InputField>
 				<InputField name="Наименование" id="8" DisplayImportance="VeryHigh">
 					<DataPath>Валюты.Наименование</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Наименование валюты</v8:content>
+						</v8:item>
+					</Title>
 					<Width>20</Width>
 					<HorizontalStretch>false</HorizontalStretch>
 					<Wrap>false</Wrap>
 					<ContextMenu name="НаименованиеКонтекстноеМеню" id="9"/>
-					<ExtendedTooltip name="НаименованиеExtendedTooltip" id="31"/>
+					<ExtendedTooltip name="НаименованиеРасширеннаяПодсказка" id="31"/>
 				</InputField>
 				<InputField name="СтраныИТерритории" id="10" DisplayImportance="VeryLow">
 					<DataPath>Валюты.СтраныИТерритории</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Страны и территории</v8:content>
+						</v8:item>
+					</Title>
 					<Wrap>false</Wrap>
 					<ContextMenu name="СтраныИТерриторииКонтекстноеМеню" id="11"/>
-					<ExtendedTooltip name="СтраныИТерриторииExtendedTooltip" id="32"/>
+					<ExtendedTooltip name="СтраныИТерриторииРасширеннаяПодсказка" id="32"/>
 				</InputField>
 				<CheckBoxField name="Загружается" id="15" DisplayImportance="VeryLow">
 					<DataPath>Валюты.Загружается</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Загружается из Интернета</v8:content>
+						</v8:item>
+					</Title>
 					<TitleLocation>None</TitleLocation>
 					<ToolTip>
 						<v8:item>
@@ -180,7 +210,7 @@
 					</HeaderPicture>
 					<CheckBoxType>Auto</CheckBoxType>
 					<ContextMenu name="ЗагружаетсяКонтекстноеМеню" id="16"/>
-					<ExtendedTooltip name="ЗагружаетсяExtendedTooltip" id="33"/>
+					<ExtendedTooltip name="ЗагружаетсяРасширеннаяПодсказка" id="33"/>
 				</CheckBoxField>
 			</ChildItems>
 		</Table>

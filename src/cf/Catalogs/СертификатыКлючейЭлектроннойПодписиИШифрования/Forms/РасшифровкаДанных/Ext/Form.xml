@@ -80,6 +80,12 @@
 					<ChildItems>
 						<InputField name="Сертификат" id="313">
 							<DataPath>Сертификат</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Сертификат</v8:content>
+								</v8:item>
+							</Title>
 							<DropListButton>false</DropListButton>
 							<ChoiceButton>true</ChoiceButton>
 							<ChoiceButtonRepresentation>ShowInInputField</ChoiceButtonRepresentation>
@@ -113,13 +119,26 @@
 							<ChildItems>
 								<InputField name="Пароль" id="316">
 									<DataPath>Пароль</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Пароль</v8:content>
+										</v8:item>
+									</Title>
 									<HorizontalStretch>false</HorizontalStretch>
 									<Wrap>false</Wrap>
 									<PasswordMode>true</PasswordMode>
+									<ChoiceButton>true</ChoiceButton>
+									<EditTextUpdate>OnValueChange</EditTextUpdate>
+									<ChoiceButtonPicture>
+										<xr:Ref>CommonPicture.ВводимыеСимволыВидны</xr:Ref>
+										<xr:LoadTransparent>false</xr:LoadTransparent>
+									</ChoiceButtonPicture>
 									<ContextMenu name="ПарольКонтекстноеМеню" id="317"/>
 									<ExtendedTooltip name="ПарольРасширеннаяПодсказка" id="318"/>
 									<Events>
 										<Event name="OnChange">ПарольПриИзменении</Event>
+										<Event name="StartChoice">ПарольНачалоВыбора</Event>
 									</Events>
 								</InputField>
 								<CheckBoxField name="ЗапомнитьПароль" id="324">
@@ -134,7 +153,7 @@
 									<ToolTip>
 										<v8:item>
 											<v8:lang>ru</v8:lang>
-											<v8:content>Запомнить пароль сертификата до закрытия программы. При снятии флажка пароль стирается из памяти, если запоминался ранее.</v8:content>
+											<v8:content>Запомнить пароль сертификата до закрытия приложения. При снятии флажка пароль стирается из памяти, если запоминался ранее.</v8:content>
 										</v8:item>
 									</ToolTip>
 									<ToolTipRepresentation>Button</ToolTipRepresentation>
@@ -266,6 +285,12 @@
 							<Type>CommandBarButton</Type>
 							<DefaultButton>true</DefaultButton>
 							<CommandName>Form.Command.Расшифровать</CommandName>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Расшифровать</v8:content>
+								</v8:item>
+							</Title>
 							<ExtendedTooltip name="ФормаРасшифроватьРасширеннаяПодсказка" id="466"/>
 						</Button>
 						<Button name="ФормаЗакрыть" id="467">

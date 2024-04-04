@@ -16,12 +16,24 @@
 				<Type>CommandBarButton</Type>
 				<DefaultButton>true</DefaultButton>
 				<CommandName>Form.Command.ЗавершитьРаботу</CommandName>
-				<ExtendedTooltip name="ЗавершитьРаботуExtendedTooltip" id="13"/>
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Завершить работу</v8:content>
+					</v8:item>
+				</Title>
+				<ExtendedTooltip name="ЗавершитьРаботуРасширеннаяПодсказка" id="13"/>
 			</Button>
 			<Button name="ПерезапуститьПрограмму" id="4">
 				<Type>CommandBarButton</Type>
 				<CommandName>Form.Command.ПерезапуститьПрограмму</CommandName>
-				<ExtendedTooltip name="ПерезапуститьПрограммуExtendedTooltip" id="14"/>
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Перезапустить</v8:content>
+					</v8:item>
+				</Title>
+				<ExtendedTooltip name="ПерезапуститьПрограммуРасширеннаяПодсказка" id="14"/>
 			</Button>
 			<Button name="ФормаОткрытьВнешнююОбработку" id="21">
 				<Type>CommandBarButton</Type>
@@ -30,6 +42,12 @@
 					<xr:Ref>StdPicture.OpenFile</xr:Ref>
 					<xr:LoadTransparent>true</xr:LoadTransparent>
 				</Picture>
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Открыть внешнюю обработку...</v8:content>
+					</v8:item>
+				</Title>
 				<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
 				<ExtendedTooltip name="ФормаОткрытьВнешнююОбработкуРасширеннаяПодсказка" id="22"/>
 			</Button>
@@ -38,6 +56,7 @@
 	<Events>
 		<Event name="OnOpen">ПриОткрытии</Event>
 		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+		<Event name="OnClose">ПриЗакрытии</Event>
 	</Events>
 	<ChildItems>
 		<UsualGroup name="СообщениеОбОшибке" id="7">
@@ -50,7 +69,7 @@
 			<Behavior>Usual</Behavior>
 			<Representation>NormalSeparation</Representation>
 			<ShowTitle>false</ShowTitle>
-			<ExtendedTooltip name="СообщениеОбОшибкеExtendedTooltip" id="15"/>
+			<ExtendedTooltip name="СообщениеОбОшибкеРасширеннаяПодсказка" id="15"/>
 			<ChildItems>
 				<PictureDecoration name="КартинкаОшибки" id="8">
 					<Title formatted="false">
@@ -60,67 +79,116 @@
 						</v8:item>
 					</Title>
 					<Picture>
-						<xr:Ref>CommonPicture.Ошибка32</xr:Ref>
-						<xr:LoadTransparent>false</xr:LoadTransparent>
+						<xr:Ref>StdPicture.DialogStop</xr:Ref>
+						<xr:LoadTransparent>true</xr:LoadTransparent>
 					</Picture>
 					<FileDragMode>AsFile</FileDragMode>
 					<ContextMenu name="КартинкаОшибкиКонтекстноеМеню" id="9"/>
-					<ExtendedTooltip name="КартинкаОшибкиExtendedTooltip" id="16"/>
+					<ExtendedTooltip name="КартинкаОшибкиРасширеннаяПодсказка" id="16"/>
 				</PictureDecoration>
-				<LabelDecoration name="ТекстСообщенияОбОшибке" id="1">
-					<AutoMaxWidth>false</AutoMaxWidth>
-					<Title formatted="false">
+				<UsualGroup name="ГруппаСодержимое" id="27">
+					<Title>
 						<v8:item>
 							<v8:lang>ru</v8:lang>
-							<v8:content>%Текст сообщения об ошибке%</v8:content>
+							<v8:content>Содержимое</v8:content>
 						</v8:item>
 					</Title>
-					<VerticalAlign>Top</VerticalAlign>
-					<ContextMenu name="ТекстСообщенияОбОшибкеКонтекстноеМеню" id="2"/>
-					<ExtendedTooltip name="ТекстСообщенияОбОшибкеExtendedTooltip" id="17"/>
-				</LabelDecoration>
-			</ChildItems>
-		</UsualGroup>
-		<Button name="ФормаПроверитьНаличиеИсправлений" id="23">
-			<Type>Hyperlink</Type>
-			<CommandName>Form.Command.ПроверитьНаличиеИсправлений</CommandName>
-			<ExtendedTooltip name="ФормаПроверитьНаличиеИсправленийРасширеннаяПодсказка" id="24"/>
-		</Button>
-		<UsualGroup name="ГруппаТехническаяИнформацияОРезультатахОбновления" id="10">
-			<Title>
-				<v8:item>
-					<v8:lang>ru</v8:lang>
-					<v8:content>Техническая информация о результатах обновления</v8:content>
-				</v8:item>
-			</Title>
-			<Behavior>Usual</Behavior>
-			<Representation>NormalSeparation</Representation>
-			<ShowTitle>false</ShowTitle>
-			<ExtendedTooltip name="ГруппаТехническаяИнформацияОРезультатахОбновленияExtendedTooltip" id="18"/>
-			<ChildItems>
-				<LabelDecoration name="ТехническаяИнформацияОРезультатахОбновления" id="5">
-					<AutoMaxWidth>false</AutoMaxWidth>
-					<Title formatted="false">
-						<v8:item>
-							<v8:lang>ru</v8:lang>
-							<v8:content>Техническая информация</v8:content>
-						</v8:item>
-					</Title>
-					<ToolTipRepresentation>Button</ToolTipRepresentation>
-					<Hyperlink>true</Hyperlink>
-					<ContextMenu name="ТехническаяИнформацияОРезультатахОбновленияКонтекстноеМеню" id="6"/>
-					<ExtendedTooltip name="ТехническаяИнформацияОРезультатахОбновленияExtendedTooltip" id="20">
-						<Title formatted="false">
-							<v8:item>
-								<v8:lang>ru</v8:lang>
-								<v8:content>Техническая информация из журнала регистрации для обращения в службу технической поддержки.</v8:content>
-							</v8:item>
-						</Title>
-					</ExtendedTooltip>
-					<Events>
-						<Event name="Click">ПоказатьСведенияОРезультатахОбновленияНажатие</Event>
-					</Events>
-				</LabelDecoration>
+					<Group>Vertical</Group>
+					<Representation>NormalSeparation</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаСодержимоеРасширеннаяПодсказка" id="28"/>
+					<ChildItems>
+						<LabelDecoration name="ТекстСообщенияОбОшибке" id="1">
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<Title formatted="false">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>%Текст сообщения об ошибке%</v8:content>
+								</v8:item>
+							</Title>
+							<VerticalAlign>Top</VerticalAlign>
+							<ContextMenu name="ТекстСообщенияОбОшибкеКонтекстноеМеню" id="2"/>
+							<ExtendedTooltip name="ТекстСообщенияОбОшибкеРасширеннаяПодсказка" id="17"/>
+						</LabelDecoration>
+						<UsualGroup name="ГруппаТехническаяИнформацияОРезультатахОбновления" id="10">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Техническая информация о результатах обновления</v8:content>
+								</v8:item>
+							</Title>
+							<HorizontalSpacing>Double</HorizontalSpacing>
+							<Behavior>Usual</Behavior>
+							<Representation>NormalSeparation</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаТехническаяИнформацияОРезультатахОбновленияРасширеннаяПодсказка" id="18"/>
+							<ChildItems>
+								<LabelDecoration name="ТехническаяИнформацияОРезультатахОбновления" id="5">
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Техническая информация</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTipRepresentation>Button</ToolTipRepresentation>
+									<Hyperlink>true</Hyperlink>
+									<ContextMenu name="ТехническаяИнформацияОРезультатахОбновленияКонтекстноеМеню" id="6"/>
+									<ExtendedTooltip name="ТехническаяИнформацияОРезультатахОбновленияРасширеннаяПодсказка" id="20">
+										<Title formatted="false">
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Техническая информация из журнала регистрации для обращения в службу технической поддержки.</v8:content>
+											</v8:item>
+										</Title>
+									</ExtendedTooltip>
+									<Events>
+										<Event name="Click">ПоказатьСведенияОРезультатахОбновленияНажатие</Event>
+									</Events>
+								</LabelDecoration>
+								<UsualGroup name="ПроверитьГруппаИсправлениеИОтчет" id="32">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Проверить группа исправление и отчет</v8:content>
+										</v8:item>
+									</Title>
+									<Group>Vertical</Group>
+									<Representation>None</Representation>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="ПроверитьГруппаИсправлениеИОтчетРасширеннаяПодсказка" id="33"/>
+									<ChildItems>
+										<Button name="ФормаПроверитьНаличиеИсправлений" id="23">
+											<Type>Hyperlink</Type>
+											<CommandName>Form.Command.ПроверитьНаличиеИсправлений</CommandName>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Проверить наличие исправлений</v8:content>
+												</v8:item>
+											</Title>
+											<ExtendedTooltip name="ФормаПроверитьНаличиеИсправленийРасширеннаяПодсказка" id="24"/>
+										</Button>
+										<LabelDecoration name="СформироватьОтчетОбОшибке" id="29">
+											<Title formatted="false">
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Сформировать отчет об ошибке</v8:content>
+												</v8:item>
+											</Title>
+											<Hyperlink>true</Hyperlink>
+											<ContextMenu name="СформироватьОтчетОбОшибкеКонтекстноеМеню" id="30"/>
+											<ExtendedTooltip name="СформироватьОтчетОбОшибкеРасширеннаяПодсказка" id="31"/>
+											<Events>
+												<Event name="Click">СформироватьОтчетОбОшибкеНажатие</Event>
+											</Events>
+										</LabelDecoration>
+									</ChildItems>
+								</UsualGroup>
+							</ChildItems>
+						</UsualGroup>
+					</ChildItems>
+				</UsualGroup>
 			</ChildItems>
 		</UsualGroup>
 	</ChildItems>
@@ -162,6 +230,27 @@
 				</v8:StringQualifiers>
 			</Type>
 		</Attribute>
+		<Attribute name="ИнформацияОбОшибке" id="7">
+			<Type/>
+		</Attribute>
+		<Attribute name="КраткоеПредставлениеОшибки" id="8">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ПодробноеПредставлениеОшибки" id="9">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
 	</Attributes>
 	<Commands>
 		<Command name="ЗавершитьРаботу" id="1">
@@ -190,7 +279,7 @@
 			<ToolTip>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Перезапустить программу</v8:content>
+					<v8:content>Перезапустить приложение</v8:content>
 				</v8:item>
 			</ToolTip>
 			<Action>ПерезагрузитьПрограмму</Action>
@@ -251,6 +340,9 @@
 				</v8:StringQualifiers>
 			</Type>
 			<KeyParameter>true</KeyParameter>
+		</Parameter>
+		<Parameter name="ИнформацияОбОшибке">
+			<Type/>
 		</Parameter>
 	</Parameters>
 </Form>

@@ -28,18 +28,30 @@
 				<Type>CommandBarButton</Type>
 				<DefaultButton>true</DefaultButton>
 				<CommandName>Form.Command.СкопироватьИЗакрыть</CommandName>
-				<ExtendedTooltip name="ФормаСкопироватьИЗакрытьExtendedTooltip" id="69"/>
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Скопировать и закрыть</v8:content>
+					</v8:item>
+				</Title>
+				<ExtendedTooltip name="ФормаСкопироватьИЗакрытьРасширеннаяПодсказка" id="69"/>
 			</Button>
 			<Button name="Скопировать" id="10">
 				<Type>CommandBarButton</Type>
 				<CommandName>Form.Command.Скопировать</CommandName>
-				<ExtendedTooltip name="СкопироватьExtendedTooltip" id="70"/>
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Скопировать</v8:content>
+					</v8:item>
+				</Title>
+				<ExtendedTooltip name="СкопироватьРасширеннаяПодсказка" id="70"/>
 			</Button>
 			<Button name="ФормаЗакрыть" id="56">
 				<Type>CommandBarButton</Type>
 				<Representation>Text</Representation>
 				<CommandName>Form.StandardCommand.Close</CommandName>
-				<ExtendedTooltip name="ФормаЗакрытьExtendedTooltip" id="71"/>
+				<ExtendedTooltip name="ФормаЗакрытьРасширеннаяПодсказка" id="71"/>
 			</Button>
 		</ChildItems>
 	</AutoCommandBar>
@@ -50,6 +62,12 @@
 	<ChildItems>
 		<InputField name="ПользовательСсылка" id="1">
 			<DataPath>ПользовательСсылка</DataPath>
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Скопировать настройки от пользователя</v8:content>
+				</v8:item>
+			</Title>
 			<TitleLocation>Top</TitleLocation>
 			<ToolTip>
 				<v8:item>
@@ -62,7 +80,7 @@
 			<AutoMarkIncomplete>true</AutoMarkIncomplete>
 			<TextEdit>false</TextEdit>
 			<ContextMenu name="ПользовательСсылкаКонтекстноеМеню" id="2"/>
-			<ExtendedTooltip name="ПользовательСсылкаExtendedTooltip" id="72"/>
+			<ExtendedTooltip name="ПользовательСсылкаРасширеннаяПодсказка" id="72"/>
 			<Events>
 				<Event name="OnChange">ПользовательСсылкаПриИзменении</Event>
 				<Event name="StartChoice">ПользовательНачалоВыбора</Event>
@@ -77,7 +95,7 @@
 			</Title>
 			<Behavior>Usual</Behavior>
 			<Representation>NormalSeparation</Representation>
-			<ExtendedTooltip name="ГруппаКомуКопироватьExtendedTooltip" id="73"/>
+			<ExtendedTooltip name="ГруппаКомуКопироватьРасширеннаяПодсказка" id="73"/>
 			<ChildItems>
 				<UsualGroup name="ГруппаВыбратьПользователей" id="29">
 					<Title>
@@ -89,7 +107,7 @@
 					<Behavior>Usual</Behavior>
 					<Representation>None</Representation>
 					<ShowTitle>false</ShowTitle>
-					<ExtendedTooltip name="ГруппаВыбратьПользователейExtendedTooltip" id="75"/>
+					<ExtendedTooltip name="ГруппаВыбратьПользователейРасширеннаяПодсказка" id="75"/>
 					<ChildItems>
 						<RadioButtonField name="ПереключательКомуКопироватьНастройки" id="3">
 							<DataPath>ПереключательКомуКопироватьНастройки</DataPath>
@@ -131,7 +149,7 @@
 								</xr:Item>
 							</ChoiceList>
 							<ContextMenu name="ПереключательКомуКопироватьНастройкиКонтекстноеМеню" id="4"/>
-							<ExtendedTooltip name="ПереключательКомуКопироватьНастройкиExtendedTooltip" id="74"/>
+							<ExtendedTooltip name="ПереключательКомуКопироватьНастройкиРасширеннаяПодсказка" id="74"/>
 							<Events>
 								<Event name="OnChange">ПереключательКомуКопироватьНастройкиПриИзменении</Event>
 							</Events>
@@ -150,7 +168,7 @@
 							</Title>
 							<Hyperlink>true</Hyperlink>
 							<ContextMenu name="ВыбратьПользователейКонтекстноеМеню" id="59"/>
-							<ExtendedTooltip name="ВыбратьПользователейExtendedTooltip" id="76"/>
+							<ExtendedTooltip name="ВыбратьПользователейРасширеннаяПодсказка" id="76"/>
 							<Events>
 								<Event name="Click">ВыбратьПользователей</Event>
 							</Events>
@@ -168,7 +186,7 @@
 			</Title>
 			<Behavior>Usual</Behavior>
 			<Representation>NormalSeparation</Representation>
-			<ExtendedTooltip name="ГруппаКопируемыеНастройкиExtendedTooltip" id="77"/>
+			<ExtendedTooltip name="ГруппаКопируемыеНастройкиРасширеннаяПодсказка" id="77"/>
 			<ChildItems>
 				<UsualGroup name="ГруппаВыбрать" id="64">
 					<Title>
@@ -181,10 +199,16 @@
 					<Behavior>Usual</Behavior>
 					<Representation>None</Representation>
 					<ShowTitle>false</ShowTitle>
-					<ExtendedTooltip name="ГруппаВыбратьExtendedTooltip" id="79"/>
+					<ExtendedTooltip name="ГруппаВыбратьРасширеннаяПодсказка" id="79"/>
 					<ChildItems>
 						<RadioButtonField name="ПереключательКопируемыеНастройки" id="62">
 							<DataPath>ПереключательКопируемыеНастройки</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Копируемые настройки</v8:content>
+								</v8:item>
+							</Title>
 							<TitleLocation>None</TitleLocation>
 							<RadioButtonType>Auto</RadioButtonType>
 							<ColumnsCount>1</ColumnsCount>
@@ -217,7 +241,7 @@
 								</xr:Item>
 							</ChoiceList>
 							<ContextMenu name="ПереключательКопируемыеНастройкиКонтекстноеМеню" id="63"/>
-							<ExtendedTooltip name="ПереключательКопируемыеНастройкиExtendedTooltip" id="78"/>
+							<ExtendedTooltip name="ПереключательКопируемыеНастройкиРасширеннаяПодсказка" id="78"/>
 							<Events>
 								<Event name="OnChange">ПереключательКопируемыеНастройкиПриИзменении</Event>
 							</Events>
@@ -238,7 +262,7 @@
 							<GroupVerticalAlign>Bottom</GroupVerticalAlign>
 							<Hyperlink>true</Hyperlink>
 							<ContextMenu name="ВыбратьНастройкиКонтекстноеМеню" id="61"/>
-							<ExtendedTooltip name="ВыбратьНастройкиExtendedTooltip" id="81"/>
+							<ExtendedTooltip name="ВыбратьНастройкиРасширеннаяПодсказка" id="81"/>
 							<Events>
 								<Event name="Click">ВыбратьНастройки</Event>
 							</Events>

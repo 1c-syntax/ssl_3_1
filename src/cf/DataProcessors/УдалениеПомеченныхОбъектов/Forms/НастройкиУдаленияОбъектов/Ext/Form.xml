@@ -7,6 +7,12 @@
 				<Type>CommandBarButton</Type>
 				<DefaultButton>true</DefaultButton>
 				<CommandName>Form.Command.Выбрать</CommandName>
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Применить</v8:content>
+					</v8:item>
+				</Title>
 				<RepresentationInContextMenu>None</RepresentationInContextMenu>
 				<LocationInCommandBar>InCommandBarAndInAdditionalSubmenu</LocationInCommandBar>
 				<ExtendedTooltip name="ФормаВыбратьРасширеннаяПодсказка" id="50"/>
@@ -14,11 +20,23 @@
 			<Button name="ФормаДобавитьНастройку" id="56">
 				<Type>CommandBarButton</Type>
 				<CommandName>Form.Command.ДобавитьНастройку</CommandName>
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Добавить настройку...</v8:content>
+					</v8:item>
+				</Title>
 				<ExtendedTooltip name="ФормаДобавитьНастройкуРасширеннаяПодсказка" id="57"/>
 			</Button>
 			<Button name="ФормаДобавитьПолеНастройки" id="66">
 				<Type>CommandBarButton</Type>
 				<CommandName>Form.Command.ДобавитьПолеНастройки</CommandName>
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Добавить выводимый реквизит...</v8:content>
+					</v8:item>
+				</Title>
 				<ExtendedTooltip name="ФормаДобавитьПолеНастройкиРасширеннаяПодсказка" id="67"/>
 			</Button>
 			<ButtonGroup name="ФормаГруппаУдаляемыеОбъекты" id="83">
@@ -41,6 +59,12 @@
 							<xr:Ref>CommonPicture.ДлительнаяОперация16</xr:Ref>
 							<xr:LoadTransparent>false</xr:LoadTransparent>
 						</Picture>
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Заблокированные для использования объекты</v8:content>
+							</v8:item>
+						</Title>
 						<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
 						<ExtendedTooltip name="УдаляемыеОбъектыРасширеннаяПодсказка" id="82"/>
 					</Button>
@@ -73,17 +97,29 @@
 					<v8:content>Выводить реквизиты в списке помеченных на удаление</v8:content>
 				</v8:item>
 			</Title>
-			<ContextMenu name="КонтекстноеМеню" id="21">
+			<ContextMenu name="НастройкиОтображенияОбъектовКонтекстноеМеню" id="21">
 				<Autofill>false</Autofill>
 				<ChildItems>
 					<Button name="КонтекстноеМенюДобавитьНастройку" id="75">
 						<Type>CommandBarButton</Type>
 						<CommandName>Form.Command.ДобавитьНастройку</CommandName>
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Добавить настройку...</v8:content>
+							</v8:item>
+						</Title>
 						<ExtendedTooltip name="КонтекстноеМенюДобавитьНастройкуРасширеннаяПодсказка" id="76"/>
 					</Button>
 					<Button name="КонтекстноеМенюДобавитьПолеНастройки" id="77">
 						<Type>CommandBarButton</Type>
 						<CommandName>Form.Command.ДобавитьПолеНастройки</CommandName>
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Добавить выводимый реквизит...</v8:content>
+							</v8:item>
+						</Title>
 						<ExtendedTooltip name="КонтекстноеМенюДобавитьПолеНастройкиРасширеннаяПодсказка" id="78"/>
 					</Button>
 					<Button name="КонтекстноеМенюУдалить" id="73">
@@ -93,10 +129,10 @@
 					</Button>
 				</ChildItems>
 			</ContextMenu>
-			<AutoCommandBar name="КоманднаяПанель" id="20">
+			<AutoCommandBar name="НастройкиОтображенияОбъектовКоманднаяПанель" id="20">
 				<Autofill>false</Autofill>
 			</AutoCommandBar>
-			<ExtendedTooltip name="РасширеннаяПодсказка" id="22"/>
+			<ExtendedTooltip name="НастройкиОтображенияОбъектовРасширеннаяПодсказка" id="22"/>
 			<SearchStringAddition name="Addition" id="23">
 				<AdditionSource>
 					<Item>НастройкиОтображенияОбъектов</Item>
@@ -130,7 +166,7 @@
 						</v8:item>
 					</Title>
 					<Group>InCell</Group>
-					<ExtendedTooltip name="НастройкиОтображенияОбъектовГруппа1РасширеннаяПодсказка" id="41"/>
+					<ExtendedTooltip name="НастройкиОтображенияОбъектовГруппаРасширеннаяПодсказка" id="41"/>
 					<ChildItems>
 						<InputField name="НастройкиОтображенияОбъектовОтображаемыйРеквизит" id="32">
 							<DataPath>НастройкиОтображенияОбъектов.МестоПоискаРеквизитПредставление</DataPath>
@@ -140,14 +176,20 @@
 									<v8:content>Место поиска / Выводимые реквизиты</v8:content>
 								</v8:item>
 							</Title>
-							<ContextMenu name="ПолеКонтекстноеМеню" id="33"/>
-							<ExtendedTooltip name="ПолеРасширеннаяПодсказка" id="34"/>
+							<ContextMenu name="НастройкиОтображенияОбъектовОтображаемыйРеквизитКонтекстноеМеню" id="33"/>
+							<ExtendedTooltip name="НастройкиОтображенияОбъектовОтображаемыйРеквизитРасширеннаяПодсказка" id="34"/>
 						</InputField>
 						<PictureField name="НастройкиОтображенияОбъектовКартинка" id="37">
 							<DataPath>НастройкиОтображенияОбъектов.Картинка</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Картинка</v8:content>
+								</v8:item>
+							</Title>
 							<TitleLocation>None</TitleLocation>
-							<ContextMenu name="ПолеКонтекстноеМеню1" id="38"/>
-							<ExtendedTooltip name="ПолеРасширеннаяПодсказка1" id="39"/>
+							<ContextMenu name="НастройкиОтображенияОбъектовКартинкаКонтекстноеМеню" id="38"/>
+							<ExtendedTooltip name="НастройкиОтображенияОбъектовКартинкаРасширеннаяПодсказка" id="39"/>
 						</PictureField>
 					</ChildItems>
 				</ColumnGroup>
@@ -164,10 +206,16 @@
 			<Behavior>Usual</Behavior>
 			<ControlRepresentation>Picture</ControlRepresentation>
 			<Representation>NormalSeparation</Representation>
-			<ExtendedTooltip name="Группа1РасширеннаяПодсказка1" id="59"/>
+			<ExtendedTooltip name="ГруппаНастройкаРежимаУдаленияРасширеннаяПодсказка" id="59"/>
 			<ChildItems>
 				<RadioButtonField name="ОбычноеУдаление" id="63">
 					<DataPath>ОбычноеУдаление</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Обычное удаление</v8:content>
+						</v8:item>
+					</Title>
 					<TitleLocation>None</TitleLocation>
 					<ToolTipRepresentation>ShowRight</ToolTipRepresentation>
 					<RadioButtonType>Auto</RadioButtonType>
@@ -186,8 +234,8 @@
 							</xr:Value>
 						</xr:Item>
 					</ChoiceList>
-					<ContextMenu name="ПолеКонтекстноеМеню5" id="64"/>
-					<ExtendedTooltip name="ПолеРасширеннаяПодсказка5" id="65">
+					<ContextMenu name="ОбычноеУдалениеКонтекстноеМеню" id="64"/>
+					<ExtendedTooltip name="ОбычноеУдалениеРасширеннаяПодсказка" id="65">
 						<Height>4</Height>
 						<Title formatted="false">
 							<v8:item>
@@ -203,6 +251,12 @@
 				</RadioButtonField>
 				<RadioButtonField name="БезопасноеУдаление" id="60">
 					<DataPath>БезопасноеУдаление</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Безопасное удаление</v8:content>
+						</v8:item>
+					</Title>
 					<TitleLocation>None</TitleLocation>
 					<ToolTipRepresentation>ShowRight</ToolTipRepresentation>
 					<RadioButtonType>Auto</RadioButtonType>
@@ -221,8 +275,8 @@
 							</xr:Value>
 						</xr:Item>
 					</ChoiceList>
-					<ContextMenu name="ПолеКонтекстноеМеню4" id="61"/>
-					<ExtendedTooltip name="ПолеРасширеннаяПодсказка4" id="62">
+					<ContextMenu name="БезопасноеУдалениеКонтекстноеМеню" id="61"/>
+					<ExtendedTooltip name="БезопасноеУдалениеРасширеннаяПодсказка" id="62">
 						<Height>3</Height>
 						<Title formatted="false">
 							<v8:item>
@@ -239,6 +293,12 @@
 				</RadioButtonField>
 				<RadioButtonField name="МонопольноеУдаление" id="42">
 					<DataPath>МонопольноеУдаление</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Монопольное удаление</v8:content>
+						</v8:item>
+					</Title>
 					<TitleLocation>None</TitleLocation>
 					<ToolTipRepresentation>ShowRight</ToolTipRepresentation>
 					<RadioButtonType>RadioButtons</RadioButtonType>
@@ -257,12 +317,12 @@
 							</xr:Value>
 						</xr:Item>
 					</ChoiceList>
-					<ContextMenu name="ПолеКонтекстноеМеню2" id="43"/>
-					<ExtendedTooltip name="ПолеРасширеннаяПодсказка2" id="44">
+					<ContextMenu name="МонопольноеУдалениеКонтекстноеМеню" id="43"/>
+					<ExtendedTooltip name="МонопольноеУдалениеРасширеннаяПодсказка" id="44">
 						<Title formatted="false">
 							<v8:item>
 								<v8:lang>ru</v8:lang>
-								<v8:content>Блокировать вход в программу.
+								<v8:content>Блокировать вход в приложение.
 Подходит для срочного удаления больших объемов данных.</v8:content>
 							</v8:item>
 						</Title>
@@ -284,7 +344,7 @@
 			<Behavior>Usual</Behavior>
 			<Representation>NormalSeparation</Representation>
 			<ShowTitle>false</ShowTitle>
-			<ExtendedTooltip name="Группа1РасширеннаяПодсказка" id="48"/>
+			<ExtendedTooltip name="НастройкаРегламентногоУдаленияРасширеннаяПодсказка" id="48"/>
 			<ChildItems>
 				<UsualGroup name="ГруппаНастройкаРегламентногоЗадания" id="68">
 					<Title>
@@ -296,14 +356,20 @@
 					<Behavior>Usual</Behavior>
 					<Representation>None</Representation>
 					<ShowTitle>false</ShowTitle>
-					<ExtendedTooltip name="Группа1РасширеннаяПодсказка2" id="69"/>
+					<ExtendedTooltip name="ГруппаНастройкаРегламентногоЗаданияРасширеннаяПодсказка" id="69"/>
 					<ChildItems>
 						<CheckBoxField name="ИспользоватьРегламентноеУдаление" id="51">
 							<DataPath>АвтоматическиУдалятьПомеченныеОбъекты</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Автоматически удалять помеченные объекты по расписанию</v8:content>
+								</v8:item>
+							</Title>
 							<TitleLocation>Right</TitleLocation>
 							<CheckBoxType>Auto</CheckBoxType>
-							<ContextMenu name="ПолеКонтекстноеМеню3" id="52"/>
-							<ExtendedTooltip name="ПолеРасширеннаяПодсказка3" id="53"/>
+							<ContextMenu name="ИспользоватьРегламентноеУдалениеКонтекстноеМеню" id="52"/>
+							<ExtendedTooltip name="ИспользоватьРегламентноеУдалениеРасширеннаяПодсказка" id="53"/>
 							<Events>
 								<Event name="OnChange">ИспользоватьРегламентноеУдалениеПриИзменении</Event>
 							</Events>
@@ -318,7 +384,7 @@
 									<v8:content>Настроить расписание</v8:content>
 								</v8:item>
 							</Title>
-							<ExtendedTooltip name="НастройкиРегламентноеУдалениеПомеченныхРасширеннаяПодсказка" id="55"/>
+							<ExtendedTooltip name="УдалениеПомеченныхНастроитьРасписаниеРасширеннаяПодсказка" id="55"/>
 						</Button>
 					</ChildItems>
 				</UsualGroup>
@@ -530,4 +596,15 @@
 			<Action>УдаляемыеОбъекты</Action>
 		</Command>
 	</Commands>
+	<Parameters>
+		<Parameter name="АдресНастроек">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Parameter>
+	</Parameters>
 </Form>

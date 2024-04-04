@@ -76,6 +76,12 @@
 					<Button name="ВариантыАдресаКонтекстноеМенюВыбрать" id="45">
 						<Type>CommandBarButton</Type>
 						<CommandName>Form.Command.Выбрать</CommandName>
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Выбрать</v8:content>
+							</v8:item>
+						</Title>
 						<ExtendedTooltip name="ВариантыАдресаКонтекстноеМенюВыбратьРасширеннаяПодсказка" id="46"/>
 					</Button>
 					<ButtonGroup name="ВариантыАдресаКонтекстноеМенюГруппаНайти" id="49">
@@ -121,6 +127,12 @@
 								<Type>CommandBarButton</Type>
 								<DefaultButton>true</DefaultButton>
 								<CommandName>Form.Command.Выбрать</CommandName>
+								<Title>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Выбрать</v8:content>
+									</v8:item>
+								</Title>
 								<ExtendedTooltip name="ВариантыАдресаВыбратьРасширеннаяПодсказка" id="63"/>
 							</Button>
 						</ChildItems>
@@ -128,6 +140,12 @@
 					<Button name="ВариантыАдресаОбновить" id="31">
 						<Type>CommandBarButton</Type>
 						<CommandName>Form.Command.Обновить</CommandName>
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Обновить</v8:content>
+							</v8:item>
+						</Title>
 						<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
 						<ExtendedTooltip name="ВариантыАдресаОбновитьРасширеннаяПодсказка" id="32"/>
 					</Button>
@@ -171,6 +189,12 @@
 				<InputField name="ВариантыАдресаПредставление" id="15">
 					<DataPath>ВариантыАдреса.Представление</DataPath>
 					<ReadOnly>true</ReadOnly>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Представление</v8:content>
+						</v8:item>
+					</Title>
 					<EditMode>EnterOnInput</EditMode>
 					<ContextMenu name="ВариантыАдресаПредставлениеКонтекстноеМеню" id="16"/>
 					<ExtendedTooltip name="ВариантыАдресаПредставлениеРасширеннаяПодсказка" id="17"/>
@@ -306,11 +330,12 @@
 	<Parameters>
 		<Parameter name="Индекс">
 			<Type>
-				<v8:Type>xs:string</v8:Type>
-				<v8:StringQualifiers>
-					<v8:Length>0</v8:Length>
-					<v8:AllowedLength>Variable</v8:AllowedLength>
-				</v8:StringQualifiers>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>10</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
 			</Type>
 			<KeyParameter>true</KeyParameter>
 		</Parameter>

@@ -10,12 +10,18 @@
 				<Type>CommandBarButton</Type>
 				<DefaultButton>true</DefaultButton>
 				<CommandName>Form.Command.ОК</CommandName>
-				<ExtendedTooltip name="ФормаОКExtendedTooltip" id="12"/>
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>ОК</v8:content>
+					</v8:item>
+				</Title>
+				<ExtendedTooltip name="ФормаОКРасширеннаяПодсказка" id="12"/>
 			</Button>
 			<Button name="ФормаОтмена" id="11">
 				<Type>CommandBarButton</Type>
 				<CommandName>Form.StandardCommand.Cancel</CommandName>
-				<ExtendedTooltip name="ФормаОтменаExtendedTooltip" id="13"/>
+				<ExtendedTooltip name="ФормаОтменаРасширеннаяПодсказка" id="13"/>
 			</Button>
 		</ChildItems>
 	</AutoCommandBar>
@@ -99,7 +105,7 @@
 					</Button>
 				</ChildItems>
 			</AutoCommandBar>
-			<ExtendedTooltip name="ПодписиExtendedTooltip" id="14"/>
+			<ExtendedTooltip name="ПодписиРасширеннаяПодсказка" id="14"/>
 			<SearchStringAddition name="ПодписиСтрокаПоиска" id="22">
 				<AdditionSource>
 					<Item>Подписи</Item>
@@ -130,23 +136,35 @@
 			<ChildItems>
 				<InputField name="ПодписиПутьКФайлу" id="4">
 					<DataPath>Подписи.ПутьКФайлу</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Файл электронной подписи</v8:content>
+						</v8:item>
+					</Title>
 					<EditMode>EnterOnInput</EditMode>
 					<AutoCellHeight>true</AutoCellHeight>
 					<Width>40</Width>
 					<ChoiceButton>true</ChoiceButton>
 					<ContextMenu name="ПодписиПутьКФайлуКонтекстноеМеню" id="5"/>
-					<ExtendedTooltip name="ПодписиПутьКФайлуExtendedTooltip" id="15"/>
+					<ExtendedTooltip name="ПодписиПутьКФайлуРасширеннаяПодсказка" id="15"/>
 					<Events>
 						<Event name="StartChoice">ПодписиПутьКФайлуНачалоВыбора</Event>
 					</Events>
 				</InputField>
 				<InputField name="ПодписиКомментарий" id="9">
 					<DataPath>Подписи.Комментарий</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Комментарий</v8:content>
+						</v8:item>
+					</Title>
 					<EditMode>EnterOnInput</EditMode>
 					<AutoCellHeight>true</AutoCellHeight>
 					<Width>20</Width>
 					<ContextMenu name="ПодписиКомментарийКонтекстноеМеню" id="10"/>
-					<ExtendedTooltip name="ПодписиКомментарийExtendedTooltip" id="16"/>
+					<ExtendedTooltip name="ПодписиКомментарийРасширеннаяПодсказка" id="16"/>
 				</InputField>
 			</ChildItems>
 		</Table>

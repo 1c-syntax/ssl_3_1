@@ -22,8 +22,6 @@
 	</Events>
 	<ChildItems>
 		<PictureDecoration name="КартинкаПредупреждение32" id="21">
-			<Width>4</Width>
-			<Height>2</Height>
 			<Title formatted="false">
 				<v8:item>
 					<v8:lang>ru</v8:lang>
@@ -31,8 +29,8 @@
 				</v8:item>
 			</Title>
 			<Picture>
-				<xr:Ref>CommonPicture.Предупреждение32</xr:Ref>
-				<xr:LoadTransparent>false</xr:LoadTransparent>
+				<xr:Ref>StdPicture.DialogExclamation</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
 			</Picture>
 			<FileDragMode>AsFile</FileDragMode>
 			<ContextMenu name="КартинкаПредупреждение32КонтекстноеМеню" id="22"/>
@@ -67,7 +65,7 @@
 и обработок из меню &lt;b&gt;Файл - &lt;/&gt;&lt;b&gt;Открыть&lt;/&gt;.
 Файлы внешних обработок (отчетов), полученные из источников, 
 с которыми у вас нет договоренности о разработке таких обработок (отчетов),
-могут нанести вред вашему компьютеру и данным в программе.
+могут нанести вред вашему компьютеру и данным в приложении.
 
 Вместо открытия внешних отчетов и обработок рекомендуется использовать 
 &lt;link e1cib/list/Справочник.ДополнительныеОтчетыИОбработки&gt;дополнительные&lt;/&gt;&lt;link e1cib/list/Справочник.ДополнительныеОтчетыИОбработки&gt; отчеты&lt;/&gt;&lt;link e1cib/list/Справочник.ДополнительныеОтчетыИОбработки&gt; и обработки&lt;/&gt; и &lt;link e1cib/app/ОбщаяФорма.Расширения&gt;расширения&lt;/&gt;, полученные из надежных источников.
@@ -92,11 +90,23 @@
 									<Type>CommandBarButton</Type>
 									<DefaultButton>true</DefaultButton>
 									<CommandName>Form.Command.ЗапретитьОткрытиеВнешнихОтчетовИОбработок</CommandName>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Запретить открытие внешних отчетов и обработок</v8:content>
+										</v8:item>
+									</Title>
 									<ExtendedTooltip name="ЗапретитьОткрытиеВнешнихОтчетовИОбработокРасширеннаяПодсказка" id="105"/>
 								</Button>
 								<Button name="НеЗапрещать" id="64">
 									<Type>CommandBarButton</Type>
 									<CommandName>Form.Command.НеЗапрещатьОткрытиеВнешнихОтчетовИОбработок</CommandName>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Не запрещать</v8:content>
+										</v8:item>
+									</Title>
 									<ExtendedTooltip name="НеЗапрещатьРасширеннаяПодсказка" id="65"/>
 								</Button>
 							</ChildItems>
@@ -123,7 +133,7 @@
 на их источник и не открывать файлы, полученные из источников, 
 с которыми у вас нет договоренности о разработке таких обработок (отчетов).
 
-В противном случае, такие файлы могут нанести вред вашему компьютеру и данным в программе.
+В противном случае, такие файлы могут нанести вред вашему компьютеру и данным в приложении.
 См. также: &lt;link http://1c.ru/news/info.jsp?id=21537&gt;Пример проблемы с вирусом во внешней обработке&lt;/&gt;.
 </v8:content>
 								</v8:item>
@@ -144,6 +154,12 @@
 								<Button name="ЯОзнакомлен" id="106">
 									<Type>CommandBarButton</Type>
 									<CommandName>Form.Command.ЯОзнакомлен</CommandName>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>ОК</v8:content>
+										</v8:item>
+									</Title>
 									<ExtendedTooltip name="ЯОзнакомленРасширеннаяПодсказка" id="107"/>
 								</Button>
 							</ChildItems>
@@ -170,7 +186,7 @@
 									<v8:content>При подключении дополнительного отчета или обработки рекомендуется 
 обращать внимание на источник, из которого был получен файл.
 Если вы не уверены в содержимом этого файла или в источнике, 
-то файл не рекомендуется подключать к программе.
+то файл не рекомендуется подключать к приложению.
 
 См. также: &lt;link http://1c.ru/news/info.jsp?id=21537&gt;Пример проблемы с вирусом во внешней обработке&lt;/&gt;.
 </v8:content>
@@ -192,6 +208,12 @@
 								<Button name="Продолжить3" id="84">
 									<Type>CommandBarButton</Type>
 									<CommandName>Form.Command.Продолжить</CommandName>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Продолжить</v8:content>
+										</v8:item>
+									</Title>
 									<ExtendedTooltip name="Продолжить3РасширеннаяПодсказка" id="85"/>
 								</Button>
 								<Button name="Отмена3" id="82">
@@ -221,7 +243,7 @@
 									<v8:content>При подключении расширения конфигурации рекомендуется обращать 
 внимание на источник, из которого был получен файл расширения.
 Если вы не уверены в содержимом расширения или в его источнике, 
-то расширение не рекомендуется подключать к программе.
+то расширение не рекомендуется подключать к приложению.
 
 См. также: &lt;link http://1c.ru/news/info.jsp?id=21537&gt;Пример проблемы с вирусом во внешней обработке&lt;/&gt;.
 </v8:content>
@@ -243,6 +265,12 @@
 								<Button name="Продолжить4" id="66">
 									<Type>CommandBarButton</Type>
 									<CommandName>Form.Command.Продолжить</CommandName>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Продолжить</v8:content>
+										</v8:item>
+									</Title>
 									<ExtendedTooltip name="Продолжить4РасширеннаяПодсказка" id="67"/>
 								</Button>
 								<Button name="Отмена4" id="38">
@@ -300,6 +328,12 @@
 								<Button name="Продолжить8" id="162">
 									<Type>CommandBarButton</Type>
 									<CommandName>Form.Command.Продолжить</CommandName>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Продолжить</v8:content>
+										</v8:item>
+									</Title>
 									<ExtendedTooltip name="Продолжить8РасширеннаяПодсказка" id="163"/>
 								</Button>
 								<Button name="Отмена8" id="164">
@@ -330,7 +364,7 @@
 из меню &lt;b&gt;Файл - &lt;/&gt;&lt;b&gt;Открыть&lt;/&gt;. При открытии таких файлов следует обращать особое внимание 
 на источник, из которого он был получен, и не открывать файлы, в которых вы не уверены.
 
-В противном случае, такие файлы могут нанести вред вашему компьютеру и данным в программе.
+В противном случае, такие файлы могут нанести вред вашему компьютеру и данным в приложении.
 См. также: &lt;link http://1c.ru/news/info.jsp?id=21537&gt;Пример проблемы с вирусом во внешней обработке&lt;/&gt;.</v8:content>
 								</v8:item>
 							</Title>
@@ -350,6 +384,12 @@
 								<Button name="Продолжить5" id="120">
 									<Type>CommandBarButton</Type>
 									<CommandName>Form.Command.Продолжить</CommandName>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Продолжить</v8:content>
+										</v8:item>
+									</Title>
 									<ExtendedTooltip name="Продолжить5РасширеннаяПодсказка" id="121"/>
 								</Button>
 								<Button name="Отмена5" id="122">
@@ -376,7 +416,7 @@
 							<Title formatted="true">
 								<v8:item>
 									<v8:lang>ru</v8:lang>
-									<v8:content>Отключение данной настройки позволяет загружать потенциально опасные файлы в программу.
+									<v8:content>Отключение данной настройки позволяет загружать потенциально опасные файлы в приложение.
 При добавлении таких файлов следует обращать особое внимание 
 на источник, из которого он был получен, и не загружать файлы, в которых вы не уверены.
 
@@ -400,6 +440,12 @@
 								<Button name="Продолжить6" id="133">
 									<Type>CommandBarButton</Type>
 									<CommandName>Form.Command.Продолжить</CommandName>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Продолжить</v8:content>
+										</v8:item>
+									</Title>
 									<ExtendedTooltip name="Продолжить6РасширеннаяПодсказка" id="134"/>
 								</Button>
 								<Button name="Отмена6" id="135">
@@ -459,6 +505,12 @@
 								<Button name="Продолжить7" id="149">
 									<Type>CommandBarButton</Type>
 									<CommandName>Form.Command.Продолжить</CommandName>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Продолжить</v8:content>
+										</v8:item>
+									</Title>
 									<ExtendedTooltip name="Продолжить7РасширеннаяПодсказка" id="150"/>
 								</Button>
 								<Button name="Отмена7" id="151">
@@ -488,7 +540,7 @@
 									<v8:content>При подключении внешней компоненты рекомендуется обращать 
 внимание на источник, из которого был получен файл компоненты.
 Если вы не уверены в содержимом компоненты или в его источнике, 
-то компоненту не рекомендуется подключать к программе.
+то компоненту не рекомендуется подключать к приложению.
 
 См. также: &lt;link http://1c.ru/news/info.jsp?id=21537&gt;Пример проблемы с вирусом во внешней обработке&lt;/&gt;.
 </v8:content>
@@ -510,6 +562,12 @@
 								<Button name="Продолжить9" id="175">
 									<Type>CommandBarButton</Type>
 									<CommandName>Form.Command.Продолжить</CommandName>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Продолжить</v8:content>
+										</v8:item>
+									</Title>
 									<ExtendedTooltip name="Продолжить9РасширеннаяПодсказка" id="176"/>
 								</Button>
 								<Button name="Отмена9" id="177">
@@ -746,8 +804,8 @@
 							<Title formatted="false">
 								<v8:item>
 									<v8:lang>ru</v8:lang>
-									<v8:content>Отключаемое расширение хранит данные в информационной базе, которые станут недоступными. 
-Кроме того некоторые данные самой программы могут также стать недоступными для изменения.</v8:content>
+									<v8:content>Отключаемое расширение хранит данные в приложении, которые станут недоступными. 
+Кроме того некоторые данные самого приложения могут также стать недоступными для изменения.</v8:content>
 								</v8:item>
 							</Title>
 							<ToolTipRepresentation>ShowBottom</ToolTipRepresentation>

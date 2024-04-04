@@ -11,6 +11,12 @@
 				<Type>CommandBarButton</Type>
 				<DefaultButton>true</DefaultButton>
 				<CommandName>Form.Command.УдалитьЛишниеФайлы</CommandName>
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Удалить лишние файлы</v8:content>
+					</v8:item>
+				</Title>
 				<ExtendedTooltip name="ФормаУдалитьЛишниеФайлыРасширеннаяПодсказка" id="2"/>
 			</Button>
 			<Button name="ФормаОтмена" id="3">
@@ -40,6 +46,12 @@
 				<InputField name="КоличествоЛишнихФайлов" id="13">
 					<DataPath>КоличествоЛишнихФайлов</DataPath>
 					<ReadOnly>true</ReadOnly>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Количество лишних файлов</v8:content>
+						</v8:item>
+					</Title>
 					<ContextMenu name="КоличествоЛишнихФайловКонтекстноеМеню" id="14"/>
 					<ExtendedTooltip name="КоличествоЛишнихФайловРасширеннаяПодсказка" id="15"/>
 				</InputField>
@@ -83,12 +95,12 @@
 						</v8:item>
 					</Title>
 					<Picture>
-						<xr:Ref>CommonPicture.Информация32</xr:Ref>
-						<xr:LoadTransparent>false</xr:LoadTransparent>
+						<xr:Ref>StdPicture.DialogInformation</xr:Ref>
+						<xr:LoadTransparent>true</xr:LoadTransparent>
 					</Picture>
 					<FileDragMode>AsFile</FileDragMode>
 					<ContextMenu name="ДекорацияИконкаКонтекстноеМеню" id="8"/>
-					<ExtendedTooltip name="ДекорацияИконкаExtendedTooltip" id="9"/>
+					<ExtendedTooltip name="ДекорацияИконкаРасширеннаяПодсказка" id="9"/>
 				</PictureDecoration>
 				<LabelDecoration name="ДекорацияИнфо" id="10">
 					<SkipOnInput>false</SkipOnInput>
@@ -96,12 +108,12 @@
 					<Title formatted="false">
 						<v8:item>
 							<v8:lang>ru</v8:lang>
-							<v8:content>Если в файлах в томе, о которых в программе нет сведений, может содержаться полезная информация,
+							<v8:content>Если в файлах в томе, о которых в приложении нет сведений, может содержаться полезная информация,
 то рекомендуется скопировать их в другой каталог.</v8:content>
 						</v8:item>
 					</Title>
 					<ContextMenu name="ДекорацияИнфоКонтекстноеМеню" id="11"/>
-					<ExtendedTooltip name="ДекорацияИнфоExtendedTooltip" id="12"/>
+					<ExtendedTooltip name="ДекорацияИнфоРасширеннаяПодсказка" id="12"/>
 				</LabelDecoration>
 			</ChildItems>
 		</UsualGroup>
@@ -119,6 +131,12 @@
 			<ChildItems>
 				<CheckBoxField name="СкопироватьФайлыПередУдалением" id="24">
 					<DataPath>СкопироватьФайлыПередУдалением</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Скопировать файлы перед удалением в папку:</v8:content>
+						</v8:item>
+					</Title>
 					<TitleLocation>Right</TitleLocation>
 					<CheckBoxType>Auto</CheckBoxType>
 					<ContextMenu name="СкопироватьФайлыПередУдалениемКонтекстноеМеню" id="25"/>
@@ -129,6 +147,12 @@
 				</CheckBoxField>
 				<InputField name="ПутьКПапкеДляКопирования" id="21">
 					<DataPath>ПутьКПапкеДляКопирования</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Путь к папке для копирования</v8:content>
+						</v8:item>
+					</Title>
 					<TitleLocation>None</TitleLocation>
 					<ChoiceButton>true</ChoiceButton>
 					<AutoMarkIncomplete>true</AutoMarkIncomplete>

@@ -40,7 +40,7 @@
 					<Behavior>Usual</Behavior>
 					<Representation>None</Representation>
 					<ShowTitle>false</ShowTitle>
-					<ExtendedTooltip name="ЗаголовокExtendedTooltip" id="48"/>
+					<ExtendedTooltip name="ЗаголовокРасширеннаяПодсказка" id="48"/>
 					<ChildItems>
 						<LabelField name="НадписьФайлы" id="27">
 							<DataPath>НадписьФайлы</DataPath>
@@ -51,7 +51,7 @@
 								</v8:item>
 							</Title>
 							<ContextMenu name="НадписьФайлыКонтекстноеМеню" id="28"/>
-							<ExtendedTooltip name="НадписьФайлыExtendedTooltip" id="49"/>
+							<ExtendedTooltip name="НадписьФайлыРасширеннаяПодсказка" id="49"/>
 						</LabelField>
 					</ChildItems>
 				</UsualGroup>
@@ -79,7 +79,7 @@
 					<SearchControlLocation>None</SearchControlLocation>
 					<ContextMenu name="ДеревоФайловКонтекстноеМеню" id="32"/>
 					<AutoCommandBar name="ДеревоФайловКоманднаяПанель" id="33"/>
-					<ExtendedTooltip name="ДеревоФайловExtendedTooltip" id="50"/>
+					<ExtendedTooltip name="ДеревоФайловРасширеннаяПодсказка" id="50"/>
 					<SearchStringAddition name="ДеревоФайловСтрокаПоиска" id="66">
 						<AdditionSource>
 							<Item>ДеревоФайлов</Item>
@@ -113,20 +113,32 @@
 								</v8:item>
 							</Title>
 							<Group>InCell</Group>
-							<ExtendedTooltip name="КартинкаИНаименованиеExtendedTooltip" id="51"/>
+							<ExtendedTooltip name="КартинкаИНаименованиеРасширеннаяПодсказка" id="51"/>
 							<ChildItems>
 								<CheckBoxField name="ДеревоФайловПометка" id="41">
 									<DataPath>ДеревоФайлов.Пометка</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Пометка</v8:content>
+										</v8:item>
+									</Title>
 									<EditMode>EnterOnInput</EditMode>
 									<CheckBoxType>Auto</CheckBoxType>
 									<ContextMenu name="ДеревоФайловПометкаКонтекстноеМеню" id="42"/>
-									<ExtendedTooltip name="ДеревоФайловПометкаExtendedTooltip" id="52"/>
+									<ExtendedTooltip name="ДеревоФайловПометкаРасширеннаяПодсказка" id="52"/>
 									<Events>
 										<Event name="OnChange">ДеревоФайловПометкаПриИзменении</Event>
 									</Events>
 								</CheckBoxField>
 								<PictureField name="ДеревоФайловИндексКартинки" id="38">
 									<DataPath>ДеревоФайлов.ИндексКартинки</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Индекс картинки</v8:content>
+										</v8:item>
+									</Title>
 									<EditMode>EnterOnInput</EditMode>
 									<ValuesPicture>
 										<xr:Ref>CommonPicture.КоллекцияПиктограммФайлов</xr:Ref>
@@ -134,15 +146,21 @@
 									</ValuesPicture>
 									<FileDragMode>AsFile</FileDragMode>
 									<ContextMenu name="ДеревоФайловИндексКартинкиКонтекстноеМеню" id="39"/>
-									<ExtendedTooltip name="ДеревоФайловИндексКартинкиExtendedTooltip" id="53"/>
+									<ExtendedTooltip name="ДеревоФайловИндексКартинкиРасширеннаяПодсказка" id="53"/>
 								</PictureField>
 								<InputField name="ДеревоФайловИмяФайла" id="34">
 									<DataPath>ДеревоФайлов.ИмяФайла</DataPath>
 									<ReadOnly>true</ReadOnly>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Имя файла</v8:content>
+										</v8:item>
+									</Title>
 									<EditMode>EnterOnInput</EditMode>
 									<TextEdit>false</TextEdit>
 									<ContextMenu name="ДеревоФайловИмяФайлаКонтекстноеМеню" id="35"/>
-									<ExtendedTooltip name="ДеревоФайловИмяФайлаExtendedTooltip" id="54"/>
+									<ExtendedTooltip name="ДеревоФайловИмяФайлаРасширеннаяПодсказка" id="54"/>
 								</InputField>
 							</ChildItems>
 						</ColumnGroup>
@@ -162,15 +180,21 @@
 			<Wrap>false</Wrap>
 			<BorderColor>style:BorderColor</BorderColor>
 			<ContextMenu name="ПапкаДляДобавленияКонтекстноеМеню" id="15"/>
-			<ExtendedTooltip name="ПапкаДляДобавленияExtendedTooltip" id="55"/>
+			<ExtendedTooltip name="ПапкаДляДобавленияРасширеннаяПодсказка" id="55"/>
 		</InputField>
 		<CheckBoxField name="УдалятьПослеДобавления" id="3">
 			<DataPath>УдалятьФайлыПослеДобавления</DataPath>
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Удалять файлы после добавления</v8:content>
+				</v8:item>
+			</Title>
 			<TitleLocation>Right</TitleLocation>
 			<FooterHorizontalAlign>Left</FooterHorizontalAlign>
 			<CheckBoxType>Auto</CheckBoxType>
 			<ContextMenu name="УдалятьПослеДобавленияКонтекстноеМеню" id="10"/>
-			<ExtendedTooltip name="УдалятьПослеДобавленияExtendedTooltip" id="56"/>
+			<ExtendedTooltip name="УдалятьПослеДобавленияРасширеннаяПодсказка" id="56"/>
 		</CheckBoxField>
 		<UsualGroup name="РеквизитыФайлов" id="25">
 			<Title>
@@ -183,7 +207,7 @@
 			<Behavior>Usual</Behavior>
 			<Representation>NormalSeparation</Representation>
 			<ShowTitle>false</ShowTitle>
-			<ExtendedTooltip name="РеквизитыФайловExtendedTooltip" id="57"/>
+			<ExtendedTooltip name="РеквизитыФайловРасширеннаяПодсказка" id="57"/>
 			<ChildItems>
 				<InputField name="Описание" id="2">
 					<DataPath>Комментарий</DataPath>
@@ -199,15 +223,21 @@
 					<MultiLine>true</MultiLine>
 					<BorderColor>style:BorderColor</BorderColor>
 					<ContextMenu name="ОписаниеКонтекстноеМеню" id="9"/>
-					<ExtendedTooltip name="ОписаниеExtendedTooltip" id="58"/>
+					<ExtendedTooltip name="ОписаниеРасширеннаяПодсказка" id="58"/>
 				</InputField>
 				<CheckBoxField name="ХранитьВерсии" id="21">
 					<DataPath>ХранитьВерсии</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Хранить версии</v8:content>
+						</v8:item>
+					</Title>
 					<TitleLocation>Right</TitleLocation>
 					<FooterHorizontalAlign>Left</FooterHorizontalAlign>
 					<CheckBoxType>Auto</CheckBoxType>
 					<ContextMenu name="ХранитьВерсииКонтекстноеМеню" id="22"/>
-					<ExtendedTooltip name="ХранитьВерсииExtendedTooltip" id="59"/>
+					<ExtendedTooltip name="ХранитьВерсииРасширеннаяПодсказка" id="59"/>
 				</CheckBoxField>
 			</ChildItems>
 		</UsualGroup>
@@ -221,7 +251,7 @@
 			<Behavior>Usual</Behavior>
 			<Representation>None</Representation>
 			<ShowTitle>false</ShowTitle>
-			<ExtendedTooltip name="ГруппаКодировкаExtendedTooltip" id="60"/>
+			<ExtendedTooltip name="ГруппаКодировкаРасширеннаяПодсказка" id="60"/>
 			<ChildItems>
 				<LabelDecoration name="ДекорацияКодировка" id="44">
 					<AutoMaxWidth>false</AutoMaxWidth>
@@ -232,12 +262,18 @@
 						</v8:item>
 					</Title>
 					<ContextMenu name="ДекорацияКодировкаКонтекстноеМеню" id="45"/>
-					<ExtendedTooltip name="ДекорацияКодировкаExtendedTooltip" id="61"/>
+					<ExtendedTooltip name="ДекорацияКодировкаРасширеннаяПодсказка" id="61"/>
 				</LabelDecoration>
 				<Button name="ВыбратьКодировку" id="46">
 					<Type>Hyperlink</Type>
 					<CommandName>Form.Command.ВыбратьКодировку</CommandName>
-					<ExtendedTooltip name="ВыбратьКодировкуExtendedTooltip" id="62"/>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Выбрать кодировку</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="ВыбратьКодировкуРасширеннаяПодсказка" id="62"/>
 				</Button>
 			</ChildItems>
 		</UsualGroup>
@@ -250,7 +286,7 @@
 			</Title>
 			<HorizontalLocation>Right</HorizontalLocation>
 			<CommandSource>Form</CommandSource>
-			<ExtendedTooltip name="ОсновнаяКоманднаяПанельExtendedTooltip" id="63"/>
+			<ExtendedTooltip name="ОсновнаяКоманднаяПанельРасширеннаяПодсказка" id="63"/>
 			<ChildItems>
 				<Button name="Добавить" id="4">
 					<Type>CommandBarButton</Type>
@@ -260,7 +296,13 @@
 					<TextColor>style:ButtonTextColor</TextColor>
 					<BackColor>style:ButtonBackColor</BackColor>
 					<BorderColor>style:BorderColor</BorderColor>
-					<ExtendedTooltip name="ДобавитьExtendedTooltip" id="64"/>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Загрузить файлы</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="ДобавитьРасширеннаяПодсказка" id="64"/>
 				</Button>
 				<Button name="Отмена" id="20">
 					<Type>CommandBarButton</Type>
@@ -269,7 +311,7 @@
 					<TextColor>style:ButtonTextColor</TextColor>
 					<BackColor>style:ButtonBackColor</BackColor>
 					<BorderColor>style:BorderColor</BorderColor>
-					<ExtendedTooltip name="ОтменаExtendedTooltip" id="65"/>
+					<ExtendedTooltip name="ОтменаРасширеннаяПодсказка" id="65"/>
 				</Button>
 			</ChildItems>
 		</CommandBar>
@@ -466,4 +508,14 @@
 			<CurrentRowUse>DontUse</CurrentRowUse>
 		</Command>
 	</Commands>
+	<Parameters>
+		<Parameter name="ПапкаДляДобавления">
+			<Type>
+				<v8:Type>cfg:CatalogRef.ПапкиФайлов</v8:Type>
+			</Type>
+		</Parameter>
+		<Parameter name="МассивИменФайлов">
+			<Type/>
+		</Parameter>
+	</Parameters>
 </Form>

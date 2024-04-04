@@ -17,16 +17,28 @@
 	<ChildItems>
 		<LabelField name="Пояснение" id="4">
 			<DataPath>Пояснение</DataPath>
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Пояснение</v8:content>
+				</v8:item>
+			</Title>
 			<TitleLocation>None</TitleLocation>
 			<AutoMaxWidth>false</AutoMaxWidth>
 			<Height>2</Height>
 			<VerticalStretch>false</VerticalStretch>
 			<Font ref="style:ВажнаяНадписьШрифт" kind="StyleItem"/>
 			<ContextMenu name="ПояснениеКонтекстноеМеню" id="5"/>
-			<ExtendedTooltip name="ПояснениеExtendedTooltip" id="6"/>
+			<ExtendedTooltip name="ПояснениеРасширеннаяПодсказка" id="6"/>
 		</LabelField>
 		<SpreadSheetDocumentField name="Отчет" id="2">
 			<DataPath>Отчет</DataPath>
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отчет</v8:content>
+				</v8:item>
+			</Title>
 			<TitleLocation>None</TitleLocation>
 			<FooterHorizontalAlign>Left</FooterHorizontalAlign>
 			<ShowGrid>true</ShowGrid>
@@ -35,7 +47,7 @@
 			<HorizontalScrollBar>true</HorizontalScrollBar>
 			<SelectionShowMode>WhenActive</SelectionShowMode>
 			<ContextMenu name="ОтчетКонтекстноеМеню" id="3"/>
-			<ExtendedTooltip name="ОтчетExtendedTooltip" id="7"/>
+			<ExtendedTooltip name="ОтчетРасширеннаяПодсказка" id="7"/>
 		</SpreadSheetDocumentField>
 	</ChildItems>
 	<Attributes>
@@ -66,4 +78,18 @@
 			</Type>
 		</Attribute>
 	</Attributes>
+	<Parameters>
+		<Parameter name="Пояснение">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Parameter>
+		<Parameter name="МассивФайловСОшибками">
+			<Type/>
+		</Parameter>
+	</Parameters>
 </Form>

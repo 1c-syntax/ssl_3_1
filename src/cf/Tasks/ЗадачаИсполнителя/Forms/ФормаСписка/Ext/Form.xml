@@ -6,6 +6,7 @@
 	<Events>
 		<Event name="OnSaveDataInSettingsAtServer">ПриСохраненииДанныхВНастройкахНаСервере</Event>
 		<Event name="NotificationProcessing">ОбработкаОповещения</Event>
+		<Event name="OnOpen">ПриОткрытии</Event>
 		<Event name="NavigationProcessing">ОбработкаПерехода</Event>
 		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
 		<Event name="BeforeLoadDataFromSettingsAtServer">ПередЗагрузкойДанныхИзНастроекНаСервере</Event>
@@ -21,7 +22,7 @@
 			<Behavior>Usual</Behavior>
 			<Representation>None</Representation>
 			<ShowTitle>false</ShowTitle>
-			<ExtendedTooltip name="ГруппаЗаголовокExtendedTooltip" id="86"/>
+			<ExtendedTooltip name="ГруппаЗаголовокРасширеннаяПодсказка" id="86"/>
 			<ChildItems>
 				<LabelField name="СтрокаБизнесПроцесса" id="55">
 					<DataPath>СтрокаБизнесПроцесса</DataPath>
@@ -33,7 +34,7 @@
 					</Title>
 					<TextColor>style:ПоясняющийТекст</TextColor>
 					<ContextMenu name="СтрокаБизнесПроцессаКонтекстноеМеню" id="56"/>
-					<ExtendedTooltip name="СтрокаБизнесПроцессаExtendedTooltip" id="87"/>
+					<ExtendedTooltip name="СтрокаБизнесПроцессаРасширеннаяПодсказка" id="87"/>
 				</LabelField>
 				<LabelField name="СтрокаЗадачи" id="57">
 					<DataPath>СтрокаЗадачи</DataPath>
@@ -45,7 +46,7 @@
 					</Title>
 					<TextColor>style:ПоясняющийТекст</TextColor>
 					<ContextMenu name="СтрокаЗадачиКонтекстноеМеню" id="58"/>
-					<ExtendedTooltip name="СтрокаЗадачиExtendedTooltip" id="88"/>
+					<ExtendedTooltip name="СтрокаЗадачиРасширеннаяПодсказка" id="88"/>
 				</LabelField>
 			</ChildItems>
 		</UsualGroup>
@@ -60,10 +61,16 @@
 			<Behavior>Usual</Behavior>
 			<Representation>None</Representation>
 			<ShowTitle>false</ShowTitle>
-			<ExtendedTooltip name="ГруппаОтборExtendedTooltip" id="89"/>
+			<ExtendedTooltip name="ГруппаОтборРасширеннаяПодсказка" id="89"/>
 			<ChildItems>
 				<InputField name="ПоказыватьЗадачи" id="49">
 					<DataPath>ПоказыватьЗадачи</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Показывать</v8:content>
+						</v8:item>
+					</Title>
 					<TitleLocation>Top</TitleLocation>
 					<Width>20</Width>
 					<DropListButton>true</DropListButton>
@@ -111,13 +118,19 @@
 						</xr:Item>
 					</ChoiceList>
 					<ContextMenu name="ПоказыватьЗадачиКонтекстноеМеню" id="50"/>
-					<ExtendedTooltip name="ПоказыватьЗадачиExtendedTooltip" id="90"/>
+					<ExtendedTooltip name="ПоказыватьЗадачиРасширеннаяПодсказка" id="90"/>
 					<Events>
 						<Event name="OnChange">ПоказыватьЗадачиПриИзменении</Event>
 					</Events>
 				</InputField>
 				<InputField name="ПоАвтору" id="18">
 					<DataPath>ПоАвтору</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Автор</v8:content>
+						</v8:item>
+					</Title>
 					<TitleLocation>Top</TitleLocation>
 					<Width>35</Width>
 					<Wrap>false</Wrap>
@@ -125,13 +138,19 @@
 					<OpenButton>false</OpenButton>
 					<ChoiceFoldersAndItems>Items</ChoiceFoldersAndItems>
 					<ContextMenu name="ПоАвторуКонтекстноеМеню" id="19"/>
-					<ExtendedTooltip name="ПоАвторуExtendedTooltip" id="91"/>
+					<ExtendedTooltip name="ПоАвторуРасширеннаяПодсказка" id="91"/>
 					<Events>
 						<Event name="OnChange">ПоАвторуПриИзменении</Event>
 					</Events>
 				</InputField>
 				<InputField name="ПоИсполнителю" id="20">
 					<DataPath>ПоИсполнителю</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Исполнитель</v8:content>
+						</v8:item>
+					</Title>
 					<TitleLocation>Top</TitleLocation>
 					<Width>35</Width>
 					<Wrap>false</Wrap>
@@ -139,7 +158,7 @@
 					<OpenButton>false</OpenButton>
 					<ChoiceFoldersAndItems>Items</ChoiceFoldersAndItems>
 					<ContextMenu name="ПоИсполнителюКонтекстноеМеню" id="21"/>
-					<ExtendedTooltip name="ПоИсполнителюExtendedTooltip" id="92"/>
+					<ExtendedTooltip name="ПоИсполнителюРасширеннаяПодсказка" id="92"/>
 					<Events>
 						<Event name="OnChange">ПоИсполнителюПриИзменении</Event>
 					</Events>
@@ -166,7 +185,7 @@
 					<v8:content>Основная командная панель</v8:content>
 				</v8:item>
 			</Title>
-			<ExtendedTooltip name="ОсновнаяКоманднаяПанельExtendedTooltip" id="93"/>
+			<ExtendedTooltip name="ОсновнаяКоманднаяПанельРасширеннаяПодсказка" id="93"/>
 			<ChildItems>
 				<Button name="Изменить" id="155">
 					<Type>CommandBarButton</Type>
@@ -176,12 +195,24 @@
 				<Button name="ОткрытьБизнесПроцесс" id="147">
 					<Type>CommandBarButton</Type>
 					<CommandName>Form.Command.ОткрытьБизнесПроцесс</CommandName>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Открыть бизнес-процесс</v8:content>
+						</v8:item>
+					</Title>
 					<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
 					<ExtendedTooltip name="ОткрытьБизнесПроцессРасширеннаяПодсказка" id="148"/>
 				</Button>
 				<Button name="ОткрытьПредметЗадачи" id="149">
 					<Type>CommandBarButton</Type>
 					<CommandName>Form.Command.ОткрытьПредметЗадачи</CommandName>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Открыть предмет задачи</v8:content>
+						</v8:item>
+					</Title>
 					<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
 					<ExtendedTooltip name="ОткрытьПредметЗадачиРасширеннаяПодсказка" id="150"/>
 				</Button>
@@ -214,7 +245,7 @@
 						</v8:item>
 					</Title>
 					<CommandSource>Form</CommandSource>
-					<ExtendedTooltip name="КоманднаяПанельСпискаExtendedTooltip" id="99"/>
+					<ExtendedTooltip name="КоманднаяПанельСпискаРасширеннаяПодсказка" id="99"/>
 				</ButtonGroup>
 				<ButtonGroup name="ГруппаПринятьКИсполнению" id="157">
 					<Title>
@@ -234,26 +265,32 @@
 									<v8:content>К исполнению</v8:content>
 								</v8:item>
 							</Title>
-							<ExtendedTooltip name="ПринятьКИсполнениюExtendedTooltip" id="95"/>
+							<ExtendedTooltip name="ПринятьКИсполнениюРасширеннаяПодсказка" id="95"/>
 						</Button>
 						<Button name="ОтменитьПринятиеКИсполнению" id="62">
 							<Type>CommandBarButton</Type>
 							<CommandName>Form.Command.ОтменитьПринятиеКИсполнению</CommandName>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Отменить принятие к исполнению</v8:content>
+								</v8:item>
+							</Title>
 							<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
-							<ExtendedTooltip name="ОтменитьПринятиеКИсполнениюExtendedTooltip" id="98"/>
+							<ExtendedTooltip name="ОтменитьПринятиеКИсполнениюРасширеннаяПодсказка" id="98"/>
 						</Button>
 						<Button name="ЗадачаЗадачаИсполнителяВыполнено" id="76">
 							<Type>CommandBarButton</Type>
 							<CommandName>Task.ЗадачаИсполнителя.Command.Выполнено</CommandName>
 							<DataPath>Items.Список.CurrentData.Ref</DataPath>
 							<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
-							<ExtendedTooltip name="ЗадачаЗадачаИсполнителяВыполненоExtendedTooltip" id="96"/>
+							<ExtendedTooltip name="ЗадачаЗадачаИсполнителяВыполненоРасширеннаяПодсказка" id="96"/>
 						</Button>
 						<Button name="ЗадачаЗадачаИсполнителяПеренаправить" id="77">
 							<Type>CommandBarButton</Type>
 							<CommandName>Task.ЗадачаИсполнителя.Command.Перенаправить</CommandName>
 							<DataPath>Items.Список.CurrentData.Ref</DataPath>
-							<ExtendedTooltip name="ЗадачаЗадачаИсполнителяПеренаправитьExtendedTooltip" id="97"/>
+							<ExtendedTooltip name="ЗадачаЗадачаИсполнителяПеренаправитьРасширеннаяПодсказка" id="97"/>
 						</Button>
 					</ChildItems>
 				</ButtonGroup>
@@ -265,7 +302,7 @@
 						</v8:item>
 					</Title>
 					<CommandSource>FormCommandPanelGlobalCommands</CommandSource>
-					<ExtendedTooltip name="КоманднаяПанельФормыExtendedTooltip" id="100"/>
+					<ExtendedTooltip name="КоманднаяПанельФормыРасширеннаяПодсказка" id="100"/>
 				</ButtonGroup>
 				<Button name="Справка" id="139">
 					<Type>CommandBarButton</Type>
@@ -312,16 +349,28 @@
 					<Button name="СписокКонтекстноеМенюИзменить" id="65">
 						<Type>CommandBarButton</Type>
 						<CommandName>Form.Item.Список.StandardCommand.Change</CommandName>
-						<ExtendedTooltip name="СписокКонтекстноеМенюИзменитьExtendedTooltip" id="103"/>
+						<ExtendedTooltip name="СписокКонтекстноеМенюИзменитьРасширеннаяПодсказка" id="103"/>
 					</Button>
 					<Button name="СписокКонтекстноеМенюОткрытьБизнесПроцесс" id="145">
 						<Type>CommandBarButton</Type>
 						<CommandName>Form.Command.ОткрытьБизнесПроцесс</CommandName>
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Открыть бизнес-процесс</v8:content>
+							</v8:item>
+						</Title>
 						<ExtendedTooltip name="СписокКонтекстноеМенюОткрытьБизнесПроцессРасширеннаяПодсказка" id="146"/>
 					</Button>
 					<Button name="СписокКонтекстноеМенюОткрытьПредметЗадачи" id="143">
 						<Type>CommandBarButton</Type>
 						<CommandName>Form.Command.ОткрытьПредметЗадачи</CommandName>
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Открыть предмет задачи</v8:content>
+							</v8:item>
+						</Title>
 						<ExtendedTooltip name="СписокКонтекстноеМенюОткрытьПредметЗадачиРасширеннаяПодсказка" id="144"/>
 					</Button>
 					<ButtonGroup name="СписокКонтекстноеМенюГруппа" id="66">
@@ -331,17 +380,29 @@
 								<v8:content>Контекстное меню группа</v8:content>
 							</v8:item>
 						</Title>
-						<ExtendedTooltip name="СписокКонтекстноеМенюГруппаExtendedTooltip" id="104"/>
+						<ExtendedTooltip name="СписокКонтекстноеМенюГруппаРасширеннаяПодсказка" id="104"/>
 						<ChildItems>
 							<Button name="СписокКонтекстноеМенюПринятьКИсполнению" id="63">
 								<Type>CommandBarButton</Type>
 								<CommandName>Form.Command.ПринятьКИсполнению</CommandName>
-								<ExtendedTooltip name="СписокКонтекстноеМенюПринятьКИсполнениюExtendedTooltip" id="105"/>
+								<Title>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Принять к исполнению</v8:content>
+									</v8:item>
+								</Title>
+								<ExtendedTooltip name="СписокКонтекстноеМенюПринятьКИсполнениюРасширеннаяПодсказка" id="105"/>
 							</Button>
 							<Button name="СписокКонтекстноеМенюОтменитьПринятиеКИсполнению" id="64">
 								<Type>CommandBarButton</Type>
 								<CommandName>Form.Command.ОтменитьПринятиеКИсполнению</CommandName>
-								<ExtendedTooltip name="СписокКонтекстноеМенюОтменитьПринятиеКИсполнениюExtendedTooltip" id="106"/>
+								<Title>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Отменить принятие к исполнению</v8:content>
+									</v8:item>
+								</Title>
+								<ExtendedTooltip name="СписокКонтекстноеМенюОтменитьПринятиеКИсполнениюРасширеннаяПодсказка" id="106"/>
 							</Button>
 						</ChildItems>
 					</ButtonGroup>
@@ -352,26 +413,26 @@
 								<v8:content>Контекстное меню группа действия</v8:content>
 							</v8:item>
 						</Title>
-						<ExtendedTooltip name="СписокКонтекстноеМенюГруппаДействияExtendedTooltip" id="107"/>
+						<ExtendedTooltip name="СписокКонтекстноеМенюГруппаДействияРасширеннаяПодсказка" id="107"/>
 						<ChildItems>
 							<Button name="СписокКонтекстноеМенюЗадачаЗадачаИсполнителяВыполнено" id="68">
 								<Type>CommandBarButton</Type>
 								<CommandName>Task.ЗадачаИсполнителя.Command.Выполнено</CommandName>
 								<DataPath>Items.Список.CurrentData.Ref</DataPath>
-								<ExtendedTooltip name="СписокКонтекстноеМенюЗадачаЗадачаИсполнителяВыполненоExtendedTooltip" id="108"/>
+								<ExtendedTooltip name="СписокКонтекстноеМенюЗадачаЗадачаИсполнителяВыполненоРасширеннаяПодсказка" id="108"/>
 							</Button>
 							<Button name="СписокКонтекстноеМенюЗадачаЗадачаИсполнителяПеренаправить" id="69">
 								<Type>CommandBarButton</Type>
 								<CommandName>Task.ЗадачаИсполнителя.Command.Перенаправить</CommandName>
 								<DataPath>Items.Список.CurrentData.Ref</DataPath>
-								<ExtendedTooltip name="СписокКонтекстноеМенюЗадачаЗадачаИсполнителяПеренаправитьExtendedTooltip" id="109"/>
+								<ExtendedTooltip name="СписокКонтекстноеМенюЗадачаЗадачаИсполнителяПеренаправитьРасширеннаяПодсказка" id="109"/>
 							</Button>
 						</ChildItems>
 					</ButtonGroup>
 					<Button name="СписокКонтекстноеМенюУстановитьИнтервал" id="70">
 						<Type>CommandBarButton</Type>
 						<CommandName>Form.Item.Список.StandardCommand.SetDateInterval</CommandName>
-						<ExtendedTooltip name="СписокКонтекстноеМенюУстановитьИнтервалExtendedTooltip" id="110"/>
+						<ExtendedTooltip name="СписокКонтекстноеМенюУстановитьИнтервалРасширеннаяПодсказка" id="110"/>
 					</Button>
 					<ButtonGroup name="СписокКонтекстноеМенюГруппаНайти" id="71">
 						<Title>
@@ -380,29 +441,29 @@
 								<v8:content>Контекстное меню группа найти</v8:content>
 							</v8:item>
 						</Title>
-						<ExtendedTooltip name="СписокКонтекстноеМенюГруппаНайтиExtendedTooltip" id="111"/>
+						<ExtendedTooltip name="СписокКонтекстноеМенюГруппаНайтиРасширеннаяПодсказка" id="111"/>
 						<ChildItems>
 							<Button name="СписокКонтекстноеМенюНайти" id="72">
 								<Type>CommandBarButton</Type>
 								<CommandName>Form.Item.Список.StandardCommand.Find</CommandName>
-								<ExtendedTooltip name="СписокКонтекстноеМенюНайтиExtendedTooltip" id="112"/>
+								<ExtendedTooltip name="СписокКонтекстноеМенюНайтиРасширеннаяПодсказка" id="112"/>
 							</Button>
 							<Button name="СписокКонтекстноеМенюОтменитьПоиск" id="73">
 								<Type>CommandBarButton</Type>
 								<CommandName>Form.Item.Список.StandardCommand.CancelSearch</CommandName>
-								<ExtendedTooltip name="СписокКонтекстноеМенюОтменитьПоискExtendedTooltip" id="113"/>
+								<ExtendedTooltip name="СписокКонтекстноеМенюОтменитьПоискРасширеннаяПодсказка" id="113"/>
 							</Button>
 						</ChildItems>
 					</ButtonGroup>
 					<Button name="СписокКонтекстноеМенюКопироватьВБуферОбмена" id="74">
 						<Type>CommandBarButton</Type>
 						<CommandName>Form.Item.Список.StandardCommand.CopyToClipboard</CommandName>
-						<ExtendedTooltip name="СписокКонтекстноеМенюКопироватьВБуферОбменаExtendedTooltip" id="114"/>
+						<ExtendedTooltip name="СписокКонтекстноеМенюКопироватьВБуферОбменаРасширеннаяПодсказка" id="114"/>
 					</Button>
 				</ChildItems>
 			</ContextMenu>
 			<AutoCommandBar name="СписокКоманднаяПанель" id="3"/>
-			<ExtendedTooltip name="СписокExtendedTooltip" id="115"/>
+			<ExtendedTooltip name="СписокРасширеннаяПодсказка" id="115"/>
 			<SearchStringAddition name="СписокСтрокаПоиска" id="171">
 				<AdditionSource>
 					<Item>Список</Item>
@@ -468,7 +529,7 @@
 							</ValuesPicture>
 							<FileDragMode>AsFile</FileDragMode>
 							<ContextMenu name="ВажностьКартинкаКонтекстноеМеню" id="82"/>
-							<ExtendedTooltip name="ВажностьКартинкаExtendedTooltip" id="116"/>
+							<ExtendedTooltip name="ВажностьКартинкаРасширеннаяПодсказка" id="116"/>
 						</PictureField>
 						<PictureField name="Остановлена" id="59">
 							<DataPath>Список.Остановлена</DataPath>
@@ -497,7 +558,7 @@
 							</ValuesPicture>
 							<FileDragMode>AsFile</FileDragMode>
 							<ContextMenu name="ОстановленаКонтекстноеМеню" id="60"/>
-							<ExtendedTooltip name="ОстановленаExtendedTooltip" id="118"/>
+							<ExtendedTooltip name="ОстановленаРасширеннаяПодсказка" id="118"/>
 						</PictureField>
 					</ChildItems>
 				</ColumnGroup>
@@ -509,7 +570,7 @@
 						</v8:item>
 					</Title>
 					<Group>Horizontal</Group>
-					<ExtendedTooltip name="ГруппаОписаниеExtendedTooltip" id="120"/>
+					<ExtendedTooltip name="ГруппаОписаниеРасширеннаяПодсказка" id="120"/>
 					<ChildItems>
 						<ColumnGroup name="ГруппаНаименование" id="165">
 							<Title>
@@ -526,14 +587,14 @@
 									<Wrap>false</Wrap>
 									<BorderColor>style:BorderColor</BorderColor>
 									<ContextMenu name="НаименованиеКонтекстноеМеню" id="7"/>
-									<ExtendedTooltip name="НаименованиеExtendedTooltip" id="121"/>
+									<ExtendedTooltip name="НаименованиеРасширеннаяПодсказка" id="121"/>
 								</InputField>
 								<InputField name="Автор" id="22">
 									<DataPath>Список.Автор</DataPath>
 									<Width>30</Width>
 									<Wrap>false</Wrap>
 									<ContextMenu name="АвторКонтекстноеМеню" id="23"/>
-									<ExtendedTooltip name="АвторExtendedTooltip" id="123"/>
+									<ExtendedTooltip name="АвторРасширеннаяПодсказка" id="123"/>
 								</InputField>
 							</ChildItems>
 						</ColumnGroup>
@@ -545,7 +606,7 @@
 							<ShowInHeader>false</ShowInHeader>
 							<Width>30</Width>
 							<ContextMenu name="ПредметКонтекстноеМеню" id="52"/>
-							<ExtendedTooltip name="ПредметExtendedTooltip" id="133"/>
+							<ExtendedTooltip name="ПредметРасширеннаяПодсказка" id="133"/>
 						</LabelField>
 						<ColumnGroup name="ГруппаАвтор" id="163">
 							<Title>
@@ -568,7 +629,7 @@
 									<Wrap>false</Wrap>
 									<BorderColor>style:BorderColor</BorderColor>
 									<ContextMenu name="ДатаКонтекстноеМеню" id="9"/>
-									<ExtendedTooltip name="ДатаExtendedTooltip" id="129"/>
+									<ExtendedTooltip name="ДатаРасширеннаяПодсказка" id="129"/>
 								</InputField>
 								<InputField name="Номер" id="4">
 									<DataPath>Список.Number</DataPath>
@@ -577,7 +638,7 @@
 									<Wrap>false</Wrap>
 									<BorderColor>style:BorderColor</BorderColor>
 									<ContextMenu name="НомерКонтекстноеМеню" id="5"/>
-									<ExtendedTooltip name="НомерExtendedTooltip" id="119"/>
+									<ExtendedTooltip name="НомерРасширеннаяПодсказка" id="119"/>
 								</InputField>
 							</ChildItems>
 						</ColumnGroup>
@@ -589,7 +650,7 @@
 							<AutoCellHeight>true</AutoCellHeight>
 							<ShowInHeader>false</ShowInHeader>
 							<ContextMenu name="ОписаниеКонтекстноеМеню" id="84"/>
-							<ExtendedTooltip name="ОписаниеExtendedTooltip" id="122"/>
+							<ExtendedTooltip name="ОписаниеРасширеннаяПодсказка" id="122"/>
 						</InputField>
 					</ChildItems>
 				</ColumnGroup>
@@ -611,7 +672,7 @@
 							</Title>
 							<HorizontalStretch>true</HorizontalStretch>
 							<Group>InCell</Group>
-							<ExtendedTooltip name="ГруппаИсполнительExtendedTooltip" id="124"/>
+							<ExtendedTooltip name="ГруппаИсполнительРасширеннаяПодсказка" id="124"/>
 							<ChildItems>
 								<InputField name="Исполнитель" id="24">
 									<DataPath>Список.Исполнитель</DataPath>
@@ -619,7 +680,7 @@
 									<HorizontalStretch>false</HorizontalStretch>
 									<Wrap>false</Wrap>
 									<ContextMenu name="ИсполнительКонтекстноеМеню" id="25"/>
-									<ExtendedTooltip name="ИсполнительExtendedTooltip" id="125"/>
+									<ExtendedTooltip name="ИсполнительРасширеннаяПодсказка" id="125"/>
 								</InputField>
 								<InputField name="РольИсполнителя" id="34">
 									<DataPath>Список.РольИсполнителя</DataPath>
@@ -627,7 +688,7 @@
 									<Width>5</Width>
 									<Wrap>false</Wrap>
 									<ContextMenu name="РольИсполнителяКонтекстноеМеню" id="35"/>
-									<ExtendedTooltip name="РольИсполнителяExtendedTooltip" id="126"/>
+									<ExtendedTooltip name="РольИсполнителяРасширеннаяПодсказка" id="126"/>
 								</InputField>
 								<InputField name="ОсновнойОбъектАдресации" id="40">
 									<DataPath>Список.ОсновнойОбъектАдресации</DataPath>
@@ -635,7 +696,7 @@
 									<Width>5</Width>
 									<Wrap>false</Wrap>
 									<ContextMenu name="ОсновнойОбъектАдресацииКонтекстноеМеню" id="41"/>
-									<ExtendedTooltip name="ОсновнойОбъектАдресацииExtendedTooltip" id="127"/>
+									<ExtendedTooltip name="ОсновнойОбъектАдресацииРасширеннаяПодсказка" id="127"/>
 								</InputField>
 								<InputField name="ДополнительныйОбъектАдресации" id="38">
 									<DataPath>Список.ДополнительныйОбъектАдресации</DataPath>
@@ -643,7 +704,7 @@
 									<Width>5</Width>
 									<Wrap>false</Wrap>
 									<ContextMenu name="ДополнительныйОбъектАдресацииКонтекстноеМеню" id="39"/>
-									<ExtendedTooltip name="ДополнительныйОбъектАдресацииExtendedTooltip" id="128"/>
+									<ExtendedTooltip name="ДополнительныйОбъектАдресацииРасширеннаяПодсказка" id="128"/>
 								</InputField>
 							</ChildItems>
 						</ColumnGroup>
@@ -663,7 +724,7 @@
 									<HorizontalStretch>false</HorizontalStretch>
 									<Wrap>false</Wrap>
 									<ContextMenu name="СрокИсполненияКонтекстноеМеню" id="31"/>
-									<ExtendedTooltip name="СрокИсполненияExtendedTooltip" id="130"/>
+									<ExtendedTooltip name="СрокИсполненияРасширеннаяПодсказка" id="130"/>
 								</InputField>
 								<CheckBoxField name="Выполнена" id="10">
 									<DataPath>Список.Executed</DataPath>
@@ -677,7 +738,7 @@
 									</HeaderPicture>
 									<CheckBoxType>Auto</CheckBoxType>
 									<ContextMenu name="ВыполненаКонтекстноеМеню" id="11"/>
-									<ExtendedTooltip name="ВыполненаExtendedTooltip" id="117"/>
+									<ExtendedTooltip name="ВыполненаРасширеннаяПодсказка" id="117"/>
 								</CheckBoxField>
 								<InputField name="ДатаИсполнения" id="32">
 									<DataPath>Список.ДатаИсполнения</DataPath>
@@ -685,7 +746,7 @@
 									<HorizontalStretch>false</HorizontalStretch>
 									<Wrap>false</Wrap>
 									<ContextMenu name="ДатаИсполненияКонтекстноеМеню" id="33"/>
-									<ExtendedTooltip name="ДатаИсполненияExtendedTooltip" id="131"/>
+									<ExtendedTooltip name="ДатаИсполненияРасширеннаяПодсказка" id="131"/>
 								</InputField>
 							</ChildItems>
 						</ColumnGroup>

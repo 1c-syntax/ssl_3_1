@@ -13,28 +13,58 @@
 			<Button name="ФормаОткрытьСуществующий" id="25">
 				<Type>CommandBarButton</Type>
 				<CommandName>Form.Command.ОткрытьСуществующий</CommandName>
-				<ExtendedTooltip name="ФормаОткрытьСуществующийExtendedTooltip" id="37"/>
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Открыть копию</v8:content>
+					</v8:item>
+				</Title>
+				<ExtendedTooltip name="ФормаОткрытьСуществующийРасширеннаяПодсказка" id="37"/>
 			</Button>
 			<Button name="ФормаПоместить" id="23">
 				<Type>CommandBarButton</Type>
 				<CommandName>Form.Command.Поместить</CommandName>
-				<ExtendedTooltip name="ФормаПоместитьExtendedTooltip" id="38"/>
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Поместить</v8:content>
+					</v8:item>
+				</Title>
+				<ExtendedTooltip name="ФормаПоместитьРасширеннаяПодсказка" id="38"/>
 			</Button>
 			<Button name="ФормаВзятьИзХранилища" id="26">
 				<Type>CommandBarButton</Type>
 				<CommandName>Form.Command.ВзятьИзПрограммы</CommandName>
-				<ExtendedTooltip name="ФормаВзятьИзХранилищаExtendedTooltip" id="39"/>
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Взять из приложения</v8:content>
+					</v8:item>
+				</Title>
+				<ExtendedTooltip name="ФормаВзятьИзХранилищаРасширеннаяПодсказка" id="39"/>
 			</Button>
 			<Button name="ФормаНеПомещать" id="24">
 				<Type>CommandBarButton</Type>
 				<CommandName>Form.Command.НеПомещать</CommandName>
-				<ExtendedTooltip name="ФормаНеПомещатьExtendedTooltip" id="40"/>
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Не помещать</v8:content>
+					</v8:item>
+				</Title>
+				<ExtendedTooltip name="ФормаНеПомещатьРасширеннаяПодсказка" id="40"/>
 			</Button>
 			<Button name="Отменить" id="11">
 				<Type>CommandBarButton</Type>
 				<SkipOnInput>false</SkipOnInput>
 				<CommandName>Form.Command.Отменить</CommandName>
-				<ExtendedTooltip name="ОтменитьExtendedTooltip" id="41"/>
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Отменить</v8:content>
+					</v8:item>
+				</Title>
+				<ExtendedTooltip name="ОтменитьРасширеннаяПодсказка" id="41"/>
 			</Button>
 		</ChildItems>
 	</AutoCommandBar>
@@ -52,7 +82,7 @@
 			<Behavior>Usual</Behavior>
 			<Representation>None</Representation>
 			<ShowTitle>false</ShowTitle>
-			<ExtendedTooltip name="СообщениеДляПользователяExtendedTooltip" id="42"/>
+			<ExtendedTooltip name="СообщениеДляПользователяРасширеннаяПодсказка" id="42"/>
 			<ChildItems>
 				<PictureDecoration name="ЗначокСообщения" id="21">
 					<SkipOnInput>false</SkipOnInput>
@@ -63,15 +93,21 @@
 						</v8:item>
 					</Title>
 					<Picture>
-						<xr:Ref>CommonPicture.Предупреждение32</xr:Ref>
-						<xr:LoadTransparent>false</xr:LoadTransparent>
+						<xr:Ref>StdPicture.DialogExclamation</xr:Ref>
+						<xr:LoadTransparent>true</xr:LoadTransparent>
 					</Picture>
 					<FileDragMode>AsFile</FileDragMode>
 					<ContextMenu name="ЗначокСообщенияКонтекстноеМеню" id="22"/>
-					<ExtendedTooltip name="ЗначокСообщенияExtendedTooltip" id="43"/>
+					<ExtendedTooltip name="ЗначокСообщенияРасширеннаяПодсказка" id="43"/>
 				</PictureDecoration>
 				<LabelField name="Сообщение" id="14">
 					<DataPath>Сообщение</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Сообщение</v8:content>
+						</v8:item>
+					</Title>
 					<TitleLocation>None</TitleLocation>
 					<AutoMaxWidth>false</AutoMaxWidth>
 					<Height>6</Height>
@@ -79,7 +115,7 @@
 					<HorizontalStretch>true</HorizontalStretch>
 					<VerticalStretch>true</VerticalStretch>
 					<ContextMenu name="СообщениеКонтекстноеМеню" id="15"/>
-					<ExtendedTooltip name="СообщениеExtendedTooltip" id="44"/>
+					<ExtendedTooltip name="СообщениеРасширеннаяПодсказка" id="44"/>
 				</LabelField>
 			</ChildItems>
 		</UsualGroup>
@@ -94,11 +130,17 @@
 			<Behavior>Usual</Behavior>
 			<Representation>NormalSeparation</Representation>
 			<ShowTitle>false</ShowTitle>
-			<ExtendedTooltip name="ФайлИКнопкаExtendedTooltip" id="47"/>
+			<ExtendedTooltip name="ФайлИКнопкаРасширеннаяПодсказка" id="47"/>
 			<ChildItems>
 				<InputField name="ПолноеИмяФайлаВРабочемКаталоге" id="1">
 					<DataPath>ПолноеИмяФайлаВРабочемКаталоге</DataPath>
 					<ReadOnly>true</ReadOnly>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Копия файла на компьютере</v8:content>
+						</v8:item>
+					</Title>
 					<TitleLocation>Top</TitleLocation>
 					<AutoMaxWidth>false</AutoMaxWidth>
 					<MaxWidth>60</MaxWidth>
@@ -109,7 +151,13 @@
 					<Type>UsualButton</Type>
 					<SkipOnInput>false</SkipOnInput>
 					<CommandName>Form.Command.ОткрытьКаталог</CommandName>
-					<ExtendedTooltip name="ОткрытьКаталогExtendedTooltip" id="49"/>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Открыть каталог</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="ОткрытьКаталогРасширеннаяПодсказка" id="49"/>
 				</Button>
 			</ChildItems>
 		</UsualGroup>
@@ -124,7 +172,7 @@
 			<Behavior>Usual</Behavior>
 			<Representation>None</Representation>
 			<ShowTitle>false</ShowTitle>
-			<ExtendedTooltip name="СвойстваФайловExtendedTooltip" id="50"/>
+			<ExtendedTooltip name="СвойстваФайловРасширеннаяПодсказка" id="50"/>
 			<ChildItems>
 				<UsualGroup name="ДатаИзменения" id="27">
 					<Title>
@@ -135,7 +183,7 @@
 					</Title>
 					<Group>Vertical</Group>
 					<Behavior>Usual</Behavior>
-					<ExtendedTooltip name="ДатаИзмененияExtendedTooltip" id="51"/>
+					<ExtendedTooltip name="ДатаИзмененияРасширеннаяПодсказка" id="51"/>
 				</UsualGroup>
 				<UsualGroup name="Размер" id="12">
 					<Title>
@@ -146,7 +194,7 @@
 					</Title>
 					<Group>Vertical</Group>
 					<Behavior>Usual</Behavior>
-					<ExtendedTooltip name="РазмерExtendedTooltip" id="54"/>
+					<ExtendedTooltip name="РазмерРасширеннаяПодсказка" id="54"/>
 				</UsualGroup>
 				<UsualGroup name="ГруппаНаКомпьютере" id="63">
 					<Title>
@@ -160,15 +208,27 @@
 					<ChildItems>
 						<InputField name="ДатаИзмененияВРабочемКаталоге" id="60">
 							<DataPath>ДатаИзмененияВРабочемКаталоге</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Изменен</v8:content>
+								</v8:item>
+							</Title>
 							<ContextMenu name="ДатаИзмененияВРабочемКаталогеКонтекстноеМеню" id="61"/>
 							<ExtendedTooltip name="ДатаИзмененияВРабочемКаталогеРасширеннаяПодсказка" id="62"/>
 						</InputField>
 						<InputField name="РазмерВРабочемКаталоге" id="32">
 							<DataPath>РазмерВРабочемКаталоге</DataPath>
 							<ReadOnly>true</ReadOnly>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Размер (байт)</v8:content>
+								</v8:item>
+							</Title>
 							<HorizontalStretch>true</HorizontalStretch>
 							<ContextMenu name="РазмерВРабочемКаталогеКонтекстноеМеню" id="33"/>
-							<ExtendedTooltip name="РазмерВРабочемКаталогеExtendedTooltip" id="55"/>
+							<ExtendedTooltip name="РазмерВРабочемКаталогеРасширеннаяПодсказка" id="55"/>
 						</InputField>
 					</ChildItems>
 				</UsualGroup>
@@ -176,7 +236,7 @@
 					<Title>
 						<v8:item>
 							<v8:lang>ru</v8:lang>
-							<v8:content>Файл в программе</v8:content>
+							<v8:content>Файл в приложении</v8:content>
 						</v8:item>
 					</Title>
 					<Behavior>Usual</Behavior>
@@ -184,15 +244,27 @@
 					<ChildItems>
 						<InputField name="ДатаИзмененияВХранилищеФайлов" id="57">
 							<DataPath>ДатаИзмененияВХранилищеФайлов</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Изменен</v8:content>
+								</v8:item>
+							</Title>
 							<ContextMenu name="ДатаИзмененияВХранилищеФайловКонтекстноеМеню" id="58"/>
 							<ExtendedTooltip name="ДатаИзмененияВХранилищеФайловРасширеннаяПодсказка" id="59"/>
 						</InputField>
 						<InputField name="РазмерВХранилищеФайлов" id="34">
 							<DataPath>РазмерВХранилищеФайлов</DataPath>
 							<ReadOnly>true</ReadOnly>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Размер (байт)</v8:content>
+								</v8:item>
+							</Title>
 							<HorizontalStretch>true</HorizontalStretch>
 							<ContextMenu name="РазмерВХранилищеФайловКонтекстноеМеню" id="35"/>
-							<ExtendedTooltip name="РазмерВХранилищеФайловExtendedTooltip" id="56"/>
+							<ExtendedTooltip name="РазмерВХранилищеФайловРасширеннаяПодсказка" id="56"/>
 						</InputField>
 					</ChildItems>
 				</UsualGroup>
@@ -314,13 +386,13 @@
 			<Title>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Взять из программы</v8:content>
+					<v8:content>Взять из приложения</v8:content>
 				</v8:item>
 			</Title>
 			<ToolTip>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Заменить копию файла на компьютере копией файла из программы и открыть.</v8:content>
+					<v8:content>Заменить копию файла на компьютере копией файла из приложения и открыть.</v8:content>
 				</v8:item>
 			</ToolTip>
 			<Action>ВзятьИзПрограммы</Action>
@@ -357,7 +429,7 @@
 			<ToolTip>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Поместить файл в программу.</v8:content>
+					<v8:content>Поместить файл в приложение</v8:content>
 				</v8:item>
 			</ToolTip>
 			<Action>Поместить</Action>
@@ -373,7 +445,7 @@
 			<ToolTip>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Не помещать файл с компьютера в программу.</v8:content>
+					<v8:content>Не помещать файл с компьютера в приложение</v8:content>
 				</v8:item>
 			</ToolTip>
 			<Action>НеПомещать</Action>
@@ -396,4 +468,15 @@
 			<CurrentRowUse>DontUse</CurrentRowUse>
 		</Command>
 	</Commands>
+	<Parameters>
+		<Parameter name="ДействиеНадФайлом">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Parameter>
+	</Parameters>
 </Form>

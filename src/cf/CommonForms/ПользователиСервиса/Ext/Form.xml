@@ -10,13 +10,19 @@
 				<Type>CommandBarButton</Type>
 				<DefaultButton>true</DefaultButton>
 				<CommandName>Form.Command.ДобавитьВыбранныхПользователей</CommandName>
-				<ExtendedTooltip name="ДобавитьВыбранныхПользователейExtendedTooltip" id="32"/>
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Добавить выбранных пользователей</v8:content>
+					</v8:item>
+				</Title>
+				<ExtendedTooltip name="ДобавитьВыбранныхПользователейРасширеннаяПодсказка" id="32"/>
 			</Button>
 			<Button name="Отмена" id="22">
 				<Type>CommandBarButton</Type>
 				<Representation>Text</Representation>
 				<CommandName>Form.StandardCommand.Close</CommandName>
-				<ExtendedTooltip name="ОтменаExtendedTooltip" id="33"/>
+				<ExtendedTooltip name="ОтменаРасширеннаяПодсказка" id="33"/>
 			</Button>
 		</ChildItems>
 	</AutoCommandBar>
@@ -68,18 +74,30 @@
 							<Button name="ПользователиСервисаУстановитьВсе" id="18">
 								<Type>CommandBarButton</Type>
 								<CommandName>Form.Command.УстановитьВсе</CommandName>
-								<ExtendedTooltip name="ПользователиСервисаУстановитьВсеExtendedTooltip" id="23"/>
+								<Title>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Установить все</v8:content>
+									</v8:item>
+								</Title>
+								<ExtendedTooltip name="ПользователиСервисаУстановитьВсеРасширеннаяПодсказка" id="23"/>
 							</Button>
 							<Button name="ПользователиСервисаСнятьВсе" id="19">
 								<Type>CommandBarButton</Type>
 								<CommandName>Form.Command.СнятьВсе</CommandName>
-								<ExtendedTooltip name="ПользователиСервисаСнятьВсеExtendedTooltip" id="24"/>
+								<Title>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Снять все</v8:content>
+									</v8:item>
+								</Title>
+								<ExtendedTooltip name="ПользователиСервисаСнятьВсеРасширеннаяПодсказка" id="24"/>
 							</Button>
 						</ChildItems>
 					</ButtonGroup>
 				</ChildItems>
 			</AutoCommandBar>
-			<ExtendedTooltip name="ПользователиСервисаExtendedTooltip" id="25"/>
+			<ExtendedTooltip name="ПользователиСервисаРасширеннаяПодсказка" id="25"/>
 			<SearchStringAddition name="ПользователиСервисаSearchString" id="34">
 				<AdditionSource>
 					<Item>ПользователиСервиса</Item>
@@ -107,38 +125,68 @@
 			<ChildItems>
 				<CheckBoxField name="ПользователиСервисаДобавить" id="16">
 					<DataPath>ТаблицаПользователиСервиса.Добавить</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Добавить</v8:content>
+						</v8:item>
+					</Title>
 					<TitleLocation>None</TitleLocation>
 					<EditMode>EnterOnInput</EditMode>
 					<CheckBoxType>Auto</CheckBoxType>
 					<ContextMenu name="ПользователиСервисаДобавитьКонтекстноеМеню" id="17"/>
-					<ExtendedTooltip name="ПользователиСервисаДобавитьExtendedTooltip" id="26"/>
+					<ExtendedTooltip name="ПользователиСервисаДобавитьРасширеннаяПодсказка" id="26"/>
 				</CheckBoxField>
 				<LabelField name="ПользователиСервисаИмя" id="4">
 					<DataPath>ТаблицаПользователиСервиса.Имя</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Имя</v8:content>
+						</v8:item>
+					</Title>
 					<EditMode>EnterOnInput</EditMode>
 					<ContextMenu name="ПользователиСервисаИмяКонтекстноеМеню" id="5"/>
-					<ExtendedTooltip name="ПользователиСервисаИмяExtendedTooltip" id="27"/>
+					<ExtendedTooltip name="ПользователиСервисаИмяРасширеннаяПодсказка" id="27"/>
 				</LabelField>
 				<LabelField name="ПользователиСервисаПолноеИмя" id="6">
 					<DataPath>ТаблицаПользователиСервиса.ПолноеИмя</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Полное имя</v8:content>
+						</v8:item>
+					</Title>
 					<EditMode>EnterOnInput</EditMode>
 					<ContextMenu name="ПользователиСервисаПолноеИмяКонтекстноеМеню" id="7"/>
-					<ExtendedTooltip name="ПользователиСервисаПолноеИмяExtendedTooltip" id="28"/>
+					<ExtendedTooltip name="ПользователиСервисаПолноеИмяРасширеннаяПодсказка" id="28"/>
 				</LabelField>
 				<LabelField name="ПользователиСервисаИдентификатор" id="12">
 					<DataPath>ТаблицаПользователиСервиса.Идентификатор</DataPath>
 					<Visible>false</Visible>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Идентификатор</v8:content>
+						</v8:item>
+					</Title>
 					<EditMode>EnterOnInput</EditMode>
 					<ContextMenu name="ПользователиСервисаИдентификаторКонтекстноеМеню" id="13"/>
-					<ExtendedTooltip name="ПользователиСервисаИдентификаторExtendedTooltip" id="29"/>
+					<ExtendedTooltip name="ПользователиСервисаИдентификаторРасширеннаяПодсказка" id="29"/>
 				</LabelField>
 				<CheckBoxField name="ПользователиСервисаДоступ" id="14">
 					<DataPath>ТаблицаПользователиСервиса.Доступ</DataPath>
 					<ReadOnly>true</ReadOnly>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Доступ</v8:content>
+						</v8:item>
+					</Title>
 					<EditMode>EnterOnInput</EditMode>
 					<CheckBoxType>Auto</CheckBoxType>
 					<ContextMenu name="ПользователиСервисаДоступКонтекстноеМеню" id="15"/>
-					<ExtendedTooltip name="ПользователиСервисаДоступExtendedTooltip" id="30"/>
+					<ExtendedTooltip name="ПользователиСервисаДоступРасширеннаяПодсказка" id="30"/>
 				</CheckBoxField>
 			</ChildItems>
 		</Table>

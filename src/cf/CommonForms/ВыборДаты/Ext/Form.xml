@@ -11,18 +11,30 @@
 				<Type>CommandBarButton</Type>
 				<DefaultButton>true</DefaultButton>
 				<CommandName>Form.Command.ОК</CommandName>
-				<ExtendedTooltip name="ФормаОКExtendedTooltip" id="8"/>
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>ОК</v8:content>
+					</v8:item>
+				</Title>
+				<ExtendedTooltip name="ФормаОКРасширеннаяПодсказка" id="8"/>
 			</Button>
 			<Button name="ФормаОтмена" id="4">
 				<Type>CommandBarButton</Type>
 				<Representation>PictureAndText</Representation>
 				<CommandName>Form.Command.Отмена</CommandName>
-				<ExtendedTooltip name="ФормаОтменаExtendedTooltip" id="9"/>
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Отмена</v8:content>
+					</v8:item>
+				</Title>
+				<ExtendedTooltip name="ФормаОтменаРасширеннаяПодсказка" id="9"/>
 			</Button>
 			<Button name="ФормаСправка" id="5">
 				<Type>CommandBarButton</Type>
 				<CommandName>Form.StandardCommand.Help</CommandName>
-				<ExtendedTooltip name="ФормаСправкаExtendedTooltip" id="10"/>
+				<ExtendedTooltip name="ФормаСправкаРасширеннаяПодсказка" id="10"/>
 			</Button>
 		</ChildItems>
 	</AutoCommandBar>
@@ -39,13 +51,19 @@
 		</LabelDecoration>
 		<CalendarField name="Календарь" id="1">
 			<DataPath>Календарь</DataPath>
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Календарь</v8:content>
+				</v8:item>
+			</Title>
 			<TitleLocation>None</TitleLocation>
 			<Width>1</Width>
 			<Height>1</Height>
 			<ShowCurrentDate>false</ShowCurrentDate>
 			<WidthInMonths>2</WidthInMonths>
 			<ContextMenu name="КалендарьКонтекстноеМеню" id="2"/>
-			<ExtendedTooltip name="КалендарьExtendedTooltip" id="12"/>
+			<ExtendedTooltip name="КалендарьРасширеннаяПодсказка" id="12"/>
 			<Events>
 				<Event name="Selection">КалендарьВыбор</Event>
 			</Events>
@@ -133,6 +151,15 @@
 				<v8:DateQualifiers>
 					<v8:DateFractions>Date</v8:DateFractions>
 				</v8:DateQualifiers>
+			</Type>
+		</Parameter>
+		<Parameter name="Заголовок">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
 			</Type>
 		</Parameter>
 	</Parameters>

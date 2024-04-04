@@ -92,8 +92,8 @@
 																		</v8:item>
 																	</Title>
 																	<Picture>
-																		<xr:Ref>CommonPicture.Информация32</xr:Ref>
-																		<xr:LoadTransparent>false</xr:LoadTransparent>
+																		<xr:Ref>StdPicture.DialogInformation</xr:Ref>
+																		<xr:LoadTransparent>true</xr:LoadTransparent>
 																	</Picture>
 																	<FileDragMode>AsFile</FileDragMode>
 																	<ContextMenu name="ИнформацияПриВключенииБудутУстановленыСледующиеНастройкиВКластереКонтекстноеМеню" id="261"/>
@@ -130,8 +130,8 @@
 																		</v8:item>
 																	</Title>
 																	<Picture>
-																		<xr:Ref>CommonPicture.Предупреждение32</xr:Ref>
-																		<xr:LoadTransparent>false</xr:LoadTransparent>
+																		<xr:Ref>StdPicture.DialogExclamation</xr:Ref>
+																		<xr:LoadTransparent>true</xr:LoadTransparent>
 																	</Picture>
 																	<FileDragMode>AsFile</FileDragMode>
 																	<ContextMenu name="ПредупреждениеТребуетсяВнестиИзмененияВКластереКонтекстноеМеню" id="70"/>
@@ -171,8 +171,8 @@
 																		</v8:item>
 																	</Title>
 																	<Picture>
-																		<xr:Ref>CommonPicture.Информация32</xr:Ref>
-																		<xr:LoadTransparent>false</xr:LoadTransparent>
+																		<xr:Ref>StdPicture.DialogInformation</xr:Ref>
+																		<xr:LoadTransparent>true</xr:LoadTransparent>
 																	</Picture>
 																	<FileDragMode>AsFile</FileDragMode>
 																	<ContextMenu name="ИнформацияПриВосстановленииБудутУстановленыСледующиеНастройкиВКластереКонтекстноеМеню" id="264"/>
@@ -209,8 +209,8 @@
 																		</v8:item>
 																	</Title>
 																	<Picture>
-																		<xr:Ref>CommonPicture.Предупреждение32</xr:Ref>
-																		<xr:LoadTransparent>false</xr:LoadTransparent>
+																		<xr:Ref>StdPicture.DialogExclamation</xr:Ref>
+																		<xr:LoadTransparent>true</xr:LoadTransparent>
 																	</Picture>
 																	<FileDragMode>AsFile</FileDragMode>
 																	<ContextMenu name="ПредупреждениеТребуетсяОтменитьНеактуальныеРазрешенияВКластереКонтекстноеМеню" id="258"/>
@@ -222,7 +222,7 @@
 																		<v8:item>
 																			<v8:lang>ru</v8:lang>
 																			<v8:content>В кластере серверов 1С:Предприятия для данной информационной базы настроены профили безопасности, ограничивающие доступ к внешним ресурсам.
-Требуется актуализировать настройки разрешений в профилях безопасности в кластере серверов, т.к. при использовании программы были изменены некоторые ее настройки (влияющие на использование программой внешних ресурсов):</v8:content>
+Требуется актуализировать настройки разрешений в профилях безопасности в кластере серверов, т.к. при использовании приложения были изменены некоторые его настройки (влияющие на использование внешних ресурсов):</v8:content>
 																		</v8:item>
 																	</Title>
 																	<ContextMenu name="ШапкаТребуетсяОтменитьНеактуальныеРазрешенияВКластереКонтекстноеМеню" id="242"/>
@@ -236,6 +236,12 @@
 										</UsualGroup>
 										<SpreadSheetDocumentField name="ПредставлениеРазрешений" id="119">
 											<DataPath>ПредставлениеРазрешений</DataPath>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Представление разрешений</v8:content>
+												</v8:item>
+											</Title>
 											<TitleLocation>None</TitleLocation>
 											<Width>85</Width>
 											<Height>18</Height>
@@ -276,8 +282,8 @@
 														</v8:item>
 													</Title>
 													<Picture>
-														<xr:Ref>CommonPicture.Ошибка32</xr:Ref>
-														<xr:LoadTransparent>false</xr:LoadTransparent>
+														<xr:Ref>StdPicture.DialogStop</xr:Ref>
+														<xr:LoadTransparent>true</xr:LoadTransparent>
 													</Picture>
 													<FileDragMode>AsFile</FileDragMode>
 													<ContextMenu name="ДекорацияОшибкаКонтекстноеМеню" id="166"/>
@@ -310,6 +316,12 @@
 														<InputField name="ТекстОшибки" id="88">
 															<DataPath>ТекстОшибки</DataPath>
 															<ReadOnly>true</ReadOnly>
+															<Title>
+																<v8:item>
+																	<v8:lang>ru</v8:lang>
+																	<v8:content>Текст ошибки</v8:content>
+																</v8:item>
+															</Title>
 															<TitleLocation>None</TitleLocation>
 															<Height>3</Height>
 															<VerticalStretch>false</VerticalStretch>
@@ -396,6 +408,12 @@
 													<ChildItems>
 														<InputField name="ТипПодключения" id="128">
 															<DataPath>ТипПодключения</DataPath>
+															<Title>
+																<v8:item>
+																	<v8:lang>ru</v8:lang>
+																	<v8:content>Тип подключения</v8:content>
+																</v8:item>
+															</Title>
 															<Width>40</Width>
 															<HorizontalStretch>false</HorizontalStretch>
 															<ListChoiceMode>true</ListChoiceMode>
@@ -438,9 +456,15 @@
 														</InputField>
 														<InputField name="ПортКластераСерверов" id="17">
 															<DataPath>ПортКластераСерверов</DataPath>
+															<Title>
+																<v8:item>
+																	<v8:lang>ru</v8:lang>
+																	<v8:content>Порт кластера серверов</v8:content>
+																</v8:item>
+															</Title>
 															<Wrap>false</Wrap>
 															<ContextMenu name="ПортКластераСерверовКонтекстноеМеню" id="18"/>
-															<ExtendedTooltip name="ПортКластераСерверовExtendedTooltip" id="59"/>
+															<ExtendedTooltip name="ПортКластераСерверовРасширеннаяПодсказка" id="59"/>
 														</InputField>
 													</ChildItems>
 												</UsualGroup>
@@ -594,7 +618,7 @@
 													<Collapsed>true</Collapsed>
 													<ControlRepresentation>Picture</ControlRepresentation>
 													<Representation>NormalSeparation</Representation>
-													<ExtendedTooltip name="ГруппаКластерТребуетАвторизацииExtendedTooltip" id="51"/>
+													<ExtendedTooltip name="ГруппаКластерТребуетАвторизацииРасширеннаяПодсказка" id="51"/>
 													<ChildItems>
 														<InputField name="ИмяАдминистратораКластера" id="10">
 															<DataPath>ИмяАдминистратораКластера</DataPath>
@@ -608,7 +632,7 @@
 															<HorizontalStretch>false</HorizontalStretch>
 															<Wrap>false</Wrap>
 															<ContextMenu name="ИмяАдминистратораКластераКонтекстноеМеню" id="11"/>
-															<ExtendedTooltip name="ИмяАдминистратораКластераExtendedTooltip" id="54"/>
+															<ExtendedTooltip name="ИмяАдминистратораКластераРасширеннаяПодсказка" id="54"/>
 														</InputField>
 														<InputField name="ПарольАдминистратораКластера" id="12">
 															<DataPath>ПарольАдминистратораКластера</DataPath>
@@ -623,7 +647,7 @@
 															<Wrap>false</Wrap>
 															<PasswordMode>true</PasswordMode>
 															<ContextMenu name="ПарольАдминистратораКластераКонтекстноеМеню" id="13"/>
-															<ExtendedTooltip name="ПарольАдминистратораКластераExtendedTooltip" id="55"/>
+															<ExtendedTooltip name="ПарольАдминистратораКластераРасширеннаяПодсказка" id="55"/>
 														</InputField>
 													</ChildItems>
 												</UsualGroup>
@@ -639,7 +663,7 @@
 													<Collapsed>true</Collapsed>
 													<ControlRepresentation>Picture</ControlRepresentation>
 													<Representation>NormalSeparation</Representation>
-													<ExtendedTooltip name="ГруппаАдминистрированиеExtendedTooltip" id="43"/>
+													<ExtendedTooltip name="ГруппаАдминистрированиеРасширеннаяПодсказка" id="43"/>
 													<ChildItems>
 														<InputField name="АдминистраторИБ" id="25">
 															<DataPath>АдминистраторИБ</DataPath>
@@ -661,7 +685,7 @@
 															<ClearButton>true</ClearButton>
 															<OpenButton>false</OpenButton>
 															<ContextMenu name="АдминистраторИБКонтекстноеМеню" id="26"/>
-															<ExtendedTooltip name="АдминистраторИБExtendedTooltip" id="49"/>
+															<ExtendedTooltip name="АдминистраторИБРасширеннаяПодсказка" id="49"/>
 														</InputField>
 														<InputField name="ПарольАдминистратораИБ" id="27">
 															<DataPath>ПарольАдминистратораИБ</DataPath>
@@ -682,7 +706,7 @@
 															<Wrap>false</Wrap>
 															<PasswordMode>true</PasswordMode>
 															<ContextMenu name="ПарольАдминистратораИБКонтекстноеМеню" id="28"/>
-															<ExtendedTooltip name="ПарольАдминистратораИБExtendedTooltip" id="50"/>
+															<ExtendedTooltip name="ПарольАдминистратораИБРасширеннаяПодсказка" id="50"/>
 														</InputField>
 													</ChildItems>
 												</UsualGroup>
@@ -720,7 +744,7 @@
 													<Title formatted="false">
 														<v8:item>
 															<v8:lang>ru</v8:lang>
-															<v8:content>После внесения изменений в настройки профилей безопасности в кластере серверов программа будет автоматически перезапущена.</v8:content>
+															<v8:content>После внесения изменений в настройки профилей безопасности в кластере серверов приложение будет автоматически перезапущено.</v8:content>
 														</v8:item>
 													</Title>
 													<ContextMenu name="ДекорацияПредупреждениеОНеобходимостиПерезапускаНадписьКонтекстноеМеню" id="203"/>
@@ -756,6 +780,12 @@
 										<Button name="ФормаНазад" id="112">
 											<Type>CommandBarButton</Type>
 											<CommandName>Form.Command.Назад</CommandName>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>&lt; Назад</v8:content>
+												</v8:item>
+											</Title>
 											<LocationInCommandBar>InCommandBarAndInAdditionalSubmenu</LocationInCommandBar>
 											<ExtendedTooltip name="ФормаНазадРасширеннаяПодсказка" id="113"/>
 										</Button>
@@ -776,6 +806,12 @@
 											<Representation>Text</Representation>
 											<DefaultButton>true</DefaultButton>
 											<CommandName>Form.Command.Далее</CommandName>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Применить изменения</v8:content>
+												</v8:item>
+											</Title>
 											<LocationInCommandBar>InCommandBarAndInAdditionalSubmenu</LocationInCommandBar>
 											<ExtendedTooltip name="ФормаРазрешитьРасширеннаяПодсказка" id="40"/>
 										</Button>
@@ -783,14 +819,14 @@
 											<Type>CommandBarButton</Type>
 											<CommandName>Form.StandardCommand.Cancel</CommandName>
 											<LocationInCommandBar>InCommandBarAndInAdditionalSubmenu</LocationInCommandBar>
-											<ExtendedTooltip name="ФормаОтменаExtendedTooltip" id="41"/>
+											<ExtendedTooltip name="ФормаОтменаРасширеннаяПодсказка" id="41"/>
 										</Button>
 										<Button name="Справка" id="23">
 											<Type>CommandBarButton</Type>
 											<SkipOnInput>false</SkipOnInput>
 											<CommandName>Form.StandardCommand.Help</CommandName>
 											<LocationInCommandBar>InCommandBarAndInAdditionalSubmenu</LocationInCommandBar>
-											<ExtendedTooltip name="СправкаExtendedTooltip" id="42"/>
+											<ExtendedTooltip name="СправкаРасширеннаяПодсказка" id="42"/>
 										</Button>
 									</ChildItems>
 								</CommandBar>
@@ -828,8 +864,8 @@
 										</v8:item>
 									</Title>
 									<Picture>
-										<xr:Ref>CommonPicture.Ошибка32</xr:Ref>
-										<xr:LoadTransparent>false</xr:LoadTransparent>
+										<xr:Ref>StdPicture.DialogStop</xr:Ref>
+										<xr:LoadTransparent>true</xr:LoadTransparent>
 									</Picture>
 									<FileDragMode>AsFile</FileDragMode>
 									<ContextMenu name="ДекорацияОперацияНеПоддерживаетсяВВебКлиентеКонтекстноеМеню" id="293"/>
@@ -863,6 +899,12 @@
 										</LabelDecoration>
 										<SpreadSheetDocumentField name="ПредставлениеРазрешенийОперацияНеПоддерживаетсяВВебКлиенте" id="276">
 											<DataPath>ПредставлениеРазрешений</DataPath>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Представление разрешений</v8:content>
+												</v8:item>
+											</Title>
 											<TitleLocation>None</TitleLocation>
 											<VerticalScrollBar>true</VerticalScrollBar>
 											<HorizontalScrollBar>true</HorizontalScrollBar>
@@ -874,9 +916,9 @@
 											<Title formatted="false">
 												<v8:item>
 													<v8:lang>ru</v8:lang>
-													<v8:content>Внесение изменений в настройки профилей безопасности в кластере серверов не может быть выполнено при подключении к программе с использованием веб-клиента.
+													<v8:content>Внесение изменений в настройки профилей безопасности в кластере серверов не может быть выполнено при подключении через веб-клиент.
 
-Для выполнения запрошенной операции требуется подключиться к программе с использованием тонкого клиента и повторить выполняемую операцию.</v8:content>
+Для выполнения запрошенной операции требуется запустить тонкий клиент и повторить операцию.</v8:content>
 												</v8:item>
 											</Title>
 											<ContextMenu name="ЗаголовокОперацияНеПоддерживаетсяВВебКлиентеПродолжениеКонтекстноеМеню" id="280"/>
@@ -1189,7 +1231,7 @@
 			<ToolTip>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Зарегистрировать компоненту и перезапустить программу</v8:content>
+					<v8:content>Зарегистрировать компоненту и перезапустить приложение</v8:content>
 				</v8:item>
 			</ToolTip>
 			<Action>ПеререгистрироватьCOMСоединитель</Action>

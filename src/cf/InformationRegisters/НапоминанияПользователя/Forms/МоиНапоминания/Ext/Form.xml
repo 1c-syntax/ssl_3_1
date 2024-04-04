@@ -51,16 +51,34 @@
 				<Button name="КнопкаСоздать" id="12">
 					<Type>CommandBarButton</Type>
 					<CommandName>Form.Command.Создать</CommandName>
-					<ExtendedTooltip name="КнопкаСоздатьExtendedTooltip" id="17"/>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Создать</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="КнопкаСоздатьРасширеннаяПодсказка" id="17"/>
 				</Button>
 				<Button name="КнопкаИзменить" id="13">
 					<Type>CommandBarButton</Type>
 					<CommandName>Form.Command.Изменить</CommandName>
-					<ExtendedTooltip name="КнопкаИзменитьExtendedTooltip" id="18"/>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Изменить</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="КнопкаИзменитьРасширеннаяПодсказка" id="18"/>
 				</Button>
 				<Button name="КнопкаУдалить" id="16">
 					<Type>CommandBarButton</Type>
 					<CommandName>Form.Command.Удалить</CommandName>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Удалить</v8:content>
+						</v8:item>
+					</Title>
 					<ExtendedTooltip name="КнопкаУдалитьРасширеннаяПодсказка" id="19"/>
 				</Button>
 				<ButtonGroup name="СтандартныеКоманды" id="14">
@@ -71,12 +89,35 @@
 						</v8:item>
 					</Title>
 					<CommandSource>Form</CommandSource>
-					<ExtendedTooltip name="СтандартныеКомандыExtendedTooltip" id="20"/>
+					<ExtendedTooltip name="СтандартныеКомандыРасширеннаяПодсказка" id="20"/>
+				</ButtonGroup>
+				<ButtonGroup name="ДополнительныеКоманды" id="48">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Дополнительные команды</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="ДополнительныеКомандыРасширеннаяПодсказка" id="49"/>
+					<ChildItems>
+						<Button name="ВсеНапоминания" id="46">
+							<Type>CommandBarButton</Type>
+							<CommandName>Form.Command.ВсеНапоминания</CommandName>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Все напоминания</v8:content>
+								</v8:item>
+							</Title>
+							<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
+							<ExtendedTooltip name="ВсеНапоминанияРасширеннаяПодсказка" id="47"/>
+						</Button>
+					</ChildItems>
 				</ButtonGroup>
 				<Button name="ФормаСправка" id="15">
 					<Type>CommandBarButton</Type>
 					<CommandName>Form.StandardCommand.Help</CommandName>
-					<ExtendedTooltip name="ФормаСправкаExtendedTooltip" id="21"/>
+					<ExtendedTooltip name="ФормаСправкаРасширеннаяПодсказка" id="21"/>
 				</Button>
 				<SearchStringAddition name="СтрокаПоиска" id="40">
 					<AdditionSource>
@@ -112,9 +153,6 @@
 					<v8:content>Список</v8:content>
 				</v8:item>
 			</Title>
-			<CommandSet>
-				<ExcludedCommand>Copy</ExcludedCommand>
-			</CommandSet>
 			<AutoRefresh>false</AutoRefresh>
 			<AutoRefreshPeriod>60</AutoRefreshPeriod>
 			<Period>
@@ -134,7 +172,7 @@
 			<AutoCommandBar name="СписокКоманднаяПанель" id="3">
 				<Autofill>false</Autofill>
 			</AutoCommandBar>
-			<ExtendedTooltip name="СписокExtendedTooltip" id="22"/>
+			<ExtendedTooltip name="СписокРасширеннаяПодсказка" id="22"/>
 			<SearchStringAddition name="СписокСтрокаПоиска" id="31">
 				<AdditionSource>
 					<Item>Список</Item>
@@ -171,7 +209,7 @@
 					<DefaultItem>true</DefaultItem>
 					<Width>8</Width>
 					<ContextMenu name="СрокНапоминанияКонтекстноеМеню" id="9"/>
-					<ExtendedTooltip name="СрокНапоминанияExtendedTooltip" id="23"/>
+					<ExtendedTooltip name="СрокНапоминанияРасширеннаяПодсказка" id="23"/>
 				</LabelField>
 				<LabelField name="Описание" id="10">
 					<DataPath>Список.Описание</DataPath>
@@ -179,13 +217,13 @@
 					<AutoCellHeight>true</AutoCellHeight>
 					<Width>30</Width>
 					<ContextMenu name="ОписаниеКонтекстноеМеню" id="11"/>
-					<ExtendedTooltip name="ОписаниеExtendedTooltip" id="24"/>
+					<ExtendedTooltip name="ОписаниеРасширеннаяПодсказка" id="24"/>
 				</LabelField>
 				<LabelField name="ВремяСобытия" id="4">
 					<DataPath>Список.ВремяСобытия</DataPath>
 					<DefaultItem>true</DefaultItem>
 					<ContextMenu name="ВремяСобытияКонтекстноеМеню" id="5"/>
-					<ExtendedTooltip name="ВремяСобытияExtendedTooltip" id="25"/>
+					<ExtendedTooltip name="ВремяСобытияРасширеннаяПодсказка" id="25"/>
 				</LabelField>
 				<LabelField name="Источник" id="6">
 					<DataPath>Список.ПредставлениеИсточника</DataPath>
@@ -200,7 +238,7 @@
 					<Width>20</Width>
 					<Hiperlink>true</Hiperlink>
 					<ContextMenu name="ИсточникКонтекстноеМеню" id="7"/>
-					<ExtendedTooltip name="ИсточникExtendedTooltip" id="26"/>
+					<ExtendedTooltip name="ИсточникРасширеннаяПодсказка" id="26"/>
 				</LabelField>
 			</ChildItems>
 		</Table>
@@ -317,6 +355,15 @@
 			<Action>Удалить</Action>
 			<Representation>Text</Representation>
 			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ВсеНапоминания" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Все напоминания</v8:content>
+				</v8:item>
+			</Title>
+			<Action>ВсеНапоминания</Action>
 		</Command>
 	</Commands>
 </Form>

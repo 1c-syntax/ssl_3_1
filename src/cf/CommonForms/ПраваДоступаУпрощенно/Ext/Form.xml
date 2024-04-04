@@ -6,24 +6,48 @@
 				<Type>CommandBarButton</Type>
 				<DefaultButton>true</DefaultButton>
 				<CommandName>Form.Command.Записать</CommandName>
-				<ExtendedTooltip name="ФормаЗаписатьExtendedTooltip" id="75"/>
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Записать</v8:content>
+					</v8:item>
+				</Title>
+				<ExtendedTooltip name="ФормаЗаписатьРасширеннаяПодсказка" id="75"/>
 			</Button>
 			<Button name="ФормаОтчетПраваПользователя" id="142">
 				<Type>CommandBarButton</Type>
 				<CommandName>Form.Command.ОтчетПраваПользователя</CommandName>
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Отчет Права пользователя</v8:content>
+					</v8:item>
+				</Title>
 				<ExtendedTooltip name="ФормаОтчетПраваПользователяРасширеннаяПодсказка" id="143"/>
 			</Button>
 			<Button name="ПоказыватьНеиспользуемыеВидыДоступа" id="110">
 				<Type>CommandBarButton</Type>
 				<CommandName>Form.Command.ПоказыватьНеиспользуемыеВидыДоступа</CommandName>
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Показывать неиспользуемые виды доступа</v8:content>
+					</v8:item>
+				</Title>
 				<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
-				<ExtendedTooltip name="ПоказыватьНеиспользуемыеВидыДоступаExtendedTooltip" id="111"/>
+				<ExtendedTooltip name="ПоказыватьНеиспользуемыеВидыДоступаРасширеннаяПодсказка" id="111"/>
 			</Button>
 			<Button name="ФормаОтчетПраваДоступа" id="68">
 				<Type>CommandBarButton</Type>
 				<CommandName>Form.Command.ОтчетПоПравамДоступа</CommandName>
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Отчет по правам доступа (старый)</v8:content>
+					</v8:item>
+				</Title>
 				<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
-				<ExtendedTooltip name="ФормаОтчетПраваДоступаExtendedTooltip" id="76"/>
+				<ExtendedTooltip name="ФормаОтчетПраваДоступаРасширеннаяПодсказка" id="76"/>
 			</Button>
 		</ChildItems>
 	</AutoCommandBar>
@@ -44,7 +68,19 @@
 				</v8:item>
 			</Title>
 			<ContextMenu name="НедостаточноПравНаПросмотрКонтекстноеМеню" id="74"/>
-			<ExtendedTooltip name="НедостаточноПравНаПросмотрExtendedTooltip" id="77"/>
+			<ExtendedTooltip name="НедостаточноПравНаПросмотрРасширеннаяПодсказка" id="77"/>
+		</LabelDecoration>
+		<LabelDecoration name="ПраваСлужебногоПользователя" id="156">
+			<Visible>false</Visible>
+			<AutoMaxWidth>false</AutoMaxWidth>
+			<Title formatted="false">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Права (роли) служебного пользователя не настраиваются интерактивно.</v8:content>
+				</v8:item>
+			</Title>
+			<ContextMenu name="ПраваСлужебногоПользователяКонтекстноеМеню" id="157"/>
+			<ExtendedTooltip name="ПраваСлужебногоПользователяРасширеннаяПодсказка" id="158"/>
 		</LabelDecoration>
 		<UsualGroup name="ПраваИОграничения" id="1">
 			<Title>
@@ -57,13 +93,13 @@
 			<Behavior>Usual</Behavior>
 			<Representation>None</Representation>
 			<ShowTitle>false</ShowTitle>
-			<ExtendedTooltip name="ПраваИОграниченияExtendedTooltip" id="78"/>
+			<ExtendedTooltip name="ПраваИОграниченияРасширеннаяПодсказка" id="78"/>
 			<ChildItems>
 				<UsualGroup name="ГруппаПрофили" id="144">
 					<Title>
 						<v8:item>
 							<v8:lang>ru</v8:lang>
-							<v8:content>Группа профили</v8:content>
+							<v8:content>Профили</v8:content>
 						</v8:item>
 					</Title>
 					<Group>Vertical</Group>
@@ -157,7 +193,7 @@
 							<AutoCommandBar name="ПрофилиКоманднаяПанель" id="4">
 								<Autofill>false</Autofill>
 							</AutoCommandBar>
-							<ExtendedTooltip name="ПрофилиExtendedTooltip" id="79"/>
+							<ExtendedTooltip name="ПрофилиРасширеннаяПодсказка" id="79"/>
 							<SearchStringAddition name="ПрофилиСтрокаПоиска" id="112">
 								<AdditionSource>
 									<Item>Профили</Item>
@@ -188,11 +224,17 @@
 							<ChildItems>
 								<CheckBoxField name="ПрофилиПометка" id="5">
 									<DataPath>Профили.Пометка</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Пометка</v8:content>
+										</v8:item>
+									</Title>
 									<TitleLocation>None</TitleLocation>
 									<EditMode>Directly</EditMode>
 									<CheckBoxType>Auto</CheckBoxType>
 									<ContextMenu name="ПрофилиПометкаКонтекстноеМеню" id="6"/>
-									<ExtendedTooltip name="ПрофилиПометкаExtendedTooltip" id="80"/>
+									<ExtendedTooltip name="ПрофилиПометкаРасширеннаяПодсказка" id="80"/>
 									<Events>
 										<Event name="OnChange">ПрофилиПометкаПриИзменении</Event>
 									</Events>
@@ -200,9 +242,15 @@
 								<InputField name="ПрофилиПрофильПредставление" id="9">
 									<DataPath>Профили.ПрофильПредставление</DataPath>
 									<ReadOnly>true</ReadOnly>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Профиль</v8:content>
+										</v8:item>
+									</Title>
 									<EditMode>EnterOnInput</EditMode>
 									<ContextMenu name="ПрофилиПрофильПредставлениеКонтекстноеМеню" id="10"/>
-									<ExtendedTooltip name="ПрофилиПрофильПредставлениеExtendedTooltip" id="81"/>
+									<ExtendedTooltip name="ПрофилиПрофильПредставлениеРасширеннаяПодсказка" id="81"/>
 								</InputField>
 							</ChildItems>
 						</Table>
@@ -220,7 +268,7 @@
 					<Representation>None</Representation>
 					<ShowTitle>false</ShowTitle>
 					<TitleDataPath>Items.Профили.CurrentData.ПрофильПредставление</TitleDataPath>
-					<ExtendedTooltip name="ДоступExtendedTooltip" id="82"/>
+					<ExtendedTooltip name="ДоступРасширеннаяПодсказка" id="82"/>
 					<ChildItems>
 						<Table name="ВидыДоступа" id="12">
 							<Representation>List</Representation>
@@ -264,19 +312,19 @@
 									<Button name="ВидыДоступаКонтекстноеМенюИзменить" id="69">
 										<Type>CommandBarButton</Type>
 										<CommandName>Form.Item.ВидыДоступа.StandardCommand.Change</CommandName>
-										<ExtendedTooltip name="ВидыДоступаКонтекстноеМенюИзменитьExtendedTooltip" id="84"/>
+										<ExtendedTooltip name="ВидыДоступаКонтекстноеМенюИзменитьРасширеннаяПодсказка" id="84"/>
 									</Button>
 									<Button name="ВидыДоступаКонтекстноеМенюЗакончитьРедактирование" id="70">
 										<Type>CommandBarButton</Type>
 										<CommandName>Form.Item.ВидыДоступа.StandardCommand.EndEdit</CommandName>
-										<ExtendedTooltip name="ВидыДоступаКонтекстноеМенюЗакончитьРедактированиеExtendedTooltip" id="85"/>
+										<ExtendedTooltip name="ВидыДоступаКонтекстноеМенюЗакончитьРедактированиеРасширеннаяПодсказка" id="85"/>
 									</Button>
 								</ChildItems>
 							</ContextMenu>
 							<AutoCommandBar name="ВидыДоступаКоманднаяПанель" id="14">
 								<Autofill>false</Autofill>
 							</AutoCommandBar>
-							<ExtendedTooltip name="ВидыДоступаExtendedTooltip" id="88"/>
+							<ExtendedTooltip name="ВидыДоступаРасширеннаяПодсказка" id="88"/>
 							<SearchStringAddition name="ВидыДоступаСтрокаПоиска" id="121">
 								<AdditionSource>
 									<Item>ВидыДоступа</Item>
@@ -312,6 +360,12 @@
 								<InputField name="ВидыДоступаВидДоступаПредставление" id="56">
 									<DataPath>ВидыДоступа.ВидДоступаПредставление</DataPath>
 									<ReadOnly>true</ReadOnly>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Вид доступа</v8:content>
+										</v8:item>
+									</Title>
 									<ToolTip>
 										<v8:item>
 											<v8:lang>ru</v8:lang>
@@ -326,6 +380,12 @@
 								</InputField>
 								<InputField name="ВидыДоступаВсеРазрешеныПредставление" id="58">
 									<DataPath>ВидыДоступа.ВсеРазрешеныПредставление</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Значения доступа</v8:content>
+										</v8:item>
+									</Title>
 									<ToolTip>
 										<v8:item>
 											<v8:lang>ru</v8:lang>
@@ -357,7 +417,7 @@
 							<Representation>None</Representation>
 							<ShowTitle>false</ShowTitle>
 							<TitleDataPath>НадписьВидДоступа</TitleDataPath>
-							<ExtendedTooltip name="ЗначенияДоступаПоВидуДоступаExtendedTooltip" id="91"/>
+							<ExtendedTooltip name="ЗначенияДоступаПоВидуДоступаРасширеннаяПодсказка" id="91"/>
 							<ChildItems>
 								<LabelDecoration name="ТекстВидДоступаНеИспользуется" id="107">
 									<Visible>false</Visible>
@@ -365,11 +425,11 @@
 									<Title formatted="false">
 										<v8:item>
 											<v8:lang>ru</v8:lang>
-											<v8:content>В данный момент не используется, т.к. эта возможность отключена в программе.</v8:content>
+											<v8:content>В данный момент не используется, т.к. эта возможность отключена в приложении.</v8:content>
 										</v8:item>
 									</Title>
 									<ContextMenu name="ТекстВидДоступаНеИспользуетсяКонтекстноеМеню" id="108"/>
-									<ExtendedTooltip name="ТекстВидДоступаНеИспользуетсяExtendedTooltip" id="109"/>
+									<ExtendedTooltip name="ТекстВидДоступаНеИспользуетсяРасширеннаяПодсказка" id="109"/>
 								</LabelDecoration>
 								<Table name="ЗначенияДоступа" id="27">
 									<Representation>List</Representation>
@@ -396,7 +456,7 @@
 									<RowFilter xsi:nil="true"/>
 									<ContextMenu name="ЗначенияДоступаКонтекстноеМеню" id="28"/>
 									<AutoCommandBar name="ЗначенияДоступаКоманднаяПанель" id="29"/>
-									<ExtendedTooltip name="ЗначенияДоступаExtendedTooltip" id="104"/>
+									<ExtendedTooltip name="ЗначенияДоступаРасширеннаяПодсказка" id="104"/>
 									<SearchStringAddition name="ЗначенияДоступаСтрокаПоиска" id="130">
 										<AdditionSource>
 											<Item>ЗначенияДоступа</Item>
@@ -442,6 +502,12 @@
 										</LabelField>
 										<InputField name="ЗначенияДоступаЗначениеДоступа" id="64">
 											<DataPath>ЗначенияДоступа.ЗначениеДоступа</DataPath>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Значение доступа</v8:content>
+												</v8:item>
+											</Title>
 											<EditMode>EnterOnInput</EditMode>
 											<ChooseType>false</ChooseType>
 											<ContextMenu name="ЗначенияДоступаЗначениеДоступаКонтекстноеМеню" id="65"/>
@@ -456,6 +522,12 @@
 										</InputField>
 										<CheckBoxField name="ЗначенияДоступаВключаяНижестоящие" id="139">
 											<DataPath>ЗначенияДоступа.ВключаяНижестоящие</DataPath>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Включая нижестоящие</v8:content>
+												</v8:item>
+											</Title>
 											<TitleLocation>None</TitleLocation>
 											<ToolTip>
 												<v8:item>
@@ -703,6 +775,14 @@
 			</Type>
 		</Attribute>
 		<Attribute name="ДоступностьТекущихОграничений" id="25">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ОшибкаРаботыССервисом" id="8">
+			<Type/>
+		</Attribute>
+		<Attribute name="ЭтоСлужебныйПользователь" id="9">
 			<Type>
 				<v8:Type>xs:boolean</v8:Type>
 			</Type>

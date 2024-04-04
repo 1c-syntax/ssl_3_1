@@ -22,7 +22,7 @@
 				</v8:item>
 			</Title>
 			<PagesRepresentation>None</PagesRepresentation>
-			<ExtendedTooltip name="СтраницыПомощникаExtendedTooltip" id="268"/>
+			<ExtendedTooltip name="СтраницыПомощникаРасширеннаяПодсказка" id="268"/>
 			<ChildItems>
 				<Page name="СтраницаНастройкиПараметровРезервногоКопирования" id="6">
 					<Title>
@@ -31,7 +31,7 @@
 							<v8:content>Страница настройки параметров резервного копирования</v8:content>
 						</v8:item>
 					</Title>
-					<ExtendedTooltip name="СтраницаНастройкиПараметровРезервногоКопированияExtendedTooltip" id="283"/>
+					<ExtendedTooltip name="СтраницаНастройкиПараметровРезервногоКопированияРасширеннаяПодсказка" id="283"/>
 					<ChildItems>
 						<Pages name="РежимыРаботы" id="434">
 							<Title>
@@ -148,22 +148,21 @@
 																			<v8:content>Не задано</v8:content>
 																		</v8:item>
 																	</Title>
-																	<ExtendedTooltip name="ИзменитьРасписаниеExtendedTooltip" id="289"/>
+																	<ExtendedTooltip name="ИзменитьРасписаниеРасширеннаяПодсказка" id="289"/>
 																</Button>
 															</ChildItems>
 														</UsualGroup>
 														<LabelDecoration name="ДекорацияВариантПоРасписанию" id="426">
 															<AutoMaxWidth>false</AutoMaxWidth>
+															<MaxWidth>60</MaxWidth>
 															<TextColor>style:ПоясняющийТекст</TextColor>
 															<Title formatted="false">
 																<v8:item>
 																	<v8:lang>ru</v8:lang>
-																	<v8:content>При составлении расписания необходимо учитывать, что если к моменту запуска резервного
-копирования программа не будет работать, то резервное копирование не выполнится. При выполнении
-резервного копирования работа всех пользователей в программе будет завершена.</v8:content>
+																	<v8:content>Необходимо учитывать, что если к моменту запуска резервного копирования по расписанию приложение не запущено, то резервное копирование не выполнится. </v8:content>
 																</v8:item>
 															</Title>
-															<TitleHeight>3</TitleHeight>
+															<TitleHeight>1</TitleHeight>
 															<ContextMenu name="ДекорацияВариантПоРасписаниюКонтекстноеМеню" id="427"/>
 															<ExtendedTooltip name="ДекорацияВариантПоРасписаниюРасширеннаяПодсказка" id="428"/>
 														</LabelDecoration>
@@ -195,14 +194,15 @@
 														</RadioButtonField>
 														<LabelDecoration name="ДекорацияВариантПриЗавершенииРаботы" id="429">
 															<AutoMaxWidth>false</AutoMaxWidth>
+															<MaxWidth>60</MaxWidth>
 															<TextColor>style:ПоясняющийТекст</TextColor>
 															<Title formatted="false">
 																<v8:item>
 																	<v8:lang>ru</v8:lang>
-																	<v8:content>При каждом выходе из программы администратору предлагается выполнить резервное копирование. При выполнении резервного копирования работа всех пользователей в программе будет завершена.</v8:content>
+																	<v8:content>Каждый раз при закрытии приложения администратору предлагается выполнить резервное копирование.</v8:content>
 																</v8:item>
 															</Title>
-															<TitleHeight>2</TitleHeight>
+															<TitleHeight>1</TitleHeight>
 															<ContextMenu name="ДекорацияВариантПриЗавершенииРаботыКонтекстноеМеню" id="430"/>
 															<ExtendedTooltip name="ДекорацияВариантПриЗавершенииРаботыРасширеннаяПодсказка" id="431"/>
 														</LabelDecoration>
@@ -282,7 +282,7 @@
 											<Title>
 												<v8:item>
 													<v8:lang>ru</v8:lang>
-													<v8:content>Папка для сохранения резервных копий</v8:content>
+													<v8:content>Каталог для сохранения резервных копий</v8:content>
 												</v8:item>
 											</Title>
 											<TitleLocation>Top</TitleLocation>
@@ -295,7 +295,7 @@
 												<Title formatted="false">
 													<v8:item>
 														<v8:lang>ru</v8:lang>
-														<v8:content>Рекомендуется выполнять резервное копирование на другой компьютер или внешний носитель.</v8:content>
+														<v8:content>Рекомендуется выполнять резервное копирование на другой компьютер или внешний носитель.  При резервном копировании работа всех пользователей в приложении будет завершена.</v8:content>
 													</v8:item>
 												</Title>
 											</ExtendedTooltip>
@@ -316,14 +316,20 @@
 									<Behavior>Usual</Behavior>
 									<Representation>NormalSeparation</Representation>
 									<ShowTitle>false</ShowTitle>
-									<ExtendedTooltip name="ГруппаАвторизацииExtendedTooltip" id="294"/>
+									<ExtendedTooltip name="ГруппаАвторизацииРасширеннаяПодсказка" id="294"/>
 									<ChildItems>
 										<InputField name="АдминистраторИБ1" id="255">
 											<DataPath>АдминистраторИБ</DataPath>
 											<Enabled>false</Enabled>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Имя администратора</v8:content>
+												</v8:item>
+											</Title>
 											<HorizontalStretch>false</HorizontalStretch>
 											<ContextMenu name="АдминистраторИБ1КонтекстноеМеню" id="256"/>
-											<ExtendedTooltip name="АдминистраторИБ1ExtendedTooltip" id="295"/>
+											<ExtendedTooltip name="АдминистраторИБ1РасширеннаяПодсказка" id="295"/>
 										</InputField>
 										<UsualGroup name="ГруппаПароль" id="396">
 											<Title>
@@ -339,10 +345,16 @@
 											<ChildItems>
 												<InputField name="ПарольАдминистратораИБ1" id="257">
 													<DataPath>ПарольАдминистратораИБ</DataPath>
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Пароль</v8:content>
+														</v8:item>
+													</Title>
 													<HorizontalStretch>false</HorizontalStretch>
 													<PasswordMode>true</PasswordMode>
 													<ContextMenu name="ПарольАдминистратораИБ1КонтекстноеМеню" id="258"/>
-													<ExtendedTooltip name="ПарольАдминистратораИБ1ExtendedTooltip" id="296"/>
+													<ExtendedTooltip name="ПарольАдминистратораИБ1РасширеннаяПодсказка" id="296"/>
 												</InputField>
 											</ChildItems>
 										</UsualGroup>
@@ -399,7 +411,7 @@
 														</xr:Item>
 													</ChoiceList>
 													<ContextMenu name="ТипОграниченияКаталогаСРезервнымиКопиямиКонтекстноеМеню" id="67"/>
-													<ExtendedTooltip name="ТипОграниченияКаталогаСРезервнымиКопиямиExtendedTooltip" id="300"/>
+													<ExtendedTooltip name="ТипОграниченияКаталогаСРезервнымиКопиямиРасширеннаяПодсказка" id="300"/>
 													<Events>
 														<Event name="OnChange">ТипОграниченияКаталогаСРезервнымиКопиямиПриИзменении</Event>
 													</Events>
@@ -475,6 +487,7 @@
 																	<DataPath>Объект.ЕдиницаИзмеренияПериода</DataPath>
 																	<TitleLocation>None</TitleLocation>
 																	<Width>7</Width>
+																	<HorizontalStretch>false</HorizontalStretch>
 																	<ExtendedEdit>false</ExtendedEdit>
 																	<ListChoiceMode>true</ListChoiceMode>
 																	<ChooseType>false</ChooseType>
@@ -535,7 +548,7 @@
 																	</ChoiceList>
 																	<DropListWidth>7</DropListWidth>
 																	<ContextMenu name="ЕдиницаИзмеренияПериодаХраненияРезервныхКопийКонтекстноеМеню" id="73"/>
-																	<ExtendedTooltip name="ЕдиницаИзмеренияПериодаХраненияРезервныхКопийExtendedTooltip" id="304"/>
+																	<ExtendedTooltip name="ЕдиницаИзмеренияПериодаХраненияРезервныхКопийРасширеннаяПодсказка" id="304"/>
 																	<Events>
 																		<Event name="Clearing">ЕдиницаИзмеренияПериодаХраненияРезервныхКопийОчистка</Event>
 																	</Events>
@@ -641,7 +654,7 @@
 							<v8:content>Дополнительные настройки</v8:content>
 						</v8:item>
 					</Title>
-					<ExtendedTooltip name="ДополнительныеНастройкиExtendedTooltip" id="330"/>
+					<ExtendedTooltip name="ДополнительныеНастройкиРасширеннаяПодсказка" id="330"/>
 					<ChildItems>
 						<UsualGroup name="ГоризонтальнаяГруппаОшибкаПодключения" id="207">
 							<Title>
@@ -653,17 +666,17 @@
 							<Behavior>Usual</Behavior>
 							<Representation>None</Representation>
 							<ShowTitle>false</ShowTitle>
-							<ExtendedTooltip name="ГоризонтальнаяГруппаОшибкаПодключенияExtendedTooltip" id="332"/>
+							<ExtendedTooltip name="ГоризонтальнаяГруппаОшибкаПодключенияРасширеннаяПодсказка" id="332"/>
 							<ChildItems>
 								<PictureDecoration name="Картинка12" id="208">
 									<SkipOnInput>false</SkipOnInput>
 									<Picture>
-										<xr:Ref>CommonPicture.Предупреждение32</xr:Ref>
-										<xr:LoadTransparent>false</xr:LoadTransparent>
+										<xr:Ref>StdPicture.DialogExclamation</xr:Ref>
+										<xr:LoadTransparent>true</xr:LoadTransparent>
 									</Picture>
 									<FileDragMode>AsFile</FileDragMode>
 									<ContextMenu name="Картинка12КонтекстноеМеню" id="209"/>
-									<ExtendedTooltip name="Картинка12ExtendedTooltip" id="333"/>
+									<ExtendedTooltip name="Картинка12РасширеннаяПодсказка" id="333"/>
 								</PictureDecoration>
 								<UsualGroup name="ГруппаОшибки" id="259">
 									<Title>
@@ -676,7 +689,7 @@
 									<Behavior>Usual</Behavior>
 									<Representation>None</Representation>
 									<ShowTitle>false</ShowTitle>
-									<ExtendedTooltip name="ГруппаОшибкиExtendedTooltip" id="334"/>
+									<ExtendedTooltip name="ГруппаОшибкиРасширеннаяПодсказка" id="334"/>
 									<ChildItems>
 										<InputField name="ОбнаруженнаяОшибкаПодключения" id="210">
 											<DataPath>ОбнаруженнаяОшибкаПодключения</DataPath>
@@ -743,7 +756,7 @@
 							<Group>Vertical</Group>
 							<Behavior>Usual</Behavior>
 							<Representation>NormalSeparation</Representation>
-							<ExtendedTooltip name="АвторизацияАдминистратораИнформационнойБазыExtendedTooltip" id="337"/>
+							<ExtendedTooltip name="АвторизацияАдминистратораИнформационнойБазыРасширеннаяПодсказка" id="337"/>
 							<ChildItems>
 								<InputField name="АдминистраторИБ" id="250">
 									<DataPath>АдминистраторИБ</DataPath>
@@ -756,7 +769,7 @@
 									</Title>
 									<HorizontalStretch>false</HorizontalStretch>
 									<ContextMenu name="АдминистраторИБКонтекстноеМеню" id="251"/>
-									<ExtendedTooltip name="АдминистраторИБExtendedTooltip" id="338"/>
+									<ExtendedTooltip name="АдминистраторИБРасширеннаяПодсказка" id="338"/>
 								</InputField>
 								<InputField name="ПарольАдминистратораИБ" id="252">
 									<DataPath>ПарольАдминистратораИБ</DataPath>
@@ -769,7 +782,7 @@
 									<HorizontalStretch>false</HorizontalStretch>
 									<PasswordMode>true</PasswordMode>
 									<ContextMenu name="ПарольАдминистратораИБКонтекстноеМеню" id="253"/>
-									<ExtendedTooltip name="ПарольАдминистратораИБExtendedTooltip" id="339"/>
+									<ExtendedTooltip name="ПарольАдминистратораИБРасширеннаяПодсказка" id="339"/>
 								</InputField>
 							</ChildItems>
 						</UsualGroup>
@@ -797,7 +810,7 @@
 							<v8:content>Готово</v8:content>
 						</v8:item>
 					</Title>
-					<ExtendedTooltip name="ДалееExtendedTooltip" id="266"/>
+					<ExtendedTooltip name="ДалееРасширеннаяПодсказка" id="266"/>
 				</Button>
 				<Button name="Справка" id="375">
 					<Type>CommandBarButton</Type>

@@ -13,7 +13,13 @@
 				<Type>CommandBarButton</Type>
 				<DefaultButton>true</DefaultButton>
 				<CommandName>Form.Command.ОК</CommandName>
-				<ExtendedTooltip name="ФормаОКExtendedTooltip" id="44"/>
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>ОК</v8:content>
+					</v8:item>
+				</Title>
+				<ExtendedTooltip name="ФормаОКРасширеннаяПодсказка" id="44"/>
 			</Button>
 			<Button name="ФормаЗакрыть" id="30">
 				<Type>CommandBarButton</Type>
@@ -25,7 +31,7 @@
 						<v8:content>Отмена</v8:content>
 					</v8:item>
 				</Title>
-				<ExtendedTooltip name="ФормаЗакрытьExtendedTooltip" id="45"/>
+				<ExtendedTooltip name="ФормаЗакрытьРасширеннаяПодсказка" id="45"/>
 			</Button>
 		</ChildItems>
 	</AutoCommandBar>
@@ -55,6 +61,12 @@
 					<ChildItems>
 						<RadioButtonField name="ЗапретИзмененияДанныхНеУстановлен" id="85">
 							<DataPath>ОписаниеДатыЗапрета</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Описание даты запрета</v8:content>
+								</v8:item>
+							</Title>
 							<TitleLocation>None</TitleLocation>
 							<RadioButtonType>Auto</RadioButtonType>
 							<ChoiceList>
@@ -92,6 +104,12 @@
 							<ChildItems>
 								<RadioButtonField name="ПроизвольнаяДатаЗапрета" id="90">
 									<DataPath>ОписаниеДатыЗапрета</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Описание даты запрета</v8:content>
+										</v8:item>
+									</Title>
 									<TitleLocation>None</TitleLocation>
 									<RadioButtonType>Auto</RadioButtonType>
 									<ChoiceList>
@@ -117,6 +135,12 @@
 								</RadioButtonField>
 								<InputField name="ДатаЗапретаПростойРежим" id="93">
 									<DataPath>ДатаЗапрета</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Дата запрета</v8:content>
+										</v8:item>
+									</Title>
 									<TitleLocation>None</TitleLocation>
 									<ContextMenu name="ДатаЗапретаПростойРежимКонтекстноеМеню" id="94"/>
 									<ExtendedTooltip name="ДатаЗапретаПростойРежимРасширеннаяПодсказка" id="95"/>
@@ -182,7 +206,7 @@
 							<Behavior>Usual</Behavior>
 							<Representation>None</Representation>
 							<ShowTitle>false</ShowTitle>
-							<ExtendedTooltip name="ДатаЗапретаСОписаниемExtendedTooltip" id="50"/>
+							<ExtendedTooltip name="ДатаЗапретаСОписаниемРасширеннаяПодсказка" id="50"/>
 							<ChildItems>
 								<InputField name="ОписаниеДатыЗапрета" id="20">
 									<DataPath>ОписаниеДатыЗапрета</DataPath>
@@ -291,7 +315,7 @@
 									</ChoiceList>
 									<BackColor>style:ФонУправляющегоПоля</BackColor>
 									<ContextMenu name="ОписаниеДатыЗапретаКонтекстноеМеню" id="21"/>
-									<ExtendedTooltip name="ОписаниеДатыЗапретаExtendedTooltip" id="51"/>
+									<ExtendedTooltip name="ОписаниеДатыЗапретаРасширеннаяПодсказка" id="51"/>
 									<Events>
 										<Event name="OnChange">ОписаниеДатыЗапретаПриИзменении</Event>
 										<Event name="Clearing">ОписаниеДатыЗапретаОчистка</Event>
@@ -305,7 +329,7 @@
 										</v8:item>
 									</Title>
 									<PagesRepresentation>None</PagesRepresentation>
-									<ExtendedTooltip name="ПроизвольнаяДатаExtendedTooltip" id="52"/>
+									<ExtendedTooltip name="ПроизвольнаяДатаРасширеннаяПодсказка" id="52"/>
 									<ChildItems>
 										<Page name="ПроизвольнаяДатаИспользуется" id="23">
 											<Title>
@@ -314,10 +338,16 @@
 													<v8:content>Произвольная дата используется</v8:content>
 												</v8:item>
 											</Title>
-											<ExtendedTooltip name="ПроизвольнаяДатаИспользуетсяExtendedTooltip" id="53"/>
+											<ExtendedTooltip name="ПроизвольнаяДатаИспользуетсяРасширеннаяПодсказка" id="53"/>
 											<ChildItems>
 												<InputField name="ДатаЗапрета" id="24">
 													<DataPath>ДатаЗапрета</DataPath>
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Дата запрета</v8:content>
+														</v8:item>
+													</Title>
 													<TitleLocation>None</TitleLocation>
 													<ClearButton>true</ClearButton>
 													<EditFormat>
@@ -327,7 +357,7 @@
 														</v8:item>
 													</EditFormat>
 													<ContextMenu name="ДатаЗапретаКонтекстноеМеню" id="25"/>
-													<ExtendedTooltip name="ДатаЗапретаExtendedTooltip" id="54"/>
+													<ExtendedTooltip name="ДатаЗапретаРасширеннаяПодсказка" id="54"/>
 													<Events>
 														<Event name="OnChange">ДатаЗапретаПриИзменении</Event>
 													</Events>
@@ -341,11 +371,11 @@
 													<v8:content>Произвольная дата не используется</v8:content>
 												</v8:item>
 											</Title>
-											<ExtendedTooltip name="ПроизвольнаяДатаНеИспользуетсяExtendedTooltip" id="55"/>
+											<ExtendedTooltip name="ПроизвольнаяДатаНеИспользуетсяРасширеннаяПодсказка" id="55"/>
 											<ChildItems>
 												<LabelDecoration name="ПустаяНадписьДляОтображенияСтраницы1" id="27">
 													<ContextMenu name="ПустаяНадписьДляОтображенияСтраницы1КонтекстноеМеню" id="28"/>
-													<ExtendedTooltip name="ПустаяНадписьДляОтображенияСтраницы1ExtendedTooltip" id="56"/>
+													<ExtendedTooltip name="ПустаяНадписьДляОтображенияСтраницы1РасширеннаяПодсказка" id="56"/>
 												</LabelDecoration>
 											</ChildItems>
 										</Page>
@@ -387,10 +417,16 @@
 											<ChildItems>
 												<CheckBoxField name="РазрешитьИзменениеДанныхДоДатыЗапрета" id="3">
 													<DataPath>РазрешитьИзменениеДанныхДоДатыЗапрета</DataPath>
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Вступает в действие с отсрочкой в</v8:content>
+														</v8:item>
+													</Title>
 													<TitleLocation>Right</TitleLocation>
 													<CheckBoxType>Auto</CheckBoxType>
 													<ContextMenu name="РазрешитьИзменениеДанныхДоДатыЗапретаКонтекстноеМеню" id="4"/>
-													<ExtendedTooltip name="РазрешитьИзменениеДанныхДоДатыЗапретаExtendedTooltip" id="59"/>
+													<ExtendedTooltip name="РазрешитьИзменениеДанныхДоДатыЗапретаРасширеннаяПодсказка" id="59"/>
 													<Events>
 														<Event name="OnChange">РазрешитьИзменениеДанныхДоДатыЗапретаПриИзменении</Event>
 													</Events>
@@ -405,7 +441,7 @@
 													</Title>
 													<TitleLocation>Right</TitleLocation>
 													<ContextMenu name="КоличествоДнейРазрешенияКонтекстноеМеню" id="10"/>
-													<ExtendedTooltip name="КоличествоДнейРазрешенияExtendedTooltip" id="63"/>
+													<ExtendedTooltip name="КоличествоДнейРазрешенияРасширеннаяПодсказка" id="63"/>
 													<Events>
 														<Event name="OnChange">КоличествоДнейРазрешенияПриИзменении</Event>
 														<Event name="AutoComplete">КоличествоДнейРазрешенияАвтоПодбор</Event>
@@ -429,7 +465,7 @@
 												</v8:item>
 											</ToolTip>
 											<ContextMenu name="ПояснениеНепроизвольнойДатыКонтекстноеМеню" id="15"/>
-											<ExtendedTooltip name="ПояснениеНепроизвольнойДатыExtendedTooltip" id="66"/>
+											<ExtendedTooltip name="ПояснениеНепроизвольнойДатыРасширеннаяПодсказка" id="66"/>
 										</LabelDecoration>
 									</ChildItems>
 								</Page>
@@ -482,26 +518,44 @@
 				<LabelField name="ПользовательПредставление" id="31">
 					<DataPath>ПользовательПредставление</DataPath>
 					<ReadOnly>true</ReadOnly>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Действует для</v8:content>
+						</v8:item>
+					</Title>
 					<TitleTextColor>style:ПоясняющийТекст</TitleTextColor>
 					<TextColor>style:ПоясняющийТекст</TextColor>
 					<ContextMenu name="ПользовательПредставлениеКонтекстноеМеню" id="32"/>
-					<ExtendedTooltip name="ПользовательПредставлениеExtendedTooltip" id="46"/>
+					<ExtendedTooltip name="ПользовательПредставлениеРасширеннаяПодсказка" id="46"/>
 				</LabelField>
 				<LabelField name="РазделПредставление" id="35">
 					<DataPath>РазделПредставление</DataPath>
 					<ReadOnly>true</ReadOnly>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Раздел</v8:content>
+						</v8:item>
+					</Title>
 					<TitleTextColor>style:ПоясняющийТекст</TitleTextColor>
 					<TextColor>style:ПоясняющийТекст</TextColor>
 					<ContextMenu name="РазделПредставлениеКонтекстноеМеню" id="36"/>
-					<ExtendedTooltip name="РазделПредставлениеExtendedTooltip" id="47"/>
+					<ExtendedTooltip name="РазделПредставлениеРасширеннаяПодсказка" id="47"/>
 				</LabelField>
 				<LabelField name="ОбъектПредставление" id="33">
 					<DataPath>Объект</DataPath>
 					<ReadOnly>true</ReadOnly>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Объект</v8:content>
+						</v8:item>
+					</Title>
 					<TitleTextColor>style:ПоясняющийТекст</TitleTextColor>
 					<Hiperlink>true</Hiperlink>
 					<ContextMenu name="ОбъектПредставлениеКонтекстноеМеню" id="34"/>
-					<ExtendedTooltip name="ОбъектПредставлениеExtendedTooltip" id="48"/>
+					<ExtendedTooltip name="ОбъектПредставлениеРасширеннаяПодсказка" id="48"/>
 					<Events>
 						<Event name="Click">ОбъектПредставлениеНажатие</Event>
 					</Events>

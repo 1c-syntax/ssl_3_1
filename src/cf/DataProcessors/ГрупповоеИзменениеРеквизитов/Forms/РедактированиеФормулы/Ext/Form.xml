@@ -9,13 +9,25 @@
 				<DefaultButton>true</DefaultButton>
 				<SkipOnInput>false</SkipOnInput>
 				<CommandName>Form.Command.ОК</CommandName>
-				<ExtendedTooltip name="ОКExtendedTooltip" id="32"/>
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Сохранить и закрыть</v8:content>
+					</v8:item>
+				</Title>
+				<ExtendedTooltip name="ОКРасширеннаяПодсказка" id="32"/>
 			</Button>
 			<Button name="Проверить" id="17">
 				<Type>CommandBarButton</Type>
 				<SkipOnInput>false</SkipOnInput>
 				<CommandName>Form.Command.Проверить</CommandName>
-				<ExtendedTooltip name="ПроверитьExtendedTooltip" id="33"/>
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Проверить формулу</v8:content>
+					</v8:item>
+				</Title>
+				<ExtendedTooltip name="ПроверитьРасширеннаяПодсказка" id="33"/>
 			</Button>
 		</ChildItems>
 	</AutoCommandBar>
@@ -47,7 +59,7 @@
 					<Behavior>Usual</Behavior>
 					<Representation>None</Representation>
 					<ShowTitle>false</ShowTitle>
-					<ExtendedTooltip name="ГруппаОсновнаяExtendedTooltip" id="35"/>
+					<ExtendedTooltip name="ГруппаОсновнаяРасширеннаяПодсказка" id="35"/>
 					<ChildItems>
 						<UsualGroup name="ГруппаОперанды" id="18">
 							<Title>
@@ -58,7 +70,7 @@
 							</Title>
 							<Group>Vertical</Group>
 							<Behavior>Usual</Behavior>
-							<ExtendedTooltip name="ГруппаОперандыExtendedTooltip" id="36"/>
+							<ExtendedTooltip name="ГруппаОперандыРасширеннаяПодсказка" id="36"/>
 							<ChildItems>
 								<Pages name="ГруппаОперандыСтраницы" id="26">
 									<Title>
@@ -68,7 +80,7 @@
 										</v8:item>
 									</Title>
 									<PagesRepresentation>None</PagesRepresentation>
-									<ExtendedTooltip name="ГруппаОперандыСтраницыExtendedTooltip" id="37"/>
+									<ExtendedTooltip name="ГруппаОперандыСтраницыРасширеннаяПодсказка" id="37"/>
 									<ChildItems>
 										<Page name="СтраницаДеревоОперандов" id="67">
 											<Title>
@@ -150,6 +162,12 @@
 															<ChildItems>
 																<PictureField name="ДеревоОперандовКодКартинки" id="79">
 																	<DataPath>ДеревоОперандов.КодКартинки</DataPath>
+																	<Title>
+																		<v8:item>
+																			<v8:lang>ru</v8:lang>
+																			<v8:content>Код картинки</v8:content>
+																		</v8:item>
+																	</Title>
 																	<EditMode>EnterOnInput</EditMode>
 																	<FileDragMode>AsFile</FileDragMode>
 																	<ContextMenu name="ДеревоОперандовКодКартинкиКонтекстноеМеню" id="80"/>
@@ -158,6 +176,12 @@
 																<InputField name="ДеревоОперандовПредставление" id="76">
 																	<DataPath>ДеревоОперандов.Представление</DataPath>
 																	<ReadOnly>true</ReadOnly>
+																	<Title>
+																		<v8:item>
+																			<v8:lang>ru</v8:lang>
+																			<v8:content>Представление</v8:content>
+																		</v8:item>
+																	</Title>
 																	<EditMode>EnterOnInput</EditMode>
 																	<ContextMenu name="ДеревоОперандовПредставлениеКонтекстноеМеню" id="77"/>
 																	<ExtendedTooltip name="ДеревоОперандовПредставлениеРасширеннаяПодсказка" id="78"/>
@@ -167,6 +191,12 @@
 														<InputField name="ДеревоОперандовИдентификатор" id="73">
 															<DataPath>ДеревоОперандов.Идентификатор</DataPath>
 															<Visible>false</Visible>
+															<Title>
+																<v8:item>
+																	<v8:lang>ru</v8:lang>
+																	<v8:content>Идентификатор</v8:content>
+																</v8:item>
+															</Title>
 															<EditMode>EnterOnInput</EditMode>
 															<ContextMenu name="ДеревоОперандовИдентификаторКонтекстноеМеню" id="74"/>
 															<ExtendedTooltip name="ДеревоОперандовИдентификаторРасширеннаяПодсказка" id="75"/>
@@ -183,7 +213,7 @@
 												</v8:item>
 											</Title>
 											<ShowTitle>false</ShowTitle>
-											<ExtendedTooltip name="СтраницаЧисловыхОперандовExtendedTooltip" id="38"/>
+											<ExtendedTooltip name="СтраницаЧисловыхОперандовРасширеннаяПодсказка" id="38"/>
 											<ChildItems>
 												<Table name="Операнды" id="3">
 													<Representation>Tree</Representation>
@@ -210,7 +240,7 @@
 													<RowFilter xsi:nil="true"/>
 													<ContextMenu name="ОперандыКонтекстноеМеню" id="4"/>
 													<AutoCommandBar name="ОперандыКоманднаяПанель" id="5"/>
-													<ExtendedTooltip name="ОперандыExtendedTooltip" id="39"/>
+													<ExtendedTooltip name="ОперандыРасширеннаяПодсказка" id="39"/>
 													<SearchStringAddition name="ОперандыСтрокаПоиска" id="96">
 														<AdditionSource>
 															<Item>Операнды</Item>
@@ -257,9 +287,15 @@
 														</InputField>
 														<InputField name="ОперандыИдентификатор" id="21">
 															<DataPath>Операнды.Идентификатор</DataPath>
+															<Title>
+																<v8:item>
+																	<v8:lang>ru</v8:lang>
+																	<v8:content>Идентификатор</v8:content>
+																</v8:item>
+															</Title>
 															<EditMode>EnterOnInput</EditMode>
 															<ContextMenu name="ОперандыИдентификаторКонтекстноеМеню" id="22"/>
-															<ExtendedTooltip name="ОперандыИдентификаторExtendedTooltip" id="40"/>
+															<ExtendedTooltip name="ОперандыИдентификаторРасширеннаяПодсказка" id="40"/>
 														</InputField>
 														<InputField name="ОперандыЗначение" id="53">
 															<DataPath>Операнды.Значение</DataPath>
@@ -288,7 +324,7 @@
 												</v8:item>
 											</Title>
 											<ShowTitle>false</ShowTitle>
-											<ExtendedTooltip name="СтраницаСтроковыхОперандовExtendedTooltip" id="41"/>
+											<ExtendedTooltip name="СтраницаСтроковыхОперандовРасширеннаяПодсказка" id="41"/>
 											<ChildItems>
 												<Table name="КомпоновщикНастроек" id="29">
 													<Representation>Tree</Representation>
@@ -310,7 +346,7 @@
 													</Title>
 													<ContextMenu name="КомпоновщикНастроекКонтекстноеМеню" id="30"/>
 													<AutoCommandBar name="КомпоновщикНастроекКоманднаяПанель" id="31"/>
-													<ExtendedTooltip name="КомпоновщикНастроекExtendedTooltip" id="42"/>
+													<ExtendedTooltip name="КомпоновщикНастроекРасширеннаяПодсказка" id="42"/>
 													<SearchStringAddition name="КомпоновщикНастроекСтрокаПоиска" id="105">
 														<AdditionSource>
 															<Item>КомпоновщикНастроек</Item>
@@ -355,7 +391,7 @@
 							</Title>
 							<Group>Vertical</Group>
 							<Behavior>Usual</Behavior>
-							<ExtendedTooltip name="ГруппаОператорыExtendedTooltip" id="43"/>
+							<ExtendedTooltip name="ГруппаОператорыРасширеннаяПодсказка" id="43"/>
 							<ChildItems>
 								<Table name="Операторы" id="8">
 									<Representation>Tree</Representation>
@@ -375,7 +411,7 @@
 									</Title>
 									<ContextMenu name="ОператорыКонтекстноеМеню" id="9"/>
 									<AutoCommandBar name="ОператорыКоманднаяПанель" id="10"/>
-									<ExtendedTooltip name="ОператорыExtendedTooltip" id="44"/>
+									<ExtendedTooltip name="ОператорыРасширеннаяПодсказка" id="44"/>
 									<SearchStringAddition name="ОператорыСтрокаПоиска" id="114">
 										<AdditionSource>
 											<Item>Операторы</Item>
@@ -408,9 +444,15 @@
 									<ChildItems>
 										<InputField name="ОператорыОператор" id="11">
 											<DataPath>Операторы.Наименование</DataPath>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Операторы</v8:content>
+												</v8:item>
+											</Title>
 											<EditMode>EnterOnInput</EditMode>
 											<ContextMenu name="ОператорыОператорКонтекстноеМеню" id="12"/>
-											<ExtendedTooltip name="ОператорыОператорExtendedTooltip" id="45"/>
+											<ExtendedTooltip name="ОператорыОператорРасширеннаяПодсказка" id="45"/>
 										</InputField>
 									</ChildItems>
 								</Table>
@@ -420,10 +462,16 @@
 				</UsualGroup>
 				<TextDocumentField name="Формула" id="13">
 					<DataPath>Формула</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Формула</v8:content>
+						</v8:item>
+					</Title>
 					<TitleLocation>None</TitleLocation>
 					<Height>5</Height>
 					<ContextMenu name="ФормулаКонтекстноеМеню" id="14"/>
-					<ExtendedTooltip name="ФормулаExtendedTooltip" id="46"/>
+					<ExtendedTooltip name="ФормулаРасширеннаяПодсказка" id="46"/>
 				</TextDocumentField>
 			</ChildItems>
 		</UsualGroup>
@@ -752,6 +800,15 @@
 		</Parameter>
 		<Parameter name="Операнды">
 			<Type/>
+		</Parameter>
+		<Parameter name="ОперандыЗаголовок">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
 		</Parameter>
 	</Parameters>
 </Form>

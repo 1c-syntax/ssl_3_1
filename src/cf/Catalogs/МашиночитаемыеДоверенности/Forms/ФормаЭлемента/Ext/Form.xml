@@ -1172,6 +1172,7 @@
 									</Title>
 									<EditMode>EnterOnInput</EditMode>
 									<Width>30</Width>
+									<Height>2</Height>
 									<ContextMenu name="ЭлектронныеПодписиКомуВыданСертификатКонтекстноеМеню" id="816"/>
 									<ExtendedTooltip name="ЭлектронныеПодписиКомуВыданСертификатРасширеннаяПодсказка" id="817"/>
 								</InputField>
@@ -1212,18 +1213,16 @@
 									<Group>InCell</Group>
 									<ExtendedTooltip name="ЭлектронныеПодписиГруппаПроверкаРасширеннаяПодсказка" id="987"/>
 									<ChildItems>
-										<InputField name="ЭлектронныеПодписиСтатус" id="857">
-											<DataPath>ЭлектронныеПодписи.Статус</DataPath>
+										<InputField name="ЭлектронныеПодписиРезультатПроверкиКраткий" id="1157">
+											<DataPath>ЭлектронныеПодписи.РезультатПроверкиКраткий</DataPath>
 											<Title>
 												<v8:item>
 													<v8:lang>ru</v8:lang>
 													<v8:content>Статус</v8:content>
 												</v8:item>
 											</Title>
-											<EditMode>EnterOnInput</EditMode>
-											<AutoMaxHeight>false</AutoMaxHeight>
-											<ContextMenu name="ЭлектронныеПодписиСтатусКонтекстноеМеню" id="858"/>
-											<ExtendedTooltip name="ЭлектронныеПодписиСтатусРасширеннаяПодсказка" id="859"/>
+											<ContextMenu name="ЭлектронныеПодписиРезультатПроверкиКраткийКонтекстноеМеню" id="1158"/>
+											<ExtendedTooltip name="ЭлектронныеПодписиРезультатПроверкиКраткийРасширеннаяПодсказка" id="1159"/>
 										</InputField>
 										<InputField name="ЭлектронныеПодписиДатаПроверкиПодписи" id="983">
 											<DataPath>ЭлектронныеПодписи.ДатаПроверкиПодписи</DataPath>
@@ -1236,21 +1235,6 @@
 											<EditMode>EnterOnInput</EditMode>
 											<ContextMenu name="ЭлектронныеПодписиДатаПроверкиПодписиКонтекстноеМеню" id="984"/>
 											<ExtendedTooltip name="ЭлектронныеПодписиДатаПроверкиПодписиРасширеннаяПодсказка" id="985"/>
-										</InputField>
-										<InputField name="ЭлектронныеПодписиОписаниеОшибки" id="988">
-											<DataPath>ЭлектронныеПодписи.ОписаниеОшибки</DataPath>
-											<Title>
-												<v8:item>
-													<v8:lang>ru</v8:lang>
-													<v8:content>Описание ошибки</v8:content>
-												</v8:item>
-											</Title>
-											<TitleLocation>None</TitleLocation>
-											<EditMode>EnterOnInput</EditMode>
-											<Height>3</Height>
-											<AutoMaxHeight>false</AutoMaxHeight>
-											<ContextMenu name="ЭлектронныеПодписиОписаниеОшибкиКонтекстноеМеню" id="989"/>
-											<ExtendedTooltip name="ЭлектронныеПодписиОписаниеОшибкиРасширеннаяПодсказка" id="990"/>
 										</InputField>
 									</ChildItems>
 								</ColumnGroup>
@@ -2646,21 +2630,6 @@
 						</v8:StringQualifiers>
 					</Type>
 				</Column>
-				<Column name="Статус" id="4">
-					<Title>
-						<v8:item>
-							<v8:lang>ru</v8:lang>
-							<v8:content>Статус</v8:content>
-						</v8:item>
-					</Title>
-					<Type>
-						<v8:Type>xs:string</v8:Type>
-						<v8:StringQualifiers>
-							<v8:Length>0</v8:Length>
-							<v8:AllowedLength>Variable</v8:AllowedLength>
-						</v8:StringQualifiers>
-					</Type>
-				</Column>
 				<Column name="Объект" id="5">
 					<Type>
 						<v8:TypeSet>cfg:AnyRef</v8:TypeSet>
@@ -2727,21 +2696,6 @@
 						</v8:NumberQualifiers>
 					</Type>
 				</Column>
-				<Column name="ОписаниеОшибки" id="13">
-					<Title>
-						<v8:item>
-							<v8:lang>ru</v8:lang>
-							<v8:content>Описание ошибки</v8:content>
-						</v8:item>
-					</Title>
-					<Type>
-						<v8:Type>xs:string</v8:Type>
-						<v8:StringQualifiers>
-							<v8:Length>0</v8:Length>
-							<v8:AllowedLength>Variable</v8:AllowedLength>
-						</v8:StringQualifiers>
-					</Type>
-				</Column>
 				<Column name="ТипПодписи" id="14">
 					<Type>
 						<v8:Type>cfg:EnumRef.ТипыПодписиКриптографии</v8:Type>
@@ -2763,6 +2717,32 @@
 				<Column name="ИдентификаторПодписи" id="16">
 					<Type>
 						<v8:Type>v8:UUID</v8:Type>
+					</Type>
+				</Column>
+				<Column name="РезультатПроверки" id="57">
+					<Type/>
+				</Column>
+				<Column name="РезультатПроверкиКраткий" id="58">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Результат проверки краткий</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="МашиночитаемаяДоверенность" id="59">
+					<Type/>
+				</Column>
+				<Column name="МашиночитаемаяДоверенностьВерна" id="61">
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
 					</Type>
 				</Column>
 			</Columns>

@@ -7,7 +7,13 @@
 				<Type>CommandBarButton</Type>
 				<SkipOnInput>false</SkipOnInput>
 				<CommandName>Form.Command.ВыполнитьОбмен</CommandName>
-				<ExtendedTooltip name="ВыполнитьОбменExtendedTooltip" id="127"/>
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Выполнить сценарий</v8:content>
+					</v8:item>
+				</Title>
+				<ExtendedTooltip name="ВыполнитьОбменРасширеннаяПодсказка" id="127"/>
 			</Button>
 		</ChildItems>
 	</AutoCommandBar>
@@ -23,7 +29,7 @@
 			<Title>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Группа сценарий отключен</v8:content>
+					<v8:content>Сценарий отключен</v8:content>
 				</v8:item>
 			</Title>
 			<HorizontalStretch>true</HorizontalStretch>
@@ -61,7 +67,7 @@
 			<Title>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Группа информация о настроке в одной базе</v8:content>
+					<v8:content>Информация о настроке в одной базе</v8:content>
 				</v8:item>
 			</Title>
 			<HorizontalStretch>true</HorizontalStretch>
@@ -111,11 +117,11 @@
 					<AutoMaxWidth>false</AutoMaxWidth>
 					<Wrap>false</Wrap>
 					<ContextMenu name="НаименованиеКонтекстноеМеню" id="4"/>
-					<ExtendedTooltip name="НаименованиеExtendedTooltip" id="129"/>
+					<ExtendedTooltip name="НаименованиеРасширеннаяПодсказка" id="129"/>
 				</InputField>
 				<InputField name="Код" id="101">
 					<ContextMenu name="КодКонтекстноеМеню" id="102"/>
-					<ExtendedTooltip name="КодExtendedTooltip" id="130"/>
+					<ExtendedTooltip name="КодРасширеннаяПодсказка" id="130"/>
 				</InputField>
 			</ChildItems>
 		</UsualGroup>
@@ -129,7 +135,7 @@
 			<Behavior>Usual</Behavior>
 			<Representation>None</Representation>
 			<ShowTitle>false</ShowTitle>
-			<ExtendedTooltip name="ОбменПоРасписаниюExtendedTooltip" id="131"/>
+			<ExtendedTooltip name="ОбменПоРасписаниюРасширеннаяПодсказка" id="131"/>
 			<ChildItems>
 				<CheckBoxField name="ИспользоватьРегламентноеЗадание" id="24">
 					<DataPath>Объект.ИспользоватьРегламентноеЗадание</DataPath>
@@ -142,7 +148,7 @@
 					<TitleLocation>Right</TitleLocation>
 					<CheckBoxType>Auto</CheckBoxType>
 					<ContextMenu name="ИспользоватьРегламентноеЗаданиеКонтекстноеМеню" id="25"/>
-					<ExtendedTooltip name="ИспользоватьРегламентноеЗаданиеExtendedTooltip" id="132"/>
+					<ExtendedTooltip name="ИспользоватьРегламентноеЗаданиеРасширеннаяПодсказка" id="132"/>
 					<Events>
 						<Event name="OnChange">ИспользоватьРегламентноеЗаданиеПриИзменении</Event>
 					</Events>
@@ -151,7 +157,13 @@
 					<Type>Hyperlink</Type>
 					<SkipOnInput>false</SkipOnInput>
 					<CommandName>Form.Command.НастроитьРасписаниеРегламентногоЗадания</CommandName>
-					<ExtendedTooltip name="НастроитьРасписаниеРегламентногоЗаданияExtendedTooltip" id="133">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Расписание синхронизации</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="НастроитьРасписаниеРегламентногоЗаданияРасширеннаяПодсказка" id="133">
 						<AutoMaxWidth>false</AutoMaxWidth>
 						<Title formatted="false">
 							<v8:item>
@@ -210,7 +222,7 @@
 			<Behavior>Usual</Behavior>
 			<Representation>None</Representation>
 			<ShowTitle>false</ShowTitle>
-			<ExtendedTooltip name="СоставExtendedTooltip" id="134"/>
+			<ExtendedTooltip name="СоставРасширеннаяПодсказка" id="134"/>
 			<ChildItems>
 				<Table name="СоставРасписания" id="5">
 					<Representation>List</Representation>
@@ -232,18 +244,30 @@
 								<Type>CommandBarButton</Type>
 								<SkipOnInput>false</SkipOnInput>
 								<CommandName>Form.Command.НастройкиТранспорта</CommandName>
-								<ExtendedTooltip name="НастройкиТранспортаExtendedTooltip" id="135"/>
+								<Title>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Параметры подключения</v8:content>
+									</v8:item>
+								</Title>
+								<ExtendedTooltip name="НастройкиТранспортаРасширеннаяПодсказка" id="135"/>
 							</Button>
 							<Button name="КонтекстноеМенюСоставРасписанияПерейтиВЖурналРегистрации" id="126">
 								<Type>CommandBarButton</Type>
 								<SkipOnInput>false</SkipOnInput>
 								<CommandName>Form.Command.ПерейтиВЖурналРегистрации</CommandName>
-								<ExtendedTooltip name="КонтекстноеМенюСоставРасписанияПерейтиВЖурналРегистрацииExtendedTooltip" id="136"/>
+								<Title>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>События обмена данных</v8:content>
+									</v8:item>
+								</Title>
+								<ExtendedTooltip name="КонтекстноеМенюСоставРасписанияПерейтиВЖурналРегистрацииРасширеннаяПодсказка" id="136"/>
 							</Button>
 						</ChildItems>
 					</ContextMenu>
 					<AutoCommandBar name="СоставРасписанияКоманднаяПанель" id="7"/>
-					<ExtendedTooltip name="СоставРасписанияExtendedTooltip" id="137"/>
+					<ExtendedTooltip name="СоставРасписанияРасширеннаяПодсказка" id="137"/>
 					<SearchStringAddition name="СоставРасписанияСтрокаПоиска" id="147">
 						<AdditionSource>
 							<Item>СоставРасписания</Item>
@@ -276,7 +300,7 @@
 							<DataPath>Объект.НастройкиОбмена.LineNumber</DataPath>
 							<EditMode>EnterOnInput</EditMode>
 							<ContextMenu name="НастройкиОбменаНомерСтрокиКонтекстноеМеню" id="109"/>
-							<ExtendedTooltip name="НастройкиОбменаНомерСтрокиExtendedTooltip" id="138"/>
+							<ExtendedTooltip name="НастройкиОбменаНомерСтрокиРасширеннаяПодсказка" id="138"/>
 						</LabelField>
 						<ColumnGroup name="КолонкиУзлаИнформационнойБазы" id="122">
 							<Title>
@@ -286,7 +310,7 @@
 								</v8:item>
 							</Title>
 							<Group>InCell</Group>
-							<ExtendedTooltip name="КолонкиУзлаИнформационнойБазыExtendedTooltip" id="139"/>
+							<ExtendedTooltip name="КолонкиУзлаИнформационнойБазыРасширеннаяПодсказка" id="139"/>
 							<ChildItems>
 								<PictureField name="НастройкиОбменаРезультатВыполненияОбмена" id="123">
 									<DataPath>Объект.НастройкиОбмена.РезультатВыполненияОбмена</DataPath>
@@ -298,13 +322,13 @@
 									</ValuesPicture>
 									<FileDragMode>AsFile</FileDragMode>
 									<ContextMenu name="НастройкиОбменаРезультатВыполненияОбменаКонтекстноеМеню" id="124"/>
-									<ExtendedTooltip name="НастройкиОбменаРезультатВыполненияОбменаExtendedTooltip" id="140"/>
+									<ExtendedTooltip name="НастройкиОбменаРезультатВыполненияОбменаРасширеннаяПодсказка" id="140"/>
 								</PictureField>
 								<InputField name="НастройкиОбменаУзелИнформационнойБазы" id="112">
 									<DataPath>Объект.НастройкиОбмена.УзелИнформационнойБазы</DataPath>
 									<EditMode>EnterOnInput</EditMode>
 									<ContextMenu name="НастройкиОбменаУзелИнформационнойБазыКонтекстноеМеню" id="113"/>
-									<ExtendedTooltip name="НастройкиОбменаУзелИнформационнойБазыExtendedTooltip" id="141"/>
+									<ExtendedTooltip name="НастройкиОбменаУзелИнформационнойБазыРасширеннаяПодсказка" id="141"/>
 									<Events>
 										<Event name="OnChange">НастройкиОбменаУзелИнформационнойБазыПриИзменении</Event>
 										<Event name="StartChoice">НастройкиОбменаУзелИнформационнойБазыНачалоВыбора</Event>
@@ -318,7 +342,7 @@
 							<EditMode>EnterOnInput</EditMode>
 							<ListChoiceMode>true</ListChoiceMode>
 							<ContextMenu name="НастройкиОбменаВидТранспортаОбменаКонтекстноеМеню" id="115"/>
-							<ExtendedTooltip name="НастройкиОбменаВидТранспортаОбменаExtendedTooltip" id="142"/>
+							<ExtendedTooltip name="НастройкиОбменаВидТранспортаОбменаРасширеннаяПодсказка" id="142"/>
 							<Events>
 								<Event name="StartChoice">НастройкиОбменаВидТранспортаОбменаНачалоВыбора</Event>
 							</Events>
@@ -327,7 +351,7 @@
 							<DataPath>Объект.НастройкиОбмена.ВыполняемоеДействие</DataPath>
 							<EditMode>EnterOnInput</EditMode>
 							<ContextMenu name="НастройкиОбменаВыполняемоеДействиеКонтекстноеМеню" id="117"/>
-							<ExtendedTooltip name="НастройкиОбменаВыполняемоеДействиеExtendedTooltip" id="143"/>
+							<ExtendedTooltip name="НастройкиОбменаВыполняемоеДействиеРасширеннаяПодсказка" id="143"/>
 						</InputField>
 					</ChildItems>
 				</Table>
@@ -343,7 +367,7 @@
 			<Behavior>Usual</Behavior>
 			<Representation>None</Representation>
 			<ShowTitle>false</ShowTitle>
-			<ExtendedTooltip name="ДополнительноExtendedTooltip" id="145"/>
+			<ExtendedTooltip name="ДополнительноРасширеннаяПодсказка" id="145"/>
 			<ChildItems>
 				<InputField name="Комментарий" id="30">
 					<DataPath>Объект.Комментарий</DataPath>
@@ -352,7 +376,7 @@
 					<Wrap>false</Wrap>
 					<ChoiceButton>true</ChoiceButton>
 					<ContextMenu name="КомментарийКонтекстноеМеню" id="31"/>
-					<ExtendedTooltip name="КомментарийExtendedTooltip" id="146"/>
+					<ExtendedTooltip name="КомментарийРасширеннаяПодсказка" id="146"/>
 					<Events>
 						<Event name="StartChoice">КомментарийНачалоВыбора</Event>
 					</Events>
@@ -487,35 +511,4 @@
 			<CurrentRowUse>DontUse</CurrentRowUse>
 		</Command>
 	</Commands>
-	<CommandInterface>
-		<NavigationPanel>
-			<Item>
-				<Command>0</Command>
-				<Type>Added</Type>
-				<Attribute>Items.СоставРасписания.CurrentData.УзелИнформационнойБазы</Attribute>
-				<DefaultVisible>false</DefaultVisible>
-			</Item>
-			<Item>
-				<Command>0</Command>
-				<Type>Added</Type>
-				<Attribute>Items.СоставРасписания.CurrentData.УзелИнформационнойБазы</Attribute>
-				<Index>3</Index>
-				<DefaultVisible>false</DefaultVisible>
-			</Item>
-			<Item>
-				<Command>0</Command>
-				<Type>Added</Type>
-				<Attribute>Items.СоставРасписания.CurrentData.УзелИнформационнойБазы</Attribute>
-				<Index>1</Index>
-				<DefaultVisible>false</DefaultVisible>
-			</Item>
-			<Item>
-				<Command>0</Command>
-				<Type>Added</Type>
-				<Attribute>Items.СоставРасписания.CurrentData.УзелИнформационнойБазы</Attribute>
-				<Index>2</Index>
-				<DefaultVisible>false</DefaultVisible>
-			</Item>
-		</NavigationPanel>
-	</CommandInterface>
 </Form>

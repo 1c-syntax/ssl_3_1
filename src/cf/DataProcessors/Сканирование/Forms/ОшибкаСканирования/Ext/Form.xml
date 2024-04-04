@@ -36,8 +36,8 @@
 						</v8:item>
 					</Title>
 					<Picture>
-						<xr:Ref>CommonPicture.Предупреждение32</xr:Ref>
-						<xr:LoadTransparent>false</xr:LoadTransparent>
+						<xr:Ref>StdPicture.DialogExclamation</xr:Ref>
+						<xr:LoadTransparent>true</xr:LoadTransparent>
 					</Picture>
 					<ContextMenu name="КартинкаОшибкиКонтекстноеМеню" id="8"/>
 					<ExtendedTooltip name="КартинкаОшибкиРасширеннаяПодсказка" id="9"/>
@@ -51,6 +51,7 @@
 Попробуйте выполнить одно из следующих действий:
  • Проверьте подключение сканера и повторите попытку сканирования.
  • Укажите в &lt;link Настройки&gt;настройках сканирования&lt;/&gt; доступный сканер.
+ • Укажите в &lt;link Настройки&gt;настройках сканирования&lt;/&gt; способ задания настроек - "Расширенные в диалоге сканера".
  • Если проблема повторится, обратитесь к техническому специалисту.</v8:content>
 						</v8:item>
 					</Title>
@@ -82,6 +83,12 @@
 					<DefaultButton>true</DefaultButton>
 					<DefaultItem>true</DefaultItem>
 					<CommandName>Form.Command.ПовторитьСканирование</CommandName>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Повторить сканирование</v8:content>
+						</v8:item>
+					</Title>
 					<ExtendedTooltip name="ПовторитьСканированиеРасширеннаяПодсказка" id="21"/>
 				</Button>
 				<Button name="Отмена" id="14">
@@ -115,6 +122,11 @@
 		<Attribute name="ТекстОшибки" id="2">
 			<Type>
 				<v8:Type>v8ui:FormattedString</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ПоказыватьДиалогСканера" id="3">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
 			</Type>
 		</Attribute>
 	</Attributes>
@@ -160,6 +172,11 @@
 					<v8:Length>0</v8:Length>
 					<v8:AllowedLength>Variable</v8:AllowedLength>
 				</v8:StringQualifiers>
+			</Type>
+		</Parameter>
+		<Parameter name="ПоказыватьДиалогСканера">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
 			</Type>
 		</Parameter>
 	</Parameters>

@@ -34,7 +34,7 @@
 							<v8:content>Параметры отправки</v8:content>
 						</v8:item>
 					</Title>
-					<ExtendedTooltip name="ПараметрыОтправкиExtendedTooltip" id="24"/>
+					<ExtendedTooltip name="ПараметрыОтправкиРасширеннаяПодсказка" id="24"/>
 					<ChildItems>
 						<UsualGroup name="ГруппаНомерПолучателя" id="128">
 							<Visible>false</Visible>
@@ -51,6 +51,12 @@
 							<ChildItems>
 								<InputField name="НомераПолучателей" id="130">
 									<DataPath>НомераПолучателей</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Номера получателей</v8:content>
+										</v8:item>
+									</Title>
 									<InputHint>
 										<v8:item>
 											<v8:lang>ru</v8:lang>
@@ -77,6 +83,12 @@
 							<ChildItems>
 								<InputField name="ТекстСообщения" id="3">
 									<DataPath>ТекстСообщения</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Текст сообщения</v8:content>
+										</v8:item>
+									</Title>
 									<Height>5</Height>
 									<MultiLine>true</MultiLine>
 									<EditTextUpdate>OnValueChange</EditTextUpdate>
@@ -100,13 +112,25 @@
 									<ChildItems>
 										<CheckBoxField name="ОтправлятьВТранслите" id="21">
 											<DataPath>ОтправлятьВТранслите</DataPath>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Отправлять в транслите</v8:content>
+												</v8:item>
+											</Title>
 											<TitleLocation>Right</TitleLocation>
 											<CheckBoxType>Auto</CheckBoxType>
 											<ContextMenu name="ОтправлятьВТранслитеКонтекстноеМеню" id="22"/>
-											<ExtendedTooltip name="ОтправлятьВТранслитеExtendedTooltip" id="28"/>
+											<ExtendedTooltip name="ОтправлятьВТранслитеРасширеннаяПодсказка" id="28"/>
 										</CheckBoxField>
 										<LabelField name="ДлинаСообщенияСимволов" id="38">
 											<DataPath>ДлинаСообщенияСимволов</DataPath>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Длина сообщения, символов</v8:content>
+												</v8:item>
+											</Title>
 											<ContextMenu name="ДлинаСообщенияСимволовКонтекстноеМеню" id="39"/>
 											<ExtendedTooltip name="ДлинаСообщенияСимволовРасширеннаяПодсказка" id="40"/>
 										</LabelField>
@@ -143,10 +167,16 @@
 										<InputField name="ИмяОтправителя" id="13">
 											<DataPath>ИмяОтправителя</DataPath>
 											<Enabled>false</Enabled>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Имя отправителя</v8:content>
+												</v8:item>
+											</Title>
 											<TitleLocation>None</TitleLocation>
 											<HorizontalStretch>false</HorizontalStretch>
 											<ContextMenu name="ИмяОтправителяКонтекстноеМеню" id="14"/>
-											<ExtendedTooltip name="ИмяОтправителяExtendedTooltip" id="29"/>
+											<ExtendedTooltip name="ИмяОтправителяРасширеннаяПодсказка" id="29"/>
 										</InputField>
 									</ChildItems>
 								</UsualGroup>
@@ -188,6 +218,12 @@
 								</PictureDecoration>
 								<LabelField name="СтатусОтправки" id="71">
 									<DataPath>СтатусОтправки</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Статус отправки</v8:content>
+										</v8:item>
+									</Title>
 									<TitleLocation>None</TitleLocation>
 									<VerticalAlign>Center</VerticalAlign>
 									<GroupVerticalAlign>Center</GroupVerticalAlign>
@@ -308,8 +344,8 @@
 								</v8:item>
 							</Title>
 							<Picture>
-								<xr:Ref>CommonPicture.Предупреждение32</xr:Ref>
-								<xr:LoadTransparent>false</xr:LoadTransparent>
+								<xr:Ref>StdPicture.DialogExclamation</xr:Ref>
+								<xr:LoadTransparent>true</xr:LoadTransparent>
 							</Picture>
 							<FileDragMode>AsFile</FileDragMode>
 							<ContextMenu name="КартинкаСообщениеНеОтправленоКонтекстноеМеню" id="104"/>
@@ -355,7 +391,7 @@
 							<v8:content>Отправить &gt;</v8:content>
 						</v8:item>
 					</Title>
-					<ExtendedTooltip name="ОтправитьExtendedTooltip" id="23"/>
+					<ExtendedTooltip name="ОтправитьРасширеннаяПодсказка" id="23"/>
 				</Button>
 				<Button name="Закрыть" id="79">
 					<Type>CommandBarButton</Type>

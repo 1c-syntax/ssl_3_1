@@ -16,6 +16,12 @@
 			<Button name="ФормаЗаписатьИЗакрыть" id="141">
 				<Type>CommandBarButton</Type>
 				<CommandName>Form.Command.ЗаписатьИЗакрыть</CommandName>
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Записать и закрыть</v8:content>
+					</v8:item>
+				</Title>
 				<ExtendedTooltip name="ФормаЗаписатьИЗакрытьРасширеннаяПодсказка" id="142"/>
 			</Button>
 			<Button name="ФормаЗаписать" id="135">
@@ -31,17 +37,35 @@
 			<Button name="ФормаНастроитьОтложенныйСтарт" id="153">
 				<Type>CommandBarButton</Type>
 				<CommandName>Form.Command.НастроитьОтложенныйСтарт</CommandName>
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Настроить отложенный старт</v8:content>
+					</v8:item>
+				</Title>
 				<ExtendedTooltip name="ФормаНастроитьОтложенныйСтартРасширеннаяПодсказка" id="154"/>
 			</Button>
 			<Button name="ФормаОстановить" id="101">
 				<Type>CommandBarButton</Type>
 				<CommandName>Form.Command.Остановить</CommandName>
-				<ExtendedTooltip name="ФормаОстановитьExtendedTooltip" id="105"/>
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Остановить</v8:content>
+					</v8:item>
+				</Title>
+				<ExtendedTooltip name="ФормаОстановитьРасширеннаяПодсказка" id="105"/>
 			</Button>
 			<Button name="ФормаПродолжить" id="102">
 				<Type>CommandBarButton</Type>
 				<CommandName>Form.Command.Продолжить</CommandName>
-				<ExtendedTooltip name="ФормаПродолжитьExtendedTooltip" id="106"/>
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Продолжить</v8:content>
+					</v8:item>
+				</Title>
+				<ExtendedTooltip name="ФормаПродолжитьРасширеннаяПодсказка" id="106"/>
 			</Button>
 			<ButtonGroup name="ГлобальныеКоманды" id="143">
 				<Title>
@@ -98,9 +122,15 @@
 			<ChildItems>
 				<LabelField name="ГлавнаяЗадача" id="99">
 					<DataPath>ГлавнаяЗадачаСтрокой</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Главная задача</v8:content>
+						</v8:item>
+					</Title>
 					<Hiperlink>true</Hiperlink>
 					<ContextMenu name="ГлавнаяЗадачаКонтекстноеМеню" id="100"/>
-					<ExtendedTooltip name="ГлавнаяЗадачаExtendedTooltip" id="110"/>
+					<ExtendedTooltip name="ГлавнаяЗадачаРасширеннаяПодсказка" id="110"/>
 					<Events>
 						<Event name="Click">ГлавнаяЗадачаНажатие</Event>
 					</Events>
@@ -116,7 +146,7 @@
 					<Behavior>Usual</Behavior>
 					<Representation>NormalSeparation</Representation>
 					<ShowTitle>false</ShowTitle>
-					<ExtendedTooltip name="ГруппаСостояниеExtendedTooltip" id="107"/>
+					<ExtendedTooltip name="ГруппаСостояниеРасширеннаяПодсказка" id="107"/>
 					<ChildItems>
 						<PictureDecoration name="ДекорацияЗначок" id="93">
 							<SkipOnInput>false</SkipOnInput>
@@ -126,10 +156,16 @@
 							</Picture>
 							<FileDragMode>AsFile</FileDragMode>
 							<ContextMenu name="ДекорацияЗначокКонтекстноеМеню" id="94"/>
-							<ExtendedTooltip name="ДекорацияЗначокExtendedTooltip" id="108"/>
+							<ExtendedTooltip name="ДекорацияЗначокРасширеннаяПодсказка" id="108"/>
 						</PictureDecoration>
 						<LabelField name="ИнфоНадписьЗаголовок" id="155">
 							<DataPath>ИнфоНадписьЗаголовок</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Инфо надпись заголовок</v8:content>
+								</v8:item>
+							</Title>
 							<TitleLocation>None</TitleLocation>
 							<AutoMaxWidth>false</AutoMaxWidth>
 							<AutoMaxHeight>false</AutoMaxHeight>
@@ -166,7 +202,7 @@
 							<Representation>None</Representation>
 							<United>false</United>
 							<ShowTitle>false</ShowTitle>
-							<ExtendedTooltip name="ГруппаСрокВажностьExtendedTooltip" id="111"/>
+							<ExtendedTooltip name="ГруппаСрокВажностьРасширеннаяПодсказка" id="111"/>
 							<ChildItems>
 								<InputField name="ЗаголовокЗадания" id="19">
 									<DataPath>Объект.Наименование</DataPath>
@@ -175,13 +211,13 @@
 									<Wrap>false</Wrap>
 									<BorderColor>style:BorderColor</BorderColor>
 									<ContextMenu name="ЗаголовокЗаданияКонтекстноеМеню" id="20"/>
-									<ExtendedTooltip name="ЗаголовокЗаданияExtendedTooltip" id="112"/>
+									<ExtendedTooltip name="ЗаголовокЗаданияРасширеннаяПодсказка" id="112"/>
 								</InputField>
 								<InputField name="Важность" id="57">
 									<DataPath>Объект.Важность</DataPath>
 									<Wrap>false</Wrap>
 									<ContextMenu name="ВажностьКонтекстноеМеню" id="58"/>
-									<ExtendedTooltip name="ВажностьExtendedTooltip" id="113"/>
+									<ExtendedTooltip name="ВажностьРасширеннаяПодсказка" id="113"/>
 								</InputField>
 								<InputField name="Номер" id="103">
 									<DataPath>Объект.Number</DataPath>
@@ -190,7 +226,7 @@
 									</UserVisible>
 									<HorizontalStretch>false</HorizontalStretch>
 									<ContextMenu name="НомерКонтекстноеМеню" id="104"/>
-									<ExtendedTooltip name="НомерExtendedTooltip" id="114"/>
+									<ExtendedTooltip name="НомерРасширеннаяПодсказка" id="114"/>
 								</InputField>
 							</ChildItems>
 						</UsualGroup>
@@ -205,7 +241,7 @@
 							<Representation>None</Representation>
 							<United>false</United>
 							<ShowTitle>false</ShowTitle>
-							<ExtendedTooltip name="ГруппаИсполнениеExtendedTooltip" id="115"/>
+							<ExtendedTooltip name="ГруппаИсполнениеРасширеннаяПодсказка" id="115"/>
 							<ChildItems>
 								<InputField name="Исполнитель" id="69">
 									<DataPath>Объект.Исполнитель</DataPath>
@@ -214,7 +250,7 @@
 									<ChoiceButton>true</ChoiceButton>
 									<OpenButton>false</OpenButton>
 									<ContextMenu name="ИсполнительКонтекстноеМеню" id="70"/>
-									<ExtendedTooltip name="ИсполнительExtendedTooltip" id="116"/>
+									<ExtendedTooltip name="ИсполнительРасширеннаяПодсказка" id="116"/>
 									<Events>
 										<Event name="OnChange">ИсполнительПриИзменении</Event>
 										<Event name="AutoComplete">ИсполнительАвтоПодбор</Event>
@@ -259,7 +295,7 @@
 												</v8:item>
 											</EditFormat>
 											<ContextMenu name="СрокИсполненияКонтекстноеМеню" id="22"/>
-											<ExtendedTooltip name="СрокИсполненияExtendedTooltip" id="117"/>
+											<ExtendedTooltip name="СрокИсполненияРасширеннаяПодсказка" id="117"/>
 											<Events>
 												<Event name="OnChange">СрокИсполненияПриИзменении</Event>
 											</Events>
@@ -290,7 +326,7 @@
 												</v8:item>
 											</EditFormat>
 											<ContextMenu name="СрокИсполненияВремяКонтекстноеМеню" id="89"/>
-											<ExtendedTooltip name="СрокИсполненияВремяExtendedTooltip" id="118"/>
+											<ExtendedTooltip name="СрокИсполненияВремяРасширеннаяПодсказка" id="118"/>
 										</InputField>
 									</ChildItems>
 								</UsualGroup>
@@ -309,15 +345,21 @@
 					<Behavior>Usual</Behavior>
 					<Representation>NormalSeparation</Representation>
 					<ShowTitle>false</ShowTitle>
-					<ExtendedTooltip name="ГруппаСодержаниеExtendedTooltip" id="119"/>
+					<ExtendedTooltip name="ГруппаСодержаниеРасширеннаяПодсказка" id="119"/>
 					<ChildItems>
 						<LabelField name="Предмет" id="86">
 							<DataPath>ПредметСтрокой</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Предмет</v8:content>
+								</v8:item>
+							</Title>
 							<Width>60</Width>
 							<AutoMaxWidth>false</AutoMaxWidth>
 							<HorizontalStretch>true</HorizontalStretch>
 							<ContextMenu name="ПредметКонтекстноеМеню" id="87"/>
-							<ExtendedTooltip name="ПредметExtendedTooltip" id="120"/>
+							<ExtendedTooltip name="ПредметРасширеннаяПодсказка" id="120"/>
 							<Events>
 								<Event name="Click">ПредметНажатие</Event>
 							</Events>
@@ -335,7 +377,7 @@
 							<AutoMaxWidth>false</AutoMaxWidth>
 							<BorderColor>style:BorderColor</BorderColor>
 							<ContextMenu name="СодержаниеКонтекстноеМеню" id="18"/>
-							<ExtendedTooltip name="СодержаниеExtendedTooltip" id="121"/>
+							<ExtendedTooltip name="СодержаниеРасширеннаяПодсказка" id="121"/>
 						</InputField>
 					</ChildItems>
 				</UsualGroup>
@@ -349,7 +391,7 @@
 					<Behavior>Usual</Behavior>
 					<Representation>None</Representation>
 					<ShowTitle>false</ShowTitle>
-					<ExtendedTooltip name="ГруппаПроверкаExtendedTooltip" id="122"/>
+					<ExtendedTooltip name="ГруппаПроверкаРасширеннаяПодсказка" id="122"/>
 					<ChildItems>
 						<CheckBoxField name="НаПроверке" id="54">
 							<DataPath>Объект.НаПроверке</DataPath>
@@ -362,7 +404,7 @@
 							<TitleLocation>Right</TitleLocation>
 							<CheckBoxType>Auto</CheckBoxType>
 							<ContextMenu name="НаПроверкеКонтекстноеМеню" id="55"/>
-							<ExtendedTooltip name="НаПроверкеExtendedTooltip" id="123"/>
+							<ExtendedTooltip name="НаПроверкеРасширеннаяПодсказка" id="123"/>
 							<Events>
 								<Event name="OnChange">НаПроверкеПриИзменении</Event>
 							</Events>
@@ -378,7 +420,7 @@
 							<Representation>None</Representation>
 							<United>false</United>
 							<ShowTitle>false</ShowTitle>
-							<ExtendedTooltip name="ГруппаПроверяющийExtendedTooltip" id="124"/>
+							<ExtendedTooltip name="ГруппаПроверяющийРасширеннаяПодсказка" id="124"/>
 							<ChildItems>
 								<InputField name="Проверяющий" id="14">
 									<DataPath>Объект.Проверяющий</DataPath>
@@ -392,7 +434,7 @@
 									<AutoMarkIncomplete>false</AutoMarkIncomplete>
 									<BorderColor>style:BorderColor</BorderColor>
 									<ContextMenu name="ПроверяющийКонтекстноеМеню" id="15"/>
-									<ExtendedTooltip name="ПроверяющийExtendedTooltip" id="125"/>
+									<ExtendedTooltip name="ПроверяющийРасширеннаяПодсказка" id="125"/>
 									<Events>
 										<Event name="OnChange">ПроверяющийПриИзменении</Event>
 										<Event name="AutoComplete">ПроверяющийАвтоПодбор</Event>
@@ -438,7 +480,7 @@
 											</EditFormat>
 											<BorderColor>style:BorderColor</BorderColor>
 											<ContextMenu name="СрокПроверкиКонтекстноеМеню" id="24"/>
-											<ExtendedTooltip name="СрокПроверкиExtendedTooltip" id="126"/>
+											<ExtendedTooltip name="СрокПроверкиРасширеннаяПодсказка" id="126"/>
 											<Events>
 												<Event name="OnChange">СрокПроверкиПриИзменении</Event>
 											</Events>
@@ -470,7 +512,7 @@
 											</EditFormat>
 											<BorderColor>style:BorderColor</BorderColor>
 											<ContextMenu name="СрокПроверкиВремяКонтекстноеМеню" id="91"/>
-											<ExtendedTooltip name="СрокПроверкиВремяExtendedTooltip" id="127"/>
+											<ExtendedTooltip name="СрокПроверкиВремяРасширеннаяПодсказка" id="127"/>
 										</InputField>
 									</ChildItems>
 								</UsualGroup>
@@ -488,7 +530,7 @@
 					<Behavior>Usual</Behavior>
 					<Representation>NormalSeparation</Representation>
 					<ShowTitle>false</ShowTitle>
-					<ExtendedTooltip name="ГруппаОбщиеСведенияExtendedTooltip" id="128"/>
+					<ExtendedTooltip name="ГруппаОбщиеСведенияРасширеннаяПодсказка" id="128"/>
 					<ChildItems>
 						<InputField name="Автор" id="79">
 							<DataPath>Объект.Автор</DataPath>
@@ -496,7 +538,7 @@
 							<Wrap>false</Wrap>
 							<OpenButton>false</OpenButton>
 							<ContextMenu name="АвторКонтекстноеМеню" id="80"/>
-							<ExtendedTooltip name="АвторExtendedTooltip" id="129"/>
+							<ExtendedTooltip name="АвторРасширеннаяПодсказка" id="129"/>
 						</InputField>
 						<InputField name="Дата" id="97">
 							<DataPath>Объект.Date</DataPath>
@@ -508,7 +550,7 @@
 								</v8:item>
 							</Title>
 							<ContextMenu name="ДатаКонтекстноеМеню" id="98"/>
-							<ExtendedTooltip name="ДатаExtendedTooltip" id="130"/>
+							<ExtendedTooltip name="ДатаРасширеннаяПодсказка" id="130"/>
 						</InputField>
 					</ChildItems>
 				</UsualGroup>

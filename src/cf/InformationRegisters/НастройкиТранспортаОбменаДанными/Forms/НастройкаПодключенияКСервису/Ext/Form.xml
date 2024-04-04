@@ -40,13 +40,13 @@
 						<v8:content>Проверить подключение и закрыть</v8:content>
 					</v8:item>
 				</Title>
-				<ExtendedTooltip name="ФормаЗаписатьИЗакрытьExtendedTooltip" id="23"/>
+				<ExtendedTooltip name="ФормаЗаписатьИЗакрытьРасширеннаяПодсказка" id="23"/>
 			</Button>
 			<Button name="ФормаЗакрыть" id="11">
 				<Type>CommandBarButton</Type>
 				<Representation>Text</Representation>
 				<CommandName>Form.StandardCommand.Close</CommandName>
-				<ExtendedTooltip name="ФормаЗакрытьExtendedTooltip" id="24"/>
+				<ExtendedTooltip name="ФормаЗакрытьРасширеннаяПодсказка" id="24"/>
 			</Button>
 		</ChildItems>
 	</AutoCommandBar>
@@ -70,6 +70,12 @@
 			<ChildItems>
 				<InputField name="Пользователь" id="20">
 					<DataPath>Пользователь</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Пользователь приложения</v8:content>
+						</v8:item>
+					</Title>
 					<ToolTip>
 						<v8:item>
 							<v8:lang>ru</v8:lang>
@@ -81,7 +87,7 @@
 					<OpenButton>false</OpenButton>
 					<ListChoiceMode>true</ListChoiceMode>
 					<ContextMenu name="ПользовательКонтекстноеМеню" id="21"/>
-					<ExtendedTooltip name="ПользовательExtendedTooltip" id="26"/>
+					<ExtendedTooltip name="ПользовательРасширеннаяПодсказка" id="26"/>
 				</InputField>
 				<UsualGroup name="ГруппаПароль" id="9">
 					<Title>
@@ -97,6 +103,12 @@
 					<ChildItems>
 						<InputField name="WSПароль" id="7">
 							<DataPath>WSПароль</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Пароль</v8:content>
+								</v8:item>
+							</Title>
 							<ToolTip>
 								<v8:item>
 									<v8:lang>ru</v8:lang>
@@ -107,7 +119,7 @@
 							<HorizontalStretch>false</HorizontalStretch>
 							<PasswordMode>true</PasswordMode>
 							<ContextMenu name="WSПарольКонтекстноеМеню" id="8"/>
-							<ExtendedTooltip name="WSПарольExtendedTooltip" id="28"/>
+							<ExtendedTooltip name="WSПарольРасширеннаяПодсказка" id="28"/>
 							<Events>
 								<Event name="OnChange">WSПарольПриИзменении</Event>
 							</Events>
@@ -115,7 +127,13 @@
 						<Button name="ЗабылиПароль" id="12">
 							<Type>Hyperlink</Type>
 							<CommandName>Form.Command.ЗабылиПароль</CommandName>
-							<ExtendedTooltip name="ЗабылиПарольExtendedTooltip" id="29"/>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Забыли пароль?</v8:content>
+								</v8:item>
+							</Title>
+							<ExtendedTooltip name="ЗабылиПарольРасширеннаяПодсказка" id="29"/>
 						</Button>
 					</ChildItems>
 				</UsualGroup>
@@ -168,7 +186,13 @@
 		<Button name="ПараметрыДоступаВИнтернет" id="13">
 			<Type>Hyperlink</Type>
 			<CommandName>Form.Command.ПараметрыДоступаВИнтернет</CommandName>
-			<ExtendedTooltip name="ПараметрыДоступаВИнтернетExtendedTooltip" id="33"/>
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Параметры доступа в Интернет</v8:content>
+				</v8:item>
+			</Title>
+			<ExtendedTooltip name="ПараметрыДоступаВИнтернетРасширеннаяПодсказка" id="33"/>
 		</Button>
 	</ChildItems>
 	<Attributes>

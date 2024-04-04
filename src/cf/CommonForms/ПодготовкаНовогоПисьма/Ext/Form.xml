@@ -25,12 +25,18 @@
 				<DefaultButton>true</DefaultButton>
 				<SkipOnInput>false</SkipOnInput>
 				<CommandName>Form.Command.Подготовить</CommandName>
-				<ExtendedTooltip name="КнопкаПодготовитьExtendedTooltip" id="67"/>
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Подготовить...</v8:content>
+					</v8:item>
+				</Title>
+				<ExtendedTooltip name="КнопкаПодготовитьРасширеннаяПодсказка" id="67"/>
 			</Button>
 			<Button name="КнопкаОтмена" id="30">
 				<Type>CommandBarButton</Type>
 				<CommandName>Form.StandardCommand.Cancel</CommandName>
-				<ExtendedTooltip name="КнопкаОтменаExtendedTooltip" id="68"/>
+				<ExtendedTooltip name="КнопкаОтменаРасширеннаяПодсказка" id="68"/>
 			</Button>
 		</ChildItems>
 	</AutoCommandBar>
@@ -47,6 +53,7 @@
 			<ChangeRowSet>false</ChangeRowSet>
 			<ChangeRowOrder>false</ChangeRowOrder>
 			<Height>10</Height>
+			<HeightControlVariant>UseHeightInFormRows</HeightControlVariant>
 			<RowSelectionMode>Row</RowSelectionMode>
 			<AutoInsertNewRow>true</AutoInsertNewRow>
 			<EnableStartDrag>true</EnableStartDrag>
@@ -77,31 +84,49 @@
 			<ContextMenu name="ПолучателиКонтекстноеМеню" id="44">
 				<ChildItems>
 					<ButtonGroup name="ПолучателиКонтекстноеМенюГруппаУправлениеВыбором" id="66">
-						<ExtendedTooltip name="ПолучателиКонтекстноеМенюГруппаУправлениеВыборомExtendedTooltip" id="69"/>
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Получатели контекстное меню группа управление выбором</v8:content>
+							</v8:item>
+						</Title>
+						<ExtendedTooltip name="ПолучателиКонтекстноеМенюГруппаУправлениеВыборомРасширеннаяПодсказка" id="69"/>
 						<ChildItems>
 							<Button name="ПолучателиКонтекстноеМенюВыбратьВсех" id="63">
 								<Type>CommandBarButton</Type>
 								<CommandName>Form.Command.ВыбратьВсехПолучателей</CommandName>
-								<ExtendedTooltip name="ПолучателиКонтекстноеМенюВыбратьВсехExtendedTooltip" id="70"/>
+								<Title>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Выбрать всех получателей</v8:content>
+									</v8:item>
+								</Title>
+								<ExtendedTooltip name="ПолучателиКонтекстноеМенюВыбратьВсехРасширеннаяПодсказка" id="70"/>
 							</Button>
 							<Button name="ПолучателиКонтекстноеМенюОтменитьВыборДляВсех" id="64">
 								<Type>CommandBarButton</Type>
 								<CommandName>Form.Command.ОтменитьВыборДляВсех</CommandName>
-								<ExtendedTooltip name="ПолучателиКонтекстноеМенюОтменитьВыборДляВсехExtendedTooltip" id="71"/>
+								<Title>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Отменить выбор для всех</v8:content>
+									</v8:item>
+								</Title>
+								<ExtendedTooltip name="ПолучателиКонтекстноеМенюОтменитьВыборДляВсехРасширеннаяПодсказка" id="71"/>
 							</Button>
 						</ChildItems>
 					</ButtonGroup>
 					<Button name="ПолучателиКонтекстноеМенюВывестиСписок" id="65">
 						<Type>CommandBarButton</Type>
 						<CommandName>Form.Item.Получатели.StandardCommand.OutputList</CommandName>
-						<ExtendedTooltip name="ПолучателиКонтекстноеМенюВывестиСписокExtendedTooltip" id="72"/>
+						<ExtendedTooltip name="ПолучателиКонтекстноеМенюВывестиСписокРасширеннаяПодсказка" id="72"/>
 					</Button>
 				</ChildItems>
 			</ContextMenu>
 			<AutoCommandBar name="ПолучателиКоманднаяПанель" id="45">
 				<Autofill>false</Autofill>
 			</AutoCommandBar>
-			<ExtendedTooltip name="ПолучателиExtendedTooltip" id="73"/>
+			<ExtendedTooltip name="ПолучателиРасширеннаяПодсказка" id="73"/>
 			<SearchStringAddition name="ПолучателиSearchString" id="88">
 				<AdditionSource>
 					<Item>Получатели</Item>
@@ -132,6 +157,12 @@
 			<ChildItems>
 				<CheckBoxField name="ПолучателиВыбран" id="52">
 					<DataPath>Получатели.Выбран</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Выбран</v8:content>
+						</v8:item>
+					</Title>
 					<TitleLocation>None</TitleLocation>
 					<EditMode>EnterOnInput</EditMode>
 					<HeaderPicture>
@@ -141,7 +172,7 @@
 					<HeaderHorizontalAlign>Center</HeaderHorizontalAlign>
 					<CheckBoxType>Auto</CheckBoxType>
 					<ContextMenu name="ПолучателиВыбранКонтекстноеМеню" id="53"/>
-					<ExtendedTooltip name="ПолучателиВыбранExtendedTooltip" id="74"/>
+					<ExtendedTooltip name="ПолучателиВыбранРасширеннаяПодсказка" id="74"/>
 				</CheckBoxField>
 				<ColumnGroup name="ПолучателиГруппа" id="60">
 					<Title>
@@ -150,7 +181,7 @@
 							<v8:content>Получатели группа</v8:content>
 						</v8:item>
 					</Title>
-					<ExtendedTooltip name="ПолучателиГруппаExtendedTooltip" id="75"/>
+					<ExtendedTooltip name="ПолучателиГруппаРасширеннаяПодсказка" id="75"/>
 					<ChildItems>
 						<ColumnGroup name="ПолучателиГруппаПредставление" id="61">
 							<Title>
@@ -160,19 +191,31 @@
 								</v8:item>
 							</Title>
 							<Group>Horizontal</Group>
-							<ExtendedTooltip name="ПолучателиГруппаПредставлениеExtendedTooltip" id="76"/>
+							<ExtendedTooltip name="ПолучателиГруппаПредставлениеРасширеннаяПодсказка" id="76"/>
 							<ChildItems>
 								<InputField name="ПолучателиПредставление" id="48">
 									<DataPath>Получатели.Представление</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Получатель</v8:content>
+										</v8:item>
+									</Title>
 									<EditMode>EnterOnInput</EditMode>
 									<ContextMenu name="ПолучателиПредставлениеКонтекстноеМеню" id="49"/>
-									<ExtendedTooltip name="ПолучателиПредставлениеExtendedTooltip" id="77"/>
+									<ExtendedTooltip name="ПолучателиПредставлениеРасширеннаяПодсказка" id="77"/>
 								</InputField>
 								<InputField name="ПолучателиПредставлениеАдреса" id="56">
 									<DataPath>Получатели.ПредставлениеАдреса</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>E-mail</v8:content>
+										</v8:item>
+									</Title>
 									<EditMode>EnterOnInput</EditMode>
 									<ContextMenu name="ПолучателиПредставлениеАдресаКонтекстноеМеню" id="57"/>
-									<ExtendedTooltip name="ПолучателиПредставлениеАдресаExtendedTooltip" id="78"/>
+									<ExtendedTooltip name="ПолучателиПредставлениеАдресаРасширеннаяПодсказка" id="78"/>
 								</InputField>
 							</ChildItems>
 						</ColumnGroup>
@@ -183,17 +226,23 @@
 									<v8:content>Получатели группа пояснение</v8:content>
 								</v8:item>
 							</Title>
-							<ExtendedTooltip name="ПолучателиГруппаПояснениеExtendedTooltip" id="79"/>
+							<ExtendedTooltip name="ПолучателиГруппаПояснениеРасширеннаяПодсказка" id="79"/>
 							<ChildItems>
 								<InputField name="ПолучателиПояснение" id="58">
 									<DataPath>Получатели.Пояснение</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Пояснение</v8:content>
+										</v8:item>
+									</Title>
 									<EditMode>EnterOnInput</EditMode>
 									<AutoCellHeight>true</AutoCellHeight>
 									<ShowInHeader>false</ShowInHeader>
 									<MultiLine>true</MultiLine>
 									<TextColor>style:ПоясняющийТекст</TextColor>
 									<ContextMenu name="ПолучателиПояснениеКонтекстноеМеню" id="59"/>
-									<ExtendedTooltip name="ПолучателиПояснениеExtendedTooltip" id="80"/>
+									<ExtendedTooltip name="ПолучателиПояснениеРасширеннаяПодсказка" id="80"/>
 								</InputField>
 							</ChildItems>
 						</ColumnGroup>
@@ -211,7 +260,7 @@
 			</Title>
 			<Group>Vertical</Group>
 			<Behavior>Usual</Behavior>
-			<ExtendedTooltip name="ГруппаВыборФорматовExtendedTooltip" id="81"/>
+			<ExtendedTooltip name="ГруппаВыборФорматовРасширеннаяПодсказка" id="81"/>
 			<ChildItems>
 				<Table name="ВыбранныеФорматыСохранения" id="32">
 					<Representation>List</Representation>
@@ -248,7 +297,7 @@
 					<AutoCommandBar name="ВыбранныеФорматыСохраненияКоманднаяПанель" id="34">
 						<Autofill>false</Autofill>
 					</AutoCommandBar>
-					<ExtendedTooltip name="ВыбранныеФорматыСохраненияExtendedTooltip" id="82"/>
+					<ExtendedTooltip name="ВыбранныеФорматыСохраненияРасширеннаяПодсказка" id="82"/>
 					<SearchStringAddition name="ВыбранныеФорматыСохраненияSearchString" id="97">
 						<AdditionSource>
 							<Item>ВыбранныеФорматыСохранения</Item>
@@ -285,7 +334,7 @@
 							<EditMode>EnterOnInput</EditMode>
 							<CheckBoxType>Auto</CheckBoxType>
 							<ContextMenu name="ВыбранныеФорматыСохраненияПометкаКонтекстноеМеню" id="38"/>
-							<ExtendedTooltip name="ВыбранныеФорматыСохраненияПометкаExtendedTooltip" id="83"/>
+							<ExtendedTooltip name="ВыбранныеФорматыСохраненияПометкаРасширеннаяПодсказка" id="83"/>
 						</CheckBoxField>
 						<InputField name="ВыбранныеФорматыСохраненияЗначение" id="35">
 							<DataPath>ВыбранныеФорматыСохранения.Value</DataPath>
@@ -297,7 +346,7 @@
 							</Title>
 							<EditMode>EnterOnInput</EditMode>
 							<ContextMenu name="ВыбранныеФорматыСохраненияЗначениеКонтекстноеМеню" id="36"/>
-							<ExtendedTooltip name="ВыбранныеФорматыСохраненияЗначениеExtendedTooltip" id="84"/>
+							<ExtendedTooltip name="ВыбранныеФорматыСохраненияЗначениеРасширеннаяПодсказка" id="84"/>
 						</InputField>
 					</ChildItems>
 				</Table>
@@ -314,13 +363,19 @@
 			<Behavior>Usual</Behavior>
 			<Representation>NormalSeparation</Representation>
 			<ShowTitle>false</ShowTitle>
-			<ExtendedTooltip name="ГруппаДополнительныеПараметрыExtendedTooltip" id="85"/>
+			<ExtendedTooltip name="ГруппаДополнительныеПараметрыРасширеннаяПодсказка" id="85"/>
 			<ChildItems>
 				<LabelField name="ФорматВложений" id="54">
 					<DataPath>ФорматВложений</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Формат вложений</v8:content>
+						</v8:item>
+					</Title>
 					<Hiperlink>true</Hiperlink>
 					<ContextMenu name="ФорматВложенийКонтекстноеМеню" id="55"/>
-					<ExtendedTooltip name="ФорматВложенийExtendedTooltip" id="86"/>
+					<ExtendedTooltip name="ФорматВложенийРасширеннаяПодсказка" id="86"/>
 					<Events>
 						<Event name="Click">ФорматВложенийНажатие</Event>
 					</Events>
@@ -336,10 +391,16 @@
 					<TitleLocation>Right</TitleLocation>
 					<CheckBoxType>Auto</CheckBoxType>
 					<ContextMenu name="УпаковатьВАрхивКонтекстноеМеню" id="41"/>
-					<ExtendedTooltip name="УпаковатьВАрхивExtendedTooltip" id="87"/>
+					<ExtendedTooltip name="УпаковатьВАрхивРасширеннаяПодсказка" id="87"/>
 				</CheckBoxField>
 				<CheckBoxField name="ПереводитьИменаФайловВТранслит" id="106">
 					<DataPath>ПереводитьИменаФайловВТранслит</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Транслитерировать имена файлов</v8:content>
+						</v8:item>
+					</Title>
 					<TitleLocation>Right</TitleLocation>
 					<ToolTip>
 						<v8:item>
@@ -354,6 +415,12 @@
 				</CheckBoxField>
 				<CheckBoxField name="Подписать" id="109">
 					<DataPath>Подписать</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Подписать</v8:content>
+						</v8:item>
+					</Title>
 					<TitleLocation>Right</TitleLocation>
 					<CheckBoxType>Auto</CheckBoxType>
 					<ContextMenu name="ПодписатьКонтекстноеМеню" id="110"/>
@@ -600,6 +667,11 @@
 					<v8:Length>0</v8:Length>
 					<v8:AllowedLength>Variable</v8:AllowedLength>
 				</v8:StringQualifiers>
+			</Type>
+		</Parameter>
+		<Parameter name="ПропуститьВыборФорматаВложений">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
 			</Type>
 		</Parameter>
 	</Parameters>

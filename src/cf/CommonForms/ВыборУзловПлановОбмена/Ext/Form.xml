@@ -27,7 +27,13 @@
 				<Type>CommandBarButton</Type>
 				<DefaultButton>true</DefaultButton>
 				<CommandName>Form.Command.Выбрать</CommandName>
-				<ExtendedTooltip name="ФормаВыбратьExtendedTooltip" id="28"/>
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Выбрать</v8:content>
+					</v8:item>
+				</Title>
+				<ExtendedTooltip name="ФормаВыбратьРасширеннаяПодсказка" id="28"/>
 			</Button>
 			<ButtonGroup name="КомандыСпискаУзлов" id="27">
 				<Title>
@@ -37,7 +43,7 @@
 					</v8:item>
 				</Title>
 				<CommandSource>Item.УзлыПлановОбмена</CommandSource>
-				<ExtendedTooltip name="КомандыСпискаУзловExtendedTooltip" id="29"/>
+				<ExtendedTooltip name="КомандыСпискаУзловРасширеннаяПодсказка" id="29"/>
 			</ButtonGroup>
 		</ChildItems>
 	</AutoCommandBar>
@@ -77,7 +83,7 @@
 			<RowFilter xsi:nil="true"/>
 			<ContextMenu name="УзлыПлановОбменаКонтекстноеМеню" id="15"/>
 			<AutoCommandBar name="УзлыПлановОбменаКоманднаяПанель" id="16"/>
-			<ExtendedTooltip name="УзлыПлановОбменаExtendedTooltip" id="30"/>
+			<ExtendedTooltip name="УзлыПлановОбменаРасширеннаяПодсказка" id="30"/>
 			<SearchStringAddition name="УзлыПлановОбменаSearchString" id="33">
 				<AdditionSource>
 					<Item>УзлыПлановОбмена</Item>
@@ -108,17 +114,29 @@
 			<ChildItems>
 				<InputField name="УзлыПлановОбменаПланОбменаПредставление" id="23">
 					<DataPath>УзлыПлановОбмена.ПланОбменаПредставление</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Приложение</v8:content>
+						</v8:item>
+					</Title>
 					<EditMode>EnterOnInput</EditMode>
 					<Width>40</Width>
 					<ContextMenu name="УзлыПлановОбменаПланОбменаПредставлениеКонтекстноеМеню" id="24"/>
-					<ExtendedTooltip name="УзлыПлановОбменаПланОбменаПредставлениеExtendedTooltip" id="31"/>
+					<ExtendedTooltip name="УзлыПлановОбменаПланОбменаПредставлениеРасширеннаяПодсказка" id="31"/>
 				</InputField>
 				<InputField name="УзлыПлановОбменаУзелПредставление" id="25">
 					<DataPath>УзлыПлановОбмена.УзелПредставление</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Информационная база</v8:content>
+						</v8:item>
+					</Title>
 					<EditMode>EnterOnInput</EditMode>
 					<Width>40</Width>
 					<ContextMenu name="УзлыПлановОбменаУзелПредставлениеКонтекстноеМеню" id="26"/>
-					<ExtendedTooltip name="УзлыПлановОбменаУзелПредставлениеExtendedTooltip" id="32"/>
+					<ExtendedTooltip name="УзлыПлановОбменаУзелПредставлениеРасширеннаяПодсказка" id="32"/>
 				</InputField>
 			</ChildItems>
 		</Table>
@@ -144,7 +162,7 @@
 					<Title>
 						<v8:item>
 							<v8:lang>ru</v8:lang>
-							<v8:content>Программа</v8:content>
+							<v8:content>Приложение</v8:content>
 						</v8:item>
 					</Title>
 					<Type>
@@ -218,6 +236,16 @@
 		<Parameter name="ТекущаяСтрока">
 			<Type>
 				<v8:TypeSet>cfg:ExchangePlanRef</v8:TypeSet>
+			</Type>
+		</Parameter>
+		<Parameter name="ЗакрыватьПриВыборе">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Parameter>
+		<Parameter name="МножественныйВыбор">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
 			</Type>
 		</Parameter>
 	</Parameters>

@@ -13,13 +13,19 @@
 				<SkipOnInput>false</SkipOnInput>
 				<DefaultItem>true</DefaultItem>
 				<CommandName>Form.Command.ОК</CommandName>
-				<ExtendedTooltip name="ОКExtendedTooltip" id="31"/>
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>ОК</v8:content>
+					</v8:item>
+				</Title>
+				<ExtendedTooltip name="ОКРасширеннаяПодсказка" id="31"/>
 			</Button>
 			<Button name="Отмена" id="11">
 				<Type>CommandBarButton</Type>
 				<SkipOnInput>false</SkipOnInput>
 				<CommandName>Form.StandardCommand.Cancel</CommandName>
-				<ExtendedTooltip name="ОтменаExtendedTooltip" id="32"/>
+				<ExtendedTooltip name="ОтменаРасширеннаяПодсказка" id="32"/>
 			</Button>
 		</ChildItems>
 	</AutoCommandBar>
@@ -38,7 +44,7 @@
 			<Behavior>Usual</Behavior>
 			<Representation>None</Representation>
 			<ShowTitle>false</ShowTitle>
-			<ExtendedTooltip name="ГруппаПользователиExtendedTooltip" id="33"/>
+			<ExtendedTooltip name="ГруппаПользователиРасширеннаяПодсказка" id="33"/>
 			<ChildItems>
 				<Table name="ВсеПользователи" id="1">
 					<Representation>List</Representation>
@@ -78,17 +84,17 @@
 								<Type>CommandBarButton</Type>
 								<SkipOnInput>false</SkipOnInput>
 								<CommandName>Form.Item.ВсеПользователи.StandardCommand.Find</CommandName>
-								<ExtendedTooltip name="ПользователиНайтиExtendedTooltip" id="34"/>
+								<ExtendedTooltip name="ПользователиНайтиРасширеннаяПодсказка" id="34"/>
 							</Button>
 							<Button name="ПользователиОтменитьПоиск" id="9">
 								<Type>CommandBarButton</Type>
 								<SkipOnInput>false</SkipOnInput>
 								<CommandName>Form.Item.ВсеПользователи.StandardCommand.CancelSearch</CommandName>
-								<ExtendedTooltip name="ПользователиОтменитьПоискExtendedTooltip" id="35"/>
+								<ExtendedTooltip name="ПользователиОтменитьПоискРасширеннаяПодсказка" id="35"/>
 							</Button>
 						</ChildItems>
 					</AutoCommandBar>
-					<ExtendedTooltip name="ВсеПользователиExtendedTooltip" id="36"/>
+					<ExtendedTooltip name="ВсеПользователиРасширеннаяПодсказка" id="36"/>
 					<SearchStringAddition name="ВсеПользователиСтрокаПоиска" id="48">
 						<AdditionSource>
 							<Item>ВсеПользователи</Item>
@@ -121,9 +127,15 @@
 						<InputField name="ПользователиСсылка" id="4">
 							<DataPath>ВсеПользователи.Пользователь</DataPath>
 							<ReadOnly>true</ReadOnly>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Пользователь</v8:content>
+								</v8:item>
+							</Title>
 							<EditMode>EnterOnInput</EditMode>
 							<ContextMenu name="ПользователиСсылкаКонтекстноеМеню" id="5"/>
-							<ExtendedTooltip name="ПользователиСсылкаExtendedTooltip" id="37"/>
+							<ExtendedTooltip name="ПользователиСсылкаРасширеннаяПодсказка" id="37"/>
 						</InputField>
 					</ChildItems>
 				</Table>
@@ -140,27 +152,51 @@
 					<Behavior>Usual</Behavior>
 					<Representation>None</Representation>
 					<ShowTitle>false</ShowTitle>
-					<ExtendedTooltip name="КомандыУправленияСпискомExtendedTooltip" id="38"/>
+					<ExtendedTooltip name="КомандыУправленияСпискомРасширеннаяПодсказка" id="38"/>
 					<ChildItems>
 						<Button name="УстановитьКомандуДляВыделенныхПользователей" id="28">
 							<Type>UsualButton</Type>
 							<CommandName>Form.Command.УстановитьКомандуДляВыделенныхПользователей</CommandName>
-							<ExtendedTooltip name="УстановитьКомандуДляВыделенныхПользователейExtendedTooltip" id="40"/>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>&gt;</v8:content>
+								</v8:item>
+							</Title>
+							<ExtendedTooltip name="УстановитьКомандуДляВыделенныхПользователейРасширеннаяПодсказка" id="40"/>
 						</Button>
 						<Button name="УстановитьДоступДляВсехПользователей" id="27">
 							<Type>UsualButton</Type>
 							<CommandName>Form.Command.УстановитьДоступДляВсехПользователей</CommandName>
-							<ExtendedTooltip name="УстановитьДоступДляВсехПользователейExtendedTooltip" id="41"/>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>&gt;&gt;</v8:content>
+								</v8:item>
+							</Title>
+							<ExtendedTooltip name="УстановитьДоступДляВсехПользователейРасширеннаяПодсказка" id="41"/>
 						</Button>
 						<Button name="УбратьДоступККомандеУВсехПользователей" id="29">
 							<Type>UsualButton</Type>
 							<CommandName>Form.Command.УбратьДоступККомандеУВсехПользователей</CommandName>
-							<ExtendedTooltip name="УбратьДоступККомандеУВсехПользователейExtendedTooltip" id="42"/>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>&lt;&lt;</v8:content>
+								</v8:item>
+							</Title>
+							<ExtendedTooltip name="УбратьДоступККомандеУВсехПользователейРасширеннаяПодсказка" id="42"/>
 						</Button>
 						<Button name="УбратьДоступККомандеУВыделенныхПользователей" id="30">
 							<Type>UsualButton</Type>
 							<CommandName>Form.Command.УбратьДоступККомандеУВыделенныхПользователей</CommandName>
-							<ExtendedTooltip name="УбратьДоступККомандеУВыделенныхПользователейExtendedTooltip" id="43"/>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>&lt;</v8:content>
+								</v8:item>
+							</Title>
+							<ExtendedTooltip name="УбратьДоступККомандеУВыделенныхПользователейРасширеннаяПодсказка" id="43"/>
 						</Button>
 					</ChildItems>
 				</UsualGroup>
@@ -202,17 +238,17 @@
 								<Type>CommandBarButton</Type>
 								<SkipOnInput>false</SkipOnInput>
 								<CommandName>Form.Item.ПользователиКороткогоСписка.StandardCommand.Find</CommandName>
-								<ExtendedTooltip name="ПользователиКороткогоСпискаНайтиExtendedTooltip" id="44"/>
+								<ExtendedTooltip name="ПользователиКороткогоСпискаНайтиРасширеннаяПодсказка" id="44"/>
 							</Button>
 							<Button name="ПользователиКороткогоСпискаОтменитьПоиск" id="19">
 								<Type>CommandBarButton</Type>
 								<SkipOnInput>false</SkipOnInput>
 								<CommandName>Form.Item.ПользователиКороткогоСписка.StandardCommand.CancelSearch</CommandName>
-								<ExtendedTooltip name="ПользователиКороткогоСпискаОтменитьПоискExtendedTooltip" id="45"/>
+								<ExtendedTooltip name="ПользователиКороткогоСпискаОтменитьПоискРасширеннаяПодсказка" id="45"/>
 							</Button>
 						</ChildItems>
 					</AutoCommandBar>
-					<ExtendedTooltip name="ПользователиКороткогоСпискаExtendedTooltip" id="46"/>
+					<ExtendedTooltip name="ПользователиКороткогоСпискаРасширеннаяПодсказка" id="46"/>
 					<SearchStringAddition name="ПользователиКороткогоСпискаСтрокаПоиска" id="57">
 						<AdditionSource>
 							<Item>ПользователиКороткогоСписка</Item>
@@ -245,9 +281,15 @@
 						<InputField name="ПользователиКороткогоСпискаПользователь" id="16">
 							<DataPath>ПользователиКороткогоСписка.Пользователь</DataPath>
 							<ReadOnly>true</ReadOnly>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Пользователь</v8:content>
+								</v8:item>
+							</Title>
 							<EditMode>EnterOnInput</EditMode>
 							<ContextMenu name="ПользователиКороткогоСпискаПользовательКонтекстноеМеню" id="17"/>
-							<ExtendedTooltip name="ПользователиКороткогоСпискаПользовательExtendedTooltip" id="47"/>
+							<ExtendedTooltip name="ПользователиКороткогоСпискаПользовательРасширеннаяПодсказка" id="47"/>
 						</InputField>
 					</ChildItems>
 				</Table>

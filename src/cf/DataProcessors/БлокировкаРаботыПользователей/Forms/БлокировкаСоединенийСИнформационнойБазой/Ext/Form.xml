@@ -22,7 +22,13 @@
 				<Type>CommandBarButton</Type>
 				<SkipOnInput>false</SkipOnInput>
 				<CommandName>Form.Command.АктивныеПользователи</CommandName>
-				<ExtendedTooltip name="АктивныеПользователиExtendedTooltip" id="83"/>
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Активные пользователи</v8:content>
+					</v8:item>
+				</Title>
+				<ExtendedTooltip name="АктивныеПользователиРасширеннаяПодсказка" id="83"/>
 			</Button>
 		</ChildItems>
 	</AutoCommandBar>
@@ -43,16 +49,16 @@
 			<Behavior>Usual</Behavior>
 			<Representation>NormalSeparation</Representation>
 			<ShowTitle>false</ShowTitle>
-			<ExtendedTooltip name="ГруппаОшибкаExtendedTooltip" id="85"/>
+			<ExtendedTooltip name="ГруппаОшибкаРасширеннаяПодсказка" id="85"/>
 			<ChildItems>
 				<PictureDecoration name="ДекорацияОшибка" id="69">
 					<Picture>
-						<xr:Ref>CommonPicture.Предупреждение32</xr:Ref>
-						<xr:LoadTransparent>false</xr:LoadTransparent>
+						<xr:Ref>StdPicture.DialogExclamation</xr:Ref>
+						<xr:LoadTransparent>true</xr:LoadTransparent>
 					</Picture>
 					<FileDragMode>AsFile</FileDragMode>
 					<ContextMenu name="ДекорацияОшибкаКонтекстноеМеню" id="70"/>
-					<ExtendedTooltip name="ДекорацияОшибкаExtendedTooltip" id="86"/>
+					<ExtendedTooltip name="ДекорацияОшибкаРасширеннаяПодсказка" id="86"/>
 				</PictureDecoration>
 				<LabelDecoration name="ТекстОшибки" id="71">
 					<AutoMaxWidth>false</AutoMaxWidth>
@@ -67,7 +73,7 @@
 					</Title>
 					<VerticalAlign>Top</VerticalAlign>
 					<ContextMenu name="ТекстОшибкиКонтекстноеМеню" id="72"/>
-					<ExtendedTooltip name="ТекстОшибкиExtendedTooltip" id="88"/>
+					<ExtendedTooltip name="ТекстОшибкиРасширеннаяПодсказка" id="88"/>
 				</LabelDecoration>
 			</ChildItems>
 		</UsualGroup>
@@ -81,7 +87,7 @@
 			<HorizontalStretch>false</HorizontalStretch>
 			<VerticalStretch>false</VerticalStretch>
 			<PagesRepresentation>None</PagesRepresentation>
-			<ExtendedTooltip name="ГруппаРежимExtendedTooltip" id="94"/>
+			<ExtendedTooltip name="ГруппаРежимРасширеннаяПодсказка" id="94"/>
 			<ChildItems>
 				<Page name="СтраницаНастройки" id="47">
 					<Title>
@@ -90,10 +96,16 @@
 							<v8:content>Страница настройки</v8:content>
 						</v8:item>
 					</Title>
-					<ExtendedTooltip name="СтраницаНастройкиExtendedTooltip" id="95"/>
+					<ExtendedTooltip name="СтраницаНастройкиРасширеннаяПодсказка" id="95"/>
 					<ChildItems>
 						<LabelField name="НачальныйСтатусЗапретаРаботыПользователей" id="64">
 							<DataPath>НачальныйСтатусЗапретаРаботыПользователей</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Состояние</v8:content>
+								</v8:item>
+							</Title>
 							<TitleLocation>None</TitleLocation>
 							<HorizontalAlign>Left</HorizontalAlign>
 							<AutoMaxWidth>false</AutoMaxWidth>
@@ -104,7 +116,7 @@
 								</v8:item>
 							</Format>
 							<ContextMenu name="НачальныйСтатусЗапретаРаботыПользователейКонтекстноеМеню" id="65"/>
-							<ExtendedTooltip name="НачальныйСтатусЗапретаРаботыПользователейExtendedTooltip" id="97"/>
+							<ExtendedTooltip name="НачальныйСтатусЗапретаРаботыПользователейРасширеннаяПодсказка" id="97"/>
 						</LabelField>
 						<InputField name="СообщениеДляПользователей" id="60">
 							<DataPath>Объект.СообщениеДляПользователей</DataPath>
@@ -113,7 +125,7 @@
 							<Height>2</Height>
 							<BorderColor>style:BorderColor</BorderColor>
 							<ContextMenu name="СообщениеДляПользователейКонтекстноеМеню" id="61"/>
-							<ExtendedTooltip name="СообщениеДляПользователейExtendedTooltip" id="98"/>
+							<ExtendedTooltip name="СообщениеДляПользователейРасширеннаяПодсказка" id="98"/>
 						</InputField>
 						<UsualGroup name="ГруппаПериодБлокировки" id="18">
 							<Title>
@@ -128,7 +140,7 @@
 							<ChildItemsWidth>Equal</ChildItemsWidth>
 							<ShowTitle>false</ShowTitle>
 							<ThroughAlign>DontUse</ThroughAlign>
-							<ExtendedTooltip name="ГруппаПериодБлокировкиExtendedTooltip" id="99"/>
+							<ExtendedTooltip name="ГруппаПериодБлокировкиРасширеннаяПодсказка" id="99"/>
 							<ChildItems>
 								<InputField name="НачалоБлокировки" id="4">
 									<DataPath>Объект.НачалоДействияБлокировки</DataPath>
@@ -142,7 +154,7 @@
 									<Wrap>false</Wrap>
 									<BorderColor>style:BorderColor</BorderColor>
 									<ContextMenu name="НачалоБлокировкиКонтекстноеМеню" id="5"/>
-									<ExtendedTooltip name="НачалоБлокировкиExtendedTooltip" id="100"/>
+									<ExtendedTooltip name="НачалоБлокировкиРасширеннаяПодсказка" id="100"/>
 								</InputField>
 								<InputField name="ОкончаниеБлокировки" id="6">
 									<DataPath>Объект.ОкончаниеДействияБлокировки</DataPath>
@@ -162,7 +174,7 @@
 									</EditFormat>
 									<BorderColor>style:BorderColor</BorderColor>
 									<ContextMenu name="ОкончаниеБлокировкиКонтекстноеМеню" id="7"/>
-									<ExtendedTooltip name="ОкончаниеБлокировкиExtendedTooltip" id="101"/>
+									<ExtendedTooltip name="ОкончаниеБлокировкиРасширеннаяПодсказка" id="101"/>
 								</InputField>
 							</ChildItems>
 						</UsualGroup>
@@ -175,7 +187,7 @@
 							<ContextMenu name="КодДляРазблокировкиКонтекстноеМеню" id="11">
 								<Autofill>false</Autofill>
 							</ContextMenu>
-							<ExtendedTooltip name="КодДляРазблокировкиExtendedTooltip" id="102"/>
+							<ExtendedTooltip name="КодДляРазблокировкиРасширеннаяПодсказка" id="102"/>
 						</InputField>
 						<Pages name="ГруппаЗапретитьРаботуРегламентныхЗаданий" id="120">
 							<Title>
@@ -200,6 +212,12 @@
 											<Type>Hyperlink</Type>
 											<AutoMaxWidth>false</AutoMaxWidth>
 											<CommandName>Form.Command.ПараметрыАдминистрирования</CommandName>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Включить возможность управления блокировкой регламентных заданий</v8:content>
+												</v8:item>
+											</Title>
 											<ExtendedTooltip name="ПараметрыАдминистрированияРасширеннаяПодсказка" id="127"/>
 										</Button>
 									</ChildItems>
@@ -224,7 +242,7 @@
 											<TitleLocation>Right</TitleLocation>
 											<CheckBoxType>Auto</CheckBoxType>
 											<ContextMenu name="ЗапретитьРаботуРегламентныхЗаданийКонтекстноеМеню" id="45"/>
-											<ExtendedTooltip name="ЗапретитьРаботуРегламентныхЗаданийExtendedTooltip" id="104"/>
+											<ExtendedTooltip name="ЗапретитьРаботуРегламентныхЗаданийРасширеннаяПодсказка" id="104"/>
 										</CheckBoxField>
 									</ChildItems>
 								</Page>
@@ -239,7 +257,7 @@
 							<v8:content>Страница состояния блокировки</v8:content>
 						</v8:item>
 					</Title>
-					<ExtendedTooltip name="СтраницаСостоянияБлокировкиExtendedTooltip" id="105"/>
+					<ExtendedTooltip name="СтраницаСостоянияБлокировкиРасширеннаяПодсказка" id="105"/>
 					<ChildItems>
 						<UsualGroup name="ГруппаСостояние" id="53">
 							<Title>
@@ -252,7 +270,7 @@
 							<Behavior>Usual</Behavior>
 							<Representation>NormalSeparation</Representation>
 							<ShowTitle>false</ShowTitle>
-							<ExtendedTooltip name="ГруппаСостояниеExtendedTooltip" id="106"/>
+							<ExtendedTooltip name="ГруппаСостояниеРасширеннаяПодсказка" id="106"/>
 							<ChildItems>
 								<PictureDecoration name="ДекорацияСостояние" id="51">
 									<Picture>
@@ -261,7 +279,7 @@
 									</Picture>
 									<FileDragMode>AsFile</FileDragMode>
 									<ContextMenu name="ДекорацияСостояниеКонтекстноеМеню" id="52"/>
-									<ExtendedTooltip name="ДекорацияСостояниеExtendedTooltip" id="107"/>
+									<ExtendedTooltip name="ДекорацияСостояниеРасширеннаяПодсказка" id="107"/>
 								</PictureDecoration>
 								<UsualGroup name="ГруппаСодержимое" id="66">
 									<Title>
@@ -274,7 +292,7 @@
 									<Behavior>Usual</Behavior>
 									<Representation>None</Representation>
 									<ShowTitle>false</ShowTitle>
-									<ExtendedTooltip name="ГруппаСодержимоеExtendedTooltip" id="108"/>
+									<ExtendedTooltip name="ГруппаСодержимоеРасширеннаяПодсказка" id="108"/>
 									<ChildItems>
 										<LabelDecoration name="Состояние" id="49">
 											<AutoMaxWidth>false</AutoMaxWidth>
@@ -288,7 +306,7 @@
 											</Title>
 											<VerticalAlign>Center</VerticalAlign>
 											<ContextMenu name="СостояниеКонтекстноеМеню" id="50"/>
-											<ExtendedTooltip name="СостояниеExtendedTooltip" id="109"/>
+											<ExtendedTooltip name="СостояниеРасширеннаяПодсказка" id="109"/>
 										</LabelDecoration>
 										<InputField name="СообщениеДляПользователей1" id="8">
 											<DataPath>Объект.СообщениеДляПользователей</DataPath>
@@ -304,7 +322,7 @@
 											<Height>2</Height>
 											<BorderColor>style:BorderColor</BorderColor>
 											<ContextMenu name="СообщениеДляПользователей1КонтекстноеМеню" id="9"/>
-											<ExtendedTooltip name="СообщениеДляПользователей1ExtendedTooltip" id="110"/>
+											<ExtendedTooltip name="СообщениеДляПользователей1РасширеннаяПодсказка" id="110"/>
 										</InputField>
 										<UsualGroup name="ГруппаПериодБлокировки1" id="55">
 											<ReadOnly>true</ReadOnly>
@@ -319,7 +337,7 @@
 											<Representation>None</Representation>
 											<ChildItemsWidth>Equal</ChildItemsWidth>
 											<ShowTitle>false</ShowTitle>
-											<ExtendedTooltip name="ГруппаПериодБлокировки1ExtendedTooltip" id="111"/>
+											<ExtendedTooltip name="ГруппаПериодБлокировки1РасширеннаяПодсказка" id="111"/>
 											<ChildItems>
 												<LabelField name="НачалоБлокировки1" id="56">
 													<DataPath>Объект.НачалоДействияБлокировки</DataPath>
@@ -331,7 +349,7 @@
 													</Title>
 													<FooterHorizontalAlign>Left</FooterHorizontalAlign>
 													<ContextMenu name="НачалоБлокировки1КонтекстноеМеню" id="57"/>
-													<ExtendedTooltip name="НачалоБлокировки1ExtendedTooltip" id="112"/>
+													<ExtendedTooltip name="НачалоБлокировки1РасширеннаяПодсказка" id="112"/>
 												</LabelField>
 												<LabelField name="ОкончаниеБлокировки1" id="58">
 													<DataPath>Объект.ОкончаниеДействияБлокировки</DataPath>
@@ -349,7 +367,7 @@
 														</v8:item>
 													</Format>
 													<ContextMenu name="ОкончаниеБлокировки1КонтекстноеМеню" id="59"/>
-													<ExtendedTooltip name="ОкончаниеБлокировки1ExtendedTooltip" id="113"/>
+													<ExtendedTooltip name="ОкончаниеБлокировки1РасширеннаяПодсказка" id="113"/>
 												</LabelField>
 											</ChildItems>
 										</UsualGroup>
@@ -370,27 +388,39 @@
 			</Title>
 			<HorizontalLocation>Right</HorizontalLocation>
 			<CommandSource>Form</CommandSource>
-			<ExtendedTooltip name="ОсновнаяКоманднаяПанельExtendedTooltip" id="114"/>
+			<ExtendedTooltip name="ОсновнаяКоманднаяПанельРасширеннаяПодсказка" id="114"/>
 			<ChildItems>
 				<Button name="КомандаПрименить" id="15">
 					<Type>CommandBarButton</Type>
 					<DefaultButton>true</DefaultButton>
 					<SkipOnInput>false</SkipOnInput>
 					<CommandName>Form.Command.Применить</CommandName>
-					<ExtendedTooltip name="КомандаПрименитьExtendedTooltip" id="115"/>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Применить</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="КомандаПрименитьРасширеннаяПодсказка" id="115"/>
 				</Button>
 				<Button name="КомандаОстановить" id="54">
 					<Type>CommandBarButton</Type>
 					<Visible>false</Visible>
 					<CommandName>Form.Command.Остановить</CommandName>
-					<ExtendedTooltip name="КомандаОстановитьExtendedTooltip" id="116"/>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Остановить</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="КомандаОстановитьРасширеннаяПодсказка" id="116"/>
 				</Button>
 				<Button name="КомандаЗакрыть" id="16">
 					<Type>CommandBarButton</Type>
 					<Representation>Text</Representation>
 					<SkipOnInput>false</SkipOnInput>
 					<CommandName>Form.StandardCommand.Close</CommandName>
-					<ExtendedTooltip name="КомандаЗакрытьExtendedTooltip" id="117"/>
+					<ExtendedTooltip name="КомандаЗакрытьРасширеннаяПодсказка" id="117"/>
 				</Button>
 			</ChildItems>
 		</CommandBar>

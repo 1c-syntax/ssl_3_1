@@ -32,10 +32,22 @@
 					<DefaultButton>true</DefaultButton>
 					<SkipOnInput>false</SkipOnInput>
 					<CommandName>Form.Command.Выбрать</CommandName>
-					<ExtendedTooltip name="ВыбратьExtendedTooltip" id="16"/>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Выбрать</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="ВыбратьРасширеннаяПодсказка" id="16"/>
 				</Button>
 				<RadioButtonField name="СпособГруппировкиОбъектов" id="33">
 					<DataPath>СпособГруппировкиОбъектов</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Способ группировки объектов</v8:content>
+						</v8:item>
+					</Title>
 					<TitleLocation>None</TitleLocation>
 					<RadioButtonType>Auto</RadioButtonType>
 					<ChoiceList>
@@ -110,7 +122,7 @@
 			<SearchStringLocation>Top</SearchStringLocation>
 			<ContextMenu name="ДеревоОбъектовМетаданныхКонтекстноеМеню" id="2"/>
 			<AutoCommandBar name="ДеревоОбъектовМетаданныхКоманднаяПанель" id="3"/>
-			<ExtendedTooltip name="ДеревоОбъектовМетаданныхExtendedTooltip" id="19"/>
+			<ExtendedTooltip name="ДеревоОбъектовМетаданныхРасширеннаяПодсказка" id="19"/>
 			<SearchStringAddition name="ДеревоОбъектовМетаданныхСтрокаПоиска" id="24">
 				<AdditionSource>
 					<Item>ДеревоОбъектовМетаданных</Item>
@@ -140,8 +152,14 @@
 			</Events>
 			<ChildItems>
 				<ColumnGroup name="Группа" id="12">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа</v8:content>
+						</v8:item>
+					</Title>
 					<Group>InCell</Group>
-					<ExtendedTooltip name="ГруппаExtendedTooltip" id="20"/>
+					<ExtendedTooltip name="ГруппаРасширеннаяПодсказка" id="20"/>
 					<ChildItems>
 						<CheckBoxField name="Пометка" id="8">
 							<DataPath>ДеревоОбъектовМетаданных.Пометка</DataPath>
@@ -154,13 +172,19 @@
 							<TitleLocation>None</TitleLocation>
 							<ThreeState>true</ThreeState>
 							<ContextMenu name="ПометкаКонтекстноеМеню" id="9"/>
-							<ExtendedTooltip name="ПометкаExtendedTooltip" id="21"/>
+							<ExtendedTooltip name="ПометкаРасширеннаяПодсказка" id="21"/>
 							<Events>
 								<Event name="OnChange">ПометкаПриИзменении</Event>
 							</Events>
 						</CheckBoxField>
 						<PictureField name="Картинка" id="10">
 							<DataPath>ДеревоОбъектовМетаданных.Картинка</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Картинка</v8:content>
+								</v8:item>
+							</Title>
 							<TitleLocation>None</TitleLocation>
 							<Width>2</Width>
 							<Height>1</Height>
@@ -171,7 +195,7 @@
 							</Border>
 							<FileDragMode>AsFile</FileDragMode>
 							<ContextMenu name="КартинкаКонтекстноеМеню" id="11"/>
-							<ExtendedTooltip name="КартинкаExtendedTooltip" id="22"/>
+							<ExtendedTooltip name="КартинкаРасширеннаяПодсказка" id="22"/>
 						</PictureField>
 						<InputField name="Представление" id="6">
 							<DataPath>ДеревоОбъектовМетаданных.Представление</DataPath>
@@ -184,7 +208,7 @@
 							</Title>
 							<Wrap>false</Wrap>
 							<ContextMenu name="ПредставлениеКонтекстноеМеню" id="7"/>
-							<ExtendedTooltip name="ПредставлениеExtendedTooltip" id="23"/>
+							<ExtendedTooltip name="ПредставлениеРасширеннаяПодсказка" id="23"/>
 						</InputField>
 					</ChildItems>
 				</ColumnGroup>
@@ -416,6 +440,11 @@
 				<v8:Type>xs:boolean</v8:Type>
 			</Type>
 		</Attribute>
+		<Attribute name="ВыбиратьТаблицыВнешнихИсточниковДанных" id="19">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
 	</Attributes>
 	<Commands>
 		<Command name="Выбрать" id="1">
@@ -503,6 +532,35 @@
 		<Parameter name="ВыбиратьКоллекцииКогдаВыбраныВсеОбъекты">
 			<Type>
 				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Parameter>
+		<Parameter name="ВыбиратьТаблицыВнешнихИсточниковДанных">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Parameter>
+		<Parameter name="ТолькоПодсистемыСКИ">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Parameter>
+		<Parameter name="ВыбиратьСсылки">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Parameter>
+		<Parameter name="ВыборЕдинственного">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Parameter>
+		<Parameter name="НачальноеЗначениеВыбора">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
 			</Type>
 		</Parameter>
 	</Parameters>

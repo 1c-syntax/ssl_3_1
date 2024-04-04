@@ -40,7 +40,7 @@
 			<Behavior>Usual</Behavior>
 			<Representation>None</Representation>
 			<ShowTitle>false</ShowTitle>
-			<ExtendedTooltip name="ПанельКомандExtendedTooltip" id="136"/>
+			<ExtendedTooltip name="ПанельКомандРасширеннаяПодсказка" id="136"/>
 			<ChildItems>
 				<CommandBar name="ГруппаПроверитьЗаполнения" id="86">
 					<EnableContentChange>true</EnableContentChange>
@@ -77,6 +77,12 @@
 										<Button name="ДобавитьКомментарий" id="386">
 											<Type>CommandBarButton</Type>
 											<CommandName>Form.Command.ДобавитьКомментарий</CommandName>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Комментарий</v8:content>
+												</v8:item>
+											</Title>
 											<ExtendedTooltip name="ДобавитьКомментарийРасширеннаяПодсказка" id="387"/>
 										</Button>
 									</ChildItems>
@@ -93,7 +99,7 @@
 						</v8:item>
 					</Title>
 					<HorizontalLocation>Right</HorizontalLocation>
-					<ExtendedTooltip name="ПанельКомандФормыExtendedTooltip" id="139"/>
+					<ExtendedTooltip name="ПанельКомандФормыРасширеннаяПодсказка" id="139"/>
 					<ChildItems>
 						<ButtonGroup name="ФормаВводАдресаПоказать" id="101">
 							<Title>
@@ -107,6 +113,12 @@
 								<Button name="ИсторияИзменений" id="326">
 									<Type>CommandBarButton</Type>
 									<CommandName>Form.Command.ИсторияИзменений</CommandName>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>История изменений...</v8:content>
+										</v8:item>
+									</Title>
 									<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
 									<ExtendedTooltip name="ИсторияИзмененийРасширеннаяПодсказка" id="327"/>
 								</Button>
@@ -133,8 +145,14 @@
 										<Button name="ФормаОчиститьАдрес" id="90">
 											<Type>CommandBarButton</Type>
 											<CommandName>Form.Command.ОчиститьАдрес</CommandName>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Очистить адрес</v8:content>
+												</v8:item>
+											</Title>
 											<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
-											<ExtendedTooltip name="ФормаОчиститьАдресExtendedTooltip" id="143"/>
+											<ExtendedTooltip name="ФормаОчиститьАдресРасширеннаяПодсказка" id="143"/>
 										</Button>
 									</ChildItems>
 								</ButtonGroup>
@@ -150,7 +168,7 @@
 							<Type>CommandBarButton</Type>
 							<CommandName>Form.StandardCommand.Help</CommandName>
 							<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
-							<ExtendedTooltip name="СправкаExtendedTooltip" id="148"/>
+							<ExtendedTooltip name="СправкаРасширеннаяПодсказка" id="148"/>
 						</Button>
 					</ChildItems>
 				</CommandBar>
@@ -182,6 +200,12 @@
 				</LabelDecoration>
 				<InputField name="АдресНаДату" id="363">
 					<DataPath>АдресНаДату</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Адрес на дату</v8:content>
+						</v8:item>
+					</Title>
 					<TitleLocation>None</TitleLocation>
 					<Width>10</Width>
 					<ContextMenu name="АдресНаДатуКонтекстноеМеню" id="364"/>
@@ -343,11 +367,17 @@
 										</UsualGroup>
 										<InputField name="ПредставлениеИностранногоАдреса" id="21">
 											<DataPath>ПредставлениеАдреса</DataPath>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Представление адреса</v8:content>
+												</v8:item>
+											</Title>
 											<TitleLocation>None</TitleLocation>
 											<AutoMaxWidth>false</AutoMaxWidth>
 											<MultiLine>true</MultiLine>
 											<ContextMenu name="ПредставлениеИностранногоАдресаКонтекстноеМеню" id="22"/>
-											<ExtendedTooltip name="ПредставлениеИностранногоАдресаExtendedTooltip" id="132"/>
+											<ExtendedTooltip name="ПредставлениеИностранногоАдресаРасширеннаяПодсказка" id="132"/>
 											<Events>
 												<Event name="OnChange">ПредставлениеИностранногоАдресаПриИзменении</Event>
 											</Events>
@@ -370,6 +400,12 @@
 					<ChildItems>
 						<InputField name="Комментарий" id="373">
 							<DataPath>Комментарий</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Комментарий</v8:content>
+								</v8:item>
+							</Title>
 							<TitleLocation>None</TitleLocation>
 							<AutoMaxWidth>false</AutoMaxWidth>
 							<AutoMaxHeight>false</AutoMaxHeight>
@@ -400,6 +436,12 @@
 				<LabelField name="ТипАдреса" id="496">
 					<DataPath>ФорматАдреса</DataPath>
 					<Visible>false</Visible>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Формат адреса</v8:content>
+						</v8:item>
+					</Title>
 					<TitleTextColor>style:ПоясняющийТекст</TitleTextColor>
 					<TitleLocation>None</TitleLocation>
 					<ToolTipRepresentation>Button</ToolTipRepresentation>
@@ -432,12 +474,24 @@
 							<Type>CommandBarButton</Type>
 							<DefaultButton>true</DefaultButton>
 							<CommandName>Form.Command.КомандаОК</CommandName>
-							<ExtendedTooltip name="ФормаКомандаОКExtendedTooltip" id="140"/>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>ОК</v8:content>
+								</v8:item>
+							</Title>
+							<ExtendedTooltip name="ФормаКомандаОКРасширеннаяПодсказка" id="140"/>
 						</Button>
 						<Button name="ФормаОтмена" id="57">
 							<Type>CommandBarButton</Type>
 							<CommandName>Form.Command.КомандаОтмена</CommandName>
-							<ExtendedTooltip name="ФормаОтменаExtendedTooltip" id="141"/>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Отмена</v8:content>
+								</v8:item>
+							</Title>
+							<ExtendedTooltip name="ФормаОтменаРасширеннаяПодсказка" id="141"/>
 						</Button>
 					</ChildItems>
 				</CommandBar>
@@ -1026,7 +1080,13 @@
 			<Type/>
 		</Parameter>
 		<Parameter name="ЗначенияПолей">
-			<Type/>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
 			<KeyParameter>true</KeyParameter>
 		</Parameter>
 		<Parameter name="Представление">
@@ -1067,6 +1127,32 @@
 		<Parameter name="ТолькоПросмотр">
 			<Type>
 				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Parameter>
+		<Parameter name="Индекс">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Parameter>
+		<Parameter name="КонтактнаяИнформацияОписаниеДополнительныхРеквизитов">
+			<Type/>
+		</Parameter>
+		<Parameter name="ВводНовогоАдреса">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Parameter>
+		<Parameter name="Значение">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
 			</Type>
 		</Parameter>
 	</Parameters>

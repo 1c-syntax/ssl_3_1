@@ -16,13 +16,19 @@
 						<v8:content>Форма заполнения</v8:content>
 					</v8:item>
 				</Title>
-				<ExtendedTooltip name="ОткрытьФормуЗаполненияАнкетыExtendedTooltip" id="77"/>
+				<ExtendedTooltip name="ОткрытьФормуЗаполненияАнкетыРасширеннаяПодсказка" id="77"/>
 			</Button>
 			<Button name="ЗакончитьРедактирование" id="54">
 				<Type>CommandBarButton</Type>
 				<SkipOnInput>false</SkipOnInput>
 				<CommandName>Form.Command.ЗакончитьРедактирование</CommandName>
-				<ExtendedTooltip name="ЗакончитьРедактированиеExtendedTooltip" id="78"/>
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Закончить редактирование</v8:content>
+					</v8:item>
+				</Title>
+				<ExtendedTooltip name="ЗакончитьРедактированиеРасширеннаяПодсказка" id="78"/>
 			</Button>
 		</ChildItems>
 	</AutoCommandBar>
@@ -45,19 +51,19 @@
 			<Behavior>Usual</Behavior>
 			<Representation>None</Representation>
 			<ShowTitle>false</ShowTitle>
-			<ExtendedTooltip name="НаименованиеКодExtendedTooltip" id="79"/>
+			<ExtendedTooltip name="НаименованиеКодРасширеннаяПодсказка" id="79"/>
 			<ChildItems>
 				<InputField name="Наименование" id="3">
 					<DataPath>Объект.Description</DataPath>
 					<EditMode>EnterOnInput</EditMode>
 					<ContextMenu name="НаименованиеКонтекстноеМеню" id="4"/>
-					<ExtendedTooltip name="НаименованиеExtendedTooltip" id="80"/>
+					<ExtendedTooltip name="НаименованиеРасширеннаяПодсказка" id="80"/>
 				</InputField>
 				<InputField name="Код" id="1">
 					<DataPath>Объект.Code</DataPath>
 					<EditMode>EnterOnInput</EditMode>
 					<ContextMenu name="КодКонтекстноеМеню" id="2"/>
-					<ExtendedTooltip name="КодExtendedTooltip" id="81"/>
+					<ExtendedTooltip name="КодРасширеннаяПодсказка" id="81"/>
 				</InputField>
 			</ChildItems>
 		</UsualGroup>
@@ -69,7 +75,7 @@
 				</v8:item>
 			</Title>
 			<PagesRepresentation>TabsOnTop</PagesRepresentation>
-			<ExtendedTooltip name="ОсновныеСтраницыExtendedTooltip" id="82"/>
+			<ExtendedTooltip name="ОсновныеСтраницыРасширеннаяПодсказка" id="82"/>
 			<ChildItems>
 				<Page name="Заголовки" id="8">
 					<Title>
@@ -78,27 +84,27 @@
 							<v8:content>Заголовки</v8:content>
 						</v8:item>
 					</Title>
-					<ExtendedTooltip name="ЗаголовкиExtendedTooltip" id="83"/>
+					<ExtendedTooltip name="ЗаголовкиРасширеннаяПодсказка" id="83"/>
 					<ChildItems>
 						<InputField name="Заголовок" id="9">
 							<DataPath>Объект.Заголовок</DataPath>
 							<AutoMaxWidth>false</AutoMaxWidth>
 							<ContextMenu name="ЗаголовокКонтекстноеМеню" id="10"/>
-							<ExtendedTooltip name="ЗаголовокExtendedTooltip" id="84"/>
+							<ExtendedTooltip name="ЗаголовокРасширеннаяПодсказка" id="84"/>
 						</InputField>
 						<InputField name="Вступление" id="11">
 							<DataPath>Объект.Вступление</DataPath>
 							<AutoMaxWidth>false</AutoMaxWidth>
 							<MultiLine>true</MultiLine>
 							<ContextMenu name="ВступлениеКонтекстноеМеню" id="12"/>
-							<ExtendedTooltip name="ВступлениеExtendedTooltip" id="85"/>
+							<ExtendedTooltip name="ВступлениеРасширеннаяПодсказка" id="85"/>
 						</InputField>
 						<InputField name="Заключение" id="13">
 							<DataPath>Объект.Заключение</DataPath>
 							<AutoMaxWidth>false</AutoMaxWidth>
 							<MultiLine>true</MultiLine>
 							<ContextMenu name="ЗаключениеКонтекстноеМеню" id="14"/>
-							<ExtendedTooltip name="ЗаключениеExtendedTooltip" id="86"/>
+							<ExtendedTooltip name="ЗаключениеРасширеннаяПодсказка" id="86"/>
 						</InputField>
 					</ChildItems>
 				</Page>
@@ -109,7 +115,7 @@
 							<v8:content>Вопросы</v8:content>
 						</v8:item>
 					</Title>
-					<ExtendedTooltip name="ДеревоАнкетыExtendedTooltip" id="87"/>
+					<ExtendedTooltip name="ДеревоАнкетыРасширеннаяПодсказка" id="87"/>
 					<ChildItems>
 						<Table name="ФормаДереваАнкеты" id="15">
 							<Representation>Tree</Representation>
@@ -140,7 +146,7 @@
 										<Visible>false</Visible>
 										<SkipOnInput>false</SkipOnInput>
 										<CommandName>Form.Item.ФормаДереваАнкеты.StandardCommand.Add</CommandName>
-										<ExtendedTooltip name="КонтекстноеМенюФормаДереваАнкетыДобавитьExtendedTooltip" id="89"/>
+										<ExtendedTooltip name="КонтекстноеМенюФормаДереваАнкетыДобавитьРасширеннаяПодсказка" id="89"/>
 									</Button>
 									<Button name="ДеревоАнкетыКонтекстноеМенюДобавитьВопрос" id="34">
 										<Type>CommandBarButton</Type>
@@ -150,7 +156,13 @@
 											<xr:Ref>StdPicture.DataCompositionNewGroup</xr:Ref>
 											<xr:LoadTransparent>true</xr:LoadTransparent>
 										</Picture>
-										<ExtendedTooltip name="ДеревоАнкетыКонтекстноеМенюДобавитьВопросExtendedTooltip" id="91"/>
+										<Title>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Добавить простой вопрос</v8:content>
+											</v8:item>
+										</Title>
+										<ExtendedTooltip name="ДеревоАнкетыКонтекстноеМенюДобавитьВопросРасширеннаяПодсказка" id="91"/>
 									</Button>
 									<Button name="ДеревоАнкетыКонтекстноеМенюДобавитьВопросСУсловием" id="67">
 										<Type>CommandBarButton</Type>
@@ -160,7 +172,13 @@
 											<xr:Ref>StdPicture.DataCompositionNewNestedScheme</xr:Ref>
 											<xr:LoadTransparent>true</xr:LoadTransparent>
 										</Picture>
-										<ExtendedTooltip name="ДеревоАнкетыКонтекстноеМенюДобавитьВопросСУсловиемExtendedTooltip" id="92"/>
+										<Title>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Добавить условный вопрос</v8:content>
+											</v8:item>
+										</Title>
+										<ExtendedTooltip name="ДеревоАнкетыКонтекстноеМенюДобавитьВопросСУсловиемРасширеннаяПодсказка" id="92"/>
 									</Button>
 									<Button name="ДеревоАнкетыКонтекстноеМенюДобавитьТабличныйВопрос" id="66">
 										<Type>CommandBarButton</Type>
@@ -170,7 +188,13 @@
 											<xr:Ref>StdPicture.DataCompositionNewTable</xr:Ref>
 											<xr:LoadTransparent>true</xr:LoadTransparent>
 										</Picture>
-										<ExtendedTooltip name="ДеревоАнкетыКонтекстноеМенюДобавитьТабличныйВопросExtendedTooltip" id="93"/>
+										<Title>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Добавить табличный вопрос</v8:content>
+											</v8:item>
+										</Title>
+										<ExtendedTooltip name="ДеревоАнкетыКонтекстноеМенюДобавитьТабличныйВопросРасширеннаяПодсказка" id="93"/>
 									</Button>
 									<Button name="ДеревоАнкетыКонтекстноеМенюДобавитьКомплексныйВопрос" id="144">
 										<Type>CommandBarButton</Type>
@@ -180,13 +204,25 @@
 											<xr:Ref>CommonPicture.ДобавитьТабличныйВопрос</xr:Ref>
 											<xr:LoadTransparent>false</xr:LoadTransparent>
 										</Picture>
+										<Title>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Добавить комплексный вопрос</v8:content>
+											</v8:item>
+										</Title>
 										<ExtendedTooltip name="ДеревоАнкетыКонтекстноеМенюДобавитьКомплексныйВопросРасширеннаяПодсказка" id="145"/>
 									</Button>
 									<Button name="ДеревоАнкетыКонтекстноеМенюДобавитьРаздел" id="33">
 										<Type>CommandBarButton</Type>
 										<SkipOnInput>false</SkipOnInput>
 										<CommandName>Form.Command.ДобавитьРаздел</CommandName>
-										<ExtendedTooltip name="ДеревоАнкетыКонтекстноеМенюДобавитьРазделExtendedTooltip" id="90"/>
+										<Title>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Добавить раздел</v8:content>
+											</v8:item>
+										</Title>
+										<ExtendedTooltip name="ДеревоАнкетыКонтекстноеМенюДобавитьРазделРасширеннаяПодсказка" id="90"/>
 									</Button>
 									<ButtonGroup name="ФормаДереваАнкетыКонтекстноеМенюГруппаПеремещение" id="135">
 										<Title>
@@ -201,13 +237,13 @@
 												<Type>CommandBarButton</Type>
 												<SkipOnInput>false</SkipOnInput>
 												<CommandName>Form.Item.ФормаДереваАнкеты.StandardCommand.MoveUp</CommandName>
-												<ExtendedTooltip name="ДеревоАнкетыКонтекстноеМенюПереместитьВверхExtendedTooltip" id="94"/>
+												<ExtendedTooltip name="ДеревоАнкетыКонтекстноеМенюПереместитьВверхРасширеннаяПодсказка" id="94"/>
 											</Button>
 											<Button name="ДеревоАнкетыКонтекстноеМенюПереместитьВниз" id="36">
 												<Type>CommandBarButton</Type>
 												<SkipOnInput>false</SkipOnInput>
 												<CommandName>Form.Item.ФормаДереваАнкеты.StandardCommand.MoveDown</CommandName>
-												<ExtendedTooltip name="ДеревоАнкетыКонтекстноеМенюПереместитьВнизExtendedTooltip" id="95"/>
+												<ExtendedTooltip name="ДеревоАнкетыКонтекстноеМенюПереместитьВнизРасширеннаяПодсказка" id="95"/>
 											</Button>
 										</ChildItems>
 									</ButtonGroup>
@@ -224,7 +260,7 @@
 												<Type>CommandBarButton</Type>
 												<SkipOnInput>false</SkipOnInput>
 												<CommandName>Form.Item.ФормаДереваАнкеты.StandardCommand.Delete</CommandName>
-												<ExtendedTooltip name="ДеревоАнкетыКонтекстноеМенюУдалитьExtendedTooltip" id="96"/>
+												<ExtendedTooltip name="ДеревоАнкетыКонтекстноеМенюУдалитьРасширеннаяПодсказка" id="96"/>
 											</Button>
 										</ChildItems>
 									</ButtonGroup>
@@ -257,7 +293,7 @@
 														<v8:content>простой вопрос</v8:content>
 													</v8:item>
 												</Title>
-												<ExtendedTooltip name="ДеревоАнкетыКоманднаяПанельДобавитьВопросExtendedTooltip" id="99"/>
+												<ExtendedTooltip name="ДеревоАнкетыКоманднаяПанельДобавитьВопросРасширеннаяПодсказка" id="99"/>
 											</Button>
 											<Button name="ДеревоАнкетыКоманднаяПанельДобавитьТабличныйВопрос" id="64">
 												<Type>CommandBarButton</Type>
@@ -269,7 +305,7 @@
 														<v8:content>табличный вопрос</v8:content>
 													</v8:item>
 												</Title>
-												<ExtendedTooltip name="ДеревоАнкетыКоманднаяПанельДобавитьТабличныйВопросExtendedTooltip" id="100"/>
+												<ExtendedTooltip name="ДеревоАнкетыКоманднаяПанельДобавитьТабличныйВопросРасширеннаяПодсказка" id="100"/>
 											</Button>
 											<Button name="ДеревоАнкетыКоманднаяПанельДобавитьВопросСУсловием" id="63">
 												<Type>CommandBarButton</Type>
@@ -281,7 +317,7 @@
 														<v8:content>вопрос c условием</v8:content>
 													</v8:item>
 												</Title>
-												<ExtendedTooltip name="ДеревоАнкетыКоманднаяПанельДобавитьВопросСУсловиемExtendedTooltip" id="101"/>
+												<ExtendedTooltip name="ДеревоАнкетыКоманднаяПанельДобавитьВопросСУсловиемРасширеннаяПодсказка" id="101"/>
 											</Button>
 											<Button name="ДереваАнкетыДобавитьКомплексныйВопрос" id="142">
 												<Type>CommandBarButton</Type>
@@ -304,7 +340,7 @@
 														<v8:content>раздел</v8:content>
 													</v8:item>
 												</Title>
-												<ExtendedTooltip name="ДеревоАнкетыКоманднаяПанельДобавитьРазделExtendedTooltip" id="98"/>
+												<ExtendedTooltip name="ДеревоАнкетыКоманднаяПанельДобавитьРазделРасширеннаяПодсказка" id="98"/>
 											</Button>
 										</ChildItems>
 									</Popup>
@@ -312,7 +348,7 @@
 										<Type>CommandBarButton</Type>
 										<SkipOnInput>false</SkipOnInput>
 										<CommandName>Form.Item.ФормаДереваАнкеты.StandardCommand.Change</CommandName>
-										<ExtendedTooltip name="ДеревоАнкетыКоманднаяПанельРедактироватьExtendedTooltip" id="102"/>
+										<ExtendedTooltip name="ДеревоАнкетыКоманднаяПанельРедактироватьРасширеннаяПодсказка" id="102"/>
 									</Button>
 									<ButtonGroup name="ФормаДереваАнкетыГруппа" id="129">
 										<Title>
@@ -328,14 +364,14 @@
 												<SkipOnInput>false</SkipOnInput>
 												<CommandName>Form.Item.ФормаДереваАнкеты.StandardCommand.MoveUp</CommandName>
 												<LocationInCommandBar>InCommandBarAndInAdditionalSubmenu</LocationInCommandBar>
-												<ExtendedTooltip name="ДеревоАнкетыКоманднаяПанельПереместитьВверхExtendedTooltip" id="103"/>
+												<ExtendedTooltip name="ДеревоАнкетыКоманднаяПанельПереместитьВверхРасширеннаяПодсказка" id="103"/>
 											</Button>
 											<Button name="ДеревоАнкетыКоманднаяПанельПереместитьВниз" id="32">
 												<Type>CommandBarButton</Type>
 												<SkipOnInput>false</SkipOnInput>
 												<CommandName>Form.Item.ФормаДереваАнкеты.StandardCommand.MoveDown</CommandName>
 												<LocationInCommandBar>InCommandBarAndInAdditionalSubmenu</LocationInCommandBar>
-												<ExtendedTooltip name="ДеревоАнкетыКоманднаяПанельПереместитьВнизExtendedTooltip" id="104"/>
+												<ExtendedTooltip name="ДеревоАнкетыКоманднаяПанельПереместитьВнизРасширеннаяПодсказка" id="104"/>
 											</Button>
 										</ChildItems>
 									</ButtonGroup>
@@ -352,7 +388,7 @@
 												<Type>CommandBarButton</Type>
 												<SkipOnInput>false</SkipOnInput>
 												<CommandName>Form.Item.ФормаДереваАнкеты.StandardCommand.Delete</CommandName>
-												<ExtendedTooltip name="ДеревоАнкетыКоманднаяПанельУдалитьExtendedTooltip" id="105"/>
+												<ExtendedTooltip name="ДеревоАнкетыКоманднаяПанельУдалитьРасширеннаяПодсказка" id="105"/>
 											</Button>
 										</ChildItems>
 									</ButtonGroup>
@@ -377,7 +413,7 @@
 									</SearchStringAddition>
 								</ChildItems>
 							</AutoCommandBar>
-							<ExtendedTooltip name="ФормаДереваАнкетыExtendedTooltip" id="106"/>
+							<ExtendedTooltip name="ФормаДереваАнкетыРасширеннаяПодсказка" id="106"/>
 							<SearchStringAddition name="ФормаДереваАнкетыСтрокаПоиска" id="118">
 								<AdditionSource>
 									<Item>ФормаДереваАнкеты</Item>
@@ -423,7 +459,7 @@
 										</v8:item>
 									</Title>
 									<Group>InCell</Group>
-									<ExtendedTooltip name="КартинкаПолныйКодExtendedTooltip" id="107"/>
+									<ExtendedTooltip name="КартинкаПолныйКодРасширеннаяПодсказка" id="107"/>
 									<ChildItems>
 										<InputField name="ДеревоАнкетыПолныйКод" id="72">
 											<DataPath>ДеревоАнкеты.ПолныйКод</DataPath>
@@ -431,7 +467,7 @@
 											<EditMode>EnterOnInput</EditMode>
 											<Width>4</Width>
 											<ContextMenu name="ДеревоАнкетыПолныйКодКонтекстноеМеню" id="73"/>
-											<ExtendedTooltip name="ДеревоАнкетыПолныйКодExtendedTooltip" id="108"/>
+											<ExtendedTooltip name="ДеревоАнкетыПолныйКодРасширеннаяПодсказка" id="108"/>
 										</InputField>
 										<InputField name="ДеревоАнкетыФормулировка" id="23">
 											<DataPath>ДеревоАнкеты.Формулировка</DataPath>
@@ -446,20 +482,32 @@
 											<Wrap>false</Wrap>
 											<ClearButton>false</ClearButton>
 											<ContextMenu name="ДеревоАнкетыФормулировкаКонтекстноеМеню" id="24"/>
-											<ExtendedTooltip name="ДеревоАнкетыФормулировкаExtendedTooltip" id="109"/>
+											<ExtendedTooltip name="ДеревоАнкетыФормулировкаРасширеннаяПодсказка" id="109"/>
 										</InputField>
 										<PictureField name="ДеревоАнкетыКодКартинки" id="21">
 											<DataPath>ДеревоАнкеты.КодКартинки</DataPath>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Код картинки</v8:content>
+												</v8:item>
+											</Title>
 											<TitleLocation>None</TitleLocation>
 											<EditMode>EnterOnInput</EditMode>
 											<FileDragMode>AsFile</FileDragMode>
 											<ContextMenu name="ДеревоАнкетыКодКартинкиКонтекстноеМеню" id="22"/>
-											<ExtendedTooltip name="ДеревоАнкетыКодКартинкиExtendedTooltip" id="110"/>
+											<ExtendedTooltip name="ДеревоАнкетыКодКартинкиРасширеннаяПодсказка" id="110"/>
 										</PictureField>
 									</ChildItems>
 								</ColumnGroup>
 								<InputField name="ДеревоАнкетыОбязательный" id="25">
 									<DataPath>ДеревоАнкеты.Обязательный</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Обязательный</v8:content>
+										</v8:item>
+									</Title>
 									<TitleLocation>None</TitleLocation>
 									<EditMode>EnterOnInput</EditMode>
 									<HeaderPicture>
@@ -470,10 +518,16 @@
 									<HorizontalStretch>true</HorizontalStretch>
 									<ChooseType>false</ChooseType>
 									<ContextMenu name="ДеревоАнкетыОбязательныйКонтекстноеМеню" id="26"/>
-									<ExtendedTooltip name="ДеревоАнкетыОбязательныйExtendedTooltip" id="111"/>
+									<ExtendedTooltip name="ДеревоАнкетыОбязательныйРасширеннаяПодсказка" id="111"/>
 								</InputField>
 								<PictureField name="ФормаДереваАнкетыЕстьЗаметки" id="115">
 									<DataPath>ДеревоАнкеты.ЕстьЗаметки</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Есть заметки</v8:content>
+										</v8:item>
+									</Title>
 									<TitleLocation>None</TitleLocation>
 									<EditMode>EnterOnInput</EditMode>
 									<HeaderPicture>
@@ -501,7 +555,7 @@
 							<MultiLine>true</MultiLine>
 							<ChoiceButton>true</ChoiceButton>
 							<ContextMenu name="ДеревоАнкетыЗаметкиКонтекстноеМеню" id="76"/>
-							<ExtendedTooltip name="ДеревоАнкетыЗаметкиExtendedTooltip" id="112"/>
+							<ExtendedTooltip name="ДеревоАнкетыЗаметкиРасширеннаяПодсказка" id="112"/>
 							<Events>
 								<Event name="OnChange">ДеревоАнкетыЗаметкиПриИзменении</Event>
 								<Event name="StartChoice">ДеревоАнкетыЗаметкиНачалоВыбора</Event>

@@ -69,18 +69,48 @@
 							<xr:Ref>StdPicture.ChooseValue</xr:Ref>
 							<xr:LoadTransparent>true</xr:LoadTransparent>
 						</Picture>
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Выбрать</v8:content>
+							</v8:item>
+						</Title>
 						<ExtendedTooltip name="РеквизитыОбъектаВыбратьРасширеннаяПодсказка" id="33"/>
 					</Button>
-					<Button name="ФормаУстановитьФлажки" id="28">
-						<Type>CommandBarButton</Type>
-						<CommandName>Form.Command.УстановитьФлажки</CommandName>
-						<ExtendedTooltip name="ФормаУстановитьФлажкиРасширеннаяПодсказка" id="29"/>
-					</Button>
-					<Button name="ФормаСнятьФлажки" id="30">
-						<Type>CommandBarButton</Type>
-						<CommandName>Form.Command.СнятьФлажки</CommandName>
-						<ExtendedTooltip name="ФормаСнятьФлажкиРасширеннаяПодсказка" id="31"/>
-					</Button>
+					<ButtonGroup name="ГруппаФлажки" id="46">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Флажки</v8:content>
+							</v8:item>
+						</Title>
+						<Representation>Compact</Representation>
+						<ExtendedTooltip name="ГруппаФлажкиРасширеннаяПодсказка" id="47"/>
+						<ChildItems>
+							<Button name="ФормаУстановитьФлажки" id="28">
+								<Type>CommandBarButton</Type>
+								<CommandName>Form.Command.УстановитьФлажки</CommandName>
+								<Title>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Установить флажки</v8:content>
+									</v8:item>
+								</Title>
+								<ExtendedTooltip name="ФормаУстановитьФлажкиРасширеннаяПодсказка" id="29"/>
+							</Button>
+							<Button name="ФормаСнятьФлажки" id="30">
+								<Type>CommandBarButton</Type>
+								<CommandName>Form.Command.СнятьФлажки</CommandName>
+								<Title>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Снять флажки</v8:content>
+									</v8:item>
+								</Title>
+								<ExtendedTooltip name="ФормаСнятьФлажкиРасширеннаяПодсказка" id="31"/>
+							</Button>
+						</ChildItems>
+					</ButtonGroup>
 					<SearchStringAddition name="СтрокаПоиска" id="43">
 						<AdditionSource>
 							<Item>РеквизитыОбъекта</Item>
@@ -136,6 +166,12 @@
 					<ChildItems>
 						<CheckBoxField name="РеквизитыОбъектаПометка" id="20">
 							<DataPath>РеквизитыОбъекта.Пометка</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Пометка</v8:content>
+								</v8:item>
+							</Title>
 							<EditMode>EnterOnInput</EditMode>
 							<ThreeState>true</ThreeState>
 							<ContextMenu name="РеквизитыОбъектаПометкаКонтекстноеМеню" id="21"/>
@@ -147,6 +183,12 @@
 						<InputField name="РеквизитыОбъектаСиноним" id="25">
 							<DataPath>РеквизитыОбъекта.Синоним</DataPath>
 							<ReadOnly>true</ReadOnly>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Синоним</v8:content>
+								</v8:item>
+							</Title>
 							<EditMode>EnterOnInput</EditMode>
 							<ContextMenu name="РеквизитыОбъектаСинонимКонтекстноеМеню" id="26"/>
 							<ExtendedTooltip name="РеквизитыОбъектаСинонимРасширеннаяПодсказка" id="27"/>
@@ -274,6 +316,9 @@
 			<Type>
 				<v8:TypeSet>cfg:AnyRef</v8:TypeSet>
 			</Type>
+		</Parameter>
+		<Parameter name="Отбор">
+			<Type/>
 		</Parameter>
 	</Parameters>
 </Form>

@@ -34,19 +34,19 @@
 			<Behavior>Usual</Behavior>
 			<Representation>None</Representation>
 			<ShowTitle>false</ShowTitle>
-			<ExtendedTooltip name="ГруппаЗаголовокExtendedTooltip" id="1829"/>
+			<ExtendedTooltip name="ГруппаЗаголовокРасширеннаяПодсказка" id="1829"/>
 			<ChildItems>
 				<LabelDecoration name="ОписаниеРаздела" id="1763">
 					<AutoMaxWidth>false</AutoMaxWidth>
 					<Title formatted="false">
 						<v8:item>
 							<v8:lang>ru</v8:lang>
-							<v8:content>Изменение заголовка программы, дополнительных реквизитов и других общих настроек.</v8:content>
+							<v8:content>Изменение заголовка приложения, дополнительных реквизитов и других общих настроек.</v8:content>
 						</v8:item>
 					</Title>
 					<VerticalAlign>Top</VerticalAlign>
 					<ContextMenu name="ОписаниеРазделаКонтекстноеМеню" id="1764"/>
-					<ExtendedTooltip name="ОписаниеРазделаExtendedTooltip" id="1830"/>
+					<ExtendedTooltip name="ОписаниеРазделаРасширеннаяПодсказка" id="1830"/>
 				</LabelDecoration>
 				<CommandBar name="ГруппаСправка" id="1765">
 					<Title>
@@ -56,12 +56,12 @@
 						</v8:item>
 					</Title>
 					<GroupHorizontalAlign>Right</GroupHorizontalAlign>
-					<ExtendedTooltip name="ГруппаСправкаExtendedTooltip" id="1832"/>
+					<ExtendedTooltip name="ГруппаСправкаРасширеннаяПодсказка" id="1832"/>
 					<ChildItems>
 						<Button name="Справка" id="1766">
 							<Type>CommandBarButton</Type>
 							<CommandName>Form.StandardCommand.Help</CommandName>
-							<ExtendedTooltip name="СправкаExtendedTooltip" id="1833"/>
+							<ExtendedTooltip name="СправкаРасширеннаяПодсказка" id="1833"/>
 						</Button>
 					</ChildItems>
 				</CommandBar>
@@ -71,7 +71,7 @@
 			<Title>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Настройки программы</v8:content>
+					<v8:content>Настройки приложения</v8:content>
 				</v8:item>
 			</Title>
 			<Group>Vertical</Group>
@@ -85,21 +85,91 @@
 					<Title>
 						<v8:item>
 							<v8:lang>ru</v8:lang>
-							<v8:content>Заголовок программы</v8:content>
+							<v8:content>Заголовок приложения</v8:content>
 						</v8:item>
 					</Title>
 					<TitleLocation>Left</TitleLocation>
 					<ContextMenu name="ЗаголовокПрограммыКонтекстноеМеню" id="1786"/>
-					<ExtendedTooltip name="ЗаголовокПрограммыExtendedTooltip" id="1835"/>
+					<ExtendedTooltip name="ЗаголовокПрограммыРасширеннаяПодсказка" id="1835"/>
 					<Events>
 						<Event name="OnChange">ЗаголовокПрограммыПриИзменении</Event>
 					</Events>
 				</InputField>
-				<Button name="РегиональныеНастройки" id="2094">
-					<Type>Hyperlink</Type>
-					<CommandName>Form.Command.РегиональныеНастройки</CommandName>
-					<ExtendedTooltip name="РегиональныеНастройкиРасширеннаяПодсказка" id="2095"/>
-				</Button>
+				<UsualGroup name="ГруппаРегиональныеНастройки" id="2262">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Региональные настройки</v8:content>
+						</v8:item>
+					</Title>
+					<Group>Vertical</Group>
+					<Behavior>Collapsible</Behavior>
+					<ControlRepresentation>Picture</ControlRepresentation>
+					<Representation>NormalSeparation</Representation>
+					<ExtendedTooltip name="ГруппаРегиональныеНастройкиРасширеннаяПодсказка" id="2263"/>
+					<ChildItems>
+						<UsualGroup name="ГруппаНастройкаЧасовогоПояса" id="2267">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа4</v8:content>
+								</v8:item>
+							</Title>
+							<Group>Vertical</Group>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаНастройкаЧасовогоПоясаРасширеннаяПодсказка" id="2268"/>
+							<ChildItems>
+								<UsualGroup name="ГруппаЧасовойПояс" id="2274">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Часовой пояс</v8:content>
+										</v8:item>
+									</Title>
+									<Representation>None</Representation>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="ГруппаЧасовойПоясРасширеннаяПодсказка" id="2275"/>
+									<ChildItems>
+										<InputField name="ЧасовойПоясПрограммы" id="2264">
+											<DataPath>ЧасовойПоясПрограммы</DataPath>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Часовой пояс приложения</v8:content>
+												</v8:item>
+											</Title>
+											<Width>20</Width>
+											<HorizontalStretch>false</HorizontalStretch>
+											<ListChoiceMode>true</ListChoiceMode>
+											<ContextMenu name="ЧасовойПоясПрограммыКонтекстноеМеню" id="2265"/>
+											<ExtendedTooltip name="ЧасовойПоясПрограммыРасширеннаяПодсказка" id="2266"/>
+											<Events>
+												<Event name="OnChange">ЧасовойПоясПрограммыПриИзменении</Event>
+											</Events>
+										</InputField>
+										<Button name="ОбщаяКомандаВремяТекущегоСеанса" id="2269">
+											<Type>Hyperlink</Type>
+											<CommandName>CommonCommand.ВремяВПриложении</CommandName>
+											<ExtendedTooltip name="ОбщаяКомандаВремяТекущегоСеансаРасширеннаяПодсказка" id="2270"/>
+										</Button>
+									</ChildItems>
+								</UsualGroup>
+							</ChildItems>
+						</UsualGroup>
+						<Button name="ЯзыкиВеденияУчета" id="2094">
+							<Type>Hyperlink</Type>
+							<CommandName>Form.Command.РегиональныеНастройки</CommandName>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Языки ведения учета</v8:content>
+								</v8:item>
+							</Title>
+							<ExtendedTooltip name="ЯзыкиВеденияУчетаРасширеннаяПодсказка" id="2095"/>
+						</Button>
+					</ChildItems>
+				</UsualGroup>
 			</ChildItems>
 		</UsualGroup>
 		<UsualGroup name="ГруппаПубликацияИнформационнойБазы" id="2038">
@@ -235,7 +305,7 @@
 							<Behavior>Usual</Behavior>
 							<Representation>None</Representation>
 							<ShowTitle>false</ShowTitle>
-							<ExtendedTooltip name="ГруппаОткрытьПараметрыПроксиСервераExtendedTooltip" id="1869"/>
+							<ExtendedTooltip name="ГруппаОткрытьПараметрыПроксиСервераРасширеннаяПодсказка" id="1869"/>
 							<ChildItems>
 								<Button name="ОткрытьПараметрыПроксиСервера" id="1686">
 									<Type>Hyperlink</Type>
@@ -247,7 +317,7 @@
 										</v8:item>
 									</Title>
 									<ToolTipRepresentation>ShowBottom</ToolTipRepresentation>
-									<ExtendedTooltip name="ОткрытьПараметрыПроксиСервераExtendedTooltip" id="1870">
+									<ExtendedTooltip name="ОткрытьПараметрыПроксиСервераРасширеннаяПодсказка" id="1870">
 										<AutoMaxWidth>false</AutoMaxWidth>
 										<Title formatted="false">
 											<v8:item>
@@ -356,17 +426,17 @@
 			<Collapsed>true</Collapsed>
 			<ControlRepresentation>Picture</ControlRepresentation>
 			<Representation>NormalSeparation</Representation>
-			<ExtendedTooltip name="ГруппаОткрытьВидыКонтактнойИнформацииExtendedTooltip" id="1865"/>
+			<ExtendedTooltip name="ГруппаОткрытьВидыКонтактнойИнформацииРасширеннаяПодсказка" id="1865"/>
 			<ChildItems>
 				<Button name="ОткрытьВидыКонтактнойИнформации" id="1640">
 					<Type>Hyperlink</Type>
 					<CommandName>Catalog.ВидыКонтактнойИнформации.StandardCommand.OpenList</CommandName>
 					<ToolTipRepresentation>ShowBottom</ToolTipRepresentation>
-					<ExtendedTooltip name="ОткрытьВидыКонтактнойИнформацииExtendedTooltip" id="1866">
+					<ExtendedTooltip name="ОткрытьВидыКонтактнойИнформацииРасширеннаяПодсказка" id="1866">
 						<Title formatted="false">
 							<v8:item>
 								<v8:lang>ru</v8:lang>
-								<v8:content>Классификация адресов, телефонов и другой контактной информации у введенных в программе объектов, например, партнеров, контрагентов, сотрудников и т.д.</v8:content>
+								<v8:content>Классификация адресов, телефонов и другой контактной информации у введенных в приложении объектов, например, партнеров, контрагентов, сотрудников и т.д.</v8:content>
 							</v8:item>
 						</Title>
 					</ExtendedTooltip>
@@ -414,7 +484,7 @@
 							<ToolTip>
 								<v8:item>
 									<v8:lang>ru</v8:lang>
-									<v8:content>Создание и настройка дополнительных текстовых, числовых и прочих свойств у справочников, документов и других объектов программы.</v8:content>
+									<v8:content>Создание и настройка дополнительных текстовых, числовых и прочих свойств у справочников, документов и других объектов приложения.</v8:content>
 								</v8:item>
 							</ToolTip>
 							<ToolTipRepresentation>ShowBottom</ToolTipRepresentation>
@@ -436,11 +506,17 @@
 							<Behavior>Usual</Behavior>
 							<Representation>None</Representation>
 							<ShowTitle>false</ShowTitle>
-							<ExtendedTooltip name="ГруппаДополнительныеСведенияExtendedTooltip" id="1862"/>
+							<ExtendedTooltip name="ГруппаДополнительныеСведенияРасширеннаяПодсказка" id="1862"/>
 							<ChildItems>
 								<Button name="ДополнительныеСведения" id="2053">
 									<Type>Hyperlink</Type>
 									<CommandName>Form.Command.ДополнительныеСведения</CommandName>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Дополнительные сведения</v8:content>
+										</v8:item>
+									</Title>
 									<ToolTipRepresentation>ShowBottom</ToolTipRepresentation>
 									<ExtendedTooltip name="ДополнительныеСведенияРасширеннаяПодсказка" id="2054">
 										<AutoMaxWidth>false</AutoMaxWidth>
@@ -483,11 +559,17 @@
 							<Behavior>Usual</Behavior>
 							<Representation>None</Representation>
 							<ShowTitle>false</ShowTitle>
-							<ExtendedTooltip name="ГруппаДополнительныеРеквизитыExtendedTooltip" id="1859"/>
+							<ExtendedTooltip name="ГруппаДополнительныеРеквизитыРасширеннаяПодсказка" id="1859"/>
 							<ChildItems>
 								<Button name="ДополнительныеРеквизиты" id="2051">
 									<Type>Hyperlink</Type>
 									<CommandName>Form.Command.ДополнительныеРеквизиты</CommandName>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Дополнительные реквизиты</v8:content>
+										</v8:item>
+									</Title>
 									<ToolTipRepresentation>ShowBottom</ToolTipRepresentation>
 									<ExtendedTooltip name="ДополнительныеРеквизитыРасширеннаяПодсказка" id="2052">
 										<AutoMaxWidth>false</AutoMaxWidth>
@@ -517,6 +599,12 @@
 								<Button name="Метки" id="2260">
 									<Type>Hyperlink</Type>
 									<CommandName>Form.Command.Метки</CommandName>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Метки</v8:content>
+										</v8:item>
+									</Title>
 									<ToolTipRepresentation>ShowBottom</ToolTipRepresentation>
 									<ExtendedTooltip name="МеткиРасширеннаяПодсказка" id="2261">
 										<AutoMaxWidth>false</AutoMaxWidth>
@@ -558,7 +646,7 @@
 					<ToolTip>
 						<v8:item>
 							<v8:lang>ru</v8:lang>
-							<v8:content>Хранение и просмотр версий документов и справочников программы.</v8:content>
+							<v8:content>Хранение и просмотр версий документов и справочников приложения.</v8:content>
 						</v8:item>
 					</ToolTip>
 					<ToolTipRepresentation>ShowBottom</ToolTipRepresentation>
@@ -568,10 +656,16 @@
 					<Behavior>Usual</Behavior>
 					<Representation>None</Representation>
 					<ShowTitle>false</ShowTitle>
-					<ExtendedTooltip name="ГруппаИспользоватьВерсионированиеОбъектовExtendedTooltip" id="2066"/>
+					<ExtendedTooltip name="ГруппаИспользоватьВерсионированиеОбъектовРасширеннаяПодсказка" id="2066"/>
 					<ChildItems>
 						<CheckBoxField name="ХранитьИсториюИзменений" id="2087">
 							<DataPath>ХранитьИсториюИзменений</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Хранить историю изменений</v8:content>
+								</v8:item>
+							</Title>
 							<TitleLocation>Right</TitleLocation>
 							<CheckBoxType>Auto</CheckBoxType>
 							<ContextMenu name="ХранитьИсториюИзмененийКонтекстноеМеню" id="2088"/>
@@ -583,6 +677,12 @@
 						<Button name="НастроитьХранениеИсторииИзменений" id="2090">
 							<Type>Hyperlink</Type>
 							<CommandName>Form.Command.НастроитьХранениеИсторииИзменений</CommandName>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Настроить</v8:content>
+								</v8:item>
+							</Title>
 							<ExtendedTooltip name="НастроитьХранениеИсторииИзмененийРасширеннаяПодсказка" id="2091"/>
 						</Button>
 					</ChildItems>
@@ -624,6 +724,12 @@
 					<ChildItems>
 						<CheckBoxField name="ИспользоватьПолнотекстовыйПоиск" id="2078">
 							<DataPath>ИспользоватьПолнотекстовыйПоиск</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Полнотекстовый поиск данных</v8:content>
+								</v8:item>
+							</Title>
 							<TitleLocation>Right</TitleLocation>
 							<ThreeState>true</ThreeState>
 							<ContextMenu name="ИспользоватьПолнотекстовыйПоискКонтекстноеМеню" id="2079"/>
@@ -635,6 +741,12 @@
 						<Button name="НастроитьПолнотекстовыйПоиск" id="2085">
 							<Type>Hyperlink</Type>
 							<CommandName>Form.Command.НастроитьПолнотекстовыйПоиск</CommandName>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Настроить</v8:content>
+								</v8:item>
+							</Title>
 							<ExtendedTooltip name="НастроитьПолнотекстовыйПоискРасширеннаяПодсказка" id="2086"/>
 						</Button>
 					</ChildItems>
@@ -735,7 +847,7 @@
 							<Title>
 								<v8:item>
 									<v8:lang>ru</v8:lang>
-									<v8:content>Сертификаты и программы электронной подписи и шифрования</v8:content>
+									<v8:content>Сертификаты и приложения электронной подписи и шифрования</v8:content>
 								</v8:item>
 							</Title>
 							<ToolTipRepresentation>ShowBottom</ToolTipRepresentation>
@@ -745,7 +857,7 @@
 								<Title formatted="false">
 									<v8:item>
 										<v8:lang>ru</v8:lang>
-										<v8:content>Настройка сертификатов и программ, используемых для подписания и шифрования.</v8:content>
+										<v8:content>Настройка сертификатов и приложений для подписания и шифрования.</v8:content>
 									</v8:item>
 								</Title>
 							</ExtendedTooltip>
@@ -800,6 +912,12 @@
 										<LabelField name="ТипПодписиКриптографииПоУмолчанию1" id="2245">
 											<DataPath>КонстантаТипПодписиКриптографииПоУмолчанию</DataPath>
 											<Visible>false</Visible>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Тип подписи для документов</v8:content>
+												</v8:item>
+											</Title>
 											<TitleLocation>Top</TitleLocation>
 											<ToolTipRepresentation>ShowBottom</ToolTipRepresentation>
 											<ContextMenu name="ТипПодписиКриптографииПоУмолчанию1КонтекстноеМеню" id="2246"/>
@@ -807,7 +925,7 @@
 												<Title formatted="false">
 													<v8:item>
 														<v8:lang>ru</v8:lang>
-														<v8:content>В приложении в Интернете типы подписи с метками времени можно выбрать при подписании сертификатом, установленным на компьютер при установленной программе электронной подписи.</v8:content>
+														<v8:content>В приложении в Интернете типы подписи с метками времени можно выбрать при подписании сертификатом, установленным на компьютер с помощью приложения электронной подписи.</v8:content>
 													</v8:item>
 												</Title>
 												<Events>
@@ -820,6 +938,12 @@
 										</LabelField>
 										<RadioButtonField name="ТипПодписиКриптографииПоУмолчанию" id="2175">
 											<DataPath>КонстантаТипПодписиКриптографииПоУмолчанию</DataPath>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Тип подписи для документов</v8:content>
+												</v8:item>
+											</Title>
 											<TitleLocation>Top</TitleLocation>
 											<ToolTipRepresentation>None</ToolTipRepresentation>
 											<GroupHorizontalAlign>Left</GroupHorizontalAlign>
@@ -871,7 +995,7 @@
 												<Title formatted="false">
 													<v8:item>
 														<v8:lang>ru</v8:lang>
-														<v8:content>В модели сервиса архивная подпись по умолчанию недоступна, этот тип подписи можно выбрать при подписании сертификатом, установленным на компьютер при установленной программе электронной подписи.</v8:content>
+														<v8:content>В модели сервиса архивная подпись по умолчанию недоступна, этот тип подписи можно выбрать при подписании сертификатом, установленным на компьютер с помощью приложения электронной подписи.</v8:content>
 													</v8:item>
 												</Title>
 												<Events>
@@ -899,6 +1023,12 @@
 									<ChildItems>
 										<InputField name="АдресаСерверовМетокВремени" id="2191">
 											<DataPath>КонстантаАдресаСерверовМетокВремени</DataPath>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Адреса серверов меток времени</v8:content>
+												</v8:item>
+											</Title>
 											<TitleLocation>Top</TitleLocation>
 											<ToolTipRepresentation>ShowBottom</ToolTipRepresentation>
 											<AutoMaxHeight>false</AutoMaxHeight>
@@ -942,7 +1072,7 @@
 								<Title formatted="true">
 									<v8:item>
 										<v8:lang>ru</v8:lang>
-										<v8:content>Для того чтобы достоверность подписей поддерживалась автоматически регламентным заданием, на каждый компьютер, где работает сервер 1С:Предприятия или веб-сервер, подключенный к файловой информационной базе, должна быть установлена &lt;link Программы&gt;программа электронной подписи&lt;/&gt;.</v8:content>
+										<v8:content>Для того чтобы достоверность подписей поддерживалась автоматически регламентным заданием, на каждый компьютер, где работает сервер 1С:Предприятия или веб-сервер, подключенный к файловой информационной базе, должно быть установлено &lt;link Программы&gt;приложение электронной подписи&lt;/&gt;.</v8:content>
 									</v8:item>
 								</Title>
 								<Events>
@@ -1097,6 +1227,12 @@
 														</LabelDecoration>
 														<InputField name="УсовершенствоватьПодписиСДаты" id="2220">
 															<DataPath>КонстантаУсовершенствоватьПодписиСДаты</DataPath>
+															<Title>
+																<v8:item>
+																	<v8:lang>ru</v8:lang>
+																	<v8:content>Начиная с даты создания подписи</v8:content>
+																</v8:item>
+															</Title>
 															<ContextMenu name="УсовершенствоватьПодписиСДатыКонтекстноеМеню" id="2221"/>
 															<ExtendedTooltip name="УсовершенствоватьПодписиСДатыРасширеннаяПодсказка" id="2222"/>
 															<Events>
@@ -1166,6 +1302,12 @@
 					<ChildItems>
 						<CheckBoxField name="ПроверятьЭлектронныеПодписиНаСервере" id="2239">
 							<DataPath>КонстантаПроверятьЭлектронныеПодписиНаСервере</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Проверять электронные подписи на сервере</v8:content>
+								</v8:item>
+							</Title>
 							<TitleLocation>Right</TitleLocation>
 							<ToolTipRepresentation>ShowBottom</ToolTipRepresentation>
 							<CheckBoxType>Auto</CheckBoxType>
@@ -1175,7 +1317,7 @@
 								<Title formatted="false">
 									<v8:item>
 										<v8:lang>ru</v8:lang>
-										<v8:content>Позволяет не устанавливать программу электронной подписи на компьютер пользователя для проверки электронных подписей и сертификатов.</v8:content>
+										<v8:content>Позволяет не устанавливать приложение электронной подписи на компьютер пользователя для проверки электронных подписей и сертификатов.</v8:content>
 									</v8:item>
 								</Title>
 								<Events>
@@ -1188,6 +1330,12 @@
 						</CheckBoxField>
 						<CheckBoxField name="СоздаватьЭлектронныеПодписиНаСервере" id="2242">
 							<DataPath>КонстантаСоздаватьЭлектронныеПодписиНаСервере</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Создавать электронные подписи на сервере</v8:content>
+								</v8:item>
+							</Title>
 							<TitleLocation>Right</TitleLocation>
 							<ToolTipRepresentation>ShowBottom</ToolTipRepresentation>
 							<CheckBoxType>Auto</CheckBoxType>
@@ -1197,7 +1345,7 @@
 								<Title formatted="false">
 									<v8:item>
 										<v8:lang>ru</v8:lang>
-										<v8:content>Позволяет не устанавливать программу электронной подписи и сертификат на компьютер пользователя для подписания, шифрования и расшифровки.</v8:content>
+										<v8:content>Позволяет не устанавливать приложение электронной подписи и сертификат на компьютер пользователя для подписания, шифрования и расшифровки.</v8:content>
 									</v8:item>
 								</Title>
 								<Events>
@@ -1244,7 +1392,7 @@
 							<Title formatted="true">
 								<v8:item>
 									<v8:lang>ru</v8:lang>
-									<v8:content>Если планируется работа с усиленной квалифицированной электронной подписью, то на компьютере должна быть установлена сертифицированная программа (средство криптографической защиты информации). 
+									<v8:content>Если планируется работа с усиленной квалифицированной электронной подписью, то на компьютере должно быть установлено сертифицированное приложение (средство криптографической защиты информации). 
 &lt;link ПроверитьУстановкуПрограммКриптографии&gt;Проверить и установить&lt;/&gt;</v8:content>
 								</v8:item>
 							</Title>
@@ -1282,12 +1430,6 @@
 							<CheckBoxType>Auto</CheckBoxType>
 							<ContextMenu name="ИспользоватьСервисОблачнойПодписиКонтекстноеМеню" id="2116"/>
 							<ExtendedTooltip name="ИспользоватьСервисОблачнойПодписиРасширеннаяПодсказка" id="2117">
-								<Title formatted="false">
-									<v8:item>
-										<v8:lang>ru</v8:lang>
-										<v8:content>В программном коде</v8:content>
-									</v8:item>
-								</Title>
 								<Events>
 									<Event name="URLProcessing">ИспользоватьСервисОблачнойПодписиРасширеннаяПодсказкаОбработкаНавигационнойСсылки</Event>
 								</Events>
@@ -1355,7 +1497,7 @@
 			<Behavior>Collapsible</Behavior>
 			<Collapsed>true</Collapsed>
 			<ControlRepresentation>Picture</ControlRepresentation>
-			<ExtendedTooltip name="Группа2РасширеннаяПодсказка" id="2097"/>
+			<ExtendedTooltip name="ГруппаУдалениеПомеченныхРасширеннаяПодсказка" id="2097"/>
 			<ChildItems>
 				<UsualGroup name="ПодгруппаУдалениеПомеченных" id="2111">
 					<Title>
@@ -1382,7 +1524,7 @@
 							<Behavior>Usual</Behavior>
 							<Representation>None</Representation>
 							<ShowTitle>false</ShowTitle>
-							<ExtendedTooltip name="РегламентноеУдалениеПомеченныхРасширеннаяПодсказка" id="2102">
+							<ExtendedTooltip name="ГруппаРегламентноеУдалениеПомеченныхРасширеннаяПодсказка" id="2102">
 								<Title formatted="false">
 									<v8:item>
 										<v8:lang>ru</v8:lang>
@@ -1401,8 +1543,8 @@
 									</Title>
 									<TitleLocation>Right</TitleLocation>
 									<CheckBoxType>Auto</CheckBoxType>
-									<ContextMenu name="КонтекстноеМеню" id="2099"/>
-									<ExtendedTooltip name="РасширеннаяПодсказка" id="2100"/>
+									<ContextMenu name="УдалениеПомеченныхИспользованиеКонтекстноеМеню" id="2099"/>
+									<ExtendedTooltip name="УдалениеПомеченныхИспользованиеРасширеннаяПодсказка" id="2100"/>
 									<Events>
 										<Event name="OnChange">УдалениеПомеченныхИспользованиеПриИзменении</Event>
 									</Events>
@@ -1410,6 +1552,12 @@
 								<Button name="НастроитьРасписание" id="2103">
 									<Type>Hyperlink</Type>
 									<CommandName>Form.Command.НастроитьРасписание</CommandName>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Настроить расписание</v8:content>
+										</v8:item>
+									</Title>
 									<ExtendedTooltip name="НастроитьРасписаниеРасширеннаяПодсказка" id="2104"/>
 								</Button>
 							</ChildItems>
@@ -1434,7 +1582,7 @@
 					<Behavior>Usual</Behavior>
 					<Representation>None</Representation>
 					<ShowTitle>false</ShowTitle>
-					<ExtendedTooltip name="Группа2РасширеннаяПодсказка2" id="2110"/>
+					<ExtendedTooltip name="ГруппаПросмотрПомеченныхНаУдалениеРасширеннаяПодсказка" id="2110"/>
 					<ChildItems>
 						<Button name="ПосмотретьПомеченныеНаУдаление" id="2105">
 							<Type>Hyperlink</Type>
@@ -1445,7 +1593,7 @@
 									<v8:content>Посмотреть помеченные на удаление</v8:content>
 								</v8:item>
 							</Title>
-							<ExtendedTooltip name="ПосмотретьРасширеннаяПодсказка" id="2106"/>
+							<ExtendedTooltip name="ПосмотретьПомеченныеНаУдалениеРасширеннаяПодсказка" id="2106"/>
 						</Button>
 					</ChildItems>
 				</UsualGroup>
@@ -1465,23 +1613,23 @@
 			<Representation>NormalSeparation</Representation>
 			<ExtendedTooltip name="ГруппаПроизводительностьРасширеннаяПодсказка" id="2125"/>
 			<ChildItems>
-				<UsualGroup name="Производительность" id="2236">
+				<UsualGroup name="ГруппаПроизводительностьОформление" id="2236">
 					<Title>
 						<v8:item>
 							<v8:lang>ru</v8:lang>
-							<v8:content>Производительность</v8:content>
+							<v8:content>Группа</v8:content>
 						</v8:item>
 					</Title>
 					<Behavior>Usual</Behavior>
 					<Representation>None</Representation>
 					<ShowTitle>false</ShowTitle>
-					<ExtendedTooltip name="ПроизводительностьРасширеннаяПодсказка" id="2237"/>
+					<ExtendedTooltip name="ГруппаПроизводительностьОформлениеРасширеннаяПодсказка" id="2237"/>
 					<ChildItems>
 						<UsualGroup name="ГруппаКоличествоПотоковДлительныхОпераций" id="2144">
 							<Title>
 								<v8:item>
 									<v8:lang>ru</v8:lang>
-									<v8:content>Количество потоков длительных операций</v8:content>
+									<v8:content>Группа</v8:content>
 								</v8:item>
 							</Title>
 							<ToolTipRepresentation>ShowBottom</ToolTipRepresentation>
@@ -1511,11 +1659,11 @@
 								</InputField>
 							</ChildItems>
 						</UsualGroup>
-						<UsualGroup name="ГруппаПроизводительностьОтступ" id="2146">
+						<UsualGroup name="ГруппаОтступ" id="2146">
 							<Title>
 								<v8:item>
 									<v8:lang>ru</v8:lang>
-									<v8:content>Производительность отступ</v8:content>
+									<v8:content>Группа</v8:content>
 								</v8:item>
 							</Title>
 							<ToolTipRepresentation>ShowBottom</ToolTipRepresentation>
@@ -1523,7 +1671,7 @@
 							<Behavior>Usual</Behavior>
 							<Representation>None</Representation>
 							<ShowTitle>false</ShowTitle>
-							<ExtendedTooltip name="ГруппаПроизводительностьОтступРасширеннаяПодсказка" id="2147">
+							<ExtendedTooltip name="ГруппаОтступРасширеннаяПодсказка" id="2147">
 								<Title formatted="true">
 									<v8:item>
 										<v8:lang>ru</v8:lang>
@@ -1762,6 +1910,30 @@
 				</v8:DateQualifiers>
 			</Type>
 		</Attribute>
+		<Attribute name="ЧасовойПоясПрограммы" id="17">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Часовой пояс приложения</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ВремяВыбранногоЧасовогоПояса" id="18">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
 	</Attributes>
 	<Commands>
 		<Command name="ИспользованиеПрофилейБезопасности" id="5">
@@ -1774,7 +1946,7 @@
 			<ToolTip>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Использование профилей безопасности для контроля за использованием программой внешних (относительно кластера серверов 1С:Предприятия) ресурсов.</v8:content>
+					<v8:content>Использование профилей безопасности для контроля за использованием внешних ресурсов приложения (внешних относительно кластера серверов 1С:Предприятия).</v8:content>
 				</v8:item>
 			</ToolTip>
 			<Action>ИспользованиеПрофилейБезопасности</Action>
