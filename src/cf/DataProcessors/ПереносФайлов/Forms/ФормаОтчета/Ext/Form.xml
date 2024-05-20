@@ -25,9 +25,7 @@
 			</Title>
 			<TitleLocation>None</TitleLocation>
 			<AutoMaxWidth>false</AutoMaxWidth>
-			<Height>2</Height>
 			<VerticalStretch>false</VerticalStretch>
-			<Font ref="style:ВажнаяНадписьШрифт" kind="StyleItem"/>
 			<ContextMenu name="ПояснениеКонтекстноеМеню" id="5"/>
 			<ExtendedTooltip name="ПояснениеРасширеннаяПодсказка" id="6"/>
 		</LabelField>
@@ -48,6 +46,9 @@
 			<SelectionShowMode>WhenActive</SelectionShowMode>
 			<ContextMenu name="ОтчетКонтекстноеМеню" id="3"/>
 			<ExtendedTooltip name="ОтчетРасширеннаяПодсказка" id="7"/>
+			<Events>
+				<Event name="Selection">ОтчетВыбор</Event>
+			</Events>
 		</SpreadSheetDocumentField>
 	</ChildItems>
 	<Attributes>
@@ -88,7 +89,7 @@
 				</v8:StringQualifiers>
 			</Type>
 		</Parameter>
-		<Parameter name="МассивФайловСОшибками">
+		<Parameter name="ФайлыСОшибками">
 			<Type/>
 		</Parameter>
 	</Parameters>

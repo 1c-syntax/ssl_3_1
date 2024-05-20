@@ -935,6 +935,55 @@
 													<ContextMenu name="Надпись51КонтекстноеМеню" id="241"/>
 													<ExtendedTooltip name="Надпись51РасширеннаяПодсказка" id="895"/>
 												</LabelDecoration>
+												<UsualGroup name="ПанельУведомлятьПользователей" id="1250">
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Панель уведомлять пользователей</v8:content>
+														</v8:item>
+													</Title>
+													<HorizontalSpacing>Half</HorizontalSpacing>
+													<Representation>None</Representation>
+													<ShowTitle>false</ShowTitle>
+													<ExtendedTooltip name="ПанельУведомлятьПользователейРасширеннаяПодсказка" id="1251"/>
+													<ChildItems>
+														<CheckBoxField name="УведомлятьПользователей" id="1252">
+															<DataPath>УведомлятьПользователей</DataPath>
+															<Title>
+																<v8:item>
+																	<v8:lang>ru</v8:lang>
+																	<v8:content>Уведомлять пользователей</v8:content>
+																</v8:item>
+															</Title>
+															<TitleLocation>None</TitleLocation>
+															<CheckBoxType>Auto</CheckBoxType>
+															<ContextMenu name="УведомлятьПользователейКонтекстноеМеню" id="1253"/>
+															<ExtendedTooltip name="УведомлятьПользователейРасширеннаяПодсказка" id="1254"/>
+															<Events>
+																<Event name="OnChange">УведомлятьПользователейПриИзменении</Event>
+															</Events>
+														</CheckBoxField>
+														<LabelDecoration name="ДекорацияУведомлятьПользователей" id="1255">
+															<Enabled>false</Enabled>
+															<AutoMaxWidth>false</AutoMaxWidth>
+															<Title formatted="true">
+																<v8:item>
+																	<v8:lang>ru</v8:lang>
+																	<v8:content>Уведомлять пользователей о планируемом обновлении за &lt;link Ссылка&gt;5 минут&lt;/&gt;</v8:content>
+																</v8:item>
+															</Title>
+															<ContextMenu name="ДекорацияУведомлятьПользователейКонтекстноеМеню" id="1256"/>
+															<ExtendedTooltip name="ДекорацияУведомлятьПользователейРасширеннаяПодсказка" id="1257"/>
+															<Events>
+																<Event name="URLProcessing">ДекорацияУведомлятьПользователейОбработкаНавигационнойСсылки</Event>
+															</Events>
+														</LabelDecoration>
+														<LabelDecoration name="ДекорацияДляПодменю" id="1258">
+															<ContextMenu name="ДекорацияДляПодменюКонтекстноеМеню" id="1259"/>
+															<ExtendedTooltip name="ДекорацияДляПодменюРасширеннаяПодсказка" id="1260"/>
+														</LabelDecoration>
+													</ChildItems>
+												</UsualGroup>
 												<UsualGroup name="ПанельПочта" id="248">
 													<Title>
 														<v8:item>
@@ -1668,6 +1717,27 @@
 		<Attribute name="ПоказатьУстановленныеИсправления" id="8">
 			<Type>
 				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="УведомлятьПользователей" id="36">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Уведомлять пользователей</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ИнтервалУведомления" id="37">
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>10</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
 			</Type>
 		</Attribute>
 	</Attributes>

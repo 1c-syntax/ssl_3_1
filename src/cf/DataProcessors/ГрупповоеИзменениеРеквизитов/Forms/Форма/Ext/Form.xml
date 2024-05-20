@@ -10,6 +10,7 @@
 		<Event name="ChoiceProcessing">ОбработкаВыбора</Event>
 		<Event name="OnOpen">ПриОткрытии</Event>
 		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+		<Event name="OnClose">ПриЗакрытии</Event>
 	</Events>
 	<ChildItems>
 		<Pages name="Страницы" id="1">
@@ -916,23 +917,78 @@
 										</InputField>
 									</ChildItems>
 								</Table>
-								<InputField name="Причина" id="142">
-									<DataPath>Причина</DataPath>
-									<ReadOnly>true</ReadOnly>
+								<UsualGroup name="ГруппаПричина" id="376">
 									<Title>
 										<v8:item>
 											<v8:lang>ru</v8:lang>
 											<v8:content>Причина</v8:content>
 										</v8:item>
 									</Title>
-									<AutoMaxWidth>false</AutoMaxWidth>
-									<Height>2</Height>
-									<VerticalStretch>false</VerticalStretch>
-									<MultiLine>true</MultiLine>
-									<ChoiceListHeight>1</ChoiceListHeight>
-									<ContextMenu name="ПричинаКонтекстноеМеню" id="143"/>
-									<ExtendedTooltip name="ПричинаРасширеннаяПодсказка" id="144"/>
-								</InputField>
+									<VerticalStretch>true</VerticalStretch>
+									<Group>Vertical</Group>
+									<Representation>None</Representation>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="ГруппаПричинаРасширеннаяПодсказка" id="377"/>
+									<ChildItems>
+										<UsualGroup name="ГруппаСформироватьОтчетОбОшибке" id="369">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Сформировать отчет об ошибке</v8:content>
+												</v8:item>
+											</Title>
+											<HorizontalStretch>true</HorizontalStretch>
+											<Group>AlwaysHorizontal</Group>
+											<Representation>None</Representation>
+											<ShowTitle>false</ShowTitle>
+											<ExtendedTooltip name="ГруппаСформироватьОтчетОбОшибкеРасширеннаяПодсказка" id="370"/>
+											<ChildItems>
+												<LabelDecoration name="НадписьПричина" id="371">
+													<Title formatted="false">
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Причина:</v8:content>
+														</v8:item>
+													</Title>
+													<ContextMenu name="НадписьПричинаКонтекстноеМеню" id="372"/>
+													<ExtendedTooltip name="НадписьПричинаРасширеннаяПодсказка" id="373"/>
+												</LabelDecoration>
+												<LabelDecoration name="СформироватьОтчетОбОшибке" id="362">
+													<Title formatted="false">
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Сформировать отчет об ошибке</v8:content>
+														</v8:item>
+													</Title>
+													<GroupHorizontalAlign>Right</GroupHorizontalAlign>
+													<Hyperlink>true</Hyperlink>
+													<HorizontalAlign>Auto</HorizontalAlign>
+													<ContextMenu name="СформироватьОтчетОбОшибкеКонтекстноеМеню" id="363"/>
+													<ExtendedTooltip name="СформироватьОтчетОбОшибкеРасширеннаяПодсказка" id="364"/>
+													<Events>
+														<Event name="Click">СформироватьОтчетОбОшибкеНажатие</Event>
+													</Events>
+												</LabelDecoration>
+											</ChildItems>
+										</UsualGroup>
+										<InputField name="Причина" id="142">
+											<DataPath>Причина</DataPath>
+											<ReadOnly>true</ReadOnly>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Причина</v8:content>
+												</v8:item>
+											</Title>
+											<TitleLocation>None</TitleLocation>
+											<AutoMaxWidth>false</AutoMaxWidth>
+											<MultiLine>true</MultiLine>
+											<ChoiceListHeight>1</ChoiceListHeight>
+											<ContextMenu name="ПричинаКонтекстноеМеню" id="143"/>
+											<ExtendedTooltip name="ПричинаРасширеннаяПодсказка" id="144"/>
+										</InputField>
+									</ChildItems>
+								</UsualGroup>
 							</ChildItems>
 						</UsualGroup>
 					</ChildItems>
@@ -1382,6 +1438,9 @@
 						</v8:StringQualifiers>
 					</Type>
 				</Column>
+				<Column name="ОтчетОбОшибке" id="46">
+					<Type/>
+				</Column>
 			</Columns>
 		</Attribute>
 		<Attribute name="ПредставлениеИзменяемыхОбъектов" id="29">
@@ -1537,6 +1596,11 @@
 				</v8:NumberQualifiers>
 			</Type>
 		</Attribute>
+		<Attribute name="ВерсияБСПСоответствуетТребованиям" id="49">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
 	</Attributes>
 	<Commands>
 		<Command name="Назад" id="1">
@@ -1625,6 +1689,12 @@
 		</Parameter>
 		<Parameter name="КомпоновщикНастроек">
 			<Type/>
+			<KeyParameter>true</KeyParameter>
+		</Parameter>
+		<Parameter name="ДополнительнаяОбработкаСсылка">
+			<Type>
+				<v8:TypeSet>cfg:AnyRef</v8:TypeSet>
+			</Type>
 		</Parameter>
 	</Parameters>
 </Form>
