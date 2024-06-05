@@ -98,32 +98,62 @@
 					</Title>
 					<ExtendedTooltip name="СтраницаНастройкиРасширеннаяПодсказка" id="95"/>
 					<ChildItems>
-						<LabelField name="НачальныйСтатусЗапретаРаботыПользователей" id="64">
-							<DataPath>НачальныйСтатусЗапретаРаботыПользователей</DataPath>
+						<UsualGroup name="ГруппаСтатус" id="131">
 							<Title>
 								<v8:item>
 									<v8:lang>ru</v8:lang>
-									<v8:content>Состояние</v8:content>
+									<v8:content>Статус</v8:content>
 								</v8:item>
 							</Title>
-							<TitleLocation>None</TitleLocation>
-							<HorizontalAlign>Left</HorizontalAlign>
-							<AutoMaxWidth>false</AutoMaxWidth>
-							<Format>
-								<v8:item>
-									<v8:lang>ru</v8:lang>
-									<v8:content>БЛ='работа пользователей разрешена'; БИ='работа пользователей временно запрещена'</v8:content>
-								</v8:item>
-							</Format>
-							<ContextMenu name="НачальныйСтатусЗапретаРаботыПользователейКонтекстноеМеню" id="65"/>
-							<ExtendedTooltip name="НачальныйСтатусЗапретаРаботыПользователейРасширеннаяПодсказка" id="97"/>
-						</LabelField>
+							<GroupVerticalAlign>Center</GroupVerticalAlign>
+							<Group>AlwaysHorizontal</Group>
+							<Representation>NormalSeparation</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаСтатусРасширеннаяПодсказка" id="132"/>
+							<ChildItems>
+								<PictureDecoration name="ДекорацияСтатус" id="128">
+									<Picture>
+										<xr:Ref>StdPicture.Information</xr:Ref>
+										<xr:LoadTransparent>true</xr:LoadTransparent>
+									</Picture>
+									<ContextMenu name="ДекорацияСтатусКонтекстноеМеню" id="129"/>
+									<ExtendedTooltip name="ДекорацияСтатусРасширеннаяПодсказка" id="130"/>
+								</PictureDecoration>
+								<LabelField name="НачальныйСтатусЗапретаРаботыПользователей" id="64">
+									<DataPath>НачальныйСтатусЗапретаРаботыПользователей</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Состояние</v8:content>
+										</v8:item>
+									</Title>
+									<TitleLocation>None</TitleLocation>
+									<HorizontalAlign>Left</HorizontalAlign>
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<Format>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>БЛ='работа пользователей разрешена'; БИ='работа пользователей временно запрещена'</v8:content>
+										</v8:item>
+									</Format>
+									<ContextMenu name="НачальныйСтатусЗапретаРаботыПользователейКонтекстноеМеню" id="65"/>
+									<ExtendedTooltip name="НачальныйСтатусЗапретаРаботыПользователейРасширеннаяПодсказка" id="97"/>
+								</LabelField>
+							</ChildItems>
+						</UsualGroup>
 						<InputField name="СообщениеДляПользователей" id="60">
 							<DataPath>Объект.СообщениеДляПользователей</DataPath>
 							<FooterHorizontalAlign>Left</FooterHorizontalAlign>
 							<AutoMaxWidth>false</AutoMaxWidth>
 							<Height>2</Height>
+							<HorizontalStretch>true</HorizontalStretch>
 							<BorderColor>style:BorderColor</BorderColor>
+							<InputHint>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Описание причины и сроков блокировки, которое выводится при попытке войти в заблокированное приложение</v8:content>
+								</v8:item>
+							</InputHint>
 							<ContextMenu name="СообщениеДляПользователейКонтекстноеМеню" id="61"/>
 							<ExtendedTooltip name="СообщениеДляПользователейРасширеннаяПодсказка" id="98"/>
 						</InputField>
@@ -182,8 +212,15 @@
 							<DataPath>Объект.КодДляРазблокировки</DataPath>
 							<TitleLocation>Left</TitleLocation>
 							<FooterHorizontalAlign>Left</FooterHorizontalAlign>
+							<HorizontalStretch>true</HorizontalStretch>
 							<Wrap>false</Wrap>
 							<BorderColor>style:BorderColor</BorderColor>
+							<InputHint>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Для администратора, чтобы войти в заблокированное приложение</v8:content>
+								</v8:item>
+							</InputHint>
 							<ContextMenu name="КодДляРазблокировкиКонтекстноеМеню" id="11">
 								<Autofill>false</Autofill>
 							</ContextMenu>

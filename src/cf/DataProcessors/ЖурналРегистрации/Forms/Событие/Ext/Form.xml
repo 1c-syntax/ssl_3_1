@@ -54,17 +54,17 @@
 				</Button>
 			</ChildItems>
 		</CommandBar>
-		<UsualGroup name="ГруппаОсновные" id="1">
+		<UsualGroup name="ГруппаОсновное" id="1">
 			<Title>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Основные</v8:content>
+					<v8:content>Основное</v8:content>
 				</v8:item>
 			</Title>
 			<Behavior>Usual</Behavior>
 			<Representation>None</Representation>
 			<ShowTitle>false</ShowTitle>
-			<ExtendedTooltip name="ГруппаОсновныеРасширеннаяПодсказка" id="109"/>
+			<ExtendedTooltip name="ГруппаОсновноеРасширеннаяПодсказка" id="109"/>
 			<ChildItems>
 				<UsualGroup name="ГруппаДатаПользователь" id="7">
 					<Title>
@@ -191,11 +191,11 @@
 				</UsualGroup>
 			</ChildItems>
 		</UsualGroup>
-		<UsualGroup name="ГруппаОсновное" id="44">
+		<UsualGroup name="ГруппаДополнительное" id="44">
 			<Title>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Основное</v8:content>
+					<v8:content>Дополнительное</v8:content>
 				</v8:item>
 			</Title>
 			<Group>Vertical</Group>
@@ -204,7 +204,7 @@
 			<ChildItemsWidth>Equal</ChildItemsWidth>
 			<ShowTitle>false</ShowTitle>
 			<ThroughAlign>Use</ThroughAlign>
-			<ExtendedTooltip name="ГруппаОсновноеРасширеннаяПодсказка" id="117"/>
+			<ExtendedTooltip name="ГруппаДополнительноеРасширеннаяПодсказка" id="117"/>
 			<ChildItems>
 				<UsualGroup name="ГруппаСобытие" id="2">
 					<Title>
@@ -295,70 +295,196 @@
 									</Title>
 									<ExtendedTooltip name="СтандартныеДанныеРасширеннаяПодсказка" id="120"/>
 									<ChildItems>
-										<InputField name="ПредставлениеМетаданных" id="21">
-											<DataPath>ПредставлениеМетаданных</DataPath>
-											<ReadOnly>true</ReadOnly>
+										<UsualGroup name="СтандартныеДанныеСвойства" id="264">
 											<Title>
 												<v8:item>
 													<v8:lang>ru</v8:lang>
-													<v8:content>Метаданные</v8:content>
+													<v8:content>Стандартные данные свойства</v8:content>
 												</v8:item>
 											</Title>
-											<ToolTip>
-												<v8:item>
-													<v8:lang>ru</v8:lang>
-													<v8:content>Представление метаданных</v8:content>
-												</v8:item>
-											</ToolTip>
-											<AutoMaxWidth>false</AutoMaxWidth>
-											<MaxWidth>60</MaxWidth>
-											<Wrap>false</Wrap>
-											<BorderColor>style:BorderColor</BorderColor>
-											<ContextMenu name="ПредставлениеМетаданныхКонтекстноеМеню" id="22"/>
-											<ExtendedTooltip name="ПредставлениеМетаданныхРасширеннаяПодсказка" id="121"/>
-											<Events>
-												<Event name="Opening">ПредставлениеМетаданныхОткрытие</Event>
-											</Events>
-										</InputField>
-										<InputField name="Данные" id="23">
-											<DataPath>Данные</DataPath>
-											<ReadOnly>true</ReadOnly>
+											<Group>Vertical</Group>
+											<Representation>None</Representation>
+											<ShowTitle>false</ShowTitle>
+											<ExtendedTooltip name="СтандартныеДанныеСвойстваРасширеннаяПодсказка" id="265"/>
+											<ChildItems>
+												<InputField name="ПредставлениеМетаданных" id="21">
+													<DataPath>ПредставлениеМетаданных</DataPath>
+													<ReadOnly>true</ReadOnly>
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Метаданные</v8:content>
+														</v8:item>
+													</Title>
+													<ToolTip>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Представление метаданных</v8:content>
+														</v8:item>
+													</ToolTip>
+													<AutoMaxWidth>false</AutoMaxWidth>
+													<MaxWidth>60</MaxWidth>
+													<Wrap>false</Wrap>
+													<BorderColor>style:BorderColor</BorderColor>
+													<ContextMenu name="ПредставлениеМетаданныхКонтекстноеМеню" id="22"/>
+													<ExtendedTooltip name="ПредставлениеМетаданныхРасширеннаяПодсказка" id="121"/>
+													<Events>
+														<Event name="Opening">ПредставлениеМетаданныхОткрытие</Event>
+													</Events>
+												</InputField>
+												<InputField name="Данные" id="23">
+													<DataPath>Данные</DataPath>
+													<ReadOnly>true</ReadOnly>
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Данные</v8:content>
+														</v8:item>
+													</Title>
+													<HorizontalAlign>Left</HorizontalAlign>
+													<AutoMaxWidth>false</AutoMaxWidth>
+													<MaxWidth>60</MaxWidth>
+													<Wrap>false</Wrap>
+													<ChoiceButton>false</ChoiceButton>
+													<BorderColor>style:BorderColor</BorderColor>
+													<ContextMenu name="ДанныеКонтекстноеМеню" id="24"/>
+													<ExtendedTooltip name="ДанныеРасширеннаяПодсказка" id="122"/>
+												</InputField>
+												<InputField name="ПредставлениеДанных" id="25">
+													<DataPath>ПредставлениеДанных</DataPath>
+													<ReadOnly>true</ReadOnly>
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Представление</v8:content>
+														</v8:item>
+													</Title>
+													<TitleLocation>Left</TitleLocation>
+													<AutoMaxWidth>false</AutoMaxWidth>
+													<MaxWidth>60</MaxWidth>
+													<Height>1</Height>
+													<MultiLine>true</MultiLine>
+													<BorderColor>style:BorderColor</BorderColor>
+													<ContextMenu name="ПредставлениеДанныхКонтекстноеМеню" id="26"/>
+													<ExtendedTooltip name="ПредставлениеДанныхРасширеннаяПодсказка" id="123"/>
+												</InputField>
+											</ChildItems>
+										</UsualGroup>
+										<UsualGroup name="ЗаголовокТаблицы" id="244">
 											<Title>
 												<v8:item>
 													<v8:lang>ru</v8:lang>
-													<v8:content>Данные</v8:content>
+													<v8:content>Заголовок таблицы</v8:content>
 												</v8:item>
 											</Title>
-											<HorizontalAlign>Left</HorizontalAlign>
-											<AutoMaxWidth>false</AutoMaxWidth>
-											<MaxWidth>60</MaxWidth>
-											<Wrap>false</Wrap>
-											<ChoiceButton>false</ChoiceButton>
-											<BorderColor>style:BorderColor</BorderColor>
-											<ContextMenu name="ДанныеКонтекстноеМеню" id="24"/>
-											<ExtendedTooltip name="ДанныеРасширеннаяПодсказка" id="122"/>
-										</InputField>
-										<InputField name="ПредставлениеДанных" id="25">
-											<DataPath>ПредставлениеДанных</DataPath>
-											<ReadOnly>true</ReadOnly>
-											<Title>
-												<v8:item>
-													<v8:lang>ru</v8:lang>
-													<v8:content>Представление</v8:content>
-												</v8:item>
-											</Title>
-											<TitleLocation>Left</TitleLocation>
-											<AutoMaxWidth>false</AutoMaxWidth>
-											<MaxWidth>60</MaxWidth>
-											<Height>1</Height>
-											<MultiLine>true</MultiLine>
-											<BorderColor>style:BorderColor</BorderColor>
-											<ContextMenu name="ПредставлениеДанныхКонтекстноеМеню" id="26"/>
-											<ExtendedTooltip name="ПредставлениеДанныхРасширеннаяПодсказка" id="123"/>
-										</InputField>
+											<Group>AlwaysHorizontal</Group>
+											<Representation>None</Representation>
+											<ShowTitle>false</ShowTitle>
+											<ExtendedTooltip name="ЗаголовокТаблицыРасширеннаяПодсказка" id="245"/>
+											<ChildItems>
+												<LabelDecoration name="НадписьДанные" id="246">
+													<Title formatted="false">
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Данные:</v8:content>
+														</v8:item>
+													</Title>
+													<ContextMenu name="НадписьДанныеКонтекстноеМеню" id="247"/>
+													<ExtendedTooltip name="НадписьДанныеРасширеннаяПодсказка" id="248"/>
+												</LabelDecoration>
+												<CommandBar name="ДеревоДанныхКоманды" id="258">
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Дерево данных команды</v8:content>
+														</v8:item>
+													</Title>
+													<HorizontalLocation>Right</HorizontalLocation>
+													<CommandSource>Item.ДеревоДанных</CommandSource>
+													<ExtendedTooltip name="ДеревоДанныхКомандыРасширеннаяПодсказка" id="259"/>
+													<ChildItems>
+														<Button name="ДеревоДанныхКомандыДанныхРазвернутьТаблицу" id="260">
+															<Type>CommandBarButton</Type>
+															<CommandName>Form.Command.РазвернутьТаблицу</CommandName>
+															<Title>
+																<v8:item>
+																	<v8:lang>ru</v8:lang>
+																	<v8:content>Развернуть таблицу</v8:content>
+																</v8:item>
+															</Title>
+															<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
+															<ExtendedTooltip name="ДеревоДанныхКомандыДанныхРазвернутьТаблицуРасширеннаяПодсказка" id="261"/>
+														</Button>
+														<Button name="ДеревоДанныхКомандыДанныхСвернутьТаблицу" id="262">
+															<Type>CommandBarButton</Type>
+															<CommandName>Form.Command.СвернутьТаблицу</CommandName>
+															<Title>
+																<v8:item>
+																	<v8:lang>ru</v8:lang>
+																	<v8:content>Свернуть таблицу</v8:content>
+																</v8:item>
+															</Title>
+															<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
+															<ExtendedTooltip name="ДеревоДанныхКомандыДанныхСвернутьТаблицуРасширеннаяПодсказка" id="263"/>
+														</Button>
+														<SearchStringAddition name="ДеревоДанныхПоиск" id="266">
+															<AdditionSource>
+																<Item>ДеревоДанных</Item>
+																<Type>SearchStringRepresentation</Type>
+															</AdditionSource>
+															<Title>
+																<v8:item>
+																	<v8:lang>ru</v8:lang>
+																	<v8:content>Дерево данных поиск</v8:content>
+																</v8:item>
+															</Title>
+															<ContextMenu name="ДеревоДанныхПоискКонтекстноеМеню" id="267"/>
+															<ExtendedTooltip name="ДеревоДанныхПоискРасширеннаяПодсказка" id="268"/>
+														</SearchStringAddition>
+													</ChildItems>
+												</CommandBar>
+												<CommandBar name="ТаблицаДанныхКоманды" id="251">
+													<Visible>false</Visible>
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Таблица данных команды</v8:content>
+														</v8:item>
+													</Title>
+													<HorizontalLocation>Right</HorizontalLocation>
+													<CommandSource>Item.ТаблицаДанных</CommandSource>
+													<ExtendedTooltip name="ТаблицаДанныхКомандыРасширеннаяПодсказка" id="252"/>
+													<ChildItems>
+														<Button name="ТаблицаДанныхРазвернутьТаблицу" id="249">
+															<Type>CommandBarButton</Type>
+															<CommandName>Form.Command.РазвернутьТаблицу</CommandName>
+															<Title>
+																<v8:item>
+																	<v8:lang>ru</v8:lang>
+																	<v8:content>Развернуть таблицу</v8:content>
+																</v8:item>
+															</Title>
+															<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
+															<ExtendedTooltip name="ТаблицаДанныхРазвернутьТаблицуРасширеннаяПодсказка" id="250"/>
+														</Button>
+														<Button name="ТаблицаДанныхСвернутьТаблицу" id="253">
+															<Type>CommandBarButton</Type>
+															<CommandName>Form.Command.СвернутьТаблицу</CommandName>
+															<Title>
+																<v8:item>
+																	<v8:lang>ru</v8:lang>
+																	<v8:content>Свернуть таблицу</v8:content>
+																</v8:item>
+															</Title>
+															<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
+															<ExtendedTooltip name="ТаблицаДанныхСвернутьТаблицуРасширеннаяПодсказка" id="254"/>
+														</Button>
+													</ChildItems>
+												</CommandBar>
+											</ChildItems>
+										</UsualGroup>
 										<Table name="ДеревоДанных" id="217">
 											<Representation>Tree</Representation>
-											<TitleLocation>Top</TitleLocation>
 											<CommandBarLocation>None</CommandBarLocation>
 											<ReadOnly>true</ReadOnly>
 											<Height>2</Height>
@@ -373,7 +499,7 @@
 											<Title>
 												<v8:item>
 													<v8:lang>ru</v8:lang>
-													<v8:content>Данные</v8:content>
+													<v8:content>Дерево данных</v8:content>
 												</v8:item>
 											</Title>
 											<CommandSet>
@@ -467,7 +593,6 @@
 										</Table>
 										<Table name="ТаблицаДанных" id="202">
 											<Representation>List</Representation>
-											<TitleLocation>Top</TitleLocation>
 											<CommandBarLocation>None</CommandBarLocation>
 											<ReadOnly>true</ReadOnly>
 											<Height>2</Height>
@@ -602,9 +727,7 @@
 															</Button>
 														</ChildItems>
 													</ContextMenu>
-													<AutoCommandBar name="ТаблицаСвойствПользователяИБКоманднаяПанель" id="96">
-														<Autofill>false</Autofill>
-													</AutoCommandBar>
+													<AutoCommandBar name="ТаблицаСвойствПользователяИБКоманднаяПанель" id="96"/>
 													<ExtendedTooltip name="ТаблицаСвойствПользователяИБРасширеннаяПодсказка" id="143"/>
 													<SearchStringAddition name="ТаблицаСвойствПользователяИБСтрокаПоиска" id="179">
 														<AdditionSource>
@@ -1193,6 +1316,38 @@
 			</Columns>
 		</Attribute>
 	</Attributes>
+	<Commands>
+		<Command name="РазвернутьТаблицу" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Развернуть таблицу</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Развернуть таблицу</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>РазвернутьТаблицу</Action>
+		</Command>
+		<Command name="СвернутьТаблицу" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Свернуть таблицу</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Свернуть таблицу</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>СвернутьТаблицу</Action>
+		</Command>
+	</Commands>
 	<Parameters>
 		<Parameter name="ВспомогательныйIPПорт">
 			<Type>

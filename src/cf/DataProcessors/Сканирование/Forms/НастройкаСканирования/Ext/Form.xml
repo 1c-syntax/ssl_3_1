@@ -1,7 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.16">
 	<WindowOpeningMode>LockOwnerWindow</WindowOpeningMode>
-	<Customizable>false</Customizable>
 	<CommandBarLocation>None</CommandBarLocation>
 	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
 		<HorizontalAlign>Right</HorizontalAlign>
@@ -324,7 +323,7 @@
 														<Event name="OnChange">ФорматСканированногоИзображенияПриИзменении</Event>
 													</Events>
 												</InputField>
-												<CheckBoxField name="СохранятьВPDF" id="112">
+												<CheckBoxField name="ПреобразоватьВPDF" id="112">
 													<DataPath>СохранятьВPDF</DataPath>
 													<Title>
 														<v8:item>
@@ -335,18 +334,17 @@
 													<TitleLocation>Right</TitleLocation>
 													<ToolTipRepresentation>Button</ToolTipRepresentation>
 													<CheckBoxType>Auto</CheckBoxType>
-													<ContextMenu name="СохранятьВPDFКонтекстноеМеню" id="113"/>
-													<ExtendedTooltip name="СохранятьВPDFРасширеннаяПодсказка" id="114">
+													<ContextMenu name="ПреобразоватьВPDFКонтекстноеМеню" id="113"/>
+													<ExtendedTooltip name="ПреобразоватьВPDFРасширеннаяПодсказка" id="114">
 														<Title formatted="true">
 															<v8:item>
 																<v8:lang>ru</v8:lang>
-																<v8:content>&lt;b&gt;JPG&lt;/&gt; подходит для большинства документов и изображений. Позволяет сжимать изображение с потерей качества. Можно настроить величину сжатия. 
-&lt;b&gt;PNG&lt;/&gt; подходит для большинства документов и изображений. Изображения без потери качества, файлы небольших размеров. 
-&lt;b&gt;TIF&lt;/&gt; позволяет сохранять изображение без потери качества, используется для хранения изображений для дальнейшей печати. Возможно хранение многостраничных изображений.
-&lt;b&gt;GIF&lt;/&gt; устаревший формат для хранения изображений в низком качестве. Файлы небольшого размера.
-&lt;b&gt;BMP&lt;/&gt; устаревший формат для хранения изображений без потери качества. Файлы больших размеров.
+																<v8:content>&lt;b&gt;JPG&lt;/&gt; подходит для большинства документов и изображений. Позволяет сжимать изображение с потерей качества. Можно настроить величину сжатия. 
+&lt;b&gt;PNG&lt;/&gt; подходит для большинства документов и изображений. Изображения без потери качества, файлы небольших размеров. 
+&lt;b&gt;TIF&lt;/&gt; позволяет сохранять изображение без потери качества, используется для хранения изображений для дальнейшей печати. Возможно хранение многостраничных изображений.
+&lt;b&gt;GIF&lt;/&gt; устаревший формат для хранения изображений в низком качестве. Файлы небольшого размера.
 
-&lt;b&gt;Преобразовать&lt;/&gt;&lt;b&gt; &lt;/&gt;&lt;b&gt;в&lt;/&gt;&lt;b&gt; &lt;/&gt;&lt;b&gt;PDF&lt;/&gt; позволяет поместить отсканированное изображение в PDF-файл. Возможно хранение многостраничных изображений.</v8:content>
+&lt;b&gt;Преобразовать в PDF&lt;/&gt; позволяет поместить отсканированное изображение в PDF-файл. Возможно хранение многостраничных изображений.</v8:content>
 															</v8:item>
 														</Title>
 													</ExtendedTooltip>
@@ -495,7 +493,7 @@ TIF - Не все браузеры отображают этот формат.</
 											<Title>
 												<v8:item>
 													<v8:lang>ru</v8:lang>
-													<v8:content>Группа1</v8:content>
+													<v8:content>Использовать ImageMagik</v8:content>
 												</v8:item>
 											</Title>
 											<Group>AlwaysHorizontal</Group>
@@ -507,7 +505,7 @@ TIF - Не все браузеры отображают этот формат.</
 													<Title>
 														<v8:item>
 															<v8:lang>ru</v8:lang>
-															<v8:content>Переключатель image magik</v8:content>
+															<v8:content>Переключатель ImageMagik</v8:content>
 														</v8:item>
 													</Title>
 													<HorizontalStretch>false</HorizontalStretch>
@@ -621,14 +619,13 @@ TIF - Не все браузеры отображают этот формат.</
 						</UsualGroup>
 					</ChildItems>
 				</UsualGroup>
-				<UsualGroup name="ГруппаЖурнал" id="160">
+				<UsualGroup name="ГруппаДиагностикаПроблем" id="160">
 					<Title>
 						<v8:item>
 							<v8:lang>ru</v8:lang>
 							<v8:content>Диагностика проблем</v8:content>
 						</v8:item>
 					</Title>
-					<HorizontalStretch>true</HorizontalStretch>
 					<Group>Vertical</Group>
 					<Behavior>Collapsible</Behavior>
 					<CollapsedRepresentationTitle>
@@ -640,18 +637,19 @@ TIF - Не все браузеры отображают этот формат.</
 					<Collapsed>true</Collapsed>
 					<ControlRepresentation>Picture</ControlRepresentation>
 					<Representation>NormalSeparation</Representation>
-					<ExtendedTooltip name="ГруппаЖурналРасширеннаяПодсказка" id="161"/>
+					<ExtendedTooltip name="ГруппаДиагностикаПроблемРасширеннаяПодсказка" id="161"/>
 					<ChildItems>
-						<UsualGroup name="ГруппаНастройкиЖурнала" id="168">
+						<UsualGroup name="ГруппаКаталогЖурналаДиагностики" id="168">
 							<Title>
 								<v8:item>
 									<v8:lang>ru</v8:lang>
-									<v8:content>Группа1</v8:content>
+									<v8:content>Каталог журнала диагностики</v8:content>
 								</v8:item>
 							</Title>
+							<Group>Vertical</Group>
 							<Representation>None</Representation>
 							<ShowTitle>false</ShowTitle>
-							<ExtendedTooltip name="ГруппаНастройкиЖурналаРасширеннаяПодсказка" id="169"/>
+							<ExtendedTooltip name="ГруппаКаталогЖурналаДиагностикиРасширеннаяПодсказка" id="169"/>
 							<ChildItems>
 								<CheckBoxField name="ИспользоватьКаталогЖурналаСканирования" id="162">
 									<DataPath>ИспользоватьКаталогЖурналаСканирования</DataPath>
@@ -679,7 +677,7 @@ TIF - Не все браузеры отображают этот формат.</
 									</Title>
 									<TitleLocation>None</TitleLocation>
 									<ToolTipRepresentation>Button</ToolTipRepresentation>
-									<Width>40</Width>
+									<Width>60</Width>
 									<AutoMaxWidth>false</AutoMaxWidth>
 									<HorizontalStretch>false</HorizontalStretch>
 									<ChoiceButton>true</ChoiceButton>
@@ -712,7 +710,6 @@ TIF - Не все браузеры отображают этот формат.</
 									<v8:content>Информация для технической поддержки</v8:content>
 								</v8:item>
 							</Title>
-							<GroupHorizontalAlign>Right</GroupHorizontalAlign>
 							<Hyperlink>true</Hyperlink>
 							<HorizontalAlign>Auto</HorizontalAlign>
 							<ContextMenu name="ИнформацияДляТехническойПоддержкиКонтекстноеМеню" id="166"/>
@@ -831,7 +828,14 @@ TIF - Не все браузеры отображают этот формат.</
 											<v8:content>Установить стандартные параметры</v8:content>
 										</v8:item>
 									</Title>
+									<LocationInCommandBar>InCommandBar</LocationInCommandBar>
 									<ExtendedTooltip name="УстановитьСтандартныеНастройкиРасширеннаяПодсказка" id="78"/>
+								</Button>
+								<Button name="ИзменитьФорму" id="170">
+									<Type>CommandBarButton</Type>
+									<CommandName>Form.StandardCommand.CustomizeForm</CommandName>
+									<LocationInCommandBar>InCommandBar</LocationInCommandBar>
+									<ExtendedTooltip name="ИзменитьФормуРасширеннаяПодсказка" id="171"/>
 								</Button>
 							</ChildItems>
 						</Popup>
@@ -1024,11 +1028,6 @@ TIF - Не все браузеры отображают этот формат.</
 				<v8:Type>cfg:EnumRef.ФорматыХраненияМногостраничныхФайлов</v8:Type>
 			</Type>
 			<SavedData>true</SavedData>
-		</Attribute>
-		<Attribute name="ФорматХраненияОдностраничный" id="17">
-			<Type>
-				<v8:Type>cfg:EnumRef.ФорматыХраненияОдностраничныхФайлов</v8:Type>
-			</Type>
 		</Attribute>
 		<Attribute name="ФорматМногостраничныйTIF" id="18">
 			<Type>
