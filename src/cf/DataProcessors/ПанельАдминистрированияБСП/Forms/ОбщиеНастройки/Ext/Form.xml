@@ -95,7 +95,7 @@
 						<Event name="OnChange">ЗаголовокПрограммыПриИзменении</Event>
 					</Events>
 				</InputField>
-				<UsualGroup name="ГруппаРегиональныеНастройки" id="2262">
+				<UsualGroup name="ГруппаРегиональныеНастройки" id="2276">
 					<Title>
 						<v8:item>
 							<v8:lang>ru</v8:lang>
@@ -106,7 +106,7 @@
 					<Behavior>Collapsible</Behavior>
 					<ControlRepresentation>Picture</ControlRepresentation>
 					<Representation>NormalSeparation</Representation>
-					<ExtendedTooltip name="ГруппаРегиональныеНастройкиРасширеннаяПодсказка" id="2263"/>
+					<ExtendedTooltip name="ГруппаРегиональныеНастройкиРасширеннаяПодсказка" id="2277"/>
 					<ChildItems>
 						<UsualGroup name="ГруппаНастройкаЧасовогоПояса" id="2267">
 							<Title>
@@ -1034,6 +1034,11 @@
 											<AutoMaxHeight>false</AutoMaxHeight>
 											<MaxHeight>2</MaxHeight>
 											<MultiLine>true</MultiLine>
+											<ChoiceButton>true</ChoiceButton>
+											<ChoiceButtonPicture>
+												<xr:Ref>StdPicture.MoveLeft</xr:Ref>
+												<xr:LoadTransparent>true</xr:LoadTransparent>
+											</ChoiceButtonPicture>
 											<HeightControlVariant>UseHeightInFormRows</HeightControlVariant>
 											<ContextMenu name="АдресаСерверовМетокВремениКонтекстноеМеню" id="2192"/>
 											<ExtendedTooltip name="АдресаСерверовМетокВремениРасширеннаяПодсказка" id="2193">
@@ -1046,8 +1051,20 @@
 											</ExtendedTooltip>
 											<Events>
 												<Event name="OnChange">АдресаСерверовМетокВремениПриИзменении</Event>
+												<Event name="StartChoice">АдресаСерверовМетокВремениНачалоВыбора</Event>
 											</Events>
 										</InputField>
+										<Button name="ДиагностикаСерверовМетокВремени" id="2262">
+											<Type>UsualButton</Type>
+											<CommandName>Form.Command.ДиагностикаСерверовМетокВремени</CommandName>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Проверить подключение</v8:content>
+												</v8:item>
+											</Title>
+											<ExtendedTooltip name="ДиагностикаСерверовМетокВремениРасширеннаяПодсказка" id="2263"/>
+										</Button>
 									</ChildItems>
 								</UsualGroup>
 							</ChildItems>
@@ -2047,6 +2064,15 @@
 				</v8:item>
 			</Title>
 			<Action>Метки</Action>
+		</Command>
+		<Command name="ДиагностикаСерверовМетокВремени" id="10">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Диагностика серверов меток времени</v8:content>
+				</v8:item>
+			</Title>
+			<Action>ДиагностикаСерверовМетокВремени</Action>
 		</Command>
 	</Commands>
 </Form>
