@@ -350,22 +350,9 @@
 			<UpdateOnDataChange>Auto</UpdateOnDataChange>
 			<UserSettingsGroup>СписокКомпоновщикНастроекПользовательскиеНастройки</UserSettingsGroup>
 			<AllowGettingCurrentRowURL>true</AllowGettingCurrentRowURL>
-			<ContextMenu name="СписокКонтекстноеМеню" id="4"/>
-			<AutoCommandBar name="СписокКоманднаяПанель" id="5">
+			<ContextMenu name="СписокКонтекстноеМеню" id="4">
 				<ChildItems>
-					<Button name="СписокЗагрузитьИзФайла" id="92">
-						<Type>CommandBarButton</Type>
-						<CommandName>Form.Command.ЗагрузитьИзФайла</CommandName>
-						<Title>
-							<v8:item>
-								<v8:lang>ru</v8:lang>
-								<v8:content>Загрузить из файла ...</v8:content>
-							</v8:item>
-						</Title>
-						<ToolTipRepresentation>None</ToolTipRepresentation>
-						<ExtendedTooltip name="СписокЗагрузитьИзФайлаРасширеннаяПодсказка" id="93"/>
-					</Button>
-					<Button name="СписокВыгрузитьВФайл" id="88">
+					<Button name="СписокКонтекстноеМенюВыгрузитьВФайл" id="266">
 						<Type>CommandBarButton</Type>
 						<CommandName>Form.Command.ВыгрузитьВФайл</CommandName>
 						<Title>
@@ -374,9 +361,117 @@
 								<v8:content>Выгрузить в файл...</v8:content>
 							</v8:item>
 						</Title>
-						<ToolTipRepresentation>None</ToolTipRepresentation>
-						<ExtendedTooltip name="СписокВыгрузитьВФайлРасширеннаяПодсказка" id="89"/>
+						<ExtendedTooltip name="СписокКонтекстноеМенюВыгрузитьВФайлРасширеннаяПодсказка" id="267"/>
 					</Button>
+					<ButtonGroup name="ДополнительныеКоманды" id="268">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Дополнительные команды</v8:content>
+							</v8:item>
+						</Title>
+						<ExtendedTooltip name="ДополнительныеКомандыРасширеннаяПодсказка" id="269"/>
+					</ButtonGroup>
+				</ChildItems>
+			</ContextMenu>
+			<AutoCommandBar name="СписокКоманднаяПанель" id="5">
+				<ChildItems>
+					<ButtonGroup name="ГруппаОбновить" id="262">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Обновить</v8:content>
+							</v8:item>
+						</Title>
+						<ExtendedTooltip name="ГруппаОбновитьРасширеннаяПодсказка" id="263"/>
+						<ChildItems>
+							<Button name="СписокОбновить" id="260">
+								<Type>CommandBarButton</Type>
+								<CommandName>Form.Item.Список.StandardCommand.Refresh</CommandName>
+								<Title>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Обновить список</v8:content>
+									</v8:item>
+								</Title>
+								<ExtendedTooltip name="СписокОбновитьРасширеннаяПодсказка" id="261"/>
+							</Button>
+							<Button name="СписокПолучитьСтатус" id="105">
+								<Type>CommandBarButton</Type>
+								<CommandName>Form.Command.ОбновитьСтатусИзРеестраФНС</CommandName>
+								<Title>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Обновить статус из реестра ФНС</v8:content>
+									</v8:item>
+								</Title>
+								<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
+								<ExtendedTooltip name="СписокПолучитьСтатусРасширеннаяПодсказка" id="106"/>
+							</Button>
+						</ChildItems>
+					</ButtonGroup>
+					<ButtonGroup name="СписокГруппа1" id="264">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Группа 1</v8:content>
+							</v8:item>
+						</Title>
+						<ExtendedTooltip name="СписокГруппа1РасширеннаяПодсказка" id="265"/>
+						<ChildItems>
+							<Popup name="ГруппаЗагрузкаИзВешнихИсточников" id="244">
+								<Title>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Загрузить</v8:content>
+									</v8:item>
+								</Title>
+								<ExtendedTooltip name="ГруппаЗагрузкаИзВешнихИсточниковРасширеннаяПодсказка" id="245"/>
+								<ChildItems>
+									<Button name="СписокЗагрузитьИзФайла" id="92">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.Command.ЗагрузитьИзФайла</CommandName>
+										<Title>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Из файла ...</v8:content>
+											</v8:item>
+										</Title>
+										<ToolTipRepresentation>None</ToolTipRepresentation>
+										<ExtendedTooltip name="СписокЗагрузитьИзФайлаРасширеннаяПодсказка" id="93"/>
+									</Button>
+									<Button name="СписокЗагрузитьИзРеестраФНС" id="98">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.Command.ЗагрузитьИзРеестраФНС</CommandName>
+										<Title>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Из реестра ФНС ...</v8:content>
+											</v8:item>
+										</Title>
+										<ExtendedTooltip name="СписокЗагрузитьИзРеестраФНСРасширеннаяПодсказка" id="99"/>
+									</Button>
+								</ChildItems>
+							</Popup>
+							<Button name="СписокВыгрузитьВФайл" id="88">
+								<Type>CommandBarButton</Type>
+								<CommandName>Form.Command.ВыгрузитьВФайл</CommandName>
+								<Picture>
+									<xr:Ref>CommonPicture.Скачать</xr:Ref>
+									<xr:LoadTransparent>false</xr:LoadTransparent>
+								</Picture>
+								<Title>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Выгрузить в файл...</v8:content>
+									</v8:item>
+								</Title>
+								<ToolTipRepresentation>None</ToolTipRepresentation>
+								<RepresentationInContextMenu>AdditionalInContextMenu</RepresentationInContextMenu>
+								<ExtendedTooltip name="СписокВыгрузитьВФайлРасширеннаяПодсказка" id="89"/>
+							</Button>
+						</ChildItems>
+					</ButtonGroup>
 					<Popup name="ПодменюПечать" id="56">
 						<Title>
 							<v8:item>
@@ -433,34 +528,10 @@
 						<Representation>Picture</Representation>
 						<ExtendedTooltip name="ПодменюСоздатьНаОснованииРасширеннаяПодсказка" id="235"/>
 					</Popup>
-					<Button name="СписокЗагрузитьИзРеестраФНС" id="98">
-						<Type>CommandBarButton</Type>
-						<CommandName>Form.Command.ЗагрузитьИзРеестраФНС</CommandName>
-						<Title>
-							<v8:item>
-								<v8:lang>ru</v8:lang>
-								<v8:content>Загрузить из реестра ФНС ...</v8:content>
-							</v8:item>
-						</Title>
-						<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
-						<ExtendedTooltip name="СписокЗагрузитьИзРеестраФНСРасширеннаяПодсказка" id="99"/>
-					</Button>
 					<Button name="ИзменитьФорму" id="84">
 						<Type>CommandBarButton</Type>
 						<CommandName>Form.StandardCommand.CustomizeForm</CommandName>
 						<ExtendedTooltip name="ИзменитьФормуРасширеннаяПодсказка" id="85"/>
-					</Button>
-					<Button name="СписокПолучитьСтатус" id="105">
-						<Type>CommandBarButton</Type>
-						<CommandName>Form.Command.ОбновитьСтатусИзРеестраФНС</CommandName>
-						<Title>
-							<v8:item>
-								<v8:lang>ru</v8:lang>
-								<v8:content>Обновить статус из реестра ФНС</v8:content>
-							</v8:item>
-						</Title>
-						<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
-						<ExtendedTooltip name="СписокПолучитьСтатусРасширеннаяПодсказка" id="106"/>
 					</Button>
 					<Button name="СписокСправочникМашиночитаемыеДоверенностиОтменаДоверенности" id="224">
 						<Type>CommandBarButton</Type>
@@ -1853,6 +1924,10 @@
 					<v8:content>Обновить статус из реестра ФНС</v8:content>
 				</v8:item>
 			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.Refresh</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
 			<Action>ОбновитьСтатусИзРеестраФНС</Action>
 		</Command>
 	</Commands>
