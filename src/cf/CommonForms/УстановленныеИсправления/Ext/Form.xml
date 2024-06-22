@@ -35,8 +35,8 @@
 								</v8:item>
 							</Title>
 							<Picture>
-								<xr:Ref>CommonPicture.Информация32</xr:Ref>
-								<xr:LoadTransparent>false</xr:LoadTransparent>
+								<xr:Ref>StdPicture.DialogInformation</xr:Ref>
+								<xr:LoadTransparent>true</xr:LoadTransparent>
 							</Picture>
 							<FileDragMode>AsFile</FileDragMode>
 							<ContextMenu name="ИнформацияКартинкаКонтекстноеМеню" id="63"/>
@@ -47,7 +47,7 @@
 							<Title formatted="false">
 								<v8:item>
 									<v8:lang>ru</v8:lang>
-									<v8:content>Изменения, которые будут сделаны, вступят в силу при следующем входе в программу.</v8:content>
+									<v8:content>Изменения, которые будут сделаны, вступят в силу при следующем входе в приложение.</v8:content>
 								</v8:item>
 							</Title>
 							<VerticalAlign>Center</VerticalAlign>
@@ -167,6 +167,12 @@
 					<Button name="УстановленныеИсправленияВыгрузитьПодключенныеИсправления" id="125">
 						<Type>CommandBarButton</Type>
 						<CommandName>Form.Command.ВыгрузитьПодключенныеИсправления</CommandName>
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Выгрузить подключенные исправления</v8:content>
+							</v8:item>
+						</Title>
 						<ExtendedTooltip name="УстановленныеИсправленияВыгрузитьПодключенныеИсправленияРасширеннаяПодсказка" id="126"/>
 					</Button>
 					<Button name="УстановленныеИсправленияЗакрыть" id="110">
@@ -192,6 +198,12 @@
 					<Button name="УстановленныеИсправленияСохранитьКак" id="104">
 						<Type>CommandBarButton</Type>
 						<CommandName>Form.Command.СохранитьКак</CommandName>
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Сохранить как...</v8:content>
+							</v8:item>
+						</Title>
 						<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
 						<ExtendedTooltip name="УстановленныеИсправленияСохранитьКакРасширеннаяПодсказка" id="105"/>
 					</Button>
@@ -243,11 +255,17 @@
 			<ChildItems>
 				<CheckBoxField name="УстановленныеИсправленияПодключать" id="112">
 					<DataPath>УстановленныеИсправления.Подключать</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Подключать</v8:content>
+						</v8:item>
+					</Title>
 					<TitleLocation>None</TitleLocation>
 					<ToolTip>
 						<v8:item>
 							<v8:lang>ru</v8:lang>
-							<v8:content>Подключать исправление при входе в программу</v8:content>
+							<v8:content>Подключать исправление при входе в приложение</v8:content>
 						</v8:item>
 					</ToolTip>
 					<HeaderPicture>
@@ -273,6 +291,12 @@
 					<ChildItems>
 						<PictureField name="УстановленныеИсправленияСтатус" id="29">
 							<DataPath>УстановленныеИсправления.Статус</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Статус</v8:content>
+								</v8:item>
+							</Title>
 							<TitleLocation>None</TitleLocation>
 							<EditMode>EnterOnInput</EditMode>
 							<FileDragMode>AsFile</FileDragMode>
@@ -281,6 +305,12 @@
 						</PictureField>
 						<LabelField name="УстановленныеИсправленияНаименование" id="14">
 							<DataPath>УстановленныеИсправления.Имя</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Наименование</v8:content>
+								</v8:item>
+							</Title>
 							<EditMode>EnterOnInput</EditMode>
 							<ContextMenu name="УстановленныеИсправленияНаименованиеКонтекстноеМеню" id="15"/>
 							<ExtendedTooltip name="УстановленныеИсправленияНаименованиеРасширеннаяПодсказка" id="16"/>
@@ -289,6 +319,12 @@
 				</ColumnGroup>
 				<LabelField name="УстановленныеИсправленияОписание" id="17">
 					<DataPath>УстановленныеИсправления.Описание</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Описание</v8:content>
+						</v8:item>
+					</Title>
 					<EditMode>EnterOnInput</EditMode>
 					<Height>2</Height>
 					<ContextMenu name="УстановленныеИсправленияОписаниеКонтекстноеМеню" id="18"/>
@@ -296,6 +332,12 @@
 				</LabelField>
 				<LabelField name="УстановленныеИсправленияПрименимоДля" id="37">
 					<DataPath>УстановленныеИсправления.ПрименимоДля</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Применимо для</v8:content>
+						</v8:item>
+					</Title>
 					<EditMode>EnterOnInput</EditMode>
 					<ContextMenu name="УстановленныеИсправленияПрименимоДляКонтекстноеМеню" id="38"/>
 					<ExtendedTooltip name="УстановленныеИсправленияПрименимоДляРасширеннаяПодсказка" id="39"/>
@@ -305,6 +347,12 @@
 					<UserVisible>
 						<xr:Common>false</xr:Common>
 					</UserVisible>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Путь к файлу</v8:content>
+						</v8:item>
+					</Title>
 					<EditMode>EnterOnInput</EditMode>
 					<ContextMenu name="УстановленныеИсправленияПутьКФайлуКонтекстноеМеню" id="27"/>
 					<ExtendedTooltip name="УстановленныеИсправленияПутьКФайлуРасширеннаяПодсказка" id="28"/>
@@ -396,7 +444,7 @@
 							<Title formatted="false">
 								<v8:item>
 									<v8:lang>ru</v8:lang>
-									<v8:content>Будет подключено после перезапуска программы</v8:content>
+									<v8:content>Будет подключено после перезапуска приложения</v8:content>
 								</v8:item>
 							</Title>
 							<ContextMenu name="ЛегендаБудетПодключеноКонтекстноеМеню" id="94"/>
@@ -436,7 +484,7 @@
 							<Title formatted="false">
 								<v8:item>
 									<v8:lang>ru</v8:lang>
-									<v8:content>Не удалось подключить при входе в программу</v8:content>
+									<v8:content>Не удалось подключить при входе в приложение</v8:content>
 								</v8:item>
 							</Title>
 							<ContextMenu name="ЛегендаОшибкаПодключенияКонтекстноеМеню" id="102"/>

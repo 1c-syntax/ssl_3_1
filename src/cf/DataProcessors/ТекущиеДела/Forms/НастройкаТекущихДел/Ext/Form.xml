@@ -10,11 +10,23 @@
 				<Type>CommandBarButton</Type>
 				<DefaultButton>true</DefaultButton>
 				<CommandName>Form.Command.КнопкаОК</CommandName>
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>ОК</v8:content>
+					</v8:item>
+				</Title>
 				<ExtendedTooltip name="ФормаКнопкаОКРасширеннаяПодсказка" id="28"/>
 			</Button>
 			<Button name="ФормаКнопкаОтмена" id="29">
 				<Type>CommandBarButton</Type>
 				<CommandName>Form.Command.КнопкаОтмена</CommandName>
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Отмена</v8:content>
+					</v8:item>
+				</Title>
 				<ExtendedTooltip name="ФормаКнопкаОтменаРасширеннаяПодсказка" id="30"/>
 			</Button>
 			<Button name="ФормаСправка" id="65">
@@ -82,31 +94,85 @@
 									<AutoCommandBar name="ДеревоОтображаемыхДелКоманднаяПанель" id="9">
 										<Autofill>false</Autofill>
 										<ChildItems>
-											<Button name="ДеревоОтображаемыхДелУстановитьФлажки" id="19">
-												<Type>CommandBarButton</Type>
-												<CommandName>Form.Command.УстановитьФлажки</CommandName>
-												<ExtendedTooltip name="ДеревоОтображаемыхДелУстановитьФлажкиРасширеннаяПодсказка" id="20"/>
-											</Button>
-											<Button name="ДеревоОтображаемыхДелСнятьФлажки" id="21">
-												<Type>CommandBarButton</Type>
-												<CommandName>Form.Command.СнятьФлажки</CommandName>
-												<ExtendedTooltip name="ДеревоОтображаемыхДелСнятьФлажкиРасширеннаяПодсказка" id="22"/>
-											</Button>
-											<Button name="ДеревоОтображаемыхДелПереместитьВверх" id="23">
-												<Type>CommandBarButton</Type>
-												<CommandName>Form.Command.ПереместитьВверх</CommandName>
-												<LocationInCommandBar>InCommandBarAndInAdditionalSubmenu</LocationInCommandBar>
-												<ExtendedTooltip name="ДеревоОтображаемыхДелПереместитьВверхРасширеннаяПодсказка" id="24"/>
-											</Button>
-											<Button name="ДеревоОтображаемыхДелПереместитьВниз" id="25">
-												<Type>CommandBarButton</Type>
-												<CommandName>Form.Command.ПереместитьВниз</CommandName>
-												<LocationInCommandBar>InCommandBarAndInAdditionalSubmenu</LocationInCommandBar>
-												<ExtendedTooltip name="ДеревоОтображаемыхДелПереместитьВнизРасширеннаяПодсказка" id="26"/>
-											</Button>
+											<ButtonGroup name="ГруппаФлажки" id="75">
+												<Title>
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>Флажки</v8:content>
+													</v8:item>
+												</Title>
+												<Representation>Compact</Representation>
+												<ExtendedTooltip name="ГруппаФлажкиРасширеннаяПодсказка" id="76"/>
+												<ChildItems>
+													<Button name="ДеревоОтображаемыхДелУстановитьФлажки" id="19">
+														<Type>CommandBarButton</Type>
+														<CommandName>Form.Command.УстановитьФлажки</CommandName>
+														<Title>
+															<v8:item>
+																<v8:lang>ru</v8:lang>
+																<v8:content>Установить флажки</v8:content>
+															</v8:item>
+														</Title>
+														<ExtendedTooltip name="ДеревоОтображаемыхДелУстановитьФлажкиРасширеннаяПодсказка" id="20"/>
+													</Button>
+													<Button name="ДеревоОтображаемыхДелСнятьФлажки" id="21">
+														<Type>CommandBarButton</Type>
+														<CommandName>Form.Command.СнятьФлажки</CommandName>
+														<Title>
+															<v8:item>
+																<v8:lang>ru</v8:lang>
+																<v8:content>Снять флажки</v8:content>
+															</v8:item>
+														</Title>
+														<ExtendedTooltip name="ДеревоОтображаемыхДелСнятьФлажкиРасширеннаяПодсказка" id="22"/>
+													</Button>
+												</ChildItems>
+											</ButtonGroup>
+											<ButtonGroup name="ГруппаПорядок" id="77">
+												<Title>
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>Порядок</v8:content>
+													</v8:item>
+												</Title>
+												<Representation>Compact</Representation>
+												<ExtendedTooltip name="ГруппаПорядокРасширеннаяПодсказка" id="78"/>
+												<ChildItems>
+													<Button name="ДеревоОтображаемыхДелПереместитьВверх" id="23">
+														<Type>CommandBarButton</Type>
+														<CommandName>Form.Command.ПереместитьВверх</CommandName>
+														<Title>
+															<v8:item>
+																<v8:lang>ru</v8:lang>
+																<v8:content>Переместить вверх</v8:content>
+															</v8:item>
+														</Title>
+														<LocationInCommandBar>InCommandBarAndInAdditionalSubmenu</LocationInCommandBar>
+														<ExtendedTooltip name="ДеревоОтображаемыхДелПереместитьВверхРасширеннаяПодсказка" id="24"/>
+													</Button>
+													<Button name="ДеревоОтображаемыхДелПереместитьВниз" id="25">
+														<Type>CommandBarButton</Type>
+														<CommandName>Form.Command.ПереместитьВниз</CommandName>
+														<Title>
+															<v8:item>
+																<v8:lang>ru</v8:lang>
+																<v8:content>Переместить вниз</v8:content>
+															</v8:item>
+														</Title>
+														<LocationInCommandBar>InCommandBarAndInAdditionalSubmenu</LocationInCommandBar>
+														<ExtendedTooltip name="ДеревоОтображаемыхДелПереместитьВнизРасширеннаяПодсказка" id="26"/>
+													</Button>
+												</ChildItems>
+											</ButtonGroup>
 											<Button name="ДеревоОтображаемыхДелДублироватьВЦентреОповещений" id="67">
 												<Type>CommandBarButton</Type>
 												<CommandName>Form.Command.ДополнительноВыводитьВЦентреОповещений</CommandName>
+												<Title>
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>Дополнительно выводить в центре оповещений</v8:content>
+													</v8:item>
+												</Title>
 												<ExtendedTooltip name="ДеревоОтображаемыхДелДублироватьВЦентреОповещенийРасширеннаяПодсказка" id="68"/>
 											</Button>
 											<SearchStringAddition name="СтрокаПоиск" id="72">
@@ -167,6 +233,12 @@
 											<ChildItems>
 												<CheckBoxField name="ДеревоОтображаемыхДелПометка" id="14">
 													<DataPath>ДеревоОтображаемыхДел.Пометка</DataPath>
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Пометка</v8:content>
+														</v8:item>
+													</Title>
 													<TitleLocation>None</TitleLocation>
 													<EditMode>EnterOnInput</EditMode>
 													<CheckBoxType>Auto</CheckBoxType>
@@ -175,6 +247,12 @@
 												</CheckBoxField>
 												<PictureField name="ДеревоОтображаемыхДелКартинка" id="69">
 													<DataPath>ДеревоОтображаемыхДел.Картинка</DataPath>
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Картинка</v8:content>
+														</v8:item>
+													</Title>
 													<EditMode>EnterOnInput</EditMode>
 													<ContextMenu name="ДеревоОтображаемыхДелКартинкаКонтекстноеМеню" id="70"/>
 													<ExtendedTooltip name="ДеревоОтображаемыхДелКартинкаРасширеннаяПодсказка" id="71"/>
@@ -182,6 +260,12 @@
 												<InputField name="ДеревоОтображаемыхДелПредставление" id="34">
 													<DataPath>ДеревоОтображаемыхДел.Представление</DataPath>
 													<ReadOnly>true</ReadOnly>
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Представление</v8:content>
+														</v8:item>
+													</Title>
 													<EditMode>EnterOnInput</EditMode>
 													<ContextMenu name="ДеревоОтображаемыхДелПредставлениеКонтекстноеМеню" id="35"/>
 													<ExtendedTooltip name="ДеревоОтображаемыхДелПредставлениеРасширеннаяПодсказка" id="36"/>
@@ -230,6 +314,12 @@
 							<ChildItems>
 								<CheckBoxField name="ИспользоватьАвтообновление" id="45">
 									<DataPath>ИспользоватьАвтообновление</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Обновлять автоматически каждые:</v8:content>
+										</v8:item>
+									</Title>
 									<TitleLocation>Right</TitleLocation>
 									<CheckBoxType>Auto</CheckBoxType>
 									<ContextMenu name="ИспользоватьАвтообновлениеКонтекстноеМеню" id="46"/>
@@ -237,6 +327,12 @@
 								</CheckBoxField>
 								<InputField name="ПериодОбновления" id="42">
 									<DataPath>ПериодОбновления</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Период обновления</v8:content>
+										</v8:item>
+									</Title>
 									<TitleLocation>None</TitleLocation>
 									<Shortcut>Ctrl+S</Shortcut>
 									<Width>4</Width>

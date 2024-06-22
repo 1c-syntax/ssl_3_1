@@ -17,12 +17,24 @@
 				<Type>CommandBarButton</Type>
 				<DefaultButton>true</DefaultButton>
 				<CommandName>Form.Command.ЗавершитьРаботу</CommandName>
-				<ExtendedTooltip name="ФормаЗавершитьРаботуExtendedTooltip" id="26"/>
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Завершить работу</v8:content>
+					</v8:item>
+				</Title>
+				<ExtendedTooltip name="ФормаЗавершитьРаботуРасширеннаяПодсказка" id="26"/>
 			</Button>
 			<Button name="ФормаНет" id="8">
 				<Type>CommandBarButton</Type>
 				<CommandName>Form.Command.Продолжить</CommandName>
-				<ExtendedTooltip name="ФормаНетExtendedTooltip" id="27"/>
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Продолжить работу на текущей версии</v8:content>
+					</v8:item>
+				</Title>
+				<ExtendedTooltip name="ФормаНетРасширеннаяПодсказка" id="27"/>
 			</Button>
 		</ChildItems>
 	</AutoCommandBar>
@@ -41,7 +53,7 @@
 			<Behavior>Usual</Behavior>
 			<Representation>None</Representation>
 			<ShowTitle>false</ShowTitle>
-			<ExtendedTooltip name="ГруппаПредупреждениеExtendedTooltip" id="28"/>
+			<ExtendedTooltip name="ГруппаПредупреждениеРасширеннаяПодсказка" id="28"/>
 			<ChildItems>
 				<PictureDecoration name="КартинкаПредупреждение" id="16">
 					<Title formatted="false">
@@ -51,12 +63,12 @@
 						</v8:item>
 					</Title>
 					<Picture>
-						<xr:Ref>CommonPicture.Предупреждение32</xr:Ref>
-						<xr:LoadTransparent>false</xr:LoadTransparent>
+						<xr:Ref>StdPicture.DialogExclamation</xr:Ref>
+						<xr:LoadTransparent>true</xr:LoadTransparent>
 					</Picture>
 					<FileDragMode>AsFile</FileDragMode>
 					<ContextMenu name="КартинкаПредупреждениеКонтекстноеМеню" id="17"/>
-					<ExtendedTooltip name="КартинкаПредупреждениеExtendedTooltip" id="29"/>
+					<ExtendedTooltip name="КартинкаПредупреждениеРасширеннаяПодсказка" id="29"/>
 				</PictureDecoration>
 				<UsualGroup name="ГруппаТекст" id="18">
 					<Title>
@@ -69,7 +81,7 @@
 					<Behavior>Usual</Behavior>
 					<Representation>None</Representation>
 					<ShowTitle>false</ShowTitle>
-					<ExtendedTooltip name="ГруппаТекстExtendedTooltip" id="30"/>
+					<ExtendedTooltip name="ГруппаТекстРасширеннаяПодсказка" id="30"/>
 					<ChildItems>
 						<UsualGroup name="ГруппаВерсия" id="21">
 							<Title>
@@ -81,7 +93,7 @@
 							<Behavior>Usual</Behavior>
 							<Representation>None</Representation>
 							<ShowTitle>false</ShowTitle>
-							<ExtendedTooltip name="ГруппаВерсияExtendedTooltip" id="31"/>
+							<ExtendedTooltip name="ГруппаВерсияРасширеннаяПодсказка" id="31"/>
 							<ChildItems>
 								<LabelDecoration name="Версия" id="19">
 									<AutoMaxWidth>false</AutoMaxWidth>
@@ -89,13 +101,13 @@
 									<Title formatted="false">
 										<v8:item>
 											<v8:lang>ru</v8:lang>
-											<v8:content>Для работы с программой %1 использовать версию платформы "1С:Предприятие 8" не ниже %2.
-Используемая сейчас версия: %3.</v8:content>
+											<v8:content>Для работы с приложением необходимо использовать версию платформы "1С:Предприятие 8" не ниже %1.
+Используемая сейчас версия: %2.</v8:content>
 										</v8:item>
 									</Title>
 									<VerticalAlign>Top</VerticalAlign>
 									<ContextMenu name="ВерсияКонтекстноеМеню" id="20"/>
-									<ExtendedTooltip name="ВерсияExtendedTooltip" id="32"/>
+									<ExtendedTooltip name="ВерсияРасширеннаяПодсказка" id="32"/>
 								</LabelDecoration>
 							</ChildItems>
 						</UsualGroup>
@@ -110,7 +122,7 @@
 							</Title>
 							<VerticalAlign>Top</VerticalAlign>
 							<ContextMenu name="ТекстСообщенияКонтекстноеМеню" id="14"/>
-							<ExtendedTooltip name="ТекстСообщенияExtendedTooltip" id="34"/>
+							<ExtendedTooltip name="ТекстСообщенияРасширеннаяПодсказка" id="34"/>
 						</LabelDecoration>
 						<LabelDecoration name="ТекстСсылки" id="11">
 							<AutoMaxWidth>false</AutoMaxWidth>
@@ -122,7 +134,7 @@
 							</Title>
 							<Hyperlink>true</Hyperlink>
 							<ContextMenu name="ТекстСсылкиКонтекстноеМеню" id="12"/>
-							<ExtendedTooltip name="ТекстСсылкиExtendedTooltip" id="35"/>
+							<ExtendedTooltip name="ТекстСсылкиРасширеннаяПодсказка" id="35"/>
 							<Events>
 								<Event name="Click">ТекстСсылкиНажатие</Event>
 							</Events>
@@ -133,12 +145,12 @@
 							<Title formatted="false">
 								<v8:item>
 									<v8:lang>ru</v8:lang>
-									<v8:content>Завершить работу программы?</v8:content>
+									<v8:content>Завершить работу приложения?</v8:content>
 								</v8:item>
 							</Title>
 							<VerticalAlign>Bottom</VerticalAlign>
 							<ContextMenu name="ТекстВопросаКонтекстноеМеню" id="25"/>
-							<ExtendedTooltip name="ТекстВопросаExtendedTooltip" id="36"/>
+							<ExtendedTooltip name="ТекстВопросаРасширеннаяПодсказка" id="36"/>
 						</LabelDecoration>
 					</ChildItems>
 				</UsualGroup>

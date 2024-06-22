@@ -9,17 +9,29 @@
 				<Representation>Text</Representation>
 				<DefaultButton>true</DefaultButton>
 				<CommandName>Form.StandardCommand.Close</CommandName>
-				<ExtendedTooltip name="ФормаЗакрытьExtendedTooltip" id="13"/>
+				<ExtendedTooltip name="ФормаЗакрытьРасширеннаяПодсказка" id="13"/>
 			</Button>
 			<Button name="ФормаСохранитьВФайл" id="10">
 				<Type>CommandBarButton</Type>
 				<CommandName>Form.Command.СохранитьВФайл</CommandName>
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Сохранить в файл...</v8:content>
+					</v8:item>
+				</Title>
 				<ExtendedTooltip name="ФормаСохранитьВФайлРасширеннаяПодсказка" id="14"/>
 			</Button>
 			<Button name="ФормаПроверить" id="11">
 				<Type>CommandBarButton</Type>
 				<CommandName>Form.Command.Проверить</CommandName>
-				<ExtendedTooltip name="ФормаПроверитьExtendedTooltip" id="15"/>
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Проверить</v8:content>
+					</v8:item>
+				</Title>
+				<ExtendedTooltip name="ФормаПроверитьРасширеннаяПодсказка" id="15"/>
 			</Button>
 		</ChildItems>
 	</AutoCommandBar>
@@ -54,28 +66,79 @@
 							<DataPath>КомуВыдан</DataPath>
 							<ReadOnly>true</ReadOnly>
 							<SkipOnInput>true</SkipOnInput>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Кому выдан</v8:content>
+								</v8:item>
+							</Title>
 							<AutoMaxWidth>false</AutoMaxWidth>
 							<ContextMenu name="КомуВыданКонтекстноеМеню" id="3"/>
-							<ExtendedTooltip name="КомуВыданExtendedTooltip" id="16"/>
+							<ExtendedTooltip name="КомуВыданРасширеннаяПодсказка" id="16"/>
 						</InputField>
 						<InputField name="КемВыдан" id="4">
 							<DataPath>КемВыдан</DataPath>
 							<ReadOnly>true</ReadOnly>
 							<SkipOnInput>true</SkipOnInput>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Кем выдан</v8:content>
+								</v8:item>
+							</Title>
 							<AutoMaxWidth>false</AutoMaxWidth>
 							<ContextMenu name="КемВыданКонтекстноеМеню" id="5"/>
-							<ExtendedTooltip name="КемВыданExtendedTooltip" id="17"/>
+							<ExtendedTooltip name="КемВыданРасширеннаяПодсказка" id="17"/>
 						</InputField>
-						<InputField name="СрокДействия" id="6">
-							<DataPath>ДействителенДо</DataPath>
-							<ReadOnly>true</ReadOnly>
-							<SkipOnInput>true</SkipOnInput>
-							<ContextMenu name="СрокДействияКонтекстноеМеню" id="7"/>
-							<ExtendedTooltip name="СрокДействияExtendedTooltip" id="18"/>
-						</InputField>
+						<UsualGroup name="ГруппаСрокДействия" id="272">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Срок действия</v8:content>
+								</v8:item>
+							</Title>
+							<ShowTitle>false</ShowTitle>
+							<ThroughAlign>Use</ThroughAlign>
+							<ExtendedTooltip name="ГруппаСрокДействияРасширеннаяПодсказка" id="273"/>
+							<ChildItems>
+								<InputField name="СрокДействия" id="6">
+									<DataPath>ДатаОкончания</DataPath>
+									<ReadOnly>true</ReadOnly>
+									<SkipOnInput>true</SkipOnInput>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Срок действия
+сертификата</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="СрокДействияКонтекстноеМеню" id="7"/>
+									<ExtendedTooltip name="СрокДействияРасширеннаяПодсказка" id="18"/>
+								</InputField>
+								<InputField name="ДатаОкончанияЗакрытогоКлюча" id="274">
+									<DataPath>ДатаОкончанияЗакрытогоКлюча</DataPath>
+									<ReadOnly>true</ReadOnly>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Срок действия
+закрытого ключа</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="ДатаОкончанияЗакрытогоКлючаКонтекстноеМеню" id="275"/>
+									<ExtendedTooltip name="ДатаОкончанияЗакрытогоКлючаРасширеннаяПодсказка" id="276"/>
+								</InputField>
+							</ChildItems>
+						</UsualGroup>
 						<InputField name="АлгоритмПодписи" id="168">
 							<DataPath>АлгоритмПодписи</DataPath>
 							<ReadOnly>true</ReadOnly>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Алгоритм подписи</v8:content>
+								</v8:item>
+							</Title>
 							<ToolTipRepresentation>Button</ToolTipRepresentation>
 							<ContextMenu name="АлгоритмПодписиКонтекстноеМеню" id="169"/>
 							<ExtendedTooltip name="АлгоритмПодписиРасширеннаяПодсказка" id="170"/>
@@ -108,6 +171,12 @@
 										<CheckBoxField name="НазначениеПодписание" id="125">
 											<DataPath>НазначениеПодписание</DataPath>
 											<ReadOnly>true</ReadOnly>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Подписание</v8:content>
+												</v8:item>
+											</Title>
 											<TitleLocation>Right</TitleLocation>
 											<CheckBoxType>Auto</CheckBoxType>
 											<ContextMenu name="НазначениеПодписаниеКонтекстноеМеню" id="126"/>
@@ -116,6 +185,12 @@
 										<CheckBoxField name="НазначениеШифрование" id="128">
 											<DataPath>НазначениеШифрование</DataPath>
 											<ReadOnly>true</ReadOnly>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Шифрование</v8:content>
+												</v8:item>
+											</Title>
 											<TitleLocation>Right</TitleLocation>
 											<CheckBoxType>Auto</CheckBoxType>
 											<ContextMenu name="НазначениеШифрованиеКонтекстноеМеню" id="129"/>
@@ -248,6 +323,12 @@
 							<ChildItems>
 								<InputField name="СубъектСвойство" id="109">
 									<DataPath>Субъект.Свойство</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Свойство</v8:content>
+										</v8:item>
+									</Title>
 									<EditMode>EnterOnInput</EditMode>
 									<Width>5</Width>
 									<ContextMenu name="СубъектСвойствоКонтекстноеМеню" id="110"/>
@@ -255,6 +336,12 @@
 								</InputField>
 								<InputField name="СубъектЗначение" id="112">
 									<DataPath>Субъект.Значение</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Значение</v8:content>
+										</v8:item>
+									</Title>
 									<EditMode>EnterOnInput</EditMode>
 									<Width>15</Width>
 									<ContextMenu name="СубъектЗначениеКонтекстноеМеню" id="113"/>
@@ -331,6 +418,12 @@
 							<ChildItems>
 								<InputField name="ИздательСвойство" id="119">
 									<DataPath>Издатель.Свойство</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Свойство</v8:content>
+										</v8:item>
+									</Title>
 									<EditMode>EnterOnInput</EditMode>
 									<Width>5</Width>
 									<ContextMenu name="ИздательСвойствоКонтекстноеМеню" id="120"/>
@@ -338,6 +431,12 @@
 								</InputField>
 								<InputField name="ИздательЗначение" id="122">
 									<DataPath>Издатель.Значение</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Значение</v8:content>
+										</v8:item>
+									</Title>
 									<EditMode>EnterOnInput</EditMode>
 									<Width>15</Width>
 									<ContextMenu name="ИздательЗначениеКонтекстноеМеню" id="123"/>
@@ -345,6 +444,257 @@
 								</InputField>
 							</ChildItems>
 						</Table>
+					</ChildItems>
+				</Page>
+				<Page name="СтраницаКорневыеСертификаты" id="240">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Путь сертификации</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="СтраницаКорневыеСертификатыРасширеннаяПодсказка" id="241"/>
+					<ChildItems>
+						<UsualGroup name="ГруппаОшибкаПолученияЦепочкиСертификатов" id="267">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа ошибка</v8:content>
+								</v8:item>
+							</Title>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаОшибкаПолученияЦепочкиСертификатовРасширеннаяПодсказка" id="268"/>
+							<ChildItems>
+								<PictureDecoration name="КартинкаОшибкаПолученияЦепочкиСертификатов" id="269">
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Картинка ошибка получения цепочки сертификатов</v8:content>
+										</v8:item>
+									</Title>
+									<Picture>
+										<xr:Ref>CommonPicture.Предупреждение</xr:Ref>
+										<xr:LoadTransparent>false</xr:LoadTransparent>
+									</Picture>
+									<FileDragMode>AsFile</FileDragMode>
+									<ContextMenu name="КартинкаОшибкаПолученияЦепочкиСертификатовКонтекстноеМеню" id="270"/>
+									<ExtendedTooltip name="КартинкаОшибкаПолученияЦепочкиСертификатовРасширеннаяПодсказка" id="271"/>
+								</PictureDecoration>
+								<LabelDecoration name="ДекорацияОшибкаПолученияЦепочкиСертификатов" id="264">
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Не удалось получить цепочку сертификатов</v8:content>
+										</v8:item>
+									</Title>
+									<Hyperlink>true</Hyperlink>
+									<ContextMenu name="ДекорацияОшибкаПолученияЦепочкиСертификатовКонтекстноеМеню" id="265"/>
+									<ExtendedTooltip name="ДекорацияОшибкаПолученияЦепочкиСертификатовРасширеннаяПодсказка" id="266"/>
+									<Events>
+										<Event name="Click">ДекорацияОшибкаПолученияЦепочкиСертификатовНажатие</Event>
+									</Events>
+								</LabelDecoration>
+							</ChildItems>
+						</UsualGroup>
+						<Table name="ПутьСертификации" id="200">
+							<Representation>List</Representation>
+							<ChangeRowSet>false</ChangeRowSet>
+							<ChangeRowOrder>false</ChangeRowOrder>
+							<Width>40</Width>
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<DataPath>ПутьСертификации</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Корневые сертификаты</v8:content>
+								</v8:item>
+							</Title>
+							<RowFilter xsi:nil="true"/>
+							<ContextMenu name="ПутьСертификацииКонтекстноеМеню" id="202"/>
+							<AutoCommandBar name="ПутьСертификацииКоманднаяПанель" id="201">
+								<Autofill>false</Autofill>
+								<ChildItems>
+									<Button name="ПутьСертификацииУстановитьСертификат" id="259">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.Command.УстановитьСертификат</CommandName>
+										<Title>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Установить сертификат</v8:content>
+											</v8:item>
+										</Title>
+										<ExtendedTooltip name="ПутьСертификацииУстановитьСертификатРасширеннаяПодсказка" id="260"/>
+									</Button>
+								</ChildItems>
+							</AutoCommandBar>
+							<ExtendedTooltip name="ПутьСертификацииРасширеннаяПодсказка" id="203"/>
+							<SearchStringAddition name="ПутьСертификацииСтрокаПоиска" id="204">
+								<AdditionSource>
+									<Item>ПутьСертификации</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ПутьСертификацииСтрокаПоискаКонтекстноеМеню" id="205"/>
+								<ExtendedTooltip name="ПутьСертификацииСтрокаПоискаРасширеннаяПодсказка" id="206"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="ПутьСертификацииСостояниеПросмотра" id="210">
+								<AdditionSource>
+									<Item>ПутьСертификации</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ПутьСертификацииСостояниеПросмотраКонтекстноеМеню" id="211"/>
+								<ExtendedTooltip name="ПутьСертификацииСостояниеПросмотраРасширеннаяПодсказка" id="212"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="ПутьСертификацииУправлениеПоиском" id="207">
+								<AdditionSource>
+									<Item>ПутьСертификации</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="ПутьСертификацииУправлениеПоискомКонтекстноеМеню" id="208"/>
+								<ExtendedTooltip name="ПутьСертификацииУправлениеПоискомРасширеннаяПодсказка" id="209"/>
+							</SearchControlAddition>
+							<Events>
+								<Event name="Selection">КорневыеСертификатыВыбор</Event>
+							</Events>
+							<ChildItems>
+								<InputField name="ПутьСертификацииПредставление" id="242">
+									<DataPath>ПутьСертификации.Представление</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Сертификат</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="ПутьСертификацииПредставлениеКонтекстноеМеню" id="243"/>
+									<ExtendedTooltip name="ПутьСертификацииПредставлениеРасширеннаяПодсказка" id="244"/>
+								</InputField>
+							</ChildItems>
+						</Table>
+					</ChildItems>
+				</Page>
+				<Page name="СтраницаСпискиОтзыва" id="238">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Списки отзыва</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="СтраницаСпискиОтзываРасширеннаяПодсказка" id="239"/>
+					<ChildItems>
+						<Table name="СпискиОтзыва" id="219">
+							<Representation>List</Representation>
+							<ChangeRowSet>false</ChangeRowSet>
+							<ChangeRowOrder>false</ChangeRowOrder>
+							<Width>40</Width>
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<DataPath>СпискиОтзыва</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Списки отзыва</v8:content>
+								</v8:item>
+							</Title>
+							<RowFilter xsi:nil="true"/>
+							<ContextMenu name="СпискиОтзываКонтекстноеМеню" id="221"/>
+							<AutoCommandBar name="СпискиОтзываКоманднаяПанель" id="220">
+								<Autofill>false</Autofill>
+								<ChildItems>
+									<Button name="УстановитьСписокОтзыва" id="257">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.Command.УстановитьСписокОтзыва</CommandName>
+										<Title>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Установить список отзыва</v8:content>
+											</v8:item>
+										</Title>
+										<ExtendedTooltip name="УстановитьСписокОтзываРасширеннаяПодсказка" id="258"/>
+									</Button>
+								</ChildItems>
+							</AutoCommandBar>
+							<ExtendedTooltip name="СпискиОтзываРасширеннаяПодсказка" id="222"/>
+							<SearchStringAddition name="СпискиОтзываСтрокаПоиска" id="223">
+								<AdditionSource>
+									<Item>СпискиОтзыва</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="СпискиОтзываСтрокаПоискаКонтекстноеМеню" id="224"/>
+								<ExtendedTooltip name="СпискиОтзываСтрокаПоискаРасширеннаяПодсказка" id="225"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="СпискиОтзываСостояниеПросмотра" id="229">
+								<AdditionSource>
+									<Item>СпискиОтзыва</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="СпискиОтзываСостояниеПросмотраКонтекстноеМеню" id="230"/>
+								<ExtendedTooltip name="СпискиОтзываСостояниеПросмотраРасширеннаяПодсказка" id="231"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="СпискиОтзываУправлениеПоиском" id="226">
+								<AdditionSource>
+									<Item>СпискиОтзыва</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="СпискиОтзываУправлениеПоискомКонтекстноеМеню" id="227"/>
+								<ExtendedTooltip name="СпискиОтзываУправлениеПоискомРасширеннаяПодсказка" id="228"/>
+							</SearchControlAddition>
+							<Events>
+								<Event name="Selection">СпискиОтзываВыбор</Event>
+							</Events>
+							<ChildItems>
+								<InputField name="СпискиОтзываАдрес" id="232">
+									<DataPath>СпискиОтзыва.Адрес</DataPath>
+									<ReadOnly>true</ReadOnly>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Адрес</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="СпискиОтзываАдресКонтекстноеМеню" id="233"/>
+									<ExtendedTooltip name="СпискиОтзываАдресРасширеннаяПодсказка" id="234"/>
+								</InputField>
+							</ChildItems>
+						</Table>
+						<UsualGroup name="ГруппаОшибкаПолученияСписковОтзыва" id="277">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа ошибка</v8:content>
+								</v8:item>
+							</Title>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаОшибкаПолученияСписковОтзываРасширеннаяПодсказка" id="278"/>
+							<ChildItems>
+								<PictureDecoration name="КартинкаОшибкаПолученияАдресовСписковОтзыва" id="285">
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Картинка ошибка получения цепочки сертификатов</v8:content>
+										</v8:item>
+									</Title>
+									<Picture>
+										<xr:Ref>CommonPicture.Предупреждение</xr:Ref>
+										<xr:LoadTransparent>false</xr:LoadTransparent>
+									</Picture>
+									<FileDragMode>AsFile</FileDragMode>
+									<ContextMenu name="КартинкаОшибкаПолученияАдресовСписковОтзываКонтекстноеМеню" id="286"/>
+									<ExtendedTooltip name="КартинкаОшибкаПолученияАдресовСписковОтзываРасширеннаяПодсказка" id="287"/>
+								</PictureDecoration>
+								<LabelDecoration name="ДекорацияОшибкаПолученияАдресовСписковОтзыва" id="288">
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Не удалось получить адреса списков отзыва</v8:content>
+										</v8:item>
+									</Title>
+									<Hyperlink>true</Hyperlink>
+									<ContextMenu name="ДекорацияОшибкаПолученияАдресовСписковОтзываКонтекстноеМеню" id="289"/>
+									<ExtendedTooltip name="ДекорацияОшибкаПолученияАдресовСписковОтзываРасширеннаяПодсказка" id="290"/>
+									<Events>
+										<Event name="Click">ДекорацияОшибкаПолученияСписковОтзываНажатие</Event>
+									</Events>
+								</LabelDecoration>
+							</ChildItems>
+						</UsualGroup>
 					</ChildItems>
 				</Page>
 				<Page name="СтраницаВнутреннееСодержание" id="26">
@@ -358,6 +708,12 @@
 					<ChildItems>
 						<InputField name="ГруппаВнутреннихПолей" id="92">
 							<DataPath>ГруппаВнутреннихПолей</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Показать поля</v8:content>
+								</v8:item>
+							</Title>
 							<HorizontalStretch>false</HorizontalStretch>
 							<ListChoiceMode>true</ListChoiceMode>
 							<ChoiceList>
@@ -480,6 +836,12 @@
 							<ChildItems>
 								<InputField name="ВнутреннееСодержаниеСвойство" id="99">
 									<DataPath>ВнутреннееСодержание.Свойство</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Свойство</v8:content>
+										</v8:item>
+									</Title>
 									<EditMode>EnterOnInput</EditMode>
 									<Width>15</Width>
 									<ContextMenu name="ВнутреннееСодержаниеСвойствоКонтекстноеМеню" id="100"/>
@@ -501,6 +863,12 @@
 								</InputField>
 								<InputField name="ВнутреннееСодержаниеЗначение" id="102">
 									<DataPath>ВнутреннееСодержание.Значение</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Значение</v8:content>
+										</v8:item>
+									</Title>
 									<EditMode>EnterOnInput</EditMode>
 									<AutoCellHeight>true</AutoCellHeight>
 									<Width>30</Width>
@@ -509,198 +877,6 @@
 								</InputField>
 							</ChildItems>
 						</Table>
-					</ChildItems>
-				</Page>
-				<Page name="СтраницаКорневыеСертификаты" id="240">
-					<Title>
-						<v8:item>
-							<v8:lang>ru</v8:lang>
-							<v8:content>Путь сертификации</v8:content>
-						</v8:item>
-					</Title>
-					<ExtendedTooltip name="СтраницаКорневыеСертификатыРасширеннаяПодсказка" id="241"/>
-					<ChildItems>
-						<UsualGroup name="ГруппаОшибкаПолученияЦепочкиСертификатов" id="267">
-							<Title>
-								<v8:item>
-									<v8:lang>ru</v8:lang>
-									<v8:content>Группа ошибка</v8:content>
-								</v8:item>
-							</Title>
-							<ShowTitle>false</ShowTitle>
-							<ExtendedTooltip name="ГруппаОшибкаПолученияЦепочкиСертификатовРасширеннаяПодсказка" id="268"/>
-							<ChildItems>
-								<PictureDecoration name="КартинкаОшибкаПолученияЦепочкиСертификатов" id="269">
-									<Title formatted="false">
-										<v8:item>
-											<v8:lang>ru</v8:lang>
-											<v8:content>Картинка ошибка получения цепочки сертификатов</v8:content>
-										</v8:item>
-									</Title>
-									<Picture>
-										<xr:Ref>CommonPicture.Предупреждение</xr:Ref>
-										<xr:LoadTransparent>false</xr:LoadTransparent>
-									</Picture>
-									<FileDragMode>AsFile</FileDragMode>
-									<ContextMenu name="КартинкаОшибкаПолученияЦепочкиСертификатовКонтекстноеМеню" id="270"/>
-									<ExtendedTooltip name="КартинкаОшибкаПолученияЦепочкиСертификатовРасширеннаяПодсказка" id="271"/>
-								</PictureDecoration>
-								<LabelDecoration name="ДекорацияОшибкаПолученияЦепочкиСертификатов" id="264">
-									<Title formatted="false">
-										<v8:item>
-											<v8:lang>ru</v8:lang>
-											<v8:content>Не удалось получить цепочку сертификатов</v8:content>
-										</v8:item>
-									</Title>
-									<Hyperlink>true</Hyperlink>
-									<ContextMenu name="ДекорацияОшибкаПолученияЦепочкиСертификатовКонтекстноеМеню" id="265"/>
-									<ExtendedTooltip name="ДекорацияОшибкаПолученияЦепочкиСертификатовРасширеннаяПодсказка" id="266"/>
-									<Events>
-										<Event name="Click">ДекорацияОшибкаПолученияЦепочкиСертификатовНажатие</Event>
-									</Events>
-								</LabelDecoration>
-							</ChildItems>
-						</UsualGroup>
-						<Table name="ПутьСертификации" id="200">
-							<Representation>List</Representation>
-							<ChangeRowSet>false</ChangeRowSet>
-							<ChangeRowOrder>false</ChangeRowOrder>
-							<Width>40</Width>
-							<AutoMaxWidth>false</AutoMaxWidth>
-							<DataPath>ПутьСертификации</DataPath>
-							<Title>
-								<v8:item>
-									<v8:lang>ru</v8:lang>
-									<v8:content>Корневые сертификаты</v8:content>
-								</v8:item>
-							</Title>
-							<RowFilter xsi:nil="true"/>
-							<ContextMenu name="ПутьСертификацииКонтекстноеМеню" id="202"/>
-							<AutoCommandBar name="ПутьСертификацииКоманднаяПанель" id="201">
-								<Autofill>false</Autofill>
-								<ChildItems>
-									<Button name="ПутьСертификацииУстановитьСертификат" id="259">
-										<Type>CommandBarButton</Type>
-										<CommandName>Form.Command.УстановитьСертификат</CommandName>
-										<ExtendedTooltip name="ПутьСертификацииУстановитьСертификатРасширеннаяПодсказка" id="260"/>
-									</Button>
-								</ChildItems>
-							</AutoCommandBar>
-							<ExtendedTooltip name="ПутьСертификацииРасширеннаяПодсказка" id="203"/>
-							<SearchStringAddition name="ПутьСертификацииСтрокаПоиска" id="204">
-								<AdditionSource>
-									<Item>ПутьСертификации</Item>
-									<Type>SearchStringRepresentation</Type>
-								</AdditionSource>
-								<ContextMenu name="ПутьСертификацииСтрокаПоискаКонтекстноеМеню" id="205"/>
-								<ExtendedTooltip name="ПутьСертификацииСтрокаПоискаРасширеннаяПодсказка" id="206"/>
-							</SearchStringAddition>
-							<ViewStatusAddition name="ПутьСертификацииСостояниеПросмотра" id="210">
-								<AdditionSource>
-									<Item>ПутьСертификации</Item>
-									<Type>ViewStatusRepresentation</Type>
-								</AdditionSource>
-								<ContextMenu name="ПутьСертификацииСостояниеПросмотраКонтекстноеМеню" id="211"/>
-								<ExtendedTooltip name="ПутьСертификацииСостояниеПросмотраРасширеннаяПодсказка" id="212"/>
-							</ViewStatusAddition>
-							<SearchControlAddition name="ПутьСертификацииУправлениеПоиском" id="207">
-								<AdditionSource>
-									<Item>ПутьСертификации</Item>
-									<Type>SearchControl</Type>
-								</AdditionSource>
-								<ContextMenu name="ПутьСертификацииУправлениеПоискомКонтекстноеМеню" id="208"/>
-								<ExtendedTooltip name="ПутьСертификацииУправлениеПоискомРасширеннаяПодсказка" id="209"/>
-							</SearchControlAddition>
-							<Events>
-								<Event name="Selection">КорневыеСертификатыВыбор</Event>
-							</Events>
-							<ChildItems>
-								<InputField name="ПутьСертификацииПредставление" id="242">
-									<DataPath>ПутьСертификации.Представление</DataPath>
-									<ContextMenu name="ПутьСертификацииПредставлениеКонтекстноеМеню" id="243"/>
-									<ExtendedTooltip name="ПутьСертификацииПредставлениеРасширеннаяПодсказка" id="244"/>
-								</InputField>
-							</ChildItems>
-						</Table>
-					</ChildItems>
-				</Page>
-				<Page name="СтраницаСпискиОтзыва" id="238">
-					<Title>
-						<v8:item>
-							<v8:lang>ru</v8:lang>
-							<v8:content>Списки отзыва</v8:content>
-						</v8:item>
-					</Title>
-					<ExtendedTooltip name="СтраницаСпискиОтзываРасширеннаяПодсказка" id="239"/>
-					<ChildItems>
-						<Table name="СпискиОтзыва" id="219">
-							<Representation>List</Representation>
-							<ChangeRowSet>false</ChangeRowSet>
-							<ChangeRowOrder>false</ChangeRowOrder>
-							<Width>40</Width>
-							<AutoMaxWidth>false</AutoMaxWidth>
-							<DataPath>СпискиОтзыва</DataPath>
-							<Title>
-								<v8:item>
-									<v8:lang>ru</v8:lang>
-									<v8:content>Списки отзыва</v8:content>
-								</v8:item>
-							</Title>
-							<RowFilter xsi:nil="true"/>
-							<ContextMenu name="СпискиОтзываКонтекстноеМеню" id="221"/>
-							<AutoCommandBar name="СпискиОтзываКоманднаяПанель" id="220">
-								<Autofill>false</Autofill>
-								<ChildItems>
-									<Button name="УстановитьСписокОтзыва" id="257">
-										<Type>CommandBarButton</Type>
-										<CommandName>Form.Command.УстановитьСписокОтзыва</CommandName>
-										<ExtendedTooltip name="УстановитьСписокОтзываРасширеннаяПодсказка" id="258"/>
-									</Button>
-								</ChildItems>
-							</AutoCommandBar>
-							<ExtendedTooltip name="СпискиОтзываРасширеннаяПодсказка" id="222"/>
-							<SearchStringAddition name="СпискиОтзываСтрокаПоиска" id="223">
-								<AdditionSource>
-									<Item>СпискиОтзыва</Item>
-									<Type>SearchStringRepresentation</Type>
-								</AdditionSource>
-								<ContextMenu name="СпискиОтзываСтрокаПоискаКонтекстноеМеню" id="224"/>
-								<ExtendedTooltip name="СпискиОтзываСтрокаПоискаРасширеннаяПодсказка" id="225"/>
-							</SearchStringAddition>
-							<ViewStatusAddition name="СпискиОтзываСостояниеПросмотра" id="229">
-								<AdditionSource>
-									<Item>СпискиОтзыва</Item>
-									<Type>ViewStatusRepresentation</Type>
-								</AdditionSource>
-								<ContextMenu name="СпискиОтзываСостояниеПросмотраКонтекстноеМеню" id="230"/>
-								<ExtendedTooltip name="СпискиОтзываСостояниеПросмотраРасширеннаяПодсказка" id="231"/>
-							</ViewStatusAddition>
-							<SearchControlAddition name="СпискиОтзываУправлениеПоиском" id="226">
-								<AdditionSource>
-									<Item>СпискиОтзыва</Item>
-									<Type>SearchControl</Type>
-								</AdditionSource>
-								<ContextMenu name="СпискиОтзываУправлениеПоискомКонтекстноеМеню" id="227"/>
-								<ExtendedTooltip name="СпискиОтзываУправлениеПоискомРасширеннаяПодсказка" id="228"/>
-							</SearchControlAddition>
-							<Events>
-								<Event name="Selection">СпискиОтзываВыбор</Event>
-							</Events>
-							<ChildItems>
-								<InputField name="СпискиОтзываАдрес" id="232">
-									<DataPath>СпискиОтзыва.Адрес</DataPath>
-									<ReadOnly>true</ReadOnly>
-									<ContextMenu name="СпискиОтзываАдресКонтекстноеМеню" id="233"/>
-									<ExtendedTooltip name="СпискиОтзываАдресРасширеннаяПодсказка" id="234"/>
-								</InputField>
-							</ChildItems>
-						</Table>
-						<LabelField name="ОшибкаПриПолученииАдресовСписковОтзыва" id="254">
-							<DataPath>ОшибкаПриПолученииАдресовСписковОтзыва</DataPath>
-							<Hiperlink>true</Hiperlink>
-							<ContextMenu name="ОшибкаПриПолученииАдресовСписковОтзываКонтекстноеМеню" id="255"/>
-							<ExtendedTooltip name="ОшибкаПриПолученииАдресовСписковОтзываРасширеннаяПодсказка" id="256"/>
-						</LabelField>
 					</ChildItems>
 				</Page>
 			</ChildItems>
@@ -737,11 +913,12 @@
 				</v8:StringQualifiers>
 			</Type>
 		</Attribute>
-		<Attribute name="ДействителенДо" id="3">
+		<Attribute name="ДатаОкончания" id="3">
 			<Title>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Действителен до</v8:content>
+					<v8:content>Срок действия
+сертификата</v8:content>
 				</v8:item>
 			</Title>
 			<Type>
@@ -1080,12 +1257,6 @@
 			</Type>
 		</Attribute>
 		<Attribute name="ОшибкаПриПолученииАдресовСписковОтзыва" id="39">
-			<Title>
-				<v8:item>
-					<v8:lang>ru</v8:lang>
-					<v8:content>Не удалось получить адреса списков отзыва</v8:content>
-				</v8:item>
-			</Title>
 			<Type>
 				<v8:Type>xs:string</v8:Type>
 				<v8:StringQualifiers>
@@ -1095,6 +1266,33 @@
 			</Type>
 		</Attribute>
 		<Attribute name="ОшибкаПриПолученииПутиСертификацииНаСервере" id="42">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ДатаОкончанияЗакрытогоКлюча" id="43">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Срок действия
+закрытого ключа</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:dateTime</v8:Type>
+				<v8:DateQualifiers>
+					<v8:DateFractions>Date</v8:DateFractions>
+				</v8:DateQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ДополнительныеСвойстваСертификата" id="44">
+			<Type/>
+		</Attribute>
+		<Attribute name="ОшибкаПриПолученииАдресовСписковОтзываНаСервере" id="45">
 			<Type>
 				<v8:Type>xs:string</v8:Type>
 				<v8:StringQualifiers>
@@ -1169,7 +1367,7 @@
 			<Type>
 				<v8:Type>xs:string</v8:Type>
 				<v8:StringQualifiers>
-					<v8:Length>0</v8:Length>
+					<v8:Length>28</v8:Length>
 					<v8:AllowedLength>Variable</v8:AllowedLength>
 				</v8:StringQualifiers>
 			</Type>

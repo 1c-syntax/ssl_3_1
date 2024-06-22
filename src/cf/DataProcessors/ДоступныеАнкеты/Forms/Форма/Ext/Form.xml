@@ -23,7 +23,7 @@
 				</v8:item>
 			</Title>
 			<PagesRepresentation>None</PagesRepresentation>
-			<ExtendedTooltip name="СтраницыExtendedTooltip" id="21"/>
+			<ExtendedTooltip name="СтраницыРасширеннаяПодсказка" id="21"/>
 			<ChildItems>
 				<Page name="Анкеты" id="15">
 					<Title>
@@ -32,7 +32,7 @@
 							<v8:content>Анкеты</v8:content>
 						</v8:item>
 					</Title>
-					<ExtendedTooltip name="АнкетыExtendedTooltip" id="22"/>
+					<ExtendedTooltip name="АнкетыРасширеннаяПодсказка" id="22"/>
 					<ChildItems>
 						<Table name="ТаблицаАнкет" id="3">
 							<Representation>Tree</Representation>
@@ -78,19 +78,31 @@
 										<Type>CommandBarButton</Type>
 										<Representation>PictureAndText</Representation>
 										<CommandName>Form.Command.Обновить</CommandName>
+										<Title>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Обновить</v8:content>
+											</v8:item>
+										</Title>
 										<RepresentationInContextMenu>OnlyInContextMenu</RepresentationInContextMenu>
 										<LocationInCommandBar>InCommandBar</LocationInCommandBar>
-										<ExtendedTooltip name="ОбновитьExtendedTooltip" id="23"/>
+										<ExtendedTooltip name="ОбновитьРасширеннаяПодсказка" id="23"/>
 									</Button>
 									<Button name="АрхивАнкет" id="12">
 										<Type>CommandBarHyperlink</Type>
 										<SkipOnInput>false</SkipOnInput>
 										<CommandName>Form.Command.АрхивАнкет</CommandName>
-										<ExtendedTooltip name="АрхивАнкетExtendedTooltip" id="26"/>
+										<Title>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Архив анкет</v8:content>
+											</v8:item>
+										</Title>
+										<ExtendedTooltip name="АрхивАнкетРасширеннаяПодсказка" id="26"/>
 									</Button>
 								</ChildItems>
 							</AutoCommandBar>
-							<ExtendedTooltip name="ТаблицаАнкетExtendedTooltip" id="24"/>
+							<ExtendedTooltip name="ТаблицаАнкетРасширеннаяПодсказка" id="24"/>
 							<SearchStringAddition name="ТаблицаАнкетSearchString" id="30">
 								<AdditionSource>
 									<Item>ТаблицаАнкет</Item>
@@ -121,10 +133,16 @@
 							<ChildItems>
 								<InputField name="ДеревоАнкетПредставление" id="10">
 									<DataPath>ТаблицаАнкет.Представление</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Представление</v8:content>
+										</v8:item>
+									</Title>
 									<TitleLocation>None</TitleLocation>
 									<EditMode>EnterOnInput</EditMode>
 									<ContextMenu name="ДеревоАнкетПредставлениеКонтекстноеМеню" id="11"/>
-									<ExtendedTooltip name="ДеревоАнкетПредставлениеExtendedTooltip" id="25"/>
+									<ExtendedTooltip name="ДеревоАнкетПредставлениеРасширеннаяПодсказка" id="25"/>
 								</InputField>
 							</ChildItems>
 						</Table>
@@ -232,4 +250,16 @@
 			<CurrentRowUse>DontUse</CurrentRowUse>
 		</Command>
 	</Commands>
+	<Parameters>
+		<Parameter name="РежимАнкетирования">
+			<Type>
+				<v8:Type>cfg:EnumRef.РежимыАнкетирования</v8:Type>
+			</Type>
+		</Parameter>
+		<Parameter name="Респондент">
+			<Type>
+				<v8:TypeSet>cfg:AnyRef</v8:TypeSet>
+			</Type>
+		</Parameter>
+	</Parameters>
 </Form>

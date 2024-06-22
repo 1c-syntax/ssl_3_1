@@ -37,7 +37,7 @@
 				</v8:item>
 			</Title>
 			<ContextMenu name="ПояснениеКонтекстноеМеню" id="303"/>
-			<ExtendedTooltip name="ПояснениеExtendedTooltip" id="339"/>
+			<ExtendedTooltip name="ПояснениеРасширеннаяПодсказка" id="339"/>
 		</LabelDecoration>
 		<UsualGroup name="ГруппаЗаголовкаТаблицы" id="210">
 			<Title>
@@ -49,17 +49,23 @@
 			<Behavior>Usual</Behavior>
 			<Representation>None</Representation>
 			<ShowTitle>false</ShowTitle>
-			<ExtendedTooltip name="ГруппаЗаголовкаТаблицыExtendedTooltip" id="340"/>
+			<ExtendedTooltip name="ГруппаЗаголовкаТаблицыРасширеннаяПодсказка" id="340"/>
 			<ChildItems>
 				<InputField name="ОтборПоСтатусуСопоставления" id="30">
 					<DataPath>ОтборПоСтатусуСопоставления</DataPath>
 					<SkipOnInput>true</SkipOnInput>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Выводить</v8:content>
+						</v8:item>
+					</Title>
 					<Width>50</Width>
 					<HorizontalStretch>false</HorizontalStretch>
 					<ListChoiceMode>true</ListChoiceMode>
 					<TextEdit>false</TextEdit>
 					<ContextMenu name="ОтборПоСтатусуСопоставленияКонтекстноеМеню" id="31"/>
-					<ExtendedTooltip name="ОтборПоСтатусуСопоставленияExtendedTooltip" id="341"/>
+					<ExtendedTooltip name="ОтборПоСтатусуСопоставленияРасширеннаяПодсказка" id="341"/>
 					<Events>
 						<Event name="OnChange">ОтборПоСтатусуСопоставленияПриИзменении</Event>
 					</Events>
@@ -76,7 +82,7 @@
 			<Behavior>Usual</Behavior>
 			<Representation>None</Representation>
 			<ShowTitle>false</ShowTitle>
-			<ExtendedTooltip name="КнопкиТаблицыExtendedTooltip" id="342"/>
+			<ExtendedTooltip name="КнопкиТаблицыРасширеннаяПодсказка" id="342"/>
 			<ChildItems>
 				<CommandBar name="КоманднаяПанель" id="267">
 					<Title>
@@ -86,7 +92,7 @@
 						</v8:item>
 					</Title>
 					<CommandSource>Form</CommandSource>
-					<ExtendedTooltip name="КоманднаяПанельExtendedTooltip" id="343"/>
+					<ExtendedTooltip name="КоманднаяПанельРасширеннаяПодсказка" id="343"/>
 					<ChildItems>
 						<Button name="ЗаписатьИЗакрыть" id="271">
 							<Type>CommandBarButton</Type>
@@ -94,34 +100,70 @@
 							<DefaultButton>true</DefaultButton>
 							<SkipOnInput>true</SkipOnInput>
 							<CommandName>Form.Command.ЗаписатьИЗакрыть</CommandName>
-							<ExtendedTooltip name="ЗаписатьИЗакрытьExtendedTooltip" id="344"/>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Записать и закрыть</v8:content>
+								</v8:item>
+							</Title>
+							<ExtendedTooltip name="ЗаписатьИЗакрытьРасширеннаяПодсказка" id="344"/>
 						</Button>
 						<Button name="ЗаписатьОбновить" id="270">
 							<Type>CommandBarButton</Type>
 							<SkipOnInput>true</SkipOnInput>
 							<CommandName>Form.Command.ЗаписатьОбновить</CommandName>
-							<ExtendedTooltip name="ЗаписатьОбновитьExtendedTooltip" id="345"/>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Записать</v8:content>
+								</v8:item>
+							</Title>
+							<ExtendedTooltip name="ЗаписатьОбновитьРасширеннаяПодсказка" id="345"/>
 						</Button>
 						<ButtonGroup name="ГруппаСвязи" id="294">
-							<ExtendedTooltip name="ГруппаСвязиExtendedTooltip" id="346"/>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Связи</v8:content>
+								</v8:item>
+							</Title>
+							<ExtendedTooltip name="ГруппаСвязиРасширеннаяПодсказка" id="346"/>
 							<ChildItems>
 								<Button name="ВыполнитьАвтоматическоеСопоставление" id="71">
 									<Type>CommandBarButton</Type>
 									<SkipOnInput>true</SkipOnInput>
 									<CommandName>Form.Command.ВыполнитьАвтоматическоеСопоставление</CommandName>
-									<ExtendedTooltip name="ВыполнитьАвтоматическоеСопоставлениеExtendedTooltip" id="347"/>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Сопоставить автоматически...</v8:content>
+										</v8:item>
+									</Title>
+									<ExtendedTooltip name="ВыполнитьАвтоматическоеСопоставлениеРасширеннаяПодсказка" id="347"/>
 								</Button>
 								<Button name="ДобавитьСопоставление" id="163">
 									<Type>CommandBarButton</Type>
 									<SkipOnInput>true</SkipOnInput>
 									<CommandName>Form.Command.ДобавитьСопоставление</CommandName>
-									<ExtendedTooltip name="ДобавитьСопоставлениеExtendedTooltip" id="348"/>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Установить соответствие</v8:content>
+										</v8:item>
+									</Title>
+									<ExtendedTooltip name="ДобавитьСопоставлениеРасширеннаяПодсказка" id="348"/>
 								</Button>
 								<Button name="ОтменитьСопоставление" id="33">
 									<Type>CommandBarButton</Type>
 									<SkipOnInput>true</SkipOnInput>
 									<CommandName>Form.Command.ОтменитьСопоставление</CommandName>
-									<ExtendedTooltip name="ОтменитьСопоставлениеExtendedTooltip" id="349"/>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Отменить соответствие</v8:content>
+										</v8:item>
+									</Title>
+									<ExtendedTooltip name="ОтменитьСопоставлениеРасширеннаяПодсказка" id="349"/>
 								</Button>
 							</ChildItems>
 						</ButtonGroup>
@@ -129,30 +171,48 @@
 							<Type>CommandBarButton</Type>
 							<SkipOnInput>true</SkipOnInput>
 							<CommandName>Form.Command.Обновить</CommandName>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Обновить</v8:content>
+								</v8:item>
+							</Title>
 							<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
-							<ExtendedTooltip name="ОбновитьExtendedTooltip" id="350"/>
+							<ExtendedTooltip name="ОбновитьРасширеннаяПодсказка" id="350"/>
 						</Button>
 						<ButtonGroup name="ГруппаНайти" id="295">
-							<ExtendedTooltip name="ГруппаНайтиExtendedTooltip" id="351"/>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Найти</v8:content>
+								</v8:item>
+							</Title>
+							<ExtendedTooltip name="ГруппаНайтиРасширеннаяПодсказка" id="351"/>
 							<ChildItems>
 								<Button name="Найти" id="287">
 									<Type>CommandBarButton</Type>
 									<CommandName>Form.Item.ТаблицаСопоставления.StandardCommand.Find</CommandName>
 									<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
-									<ExtendedTooltip name="НайтиExtendedTooltip" id="352"/>
+									<ExtendedTooltip name="НайтиРасширеннаяПодсказка" id="352"/>
 								</Button>
 								<Button name="ОтменитьПоиск" id="288">
 									<Type>CommandBarButton</Type>
 									<CommandName>Form.Item.ТаблицаСопоставления.StandardCommand.CancelSearch</CommandName>
 									<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
-									<ExtendedTooltip name="ОтменитьПоискExtendedTooltip" id="353"/>
+									<ExtendedTooltip name="ОтменитьПоискРасширеннаяПодсказка" id="353"/>
 								</Button>
 								<Button name="Сортировка" id="167">
 									<Type>CommandBarButton</Type>
 									<SkipOnInput>true</SkipOnInput>
 									<CommandName>Form.Command.Сортировка</CommandName>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Сортировать</v8:content>
+										</v8:item>
+									</Title>
 									<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
-									<ExtendedTooltip name="СортировкаExtendedTooltip" id="354"/>
+									<ExtendedTooltip name="СортировкаРасширеннаяПодсказка" id="354"/>
 								</Button>
 							</ChildItems>
 						</ButtonGroup>
@@ -160,35 +220,59 @@
 							<Type>CommandBarButton</Type>
 							<SkipOnInput>true</SkipOnInput>
 							<CommandName>Form.Command.ВыполнитьЗагрузкуДанных</CommandName>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Загрузить данные из другой программы</v8:content>
+								</v8:item>
+							</Title>
 							<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
-							<ExtendedTooltip name="ВыполнитьЗагрузкуДанныхExtendedTooltip" id="355"/>
+							<ExtendedTooltip name="ВыполнитьЗагрузкуДанныхРасширеннаяПодсказка" id="355"/>
 						</Button>
 						<ButtonGroup name="ПодменюНастройки" id="268">
-							<ExtendedTooltip name="ПодменюНастройкиExtendedTooltip" id="356"/>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Подменю настройки</v8:content>
+								</v8:item>
+							</Title>
+							<ExtendedTooltip name="ПодменюНастройкиРасширеннаяПодсказка" id="356"/>
 							<ChildItems>
 								<Button name="ИзменитьСписокПолейТаблицы" id="266">
 									<Type>CommandBarButton</Type>
 									<SkipOnInput>true</SkipOnInput>
 									<CommandName>Form.Command.НастройкаСпискаПолейТаблицы</CommandName>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Колонки...</v8:content>
+										</v8:item>
+									</Title>
 									<LocationInCommandBar>InCommandBarAndInAdditionalSubmenu</LocationInCommandBar>
-									<ExtendedTooltip name="ИзменитьСписокПолейТаблицыExtendedTooltip" id="357"/>
+									<ExtendedTooltip name="ИзменитьСписокПолейТаблицыРасширеннаяПодсказка" id="357"/>
 								</Button>
 							</ChildItems>
 						</ButtonGroup>
 						<ButtonGroup name="ФормаГруппаВывестиСписок" id="308">
-							<ExtendedTooltip name="ФормаГруппаВывестиСписокExtendedTooltip" id="358"/>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Форма группа вывести список</v8:content>
+								</v8:item>
+							</Title>
+							<ExtendedTooltip name="ФормаГруппаВывестиСписокРасширеннаяПодсказка" id="358"/>
 							<ChildItems>
 								<Button name="ФормаВывестиСписок" id="309">
 									<Type>CommandBarButton</Type>
 									<CommandName>Form.Item.ТаблицаСопоставления.StandardCommand.OutputList</CommandName>
 									<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
-									<ExtendedTooltip name="ФормаВывестиСписокExtendedTooltip" id="359"/>
+									<ExtendedTooltip name="ФормаВывестиСписокРасширеннаяПодсказка" id="359"/>
 								</Button>
 								<Button name="ФормаКопироватьВБуферОбмена" id="310">
 									<Type>CommandBarButton</Type>
 									<CommandName>Form.Item.ТаблицаСопоставления.StandardCommand.CopyToClipboard</CommandName>
 									<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
-									<ExtendedTooltip name="ФормаКопироватьВБуферОбменаExtendedTooltip" id="360"/>
+									<ExtendedTooltip name="ФормаКопироватьВБуферОбменаРасширеннаяПодсказка" id="360"/>
 								</Button>
 							</ChildItems>
 						</ButtonGroup>
@@ -205,7 +289,7 @@
 				</v8:item>
 			</Title>
 			<PagesRepresentation>None</PagesRepresentation>
-			<ExtendedTooltip name="ПанельОсновнаяExtendedTooltip" id="361"/>
+			<ExtendedTooltip name="ПанельОсновнаяРасширеннаяПодсказка" id="361"/>
 			<ChildItems>
 				<Page name="СопоставлениеОбъектов" id="321">
 					<EnableContentChange>true</EnableContentChange>
@@ -215,7 +299,7 @@
 							<v8:content>Сопоставление объектов</v8:content>
 						</v8:item>
 					</Title>
-					<ExtendedTooltip name="СопоставлениеОбъектовExtendedTooltip" id="362"/>
+					<ExtendedTooltip name="СопоставлениеОбъектовРасширеннаяПодсказка" id="362"/>
 					<ChildItems>
 						<Table name="ТаблицаСопоставления" id="22">
 							<Representation>List</Representation>
@@ -253,61 +337,97 @@
 								<Autofill>false</Autofill>
 								<ChildItems>
 									<ButtonGroup name="ТаблицаСопоставленияКонтекстноеМенюГруппаСвязи" id="296">
-										<ExtendedTooltip name="ТаблицаСопоставленияКонтекстноеМенюГруппаСвязиExtendedTooltip" id="363"/>
+										<Title>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Таблица сопоставления контекстное меню группа связи</v8:content>
+											</v8:item>
+										</Title>
+										<ExtendedTooltip name="ТаблицаСопоставленияКонтекстноеМенюГруппаСвязиРасширеннаяПодсказка" id="363"/>
 										<ChildItems>
 											<Button name="КонтекстноеМенюТаблицаСопоставленияДобавитьСопоставление" id="279">
 												<Type>CommandBarButton</Type>
 												<SkipOnInput>false</SkipOnInput>
 												<CommandName>Form.Command.ДобавитьСопоставление</CommandName>
-												<ExtendedTooltip name="КонтекстноеМенюТаблицаСопоставленияДобавитьСопоставлениеExtendedTooltip" id="364"/>
+												<Title>
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>Установить соответствие</v8:content>
+													</v8:item>
+												</Title>
+												<ExtendedTooltip name="КонтекстноеМенюТаблицаСопоставленияДобавитьСопоставлениеРасширеннаяПодсказка" id="364"/>
 											</Button>
 											<Button name="КонтекстноеМенюТаблицаСопоставленияОтменитьСопоставление" id="280">
 												<Type>CommandBarButton</Type>
 												<SkipOnInput>false</SkipOnInput>
 												<CommandName>Form.Command.ОтменитьСопоставление</CommandName>
-												<ExtendedTooltip name="КонтекстноеМенюТаблицаСопоставленияОтменитьСопоставлениеExtendedTooltip" id="365"/>
+												<Title>
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>Отменить соответствие</v8:content>
+													</v8:item>
+												</Title>
+												<ExtendedTooltip name="КонтекстноеМенюТаблицаСопоставленияОтменитьСопоставлениеРасширеннаяПодсказка" id="365"/>
 											</Button>
 										</ChildItems>
 									</ButtonGroup>
 									<ButtonGroup name="ТаблицаСопоставленияКонтекстноеМенюГруппаНайти" id="297">
-										<ExtendedTooltip name="ТаблицаСопоставленияКонтекстноеМенюГруппаНайтиExtendedTooltip" id="366"/>
+										<Title>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Таблица сопоставления контекстное меню группа найти</v8:content>
+											</v8:item>
+										</Title>
+										<ExtendedTooltip name="ТаблицаСопоставленияКонтекстноеМенюГруппаНайтиРасширеннаяПодсказка" id="366"/>
 										<ChildItems>
 											<Button name="ТаблицаСопоставленияКонтекстноеМенюНайти" id="289">
 												<Type>CommandBarButton</Type>
 												<CommandName>Form.Item.ТаблицаСопоставления.StandardCommand.Find</CommandName>
-												<ExtendedTooltip name="ТаблицаСопоставленияКонтекстноеМенюНайтиExtendedTooltip" id="367"/>
+												<ExtendedTooltip name="ТаблицаСопоставленияКонтекстноеМенюНайтиРасширеннаяПодсказка" id="367"/>
 											</Button>
 											<Button name="ТаблицаСопоставленияКонтекстноеМенюОтменитьПоиск" id="290">
 												<Type>CommandBarButton</Type>
 												<CommandName>Form.Item.ТаблицаСопоставления.StandardCommand.CancelSearch</CommandName>
-												<ExtendedTooltip name="ТаблицаСопоставленияКонтекстноеМенюОтменитьПоискExtendedTooltip" id="368"/>
+												<ExtendedTooltip name="ТаблицаСопоставленияКонтекстноеМенюОтменитьПоискРасширеннаяПодсказка" id="368"/>
 											</Button>
 										</ChildItems>
 									</ButtonGroup>
 									<Button name="ТаблицаСопоставленияКонтекстноеМенюСортировка" id="291">
 										<Type>CommandBarButton</Type>
 										<CommandName>Form.Command.Сортировка</CommandName>
-										<ExtendedTooltip name="ТаблицаСопоставленияКонтекстноеМенюСортировкаExtendedTooltip" id="369"/>
+										<Title>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Сортировать</v8:content>
+											</v8:item>
+										</Title>
+										<ExtendedTooltip name="ТаблицаСопоставленияКонтекстноеМенюСортировкаРасширеннаяПодсказка" id="369"/>
 									</Button>
 									<ButtonGroup name="ТаблицаСопоставленияКонтекстноеМенюГруппаВывестиСписок" id="311">
-										<ExtendedTooltip name="ТаблицаСопоставленияКонтекстноеМенюГруппаВывестиСписокExtendedTooltip" id="370"/>
+										<Title>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Таблица сопоставления контекстное меню группа вывести список</v8:content>
+											</v8:item>
+										</Title>
+										<ExtendedTooltip name="ТаблицаСопоставленияКонтекстноеМенюГруппаВывестиСписокРасширеннаяПодсказка" id="370"/>
 										<ChildItems>
 											<Button name="ТаблицаСопоставленияКонтекстноеМенюВывестиСписок" id="312">
 												<Type>CommandBarButton</Type>
 												<CommandName>Form.Item.ТаблицаСопоставления.StandardCommand.OutputList</CommandName>
-												<ExtendedTooltip name="ТаблицаСопоставленияКонтекстноеМенюВывестиСписокExtendedTooltip" id="371"/>
+												<ExtendedTooltip name="ТаблицаСопоставленияКонтекстноеМенюВывестиСписокРасширеннаяПодсказка" id="371"/>
 											</Button>
 											<Button name="ТаблицаСопоставленияКонтекстноеМенюКопироватьВБуферОбмена" id="313">
 												<Type>CommandBarButton</Type>
 												<CommandName>Form.Item.ТаблицаСопоставления.StandardCommand.CopyToClipboard</CommandName>
-												<ExtendedTooltip name="ТаблицаСопоставленияКонтекстноеМенюКопироватьВБуферОбменаExtendedTooltip" id="372"/>
+												<ExtendedTooltip name="ТаблицаСопоставленияКонтекстноеМенюКопироватьВБуферОбменаРасширеннаяПодсказка" id="372"/>
 											</Button>
 										</ChildItems>
 									</ButtonGroup>
 								</ChildItems>
 							</ContextMenu>
 							<AutoCommandBar name="ТаблицаСопоставленияКоманднаяПанель" id="24"/>
-							<ExtendedTooltip name="ТаблицаСопоставленияExtendedTooltip" id="373"/>
+							<ExtendedTooltip name="ТаблицаСопоставленияРасширеннаяПодсказка" id="373"/>
 							<SearchStringAddition name="ТаблицаСопоставленияСтрокаПоиска" id="410">
 								<AdditionSource>
 									<Item>ТаблицаСопоставления</Item>
@@ -339,6 +459,12 @@
 							<ChildItems>
 								<PictureField name="ТаблицаСопоставленияСопоставлениеПоСсылкеКартинка" id="419">
 									<DataPath>ТаблицаСопоставления.СопоставлениеПоСсылкеКартинка</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Сопоставление по ссылке картинка</v8:content>
+										</v8:item>
+									</Title>
 									<TitleLocation>None</TitleLocation>
 									<ValuesPicture>
 										<xr:Ref>StdPicture.GetURL</xr:Ref>
@@ -355,7 +481,7 @@
 										</v8:item>
 									</Title>
 									<ShowInHeader>true</ShowInHeader>
-									<ExtendedTooltip name="ДанныеЭтойПрограммыExtendedTooltip" id="374"/>
+									<ExtendedTooltip name="ДанныеЭтойПрограммыРасширеннаяПодсказка" id="374"/>
 									<ChildItems>
 										<ColumnGroup name="ПоляПриемника" id="69">
 											<Title>
@@ -371,11 +497,17 @@
 												</v8:item>
 											</ToolTip>
 											<Group>InCell</Group>
-											<ExtendedTooltip name="ПоляПриемникаExtendedTooltip" id="375"/>
+											<ExtendedTooltip name="ПоляПриемникаРасширеннаяПодсказка" id="375"/>
 											<ChildItems>
 												<PictureField name="ТаблицаСопоставленияПриемникИндексКартинки" id="285">
 													<DataPath>ТаблицаСопоставления.ПриемникИндексКартинки</DataPath>
 													<SkipOnInput>true</SkipOnInput>
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Приемник индекс картинки</v8:content>
+														</v8:item>
+													</Title>
 													<TitleLocation>None</TitleLocation>
 													<WarningOnEditRepresentation>DontShow</WarningOnEditRepresentation>
 													<EditMode>EnterOnInput</EditMode>
@@ -389,37 +521,67 @@
 													</ValuesPicture>
 													<FileDragMode>AsFile</FileDragMode>
 													<ContextMenu name="ТаблицаСопоставленияПриемникИндексКартинкиКонтекстноеМеню" id="286"/>
-													<ExtendedTooltip name="ТаблицаСопоставленияПриемникИндексКартинкиExtendedTooltip" id="376"/>
+													<ExtendedTooltip name="ТаблицаСопоставленияПриемникИндексКартинкиРасширеннаяПодсказка" id="376"/>
 												</PictureField>
 												<InputField name="ТаблицаСопоставленияПриемникПоле1" id="48">
 													<DataPath>ТаблицаСопоставления.ПриемникПоле1</DataPath>
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Приемник поле1</v8:content>
+														</v8:item>
+													</Title>
 													<EditMode>EnterOnInput</EditMode>
 													<ContextMenu name="ТаблицаСопоставленияПриемникПоле1КонтекстноеМеню" id="49"/>
-													<ExtendedTooltip name="ТаблицаСопоставленияПриемникПоле1ExtendedTooltip" id="377"/>
+													<ExtendedTooltip name="ТаблицаСопоставленияПриемникПоле1РасширеннаяПодсказка" id="377"/>
 												</InputField>
 												<InputField name="ТаблицаСопоставленияПриемникПоле2" id="50">
 													<DataPath>ТаблицаСопоставления.ПриемникПоле2</DataPath>
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Приемник поле2</v8:content>
+														</v8:item>
+													</Title>
 													<EditMode>EnterOnInput</EditMode>
 													<ContextMenu name="ТаблицаСопоставленияПриемникПоле2КонтекстноеМеню" id="51"/>
-													<ExtendedTooltip name="ТаблицаСопоставленияПриемникПоле2ExtendedTooltip" id="378"/>
+													<ExtendedTooltip name="ТаблицаСопоставленияПриемникПоле2РасширеннаяПодсказка" id="378"/>
 												</InputField>
 												<InputField name="ТаблицаСопоставленияПриемникПоле3" id="52">
 													<DataPath>ТаблицаСопоставления.ПриемникПоле3</DataPath>
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Приемник поле3</v8:content>
+														</v8:item>
+													</Title>
 													<EditMode>EnterOnInput</EditMode>
 													<ContextMenu name="ТаблицаСопоставленияПриемникПоле3КонтекстноеМеню" id="53"/>
-													<ExtendedTooltip name="ТаблицаСопоставленияПриемникПоле3ExtendedTooltip" id="379"/>
+													<ExtendedTooltip name="ТаблицаСопоставленияПриемникПоле3РасширеннаяПодсказка" id="379"/>
 												</InputField>
 												<InputField name="ТаблицаСопоставленияПриемникПоле4" id="54">
 													<DataPath>ТаблицаСопоставления.ПриемникПоле4</DataPath>
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Приемник поле4</v8:content>
+														</v8:item>
+													</Title>
 													<EditMode>EnterOnInput</EditMode>
 													<ContextMenu name="ТаблицаСопоставленияПриемникПоле4КонтекстноеМеню" id="55"/>
-													<ExtendedTooltip name="ТаблицаСопоставленияПриемникПоле4ExtendedTooltip" id="380"/>
+													<ExtendedTooltip name="ТаблицаСопоставленияПриемникПоле4РасширеннаяПодсказка" id="380"/>
 												</InputField>
 												<InputField name="ТаблицаСопоставленияПриемникПоле5" id="56">
 													<DataPath>ТаблицаСопоставления.ПриемникПоле5</DataPath>
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Приемник поле5</v8:content>
+														</v8:item>
+													</Title>
 													<EditMode>EnterOnInput</EditMode>
 													<ContextMenu name="ТаблицаСопоставленияПриемникПоле5КонтекстноеМеню" id="57"/>
-													<ExtendedTooltip name="ТаблицаСопоставленияПриемникПоле5ExtendedTooltip" id="381"/>
+													<ExtendedTooltip name="ТаблицаСопоставленияПриемникПоле5РасширеннаяПодсказка" id="381"/>
 												</InputField>
 											</ChildItems>
 										</ColumnGroup>
@@ -433,7 +595,7 @@
 										</v8:item>
 									</Title>
 									<ShowInHeader>true</ShowInHeader>
-									<ExtendedTooltip name="ДанныеВторойПрограммыExtendedTooltip" id="382"/>
+									<ExtendedTooltip name="ДанныеВторойПрограммыРасширеннаяПодсказка" id="382"/>
 									<ChildItems>
 										<ColumnGroup name="ПоляИсточника" id="68">
 											<Title>
@@ -443,11 +605,17 @@
 												</v8:item>
 											</Title>
 											<Group>InCell</Group>
-											<ExtendedTooltip name="ПоляИсточникаExtendedTooltip" id="383"/>
+											<ExtendedTooltip name="ПоляИсточникаРасширеннаяПодсказка" id="383"/>
 											<ChildItems>
 												<PictureField name="ТаблицаСопоставленияИсточникИндексКартинки" id="283">
 													<DataPath>ТаблицаСопоставления.ИсточникИндексКартинки</DataPath>
 													<ReadOnly>true</ReadOnly>
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Источник индекс картинки</v8:content>
+														</v8:item>
+													</Title>
 													<EditMode>EnterOnInput</EditMode>
 													<ShowInHeader>false</ShowInHeader>
 													<ShowInFooter>false</ShowInFooter>
@@ -459,37 +627,67 @@
 													</ValuesPicture>
 													<FileDragMode>AsFile</FileDragMode>
 													<ContextMenu name="ТаблицаСопоставленияИсточникИндексКартинкиКонтекстноеМеню" id="284"/>
-													<ExtendedTooltip name="ТаблицаСопоставленияИсточникИндексКартинкиExtendedTooltip" id="384"/>
+													<ExtendedTooltip name="ТаблицаСопоставленияИсточникИндексКартинкиРасширеннаяПодсказка" id="384"/>
 												</PictureField>
 												<InputField name="ТаблицаСопоставленияИсточникПоле1" id="58">
 													<DataPath>ТаблицаСопоставления.ИсточникПоле1</DataPath>
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Источник поле1</v8:content>
+														</v8:item>
+													</Title>
 													<EditMode>EnterOnInput</EditMode>
 													<ContextMenu name="ТаблицаСопоставленияИсточникПоле1КонтекстноеМеню" id="59"/>
-													<ExtendedTooltip name="ТаблицаСопоставленияИсточникПоле1ExtendedTooltip" id="385"/>
+													<ExtendedTooltip name="ТаблицаСопоставленияИсточникПоле1РасширеннаяПодсказка" id="385"/>
 												</InputField>
 												<InputField name="ТаблицаСопоставленияИсточникПоле2" id="60">
 													<DataPath>ТаблицаСопоставления.ИсточникПоле2</DataPath>
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Источник поле2</v8:content>
+														</v8:item>
+													</Title>
 													<EditMode>EnterOnInput</EditMode>
 													<ContextMenu name="ТаблицаСопоставленияИсточникПоле2КонтекстноеМеню" id="61"/>
-													<ExtendedTooltip name="ТаблицаСопоставленияИсточникПоле2ExtendedTooltip" id="386"/>
+													<ExtendedTooltip name="ТаблицаСопоставленияИсточникПоле2РасширеннаяПодсказка" id="386"/>
 												</InputField>
 												<InputField name="ТаблицаСопоставленияИсточникПоле3" id="62">
 													<DataPath>ТаблицаСопоставления.ИсточникПоле3</DataPath>
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Источник поле3</v8:content>
+														</v8:item>
+													</Title>
 													<EditMode>EnterOnInput</EditMode>
 													<ContextMenu name="ТаблицаСопоставленияИсточникПоле3КонтекстноеМеню" id="63"/>
-													<ExtendedTooltip name="ТаблицаСопоставленияИсточникПоле3ExtendedTooltip" id="387"/>
+													<ExtendedTooltip name="ТаблицаСопоставленияИсточникПоле3РасширеннаяПодсказка" id="387"/>
 												</InputField>
 												<InputField name="ТаблицаСопоставленияИсточникПоле4" id="64">
 													<DataPath>ТаблицаСопоставления.ИсточникПоле4</DataPath>
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Источник поле4</v8:content>
+														</v8:item>
+													</Title>
 													<EditMode>EnterOnInput</EditMode>
 													<ContextMenu name="ТаблицаСопоставленияИсточникПоле4КонтекстноеМеню" id="65"/>
-													<ExtendedTooltip name="ТаблицаСопоставленияИсточникПоле4ExtendedTooltip" id="388"/>
+													<ExtendedTooltip name="ТаблицаСопоставленияИсточникПоле4РасширеннаяПодсказка" id="388"/>
 												</InputField>
 												<InputField name="ТаблицаСопоставленияИсточникПоле5" id="66">
 													<DataPath>ТаблицаСопоставления.ИсточникПоле5</DataPath>
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Источник поле5</v8:content>
+														</v8:item>
+													</Title>
 													<EditMode>EnterOnInput</EditMode>
 													<ContextMenu name="ТаблицаСопоставленияИсточникПоле5КонтекстноеМеню" id="67"/>
-													<ExtendedTooltip name="ТаблицаСопоставленияИсточникПоле5ExtendedTooltip" id="389"/>
+													<ExtendedTooltip name="ТаблицаСопоставленияИсточникПоле5РасширеннаяПодсказка" id="389"/>
 												</InputField>
 											</ChildItems>
 										</ColumnGroup>
@@ -507,7 +705,7 @@
 							<v8:content>Ожидание сопоставления объектов</v8:content>
 						</v8:item>
 					</Title>
-					<ExtendedTooltip name="ОжиданиеСопоставленияОбъектовExtendedTooltip" id="390"/>
+					<ExtendedTooltip name="ОжиданиеСопоставленияОбъектовРасширеннаяПодсказка" id="390"/>
 					<ChildItems>
 						<UsualGroup name="Рамка" id="336">
 							<EnableContentChange>true</EnableContentChange>
@@ -523,7 +721,7 @@
 							<Behavior>Usual</Behavior>
 							<Representation>NormalSeparation</Representation>
 							<ShowTitle>false</ShowTitle>
-							<ExtendedTooltip name="РамкаExtendedTooltip" id="391"/>
+							<ExtendedTooltip name="РамкаРасширеннаяПодсказка" id="391"/>
 							<ChildItems>
 								<UsualGroup name="ГруппировкаСообщения" id="329">
 									<Title>
@@ -535,7 +733,7 @@
 									<Behavior>Usual</Behavior>
 									<Representation>NormalSeparation</Representation>
 									<ShowTitle>false</ShowTitle>
-									<ExtendedTooltip name="ГруппировкаСообщенияExtendedTooltip" id="392"/>
+									<ExtendedTooltip name="ГруппировкаСообщенияРасширеннаяПодсказка" id="392"/>
 									<ChildItems>
 										<UsualGroup name="ГруппаКартинки" id="330">
 											<Title>
@@ -548,7 +746,7 @@
 											<Behavior>Usual</Behavior>
 											<Representation>None</Representation>
 											<ShowTitle>false</ShowTitle>
-											<ExtendedTooltip name="ГруппаКартинкиExtendedTooltip" id="393"/>
+											<ExtendedTooltip name="ГруппаКартинкиРасширеннаяПодсказка" id="393"/>
 											<ChildItems>
 												<PictureDecoration name="Декорация14" id="331">
 													<SkipOnInput>false</SkipOnInput>
@@ -558,7 +756,7 @@
 													</Picture>
 													<FileDragMode>AsFile</FileDragMode>
 													<ContextMenu name="Декорация14КонтекстноеМеню" id="332"/>
-													<ExtendedTooltip name="Декорация14ExtendedTooltip" id="394"/>
+													<ExtendedTooltip name="Декорация14РасширеннаяПодсказка" id="394"/>
 												</PictureDecoration>
 											</ChildItems>
 										</UsualGroup>
@@ -573,7 +771,7 @@
 											<Behavior>Usual</Behavior>
 											<Representation>None</Representation>
 											<ShowTitle>false</ShowTitle>
-											<ExtendedTooltip name="ГруппаСообщенияExtendedTooltip" id="395"/>
+											<ExtendedTooltip name="ГруппаСообщенияРасширеннаяПодсказка" id="395"/>
 											<ChildItems>
 												<LabelDecoration name="Декорация15" id="334">
 													<AutoMaxWidth>false</AutoMaxWidth>
@@ -587,7 +785,7 @@
 													</Title>
 													<VerticalAlign>Center</VerticalAlign>
 													<ContextMenu name="Декорация15КонтекстноеМеню" id="335"/>
-													<ExtendedTooltip name="Декорация15ExtendedTooltip" id="396"/>
+													<ExtendedTooltip name="Декорация15РасширеннаяПодсказка" id="396"/>
 												</LabelDecoration>
 											</ChildItems>
 										</UsualGroup>
@@ -605,7 +803,7 @@
 							<v8:content>Ошибка сопоставления объектов</v8:content>
 						</v8:item>
 					</Title>
-					<ExtendedTooltip name="ОшибкаСопоставленияОбъектовExtendedTooltip" id="397"/>
+					<ExtendedTooltip name="ОшибкаСопоставленияОбъектовРасширеннаяПодсказка" id="397"/>
 					<ChildItems>
 						<UsualGroup name="Рамка1" id="337">
 							<EnableContentChange>true</EnableContentChange>
@@ -621,7 +819,7 @@
 							<Behavior>Usual</Behavior>
 							<Representation>NormalSeparation</Representation>
 							<ShowTitle>false</ShowTitle>
-							<ExtendedTooltip name="Рамка1ExtendedTooltip" id="398"/>
+							<ExtendedTooltip name="Рамка1РасширеннаяПодсказка" id="398"/>
 							<ChildItems>
 								<UsualGroup name="ГруппировкаСообщения1" id="322">
 									<Title>
@@ -639,7 +837,7 @@
 									<Behavior>Usual</Behavior>
 									<Representation>NormalSeparation</Representation>
 									<ShowTitle>false</ShowTitle>
-									<ExtendedTooltip name="ГруппировкаСообщения1ExtendedTooltip" id="399"/>
+									<ExtendedTooltip name="ГруппировкаСообщения1РасширеннаяПодсказка" id="399"/>
 									<ChildItems>
 										<UsualGroup name="ГруппаКартинки1" id="323">
 											<Title>
@@ -652,7 +850,7 @@
 											<Behavior>Usual</Behavior>
 											<Representation>None</Representation>
 											<ShowTitle>false</ShowTitle>
-											<ExtendedTooltip name="ГруппаКартинки1ExtendedTooltip" id="400"/>
+											<ExtendedTooltip name="ГруппаКартинки1РасширеннаяПодсказка" id="400"/>
 											<ChildItems>
 												<PictureDecoration name="Декорация3" id="324">
 													<SkipOnInput>false</SkipOnInput>
@@ -662,7 +860,7 @@
 													</Picture>
 													<FileDragMode>AsFile</FileDragMode>
 													<ContextMenu name="Декорация3КонтекстноеМеню" id="325"/>
-													<ExtendedTooltip name="Декорация3ExtendedTooltip" id="401"/>
+													<ExtendedTooltip name="Декорация3РасширеннаяПодсказка" id="401"/>
 												</PictureDecoration>
 											</ChildItems>
 										</UsualGroup>
@@ -677,7 +875,7 @@
 											<Behavior>Usual</Behavior>
 											<Representation>None</Representation>
 											<ShowTitle>false</ShowTitle>
-											<ExtendedTooltip name="ГруппаСообщения1ExtendedTooltip" id="402"/>
+											<ExtendedTooltip name="ГруппаСообщения1РасширеннаяПодсказка" id="402"/>
 											<ChildItems>
 												<LabelDecoration name="Декорация4" id="327">
 													<AutoMaxWidth>false</AutoMaxWidth>
@@ -691,7 +889,7 @@
 													</Title>
 													<VerticalAlign>Center</VerticalAlign>
 													<ContextMenu name="Декорация4КонтекстноеМеню" id="328"/>
-													<ExtendedTooltip name="Декорация4ExtendedTooltip" id="403"/>
+													<ExtendedTooltip name="Декорация4РасширеннаяПодсказка" id="403"/>
 												</LabelDecoration>
 											</ChildItems>
 										</UsualGroup>
@@ -713,7 +911,7 @@
 			<Behavior>Usual</Behavior>
 			<Representation>None</Representation>
 			<ShowTitle>false</ShowTitle>
-			<ExtendedTooltip name="ИнформацияДайджестаСопоставленияExtendedTooltip" id="404"/>
+			<ExtendedTooltip name="ИнформацияДайджестаСопоставленияРасширеннаяПодсказка" id="404"/>
 			<ChildItems>
 				<PictureDecoration name="КартинкаИнформацияОНаличииНесопоставленныхОбъектов" id="304">
 					<SkipOnInput>false</SkipOnInput>
@@ -729,11 +927,17 @@
 					</Picture>
 					<FileDragMode>AsFile</FileDragMode>
 					<ContextMenu name="КартинкаИнформацияОНаличииНесопоставленныхОбъектовКонтекстноеМеню" id="305"/>
-					<ExtendedTooltip name="КартинкаИнформацияОНаличииНесопоставленныхОбъектовExtendedTooltip" id="405"/>
+					<ExtendedTooltip name="КартинкаИнформацияОНаличииНесопоставленныхОбъектовРасширеннаяПодсказка" id="405"/>
 				</PictureDecoration>
 				<LabelField name="КоличествоОбъектовСопоставленных" id="316">
 					<DataPath>КоличествоОбъектовСопоставленных</DataPath>
 					<ReadOnly>true</ReadOnly>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Сопоставлено</v8:content>
+						</v8:item>
+					</Title>
 					<Width>6</Width>
 					<Format>
 						<v8:item>
@@ -742,7 +946,7 @@
 						</v8:item>
 					</Format>
 					<ContextMenu name="КоличествоОбъектовСопоставленныхКонтекстноеМеню" id="317"/>
-					<ExtendedTooltip name="КоличествоОбъектовСопоставленныхExtendedTooltip" id="406"/>
+					<ExtendedTooltip name="КоличествоОбъектовСопоставленныхРасширеннаяПодсказка" id="406"/>
 				</LabelField>
 				<LabelDecoration name="НадписьШт" id="300">
 					<AutoMaxWidth>false</AutoMaxWidth>
@@ -753,11 +957,17 @@
 						</v8:item>
 					</Title>
 					<ContextMenu name="НадписьШтКонтекстноеМеню" id="301"/>
-					<ExtendedTooltip name="НадписьШтExtendedTooltip" id="407"/>
+					<ExtendedTooltip name="НадписьШтРасширеннаяПодсказка" id="407"/>
 				</LabelDecoration>
 				<LabelField name="КоличествоОбъектовНесопоставленных" id="277">
 					<DataPath>КоличествоОбъектовНесопоставленных</DataPath>
 					<ReadOnly>true</ReadOnly>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Не сопоставлено</v8:content>
+						</v8:item>
+					</Title>
 					<Width>6</Width>
 					<Format>
 						<v8:item>
@@ -766,7 +976,7 @@
 						</v8:item>
 					</Format>
 					<ContextMenu name="КоличествоОбъектовНесопоставленныхКонтекстноеМеню" id="278"/>
-					<ExtendedTooltip name="КоличествоОбъектовНесопоставленныхExtendedTooltip" id="408"/>
+					<ExtendedTooltip name="КоличествоОбъектовНесопоставленныхРасширеннаяПодсказка" id="408"/>
 				</LabelField>
 				<LabelDecoration name="НадписьШт1" id="314">
 					<AutoMaxWidth>false</AutoMaxWidth>
@@ -777,7 +987,7 @@
 						</v8:item>
 					</Title>
 					<ContextMenu name="НадписьШт1КонтекстноеМеню" id="315"/>
-					<ExtendedTooltip name="НадписьШт1ExtendedTooltip" id="409"/>
+					<ExtendedTooltip name="НадписьШт1РасширеннаяПодсказка" id="409"/>
 				</LabelDecoration>
 			</ChildItems>
 		</UsualGroup>

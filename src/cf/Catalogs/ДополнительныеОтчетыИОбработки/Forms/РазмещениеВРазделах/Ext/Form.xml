@@ -12,13 +12,19 @@
 				<SkipOnInput>false</SkipOnInput>
 				<DefaultItem>true</DefaultItem>
 				<CommandName>Form.Command.ОК</CommandName>
-				<ExtendedTooltip name="ОКExtendedTooltip" id="13"/>
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>ОК</v8:content>
+					</v8:item>
+				</Title>
+				<ExtendedTooltip name="ОКРасширеннаяПодсказка" id="13"/>
 			</Button>
 			<Button name="Отмена" id="9">
 				<Type>CommandBarButton</Type>
 				<SkipOnInput>false</SkipOnInput>
 				<CommandName>Form.StandardCommand.Cancel</CommandName>
-				<ExtendedTooltip name="ОтменаExtendedTooltip" id="14"/>
+				<ExtendedTooltip name="ОтменаРасширеннаяПодсказка" id="14"/>
 			</Button>
 		</ChildItems>
 	</AutoCommandBar>
@@ -68,7 +74,7 @@
 			<AutoCommandBar name="РазделыКоманднаяПанель" id="3">
 				<Autofill>false</Autofill>
 			</AutoCommandBar>
-			<ExtendedTooltip name="РазделыExtendedTooltip" id="15"/>
+			<ExtendedTooltip name="РазделыРасширеннаяПодсказка" id="15"/>
 			<SearchStringAddition name="РазделыSearchString" id="19">
 				<AdditionSource>
 					<Item>Разделы</Item>
@@ -102,23 +108,35 @@
 						</v8:item>
 					</Title>
 					<Group>Horizontal</Group>
-					<ExtendedTooltip name="ГруппаКолонокExtendedTooltip" id="16"/>
+					<ExtendedTooltip name="ГруппаКолонокРасширеннаяПодсказка" id="16"/>
 					<ChildItems>
 						<CheckBoxField name="Используется" id="6">
 							<DataPath>Разделы.Используется</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Используется</v8:content>
+								</v8:item>
+							</Title>
 							<TitleLocation>None</TitleLocation>
 							<EditMode>EnterOnInput</EditMode>
 							<CheckBoxType>Auto</CheckBoxType>
 							<ContextMenu name="ИспользуетсяКонтекстноеМеню" id="7"/>
-							<ExtendedTooltip name="ИспользуетсяExtendedTooltip" id="17"/>
+							<ExtendedTooltip name="ИспользуетсяРасширеннаяПодсказка" id="17"/>
 						</CheckBoxField>
 						<InputField name="Представление" id="10">
 							<DataPath>Разделы.Представление</DataPath>
 							<ReadOnly>true</ReadOnly>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Представление</v8:content>
+								</v8:item>
+							</Title>
 							<EditMode>EnterOnInput</EditMode>
 							<TextEdit>false</TextEdit>
 							<ContextMenu name="ПредставлениеКонтекстноеМеню" id="11"/>
-							<ExtendedTooltip name="ПредставлениеExtendedTooltip" id="18"/>
+							<ExtendedTooltip name="ПредставлениеРасширеннаяПодсказка" id="18"/>
 						</InputField>
 					</ChildItems>
 				</ColumnGroup>

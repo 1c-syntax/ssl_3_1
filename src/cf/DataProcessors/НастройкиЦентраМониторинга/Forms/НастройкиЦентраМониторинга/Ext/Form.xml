@@ -18,17 +18,35 @@
 				<Type>CommandBarButton</Type>
 				<DefaultButton>true</DefaultButton>
 				<CommandName>Form.Command.ЗаписатьИЗакрыть</CommandName>
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Записать и закрыть</v8:content>
+					</v8:item>
+				</Title>
 				<ExtendedTooltip name="ФормаЗаписатьИЗакрытьРасширеннаяПодсказка" id="2"/>
 			</Button>
 			<Button name="ФормаЗаписать" id="3">
 				<Type>CommandBarButton</Type>
 				<CommandName>Form.Command.Записать</CommandName>
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Записать</v8:content>
+					</v8:item>
+				</Title>
 				<ExtendedTooltip name="ФормаЗаписатьРасширеннаяПодсказка" id="4"/>
 			</Button>
 			<Button name="ФормаПолучитьИдентификатор" id="14">
 				<Type>CommandBarButton</Type>
 				<Visible>false</Visible>
 				<CommandName>Form.Command.ПолучитьИдентификатор</CommandName>
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Получить идентификатор</v8:content>
+					</v8:item>
+				</Title>
 				<ExtendedTooltip name="ФормаПолучитьИдентификаторРасширеннаяПодсказка" id="15"/>
 			</Button>
 		</ChildItems>
@@ -201,6 +219,12 @@
 				</CheckBoxField>
 				<CheckBoxField name="СпрашиватьПередОтправкой" id="11">
 					<DataPath>СпрашиватьПередОтправкой</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Спрашивать администратора перед отправкой данных</v8:content>
+						</v8:item>
+					</Title>
 					<TitleLocation>Right</TitleLocation>
 					<ToolTipRepresentation>ShowBottom</ToolTipRepresentation>
 					<CheckBoxType>Auto</CheckBoxType>
@@ -349,4 +373,20 @@
 			<CurrentRowUse>DontUse</CurrentRowUse>
 		</Command>
 	</Commands>
+	<Parameters>
+		<Parameter name="ИдентификаторЗадания">
+			<Type>
+				<v8:Type>v8:UUID</v8:Type>
+			</Type>
+		</Parameter>
+		<Parameter name="АдресРезультатаЗадания">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Parameter>
+	</Parameters>
 </Form>

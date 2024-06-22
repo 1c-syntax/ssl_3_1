@@ -14,6 +14,12 @@
 				<DefaultButton>true</DefaultButton>
 				<DefaultItem>true</DefaultItem>
 				<CommandName>Form.Command.Загрузить</CommandName>
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Загрузить</v8:content>
+					</v8:item>
+				</Title>
 				<ExtendedTooltip name="ЗагрузитьРасширеннаяПодсказка" id="29"/>
 			</Button>
 			<Button name="Отмена" id="30">
@@ -68,8 +74,8 @@
 										</v8:item>
 									</Title>
 									<Picture>
-										<xr:Ref>CommonPicture.Предупреждение32</xr:Ref>
-										<xr:LoadTransparent>false</xr:LoadTransparent>
+										<xr:Ref>StdPicture.DialogExclamation</xr:Ref>
+										<xr:LoadTransparent>true</xr:LoadTransparent>
 									</Picture>
 									<FileDragMode>AsFile</FileDragMode>
 									<ContextMenu name="Предупреждение32КонтекстноеМеню" id="14"/>
@@ -85,7 +91,7 @@
 											<v8:content>%1
 
 
-Компонента не загружена в программу.
+Компонента не загружена в приложение.
 Загрузить?</v8:content>
 										</v8:item>
 									</Title>
@@ -97,6 +103,12 @@
 						<Button name="ПодключитьИнтернетПоддержку" id="22">
 							<Type>Hyperlink</Type>
 							<CommandName>Form.Command.ПодключитьИнтернетПоддержку</CommandName>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Подключить интернет-поддержку пользователей</v8:content>
+								</v8:item>
+							</Title>
 							<ToolTipRepresentation>Button</ToolTipRepresentation>
 							<ExtendedTooltip name="ПодключитьИнтернетПоддержкуРасширеннаяПодсказка" id="23">
 								<Title formatted="false">
@@ -147,40 +159,6 @@
 						</LabelDecoration>
 					</ChildItems>
 				</Page>
-				<Page name="Ошибка" id="42">
-					<Title>
-						<v8:item>
-							<v8:lang>ru</v8:lang>
-							<v8:content>Ошибка</v8:content>
-						</v8:item>
-					</Title>
-					<Group>AlwaysHorizontal</Group>
-					<ExtendedTooltip name="ОшибкаРасширеннаяПодсказка" id="43"/>
-					<ChildItems>
-						<PictureDecoration name="Ошибка32" id="47">
-							<Title formatted="false">
-								<v8:item>
-									<v8:lang>ru</v8:lang>
-									<v8:content>Ошибка32</v8:content>
-								</v8:item>
-							</Title>
-							<Picture>
-								<xr:Ref>CommonPicture.Ошибка32</xr:Ref>
-								<xr:LoadTransparent>false</xr:LoadTransparent>
-							</Picture>
-							<FileDragMode>AsFile</FileDragMode>
-							<ContextMenu name="Ошибка32КонтекстноеМеню" id="48"/>
-							<ExtendedTooltip name="Ошибка32РасширеннаяПодсказка" id="49"/>
-						</PictureDecoration>
-						<LabelField name="КраткоеПредставлениеОшибки" id="44">
-							<DataPath>КраткоеПредставлениеОшибки</DataPath>
-							<TitleLocation>None</TitleLocation>
-							<Height>2</Height>
-							<ContextMenu name="КраткоеПредставлениеОшибкиКонтекстноеМеню" id="45"/>
-							<ExtendedTooltip name="КраткоеПредставлениеОшибкиРасширеннаяПодсказка" id="46"/>
-						</LabelField>
-					</ChildItems>
-				</Page>
 			</ChildItems>
 		</Pages>
 	</ChildItems>
@@ -193,21 +171,6 @@
 		<Attribute name="ДанныеАутентификацииПорталаСохранены" id="3">
 			<Type>
 				<v8:Type>xs:boolean</v8:Type>
-			</Type>
-		</Attribute>
-		<Attribute name="КраткоеПредставлениеОшибки" id="4">
-			<Title>
-				<v8:item>
-					<v8:lang>ru</v8:lang>
-					<v8:content>Краткое представление ошибки</v8:content>
-				</v8:item>
-			</Title>
-			<Type>
-				<v8:Type>xs:string</v8:Type>
-				<v8:StringQualifiers>
-					<v8:Length>0</v8:Length>
-					<v8:AllowedLength>Variable</v8:AllowedLength>
-				</v8:StringQualifiers>
 			</Type>
 		</Attribute>
 	</Attributes>

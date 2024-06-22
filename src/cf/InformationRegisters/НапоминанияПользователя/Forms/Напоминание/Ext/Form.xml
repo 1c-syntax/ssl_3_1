@@ -10,12 +10,18 @@
 	</CommandSet>
 	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
 		<ChildItems>
-			<Button name="Удалить" id="109">
+			<Button name="Прекратить" id="109">
 				<Type>CommandBarButton</Type>
 				<Representation>Text</Representation>
 				<CommandName>Form.Command.Удалить</CommandName>
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Прекратить</v8:content>
+					</v8:item>
+				</Title>
 				<LocationInCommandBar>InCommandBarAndInAdditionalSubmenu</LocationInCommandBar>
-				<ExtendedTooltip name="УдалитьРасширеннаяПодсказка" id="110"/>
+				<ExtendedTooltip name="ПрекратитьРасширеннаяПодсказка" id="110"/>
 			</Button>
 		</ChildItems>
 	</AutoCommandBar>
@@ -68,6 +74,40 @@
 				</LabelDecoration>
 			</ChildItems>
 		</UsualGroup>
+		<UsualGroup name="Сообщение" id="140">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сообщение</v8:content>
+				</v8:item>
+			</Title>
+			<Group>Vertical</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="СообщениеРасширеннаяПодсказка" id="141"/>
+			<ChildItems>
+				<LabelDecoration name="ОписаниеСообщения" id="142">
+					<Title formatted="false">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Описание сообщения</v8:content>
+						</v8:item>
+					</Title>
+					<ContextMenu name="ОписаниеСообщенияКонтекстноеМеню" id="143"/>
+					<ExtendedTooltip name="ОписаниеСообщенияРасширеннаяПодсказка" id="144"/>
+				</LabelDecoration>
+				<LabelDecoration name="СсылкаНаСообщение" id="145">
+					<Title formatted="false">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Ссылка на сообщение</v8:content>
+						</v8:item>
+					</Title>
+					<ContextMenu name="СсылкаНаСообщениеКонтекстноеМеню" id="146"/>
+					<ExtendedTooltip name="СсылкаНаСообщениеРасширеннаяПодсказка" id="147"/>
+				</LabelDecoration>
+			</ChildItems>
+		</UsualGroup>
 		<InputField name="Текст" id="15">
 			<DataPath>Объект.Описание</DataPath>
 			<DefaultItem>true</DefaultItem>
@@ -82,7 +122,7 @@
 			<AutoMaxWidth>false</AutoMaxWidth>
 			<EditTextUpdate>OnValueChange</EditTextUpdate>
 			<ContextMenu name="ТекстКонтекстноеМеню" id="16"/>
-			<ExtendedTooltip name="ТекстExtendedTooltip" id="111"/>
+			<ExtendedTooltip name="ТекстРасширеннаяПодсказка" id="111"/>
 		</InputField>
 		<UsualGroup name="НастройкаВремени" id="102">
 			<Title>
@@ -94,7 +134,7 @@
 			<Behavior>Usual</Behavior>
 			<Representation>None</Representation>
 			<ShowTitle>false</ShowTitle>
-			<ExtendedTooltip name="НастройкаВремениExtendedTooltip" id="112"/>
+			<ExtendedTooltip name="НастройкаВремениРасширеннаяПодсказка" id="112"/>
 			<ChildItems>
 				<InputField name="СпособУстановкиВремениНапоминания" id="39">
 					<DataPath>СпособУстановкиВремениНапоминания</DataPath>
@@ -116,7 +156,7 @@
 					<ChooseType>false</ChooseType>
 					<EditTextUpdate>OnValueChange</EditTextUpdate>
 					<ContextMenu name="СпособУстановкиВремениНапоминанияКонтекстноеМеню" id="40"/>
-					<ExtendedTooltip name="СпособУстановкиВремениНапоминанияExtendedTooltip" id="114"/>
+					<ExtendedTooltip name="СпособУстановкиВремениНапоминанияРасширеннаяПодсказка" id="114"/>
 					<Events>
 						<Event name="OnChange">СпособУстановкиВремениНапоминанияПриИзменении</Event>
 					</Events>
@@ -130,7 +170,7 @@
 					</Title>
 					<VerticalStretch>false</VerticalStretch>
 					<PagesRepresentation>None</PagesRepresentation>
-					<ExtendedTooltip name="ПанельДетальныхНастроекExtendedTooltip" id="115"/>
+					<ExtendedTooltip name="ПанельДетальныхНастроекРасширеннаяПодсказка" id="115"/>
 					<ChildItems>
 						<Page name="БезДетализации" id="76">
 							<Title>
@@ -141,7 +181,7 @@
 							</Title>
 							<Group>HorizontalIfPossible</Group>
 							<ShowTitle>false</ShowTitle>
-							<ExtendedTooltip name="БезДетализацииExtendedTooltip" id="116"/>
+							<ExtendedTooltip name="БезДетализацииРасширеннаяПодсказка" id="116"/>
 							<ChildItems>
 								<LabelDecoration name="РасчетноеВремяНапоминания" id="97">
 									<HorizontalStretch>true</HorizontalStretch>
@@ -160,7 +200,7 @@
 									</ToolTip>
 									<TitleHeight>1</TitleHeight>
 									<ContextMenu name="РасчетноеВремяНапоминанияКонтекстноеМеню" id="98"/>
-									<ExtendedTooltip name="РасчетноеВремяНапоминанияExtendedTooltip" id="117"/>
+									<ExtendedTooltip name="РасчетноеВремяНапоминанияРасширеннаяПодсказка" id="117"/>
 								</LabelDecoration>
 							</ChildItems>
 						</Page>
@@ -173,7 +213,7 @@
 							</Title>
 							<Group>HorizontalIfPossible</Group>
 							<ShowTitle>false</ShowTitle>
-							<ExtendedTooltip name="ДатаВремяExtendedTooltip" id="118"/>
+							<ExtendedTooltip name="ДатаВремяРасширеннаяПодсказка" id="118"/>
 							<ChildItems>
 								<InputField name="Дата" id="17">
 									<DataPath>Объект.ВремяСобытия</DataPath>
@@ -195,7 +235,7 @@
 									</EditFormat>
 									<EditTextUpdate>OnValueChange</EditTextUpdate>
 									<ContextMenu name="ДатаКонтекстноеМеню" id="18"/>
-									<ExtendedTooltip name="ДатаExtendedTooltip" id="119"/>
+									<ExtendedTooltip name="ДатаРасширеннаяПодсказка" id="119"/>
 									<Events>
 										<Event name="OnChange">ДатаПриИзменении</Event>
 									</Events>
@@ -227,7 +267,7 @@
 									<ChoiceListHeight>10</ChoiceListHeight>
 									<DropListWidth>5</DropListWidth>
 									<ContextMenu name="ВремяКонтекстноеМеню" id="20"/>
-									<ExtendedTooltip name="ВремяExtendedTooltip" id="120"/>
+									<ExtendedTooltip name="ВремяРасширеннаяПодсказка" id="120"/>
 									<Events>
 										<Event name="OnChange">ВремяПриИзменении</Event>
 									</Events>
@@ -243,7 +283,7 @@
 							</Title>
 							<Group>HorizontalIfPossible</Group>
 							<ShowTitle>false</ShowTitle>
-							<ExtendedTooltip name="НастройкаИсточникаExtendedTooltip" id="121"/>
+							<ExtendedTooltip name="НастройкаИсточникаРасширеннаяПодсказка" id="121"/>
 							<ChildItems>
 								<UsualGroup name="ГруппаИнтервалВремениОтносительноИсточника" id="136">
 									<Title>
@@ -268,10 +308,16 @@
 											</Title>
 											<HorizontalAlign>Right</HorizontalAlign>
 											<ContextMenu name="НадписьЗаКонтекстноеМеню" id="58"/>
-											<ExtendedTooltip name="НадписьЗаExtendedTooltip" id="122"/>
+											<ExtendedTooltip name="НадписьЗаРасширеннаяПодсказка" id="122"/>
 										</LabelDecoration>
 										<InputField name="ИнтервалВремениОтносительноИсточника" id="59">
 											<DataPath>ИнтервалВремениСтрокой</DataPath>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Интервал времени строкой</v8:content>
+												</v8:item>
+											</Title>
 											<TitleLocation>None</TitleLocation>
 											<ToolTip>
 												<v8:item>
@@ -457,7 +503,7 @@
 												</xr:Item>
 											</ChoiceList>
 											<ContextMenu name="ИнтервалВремениОтносительноИсточникаКонтекстноеМеню" id="60"/>
-											<ExtendedTooltip name="ИнтервалВремениОтносительноИсточникаExtendedTooltip" id="123"/>
+											<ExtendedTooltip name="ИнтервалВремениОтносительноИсточникаРасширеннаяПодсказка" id="123"/>
 											<Events>
 												<Event name="OnChange">ПриИзмененииИнтервалаВремени</Event>
 											</Events>
@@ -486,7 +532,7 @@
 												</v8:item>
 											</Title>
 											<ContextMenu name="НадписьДоКонтекстноеМеню" id="34"/>
-											<ExtendedTooltip name="НадписьДоExtendedTooltip" id="124"/>
+											<ExtendedTooltip name="НадписьДоРасширеннаяПодсказка" id="124"/>
 										</LabelDecoration>
 										<InputField name="ИмяРеквизитаИсточника" id="35">
 											<DataPath>Объект.ИмяРеквизитаИсточника</DataPath>
@@ -502,7 +548,7 @@
 											<ChooseType>false</ChooseType>
 											<TextEdit>false</TextEdit>
 											<ContextMenu name="ИмяРеквизитаИсточникаКонтекстноеМеню" id="36"/>
-											<ExtendedTooltip name="ИмяРеквизитаИсточникаExtendedTooltip" id="125"/>
+											<ExtendedTooltip name="ИмяРеквизитаИсточникаРасширеннаяПодсказка" id="125"/>
 											<Events>
 												<Event name="Clearing">ИмяРеквизитаИсточникаОчистка</Event>
 											</Events>
@@ -520,10 +566,16 @@
 							</Title>
 							<Group>HorizontalIfPossible</Group>
 							<ShowTitle>false</ShowTitle>
-							<ExtendedTooltip name="НастройкаПериодичностиExtendedTooltip" id="126"/>
+							<ExtendedTooltip name="НастройкаПериодичностиРасширеннаяПодсказка" id="126"/>
 							<ChildItems>
 								<InputField name="ВариантПериодичности" id="61">
 									<DataPath>ВариантПериодичности</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Вариант периодичности</v8:content>
+										</v8:item>
+									</Title>
 									<TitleLocation>None</TitleLocation>
 									<EditMode>EnterOnInput</EditMode>
 									<Width>25</Width>
@@ -586,7 +638,7 @@
 										</xr:Item>
 									</ChoiceList>
 									<ContextMenu name="ВариантПериодичностиКонтекстноеМеню" id="62"/>
-									<ExtendedTooltip name="ВариантПериодичностиExtendedTooltip" id="127"/>
+									<ExtendedTooltip name="ВариантПериодичностиРасширеннаяПодсказка" id="127"/>
 									<Events>
 										<Event name="OnChange">ВариантПериодичностиПриИзменении</Event>
 										<Event name="Opening">ВариантПериодичностиОткрытие</Event>
@@ -696,6 +748,9 @@
 	</Commands>
 	<Parameters>
 		<Parameter name="Источник">
+			<Type/>
+		</Parameter>
+		<Parameter name="ДанныеКлюча">
 			<Type/>
 		</Parameter>
 	</Parameters>

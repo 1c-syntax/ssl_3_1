@@ -20,7 +20,6 @@
 		<ExcludedCommand>Cancel</ExcludedCommand>
 		<ExcludedCommand>Close</ExcludedCommand>
 		<ExcludedCommand>CustomizeForm</ExcludedCommand>
-		<ExcludedCommand>Help</ExcludedCommand>
 		<ExcludedCommand>Ignore</ExcludedCommand>
 		<ExcludedCommand>No</ExcludedCommand>
 		<ExcludedCommand>OK</ExcludedCommand>
@@ -40,164 +39,243 @@
 		<Event name="OnClose">ПриЗакрытии</Event>
 	</Events>
 	<ChildItems>
-		<UsualGroup name="ПанельКнопок" id="15">
+		<UsualGroup name="ГруппаКоманднаяПанель" id="55">
 			<Title>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Панель кнопок</v8:content>
+					<v8:content>Командная панель</v8:content>
 				</v8:item>
 			</Title>
-			<Behavior>Usual</Behavior>
 			<Representation>None</Representation>
 			<ShowTitle>false</ShowTitle>
-			<ExtendedTooltip name="ПанельКнопокExtendedTooltip" id="30"/>
+			<ExtendedTooltip name="ГруппаКоманднаяПанельРасширеннаяПодсказка" id="56"/>
 			<ChildItems>
-				<Button name="КнопкаОткрыть" id="11" DisplayImportance="VeryLow">
-					<Type>UsualButton</Type>
-					<CommandName>Form.Command.Открыть</CommandName>
-					<ExtendedTooltip name="КнопкаОткрытьExtendedTooltip" id="31"/>
-				</Button>
-				<Button name="КнопкаПрекратить" id="9" DisplayImportance="VeryLow">
-					<Type>UsualButton</Type>
-					<CommandName>Form.Command.Прекратить</CommandName>
-					<ExtendedTooltip name="КнопкаПрекратитьExtendedTooltip" id="32"/>
-				</Button>
-				<InputField name="СрокПовторногоОповещения" id="12">
-					<DataPath>СрокПовторногоОповещения</DataPath>
+				<UsualGroup name="ПанельКнопок" id="15">
 					<Title>
 						<v8:item>
 							<v8:lang>ru</v8:lang>
-							<v8:content>Напомнить через</v8:content>
+							<v8:content>Панель кнопок</v8:content>
 						</v8:item>
 					</Title>
-					<ToolTip>
+					<Behavior>Usual</Behavior>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ПанельКнопокРасширеннаяПодсказка" id="30"/>
+					<ChildItems>
+						<Button name="КнопкаОткрыть" id="11" DisplayImportance="VeryLow">
+							<Type>UsualButton</Type>
+							<CommandName>Form.Command.Открыть</CommandName>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Открыть</v8:content>
+								</v8:item>
+							</Title>
+							<ExtendedTooltip name="КнопкаОткрытьРасширеннаяПодсказка" id="31"/>
+						</Button>
+						<Button name="КнопкаПрекратить" id="9" DisplayImportance="VeryLow">
+							<Type>UsualButton</Type>
+							<CommandName>Form.Command.Прекратить</CommandName>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Прекратить</v8:content>
+								</v8:item>
+							</Title>
+							<ExtendedTooltip name="КнопкаПрекратитьРасширеннаяПодсказка" id="32"/>
+						</Button>
+						<InputField name="СрокПовторногоОповещения" id="12">
+							<DataPath>СрокПовторногоОповещения</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Напомнить через</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Время, через которое нужно напомнить</v8:content>
+								</v8:item>
+							</ToolTip>
+							<Width>15</Width>
+							<DropListButton>true</DropListButton>
+							<ClearButton>false</ClearButton>
+							<EditTextUpdate>OnValueChange</EditTextUpdate>
+							<ChoiceList>
+								<xr:Item>
+									<xr:Presentation/>
+									<xr:CheckState>0</xr:CheckState>
+									<xr:Value xsi:type="FormChoiceListDesTimeValue">
+										<Presentation/>
+										<Value xsi:type="xs:string">5м</Value>
+									</xr:Value>
+								</xr:Item>
+								<xr:Item>
+									<xr:Presentation/>
+									<xr:CheckState>0</xr:CheckState>
+									<xr:Value xsi:type="FormChoiceListDesTimeValue">
+										<Presentation/>
+										<Value xsi:type="xs:string">10м</Value>
+									</xr:Value>
+								</xr:Item>
+								<xr:Item>
+									<xr:Presentation/>
+									<xr:CheckState>0</xr:CheckState>
+									<xr:Value xsi:type="FormChoiceListDesTimeValue">
+										<Presentation/>
+										<Value xsi:type="xs:string">15м</Value>
+									</xr:Value>
+								</xr:Item>
+								<xr:Item>
+									<xr:Presentation/>
+									<xr:CheckState>0</xr:CheckState>
+									<xr:Value xsi:type="FormChoiceListDesTimeValue">
+										<Presentation/>
+										<Value xsi:type="xs:string">30м</Value>
+									</xr:Value>
+								</xr:Item>
+								<xr:Item>
+									<xr:Presentation/>
+									<xr:CheckState>0</xr:CheckState>
+									<xr:Value xsi:type="FormChoiceListDesTimeValue">
+										<Presentation/>
+										<Value xsi:type="xs:string">1ч</Value>
+									</xr:Value>
+								</xr:Item>
+								<xr:Item>
+									<xr:Presentation/>
+									<xr:CheckState>0</xr:CheckState>
+									<xr:Value xsi:type="FormChoiceListDesTimeValue">
+										<Presentation/>
+										<Value xsi:type="xs:string">2ч</Value>
+									</xr:Value>
+								</xr:Item>
+								<xr:Item>
+									<xr:Presentation/>
+									<xr:CheckState>0</xr:CheckState>
+									<xr:Value xsi:type="FormChoiceListDesTimeValue">
+										<Presentation/>
+										<Value xsi:type="xs:string">4ч</Value>
+									</xr:Value>
+								</xr:Item>
+								<xr:Item>
+									<xr:Presentation/>
+									<xr:CheckState>0</xr:CheckState>
+									<xr:Value xsi:type="FormChoiceListDesTimeValue">
+										<Presentation/>
+										<Value xsi:type="xs:string">8ч</Value>
+									</xr:Value>
+								</xr:Item>
+								<xr:Item>
+									<xr:Presentation/>
+									<xr:CheckState>0</xr:CheckState>
+									<xr:Value xsi:type="FormChoiceListDesTimeValue">
+										<Presentation/>
+										<Value xsi:type="xs:string">1д</Value>
+									</xr:Value>
+								</xr:Item>
+								<xr:Item>
+									<xr:Presentation/>
+									<xr:CheckState>0</xr:CheckState>
+									<xr:Value xsi:type="FormChoiceListDesTimeValue">
+										<Presentation/>
+										<Value xsi:type="xs:string">2д</Value>
+									</xr:Value>
+								</xr:Item>
+								<xr:Item>
+									<xr:Presentation/>
+									<xr:CheckState>0</xr:CheckState>
+									<xr:Value xsi:type="FormChoiceListDesTimeValue">
+										<Presentation/>
+										<Value xsi:type="xs:string">3д</Value>
+									</xr:Value>
+								</xr:Item>
+								<xr:Item>
+									<xr:Presentation/>
+									<xr:CheckState>0</xr:CheckState>
+									<xr:Value xsi:type="FormChoiceListDesTimeValue">
+										<Presentation/>
+										<Value xsi:type="xs:string">1н</Value>
+									</xr:Value>
+								</xr:Item>
+								<xr:Item>
+									<xr:Presentation/>
+									<xr:CheckState>0</xr:CheckState>
+									<xr:Value xsi:type="FormChoiceListDesTimeValue">
+										<Presentation/>
+										<Value xsi:type="xs:string">2н</Value>
+									</xr:Value>
+								</xr:Item>
+							</ChoiceList>
+							<ContextMenu name="СрокПовторногоОповещенияКонтекстноеМеню" id="13"/>
+							<ExtendedTooltip name="СрокПовторногоОповещенияРасширеннаяПодсказка" id="34"/>
+							<Events>
+								<Event name="OnChange">СрокПовторногоОповещенияПриИзменении</Event>
+							</Events>
+						</InputField>
+						<Button name="КнопкаОтложить" id="8" DisplayImportance="VeryHigh">
+							<Type>UsualButton</Type>
+							<SkipOnInput>false</SkipOnInput>
+							<CommandName>Form.Command.ОтложитьВсе</CommandName>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Отложить все</v8:content>
+								</v8:item>
+							</Title>
+							<ExtendedTooltip name="КнопкаОтложитьРасширеннаяПодсказка" id="35"/>
+						</Button>
+					</ChildItems>
+				</UsualGroup>
+				<CommandBar name="СтандартныеКоманды" id="68">
+					<Title>
 						<v8:item>
 							<v8:lang>ru</v8:lang>
-							<v8:content>Время, через которое нужно напомнить</v8:content>
+							<v8:content>Стандартные команды</v8:content>
 						</v8:item>
-					</ToolTip>
-					<Width>15</Width>
-					<DropListButton>true</DropListButton>
-					<ClearButton>false</ClearButton>
-					<EditTextUpdate>OnValueChange</EditTextUpdate>
-					<ChoiceList>
-						<xr:Item>
-							<xr:Presentation/>
-							<xr:CheckState>0</xr:CheckState>
-							<xr:Value xsi:type="FormChoiceListDesTimeValue">
-								<Presentation/>
-								<Value xsi:type="xs:string">5м</Value>
-							</xr:Value>
-						</xr:Item>
-						<xr:Item>
-							<xr:Presentation/>
-							<xr:CheckState>0</xr:CheckState>
-							<xr:Value xsi:type="FormChoiceListDesTimeValue">
-								<Presentation/>
-								<Value xsi:type="xs:string">10м</Value>
-							</xr:Value>
-						</xr:Item>
-						<xr:Item>
-							<xr:Presentation/>
-							<xr:CheckState>0</xr:CheckState>
-							<xr:Value xsi:type="FormChoiceListDesTimeValue">
-								<Presentation/>
-								<Value xsi:type="xs:string">15м</Value>
-							</xr:Value>
-						</xr:Item>
-						<xr:Item>
-							<xr:Presentation/>
-							<xr:CheckState>0</xr:CheckState>
-							<xr:Value xsi:type="FormChoiceListDesTimeValue">
-								<Presentation/>
-								<Value xsi:type="xs:string">30м</Value>
-							</xr:Value>
-						</xr:Item>
-						<xr:Item>
-							<xr:Presentation/>
-							<xr:CheckState>0</xr:CheckState>
-							<xr:Value xsi:type="FormChoiceListDesTimeValue">
-								<Presentation/>
-								<Value xsi:type="xs:string">1ч</Value>
-							</xr:Value>
-						</xr:Item>
-						<xr:Item>
-							<xr:Presentation/>
-							<xr:CheckState>0</xr:CheckState>
-							<xr:Value xsi:type="FormChoiceListDesTimeValue">
-								<Presentation/>
-								<Value xsi:type="xs:string">2ч</Value>
-							</xr:Value>
-						</xr:Item>
-						<xr:Item>
-							<xr:Presentation/>
-							<xr:CheckState>0</xr:CheckState>
-							<xr:Value xsi:type="FormChoiceListDesTimeValue">
-								<Presentation/>
-								<Value xsi:type="xs:string">4ч</Value>
-							</xr:Value>
-						</xr:Item>
-						<xr:Item>
-							<xr:Presentation/>
-							<xr:CheckState>0</xr:CheckState>
-							<xr:Value xsi:type="FormChoiceListDesTimeValue">
-								<Presentation/>
-								<Value xsi:type="xs:string">8ч</Value>
-							</xr:Value>
-						</xr:Item>
-						<xr:Item>
-							<xr:Presentation/>
-							<xr:CheckState>0</xr:CheckState>
-							<xr:Value xsi:type="FormChoiceListDesTimeValue">
-								<Presentation/>
-								<Value xsi:type="xs:string">1д</Value>
-							</xr:Value>
-						</xr:Item>
-						<xr:Item>
-							<xr:Presentation/>
-							<xr:CheckState>0</xr:CheckState>
-							<xr:Value xsi:type="FormChoiceListDesTimeValue">
-								<Presentation/>
-								<Value xsi:type="xs:string">2д</Value>
-							</xr:Value>
-						</xr:Item>
-						<xr:Item>
-							<xr:Presentation/>
-							<xr:CheckState>0</xr:CheckState>
-							<xr:Value xsi:type="FormChoiceListDesTimeValue">
-								<Presentation/>
-								<Value xsi:type="xs:string">3д</Value>
-							</xr:Value>
-						</xr:Item>
-						<xr:Item>
-							<xr:Presentation/>
-							<xr:CheckState>0</xr:CheckState>
-							<xr:Value xsi:type="FormChoiceListDesTimeValue">
-								<Presentation/>
-								<Value xsi:type="xs:string">1н</Value>
-							</xr:Value>
-						</xr:Item>
-						<xr:Item>
-							<xr:Presentation/>
-							<xr:CheckState>0</xr:CheckState>
-							<xr:Value xsi:type="FormChoiceListDesTimeValue">
-								<Presentation/>
-								<Value xsi:type="xs:string">2н</Value>
-							</xr:Value>
-						</xr:Item>
-					</ChoiceList>
-					<ContextMenu name="СрокПовторногоОповещенияКонтекстноеМеню" id="13"/>
-					<ExtendedTooltip name="СрокПовторногоОповещенияExtendedTooltip" id="34"/>
-					<Events>
-						<Event name="OnChange">СрокПовторногоОповещенияПриИзменении</Event>
-					</Events>
-				</InputField>
-				<Button name="КнопкаОтложить" id="8" DisplayImportance="VeryHigh">
-					<Type>UsualButton</Type>
-					<SkipOnInput>false</SkipOnInput>
-					<CommandName>Form.Command.ОтложитьВсе</CommandName>
-					<ExtendedTooltip name="КнопкаОтложитьExtendedTooltip" id="35"/>
-				</Button>
+					</Title>
+					<CommandSource>Form</CommandSource>
+					<ExtendedTooltip name="СтандартныеКомандыРасширеннаяПодсказка" id="69"/>
+					<ChildItems>
+						<Button name="КнопкаОткрытьЕще" id="70">
+							<Type>CommandBarButton</Type>
+							<CommandName>Form.Command.Открыть</CommandName>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Открыть</v8:content>
+								</v8:item>
+							</Title>
+							<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
+							<ExtendedTooltip name="КнопкаОткрытьЕщеРасширеннаяПодсказка" id="71"/>
+						</Button>
+						<Button name="КнопкаПрекратитьЕще" id="72">
+							<Type>CommandBarButton</Type>
+							<CommandName>Form.Command.Прекратить</CommandName>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Прекратить</v8:content>
+								</v8:item>
+							</Title>
+							<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
+							<ExtendedTooltip name="КнопкаПрекратитьЕщеРасширеннаяПодсказка" id="73"/>
+						</Button>
+						<Button name="ФормаОткрытьНастройки" id="74">
+							<Type>CommandBarButton</Type>
+							<CommandName>Form.Command.Настройки</CommandName>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Настройки...</v8:content>
+								</v8:item>
+							</Title>
+							<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
+							<ExtendedTooltip name="ФормаОткрытьНастройкиРасширеннаяПодсказка" id="75"/>
+						</Button>
+					</ChildItems>
+				</CommandBar>
 			</ChildItems>
 		</UsualGroup>
 		<Table name="Напоминания" id="1">
@@ -249,7 +327,13 @@
 				<ChildItems>
 					<ButtonGroup name="ДействияСНапоминаниями" id="26">
 						<EnableContentChange>true</EnableContentChange>
-						<ExtendedTooltip name="ДействияСНапоминаниямиExtendedTooltip" id="36"/>
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Действия с напоминаниями</v8:content>
+							</v8:item>
+						</Title>
+						<ExtendedTooltip name="ДействияСНапоминаниямиРасширеннаяПодсказка" id="36"/>
 						<ChildItems>
 							<Button name="НапоминанияКонтекстноеМенюОткрыть" id="20">
 								<Type>CommandBarButton</Type>
@@ -260,7 +344,7 @@
 										<v8:content>Открыть предмет напоминания</v8:content>
 									</v8:item>
 								</Title>
-								<ExtendedTooltip name="НапоминанияКонтекстноеМенюОткрытьExtendedTooltip" id="37"/>
+								<ExtendedTooltip name="НапоминанияКонтекстноеМенюОткрытьРасширеннаяПодсказка" id="37"/>
 							</Button>
 							<Button name="НапоминанияКонтекстноеМенюИзменить" id="21">
 								<Type>CommandBarButton</Type>
@@ -271,28 +355,34 @@
 										<v8:content>Изменить напоминание...</v8:content>
 									</v8:item>
 								</Title>
-								<ExtendedTooltip name="НапоминанияКонтекстноеМенюИзменитьExtendedTooltip" id="38"/>
+								<ExtendedTooltip name="НапоминанияКонтекстноеМенюИзменитьРасширеннаяПодсказка" id="38"/>
 							</Button>
 						</ChildItems>
 					</ButtonGroup>
 					<ButtonGroup name="ДействияСоСписком" id="25">
 						<EnableContentChange>true</EnableContentChange>
-						<ExtendedTooltip name="ДействияСоСпискомExtendedTooltip" id="39"/>
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Действия со списком</v8:content>
+							</v8:item>
+						</Title>
+						<ExtendedTooltip name="ДействияСоСпискомРасширеннаяПодсказка" id="39"/>
 						<ChildItems>
 							<Button name="НапоминанияКонтекстноеМенюВывестиСписок" id="27">
 								<Type>CommandBarButton</Type>
 								<CommandName>Form.Item.Напоминания.StandardCommand.OutputList</CommandName>
-								<ExtendedTooltip name="НапоминанияКонтекстноеМенюВывестиСписокExtendedTooltip" id="40"/>
+								<ExtendedTooltip name="НапоминанияКонтекстноеМенюВывестиСписокРасширеннаяПодсказка" id="40"/>
 							</Button>
 							<Button name="НапоминанияКонтекстноеМенюКопироватьВБуферОбмена" id="28">
 								<Type>CommandBarButton</Type>
 								<CommandName>Form.Item.Напоминания.StandardCommand.CopyToClipboard</CommandName>
-								<ExtendedTooltip name="НапоминанияКонтекстноеМенюКопироватьВБуферОбменаExtendedTooltip" id="41"/>
+								<ExtendedTooltip name="НапоминанияКонтекстноеМенюКопироватьВБуферОбменаРасширеннаяПодсказка" id="41"/>
 							</Button>
 							<Button name="НапоминанияКонтекстноеМенюВыделитьВсе" id="29">
 								<Type>CommandBarButton</Type>
 								<CommandName>Form.Item.Напоминания.StandardCommand.SelectAll</CommandName>
-								<ExtendedTooltip name="НапоминанияКонтекстноеМенюВыделитьВсеExtendedTooltip" id="42"/>
+								<ExtendedTooltip name="НапоминанияКонтекстноеМенюВыделитьВсеРасширеннаяПодсказка" id="42"/>
 							</Button>
 						</ChildItems>
 					</ButtonGroup>
@@ -301,7 +391,7 @@
 			<AutoCommandBar name="НапоминанияКоманднаяПанель" id="3">
 				<Autofill>false</Autofill>
 			</AutoCommandBar>
-			<ExtendedTooltip name="НапоминанияExtendedTooltip" id="43"/>
+			<ExtendedTooltip name="НапоминанияРасширеннаяПодсказка" id="43"/>
 			<SearchStringAddition name="НапоминанияСтрокаПоиска" id="46">
 				<AdditionSource>
 					<Item>Напоминания</Item>
@@ -333,16 +423,28 @@
 			<ChildItems>
 				<InputField name="Описание" id="4">
 					<DataPath>Напоминания.Описание</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Текст оповещения</v8:content>
+						</v8:item>
+					</Title>
 					<EditMode>EnterOnInput</EditMode>
 					<AutoCellHeight>true</AutoCellHeight>
 					<ContextMenu name="ОписаниеКонтекстноеМеню" id="5"/>
-					<ExtendedTooltip name="ОписаниеExtendedTooltip" id="44"/>
+					<ExtendedTooltip name="ОписаниеРасширеннаяПодсказка" id="44"/>
 				</InputField>
 				<InputField name="ВремяСобытия" id="6">
 					<DataPath>Напоминания.ВремяСобытияСтрока</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Время события</v8:content>
+						</v8:item>
+					</Title>
 					<EditMode>EnterOnInput</EditMode>
 					<ContextMenu name="ВремяСобытияКонтекстноеМеню" id="7"/>
-					<ExtendedTooltip name="ВремяСобытияExtendedTooltip" id="45"/>
+					<ExtendedTooltip name="ВремяСобытияРасширеннаяПодсказка" id="45"/>
 				</InputField>
 			</ChildItems>
 		</Table>
@@ -443,6 +545,24 @@
 						</v8:StringQualifiers>
 					</Type>
 				</Column>
+				<Column name="НавигационнаяСсылка" id="9">
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="Идентификатор" id="5">
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
 			</Columns>
 		</Attribute>
 		<Attribute name="СрокПовторногоОповещения" id="1">
@@ -530,6 +650,21 @@
 			</Picture>
 			<Action>Изменить</Action>
 			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="Настройки" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Настройки...</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Настройки</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ОткрытьНастройки</Action>
 		</Command>
 	</Commands>
 </Form>

@@ -7,17 +7,55 @@
 				<Type>CommandBarButton</Type>
 				<DefaultButton>true</DefaultButton>
 				<CommandName>Form.Command.Подписать</CommandName>
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Подписать</v8:content>
+					</v8:item>
+				</Title>
 				<ExtendedTooltip name="ФормаПодписатьРасширеннаяПодсказка" id="444"/>
 			</Button>
 			<Button name="ФормаОтправить" id="508">
 				<Type>CommandBarButton</Type>
 				<CommandName>Form.Command.Отправить</CommandName>
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Зарегистрировать в реестре</v8:content>
+					</v8:item>
+				</Title>
 				<ExtendedTooltip name="ФормаОтправитьРасширеннаяПодсказка" id="509"/>
 			</Button>
 			<Button name="ФормаЗаписатьИЗакрыть" id="489">
 				<Type>CommandBarButton</Type>
 				<CommandName>Form.StandardCommand.WriteAndClose</CommandName>
 				<ExtendedTooltip name="ФормаЗаписатьИЗакрытьРасширеннаяПодсказка" id="490"/>
+			</Button>
+			<Popup name="ПодменюСоздатьНаОсновании" id="1166">
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Создать на основании</v8:content>
+					</v8:item>
+				</Title>
+				<Picture>
+					<xr:Ref>StdPicture.InputOnBasis</xr:Ref>
+					<xr:LoadTransparent>true</xr:LoadTransparent>
+				</Picture>
+				<Representation>Picture</Representation>
+				<ExtendedTooltip name="ПодменюСоздатьНаОснованииРасширеннаяПодсказка" id="1167"/>
+			</Popup>
+			<Button name="ФормаДобавитьПодпись" id="1042">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.ДобавитьПодпись</CommandName>
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Добавить подпись из файла...</v8:content>
+					</v8:item>
+				</Title>
+				<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
+				<ExtendedTooltip name="ФормаДобавитьПодписьРасширеннаяПодсказка" id="1043"/>
 			</Button>
 			<Button name="ФормаЗаписать" id="491">
 				<Type>CommandBarButton</Type>
@@ -37,15 +75,15 @@
 				<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
 				<ExtendedTooltip name="ФормаПроверитьДоверенностьРасширеннаяПодсказка" id="1051"/>
 			</Button>
-			<Button name="ФормаДобавитьПодпись" id="1042">
-				<Type>CommandBarButton</Type>
-				<CommandName>Form.Command.ДобавитьПодпись</CommandName>
-				<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
-				<ExtendedTooltip name="ФормаДобавитьПодписьРасширеннаяПодсказка" id="1043"/>
-			</Button>
 			<Button name="ФормаВыгрузитьВФайл" id="553">
 				<Type>CommandBarButton</Type>
 				<CommandName>Form.Command.ВыгрузитьВФайл</CommandName>
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Выгрузить в файл...</v8:content>
+					</v8:item>
+				</Title>
 				<ExtendedTooltip name="ФормаВыгрузитьВФайлРасширеннаяПодсказка" id="554"/>
 			</Button>
 			<Button name="ФормаДоверенностьПроверенаВручную" id="1052">
@@ -86,11 +124,12 @@
 			<Title>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Группа статусы</v8:content>
+					<v8:content>Статусы</v8:content>
 				</v8:item>
 			</Title>
 			<Width>75</Width>
 			<HorizontalStretch>false</HorizontalStretch>
+			<VerticalStretch>false</VerticalStretch>
 			<Representation>None</Representation>
 			<ShowTitle>false</ShowTitle>
 			<ExtendedTooltip name="ГруппаСтатусыРасширеннаяПодсказка" id="768"/>
@@ -99,10 +138,11 @@
 					<Title>
 						<v8:item>
 							<v8:lang>ru</v8:lang>
-							<v8:content>Группа статус в реестре ФНС</v8:content>
+							<v8:content>Статус в реестре ФНС</v8:content>
 						</v8:item>
 					</Title>
 					<HorizontalStretch>true</HorizontalStretch>
+					<VerticalStretch>true</VerticalStretch>
 					<VerticalAlign>Center</VerticalAlign>
 					<ShowTitle>false</ShowTitle>
 					<BackColor>style:ToolTipBackColor</BackColor>
@@ -268,6 +308,21 @@
 							<ContextMenu name="ДекорацияГотовоКонтекстноеМеню" id="503"/>
 							<ExtendedTooltip name="ДекорацияГотовоРасширеннаяПодсказка" id="504"/>
 						</PictureDecoration>
+						<PictureDecoration name="ДекорацияОшибка" id="1160">
+							<Visible>false</Visible>
+							<Title formatted="false">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Декорация ошибка</v8:content>
+								</v8:item>
+							</Title>
+							<Picture>
+								<xr:Ref>CommonPicture.МЧДОшибка</xr:Ref>
+								<xr:LoadTransparent>false</xr:LoadTransparent>
+							</Picture>
+							<ContextMenu name="ДекорацияОшибкаКонтекстноеМеню" id="1161"/>
+							<ExtendedTooltip name="ДекорацияОшибкаРасширеннаяПодсказка" id="1162"/>
+						</PictureDecoration>
 						<LabelDecoration name="ОписаниеСостояния" id="773">
 							<AutoMaxWidth>false</AutoMaxWidth>
 							<AutoMaxHeight>false</AutoMaxHeight>
@@ -299,10 +354,11 @@
 					<Title>
 						<v8:item>
 							<v8:lang>ru</v8:lang>
-							<v8:content>Группа статус в другом реестре</v8:content>
+							<v8:content>Статус в другом реестре</v8:content>
 						</v8:item>
 					</Title>
 					<Width>35</Width>
+					<VerticalStretch>true</VerticalStretch>
 					<VerticalAlign>Center</VerticalAlign>
 					<ShowTitle>false</ShowTitle>
 					<BackColor>style:ToolTipBackColor</BackColor>
@@ -349,7 +405,7 @@
 			<Title>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Группа шапка</v8:content>
+					<v8:content>Шапка</v8:content>
 				</v8:item>
 			</Title>
 			<Width>80</Width>
@@ -362,7 +418,7 @@
 					<Title>
 						<v8:item>
 							<v8:lang>ru</v8:lang>
-							<v8:content>Группа лево</v8:content>
+							<v8:content>Лево</v8:content>
 						</v8:item>
 					</Title>
 					<Group>Vertical</Group>
@@ -374,7 +430,7 @@
 							<Title>
 								<v8:item>
 									<v8:lang>ru</v8:lang>
-									<v8:content>Группа период действия</v8:content>
+									<v8:content>Период действия</v8:content>
 								</v8:item>
 							</Title>
 							<Group>AlwaysHorizontal</Group>
@@ -414,7 +470,7 @@
 					<Title>
 						<v8:item>
 							<v8:lang>ru</v8:lang>
-							<v8:content>Группа право</v8:content>
+							<v8:content>Право</v8:content>
 						</v8:item>
 					</Title>
 					<ShowTitle>false</ShowTitle>
@@ -455,7 +511,7 @@
 			<Title>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Доверитель</v8:content>
+					<v8:content>Доверители</v8:content>
 				</v8:item>
 			</Title>
 			<Group>Vertical</Group>
@@ -463,6 +519,48 @@
 			<ShowTitle>false</ShowTitle>
 			<ExtendedTooltip name="ГруппаДоверителиРасширеннаяПодсказка" id="8"/>
 			<ChildItems>
+				<UsualGroup name="ГруппаДоверительПервоначальнойДоверенности" id="1178">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Первоначальный доверитель</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="ГруппаДоверительПервоначальнойДоверенностиРасширеннаяПодсказка" id="1179"/>
+					<ChildItems>
+						<LabelDecoration name="ДоверительПервоначальнойДоверенностиТипДекорация" id="1186">
+							<Width>15</Width>
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<Title formatted="false">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Организация:</v8:content>
+								</v8:item>
+							</Title>
+							<ContextMenu name="ДоверительПервоначальнойДоверенностиТипДекорацияКонтекстноеМеню" id="1187"/>
+							<ExtendedTooltip name="ДоверительПервоначальнойДоверенностиТипДекорацияРасширеннаяПодсказка" id="1188"/>
+						</LabelDecoration>
+						<InputField name="ДоверительПервоначальнойДоверенностиНаименование" id="1183">
+							<DataPath>ДоверительПервоначальнойДоверенностиНаименование</DataPath>
+							<ReadOnly>true</ReadOnly>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Организация</v8:content>
+								</v8:item>
+							</Title>
+							<TitleLocation>None</TitleLocation>
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<MaxWidth>55</MaxWidth>
+							<OpenButton>true</OpenButton>
+							<ContextMenu name="ДоверительПервоначальнойДоверенностиНаименованиеКонтекстноеМеню" id="1184"/>
+							<ExtendedTooltip name="ДоверительПервоначальнойДоверенностиНаименованиеРасширеннаяПодсказка" id="1185"/>
+							<Events>
+								<Event name="Opening">ПервоначальныйДоверительОткрытие</Event>
+							</Events>
+						</InputField>
+					</ChildItems>
+				</UsualGroup>
 				<UsualGroup name="ГруппаОдинДоверитель" id="104">
 					<Title>
 						<v8:item>
@@ -477,7 +575,7 @@
 							<Title>
 								<v8:item>
 									<v8:lang>ru</v8:lang>
-									<v8:content>Группа тип доверителя организация</v8:content>
+									<v8:content>Тип доверителя организация</v8:content>
 								</v8:item>
 							</Title>
 							<ShowTitle>false</ShowTitle>
@@ -516,6 +614,12 @@
 								</LabelDecoration>
 								<InputField name="Доверитель" id="1">
 									<DataPath>Доверитель</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Доверитель</v8:content>
+										</v8:item>
+									</Title>
 									<TitleLocation>None</TitleLocation>
 									<AutoMaxWidth>false</AutoMaxWidth>
 									<MaxWidth>55</MaxWidth>
@@ -531,6 +635,12 @@
 								<InputField name="ДоверительНаименование" id="31">
 									<DataPath>ДоверительНаименование</DataPath>
 									<Visible>false</Visible>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Доверитель наименование</v8:content>
+										</v8:item>
+									</Title>
 									<TitleLocation>None</TitleLocation>
 									<AutoMaxWidth>false</AutoMaxWidth>
 									<MaxWidth>55</MaxWidth>
@@ -548,6 +658,12 @@
 								<Button name="РеквизитыДоверителя" id="19">
 									<Type>Hyperlink</Type>
 									<CommandName>Form.Command.РеквизитыДоверителя</CommandName>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Уточнить реквизиты</v8:content>
+										</v8:item>
+									</Title>
 									<ToolTipRepresentation>Button</ToolTipRepresentation>
 									<ExtendedTooltip name="РеквизитыДоверителяРасширеннаяПодсказка" id="20"/>
 								</Button>
@@ -557,7 +673,7 @@
 							<Title>
 								<v8:item>
 									<v8:lang>ru</v8:lang>
-									<v8:content>Группа доверитель декорация</v8:content>
+									<v8:content>Доверитель декорация</v8:content>
 								</v8:item>
 							</Title>
 							<ShowTitle>false</ShowTitle>
@@ -665,6 +781,12 @@
 												</LabelDecoration>
 												<InputField name="ЛицоДоверителя" id="4">
 													<DataPath>ЛицоДоверителя</DataPath>
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Лицо без доверенности</v8:content>
+														</v8:item>
+													</Title>
 													<TitleLocation>None</TitleLocation>
 													<AutoMaxWidth>false</AutoMaxWidth>
 													<MaxWidth>55</MaxWidth>
@@ -680,6 +802,12 @@
 												<InputField name="ЛицоДоверителяНаименование" id="49">
 													<DataPath>ЛицоДоверителяНаименование</DataPath>
 													<Visible>false</Visible>
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Лицо без доверенности</v8:content>
+														</v8:item>
+													</Title>
 													<TitleLocation>None</TitleLocation>
 													<AutoMaxWidth>false</AutoMaxWidth>
 													<MaxWidth>55</MaxWidth>
@@ -696,6 +824,12 @@
 												<Button name="РеквизитыЛицаДоверителя" id="21">
 													<Type>Hyperlink</Type>
 													<CommandName>Form.Command.РеквизитыЛицаДоверителя</CommandName>
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Уточнить реквизиты</v8:content>
+														</v8:item>
+													</Title>
 													<ToolTipRepresentation>Button</ToolTipRepresentation>
 													<ExtendedTooltip name="РеквизитыЛицаДоверителяРасширеннаяПодсказка" id="22">
 														<Title formatted="false">
@@ -713,7 +847,7 @@
 											<Title>
 												<v8:item>
 													<v8:lang>ru</v8:lang>
-													<v8:content>Группа лицо доверителя декорация</v8:content>
+													<v8:content>Лицо доверителя декорация</v8:content>
 												</v8:item>
 											</Title>
 											<ShowTitle>false</ShowTitle>
@@ -743,6 +877,12 @@
 											</ChildItems>
 										</UsualGroup>
 										<UsualGroup name="ГруппаЛицоДоверителяПредставитель" id="159">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Лицо доверителя представитель</v8:content>
+												</v8:item>
+											</Title>
 											<ToolTip>
 												<v8:item>
 													<v8:lang>ru</v8:lang>
@@ -777,6 +917,12 @@
 														</LabelDecoration>
 														<InputField name="ПредставительУправляющейКомпании" id="166">
 															<DataPath>ПредставительУправляющейКомпании</DataPath>
+															<Title>
+																<v8:item>
+																	<v8:lang>ru</v8:lang>
+																	<v8:content>Представитель управляющей организации</v8:content>
+																</v8:item>
+															</Title>
 															<TitleLocation>None</TitleLocation>
 															<AutoMaxWidth>false</AutoMaxWidth>
 															<MaxWidth>55</MaxWidth>
@@ -792,6 +938,12 @@
 														<InputField name="ПредставительУправляющейКомпанииНаименование" id="163">
 															<DataPath>ПредставительУправляющейКомпанииНаименование</DataPath>
 															<Visible>false</Visible>
+															<Title>
+																<v8:item>
+																	<v8:lang>ru</v8:lang>
+																	<v8:content>Представитель управляющей организации</v8:content>
+																</v8:item>
+															</Title>
 															<TitleLocation>None</TitleLocation>
 															<AutoMaxWidth>false</AutoMaxWidth>
 															<MaxWidth>55</MaxWidth>
@@ -808,6 +960,12 @@
 														<Button name="РеквизитыПредставителяУправляющейОрганизации" id="169">
 															<Type>Hyperlink</Type>
 															<CommandName>Form.Command.РеквизитыПредставителяУправляющейОрганизации</CommandName>
+															<Title>
+																<v8:item>
+																	<v8:lang>ru</v8:lang>
+																	<v8:content>Уточнить реквизиты</v8:content>
+																</v8:item>
+															</Title>
 															<ToolTipRepresentation>Button</ToolTipRepresentation>
 															<ExtendedTooltip name="РеквизитыПредставителяУправляющейОрганизацииРасширеннаяПодсказка" id="170">
 																<Title formatted="false">
@@ -825,7 +983,7 @@
 													<Title>
 														<v8:item>
 															<v8:lang>ru</v8:lang>
-															<v8:content>Группа представитель управляющей компании декорация</v8:content>
+															<v8:content>Представитель управляющей компании декорация</v8:content>
 														</v8:item>
 													</Title>
 													<ToolTip>
@@ -862,61 +1020,6 @@
 												</UsualGroup>
 											</ChildItems>
 										</UsualGroup>
-										<UsualGroup name="ГруппаДоверенностьОснование" id="1097">
-											<Title>
-												<v8:item>
-													<v8:lang>ru</v8:lang>
-													<v8:content>Группа доверенность основание</v8:content>
-												</v8:item>
-											</Title>
-											<Group>AlwaysHorizontal</Group>
-											<Representation>None</Representation>
-											<ShowTitle>false</ShowTitle>
-											<ExtendedTooltip name="ГруппаДоверенностьОснованиеРасширеннаяПодсказка" id="1098"/>
-											<ChildItems>
-												<LabelDecoration name="НадписьПоДоверенности" id="1129">
-													<Width>15</Width>
-													<Title formatted="false">
-														<v8:item>
-															<v8:lang>ru</v8:lang>
-															<v8:content>По доверенности:</v8:content>
-														</v8:item>
-													</Title>
-													<ContextMenu name="НадписьПоДоверенностиКонтекстноеМеню" id="1130"/>
-													<ExtendedTooltip name="НадписьПоДоверенностиРасширеннаяПодсказка" id="1131"/>
-												</LabelDecoration>
-												<UsualGroup name="ГруппаДоверенностьИПредставление" id="1105">
-													<Title>
-														<v8:item>
-															<v8:lang>ru</v8:lang>
-															<v8:content>Группа доверенность</v8:content>
-														</v8:item>
-													</Title>
-													<Group>Vertical</Group>
-													<Representation>None</Representation>
-													<ShowTitle>false</ShowTitle>
-													<ExtendedTooltip name="ГруппаДоверенностьИПредставлениеРасширеннаяПодсказка" id="1106"/>
-													<ChildItems>
-														<InputField name="ДоверенностьЛицаДоверителя" id="1102">
-															<DataPath>Объект.РодительскаяДоверенность</DataPath>
-															<TitleLocation>None</TitleLocation>
-															<AutoMaxWidth>false</AutoMaxWidth>
-															<MaxWidth>55</MaxWidth>
-															<ContextMenu name="ДоверенностьЛицаДоверителяКонтекстноеМеню" id="1103"/>
-															<ExtendedTooltip name="ДоверенностьЛицаДоверителяРасширеннаяПодсказка" id="1104"/>
-														</InputField>
-														<InputField name="ДоверенностьЛицаДоверителяПредставление" id="1107">
-															<DataPath>Объект.РодительскаяДоверенностьНомер</DataPath>
-															<TitleLocation>None</TitleLocation>
-															<AutoMaxWidth>false</AutoMaxWidth>
-															<MaxWidth>55</MaxWidth>
-															<ContextMenu name="ДоверенностьЛицаДоверителяПредставлениеКонтекстноеМеню" id="1108"/>
-															<ExtendedTooltip name="ДоверенностьЛицаДоверителяПредставлениеРасширеннаяПодсказка" id="1109"/>
-														</InputField>
-													</ChildItems>
-												</UsualGroup>
-											</ChildItems>
-										</UsualGroup>
 									</ChildItems>
 								</UsualGroup>
 							</ChildItems>
@@ -938,7 +1041,7 @@
 							<Title>
 								<v8:item>
 									<v8:lang>ru</v8:lang>
-									<v8:content>Группа несколько доверителей декорация</v8:content>
+									<v8:content>Несколько доверителей декорация</v8:content>
 								</v8:item>
 							</Title>
 							<ShowTitle>false</ShowTitle>
@@ -959,6 +1062,181 @@
 						</UsualGroup>
 					</ChildItems>
 				</UsualGroup>
+				<UsualGroup name="ГруппаПервоначальнаяДоверенность" id="1171">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Первоначальная доверенность</v8:content>
+						</v8:item>
+					</Title>
+					<Group>Vertical</Group>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаПервоначальнаяДоверенностьРасширеннаяПодсказка" id="1172"/>
+					<ChildItems>
+						<UsualGroup name="ГруппаДоверенностьОснование" id="1097">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Доверенность основание</v8:content>
+								</v8:item>
+							</Title>
+							<Group>AlwaysHorizontal</Group>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаДоверенностьОснованиеРасширеннаяПодсказка" id="1098"/>
+							<ChildItems>
+								<LabelDecoration name="НадписьПоДоверенности" id="1129">
+									<Width>15</Width>
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>По доверенности:</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="НадписьПоДоверенностиКонтекстноеМеню" id="1130"/>
+									<ExtendedTooltip name="НадписьПоДоверенностиРасширеннаяПодсказка" id="1131"/>
+								</LabelDecoration>
+								<UsualGroup name="ГруппаДоверенностьИПредставление" id="1105">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Группа доверенность</v8:content>
+										</v8:item>
+									</Title>
+									<Group>Vertical</Group>
+									<Representation>None</Representation>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="ГруппаДоверенностьИПредставлениеРасширеннаяПодсказка" id="1106"/>
+									<ChildItems>
+										<InputField name="ДоверенностьЛицаДоверителя" id="1102">
+											<DataPath>Объект.РодительскаяДоверенность</DataPath>
+											<TitleLocation>None</TitleLocation>
+											<AutoMaxWidth>false</AutoMaxWidth>
+											<MaxWidth>55</MaxWidth>
+											<ContextMenu name="ДоверенностьЛицаДоверителяКонтекстноеМеню" id="1103"/>
+											<ExtendedTooltip name="ДоверенностьЛицаДоверителяРасширеннаяПодсказка" id="1104"/>
+										</InputField>
+										<InputField name="ДоверенностьЛицаДоверителяПредставление" id="1107">
+											<DataPath>Объект.РодительскаяДоверенностьНомер</DataPath>
+											<TitleLocation>None</TitleLocation>
+											<AutoMaxWidth>false</AutoMaxWidth>
+											<MaxWidth>55</MaxWidth>
+											<ContextMenu name="ДоверенностьЛицаДоверителяПредставлениеКонтекстноеМеню" id="1108"/>
+											<ExtendedTooltip name="ДоверенностьЛицаДоверителяПредставлениеРасширеннаяПодсказка" id="1109"/>
+										</InputField>
+									</ChildItems>
+								</UsualGroup>
+							</ChildItems>
+						</UsualGroup>
+					</ChildItems>
+				</UsualGroup>
+				<UsualGroup name="ГруппаПередоверие" id="1189">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Цепочка передоверия</v8:content>
+						</v8:item>
+					</Title>
+					<TitleFont ref="style:NormalTextFont" kind="StyleItem"/>
+					<Behavior>Collapsible</Behavior>
+					<Collapsed>true</Collapsed>
+					<ControlRepresentation>Picture</ControlRepresentation>
+					<ExtendedTooltip name="ГруппаПередовериеРасширеннаяПодсказка" id="1190"/>
+					<ChildItems>
+						<Table name="ЦепочкаПередоверия" id="1191">
+							<Representation>Tree</Representation>
+							<CommandBarLocation>None</CommandBarLocation>
+							<ReadOnly>true</ReadOnly>
+							<Width>71</Width>
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<HeightControlVariant>UseContentHeight</HeightControlVariant>
+							<Header>false</Header>
+							<UseAlternationRowColor>true</UseAlternationRowColor>
+							<AutoInsertNewRow>true</AutoInsertNewRow>
+							<InitialTreeView>ExpandAllLevels</InitialTreeView>
+							<HorizontalStretch>false</HorizontalStretch>
+							<VerticalStretch>false</VerticalStretch>
+							<EnableStartDrag>true</EnableStartDrag>
+							<EnableDrag>true</EnableDrag>
+							<DataPath>ЦепочкаПередоверия</DataPath>
+							<RowPictureDataPath>ЦепочкаПередоверия.ИндексСтатуса</RowPictureDataPath>
+							<RowsPicture>
+								<xr:Ref>CommonPicture.СостоянияСертификатов</xr:Ref>
+								<xr:LoadTransparent>false</xr:LoadTransparent>
+							</RowsPicture>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Цепочка передоверия</v8:content>
+								</v8:item>
+							</Title>
+							<CommandSet>
+								<ExcludedCommand>Add</ExcludedCommand>
+								<ExcludedCommand>Change</ExcludedCommand>
+								<ExcludedCommand>Copy</ExcludedCommand>
+								<ExcludedCommand>CopyToClipboard</ExcludedCommand>
+								<ExcludedCommand>Delete</ExcludedCommand>
+								<ExcludedCommand>EndEdit</ExcludedCommand>
+								<ExcludedCommand>FindByCurrentValue</ExcludedCommand>
+								<ExcludedCommand>HierarchicalList</ExcludedCommand>
+								<ExcludedCommand>List</ExcludedCommand>
+								<ExcludedCommand>MoveDown</ExcludedCommand>
+								<ExcludedCommand>MoveUp</ExcludedCommand>
+								<ExcludedCommand>SearchEverywhere</ExcludedCommand>
+								<ExcludedCommand>SelectAll</ExcludedCommand>
+								<ExcludedCommand>ShowMultipleSelection</ExcludedCommand>
+								<ExcludedCommand>ShowRowRearrangement</ExcludedCommand>
+								<ExcludedCommand>SortListAsc</ExcludedCommand>
+								<ExcludedCommand>SortListDesc</ExcludedCommand>
+								<ExcludedCommand>Tree</ExcludedCommand>
+							</CommandSet>
+							<ContextMenu name="ЦепочкаПередоверияКонтекстноеМеню" id="1192"/>
+							<AutoCommandBar name="ЦепочкаПередоверияКоманднаяПанель" id="1193"/>
+							<ExtendedTooltip name="ЦепочкаПередоверияРасширеннаяПодсказка" id="1194"/>
+							<SearchStringAddition name="ЦепочкаПередоверияСтрокаПоиска" id="1195">
+								<AdditionSource>
+									<Item>ЦепочкаПередоверия</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ЦепочкаПередоверияСтрокаПоискаКонтекстноеМеню" id="1196"/>
+								<ExtendedTooltip name="ЦепочкаПередоверияСтрокаПоискаРасширеннаяПодсказка" id="1197"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="ЦепочкаПередоверияСостояниеПросмотра" id="1198">
+								<AdditionSource>
+									<Item>ЦепочкаПередоверия</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ЦепочкаПередоверияСостояниеПросмотраКонтекстноеМеню" id="1199"/>
+								<ExtendedTooltip name="ЦепочкаПередоверияСостояниеПросмотраРасширеннаяПодсказка" id="1200"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="ЦепочкаПередоверияУправлениеПоиском" id="1201">
+								<AdditionSource>
+									<Item>ЦепочкаПередоверия</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="ЦепочкаПередоверияУправлениеПоискомКонтекстноеМеню" id="1202"/>
+								<ExtendedTooltip name="ЦепочкаПередоверияУправлениеПоискомРасширеннаяПодсказка" id="1203"/>
+							</SearchControlAddition>
+							<Events>
+								<Event name="Selection">ПередовериеВыбор</Event>
+							</Events>
+							<ChildItems>
+								<InputField name="ЦепочкаПередоверияНаименование" id="1216">
+									<DataPath>ЦепочкаПередоверия.Наименование</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Доверенность</v8:content>
+										</v8:item>
+									</Title>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ЦепочкаПередоверияНаименованиеКонтекстноеМеню" id="1217"/>
+									<ExtendedTooltip name="ЦепочкаПередоверияНаименованиеРасширеннаяПодсказка" id="1218"/>
+								</InputField>
+							</ChildItems>
+						</Table>
+					</ChildItems>
+				</UsualGroup>
 				<UsualGroup name="ГруппаЭлектронныеПодписи" id="800">
 					<Title>
 						<v8:item>
@@ -974,7 +1252,7 @@
 					<ChildItems>
 						<Table name="ЭлектронныеПодписи" id="802">
 							<Representation>List</Representation>
-							<Width>80</Width>
+							<Width>71</Width>
 							<AutoMaxWidth>false</AutoMaxWidth>
 							<AutoMaxHeight>false</AutoMaxHeight>
 							<HeightControlVariant>UseContentHeight</HeightControlVariant>
@@ -985,6 +1263,12 @@
 							<EnableStartDrag>true</EnableStartDrag>
 							<EnableDrag>true</EnableDrag>
 							<DataPath>ЭлектронныеПодписи</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Электронные подписи</v8:content>
+								</v8:item>
+							</Title>
 							<RowFilter xsi:nil="true"/>
 							<ContextMenu name="ЭлектронныеПодписиКонтекстноеМеню" id="803"/>
 							<AutoCommandBar name="ЭлектронныеПодписиКоманднаяПанель" id="804">
@@ -993,16 +1277,34 @@
 									<Button name="ЭлектронныеПодписиПроверитьПодпись" id="1044">
 										<Type>CommandBarButton</Type>
 										<CommandName>Form.Command.ПроверитьПодпись</CommandName>
+										<Title>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Проверить</v8:content>
+											</v8:item>
+										</Title>
 										<ExtendedTooltip name="ЭлектронныеПодписиПроверитьПодписьРасширеннаяПодсказка" id="1045"/>
 									</Button>
 									<Button name="ЭлектронныеПодписиДобавитьПодпись" id="1048">
 										<Type>CommandBarButton</Type>
 										<CommandName>Form.Command.ДобавитьПодпись</CommandName>
+										<Title>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Добавить подпись из файла...</v8:content>
+											</v8:item>
+										</Title>
 										<ExtendedTooltip name="ЭлектронныеПодписиДобавитьПодписьРасширеннаяПодсказка" id="1049"/>
 									</Button>
 									<Button name="ЭлектронныеПодписиУдалитьПодпись" id="1046">
 										<Type>CommandBarButton</Type>
 										<CommandName>Form.Command.УдалитьПодпись</CommandName>
+										<Title>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Удалить подпись</v8:content>
+											</v8:item>
+										</Title>
 										<ExtendedTooltip name="ЭлектронныеПодписиУдалитьПодписьРасширеннаяПодсказка" id="1047"/>
 									</Button>
 								</ChildItems>
@@ -1046,6 +1348,7 @@
 									</Title>
 									<EditMode>EnterOnInput</EditMode>
 									<Width>30</Width>
+									<Height>2</Height>
 									<ContextMenu name="ЭлектронныеПодписиКомуВыданСертификатКонтекстноеМеню" id="816"/>
 									<ExtendedTooltip name="ЭлектронныеПодписиКомуВыданСертификатРасширеннаяПодсказка" id="817"/>
 								</InputField>
@@ -1086,27 +1389,28 @@
 									<Group>InCell</Group>
 									<ExtendedTooltip name="ЭлектронныеПодписиГруппаПроверкаРасширеннаяПодсказка" id="987"/>
 									<ChildItems>
-										<InputField name="ЭлектронныеПодписиСтатус" id="857">
-											<DataPath>ЭлектронныеПодписи.Статус</DataPath>
-											<EditMode>EnterOnInput</EditMode>
-											<AutoMaxHeight>false</AutoMaxHeight>
-											<ContextMenu name="ЭлектронныеПодписиСтатусКонтекстноеМеню" id="858"/>
-											<ExtendedTooltip name="ЭлектронныеПодписиСтатусРасширеннаяПодсказка" id="859"/>
+										<InputField name="ЭлектронныеПодписиРезультатПроверкиКраткий" id="1157">
+											<DataPath>ЭлектронныеПодписи.РезультатПроверкиКраткий</DataPath>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Статус</v8:content>
+												</v8:item>
+											</Title>
+											<ContextMenu name="ЭлектронныеПодписиРезультатПроверкиКраткийКонтекстноеМеню" id="1158"/>
+											<ExtendedTooltip name="ЭлектронныеПодписиРезультатПроверкиКраткийРасширеннаяПодсказка" id="1159"/>
 										</InputField>
 										<InputField name="ЭлектронныеПодписиДатаПроверкиПодписи" id="983">
 											<DataPath>ЭлектронныеПодписи.ДатаПроверкиПодписи</DataPath>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Дата проверки</v8:content>
+												</v8:item>
+											</Title>
 											<EditMode>EnterOnInput</EditMode>
 											<ContextMenu name="ЭлектронныеПодписиДатаПроверкиПодписиКонтекстноеМеню" id="984"/>
 											<ExtendedTooltip name="ЭлектронныеПодписиДатаПроверкиПодписиРасширеннаяПодсказка" id="985"/>
-										</InputField>
-										<InputField name="ЭлектронныеПодписиОписаниеОшибки" id="988">
-											<DataPath>ЭлектронныеПодписи.ОписаниеОшибки</DataPath>
-											<TitleLocation>None</TitleLocation>
-											<EditMode>EnterOnInput</EditMode>
-											<Height>3</Height>
-											<AutoMaxHeight>false</AutoMaxHeight>
-											<ContextMenu name="ЭлектронныеПодписиОписаниеОшибкиКонтекстноеМеню" id="989"/>
-											<ExtendedTooltip name="ЭлектронныеПодписиОписаниеОшибкиРасширеннаяПодсказка" id="990"/>
 										</InputField>
 									</ChildItems>
 								</ColumnGroup>
@@ -1142,7 +1446,7 @@
 							<Title>
 								<v8:item>
 									<v8:lang>ru</v8:lang>
-									<v8:content>Группа представитель реквизиты</v8:content>
+									<v8:content>Представитель реквизиты</v8:content>
 								</v8:item>
 							</Title>
 							<Group>AlwaysHorizontal</Group>
@@ -1183,6 +1487,12 @@
 								<InputField name="ПредставительНаименование" id="119">
 									<DataPath>ПредставительНаименование</DataPath>
 									<Visible>false</Visible>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Представитель наименование</v8:content>
+										</v8:item>
+									</Title>
 									<TitleLocation>None</TitleLocation>
 									<AutoMaxWidth>false</AutoMaxWidth>
 									<MaxWidth>55</MaxWidth>
@@ -1198,6 +1508,12 @@
 								</InputField>
 								<InputField name="Представитель" id="116">
 									<DataPath>Представитель</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Представитель</v8:content>
+										</v8:item>
+									</Title>
 									<TitleLocation>None</TitleLocation>
 									<AutoMaxWidth>false</AutoMaxWidth>
 									<MaxWidth>55</MaxWidth>
@@ -1213,6 +1529,12 @@
 								<Button name="РеквизитыПредставителя" id="122">
 									<Type>Hyperlink</Type>
 									<CommandName>Form.Command.РеквизитыПредставителя</CommandName>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Уточнить реквизиты</v8:content>
+										</v8:item>
+									</Title>
 									<ToolTipRepresentation>Button</ToolTipRepresentation>
 									<ExtendedTooltip name="РеквизитыПредставителяРасширеннаяПодсказка" id="123">
 										<Title formatted="false">
@@ -1227,6 +1549,12 @@
 									<Type>UsualButton</Type>
 									<Representation>Picture</Representation>
 									<CommandName>Form.Command.ДобавитьПредставителя</CommandName>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Добавить</v8:content>
+										</v8:item>
+									</Title>
 									<ExtendedTooltip name="ПредставительДобавитьРасширеннаяПодсказка" id="1041"/>
 								</Button>
 							</ChildItems>
@@ -1235,7 +1563,7 @@
 							<Title>
 								<v8:item>
 									<v8:lang>ru</v8:lang>
-									<v8:content>Группа представитель декорация</v8:content>
+									<v8:content>Представитель декорация</v8:content>
 								</v8:item>
 							</Title>
 							<ShowTitle>false</ShowTitle>
@@ -1300,6 +1628,12 @@
 										<InputField name="ЛицоПредставителяНаименование" id="751">
 											<DataPath>ЛицоПредставителяНаименование</DataPath>
 											<Visible>false</Visible>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Представитель наименование</v8:content>
+												</v8:item>
+											</Title>
 											<TitleLocation>None</TitleLocation>
 											<AutoMaxWidth>false</AutoMaxWidth>
 											<MaxWidth>55</MaxWidth>
@@ -1314,6 +1648,12 @@
 										</InputField>
 										<InputField name="ЛицоПредставителя" id="748">
 											<DataPath>ЛицоПредставителя</DataPath>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Представитель ФЛ</v8:content>
+												</v8:item>
+											</Title>
 											<TitleLocation>None</TitleLocation>
 											<AutoMaxWidth>false</AutoMaxWidth>
 											<MaxWidth>55</MaxWidth>
@@ -1329,6 +1669,12 @@
 										<Button name="РеквизитыЛицаПредставителя" id="754">
 											<Type>Hyperlink</Type>
 											<CommandName>Form.Command.РеквизитыЛицаПредставителя</CommandName>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Уточнить реквизиты</v8:content>
+												</v8:item>
+											</Title>
 											<ToolTipRepresentation>Button</ToolTipRepresentation>
 											<ExtendedTooltip name="РеквизитыЛицаПредставителяРасширеннаяПодсказка" id="755"/>
 										</Button>
@@ -1336,6 +1682,12 @@
 											<Type>UsualButton</Type>
 											<Representation>Picture</Representation>
 											<CommandName>Form.Command.ДобавитьЛицаПредставителя</CommandName>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Добавить</v8:content>
+												</v8:item>
+											</Title>
 											<ExtendedTooltip name="ЛицоПредставителяДобавитьРасширеннаяПодсказка" id="1039"/>
 										</Button>
 									</ChildItems>
@@ -1344,7 +1696,7 @@
 									<Title>
 										<v8:item>
 											<v8:lang>ru</v8:lang>
-											<v8:content>Группа лицо представителя декорация</v8:content>
+											<v8:content>Лицо представителя декорация</v8:content>
 										</v8:item>
 									</Title>
 									<ShowTitle>false</ShowTitle>
@@ -1409,6 +1761,12 @@
 						<Button name="Удалить" id="1022">
 							<Type>UsualButton</Type>
 							<CommandName>Form.Command.Удалить</CommandName>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Удалить</v8:content>
+								</v8:item>
+							</Title>
 							<ExtendedTooltip name="УдалитьРасширеннаяПодсказка" id="1023"/>
 						</Button>
 					</ChildItems>
@@ -1417,7 +1775,7 @@
 					<Representation>List</Representation>
 					<ReadOnly>true</ReadOnly>
 					<AutoMaxWidth>false</AutoMaxWidth>
-					<MaxWidth>80</MaxWidth>
+					<MaxWidth>73</MaxWidth>
 					<HeightControlVariant>UseContentHeight</HeightControlVariant>
 					<RowSelectionMode>Row</RowSelectionMode>
 					<Header>false</Header>
@@ -1426,6 +1784,12 @@
 					<EnableStartDrag>true</EnableStartDrag>
 					<EnableDrag>true</EnableDrag>
 					<DataPath>ТаблицаПредставительНесколько</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Таблица представитель несколько</v8:content>
+						</v8:item>
+					</Title>
 					<CommandSet>
 						<ExcludedCommand>CancelSearch</ExcludedCommand>
 						<ExcludedCommand>Copy</ExcludedCommand>
@@ -1491,6 +1855,12 @@
 							<ChildItems>
 								<InputField name="ТаблицаПредставительНесколькоПредставитель" id="993">
 									<DataPath>ТаблицаПредставительНесколько.Представитель</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Представитель</v8:content>
+										</v8:item>
+									</Title>
 									<TitleLocation>None</TitleLocation>
 									<EditMode>EnterOnInput</EditMode>
 									<AutoCellHeight>true</AutoCellHeight>
@@ -1536,6 +1906,12 @@
 							<ChildItems>
 								<InputField name="ТаблицаПредставительНесколькоНеЗаполненыРеквизиты" id="1030">
 									<DataPath>ТаблицаПредставительНесколько.НеЗаполненыРеквизиты</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Не заполнены реквизиты</v8:content>
+										</v8:item>
+									</Title>
 									<EditMode>EnterOnInput</EditMode>
 									<AutoCellHeight>true</AutoCellHeight>
 									<Width>3</Width>
@@ -1549,6 +1925,12 @@
 								</InputField>
 								<InputField name="ТаблицаПредставительНесколькоНеЗаполненыРеквизитыФЛ" id="1033">
 									<DataPath>ТаблицаПредставительНесколько.НеЗаполненыРеквизитыФЛ</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Не заполнены реквизиты</v8:content>
+										</v8:item>
+									</Title>
 									<EditMode>EnterOnInput</EditMode>
 									<AutoCellHeight>true</AutoCellHeight>
 									<Width>3</Width>
@@ -1570,49 +1952,57 @@
 			<Title>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Группа полномочия</v8:content>
+					<v8:content>Полномочия</v8:content>
 				</v8:item>
 			</Title>
-			<Width>80</Width>
-			<HorizontalStretch>false</HorizontalStretch>
+			<VerticalStretch>true</VerticalStretch>
 			<Group>AlwaysHorizontal</Group>
 			<Representation>NormalSeparation</Representation>
-			<ShowTitle>false</ShowTitle>
 			<ExtendedTooltip name="ГруппаПолномочияРасширеннаяПодсказка" id="556"/>
 			<ChildItems>
-				<LabelDecoration name="ДекорацияПолномочия" id="557">
-					<Title formatted="false">
+				<InputField name="ТекстПолномочий" id="1173">
+					<DataPath>ТекстПолномочий</DataPath>
+					<Title>
 						<v8:item>
 							<v8:lang>ru</v8:lang>
-							<v8:content>Полномочия:</v8:content>
+							<v8:content>Полномочия</v8:content>
 						</v8:item>
 					</Title>
-					<ContextMenu name="ДекорацияПолномочияКонтекстноеМеню" id="558"/>
-					<ExtendedTooltip name="ДекорацияПолномочияРасширеннаяПодсказка" id="559"/>
-				</LabelDecoration>
-				<LabelDecoration name="ДекорацияПолномочияПредставителя" id="560">
+					<TitleLocation>None</TitleLocation>
 					<AutoMaxWidth>false</AutoMaxWidth>
+					<MaxWidth>71</MaxWidth>
 					<AutoMaxHeight>false</AutoMaxHeight>
-					<Title formatted="false">
+					<VerticalStretch>true</VerticalStretch>
+					<MultiLine>true</MultiLine>
+					<ChoiceButton>false</ChoiceButton>
+					<OpenButton>true</OpenButton>
+					<TextEdit>false</TextEdit>
+					<HeightControlVariant>UseContentHeight</HeightControlVariant>
+					<ContextMenu name="ТекстПолномочийКонтекстноеМеню" id="1174"/>
+					<ExtendedTooltip name="ТекстПолномочийРасширеннаяПодсказка" id="1175"/>
+					<Events>
+						<Event name="StartChoice">ТекстПолномочийНачалоВыбора</Event>
+						<Event name="Opening">ТекстПолномочийОткрытие</Event>
+					</Events>
+				</InputField>
+				<Button name="ВыбратьПолномочия" id="1176">
+					<Type>Hyperlink</Type>
+					<CommandName>Form.Command.ВыбратьПолномочия</CommandName>
+					<Title>
 						<v8:item>
 							<v8:lang>ru</v8:lang>
-							<v8:content>Все</v8:content>
+							<v8:content>Выбрать</v8:content>
 						</v8:item>
 					</Title>
-					<Hyperlink>true</Hyperlink>
-					<ContextMenu name="ДекорацияПолномочияПредставителяКонтекстноеМеню" id="561"/>
-					<ExtendedTooltip name="ДекорацияПолномочияПредставителяРасширеннаяПодсказка" id="562"/>
-					<Events>
-						<Event name="Click">ДекорацияПолномочияПредставителяНажатие</Event>
-					</Events>
-				</LabelDecoration>
+					<ExtendedTooltip name="ВыбратьПолномочияРасширеннаяПодсказка" id="1177"/>
+				</Button>
 			</ChildItems>
 		</UsualGroup>
 		<UsualGroup name="ГруппаПодвал" id="759">
 			<Title>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Группа подвал</v8:content>
+					<v8:content>Подвал</v8:content>
 				</v8:item>
 			</Title>
 			<Group>Vertical</Group>
@@ -1624,7 +2014,7 @@
 					<Title>
 						<v8:item>
 							<v8:lang>ru</v8:lang>
-							<v8:content>Группа назначение</v8:content>
+							<v8:content>Назначение</v8:content>
 						</v8:item>
 					</Title>
 					<ToolTipRepresentation>ShowBottom</ToolTipRepresentation>
@@ -1645,7 +2035,7 @@
 							<Title>
 								<v8:item>
 									<v8:lang>ru</v8:lang>
-									<v8:content>Группа назначение НО</v8:content>
+									<v8:content>Назначение НО</v8:content>
 								</v8:item>
 							</Title>
 							<Group>AlwaysHorizontal</Group>
@@ -1796,7 +2186,7 @@
 							<TitleLocation>None</TitleLocation>
 							<ToolTipRepresentation>ShowTop</ToolTipRepresentation>
 							<AutoMaxWidth>false</AutoMaxWidth>
-							<MaxWidth>80</MaxWidth>
+							<MaxWidth>72</MaxWidth>
 							<MaxHeight>10</MaxHeight>
 							<MultiLine>true</MultiLine>
 							<ContextMenu name="ИныеСведенияКонтекстноеМеню" id="796"/>
@@ -1814,16 +2204,14 @@
 					</ChildItems>
 				</UsualGroup>
 				<UsualGroup name="ГруппаВозможностьПередоверия" id="1122">
-					<Visible>false</Visible>
 					<Title>
 						<v8:item>
 							<v8:lang>ru</v8:lang>
-							<v8:content>Группа возможность передоверия</v8:content>
+							<v8:content>Возможность передоверия</v8:content>
 						</v8:item>
 					</Title>
-					<VerticalStretch>true</VerticalStretch>
+					<VerticalStretch>false</VerticalStretch>
 					<Group>AlwaysHorizontal</Group>
-					<Representation>None</Representation>
 					<ShowTitle>false</ShowTitle>
 					<ExtendedTooltip name="ГруппаВозможностьПередоверияРасширеннаяПодсказка" id="1123"/>
 					<ChildItems>
@@ -1877,7 +2265,7 @@
 			<Title>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Группа регистрация в реестре</v8:content>
+					<v8:content>Регистрация в реестре</v8:content>
 				</v8:item>
 			</Title>
 			<Group>Vertical</Group>
@@ -1889,7 +2277,7 @@
 					<Title>
 						<v8:item>
 							<v8:lang>ru</v8:lang>
-							<v8:content>Группа регистрация в реестре ФНС</v8:content>
+							<v8:content>Регистрация в реестре ФНС</v8:content>
 						</v8:item>
 					</Title>
 					<ShowTitle>false</ShowTitle>
@@ -1929,7 +2317,7 @@
 					<Title>
 						<v8:item>
 							<v8:lang>ru</v8:lang>
-							<v8:content>Группа регистрация в другом реестре</v8:content>
+							<v8:content>Регистрация в другом реестре</v8:content>
 						</v8:item>
 					</Title>
 					<ShowTitle>false</ShowTitle>
@@ -1973,9 +2361,10 @@
 			<Title>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Группа номера</v8:content>
+					<v8:content>Номера</v8:content>
 				</v8:item>
 			</Title>
+			<Width>80</Width>
 			<ShowTitle>false</ShowTitle>
 			<ExtendedTooltip name="ГруппаНомераРасширеннаяПодсказка" id="1121"/>
 			<ChildItems>
@@ -1988,6 +2377,9 @@
 						</v8:item>
 					</Title>
 					<TitleLocation>Top</TitleLocation>
+					<AutoMaxWidth>false</AutoMaxWidth>
+					<MaxWidth>30</MaxWidth>
+					<HorizontalStretch>false</HorizontalStretch>
 					<TextEdit>false</TextEdit>
 					<InputHint>
 						<v8:item>
@@ -1998,11 +2390,21 @@
 					<ContextMenu name="НомерДоверенностиКонтекстноеМеню" id="39"/>
 					<ExtendedTooltip name="НомерДоверенностиРасширеннаяПодсказка" id="40"/>
 				</InputField>
+				<InputField name="НомерВРеестреНотариальныхДействий" id="1163">
+					<DataPath>Объект.НомерВРеестреНотариальныхДействий</DataPath>
+					<ReadOnly>true</ReadOnly>
+					<TitleLocation>Top</TitleLocation>
+					<AutoMaxWidth>false</AutoMaxWidth>
+					<MaxWidth>25</MaxWidth>
+					<HorizontalStretch>false</HorizontalStretch>
+					<ContextMenu name="НомерВРеестреНотариальныхДействийКонтекстноеМеню" id="1164"/>
+					<ExtendedTooltip name="НомерВРеестреНотариальныхДействийРасширеннаяПодсказка" id="1165"/>
+				</InputField>
 				<InputField name="Код" id="66">
 					<DataPath>Объект.Code</DataPath>
 					<TitleLocation>Top</TitleLocation>
-					<AutoMaxWidth>false</AutoMaxWidth>
 					<MaxWidth>11</MaxWidth>
+					<HorizontalStretch>false</HorizontalStretch>
 					<ContextMenu name="КодКонтекстноеМеню" id="67"/>
 					<ExtendedTooltip name="КодРасширеннаяПодсказка" id="68"/>
 				</InputField>
@@ -2017,7 +2419,8 @@
 				</v8:item>
 			</Title>
 			<TitleLocation>Top</TitleLocation>
-			<Width>60</Width>
+			<AutoMaxWidth>false</AutoMaxWidth>
+			<MaxWidth>70</MaxWidth>
 			<HorizontalStretch>true</HorizontalStretch>
 			<ContextMenu name="НаименованиеКонтекстноеМеню" id="365"/>
 			<ExtendedTooltip name="НаименованиеРасширеннаяПодсказка" id="366"/>
@@ -2424,21 +2827,6 @@
 						</v8:StringQualifiers>
 					</Type>
 				</Column>
-				<Column name="Статус" id="4">
-					<Title>
-						<v8:item>
-							<v8:lang>ru</v8:lang>
-							<v8:content>Статус</v8:content>
-						</v8:item>
-					</Title>
-					<Type>
-						<v8:Type>xs:string</v8:Type>
-						<v8:StringQualifiers>
-							<v8:Length>0</v8:Length>
-							<v8:AllowedLength>Variable</v8:AllowedLength>
-						</v8:StringQualifiers>
-					</Type>
-				</Column>
 				<Column name="Объект" id="5">
 					<Type>
 						<v8:TypeSet>cfg:AnyRef</v8:TypeSet>
@@ -2505,21 +2893,6 @@
 						</v8:NumberQualifiers>
 					</Type>
 				</Column>
-				<Column name="ОписаниеОшибки" id="13">
-					<Title>
-						<v8:item>
-							<v8:lang>ru</v8:lang>
-							<v8:content>Описание ошибки</v8:content>
-						</v8:item>
-					</Title>
-					<Type>
-						<v8:Type>xs:string</v8:Type>
-						<v8:StringQualifiers>
-							<v8:Length>0</v8:Length>
-							<v8:AllowedLength>Variable</v8:AllowedLength>
-						</v8:StringQualifiers>
-					</Type>
-				</Column>
 				<Column name="ТипПодписи" id="14">
 					<Type>
 						<v8:Type>cfg:EnumRef.ТипыПодписиКриптографии</v8:Type>
@@ -2541,6 +2914,32 @@
 				<Column name="ИдентификаторПодписи" id="16">
 					<Type>
 						<v8:Type>v8:UUID</v8:Type>
+					</Type>
+				</Column>
+				<Column name="РезультатПроверки" id="57">
+					<Type/>
+				</Column>
+				<Column name="РезультатПроверкиКраткий" id="58">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Результат проверки краткий</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="МашиночитаемаяДоверенность" id="59">
+					<Type/>
+				</Column>
+				<Column name="МашиночитаемаяДоверенностьВерна" id="61">
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
 					</Type>
 				</Column>
 			</Columns>
@@ -2808,6 +3207,177 @@
 				<v8:Type>xs:boolean</v8:Type>
 			</Type>
 		</Attribute>
+		<Attribute name="ТекстПолномочий" id="52">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Текст полномочий</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ДоверительПервоначальнойДоверенностиНаименование" id="62">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Доверитель первоначальной доверенности наименование</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ОграниченияПолномочий" id="63">
+			<Type>
+				<v8:Type>v8:ValueTable</v8:Type>
+			</Type>
+			<SavedData>true</SavedData>
+			<Columns>
+				<Column name="ИдентификаторПолномочия" id="1">
+					<Type>
+						<v8:Type>v8:UUID</v8:Type>
+					</Type>
+				</Column>
+				<Column name="Код" id="2">
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>255</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="Наименование" id="3">
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>255</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="НаименованиеЗначения" id="4">
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>255</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="КодЗначения" id="5">
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>255</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="ЭтоТекстовоеЗначение" id="7">
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+				<Column name="ОписаниеТипа" id="8">
+					<Type/>
+				</Column>
+				<Column name="Описание" id="6">
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="НетВКлассификаторе" id="9">
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+				<Column name="НетВКлассификатореКодаЗначения" id="10">
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+		<Attribute name="ДоверительПервоначальнойДоверенностиРеквизиты" id="64">
+			<Type/>
+		</Attribute>
+		<Attribute name="ДоверительПервоначальнойДоверенности" id="65">
+			<Type>
+				<v8:TypeSet>cfg:DefinedType.СторонаМЧД</v8:TypeSet>
+			</Type>
+		</Attribute>
+		<Attribute name="ЦепочкаПередоверия" id="57">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Цепочка передоверия</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTree</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="НомерДоверенности" id="1">
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>50</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="Ссылка" id="2">
+					<Type>
+						<v8:Type>cfg:CatalogRef.МашиночитаемыеДоверенности</v8:Type>
+					</Type>
+				</Column>
+				<Column name="ИндексСтатуса" id="3">
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>10</v8:Digits>
+							<v8:FractionDigits>0</v8:FractionDigits>
+							<v8:AllowedSign>Any</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+				<Column name="ФайлДоверенности" id="4">
+					<Type>
+						<v8:Type>cfg:CatalogRef.МашиночитаемыеДоверенностиПрисоединенныеФайлы</v8:Type>
+					</Type>
+				</Column>
+				<Column name="Наименование" id="5">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Наименование</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
 	</Attributes>
 	<Commands>
 		<Command name="ВыборТипаДоверителя" id="1">
@@ -2936,7 +3506,6 @@
 				</v8:item>
 			</ToolTip>
 			<Action>Отправить</Action>
-			<ModifiesSavedData>true</ModifiesSavedData>
 		</Command>
 		<Command name="УдалитьПодпись" id="14">
 			<Title>
@@ -3113,6 +3682,15 @@
 			</ToolTip>
 			<Action>ДоверенностьПроверенаВручную</Action>
 			<ModifiesSavedData>true</ModifiesSavedData>
+		</Command>
+		<Command name="ВыбратьПолномочия" id="23">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Выбрать</v8:content>
+				</v8:item>
+			</Title>
+			<Action>ВыбратьПолномочия</Action>
 		</Command>
 	</Commands>
 	<Parameters>

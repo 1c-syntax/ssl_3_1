@@ -16,7 +16,7 @@
 						<v8:content>Выбрать</v8:content>
 					</v8:item>
 				</Title>
-				<ExtendedTooltip name="ФормаКомандаВыбратьExtendedTooltip" id="105"/>
+				<ExtendedTooltip name="ФормаКомандаВыбратьРасширеннаяПодсказка" id="105"/>
 			</Button>
 		</ChildItems>
 	</AutoCommandBar>
@@ -33,7 +33,7 @@
 				</v8:item>
 			</Title>
 			<PagesRepresentation>TabsOnTop</PagesRepresentation>
-			<ExtendedTooltip name="СтраницыСпискиExtendedTooltip" id="106"/>
+			<ExtendedTooltip name="СтраницыСпискиРасширеннаяПодсказка" id="106"/>
 			<ChildItems>
 				<Page name="СтраницаПоискКонтактов" id="2">
 					<Title>
@@ -42,7 +42,7 @@
 							<v8:content>Поиск контактов</v8:content>
 						</v8:item>
 					</Title>
-					<ExtendedTooltip name="СтраницаПоискКонтактовExtendedTooltip" id="107"/>
+					<ExtendedTooltip name="СтраницаПоискКонтактовРасширеннаяПодсказка" id="107"/>
 					<ChildItems>
 						<UsualGroup name="ГруппаСтрокаПоиска" id="78">
 							<Title>
@@ -54,10 +54,16 @@
 							<Behavior>Usual</Behavior>
 							<Representation>None</Representation>
 							<ShowTitle>false</ShowTitle>
-							<ExtendedTooltip name="ГруппаСтрокаПоискаExtendedTooltip" id="108"/>
+							<ExtendedTooltip name="ГруппаСтрокаПоискаРасширеннаяПодсказка" id="108"/>
 							<ChildItems>
 								<InputField name="ВариантыПоиска" id="79">
 									<DataPath>ВариантыПоиска</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Варианты поиска</v8:content>
+										</v8:item>
+									</Title>
 									<TitleLocation>None</TitleLocation>
 									<Width>15</Width>
 									<HorizontalStretch>false</HorizontalStretch>
@@ -65,7 +71,7 @@
 									<ListChoiceMode>true</ListChoiceMode>
 									<TextEdit>false</TextEdit>
 									<ContextMenu name="ВариантыПоискаКонтекстноеМеню" id="80"/>
-									<ExtendedTooltip name="ВариантыПоискаExtendedTooltip" id="109"/>
+									<ExtendedTooltip name="ВариантыПоискаРасширеннаяПодсказка" id="109"/>
 									<Events>
 										<Event name="OnChange">ВариантыПоискаПриИзменении</Event>
 										<Event name="Clearing">ВариантыПоискаОчистка</Event>
@@ -74,6 +80,12 @@
 								<InputField name="СтрокаПоиска" id="17">
 									<DataPath>СтрокаПоиска</DataPath>
 									<DefaultItem>true</DefaultItem>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Строка поиска</v8:content>
+										</v8:item>
+									</Title>
 									<TitleLocation>None</TitleLocation>
 									<Width>28</Width>
 									<Wrap>false</Wrap>
@@ -84,13 +96,19 @@
 										</v8:item>
 									</InputHint>
 									<ContextMenu name="СтрокаПоискаКонтекстноеМеню" id="18"/>
-									<ExtendedTooltip name="СтрокаПоискаExtendedTooltip" id="110"/>
+									<ExtendedTooltip name="СтрокаПоискаРасширеннаяПодсказка" id="110"/>
 								</InputField>
 								<Button name="КомандаНайти" id="19">
 									<Type>UsualButton</Type>
 									<SkipOnInput>false</SkipOnInput>
 									<CommandName>Form.Command.КомандаНайти</CommandName>
-									<ExtendedTooltip name="КомандаНайтиExtendedTooltip" id="111"/>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Найти</v8:content>
+										</v8:item>
+									</Title>
+									<ExtendedTooltip name="КомандаНайтиРасширеннаяПодсказка" id="111"/>
 								</Button>
 							</ChildItems>
 						</UsualGroup>
@@ -120,20 +138,32 @@
 									<Button name="НайденныеКонтактыКонтекстноеМенюПросмотр" id="170">
 										<Type>CommandBarButton</Type>
 										<CommandName>Form.Command.Просмотр</CommandName>
+										<Title>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Просмотр</v8:content>
+											</v8:item>
+										</Title>
 										<ExtendedTooltip name="НайденныеКонтактыКонтекстноеМенюПросмотрРасширеннаяПодсказка" id="171"/>
 									</Button>
 									<Button name="НайтиВСпискеИзСпискаНайденных" id="90">
 										<Type>CommandBarButton</Type>
 										<SkipOnInput>false</SkipOnInput>
 										<CommandName>Form.Command.НайтиВСпискеИзСпискаНайденных</CommandName>
-										<ExtendedTooltip name="НайтиВСпискеИзСпискаНайденныхExtendedTooltip" id="112"/>
+										<Title>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Найти в списке</v8:content>
+											</v8:item>
+										</Title>
+										<ExtendedTooltip name="НайтиВСпискеИзСпискаНайденныхРасширеннаяПодсказка" id="112"/>
 									</Button>
 								</ChildItems>
 							</ContextMenu>
 							<AutoCommandBar name="НайденныеКонтактыКоманднаяПанель" id="22">
 								<Autofill>false</Autofill>
 							</AutoCommandBar>
-							<ExtendedTooltip name="НайденныеКонтактыExtendedTooltip" id="113"/>
+							<ExtendedTooltip name="НайденныеКонтактыРасширеннаяПодсказка" id="113"/>
 							<SearchStringAddition name="НайденныеКонтактыСтрокаПоиска" id="128">
 								<AdditionSource>
 									<Item>НайденныеКонтакты</Item>
@@ -172,15 +202,21 @@
 									</Title>
 									<Wrap>false</Wrap>
 									<ContextMenu name="КонтактКонтекстноеМеню" id="26"/>
-									<ExtendedTooltip name="КонтактExtendedTooltip" id="114"/>
+									<ExtendedTooltip name="КонтактРасширеннаяПодсказка" id="114"/>
 								</InputField>
 								<InputField name="Представление" id="23">
 									<DataPath>НайденныеКонтакты.Представление</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Найдено в</v8:content>
+										</v8:item>
+									</Title>
 									<AutoCellHeight>true</AutoCellHeight>
 									<Height>3</Height>
 									<Wrap>false</Wrap>
 									<ContextMenu name="ПредставлениеКонтекстноеМеню" id="24"/>
-									<ExtendedTooltip name="ПредставлениеExtendedTooltip" id="115"/>
+									<ExtendedTooltip name="ПредставлениеРасширеннаяПодсказка" id="115"/>
 								</InputField>
 							</ChildItems>
 						</Table>
@@ -193,7 +229,7 @@
 							<v8:content>Контакты по предмету</v8:content>
 						</v8:item>
 					</Title>
-					<ExtendedTooltip name="СтраницаВсеКонтактыПоПредметуExtendedTooltip" id="119"/>
+					<ExtendedTooltip name="СтраницаВсеКонтактыПоПредметуРасширеннаяПодсказка" id="119"/>
 					<ChildItems>
 						<Table name="КонтактыПоПредмету" id="71">
 							<Representation>List</Representation>
@@ -222,14 +258,20 @@
 										<Type>CommandBarButton</Type>
 										<SkipOnInput>false</SkipOnInput>
 										<CommandName>Form.Command.НайтиВСпискеИзСпискаПредметов</CommandName>
-										<ExtendedTooltip name="НайтиВСпискеИзСпискаПредметовExtendedTooltip" id="120"/>
+										<Title>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Найти в списке</v8:content>
+											</v8:item>
+										</Title>
+										<ExtendedTooltip name="НайтиВСпискеИзСпискаПредметовРасширеннаяПодсказка" id="120"/>
 									</Button>
 								</ChildItems>
 							</ContextMenu>
 							<AutoCommandBar name="КонтактыПоПредметуКоманднаяПанель" id="73">
 								<Autofill>false</Autofill>
 							</AutoCommandBar>
-							<ExtendedTooltip name="КонтактыПоПредметуExtendedTooltip" id="121"/>
+							<ExtendedTooltip name="КонтактыПоПредметуРасширеннаяПодсказка" id="121"/>
 							<SearchStringAddition name="КонтактыПоПредметуСтрокаПоиска" id="137">
 								<AdditionSource>
 									<Item>КонтактыПоПредмету</Item>
@@ -260,9 +302,15 @@
 							<ChildItems>
 								<InputField name="ПредставлениеНаименования" id="91">
 									<DataPath>КонтактыПоПредмету.ПредставлениеНаименования</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Контакт</v8:content>
+										</v8:item>
+									</Title>
 									<Wrap>false</Wrap>
 									<ContextMenu name="ПредставлениеНаименованияКонтекстноеМеню" id="92"/>
-									<ExtendedTooltip name="ПредставлениеНаименованияExtendedTooltip" id="122"/>
+									<ExtendedTooltip name="ПредставлениеНаименованияРасширеннаяПодсказка" id="122"/>
 								</InputField>
 							</ChildItems>
 						</Table>
@@ -275,7 +323,7 @@
 							<v8:content>Пользователи</v8:content>
 						</v8:item>
 					</Title>
-					<ExtendedTooltip name="СтраницаПользователейExtendedTooltip" id="123"/>
+					<ExtendedTooltip name="СтраницаПользователейРасширеннаяПодсказка" id="123"/>
 					<ChildItems>
 						<Table name="ГруппыПользователей" id="100">
 							<Representation>Tree</Representation>
@@ -333,7 +381,7 @@
 							<AllowGettingCurrentRowURL>true</AllowGettingCurrentRowURL>
 							<ContextMenu name="ГруппыПользователейКонтекстноеМеню" id="101"/>
 							<AutoCommandBar name="ГруппыПользователейКоманднаяПанель" id="102"/>
-							<ExtendedTooltip name="ГруппыПользователейExtendedTooltip" id="124"/>
+							<ExtendedTooltip name="ГруппыПользователейРасширеннаяПодсказка" id="124"/>
 							<SearchStringAddition name="ГруппыПользователейСтрокаПоиска" id="146">
 								<AdditionSource>
 									<Item>ГруппыПользователей</Item>
@@ -366,7 +414,7 @@
 									<DataPath>ГруппыПользователей.Description</DataPath>
 									<AutoMaxHeight>false</AutoMaxHeight>
 									<ContextMenu name="НаименованиеГруппыКонтекстноеМеню" id="104"/>
-									<ExtendedTooltip name="НаименованиеГруппыExtendedTooltip" id="125"/>
+									<ExtendedTooltip name="НаименованиеГруппыРасширеннаяПодсказка" id="125"/>
 								</LabelField>
 								<LabelField name="ГруппыПользователейСсылка" id="164">
 									<DataPath>ГруппыПользователей.Ref</DataPath>
@@ -416,7 +464,7 @@
 							<AllowGettingCurrentRowURL>true</AllowGettingCurrentRowURL>
 							<ContextMenu name="СписокПользователейКонтекстноеМеню" id="85"/>
 							<AutoCommandBar name="СписокПользователейКоманднаяПанель" id="86"/>
-							<ExtendedTooltip name="СписокПользователейExtendedTooltip" id="126"/>
+							<ExtendedTooltip name="СписокПользователейРасширеннаяПодсказка" id="126"/>
 							<SearchStringAddition name="СписокПользователейСтрокаПоиска" id="155">
 								<AdditionSource>
 									<Item>СписокПользователей</Item>
@@ -456,7 +504,7 @@
 									</Title>
 									<Wrap>false</Wrap>
 									<ContextMenu name="ПользовательКонтекстноеМеню" id="88"/>
-									<ExtendedTooltip name="ПользовательExtendedTooltip" id="127"/>
+									<ExtendedTooltip name="ПользовательРасширеннаяПодсказка" id="127"/>
 								</InputField>
 								<LabelField name="СписокПользователейСсылка" id="167">
 									<DataPath>СписокПользователей.Ref</DataPath>

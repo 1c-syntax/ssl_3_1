@@ -47,8 +47,8 @@
 						</v8:item>
 					</Title>
 					<Picture>
-						<xr:Ref>CommonPicture.Предупреждение32</xr:Ref>
-						<xr:LoadTransparent>false</xr:LoadTransparent>
+						<xr:Ref>StdPicture.DialogExclamation</xr:Ref>
+						<xr:LoadTransparent>true</xr:LoadTransparent>
 					</Picture>
 					<FileDragMode>AsFile</FileDragMode>
 					<ContextMenu name="КартинкаПредупрежденияКонтекстноеМеню" id="1169"/>
@@ -68,13 +68,41 @@
 					<ShowTitle>false</ShowTitle>
 					<ExtendedTooltip name="КолонкаПредупрежденияРасширеннаяПодсказка" id="1167"/>
 					<ChildItems>
+						<LabelDecoration name="НадписьНезавершенныеОбработчики" id="1247">
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<Title formatted="true">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>В приложении есть незавершенные дополнительные процедуры обработки данных, рекомендуется дождаться их
+выполнения до обновления.
+&lt;link Ссылка&gt;Перейти к результатам обновления&lt;/&gt;</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTipRepresentation>Button</ToolTipRepresentation>
+							<ContextMenu name="НадписьНезавершенныеОбработчикиКонтекстноеМеню" id="1248"/>
+							<ExtendedTooltip name="НадписьНезавершенныеОбработчикиРасширеннаяПодсказка" id="1249">
+								<Title formatted="false">
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>При обновлении приложения на новый исправительный релиз (изменилась 4-я цифра версии, например, 3.1.1.ХХ) можно не дожидаться завершения дополнительных процедур обработки данных и продолжить обновление.
+
+Если же выполняется обновление на новый функциональный релиз (изменилась 1-я, 2-я или 3-я цифра номера версии), то рекомендуется дождаться полного завершения процедур обработки данных. В новых функциональных релизах состав данных процедур может измениться и некоторые из них могут быть удалены, из-за чего они не будут выполнены и может произойти потеря некоторых данных.
+
+Если какие-то дополнительные процедуры обработки данных завершились с ошибкой, то рекомендуется обратиться в службу технической поддержки и после исправления ошибки выполнить обновление на новый исправительный релиз.</v8:content>
+									</v8:item>
+								</Title>
+							</ExtendedTooltip>
+							<Events>
+								<Event name="URLProcessing">НадписьОтложенныеОбработчикиОбработкаНавигационнойСсылки</Event>
+							</Events>
+						</LabelDecoration>
 						<LabelDecoration name="НадписьВыявленныеПроблемы" id="1175">
 							<AutoMaxWidth>false</AutoMaxWidth>
 							<SkipOnInput>false</SkipOnInput>
 							<Title formatted="true">
 								<v8:item>
 									<v8:lang>ru</v8:lang>
-									<v8:content>В программе выявлены проблемы ведения учета, которые рекомендуется устранить до обновления.
+									<v8:content>В приложении выявлены проблемы ведения учета, которые рекомендуется устранить до обновления.
 &lt;link Перейти к отчету по проблемам&gt;Перейти к отчету по проблемам&lt;/&gt;</v8:content>
 								</v8:item>
 							</Title>
@@ -84,7 +112,7 @@
 								<Title formatted="false">
 									<v8:item>
 										<v8:lang>ru</v8:lang>
-										<v8:content>Одна из частых причин различных блокирующих ошибок при обновлении на новую версию программы - это проблемы ведения учета, такие как, битые ссылки на несуществующие объекты, незаполненные обязательные реквизиты документов и другие. В таком случае рекомендуется устранять их перед началом обновления, для этого перейти к отчету и следовать приведенным в нем рекомендациям.</v8:content>
+										<v8:content>Одна из частых причин различных блокирующих ошибок при обновлении на новую версию приложения - это проблемы ведения учета, такие как, битые ссылки на несуществующие объекты, незаполненные обязательные реквизиты документов и другие. В таком случае рекомендуется устранять их перед началом обновления, для этого перейти к отчету и следовать приведенным в нем рекомендациям.</v8:content>
 									</v8:item>
 								</Title>
 							</ExtendedTooltip>
@@ -139,7 +167,7 @@
 					<Title formatted="true">
 						<v8:item>
 							<v8:lang>ru</v8:lang>
-							<v8:content>Проверка ведения учета в программе давно не выполнялась. Рекомендуется &lt;link ПерейтиКСпискуПроверок&gt;выполнить системные проверки&lt;/&gt; до обновления.</v8:content>
+							<v8:content>Проверка ведения учета в приложении давно не выполнялась. Рекомендуется &lt;link ПерейтиКСпискуПроверок&gt;выполнить системные проверки&lt;/&gt; до обновления.</v8:content>
 						</v8:item>
 					</Title>
 					<ToolTipRepresentation>Button</ToolTipRepresentation>
@@ -148,7 +176,7 @@
 						<Title formatted="false">
 							<v8:item>
 								<v8:lang>ru</v8:lang>
-								<v8:content>Одна из частых причин различных блокирующих ошибок при обновлении на новую версию программы - это проблемы ведения учета, такие как, битые ссылки на несуществующие объекты, незаполненные обязательные реквизиты документов и другие. В таком случае рекомендуется устранять их перед началом обновления.</v8:content>
+								<v8:content>Одна из частых причин различных блокирующих ошибок при обновлении на новую версию приложения - это проблемы ведения учета, такие как, битые ссылки на несуществующие объекты, незаполненные обязательные реквизиты документов и другие. В таком случае рекомендуется устранять их перед началом обновления.</v8:content>
 							</v8:item>
 						</Title>
 					</ExtendedTooltip>
@@ -166,7 +194,7 @@
 				</v8:item>
 			</Title>
 			<PagesRepresentation>None</PagesRepresentation>
-			<ExtendedTooltip name="СтраницыПомощникаExtendedTooltip" id="657"/>
+			<ExtendedTooltip name="СтраницыПомощникаРасширеннаяПодсказка" id="657"/>
 			<ChildItems>
 				<Page name="ФайлОбновления" id="283">
 					<Title>
@@ -175,7 +203,7 @@
 							<v8:content>Файл обновления</v8:content>
 						</v8:item>
 					</Title>
-					<ExtendedTooltip name="ФайлОбновленияExtendedTooltip" id="745"/>
+					<ExtendedTooltip name="ФайлОбновленияРасширеннаяПодсказка" id="745"/>
 					<ChildItems>
 						<UsualGroup name="ГруппаФайлОбновления" id="1026">
 							<Title>
@@ -191,6 +219,12 @@
 							<ChildItems>
 								<RadioButtonField name="ПереключательНуженФайлОбновления" id="286">
 									<DataPath>НуженФайлОбновления</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Нужен файл обновления</v8:content>
+										</v8:item>
+									</Title>
 									<TitleLocation>None</TitleLocation>
 									<RadioButtonType>Auto</RadioButtonType>
 									<ColumnsCount>1</ColumnsCount>
@@ -223,18 +257,24 @@
 										</xr:Item>
 									</ChoiceList>
 									<ContextMenu name="ПереключательНуженФайлОбновленияКонтекстноеМеню" id="287"/>
-									<ExtendedTooltip name="ПереключательНуженФайлОбновленияExtendedTooltip" id="747"/>
+									<ExtendedTooltip name="ПереключательНуженФайлОбновленияРасширеннаяПодсказка" id="747"/>
 									<Events>
 										<Event name="OnChange">ПереключательНуженФайлОбновленияПриИзменении</Event>
 									</Events>
 								</RadioButtonField>
 								<InputField name="ПолеФайлОбновления" id="296">
 									<DataPath>ВыбранныеФайлы</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Выбранные файлы</v8:content>
+										</v8:item>
+									</Title>
 									<TitleLocation>None</TitleLocation>
 									<AutoMaxWidth>false</AutoMaxWidth>
 									<ChoiceButton>true</ChoiceButton>
 									<ContextMenu name="ПолеФайлОбновленияКонтекстноеМеню" id="297"/>
-									<ExtendedTooltip name="ПолеФайлОбновленияExtendedTooltip" id="749"/>
+									<ExtendedTooltip name="ПолеФайлОбновленияРасширеннаяПодсказка" id="749"/>
 									<Events>
 										<Event name="StartChoice">ПолеФайлОбновленияНачалоВыбора</Event>
 									</Events>
@@ -249,7 +289,7 @@
 									<Behavior>Usual</Behavior>
 									<Representation>NormalSeparation</Representation>
 									<ShowTitle>false</ShowTitle>
-									<ExtendedTooltip name="ПанельОбновлениеИзОсновнойКонфигурацииExtendedTooltip" id="750"/>
+									<ExtendedTooltip name="ПанельОбновлениеИзОсновнойКонфигурацииРасширеннаяПодсказка" id="750"/>
 									<ChildItems>
 										<Pages name="СтраницыФайлОбновления" id="477">
 											<Title>
@@ -268,7 +308,7 @@
 															<v8:content>Есть изменения</v8:content>
 														</v8:item>
 													</Title>
-													<ExtendedTooltip name="ЕстьИзмененияExtendedTooltip" id="753"/>
+													<ExtendedTooltip name="ЕстьИзмененияРасширеннаяПодсказка" id="753"/>
 													<ChildItems>
 														<LabelDecoration name="НадписьКонфигурацияИзменена" id="291">
 															<AutoMaxWidth>false</AutoMaxWidth>
@@ -282,7 +322,7 @@
 																</v8:item>
 															</Title>
 															<ContextMenu name="НадписьКонфигурацияИзмененаКонтекстноеМеню" id="292"/>
-															<ExtendedTooltip name="НадписьКонфигурацияИзмененаExtendedTooltip" id="754"/>
+															<ExtendedTooltip name="НадписьКонфигурацияИзмененаРасширеннаяПодсказка" id="754"/>
 														</LabelDecoration>
 													</ChildItems>
 												</Page>
@@ -293,7 +333,7 @@
 															<v8:content>Нет изменений</v8:content>
 														</v8:item>
 													</Title>
-													<ExtendedTooltip name="НетИзмененийExtendedTooltip" id="755"/>
+													<ExtendedTooltip name="НетИзмененийРасширеннаяПодсказка" id="755"/>
 													<ChildItems>
 														<LabelDecoration name="НадписьНетИзменений" id="480">
 															<AutoMaxWidth>false</AutoMaxWidth>
@@ -308,7 +348,7 @@
 															</Title>
 															<VerticalAlign>Center</VerticalAlign>
 															<ContextMenu name="НадписьНетИзмененийКонтекстноеМеню" id="481"/>
-															<ExtendedTooltip name="НадписьНетИзмененийExtendedTooltip" id="756"/>
+															<ExtendedTooltip name="НадписьНетИзмененийРасширеннаяПодсказка" id="756"/>
 														</LabelDecoration>
 													</ChildItems>
 												</Page>
@@ -378,6 +418,12 @@
 									<Type>Hyperlink</Type>
 									<GroupVerticalAlign>Bottom</GroupVerticalAlign>
 									<CommandName>Form.Command.ПоискИУстановкаОбновлений</CommandName>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Поиск и установка обновлений</v8:content>
+										</v8:item>
+									</Title>
 									<ToolTipRepresentation>ShowRight</ToolTipRepresentation>
 									<ExtendedTooltip name="ПоискИУстановкаОбновленийРасширеннаяПодсказка" id="1153">
 										<Title formatted="false">
@@ -399,7 +445,7 @@
 							<v8:content>Выбор режима обновления файл</v8:content>
 						</v8:item>
 					</Title>
-					<ExtendedTooltip name="ВыборРежимаОбновленияФайлExtendedTooltip" id="842"/>
+					<ExtendedTooltip name="ВыборРежимаОбновленияФайлРасширеннаяПодсказка" id="842"/>
 					<ChildItems>
 						<UsualGroup name="ГруппаВыборРежимаОбновленияФайл" id="1034">
 							<Title>
@@ -437,7 +483,7 @@
 													<Title>
 														<v8:item>
 															<v8:lang>ru</v8:lang>
-															<v8:content>Выберите способ установки обновления программы</v8:content>
+															<v8:content>Выберите способ установки обновления приложения</v8:content>
 														</v8:item>
 													</Title>
 													<TitleLocation>None</TitleLocation>
@@ -472,7 +518,7 @@
 														</xr:Item>
 													</ChoiceList>
 													<ContextMenu name="ПереключательОбновленияФайлКонтекстноеМеню" id="613"/>
-													<ExtendedTooltip name="ПереключательОбновленияФайлExtendedTooltip" id="853"/>
+													<ExtendedTooltip name="ПереключательОбновленияФайлРасширеннаяПодсказка" id="853"/>
 													<Events>
 														<Event name="OnChange">ПереключательОбновленияПриИзменении</Event>
 													</Events>
@@ -500,7 +546,7 @@
 														</v8:item>
 													</Title>
 													<ContextMenu name="НадписьПроцессОбновленияМожетЗанятьМногоВремениКонтекстноеМеню" id="178"/>
-													<ExtendedTooltip name="НадписьПроцессОбновленияМожетЗанятьМногоВремениExtendedTooltip" id="866"/>
+													<ExtendedTooltip name="НадписьПроцессОбновленияМожетЗанятьМногоВремениРасширеннаяПодсказка" id="866"/>
 												</LabelDecoration>
 											</ChildItems>
 										</Page>
@@ -519,12 +565,12 @@
 														<v8:item>
 															<v8:lang>ru</v8:lang>
 															<v8:content>Получено обновление из приложения в Интернете. Для установки потребуется
-перезапуск программы. Процесс обновления может занять длительное время.
+перезапуск приложения. Процесс обновления может занять длительное время.
 Не выключайте питание компьютера до завершения установки обновления.</v8:content>
 														</v8:item>
 													</Title>
 													<ContextMenu name="НадписьПолученоОбновлениеИзПриложенияФайлКонтекстноеМеню" id="653"/>
-													<ExtendedTooltip name="НадписьПолученоОбновлениеИзПриложенияФайлExtendedTooltip" id="852"/>
+													<ExtendedTooltip name="НадписьПолученоОбновлениеИзПриложенияФайлРасширеннаяПодсказка" id="852"/>
 												</LabelDecoration>
 											</ChildItems>
 										</Page>
@@ -542,7 +588,7 @@
 									<Behavior>Usual</Behavior>
 									<Representation>NormalSeparation</Representation>
 									<ShowTitle>false</ShowTitle>
-									<ExtendedTooltip name="ГруппаСоединенийExtendedTooltip" id="854"/>
+									<ExtendedTooltip name="ГруппаСоединенийРасширеннаяПодсказка" id="854"/>
 									<ChildItems>
 										<UsualGroup name="ГруппаВажно" id="1237">
 											<Title>
@@ -560,12 +606,12 @@
 												<PictureDecoration name="Картинка1" id="180">
 													<SkipOnInput>false</SkipOnInput>
 													<Picture>
-														<xr:Ref>CommonPicture.Предупреждение32</xr:Ref>
-														<xr:LoadTransparent>false</xr:LoadTransparent>
+														<xr:Ref>StdPicture.DialogExclamation</xr:Ref>
+														<xr:LoadTransparent>true</xr:LoadTransparent>
 													</Picture>
 													<FileDragMode>AsFile</FileDragMode>
 													<ContextMenu name="Картинка1КонтекстноеМеню" id="181"/>
-													<ExtendedTooltip name="Картинка1ExtendedTooltip" id="855"/>
+													<ExtendedTooltip name="Картинка1РасширеннаяПодсказка" id="855"/>
 												</PictureDecoration>
 												<Pages name="ПанельАктивныеПользователи" id="187">
 													<Title>
@@ -575,7 +621,7 @@
 														</v8:item>
 													</Title>
 													<PagesRepresentation>None</PagesRepresentation>
-													<ExtendedTooltip name="ПанельАктивныеПользователиExtendedTooltip" id="856"/>
+													<ExtendedTooltip name="ПанельАктивныеПользователиРасширеннаяПодсказка" id="856"/>
 													<ChildItems>
 														<Page name="АктивныеПользователи" id="188">
 															<Title>
@@ -584,7 +630,7 @@
 																	<v8:content>Активные пользователи</v8:content>
 																</v8:item>
 															</Title>
-															<ExtendedTooltip name="АктивныеПользователиExtendedTooltip" id="857"/>
+															<ExtendedTooltip name="АктивныеПользователиРасширеннаяПодсказка" id="857"/>
 															<ChildItems>
 																<LabelDecoration name="Надпись43" id="183">
 																	<AutoMaxWidth>false</AutoMaxWidth>
@@ -592,11 +638,11 @@
 																	<Title formatted="false">
 																		<v8:item>
 																			<v8:lang>ru</v8:lang>
-																			<v8:content>С программой сейчас работают другие пользователи. Для установки обновления необходимо завершить их работу.</v8:content>
+																			<v8:content>С приложением сейчас работают другие пользователи. Для установки обновления необходимо завершить их работу.</v8:content>
 																		</v8:item>
 																	</Title>
 																	<ContextMenu name="Надпись43КонтекстноеМеню" id="184"/>
-																	<ExtendedTooltip name="Надпись43ExtendedTooltip" id="858"/>
+																	<ExtendedTooltip name="Надпись43РасширеннаяПодсказка" id="858"/>
 																</LabelDecoration>
 																<LabelDecoration name="НадписьСписокДействий" id="185">
 																	<AutoMaxWidth>false</AutoMaxWidth>
@@ -609,7 +655,7 @@
 																	</Title>
 																	<Hyperlink>true</Hyperlink>
 																	<ContextMenu name="НадписьСписокДействийКонтекстноеМеню" id="186"/>
-																	<ExtendedTooltip name="НадписьСписокДействийExtendedTooltip" id="859"/>
+																	<ExtendedTooltip name="НадписьСписокДействийРасширеннаяПодсказка" id="859"/>
 																	<Events>
 																		<Event name="Click">НадписьСписокДействийНажатие</Event>
 																	</Events>
@@ -623,7 +669,7 @@
 																	<v8:content>Активные соединения</v8:content>
 																</v8:item>
 															</Title>
-															<ExtendedTooltip name="АктивныеСоединенияExtendedTooltip" id="860"/>
+															<ExtendedTooltip name="АктивныеСоединенияРасширеннаяПодсказка" id="860"/>
 															<ChildItems>
 																<LabelDecoration name="Надпись42" id="190">
 																	<AutoMaxWidth>false</AutoMaxWidth>
@@ -631,11 +677,11 @@
 																	<Title formatted="false">
 																		<v8:item>
 																			<v8:lang>ru</v8:lang>
-																			<v8:content>С программой сейчас работают внешние приложения. Для установки обновления необходимо завершить их работу.</v8:content>
+																			<v8:content>С приложением сейчас работают внешние приложения. Для установки обновления необходимо завершить их работу.</v8:content>
 																		</v8:item>
 																	</Title>
 																	<ContextMenu name="Надпись42КонтекстноеМеню" id="191"/>
-																	<ExtendedTooltip name="Надпись42ExtendedTooltip" id="861"/>
+																	<ExtendedTooltip name="Надпись42РасширеннаяПодсказка" id="861"/>
 																</LabelDecoration>
 																<LabelDecoration name="НадписьСписокДействий1" id="192">
 																	<AutoMaxWidth>false</AutoMaxWidth>
@@ -648,7 +694,7 @@
 																	</Title>
 																	<Hyperlink>true</Hyperlink>
 																	<ContextMenu name="НадписьСписокДействий1КонтекстноеМеню" id="193"/>
-																	<ExtendedTooltip name="НадписьСписокДействий1ExtendedTooltip" id="862"/>
+																	<ExtendedTooltip name="НадписьСписокДействий1РасширеннаяПодсказка" id="862"/>
 																	<Events>
 																		<Event name="Click">НадписьСписокДействий1Нажатие</Event>
 																	</Events>
@@ -662,7 +708,7 @@
 																	<v8:content>Соединение конфигуратора</v8:content>
 																</v8:item>
 															</Title>
-															<ExtendedTooltip name="СоединениеКонфигуратораExtendedTooltip" id="863"/>
+															<ExtendedTooltip name="СоединениеКонфигуратораРасширеннаяПодсказка" id="863"/>
 															<ChildItems>
 																<LabelDecoration name="Надпись45" id="195">
 																	<AutoMaxWidth>false</AutoMaxWidth>
@@ -675,7 +721,7 @@
 																	</Title>
 																	<VerticalAlign>Top</VerticalAlign>
 																	<ContextMenu name="Надпись45КонтекстноеМеню" id="196"/>
-																	<ExtendedTooltip name="Надпись45ExtendedTooltip" id="864"/>
+																	<ExtendedTooltip name="Надпись45РасширеннаяПодсказка" id="864"/>
 																</LabelDecoration>
 																<LabelDecoration name="НадписьСписокДействий3" id="197">
 																	<AutoMaxWidth>false</AutoMaxWidth>
@@ -689,7 +735,7 @@
 																	<Hyperlink>true</Hyperlink>
 																	<VerticalAlign>Top</VerticalAlign>
 																	<ContextMenu name="НадписьСписокДействий3КонтекстноеМеню" id="198"/>
-																	<ExtendedTooltip name="НадписьСписокДействий3ExtendedTooltip" id="865"/>
+																	<ExtendedTooltip name="НадписьСписокДействий3РасширеннаяПодсказка" id="865"/>
 																	<Events>
 																		<Event name="Click">НадписьСписокДействий3Нажатие</Event>
 																	</Events>
@@ -714,7 +760,7 @@
 									<Behavior>Usual</Behavior>
 									<Representation>NormalSeparation</Representation>
 									<ShowTitle>false</ShowTitle>
-									<ExtendedTooltip name="ГруппаРезервнаяКопияExtendedTooltip" id="868"/>
+									<ExtendedTooltip name="ГруппаРезервнаяКопияРасширеннаяПодсказка" id="868"/>
 									<ChildItems>
 										<LabelDecoration name="Надпись46" id="202">
 											<AutoMaxWidth>false</AutoMaxWidth>
@@ -726,7 +772,7 @@
 												</v8:item>
 											</Title>
 											<ContextMenu name="Надпись46КонтекстноеМеню" id="203"/>
-											<ExtendedTooltip name="Надпись46ExtendedTooltip" id="869"/>
+											<ExtendedTooltip name="Надпись46РасширеннаяПодсказка" id="869"/>
 										</LabelDecoration>
 										<LabelDecoration name="НадписьРезервнаяКопияФайл" id="205">
 											<AutoMaxWidth>false</AutoMaxWidth>
@@ -740,7 +786,7 @@
 											<Hyperlink>true</Hyperlink>
 											<VerticalAlign>Bottom</VerticalAlign>
 											<ContextMenu name="НадписьРезервнаяКопияФайлКонтекстноеМеню" id="206"/>
-											<ExtendedTooltip name="НадписьРезервнаяКопияФайлExtendedTooltip" id="870"/>
+											<ExtendedTooltip name="НадписьРезервнаяКопияФайлРасширеннаяПодсказка" id="870"/>
 											<Events>
 												<Event name="Click">НадписьРезервнаяКопияНажатие</Event>
 											</Events>
@@ -758,7 +804,7 @@
 							<v8:content>Выбор режима обновления сервер</v8:content>
 						</v8:item>
 					</Title>
-					<ExtendedTooltip name="ВыборРежимаОбновленияСерверExtendedTooltip" id="880"/>
+					<ExtendedTooltip name="ВыборРежимаОбновленияСерверРасширеннаяПодсказка" id="880"/>
 					<ChildItems>
 						<UsualGroup name="ГруппаВыборРежимаОбновленияСервер" id="1036">
 							<Title>
@@ -782,14 +828,14 @@
 									<Behavior>Usual</Behavior>
 									<Representation>None</Representation>
 									<ShowTitle>false</ShowTitle>
-									<ExtendedTooltip name="ОтступЧетыреExtendedTooltip" id="890"/>
+									<ExtendedTooltip name="ОтступЧетыреРасширеннаяПодсказка" id="890"/>
 									<ChildItems>
 										<RadioButtonField name="ПереключательОбновленияСервер" id="214">
 											<DataPath>Объект.РежимОбновления</DataPath>
 											<Title>
 												<v8:item>
 													<v8:lang>ru</v8:lang>
-													<v8:content>Выберите способ установки обновления программы</v8:content>
+													<v8:content>Выберите способ установки обновления приложения</v8:content>
 												</v8:item>
 											</Title>
 											<RadioButtonType>Auto</RadioButtonType>
@@ -836,7 +882,7 @@
 												</xr:Item>
 											</ChoiceList>
 											<ContextMenu name="ПереключательОбновленияСерверКонтекстноеМеню" id="215"/>
-											<ExtendedTooltip name="ПереключательОбновленияСерверExtendedTooltip" id="891"/>
+											<ExtendedTooltip name="ПереключательОбновленияСерверРасширеннаяПодсказка" id="891"/>
 											<Events>
 												<Event name="OnChange">ПереключательОбновленияПриИзменении</Event>
 											</Events>
@@ -852,7 +898,7 @@
 											<TitleLocation>None</TitleLocation>
 											<GroupVerticalAlign>Bottom</GroupVerticalAlign>
 											<ContextMenu name="ПолеДатаВремяОбновленияКонтекстноеМеню" id="243"/>
-											<ExtendedTooltip name="ПолеДатаВремяОбновленияExtendedTooltip" id="894"/>
+											<ExtendedTooltip name="ПолеДатаВремяОбновленияРасширеннаяПодсказка" id="894"/>
 										</InputField>
 									</ChildItems>
 								</UsualGroup>
@@ -873,7 +919,7 @@
 													<v8:content>Страница запланированной перезагрузки</v8:content>
 												</v8:item>
 											</Title>
-											<ExtendedTooltip name="СтраницаЗапланированнойПерезагрузкиExtendedTooltip" id="893"/>
+											<ExtendedTooltip name="СтраницаЗапланированнойПерезагрузкиРасширеннаяПодсказка" id="893"/>
 											<ChildItems>
 												<LabelDecoration name="Надпись51" id="240">
 													<AutoMaxWidth>false</AutoMaxWidth>
@@ -887,8 +933,57 @@
 													</Title>
 													<VerticalAlign>Top</VerticalAlign>
 													<ContextMenu name="Надпись51КонтекстноеМеню" id="241"/>
-													<ExtendedTooltip name="Надпись51ExtendedTooltip" id="895"/>
+													<ExtendedTooltip name="Надпись51РасширеннаяПодсказка" id="895"/>
 												</LabelDecoration>
+												<UsualGroup name="ПанельУведомлятьПользователей" id="1250">
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Панель уведомлять пользователей</v8:content>
+														</v8:item>
+													</Title>
+													<HorizontalSpacing>Half</HorizontalSpacing>
+													<Representation>None</Representation>
+													<ShowTitle>false</ShowTitle>
+													<ExtendedTooltip name="ПанельУведомлятьПользователейРасширеннаяПодсказка" id="1251"/>
+													<ChildItems>
+														<CheckBoxField name="УведомлятьПользователей" id="1252">
+															<DataPath>УведомлятьПользователей</DataPath>
+															<Title>
+																<v8:item>
+																	<v8:lang>ru</v8:lang>
+																	<v8:content>Уведомлять пользователей</v8:content>
+																</v8:item>
+															</Title>
+															<TitleLocation>None</TitleLocation>
+															<CheckBoxType>Auto</CheckBoxType>
+															<ContextMenu name="УведомлятьПользователейКонтекстноеМеню" id="1253"/>
+															<ExtendedTooltip name="УведомлятьПользователейРасширеннаяПодсказка" id="1254"/>
+															<Events>
+																<Event name="OnChange">УведомлятьПользователейПриИзменении</Event>
+															</Events>
+														</CheckBoxField>
+														<LabelDecoration name="ДекорацияУведомлятьПользователей" id="1255">
+															<Enabled>false</Enabled>
+															<AutoMaxWidth>false</AutoMaxWidth>
+															<Title formatted="true">
+																<v8:item>
+																	<v8:lang>ru</v8:lang>
+																	<v8:content>Уведомлять пользователей о планируемом обновлении за &lt;link Ссылка&gt;5 минут&lt;/&gt;</v8:content>
+																</v8:item>
+															</Title>
+															<ContextMenu name="ДекорацияУведомлятьПользователейКонтекстноеМеню" id="1256"/>
+															<ExtendedTooltip name="ДекорацияУведомлятьПользователейРасширеннаяПодсказка" id="1257"/>
+															<Events>
+																<Event name="URLProcessing">ДекорацияУведомлятьПользователейОбработкаНавигационнойСсылки</Event>
+															</Events>
+														</LabelDecoration>
+														<LabelDecoration name="ДекорацияДляПодменю" id="1258">
+															<ContextMenu name="ДекорацияДляПодменюКонтекстноеМеню" id="1259"/>
+															<ExtendedTooltip name="ДекорацияДляПодменюРасширеннаяПодсказка" id="1260"/>
+														</LabelDecoration>
+													</ChildItems>
+												</UsualGroup>
 												<UsualGroup name="ПанельПочта" id="248">
 													<Title>
 														<v8:item>
@@ -899,7 +994,7 @@
 													<Behavior>Usual</Behavior>
 													<Representation>None</Representation>
 													<ShowTitle>false</ShowTitle>
-													<ExtendedTooltip name="ПанельПочтаExtendedTooltip" id="896"/>
+													<ExtendedTooltip name="ПанельПочтаРасширеннаяПодсказка" id="896"/>
 													<ChildItems>
 														<CheckBoxField name="ВыслатьОтчетНаПочту" id="244">
 															<DataPath>Объект.ВыслатьОтчетНаПочту</DataPath>
@@ -912,7 +1007,7 @@
 															<TitleLocation>Right</TitleLocation>
 															<CheckBoxType>Auto</CheckBoxType>
 															<ContextMenu name="ВыслатьОтчетНаПочтуКонтекстноеМеню" id="245"/>
-															<ExtendedTooltip name="ВыслатьОтчетНаПочтуExtendedTooltip" id="897"/>
+															<ExtendedTooltip name="ВыслатьОтчетНаПочтуРасширеннаяПодсказка" id="897"/>
 															<Events>
 																<Event name="OnChange">ВыслатьОтчетНаПочтуПриИзменении</Event>
 															</Events>
@@ -922,7 +1017,7 @@
 															<TitleLocation>None</TitleLocation>
 															<HorizontalStretch>false</HorizontalStretch>
 															<ContextMenu name="АдресЭлектроннойПочтыКонтекстноеМеню" id="247"/>
-															<ExtendedTooltip name="АдресЭлектроннойПочтыExtendedTooltip" id="898"/>
+															<ExtendedTooltip name="АдресЭлектроннойПочтыРасширеннаяПодсказка" id="898"/>
 														</InputField>
 													</ChildItems>
 												</UsualGroup>
@@ -947,7 +1042,7 @@
 													</Title>
 													<VerticalAlign>Top</VerticalAlign>
 													<ContextMenu name="НадписьБудетУстановленоОбновлениеСерверКонтекстноеМеню" id="219"/>
-													<ExtendedTooltip name="НадписьБудетУстановленоОбновлениеСерверExtendedTooltip" id="900"/>
+													<ExtendedTooltip name="НадписьБудетУстановленоОбновлениеСерверРасширеннаяПодсказка" id="900"/>
 												</LabelDecoration>
 												<UsualGroup name="ГруппаСоединений1" id="220">
 													<Title>
@@ -959,17 +1054,17 @@
 													<Behavior>Usual</Behavior>
 													<Representation>None</Representation>
 													<ShowTitle>false</ShowTitle>
-													<ExtendedTooltip name="ГруппаСоединений1ExtendedTooltip" id="901"/>
+													<ExtendedTooltip name="ГруппаСоединений1РасширеннаяПодсказка" id="901"/>
 													<ChildItems>
 														<PictureDecoration name="Картинка2" id="221">
 															<SkipOnInput>false</SkipOnInput>
 															<Picture>
-																<xr:Ref>CommonPicture.Предупреждение32</xr:Ref>
-																<xr:LoadTransparent>false</xr:LoadTransparent>
+																<xr:Ref>StdPicture.DialogExclamation</xr:Ref>
+																<xr:LoadTransparent>true</xr:LoadTransparent>
 															</Picture>
 															<FileDragMode>AsFile</FileDragMode>
 															<ContextMenu name="Картинка2КонтекстноеМеню" id="222"/>
-															<ExtendedTooltip name="Картинка2ExtendedTooltip" id="902"/>
+															<ExtendedTooltip name="Картинка2РасширеннаяПодсказка" id="902"/>
 														</PictureDecoration>
 														<Pages name="ПанельАктивныеПользователи1" id="223">
 															<Title>
@@ -979,7 +1074,7 @@
 																</v8:item>
 															</Title>
 															<PagesRepresentation>None</PagesRepresentation>
-															<ExtendedTooltip name="ПанельАктивныеПользователи1ExtendedTooltip" id="903"/>
+															<ExtendedTooltip name="ПанельАктивныеПользователи1РасширеннаяПодсказка" id="903"/>
 															<ChildItems>
 																<Page name="АктивныеПользователи1" id="224">
 																	<Title>
@@ -988,7 +1083,7 @@
 																			<v8:content>Активные пользователи</v8:content>
 																		</v8:item>
 																	</Title>
-																	<ExtendedTooltip name="АктивныеПользователи1ExtendedTooltip" id="904"/>
+																	<ExtendedTooltip name="АктивныеПользователи1РасширеннаяПодсказка" id="904"/>
 																	<ChildItems>
 																		<LabelDecoration name="Надпись48" id="225">
 																			<AutoMaxWidth>false</AutoMaxWidth>
@@ -996,12 +1091,12 @@
 																			<Title formatted="false">
 																				<v8:item>
 																					<v8:lang>ru</v8:lang>
-																					<v8:content>С программой сейчас работают другие пользователи. Их работа будет завершена автоматически.</v8:content>
+																					<v8:content>С приложением сейчас работают другие пользователи. Их работа будет завершена автоматически.</v8:content>
 																				</v8:item>
 																			</Title>
 																			<VerticalAlign>Top</VerticalAlign>
 																			<ContextMenu name="Надпись48КонтекстноеМеню" id="226"/>
-																			<ExtendedTooltip name="Надпись48ExtendedTooltip" id="905"/>
+																			<ExtendedTooltip name="Надпись48РасширеннаяПодсказка" id="905"/>
 																		</LabelDecoration>
 																		<LabelDecoration name="НадписьСписокДействий2" id="227">
 																			<AutoMaxWidth>false</AutoMaxWidth>
@@ -1014,7 +1109,7 @@
 																			</Title>
 																			<Hyperlink>true</Hyperlink>
 																			<ContextMenu name="НадписьСписокДействий2КонтекстноеМеню" id="228"/>
-																			<ExtendedTooltip name="НадписьСписокДействий2ExtendedTooltip" id="906"/>
+																			<ExtendedTooltip name="НадписьСписокДействий2РасширеннаяПодсказка" id="906"/>
 																			<Events>
 																				<Event name="Click">НадписьСписокДействийНажатие</Event>
 																			</Events>
@@ -1028,7 +1123,7 @@
 																			<v8:content>Активные соединения</v8:content>
 																		</v8:item>
 																	</Title>
-																	<ExtendedTooltip name="АктивныеСоединения1ExtendedTooltip" id="907"/>
+																	<ExtendedTooltip name="АктивныеСоединения1РасширеннаяПодсказка" id="907"/>
 																	<ChildItems>
 																		<LabelDecoration name="Надпись49" id="230">
 																			<AutoMaxWidth>false</AutoMaxWidth>
@@ -1041,7 +1136,7 @@
 																				</v8:item>
 																			</Title>
 																			<ContextMenu name="Надпись49КонтекстноеМеню" id="231"/>
-																			<ExtendedTooltip name="Надпись49ExtendedTooltip" id="908"/>
+																			<ExtendedTooltip name="Надпись49РасширеннаяПодсказка" id="908"/>
 																		</LabelDecoration>
 																		<LabelDecoration name="НадписьСписокДействий4" id="232">
 																			<AutoMaxWidth>false</AutoMaxWidth>
@@ -1054,7 +1149,7 @@
 																			</Title>
 																			<Hyperlink>true</Hyperlink>
 																			<ContextMenu name="НадписьСписокДействий4КонтекстноеМеню" id="233"/>
-																			<ExtendedTooltip name="НадписьСписокДействий4ExtendedTooltip" id="909"/>
+																			<ExtendedTooltip name="НадписьСписокДействий4РасширеннаяПодсказка" id="909"/>
 																			<Events>
 																				<Event name="Click">НадписьСписокДействий1Нажатие</Event>
 																			</Events>
@@ -1079,7 +1174,7 @@
 									<Behavior>Usual</Behavior>
 									<Representation>NormalSeparation</Representation>
 									<ShowTitle>false</ShowTitle>
-									<ExtendedTooltip name="ГруппаРезервнаяКопияСерверExtendedTooltip" id="911"/>
+									<ExtendedTooltip name="ГруппаРезервнаяКопияСерверРасширеннаяПодсказка" id="911"/>
 									<ChildItems>
 										<PictureDecoration name="Декорация13" id="540">
 											<SkipOnInput>false</SkipOnInput>
@@ -1089,7 +1184,7 @@
 											</Picture>
 											<FileDragMode>AsFile</FileDragMode>
 											<ContextMenu name="Декорация13КонтекстноеМеню" id="541"/>
-											<ExtendedTooltip name="Декорация13ExtendedTooltip" id="912"/>
+											<ExtendedTooltip name="Декорация13РасширеннаяПодсказка" id="912"/>
 										</PictureDecoration>
 										<UsualGroup name="ГруппаДополнительнаяИнформация" id="1090">
 											<Title>
@@ -1115,23 +1210,7 @@
 													</Title>
 													<VerticalAlign>Center</VerticalAlign>
 													<ContextMenu name="НадписьРезервнаяКопияСерверКонтекстноеМеню" id="538"/>
-													<ExtendedTooltip name="НадписьРезервнаяКопияСерверExtendedTooltip" id="913"/>
-												</LabelDecoration>
-												<LabelDecoration name="НадписьОтложенныеОбработчики" id="1092">
-													<AutoMaxWidth>false</AutoMaxWidth>
-													<Title formatted="true">
-														<v8:item>
-															<v8:lang>ru</v8:lang>
-															<v8:content>В программе имеются &lt;link ОтложенныеОбработчики&gt;дополнительные процедуры обработки данных&lt;/&gt;, которые не были завершены
-при переходе с предыдущего релиза. Они будут автоматически выполнены в процессе обновления
-на новую версию. Это может существенно увеличить время обновления.</v8:content>
-														</v8:item>
-													</Title>
-													<ContextMenu name="НадписьОтложенныеОбработчикиКонтекстноеМеню" id="1093"/>
-													<ExtendedTooltip name="НадписьОтложенныеОбработчикиРасширеннаяПодсказка" id="1094"/>
-													<Events>
-														<Event name="URLProcessing">НадписьОтложенныеОбработчикиОбработкаНавигационнойСсылки</Event>
-													</Events>
+													<ExtendedTooltip name="НадписьРезервнаяКопияСерверРасширеннаяПодсказка" id="913"/>
 												</LabelDecoration>
 											</ChildItems>
 										</UsualGroup>
@@ -1177,8 +1256,8 @@
 									<ChildItems>
 										<PictureDecoration name="ДекорацияОшибкаУстановкиИсправлений" id="1202">
 											<Picture>
-												<xr:Ref>CommonPicture.Ошибка32</xr:Ref>
-												<xr:LoadTransparent>false</xr:LoadTransparent>
+												<xr:Ref>StdPicture.DialogStop</xr:Ref>
+												<xr:LoadTransparent>true</xr:LoadTransparent>
 											</Picture>
 											<FileDragMode>AsFile</FileDragMode>
 											<ContextMenu name="ДекорацияОшибкаУстановкиИсправленийКонтекстноеМеню" id="1203"/>
@@ -1205,7 +1284,7 @@
 									<Title formatted="false">
 										<v8:item>
 											<v8:lang>ru</v8:lang>
-											<v8:content>Установлено исправлений: %1 из %2, изменения вступят в силу после перезапуска программы</v8:content>
+											<v8:content>Установлено исправлений: %1 из %2, изменения вступят в силу после перезапуска приложения</v8:content>
 										</v8:item>
 									</Title>
 									<ContextMenu name="ДекорацияУстановленоИсправленийКонтекстноеМеню" id="1211"/>
@@ -1230,7 +1309,7 @@
 									<Title formatted="false">
 										<v8:item>
 											<v8:lang>ru</v8:lang>
-											<v8:content>Исправления установлены и вступят в силу после перезапуска программы</v8:content>
+											<v8:content>Исправления установлены и вступят в силу после перезапуска приложения</v8:content>
 										</v8:item>
 									</Title>
 									<ContextMenu name="ДекорацияИсправленияУстановленыКонтекстноеМеню" id="1183"/>
@@ -1257,13 +1336,16 @@
 											<Title>
 												<v8:item>
 													<v8:lang>ru</v8:lang>
-													<v8:content>Перезапустить программу</v8:content>
+													<v8:content>Перезапустить приложение</v8:content>
 												</v8:item>
 											</Title>
 											<TitleLocation>Right</TitleLocation>
 											<CheckBoxType>Auto</CheckBoxType>
 											<ContextMenu name="ПерезапуститьПрограммуКонтекстноеМеню" id="1191"/>
 											<ExtendedTooltip name="ПерезапуститьПрограммуРасширеннаяПодсказка" id="1192"/>
+											<Events>
+												<Event name="OnChange">ПерезапуститьПрограммуПриИзменении</Event>
+											</Events>
 										</CheckBoxField>
 									</ChildItems>
 								</UsualGroup>
@@ -1285,8 +1367,8 @@
 											<Title formatted="true">
 												<v8:item>
 													<v8:lang>ru</v8:lang>
-													<v8:content>Также с программой работают &lt;link 1&gt;другие пользователи&lt;/&gt;.
-Для них исправления вступят в силу при следующем входе в программу.</v8:content>
+													<v8:content>Также с приложением работают &lt;link 1&gt;другие пользователи&lt;/&gt;.
+Для них исправления вступят в силу при следующем входе в приложение.</v8:content>
 												</v8:item>
 											</Title>
 											<ContextMenu name="ДекорацияАктивныеПользователиКонтекстноеМеню" id="1196"/>
@@ -1308,7 +1390,7 @@
 							<v8:content>Обновления не обнаружено</v8:content>
 						</v8:item>
 					</Title>
-					<ExtendedTooltip name="ОбновленияНеОбнаруженоExtendedTooltip" id="1099"/>
+					<ExtendedTooltip name="ОбновленияНеОбнаруженоРасширеннаяПодсказка" id="1099"/>
 					<ChildItems>
 						<UsualGroup name="ГруппаОбновленияНеОбнаружено" id="1100">
 							<Title>
@@ -1333,7 +1415,7 @@
 									<Behavior>Usual</Behavior>
 									<Representation>None</Representation>
 									<ShowTitle>false</ShowTitle>
-									<ExtendedTooltip name="ГруппаРезультатПоискаОбновленияExtendedTooltip" id="1103"/>
+									<ExtendedTooltip name="ГруппаРезультатПоискаОбновленияРасширеннаяПодсказка" id="1103"/>
 									<ChildItems>
 										<UsualGroup name="ОбновлениеПроизводитсяВГлавномУзле" id="1130">
 											<Title>
@@ -1345,17 +1427,17 @@
 											<Behavior>Usual</Behavior>
 											<Representation>None</Representation>
 											<ShowTitle>false</ShowTitle>
-											<ExtendedTooltip name="ОбновлениеПроизводитсяВГлавномУзлеExtendedTooltip" id="1131"/>
+											<ExtendedTooltip name="ОбновлениеПроизводитсяВГлавномУзлеРасширеннаяПодсказка" id="1131"/>
 											<ChildItems>
 												<PictureDecoration name="Картинка27" id="1132">
 													<SkipOnInput>false</SkipOnInput>
 													<Picture>
-														<xr:Ref>CommonPicture.Информация32</xr:Ref>
-														<xr:LoadTransparent>false</xr:LoadTransparent>
+														<xr:Ref>StdPicture.DialogInformation</xr:Ref>
+														<xr:LoadTransparent>true</xr:LoadTransparent>
 													</Picture>
 													<FileDragMode>AsFile</FileDragMode>
 													<ContextMenu name="Картинка27КонтекстноеМеню" id="1133"/>
-													<ExtendedTooltip name="Картинка27ExtendedTooltip" id="1134"/>
+													<ExtendedTooltip name="Картинка27РасширеннаяПодсказка" id="1134"/>
 												</PictureDecoration>
 												<LabelDecoration name="НадписьОбновлениеКонфигурацииВыполняетсяПриОбменеДаннымиСГлавнымУзлом" id="1135">
 													<AutoMaxWidth>false</AutoMaxWidth>
@@ -1364,17 +1446,23 @@
 													<Title formatted="false">
 														<v8:item>
 															<v8:lang>ru</v8:lang>
-															<v8:content>Обновление программы выполняется при синхронизации данных с "%1".</v8:content>
+															<v8:content>Обновление приложения выполняется при синхронизации данных с "%1".</v8:content>
 														</v8:item>
 													</Title>
 													<VerticalAlign>Center</VerticalAlign>
 													<ContextMenu name="НадписьОбновлениеКонфигурацииВыполняетсяПриОбменеДаннымиСГлавнымУзломКонтекстноеМеню" id="1136"/>
-													<ExtendedTooltip name="НадписьОбновлениеКонфигурацииВыполняетсяПриОбменеДаннымиСГлавнымУзломExtendedTooltip" id="1137"/>
+													<ExtendedTooltip name="НадписьОбновлениеКонфигурацииВыполняетсяПриОбменеДаннымиСГлавнымУзломРасширеннаяПодсказка" id="1137"/>
 												</LabelDecoration>
 											</ChildItems>
 										</UsualGroup>
 										<LabelField name="ВерсияТекущейКонфигурации" id="1224">
 											<DataPath>ВерсияТекущейКонфигурации</DataPath>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Текущая версия приложения</v8:content>
+												</v8:item>
+											</Title>
 											<ContextMenu name="ВерсияТекущейКонфигурацииКонтекстноеМеню" id="1225"/>
 											<ExtendedTooltip name="ВерсияТекущейКонфигурацииРасширеннаяПодсказка" id="1226"/>
 										</LabelField>
@@ -1419,7 +1507,13 @@
 							<Type>CommandBarButton</Type>
 							<SkipOnInput>false</SkipOnInput>
 							<CommandName>Form.Command.Назад</CommandName>
-							<ExtendedTooltip name="КнопкаНазадExtendedTooltip" id="654"/>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>&lt; Назад</v8:content>
+								</v8:item>
+							</Title>
+							<ExtendedTooltip name="КнопкаНазадРасширеннаяПодсказка" id="654"/>
 						</Button>
 					</ChildItems>
 				</CommandBar>
@@ -1450,7 +1544,7 @@
 									<v8:content>Далее &gt;</v8:content>
 								</v8:item>
 							</Title>
-							<ExtendedTooltip name="КнопкаДалееExtendedTooltip" id="655"/>
+							<ExtendedTooltip name="КнопкаДалееРасширеннаяПодсказка" id="655"/>
 						</Button>
 						<Button name="КнопкаЗакрыть" id="364">
 							<Type>CommandBarButton</Type>
@@ -1541,7 +1635,7 @@
 			<Title>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Перезапустить программу</v8:content>
+					<v8:content>Перезапустить приложение</v8:content>
 				</v8:item>
 			</Title>
 			<Type>
@@ -1590,7 +1684,7 @@
 			<Title>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Текущая версия программы</v8:content>
+					<v8:content>Текущая версия приложения</v8:content>
 				</v8:item>
 			</Title>
 			<Type>
@@ -1618,6 +1712,32 @@
 		<Attribute name="ЗагрузитьРасширения" id="7">
 			<Type>
 				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ПоказатьУстановленныеИсправления" id="8">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="УведомлятьПользователей" id="36">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Уведомлять пользователей</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ИнтервалУведомления" id="37">
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>10</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
 			</Type>
 		</Attribute>
 	</Attributes>

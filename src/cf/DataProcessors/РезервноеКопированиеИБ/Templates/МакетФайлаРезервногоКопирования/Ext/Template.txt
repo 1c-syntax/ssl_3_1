@@ -338,6 +338,24 @@ function backupDB () {
   var ret = 0
   try {
     var fileDBName = BaseFileName + '1Cv8.1CD'
+    
+    var waitBaseFile = true
+    while (waitBaseFile) {
+      try {
+        var oFile = oFileSystemObject.OpenTextFile(fileDBName, ForAppending, true, TristateFalse)
+      } catch (ex) {
+        if (oHTA != null) {
+          return -1
+        } else {
+          WScript.Echo(ex.message) 
+          WScript.Sleep(18 * 1000) // Ждем и повторяем проверку, освободился ли файл ИБ.
+        }
+        continue;
+      }
+      oFile.Close()
+      waitBaseFile = false
+    }
+    
     var fileDB = oFileSystemObject.GetFile(fileDBName)
     log(format('[СообщениеРазмерФайлаРезервнойКопииВМб]', fileDB.size / 1024 / 1024))
 

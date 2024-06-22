@@ -10,6 +10,12 @@
 			<Button name="ФормаПродолжитьПопыткуУстановки" id="102">
 				<Type>CommandBarButton</Type>
 				<CommandName>Form.Command.ПродолжитьПопыткуУстановки</CommandName>
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Продолжить попытку установки</v8:content>
+					</v8:item>
+				</Title>
 				<ExtendedTooltip name="ФормаПродолжитьПопыткуУстановкиРасширеннаяПодсказка" id="103"/>
 			</Button>
 			<Button name="Закрыть" id="100">
@@ -28,6 +34,7 @@
 	</AutoCommandBar>
 	<Events>
 		<Event name="OnOpen">ПриОткрытии</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
 	</Events>
 	<ChildItems>
 		<UsualGroup name="Шапка" id="90">
@@ -51,8 +58,8 @@
 						</v8:item>
 					</Title>
 					<Picture>
-						<xr:Ref>CommonPicture.Предупреждение32</xr:Ref>
-						<xr:LoadTransparent>false</xr:LoadTransparent>
+						<xr:Ref>StdPicture.DialogExclamation</xr:Ref>
+						<xr:LoadTransparent>true</xr:LoadTransparent>
 					</Picture>
 					<FileDragMode>AsFile</FileDragMode>
 					<ContextMenu name="Предупреждение32КонтекстноеМеню" id="96"/>
@@ -108,6 +115,11 @@
 		<Parameter name="ПоддерживаемыеКлиенты">
 			<Type/>
 			<KeyParameter>true</KeyParameter>
+		</Parameter>
+		<Parameter name="ПослеОшибкиПодключения">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
 		</Parameter>
 	</Parameters>
 </Form>

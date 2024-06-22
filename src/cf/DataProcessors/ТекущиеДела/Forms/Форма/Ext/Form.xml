@@ -15,11 +15,23 @@
 			<Button name="ФормаНастроить" id="1">
 				<Type>CommandBarButton</Type>
 				<CommandName>Form.Command.Настроить</CommandName>
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Настроить</v8:content>
+					</v8:item>
+				</Title>
 				<ExtendedTooltip name="ФормаНастроитьРасширеннаяПодсказка" id="2"/>
 			</Button>
 			<Button name="ФормаОбновить" id="3">
 				<Type>CommandBarButton</Type>
 				<CommandName>Form.Command.Обновить</CommandName>
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Обновить</v8:content>
+					</v8:item>
+				</Title>
 				<ExtendedTooltip name="ФормаОбновитьРасширеннаяПодсказка" id="4"/>
 			</Button>
 		</ChildItems>
@@ -84,8 +96,8 @@
 			<ChildItems>
 				<PictureDecoration name="КартинкаИнформация" id="18">
 					<Picture>
-						<xr:Ref>CommonPicture.Информация32</xr:Ref>
-						<xr:LoadTransparent>false</xr:LoadTransparent>
+						<xr:Ref>StdPicture.DialogInformation</xr:Ref>
+						<xr:LoadTransparent>true</xr:LoadTransparent>
 					</Picture>
 					<FileDragMode>AsFile</FileDragMode>
 					<ContextMenu name="КартинкаИнформацияКонтекстноеМеню" id="19"/>
@@ -113,36 +125,101 @@
 					<v8:content>Страница ошибка</v8:content>
 				</v8:item>
 			</Title>
+			<Group>Vertical</Group>
 			<Behavior>Usual</Behavior>
 			<Representation>None</Representation>
 			<ShowTitle>false</ShowTitle>
 			<ExtendedTooltip name="СтраницаОшибкаРасширеннаяПодсказка" id="25"/>
 			<ChildItems>
-				<PictureDecoration name="ДекорацияОшибка" id="26">
+				<UsualGroup name="ГруппаОшибка" id="40">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Ошибка</v8:content>
+						</v8:item>
+					</Title>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаОшибкаРасширеннаяПодсказка" id="41"/>
+					<ChildItems>
+						<PictureDecoration name="ДекорацияОшибка" id="26">
+							<Title formatted="false">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Декорация ошибка</v8:content>
+								</v8:item>
+							</Title>
+							<Picture>
+								<xr:Ref>StdPicture.DialogStop</xr:Ref>
+								<xr:LoadTransparent>true</xr:LoadTransparent>
+							</Picture>
+							<ContextMenu name="ДекорацияОшибкаКонтекстноеМеню" id="27"/>
+							<ExtendedTooltip name="ДекорацияОшибкаРасширеннаяПодсказка" id="28"/>
+						</PictureDecoration>
+						<InputField name="ТекстОшибки" id="32">
+							<DataPath>ТекстОшибки</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Текст ошибки</v8:content>
+								</v8:item>
+							</Title>
+							<TitleLocation>None</TitleLocation>
+							<MultiLine>true</MultiLine>
+							<BorderColor>style:FormBackColor</BorderColor>
+							<ContextMenu name="ТекстОшибкиКонтекстноеМеню" id="33"/>
+							<ExtendedTooltip name="ТекстОшибкиРасширеннаяПодсказка" id="34"/>
+						</InputField>
+					</ChildItems>
+				</UsualGroup>
+				<UsualGroup name="ГруппаПодробнее" id="35">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Скрыть подробности</v8:content>
+						</v8:item>
+					</Title>
+					<Behavior>Collapsible</Behavior>
+					<CollapsedRepresentationTitle>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Подробности ошибки</v8:content>
+						</v8:item>
+					</CollapsedRepresentationTitle>
+					<Collapsed>true</Collapsed>
+					<Representation>None</Representation>
+					<ExtendedTooltip name="ГруппаПодробнееРасширеннаяПодсказка" id="36"/>
+					<ChildItems>
+						<InputField name="ТекстОшибкиПодробный" id="42">
+							<DataPath>ТекстОшибкиПодробный</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Текст ошибки подробный</v8:content>
+								</v8:item>
+							</Title>
+							<TitleLocation>None</TitleLocation>
+							<MultiLine>true</MultiLine>
+							<BorderColor>style:FormBackColor</BorderColor>
+							<ContextMenu name="ТекстОшибкиПодробныйКонтекстноеМеню" id="43"/>
+							<ExtendedTooltip name="ТекстОшибкиПодробныйРасширеннаяПодсказка" id="44"/>
+						</InputField>
+					</ChildItems>
+				</UsualGroup>
+				<LabelDecoration name="СформироватьОтчетОбОшибке" id="45">
 					<Title formatted="false">
 						<v8:item>
 							<v8:lang>ru</v8:lang>
-							<v8:content>Декорация ошибка</v8:content>
+							<v8:content>Сформировать отчет</v8:content>
 						</v8:item>
 					</Title>
-					<Picture>
-						<xr:Ref>CommonPicture.Ошибка32</xr:Ref>
-						<xr:LoadTransparent>false</xr:LoadTransparent>
-					</Picture>
-					<ContextMenu name="ДекорацияОшибкаКонтекстноеМеню" id="27"/>
-					<ExtendedTooltip name="ДекорацияОшибкаРасширеннаяПодсказка" id="28"/>
-				</PictureDecoration>
-				<InputField name="ТекстОшибки" id="32">
-					<DataPath>ТекстОшибки</DataPath>
-					<TitleLocation>None</TitleLocation>
-					<MultiLine>true</MultiLine>
-					<BorderColor>style:FormBackColor</BorderColor>
-					<ContextMenu name="ТекстОшибкиКонтекстноеМеню" id="33"/>
-					<ExtendedTooltip name="ТекстОшибкиРасширеннаяПодсказка" id="34"/>
-				</InputField>
-				<LabelDecoration name="ДекорацияТекстОшибки" id="29">
-					<ContextMenu name="ДекорацияТекстОшибкиКонтекстноеМеню" id="30"/>
-					<ExtendedTooltip name="ДекорацияТекстОшибкиРасширеннаяПодсказка" id="31"/>
+					<GroupHorizontalAlign>Right</GroupHorizontalAlign>
+					<Hyperlink>true</Hyperlink>
+					<ContextMenu name="СформироватьОтчетОбОшибкеКонтекстноеМеню" id="46"/>
+					<ExtendedTooltip name="СформироватьОтчетОбОшибкеРасширеннаяПодсказка" id="47"/>
+					<Events>
+						<Event name="Click">СформироватьОтчетОбОшибкеНажатие</Event>
+					</Events>
 				</LabelDecoration>
 			</ChildItems>
 		</UsualGroup>
@@ -238,6 +315,24 @@
 					</Type>
 				</Column>
 			</Columns>
+		</Attribute>
+		<Attribute name="ТекстОшибкиПодробный" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Текст ошибки подробный</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ИнформацияОбОшибке" id="11">
+			<Type/>
 		</Attribute>
 	</Attributes>
 	<Commands>

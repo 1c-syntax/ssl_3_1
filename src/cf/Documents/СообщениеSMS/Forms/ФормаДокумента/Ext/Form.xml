@@ -13,7 +13,13 @@
 				<DefaultButton>true</DefaultButton>
 				<DefaultItem>true</DefaultItem>
 				<CommandName>Form.Command.Отправить</CommandName>
-				<ExtendedTooltip name="ФормаОтправитьExtendedTooltip" id="111"/>
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Отправить</v8:content>
+					</v8:item>
+				</Title>
+				<ExtendedTooltip name="ФормаОтправитьРасширеннаяПодсказка" id="111"/>
 			</Button>
 			<Button name="ФормаЗаписатьИЗакрыть" id="85">
 				<Type>CommandBarButton</Type>
@@ -23,7 +29,7 @@
 					<xr:Ref>StdPicture.WriteAndClose</xr:Ref>
 					<xr:LoadTransparent>true</xr:LoadTransparent>
 				</Picture>
-				<ExtendedTooltip name="ФормаЗаписатьИЗакрытьExtendedTooltip" id="112"/>
+				<ExtendedTooltip name="ФормаЗаписатьИЗакрытьРасширеннаяПодсказка" id="112"/>
 			</Button>
 			<Button name="ФормаЗаписать" id="86">
 				<Type>CommandBarButton</Type>
@@ -33,7 +39,7 @@
 					<xr:Ref>StdPicture.Write</xr:Ref>
 					<xr:LoadTransparent>true</xr:LoadTransparent>
 				</Picture>
-				<ExtendedTooltip name="ФормаЗаписатьExtendedTooltip" id="113"/>
+				<ExtendedTooltip name="ФормаЗаписатьРасширеннаяПодсказка" id="113"/>
 			</Button>
 			<ButtonGroup name="ГруппаГлобальныеКоманды" id="90">
 				<Title>
@@ -43,7 +49,7 @@
 					</v8:item>
 				</Title>
 				<CommandSource>FormCommandPanelGlobalCommands</CommandSource>
-				<ExtendedTooltip name="ГруппаГлобальныеКомандыExtendedTooltip" id="116"/>
+				<ExtendedTooltip name="ГруппаГлобальныеКомандыРасширеннаяПодсказка" id="116"/>
 			</ButtonGroup>
 			<Popup name="ПодменюПечать" id="185">
 				<Title>
@@ -132,12 +138,18 @@
 			<Button name="ФормаСформироватьПоШаблону" id="199">
 				<Type>CommandBarButton</Type>
 				<CommandName>Form.Command.СформироватьПоШаблону</CommandName>
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Сформировать по шаблону</v8:content>
+					</v8:item>
+				</Title>
 				<ExtendedTooltip name="ФормаСформироватьПоШаблонуРасширеннаяПодсказка" id="200"/>
 			</Button>
 			<Button name="ФормаСправка" id="89">
 				<Type>CommandBarButton</Type>
 				<CommandName>Form.StandardCommand.Help</CommandName>
-				<ExtendedTooltip name="ФормаСправкаExtendedTooltip" id="110"/>
+				<ExtendedTooltip name="ФормаСправкаРасширеннаяПодсказка" id="110"/>
 			</Button>
 		</ChildItems>
 	</AutoCommandBar>
@@ -176,7 +188,7 @@
 						</v8:item>
 					</Title>
 					<PagesRepresentation>TabsOnTop</PagesRepresentation>
-					<ExtendedTooltip name="СтраницыКонтактыДопРеквизитыКомментарийExtendedTooltip" id="151"/>
+					<ExtendedTooltip name="СтраницыКонтактыДопРеквизитыКомментарийРасширеннаяПодсказка" id="151"/>
 					<Events>
 						<Event name="OnCurrentPageChange">СтраницыКонтактыДопРеквизитыКомментарийПриСменеСтраницы</Event>
 					</Events>
@@ -193,6 +205,12 @@
 								<InputField name="ОсталосьСимволов" id="82">
 									<DataPath>ОсталосьСимволов</DataPath>
 									<ReadOnly>true</ReadOnly>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Осталось символов</v8:content>
+										</v8:item>
+									</Title>
 									<TitleLocation>None</TitleLocation>
 									<HorizontalAlign>Right</HorizontalAlign>
 									<AutoMaxWidth>false</AutoMaxWidth>
@@ -209,7 +227,7 @@
 									<BackColor>style:FormBackColor</BackColor>
 									<BorderColor>style:FormBackColor</BorderColor>
 									<ContextMenu name="ОсталосьСимволовКонтекстноеМеню" id="83"/>
-									<ExtendedTooltip name="ОсталосьСимволовExtendedTooltip" id="130"/>
+									<ExtendedTooltip name="ОсталосьСимволовРасширеннаяПодсказка" id="130"/>
 								</InputField>
 								<InputField name="ТекстСообщения" id="75">
 									<DataPath>Объект.ТекстСообщения</DataPath>
@@ -217,7 +235,7 @@
 									<AutoMaxWidth>false</AutoMaxWidth>
 									<EditTextUpdate>DontUse</EditTextUpdate>
 									<ContextMenu name="ТекстСообщенияКонтекстноеМеню" id="76"/>
-									<ExtendedTooltip name="ТекстСообщенияExtendedTooltip" id="131"/>
+									<ExtendedTooltip name="ТекстСообщенияРасширеннаяПодсказка" id="131"/>
 									<Events>
 										<Event name="EditTextChange">ТекстСообщенияИзменениеТекстаРедактирования</Event>
 									</Events>
@@ -233,7 +251,7 @@
 									<TitleLocation>Right</TitleLocation>
 									<CheckBoxType>Auto</CheckBoxType>
 									<ContextMenu name="ОтправлятьВТранслитеКонтекстноеМеню" id="72"/>
-									<ExtendedTooltip name="ОтправлятьВТранслитеExtendedTooltip" id="125"/>
+									<ExtendedTooltip name="ОтправлятьВТранслитеРасширеннаяПодсказка" id="125"/>
 									<Events>
 										<Event name="OnChange">ОтправлятьВТранслитеПриИзменении</Event>
 									</Events>
@@ -248,7 +266,7 @@
 								</v8:item>
 							</Title>
 							<TitleDataPath>КоличествоАдресатов</TitleDataPath>
-							<ExtendedTooltip name="ГруппаАдресатыКонтактыExtendedTooltip" id="132"/>
+							<ExtendedTooltip name="ГруппаАдресатыКонтактыРасширеннаяПодсказка" id="132"/>
 							<ChildItems>
 								<UsualGroup name="ГруппаАдресаты" id="44">
 									<Title>
@@ -261,7 +279,7 @@
 									<Behavior>Usual</Behavior>
 									<Representation>None</Representation>
 									<ShowTitle>false</ShowTitle>
-									<ExtendedTooltip name="ГруппаАдресатыExtendedTooltip" id="141"/>
+									<ExtendedTooltip name="ГруппаАдресатыРасширеннаяПодсказка" id="141"/>
 									<ChildItems>
 										<Table name="Адресаты" id="45">
 											<Representation>List</Representation>
@@ -292,7 +310,13 @@
 														<SkipOnInput>false</SkipOnInput>
 														<Enabled>false</Enabled>
 														<CommandName>Form.Command.СоздатьКонтакт</CommandName>
-														<ExtendedTooltip name="СоздатьКонтактExtendedTooltip" id="142"/>
+														<Title>
+															<v8:item>
+																<v8:lang>ru</v8:lang>
+																<v8:content>Создать контакт</v8:content>
+															</v8:item>
+														</Title>
+														<ExtendedTooltip name="СоздатьКонтактРасширеннаяПодсказка" id="142"/>
 													</Button>
 													<Button name="АдресатыПроверитьСтатусыДоставки" id="91">
 														<Type>CommandBarButton</Type>
@@ -303,11 +327,11 @@
 																<v8:content>Проверить состояние доставки</v8:content>
 															</v8:item>
 														</Title>
-														<ExtendedTooltip name="АдресатыПроверитьСтатусыДоставкиExtendedTooltip" id="143"/>
+														<ExtendedTooltip name="АдресатыПроверитьСтатусыДоставкиРасширеннаяПодсказка" id="143"/>
 													</Button>
 												</ChildItems>
 											</AutoCommandBar>
-											<ExtendedTooltip name="АдресатыExtendedTooltip" id="144"/>
+											<ExtendedTooltip name="АдресатыРасширеннаяПодсказка" id="144"/>
 											<SearchStringAddition name="АдресатыСтрокаПоиска" id="174">
 												<AdditionSource>
 													<Item>Адресаты</Item>
@@ -376,7 +400,7 @@
 													</FooterText>
 													<Width>15</Width>
 													<ContextMenu name="АдресатыКакСвязатьсяКонтекстноеМеню" id="62"/>
-													<ExtendedTooltip name="АдресатыКакСвязатьсяExtendedTooltip" id="146"/>
+													<ExtendedTooltip name="АдресатыКакСвязатьсяРасширеннаяПодсказка" id="146"/>
 												</InputField>
 												<InputField name="АдресатыСостояниеСообщения" id="96">
 													<DataPath>Объект.Адресаты.СостояниеСообщения</DataPath>
@@ -390,7 +414,7 @@
 													<EditMode>EnterOnInput</EditMode>
 													<Width>15</Width>
 													<ContextMenu name="АдресатыСостояниеСообщенияКонтекстноеМеню" id="97"/>
-													<ExtendedTooltip name="АдресатыСостояниеСообщенияExtendedTooltip" id="148"/>
+													<ExtendedTooltip name="АдресатыСостояниеСообщенияРасширеннаяПодсказка" id="148"/>
 												</InputField>
 											</ChildItems>
 										</Table>
@@ -402,7 +426,7 @@
 												</v8:item>
 											</Title>
 											<PagesRepresentation>None</PagesRepresentation>
-											<ExtendedTooltip name="СтраницыУказаныКонтактыExtendedTooltip" id="136"/>
+											<ExtendedTooltip name="СтраницыУказаныКонтактыРасширеннаяПодсказка" id="136"/>
 											<ChildItems>
 												<Page name="СтраницаКонтактыНеЗаполнены" id="38">
 													<Title>
@@ -411,7 +435,7 @@
 															<v8:content>Страница контакты не заполнены</v8:content>
 														</v8:item>
 													</Title>
-													<ExtendedTooltip name="СтраницаКонтактыНеЗаполненыExtendedTooltip" id="137"/>
+													<ExtendedTooltip name="СтраницаКонтактыНеЗаполненыРасширеннаяПодсказка" id="137"/>
 													<ChildItems>
 														<LabelDecoration name="ДекорацияКонтактыНеЗаполнены" id="39">
 															<AutoMaxWidth>false</AutoMaxWidth>
@@ -423,7 +447,7 @@
 																</v8:item>
 															</Title>
 															<ContextMenu name="ДекорацияКонтактыНеЗаполненыКонтекстноеМеню" id="40"/>
-															<ExtendedTooltip name="ДекорацияКонтактыНеЗаполненыExtendedTooltip" id="138"/>
+															<ExtendedTooltip name="ДекорацияКонтактыНеЗаполненыРасширеннаяПодсказка" id="138"/>
 														</LabelDecoration>
 													</ChildItems>
 												</Page>
@@ -434,7 +458,7 @@
 															<v8:content>Страница контакты заполнены</v8:content>
 														</v8:item>
 													</Title>
-													<ExtendedTooltip name="СтраницаКонтактыЗаполненыExtendedTooltip" id="139"/>
+													<ExtendedTooltip name="СтраницаКонтактыЗаполненыРасширеннаяПодсказка" id="139"/>
 													<ChildItems>
 														<LabelDecoration name="ДекорацияКонтактыЗаполнены" id="42">
 															<TextColor>style:ПоясняющийТекст</TextColor>
@@ -445,7 +469,7 @@
 																</v8:item>
 															</Title>
 															<ContextMenu name="ДекорацияКонтактыЗаполненыКонтекстноеМеню" id="43"/>
-															<ExtendedTooltip name="ДекорацияКонтактыЗаполненыExtendedTooltip" id="140"/>
+															<ExtendedTooltip name="ДекорацияКонтактыЗаполненыРасширеннаяПодсказка" id="140"/>
 														</LabelDecoration>
 													</ChildItems>
 												</Page>
@@ -462,7 +486,7 @@
 									<v8:content>Дополнительно</v8:content>
 								</v8:item>
 							</Title>
-							<ExtendedTooltip name="СтраницаДополнительныеРеквизитыExtendedTooltip" id="152"/>
+							<ExtendedTooltip name="СтраницаДополнительныеРеквизитыРасширеннаяПодсказка" id="152"/>
 						</Page>
 						<Page name="СтраницаКомментарий" id="68">
 							<Title>
@@ -471,7 +495,7 @@
 									<v8:content>Комментарий</v8:content>
 								</v8:item>
 							</Title>
-							<ExtendedTooltip name="СтраницаКомментарийExtendedTooltip" id="153"/>
+							<ExtendedTooltip name="СтраницаКомментарийРасширеннаяПодсказка" id="153"/>
 							<ChildItems>
 								<InputField name="Комментарии" id="108">
 									<DataPath>Объект.Комментарий</DataPath>
@@ -483,7 +507,7 @@
 									<ExtendedEdit>true</ExtendedEdit>
 									<ChoiceButton>false</ChoiceButton>
 									<ContextMenu name="КомментарииКонтекстноеМеню" id="109"/>
-									<ExtendedTooltip name="КомментарииExtendedTooltip" id="149"/>
+									<ExtendedTooltip name="КомментарииРасширеннаяПодсказка" id="149"/>
 								</InputField>
 							</ChildItems>
 						</Page>
@@ -506,6 +530,12 @@
 			<ChildItems>
 				<InputField name="Предмет" id="8">
 					<DataPath>Предмет</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Предмет</v8:content>
+						</v8:item>
+					</Title>
 					<TitleLocation>Top</TitleLocation>
 					<Width>32</Width>
 					<AutoMaxWidth>false</AutoMaxWidth>
@@ -518,7 +548,7 @@
 					<OpenButton>true</OpenButton>
 					<TextEdit>false</TextEdit>
 					<ContextMenu name="ПредметКонтекстноеМеню" id="9"/>
-					<ExtendedTooltip name="ПредметExtendedTooltip" id="119"/>
+					<ExtendedTooltip name="ПредметРасширеннаяПодсказка" id="119"/>
 					<Events>
 						<Event name="StartChoice">ПредметНачалоВыбора</Event>
 					</Events>
@@ -531,7 +561,7 @@
 					<HorizontalStretch>false</HorizontalStretch>
 					<Wrap>false</Wrap>
 					<ContextMenu name="ОтветственныйКонтекстноеМеню" id="13"/>
-					<ExtendedTooltip name="ОтветственныйExtendedTooltip" id="120"/>
+					<ExtendedTooltip name="ОтветственныйРасширеннаяПодсказка" id="120"/>
 				</InputField>
 				<CheckBoxField name="НаКонтроле" id="92">
 					<DataPath>НаКонтроле</DataPath>
@@ -544,19 +574,25 @@
 					<TitleLocation>Right</TitleLocation>
 					<CheckBoxType>Auto</CheckBoxType>
 					<ContextMenu name="НаКонтролеКонтекстноеМеню" id="93"/>
-					<ExtendedTooltip name="НаКонтролеExtendedTooltip" id="123"/>
+					<ExtendedTooltip name="НаКонтролеРасширеннаяПодсказка" id="123"/>
 					<Events>
 						<Event name="OnChange">НаКонтролеПриИзменении</Event>
 					</Events>
 				</CheckBoxField>
 				<InputField name="РассмотретьПосле" id="26">
 					<DataPath>РассмотретьПосле</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Рассмотреть после</v8:content>
+						</v8:item>
+					</Title>
 					<TitleLocation>Top</TitleLocation>
 					<Width>15</Width>
 					<Wrap>false</Wrap>
 					<DropListButton>true</DropListButton>
 					<ContextMenu name="РассмотретьПослеКонтекстноеМеню" id="27"/>
-					<ExtendedTooltip name="РассмотретьПослеExtendedTooltip" id="124"/>
+					<ExtendedTooltip name="РассмотретьПослеРасширеннаяПодсказка" id="124"/>
 					<Events>
 						<Event name="ChoiceProcessing">РассмотретьПослеОбработкаВыбора</Event>
 					</Events>
@@ -660,7 +696,7 @@
 								</v8:item>
 							</Format>
 							<ContextMenu name="ДатаКонтекстноеМеню" id="5"/>
-							<ExtendedTooltip name="ДатаExtendedTooltip" id="157"/>
+							<ExtendedTooltip name="ДатаРасширеннаяПодсказка" id="157"/>
 						</LabelField>
 						<LabelField name="Автор" id="2">
 							<DataPath>Объект.Автор</DataPath>
@@ -670,7 +706,7 @@
 							<HorizontalStretch>true</HorizontalStretch>
 							<Hiperlink>true</Hiperlink>
 							<ContextMenu name="АвторКонтекстноеМеню" id="3"/>
-							<ExtendedTooltip name="АвторExtendedTooltip" id="158"/>
+							<ExtendedTooltip name="АвторРасширеннаяПодсказка" id="158"/>
 						</LabelField>
 					</ChildItems>
 				</UsualGroup>
@@ -687,7 +723,7 @@
 			<Behavior>Usual</Behavior>
 			<Representation>NormalSeparation</Representation>
 			<ShowTitle>false</ShowTitle>
-			<ExtendedTooltip name="ГруппаАдресатыПодвалExtendedTooltip" id="150"/>
+			<ExtendedTooltip name="ГруппаАдресатыПодвалРасширеннаяПодсказка" id="150"/>
 			<ChildItems>
 				<UsualGroup name="ГруппаАвторДатаРегистрации" id="1">
 					<Title>
@@ -699,7 +735,7 @@
 					<Behavior>Usual</Behavior>
 					<Representation>None</Representation>
 					<ShowTitle>false</ShowTitle>
-					<ExtendedTooltip name="ГруппаАвторДатаРегистрацииExtendedTooltip" id="154"/>
+					<ExtendedTooltip name="ГруппаАвторДатаРегистрацииРасширеннаяПодсказка" id="154"/>
 				</UsualGroup>
 			</ChildItems>
 		</UsualGroup>
@@ -922,30 +958,6 @@
 	</Parameters>
 	<CommandInterface>
 		<NavigationPanel>
-			<Item>
-				<Command>0</Command>
-				<Type>Auto</Type>
-				<DefaultVisible>false</DefaultVisible>
-				<Visible>
-					<xr:Common>false</xr:Common>
-				</Visible>
-			</Item>
-			<Item>
-				<Command>0</Command>
-				<Type>Auto</Type>
-				<DefaultVisible>false</DefaultVisible>
-				<Visible>
-					<xr:Common>false</xr:Common>
-				</Visible>
-			</Item>
-			<Item>
-				<Command>0</Command>
-				<Type>Auto</Type>
-				<DefaultVisible>false</DefaultVisible>
-				<Visible>
-					<xr:Common>false</xr:Common>
-				</Visible>
-			</Item>
 			<Item>
 				<Command>CommonCommand.ПрисоединенныеФайлы</Command>
 				<Type>Auto</Type>

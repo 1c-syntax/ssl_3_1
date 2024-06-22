@@ -17,22 +17,40 @@
 				<Type>CommandBarButton</Type>
 				<DefaultButton>true</DefaultButton>
 				<CommandName>Form.Command.ПовторитьЗапускПрограммы</CommandName>
-				<ExtendedTooltip name="ФормаПовторитьЗапускПрограммыExtendedTooltip" id="43"/>
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Повторить</v8:content>
+					</v8:item>
+				</Title>
+				<ExtendedTooltip name="ФормаПовторитьЗапускПрограммыРасширеннаяПодсказка" id="43"/>
 			</Button>
 			<Button name="ФормаЗавершитьСеансыИПерезапуститьПрограмму" id="4">
 				<Type>CommandBarButton</Type>
 				<CommandName>Form.Command.ЗавершитьСеансыИПовторить</CommandName>
-				<ExtendedTooltip name="ФормаЗавершитьСеансыИПерезапуститьПрограммуExtendedTooltip" id="44"/>
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Завершить сеансы и повторить</v8:content>
+					</v8:item>
+				</Title>
+				<ExtendedTooltip name="ФормаЗавершитьСеансыИПерезапуститьПрограммуРасширеннаяПодсказка" id="44"/>
 			</Button>
 			<Button name="ФормаОтменитьЗапускПрограммы" id="3">
 				<Type>CommandBarButton</Type>
 				<CommandName>Form.Command.ОтменитьЗапускПрограммы</CommandName>
-				<ExtendedTooltip name="ФормаОтменитьЗапускПрограммыExtendedTooltip" id="45"/>
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Отменить</v8:content>
+					</v8:item>
+				</Title>
+				<ExtendedTooltip name="ФормаОтменитьЗапускПрограммыРасширеннаяПодсказка" id="45"/>
 			</Button>
 			<Button name="ФормаСправка" id="41">
 				<Type>CommandBarButton</Type>
 				<CommandName>Form.StandardCommand.Help</CommandName>
-				<ExtendedTooltip name="ФормаСправкаExtendedTooltip" id="46"/>
+				<ExtendedTooltip name="ФормаСправкаРасширеннаяПодсказка" id="46"/>
 			</Button>
 		</ChildItems>
 	</AutoCommandBar>
@@ -50,7 +68,7 @@
 				</v8:item>
 			</Title>
 			<PagesRepresentation>None</PagesRepresentation>
-			<ExtendedTooltip name="ГруппаСтраницыExtendedTooltip" id="47"/>
+			<ExtendedTooltip name="ГруппаСтраницыРасширеннаяПодсказка" id="47"/>
 			<ChildItems>
 				<Page name="Информация" id="22">
 					<Title>
@@ -72,16 +90,16 @@
 							<Behavior>Usual</Behavior>
 							<Representation>None</Representation>
 							<ShowTitle>false</ShowTitle>
-							<ExtendedTooltip name="ГруппаИнформацияДляПользователяExtendedTooltip" id="49"/>
+							<ExtendedTooltip name="ГруппаИнформацияДляПользователяРасширеннаяПодсказка" id="49"/>
 							<ChildItems>
 								<PictureDecoration name="КартинкаПредупреждение" id="18">
 									<Picture>
-										<xr:Ref>CommonPicture.Предупреждение32</xr:Ref>
-										<xr:LoadTransparent>false</xr:LoadTransparent>
+										<xr:Ref>StdPicture.DialogExclamation</xr:Ref>
+										<xr:LoadTransparent>true</xr:LoadTransparent>
 									</Picture>
 									<FileDragMode>AsFile</FileDragMode>
 									<ContextMenu name="КартинкаПредупреждениеКонтекстноеМеню" id="19"/>
-									<ExtendedTooltip name="КартинкаПредупреждениеExtendedTooltip" id="50"/>
+									<ExtendedTooltip name="КартинкаПредупреждениеРасширеннаяПодсказка" id="50"/>
 								</PictureDecoration>
 								<UsualGroup name="ГруппаИнформация" id="20">
 									<Title>
@@ -94,7 +112,7 @@
 									<Behavior>Usual</Behavior>
 									<Representation>None</Representation>
 									<ShowTitle>false</ShowTitle>
-									<ExtendedTooltip name="ГруппаИнформацияExtendedTooltip" id="51"/>
+									<ExtendedTooltip name="ГруппаИнформацияРасширеннаяПодсказка" id="51"/>
 									<ChildItems>
 										<UsualGroup name="ГруппаСообщениеОбОшибке" id="15">
 											<Title>
@@ -107,18 +125,18 @@
 											<Behavior>Usual</Behavior>
 											<Representation>None</Representation>
 											<ShowTitle>false</ShowTitle>
-											<ExtendedTooltip name="ГруппаСообщениеОбОшибкеExtendedTooltip" id="52"/>
+											<ExtendedTooltip name="ГруппаСообщениеОбОшибкеРасширеннаяПодсказка" id="52"/>
 											<ChildItems>
 												<LabelDecoration name="ТекстСообщенияОбОшибке" id="1">
 													<AutoMaxWidth>false</AutoMaxWidth>
 													<Title formatted="false">
 														<v8:item>
 															<v8:lang>ru</v8:lang>
-															<v8:content>Невозможно выполнить обновление версии программы, т.к. с ней работают другие пользователи:</v8:content>
+															<v8:content>Невозможно выполнить обновление версии приложения, т.к. с ним работают другие пользователи:</v8:content>
 														</v8:item>
 													</Title>
 													<ContextMenu name="ТекстСообщенияОбОшибкеКонтекстноеМеню" id="2"/>
-													<ExtendedTooltip name="ТекстСообщенияОбОшибкеExtendedTooltip" id="53"/>
+													<ExtendedTooltip name="ТекстСообщенияОбОшибкеРасширеннаяПодсказка" id="53"/>
 												</LabelDecoration>
 												<LabelDecoration name="АктивныеПользователи" id="8">
 													<AutoMaxWidth>false</AutoMaxWidth>
@@ -131,7 +149,7 @@
 													<ToolTipRepresentation>ShowBottom</ToolTipRepresentation>
 													<Hyperlink>true</Hyperlink>
 													<ContextMenu name="АктивныеПользователиКонтекстноеМеню" id="9"/>
-													<ExtendedTooltip name="АктивныеПользователиExtendedTooltip" id="54"/>
+													<ExtendedTooltip name="АктивныеПользователиРасширеннаяПодсказка" id="54"/>
 													<Events>
 														<Event name="Click">АктивныеПользователиНажатие</Event>
 													</Events>
@@ -149,7 +167,7 @@
 											</Title>
 											<VerticalAlign>Bottom</VerticalAlign>
 											<ContextMenu name="ПояснениеПоОшибкеКонтекстноеМеню" id="17"/>
-											<ExtendedTooltip name="ПояснениеПоОшибкеExtendedTooltip" id="55"/>
+											<ExtendedTooltip name="ПояснениеПоОшибкеРасширеннаяПодсказка" id="55"/>
 										</LabelDecoration>
 									</ChildItems>
 								</UsualGroup>
@@ -177,7 +195,7 @@
 							<Behavior>Usual</Behavior>
 							<Representation>None</Representation>
 							<ShowTitle>false</ShowTitle>
-							<ExtendedTooltip name="ГруппаСодержаниеExtendedTooltip" id="57"/>
+							<ExtendedTooltip name="ГруппаСодержаниеРасширеннаяПодсказка" id="57"/>
 							<ChildItems>
 								<PictureDecoration name="КартинкаОжидание" id="24">
 									<Title formatted="false">
@@ -192,7 +210,7 @@
 									</Picture>
 									<FileDragMode>AsFile</FileDragMode>
 									<ContextMenu name="КартинкаОжиданиеКонтекстноеМеню" id="25"/>
-									<ExtendedTooltip name="КартинкаОжиданиеExtendedTooltip" id="58"/>
+									<ExtendedTooltip name="КартинкаОжиданиеРасширеннаяПодсказка" id="58"/>
 								</PictureDecoration>
 								<UsualGroup name="ГруппаТекстПояснения" id="42">
 									<Title>
@@ -212,13 +230,13 @@
 											<Title formatted="false">
 												<v8:item>
 													<v8:lang>ru</v8:lang>
-													<v8:content>В течение ближайших семи минут работа всех пользователей в программе будет завершена автоматически. 
-При этом им будет выведено предупреждение, чтобы перед выходом из программы они могли сохранить введенные данные.</v8:content>
+													<v8:content>В течение ближайших семи минут работа всех пользователей в приложении будет завершена автоматически. 
+При этом им будет выведено предупреждение, чтобы перед выходом из приложения они могли сохранить введенные данные.</v8:content>
 												</v8:item>
 											</Title>
 											<TitleHeight>1</TitleHeight>
 											<ContextMenu name="ТекстПоясненияКонтекстноеМеню" id="27"/>
-											<ExtendedTooltip name="ТекстПоясненияExtendedTooltip" id="60"/>
+											<ExtendedTooltip name="ТекстПоясненияРасширеннаяПодсказка" id="60"/>
 										</LabelDecoration>
 										<LabelDecoration name="АктивныеПользователиОжидание" id="29">
 											<AutoMaxWidth>false</AutoMaxWidth>
@@ -256,24 +274,6 @@
 				<v8:Type>xs:boolean</v8:Type>
 			</Type>
 		</Attribute>
-		<Attribute name="ТекущаяСтраницаПомощника" id="4">
-			<Type>
-				<v8:Type>xs:string</v8:Type>
-				<v8:StringQualifiers>
-					<v8:Length>0</v8:Length>
-					<v8:AllowedLength>Variable</v8:AllowedLength>
-				</v8:StringQualifiers>
-			</Type>
-		</Attribute>
-		<Attribute name="СообщениеОбОшибке" id="6">
-			<Type>
-				<v8:Type>xs:string</v8:Type>
-				<v8:StringQualifiers>
-					<v8:Length>0</v8:Length>
-					<v8:AllowedLength>Variable</v8:AllowedLength>
-				</v8:StringQualifiers>
-			</Type>
-		</Attribute>
 		<Attribute name="ПродолжительностьЗавершенияРаботыПользователей" id="5">
 			<Type>
 				<v8:Type>xs:decimal</v8:Type>
@@ -282,11 +282,6 @@
 					<v8:FractionDigits>0</v8:FractionDigits>
 					<v8:AllowedSign>Any</v8:AllowedSign>
 				</v8:NumberQualifiers>
-			</Type>
-		</Attribute>
-		<Attribute name="ЭтоУдалениеПомеченныхОбъектов" id="7">
-			<Type>
-				<v8:Type>xs:boolean</v8:Type>
 			</Type>
 		</Attribute>
 		<Attribute name="КоличествоАктивныхСеансов" id="8">
@@ -347,9 +342,64 @@
 		</Command>
 	</Commands>
 	<Parameters>
-		<Parameter name="УдалениеПомеченныхОбъектов">
+		<Parameter name="Заголовок">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Parameter>
+		<Parameter name="ТекстСообщенияОбОшибке">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Parameter>
+		<Parameter name="ЗавершатьСеансКонфигуратора">
 			<Type>
 				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+			<KeyParameter>true</KeyParameter>
+		</Parameter>
+		<Parameter name="ЗавершатьВсеСеансыКромеТекущего">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+			<KeyParameter>true</KeyParameter>
+		</Parameter>
+		<Parameter name="ПериодБлокировки">
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>10</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+			<KeyParameter>true</KeyParameter>
+		</Parameter>
+		<Parameter name="СообщениеПриВходеВПриложение">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+			<KeyParameter>true</KeyParameter>
+		</Parameter>
+		<Parameter name="ТекстСообщенияОбОшибкеЗавершенияРаботы">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
 			</Type>
 			<KeyParameter>true</KeyParameter>
 		</Parameter>

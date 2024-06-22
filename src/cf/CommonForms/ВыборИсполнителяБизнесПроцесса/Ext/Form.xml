@@ -13,7 +13,13 @@
 				<DefaultButton>true</DefaultButton>
 				<SkipOnInput>false</SkipOnInput>
 				<CommandName>Form.Command.Выбрать</CommandName>
-				<ExtendedTooltip name="ВыбратьExtendedTooltip" id="55"/>
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Выбрать</v8:content>
+					</v8:item>
+				</Title>
+				<ExtendedTooltip name="ВыбратьРасширеннаяПодсказка" id="55"/>
 			</Button>
 		</ChildItems>
 	</AutoCommandBar>
@@ -30,7 +36,7 @@
 				</v8:item>
 			</Title>
 			<PagesRepresentation>TabsOnTop</PagesRepresentation>
-			<ExtendedTooltip name="СтраницыExtendedTooltip" id="56"/>
+			<ExtendedTooltip name="СтраницыРасширеннаяПодсказка" id="56"/>
 			<ChildItems>
 				<Page name="Пользователи" id="24">
 					<Title>
@@ -39,7 +45,7 @@
 							<v8:content>Пользователи</v8:content>
 						</v8:item>
 					</Title>
-					<ExtendedTooltip name="ПользователиExtendedTooltip" id="57"/>
+					<ExtendedTooltip name="ПользователиРасширеннаяПодсказка" id="57"/>
 					<ChildItems>
 						<CommandBar name="КоманднаяПанельПользователи" id="31">
 							<Title>
@@ -49,7 +55,7 @@
 								</v8:item>
 							</Title>
 							<CommandSource>Item.СписокПользователи</CommandSource>
-							<ExtendedTooltip name="КоманднаяПанельПользователиExtendedTooltip" id="58"/>
+							<ExtendedTooltip name="КоманднаяПанельПользователиРасширеннаяПодсказка" id="58"/>
 						</CommandBar>
 						<Table name="СписокПользователи" id="1">
 							<Representation>List</Representation>
@@ -98,7 +104,7 @@
 							<AllowGettingCurrentRowURL>true</AllowGettingCurrentRowURL>
 							<ContextMenu name="СписокПользователиКонтекстноеМеню" id="2"/>
 							<AutoCommandBar name="СписокПользователиКоманднаяПанель" id="3"/>
-							<ExtendedTooltip name="СписокПользователиExtendedTooltip" id="59"/>
+							<ExtendedTooltip name="СписокПользователиРасширеннаяПодсказка" id="59"/>
 							<SearchStringAddition name="СписокПользователиSearchString" id="65">
 								<AdditionSource>
 									<Item>СписокПользователи</Item>
@@ -133,7 +139,7 @@
 									<DefaultItem>true</DefaultItem>
 									<Width>20</Width>
 									<ContextMenu name="НаименованиеКонтекстноеМеню" id="5"/>
-									<ExtendedTooltip name="НаименованиеExtendedTooltip" id="60"/>
+									<ExtendedTooltip name="НаименованиеРасширеннаяПодсказка" id="60"/>
 								</LabelField>
 								<LabelField name="Ссылка" id="83">
 									<DataPath>СписокПользователи.Ref</DataPath>
@@ -154,7 +160,7 @@
 							<v8:content>Роли исполнителей</v8:content>
 						</v8:item>
 					</Title>
-					<ExtendedTooltip name="РолиExtendedTooltip" id="61"/>
+					<ExtendedTooltip name="РолиРасширеннаяПодсказка" id="61"/>
 					<ChildItems>
 						<Table name="СписокРоли" id="26">
 							<Representation>List</Representation>
@@ -197,7 +203,7 @@
 							<AllowGettingCurrentRowURL>true</AllowGettingCurrentRowURL>
 							<ContextMenu name="СписокРолиКонтекстноеМеню" id="27"/>
 							<AutoCommandBar name="СписокРолиКоманднаяПанель" id="28"/>
-							<ExtendedTooltip name="СписокРолиExtendedTooltip" id="62"/>
+							<ExtendedTooltip name="СписокРолиРасширеннаяПодсказка" id="62"/>
 							<SearchStringAddition name="СписокРолиSearchString" id="74">
 								<AdditionSource>
 									<Item>СписокРоли</Item>
@@ -229,7 +235,7 @@
 								<LabelField name="НаименованиеРоли" id="29">
 									<DataPath>СписокРоли.Description</DataPath>
 									<ContextMenu name="НаименованиеРолиКонтекстноеМеню" id="30"/>
-									<ExtendedTooltip name="НаименованиеРолиExtendedTooltip" id="63"/>
+									<ExtendedTooltip name="НаименованиеРолиРасширеннаяПодсказка" id="63"/>
 								</LabelField>
 								<LabelField name="СписокРолиСсылка" id="86">
 									<DataPath>СписокРоли.Ref</DataPath>
@@ -246,7 +252,7 @@
 							<ReadOnly>true</ReadOnly>
 							<TitleLocation>Left</TitleLocation>
 							<ContextMenu name="СписокРолиКомментарийКонтекстноеМеню" id="54"/>
-							<ExtendedTooltip name="СписокРолиКомментарийExtendedTooltip" id="64"/>
+							<ExtendedTooltip name="СписокРолиКомментарийРасширеннаяПодсказка" id="64"/>
 						</InputField>
 					</ChildItems>
 				</Page>
@@ -420,39 +426,7 @@
 	<CommandInterface>
 		<CommandBar>
 			<Item>
-				<Command>0</Command>
-				<Type>Auto</Type>
-				<DefaultVisible>false</DefaultVisible>
-				<Visible>
-					<xr:Common>false</xr:Common>
-				</Visible>
-			</Item>
-			<Item>
 				<Command>CommonCommand.ИсторияИзменений</Command>
-				<Type>Auto</Type>
-				<DefaultVisible>false</DefaultVisible>
-				<Visible>
-					<xr:Common>false</xr:Common>
-				</Visible>
-			</Item>
-			<Item>
-				<Command>0</Command>
-				<Type>Auto</Type>
-				<DefaultVisible>false</DefaultVisible>
-				<Visible>
-					<xr:Common>false</xr:Common>
-				</Visible>
-			</Item>
-			<Item>
-				<Command>0</Command>
-				<Type>Auto</Type>
-				<DefaultVisible>false</DefaultVisible>
-				<Visible>
-					<xr:Common>false</xr:Common>
-				</Visible>
-			</Item>
-			<Item>
-				<Command>0</Command>
 				<Type>Auto</Type>
 				<DefaultVisible>false</DefaultVisible>
 				<Visible>
