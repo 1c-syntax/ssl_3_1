@@ -101,36 +101,7 @@
 			</ChildItems>
 		</UsualGroup>
 	</ChildItems>
-	<Attributes>
-		<Attribute name="ИмяУстройстваСканирования" id="1">
-			<Type>
-				<v8:Type>xs:string</v8:Type>
-				<v8:StringQualifiers>
-					<v8:Length>0</v8:Length>
-					<v8:AllowedLength>Variable</v8:AllowedLength>
-				</v8:StringQualifiers>
-			</Type>
-		</Attribute>
-		<Attribute name="ПодробноеПредставлениеОшибки" id="4">
-			<Type>
-				<v8:Type>xs:string</v8:Type>
-				<v8:StringQualifiers>
-					<v8:Length>0</v8:Length>
-					<v8:AllowedLength>Variable</v8:AllowedLength>
-				</v8:StringQualifiers>
-			</Type>
-		</Attribute>
-		<Attribute name="ТекстОшибки" id="2">
-			<Type>
-				<v8:Type>v8ui:FormattedString</v8:Type>
-			</Type>
-		</Attribute>
-		<Attribute name="ПоказыватьДиалогСканера" id="3">
-			<Type>
-				<v8:Type>xs:boolean</v8:Type>
-			</Type>
-		</Attribute>
-	</Attributes>
+	<Attributes/>
 	<Commands>
 		<Command name="ПовторитьСканирование" id="3">
 			<Title>
@@ -143,11 +114,6 @@
 		</Command>
 	</Commands>
 	<Parameters>
-		<Parameter name="ТекстОшибки">
-			<Type>
-				<v8:Type>v8ui:FormattedString</v8:Type>
-			</Type>
-		</Parameter>
 		<Parameter name="ИмяУстройстваСканирования">
 			<Type>
 				<v8:Type>xs:string</v8:Type>
@@ -156,6 +122,7 @@
 					<v8:AllowedLength>Variable</v8:AllowedLength>
 				</v8:StringQualifiers>
 			</Type>
+			<KeyParameter>true</KeyParameter>
 		</Parameter>
 		<Parameter name="Заголовок">
 			<Type>
@@ -174,11 +141,23 @@
 					<v8:AllowedLength>Variable</v8:AllowedLength>
 				</v8:StringQualifiers>
 			</Type>
+			<KeyParameter>true</KeyParameter>
 		</Parameter>
 		<Parameter name="ПоказыватьДиалогСканера">
 			<Type>
 				<v8:Type>xs:boolean</v8:Type>
 			</Type>
+			<KeyParameter>true</KeyParameter>
+		</Parameter>
+		<Parameter name="РежимТребуетсяПомощь">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+			<KeyParameter>true</KeyParameter>
+		</Parameter>
+		<Parameter name="Разрешение">
+			<Type/>
+			<KeyParameter>true</KeyParameter>
 		</Parameter>
 	</Parameters>
 </Form>

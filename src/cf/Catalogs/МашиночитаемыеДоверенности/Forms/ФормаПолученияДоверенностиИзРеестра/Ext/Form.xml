@@ -26,7 +26,7 @@
 			<ContextMenu name="НомерДоверенностиКонтекстноеМеню" id="2"/>
 			<ExtendedTooltip name="НомерДоверенностиРасширеннаяПодсказка" id="3"/>
 		</InputField>
-		<InputField name="ИНН" id="4">
+		<InputField name="ИННДоверителя" id="4">
 			<DataPath>ИННДоверителя</DataPath>
 			<Title>
 				<v8:item>
@@ -35,8 +35,26 @@
 				</v8:item>
 			</Title>
 			<Mask>999999999999</Mask>
-			<ContextMenu name="ИННКонтекстноеМеню" id="5"/>
-			<ExtendedTooltip name="ИННРасширеннаяПодсказка" id="6"/>
+			<ContextMenu name="ИННДоверителяКонтекстноеМеню" id="5"/>
+			<ExtendedTooltip name="ИННДоверителяРасширеннаяПодсказка" id="6"/>
+		</InputField>
+		<InputField name="ИННПредставителя" id="11">
+			<DataPath>ИННПредставителя</DataPath>
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>ИНН представителя</v8:content>
+				</v8:item>
+			</Title>
+			<Mask>999999999999</Mask>
+			<InputHint>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>(необязательно)</v8:content>
+				</v8:item>
+			</InputHint>
+			<ContextMenu name="ИННПредставителяКонтекстноеМеню" id="12"/>
+			<ExtendedTooltip name="ИННПредставителяРасширеннаяПодсказка" id="13"/>
 		</InputField>
 		<UsualGroup name="ГруппаПодвал" id="9">
 			<Title>
@@ -99,6 +117,21 @@
 				</v8:StringQualifiers>
 			</Type>
 			<FillCheck>ShowError</FillCheck>
+		</Attribute>
+		<Attribute name="ИННПредставителя" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>ИНН представителя</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
 		</Attribute>
 	</Attributes>
 	<Commands>

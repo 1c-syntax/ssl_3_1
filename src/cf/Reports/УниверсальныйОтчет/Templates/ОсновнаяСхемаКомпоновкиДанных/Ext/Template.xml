@@ -53,7 +53,7 @@
 		</valueType>
 		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
 		<useRestriction>true</useRestriction>
-		<expression>Отчеты.УниверсальныйОтчет.ПериодДатаОкончания(&amp;Период, &amp;ТипОбъектаМетаданных, &amp;ИмяТаблицы)</expression>
+		<expression>Отчеты.УниверсальныйОтчет.ПериодДатаОкончания(&amp;Период, &amp;ИмяТипаОбъектаМетаданных, &amp;ИмяТаблицыОбъектаМетаданных)</expression>
 	</parameter>
 	<parameter>
 		<name>ИсточникДанных</name>
@@ -140,6 +140,44 @@
 		</valueType>
 		<value xsi:type="xs:boolean">true</value>
 		<useRestriction>false</useRestriction>
+		<use>Always</use>
+	</parameter>
+	<parameter>
+		<name>ИмяТипаОбъектаМетаданных</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Имя типа объекта метаданных</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:string</v8:Type>
+			<v8:StringQualifiers>
+				<v8:Length>0</v8:Length>
+				<v8:AllowedLength>Variable</v8:AllowedLength>
+			</v8:StringQualifiers>
+		</valueType>
+		<value xsi:type="xs:string"/>
+		<useRestriction>true</useRestriction>
+		<use>Always</use>
+	</parameter>
+	<parameter>
+		<name>ИмяТаблицыОбъектаМетаданных</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Имя таблицы объекта метаданных</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:string</v8:Type>
+			<v8:StringQualifiers>
+				<v8:Length>0</v8:Length>
+				<v8:AllowedLength>Variable</v8:AllowedLength>
+			</v8:StringQualifiers>
+		</valueType>
+		<value xsi:type="xs:string"/>
+		<useRestriction>true</useRestriction>
 		<use>Always</use>
 	</parameter>
 	<settingsVariant>

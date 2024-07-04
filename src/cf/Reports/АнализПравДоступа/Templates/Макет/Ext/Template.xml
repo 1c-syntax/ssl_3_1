@@ -1435,9 +1435,22 @@
 					<dcsat:item xsi:type="dcsat:Field">
 						<dcsat:value xsi:type="dcscor:Parameter">ОбъектМетаданных</dcsat:value>
 					</dcsat:item>
+					<dcsat:appearance>
+						<dcscor:item>
+							<dcscor:parameter>Расшифровка</dcscor:parameter>
+							<dcscor:value xsi:type="dcscor:Parameter">Расшифровка</dcscor:value>
+						</dcscor:item>
+					</dcsat:appearance>
 				</dcsat:tableCell>
 			</dcsat:item>
 		</template>
+		<parameter xmlns:dcsat="http://v8.1c.ru/8.1/data-composition-system/area-template" xsi:type="dcsat:DetailsAreaTemplateParameter">
+			<dcsat:name>Расшифровка</dcsat:name>
+			<dcsat:fieldExpression>
+				<dcsat:field>ОбъектМетаданныхЗаголовкаОтчета</dcsat:field>
+				<dcsat:expression>ОбъектМетаданных</dcsat:expression>
+			</dcsat:fieldExpression>
+		</parameter>
 		<parameter xmlns:dcsat="http://v8.1c.ru/8.1/data-composition-system/area-template" xsi:type="dcsat:ExpressionAreaTemplateParameter">
 			<dcsat:name>ОбъектМетаданных</dcsat:name>
 			<dcsat:expression>Представление(ОбъектМетаданных)</dcsat:expression>
