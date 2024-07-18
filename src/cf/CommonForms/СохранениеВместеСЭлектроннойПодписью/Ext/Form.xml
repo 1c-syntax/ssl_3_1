@@ -185,6 +185,22 @@
 							<ContextMenu name="ТаблицаПодписейКомментарийКонтекстноеМеню" id="42"/>
 							<ExtendedTooltip name="ТаблицаПодписейКомментарийРасширеннаяПодсказка" id="70"/>
 						</InputField>
+						<InputField name="ТаблицаПодписейМашиночитаемаяДоверенность" id="97">
+							<DataPath>ТаблицаПодписей.МашиночитаемаяДоверенностьПредставление</DataPath>
+							<Visible>false</Visible>
+							<ReadOnly>true</ReadOnly>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Машиночитаемая доверенность</v8:content>
+								</v8:item>
+							</Title>
+							<Height>2</Height>
+							<AutoMaxHeight>false</AutoMaxHeight>
+							<HeightControlVariant>UseContentHeight</HeightControlVariant>
+							<ContextMenu name="ТаблицаПодписейМашиночитаемаяДоверенностьКонтекстноеМеню" id="98"/>
+							<ExtendedTooltip name="ТаблицаПодписейМашиночитаемаяДоверенностьРасширеннаяПодсказка" id="99"/>
+						</InputField>
 					</ChildItems>
 				</Table>
 			</ChildItems>
@@ -328,6 +344,35 @@
 						<v8:Type>xs:string</v8:Type>
 						<v8:StringQualifiers>
 							<v8:Length>3</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="МашиночитаемаяДоверенность" id="13">
+					<Type>
+						<v8:Type>v8:ValueListType</v8:Type>
+					</Type>
+				</Column>
+				<Column name="МашиночитаемаяДоверенностьПредставление" id="14">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Машиночитаемая доверенность представление</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="Отпечаток" id="9">
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
 							<v8:AllowedLength>Variable</v8:AllowedLength>
 						</v8:StringQualifiers>
 					</Type>
