@@ -233,27 +233,54 @@
 											<ContextMenu name="РазмерБумагиКонтекстноеМеню" id="23"/>
 											<ExtendedTooltip name="РазмерБумагиРасширеннаяПодсказка" id="75"/>
 										</InputField>
-										<CheckBoxField name="ДвустороннееСканирование" id="28">
-											<DataPath>ДвустороннееСканирование</DataPath>
+										<UsualGroup name="ГруппаАвтоПодача" id="175">
 											<Title>
 												<v8:item>
 													<v8:lang>ru</v8:lang>
-													<v8:content>Двустороннее сканирование</v8:content>
+													<v8:content>Авто подача</v8:content>
 												</v8:item>
 											</Title>
-											<TitleLocation>Right</TitleLocation>
-											<ToolTipRepresentation>Button</ToolTipRepresentation>
-											<CheckBoxType>Auto</CheckBoxType>
-											<ContextMenu name="ДвустороннееСканированиеКонтекстноеМеню" id="29"/>
-											<ExtendedTooltip name="ДвустороннееСканированиеРасширеннаяПодсказка" id="76">
-												<Title formatted="false">
-													<v8:item>
-														<v8:lang>ru</v8:lang>
-														<v8:content>Это функция сканеров и многофункциональных устройств (МФУ), позволяющая производить автоматическое сканирование документа с двух сторон. Доступна не во всех моделях устройств.</v8:content>
-													</v8:item>
-												</Title>
-											</ExtendedTooltip>
-										</CheckBoxField>
+											<Group>Vertical</Group>
+											<Representation>NormalSeparation</Representation>
+											<ShowTitle>false</ShowTitle>
+											<ExtendedTooltip name="ГруппаАвтоПодачаРасширеннаяПодсказка" id="176"/>
+											<ChildItems>
+												<CheckBoxField name="ДвустороннееСканирование" id="28">
+													<DataPath>ДвустороннееСканирование</DataPath>
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Двустороннее сканирование</v8:content>
+														</v8:item>
+													</Title>
+													<TitleLocation>Right</TitleLocation>
+													<ToolTipRepresentation>Button</ToolTipRepresentation>
+													<CheckBoxType>Auto</CheckBoxType>
+													<ContextMenu name="ДвустороннееСканированиеКонтекстноеМеню" id="29"/>
+													<ExtendedTooltip name="ДвустороннееСканированиеРасширеннаяПодсказка" id="76">
+														<Title formatted="false">
+															<v8:item>
+																<v8:lang>ru</v8:lang>
+																<v8:content>Это функция сканеров и многофункциональных устройств (МФУ), позволяющая производить автоматическое сканирование документа с двух сторон. Доступна не во всех моделях устройств.</v8:content>
+															</v8:item>
+														</Title>
+													</ExtendedTooltip>
+												</CheckBoxField>
+												<CheckBoxField name="АвтоматическаяПодачаДокументов" id="172">
+													<DataPath>АвтоматическаяПодачаДокументов</DataPath>
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Автоматическая подача документов</v8:content>
+														</v8:item>
+													</Title>
+													<TitleLocation>Right</TitleLocation>
+													<CheckBoxType>Auto</CheckBoxType>
+													<ContextMenu name="АвтоматическаяПодачаДокументовКонтекстноеМеню" id="173"/>
+													<ExtendedTooltip name="АвтоматическаяПодачаДокументовРасширеннаяПодсказка" id="174"/>
+												</CheckBoxField>
+											</ChildItems>
+										</UsualGroup>
 									</ChildItems>
 								</UsualGroup>
 								<Button name="ОткрытьНомераОтсканированныхФайлов" id="79">
@@ -1108,6 +1135,17 @@ TIF - Не все браузеры отображают этот формат.</
 				<v8:item>
 					<v8:lang>ru</v8:lang>
 					<v8:content>Использовать каталог журнала сканирования</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="АвтоматическаяПодачаДокументов" id="17">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Автоматическая подача документов</v8:content>
 				</v8:item>
 			</Title>
 			<Type>
