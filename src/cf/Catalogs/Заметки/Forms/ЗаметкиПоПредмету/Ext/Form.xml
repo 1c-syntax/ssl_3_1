@@ -94,7 +94,7 @@
 			<AllowGettingCurrentRowURL>true</AllowGettingCurrentRowURL>
 			<ContextMenu name="СписокКонтекстноеМеню" id="2"/>
 			<AutoCommandBar name="СписокКоманднаяПанель" id="3"/>
-			<ExtendedTooltip name="СписокExtendedTooltip" id="34"/>
+			<ExtendedTooltip name="СписокРасширеннаяПодсказка" id="34"/>
 			<SearchStringAddition name="СписокSearchString" id="48">
 				<AdditionSource>
 					<Item>Список</Item>
@@ -133,7 +133,7 @@
 				<LabelField name="Автор" id="25">
 					<DataPath>Список.Автор</DataPath>
 					<ContextMenu name="АвторКонтекстноеМеню" id="26"/>
-					<ExtendedTooltip name="АвторExtendedTooltip" id="37"/>
+					<ExtendedTooltip name="АвторРасширеннаяПодсказка" id="37"/>
 				</LabelField>
 				<LabelField name="Ссылка" id="57">
 					<DataPath>Список.Ref</DataPath>
@@ -155,24 +155,36 @@
 			<Behavior>Usual</Behavior>
 			<Representation>None</Representation>
 			<ShowTitle>false</ShowTitle>
-			<ExtendedTooltip name="ФильтрыExtendedTooltip" id="38"/>
+			<ExtendedTooltip name="ФильтрыРасширеннаяПодсказка" id="38"/>
 			<ChildItems>
 				<CheckBoxField name="ПоказыватьЗаметкиДругихПользователей" id="23">
 					<DataPath>ПоказыватьЗаметкиДругихПользователей</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Показывать заметки других пользователей</v8:content>
+						</v8:item>
+					</Title>
 					<TitleLocation>Right</TitleLocation>
 					<CheckBoxType>Auto</CheckBoxType>
 					<ContextMenu name="ПоказыватьЗаметкиДругихПользователейКонтекстноеМеню" id="24"/>
-					<ExtendedTooltip name="ПоказыватьЗаметкиДругихПользователейExtendedTooltip" id="39"/>
+					<ExtendedTooltip name="ПоказыватьЗаметкиДругихПользователейРасширеннаяПодсказка" id="39"/>
 					<Events>
 						<Event name="OnChange">ПоказыватьЗаметкиДругихПользователейПриИзменении</Event>
 					</Events>
 				</CheckBoxField>
 				<CheckBoxField name="ПоказыватьУдаленные" id="28">
 					<DataPath>ПоказыватьУдаленные</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Показывать удаленные</v8:content>
+						</v8:item>
+					</Title>
 					<TitleLocation>Right</TitleLocation>
 					<CheckBoxType>Auto</CheckBoxType>
 					<ContextMenu name="ПоказыватьУдаленныеКонтекстноеМеню" id="29"/>
-					<ExtendedTooltip name="ПоказыватьУдаленныеExtendedTooltip" id="40"/>
+					<ExtendedTooltip name="ПоказыватьУдаленныеРасширеннаяПодсказка" id="40"/>
 					<Events>
 						<Event name="OnChange">ПоказыватьУдаленныеПриИзменении</Event>
 					</Events>
@@ -274,4 +286,9 @@
 			</Save>
 		</Attribute>
 	</Attributes>
+	<Parameters>
+		<Parameter name="Предмет">
+			<Type/>
+		</Parameter>
+	</Parameters>
 </Form>

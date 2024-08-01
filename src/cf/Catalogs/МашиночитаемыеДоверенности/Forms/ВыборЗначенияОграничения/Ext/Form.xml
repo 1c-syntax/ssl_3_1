@@ -17,6 +17,12 @@
 			<EnableStartDrag>true</EnableStartDrag>
 			<EnableDrag>true</EnableDrag>
 			<DataPath>ТаблицаЗначенийОграничений</DataPath>
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Таблица</v8:content>
+				</v8:item>
+			</Title>
 			<CommandSet>
 				<ExcludedCommand>Add</ExcludedCommand>
 				<ExcludedCommand>Change</ExcludedCommand>
@@ -35,6 +41,12 @@
 						<Type>CommandBarButton</Type>
 						<DefaultButton>true</DefaultButton>
 						<CommandName>Form.Command.Выбрать</CommandName>
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Выбрать</v8:content>
+							</v8:item>
+						</Title>
 						<ExtendedTooltip name="ТаблицаЗначенийОграниченийВыбратьРасширеннаяПодсказка" id="27"/>
 					</Button>
 				</ChildItems>
@@ -70,6 +82,12 @@
 			<ChildItems>
 				<InputField name="ТаблицаЗначенийОграниченийКод" id="14">
 					<DataPath>ТаблицаЗначенийОграничений.Код</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Код</v8:content>
+						</v8:item>
+					</Title>
 					<EditMode>EnterOnInput</EditMode>
 					<Width>4</Width>
 					<AutoMaxWidth>false</AutoMaxWidth>
@@ -78,6 +96,12 @@
 				</InputField>
 				<InputField name="ТаблицаЗначенийОграниченийНаименование" id="17">
 					<DataPath>ТаблицаЗначенийОграничений.Наименование</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Наименование</v8:content>
+						</v8:item>
+					</Title>
 					<EditMode>EnterOnInput</EditMode>
 					<Width>30</Width>
 					<AutoMaxWidth>false</AutoMaxWidth>
@@ -88,6 +112,12 @@
 				<InputField name="ТаблицаЗначенийОграниченийДействуетС" id="20">
 					<DataPath>ТаблицаЗначенийОграничений.ДействуетС</DataPath>
 					<Visible>false</Visible>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Действует С</v8:content>
+						</v8:item>
+					</Title>
 					<EditMode>EnterOnInput</EditMode>
 					<ContextMenu name="ТаблицаЗначенийОграниченийДействуетСКонтекстноеМеню" id="21"/>
 					<ExtendedTooltip name="ТаблицаЗначенийОграниченийДействуетСРасширеннаяПодсказка" id="22"/>
@@ -95,6 +125,12 @@
 				<CheckBoxField name="ТаблицаЗначенийОграниченийОтозвано" id="23">
 					<DataPath>ТаблицаЗначенийОграничений.Отозвано</DataPath>
 					<Visible>false</Visible>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Отозвано</v8:content>
+						</v8:item>
+					</Title>
 					<EditMode>EnterOnInput</EditMode>
 					<CheckBoxType>Auto</CheckBoxType>
 					<ContextMenu name="ТаблицаЗначенийОграниченийОтозваноКонтекстноеМеню" id="24"/>
@@ -191,4 +227,15 @@
 			<Action>Выбрать</Action>
 		</Command>
 	</Commands>
+	<Parameters>
+		<Parameter name="КодОграничения">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Parameter>
+	</Parameters>
 </Form>

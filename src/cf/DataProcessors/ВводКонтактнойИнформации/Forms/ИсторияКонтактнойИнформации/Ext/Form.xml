@@ -68,6 +68,12 @@
 						<Type>CommandBarButton</Type>
 						<Visible>false</Visible>
 						<CommandName>Form.Command.Выбрать</CommandName>
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Выбрать</v8:content>
+							</v8:item>
+						</Title>
 						<ExtendedTooltip name="ИсторияВыбратьРасширеннаяПодсказка" id="51"/>
 					</Button>
 					<Button name="ИсторияДобавить" id="22" DisplayImportance="Usual">
@@ -136,6 +142,12 @@
 			<ChildItems>
 				<InputField name="ИсторияДействуетС" id="14">
 					<DataPath>История.ДействуетС</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Действует с</v8:content>
+						</v8:item>
+					</Title>
 					<EditMode>EnterOnInput</EditMode>
 					<ContextMenu name="ИсторияДействуетСКонтекстноеМеню" id="15"/>
 					<ExtendedTooltip name="ИсторияДействуетСРасширеннаяПодсказка" id="16"/>
@@ -145,6 +157,12 @@
 				</InputField>
 				<InputField name="ИсторияПредставление" id="17">
 					<DataPath>История.Представление</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Представление</v8:content>
+						</v8:item>
+					</Title>
 					<ChoiceButton>true</ChoiceButton>
 					<ChooseType>false</ChooseType>
 					<TextEdit>false</TextEdit>
@@ -161,6 +179,12 @@
 						<xr:Common>false</xr:Common>
 					</UserVisible>
 					<ReadOnly>true</ReadOnly>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Комментарий</v8:content>
+						</v8:item>
+					</Title>
 					<EditMode>EnterOnInput</EditMode>
 					<TextEdit>false</TextEdit>
 					<ContextMenu name="ИсторияКомментарийКонтекстноеМеню" id="53"/>
@@ -183,11 +207,23 @@
 					<DefaultButton>true</DefaultButton>
 					<DefaultItem>true</DefaultItem>
 					<CommandName>Form.Command.ОК</CommandName>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ОК</v8:content>
+						</v8:item>
+					</Title>
 					<ExtendedTooltip name="ОКРасширеннаяПодсказка" id="41"/>
 				</Button>
 				<Button name="Отмена" id="38">
 					<Type>CommandBarButton</Type>
 					<CommandName>Form.Command.Отмена</CommandName>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Отмена</v8:content>
+						</v8:item>
+					</Title>
 					<ExtendedTooltip name="ОтменаРасширеннаяПодсказка" id="39"/>
 				</Button>
 			</ChildItems>
@@ -409,6 +445,19 @@
 		<Parameter name="ВидКонтактнойИнформации">
 			<Type>
 				<v8:Type>cfg:CatalogRef.ВидыКонтактнойИнформации</v8:Type>
+			</Type>
+		</Parameter>
+		<Parameter name="ИзФормыВводаАдреса">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Parameter>
+		<Parameter name="ДействуетС">
+			<Type>
+				<v8:Type>xs:dateTime</v8:Type>
+				<v8:DateQualifiers>
+					<v8:DateFractions>Date</v8:DateFractions>
+				</v8:DateQualifiers>
 			</Type>
 		</Parameter>
 	</Parameters>

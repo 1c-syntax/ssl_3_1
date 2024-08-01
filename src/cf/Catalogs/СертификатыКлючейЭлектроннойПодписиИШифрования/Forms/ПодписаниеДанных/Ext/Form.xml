@@ -66,6 +66,12 @@
 			<ChildItems>
 				<InputField name="ТипПодписи" id="477">
 					<DataPath>ТипПодписи</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Тип подписи</v8:content>
+						</v8:item>
+					</Title>
 					<ToolTipRepresentation>Button</ToolTipRepresentation>
 					<ListChoiceMode>true</ListChoiceMode>
 					<TextEdit>false</TextEdit>
@@ -120,6 +126,12 @@
 							<ChildItems>
 								<InputField name="Сертификат" id="313">
 									<DataPath>Сертификат</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Сертификат</v8:content>
+										</v8:item>
+									</Title>
 									<AutoMaxWidth>false</AutoMaxWidth>
 									<DropListButton>false</DropListButton>
 									<ChoiceButton>true</ChoiceButton>
@@ -196,7 +208,7 @@
 											<Title formatted="false">
 												<v8:item>
 													<v8:lang>ru</v8:lang>
-													<v8:content>Сертификат помечен в программе как отозванный. Выберите другой сертификат.</v8:content>
+													<v8:content>Сертификат помечен в приложении как отозванный. Выберите другой сертификат.</v8:content>
 												</v8:item>
 											</Title>
 											<ContextMenu name="ДекорацияОтозванНадписьКонтекстноеМеню" id="486"/>
@@ -219,13 +231,26 @@
 									<ChildItems>
 										<InputField name="Пароль" id="316">
 											<DataPath>Пароль</DataPath>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Пароль</v8:content>
+												</v8:item>
+											</Title>
 											<HorizontalStretch>false</HorizontalStretch>
 											<Wrap>false</Wrap>
 											<PasswordMode>true</PasswordMode>
+											<ChoiceButton>true</ChoiceButton>
+											<EditTextUpdate>OnValueChange</EditTextUpdate>
+											<ChoiceButtonPicture>
+												<xr:Ref>CommonPicture.ВводимыеСимволыВидны</xr:Ref>
+												<xr:LoadTransparent>false</xr:LoadTransparent>
+											</ChoiceButtonPicture>
 											<ContextMenu name="ПарольКонтекстноеМеню" id="317"/>
 											<ExtendedTooltip name="ПарольРасширеннаяПодсказка" id="318"/>
 											<Events>
 												<Event name="OnChange">ПарольПриИзменении</Event>
+												<Event name="StartChoice">ПарольНачалоВыбора</Event>
 											</Events>
 										</InputField>
 										<CheckBoxField name="ЗапомнитьПароль" id="324">
@@ -241,7 +266,7 @@
 											<ToolTip>
 												<v8:item>
 													<v8:lang>ru</v8:lang>
-													<v8:content>Запомнить пароль сертификата до закрытия программы. При снятии флажка пароль стирается из памяти, если запоминался ранее.</v8:content>
+													<v8:content>Запомнить пароль сертификата до закрытия приложения. При снятии флажка пароль стирается из памяти, если запоминался ранее.</v8:content>
 												</v8:item>
 											</ToolTip>
 											<ToolTipRepresentation>Button</ToolTipRepresentation>
@@ -321,7 +346,7 @@
 							<Title>
 								<v8:item>
 									<v8:lang>ru</v8:lang>
-									<v8:content>Группа доверенность</v8:content>
+									<v8:content>Доверенность</v8:content>
 								</v8:item>
 							</Title>
 							<Representation>NormalSeparation</Representation>
@@ -350,6 +375,12 @@
 											<ChildItems>
 												<CheckBoxField name="ПоДоверенности1" id="515">
 													<DataPath>ПоДоверенности</DataPath>
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>По доверенности</v8:content>
+														</v8:item>
+													</Title>
 													<TitleLocation>Right</TitleLocation>
 													<GroupVerticalAlign>Center</GroupVerticalAlign>
 													<CheckBoxType>Auto</CheckBoxType>
@@ -396,6 +427,12 @@
 												</CheckBoxField>
 												<InputField name="МашиночитаемаяДоверенность" id="501">
 													<DataPath>МашиночитаемаяДоверенность</DataPath>
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Машиночитаемая доверенность</v8:content>
+														</v8:item>
+													</Title>
 													<TitleLocation>None</TitleLocation>
 													<AutoMaxWidth>false</AutoMaxWidth>
 													<DropListButton>true</DropListButton>
@@ -512,6 +549,12 @@
 							<Type>CommandBarButton</Type>
 							<DefaultButton>true</DefaultButton>
 							<CommandName>Form.Command.Подписать</CommandName>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Подписать</v8:content>
+								</v8:item>
+							</Title>
 							<ExtendedTooltip name="ПодписатьРасширеннаяПодсказка" id="463"/>
 						</Button>
 						<Button name="Отмена" id="464">

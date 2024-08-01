@@ -7,7 +7,7 @@
 			<xr:Value xsi:type="xs:string">КоманднаяПанель</xr:Value>
 		</xr:Item>
 	</MobileDeviceCommandBarContent>
-	<AutoCommandBar name="Форма_КоманднаяПанель" id="-1">
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
 		<Autofill>false</Autofill>
 	</AutoCommandBar>
 	<Events>
@@ -67,9 +67,9 @@
 			<UpdateOnDataChange>Auto</UpdateOnDataChange>
 			<UserSettingsGroup>ГруппаПользовательскихНастроек</UserSettingsGroup>
 			<AllowGettingCurrentRowURL>true</AllowGettingCurrentRowURL>
-			<ContextMenu name="Список_КонтекстноеМеню" id="2"/>
-			<AutoCommandBar name="Список_КоманднаяПанель" id="3"/>
-			<ExtendedTooltip name="СписокExtendedTooltip" id="10"/>
+			<ContextMenu name="СписокКонтекстноеМеню" id="2"/>
+			<AutoCommandBar name="СписокКоманднаяПанель" id="3"/>
+			<ExtendedTooltip name="СписокРасширеннаяПодсказка" id="10"/>
 			<SearchStringAddition name="СписокСтрокаПоиска" id="31">
 				<AdditionSource>
 					<Item>Список</Item>
@@ -109,8 +109,8 @@
 					</Title>
 					<Width>30</Width>
 					<HorizontalStretch>true</HorizontalStretch>
-					<ContextMenu name="Наименование_КонтекстноеМеню" id="5"/>
-					<ExtendedTooltip name="НаименованиеExtendedTooltip" id="11"/>
+					<ContextMenu name="НаименованиеКонтекстноеМеню" id="5"/>
+					<ExtendedTooltip name="НаименованиеРасширеннаяПодсказка" id="11"/>
 				</LabelField>
 				<LabelField name="ИмяПользователя" id="6">
 					<DataPath>Список.ИмяПользователя</DataPath>
@@ -121,8 +121,8 @@
 						</v8:item>
 					</Title>
 					<Width>20</Width>
-					<ContextMenu name="ИмяПользователя_КонтекстноеМеню" id="7"/>
-					<ExtendedTooltip name="ИмяПользователяExtendedTooltip" id="12"/>
+					<ContextMenu name="ИмяПользователяКонтекстноеМеню" id="7"/>
+					<ExtendedTooltip name="ИмяПользователяРасширеннаяПодсказка" id="12"/>
 				</LabelField>
 				<LabelField name="АдресЭлектроннойПочты" id="8">
 					<DataPath>Список.АдресЭлектроннойПочты</DataPath>
@@ -133,8 +133,8 @@
 						</v8:item>
 					</Title>
 					<Width>20</Width>
-					<ContextMenu name="АдресЭлектроннойПочты_КонтекстноеМеню" id="9"/>
-					<ExtendedTooltip name="АдресЭлектроннойПочтыExtendedTooltip" id="13"/>
+					<ContextMenu name="АдресЭлектроннойПочтыКонтекстноеМеню" id="9"/>
+					<ExtendedTooltip name="АдресЭлектроннойПочтыРасширеннаяПодсказка" id="13"/>
 				</LabelField>
 				<LabelField name="ВладелецУчетнойЗаписи" id="43">
 					<DataPath>Список.ВладелецУчетнойЗаписи</DataPath>
@@ -181,6 +181,12 @@
 				</CheckBoxField>
 				<CheckBoxField name="ПоказыватьНедействительные" id="46">
 					<DataPath>ПоказыватьНедействительные</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Показывать недействительные</v8:content>
+						</v8:item>
+					</Title>
 					<TitleLocation>Right</TitleLocation>
 					<CheckBoxType>Auto</CheckBoxType>
 					<ContextMenu name="ПоказыватьНедействительныеКонтекстноеМеню" id="47"/>

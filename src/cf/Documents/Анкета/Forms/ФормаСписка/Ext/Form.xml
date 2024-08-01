@@ -62,7 +62,7 @@
 			<AutoCommandBar name="СписокКоманднаяПанель" id="3">
 				<Autofill>false</Autofill>
 			</AutoCommandBar>
-			<ExtendedTooltip name="СписокExtendedTooltip" id="14"/>
+			<ExtendedTooltip name="СписокРасширеннаяПодсказка" id="14"/>
 			<SearchStringAddition name="СписокSearchString" id="25">
 				<AdditionSource>
 					<Item>Список</Item>
@@ -93,18 +93,18 @@
 			</Events>
 			<ChildItems>
 				<LabelField name="Номер" id="6">
-					<DataPath>Список.Number</DataPath>
+					<DataPath>Список.Номер</DataPath>
 					<Width>14</Width>
 					<HorizontalStretch>false</HorizontalStretch>
 					<ContextMenu name="НомерКонтекстноеМеню" id="7"/>
-					<ExtendedTooltip name="НомерExtendedTooltip" id="16"/>
+					<ExtendedTooltip name="НомерРасширеннаяПодсказка" id="16"/>
 				</LabelField>
 				<LabelField name="Дата" id="4">
-					<DataPath>Список.Date</DataPath>
+					<DataPath>Список.Дата</DataPath>
 					<DefaultItem>true</DefaultItem>
 					<Width>9</Width>
 					<ContextMenu name="ДатаКонтекстноеМеню" id="5"/>
-					<ExtendedTooltip name="ДатаExtendedTooltip" id="15"/>
+					<ExtendedTooltip name="ДатаРасширеннаяПодсказка" id="15"/>
 				</LabelField>
 				<LabelField name="РежимАнкетирования" id="34">
 					<DataPath>Список.РежимАнкетирования</DataPath>
@@ -137,14 +137,14 @@
 					<Width>25</Width>
 					<HorizontalStretch>false</HorizontalStretch>
 					<ContextMenu name="ОпросКонтекстноеМеню" id="9"/>
-					<ExtendedTooltip name="ОпросExtendedTooltip" id="17"/>
+					<ExtendedTooltip name="ОпросРасширеннаяПодсказка" id="17"/>
 				</LabelField>
 				<LabelField name="Респондент" id="10">
 					<DataPath>Список.Респондент</DataPath>
 					<Width>20</Width>
 					<HorizontalStretch>false</HorizontalStretch>
 					<ContextMenu name="РеспондентКонтекстноеМеню" id="11"/>
-					<ExtendedTooltip name="РеспондентExtendedTooltip" id="18"/>
+					<ExtendedTooltip name="РеспондентРасширеннаяПодсказка" id="18"/>
 				</LabelField>
 				<LabelField name="ДатаРедактирования" id="12">
 					<DataPath>Список.ДатаРедактирования</DataPath>
@@ -152,10 +152,10 @@
 						<xr:Common>false</xr:Common>
 					</UserVisible>
 					<ContextMenu name="ДатаРедактированияКонтекстноеМеню" id="13"/>
-					<ExtendedTooltip name="ДатаРедактированияExtendedTooltip" id="19"/>
+					<ExtendedTooltip name="ДатаРедактированияРасширеннаяПодсказка" id="19"/>
 				</LabelField>
 				<LabelField name="Ссылка" id="20">
-					<DataPath>Список.Ref</DataPath>
+					<DataPath>Список.Ссылка</DataPath>
 					<UserVisible>
 						<xr:Common>false</xr:Common>
 					</UserVisible>
@@ -172,7 +172,7 @@
 			</Type>
 			<MainAttribute>true</MainAttribute>
 			<UseAlways>
-				<Field>Список.Ref</Field>
+				<Field>Список.Ссылка</Field>
 			</UseAlways>
 			<Settings xsi:type="DynamicList">
 				<ManualQuery>true</ManualQuery>
@@ -197,6 +197,72 @@
 	КОНЕЦ КАК ШаблонАнкеты
 ИЗ
 	Документ.Анкета КАК ДокументАнкета</QueryText>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ШаблонАнкеты</dcssch:dataPath>
+					<dcssch:field>ШаблонАнкеты</dcssch:field>
+					<dcssch:title xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Шаблон анкеты</v8:content>
+						</v8:item>
+					</dcssch:title>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>Состав</dcssch:dataPath>
+					<dcssch:field>Состав</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>МоментВремени</dcssch:dataPath>
+					<dcssch:field>МоментВремени</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>Ссылка</dcssch:dataPath>
+					<dcssch:field>Ссылка</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ПометкаУдаления</dcssch:dataPath>
+					<dcssch:field>ПометкаУдаления</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>Номер</dcssch:dataPath>
+					<dcssch:field>Номер</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>Дата</dcssch:dataPath>
+					<dcssch:field>Дата</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>Проведен</dcssch:dataPath>
+					<dcssch:field>Проведен</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>Опрос</dcssch:dataPath>
+					<dcssch:field>Опрос</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>Респондент</dcssch:dataPath>
+					<dcssch:field>Респондент</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ДатаРедактирования</dcssch:dataPath>
+					<dcssch:field>ДатаРедактирования</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>РедактируемыйРаздел</dcssch:dataPath>
+					<dcssch:field>РедактируемыйРаздел</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>Комментарий</dcssch:dataPath>
+					<dcssch:field>Комментарий</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>Интервьюер</dcssch:dataPath>
+					<dcssch:field>Интервьюер</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>РежимАнкетирования</dcssch:dataPath>
+					<dcssch:field>РежимАнкетирования</dcssch:field>
+				</Field>
 				<MainTable>Document.Анкета</MainTable>
 				<ListSettings>
 					<dcsset:filter>

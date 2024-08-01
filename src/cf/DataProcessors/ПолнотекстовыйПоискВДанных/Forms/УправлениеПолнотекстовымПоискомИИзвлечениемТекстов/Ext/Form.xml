@@ -34,7 +34,7 @@
 			<Behavior>Usual</Behavior>
 			<Representation>None</Representation>
 			<ShowTitle>false</ShowTitle>
-			<ExtendedTooltip name="ГруппаЗаголовокExtendedTooltip" id="135"/>
+			<ExtendedTooltip name="ГруппаЗаголовокРасширеннаяПодсказка" id="135"/>
 			<ChildItems>
 				<LabelDecoration name="ОписаниеРаздела" id="136">
 					<AutoMaxWidth>false</AutoMaxWidth>
@@ -55,12 +55,12 @@
 						</v8:item>
 					</Title>
 					<HorizontalLocation>Right</HorizontalLocation>
-					<ExtendedTooltip name="ГруппаСправкаExtendedTooltip" id="143"/>
+					<ExtendedTooltip name="ГруппаСправкаРасширеннаяПодсказка" id="143"/>
 					<ChildItems>
 						<Button name="Справка" id="144">
 							<Type>CommandBarButton</Type>
 							<CommandName>Form.StandardCommand.Help</CommandName>
-							<ExtendedTooltip name="СправкаExtendedTooltip" id="145"/>
+							<ExtendedTooltip name="СправкаРасширеннаяПодсказка" id="145"/>
 						</Button>
 					</ChildItems>
 				</CommandBar>
@@ -80,6 +80,12 @@
 			<ChildItems>
 				<CheckBoxField name="ИспользоватьПолнотекстовыйПоиск" id="214">
 					<DataPath>ИспользоватьПолнотекстовыйПоиск</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Использовать полнотекстовый поиск</v8:content>
+						</v8:item>
+					</Title>
 					<TitleLocation>Right</TitleLocation>
 					<CheckBoxType>Auto</CheckBoxType>
 					<ContextMenu name="ИспользоватьПолнотекстовыйПоискКонтекстноеМеню" id="215"/>
@@ -119,7 +125,7 @@
 							<Type>Hyperlink</Type>
 							<Visible>false</Visible>
 							<CommandName>DataProcessor.АктивныеПользователи.StandardCommand.Open</CommandName>
-							<ExtendedTooltip name="ОбработкаАктивныеПользователиExtendedTooltip" id="116"/>
+							<ExtendedTooltip name="ОбработкаАктивныеПользователиРасширеннаяПодсказка" id="116"/>
 						</Button>
 					</ChildItems>
 				</UsualGroup>
@@ -166,6 +172,12 @@
 								</CheckBoxField>
 								<InputField name="МаксимальныйРазмерИндексируемыхДанных" id="197">
 									<DataPath>МаксимальныйРазмерИндексируемыхДанных</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Ограничить максимальный размер индексируемых данных</v8:content>
+										</v8:item>
+									</Title>
 									<TitleLocation>None</TitleLocation>
 									<ContextMenu name="МаксимальныйРазмерИндексируемыхДанныхКонтекстноеМеню" id="198"/>
 									<ExtendedTooltip name="МаксимальныйРазмерИндексируемыхДанныхРасширеннаяПодсказка" id="199"/>
@@ -216,19 +228,31 @@
 					<Behavior>Usual</Behavior>
 					<Representation>None</Representation>
 					<ShowTitle>false</ShowTitle>
-					<ExtendedTooltip name="ГруппаУправлениеПолнотекстовымПоискомExtendedTooltip" id="117"/>
+					<ExtendedTooltip name="ГруппаУправлениеПолнотекстовымПоискомРасширеннаяПодсказка" id="117"/>
 					<ChildItems>
 						<LabelField name="ДатаАктуальностиИндекса" id="5">
 							<DataPath>ДатаАктуальностиИндекса</DataPath>
 							<SkipOnInput>true</SkipOnInput>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Дата актуальности индекса</v8:content>
+								</v8:item>
+							</Title>
 							<ContextMenu name="ДатаАктуальностиИндексаКонтекстноеМеню" id="6"/>
-							<ExtendedTooltip name="ДатаАктуальностиИндексаExtendedTooltip" id="118"/>
+							<ExtendedTooltip name="ДатаАктуальностиИндексаРасширеннаяПодсказка" id="118"/>
 						</LabelField>
 						<LabelField name="СтатусИндекса" id="3">
 							<DataPath>СтатусИндекса</DataPath>
 							<SkipOnInput>true</SkipOnInput>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Статус индекса</v8:content>
+								</v8:item>
+							</Title>
 							<ContextMenu name="СтатусИндексаКонтекстноеМеню" id="4"/>
-							<ExtendedTooltip name="СтатусИндексаExtendedTooltip" id="119"/>
+							<ExtendedTooltip name="СтатусИндексаРасширеннаяПодсказка" id="119"/>
 						</LabelField>
 						<UsualGroup name="ГруппаКнопки" id="93">
 							<Title>
@@ -245,16 +269,34 @@
 								<Button name="ОбновитьИндекс" id="11">
 									<Type>UsualButton</Type>
 									<CommandName>Form.Command.ОбновитьИндекс</CommandName>
-									<ExtendedTooltip name="ОбновитьИндексExtendedTooltip" id="121"/>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Обновить индекс</v8:content>
+										</v8:item>
+									</Title>
+									<ExtendedTooltip name="ОбновитьИндексРасширеннаяПодсказка" id="121"/>
 								</Button>
 								<Button name="ОчиститьИндекс" id="12">
 									<Type>UsualButton</Type>
 									<CommandName>Form.Command.ОчиститьИндекс</CommandName>
-									<ExtendedTooltip name="ОчиститьИндексExtendedTooltip" id="122"/>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Очистить индекс</v8:content>
+										</v8:item>
+									</Title>
+									<ExtendedTooltip name="ОчиститьИндексРасширеннаяПодсказка" id="122"/>
 								</Button>
 								<Button name="ПроверитьИндекс" id="155">
 									<Type>UsualButton</Type>
 									<CommandName>Form.Command.ПроверитьИндекс</CommandName>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Проверить индекс</v8:content>
+										</v8:item>
+									</Title>
 									<ExtendedTooltip name="ПроверитьИндексРасширеннаяПодсказка" id="156"/>
 								</Button>
 							</ChildItems>
@@ -274,7 +316,7 @@
 			<Group>Vertical</Group>
 			<Behavior>Usual</Behavior>
 			<Representation>NormalSeparation</Representation>
-			<ExtendedTooltip name="ГруппаАвтоматическоеИзвлечениеТекстовExtendedTooltip" id="123"/>
+			<ExtendedTooltip name="ГруппаАвтоматическоеИзвлечениеТекстовРасширеннаяПодсказка" id="123"/>
 			<ChildItems>
 				<LabelDecoration name="ПояснениеИзвлекатьТекстыФайловНаСервере4" id="103">
 					<AutoMaxWidth>false</AutoMaxWidth>
@@ -283,11 +325,11 @@
 					<Title formatted="false">
 						<v8:item>
 							<v8:lang>ru</v8:lang>
-							<v8:content>Извлечение текстов из файлов необходимо для полнотекстового поиска в программе.</v8:content>
+							<v8:content>Извлечение текстов из файлов необходимо для полнотекстового поиска в приложении.</v8:content>
 						</v8:item>
 					</Title>
 					<ContextMenu name="ПояснениеИзвлекатьТекстыФайловНаСервере4КонтекстноеМеню" id="104"/>
-					<ExtendedTooltip name="ПояснениеИзвлекатьТекстыФайловНаСервере4ExtendedTooltip" id="124"/>
+					<ExtendedTooltip name="ПояснениеИзвлекатьТекстыФайловНаСервере4РасширеннаяПодсказка" id="124"/>
 				</LabelDecoration>
 				<UsualGroup name="ГруппаАвтоматическоеИзвлечениеТекстовОсновное" id="189">
 					<Title>
@@ -317,6 +359,12 @@
 							<ChildItems>
 								<RadioButtonField name="ИзвлекатьТекстыФайловНаСервереWindows" id="159">
 									<DataPath>ИзвлекатьТекстыФайловНаСервере</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Извлекать тексты файлов</v8:content>
+										</v8:item>
+									</Title>
 									<TitleLocation>None</TitleLocation>
 									<RadioButtonType>Auto</RadioButtonType>
 									<ItemTitleHeight>2</ItemTitleHeight>
@@ -378,6 +426,12 @@
 							<ChildItems>
 								<RadioButtonField name="ИзвлекатьТекстыФайловНаСервереLinux" id="175">
 									<DataPath>ИзвлекатьТекстыФайловНаСервере</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Извлекать тексты файлов</v8:content>
+										</v8:item>
+									</Title>
 									<TitleLocation>None</TitleLocation>
 									<RadioButtonType>Auto</RadioButtonType>
 									<ItemTitleHeight>2</ItemTitleHeight>

@@ -7,6 +7,12 @@
 		<Autofill>false</Autofill>
 		<ChildItems>
 			<ButtonGroup name="ГруппаКоманднаяПанель" id="34">
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Командная панель</v8:content>
+					</v8:item>
+				</Title>
 				<ExtendedTooltip name="ГруппаКоманднаяПанельРасширеннаяПодсказка" id="35"/>
 				<ChildItems>
 					<Button name="ЗаписатьИЗакрыть" id="36">
@@ -148,6 +154,12 @@
 						</RadioButtonField>
 						<InputField name="ЭлементСправочника" id="115">
 							<DataPath>ЭлементСправочника</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Элемент справочника</v8:content>
+								</v8:item>
+							</Title>
 							<TitleLocation>None</TitleLocation>
 							<Width>35</Width>
 							<HorizontalStretch>false</HorizontalStretch>
@@ -162,6 +174,12 @@
 				</UsualGroup>
 				<RadioButtonField name="ОбъектСинхронизацииВсеФайлы" id="69">
 					<DataPath>ОбъектСинхронизации</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Объект синхронизации</v8:content>
+						</v8:item>
+					</Title>
 					<TitleLocation>None</TitleLocation>
 					<ToolTipRepresentation>ShowBottom</ToolTipRepresentation>
 					<RadioButtonType>Auto</RadioButtonType>
@@ -237,6 +255,12 @@
 					<ContextMenu name="ПравилоНастройкиОтборКонтекстноеМеню" id="11">
 						<ChildItems>
 							<ButtonGroup name="КонтекстноеМенюДобавить" id="151">
+								<Title>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Контекстное меню добавить</v8:content>
+									</v8:item>
+								</Title>
 								<ExtendedTooltip name="КонтекстноеМенюДобавитьРасширеннаяПодсказка" id="152"/>
 								<ChildItems>
 									<Button name="ПравилоНастройкиОтборКонтекстноеМенюДобавитьЭлементОтбора" id="149">
@@ -248,11 +272,23 @@
 										<Type>CommandBarButton</Type>
 										<Enabled>false</Enabled>
 										<CommandName>Form.Command.ДобавитьУсловиеПоДате</CommandName>
+										<Title>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Добавить условие по дате</v8:content>
+											</v8:item>
+										</Title>
 										<ExtendedTooltip name="ПравилоНастройкиОтборКонтекстноеМенюДобавитьУсловиеПоДатеРасширеннаяПодсказка" id="148"/>
 									</Button>
 								</ChildItems>
 							</ButtonGroup>
 							<ButtonGroup name="КонтекстноеМенюСгруппировать" id="153">
+								<Title>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Контекстное меню сгруппировать</v8:content>
+									</v8:item>
+								</Title>
 								<ExtendedTooltip name="КонтекстноеМенюСгруппироватьРасширеннаяПодсказка" id="154"/>
 								<ChildItems>
 									<Button name="ПравилоНастройкиОтборКонтекстноеМенюСгруппироватьЭлементыОтбора" id="155">
@@ -294,11 +330,23 @@
 									<Button name="ДобавитьУсловиеПоДате" id="46">
 										<Type>CommandBarButton</Type>
 										<CommandName>Form.Command.ДобавитьУсловиеПоДате</CommandName>
+										<Title>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Добавить условие по дате</v8:content>
+											</v8:item>
+										</Title>
 										<ExtendedTooltip name="ДобавитьУсловиеПоДатеРасширеннаяПодсказка" id="47"/>
 									</Button>
 								</ChildItems>
 							</Popup>
 							<ButtonGroup name="МенюСгруппировать" id="145">
+								<Title>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Меню сгруппировать</v8:content>
+									</v8:item>
+								</Title>
 								<ExtendedTooltip name="МенюСгруппироватьРасширеннаяПодсказка" id="146"/>
 								<ChildItems>
 									<Button name="СгруппироватьЭлементыОтбора" id="42">
@@ -493,6 +541,16 @@
 		<Parameter name="ТипВладельцаФайла">
 			<Type>
 				<v8:Type>cfg:CatalogRef.ИдентификаторыОбъектовМетаданных</v8:Type>
+			</Type>
+		</Parameter>
+		<Parameter name="ЭтоФайл">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Parameter>
+		<Parameter name="НоваяНастройка">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
 			</Type>
 		</Parameter>
 	</Parameters>

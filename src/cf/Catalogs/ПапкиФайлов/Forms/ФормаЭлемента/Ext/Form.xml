@@ -7,6 +7,12 @@
 			<Button name="ФормаНастроитьСинхронизацию" id="43">
 				<Type>CommandBarButton</Type>
 				<CommandName>Form.Command.НастроитьСинхронизацию</CommandName>
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Синхронизация с облаком ...</v8:content>
+					</v8:item>
+				</Title>
 				<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
 				<ExtendedTooltip name="ФормаНастроитьСинхронизациюРасширеннаяПодсказка" id="44"/>
 			</Button>
@@ -82,7 +88,7 @@
 			<Wrap>false</Wrap>
 			<BorderColor>style:BorderColor</BorderColor>
 			<ContextMenu name="КодКонтекстноеМеню" id="3"/>
-			<ExtendedTooltip name="КодExtendedTooltip" id="32"/>
+			<ExtendedTooltip name="КодРасширеннаяПодсказка" id="32"/>
 		</InputField>
 		<InputField name="Наименование" id="4">
 			<DataPath>Объект.Description</DataPath>
@@ -91,7 +97,7 @@
 			<Wrap>false</Wrap>
 			<BorderColor>style:BorderColor</BorderColor>
 			<ContextMenu name="НаименованиеКонтекстноеМеню" id="5"/>
-			<ExtendedTooltip name="НаименованиеExtendedTooltip" id="33"/>
+			<ExtendedTooltip name="НаименованиеРасширеннаяПодсказка" id="33"/>
 		</InputField>
 		<InputField name="Родитель" id="6">
 			<DataPath>Объект.Parent</DataPath>
@@ -107,7 +113,7 @@
 			<Wrap>false</Wrap>
 			<BorderColor>style:BorderColor</BorderColor>
 			<ContextMenu name="РодительКонтекстноеМеню" id="7"/>
-			<ExtendedTooltip name="РодительExtendedTooltip" id="34"/>
+			<ExtendedTooltip name="РодительРасширеннаяПодсказка" id="34"/>
 			<Events>
 				<Event name="OnChange">РодительПриИзменении</Event>
 			</Events>
@@ -115,9 +121,15 @@
 		<InputField name="ПолныйПуть" id="28">
 			<DataPath>ПолныйПуть</DataPath>
 			<ReadOnly>true</ReadOnly>
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Полный путь</v8:content>
+				</v8:item>
+			</Title>
 			<AutoMaxWidth>false</AutoMaxWidth>
 			<ContextMenu name="ПолныйПутьКонтекстноеМеню" id="29"/>
-			<ExtendedTooltip name="ПолныйПутьExtendedTooltip" id="35"/>
+			<ExtendedTooltip name="ПолныйПутьРасширеннаяПодсказка" id="35"/>
 		</InputField>
 		<InputField name="Описание" id="8">
 			<DataPath>Объект.Описание</DataPath>
@@ -125,7 +137,7 @@
 			<AutoMaxWidth>false</AutoMaxWidth>
 			<BorderColor>style:BorderColor</BorderColor>
 			<ContextMenu name="ОписаниеКонтекстноеМеню" id="9"/>
-			<ExtendedTooltip name="ОписаниеExtendedTooltip" id="36"/>
+			<ExtendedTooltip name="ОписаниеРасширеннаяПодсказка" id="36"/>
 		</InputField>
 		<InputField name="Ответственный" id="10">
 			<DataPath>Объект.Ответственный</DataPath>
@@ -135,7 +147,7 @@
 			<Wrap>false</Wrap>
 			<BorderColor>style:BorderColor</BorderColor>
 			<ContextMenu name="ОтветственныйКонтекстноеМеню" id="11"/>
-			<ExtendedTooltip name="ОтветственныйExtendedTooltip" id="37"/>
+			<ExtendedTooltip name="ОтветственныйРасширеннаяПодсказка" id="37"/>
 		</InputField>
 		<InputField name="ДатаСоздания" id="12">
 			<DataPath>Объект.ДатаСоздания</DataPath>
@@ -144,17 +156,23 @@
 			<Wrap>false</Wrap>
 			<BorderColor>style:BorderColor</BorderColor>
 			<ContextMenu name="ДатаСозданияКонтекстноеМеню" id="13"/>
-			<ExtendedTooltip name="ДатаСозданияExtendedTooltip" id="38"/>
+			<ExtendedTooltip name="ДатаСозданияРасширеннаяПодсказка" id="38"/>
 		</InputField>
 		<InputField name="РабочийКаталог" id="26">
 			<DataPath>РабочийКаталог</DataPath>
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Рабочий каталог</v8:content>
+				</v8:item>
+			</Title>
 			<AutoMaxWidth>false</AutoMaxWidth>
 			<MaxWidth>40</MaxWidth>
 			<ChoiceButton>true</ChoiceButton>
 			<ClearButton>true</ClearButton>
 			<TextEdit>false</TextEdit>
 			<ContextMenu name="РабочийКаталогКонтекстноеМеню" id="27"/>
-			<ExtendedTooltip name="РабочийКаталогExtendedTooltip" id="39"/>
+			<ExtendedTooltip name="РабочийКаталогРасширеннаяПодсказка" id="39"/>
 			<Events>
 				<Event name="StartChoice">РабочийКаталогВладельцаНачалоВыбора</Event>
 				<Event name="Clearing">РабочийКаталогВладельцаОчистка</Event>
@@ -231,11 +249,6 @@
 	</Parameters>
 	<CommandInterface>
 		<NavigationPanel>
-			<Item>
-				<Command>0</Command>
-				<Type>Auto</Type>
-				<DefaultVisible>false</DefaultVisible>
-			</Item>
 			<Item>
 				<Command>CommonCommand.ПрисоединенныеФайлы</Command>
 				<Type>Auto</Type>

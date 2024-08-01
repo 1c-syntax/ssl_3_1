@@ -73,7 +73,7 @@
 					<RowFilter xsi:nil="true"/>
 					<ContextMenu name="ВыбранныеФайлыКонтекстноеМеню" id="17"/>
 					<AutoCommandBar name="ВыбранныеФайлыКоманднаяПанель" id="18"/>
-					<ExtendedTooltip name="ВыбранныеФайлыExtendedTooltip" id="42"/>
+					<ExtendedTooltip name="ВыбранныеФайлыРасширеннаяПодсказка" id="42"/>
 					<SearchStringAddition name="ВыбранныеФайлыСтрокаПоиска" id="56">
 						<AdditionSource>
 							<Item>ВыбранныеФайлы</Item>
@@ -110,10 +110,16 @@
 								</v8:item>
 							</Title>
 							<Group>InCell</Group>
-							<ExtendedTooltip name="КартинкаИНаименованиеExtendedTooltip" id="43"/>
+							<ExtendedTooltip name="КартинкаИНаименованиеРасширеннаяПодсказка" id="43"/>
 							<ChildItems>
 								<PictureField name="ВыбранныеФайлыИндексКартинки" id="30">
 									<DataPath>ВыбранныеФайлы.ИндексКартинки</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Индекс картинки</v8:content>
+										</v8:item>
+									</Title>
 									<EditMode>EnterOnInput</EditMode>
 									<ValuesPicture>
 										<xr:Ref>CommonPicture.КоллекцияПиктограммФайлов</xr:Ref>
@@ -121,10 +127,16 @@
 									</ValuesPicture>
 									<FileDragMode>AsFile</FileDragMode>
 									<ContextMenu name="ВыбранныеФайлыИндексКартинкиКонтекстноеМеню" id="31"/>
-									<ExtendedTooltip name="ВыбранныеФайлыИндексКартинкиExtendedTooltip" id="44"/>
+									<ExtendedTooltip name="ВыбранныеФайлыИндексКартинкиРасширеннаяПодсказка" id="44"/>
 								</PictureField>
 								<LabelField name="ВыбранныеСсылка" id="32">
 									<DataPath>ВыбранныеФайлы.Ссылка</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Ссылка</v8:content>
+										</v8:item>
+									</Title>
 									<EditMode>EnterOnInput</EditMode>
 									<ContextMenu name="ВыбранныеСсылкаКонтекстноеМеню" id="33"/>
 									<ExtendedTooltip name="ВыбранныеСсылкаРасширеннаяПодсказка" id="45"/>
@@ -149,15 +161,21 @@
 			<MultiLine>true</MultiLine>
 			<BorderColor>style:BorderColor</BorderColor>
 			<ContextMenu name="ОписаниеКонтекстноеМеню" id="9"/>
-			<ExtendedTooltip name="ОписаниеExtendedTooltip" id="48"/>
+			<ExtendedTooltip name="ОписаниеРасширеннаяПодсказка" id="48"/>
 		</InputField>
 		<CheckBoxField name="ХранитьВерсии" id="21">
 			<DataPath>ХранитьВерсии</DataPath>
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Хранить версии</v8:content>
+				</v8:item>
+			</Title>
 			<TitleLocation>Right</TitleLocation>
 			<FooterHorizontalAlign>Left</FooterHorizontalAlign>
 			<CheckBoxType>Auto</CheckBoxType>
 			<ContextMenu name="ХранитьВерсииКонтекстноеМеню" id="22"/>
-			<ExtendedTooltip name="ХранитьВерсииExtendedTooltip" id="49"/>
+			<ExtendedTooltip name="ХранитьВерсииРасширеннаяПодсказка" id="49"/>
 		</CheckBoxField>
 		<CommandBar name="ОсновнаяКоманднаяПанель" id="1">
 			<Title>
@@ -168,7 +186,7 @@
 			</Title>
 			<HorizontalLocation>Right</HorizontalLocation>
 			<CommandSource>Form</CommandSource>
-			<ExtendedTooltip name="ОсновнаяКоманднаяПанельExtendedTooltip" id="53"/>
+			<ExtendedTooltip name="ОсновнаяКоманднаяПанельРасширеннаяПодсказка" id="53"/>
 			<ChildItems>
 				<Button name="ЗакончитьРедактирование" id="4">
 					<Type>CommandBarButton</Type>
@@ -178,6 +196,12 @@
 					<TextColor>style:ButtonTextColor</TextColor>
 					<BackColor>style:ButtonBackColor</BackColor>
 					<BorderColor>style:BorderColor</BorderColor>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Закончить редактирование</v8:content>
+						</v8:item>
+					</Title>
 					<ExtendedTooltip name="ЗакончитьРедактированиеРасширеннаяПодсказка" id="54"/>
 				</Button>
 				<Button name="Отмена" id="20">
@@ -187,7 +211,7 @@
 					<TextColor>style:ButtonTextColor</TextColor>
 					<BackColor>style:ButtonBackColor</BackColor>
 					<BorderColor>style:BorderColor</BorderColor>
-					<ExtendedTooltip name="ОтменаExtendedTooltip" id="55"/>
+					<ExtendedTooltip name="ОтменаРасширеннаяПодсказка" id="55"/>
 				</Button>
 			</ChildItems>
 		</CommandBar>

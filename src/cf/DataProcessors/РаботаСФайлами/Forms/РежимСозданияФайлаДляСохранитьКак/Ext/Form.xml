@@ -18,13 +18,19 @@
 				<DefaultButton>true</DefaultButton>
 				<SkipOnInput>false</SkipOnInput>
 				<CommandName>Form.Command.СохранитьФайл</CommandName>
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Сохранить файл</v8:content>
+					</v8:item>
+				</Title>
 				<ExtendedTooltip name="СохранитьФайлРасширеннаяПодсказка" id="21"/>
 			</Button>
 			<Button name="Отмена" id="11">
 				<Type>CommandBarButton</Type>
 				<SkipOnInput>false</SkipOnInput>
 				<CommandName>Form.StandardCommand.Cancel</CommandName>
-				<ExtendedTooltip name="ОтменаExtendedTooltip" id="22"/>
+				<ExtendedTooltip name="ОтменаРасширеннаяПодсказка" id="22"/>
 			</Button>
 		</ChildItems>
 	</AutoCommandBar>
@@ -43,7 +49,7 @@
 			<Behavior>Usual</Behavior>
 			<Representation>None</Representation>
 			<ShowTitle>false</ShowTitle>
-			<ExtendedTooltip name="ГруппаСообщениеExtendedTooltip" id="23"/>
+			<ExtendedTooltip name="ГруппаСообщениеРасширеннаяПодсказка" id="23"/>
 			<ChildItems>
 				<PictureDecoration name="ДекорацияИконка" id="19">
 					<SkipOnInput>false</SkipOnInput>
@@ -54,21 +60,27 @@
 						</v8:item>
 					</Title>
 					<Picture>
-						<xr:Ref>CommonPicture.Предупреждение32</xr:Ref>
-						<xr:LoadTransparent>false</xr:LoadTransparent>
+						<xr:Ref>StdPicture.DialogExclamation</xr:Ref>
+						<xr:LoadTransparent>true</xr:LoadTransparent>
 					</Picture>
 					<FileDragMode>AsFile</FileDragMode>
 					<ContextMenu name="ДекорацияИконкаКонтекстноеМеню" id="20"/>
-					<ExtendedTooltip name="ДекорацияИконкаExtendedTooltip" id="24"/>
+					<ExtendedTooltip name="ДекорацияИконкаРасширеннаяПодсказка" id="24"/>
 				</PictureDecoration>
 				<LabelField name="Сообщение" id="3">
 					<DataPath>Сообщение</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Сообщение</v8:content>
+						</v8:item>
+					</Title>
 					<TitleLocation>None</TitleLocation>
 					<Width>65</Width>
 					<Height>3</Height>
 					<VerticalStretch>false</VerticalStretch>
 					<ContextMenu name="СообщениеКонтекстноеМеню" id="4"/>
-					<ExtendedTooltip name="СообщениеExtendedTooltip" id="25"/>
+					<ExtendedTooltip name="СообщениеРасширеннаяПодсказка" id="25"/>
 				</LabelField>
 			</ChildItems>
 		</UsualGroup>
@@ -83,7 +95,7 @@
 			<Behavior>Usual</Behavior>
 			<Representation>NormalSeparation</Representation>
 			<ShowTitle>false</ShowTitle>
-			<ExtendedTooltip name="ГруппаФайлExtendedTooltip" id="26"/>
+			<ExtendedTooltip name="ГруппаФайлРасширеннаяПодсказка" id="26"/>
 			<ChildItems>
 				<UsualGroup name="ГруппаФайлИКнопка" id="17">
 					<Title>
@@ -96,21 +108,33 @@
 					<Behavior>Usual</Behavior>
 					<Representation>None</Representation>
 					<ShowTitle>false</ShowTitle>
-					<ExtendedTooltip name="ГруппаФайлИКнопкаExtendedTooltip" id="28"/>
+					<ExtendedTooltip name="ГруппаФайлИКнопкаРасширеннаяПодсказка" id="28"/>
 					<ChildItems>
 						<InputField name="Файл" id="8">
 							<DataPath>КопияФайла</DataPath>
 							<ReadOnly>true</ReadOnly>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Копия файла на компьютере</v8:content>
+								</v8:item>
+							</Title>
 							<TitleLocation>Top</TitleLocation>
 							<Width>60</Width>
 							<ContextMenu name="ФайлКонтекстноеМеню" id="9"/>
-							<ExtendedTooltip name="ФайлExtendedTooltip" id="29"/>
+							<ExtendedTooltip name="ФайлРасширеннаяПодсказка" id="29"/>
 						</InputField>
 						<Button name="ОткрытьКаталог" id="14">
 							<Type>UsualButton</Type>
 							<SkipOnInput>false</SkipOnInput>
 							<CommandName>Form.Command.ОткрытьКаталог</CommandName>
-							<ExtendedTooltip name="ОткрытьКаталогExtendedTooltip" id="30"/>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Открыть каталог</v8:content>
+								</v8:item>
+							</Title>
+							<ExtendedTooltip name="ОткрытьКаталогРасширеннаяПодсказка" id="30"/>
 						</Button>
 					</ChildItems>
 				</UsualGroup>
@@ -118,6 +142,12 @@
 		</UsualGroup>
 		<RadioButtonField name="РежимСозданияФайла" id="5">
 			<DataPath>РежимСозданияФайла</DataPath>
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Выберите, какую копию файла сохранить</v8:content>
+				</v8:item>
+			</Title>
 			<TitleLocation>Top</TitleLocation>
 			<RadioButtonType>Auto</RadioButtonType>
 			<ColumnsCount>1</ColumnsCount>
@@ -142,7 +172,7 @@
 						<Presentation>
 							<v8:item>
 								<v8:lang>ru</v8:lang>
-								<v8:content>Получить заново и сохранить копию файла из программы</v8:content>
+								<v8:content>Получить заново и сохранить копию файла из приложения</v8:content>
 							</v8:item>
 						</Presentation>
 						<Value xsi:type="xs:decimal">0</Value>
@@ -150,7 +180,7 @@
 				</xr:Item>
 			</ChoiceList>
 			<ContextMenu name="РежимСозданияФайлаКонтекстноеМеню" id="6"/>
-			<ExtendedTooltip name="РежимСозданияФайлаExtendedTooltip" id="31"/>
+			<ExtendedTooltip name="РежимСозданияФайлаРасширеннаяПодсказка" id="31"/>
 		</RadioButtonField>
 	</ChildItems>
 	<Attributes>
@@ -240,4 +270,24 @@
 			<CurrentRowUse>DontUse</CurrentRowUse>
 		</Command>
 	</Commands>
+	<Parameters>
+		<Parameter name="Файл">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Parameter>
+		<Parameter name="Сообщение">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Parameter>
+	</Parameters>
 </Form>

@@ -23,6 +23,12 @@
 				<DefaultButton>true</DefaultButton>
 				<DefaultItem>true</DefaultItem>
 				<CommandName>Form.Command.ОК</CommandName>
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>ОК</v8:content>
+					</v8:item>
+				</Title>
 				<ExtendedTooltip name="ОКРасширеннаяПодсказка" id="34"/>
 			</Button>
 			<Button name="Закрыть" id="80">
@@ -61,7 +67,7 @@
 							<Title>
 								<v8:item>
 									<v8:lang>ru</v8:lang>
-									<v8:content>Часовой пояс программы</v8:content>
+									<v8:content>Часовой пояс приложения</v8:content>
 								</v8:item>
 							</Title>
 							<ToolTipRepresentation>ShowBottom</ToolTipRepresentation>
@@ -70,11 +76,11 @@
 							<Representation>None</Representation>
 							<United>false</United>
 							<ShowTitle>false</ShowTitle>
-							<ExtendedTooltip name="ГруппаЧасовойПоясПрограммыExtendedTooltip" id="4">
+							<ExtendedTooltip name="ГруппаЧасовойПоясПрограммыРасширеннаяПодсказка" id="4">
 								<Title formatted="false">
 									<v8:item>
 										<v8:lang>ru</v8:lang>
-										<v8:content>Часовой пояс, в котором ведется учет в программе. Даты всех документов и других данных вводятся и хранятся в этом часовом поясе. </v8:content>
+										<v8:content>Часовой пояс, в котором ведется учет в приложении. Даты всех документов и других данных вводятся и хранятся в этом часовом поясе. </v8:content>
 									</v8:item>
 								</Title>
 							</ExtendedTooltip>
@@ -94,26 +100,38 @@
 									<ChildItems>
 										<InputField name="ЧасовойПоясПрограммы" id="5">
 											<DataPath>ЧасовойПоясПрограммы</DataPath>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Часовой пояс приложения</v8:content>
+												</v8:item>
+											</Title>
 											<Width>20</Width>
 											<HorizontalStretch>false</HorizontalStretch>
 											<ListChoiceMode>true</ListChoiceMode>
 											<TextEdit>false</TextEdit>
 											<EditTextUpdate>OnValueChange</EditTextUpdate>
 											<ContextMenu name="ЧасовойПоясПрограммыКонтекстноеМеню" id="6"/>
-											<ExtendedTooltip name="ЧасовойПоясПрограммыExtendedTooltip" id="7"/>
+											<ExtendedTooltip name="ЧасовойПоясПрограммыРасширеннаяПодсказка" id="7"/>
 											<Events>
 												<Event name="OnChange">ЧасовойПоясПрограммыПриИзменении</Event>
 											</Events>
 										</InputField>
 										<Button name="ВремяТекущегоСеанса" id="8">
 											<Type>Hyperlink</Type>
-											<CommandName>CommonCommand.ВремяТекущегоСеанса</CommandName>
+											<CommandName>CommonCommand.ВремяВПриложении</CommandName>
 											<ExtendedTooltip name="ВремяТекущегоСеансаРасширеннаяПодсказка" id="9"/>
 										</Button>
 									</ChildItems>
 								</UsualGroup>
 								<LabelField name="ВремяЧасовогоПояса" id="82">
 									<DataPath>ВремяВыбранногоЧасовогоПояса</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Время выбранного часового пояса</v8:content>
+										</v8:item>
+									</Title>
 									<ContextMenu name="ВремяЧасовогоПоясаКонтекстноеМеню" id="83"/>
 									<ExtendedTooltip name="ВремяЧасовогоПоясаРасширеннаяПодсказка" id="84"/>
 								</LabelField>
@@ -129,7 +147,7 @@
 							<ToolTip>
 								<v8:item>
 									<v8:lang>ru</v8:lang>
-									<v8:content>На выбранном языке ведется учет в программе, а также создаются автогенерируемые данные (предопределенные элементы, классификаторы, комментарии к проводкам, события журнала регистрации и т.п.).</v8:content>
+									<v8:content>На выбранном языке ведется учет в приложении, а также создаются автогенерируемые данные (предопределенные элементы, классификаторы, комментарии к проводкам, события журнала регистрации и т.п.).</v8:content>
 								</v8:item>
 							</ToolTip>
 							<ToolTipRepresentation>ShowBottom</ToolTipRepresentation>
@@ -140,6 +158,12 @@
 							<ChildItems>
 								<InputField name="ОсновнойЯзык" id="12">
 									<DataPath>ОсновнойЯзык</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Основной язык</v8:content>
+										</v8:item>
+									</Title>
 									<ListChoiceMode>true</ListChoiceMode>
 									<ChooseType>false</ChooseType>
 									<ContextMenu name="ОсновнойЯзыкКонтекстноеМеню" id="13"/>
@@ -185,6 +209,12 @@
 									<ChildItems>
 										<CheckBoxField name="ИспользоватьДополнительныйЯзык1" id="19">
 											<DataPath>ИспользоватьДополнительныйЯзык1</DataPath>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Использовать дополнительный язык1</v8:content>
+												</v8:item>
+											</Title>
 											<TitleLocation>None</TitleLocation>
 											<CheckBoxType>Auto</CheckBoxType>
 											<ContextMenu name="ИспользоватьДополнительныйЯзык1КонтекстноеМеню" id="20"/>
@@ -195,6 +225,12 @@
 										</CheckBoxField>
 										<InputField name="ДополнительныйЯзык1" id="22">
 											<DataPath>ДополнительныйЯзык1</DataPath>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Дополнительный язык1</v8:content>
+												</v8:item>
+											</Title>
 											<TitleLocation>None</TitleLocation>
 											<ListChoiceMode>true</ListChoiceMode>
 											<ChooseType>false</ChooseType>
@@ -221,6 +257,12 @@
 									<ChildItems>
 										<CheckBoxField name="ИспользоватьДополнительныйЯзык2" id="27">
 											<DataPath>ИспользоватьДополнительныйЯзык2</DataPath>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Использовать дополнительный язык 2</v8:content>
+												</v8:item>
+											</Title>
 											<TitleLocation>None</TitleLocation>
 											<CheckBoxType>Auto</CheckBoxType>
 											<ContextMenu name="ИспользоватьДополнительныйЯзык2КонтекстноеМеню" id="28"/>
@@ -231,6 +273,12 @@
 										</CheckBoxField>
 										<InputField name="ДополнительныйЯзык2" id="30">
 											<DataPath>ДополнительныйЯзык2</DataPath>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Дополнительный язык1</v8:content>
+												</v8:item>
+											</Title>
 											<TitleLocation>None</TitleLocation>
 											<ListChoiceMode>true</ListChoiceMode>
 											<ChooseType>false</ChooseType>
@@ -281,18 +329,33 @@
 								<LabelDecoration name="ДекорацияОписание" id="77">
 									<AutoMaxWidth>false</AutoMaxWidth>
 									<Height>3</Height>
+									<AutoMaxHeight>false</AutoMaxHeight>
 									<Title formatted="false">
 										<v8:item>
 											<v8:lang>ru</v8:lang>
-											<v8:content>Перезаполнение строк предопределенных элементов и классификаторов. </v8:content>
+											<v8:content>Перезаполнение предопределенных элементов и классификаторов.</v8:content>
 										</v8:item>
 									</Title>
-									<VerticalAlign>Bottom</VerticalAlign>
+									<VerticalAlign>Center</VerticalAlign>
 									<ContextMenu name="ДекорацияОписаниеКонтекстноеМеню" id="78"/>
 									<ExtendedTooltip name="ДекорацияОписаниеРасширеннаяПодсказка" id="79"/>
 								</LabelDecoration>
 							</ChildItems>
 						</UsualGroup>
+						<ProgressBarField name="Прогресс" id="87">
+							<DataPath>Прогресс</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Прогресс</v8:content>
+								</v8:item>
+							</Title>
+							<TitleLocation>None</TitleLocation>
+							<ToolTipRepresentation>ShowBottom</ToolTipRepresentation>
+							<ShowPercent>true</ShowPercent>
+							<ContextMenu name="ПрогрессКонтекстноеМеню" id="88"/>
+							<ExtendedTooltip name="ПрогрессРасширеннаяПодсказка" id="89"/>
+						</ProgressBarField>
 					</ChildItems>
 				</Page>
 				<Page name="УспешноеЗавершение" id="37">
@@ -340,10 +403,10 @@
 									<Title formatted="false">
 										<v8:item>
 											<v8:lang>ru</v8:lang>
-											<v8:content>Строки предопределенных элементов и классификаторов успешно перезаполнены.</v8:content>
+											<v8:content>Предопределенные элементы и классификаторы успешно перезаполнены.</v8:content>
 										</v8:item>
 									</Title>
-									<VerticalAlign>Bottom</VerticalAlign>
+									<VerticalAlign>Center</VerticalAlign>
 									<ContextMenu name="ДекорацияЗавершениеКонтекстноеМеню" id="73"/>
 									<ExtendedTooltip name="ДекорацияЗавершениеРасширеннаяПодсказка" id="74"/>
 								</LabelDecoration>
@@ -404,7 +467,7 @@
 			<Title>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Часовой пояс программы</v8:content>
+					<v8:content>Часовой пояс приложения</v8:content>
 				</v8:item>
 			</Title>
 			<Type>
@@ -496,6 +559,30 @@
 		<Attribute name="ПродолжитьИзменениеМультиязычныхРеквизитов" id="12">
 			<Type>
 				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ВремяЗакрытияФормы" id="13">
+			<Type>
+				<v8:Type>xs:dateTime</v8:Type>
+				<v8:DateQualifiers>
+					<v8:DateFractions>DateTime</v8:DateFractions>
+				</v8:DateQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="Прогресс" id="14">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Прогресс</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>10</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
 			</Type>
 		</Attribute>
 	</Attributes>

@@ -22,12 +22,24 @@
 				<DefaultButton>true</DefaultButton>
 				<SkipOnInput>false</SkipOnInput>
 				<CommandName>Form.Command.КнопкаОК</CommandName>
-				<ExtendedTooltip name="ОкExtendedTooltip" id="43"/>
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>ОК</v8:content>
+					</v8:item>
+				</Title>
+				<ExtendedTooltip name="ОкРасширеннаяПодсказка" id="43"/>
 			</Button>
 			<Button name="КнопкаОтмена" id="34">
 				<Type>CommandBarButton</Type>
 				<CommandName>Form.Command.КнопкаОтмена</CommandName>
-				<ExtendedTooltip name="КнопкаОтменаExtendedTooltip" id="44"/>
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Отмена</v8:content>
+					</v8:item>
+				</Title>
+				<ExtendedTooltip name="КнопкаОтменаРасширеннаяПодсказка" id="44"/>
 			</Button>
 		</ChildItems>
 	</AutoCommandBar>
@@ -40,6 +52,12 @@
 	<ChildItems>
 		<RadioButtonField name="ВариантыИспользованияПроксиСервера" id="20">
 			<DataPath>ВариантИспользованияПроксиСервера</DataPath>
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Вариант использования прокси-сервера</v8:content>
+				</v8:item>
+			</Title>
 			<TitleLocation>None</TitleLocation>
 			<RadioButtonType>Auto</RadioButtonType>
 			<ColumnsCount>1</ColumnsCount>
@@ -85,7 +103,7 @@
 				</xr:Item>
 			</ChoiceList>
 			<ContextMenu name="ВариантыИспользованияПроксиСервераКонтекстноеМеню" id="21"/>
-			<ExtendedTooltip name="ВариантыИспользованияПроксиСервераExtendedTooltip" id="45"/>
+			<ExtendedTooltip name="ВариантыИспользованияПроксиСервераРасширеннаяПодсказка" id="45"/>
 			<Events>
 				<Event name="OnChange">ВариантыИспользованияПроксиСервераПриИзменении</Event>
 			</Events>
@@ -101,7 +119,7 @@
 			<Behavior>Usual</Behavior>
 			<Representation>NormalSeparation</Representation>
 			<ShowTitle>false</ShowTitle>
-			<ExtendedTooltip name="ПараметрыПроксиExtendedTooltip" id="46"/>
+			<ExtendedTooltip name="ПараметрыПроксиРасширеннаяПодсказка" id="46"/>
 			<ChildItems>
 				<UsualGroup name="ГруппаАдресСервера" id="19">
 					<Title>
@@ -113,10 +131,16 @@
 					<Behavior>Usual</Behavior>
 					<Representation>NormalSeparation</Representation>
 					<ShowTitle>false</ShowTitle>
-					<ExtendedTooltip name="ГруппаАдресСервераExtendedTooltip" id="47"/>
+					<ExtendedTooltip name="ГруппаАдресСервераРасширеннаяПодсказка" id="47"/>
 					<ChildItems>
 						<InputField name="ПроксиСервер" id="9">
 							<DataPath>Сервер</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Адрес сервера</v8:content>
+								</v8:item>
+							</Title>
 							<ToolTip>
 								<v8:item>
 									<v8:lang>ru</v8:lang>
@@ -125,10 +149,16 @@
 							</ToolTip>
 							<Wrap>false</Wrap>
 							<ContextMenu name="ПроксиСерверКонтекстноеМеню" id="10"/>
-							<ExtendedTooltip name="ПроксиСерверExtendedTooltip" id="48"/>
+							<ExtendedTooltip name="ПроксиСерверРасширеннаяПодсказка" id="48"/>
 						</InputField>
 						<InputField name="Порт" id="1">
 							<DataPath>Порт</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Порт</v8:content>
+								</v8:item>
+							</Title>
 							<ToolTip>
 								<v8:item>
 									<v8:lang>ru</v8:lang>
@@ -145,7 +175,7 @@
 							<MinValue xsi:type="xs:decimal">0</MinValue>
 							<MaxValue xsi:type="xs:decimal">65535</MaxValue>
 							<ContextMenu name="ПортКонтекстноеМеню" id="2"/>
-							<ExtendedTooltip name="ПортExtendedTooltip" id="49"/>
+							<ExtendedTooltip name="ПортРасширеннаяПодсказка" id="49"/>
 						</InputField>
 					</ChildItems>
 				</UsualGroup>
@@ -216,6 +246,12 @@
 						</InputField>
 						<InputField name="Пользователь" id="5">
 							<DataPath>Пользователь</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Пользователь</v8:content>
+								</v8:item>
+							</Title>
 							<ToolTip>
 								<v8:item>
 									<v8:lang>ru</v8:lang>
@@ -224,10 +260,16 @@
 							</ToolTip>
 							<Wrap>false</Wrap>
 							<ContextMenu name="ПользовательКонтекстноеМеню" id="6"/>
-							<ExtendedTooltip name="ПользовательExtendedTooltip" id="51"/>
+							<ExtendedTooltip name="ПользовательРасширеннаяПодсказка" id="51"/>
 						</InputField>
 						<InputField name="Пароль" id="3">
 							<DataPath>Пароль</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Пароль</v8:content>
+								</v8:item>
+							</Title>
 							<ToolTip>
 								<v8:item>
 									<v8:lang>ru</v8:lang>
@@ -237,7 +279,7 @@
 							<Wrap>false</Wrap>
 							<PasswordMode>true</PasswordMode>
 							<ContextMenu name="ПарольКонтекстноеМеню" id="4"/>
-							<ExtendedTooltip name="ПарольExtendedTooltip" id="52"/>
+							<ExtendedTooltip name="ПарольРасширеннаяПодсказка" id="52"/>
 						</InputField>
 					</ChildItems>
 				</UsualGroup>
@@ -251,20 +293,32 @@
 					<Behavior>Usual</Behavior>
 					<Representation>NormalSeparation</Representation>
 					<ShowTitle>false</ShowTitle>
-					<ExtendedTooltip name="ГруппаДополнительныхПараметровExtendedTooltip" id="53"/>
+					<ExtendedTooltip name="ГруппаДополнительныхПараметровРасширеннаяПодсказка" id="53"/>
 					<ChildItems>
 						<CheckBoxField name="НеИспользоватьПроксиДляЛокальныхАдресов" id="11">
 							<DataPath>НеИспользоватьПроксиДляЛокальныхАдресов</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Не использовать прокси для локальных адресов</v8:content>
+								</v8:item>
+							</Title>
 							<TitleLocation>Right</TitleLocation>
 							<CheckBoxType>Auto</CheckBoxType>
 							<ContextMenu name="НеИспользоватьПроксиДляЛокальныхАдресовКонтекстноеМеню" id="12"/>
-							<ExtendedTooltip name="НеИспользоватьПроксиДляЛокальныхАдресовExtendedTooltip" id="54"/>
+							<ExtendedTooltip name="НеИспользоватьПроксиДляЛокальныхАдресовРасширеннаяПодсказка" id="54"/>
 						</CheckBoxField>
 						<Button name="ДополнительныеПараметрыПроксиСервера" id="26">
 							<Type>UsualButton</Type>
 							<GroupHorizontalAlign>Right</GroupHorizontalAlign>
 							<CommandName>Form.Command.ДополнительныеПараметрыПроксиСервера</CommandName>
-							<ExtendedTooltip name="ДополнительныеПараметрыПроксиСервераExtendedTooltip" id="56"/>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Дополнительно</v8:content>
+								</v8:item>
+							</Title>
+							<ExtendedTooltip name="ДополнительныеПараметрыПроксиСервераРасширеннаяПодсказка" id="56"/>
 						</Button>
 					</ChildItems>
 				</UsualGroup>

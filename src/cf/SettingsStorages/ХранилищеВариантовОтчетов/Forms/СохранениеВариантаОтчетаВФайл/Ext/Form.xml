@@ -9,6 +9,12 @@
 				<Type>CommandBarButton</Type>
 				<DefaultButton>true</DefaultButton>
 				<CommandName>Form.Command.Сохранить</CommandName>
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Сохранить</v8:content>
+					</v8:item>
+				</Title>
 				<ExtendedTooltip name="СохранитьРасширеннаяПодсказка" id="28"/>
 			</Button>
 		</ChildItems>
@@ -39,6 +45,12 @@
 					<ChildItems>
 						<InputField name="ИмяФайла" id="1">
 							<DataPath>ИмяФайла</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Имя файла</v8:content>
+								</v8:item>
+							</Title>
 							<AutoMaxWidth>false</AutoMaxWidth>
 							<HorizontalStretch>true</HorizontalStretch>
 							<ChoiceButton>true</ChoiceButton>
@@ -49,88 +61,130 @@
 								<Event name="StartChoice">ИмяФайлаНачалоВыбора</Event>
 							</Events>
 						</InputField>
-						<Table name="ПользовательскиеНастройки" id="4">
+						<UsualGroup name="ГруппаПерсональныеНастройки" id="80">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Персональные настройки</v8:content>
+								</v8:item>
+							</Title>
+							<Group>AlwaysHorizontal</Group>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаПерсональныеНастройкиРасширеннаяПодсказка" id="81"/>
+							<ChildItems>
+								<LabelDecoration name="ПерсональныеНастройкиНадпись" id="77">
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Персональные настройки:</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="ПерсональныеНастройкиНадписьКонтекстноеМеню" id="78"/>
+									<ExtendedTooltip name="ПерсональныеНастройкиНадписьРасширеннаяПодсказка" id="79"/>
+								</LabelDecoration>
+								<CommandBar name="КоманднаяПанельПерсональныеНастройки" id="82">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Командная панель персональные настройки</v8:content>
+										</v8:item>
+									</Title>
+									<ExtendedTooltip name="КоманднаяПанельПерсональныеНастройкиРасширеннаяПодсказка" id="83"/>
+									<ChildItems>
+										<ButtonGroup name="ПользовательскиеНастройкиГруппаИзменитьФлажки" id="75">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Изменить флажки</v8:content>
+												</v8:item>
+											</Title>
+											<Representation>Compact</Representation>
+											<ExtendedTooltip name="ПользовательскиеНастройкиГруппаИзменитьФлажкиРасширеннаяПодсказка" id="76"/>
+											<ChildItems>
+												<Button name="ПользовательскиеНастройкиУстановитьФлажки" id="23">
+													<Type>CommandBarButton</Type>
+													<CommandName>Form.Item.ПерсональныеНастройки.StandardCommand.CheckAll</CommandName>
+													<LocationInCommandBar>InCommandBarAndInAdditionalSubmenu</LocationInCommandBar>
+													<ExtendedTooltip name="ПользовательскиеНастройкиУстановитьФлажкиРасширеннаяПодсказка" id="24"/>
+												</Button>
+												<Button name="ПользовательскиеНастройкиСнятьФлажки" id="25">
+													<Type>CommandBarButton</Type>
+													<CommandName>Form.Item.ПерсональныеНастройки.StandardCommand.UncheckAll</CommandName>
+													<LocationInCommandBar>InCommandBarAndInAdditionalSubmenu</LocationInCommandBar>
+													<ExtendedTooltip name="ПользовательскиеНастройкиСнятьФлажкиРасширеннаяПодсказка" id="26"/>
+												</Button>
+											</ChildItems>
+										</ButtonGroup>
+									</ChildItems>
+								</CommandBar>
+							</ChildItems>
+						</UsualGroup>
+						<Table name="ПерсональныеНастройки" id="4">
 							<Representation>List</Representation>
-							<TitleLocation>Top</TitleLocation>
+							<CommandBarLocation>None</CommandBarLocation>
+							<ChangeRowSet>false</ChangeRowSet>
 							<ChangeRowOrder>false</ChangeRowOrder>
 							<Header>false</Header>
 							<HorizontalLines>false</HorizontalLines>
 							<VerticalLines>false</VerticalLines>
 							<AutoInsertNewRow>true</AutoInsertNewRow>
-							<DataPath>ПользовательскиеНастройки</DataPath>
-							<RowPictureDataPath>ПользовательскиеНастройки.Picture</RowPictureDataPath>
+							<DataPath>ПерсональныеНастройки</DataPath>
+							<RowPictureDataPath>ПерсональныеНастройки.Picture</RowPictureDataPath>
 							<Title>
 								<v8:item>
 									<v8:lang>ru</v8:lang>
-									<v8:content>Пользовательские настройки</v8:content>
+									<v8:content>Персональные настройки</v8:content>
 								</v8:item>
 							</Title>
 							<CommandSet>
+								<ExcludedCommand>Add</ExcludedCommand>
 								<ExcludedCommand>Change</ExcludedCommand>
+								<ExcludedCommand>Copy</ExcludedCommand>
+								<ExcludedCommand>Delete</ExcludedCommand>
 								<ExcludedCommand>EndEdit</ExcludedCommand>
+								<ExcludedCommand>MoveDown</ExcludedCommand>
+								<ExcludedCommand>MoveUp</ExcludedCommand>
 								<ExcludedCommand>Pickup</ExcludedCommand>
+								<ExcludedCommand>ShowRowRearrangement</ExcludedCommand>
+								<ExcludedCommand>SortListAsc</ExcludedCommand>
+								<ExcludedCommand>SortListDesc</ExcludedCommand>
 							</CommandSet>
-							<ContextMenu name="ПользовательскиеНастройкиКонтекстноеМеню" id="5"/>
-							<AutoCommandBar name="ПользовательскиеНастройкиКоманднаяПанель" id="6">
+							<ContextMenu name="ПерсональныеНастройкиКонтекстноеМеню" id="5"/>
+							<AutoCommandBar name="ПерсональныеНастройкиКоманднаяПанель" id="6">
 								<Autofill>false</Autofill>
-								<ChildItems>
-									<ButtonGroup name="ПользовательскиеНастройкиГруппаИзменитьФлажки" id="75">
-										<Title>
-											<v8:item>
-												<v8:lang>ru</v8:lang>
-												<v8:content>Изменить флажки</v8:content>
-											</v8:item>
-										</Title>
-										<Representation>Compact</Representation>
-										<ExtendedTooltip name="ПользовательскиеНастройкиГруппаИзменитьФлажкиРасширеннаяПодсказка" id="76"/>
-										<ChildItems>
-											<Button name="ПользовательскиеНастройкиУстановитьФлажки" id="23">
-												<Type>CommandBarButton</Type>
-												<CommandName>Form.Item.ПользовательскиеНастройки.StandardCommand.CheckAll</CommandName>
-												<LocationInCommandBar>InCommandBarAndInAdditionalSubmenu</LocationInCommandBar>
-												<ExtendedTooltip name="ПользовательскиеНастройкиУстановитьФлажкиРасширеннаяПодсказка" id="24"/>
-											</Button>
-											<Button name="ПользовательскиеНастройкиСнятьФлажки" id="25">
-												<Type>CommandBarButton</Type>
-												<CommandName>Form.Item.ПользовательскиеНастройки.StandardCommand.UncheckAll</CommandName>
-												<LocationInCommandBar>InCommandBarAndInAdditionalSubmenu</LocationInCommandBar>
-												<ExtendedTooltip name="ПользовательскиеНастройкиСнятьФлажкиРасширеннаяПодсказка" id="26"/>
-											</Button>
-										</ChildItems>
-									</ButtonGroup>
-								</ChildItems>
 							</AutoCommandBar>
-							<ExtendedTooltip name="ПользовательскиеНастройкиРасширеннаяПодсказка" id="7"/>
-							<SearchStringAddition name="ПользовательскиеНастройкиСтрокаПоиска" id="8">
+							<ExtendedTooltip name="ПерсональныеНастройкиРасширеннаяПодсказка" id="7"/>
+							<SearchStringAddition name="ПерсональныеНастройкиСтрокаПоиска" id="8">
 								<AdditionSource>
-									<Item>ПользовательскиеНастройки</Item>
+									<Item>ПерсональныеНастройки</Item>
 									<Type>SearchStringRepresentation</Type>
 								</AdditionSource>
-								<ContextMenu name="ПользовательскиеНастройкиСтрокаПоискаКонтекстноеМеню" id="9"/>
-								<ExtendedTooltip name="ПользовательскиеНастройкиСтрокаПоискаРасширеннаяПодсказка" id="10"/>
+								<ContextMenu name="ПерсональныеНастройкиСтрокаПоискаКонтекстноеМеню" id="9"/>
+								<ExtendedTooltip name="ПерсональныеНастройкиСтрокаПоискаРасширеннаяПодсказка" id="10"/>
 							</SearchStringAddition>
-							<ViewStatusAddition name="ПользовательскиеНастройкиСостояниеПросмотра" id="11">
+							<ViewStatusAddition name="ПерсональныеНастройкиСостояниеПросмотра" id="11">
 								<AdditionSource>
-									<Item>ПользовательскиеНастройки</Item>
+									<Item>ПерсональныеНастройки</Item>
 									<Type>ViewStatusRepresentation</Type>
 								</AdditionSource>
-								<ContextMenu name="ПользовательскиеНастройкиСостояниеПросмотраКонтекстноеМеню" id="12"/>
-								<ExtendedTooltip name="ПользовательскиеНастройкиСостояниеПросмотраРасширеннаяПодсказка" id="13"/>
+								<ContextMenu name="ПерсональныеНастройкиСостояниеПросмотраКонтекстноеМеню" id="12"/>
+								<ExtendedTooltip name="ПерсональныеНастройкиСостояниеПросмотраРасширеннаяПодсказка" id="13"/>
 							</ViewStatusAddition>
-							<SearchControlAddition name="ПользовательскиеНастройкиУправлениеПоиском" id="14">
+							<SearchControlAddition name="ПерсональныеНастройкиУправлениеПоиском" id="14">
 								<AdditionSource>
-									<Item>ПользовательскиеНастройки</Item>
+									<Item>ПерсональныеНастройки</Item>
 									<Type>SearchControl</Type>
 								</AdditionSource>
-								<ContextMenu name="ПользовательскиеНастройкиУправлениеПоискомКонтекстноеМеню" id="15"/>
-								<ExtendedTooltip name="ПользовательскиеНастройкиУправлениеПоискомРасширеннаяПодсказка" id="16"/>
+								<ContextMenu name="ПерсональныеНастройкиУправлениеПоискомКонтекстноеМеню" id="15"/>
+								<ExtendedTooltip name="ПерсональныеНастройкиУправлениеПоискомРасширеннаяПодсказка" id="16"/>
 							</SearchControlAddition>
 							<Events>
 								<Event name="OnChange">ПользовательскиеНастройкиПриИзменении</Event>
 							</Events>
 							<ChildItems>
 								<CheckBoxField name="ПользовательскиеНастройкиПометка" id="20">
-									<DataPath>ПользовательскиеНастройки.Check</DataPath>
+									<DataPath>ПерсональныеНастройки.Check</DataPath>
 									<Title>
 										<v8:item>
 											<v8:lang>ru</v8:lang>
@@ -143,7 +197,7 @@
 									<ExtendedTooltip name="ПользовательскиеНастройкиПометкаРасширеннаяПодсказка" id="22"/>
 								</CheckBoxField>
 								<InputField name="ПользовательскиеНастройкиЗначение" id="17">
-									<DataPath>ПользовательскиеНастройки.Value</DataPath>
+									<DataPath>ПерсональныеНастройки.Value</DataPath>
 									<ReadOnly>true</ReadOnly>
 									<Title>
 										<v8:item>
@@ -170,6 +224,12 @@
 					<ChildItems>
 						<InputField name="ИмяКаталога" id="35">
 							<DataPath>ИмяКаталога</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Каталог</v8:content>
+								</v8:item>
+							</Title>
 							<HorizontalStretch>true</HorizontalStretch>
 							<ChoiceButton>true</ChoiceButton>
 							<ContextMenu name="ИмяКаталогаКонтекстноеМеню" id="36"/>
@@ -255,6 +315,12 @@
 								<InputField name="ОписаниеВариантовОтчетовИмяФайлаКраткое" id="72">
 									<DataPath>ОписаниеВариантовОтчетов.ИмяФайлаКраткое</DataPath>
 									<ReadOnly>true</ReadOnly>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Имя файла</v8:content>
+										</v8:item>
+									</Title>
 									<EditMode>EnterOnInput</EditMode>
 									<ContextMenu name="ОписаниеВариантовОтчетовИмяФайлаКраткоеКонтекстноеМеню" id="73"/>
 									<ExtendedTooltip name="ОписаниеВариантовОтчетовИмяФайлаКраткоеРасширеннаяПодсказка" id="74"/>
@@ -285,11 +351,11 @@
 				<Field>ИмяФайла</Field>
 			</Save>
 		</Attribute>
-		<Attribute name="ПользовательскиеНастройки" id="2">
+		<Attribute name="ПерсональныеНастройки" id="2">
 			<Title>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Настройки</v8:content>
+					<v8:content>Персональные настройки</v8:content>
 				</v8:item>
 			</Title>
 			<Type>
@@ -478,4 +544,9 @@
 			<Action>Сохранить</Action>
 		</Command>
 	</Commands>
+	<Parameters>
+		<Parameter name="ВыбранныеВариантыОтчетов">
+			<Type/>
+		</Parameter>
+	</Parameters>
 </Form>

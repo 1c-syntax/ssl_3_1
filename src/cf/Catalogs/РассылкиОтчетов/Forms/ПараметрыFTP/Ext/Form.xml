@@ -7,12 +7,24 @@
 				<Type>CommandBarButton</Type>
 				<DefaultButton>true</DefaultButton>
 				<CommandName>Form.Command.ОК</CommandName>
-				<ExtendedTooltip name="ФормаОКExtendedTooltip" id="19"/>
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>ОК</v8:content>
+					</v8:item>
+				</Title>
+				<ExtendedTooltip name="ФормаОКРасширеннаяПодсказка" id="19"/>
 			</Button>
 			<Button name="ФормаЗаполнить" id="14">
 				<Type>CommandBarButton</Type>
 				<CommandName>Form.Command.Заполнить</CommandName>
-				<ExtendedTooltip name="ФормаЗаполнитьExtendedTooltip" id="20"/>
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Заполнить...</v8:content>
+					</v8:item>
+				</Title>
+				<ExtendedTooltip name="ФормаЗаполнитьРасширеннаяПодсказка" id="20"/>
 			</Button>
 		</ChildItems>
 	</AutoCommandBar>
@@ -22,6 +34,12 @@
 	<ChildItems>
 		<InputField name="СерверИКаталог" id="9">
 			<DataPath>СерверИКаталог</DataPath>
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сервер и каталог</v8:content>
+				</v8:item>
+			</Title>
 			<InputHint>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
@@ -29,7 +47,7 @@
 				</v8:item>
 			</InputHint>
 			<ContextMenu name="СерверИКаталогКонтекстноеМеню" id="10"/>
-			<ExtendedTooltip name="СерверИКаталогExtendedTooltip" id="22"/>
+			<ExtendedTooltip name="СерверИКаталогРасширеннаяПодсказка" id="22"/>
 			<Events>
 				<Event name="OnChange">СерверИКаталогПриИзменении</Event>
 			</Events>
@@ -48,6 +66,12 @@
 			<ChildItems>
 				<InputField name="Порт" id="3">
 					<DataPath>Порт</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Порт</v8:content>
+						</v8:item>
+					</Title>
 					<SpinButton>true</SpinButton>
 					<EditFormat>
 						<v8:item>
@@ -58,7 +82,7 @@
 					<MinValue xsi:type="xs:decimal">1</MinValue>
 					<MaxValue xsi:type="xs:decimal">65535</MaxValue>
 					<ContextMenu name="ПортКонтекстноеМеню" id="4"/>
-					<ExtendedTooltip name="ПортExtendedTooltip" id="23"/>
+					<ExtendedTooltip name="ПортРасширеннаяПодсказка" id="23"/>
 				</InputField>
 				<LabelDecoration name="ДекорацияРазделитель" id="30">
 					<AutoMaxWidth>false</AutoMaxWidth>
@@ -69,22 +93,40 @@
 				</LabelDecoration>
 				<CheckBoxField name="ПассивноеСоединение" id="17">
 					<DataPath>ПассивноеСоединение</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Пассивное соединение</v8:content>
+						</v8:item>
+					</Title>
 					<TitleLocation>Right</TitleLocation>
 					<CheckBoxType>Auto</CheckBoxType>
 					<ContextMenu name="ПассивноеСоединениеКонтекстноеМеню" id="18"/>
-					<ExtendedTooltip name="ПассивноеСоединениеExtendedTooltip" id="27"/>
+					<ExtendedTooltip name="ПассивноеСоединениеРасширеннаяПодсказка" id="27"/>
 				</CheckBoxField>
 			</ChildItems>
 		</UsualGroup>
 		<InputField name="Логин" id="5">
 			<DataPath>Логин</DataPath>
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Логин</v8:content>
+				</v8:item>
+			</Title>
 			<AutoMaxWidth>false</AutoMaxWidth>
 			<MaxWidth>35</MaxWidth>
 			<ContextMenu name="ЛогинКонтекстноеМеню" id="6"/>
-			<ExtendedTooltip name="ЛогинExtendedTooltip" id="25"/>
+			<ExtendedTooltip name="ЛогинРасширеннаяПодсказка" id="25"/>
 		</InputField>
 		<InputField name="Пароль" id="7">
 			<DataPath>Пароль</DataPath>
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Пароль</v8:content>
+				</v8:item>
+			</Title>
 			<ToolTip>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
@@ -95,7 +137,7 @@
 			<MaxWidth>35</MaxWidth>
 			<PasswordMode>true</PasswordMode>
 			<ContextMenu name="ПарольКонтекстноеМеню" id="8"/>
-			<ExtendedTooltip name="ПарольExtendedTooltip" id="26"/>
+			<ExtendedTooltip name="ПарольРасширеннаяПодсказка" id="26"/>
 		</InputField>
 	</ChildItems>
 	<Attributes>

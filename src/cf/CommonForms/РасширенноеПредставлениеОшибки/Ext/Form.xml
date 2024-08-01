@@ -6,6 +6,7 @@
 	<CommandBarLocation>None</CommandBarLocation>
 	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
 	<Events>
+		<Event name="OnOpen">ПриОткрытии</Event>
 		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
 	</Events>
 	<ChildItems>
@@ -53,6 +54,7 @@
 							<ExtendedTooltip name="ЗаголовокКлиентКартинкаРасширеннаяПодсказка" id="5"/>
 						</PictureDecoration>
 						<LabelDecoration name="ЗаголовокКлиентНадпись" id="6">
+							<Font ref="style:ВажнаяНадписьШрифт" kind="StyleItem"/>
 							<Title formatted="false">
 								<v8:item>
 									<v8:lang>ru</v8:lang>
@@ -67,6 +69,12 @@
 				<InputField name="ТекстОшибкиКлиент" id="9">
 					<DataPath>ТекстОшибкиКлиент</DataPath>
 					<ReadOnly>true</ReadOnly>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Текст ошибки клиент</v8:content>
+						</v8:item>
+					</Title>
 					<TitleLocation>None</TitleLocation>
 					<AutoMaxWidth>false</AutoMaxWidth>
 					<MultiLine>true</MultiLine>
@@ -148,7 +156,7 @@
 					<Title formatted="false">
 						<v8:item>
 							<v8:lang>ru</v8:lang>
-							<v8:content>Типичные проблемы при работе с программой электронной подписи и шифрования</v8:content>
+							<v8:content>Типичные проблемы при работе с приложениями электронной подписи и шифрования</v8:content>
 						</v8:item>
 					</Title>
 					<Hyperlink>true</Hyperlink>
@@ -209,6 +217,7 @@
 							<ExtendedTooltip name="ЗаголовокСерверКартинкаРасширеннаяПодсказка" id="33"/>
 						</PictureDecoration>
 						<LabelDecoration name="ЗаголовокСерверНадпись" id="34">
+							<Font ref="style:ВажнаяНадписьШрифт" kind="StyleItem"/>
 							<Title formatted="false">
 								<v8:item>
 									<v8:lang>ru</v8:lang>
@@ -223,6 +232,12 @@
 				<InputField name="ТекстОшибкиСервер" id="37">
 					<DataPath>ТекстОшибкиСервер</DataPath>
 					<ReadOnly>true</ReadOnly>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Текст ошибки сервер</v8:content>
+						</v8:item>
+					</Title>
 					<TitleLocation>None</TitleLocation>
 					<AutoMaxWidth>false</AutoMaxWidth>
 					<MultiLine>true</MultiLine>
@@ -304,7 +319,7 @@
 					<Title formatted="false">
 						<v8:item>
 							<v8:lang>ru</v8:lang>
-							<v8:content>Типичные проблемы при работе с программой электронной подписи и шифрования</v8:content>
+							<v8:content>Типичные проблемы при работе с приложениями электронной подписи и шифрования</v8:content>
 						</v8:item>
 					</Title>
 					<Hyperlink>true</Hyperlink>
@@ -354,6 +369,12 @@
 							<ChildItems>
 								<InputField name="ПричиныТекст" id="101">
 									<DataPath>ПричиныТекст</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Причины текст</v8:content>
+										</v8:item>
+									</Title>
 									<TitleLocation>None</TitleLocation>
 									<AutoMaxWidth>false</AutoMaxWidth>
 									<MultiLine>true</MultiLine>
@@ -414,7 +435,7 @@
 					<Title formatted="false">
 						<v8:item>
 							<v8:lang>ru</v8:lang>
-							<v8:content>Типичные проблемы при работе с программой</v8:content>
+							<v8:content>Типичные проблемы при работе с приложениями</v8:content>
 						</v8:item>
 					</Title>
 					<Hyperlink>true</Hyperlink>
@@ -459,7 +480,7 @@
 							<Title formatted="true">
 								<v8:item>
 									<v8:lang>ru</v8:lang>
-									<v8:content>При возникновении затруднений ознакомьтесь со списком &lt;link %1&gt;типичных проблем при работе с программой электронной подписи и их решений&lt;/&gt;.
+									<v8:content>При возникновении затруднений ознакомьтесь со списком &lt;link %1&gt;типичных проблем при работе с приложениями электронной подписи и их решений&lt;/&gt;.
 
 В иных случаях обратитесь в службу поддержки фирмы "1С", предоставив &lt;link %2&gt;техническую информацию о возникшей проблеме&lt;/&gt;.</v8:content>
 								</v8:item>
@@ -485,11 +506,23 @@
 						<Button name="ФормаУстановитьРасширение" id="72">
 							<Type>CommandBarButton</Type>
 							<CommandName>Form.Command.УстановитьРасширение</CommandName>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Установить расширение</v8:content>
+								</v8:item>
+							</Title>
 							<ExtendedTooltip name="ФормаУстановитьРасширениеРасширеннаяПодсказка" id="73"/>
 						</Button>
 						<Button name="ФормаПерейтиКНастройкеПрограмм" id="74">
 							<Type>CommandBarButton</Type>
 							<CommandName>Form.Command.ПерейтиКНастройкеПрограмм</CommandName>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Перейти к настройке приложений</v8:content>
+								</v8:item>
+							</Title>
 							<ExtendedTooltip name="ФормаПерейтиКНастройкеПрограммРасширеннаяПодсказка" id="75"/>
 						</Button>
 						<Button name="ФормаЗакрыть" id="76">
@@ -611,13 +644,21 @@
 				</v8:StringQualifiers>
 			</Type>
 		</Attribute>
+		<Attribute name="ОшибкаПроверкиПодписи" id="10">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ПараметрыДополненияТекстаРешенияОшибкиКлассификатора" id="11">
+			<Type/>
+		</Attribute>
 	</Attributes>
 	<Commands>
 		<Command name="ПерейтиКНастройкеПрограмм" id="1">
 			<Title>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Перейти к настройке программ</v8:content>
+					<v8:content>Перейти к настройке приложений</v8:content>
 				</v8:item>
 			</Title>
 			<Action>ПерейтиКНастройкеПрограмм</Action>

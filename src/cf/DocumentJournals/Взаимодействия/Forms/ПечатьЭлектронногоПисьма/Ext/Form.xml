@@ -40,6 +40,12 @@
 				<Button name="Печать" id="37">
 					<Type>UsualButton</Type>
 					<CommandName>Form.Command.Печать</CommandName>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Печать</v8:content>
+						</v8:item>
+					</Title>
 					<ExtendedTooltip name="ПечатьРасширеннаяПодсказка" id="38"/>
 				</Button>
 			</ChildItems>
@@ -99,9 +105,15 @@
 		</UsualGroup>
 		<HTMLDocumentField name="ТекстHTML" id="1">
 			<DataPath>ТекстHTML</DataPath>
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Текст HTML</v8:content>
+				</v8:item>
+			</Title>
 			<TitleLocation>None</TitleLocation>
 			<ContextMenu name="ТекстHTMLКонтекстноеМеню" id="2"/>
-			<ExtendedTooltip name="ТекстHTMLExtendedTooltip" id="3"/>
+			<ExtendedTooltip name="ТекстHTMLРасширеннаяПодсказка" id="3"/>
 			<Events>
 				<Event name="DocumentComplete">ТекстHTMLДокументСформирован</Event>
 				<Event name="OnClick">ТекстHTMLПриНажатии</Event>
@@ -138,13 +150,25 @@
 						<Type>CommandBarButton</Type>
 						<SkipOnInput>false</SkipOnInput>
 						<CommandName>Form.Command.ОткрытьВложение</CommandName>
-						<ExtendedTooltip name="ОткрытьВложениеExtendedTooltip" id="29"/>
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Открыть</v8:content>
+							</v8:item>
+						</Title>
+						<ExtendedTooltip name="ОткрытьВложениеРасширеннаяПодсказка" id="29"/>
 					</Button>
 					<Button name="СохранитьВложение" id="30">
 						<Type>CommandBarButton</Type>
 						<SkipOnInput>false</SkipOnInput>
 						<CommandName>Form.Command.СохранитьВложение</CommandName>
-						<ExtendedTooltip name="СохранитьВложениеExtendedTooltip" id="31"/>
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Сохранить как...</v8:content>
+							</v8:item>
+						</Title>
+						<ExtendedTooltip name="СохранитьВложениеРасширеннаяПодсказка" id="31"/>
 					</Button>
 				</ChildItems>
 			</ContextMenu>
@@ -179,13 +203,25 @@
 			</Events>
 			<ChildItems>
 				<ColumnGroup name="Группа" id="17">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа</v8:content>
+						</v8:item>
+					</Title>
 					<Width>15</Width>
 					<Group>InCell</Group>
 					<ShowInHeader>true</ShowInHeader>
-					<ExtendedTooltip name="ГруппаExtendedTooltip" id="18"/>
+					<ExtendedTooltip name="ГруппаРасширеннаяПодсказка" id="18"/>
 					<ChildItems>
 						<PictureField name="ИндексКартинки" id="19">
 							<DataPath>Вложения.ИндексКартинки</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Индекс картинки</v8:content>
+								</v8:item>
+							</Title>
 							<TitleLocation>None</TitleLocation>
 							<ShowInHeader>false</ShowInHeader>
 							<Width>2</Width>
@@ -199,23 +235,35 @@
 							</Border>
 							<FileDragMode>AsFile</FileDragMode>
 							<ContextMenu name="ИндексКартинкиКонтекстноеМеню" id="20"/>
-							<ExtendedTooltip name="ИндексКартинкиExtendedTooltip" id="21"/>
+							<ExtendedTooltip name="ИндексКартинкиРасширеннаяПодсказка" id="21"/>
 						</PictureField>
 						<InputField name="ИмяФайла" id="22">
 							<DataPath>Вложения.ИмяФайла</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Вложение</v8:content>
+								</v8:item>
+							</Title>
 							<ShowInHeader>false</ShowInHeader>
 							<Wrap>false</Wrap>
 							<TextEdit>false</TextEdit>
 							<ContextMenu name="ИмяФайлаКонтекстноеМеню" id="23"/>
-							<ExtendedTooltip name="ИмяФайлаExtendedTooltip" id="24"/>
+							<ExtendedTooltip name="ИмяФайлаРасширеннаяПодсказка" id="24"/>
 						</InputField>
 						<InputField name="ВложенияРазмерПредставление" id="25">
 							<DataPath>Вложения.РазмерПредставление</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Размер представление</v8:content>
+								</v8:item>
+							</Title>
 							<EditMode>EnterOnInput</EditMode>
 							<ShowInHeader>false</ShowInHeader>
 							<Width>5</Width>
 							<ContextMenu name="ВложенияРазмерПредставлениеКонтекстноеМеню" id="26"/>
-							<ExtendedTooltip name="ВложенияРазмерПредставлениеExtendedTooltip" id="27"/>
+							<ExtendedTooltip name="ВложенияРазмерПредставлениеРасширеннаяПодсказка" id="27"/>
 						</InputField>
 					</ChildItems>
 				</ColumnGroup>

@@ -9,33 +9,37 @@
 			<Button name="ФормаВключитьВозможностьРедактирования" id="5">
 				<Type>CommandBarButton</Type>
 				<CommandName>Form.Command.ВключитьВозможностьРедактирования</CommandName>
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Включить возможность редактирования</v8:content>
+					</v8:item>
+				</Title>
 				<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
-				<ExtendedTooltip name="ФормаВключитьВозможностьРедактированияExtendedTooltip" id="8"/>
+				<ExtendedTooltip name="ФормаВключитьВозможностьРедактированияРасширеннаяПодсказка" id="8"/>
 			</Button>
 		</ChildItems>
 	</AutoCommandBar>
 	<Events>
-		<Event name="AfterWriteAtServer">ПослеЗаписиНаСервере</Event>
-		<Event name="OnReadAtServer">ПриЧтенииНаСервере</Event>
 		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
 	</Events>
 	<ChildItems>
 		<InputField name="ГруппаПользователей" id="1">
 			<DataPath>Запись.ГруппаПользователей</DataPath>
 			<ContextMenu name="ГруппаПользователейКонтекстноеМеню" id="2"/>
-			<ExtendedTooltip name="ГруппаПользователейExtendedTooltip" id="9"/>
+			<ExtendedTooltip name="ГруппаПользователейРасширеннаяПодсказка" id="9"/>
 		</InputField>
 		<InputField name="Пользователь" id="3">
 			<DataPath>Запись.Пользователь</DataPath>
 			<ContextMenu name="ПользовательКонтекстноеМеню" id="4"/>
-			<ExtendedTooltip name="ПользовательExtendedTooltip" id="10"/>
+			<ExtendedTooltip name="ПользовательРасширеннаяПодсказка" id="10"/>
 		</InputField>
 		<CheckBoxField name="Используется" id="6">
 			<DataPath>Запись.Используется</DataPath>
 			<TitleLocation>Right</TitleLocation>
 			<CheckBoxType>Auto</CheckBoxType>
 			<ContextMenu name="ИспользуетсяКонтекстноеМеню" id="7"/>
-			<ExtendedTooltip name="ИспользуетсяExtendedTooltip" id="11"/>
+			<ExtendedTooltip name="ИспользуетсяРасширеннаяПодсказка" id="11"/>
 		</CheckBoxField>
 	</ChildItems>
 	<Attributes>

@@ -36,10 +36,16 @@
 			<Behavior>Usual</Behavior>
 			<Representation>None</Representation>
 			<ShowTitle>false</ShowTitle>
-			<ExtendedTooltip name="БыстрыеОтборыExtendedTooltip" id="32"/>
+			<ExtendedTooltip name="БыстрыеОтборыРасширеннаяПодсказка" id="32"/>
 			<ChildItems>
 				<InputField name="ВидОтбор" id="20">
 					<DataPath>ВидОтбор</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Вид</v8:content>
+						</v8:item>
+					</Title>
 					<HorizontalStretch>false</HorizontalStretch>
 					<ClearButton>true</ClearButton>
 					<ListChoiceMode>true</ListChoiceMode>
@@ -53,13 +59,19 @@
 						</v8:item>
 					</InputHint>
 					<ContextMenu name="ВидОтборКонтекстноеМеню" id="21"/>
-					<ExtendedTooltip name="ВидОтборExtendedTooltip" id="33"/>
+					<ExtendedTooltip name="ВидОтборРасширеннаяПодсказка" id="33"/>
 					<Events>
 						<Event name="OnChange">ВидОтборПриИзменении</Event>
 					</Events>
 				</InputField>
 				<InputField name="ПубликацияОтбор" id="17">
 					<DataPath>ПубликацияОтбор</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Публикация</v8:content>
+						</v8:item>
+					</Title>
 					<Width>26</Width>
 					<HorizontalStretch>false</HorizontalStretch>
 					<ClearButton>true</ClearButton>
@@ -74,7 +86,7 @@
 						</v8:item>
 					</InputHint>
 					<ContextMenu name="ПубликацияОтборКонтекстноеМеню" id="18"/>
-					<ExtendedTooltip name="ПубликацияОтборExtendedTooltip" id="34"/>
+					<ExtendedTooltip name="ПубликацияОтборРасширеннаяПодсказка" id="34"/>
 					<Events>
 						<Event name="OnChange">ПубликацияОтборПриИзменении</Event>
 					</Events>
@@ -95,8 +107,8 @@
 			<ChildItems>
 				<PictureDecoration name="КартинкаПояснения" id="132">
 					<Picture>
-						<xr:Ref>CommonPicture.Информация32</xr:Ref>
-						<xr:LoadTransparent>false</xr:LoadTransparent>
+						<xr:Ref>StdPicture.DialogInformation</xr:Ref>
+						<xr:LoadTransparent>true</xr:LoadTransparent>
 					</Picture>
 					<FileDragMode>AsFile</FileDragMode>
 					<ContextMenu name="КартинкаПоясненияКонтекстноеМеню" id="133"/>
@@ -123,7 +135,7 @@
 					<v8:content>Командная панель</v8:content>
 				</v8:item>
 			</Title>
-			<ExtendedTooltip name="КоманднаяПанельExtendedTooltip" id="35"/>
+			<ExtendedTooltip name="КоманднаяПанельРасширеннаяПодсказка" id="35"/>
 			<ChildItems>
 				<ButtonGroup name="КнопкиДобавления" id="26">
 					<Title>
@@ -132,7 +144,7 @@
 							<v8:content>Кнопки добавления</v8:content>
 						</v8:item>
 					</Title>
-					<ExtendedTooltip name="КнопкиДобавленияExtendedTooltip" id="36"/>
+					<ExtendedTooltip name="КнопкиДобавленияРасширеннаяПодсказка" id="36"/>
 					<ChildItems>
 						<Button name="Создать" id="27">
 							<Type>CommandBarButton</Type>
@@ -171,11 +183,23 @@
 						<Button name="ЗагрузитьИзФайла" id="56">
 							<Type>CommandBarButton</Type>
 							<CommandName>Form.Command.ЗагрузитьИзФайла</CommandName>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Обновить из файла...</v8:content>
+								</v8:item>
+							</Title>
 							<ExtendedTooltip name="ЗагрузитьИзФайлаРасширеннаяПодсказка" id="57"/>
 						</Button>
 						<Button name="ВыгрузитьВФайл" id="58">
 							<Type>CommandBarButton</Type>
 							<CommandName>Form.Command.ВыгрузитьВФайл</CommandName>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Сохранить как...</v8:content>
+								</v8:item>
+							</Title>
 							<ExtendedTooltip name="ВыгрузитьВФайлРасширеннаяПодсказка" id="59"/>
 						</Button>
 					</ChildItems>
@@ -197,6 +221,12 @@
 						<Button name="ИзменитьВыделенные" id="62">
 							<Type>CommandBarButton</Type>
 							<CommandName>Form.Command.ИзменитьВыделенные</CommandName>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Изменить выделенные...</v8:content>
+								</v8:item>
+							</Title>
 							<ExtendedTooltip name="ИзменитьВыделенныеРасширеннаяПодсказка" id="63"/>
 						</Button>
 					</ChildItems>
@@ -209,7 +239,7 @@
 						</v8:item>
 					</Title>
 					<CommandSource>Form</CommandSource>
-					<ExtendedTooltip name="КомандыФормыExtendedTooltip" id="40"/>
+					<ExtendedTooltip name="КомандыФормыРасширеннаяПодсказка" id="40"/>
 				</ButtonGroup>
 				<Popup name="ГруппаИзменениеПубликации" id="64">
 					<Title>
@@ -223,18 +253,36 @@
 						<Button name="Используется" id="72">
 							<Type>CommandBarButton</Type>
 							<CommandName>Form.Command.ПубликацияИспользуется</CommandName>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Используется</v8:content>
+								</v8:item>
+							</Title>
 							<LocationInCommandBar>InCommandBarAndInAdditionalSubmenu</LocationInCommandBar>
 							<ExtendedTooltip name="ИспользуетсяРасширеннаяПодсказка" id="73"/>
 						</Button>
 						<Button name="РежимОтладки" id="76">
 							<Type>CommandBarButton</Type>
 							<CommandName>Form.Command.ПубликацияРежимОтладки</CommandName>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Режим отладки</v8:content>
+								</v8:item>
+							</Title>
 							<LocationInCommandBar>InCommandBarAndInAdditionalSubmenu</LocationInCommandBar>
 							<ExtendedTooltip name="РежимОтладкиРасширеннаяПодсказка" id="77"/>
 						</Button>
 						<Button name="Отключена" id="74">
 							<Type>CommandBarButton</Type>
 							<CommandName>Form.Command.ПубликацияОтключена</CommandName>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Отключена</v8:content>
+								</v8:item>
+							</Title>
 							<LocationInCommandBar>InCommandBarAndInAdditionalSubmenu</LocationInCommandBar>
 							<ExtendedTooltip name="ОтключенаРасширеннаяПодсказка" id="75"/>
 						</Button>
@@ -243,7 +291,7 @@
 				<Button name="Справка" id="31">
 					<Type>CommandBarButton</Type>
 					<CommandName>Form.StandardCommand.Help</CommandName>
-					<ExtendedTooltip name="СправкаExtendedTooltip" id="41"/>
+					<ExtendedTooltip name="СправкаРасширеннаяПодсказка" id="41"/>
 				</Button>
 				<SearchStringAddition name="СписокПоиск" id="135">
 					<AdditionSource>
@@ -346,18 +394,36 @@
 							<Button name="ИспользуетсяМеню" id="121">
 								<Type>CommandBarButton</Type>
 								<CommandName>Form.Command.ПубликацияИспользуется</CommandName>
+								<Title>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Используется</v8:content>
+									</v8:item>
+								</Title>
 								<LocationInCommandBar>InCommandBarAndInAdditionalSubmenu</LocationInCommandBar>
 								<ExtendedTooltip name="ИспользуетсяМенюРасширеннаяПодсказка" id="122"/>
 							</Button>
 							<Button name="РежимОтладкиМеню" id="123">
 								<Type>CommandBarButton</Type>
 								<CommandName>Form.Command.ПубликацияРежимОтладки</CommandName>
+								<Title>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Режим отладки</v8:content>
+									</v8:item>
+								</Title>
 								<LocationInCommandBar>InCommandBarAndInAdditionalSubmenu</LocationInCommandBar>
 								<ExtendedTooltip name="РежимОтладкиМенюРасширеннаяПодсказка" id="124"/>
 							</Button>
 							<Button name="ОтключенаМеню" id="125">
 								<Type>CommandBarButton</Type>
 								<CommandName>Form.Command.ПубликацияОтключена</CommandName>
+								<Title>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Отключена</v8:content>
+									</v8:item>
+								</Title>
 								<LocationInCommandBar>InCommandBarAndInAdditionalSubmenu</LocationInCommandBar>
 								<ExtendedTooltip name="ОтключенаМенюРасширеннаяПодсказка" id="126"/>
 							</Button>
@@ -380,6 +446,12 @@
 							<Button name="ИзменитьВыделенныеМеню" id="60">
 								<Type>CommandBarButton</Type>
 								<CommandName>Form.Command.ИзменитьВыделенные</CommandName>
+								<Title>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Изменить выделенные...</v8:content>
+									</v8:item>
+								</Title>
 								<ExtendedTooltip name="ИзменитьВыделенныеМенюРасширеннаяПодсказка" id="61"/>
 							</Button>
 						</ChildItems>
@@ -396,11 +468,23 @@
 							<Button name="ЗагрузитьИзФайлаМеню" id="54">
 								<Type>CommandBarButton</Type>
 								<CommandName>Form.Command.ЗагрузитьИзФайла</CommandName>
+								<Title>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Обновить из файла...</v8:content>
+									</v8:item>
+								</Title>
 								<ExtendedTooltip name="ЗагрузитьИзФайлаМенюРасширеннаяПодсказка" id="55"/>
 							</Button>
 							<Button name="ВыгрузитьВФайлМеню" id="52">
 								<Type>CommandBarButton</Type>
 								<CommandName>Form.Command.ВыгрузитьВФайл</CommandName>
+								<Title>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Сохранить как...</v8:content>
+									</v8:item>
+								</Title>
 								<ExtendedTooltip name="ВыгрузитьВФайлМенюРасширеннаяПодсказка" id="53"/>
 							</Button>
 						</ChildItems>
@@ -410,7 +494,7 @@
 			<AutoCommandBar name="СписокКоманднаяПанель" id="3">
 				<Autofill>false</Autofill>
 			</AutoCommandBar>
-			<ExtendedTooltip name="СписокExtendedTooltip" id="42"/>
+			<ExtendedTooltip name="СписокРасширеннаяПодсказка" id="42"/>
 			<SearchStringAddition name="СписокСтрокаПоиска" id="80">
 				<AdditionSource>
 					<Item>Список</Item>
@@ -443,7 +527,7 @@
 					<DataPath>Список.Description</DataPath>
 					<DefaultItem>true</DefaultItem>
 					<ContextMenu name="НаименованиеКонтекстноеМеню" id="5"/>
-					<ExtendedTooltip name="НаименованиеExtendedTooltip" id="43"/>
+					<ExtendedTooltip name="НаименованиеРасширеннаяПодсказка" id="43"/>
 				</LabelField>
 				<LabelField name="Вид" id="13">
 					<DataPath>Список.Вид</DataPath>
@@ -453,21 +537,21 @@
 					<Width>21</Width>
 					<HorizontalStretch>false</HorizontalStretch>
 					<ContextMenu name="ВидКонтекстноеМеню" id="14"/>
-					<ExtendedTooltip name="ВидExtendedTooltip" id="44"/>
+					<ExtendedTooltip name="ВидРасширеннаяПодсказка" id="44"/>
 				</LabelField>
 				<LabelField name="Публикация" id="11">
 					<DataPath>Список.Публикация</DataPath>
 					<Width>12</Width>
 					<HorizontalStretch>false</HorizontalStretch>
 					<ContextMenu name="ПубликацияКонтекстноеМеню" id="12"/>
-					<ExtendedTooltip name="ПубликацияExtendedTooltip" id="45"/>
+					<ExtendedTooltip name="ПубликацияРасширеннаяПодсказка" id="45"/>
 				</LabelField>
 				<LabelField name="Версия" id="9">
 					<DataPath>Список.Версия</DataPath>
 					<Width>7</Width>
 					<HorizontalStretch>false</HorizontalStretch>
 					<ContextMenu name="ВерсияКонтекстноеМеню" id="10"/>
-					<ExtendedTooltip name="ВерсияExtendedTooltip" id="46"/>
+					<ExtendedTooltip name="ВерсияРасширеннаяПодсказка" id="46"/>
 				</LabelField>
 				<LabelField name="Ответственный" id="7">
 					<DataPath>Список.Ответственный</DataPath>
@@ -475,7 +559,7 @@
 						<xr:Common>false</xr:Common>
 					</UserVisible>
 					<ContextMenu name="ОтветственныйКонтекстноеМеню" id="8"/>
-					<ExtendedTooltip name="ОтветственныйExtendedTooltip" id="47"/>
+					<ExtendedTooltip name="ОтветственныйРасширеннаяПодсказка" id="47"/>
 				</LabelField>
 				<LabelField name="ИмяОбъекта" id="15">
 					<DataPath>Список.ИмяОбъекта</DataPath>
@@ -483,7 +567,7 @@
 						<xr:Common>false</xr:Common>
 					</UserVisible>
 					<ContextMenu name="ИмяОбъектаКонтекстноеМеню" id="16"/>
-					<ExtendedTooltip name="ИмяОбъектаExtendedTooltip" id="48"/>
+					<ExtendedTooltip name="ИмяОбъектаРасширеннаяПодсказка" id="48"/>
 				</LabelField>
 				<LabelField name="Ссылка" id="49">
 					<DataPath>Список.Ref</DataPath>
@@ -712,38 +796,8 @@
 				</v8:StringQualifiers>
 			</Type>
 		</Parameter>
+		<Parameter name="Отображение">
+			<Type/>
+		</Parameter>
 	</Parameters>
-	<CommandInterface>
-		<CommandBar>
-			<Item>
-				<Command>0</Command>
-				<Type>Auto</Type>
-				<CommandGroup>FormCommandBarImportant</CommandGroup>
-				<DefaultVisible>false</DefaultVisible>
-				<Visible>
-					<xr:Common>false</xr:Common>
-				</Visible>
-			</Item>
-			<Item>
-				<Command>0</Command>
-				<Type>Auto</Type>
-				<CommandGroup>FormCommandBarImportant</CommandGroup>
-				<Index>2</Index>
-				<DefaultVisible>false</DefaultVisible>
-				<Visible>
-					<xr:Common>false</xr:Common>
-				</Visible>
-			</Item>
-			<Item>
-				<Command>0</Command>
-				<Type>Auto</Type>
-				<CommandGroup>FormCommandBarImportant</CommandGroup>
-				<Index>1</Index>
-				<DefaultVisible>false</DefaultVisible>
-				<Visible>
-					<xr:Common>false</xr:Common>
-				</Visible>
-			</Item>
-		</CommandBar>
-	</CommandInterface>
 </Form>

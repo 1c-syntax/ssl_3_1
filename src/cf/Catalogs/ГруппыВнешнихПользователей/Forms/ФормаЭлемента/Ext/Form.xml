@@ -35,7 +35,7 @@
 					<Wrap>false</Wrap>
 					<BorderColor>style:BorderColor</BorderColor>
 					<ContextMenu name="НаименованиеКонтекстноеМеню" id="5"/>
-					<ExtendedTooltip name="НаименованиеExtendedTooltip" id="153"/>
+					<ExtendedTooltip name="НаименованиеРасширеннаяПодсказка" id="153"/>
 				</InputField>
 				<InputField name="Родитель" id="40">
 					<DataPath>Объект.Parent</DataPath>
@@ -46,7 +46,7 @@
 						</v8:item>
 					</Title>
 					<ContextMenu name="РодительКонтекстноеМеню" id="41"/>
-					<ExtendedTooltip name="РодительExtendedTooltip" id="184"/>
+					<ExtendedTooltip name="РодительРасширеннаяПодсказка" id="184"/>
 					<Events>
 						<Event name="OnChange">РодительПриИзменении</Event>
 						<Event name="StartChoice">РодительНачалоВыбора</Event>
@@ -62,7 +62,7 @@
 				</v8:item>
 			</Title>
 			<PagesRepresentation>TabsOnTop</PagesRepresentation>
-			<ExtendedTooltip name="СоставИРолиExtendedTooltip" id="154"/>
+			<ExtendedTooltip name="СоставИРолиРасширеннаяПодсказка" id="154"/>
 			<ChildItems>
 				<Page name="ВнешниеПользователиГруппы" id="55">
 					<Title>
@@ -71,7 +71,7 @@
 							<v8:content>Участники группы</v8:content>
 						</v8:item>
 					</Title>
-					<ExtendedTooltip name="ВнешниеПользователиГруппыExtendedTooltip" id="155"/>
+					<ExtendedTooltip name="ВнешниеПользователиГруппыРасширеннаяПодсказка" id="155"/>
 					<ChildItems>
 						<UsualGroup name="ТипПользователей" id="124">
 							<Title>
@@ -83,7 +83,7 @@
 							<Behavior>Usual</Behavior>
 							<Representation>None</Representation>
 							<ShowTitle>false</ShowTitle>
-							<ExtendedTooltip name="ТипПользователейExtendedTooltip" id="156"/>
+							<ExtendedTooltip name="ТипПользователейРасширеннаяПодсказка" id="156"/>
 							<ChildItems>
 								<InputField name="УчастникиГруппы" id="147">
 									<DataPath>УчастникиГруппы</DataPath>
@@ -128,7 +128,7 @@
 									</ChoiceList>
 									<BackColor>style:ФонУправляющегоПоля</BackColor>
 									<ContextMenu name="УчастникиГруппыКонтекстноеМеню" id="148"/>
-									<ExtendedTooltip name="УчастникиГруппыExtendedTooltip" id="157"/>
+									<ExtendedTooltip name="УчастникиГруппыРасширеннаяПодсказка" id="157"/>
 									<Events>
 										<Event name="OnChange">СоставУчастниковПриИзменении</Event>
 									</Events>
@@ -159,6 +159,12 @@
 										<Button name="ВыбратьНазначение" id="234">
 											<Type>Hyperlink</Type>
 											<CommandName>Form.Command.ВыбратьНазначение</CommandName>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>&lt;Не указан&gt;</v8:content>
+												</v8:item>
+											</Title>
 											<ExtendedTooltip name="ВыбратьНазначениеРасширеннаяПодсказка" id="235"/>
 										</Button>
 									</ChildItems>
@@ -198,6 +204,12 @@
 										<Type>CommandBarButton</Type>
 										<SkipOnInput>false</SkipOnInput>
 										<CommandName>Form.Command.ПодобратьВнешнихПользователей</CommandName>
+										<Title>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Подобрать</v8:content>
+											</v8:item>
+										</Title>
 										<ExtendedTooltip name="СоставКонтекстноеМенюПодобратьРасширеннаяПодсказка" id="159"/>
 									</Button>
 									<Button name="СоставКонтекстноеМенюДобавить" id="45">
@@ -220,11 +232,23 @@
 									<Button name="СоставКонтекстноеМенюПереместитьВверх" id="206">
 										<Type>CommandBarButton</Type>
 										<CommandName>Form.Command.ПереместитьВверх</CommandName>
+										<Title>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Переместить вверх</v8:content>
+											</v8:item>
+										</Title>
 										<ExtendedTooltip name="СоставКонтекстноеМенюПереместитьВверхРасширеннаяПодсказка" id="207"/>
 									</Button>
 									<Button name="СоставКонтекстноеМенюПереместитьВниз" id="208">
 										<Type>CommandBarButton</Type>
 										<CommandName>Form.Command.ПереместитьВниз</CommandName>
+										<Title>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Переместить вниз</v8:content>
+											</v8:item>
+										</Title>
 										<ExtendedTooltip name="СоставКонтекстноеМенюПереместитьВнизРасширеннаяПодсказка" id="209"/>
 									</Button>
 									<ButtonGroup name="СоставКонтекстноеМенюСтандартныеКоманды" id="186">
@@ -246,14 +270,20 @@
 										<Type>CommandBarButton</Type>
 										<SkipOnInput>false</SkipOnInput>
 										<CommandName>Form.Command.ПодобратьВнешнихПользователей</CommandName>
-										<ExtendedTooltip name="СоставПодобратьExtendedTooltip" id="163"/>
+										<Title>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Подобрать</v8:content>
+											</v8:item>
+										</Title>
+										<ExtendedTooltip name="СоставПодобратьРасширеннаяПодсказка" id="163"/>
 									</Button>
 									<Button name="СоставДобавить" id="32">
 										<Type>CommandBarButton</Type>
 										<SkipOnInput>false</SkipOnInput>
 										<CommandName>Form.Item.Состав.StandardCommand.Add</CommandName>
 										<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
-										<ExtendedTooltip name="СоставДобавитьExtendedTooltip" id="164"/>
+										<ExtendedTooltip name="СоставДобавитьРасширеннаяПодсказка" id="164"/>
 									</Button>
 									<Button name="СоставИзменить" id="214">
 										<Type>CommandBarButton</Type>
@@ -265,17 +295,29 @@
 										<SkipOnInput>false</SkipOnInput>
 										<CommandName>Form.Item.Состав.StandardCommand.Delete</CommandName>
 										<LocationInCommandBar>InCommandBarAndInAdditionalSubmenu</LocationInCommandBar>
-										<ExtendedTooltip name="СоставУдалитьExtendedTooltip" id="166"/>
+										<ExtendedTooltip name="СоставУдалитьРасширеннаяПодсказка" id="166"/>
 									</Button>
 									<Button name="СоставПереместитьВверх" id="202">
 										<Type>CommandBarButton</Type>
 										<CommandName>Form.Command.ПереместитьВверх</CommandName>
+										<Title>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Переместить вверх</v8:content>
+											</v8:item>
+										</Title>
 										<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
 										<ExtendedTooltip name="СоставПереместитьВверхРасширеннаяПодсказка" id="203"/>
 									</Button>
 									<Button name="СоставПереместитьВниз" id="204">
 										<Type>CommandBarButton</Type>
 										<CommandName>Form.Command.ПереместитьВниз</CommandName>
+										<Title>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Переместить вниз</v8:content>
+											</v8:item>
+										</Title>
 										<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
 										<ExtendedTooltip name="СоставПереместитьВнизРасширеннаяПодсказка" id="205"/>
 									</Button>
@@ -292,11 +334,23 @@
 											<Button name="СоставСортироватьПоВозрастанию" id="198">
 												<Type>CommandBarButton</Type>
 												<CommandName>Form.Command.СортироватьПоВозрастанию</CommandName>
+												<Title>
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>Сортировать по возрастанию</v8:content>
+													</v8:item>
+												</Title>
 												<ExtendedTooltip name="СоставСортироватьПоВозрастаниюРасширеннаяПодсказка" id="199"/>
 											</Button>
 											<Button name="СоставСортироватьПоУбыванию" id="200">
 												<Type>CommandBarButton</Type>
 												<CommandName>Form.Command.СортироватьПоУбыванию</CommandName>
+												<Title>
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>Сортировать по убыванию</v8:content>
+													</v8:item>
+												</Title>
 												<ExtendedTooltip name="СоставСортироватьПоУбываниюРасширеннаяПодсказка" id="201"/>
 											</Button>
 										</ChildItems>
@@ -314,8 +368,14 @@
 											<Button name="ПоказыватьНедействительныхПользователей" id="149">
 												<Type>CommandBarButton</Type>
 												<CommandName>Form.Command.ПоказыватьНедействительныхПользователей</CommandName>
+												<Title>
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>Показывать недействительных пользователей</v8:content>
+													</v8:item>
+												</Title>
 												<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
-												<ExtendedTooltip name="ПоказыватьНедействительныхПользователейExtendedTooltip" id="152"/>
+												<ExtendedTooltip name="ПоказыватьНедействительныхПользователейРасширеннаяПодсказка" id="152"/>
 											</Button>
 										</ChildItems>
 									</ButtonGroup>
@@ -335,7 +395,7 @@
 									</SearchStringAddition>
 								</ChildItems>
 							</AutoCommandBar>
-							<ExtendedTooltip name="СоставExtendedTooltip" id="171"/>
+							<ExtendedTooltip name="СоставРасширеннаяПодсказка" id="171"/>
 							<SearchStringAddition name="СоставСтрокаПоиска" id="216">
 								<AdditionSource>
 									<Item>Состав</Item>
@@ -370,7 +430,7 @@
 									<DataPath>Объект.Состав.ВнешнийПользователь</DataPath>
 									<EditMode>EnterOnInput</EditMode>
 									<ContextMenu name="СоставВнешнийПользовательКонтекстноеМеню" id="54"/>
-									<ExtendedTooltip name="СоставВнешнийПользовательExtendedTooltip" id="172"/>
+									<ExtendedTooltip name="СоставВнешнийПользовательРасширеннаяПодсказка" id="172"/>
 									<Events>
 										<Event name="StartChoice">СоставВнешнийПользовательНачалоВыбора</Event>
 									</Events>
@@ -381,7 +441,7 @@
 									<EditMode>EnterOnInput</EditMode>
 									<CheckBoxType>Auto</CheckBoxType>
 									<ContextMenu name="НедействителенКонтекстноеМеню" id="151"/>
-									<ExtendedTooltip name="НедействителенExtendedTooltip" id="173"/>
+									<ExtendedTooltip name="НедействителенРасширеннаяПодсказка" id="173"/>
 								</CheckBoxField>
 							</ChildItems>
 						</Table>
@@ -394,7 +454,7 @@
 							<v8:content>Разрешенные действия (роли)</v8:content>
 						</v8:item>
 					</Title>
-					<ExtendedTooltip name="РолиГруппыExtendedTooltip" id="174"/>
+					<ExtendedTooltip name="РолиГруппыРасширеннаяПодсказка" id="174"/>
 					<ChildItems>
 						<UsualGroup name="ОтображениеРолей" id="64">
 							<Title>
@@ -407,7 +467,7 @@
 							<Behavior>Usual</Behavior>
 							<Representation>None</Representation>
 							<ShowTitle>false</ShowTitle>
-							<ExtendedTooltip name="ОтображениеРолейExtendedTooltip" id="175"/>
+							<ExtendedTooltip name="ОтображениеРолейРасширеннаяПодсказка" id="175"/>
 							<ChildItems>
 								<Table name="Роли" id="131">
 									<Representation>Tree</Representation>
@@ -465,13 +525,25 @@
 														<Type>CommandBarButton</Type>
 														<SkipOnInput>false</SkipOnInput>
 														<CommandName>Form.Command.ВключитьРоли</CommandName>
-														<ExtendedTooltip name="РолиУстановитьФлажкиExtendedTooltip" id="176"/>
+														<Title>
+															<v8:item>
+																<v8:lang>ru</v8:lang>
+																<v8:content>Включить роли</v8:content>
+															</v8:item>
+														</Title>
+														<ExtendedTooltip name="РолиУстановитьФлажкиРасширеннаяПодсказка" id="176"/>
 													</Button>
 													<Button name="РолиСнятьФлажки" id="140">
 														<Type>CommandBarButton</Type>
 														<SkipOnInput>false</SkipOnInput>
 														<CommandName>Form.Command.ИсключитьРоли</CommandName>
-														<ExtendedTooltip name="РолиСнятьФлажкиExtendedTooltip" id="177"/>
+														<Title>
+															<v8:item>
+																<v8:lang>ru</v8:lang>
+																<v8:content>Исключить роли</v8:content>
+															</v8:item>
+														</Title>
+														<ExtendedTooltip name="РолиСнятьФлажкиРасширеннаяПодсказка" id="177"/>
 													</Button>
 												</ChildItems>
 											</ButtonGroup>
@@ -479,14 +551,26 @@
 												<Type>CommandBarButton</Type>
 												<SkipOnInput>false</SkipOnInput>
 												<CommandName>Form.Command.ПоказатьТолькоВыбранныеРоли</CommandName>
-												<ExtendedTooltip name="РолиПоказатьТолькоВыбранныеРолиExtendedTooltip" id="178"/>
+												<Title>
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>Только выбранные</v8:content>
+													</v8:item>
+												</Title>
+												<ExtendedTooltip name="РолиПоказатьТолькоВыбранныеРолиРасширеннаяПодсказка" id="178"/>
 											</Button>
 											<Button name="РолиПоказатьПодсистемыРолей" id="146">
 												<Type>CommandBarButton</Type>
 												<Representation>Picture</Representation>
 												<CommandName>Form.Command.ГруппировкаРолейПоПодсистемам</CommandName>
+												<Title>
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>По подсистемам</v8:content>
+													</v8:item>
+												</Title>
 												<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
-												<ExtendedTooltip name="РолиПоказатьПодсистемыРолейExtendedTooltip" id="179"/>
+												<ExtendedTooltip name="РолиПоказатьПодсистемыРолейРасширеннаяПодсказка" id="179"/>
 											</Button>
 											<ButtonGroup name="РолиСтандартныеКоманды" id="210">
 												<Title>
@@ -514,7 +598,7 @@
 											</SearchStringAddition>
 										</ChildItems>
 									</AutoCommandBar>
-									<ExtendedTooltip name="РолиExtendedTooltip" id="180"/>
+									<ExtendedTooltip name="РолиРасширеннаяПодсказка" id="180"/>
 									<SearchStringAddition name="РолиСтрокаПоиска" id="225">
 										<AdditionSource>
 											<Item>Роли</Item>
@@ -548,15 +632,21 @@
 												</v8:item>
 											</Title>
 											<Group>InCell</Group>
-											<ExtendedTooltip name="РолиКолонокExtendedTooltip" id="181"/>
+											<ExtendedTooltip name="РолиКолонокРасширеннаяПодсказка" id="181"/>
 											<ChildItems>
 												<CheckBoxField name="РолиПометка" id="142">
 													<DataPath>Роли.Пометка</DataPath>
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Пометка</v8:content>
+														</v8:item>
+													</Title>
 													<EditMode>Directly</EditMode>
 													<ShowInHeader>false</ShowInHeader>
 													<CheckBoxType>Auto</CheckBoxType>
 													<ContextMenu name="РолиПометкаКонтекстноеМеню" id="143"/>
-													<ExtendedTooltip name="РолиПометкаExtendedTooltip" id="182"/>
+													<ExtendedTooltip name="РолиПометкаРасширеннаяПодсказка" id="182"/>
 													<Events>
 														<Event name="OnChange">РолиПометкаПриИзменении</Event>
 													</Events>
@@ -564,9 +654,15 @@
 												<InputField name="РолиСиноним" id="144">
 													<DataPath>Роли.Синоним</DataPath>
 													<ReadOnly>true</ReadOnly>
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Разрешенное действие (роль)</v8:content>
+														</v8:item>
+													</Title>
 													<EditMode>EnterOnInput</EditMode>
 													<ContextMenu name="РолиСинонимКонтекстноеМеню" id="145"/>
-													<ExtendedTooltip name="РолиСинонимExtendedTooltip" id="183"/>
+													<ExtendedTooltip name="РолиСинонимРасширеннаяПодсказка" id="183"/>
 												</InputField>
 											</ChildItems>
 										</ColumnGroup>
@@ -590,7 +686,7 @@
 							<TitleLocation>None</TitleLocation>
 							<AutoMaxWidth>false</AutoMaxWidth>
 							<ContextMenu name="КомментарийКонтекстноеМеню" id="39"/>
-							<ExtendedTooltip name="КомментарийExtendedTooltip" id="185"/>
+							<ExtendedTooltip name="КомментарийРасширеннаяПодсказка" id="185"/>
 						</InputField>
 					</ChildItems>
 				</Page>

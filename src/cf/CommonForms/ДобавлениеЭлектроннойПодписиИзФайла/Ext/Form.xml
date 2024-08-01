@@ -10,12 +10,18 @@
 				<Type>CommandBarButton</Type>
 				<DefaultButton>true</DefaultButton>
 				<CommandName>Form.Command.ОК</CommandName>
-				<ExtendedTooltip name="ФормаОКExtendedTooltip" id="12"/>
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Добавить</v8:content>
+					</v8:item>
+				</Title>
+				<ExtendedTooltip name="ФормаОКРасширеннаяПодсказка" id="12"/>
 			</Button>
 			<Button name="ФормаОтмена" id="11">
 				<Type>CommandBarButton</Type>
 				<CommandName>Form.StandardCommand.Cancel</CommandName>
-				<ExtendedTooltip name="ФормаОтменаExtendedTooltip" id="13"/>
+				<ExtendedTooltip name="ФормаОтменаРасширеннаяПодсказка" id="13"/>
 			</Button>
 		</ChildItems>
 	</AutoCommandBar>
@@ -92,14 +98,14 @@
 						<Title>
 							<v8:item>
 								<v8:lang>ru</v8:lang>
-								<v8:content>Добавить ...</v8:content>
+								<v8:content>Выбрать файлы с компьютера...</v8:content>
 							</v8:item>
 						</Title>
 						<ExtendedTooltip name="ПодписиДобавитьРасширеннаяПодсказка" id="18"/>
 					</Button>
 				</ChildItems>
 			</AutoCommandBar>
-			<ExtendedTooltip name="ПодписиExtendedTooltip" id="14"/>
+			<ExtendedTooltip name="ПодписиРасширеннаяПодсказка" id="14"/>
 			<SearchStringAddition name="ПодписиСтрокаПоиска" id="22">
 				<AdditionSource>
 					<Item>Подписи</Item>
@@ -130,23 +136,59 @@
 			<ChildItems>
 				<InputField name="ПодписиПутьКФайлу" id="4">
 					<DataPath>Подписи.ПутьКФайлу</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Файл электронной подписи</v8:content>
+						</v8:item>
+					</Title>
 					<EditMode>EnterOnInput</EditMode>
 					<AutoCellHeight>true</AutoCellHeight>
 					<Width>40</Width>
 					<ChoiceButton>true</ChoiceButton>
 					<ContextMenu name="ПодписиПутьКФайлуКонтекстноеМеню" id="5"/>
-					<ExtendedTooltip name="ПодписиПутьКФайлуExtendedTooltip" id="15"/>
+					<ExtendedTooltip name="ПодписиПутьКФайлуРасширеннаяПодсказка" id="15"/>
 					<Events>
 						<Event name="StartChoice">ПодписиПутьКФайлуНачалоВыбора</Event>
 					</Events>
 				</InputField>
 				<InputField name="ПодписиКомментарий" id="9">
 					<DataPath>Подписи.Комментарий</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Комментарий</v8:content>
+						</v8:item>
+					</Title>
 					<EditMode>EnterOnInput</EditMode>
 					<AutoCellHeight>true</AutoCellHeight>
 					<Width>20</Width>
 					<ContextMenu name="ПодписиКомментарийКонтекстноеМеню" id="10"/>
-					<ExtendedTooltip name="ПодписиКомментарийExtendedTooltip" id="16"/>
+					<ExtendedTooltip name="ПодписиКомментарийРасширеннаяПодсказка" id="16"/>
+				</InputField>
+				<InputField name="ПодписиМашиночитаемаяДоверенность" id="54">
+					<DataPath>Подписи.МашиночитаемаяДоверенность</DataPath>
+					<Visible>false</Visible>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Машиночитаемая доверенность</v8:content>
+						</v8:item>
+					</Title>
+					<Width>40</Width>
+					<Height>2</Height>
+					<AutoMaxHeight>false</AutoMaxHeight>
+					<ChoiceButton>true</ChoiceButton>
+					<ChoiceButtonRepresentation>ShowInInputField</ChoiceButtonRepresentation>
+					<QuickChoice>false</QuickChoice>
+					<ChooseType>false</ChooseType>
+					<TextEdit>false</TextEdit>
+					<ContextMenu name="ПодписиМашиночитаемаяДоверенностьКонтекстноеМеню" id="55"/>
+					<ExtendedTooltip name="ПодписиМашиночитаемаяДоверенностьРасширеннаяПодсказка" id="56"/>
+					<Events>
+						<Event name="AutoComplete">ПодписиМашиночитаемаяДоверенностьАвтоПодбор</Event>
+						<Event name="StartChoice">ПодписиМашиночитаемаяДоверенностьНачалоВыбора</Event>
+					</Events>
 				</InputField>
 			</ChildItems>
 		</Table>
@@ -203,6 +245,40 @@
 						</v8:StringQualifiers>
 					</Type>
 				</Column>
+				<Column name="МашиночитаемаяДоверенность" id="9">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Машиночитаемая доверенность</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.МашиночитаемыеДоверенности</v8:Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>500</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="ПоляОтбора" id="23">
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="НомерДоверенности" id="27">
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
 			</Columns>
 		</Attribute>
 		<Attribute name="МенеджерКриптографииНаСервереОписаниеОшибки" id="4">
@@ -215,6 +291,68 @@
 					<v8:content>Представление данных</v8:content>
 				</v8:item>
 			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="Доверенности" id="6">
+			<Type>
+				<v8:Type>v8:ValueTable</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="МашиночитаемаяДоверенность" id="7">
+					<Type>
+						<v8:Type>cfg:CatalogRef.МашиночитаемыеДоверенности</v8:Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>500</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="ИмяФайла" id="11">
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="НомерДоверенности" id="12">
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="ФайлыДоверенности" id="25">
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="ПоляОтбора" id="26">
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+		<Attribute name="ОшибкиПриЗагрузкеДоверенностей" id="8">
 			<Type>
 				<v8:Type>xs:string</v8:Type>
 				<v8:StringQualifiers>
@@ -240,6 +378,15 @@
 			</ToolTip>
 			<Action>ОК</Action>
 			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ПодобратьДоверенности" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Подобрать доверенности</v8:content>
+				</v8:item>
+			</Title>
+			<Action>ПодобратьДоверенности</Action>
 		</Command>
 	</Commands>
 	<Parameters>

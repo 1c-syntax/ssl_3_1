@@ -9,6 +9,12 @@
 	<ChildItems>
 		<InputField name="ВариантОтчета" id="3">
 			<DataPath>ВариантОтчета</DataPath>
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Вариант отчета</v8:content>
+				</v8:item>
+			</Title>
 			<Width>25</Width>
 			<HorizontalStretch>false</HorizontalStretch>
 			<DropListButton>true</DropListButton>
@@ -42,18 +48,24 @@
 				</xr:Item>
 			</ChoiceList>
 			<ContextMenu name="ВариантОтчетаКонтекстноеМеню" id="4"/>
-			<ExtendedTooltip name="ВариантОтчетаExtendedTooltip" id="5"/>
+			<ExtendedTooltip name="ВариантОтчетаРасширеннаяПодсказка" id="5"/>
 			<Events>
 				<Event name="OnChange">ВариантОтчетаПриИзменении</Event>
 			</Events>
 		</InputField>
 		<SpreadSheetDocumentField name="ТаблицаОтчета" id="1">
 			<DataPath>ТаблицаОтчета</DataPath>
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Таблица отчета</v8:content>
+				</v8:item>
+			</Title>
 			<TitleLocation>None</TitleLocation>
 			<VerticalScrollBar>true</VerticalScrollBar>
 			<HorizontalScrollBar>true</HorizontalScrollBar>
 			<ContextMenu name="ТаблицаОтчетаКонтекстноеМеню" id="2"/>
-			<ExtendedTooltip name="ТаблицаОтчетаExtendedTooltip" id="6"/>
+			<ExtendedTooltip name="ТаблицаОтчетаРасширеннаяПодсказка" id="6"/>
 		</SpreadSheetDocumentField>
 	</ChildItems>
 	<Attributes>
@@ -129,4 +141,51 @@
 			</Type>
 		</Attribute>
 	</Attributes>
+	<Parameters>
+		<Parameter name="ВопросШаблонаАнкеты">
+			<Type>
+				<v8:Type>cfg:CatalogRef.ВопросыШаблонаАнкеты</v8:Type>
+			</Type>
+		</Parameter>
+		<Parameter name="Опрос">
+			<Type>
+				<v8:Type>cfg:DocumentRef.НазначениеОпросов</v8:Type>
+			</Type>
+		</Parameter>
+		<Parameter name="ПолныйКод">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Parameter>
+		<Parameter name="НаименованиеОпроса">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Parameter>
+		<Parameter name="ДатаОпроса">
+			<Type>
+				<v8:Type>xs:dateTime</v8:Type>
+				<v8:DateQualifiers>
+					<v8:DateFractions>Date</v8:DateFractions>
+				</v8:DateQualifiers>
+			</Type>
+		</Parameter>
+		<Parameter name="ВариантОтчета">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Parameter>
+	</Parameters>
 </Form>
