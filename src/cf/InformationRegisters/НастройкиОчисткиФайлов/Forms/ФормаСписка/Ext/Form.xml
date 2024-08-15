@@ -123,12 +123,20 @@
 					</Button>
 				</ChildItems>
 			</Popup>
-			<Button name="ФормаСправка" id="105">
-				<Type>CommandBarButton</Type>
-				<CommandName>Form.StandardCommand.Help</CommandName>
-				<LocationInCommandBar>InCommandBarAndInAdditionalSubmenu</LocationInCommandBar>
-				<ExtendedTooltip name="ФормаСправкаРасширеннаяПодсказка" id="106"/>
-			</Button>
+			<Popup name="ПодменюОтчеты" id="156">
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Отчеты</v8:content>
+					</v8:item>
+				</Title>
+				<Picture>
+					<xr:Ref>CommonPicture.Отчеты</xr:Ref>
+					<xr:LoadTransparent>false</xr:LoadTransparent>
+				</Picture>
+				<Representation>PictureAndText</Representation>
+				<ExtendedTooltip name="ПодменюОтчетыРасширеннаяПодсказка" id="157"/>
+			</Popup>
 			<SearchStringAddition name="СтрокаПоиска" id="153">
 				<AdditionSource>
 					<Item>ДеревоОбъектовМетаданных</Item>
@@ -242,6 +250,7 @@
 				<Event name="Selection">ДеревоОбъектовМетаданныхВыбор</Event>
 				<Event name="BeforeAddRow">ДеревоОбъектовМетаданныхПередНачаломДобавления</Event>
 				<Event name="BeforeDeleteRow">ДеревоОбъектовМетаданныхПередУдалением</Event>
+				<Event name="OnActivateRow">ДеревоОбъектовМетаданныхПриАктивизацииСтроки</Event>
 				<Event name="ChoiceProcessing">ДеревоОбъектовМетаданныхОбработкаВыбора</Event>
 				<Event name="BeforeRowChange">ДеревоОбъектовМетаданныхПередНачаломИзменения</Event>
 			</Events>

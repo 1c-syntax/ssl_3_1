@@ -592,6 +592,21 @@
 		<value xsi:type="xs:boolean">false</value>
 		<useRestriction>true</useRestriction>
 	</parameter>
+	<parameter>
+		<name>ИдентификаторОбработчикаОчисткиУстаревшихДанных</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Идентификатор обработчика очистки устаревших данных</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>v8:UUID</v8:Type>
+		</valueType>
+		<value xsi:type="v8:UUID">00000000-0000-0000-0000-000000000000</value>
+		<useRestriction>true</useRestriction>
+		<use>Always</use>
+	</parameter>
 	<settingsVariant>
 		<dcsset:name>Основной</dcsset:name>
 		<dcsset:presentation xsi:type="xs:string">Основной</dcsset:presentation>
@@ -735,6 +750,17 @@
 							<v8:item>
 								<v8:lang>ru</v8:lang>
 								<v8:content>// Версия еще не известна, вызываются при каждом обновлении</v8:content>
+							</v8:item>
+						</dcsset:presentation>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">Идентификатор</dcsset:left>
+						<dcsset:comparisonType>Equal</dcsset:comparisonType>
+						<dcsset:right xsi:type="dcscor:Field">ПараметрыДанных.ИдентификаторОбработчикаОчисткиУстаревшихДанных</dcsset:right>
+						<dcsset:presentation xsi:type="v8:LocalStringType">
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>// Очистка устаревших данных при каждом обновлении</v8:content>
 							</v8:item>
 						</dcsset:presentation>
 					</dcsset:item>

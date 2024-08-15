@@ -709,95 +709,166 @@
 										<Title formatted="true">
 											<v8:item>
 												<v8:lang>ru</v8:lang>
-												<v8:content>&lt;b&gt;Ключ электронной подписи&lt;/&gt; - это секретная информация, которая сохраняется на компьютер, флешку, дискету или другой носитель информации и используется в дальнейшем для создания электронных подписей.
+												<v8:content>&lt;b&gt;Ключ&lt;/&gt;&lt;b&gt; &lt;/&gt;&lt;b&gt;электронной&lt;/&gt;&lt;b&gt; &lt;/&gt;&lt;b&gt;подписи&lt;/&gt; - это секретная информация, которая сохраняется на компьютер, флешку, устройство или другой носитель информации и используется в дальнейшем для создания электронных подписей.
 
-&lt;b&gt;Запрос на сертификат&lt;/&gt; - это не секретная информация, которая создается на основе ключа электронной подписи, отправляется вместе с заявлением на выпуск сертификата и требуется для выпуска сертификата.</v8:content>
+&lt;b&gt;Запрос&lt;/&gt;&lt;b&gt; &lt;/&gt;&lt;b&gt;на&lt;/&gt;&lt;b&gt; &lt;/&gt;&lt;b&gt;сертификат&lt;/&gt; - это не секретная информация, которая создается на основе ключа электронной подписи, отправляется вместе с заявлением на выпуск сертификата и требуется для выпуска сертификата.</v8:content>
 											</v8:item>
 										</Title>
 									</ExtendedTooltip>
 								</LabelDecoration>
-								<InputField name="ПредставлениеПрограммы" id="949">
-									<DataPath>ПредставлениеПрограммы</DataPath>
+								<UsualGroup name="ГруппаПредставлениеПрограммы" id="1002">
 									<Title>
 										<v8:item>
 											<v8:lang>ru</v8:lang>
-											<v8:content>с помощью приложения</v8:content>
+											<v8:content>Представление программы</v8:content>
 										</v8:item>
 									</Title>
-									<ToolTipRepresentation>Button</ToolTipRepresentation>
-									<Width>30</Width>
-									<HorizontalStretch>false</HorizontalStretch>
-									<DropListButton>true</DropListButton>
-									<ChoiceButton>false</ChoiceButton>
-									<OpenButton>false</OpenButton>
-									<CreateButton>false</CreateButton>
-									<AutoMarkIncomplete>true</AutoMarkIncomplete>
-									<ChoiceHistoryOnInput>DontUse</ChoiceHistoryOnInput>
-									<ContextMenu name="ПредставлениеПрограммыКонтекстноеМеню" id="950"/>
-									<ExtendedTooltip name="ПредставлениеПрограммыРасширеннаяПодсказка" id="951">
-										<Title formatted="false">
-											<v8:item>
-												<v8:lang>ru</v8:lang>
-												<v8:content>Программа для работы с электронной подписью должна быть установлена на компьютере</v8:content>
-											</v8:item>
-										</Title>
-										<Events>
-											<Event name="URLProcessing">ПрограммаРасширеннаяПодсказкаОбработкаНавигационнойСсылки</Event>
-										</Events>
-									</ExtendedTooltip>
-									<Events>
-										<Event name="AutoComplete">ПрограммаАвтоПодбор</Event>
-										<Event name="StartChoice">ПрограммаНачалоВыбора</Event>
-										<Event name="TextEditEnd">ПрограммаОкончаниеВводаТекста</Event>
-										<Event name="ChoiceProcessing">ПрограммаОбработкаВыбора</Event>
-									</Events>
-								</InputField>
-								<InputField name="Программа" id="1">
-									<DataPath>Объект.Программа</DataPath>
-									<Title>
-										<v8:item>
-											<v8:lang>ru</v8:lang>
-											<v8:content>с помощью приложения</v8:content>
-										</v8:item>
-									</Title>
-									<ToolTipRepresentation>Button</ToolTipRepresentation>
-									<Width>30</Width>
-									<HorizontalStretch>false</HorizontalStretch>
-									<DropListButton>true</DropListButton>
-									<ChoiceButton>false</ChoiceButton>
-									<OpenButton>false</OpenButton>
-									<CreateButton>false</CreateButton>
-									<AutoMarkIncomplete>true</AutoMarkIncomplete>
-									<ChoiceHistoryOnInput>DontUse</ChoiceHistoryOnInput>
-									<ContextMenu name="ПрограммаКонтекстноеМеню" id="2"/>
-									<ExtendedTooltip name="ПрограммаРасширеннаяПодсказка" id="3">
-										<Title formatted="false">
-											<v8:item>
-												<v8:lang>ru</v8:lang>
-												<v8:content>Программа для работы с электронной подписью должна быть установлена на компьютере</v8:content>
-											</v8:item>
-										</Title>
-										<Events>
-											<Event name="URLProcessing">ПрограммаРасширеннаяПодсказкаОбработкаНавигационнойСсылки</Event>
-										</Events>
-									</ExtendedTooltip>
-									<Events>
-										<Event name="AutoComplete">ПрограммаАвтоПодбор</Event>
-										<Event name="StartChoice">ПрограммаНачалоВыбора</Event>
-										<Event name="TextEditEnd">ПрограммаОкончаниеВводаТекста</Event>
-										<Event name="ChoiceProcessing">ПрограммаОбработкаВыбора</Event>
-									</Events>
-								</InputField>
-								<LabelDecoration name="ДекорацияПрограмма" id="952">
-									<Title formatted="false">
-										<v8:item>
-											<v8:lang>ru</v8:lang>
-											<v8:content>Программа определена автоматически</v8:content>
-										</v8:item>
-									</Title>
-									<ContextMenu name="ДекорацияПрограммаКонтекстноеМеню" id="953"/>
-									<ExtendedTooltip name="ДекорацияПрограммаРасширеннаяПодсказка" id="954"/>
-								</LabelDecoration>
+									<Group>AlwaysHorizontal</Group>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="ГруппаПредставлениеПрограммыРасширеннаяПодсказка" id="1003"/>
+									<ChildItems>
+										<InputField name="ПредставлениеПрограммы" id="949">
+											<DataPath>ПредставлениеПрограммы</DataPath>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>с помощью</v8:content>
+												</v8:item>
+											</Title>
+											<ToolTipRepresentation>Button</ToolTipRepresentation>
+											<Width>30</Width>
+											<HorizontalStretch>false</HorizontalStretch>
+											<DropListButton>true</DropListButton>
+											<ChoiceButton>false</ChoiceButton>
+											<OpenButton>false</OpenButton>
+											<CreateButton>false</CreateButton>
+											<AutoMarkIncomplete>true</AutoMarkIncomplete>
+											<ChoiceHistoryOnInput>DontUse</ChoiceHistoryOnInput>
+											<ContextMenu name="ПредставлениеПрограммыКонтекстноеМеню" id="950"/>
+											<ExtendedTooltip name="ПредставлениеПрограммыРасширеннаяПодсказка" id="951">
+												<Title formatted="false">
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>Программа для работы с электронной подписью должна быть установлена на компьютере</v8:content>
+													</v8:item>
+												</Title>
+												<Events>
+													<Event name="URLProcessing">ПрограммаРасширеннаяПодсказкаОбработкаНавигационнойСсылки</Event>
+												</Events>
+											</ExtendedTooltip>
+											<Events>
+												<Event name="AutoComplete">ПрограммаАвтоПодбор</Event>
+												<Event name="StartChoice">ПрограммаНачалоВыбора</Event>
+												<Event name="TextEditEnd">ПрограммаОкончаниеВводаТекста</Event>
+												<Event name="ChoiceProcessing">ПрограммаОбработкаВыбора</Event>
+											</Events>
+										</InputField>
+										<InputField name="Программа" id="1">
+											<DataPath>Объект.Программа</DataPath>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>с помощью</v8:content>
+												</v8:item>
+											</Title>
+											<ToolTipRepresentation>Button</ToolTipRepresentation>
+											<Width>30</Width>
+											<HorizontalStretch>false</HorizontalStretch>
+											<DropListButton>true</DropListButton>
+											<ChoiceButton>false</ChoiceButton>
+											<OpenButton>false</OpenButton>
+											<CreateButton>false</CreateButton>
+											<AutoMarkIncomplete>true</AutoMarkIncomplete>
+											<ChoiceHistoryOnInput>DontUse</ChoiceHistoryOnInput>
+											<ContextMenu name="ПрограммаКонтекстноеМеню" id="2"/>
+											<ExtendedTooltip name="ПрограммаРасширеннаяПодсказка" id="3">
+												<Title formatted="false">
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>Программа для работы с электронной подписью должна быть установлена на компьютере</v8:content>
+													</v8:item>
+												</Title>
+												<Events>
+													<Event name="URLProcessing">ПрограммаРасширеннаяПодсказкаОбработкаНавигационнойСсылки</Event>
+												</Events>
+											</ExtendedTooltip>
+											<Events>
+												<Event name="AutoComplete">ПрограммаАвтоПодбор</Event>
+												<Event name="StartChoice">ПрограммаНачалоВыбора</Event>
+												<Event name="TextEditEnd">ПрограммаОкончаниеВводаТекста</Event>
+												<Event name="ChoiceProcessing">ПрограммаОбработкаВыбора</Event>
+											</Events>
+										</InputField>
+										<PictureDecoration name="ДекорацияОбновитьСписокПриложений" id="1009">
+											<ToolTip>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Обновить список приложений и токенов</v8:content>
+												</v8:item>
+											</ToolTip>
+											<GroupVerticalAlign>Center</GroupVerticalAlign>
+											<Hyperlink>true</Hyperlink>
+											<Picture>
+												<xr:Ref>StdPicture.Refresh</xr:Ref>
+												<xr:LoadTransparent>true</xr:LoadTransparent>
+											</Picture>
+											<ContextMenu name="ДекорацияОбновитьСписокПриложенийКонтекстноеМеню" id="1010"/>
+											<ExtendedTooltip name="ДекорацияОбновитьСписокПриложенийРасширеннаяПодсказка" id="1011"/>
+											<Events>
+												<Event name="Click">ДекорацияОбновитьСписокПриложенийНажатие</Event>
+											</Events>
+										</PictureDecoration>
+										<LabelDecoration name="ДекорацияПрограмма" id="952">
+											<Visible>false</Visible>
+											<Title formatted="false">
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Приложение определено автоматически</v8:content>
+												</v8:item>
+											</Title>
+											<ContextMenu name="ДекорацияПрограммаКонтекстноеМеню" id="953"/>
+											<ExtendedTooltip name="ДекорацияПрограммаРасширеннаяПодсказка" id="954"/>
+										</LabelDecoration>
+										<UsualGroup name="ГруппаПоискПриложений" id="1004">
+											<Visible>false</Visible>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Поиск приложений</v8:content>
+												</v8:item>
+											</Title>
+											<Group>AlwaysHorizontal</Group>
+											<ShowTitle>false</ShowTitle>
+											<ExtendedTooltip name="ГруппаПоискПриложенийРасширеннаяПодсказка" id="1005"/>
+											<ChildItems>
+												<PictureDecoration name="ДекорацияПоискПриложений" id="999">
+													<Title formatted="false">
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Идет поиск приложений электронной подписи...</v8:content>
+														</v8:item>
+													</Title>
+													<Picture>
+														<xr:Ref>CommonPicture.ДлительнаяОперация16</xr:Ref>
+														<xr:LoadTransparent>false</xr:LoadTransparent>
+													</Picture>
+													<ContextMenu name="ДекорацияПоискПриложенийКонтекстноеМеню" id="1000"/>
+													<ExtendedTooltip name="ДекорацияПоискПриложенийРасширеннаяПодсказка" id="1001"/>
+												</PictureDecoration>
+												<LabelDecoration name="ДекорацияПоискПриложенийТекст" id="1006">
+													<Title formatted="false">
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Идет поиск приложений электронной подписи...</v8:content>
+														</v8:item>
+													</Title>
+													<ContextMenu name="ДекорацияПоискПриложенийТекстКонтекстноеМеню" id="1007"/>
+													<ExtendedTooltip name="ДекорацияПоискПриложенийТекстРасширеннаяПодсказка" id="1008"/>
+												</LabelDecoration>
+											</ChildItems>
+										</UsualGroup>
+									</ChildItems>
+								</UsualGroup>
 							</ChildItems>
 						</UsualGroup>
 						<UsualGroup name="ГруппаЛицензияКриптоПро" id="957">
@@ -843,6 +914,144 @@
 								</CheckBoxField>
 							</ChildItems>
 						</UsualGroup>
+						<Table name="СписокТокенов" id="962">
+							<Representation>List</Representation>
+							<Visible>false</Visible>
+							<ChangeRowSet>false</ChangeRowSet>
+							<ChangeRowOrder>false</ChangeRowOrder>
+							<AutoInsertNewRow>true</AutoInsertNewRow>
+							<EnableStartDrag>true</EnableStartDrag>
+							<EnableDrag>true</EnableDrag>
+							<DataPath>СписокТокенов</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Список токенов</v8:content>
+								</v8:item>
+							</Title>
+							<CommandSet>
+								<ExcludedCommand>Add</ExcludedCommand>
+								<ExcludedCommand>CancelSearch</ExcludedCommand>
+								<ExcludedCommand>Change</ExcludedCommand>
+								<ExcludedCommand>Copy</ExcludedCommand>
+								<ExcludedCommand>CopyToClipboard</ExcludedCommand>
+								<ExcludedCommand>Delete</ExcludedCommand>
+								<ExcludedCommand>EndEdit</ExcludedCommand>
+								<ExcludedCommand>Find</ExcludedCommand>
+								<ExcludedCommand>FindByCurrentValue</ExcludedCommand>
+								<ExcludedCommand>MoveDown</ExcludedCommand>
+								<ExcludedCommand>MoveUp</ExcludedCommand>
+								<ExcludedCommand>OutputList</ExcludedCommand>
+								<ExcludedCommand>SearchEverywhere</ExcludedCommand>
+								<ExcludedCommand>SelectAll</ExcludedCommand>
+								<ExcludedCommand>ShowMultipleSelection</ExcludedCommand>
+								<ExcludedCommand>ShowRowRearrangement</ExcludedCommand>
+								<ExcludedCommand>SortListAsc</ExcludedCommand>
+								<ExcludedCommand>SortListDesc</ExcludedCommand>
+							</CommandSet>
+							<RowFilter xsi:nil="true"/>
+							<ContextMenu name="СписокТокеновКонтекстноеМеню" id="963"/>
+							<AutoCommandBar name="СписокТокеновКоманднаяПанель" id="964"/>
+							<ExtendedTooltip name="СписокТокеновРасширеннаяПодсказка" id="965"/>
+							<SearchStringAddition name="СписокТокеновСтрокаПоиска" id="966">
+								<AdditionSource>
+									<Item>СписокТокенов</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="СписокТокеновСтрокаПоискаКонтекстноеМеню" id="967"/>
+								<ExtendedTooltip name="СписокТокеновСтрокаПоискаРасширеннаяПодсказка" id="968"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="СписокТокеновСостояниеПросмотра" id="969">
+								<AdditionSource>
+									<Item>СписокТокенов</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="СписокТокеновСостояниеПросмотраКонтекстноеМеню" id="970"/>
+								<ExtendedTooltip name="СписокТокеновСостояниеПросмотраРасширеннаяПодсказка" id="971"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="СписокТокеновУправлениеПоиском" id="972">
+								<AdditionSource>
+									<Item>СписокТокенов</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="СписокТокеновУправлениеПоискомКонтекстноеМеню" id="973"/>
+								<ExtendedTooltip name="СписокТокеновУправлениеПоискомРасширеннаяПодсказка" id="974"/>
+							</SearchControlAddition>
+							<ChildItems>
+								<InputField name="СписокТокеновТокен" id="975">
+									<DataPath>СписокТокенов.Токен</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Токен</v8:content>
+										</v8:item>
+									</Title>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="СписокТокеновТокенКонтекстноеМеню" id="976"/>
+									<ExtendedTooltip name="СписокТокеновТокенРасширеннаяПодсказка" id="977"/>
+								</InputField>
+								<InputField name="СписокТокеновОписание" id="978">
+									<DataPath>СписокТокенов.Описание</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Описание</v8:content>
+										</v8:item>
+									</Title>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="СписокТокеновОписаниеКонтекстноеМеню" id="979"/>
+									<ExtendedTooltip name="СписокТокеновОписаниеРасширеннаяПодсказка" id="980"/>
+								</InputField>
+								<InputField name="СписокТокеновПредставление" id="981">
+									<DataPath>СписокТокенов.Представление</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Представление</v8:content>
+										</v8:item>
+									</Title>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="СписокТокеновПредставлениеКонтекстноеМеню" id="982"/>
+									<ExtendedTooltip name="СписокТокеновПредставлениеРасширеннаяПодсказка" id="983"/>
+								</InputField>
+								<InputField name="СписокТокеновСлот" id="984">
+									<DataPath>СписокТокенов.Слот</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Слот</v8:content>
+										</v8:item>
+									</Title>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="СписокТокеновСлотКонтекстноеМеню" id="985"/>
+									<ExtendedTooltip name="СписокТокеновСлотРасширеннаяПодсказка" id="986"/>
+								</InputField>
+								<InputField name="СписокТокеновМодель" id="987">
+									<DataPath>СписокТокенов.Модель</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Модель</v8:content>
+										</v8:item>
+									</Title>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="СписокТокеновМодельКонтекстноеМеню" id="988"/>
+									<ExtendedTooltip name="СписокТокеновМодельРасширеннаяПодсказка" id="989"/>
+								</InputField>
+								<InputField name="СписокТокеновОшибка" id="996">
+									<DataPath>СписокТокенов.Ошибка</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Ошибка</v8:content>
+										</v8:item>
+									</Title>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="СписокТокеновОшибкаКонтекстноеМеню" id="997"/>
+									<ExtendedTooltip name="СписокТокеновОшибкаРасширеннаяПодсказка" id="998"/>
+								</InputField>
+							</ChildItems>
+						</Table>
 					</ChildItems>
 				</UsualGroup>
 				<UsualGroup name="ГруппаЭлектронноеПродление" id="863">
@@ -2155,6 +2364,175 @@
 					<v8:content>Включать лицензию крипто про в сертификат</v8:content>
 				</v8:item>
 			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="СписокТокенов" id="59">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Список токенов</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTable</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="Токен" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Токен</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="Описание" id="2">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Описание</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="Представление" id="3">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Представление</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="Слот" id="4">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Слот</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>10</v8:Digits>
+							<v8:FractionDigits>0</v8:FractionDigits>
+							<v8:AllowedSign>Any</v8:AllowedSign>
+						</v8:NumberQualifiers>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="Модель" id="5">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Модель</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="Ошибка" id="8">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Ошибка</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="ПрограммаИмя" id="9">
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="ПрограммаТип" id="10">
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="ПрограммаИдентификатор" id="11">
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="ТипМеханизмаГенерацииКлючевойПары" id="131">
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>10</v8:Digits>
+							<v8:FractionDigits>0</v8:FractionDigits>
+							<v8:AllowedSign>Any</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+		<Attribute name="ТекстОшибкиЗаполненияПрограмм" id="66">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ТекстОшибкиЗаполненияУстройств" id="103">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="КлючНаТокене" id="105">
 			<Type>
 				<v8:Type>xs:boolean</v8:Type>
 			</Type>

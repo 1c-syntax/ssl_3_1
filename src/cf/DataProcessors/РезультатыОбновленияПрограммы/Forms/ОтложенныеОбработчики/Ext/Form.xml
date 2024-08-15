@@ -446,26 +446,52 @@
 							</Title>
 							<HorizontalAlign>Left</HorizontalAlign>
 							<EditMode>EnterOnInput</EditMode>
-							<Width>4</Width>
+							<Width>3</Width>
 							<HorizontalStretch>false</HorizontalStretch>
 							<ContextMenu name="НомерКонтекстноеМеню" id="39"/>
 							<ExtendedTooltip name="НомерРасширеннаяПодсказка" id="40"/>
 						</InputField>
-						<InputField name="ОтложенныеОбработчикиОбработчик" id="41">
-							<DataPath>ОтложенныеОбработчики.Обработчик</DataPath>
+						<ColumnGroup name="ГруппаОбработчик" id="148">
 							<Title>
 								<v8:item>
 									<v8:lang>ru</v8:lang>
-									<v8:content>Процедура обработки данных</v8:content>
+									<v8:content>Обработчик</v8:content>
 								</v8:item>
 							</Title>
-							<EditMode>EnterOnInput</EditMode>
-							<Width>36</Width>
-							<HorizontalStretch>false</HorizontalStretch>
-							<MultiLine>true</MultiLine>
-							<ContextMenu name="ОтложенныеОбработчикиОбработчикКонтекстноеМеню" id="42"/>
-							<ExtendedTooltip name="ОтложенныеОбработчикиОбработчикРасширеннаяПодсказка" id="43"/>
-						</InputField>
+							<ExtendedTooltip name="ГруппаОбработчикРасширеннаяПодсказка" id="149"/>
+							<ChildItems>
+								<InputField name="ОтложенныеОбработчикиОбработчик" id="41">
+									<DataPath>ОтложенныеОбработчики.Обработчик</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Процедура обработки данных</v8:content>
+										</v8:item>
+									</Title>
+									<EditMode>EnterOnInput</EditMode>
+									<AutoCellHeight>true</AutoCellHeight>
+									<Width>40</Width>
+									<HorizontalStretch>false</HorizontalStretch>
+									<ContextMenu name="ОтложенныеОбработчикиОбработчикКонтекстноеМеню" id="42"/>
+									<ExtendedTooltip name="ОтложенныеОбработчикиОбработчикРасширеннаяПодсказка" id="43"/>
+								</InputField>
+								<LabelField name="ОтложенныеОбработчикиОбработчикДополнение" id="150">
+									<DataPath>ОтложенныеОбработчики.ОбработчикДополнение</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Дополнение</v8:content>
+										</v8:item>
+									</Title>
+									<TitleLocation>None</TitleLocation>
+									<EditMode>EnterOnInput</EditMode>
+									<CellHyperlink>true</CellHyperlink>
+									<ShowInHeader>false</ShowInHeader>
+									<ContextMenu name="ОтложенныеОбработчикиОбработчикДополнениеКонтекстноеМеню" id="151"/>
+									<ExtendedTooltip name="ОтложенныеОбработчикиОбработчикДополнениеРасширеннаяПодсказка" id="152"/>
+								</LabelField>
+							</ChildItems>
+						</ColumnGroup>
 						<ColumnGroup name="ГруппаСтатусКартинка" id="44">
 							<Title>
 								<v8:item>
@@ -488,7 +514,8 @@
 									</Title>
 									<TitleLocation>None</TitleLocation>
 									<EditMode>EnterOnInput</EditMode>
-									<Width>9</Width>
+									<AutoCellHeight>true</AutoCellHeight>
+									<Width>3</Width>
 									<HorizontalStretch>false</HorizontalStretch>
 									<FileDragMode>AsFile</FileDragMode>
 									<ContextMenu name="ОтложенныеОбработчикиСтатусКартинкаКонтекстноеМеню" id="47"/>
@@ -602,12 +629,6 @@
 									<v8:content>Обработчики обновления</v8:content>
 								</v8:item>
 							</Title>
-							<ToolTip>
-								<v8:item>
-									<v8:lang>ru</v8:lang>
-									<v8:content>Переход к расширенному списку обработчиков обновления с возможностью просмотра служебных сведений для расследования ошибок обновления.</v8:content>
-								</v8:item>
-							</ToolTip>
 							<ToolTipRepresentation>Button</ToolTipRepresentation>
 							<Hyperlink>true</Hyperlink>
 							<ContextMenu name="ГиперссылкаОбработчикиОбновленияКонтекстноеМеню" id="138"/>
@@ -628,10 +649,11 @@
 							<Hyperlink>true</Hyperlink>
 							<ContextMenu name="ГиперссылкаОтложенноеОбновлениеКонтекстноеМеню" id="14"/>
 							<ExtendedTooltip name="ГиперссылкаОтложенноеОбновлениеРасширеннаяПодсказка" id="29">
-								<Title formatted="false">
+								<Title formatted="true">
 									<v8:item>
 										<v8:lang>ru</v8:lang>
-										<v8:content>Техническая информация из журнала регистрации для обращения в службу технической поддержки.</v8:content>
+										<v8:content>• &lt;b&gt;Обработчики обновления&lt;/&gt; - переход к расширенному списку обработчиков обновления с возможностью просмотра служебных сведений для расследования ошибок обновления.
+• &lt;b&gt;Журнал регистрации&lt;/&gt; - техническая информация для обращения в службу технической поддержки.</v8:content>
 									</v8:item>
 								</Title>
 							</ExtendedTooltip>
@@ -870,6 +892,26 @@
 							<v8:FractionDigits>0</v8:FractionDigits>
 							<v8:AllowedSign>Any</v8:AllowedSign>
 						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+				<Column name="ОбработчикДополнение" id="13">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Обработчик дополнение</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="ЭтоОбработчикОчисткиУстаревшихДанных" id="14">
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
 					</Type>
 				</Column>
 			</Columns>

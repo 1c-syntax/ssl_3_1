@@ -34,11 +34,6 @@
 				<CommandSource>Form</CommandSource>
 				<ExtendedTooltip name="СтандартныеКомандыРасширеннаяПодсказка" id="39"/>
 			</ButtonGroup>
-			<Button name="ФормаСправка" id="40">
-				<Type>CommandBarButton</Type>
-				<CommandName>Form.StandardCommand.Help</CommandName>
-				<ExtendedTooltip name="ФормаСправкаРасширеннаяПодсказка" id="41"/>
-			</Button>
 			<Button name="ФормаПроверитьЦелостностьТома" id="48">
 				<Type>CommandBarButton</Type>
 				<CommandName>Form.Command.ПроверитьЦелостностьТома</CommandName>
@@ -61,10 +56,17 @@
 				</Title>
 				<ExtendedTooltip name="ФормаУдалитьЛишниеФайлыРасширеннаяПодсказка" id="51"/>
 			</Button>
+			<Button name="ФормаСправка" id="40">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.StandardCommand.Help</CommandName>
+				<ExtendedTooltip name="ФормаСправкаРасширеннаяПодсказка" id="41"/>
+			</Button>
 		</ChildItems>
 	</AutoCommandBar>
 	<Events>
 		<Event name="AfterWrite">ПослеЗаписи</Event>
+		<Event name="OnReadAtServer">ПриЧтенииНаСервере</Event>
+		<Event name="OnOpen">ПриОткрытии</Event>
 		<Event name="BeforeClose">ПередЗакрытием</Event>
 		<Event name="BeforeWrite">ПередЗаписью</Event>
 		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>

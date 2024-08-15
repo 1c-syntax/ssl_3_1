@@ -29,10 +29,91 @@
 					<v8:content>Командная панель</v8:content>
 				</v8:item>
 			</Title>
+			<GroupHorizontalAlign>Left</GroupHorizontalAlign>
 			<Behavior>Usual</Behavior>
 			<Representation>None</Representation>
 			<ShowTitle>false</ShowTitle>
 			<ExtendedTooltip name="ГруппаКоманднаяПанельРасширеннаяПодсказка" id="68"/>
+			<ChildItems>
+				<Button name="ВариантыАдресаВыбрать" id="62">
+					<Type>UsualButton</Type>
+					<DefaultButton>true</DefaultButton>
+					<CommandName>Form.Command.Выбрать</CommandName>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Выбрать</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="ВариантыАдресаВыбратьРасширеннаяПодсказка" id="63"/>
+				</Button>
+				<InputField name="ПоискВВебСервисе" id="76">
+					<DataPath>ПоискВВебСервисе</DataPath>
+					<Visible>false</Visible>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Поиск</v8:content>
+						</v8:item>
+					</Title>
+					<TitleLocation>None</TitleLocation>
+					<Shortcut>Ctrl+F</Shortcut>
+					<GroupHorizontalAlign>Left</GroupHorizontalAlign>
+					<ClearButton>true</ClearButton>
+					<EditTextUpdate>DontUse</EditTextUpdate>
+					<InputHint>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Поиск (Ctrl+F)</v8:content>
+						</v8:item>
+					</InputHint>
+					<ContextMenu name="ПоискВВебСервисеКонтекстноеМеню" id="77"/>
+					<ExtendedTooltip name="ПоискВВебСервисеРасширеннаяПодсказка" id="78"/>
+					<Events>
+						<Event name="AutoComplete">ПоискВВебСервисеАвтоПодбор</Event>
+						<Event name="Clearing">ПоискВВебСервисеОчистка</Event>
+					</Events>
+				</InputField>
+				<SearchStringAddition name="ДополнениеПоиск" id="79">
+					<AdditionSource>
+						<Item>ВариантыАдреса</Item>
+						<Type>SearchStringRepresentation</Type>
+					</AdditionSource>
+					<GroupHorizontalAlign>Left</GroupHorizontalAlign>
+					<ContextMenu name="ДополнениеПоискКонтекстноеМеню" id="80"/>
+					<ExtendedTooltip name="ДополнениеПоискРасширеннаяПодсказка" id="81"/>
+				</SearchStringAddition>
+				<CommandBar name="ГруппаЕще" id="71">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Еще</v8:content>
+						</v8:item>
+					</Title>
+					<CommandSource>Form</CommandSource>
+					<ExtendedTooltip name="ГруппаЕщеРасширеннаяПодсказка" id="72"/>
+					<ChildItems>
+						<Button name="ВариантыАдресаОбновить" id="31">
+							<Type>CommandBarButton</Type>
+							<CommandName>Form.Command.Обновить</CommandName>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Обновить</v8:content>
+								</v8:item>
+							</Title>
+							<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
+							<ExtendedTooltip name="ВариантыАдресаОбновитьРасширеннаяПодсказка" id="32"/>
+						</Button>
+						<Button name="ВариантыАдресаИзменитьФорму" id="35">
+							<Type>CommandBarButton</Type>
+							<CommandName>Form.StandardCommand.CustomizeForm</CommandName>
+							<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
+							<ExtendedTooltip name="ВариантыАдресаИзменитьФормуРасширеннаяПодсказка" id="36"/>
+						</Button>
+					</ChildItems>
+				</CommandBar>
+			</ChildItems>
 		</UsualGroup>
 		<Table name="ВариантыАдреса" id="8">
 			<Representation>List</Representation>
@@ -113,49 +194,7 @@
 				</ChildItems>
 			</ContextMenu>
 			<AutoCommandBar name="ВариантыАдресаКоманднаяПанель" id="10">
-				<ChildItems>
-					<ButtonGroup name="ГруппаВыбрать" id="69">
-						<Title>
-							<v8:item>
-								<v8:lang>ru</v8:lang>
-								<v8:content>Выбрать</v8:content>
-							</v8:item>
-						</Title>
-						<ExtendedTooltip name="ГруппаВыбратьРасширеннаяПодсказка" id="70"/>
-						<ChildItems>
-							<Button name="ВариантыАдресаВыбрать" id="62">
-								<Type>CommandBarButton</Type>
-								<DefaultButton>true</DefaultButton>
-								<CommandName>Form.Command.Выбрать</CommandName>
-								<Title>
-									<v8:item>
-										<v8:lang>ru</v8:lang>
-										<v8:content>Выбрать</v8:content>
-									</v8:item>
-								</Title>
-								<ExtendedTooltip name="ВариантыАдресаВыбратьРасширеннаяПодсказка" id="63"/>
-							</Button>
-						</ChildItems>
-					</ButtonGroup>
-					<Button name="ВариантыАдресаОбновить" id="31">
-						<Type>CommandBarButton</Type>
-						<CommandName>Form.Command.Обновить</CommandName>
-						<Title>
-							<v8:item>
-								<v8:lang>ru</v8:lang>
-								<v8:content>Обновить</v8:content>
-							</v8:item>
-						</Title>
-						<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
-						<ExtendedTooltip name="ВариантыАдресаОбновитьРасширеннаяПодсказка" id="32"/>
-					</Button>
-					<Button name="ВариантыАдресаИзменитьФорму" id="35">
-						<Type>CommandBarButton</Type>
-						<CommandName>Form.StandardCommand.CustomizeForm</CommandName>
-						<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
-						<ExtendedTooltip name="ВариантыАдресаИзменитьФормуРасширеннаяПодсказка" id="36"/>
-					</Button>
-				</ChildItems>
+				<Autofill>false</Autofill>
 			</AutoCommandBar>
 			<ExtendedTooltip name="ВариантыАдресаРасширеннаяПодсказка" id="11"/>
 			<SearchStringAddition name="ВариантыАдресаСтрокаПоиска" id="51">
@@ -260,15 +299,6 @@
 				</v8:StringQualifiers>
 			</Type>
 		</Attribute>
-		<Attribute name="ИспользуемыйАдресныйКлассификатор" id="5">
-			<Type>
-				<v8:Type>xs:string</v8:Type>
-				<v8:StringQualifiers>
-					<v8:Length>0</v8:Length>
-					<v8:AllowedLength>Variable</v8:AllowedLength>
-				</v8:StringQualifiers>
-			</Type>
-		</Attribute>
 		<Attribute name="Индекс" id="4">
 			<Type>
 				<v8:Type>xs:decimal</v8:Type>
@@ -280,6 +310,30 @@
 			</Type>
 		</Attribute>
 		<Attribute name="КраткоеПредставлениеОшибки" id="6">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ПоискВВебСервисе" id="7">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Поиск</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ТипАдреса" id="5">
 			<Type>
 				<v8:Type>xs:string</v8:Type>
 				<v8:StringQualifiers>

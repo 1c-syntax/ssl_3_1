@@ -57,11 +57,6 @@
 					<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
 					<ExtendedTooltip name="ФормаУстановкаПометкиУдаленияРасширеннаяПодсказка" id="29"/>
 				</Button>
-				<Button name="ФормаСправка" id="54">
-					<Type>CommandBarButton</Type>
-					<CommandName>Form.StandardCommand.Help</CommandName>
-					<ExtendedTooltip name="ФормаСправкаРасширеннаяПодсказка" id="55"/>
-				</Button>
 				<Button name="ПеренестиВсеФайлыВТома" id="75">
 					<Type>CommandBarButton</Type>
 					<CommandName>Form.Command.ПеренестиФайлы</CommandName>
@@ -168,6 +163,9 @@
 				<ContextMenu name="СписокУправлениеПоискомКонтекстноеМеню" id="73"/>
 				<ExtendedTooltip name="СписокУправлениеПоискомРасширеннаяПодсказка" id="74"/>
 			</SearchControlAddition>
+			<Events>
+				<Event name="OnActivateRow">СписокПриАктивизацииСтроки</Event>
+			</Events>
 			<ChildItems>
 				<ColumnGroup name="ПерваяКолонка" id="56" DisplayImportance="VeryHigh">
 					<Title>
