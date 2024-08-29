@@ -191,7 +191,6 @@
 							<SkipOnInput>false</SkipOnInput>
 							<ChangeRowSet>false</ChangeRowSet>
 							<ChangeRowOrder>false</ChangeRowOrder>
-							<SelectionMode>SingleRow</SelectionMode>
 							<Header>false</Header>
 							<HorizontalLines>false</HorizontalLines>
 							<VerticalLines>false</VerticalLines>
@@ -247,7 +246,7 @@
 												<Title>
 													<v8:item>
 														<v8:lang>ru</v8:lang>
-														<v8:content>Включить роли</v8:content>
+														<v8:content>Включить выделенные роли</v8:content>
 													</v8:item>
 												</Title>
 												<ExtendedTooltip name="РолиУстановитьФлажкиРасширеннаяПодсказка" id="257"/>
@@ -259,7 +258,7 @@
 												<Title>
 													<v8:item>
 														<v8:lang>ru</v8:lang>
-														<v8:content>Исключить роли</v8:content>
+														<v8:content>Исключить выделенные роли</v8:content>
 													</v8:item>
 												</Title>
 												<ExtendedTooltip name="РолиСнятьФлажкиРасширеннаяПодсказка" id="258"/>
@@ -611,7 +610,57 @@
 													</CommandSet>
 													<RowFilter xsi:nil="true"/>
 													<ContextMenu name="ЗначенияДоступаКонтекстноеМеню" id="234"/>
-													<AutoCommandBar name="ЗначенияДоступаКоманднаяПанель" id="235"/>
+													<AutoCommandBar name="ЗначенияДоступаКоманднаяПанель" id="235">
+														<Autofill>false</Autofill>
+														<ChildItems>
+															<Button name="ЗначенияДоступаПодобратьЗначенияДоступа" id="417">
+																<Type>CommandBarButton</Type>
+																<CommandName>Form.Command.ПодобратьЗначенияДоступа</CommandName>
+																<Title>
+																	<v8:item>
+																		<v8:lang>ru</v8:lang>
+																		<v8:content>Подобрать</v8:content>
+																	</v8:item>
+																</Title>
+																<ExtendedTooltip name="ЗначенияДоступаПодобратьЗначенияДоступаРасширеннаяПодсказка" id="418"/>
+															</Button>
+															<Button name="ЗначенияДоступаДобавить" id="419">
+																<Type>CommandBarButton</Type>
+																<CommandName>Form.Item.ЗначенияДоступа.StandardCommand.Add</CommandName>
+																<ExtendedTooltip name="ЗначенияДоступаДобавитьРасширеннаяПодсказка" id="420"/>
+															</Button>
+															<Button name="ЗначенияДоступаУдалить" id="421">
+																<Type>CommandBarButton</Type>
+																<CommandName>Form.Item.ЗначенияДоступа.StandardCommand.Delete</CommandName>
+																<LocationInCommandBar>InCommandBarAndInAdditionalSubmenu</LocationInCommandBar>
+																<ExtendedTooltip name="ЗначенияДоступаУдалитьРасширеннаяПодсказка" id="422"/>
+															</Button>
+															<ButtonGroup name="ЗначенияДоступаСтандартныеКоманды" id="423">
+																<Title>
+																	<v8:item>
+																		<v8:lang>ru</v8:lang>
+																		<v8:content>Значения доступа стандартные команды</v8:content>
+																	</v8:item>
+																</Title>
+																<CommandSource>Item.ЗначенияДоступа</CommandSource>
+																<ExtendedTooltip name="ЗначенияДоступаСтандартныеКомандыРасширеннаяПодсказка" id="424"/>
+															</ButtonGroup>
+															<SearchStringAddition name="ЗначенияДоступаПоиск" id="425">
+																<AdditionSource>
+																	<Item>ЗначенияДоступа</Item>
+																	<Type>SearchStringRepresentation</Type>
+																</AdditionSource>
+																<Title>
+																	<v8:item>
+																		<v8:lang>ru</v8:lang>
+																		<v8:content>Поиск</v8:content>
+																	</v8:item>
+																</Title>
+																<ContextMenu name="ЗначенияДоступаПоискКонтекстноеМеню" id="426"/>
+																<ExtendedTooltip name="ЗначенияДоступаПоискРасширеннаяПодсказка" id="427"/>
+															</SearchStringAddition>
+														</ChildItems>
+													</AutoCommandBar>
 													<ExtendedTooltip name="ЗначенияДоступаРасширеннаяПодсказка" id="294"/>
 													<SearchStringAddition name="ЗначенияДоступаСтрокаПоиска" id="369">
 														<AdditionSource>
@@ -639,6 +688,7 @@
 													</SearchControlAddition>
 													<Events>
 														<Event name="OnEditEnd">ЗначенияДоступаПриОкончанииРедактирования</Event>
+														<Event name="ChoiceProcessing">ЗначенияДоступаОбработкаВыбора</Event>
 														<Event name="OnStartEdit">ЗначенияДоступаПриНачалеРедактирования</Event>
 														<Event name="OnChange">ЗначенияДоступаПриИзменении</Event>
 													</Events>
@@ -663,7 +713,6 @@
 																<Event name="StartChoice">ЗначениеДоступаНачалоВыбора</Event>
 																<Event name="Clearing">ЗначениеДоступаОчистка</Event>
 																<Event name="TextEditEnd">ЗначениеДоступаОкончаниеВводаТекста</Event>
-																<Event name="ChoiceProcessing">ЗначениеДоступаОбработкаВыбора</Event>
 															</Events>
 														</InputField>
 														<CheckBoxField name="ЗначенияДоступаВключаяНижестоящие" id="397">
@@ -1048,13 +1097,13 @@
 			<Title>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Включить роли</v8:content>
+					<v8:content>Включить выделенные роли</v8:content>
 				</v8:item>
 			</Title>
 			<ToolTip>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Включить роли</v8:content>
+					<v8:content>Включить выделенные роли</v8:content>
 				</v8:item>
 			</ToolTip>
 			<Picture>
@@ -1069,13 +1118,13 @@
 			<Title>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Исключить роли</v8:content>
+					<v8:content>Исключить выделенные роли</v8:content>
 				</v8:item>
 			</Title>
 			<ToolTip>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Исключить роли</v8:content>
+					<v8:content>Исключить выделенные роли</v8:content>
 				</v8:item>
 			</ToolTip>
 			<Picture>
@@ -1155,6 +1204,21 @@
 			</ToolTip>
 			<Action>ЗаписатьИЗакрыть</Action>
 			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ПодобратьЗначенияДоступа" id="9">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Подобрать</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Подобрать</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ПодобратьЗначенияДоступа</Action>
 		</Command>
 	</Commands>
 </Form>

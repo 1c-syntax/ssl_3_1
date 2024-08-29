@@ -287,208 +287,221 @@
 					<ShowTitle>false</ShowTitle>
 					<ExtendedTooltip name="ГруппаЛевоРасширеннаяПодсказка" id="362"/>
 					<ChildItems>
-						<Table name="СписокПолучателей" id="399">
-							<Representation>List</Representation>
-							<AutoMaxWidth>false</AutoMaxWidth>
-							<Height>4</Height>
-							<AutoMaxHeight>false</AutoMaxHeight>
-							<MaxHeight>5</MaxHeight>
-							<HeightInTableRows>4</HeightInTableRows>
-							<Header>false</Header>
-							<AutoInsertNewRow>true</AutoInsertNewRow>
-							<EnableStartDrag>true</EnableStartDrag>
-							<EnableDrag>true</EnableDrag>
-							<FileDragMode>AsFile</FileDragMode>
-							<DataPath>СписокПолучателей</DataPath>
+						<UsualGroup name="ГруппаПолучатели" id="499">
 							<Title>
 								<v8:item>
 									<v8:lang>ru</v8:lang>
-									<v8:content>Получателей</v8:content>
+									<v8:content>Получатели</v8:content>
 								</v8:item>
 							</Title>
-							<RowFilter xsi:nil="true"/>
-							<ContextMenu name="СписокПолучателейКонтекстноеМеню" id="400"/>
-							<AutoCommandBar name="СписокПолучателейКоманднаяПанель" id="401">
-								<Autofill>false</Autofill>
-							</AutoCommandBar>
-							<ExtendedTooltip name="СписокПолучателейРасширеннаяПодсказка" id="402"/>
-							<SearchStringAddition name="СписокПолучателейСтрокаПоиска" id="403">
-								<AdditionSource>
-									<Item>СписокПолучателей</Item>
-									<Type>SearchStringRepresentation</Type>
-								</AdditionSource>
-								<ContextMenu name="СписокПолучателейСтрокаПоискаКонтекстноеМеню" id="404"/>
-								<ExtendedTooltip name="СписокПолучателейСтрокаПоискаРасширеннаяПодсказка" id="405"/>
-							</SearchStringAddition>
-							<ViewStatusAddition name="СписокПолучателейСостояниеПросмотра" id="406">
-								<AdditionSource>
-									<Item>СписокПолучателей</Item>
-									<Type>ViewStatusRepresentation</Type>
-								</AdditionSource>
-								<ContextMenu name="СписокПолучателейСостояниеПросмотраКонтекстноеМеню" id="407"/>
-								<ExtendedTooltip name="СписокПолучателейСостояниеПросмотраРасширеннаяПодсказка" id="408"/>
-							</ViewStatusAddition>
-							<SearchControlAddition name="СписокПолучателейУправлениеПоиском" id="409">
-								<AdditionSource>
-									<Item>СписокПолучателей</Item>
-									<Type>SearchControl</Type>
-								</AdditionSource>
-								<ContextMenu name="СписокПолучателейУправлениеПоискомКонтекстноеМеню" id="410"/>
-								<ExtendedTooltip name="СписокПолучателейУправлениеПоискомРасширеннаяПодсказка" id="411"/>
-							</SearchControlAddition>
-							<Events>
-								<Event name="BeforeDeleteRow">СписокПолучателейПередУдалением</Event>
-								<Event name="BeforeEditEnd">СписокПолучателейПередОкончаниемРедактирования</Event>
-								<Event name="OnStartEdit">СписокПолучателейПриНачалеРедактирования</Event>
-								<Event name="OnChange">СписокПолучателейПриИзменении</Event>
-							</Events>
+							<Group>Vertical</Group>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаПолучателиРасширеннаяПодсказка" id="500"/>
 							<ChildItems>
-								<InputField name="СписокПолучателейВариантОтправки" id="412">
-									<DataPath>СписокПолучателей.ВариантОтправки</DataPath>
+								<Table name="СписокПолучателей" id="399">
+									<Representation>List</Representation>
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<Height>4</Height>
+									<AutoMaxHeight>false</AutoMaxHeight>
+									<MaxHeight>5</MaxHeight>
+									<HeightInTableRows>4</HeightInTableRows>
+									<Header>false</Header>
+									<AutoInsertNewRow>true</AutoInsertNewRow>
+									<EnableStartDrag>true</EnableStartDrag>
+									<EnableDrag>true</EnableDrag>
+									<FileDragMode>AsFile</FileDragMode>
+									<DataPath>СписокПолучателей</DataPath>
 									<Title>
 										<v8:item>
 											<v8:lang>ru</v8:lang>
-											<v8:content>Вариант отправки</v8:content>
+											<v8:content>Получателей</v8:content>
 										</v8:item>
 									</Title>
-									<EditMode>EnterOnInput</EditMode>
-									<Width>3</Width>
-									<ListChoiceMode>true</ListChoiceMode>
-									<ChooseType>false</ChooseType>
-									<IncompleteChoiceMode>OnActivate</IncompleteChoiceMode>
-									<TextEdit>false</TextEdit>
-									<ChoiceList>
-										<xr:Item>
-											<xr:Presentation/>
-											<xr:CheckState>0</xr:CheckState>
-											<xr:Value xsi:type="FormChoiceListDesTimeValue">
-												<Presentation>
-													<v8:item>
-														<v8:lang>ru</v8:lang>
-														<v8:content>Кому:</v8:content>
-													</v8:item>
-												</Presentation>
-												<Value xsi:type="xs:string">Кому</Value>
-											</xr:Value>
-										</xr:Item>
-										<xr:Item>
-											<xr:Presentation/>
-											<xr:CheckState>0</xr:CheckState>
-											<xr:Value xsi:type="FormChoiceListDesTimeValue">
-												<Presentation>
-													<v8:item>
-														<v8:lang>ru</v8:lang>
-														<v8:content>Копия:</v8:content>
-													</v8:item>
-												</Presentation>
-												<Value xsi:type="xs:string">Копия</Value>
-											</xr:Value>
-										</xr:Item>
-										<xr:Item>
-											<xr:Presentation/>
-											<xr:CheckState>0</xr:CheckState>
-											<xr:Value xsi:type="FormChoiceListDesTimeValue">
-												<Presentation>
-													<v8:item>
-														<v8:lang>ru</v8:lang>
-														<v8:content>Скрытая копия:</v8:content>
-													</v8:item>
-												</Presentation>
-												<Value xsi:type="xs:string">СкрытаяКопия</Value>
-											</xr:Value>
-										</xr:Item>
-										<xr:Item>
-											<xr:Presentation/>
-											<xr:CheckState>0</xr:CheckState>
-											<xr:Value xsi:type="FormChoiceListDesTimeValue">
-												<Presentation>
-													<v8:item>
-														<v8:lang>ru</v8:lang>
-														<v8:content>Обратный адрес:</v8:content>
-													</v8:item>
-												</Presentation>
-												<Value xsi:type="xs:string">ОбратныйАдрес</Value>
-											</xr:Value>
-										</xr:Item>
-									</ChoiceList>
-									<ContextMenu name="СписокПолучателейВариантОтправкиКонтекстноеМеню" id="413"/>
-									<ExtendedTooltip name="СписокПолучателейВариантОтправкиРасширеннаяПодсказка" id="414"/>
-								</InputField>
-								<InputField name="СписокПолучателейПредставление" id="418">
-									<DataPath>СписокПолучателей.Представление</DataPath>
-									<DefaultItem>true</DefaultItem>
-									<Title>
-										<v8:item>
-											<v8:lang>ru</v8:lang>
-											<v8:content>Представление</v8:content>
-										</v8:item>
-									</Title>
-									<EditMode>EnterOnInput</EditMode>
-									<ChoiceButton>true</ChoiceButton>
-									<ContextMenu name="СписокПолучателейПредставлениеКонтекстноеМеню" id="419"/>
-									<ExtendedTooltip name="СписокПолучателейПредставлениеРасширеннаяПодсказка" id="420"/>
+									<RowFilter xsi:nil="true"/>
+									<ContextMenu name="СписокПолучателейКонтекстноеМеню" id="400"/>
+									<AutoCommandBar name="СписокПолучателейКоманднаяПанель" id="401">
+										<Autofill>false</Autofill>
+									</AutoCommandBar>
+									<ExtendedTooltip name="СписокПолучателейРасширеннаяПодсказка" id="402"/>
+									<SearchStringAddition name="СписокПолучателейСтрокаПоиска" id="403">
+										<AdditionSource>
+											<Item>СписокПолучателей</Item>
+											<Type>SearchStringRepresentation</Type>
+										</AdditionSource>
+										<ContextMenu name="СписокПолучателейСтрокаПоискаКонтекстноеМеню" id="404"/>
+										<ExtendedTooltip name="СписокПолучателейСтрокаПоискаРасширеннаяПодсказка" id="405"/>
+									</SearchStringAddition>
+									<ViewStatusAddition name="СписокПолучателейСостояниеПросмотра" id="406">
+										<AdditionSource>
+											<Item>СписокПолучателей</Item>
+											<Type>ViewStatusRepresentation</Type>
+										</AdditionSource>
+										<ContextMenu name="СписокПолучателейСостояниеПросмотраКонтекстноеМеню" id="407"/>
+										<ExtendedTooltip name="СписокПолучателейСостояниеПросмотраРасширеннаяПодсказка" id="408"/>
+									</ViewStatusAddition>
+									<SearchControlAddition name="СписокПолучателейУправлениеПоиском" id="409">
+										<AdditionSource>
+											<Item>СписокПолучателей</Item>
+											<Type>SearchControl</Type>
+										</AdditionSource>
+										<ContextMenu name="СписокПолучателейУправлениеПоискомКонтекстноеМеню" id="410"/>
+										<ExtendedTooltip name="СписокПолучателейУправлениеПоискомРасширеннаяПодсказка" id="411"/>
+									</SearchControlAddition>
 									<Events>
-										<Event name="AutoComplete">СписокПолучателейПредставлениеАвтоПодбор</Event>
-										<Event name="StartChoice">СписокПолучателейПредставлениеНачалоВыбора</Event>
-										<Event name="ChoiceProcessing">СписокПолучателейПредставлениеОбработкаВыбора</Event>
+										<Event name="BeforeDeleteRow">СписокПолучателейПередУдалением</Event>
+										<Event name="BeforeEditEnd">СписокПолучателейПередОкончаниемРедактирования</Event>
+										<Event name="OnStartEdit">СписокПолучателейПриНачалеРедактирования</Event>
+										<Event name="OnChange">СписокПолучателейПриИзменении</Event>
 									</Events>
-								</InputField>
-							</ChildItems>
-						</Table>
-						<Pages name="СтраницыУказаныКонтакты" id="255">
-							<Title>
-								<v8:item>
-									<v8:lang>ru</v8:lang>
-									<v8:content>Страницы указаны контакты</v8:content>
-								</v8:item>
-							</Title>
-							<GroupHorizontalAlign>Right</GroupHorizontalAlign>
-							<PagesRepresentation>None</PagesRepresentation>
-							<ExtendedTooltip name="СтраницыУказаныКонтактыРасширеннаяПодсказка" id="313"/>
-							<ChildItems>
-								<Page name="СтраницаКонтактыЗаполнены" id="256">
-									<Title>
-										<v8:item>
-											<v8:lang>ru</v8:lang>
-											<v8:content>Страница контакты заполнены</v8:content>
-										</v8:item>
-									</Title>
-									<Group>HorizontalIfPossible</Group>
-									<ExtendedTooltip name="СтраницаКонтактыЗаполненыРасширеннаяПодсказка" id="314"/>
 									<ChildItems>
-										<LabelDecoration name="ДекорацияПустая" id="257">
-											<Width>10</Width>
-											<ContextMenu name="ДекорацияПустаяКонтекстноеМеню" id="258"/>
-											<ExtendedTooltip name="ДекорацияПустаяРасширеннаяПодсказка" id="315"/>
-										</LabelDecoration>
-									</ChildItems>
-								</Page>
-								<Page name="СтраницаКонтактыНеЗаполнены" id="261">
-									<Title>
-										<v8:item>
-											<v8:lang>ru</v8:lang>
-											<v8:content>Страница контакты не заполнены</v8:content>
-										</v8:item>
-									</Title>
-									<Group>HorizontalIfPossible</Group>
-									<ExtendedTooltip name="СтраницаКонтактыНеЗаполненыРасширеннаяПодсказка" id="317"/>
-									<ChildItems>
-										<Button name="УточнитьКонтакты" id="263">
-											<Type>Hyperlink</Type>
-											<Representation>PictureAndText</Representation>
-											<CommandName>Form.Command.УточнитьКонтакты</CommandName>
+										<InputField name="СписокПолучателейВариантОтправки" id="412">
+											<DataPath>СписокПолучателей.ВариантОтправки</DataPath>
 											<Title>
 												<v8:item>
 													<v8:lang>ru</v8:lang>
-													<v8:content>Сохранить адреса в контакты</v8:content>
+													<v8:content>Вариант отправки</v8:content>
 												</v8:item>
 											</Title>
-											<ExtendedTooltip name="УточнитьКонтактыРасширеннаяПодсказка" id="319"/>
-										</Button>
+											<EditMode>EnterOnInput</EditMode>
+											<Width>3</Width>
+											<ListChoiceMode>true</ListChoiceMode>
+											<ChooseType>false</ChooseType>
+											<IncompleteChoiceMode>OnActivate</IncompleteChoiceMode>
+											<TextEdit>false</TextEdit>
+											<ChoiceList>
+												<xr:Item>
+													<xr:Presentation/>
+													<xr:CheckState>0</xr:CheckState>
+													<xr:Value xsi:type="FormChoiceListDesTimeValue">
+														<Presentation>
+															<v8:item>
+																<v8:lang>ru</v8:lang>
+																<v8:content>Кому:</v8:content>
+															</v8:item>
+														</Presentation>
+														<Value xsi:type="xs:string">Кому</Value>
+													</xr:Value>
+												</xr:Item>
+												<xr:Item>
+													<xr:Presentation/>
+													<xr:CheckState>0</xr:CheckState>
+													<xr:Value xsi:type="FormChoiceListDesTimeValue">
+														<Presentation>
+															<v8:item>
+																<v8:lang>ru</v8:lang>
+																<v8:content>Копия:</v8:content>
+															</v8:item>
+														</Presentation>
+														<Value xsi:type="xs:string">Копия</Value>
+													</xr:Value>
+												</xr:Item>
+												<xr:Item>
+													<xr:Presentation/>
+													<xr:CheckState>0</xr:CheckState>
+													<xr:Value xsi:type="FormChoiceListDesTimeValue">
+														<Presentation>
+															<v8:item>
+																<v8:lang>ru</v8:lang>
+																<v8:content>Скрытая копия:</v8:content>
+															</v8:item>
+														</Presentation>
+														<Value xsi:type="xs:string">СкрытаяКопия</Value>
+													</xr:Value>
+												</xr:Item>
+												<xr:Item>
+													<xr:Presentation/>
+													<xr:CheckState>0</xr:CheckState>
+													<xr:Value xsi:type="FormChoiceListDesTimeValue">
+														<Presentation>
+															<v8:item>
+																<v8:lang>ru</v8:lang>
+																<v8:content>Обратный адрес:</v8:content>
+															</v8:item>
+														</Presentation>
+														<Value xsi:type="xs:string">ОбратныйАдрес</Value>
+													</xr:Value>
+												</xr:Item>
+											</ChoiceList>
+											<ContextMenu name="СписокПолучателейВариантОтправкиКонтекстноеМеню" id="413"/>
+											<ExtendedTooltip name="СписокПолучателейВариантОтправкиРасширеннаяПодсказка" id="414"/>
+										</InputField>
+										<InputField name="СписокПолучателейПредставление" id="418">
+											<DataPath>СписокПолучателей.Представление</DataPath>
+											<DefaultItem>true</DefaultItem>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Представление</v8:content>
+												</v8:item>
+											</Title>
+											<EditMode>EnterOnInput</EditMode>
+											<ChoiceButton>true</ChoiceButton>
+											<ContextMenu name="СписокПолучателейПредставлениеКонтекстноеМеню" id="419"/>
+											<ExtendedTooltip name="СписокПолучателейПредставлениеРасширеннаяПодсказка" id="420"/>
+											<Events>
+												<Event name="AutoComplete">СписокПолучателейПредставлениеАвтоПодбор</Event>
+												<Event name="StartChoice">СписокПолучателейПредставлениеНачалоВыбора</Event>
+												<Event name="ChoiceProcessing">СписокПолучателейПредставлениеОбработкаВыбора</Event>
+											</Events>
+										</InputField>
 									</ChildItems>
-								</Page>
+								</Table>
+								<Pages name="СтраницыУказаныКонтакты" id="255">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Страницы указаны контакты</v8:content>
+										</v8:item>
+									</Title>
+									<GroupHorizontalAlign>Right</GroupHorizontalAlign>
+									<PagesRepresentation>None</PagesRepresentation>
+									<ExtendedTooltip name="СтраницыУказаныКонтактыРасширеннаяПодсказка" id="313"/>
+									<ChildItems>
+										<Page name="СтраницаКонтактыЗаполнены" id="256">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Страница контакты заполнены</v8:content>
+												</v8:item>
+											</Title>
+											<Group>HorizontalIfPossible</Group>
+											<ExtendedTooltip name="СтраницаКонтактыЗаполненыРасширеннаяПодсказка" id="314"/>
+											<ChildItems>
+												<LabelDecoration name="ДекорацияПустая" id="257">
+													<Width>10</Width>
+													<ContextMenu name="ДекорацияПустаяКонтекстноеМеню" id="258"/>
+													<ExtendedTooltip name="ДекорацияПустаяРасширеннаяПодсказка" id="315"/>
+												</LabelDecoration>
+											</ChildItems>
+										</Page>
+										<Page name="СтраницаКонтактыНеЗаполнены" id="261">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Страница контакты не заполнены</v8:content>
+												</v8:item>
+											</Title>
+											<Group>HorizontalIfPossible</Group>
+											<ExtendedTooltip name="СтраницаКонтактыНеЗаполненыРасширеннаяПодсказка" id="317"/>
+											<ChildItems>
+												<Button name="УточнитьКонтакты" id="263">
+													<Type>Hyperlink</Type>
+													<Representation>PictureAndText</Representation>
+													<CommandName>Form.Command.УточнитьКонтакты</CommandName>
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Сохранить адреса в контакты</v8:content>
+														</v8:item>
+													</Title>
+													<ExtendedTooltip name="УточнитьКонтактыРасширеннаяПодсказка" id="319"/>
+												</Button>
+											</ChildItems>
+										</Page>
+									</ChildItems>
+								</Pages>
 							</ChildItems>
-						</Pages>
+						</UsualGroup>
 						<UsualGroup name="ГруппаТема" id="484">
 							<Title>
 								<v8:item>
@@ -954,315 +967,328 @@
 					<ShowTitle>false</ShowTitle>
 					<ExtendedTooltip name="ГруппаПравоРасширеннаяПодсказка" id="364"/>
 					<ChildItems>
-						<Table name="Вложения" id="138">
-							<Representation>List</Representation>
-							<CommandBarLocation>None</CommandBarLocation>
-							<SkipOnInput>false</SkipOnInput>
-							<Width>32</Width>
-							<AutoMaxWidth>false</AutoMaxWidth>
-							<HeightInTableRows>2</HeightInTableRows>
-							<RowSelectionMode>Row</RowSelectionMode>
-							<HorizontalLines>false</HorizontalLines>
-							<VerticalLines>false</VerticalLines>
-							<AutoInsertNewRow>true</AutoInsertNewRow>
-							<EnableDrag>true</EnableDrag>
-							<FileDragMode>AsFile</FileDragMode>
-							<DataPath>Вложения</DataPath>
-							<RowPictureDataPath>Вложения.ИндексКартинки</RowPictureDataPath>
-							<RowsPicture>
-								<xr:Ref>CommonPicture.КоллекцияПиктограммФайлов</xr:Ref>
-								<xr:LoadTransparent>false</xr:LoadTransparent>
-							</RowsPicture>
+						<UsualGroup name="ГруппаВложения" id="501">
 							<Title>
 								<v8:item>
 									<v8:lang>ru</v8:lang>
 									<v8:content>Вложения</v8:content>
 								</v8:item>
 							</Title>
-							<RowFilter xsi:nil="true"/>
-							<ContextMenu name="ВложенияКонтекстноеМеню" id="139">
-								<Autofill>false</Autofill>
-								<ChildItems>
-									<Button name="ДобавитьВложение" id="150">
-										<Type>CommandBarButton</Type>
-										<SkipOnInput>false</SkipOnInput>
-										<CommandName>Form.Command.ДобавитьВложение</CommandName>
-										<Title>
-											<v8:item>
-												<v8:lang>ru</v8:lang>
-												<v8:content>Добавить вложение...</v8:content>
-											</v8:item>
-										</Title>
-										<ExtendedTooltip name="ДобавитьВложениеРасширеннаяПодсказка" id="331"/>
-									</Button>
-									<Button name="ДобавитьПисьмо" id="397">
-										<Type>CommandBarButton</Type>
-										<CommandName>Form.Command.ДобавитьПисьмо</CommandName>
-										<Title>
-											<v8:item>
-												<v8:lang>ru</v8:lang>
-												<v8:content>Добавить письмо как вложение...</v8:content>
-											</v8:item>
-										</Title>
-										<ExtendedTooltip name="ДобавитьПисьмоРасширеннаяПодсказка" id="398"/>
-									</Button>
-									<Button name="ОткрытьВложение" id="152">
-										<Type>CommandBarButton</Type>
-										<SkipOnInput>false</SkipOnInput>
-										<CommandName>Form.Command.ОткрытьВложение</CommandName>
-										<Title>
-											<v8:item>
-												<v8:lang>ru</v8:lang>
-												<v8:content>Открыть вложение...</v8:content>
-											</v8:item>
-										</Title>
-										<ExtendedTooltip name="ОткрытьВложениеРасширеннаяПодсказка" id="332"/>
-									</Button>
-									<Button name="СохранитьВложение" id="153">
-										<Type>CommandBarButton</Type>
-										<SkipOnInput>false</SkipOnInput>
-										<CommandName>Form.Command.СохранитьВложение</CommandName>
-										<Title>
-											<v8:item>
-												<v8:lang>ru</v8:lang>
-												<v8:content>Сохранить вложение...</v8:content>
-											</v8:item>
-										</Title>
-										<ExtendedTooltip name="СохранитьВложениеРасширеннаяПодсказка" id="333"/>
-									</Button>
-									<ButtonGroup name="ВложенияКонтекстноеМенюГруппа" id="466">
-										<Title>
-											<v8:item>
-												<v8:lang>ru</v8:lang>
-												<v8:content>Вложения контекстное меню группа</v8:content>
-											</v8:item>
-										</Title>
-										<ExtendedTooltip name="ВложенияКонтекстноеМенюГруппаРасширеннаяПодсказка" id="467"/>
-										<ChildItems>
-											<Button name="УдалитьВложение" id="187">
-												<Type>CommandBarButton</Type>
-												<SkipOnInput>false</SkipOnInput>
-												<CommandName>Form.Item.Вложения.StandardCommand.Delete</CommandName>
-												<Title>
-													<v8:item>
-														<v8:lang>ru</v8:lang>
-														<v8:content>Удалить вложение</v8:content>
-													</v8:item>
-												</Title>
-												<ExtendedTooltip name="УдалитьВложениеРасширеннаяПодсказка" id="334"/>
-											</Button>
-										</ChildItems>
-									</ButtonGroup>
-									<Button name="ВложенияКонтекстноеМенюСвойстваВложения" id="280">
-										<Type>CommandBarButton</Type>
-										<CommandName>Form.Command.СвойстваВложения</CommandName>
-										<Title>
-											<v8:item>
-												<v8:lang>ru</v8:lang>
-												<v8:content>Свойства вложения...</v8:content>
-											</v8:item>
-										</Title>
-										<ExtendedTooltip name="ВложенияКонтекстноеМенюСвойстваВложенияРасширеннаяПодсказка" id="335"/>
-									</Button>
-								</ChildItems>
-							</ContextMenu>
-							<AutoCommandBar name="ВложенияКоманднаяПанель" id="140"/>
-							<ExtendedTooltip name="ВложенияРасширеннаяПодсказка" id="336"/>
-							<SearchStringAddition name="ВложенияСтрокаПоиска" id="376">
-								<AdditionSource>
-									<Item>Вложения</Item>
-									<Type>SearchStringRepresentation</Type>
-								</AdditionSource>
-								<ContextMenu name="ВложенияСтрокаПоискаКонтекстноеМеню" id="377"/>
-								<ExtendedTooltip name="ВложенияСтрокаПоискаРасширеннаяПодсказка" id="378"/>
-							</SearchStringAddition>
-							<ViewStatusAddition name="ВложенияСостояниеПросмотра" id="379">
-								<AdditionSource>
-									<Item>Вложения</Item>
-									<Type>ViewStatusRepresentation</Type>
-								</AdditionSource>
-								<ContextMenu name="ВложенияСостояниеПросмотраКонтекстноеМеню" id="380"/>
-								<ExtendedTooltip name="ВложенияСостояниеПросмотраРасширеннаяПодсказка" id="381"/>
-							</ViewStatusAddition>
-							<SearchControlAddition name="ВложенияУправлениеПоиском" id="382">
-								<AdditionSource>
-									<Item>Вложения</Item>
-									<Type>SearchControl</Type>
-								</AdditionSource>
-								<ContextMenu name="ВложенияУправлениеПоискомКонтекстноеМеню" id="383"/>
-								<ExtendedTooltip name="ВложенияУправлениеПоискомРасширеннаяПодсказка" id="384"/>
-							</SearchControlAddition>
-							<Events>
-								<Event name="DragCheck">ВложенияПроверкаПеретаскивания</Event>
-								<Event name="Selection">ВложенияВыбор</Event>
-								<Event name="BeforeAddRow">ВложенияПередНачаломДобавления</Event>
-								<Event name="BeforeDeleteRow">ВложенияПередУдалением</Event>
-								<Event name="Drag">ВложенияПеретаскивание</Event>
-								<Event name="OnActivateCell">ВложенияПриАктивизацииЯчейки</Event>
-							</Events>
+							<Group>Vertical</Group>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаВложенияРасширеннаяПодсказка" id="502"/>
 							<ChildItems>
-								<ColumnGroup name="Группа" id="149">
+								<Table name="Вложения" id="138">
+									<Representation>List</Representation>
+									<CommandBarLocation>None</CommandBarLocation>
+									<SkipOnInput>false</SkipOnInput>
+									<Width>32</Width>
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<HeightInTableRows>2</HeightInTableRows>
+									<RowSelectionMode>Row</RowSelectionMode>
+									<HorizontalLines>false</HorizontalLines>
+									<VerticalLines>false</VerticalLines>
+									<AutoInsertNewRow>true</AutoInsertNewRow>
+									<EnableDrag>true</EnableDrag>
+									<FileDragMode>AsFile</FileDragMode>
+									<DataPath>Вложения</DataPath>
+									<RowPictureDataPath>Вложения.ИндексКартинки</RowPictureDataPath>
+									<RowsPicture>
+										<xr:Ref>CommonPicture.КоллекцияПиктограммФайлов</xr:Ref>
+										<xr:LoadTransparent>false</xr:LoadTransparent>
+									</RowsPicture>
 									<Title>
 										<v8:item>
 											<v8:lang>ru</v8:lang>
 											<v8:content>Вложения</v8:content>
 										</v8:item>
 									</Title>
-									<Group>InCell</Group>
-									<ShowInHeader>true</ShowInHeader>
-									<ExtendedTooltip name="ГруппаРасширеннаяПодсказка" id="338"/>
+									<RowFilter xsi:nil="true"/>
+									<ContextMenu name="ВложенияКонтекстноеМеню" id="139">
+										<Autofill>false</Autofill>
+										<ChildItems>
+											<Button name="ДобавитьВложение" id="150">
+												<Type>CommandBarButton</Type>
+												<SkipOnInput>false</SkipOnInput>
+												<CommandName>Form.Command.ДобавитьВложение</CommandName>
+												<Title>
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>Добавить вложение...</v8:content>
+													</v8:item>
+												</Title>
+												<ExtendedTooltip name="ДобавитьВложениеРасширеннаяПодсказка" id="331"/>
+											</Button>
+											<Button name="ДобавитьПисьмо" id="397">
+												<Type>CommandBarButton</Type>
+												<CommandName>Form.Command.ДобавитьПисьмо</CommandName>
+												<Title>
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>Добавить письмо как вложение...</v8:content>
+													</v8:item>
+												</Title>
+												<ExtendedTooltip name="ДобавитьПисьмоРасширеннаяПодсказка" id="398"/>
+											</Button>
+											<Button name="ОткрытьВложение" id="152">
+												<Type>CommandBarButton</Type>
+												<SkipOnInput>false</SkipOnInput>
+												<CommandName>Form.Command.ОткрытьВложение</CommandName>
+												<Title>
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>Открыть вложение...</v8:content>
+													</v8:item>
+												</Title>
+												<ExtendedTooltip name="ОткрытьВложениеРасширеннаяПодсказка" id="332"/>
+											</Button>
+											<Button name="СохранитьВложение" id="153">
+												<Type>CommandBarButton</Type>
+												<SkipOnInput>false</SkipOnInput>
+												<CommandName>Form.Command.СохранитьВложение</CommandName>
+												<Title>
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>Сохранить вложение...</v8:content>
+													</v8:item>
+												</Title>
+												<ExtendedTooltip name="СохранитьВложениеРасширеннаяПодсказка" id="333"/>
+											</Button>
+											<ButtonGroup name="ВложенияКонтекстноеМенюГруппа" id="466">
+												<Title>
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>Вложения контекстное меню группа</v8:content>
+													</v8:item>
+												</Title>
+												<ExtendedTooltip name="ВложенияКонтекстноеМенюГруппаРасширеннаяПодсказка" id="467"/>
+												<ChildItems>
+													<Button name="УдалитьВложение" id="187">
+														<Type>CommandBarButton</Type>
+														<SkipOnInput>false</SkipOnInput>
+														<CommandName>Form.Item.Вложения.StandardCommand.Delete</CommandName>
+														<Title>
+															<v8:item>
+																<v8:lang>ru</v8:lang>
+																<v8:content>Удалить вложение</v8:content>
+															</v8:item>
+														</Title>
+														<ExtendedTooltip name="УдалитьВложениеРасширеннаяПодсказка" id="334"/>
+													</Button>
+												</ChildItems>
+											</ButtonGroup>
+											<Button name="ВложенияКонтекстноеМенюСвойстваВложения" id="280">
+												<Type>CommandBarButton</Type>
+												<CommandName>Form.Command.СвойстваВложения</CommandName>
+												<Title>
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>Свойства вложения...</v8:content>
+													</v8:item>
+												</Title>
+												<ExtendedTooltip name="ВложенияКонтекстноеМенюСвойстваВложенияРасширеннаяПодсказка" id="335"/>
+											</Button>
+										</ChildItems>
+									</ContextMenu>
+									<AutoCommandBar name="ВложенияКоманднаяПанель" id="140"/>
+									<ExtendedTooltip name="ВложенияРасширеннаяПодсказка" id="336"/>
+									<SearchStringAddition name="ВложенияСтрокаПоиска" id="376">
+										<AdditionSource>
+											<Item>Вложения</Item>
+											<Type>SearchStringRepresentation</Type>
+										</AdditionSource>
+										<ContextMenu name="ВложенияСтрокаПоискаКонтекстноеМеню" id="377"/>
+										<ExtendedTooltip name="ВложенияСтрокаПоискаРасширеннаяПодсказка" id="378"/>
+									</SearchStringAddition>
+									<ViewStatusAddition name="ВложенияСостояниеПросмотра" id="379">
+										<AdditionSource>
+											<Item>Вложения</Item>
+											<Type>ViewStatusRepresentation</Type>
+										</AdditionSource>
+										<ContextMenu name="ВложенияСостояниеПросмотраКонтекстноеМеню" id="380"/>
+										<ExtendedTooltip name="ВложенияСостояниеПросмотраРасширеннаяПодсказка" id="381"/>
+									</ViewStatusAddition>
+									<SearchControlAddition name="ВложенияУправлениеПоиском" id="382">
+										<AdditionSource>
+											<Item>Вложения</Item>
+											<Type>SearchControl</Type>
+										</AdditionSource>
+										<ContextMenu name="ВложенияУправлениеПоискомКонтекстноеМеню" id="383"/>
+										<ExtendedTooltip name="ВложенияУправлениеПоискомРасширеннаяПодсказка" id="384"/>
+									</SearchControlAddition>
+									<Events>
+										<Event name="DragCheck">ВложенияПроверкаПеретаскивания</Event>
+										<Event name="Selection">ВложенияВыбор</Event>
+										<Event name="BeforeAddRow">ВложенияПередНачаломДобавления</Event>
+										<Event name="BeforeDeleteRow">ВложенияПередУдалением</Event>
+										<Event name="Drag">ВложенияПеретаскивание</Event>
+										<Event name="OnActivateCell">ВложенияПриАктивизацииЯчейки</Event>
+									</Events>
 									<ChildItems>
-										<PictureField name="ИндексКартинки" id="145">
-											<DataPath>Вложения.ИндексКартинки</DataPath>
+										<ColumnGroup name="Группа" id="149">
 											<Title>
 												<v8:item>
 													<v8:lang>ru</v8:lang>
-													<v8:content>Индекс картинки</v8:content>
+													<v8:content>Вложения</v8:content>
 												</v8:item>
 											</Title>
-											<TitleLocation>None</TitleLocation>
-											<ShowInHeader>false</ShowInHeader>
-											<Width>2</Width>
-											<AutoMaxWidth>false</AutoMaxWidth>
-											<ValuesPicture>
-												<xr:Ref>CommonPicture.КоллекцияПиктограммФайлов</xr:Ref>
-												<xr:LoadTransparent>false</xr:LoadTransparent>
-											</ValuesPicture>
-											<Border width="1">
-												<v8ui:style xsi:type="v8ui:ControlBorderType">WithoutBorder</v8ui:style>
-											</Border>
-											<FileDragMode>AsFile</FileDragMode>
-											<ContextMenu name="ИндексКартинкиКонтекстноеМеню" id="146"/>
-											<ExtendedTooltip name="ИндексКартинкиРасширеннаяПодсказка" id="339"/>
-										</PictureField>
-										<InputField name="ИмяФайла" id="143">
-											<DataPath>Вложения.ИмяФайла</DataPath>
-											<Title>
-												<v8:item>
-													<v8:lang>ru</v8:lang>
-													<v8:content>Имя файла</v8:content>
-												</v8:item>
-											</Title>
-											<ShowInHeader>false</ShowInHeader>
-											<Wrap>false</Wrap>
-											<TextEdit>false</TextEdit>
-											<ContextMenu name="ИмяФайлаКонтекстноеМеню" id="144"/>
-											<ExtendedTooltip name="ИмяФайлаРасширеннаяПодсказка" id="340"/>
-										</InputField>
-										<InputField name="РазмерПредставление" id="236">
-											<DataPath>Вложения.РазмерПредставление</DataPath>
-											<ReadOnly>true</ReadOnly>
-											<Title>
-												<v8:item>
-													<v8:lang>ru</v8:lang>
-													<v8:content>Размер представление</v8:content>
-												</v8:item>
-											</Title>
-											<EditMode>EnterOnInput</EditMode>
-											<ShowInHeader>false</ShowInHeader>
-											<Width>5</Width>
-											<TextEdit>false</TextEdit>
-											<ContextMenu name="РазмерПредставлениеКонтекстноеМеню" id="237"/>
-											<ExtendedTooltip name="РазмерПредставлениеРасширеннаяПодсказка" id="341"/>
-										</InputField>
+											<Group>InCell</Group>
+											<ShowInHeader>true</ShowInHeader>
+											<ExtendedTooltip name="ГруппаРасширеннаяПодсказка" id="338"/>
+											<ChildItems>
+												<PictureField name="ИндексКартинки" id="145">
+													<DataPath>Вложения.ИндексКартинки</DataPath>
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Индекс картинки</v8:content>
+														</v8:item>
+													</Title>
+													<TitleLocation>None</TitleLocation>
+													<ShowInHeader>false</ShowInHeader>
+													<Width>2</Width>
+													<AutoMaxWidth>false</AutoMaxWidth>
+													<ValuesPicture>
+														<xr:Ref>CommonPicture.КоллекцияПиктограммФайлов</xr:Ref>
+														<xr:LoadTransparent>false</xr:LoadTransparent>
+													</ValuesPicture>
+													<Border width="1">
+														<v8ui:style xsi:type="v8ui:ControlBorderType">WithoutBorder</v8ui:style>
+													</Border>
+													<FileDragMode>AsFile</FileDragMode>
+													<ContextMenu name="ИндексКартинкиКонтекстноеМеню" id="146"/>
+													<ExtendedTooltip name="ИндексКартинкиРасширеннаяПодсказка" id="339"/>
+												</PictureField>
+												<InputField name="ИмяФайла" id="143">
+													<DataPath>Вложения.ИмяФайла</DataPath>
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Имя файла</v8:content>
+														</v8:item>
+													</Title>
+													<ShowInHeader>false</ShowInHeader>
+													<Wrap>false</Wrap>
+													<TextEdit>false</TextEdit>
+													<ContextMenu name="ИмяФайлаКонтекстноеМеню" id="144"/>
+													<ExtendedTooltip name="ИмяФайлаРасширеннаяПодсказка" id="340"/>
+												</InputField>
+												<InputField name="РазмерПредставление" id="236">
+													<DataPath>Вложения.РазмерПредставление</DataPath>
+													<ReadOnly>true</ReadOnly>
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Размер представление</v8:content>
+														</v8:item>
+													</Title>
+													<EditMode>EnterOnInput</EditMode>
+													<ShowInHeader>false</ShowInHeader>
+													<Width>5</Width>
+													<TextEdit>false</TextEdit>
+													<ContextMenu name="РазмерПредставлениеКонтекстноеМеню" id="237"/>
+													<ExtendedTooltip name="РазмерПредставлениеРасширеннаяПодсказка" id="341"/>
+												</InputField>
+											</ChildItems>
+										</ColumnGroup>
 									</ChildItems>
-								</ColumnGroup>
-							</ChildItems>
-						</Table>
-						<CommandBar name="КомандыВложений" id="450">
-							<Title>
-								<v8:item>
-									<v8:lang>ru</v8:lang>
-									<v8:content>Команды вложений</v8:content>
-								</v8:item>
-							</Title>
-							<HorizontalStretch>false</HorizontalStretch>
-							<HorizontalLocation>Right</HorizontalLocation>
-							<ExtendedTooltip name="КомандыВложенийРасширеннаяПодсказка" id="451"/>
-							<ChildItems>
-								<Button name="ДобавитьВложениеКоманда" id="452">
-									<Type>CommandBarButton</Type>
-									<SkipOnInput>false</SkipOnInput>
-									<CommandName>Form.Command.ДобавитьВложение</CommandName>
+								</Table>
+								<CommandBar name="КомандыВложений" id="450">
 									<Title>
 										<v8:item>
 											<v8:lang>ru</v8:lang>
-											<v8:content>Добавить вложение...</v8:content>
+											<v8:content>Команды вложений</v8:content>
 										</v8:item>
 									</Title>
-									<ExtendedTooltip name="ДобавитьВложениеКомандаРасширеннаяПодсказка" id="453"/>
-								</Button>
-								<Button name="ДобавитьПисьмоКоманда" id="454">
-									<Type>CommandBarButton</Type>
-									<CommandName>Form.Command.ДобавитьПисьмо</CommandName>
-									<Title>
-										<v8:item>
-											<v8:lang>ru</v8:lang>
-											<v8:content>Добавить письмо как вложение...</v8:content>
-										</v8:item>
-									</Title>
-									<ExtendedTooltip name="ДобавитьПисьмоКомандаРасширеннаяПодсказка" id="455"/>
-								</Button>
-								<Button name="ОткрытьВложениеКоманда" id="456">
-									<Type>CommandBarButton</Type>
-									<SkipOnInput>false</SkipOnInput>
-									<CommandName>Form.Command.ОткрытьВложение</CommandName>
-									<Title>
-										<v8:item>
-											<v8:lang>ru</v8:lang>
-											<v8:content>Открыть вложение...</v8:content>
-										</v8:item>
-									</Title>
-									<ExtendedTooltip name="ОткрытьВложениеКомандаРасширеннаяПодсказка" id="457"/>
-								</Button>
-								<Button name="СохранитьВложениеКоманда" id="458">
-									<Type>CommandBarButton</Type>
-									<SkipOnInput>false</SkipOnInput>
-									<CommandName>Form.Command.СохранитьВложение</CommandName>
-									<Title>
-										<v8:item>
-											<v8:lang>ru</v8:lang>
-											<v8:content>Сохранить вложение...</v8:content>
-										</v8:item>
-									</Title>
-									<ExtendedTooltip name="СохранитьВложениеКомандаРасширеннаяПодсказка" id="459"/>
-								</Button>
-								<ButtonGroup name="ГруппаУдалить" id="464">
-									<Title>
-										<v8:item>
-											<v8:lang>ru</v8:lang>
-											<v8:content>Удалить</v8:content>
-										</v8:item>
-									</Title>
-									<ExtendedTooltip name="ГруппаУдалитьРасширеннаяПодсказка" id="465"/>
+									<HorizontalStretch>false</HorizontalStretch>
+									<HorizontalLocation>Right</HorizontalLocation>
+									<ExtendedTooltip name="КомандыВложенийРасширеннаяПодсказка" id="451"/>
 									<ChildItems>
-										<Button name="УдалитьВложениеКоманда" id="460">
+										<Button name="ДобавитьВложениеКоманда" id="452">
 											<Type>CommandBarButton</Type>
 											<SkipOnInput>false</SkipOnInput>
-											<CommandName>Form.Item.Вложения.StandardCommand.Delete</CommandName>
+											<CommandName>Form.Command.ДобавитьВложение</CommandName>
 											<Title>
 												<v8:item>
 													<v8:lang>ru</v8:lang>
-													<v8:content>Удалить вложение</v8:content>
+													<v8:content>Добавить вложение...</v8:content>
 												</v8:item>
 											</Title>
-											<ExtendedTooltip name="УдалитьВложениеКомандаРасширеннаяПодсказка" id="461"/>
+											<ExtendedTooltip name="ДобавитьВложениеКомандаРасширеннаяПодсказка" id="453"/>
+										</Button>
+										<Button name="ДобавитьПисьмоКоманда" id="454">
+											<Type>CommandBarButton</Type>
+											<CommandName>Form.Command.ДобавитьПисьмо</CommandName>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Добавить письмо как вложение...</v8:content>
+												</v8:item>
+											</Title>
+											<ExtendedTooltip name="ДобавитьПисьмоКомандаРасширеннаяПодсказка" id="455"/>
+										</Button>
+										<Button name="ОткрытьВложениеКоманда" id="456">
+											<Type>CommandBarButton</Type>
+											<SkipOnInput>false</SkipOnInput>
+											<CommandName>Form.Command.ОткрытьВложение</CommandName>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Открыть вложение...</v8:content>
+												</v8:item>
+											</Title>
+											<ExtendedTooltip name="ОткрытьВложениеКомандаРасширеннаяПодсказка" id="457"/>
+										</Button>
+										<Button name="СохранитьВложениеКоманда" id="458">
+											<Type>CommandBarButton</Type>
+											<SkipOnInput>false</SkipOnInput>
+											<CommandName>Form.Command.СохранитьВложение</CommandName>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Сохранить вложение...</v8:content>
+												</v8:item>
+											</Title>
+											<ExtendedTooltip name="СохранитьВложениеКомандаРасширеннаяПодсказка" id="459"/>
+										</Button>
+										<ButtonGroup name="ГруппаУдалить" id="464">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Удалить</v8:content>
+												</v8:item>
+											</Title>
+											<ExtendedTooltip name="ГруппаУдалитьРасширеннаяПодсказка" id="465"/>
+											<ChildItems>
+												<Button name="УдалитьВложениеКоманда" id="460">
+													<Type>CommandBarButton</Type>
+													<SkipOnInput>false</SkipOnInput>
+													<CommandName>Form.Item.Вложения.StandardCommand.Delete</CommandName>
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Удалить вложение</v8:content>
+														</v8:item>
+													</Title>
+													<ExtendedTooltip name="УдалитьВложениеКомандаРасширеннаяПодсказка" id="461"/>
+												</Button>
+											</ChildItems>
+										</ButtonGroup>
+										<Button name="СвойстваВложения" id="462">
+											<Type>CommandBarButton</Type>
+											<CommandName>Form.Command.СвойстваВложения</CommandName>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Свойства вложения...</v8:content>
+												</v8:item>
+											</Title>
+											<ExtendedTooltip name="СвойстваВложенияРасширеннаяПодсказка" id="463"/>
 										</Button>
 									</ChildItems>
-								</ButtonGroup>
-								<Button name="СвойстваВложения" id="462">
-									<Type>CommandBarButton</Type>
-									<CommandName>Form.Command.СвойстваВложения</CommandName>
-									<Title>
-										<v8:item>
-											<v8:lang>ru</v8:lang>
-											<v8:content>Свойства вложения...</v8:content>
-										</v8:item>
-									</Title>
-									<ExtendedTooltip name="СвойстваВложенияРасширеннаяПодсказка" id="463"/>
-								</Button>
+								</CommandBar>
 							</ChildItems>
-						</CommandBar>
+						</UsualGroup>
 						<InputField name="Предмет" id="160">
 							<DataPath>Предмет</DataPath>
 							<Title>
@@ -2143,6 +2169,10 @@
 					<v8:content>Сохранить вложение...</v8:content>
 				</v8:item>
 			</Title>
+			<Picture>
+				<xr:Ref>StdPicture.SaveFile</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
 			<Action>СохранитьВложение</Action>
 		</Command>
 		<Command name="ВажностьВысокая" id="15">

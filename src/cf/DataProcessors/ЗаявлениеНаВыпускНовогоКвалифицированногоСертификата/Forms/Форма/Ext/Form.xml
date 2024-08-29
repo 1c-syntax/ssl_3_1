@@ -990,18 +990,6 @@
 									<ContextMenu name="СписокТокеновТокенКонтекстноеМеню" id="976"/>
 									<ExtendedTooltip name="СписокТокеновТокенРасширеннаяПодсказка" id="977"/>
 								</InputField>
-								<InputField name="СписокТокеновОписание" id="978">
-									<DataPath>СписокТокенов.Описание</DataPath>
-									<Title>
-										<v8:item>
-											<v8:lang>ru</v8:lang>
-											<v8:content>Описание</v8:content>
-										</v8:item>
-									</Title>
-									<EditMode>EnterOnInput</EditMode>
-									<ContextMenu name="СписокТокеновОписаниеКонтекстноеМеню" id="979"/>
-									<ExtendedTooltip name="СписокТокеновОписаниеРасширеннаяПодсказка" id="980"/>
-								</InputField>
 								<InputField name="СписокТокеновПредставление" id="981">
 									<DataPath>СписокТокенов.Представление</DataPath>
 									<Title>
@@ -2394,21 +2382,6 @@
 						</v8:StringQualifiers>
 					</Type>
 				</Column>
-				<Column name="Описание" id="2">
-					<Title>
-						<v8:item>
-							<v8:lang>ru</v8:lang>
-							<v8:content>Описание</v8:content>
-						</v8:item>
-					</Title>
-					<Type>
-						<v8:Type>xs:string</v8:Type>
-						<v8:StringQualifiers>
-							<v8:Length>0</v8:Length>
-							<v8:AllowedLength>Variable</v8:AllowedLength>
-						</v8:StringQualifiers>
-					</Type>
-				</Column>
 				<Column name="Представление" id="3">
 					<Title>
 						<v8:item>
@@ -2703,6 +2676,11 @@
 		<Parameter name="ФизическоеЛицо">
 			<Type>
 				<v8:TypeSet>cfg:AnyRef</v8:TypeSet>
+			</Type>
+		</Parameter>
+		<Parameter name="НаТокене">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
 			</Type>
 		</Parameter>
 	</Parameters>

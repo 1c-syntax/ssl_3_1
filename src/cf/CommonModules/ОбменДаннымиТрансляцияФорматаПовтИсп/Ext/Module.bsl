@@ -14,7 +14,6 @@
 // 
 // Возвращаемое значение:
 //  Строка
-//
 Функция ТранслироватьИмя(Имя, НаправлениеПеревода) Экспорт
 	
 	Если Метаданные.ВариантВстроенногоЯзыка = Метаданные.СвойстваОбъектов.ВариантВстроенногоЯзыка.Русский Тогда
@@ -37,11 +36,16 @@
 	
 КонецФункции
 
-    
+#КонецОбласти
+
+#Область СлужебныеПроцедурыИФункции
+
 // Возвращаемое значение:
-//  Соответствие
+//  Соответствие из КлючИЗначение:
+//   * Ключ - Строка
+//   * Значение - Строка
 //
-Функция Словарь_ru_en() Экспорт
+Функция Словарь_ru_en()
 	
 	Словарь = Новый Соответствие;
 	
@@ -79,6 +83,7 @@
 	Словарь.Вставить("антисептики", "Antiseptics"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("аренда", "Lease"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("артикул", "SKU"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("архив", "Archive"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("бады", "DietarySupplements"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("банк", "Bank"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("банкдлярасчетов", "TransferBank"); // @NON-NLS-1 @NON-NLS-2
@@ -90,10 +95,13 @@
 	Словарь.Вставить("банковскийсчеторганизации", "CompanyBankAccount"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("банковскийсчетотправитель", "SenderBankAccount"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("банковскийсчетсотрудника", "EmployeeSBankAccount"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("безалкогольноепиво", "NonAlcoholicBeer"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("безналичная", "BankAccountPayment"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("безндс", "EXCLUDINGVAT"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("безучетапредоставленныхскидок", "ExcludingDiscountsProvided"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("бик", "BIC"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("бонус", "Bonus"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("бонуснаяпрограмма", "BonusProgram"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("бухгалтер", "Accountant"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("валюта", "Currency"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("валютавзаиморасчетов", "ARAPCurrency"); // @NON-NLS-1 @NON-NLS-2
@@ -104,18 +112,23 @@
 	Словарь.Вставить("валютацены", "PriceCurrency"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("вариантоплаты", "PaymentOption"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("вариантотражения", "PostingOption"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("вариантыоплаты", "PaymentOptions"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("вариантыотраженияизлишковприпоступлении", "OptionsForReflectingSurplusesUponReceipt"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("вариантыотражениянедостачиприпоступлении", "OptionsForReflectingShortageUponReceipt"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("вводвэксплуатацию", "Commissioning"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("вебстраница", "WebPage"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("ведомость", "Statement"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("велосипеды", "Bicycles"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("версияформатафайланастроекобменаданными", "ExchangeDataSettingsFileFormatVersion"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("вес", "Weight"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("веснеттокг", "NetWeightKg"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("весовой", "SoldByWeight"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("взносналичными", "CashContribution"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("видагентскогодоговора", "AgencyAgreementKind"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("видалкогольнойпродукции", "KindOfAlcoholContainingProducts"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("видбанковскогосчета", "TypeOfBankAccount"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("виддеятельностидляналоговогоучетазатрат", "ActivityTypeForTaxAccountingOfCosts"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("виддеятельностираздельногоучетандс", "TypeOfActivityOfSeparateVATAccounting"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("виддоговора", "TypeOfAgreement"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("виддокумента", "DocumentKind"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("виддокументаизклассификатора", "DocumentViewFromClassifier"); // @NON-NLS-1 @NON-NLS-2
@@ -143,14 +156,35 @@
 	Словарь.Вставить("видрасчетоврасширенный", "TypeOfCalculationsAdvanced"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("видрезерва", "TypeOfReserve"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("видскидки", "TypeOfDiscount"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("видсобытия", "EventKind"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("видсобытияос", "EventKindWithFixedAssets"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("видсчета", "AccountType"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("видсчетафактуры", "InvoiceType"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("видтранспортасообщенийобмена", "ExchangeMessagesTransportKind"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("видыдоговоров", "TypesOfContracts"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("видыки", "CIKinds"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("видылицензийалкогольнойпродукции", "LicenseKindsOfAlcoholContainingProducts"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("видыноменклатуры", "ItemKinds"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("видыобъектовучетанма", "IntangibleAssetsAccountingItemKinds"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("видыоперацийвозвратотпокупателя", "TypesOfOperationsReturnFromBuyer"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("видыоперацийвозвратпоставщику", "TypesOfOperationsRefundToSupplier"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("видыоперацийвыпускапродукции", "TypesOfProductionOperations"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("видыоперацийпоплатежнойкарте", "TypesOfPaymentCardOperations"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("видыоперацийпоступлениятоваров", "TypesOfOperationsOfReceiptOfGoods"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("видыоперацийреализациятоваровуслуг", "TypesOfOperationsSaleOfGoodsServices"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("видыоперацийрконабанковскийсчет", "TypesOfACWOperationsToBankAccount"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("видыоперацийсбдспрочее", "TypesOfSBDsOperationsOther"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("видыответственныхлиц", "TypesOfResponsiblePersons"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("видыподарочныхсертификатов", "GiftCertificateKinds"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("видыпродукцииис", "TypesOfIPProducts"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("видырасчетовсконтрагентами", "TypesOfSettlementsWithCounterparties"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("видырасчетовссотрудниками", "TypesOfEmployeeCompensations"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("видысобытийос", "EventKindsWithFixedAssets"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("видытранспортасообщенийобмена", "ExchangeMessagesTransportTypes"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("видыэд", "TypesOfED"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("видэд", "EdView"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("включениеврасходыприпринятиикучету", "DeductionInExpensesOnRecognition"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("включитьвсоставамортизируемогоимущества", "IncludeInDepreciableProperty"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("владелец", "Owner"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("владелецдополнительныхзначений", "AdditionalValuesOwner"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("владелецкарты", "Cardholder"); // @NON-NLS-1 @NON-NLS-2
@@ -159,7 +193,7 @@
 	Словарь.Вставить("внереализационныйдоход", "NonOperatingIncome"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("внешняясистема", "ExternalSystem"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("внутреннееперемещение", "InternalMovement"); // @NON-NLS-1 @NON-NLS-2
-	Словарь.Вставить("внутренняяпередача", "InternalTransmission"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("внутренняяпередача", "InternalTransfer"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("водительскоеудостоверение", "DriverLicense"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("возврат", "Return"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("возвратденежныхдокументовпоставщику", "ReturnOfCashEquivalentsToVendor"); // @NON-NLS-1 @NON-NLS-2
@@ -175,6 +209,8 @@
 	Словарь.Вставить("возвратподарочныхсертификатов", "ReturnOfGiftCards"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("возвратподдеятельность", "ReturnUnderOperation"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("возвратпоставщику", "ReturnToVendor"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("возвратсырьядавальцу", "ReturnOfRawMaterialsToMaterialProvider"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("возвратсырьяотпереработчика", "ReturnOfRawMaterialsFromToller"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("возвраттоваровпоставщику", "ReturnOfGoodsToVendor"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("возвраты", "Returns"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("возвратыпокупателей", "CustomerRefunds"); // @NON-NLS-1 @NON-NLS-2
@@ -184,6 +220,7 @@
 	Словарь.Вставить("встречноепредставление", "CounterRepresentation"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("втомчислендс", "IncludingVAT"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("выбраннаяформа", "SelectedForm"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("выбытиебутылки", "BottleRetirement"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("выводитьмесяцпрописью", "DisplayMonthInWords"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("выводитьсуммубезкопеек", "OutputAmountWithoutFractionalPart"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("выданныеавансы", "PrepaymentsToVendor_"); // @NON-NLS-1 @NON-NLS-2
@@ -194,6 +231,7 @@
 	Словарь.Вставить("выигрышазартнойигры", "GamblingPrize"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("выигрышлотереи", "LotteryPrize"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("выплата", "Repayment"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("выплатасамозанятому", "PaymentToSelfEmployed"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("выполнен", "Completed"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("выполненныеработы", "CompletedWorks"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("выпускпродукции", "ProductsRelease"); // @NON-NLS-1 @NON-NLS-2
@@ -223,14 +261,17 @@
 	Словарь.Вставить("группааналитическогоучетаноменклатуры", "AnalyticalProductGroup"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("группанастроекфинансовогоучетарасчетов", "GroupOfFinancialAccountingSettingsForSettlements"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("группаос", "OSGroup"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("группыос", "FAGroups"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("да", "Yes"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("давальческиесырьеиматериалы", "GiverRawMaterialsAndSupplies"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("данныевзаиморасчетов", "SettlementData"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("данныевходящегодокумента", "IncomingDocumentData"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("данныегтд", "CCDData"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("данныеклассификатора", "ClassifierData"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("данныеноменклатуры", "ProductData_1"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("данныеотчета", "ReportData"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("данныепосф", "SFData"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("данныерасчетов", "CalculationData"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("данныесертификата", "CertificateData"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("данныефио", "FullNameData"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("дата", "Date"); // @NON-NLS-1 @NON-NLS-2
@@ -242,35 +283,44 @@
 	Словарь.Вставить("датавыполнения", "ExecutionDate"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("датавыпуска", "DateOfProduction"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("датавыставления", "IssueDate"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("датадоговора", "ContractDate_"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("датадокумента", "DocumentDate"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("датадокументаправаподписи", "DateOfDocumentSignatureRight"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("датазакрытия", "ClosingDate"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("датаинвентаризации", "InventoryDate"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("датаисправления", "CorrectionDate"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("датаначала", "StartDate"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("датаначаладействия", "ValidityStartDate"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("датаначалаинвентаризации", "StartDateOfInventory"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("датаначисления", "AccrualDate"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("датаокончания", "EndDate"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("датаокончаниядействия", "ValidityEndDate"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("датаокончанияинвентаризации", "EndDateOfInventory"); // @NON-NLS-1 @NON-NLS-2
-	Словарь.Вставить("датаоткрытия", "OpeningDate"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("датаотправки", "DateSent"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("датаотправления", "PostingDate"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("датапереходаправасобственности", "DateOfTransferOfTitleToGoods"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("датаплатежа", "PaymentDate"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("датаплатежногодокумента", "DateOfPaymentDocument"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("датаплатежнорасчетногодокумента", "DateOfDocumentInARAPAccounting"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("датаподключения", "DateOfActivation"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("датаподписи", "SignatureDate"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("датаполучения", "DateReceived"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("датапринятиякучету", "DateOfRecognition"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("датапринятиянаучет", "AccountingRecordDate"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("датаприобретения", "PurchaseDate"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("датапродажи", "DateOfSale"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("датапроизводства", "ProductionDate"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("датареализации", "SaleDate"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("датарегистрации", "RegistrationDate"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("датарождения", "BirthDate"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("датасобытия", "EventDate"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("датасостояния", "StateDate"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("датаспецификации", "SpecificationDate"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("датасписания", "DateOfDeduction"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("датасф", "InvoiceDate"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("датасчетафактуры", "TaxInvoiceDate"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("дататсд", "SupportingDocumentDate"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("датаутверждения", "ConfirmationDate"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("дебиторскаязадолженность", "AccountsReceivable"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("действийнетребуется", "NoActionsNeeded"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("действителендо", "ValidBefore"); // @NON-NLS-1 @NON-NLS-2
@@ -279,10 +329,12 @@
 	Словарь.Вставить("денежныесредства", "Cash"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("денежныйдокумент", "MonetaryDocument"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("день", "Day"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("депозит", "Deposit"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("депозитный", "Deposit_"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("депозиты", "Deposits"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("депонированиезарплаты", "SalaryDepositing"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("десятая", "Tenth"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("дисконтная", "Discounted"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("дисконтнаякарта", "DiscountCard"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("длинамагнитногокода", "MagneticCodeLength"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("длинаштрихкода", "BarcodeLength"); // @NON-NLS-1 @NON-NLS-2
@@ -293,6 +345,7 @@
 	Словарь.Вставить("доверенностьномер", "PowerOfAttorneyNumber"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("договор", "Contract"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("договорконтрагента", "CounterpartyContract"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("договорскомиссионером", "ContractWithCommissionAgent"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("договорссылка", "ContractLink"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("договорэквайрера", "AcquirerSContract"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("доклиента", "ToCustomer"); // @NON-NLS-1 @NON-NLS-2
@@ -326,6 +379,7 @@
 	Словарь.Вставить("духи", "PerfumesAndToiletWaters"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("единицаизмерения", "UnitOfMeasure"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("единицаизмеренияпрослеживаемости", "UnitOfTraceability"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("единицаизмерениярнпт", "UnitOfProductBatchID"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("единицаизмерениясрокагодности", "ShelfLifeUnitOfMeasure"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("енвд", "UTII"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("естьвдокументепоступленияреализации", "ThereIsImplementationReceiptInDocument"); // @NON-NLS-1 @NON-NLS-2
@@ -346,6 +400,7 @@
 	Словарь.Вставить("заказнаперемещение", "TransferOrder"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("заказпоставщику", "PurchaseOrder"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("заказчик", "Customer_"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("закрыта", "Closed_"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("закрытпринудительно", "ClosedForcefully"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("закрытсотклонением", "ClosedWithDeviation"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("закрытсотклонениемприглашения", "ClosedWithRejectionOfInvitation"); // @NON-NLS-1 @NON-NLS-2
@@ -360,12 +415,17 @@
 	Словарь.Вставить("засчетпоставщика", "AtExpenseOfSupplier"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("засчетстороннейкомпании", "AtExpenseOfThirdPartyCompany"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("заявканарасходденежныхсредств", "RequestForSpendingFunds"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("заявлениеоввозетоваров", "ApplicationForImportationOfGoods"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("зерно", "Grain"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("зерноветис", "GrainUnderVetISControl"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("значениедополнительногореквизита", "ValueOfAdditionalProps"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("значениесвойства", "PropertyValue"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("значенияполей", "FieldValues"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("идентификатор", "Id"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("идентификаторгосконтракта", "StateContactID"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("идентификаторкорзины", "CartID"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("идентификаторноменклатурысервиса1сноменклатура", "IDOf1CProductsProductCategory"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("идентификатороплатысбп", "FPSPaymentID"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("идентификаторотчета", "ReportID"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("идентификаторплатежа", "PaymentID"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("идентификаторсервиса1сноменклатура", "IDOf1CProductsService"); // @NON-NLS-1 @NON-NLS-2
@@ -380,6 +440,7 @@
 	Словарь.Вставить("имяпланаобмена", "ExchangePlanName"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("инвентаризация", "Inventory_"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("инвентарныйномер", "AssetID"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("индивидуальныйпредприниматель", "IndividualEntrepreneur"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("инкассация", "Collection_"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("инкассовоепоручение", "CollectionOrder_2"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("инн", "TIN"); // @NON-NLS-1 @NON-NLS-2
@@ -391,6 +452,7 @@
 	Словарь.Вставить("инойпредметрасчета", "OtherSettlementSubject"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("иностранныйбанк", "ForeignBank"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("исполнитель", "Performer"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("использоватьакцизы", "UseExcises"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("использоватьоплатуплатежнымикартами", "UsePaymentByCards"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("использоватьпараметрытранспортаemail", "UseTransportParametersEMAIL"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("использоватьпараметрытранспортаfile", "UseTransportParametersFILE"); // @NON-NLS-1 @NON-NLS-2
@@ -399,9 +461,13 @@
 	Словарь.Вставить("использоватьскидкинаценки", "UseDiscountsMarkups"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("использоватьсрокгодностисерии", "UseShelfLifeOnBatchRegistration"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("использоватьхарактеристики", "UseCharacteristics"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("исправление", "Patch"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("исправлениеошибки", "CorrectionOfErrors"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("исправляемыйдокумент", "CorrectedDocument"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("исправляемыйдокументпоступления", "CorrectedReceiptDocument"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("исправляемыйдокументреализации", "CorrectedImplementationDocument"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("историякпп", "CRTRHistory"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("историянаименований", "NameHistory"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("исходныйдокумент", "SourceDocument_"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("капитальныйремонт", "Overhaul"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("карталояльности", "LoyaltyCard"); // @NON-NLS-1 @NON-NLS-2
@@ -425,6 +491,7 @@
 	Словарь.Вставить("кодвидадохода", "IncomeKindCode"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("кодвиданоменклатурнойклассификации", "ProductClassificationTypeCode"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("кодвидаоперации", "TransactionKindCode"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("кодвидатранспорта", "TransportKindCode"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("кодвпрограмме", "CodeInApp"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("кодмвд", "FTSCode"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("кодналоговогооргана", "TaxAuthorityCode"); // @NON-NLS-1 @NON-NLS-2
@@ -441,6 +508,7 @@
 	Словарь.Вставить("кодтнвэд", "FEACNCode"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("кодтру", "TRUCode"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("количество", "Count"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("количествобонусныхбаллов", "NumberOfBonusPoints"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("количестводнейотсрочки", "NumberOfDaysOfDeferral"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("количестводоизменения", "QuantityBeforeChange_"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("количестводокорректировки", "QuantityBeforeAdjustment"); // @NON-NLS-1 @NON-NLS-2
@@ -449,6 +517,7 @@
 	Словарь.Вставить("количествонаскладе", "QuantityInStock_"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("количествопериодовдействия", "NumberOfValidityPeriods"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("количествопослеизменения", "QuantityAfterChange"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("количествопотнвэд", "QuantityByFEACN"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("количестворнпт", "NumberOfRNPT"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("количестворнптдоизменения", "NumberOfRNPTBeforeChange"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("количестворнптдокорректировки", "NumberOfRNPTBeforeAdjustment"); // @NON-NLS-1 @NON-NLS-2
@@ -462,7 +531,9 @@
 	Словарь.Вставить("комиссионер", "Consignee"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("комиссионныетовары", "CommissionGoods"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("комиссия", "Fee"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("комитент", "Consignor"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("комментарий", "Comment"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("комплект", "Kit"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("комплектуется", "Replenished"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("конецдиапазонамагнитногокода", "EndOfMagneticCodeRange"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("конецдиапазонаштрихкода", "EndOfBarcodeRange"); // @NON-NLS-1 @NON-NLS-2
@@ -470,6 +541,7 @@
 	Словарь.Вставить("контактнаяинформация", "ContactInformation"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("контактноелицо", "ContactPerson"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("контактноелицоконтрагента", "CounterpartySContactPerson"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("контактныелица", "ContactPersons"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("контрагент", "Counterparty"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("контрагентдебитор", "CounterpartyDebtor"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("контрагенткредитор", "Creditor"); // @NON-NLS-1 @NON-NLS-2
@@ -533,6 +605,7 @@
 	Словарь.Вставить("максимальныйпроцентоплатыбонусами", "MaximumSharePayableByPoints"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("марка", "Brand"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("маркированныйтовар", "MarkedGoods"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("маркировка", "Marking"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("маркировкаупаковки", "PackageMarking"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("маркировкиупаковок", "PackageMarkings"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("маркируемый", "Labelled"); // @NON-NLS-1 @NON-NLS-2
@@ -552,6 +625,7 @@
 	Словарь.Вставить("молочнаяпродукциябезветис", "MilkAndDairyProductsWithoutVetIS"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("молочнаяпродукцияветис", "VETISDairyProducts"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("монотоварнаяупаковка", "SingleProductPackage"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("морепродуктыподконтрольныеветис", "SeafoodControlledByVETIS"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("мужской", "Masculine"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("мультитоварнаяупаковка", "MultiproductPackaging"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("нааванс", "AdvancePayment"); // @NON-NLS-1 @NON-NLS-2
@@ -565,12 +639,13 @@
 	Словарь.Вставить("наименованиевторойбазы", "SecondInfobaseDescription"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("наименованиевходящегодокумента", "ExternalDocumentName"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("наименованиеконтактнойинформации", "NameOfContactInformation"); // @NON-NLS-1 @NON-NLS-2
-	Словарь.Вставить("наименованиекраткое", "ShortDescription1"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("наименованиемеждународное", "DescriptionInternational"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("наименованиеназначенияиспользования", "NameOfPurposeOfUse"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("наименованиенастройкивыполненияобмена", "DataExchangeExecutionSettingsDescription"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("наименованиеоквэд", "ActivityType"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("наименованиеоквэд2", "ActivityType2"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("наименованиеокопф", "LegalForm"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("наименованиеокп", "NameOfTheOKP"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("наименованиеокфс", "OwnershipForm"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("наименованиеотчета", "ReportDescription1"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("наименованиеполное", "DescriptionFull"); // @NON-NLS-1 @NON-NLS-2
@@ -578,6 +653,7 @@
 	Словарь.Вставить("наименованиеспособаотражениярасходов", "NameOfMethodForReflectingExpenses"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("наименованиетерриториальногоорганапфр", "PensionFundLocalAuthorityName"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("наименованиетерриториальногоорганафсс", "SSFLocalAuthorityName"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("наименованиетовара", "ProductName"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("наименованиеэтойбазы", "ThisInfobaseDescription"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("накопленнаяамортизациябу", "AccumulatedDepreciationAccounting"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("накопленнаяамортизациявр", "AccumulatedDepreciationTD"); // @NON-NLS-1 @NON-NLS-2
@@ -585,13 +661,17 @@
 	Словарь.Вставить("накопленнаяамортизацияпр", "PermanentDifferenceInEvaluationOfAccumulatedDepreciation"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("наличная", "CashAccountPayment_"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("наличные", "CashPayment"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("налоговаябазаакцизы", "TaxBaseExcises"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("налоговаябазандс", "VATTaxBase"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("налоговыйагентпондс", "VATTaxAgent"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("налоговыйномернерезидента", "NonResidentTaxNumber"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("налогообложение", "Taxation"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("налогообложениендс", "VATTaxation"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("налогообложениендспродавца", "VATTaxationOfSeller"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("напрочиедоходы", "OnOtherIncome"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("напрочиерасходы", "ForOtherExpenses"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("настройкирасчета", "CalculationSettings"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("натовар", "OnItem"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("наутверждении", "AwaitingConfirmation"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("наценка", "Markup"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("началодиапазонамагнитногокода", "StartOfMagneticCodeRange"); // @NON-NLS-1 @NON-NLS-2
@@ -604,6 +684,7 @@
 	Словарь.Вставить("начислениеизносапоенаоф", "AccrueWearAsPerUFADR"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("начислениеоценочныхобязательствпоотпускам", "AccrualOfEstimatedVacationLiabilities"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("начисления", "Accruals"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("начисленныебонусы", "Accrued_Bonuses"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("начислятьамортизациюбу", "DepreciationAccrualAccounting"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("начислятьамортизациюну", "DepreciationAccrualTaxAccounting"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("нашимисиламисадресаотправителя", "OurOwnDeliveryFromSenderAddress"); // @NON-NLS-1 @NON-NLS-2
@@ -645,6 +726,7 @@
 	Словарь.Вставить("номергтд", "CCDNumber"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("номергтддоизменения", "CCDNumberBeforeChange"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("номердекларации", "DeclarationNo"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("номердоговора", "ContractNumber"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("номердокумента", "DocumentNumber"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("номердокументамодернизации", "ModernizationDocumentNumber"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("номердокументаправаподписи", "NumberOfSignatureRightDocument"); // @NON-NLS-1 @NON-NLS-2
@@ -658,13 +740,16 @@
 	Словарь.Вставить("номерплатежнорасчетногодокумента", "SettlementDocumentNumber"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("номерраздела", "SectionNumber"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("номеррасширенный", "ExtendedNumber"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("номерспецификации", "SpecificationNumber"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("номерстроки", "LineNumber"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("номерстрокидокумента", "DocumentRowNumber"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("номерсф", "InvoiceNumber"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("номерсчета", "AccountNumber"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("номерсчетафактуры", "TaxInvoiceNumber"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("номерсчетафактурыкомиссионера", "CommissionAgentSTaxInvoiceNumber"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("номерчекаккм", "CashRegisterReceiptNumber"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("номерчекаккмпродажи", "CashRegisterSalesReceiptNumber"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("номерчекаэт", "POSTerminalReceiptNumber"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("номинал", "Nominal"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("облагаетсяенвд", "SubjectToENVD"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("облагаетсяндс", "SubjectToVAT"); // @NON-NLS-1 @NON-NLS-2
@@ -684,7 +769,7 @@
 	Словарь.Вставить("обязательноепенсионноестрахование", "ContributionsForMPI"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("обязательноепенсионноестрахованиеип", "ContributionsForMPIIE"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("обязательноесоциальноестрахование", "ContributionsForCSI"); // @NON-NLS-1 @NON-NLS-2
-	Словарь.Вставить("огрн", "RegistrationNumber"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("огрн", "OGRN"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("ожидаемаядатапоставки", "ExpectedDeliveryDate"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("ожидаемаядатапоступления", "ExpectedDateOfReceipt"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("ожидаетсяизвещениеополучении", "PendingReceiptNotification"); // @NON-NLS-1 @NON-NLS-2
@@ -698,6 +783,7 @@
 	Словарь.Вставить("окато", "RNCPS"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("оквэд", "RNCEA"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("оквэд2", "RNCEA2"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("окончаниепериода", "PeriodEnding"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("окончаниепериодаотчета", "EndOfReportPeriod_"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("окопф", "RNCFI"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("окпо", "OKPO"); // @NON-NLS-1 @NON-NLS-2
@@ -713,6 +799,7 @@
 	Словарь.Вставить("оплатаотклиентачерезплатежнуюсистему", "PaymentFromClientThroughPaymentSystem"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("оплатаплатежнымикартами", "PaymentWithPaymentCards"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("оплатаплатежнымикартамиподарочныхсертификатов", "PaymentByCreditCardsForGiftCertificates"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("оплатапоставщику", "PaymentToVendor"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("оплатасертификатами", "PaymentByCertificates"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("оплаты", "Payments"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("оплатыккм", "CashRegisterPayments"); // @NON-NLS-1 @NON-NLS-2
@@ -727,6 +814,7 @@
 	Словарь.Вставить("организацияотбор", "CompanyFilter"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("организацияотправитель", "SenderOrganization"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("организацияполучатель", "CompanyRecipient"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("организацияпродавец", "CompanyCustomer"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("органпфр", "FIUAuthority"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("основание", "Basis"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("основнаявалюта", "MainCurrency"); // @NON-NLS-1 @NON-NLS-2
@@ -754,7 +842,9 @@
 	Словарь.Вставить("отменено", "Canceled"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("ототправителяопределяетслужбадоставки", "FromSenderDeterminedByDeliveryService"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("отпускпроизвел", "VacationProduced"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("отражениевозвратаоплатычерезкомиссионера", "RecordOfRefundThroughTheCommissionAgent"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("отражениезарплатывфинансовомучете", "PostingPayrollExpensesInFinancialAccounting"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("отражениеоплатычерезкомиссионера", "RecordOfPaymentThroughTheCommissionAgent"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("отсрочкаплатежа", "DeferredPayment"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("отчество", "MiddleName"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("отчетбанкапооперациямэквайринга", "BankReportOnAcquiringTransactions"); // @NON-NLS-1 @NON-NLS-2
@@ -798,7 +888,7 @@
 	Словарь.Вставить("платежвыплата", "PaymentDisbursement"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("платежказино", "PaymentCasino"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("платежнаякарта", "PaymentCard"); // @NON-NLS-1 @NON-NLS-2
-	Словарь.Вставить("платежнаяссылка", "PaymentLink_"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("платежнаяссылка", "PaymentURL"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("платежноепоручение", "PaymentOrder"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("платежноетребование", "PaymentDemand"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("платежнорасчетныедокументы", "PaymentAndSettlementDocuments"); // @NON-NLS-1 @NON-NLS-2
@@ -814,6 +904,8 @@
 	Словарь.Вставить("подарочныесертификаты", "GiftCertificates"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("подготовкакпередаче", "PreparingForSale"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("поддерживаетоплатуэсфсс", "SupportsESFSSPayment"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("подконтрольнаяпродукцияветис", "ProductsUnderVetISControl"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("подконтрольнаяпродукциясатурн", "ProductsUnderSaturnFSISControl"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("подоговорулизинга", "UnderLeaseAgreement"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("подокументу", "ByDocument"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("подотчет", "Subreport"); // @NON-NLS-1 @NON-NLS-2
@@ -821,6 +913,7 @@
 	Словарь.Вставить("подпись", "Signature"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("подразделение", "Department"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("подразделениезатрат", "CostDivision"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("подразделениеорганизации", "Department_Company"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("подразделениеотправитель", "SendingDepartment"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("подразделениеполучатель", "ReceivingBusinessUnit"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("подсказка", "ToolTip"); // @NON-NLS-1 @NON-NLS-2
@@ -838,6 +931,7 @@
 	Словарь.Вставить("покупателемвыставляетсясчетфактуранавозврат", "BuyerIssuesInvoiceForReturn"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("покупатели", "Buyers"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("покупатель", "Customer"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("покупателькомиссионноготовара", "ConsignedGoodsCustomer"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("покупка", "Purchase"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("покупкаупоставщика", "PurchaseFromSupplier_"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("покупки", "Purchases"); // @NON-NLS-1 @NON-NLS-2
@@ -859,6 +953,8 @@
 	Словарь.Вставить("поручениеэкспедиторусосклада", "InstructionForShippingAgentFromWarehouse"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("порядковыйномер", "SequenceNumber"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("порядок", "Order"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("порядоквключениястоимостиосвсоставрасходовну", "ProcedureOfIncludingFixedAssetCostInExpensesTA"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("порядокпогашениястоимостиос", "FARepaymentProcedure"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("посроку", "ByDate"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("поставщик", "Vendor"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("постоплата", "Postpayment"); // @NON-NLS-1 @NON-NLS-2
@@ -866,9 +962,9 @@
 	Словарь.Вставить("поступлениеденежныхдокументовотпоставщика", "ReceiptOfFinancialDocumentsFromVendor"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("поступлениеотпереработчика", "ReceiptFromToller"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("поступлениеподдеятельность", "IncomeForActivities"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("поступлениесырьяотдавальца", "SupplyFromMaterialProvider"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("поступлениетоваровуслуг", "ReceiptOfGoodsServices"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("посуммечиселлетиспользования", "BySumOfUsefulLifeYearNumbers"); // @NON-NLS-1 @NON-NLS-2
-	Словарь.Вставить("потребительскаяупаковка", "ConsumerPackaging"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("пофактическомуиспользованию", "ByActualUsage"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("почтовыйадрес", "MailAddress"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("прайслист", "PriceList"); // @NON-NLS-1 @NON-NLS-2
@@ -887,6 +983,9 @@
 	Словарь.Вставить("приемкапоперемещению", "ReceivingByTransfer"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("приемнакомиссию", "ConsignmentProcurement"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("признакагента", "AgentAttribute"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("признакиагента", "AgentCharacteristics"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("признакипредметарасчета", "SettlementSubjectFlags"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("признакиспособарасчета", "CalculationMethodFlags"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("признакпредметарасчета", "SettlementSubjectFlag"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("признакспособарасчета", "ShowsCalculationMethod"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("приложение", "Package"); // @NON-NLS-1 @NON-NLS-2
@@ -907,10 +1006,15 @@
 	Словарь.Вставить("продажаоблагаетсяндс", "SaleIsSubjectToVAT"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("продажапопатенту", "SalesByPatent"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("продажатоваровнакомиссии", "SaleOfGoodsOnCommission"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("продуктыпереработкизерна", "GrainProcessingProducts"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("продуктыпереработкизернаветис", "GrainProcessingProductsUnderVetISControl"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("продукция", "ManufacturedProduct"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("продукцияизнатуральногомеха", "FurSkinProducts"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("производитель", "Manufacturer"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("производительимпортер", "ManufacturerImporter"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("произвольнаясумма", "ArbitraryAmount"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("промокод", "PromoCode"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("промокоды", "PromoCodes"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("пропорциональнообъемупродукции", "ByUnitsOfProduction"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("прослеживаемыйтовар", "TracedGoods"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("проценткомиссионноговознаграждения", "PercentageOfCommission"); // @NON-NLS-1 @NON-NLS-2
@@ -926,6 +1030,7 @@
 	Словарь.Вставить("прочее", "Other"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("прочеесписание", "OtherWriteOffs"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("прочиерасходы", "OtherExpenses"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("прочиерасчетысконтрагентами", "OtherSettlementsWithCounterparties"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("прочиесведения", "OtherInformation"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("пфрдопредельнойвеличины", "PensionFundFromBaseToLimitValue"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("пфрзазанятыхнаподземныхивредныхработах", "PFEmployedOnUndergroundAndHarmfulJobs"); // @NON-NLS-1 @NON-NLS-2
@@ -943,10 +1048,12 @@
 	Словарь.Вставить("расход", "Expense"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("расходынаниокр", "RDExpenses"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("расценка", "Rate_"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("расчетнаяставка", "CalculatedRate"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("расчетный", "Estimated_"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("расчеты", "Calculations"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("расчетыввалюте", "ARAPInCurrency"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("расчетывусловныхединицах", "CalculationsInConventionalUnits"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("расчетыпокредитамизаймам", "SettlementsOnLoansAndBorrowings"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("расчетысдебиторами", "DebtorsARAPAccounting"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("расчетысклиентами", "CustomersARAPAccounting"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("расчетыскомиссионерами", "CommissionAgentsARAPAccounting"); // @NON-NLS-1 @NON-NLS-2
@@ -959,8 +1066,11 @@
 	Словарь.Вставить("расшифровкадопрасходов", "TranscriptOfAdditionalExpenses"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("расшифровкаплатежа", "ARAPDetails"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("реализацияклиенту", "SaleToCustomer"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("реализацияподарочныхсертификатов", "GiftCertificateSale"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("реализациятоваров", "GoodsSales"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("реализациятоваровуслуг", "CustomerInvoice"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("реализациячерезкомиссионера", "SalesViaCommissionAgent"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("реализациячерезкомиссионерабезпереходаправасобственности", "SalesViaCommissionAgentGoodsInTransit"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("регистрационныйномер", "RegistrationNumber"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("регистрационныйномернерезидента", "NonResidentRegistrationNumber"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("регистрационныйномерпфр", "PensionFundRegistrationNumber"); // @NON-NLS-1 @NON-NLS-2
@@ -971,15 +1081,21 @@
 	Словарь.Вставить("резервбу", "ACReserve"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("резервну", "TAReserve"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("резервы", "Reserves"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("резервыпооплатетруда", "WageReserves"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("реквизитыплатежа", "PaymentDetails"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("реконструкция", "Reconstruction"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("рнпт", "ProductBatchID"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("родитель", "Parent"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("розничный", "Retail_2"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("рольпокупателя", "CustomerRole"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("рольпродавца", "SellerRole"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("руководитель", "Director"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("руководителькадровойслужбы", "HRDirector"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("самовывоз", "SelfPickup"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("сборка", "Assembly"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("сборкатоваров", "AssemblyFromComponents"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("сведенияодокументах", "DocumentsInformation"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("сведениярнпт", "ProductBatchIDInformation"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("свидетельстводатавыдачи", "SertificateDateOfIssue"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("свидетельствосерияномер", "SeriesAndNumber"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("свифтбик", "SWIFTBIC"); // @NON-NLS-1 @NON-NLS-2
@@ -989,6 +1105,7 @@
 	Словарь.Вставить("серииноменклатуры", "ItemsBatches"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("серийныйномер", "SerialNumber"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("серия", "Series"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("серияномертсд", "SupportingDocumentSeriesNumber"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("серияпродукции", "ProductionSeries_"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("сертификат", "Certificate"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("сертификатнспк", "NSPKCertificate"); // @NON-NLS-1 @NON-NLS-2
@@ -1001,6 +1118,7 @@
 	Словарь.Вставить("синхронизацияданныхчерезуниверсальныйформат", "DataSynchronizationViaUniversalFormat"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("системабыстрыхплатежей", "InstantPayments"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("системаналогообложения", "TaxationSystem"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("системыналогообложения", "TaxationSystems"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("скидкинаценки", "DiscountsMarkups"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("склад", "Warehouse"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("складгруппа", "WarehouseGroup_"); // @NON-NLS-1 @NON-NLS-2
@@ -1017,14 +1135,16 @@
 	Словарь.Вставить("согласованноеизменение", "AgreedChange"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("содержание", "Content"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("содержаниедоизменения", "ContentBeforeChange"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("соковаяпродукция", "JuiceProducts"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("составнойпредметрасчета", "CompoundSettlementSubject"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("состояниезаказа", "OrderState"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("состояниезаказастрокой", "OrderStateByLine"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("состояниеоплаты", "StateOfPayment"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("состояниеотгрузки", "ShipmentStatus"); // @NON-NLS-1 @NON-NLS-2
-	Словарь.Вставить("состояниеэлектронногодокумента", "StateOfElectronicDocument"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("сотрудник", "Employee"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("сотрудники", "Employees_"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("специальныйкоэффициентну", "SpecialFactorTaxAccounting"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("спецификации", "Specifications"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("спирт", "Alcohol"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("спиртосодержащаянепищеваяпродукция", "AlcoholContainingNonFoodProducts"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("спиртосодержащаяпищеваяпродукция", "AlcoholContainingFoodProducts"); // @NON-NLS-1 @NON-NLS-2
@@ -1041,6 +1161,11 @@
 	Словарь.Вставить("способпоступления", "ReceiptMethod"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("способрасчетакомиссионноговознаграждения", "MethodOfCalculationOfCommission"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("способрасчетов", "CalculationMethod"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("способыдоставки", "TransportMethods"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("способыначисленияамортизациинмабу", "MethodsOfCalculatingDepreciationOfNMABU"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("способыначисленияамортизацииос", "AccrualMethodOfFixedAssetsDepreciation"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("способыпогашениястоимоститмц", "WaysToRepayCostOfInventory"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("способырасчетакомиссионноговознаграждения", "CommissionFeeCalculationMethods"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("споставщиком", "WithVendor"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("среднийремонт", "AssetRepair"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("срокгодности", "ExpirationDate_"); // @NON-NLS-1 @NON-NLS-2
@@ -1052,23 +1177,29 @@
 	Словарь.Вставить("срочностькредитазайма", "UrgencyOfLoanLoan"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("ссылка", "Ref"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("ссылканаобъект", "ObjectReference"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("ставка", "Rate1"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("ставкаазартнойигры", "GamblingStake"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("ставкандс", "VATRate"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("ставкандсвознаграждения", "VATRateOfRemuneration"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("ставкандсврознице", "RetailNDSRate"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("ставкандсдоизменения", "VATRateBeforeChange"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("ставкапошлины", "DutyRate"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("ставкиндс", "VATRates"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("ставкиндсноменклатуры", "ProductsVATRates"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("статус", "Status"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("статуссоставителя", "AuthorStatus"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("статусуказаниясерий", "BatchesIndicationStatus"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("статусызаявокнарасходдс", "StatusesOfRequestsForSpendingCash"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("статьяддс", "CFItem"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("статьядоходов", "IncomeItem"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("статьязатрат", "CostItem"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("статьярасходов", "ExpenseItem"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("стоимость", "Cost"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("стоимостьневключаетсяврасходы", "CostIsNotIncludedInExpenses"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("стоимостьнепогашается", "CostIsNotRedeemable"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("стоимостьос", "FACost"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("стоимостьтоваров", "GoodsCost"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("сторнируемыйдокумент", "ReversedDocument"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("страна", "Country"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("странаввозанерф", "ImportingCountryIsNotRF"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("странамира", "WorldCountry"); // @NON-NLS-1 @NON-NLS-2
@@ -1078,6 +1209,7 @@
 	Словарь.Вставить("страховойномерпфр", "InsuranceNumberOfTheFIU"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("страховыевзносы", "InsuranceContributions"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("строка", "String"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("субъект", "Subject"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("сумма", "Sum"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("суммабезндс", "AmountExcludingVAT"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("суммабонусныхбаллов", "AmountOfBonusPoints"); // @NON-NLS-1 @NON-NLS-2
@@ -1104,24 +1236,24 @@
 	Словарь.Вставить("сумманеоблагаемаяндс", "AmountNotSubjectToVAT"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("суммаоплаты", "PayAmount"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("суммапередачи", "TransferAmount"); // @NON-NLS-1 @NON-NLS-2
-	Словарь.Вставить("суммапереоценки", "AmountOfRevaluation_"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("суммаплатежа", "PaymentAmount"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("суммапоступления", "OrderReceiptAmount"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("суммапошлины", "DutyAmount"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("суммарегл", "SumCompl"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("суммарезерва", "ReserveAmount_"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("суммарнпт", "AmountOfProductBatchID"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("суммаскидки", "DiscountAmount"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("суммасучетомскидки", "AmountIncludingDiscount"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("суммауслуг", "AmountOfServices"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("суммаучет", "AmountAccounting_"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("суммафакт", "SumReal"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("счетафактурывыданныепокупателям", "InvoicesIssuedToCustomers"); // @NON-NLS-1 @NON-NLS-2
-	Словарь.Вставить("счетдоходов", "RevenueAccount"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("счетдоходов", "AccountOfIncome"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("счетдт", "AccountDr"); // @NON-NLS-1 @NON-NLS-2
-	Словарь.Вставить("счетзатрат", "ExpenseAccount_"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("счетзатрат", "CostAccount"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("счеткт", "AccountCr"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("счетпередачи", "TransferAccount"); // @NON-NLS-1 @NON-NLS-2
-	Словарь.Вставить("счетрасходов", "ExpenseAccount"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("счетрасходов", "ExpensesAccount"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("счетрасчетов", "SettlementAccount_"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("счетучета", "GLAccount"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("счетучетаавансоввыданных", "AccountForAdvancesIssued"); // @NON-NLS-1 @NON-NLS-2
@@ -1165,6 +1297,7 @@
 	Словарь.Вставить("таможенныйсбор", "CustomsFee"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("таможенныйштраф", "CustomsPenalty"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("тара", "Tara"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("твердаяставкаакциза", "FixedExciseDuty"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("тексткорреспондента", "CorrespondentText"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("текстназначения", "PurposeText"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("текстплательщика", "PayerSName"); // @NON-NLS-1 @NON-NLS-2
@@ -1181,18 +1314,31 @@
 	Словарь.Вставить("телефоны", "Phones"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("типакцизноймарки", "TypeOfExciseStamp"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("типзапасов", "InventoryType"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("типколичество", "TypeQuantity"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("типноменклатуры", "ItemsType"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("типоплаты", "TypeOfPayment"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("типпериодадействия", "TypeOfValidityPeriod"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("типплатежногодокумента", "PaymentDocumentType"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("типсклада", "WarehouseStore"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("типсумма", "TypeAmount"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("типсуммыграфика", "ScheduleAmountType"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("типуникальныйидентификатор", "UUIDType"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("типупаковки", "PackageType"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("типуслуги", "ServiceType"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("типцен", "PriceType_"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("типценрозничнойторговли", "TypeOfRetailPrices"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("типцены", "PriceType"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("типштрихкода", "BarcodeType"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("типызапасов", "InventoryTypes"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("типыноменклатуры", "ItemsTypes"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("типыпериодов", "TypesOfPeriods"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("типыплатежнойсистемыккт", "TypesOfCashRegisterPaymentSystem"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("типыплатежныхдокументов", "TypesOfPaymentDocuments"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("типыскладов", "TypesOfWarehouses"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("типытипыоплатчековккм", "TypesOfPaymentTypesOfCashRegisterChecks"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("типыупаковокноменклатуры", "TypesOfItemsPackages"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("типыуслуг", "ServicesTypes"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("типыштрихкодов", "BarcodeTypes"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("тмц", "Inventory"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("товар", "OwnGoods"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("товармаркируемыйсиимеющийкм", "GoodsMarkedByIdentificationToolWithMarkingCode"); // @NON-NLS-1 @NON-NLS-2
@@ -1230,6 +1376,9 @@
 	Словарь.Вставить("требуетсяуточнение", "ClarificationIsRequired"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("требуютсядействия", "ActionsAreRequired"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("тфомс", "TCMIF"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("уведомлениеобостаткахпрослеживаемыхтоваров", "NotificationOfBalancesOfTraceableGoods"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("уведомлениеоввозепрослеживаемыхтоваров", "NotificationOfImportOfTraceableGoods"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("уведомлениеоперемещениипрослеживаемыхтоваров", "NotificationOfMovementOfTraceableGoods"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("удалитьожидаетсявыписка", "DeleteAwaitingStatement"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("удалитьожидаетсяизвещение", "DeleteAwaitingNotification"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("удалитьожидаетсяисполнение", "DeleteFulfillmentIsExpected"); // @NON-NLS-1 @NON-NLS-2
@@ -1254,14 +1403,17 @@
 	Словарь.Вставить("услуги", "Services"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("установкаценноменклатуры", "PriceSetup"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("устаревший", "Obsolete1"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("утверждена", "Upholded_"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("утвержденнаядатаплатежа", "ApprovedPaymentDate"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("утвержденнаяформаоплаты", "ApprovedFormOfPayment"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("уточнениенаименования", "NameClarification"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("участникисделки", "TransactionParties"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("учетагентскогондс", "CompanyActsAsAVATTaxAgent"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("учетвыручкивоперационнойкассе", "AccountingForRevenueInOperatingCashRegister"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("файлы", "Files"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("факс", "Fax"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("фактическийадрес", "ActualAddress"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("фактурнаястоимость", "TaxInvoicedPrice"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("фамилия", "LastName"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("физическиелица", "Persons"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("физическоелицо", "Individual"); // @NON-NLS-1 @NON-NLS-2
@@ -1270,6 +1422,7 @@
 	Словарь.Вставить("формаоплаты", "PaymentMethod"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("форматвыгрузки", "UploadFormat"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("форматсвойства", "FormatProperties"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("формыоплаты", "PaymentForms"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("фотоаппараты", "CamerasAndFlashbulbs"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("фсс", "InsuranceContributionsToSSF"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("ффомс", "InsuranceContributionsToFCMIF"); // @NON-NLS-1 @NON-NLS-2
@@ -1294,6 +1447,7 @@
 	Словарь.Вставить("частичнаяликвидация", "PartialDisposal"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("частичноевыбытиевариантучета", "PartialDisposalAccountingOption"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("частичноевыбытиеколичество", "PartialDisposalQuantity"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("чек", "Receipt"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("чекккм", "CashRegisterReceipt"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("черновик", "Draft"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("шаблонмагнитнойкарты", "MagneticStripeCardTemplate"); // @NON-NLS-1 @NON-NLS-2
@@ -1335,9 +1489,11 @@
 КонецФункции
     
 // Возвращаемое значение:
-//  Соответствие
+//  Соответствие из КлючИЗначение:
+//   * Ключ - Строка
+//   * Значение - Строка
 //
-Функция Словарь_en_ru() Экспорт
+Функция Словарь_en_ru()
 	
 	Словарь = Новый Соответствие;
 	
@@ -1368,13 +1524,17 @@
 	Словарь.Вставить("accountforsettlementswithsupplierstare", "СчетУчетаРасчетовСПоставщикамиТара"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("accountfortransfertocommission", "СчетУчетаПередачиНаКомиссию"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("accountingforrevenueinoperatingcashregister", "УчетВыручкиВОперационнойКассе"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("accountingrecorddate", "ДатаПринятияНаУчет"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("accountnumber", "НомерСчета"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("accountofincome", "СчетДоходов"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("accountspayable", "КредиторскаяЗадолженность"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("accountsreceivable", "ДебиторскаяЗадолженность"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("accounttype", "ВидСчета"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("accrualdate", "ДатаНачисления"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("accrualmethodoffixedassetsdepreciation", "СпособыНачисленияАмортизацииОС"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("accrualofestimatedvacationliabilities", "НачислениеОценочныхОбязательствПоОтпускам"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("accruals", "Начисления"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("accrued_bonuses", "НачисленныеБонусы"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("accruewearasperufadr", "НачислениеИзносаПоЕНАОФ"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("accumulateddepreciationaccounting", "НакопленнаяАмортизацияБУ"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("accumulateddepreciationtaxaccounting", "НакопленнаяАмортизацияНУ"); // @NON-NLS-1 @NON-NLS-2
@@ -1412,6 +1572,7 @@
 	Словарь.Вставить("agencyfee", "АгентскоеВознаграждение"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("agent", "Агент"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("agentattribute", "ПризнакАгента"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("agentcharacteristics", "ПризнакиАгента"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("agreedchange", "СогласованноеИзменение"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("agreedupon", "Согласована"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("alcohol", "Спирт"); // @NON-NLS-1 @NON-NLS-2
@@ -1436,7 +1597,7 @@
 	Словарь.Вставить("amountofaccountspayable", "СуммаКредиторскойЗадолженности"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("amountofaccountsreceivable", "СуммаДебиторскойЗадолженности"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("amountofbonuspoints", "СуммаБонусныхБаллов"); // @NON-NLS-1 @NON-NLS-2
-	Словарь.Вставить("amountofrevaluation_", "СуммаПереоценки"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("amountofproductbatchid", "СуммаРНПТ"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("amountofservices", "СуммаУслуг"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("amountofvatbeforeadjustment", "СуммаНДСДоКорректировки"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("amountvatremuneration", "СуммаНДСВознаграждения"); // @NON-NLS-1 @NON-NLS-2
@@ -1444,6 +1605,7 @@
 	Словарь.Вставить("analyticalproductgroup", "ГруппаАналитическогоУчетаНоменклатуры"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("annualdepreciationrate", "КоэффициентАмортизацииБУ"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("antiseptics", "Антисептики"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("applicationforimportationofgoods", "ЗаявлениеОВвозеТоваров"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("approvalrequired", "ТребуетсяУтверждение"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("approvedformofpayment", "УтвержденнаяФормаОплаты"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("approvedpaymentdate", "УтвержденнаяДатаПлатежа"); // @NON-NLS-1 @NON-NLS-2
@@ -1451,6 +1613,8 @@
 	Словарь.Вставить("arapdetails", "РасшифровкаПлатежа"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("arapincurrency", "РасчетыВВалюте"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("araptype", "ВидРасчетов"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("arbitraryamount", "ПроизвольнаяСумма"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("archive", "Архив"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("archivepasswordexchangemessages", "ПарольАрхиваСообщенияОбмена"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("assembly", "Сборка"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("assemblyfromcomponents", "СборкаТоваров"); // @NON-NLS-1 @NON-NLS-2
@@ -1483,6 +1647,7 @@
 	Словарь.Вставить("barcodelength", "ДлинаШтрихкода"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("barcodeselection", "ШтрихкодОтбор"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("barcodetype", "ТипШтрихкода"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("barcodetypes", "ТипыШтрихкодов"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("basis", "Основание"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("basisdocuments", "ДокументыОснования"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("basisindicator", "ПоказательОснования"); // @NON-NLS-1 @NON-NLS-2
@@ -1495,8 +1660,11 @@
 	Словарь.Вставить("billingmethod", "СпособВыставления"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("birthdate", "ДатаРождения"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("birthplace", "МестоРождения"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("bonus", "Бонус"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("bonusconversioncurrency", "ВалютаКонвертацииБонусов"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("bonuspointaccrual", "НачислениеБонусныхБаллов"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("bonusprogram", "БонуснаяПрограмма"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("bottleretirement", "ВыбытиеБутылки"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("branchoffice", "ОбособленноеПодразделение"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("brand", "Марка"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("businessactivityclassifiercode", "КодОКВЭД"); // @NON-NLS-1 @NON-NLS-2
@@ -1518,7 +1686,10 @@
 	Словарь.Вставить("byuniformdepreciationratesper1000kmofmileage", "ПоЕНАОФНа1000кмПробега"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("byunitsofproduction", "ПропорциональноОбъемуПродукции"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("byvendortoourwarehouse", "СиламиПоставщикаДоНашегоСклада"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("calculatedrate", "РасчетнаяСтавка"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("calculationdata", "ДанныеРасчетов"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("calculationmethod", "СпособРасчетов"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("calculationmethodflags", "ПризнакиСпособаРасчета"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("calculations", "Расчеты"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("calculationsettings", "НастройкиРасчета"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("calculationsinconventionalunits", "РасчетыВУсловныхЕдиницах"); // @NON-NLS-1 @NON-NLS-2
@@ -1530,6 +1701,7 @@
 	Словарь.Вставить("cardnumber", "НомерКарты"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("carrier", "Перевозчик"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("carryingoutnetting", "ПроведениеВзаимозачета"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("cartid", "ИдентификаторКорзины"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("cash", "ДенежныеСредства"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("cashaccountissuer", "КассаОтправитель"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("cashaccountpayment_", "Наличная"); // @NON-NLS-1 @NON-NLS-2
@@ -1558,11 +1730,13 @@
 	Словарь.Вставить("cfitem", "СтатьяДДС"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("characteristic", "Характеристика"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("chiefaccountant", "ГлавныйБухгалтер"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("cikinds", "ВидыКИ"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("citizenship", "Гражданство"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("city", "Город"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("claimssettlementaccount", "СчетУчетаРасчетовПоПретензиям"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("clarificationisrequired", "ТребуетсяУточнение"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("classifierdata", "ДанныеКлассификатора"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("closed_", "Закрыта"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("closedforcefully", "ЗакрытПринудительно"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("closedwithdeviation", "ЗакрытСОтклонением"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("closedwithrejectionofinvitation", "ЗакрытСОтклонениемПриглашения"); // @NON-NLS-1 @NON-NLS-2
@@ -1582,12 +1756,14 @@
 	Словарь.Вставить("commissionagentsarapaccounting", "РасчетыСКомиссионерами"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("commissionagentstaxinvoicenumber", "НомерСчетаФактурыКомиссионера"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("commissionamount", "СуммаВознаграждения"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("commissionfeecalculationmethods", "СпособыРасчетаКомиссионногоВознаграждения"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("commissiongoods", "КомиссионныеТовары"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("commissioning", "ВводВЭксплуатацию"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("commodity", "СырьевойТовар"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("commodityexports", "ЭкспортСырьевыхТоваров"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("companyactsasavattaxagent", "УчетАгентскогоНДС"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("companybankaccount", "БанковскийСчетОрганизации"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("companycustomer", "ОрганизацияПродавец"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("companyfilter", "ОрганизацияОтбор"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("companyindividual", "ЮридическоеФизическоеЛицо"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("companyrecipient", "ОрганизацияПолучатель"); // @NON-NLS-1 @NON-NLS-2
@@ -1596,22 +1772,28 @@
 	Словарь.Вставить("completion", "Достройка"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("composite", "КлючСтроки"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("compoundsettlementsubject", "СоставнойПредметРасчета"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("confirmationdate", "ДатаУтверждения"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("confirmationofcancellationisrequired", "ТребуетсяПодтверждениеАннулирования"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("confirmed_", "Подтвержден"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("consignedgoodscustomer", "ПокупательКомиссионногоТовара"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("consignee", "Комиссионер"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("consignmentprocurement", "ПриемНаКомиссию"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("consignmentreportfromcustomer", "ОтчетКомиссионера"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("consignmentreporttovendor", "ОтчетКомитенту"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("consignor", "Комитент"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("consignorsarapaccounting", "РасчетыСКомитентами"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("consolidatedcommission", "СводныйКомиссионный"); // @NON-NLS-1 @NON-NLS-2
-	Словарь.Вставить("consumerpackaging", "ПотребительскаяУпаковка"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("contactinformation", "КонтактнаяИнформация"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("contactinformationkind", "ВидКонтактнойИнформации"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("contactperson", "КонтактноеЛицо"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("contactpersons", "КонтактныеЛица"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("content", "Содержание"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("contentbeforechange", "СодержаниеДоИзменения"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("contract", "Договор"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("contractdate_", "ДатаДоговора"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("contractlink", "ДоговорСсылка"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("contractnumber", "НомерДоговора"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("contractwithcommissionagent", "ДоговорСКомиссионером"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("contributionsforcmi", "ОбязательноеМедицинскоеСтрахование"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("contributionsforcmiie", "ОбязательноеМедицинскоеСтрахованиеИП"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("contributionsforcsi", "ОбязательноеСоциальноеСтрахование"); // @NON-NLS-1 @NON-NLS-2
@@ -1621,6 +1803,7 @@
 	Словарь.Вставить("conversionrate", "КурсКонвертации"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("conversionrateofbonusesintocurrency", "КурсКонвертацииБонусовВВалюту"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("corraccount", "КоррСчет"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("correcteddocument", "ИсправляемыйДокумент"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("correctedimplementationdocument", "ИсправляемыйДокументРеализации"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("correctedreceiptdocument", "ИсправляемыйДокументПоступления"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("correctiondate", "ДатаИсправления"); // @NON-NLS-1 @NON-NLS-2
@@ -1630,7 +1813,9 @@
 	Словарь.Вставить("correspondenttext", "ТекстКорреспондента"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("cost", "Стоимость"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("cost_", "Себестоимость"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("costaccount", "СчетЗатрат"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("costdivision", "ПодразделениеЗатрат"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("costisnotincludedinexpenses", "СтоимостьНеВключаетсяВРасходы"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("costisnotredeemable", "СтоимостьНеПогашается"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("costitem", "СтатьяЗатрат"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("costofsalesaccount", "СчетУчетаСебестоимостиПродаж"); // @NON-NLS-1 @NON-NLS-2
@@ -1653,6 +1838,7 @@
 	Словарь.Вставить("creditor", "КонтрагентКредитор"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("creditorsarapaccounting", "РасчетыСКредиторами"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("crtr", "КПП"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("crtrhistory", "ИсторияКПП"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("currency", "Валюта"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("currencyofconversion", "ВалютаКонвертации"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("currentccostfinacc", "ТекущаяСтоимостьБУ"); // @NON-NLS-1 @NON-NLS-2
@@ -1666,6 +1852,7 @@
 	Словарь.Вставить("customerinvoiceoutsourcedsale", "СКомитентомНаЗакупку"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("customermaterials", "МатериалыЗаказчика"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("customerrefunds", "ВозвратыПокупателей"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("customerrole", "РольПокупателя"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("customersarapaccounting", "РасчетыСКлиентами"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("customsdeclaration", "ТаможеннаяДекларация"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("customsdeclarationlink", "ТаможеннаяДекларацияСсылка"); // @NON-NLS-1 @NON-NLS-2
@@ -1676,6 +1863,7 @@
 	Словарь.Вставить("datasynchronizationviauniversalformat", "СинхронизацияДанныхЧерезУниверсальныйФормат"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("date", "Дата"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("dateindicator", "ПоказательДаты"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("dateofactivation", "ДатаПодключения"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("dateofdeduction", "ДатаСписания"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("dateofdischarge", "ДатаВыписки"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("dateofdocumentinarapaccounting", "ДатаПлатежноРасчетногоДокумента"); // @NON-NLS-1 @NON-NLS-2
@@ -1694,6 +1882,7 @@
 	Словарь.Вставить("debtorsarapaccounting", "РасчетыСДебиторами"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("debttransfer_", "ПереносЗадолженности"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("declarationno", "НомерДекларации"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("deductioninexpensesonrecognition", "ВключениеВРасходыПриПринятииКУчету"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("deedoftransfer", "АктНаПередачуПрав"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("deferredpayment", "ОтсрочкаПлатежа"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("deleteawaitingnotification", "УдалитьОжидаетсяИзвещение"); // @NON-NLS-1 @NON-NLS-2
@@ -1707,6 +1896,8 @@
 	Словарь.Вставить("deliveryaddress", "АдресДоставки"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("deliverymethod", "СпособДоставки"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("department", "Подразделение"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("department_company", "ПодразделениеОрганизации"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("deposit", "Депозит"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("deposit_", "Депозитный"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("deposits", "Депозиты"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("depreciation", "Амортизация"); // @NON-NLS-1 @NON-NLS-2
@@ -1719,6 +1910,7 @@
 	Словарь.Вставить("depth", "Глубина"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("description", "Наименование"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("descriptionfull", "НаименованиеПолное"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("descriptioninternational", "НаименованиеМеждународное"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("desirableformofpaymentcash", "ЖелательнаяФормаОплатыНаличные"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("desirableformofpaymentnoncash", "ЖелательнаяФормаОплатыБезналичные"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("desiredformofpaymentpaymentcard", "ЖелательнаяФормаОплатыПлатежнаяКарта"); // @NON-NLS-1 @NON-NLS-2
@@ -1732,6 +1924,7 @@
 	Словарь.Вставить("disbursementoffunds", "ВыдачаДенежныхСредств"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("discountamount", "СуммаСкидки"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("discountcard", "ДисконтнаяКарта"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("discounted", "Дисконтная"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("discountpercentage", "ПроцентСкидки"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("discountsmarkups", "СкидкиНаценки"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("displaymonthinwords", "ВыводитьМесяцПрописью"); // @NON-NLS-1 @NON-NLS-2
@@ -1753,6 +1946,7 @@
 	Словарь.Вставить("documentsales", "ДокументПродажи"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("documentsalesofgoodsandservices", "ДокументРеализации"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("documentscount", "КоличествоДокументов"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("documentsinformation", "СведенияОДокументах"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("documenttransfers_", "ДокументПередачи"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("documenttypeselection", "ВидДокументаОтбор"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("documentviewfromclassifier", "ВидДокументаИзКлассификатора"); // @NON-NLS-1 @NON-NLS-2
@@ -1767,6 +1961,7 @@
 	Словарь.Вставить("employee", "Сотрудник"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("employeeincharge_", "ОтветственноеЛицо"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("employeeresponsible", "Ответственный"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("employees_", "Сотрудники"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("employeesbankaccount", "БанковскийСчетСотрудника"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("encryptioncertificates", "СертификатыШифрования"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("enddate", "ДатаОкончания"); // @NON-NLS-1 @NON-NLS-2
@@ -1776,6 +1971,9 @@
 	Словарь.Вставить("endofperiod", "КонецПериода"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("endofreportperiod_", "ОкончаниеПериодаОтчета"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("estimated_", "Расчетный"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("eventdate", "ДатаСобытия"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("eventkind", "ВидСобытия"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("eventkindswithfixedassets", "ВидыСобытийОС"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("eventkindwithfixedassets", "ВидСобытияОС"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("exchangecompleted", "ОбменЗавершен"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("exchangecompletedwithadjustments", "ОбменЗавершенСИсправлением"); // @NON-NLS-1 @NON-NLS-2
@@ -1796,10 +1994,9 @@
 	Словарь.Вставить("expecteddateofreceipt", "ОжидаемаяДатаПоступления"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("expecteddeliverydate", "ОжидаемаяДатаПоставки"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("expense", "Расход"); // @NON-NLS-1 @NON-NLS-2
-	Словарь.Вставить("expenseaccount", "СчетРасходов"); // @NON-NLS-1 @NON-NLS-2
-	Словарь.Вставить("expenseaccount_", "СчетЗатрат"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("expenseitem", "СтатьяРасходов"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("expensereport", "АвансовыйОтчет"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("expensesaccount", "СчетРасходов"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("expensesforallocation", "РаспределяемыеЗатраты"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("expirationdate_", "СрокГодности"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("exportofnonresourcegoods", "ЭкспортНесырьевыхТоваров"); // @NON-NLS-1 @NON-NLS-2
@@ -1810,6 +2007,8 @@
 	Словарь.Вставить("externalsystem", "ВнешняяСистема"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("extrapay", "Доплата"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("facost", "СтоимостьОС"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("fagroups", "ГруппыОС"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("farepaymentprocedure", "ПорядокПогашенияСтоимостиОС"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("fax", "Факс"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("feacncode", "КодТНВЭД"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("featureselection", "ХарактеристикаОтбор"); // @NON-NLS-1 @NON-NLS-2
@@ -1831,9 +2030,11 @@
 	Словарь.Вставить("fixedassetscostadditions", "МодернизацияОС"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("fixedassetsdepreciationcharge", "АмортизацияОС"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("fixedassetsevent", "СобытиеОС"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("fixedexciseduty", "ТвердаяСтавкаАкциза"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("foreignbank", "ИностранныйБанк"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("formatproperties", "ФорматСвойства"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("forotherexpenses", "НаПрочиеРасходы"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("fpspaymentid", "ИдентификаторОплатыСБП"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("fromsenderdeterminedbydeliveryservice", "ОтОтправителяОпределяетСлужбаДоставки"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("ftscode", "КодМВД"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("ftssubordinationcode", "КодПодчиненностиФСС"); // @NON-NLS-1 @NON-NLS-2
@@ -1849,6 +2050,7 @@
 	Словарь.Вставить("giftcertificatekind", "ВидПодарочногоСертификата"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("giftcertificatekinds", "ВидыПодарочныхСертификатов"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("giftcertificates", "ПодарочныеСертификаты"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("giftcertificatesale", "РеализацияПодарочныхСертификатов"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("giverrawmaterialsandsupplies", "ДавальческиеСырьеИМатериалы"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("glaccount", "СчетУчета"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("goods", "Товары"); // @NON-NLS-1 @NON-NLS-2
@@ -1861,6 +2063,10 @@
 	Словарь.Вставить("goodsrevaluationinretail", "ПереоценкаТоваровВРознице"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("goodssale", "ТоварыПродажа"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("goodssales", "РеализацияТоваров"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("grain", "Зерно"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("grainprocessingproducts", "ПродуктыПереработкиЗерна"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("grainprocessingproductsundervetiscontrol", "ПродуктыПереработкиЗернаВЕТИС"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("grainundervetiscontrol", "ЗерноВЕТИС"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("group", "Группа"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("groupoffinancialaccountingsettingsforsettlements", "ГруппаНастроекФинансовогоУчетаРасчетов"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("halfyear_", "Полугодье"); // @NON-NLS-1 @NON-NLS-2
@@ -1874,6 +2080,7 @@
 	Словарь.Вставить("importedalcoholcontainingproducts", "ИмпортнаяАлкогольнаяПродукция"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("importingcountryisnotrf", "СтранаВвозаНеРФ"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("importingfrominternet", "ЗагружаетсяИзИнтернета"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("includeindepreciableproperty", "ВключитьВСоставАмортизируемогоИмущества"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("includinginexpensesonrecognition", "СписаниеПриПринятииКУчету"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("includingvat", "ВТомЧислеНДС"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("incomeforactivities", "ПоступлениеПодДеятельность"); // @NON-NLS-1 @NON-NLS-2
@@ -1885,6 +2092,7 @@
 	Словарь.Вставить("indicatorbcc", "ПоказательКБК"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("indicators", "Показатели"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("individual", "ФизическоеЛицо"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("individualentrepreneur", "ИндивидуальныйПредприниматель"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("individualselection", "ФизическоеЛицоОтбор"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("inelectronicform", "ВЭлектронномВиде"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("infavorofsupplier", "ВПользуПоставщика"); // @NON-NLS-1 @NON-NLS-2
@@ -1901,13 +2109,14 @@
 	Словарь.Вставить("insurancenumberofthefiu", "СтраховойНомерПФР"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("intangibleasset", "НематериальныйАктив"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("intangibleassets", "НематериальныеАктивы"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("intangibleassetsaccountingitemkinds", "ВидыОбъектовУчетаНМА"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("interestonlongtermloans", "ПроцентыПоДолгосрочнымКредитам"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("interestonlongtermloans_", "ПроцентыПоДолгосрочнымЗаймам"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("interestonshorttermloans", "ПроцентыПоКраткосрочнымКредитам"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("interestonshorttermloans_", "ПроцентыПоКраткосрочнымЗаймам"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("interests", "Проценты"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("internalmovement", "ВнутреннееПеремещение"); // @NON-NLS-1 @NON-NLS-2
-	Словарь.Вставить("internaltransmission", "ВнутренняяПередача"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("internaltransfer", "ВнутренняяПередача"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("inventory", "ТМЦ"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("inventory_", "Инвентаризация"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("inventorydate", "ДатаИнвентаризации"); // @NON-NLS-1 @NON-NLS-2
@@ -1915,6 +2124,7 @@
 	Словарь.Вставить("inventoryrecount", "ПересчетТоваров"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("inventorytransfer", "ПеремещениеТоваров"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("inventorytype", "ТипЗапасов"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("inventorytypes", "ТипыЗапасов"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("invissubmitted", "ПредъявленСФ"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("invoicedate", "ДатаСФ"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("invoiceforunfactureddeliveries", "СчетУчетаНеотфактурованныеПоставки"); // @NON-NLS-1 @NON-NLS-2
@@ -1941,13 +2151,16 @@
 	Словарь.Вставить("itemkinds", "ВидыНоменклатуры"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("itemsbatches", "СерииНоменклатуры"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("itemstype", "ТипНоменклатуры"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("itemstypes", "ТипыНоменклатуры"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("itemvariant", "ХарактеристикаПродукции"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("jobtitle", "Должность"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("juiceproducts", "СоковаяПродукция"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("keepaccountingbybatch", "ИспользоватьСерии"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("keyproperties", "КлючевыеСвойства"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("kindofaccountingobject", "ВидОбъектаУчета"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("kindofalcoholcontainingproducts", "ВидАлкогольнойПродукции"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("kindpresentaion", "ПредставлениеВида"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("kit", "Комплект"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("labelled", "Маркируемый"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("lastfirstname", "ФИО"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("lastname", "Фамилия"); // @NON-NLS-1 @NON-NLS-2
@@ -1956,6 +2169,7 @@
 	Словарь.Вставить("legalform", "НаименованиеОКОПФ"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("letterofauthority", "Доверенность"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("letterofcredit", "Аккредитив"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("licensekindsofalcoholcontainingproducts", "ВидыЛицензийАлкогольнойПродукции"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("lightindustrygoodsandclothes", "ЛегкаяПромышленность"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("linear", "Линейный"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("linenumber", "НомерСтроки"); // @NON-NLS-1 @NON-NLS-2
@@ -1989,6 +2203,7 @@
 	Словарь.Вставить("manufacturerimporter", "ПроизводительИмпортер"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("manufaturernumber", "ЗаводскойНомер"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("markedgoods", "МаркированныйТовар"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("marking", "Маркировка"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("markup", "Наценка"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("masculine", "Мужской"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("materialtransfertoproduction", "ПередачаМатериаловВПроизводство"); // @NON-NLS-1 @NON-NLS-2
@@ -1996,6 +2211,7 @@
 	Словарь.Вставить("methodofcalculationofcommission", "СпособРасчетаКомиссионногоВознаграждения"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("methodofdebtrepayment", "СпособПогашенияЗадолженности"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("methodofrepaymentofcostofinventory", "СпособПогашенияСтоимостиТМЦ"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("methodsofcalculatingdepreciationofnmabu", "СпособыНачисленияАмортизацииНМАБУ"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("middlename", "Отчество"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("milkanddairyproductswithoutvetis", "МолочнаяПродукцияБезВЕТИС"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("milkandmilkproducts", "МолочнаяПродукция"); // @NON-NLS-1 @NON-NLS-2
@@ -2011,16 +2227,20 @@
 	Словарь.Вставить("municipalterritoriesclassifier", "ОКТМО"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("name", "Имя"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("nameclarification", "УточнениеНаименования"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("namehistory", "ИсторияНаименований"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("nameofcontactinformation", "НаименованиеКонтактнойИнформации"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("nameofmethodforreflectingexpenses", "НаименованиеСпособаОтраженияРасходов"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("nameofpurposeofuse", "НаименованиеНазначенияИспользования"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("nameofrecognitiondocument", "НазваниеДокументаПринятияКУчету"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("nameoftheokp", "НаименованиеОКП"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("ndsvpathaccountingaccount", "СчетУчетаНДСВПути"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("netweightkg", "ВесНеттоКг"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("newnodecode", "КодНовогоУзла"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("nicotinecontainingproducts", "НикотиносодержащаяПродукция"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("noactionsneeded", "ДействийНеТребуется"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("nomenclatureselection", "НоменклатураОтбор"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("nominal", "Номинал"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("nonalcoholicbeer", "БезалкогольноеПиво"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("nonautomatedpointofsale", "НеавтоматизированнаяТорговаяТочка"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("none", "Нет"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("nonoperatingincome", "ВнереализационныйДоход"); // @NON-NLS-1 @NON-NLS-2
@@ -2030,6 +2250,9 @@
 	Словарь.Вставить("notcalculating", "НеРассчитывается"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("notes", "Заметки"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("notgenerated1", "НеСформирован"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("notificationofbalancesoftraceablegoods", "УведомлениеОбОстаткахПрослеживаемыхТоваров"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("notificationofimportoftraceablegoods", "УведомлениеОВвозеПрослеживаемыхТоваров"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("notificationofmovementoftraceablegoods", "УведомлениеОПеремещенииПрослеживаемыхТоваров"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("notificationofreceiptisrequired", "ТребуетсяИзвещениеОПолучении"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("notificationofrejectionisexpected", "ОжидаетсяИзвещениеПоОтклонению"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("notificationofrejectionisrequired", "ТребуетсяИзвещениеПоОтклонению"); // @NON-NLS-1 @NON-NLS-2
@@ -2041,6 +2264,7 @@
 	Словарь.Вставить("number", "Номер"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("numberindicator", "ПоказательНомера"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("numberinprogram", "НомерВПрограмме"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("numberofbonuspoints", "КоличествоБонусныхБаллов"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("numberofdays_1", "КоличествоУчет"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("numberofdaysofdeferral", "КоличествоДнейОтсрочки"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("numberofpackages", "КоличествоУпаковок"); // @NON-NLS-1 @NON-NLS-2
@@ -2058,14 +2282,17 @@
 	Словарь.Вставить("object", "Объект"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("objectreference", "СсылкаНаОбъект"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("obsolete1", "Устаревший"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("ogrn", "ОГРН"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("okfs", "ОКФС"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("okpo", "ОКПО"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("oncommissioning", "ПриПередаче"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("onitem", "НаТовар"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("onotherincome", "НаПрочиеДоходы"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("onpaper", "НаБумажномНосителе"); // @NON-NLS-1 @NON-NLS-2
-	Словарь.Вставить("openingdate", "ДатаОткрытия"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("operationkind", "ВидОперации"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("operationservice", "Услуга"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("optionsforreflectingshortageuponreceipt", "ВариантыОтраженияНедостачиПриПоступлении"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("optionsforreflectingsurplusesuponreceipt", "ВариантыОтраженияИзлишковПриПоступлении"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("order", "Порядок"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("orderdocument", "Заказ"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("orderforacceptance", "РаспоряжениеНаПриемку"); // @NON-NLS-1 @NON-NLS-2
@@ -2080,6 +2307,7 @@
 	Словарь.Вставить("otherinformation", "ПрочиеСведения"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("otherreasons", "Иное"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("othersettlementsubject", "ИнойПредметРасчета"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("othersettlementswithcounterparties", "ПрочиеРасчетыСКонтрагентами"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("otherwriteoffs", "ПрочееСписание"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("ourowndeliveryfromsenderaddress", "НашимиСиламиСАдресаОтправителя"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("outputamountwithoutfractionalpart", "ВыводитьСуммуБезКопеек"); // @NON-NLS-1 @NON-NLS-2
@@ -2107,6 +2335,7 @@
 	Массив.Добавить("Оплачено"); // @NON-NLS-1
 	Словарь.Вставить("paid", Массив);
 
+	Словарь.Вставить("parent", "Родитель"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("parentcompany", "ГоловнаяОрганизация"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("partialdisposal", "ЧастичнаяЛиквидация"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("partialdisposalaccountingoption", "ЧастичноеВыбытиеВариантУчета"); // @NON-NLS-1 @NON-NLS-2
@@ -2115,6 +2344,7 @@
 	Словарь.Вставить("partiallyshipped", "ОтгруженЧастично"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("partialprepayment", "ПредоплатаЧастичная"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("passportnumber", "НомерПаспорта"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("patch", "Исправление"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("patent", "Патент"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("patentsystem", "ПатентнаяСистема"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("payamount", "СуммаОплаты"); // @NON-NLS-1 @NON-NLS-2
@@ -2137,20 +2367,24 @@
 	Словарь.Вставить("paymentdisbursement", "ПлатежВыплата"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("paymentdocumenttype", "ТипПлатежногоДокумента"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("paymentforloan", "ОплатаКредита"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("paymentforms", "ФормыОплаты"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("paymentfromclientbypaymentcard", "ОплатаОтКлиентаПлатежнойКартой"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("paymentfromclientthroughpaymentsystem", "ОплатаОтКлиентаЧерезПлатежнуюСистему"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("paymentid", "ИдентификаторПлатежа"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("paymentkind", "ВидПлатежа"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("paymentkind_", "ВидОплаты"); // @NON-NLS-1 @NON-NLS-2
-	Словарь.Вставить("paymentlink_", "ПлатежнаяСсылка"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("paymentmethod", "ФормаОплаты"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("paymentoption", "ВариантОплаты"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("paymentoptions", "ВариантыОплаты"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("paymentorder", "ПлатежноеПоручение"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("paymentpercentage", "ПроцентПлатежа"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("paymentpurposes", "НазначениеПлатежа"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("payments", "Оплаты"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("paymentsteps", "ЭтапыОплаты"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("paymenttocounterparties", "ОплатаКонтрагентам"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("paymenttoselfemployed", "ВыплатаСамозанятому"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("paymenttovendor", "ОплатаПоставщику"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("paymenturl", "ПлатежнаяСсылка"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("paymentwarrant", "ПлатежныйОрдер"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("paymentwithbonuspoints", "ОплатаБонуснымиБаллами"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("paymentwithpaymentcards", "ОплатаПлатежнымиКартами"); // @NON-NLS-1 @NON-NLS-2
@@ -2174,6 +2408,7 @@
 	Словарь.Вставить("perfumesandtoiletwaters", "Духи"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("period", "Период"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("periodasstring", "ПериодСтрокой"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("periodending", "ОкончаниеПериода"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("periodfilter", "ПериодОтбор"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("periodindicator", "ПоказательПериода"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("periodpresentation", "ПредставлениеПериода"); // @NON-NLS-1 @NON-NLS-2
@@ -2188,6 +2423,7 @@
 	Словарь.Вставить("phones", "Телефоны"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("physicalinventorycountreason", "ПричинаПроведенияИнвентаризации"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("posterminal", "ЭквайринговыйТерминал"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("posterminalreceiptnumber", "НомерЧекаЭТ"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("posterminals", "ЭквайринговыеТерминалы"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("postingdate", "ДатаОтправления"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("postingoption", "ВариантОтражения"); // @NON-NLS-1 @NON-NLS-2
@@ -2226,19 +2462,27 @@
 	Словарь.Вставить("pricetype", "ТипЦены"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("pricetype_", "ТипЦен"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("principal", "Принципал"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("procedureofincludingfixedassetcostinexpensesta", "ПорядокВключенияСтоимостиОСВСоставРасходовНУ"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("productbatchid", "РНПТ"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("productbatchidinformation", "СведенияРНПТ"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("productcharacteristic", "ХарактеристикаНоменклатуры"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("productclassificationtypecode", "КодВидаНоменклатурнойКлассификации"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("productdata_1", "ДанныеНоменклатуры"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("productiondate", "ДатаПроизводства"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("productionseries_", "СерияПродукции"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("productkind", "ВидНоменклатуры"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("productname", "НаименованиеТовара"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("productpackaging", "УпаковкаНоменклатуры"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("products", "Номенклатура"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("productsrelease", "ВыпускПродукции"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("productsreleasetobusinessunit", "ВыпускПродукцииВПодразделение"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("productsreleasetowarehouse", "ВыпускПродукцииНаСклад"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("productsundersaturnfsiscontrol", "ПодконтрольнаяПродукцияСАТУРН"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("productsundervetiscontrol", "ПодконтрольнаяПродукцияВЕТИС"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("productsvatrates", "СтавкиНДСНоменклатуры"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("producttypeis", "ВидПродукцииИС"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("promocode", "Промокод"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("promocodes", "Промокоды"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("property", "Свойство"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("propertyright", "ИмущественноеПраво"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("propertyvalue", "ЗначениеСвойства"); // @NON-NLS-1 @NON-NLS-2
@@ -2255,12 +2499,15 @@
 	Словарь.Вставить("quantityafterchange", "КоличествоПослеИзменения"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("quantitybeforeadjustment", "КоличествоДоКорректировки"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("quantitybeforechange_", "КоличествоДоИзменения"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("quantitybyfeacn", "КоличествоПоТНВЭД"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("quantityinstock_", "КоличествоНаСкладе"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("quarter", "Квартал"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("rankinginpriority", "Очередность"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("rate1", "Ставка"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("rate_", "Расценка"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("rdexpenses", "РасходыНаНИОКР"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("readyforissuance", "ГотовКВыдаче"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("receipt", "Чек"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("receiptfromtoller", "ПоступлениеОтПереработчика"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("receiptfromvendor", "ПриемкаОтПоставщика"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("receiptmethod", "СпособПоступления"); // @NON-NLS-1 @NON-NLS-2
@@ -2279,6 +2526,8 @@
 	Словарь.Вставить("recognition", "ПринятиеКУчету"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("recognitionwithcommissioning", "ПринятиеКУчетуСВводомВЭксплуатацию"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("reconstruction", "Реконструкция"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("recordofpaymentthroughthecommissionagent", "ОтражениеОплатыЧерезКомиссионера"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("recordofrefundthroughthecommissionagent", "ОтражениеВозвратаОплатыЧерезКомиссионера"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("records", "Записи"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("recyclablewaste", "ВозвратныеОтходы"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("reducedbalance", "УменьшаемогоОстатка"); // @NON-NLS-1 @NON-NLS-2
@@ -2288,12 +2537,7 @@
 	Словарь.Вставить("refundtocustomerspaymentcard", "ВозвратОплатыКлиентуНаПлатежнуюКарту"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("registrationcountry", "СтранаРегистрации"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("registrationdate", "ДатаРегистрации"); // @NON-NLS-1 @NON-NLS-2
-
-	Массив = Новый Массив;
-	Массив.Добавить("ОГРН"); // @NON-NLS-1
-	Массив.Добавить("РегистрационныйНомер"); // @NON-NLS-1
-	Словарь.Вставить("registrationnumber", Массив);
-
+	Словарь.Вставить("registrationnumber", "РегистрационныйНомер"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("registrationperiod", "ПериодРегистрации"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("registrationwithtaxauthority", "РегистрацияВНалоговомОргане"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("regulatedreporting", "РегламентированнаяОтчетность"); // @NON-NLS-1 @NON-NLS-2
@@ -2333,12 +2577,14 @@
 	Словарь.Вставить("returnofgiftcards", "ВозвратПодарочныхСертификатов"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("returnofgoodstovendor", "ВозвратТоваровПоставщику"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("returnofmaterialsfromproduction", "ВозвратМатериаловИзПроизводства"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("returnofrawmaterialsfromtoller", "ВозвратСырьяОтПереработчика"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("returnofrawmaterialstomaterialprovider", "ВозвратСырьяДавальцу"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("returns", "Возвраты"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("returntovendor", "ВозвратПоставщику"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("returnunderoperation", "ВозвратПодДеятельность"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("reusablepackage", "МногооборотнаяТара"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("revaluation", "Переоценка"); // @NON-NLS-1 @NON-NLS-2
-	Словарь.Вставить("revenueaccount", "СчетДоходов"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("reverseddocument", "СторнируемыйДокумент"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("rewardservice", "УслугаПоВознаграждению"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("rncea", "ОКВЭД"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("rncea2", "ОКВЭД2"); // @NON-NLS-1 @NON-NLS-2
@@ -2364,8 +2610,11 @@
 	Словарь.Вставить("saleshare", "ПроцентОтСуммыПродажи"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("salesorder", "ЗаказКлиента"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("salesrevenueaccount", "СчетУчетаВыручкиОтПродаж"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("salesviacommissionagent", "РеализацияЧерезКомиссионера"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("salesviacommissionagentgoodsintransit", "РеализацияЧерезКомиссионераБезПереходаПраваСобственности"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("saletocustomer", "РеализацияКлиенту"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("scheduleamounttype", "ТипСуммыГрафика"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("seafoodcontrolledbyvetis", "МорепродуктыПодконтрольныеВЕТИС"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("secondinfobasedescription", "НаименованиеВторойБазы"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("secondinfobasenewnodecode", "КодНовогоУзлаВторойБазы"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("sectionnumber", "НомерРаздела"); // @NON-NLS-1 @NON-NLS-2
@@ -2376,6 +2625,7 @@
 	Словарь.Вставить("selfpickup", "Самовывоз"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("seller", "Продавец"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("sellercrtr", "КПППродавца"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("sellerrole", "РольПродавца"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("sellers", "Продавцы"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("sellertin", "ИННПродавца"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("senderbankaccount", "БанковскийСчетОтправитель"); // @NON-NLS-1 @NON-NLS-2
@@ -2394,12 +2644,16 @@
 	Словарь.Вставить("sertificatedateofissue", "СвидетельствоДатаВыдачи"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("servicelife", "СрокЭксплуатации"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("services", "Услуги"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("servicestypes", "ТипыУслуг"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("servicetype", "ТипУслуги"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("set", "Набор"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("setsf", "ВыставленСФ"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("settlementaccount_", "СчетРасчетов"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("settlementdata", "ДанныеВзаиморасчетов"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("settlementdocumentnumber", "НомерПлатежноРасчетногоДокумента"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("settlementsonloansandborrowings", "РасчетыПоКредитамИЗаймам"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("settlementsubjectflag", "ПризнакПредметаРасчета"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("settlementsubjectflags", "ПризнакиПредметаРасчета"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("settlementswithlessors", "РасчетыСЛизингодателями"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("sfdata", "ДанныеПоСФ"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("shared3", "Общая"); // @NON-NLS-1 @NON-NLS-2
@@ -2418,7 +2672,6 @@
 	Словарь.Вставить("shipper", "Грузоотправитель"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("shoesproducts", "Обувь"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("shortages", "Недостачи"); // @NON-NLS-1 @NON-NLS-2
-	Словарь.Вставить("shortdescription1", "НаименованиеКраткое"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("shortterm", "Краткосрочный"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("shorttermloans", "КраткосрочныеЗаймы"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("shorttermloans_", "КраткосрочныеКредиты"); // @NON-NLS-1 @NON-NLS-2
@@ -2440,6 +2693,9 @@
 	Словарь.Вставить("sourcewarehouse", "СкладОтправитель"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("specialfactortaxaccounting", "СпециальныйКоэффициентНУ"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("specialtaxationprocedure", "ОсобыйПорядокНалогообложения"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("specificationdate", "ДатаСпецификации"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("specificationnumber", "НомерСпецификации"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("specifications", "Спецификации"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("ssfadditionalcode", "ДополнительныйКодФСС"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("ssflocalauthorityname", "НаименованиеТерриториальногоОрганаФСС"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("ssfregistrationnumber", "РегистрационныйНомерФСС"); // @NON-NLS-1 @NON-NLS-2
@@ -2452,14 +2708,15 @@
 	Словарь.Вставить("statement", "Ведомость"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("statementdate", "ДатаВедомости"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("statementnumber", "НомерВедомости"); // @NON-NLS-1 @NON-NLS-2
-	Словарь.Вставить("stateofelectronicdocument", "СостояниеЭлектронногоДокумента"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("stateofpayment", "СостояниеОплаты"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("status", "Статус"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("statusesofrequestsforspendingcash", "СтатусыЗаявокНаРасходДС"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("store", "Магазин"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("storedfile", "ХранимыйФайл"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("strength", "Крепость"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("string", "Строка"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("subcontractorreport", "ОтчетПереработчика"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("subject", "Субъект"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("subjecttoenvd", "ОблагаетсяЕНВД"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("subjecttovat", "ОблагаетсяНДС"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("subjecttovatatcustomer", "ОблагаетсяНДСУПокупателя"); // @NON-NLS-1 @NON-NLS-2
@@ -2469,6 +2726,9 @@
 	Словарь.Вставить("sumcurr", "СуммаВал"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("sumreal", "СуммаФакт"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("superiordepartment", "ВышестоящееПодразделение"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("supplyfrommaterialprovider", "ПоступлениеСырьяОтДавальца"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("supportingdocumentdate", "ДатаТСД"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("supportingdocumentseriesnumber", "СерияНомерТСД"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("supportsesfsspayment", "ПоддерживаетОплатуЭСФСС"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("surpluses", "Излишки"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("swiftbic", "СВИФТБИК"); // @NON-NLS-1 @NON-NLS-2
@@ -2476,8 +2736,13 @@
 	Словарь.Вставить("tareserve", "РезервНУ"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("taxation", "Налогообложение"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("taxationsystem", "СистемаНалогообложения"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("taxationsystems", "СистемыНалогообложения"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("taxauthoritycode", "КодНалоговогоОргана"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("taxbaseexcises", "НалоговаяБазаАкцизы"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("taxinvoice", "СчетФактура"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("taxinvoicedate", "ДатаСчетаФактуры"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("taxinvoicedprice", "ФактурнаяСтоимость"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("taxinvoicenumber", "НомерСчетаФактуры"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("tcmif", "ТФОМС"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("technicalcharacteristics", "ВладелецХарактеристики"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("tendays", "Декада"); // @NON-NLS-1 @NON-NLS-2
@@ -2501,6 +2766,7 @@
 	Словарь.Вставить("tracedgoods", "ПрослеживаемыйТовар"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("trackingaccountintransit", "СчетУчетаВПути"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("transactionkindcode", "КодВидаОперации"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("transactionparties", "УчастникиСделки"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("transactionrate", "КурсВзаиморасчетов"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("transcriptofadditionalexpenses", "РасшифровкаДопРасходов"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("transfer_", "Передача"); // @NON-NLS-1 @NON-NLS-2
@@ -2518,8 +2784,12 @@
 	Словарь.Вставить("transferwithoutpayment", "ПередачаБезОплаты"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("transferwithpartialpayment", "ПередачаСЧастичнойОплатой"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("transmissionerrorcorrectionisrequired", "ТребуетсяИсправлениеОшибкиПередачи"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("transportkindcode", "КодВидаТранспорта"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("transportmethods", "СпособыДоставки"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("trucode", "КодТРУ"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("typeamount", "ТипСумма"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("typeindicator", "ПоказательТипа"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("typeofactivityofseparatevataccounting", "ВидДеятельностиРаздельногоУчетаНДС"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("typeofagreement", "ВидДоговора"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("typeofbankaccount", "ВидБанковскогоСчета"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("typeofcalculationsadvanced", "ВидРасчетовРасширенный"); // @NON-NLS-1 @NON-NLS-2
@@ -2533,17 +2803,41 @@
 	Словарь.Вставить("typeofreserve", "ВидРезерва"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("typeofresponsiblepersonbyline", "ВидОтветственногоЛицаСтрокой"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("typeofresponsiblepersonselection", "ВидОтветственногоЛицаОтбор"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("typeofretailprices", "ТипЦенРозничнойТорговли"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("typeofvalidityperiod", "ТипПериодаДействия"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("typequantity", "ТипКоличество"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("typesofacwoperationstobankaccount", "ВидыОперацийРКОНаБанковскийСчет"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("typesofcashregisterpaymentsystem", "ТипыПлатежнойСистемыККТ"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("typesofcontracts", "ВидыДоговоров"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("typesofed", "ВидыЭД"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("typesofemployeecompensations", "ВидыРасчетовССотрудниками"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("typesofipproducts", "ВидыПродукцииИС"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("typesofitemspackages", "ТипыУпаковокНоменклатуры"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("typesofoperationsofreceiptofgoods", "ВидыОперацийПоступленияТоваров"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("typesofoperationsrefundtosupplier", "ВидыОперацийВозвратПоставщику"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("typesofoperationsreturnfrombuyer", "ВидыОперацийВозвратОтПокупателя"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("typesofoperationssaleofgoodsservices", "ВидыОперацийРеализацияТоваровУслуг"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("typesofpaymentcardoperations", "ВидыОперацийПоПлатежнойКарте"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("typesofpaymentdocuments", "ТипыПлатежныхДокументов"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("typesofpaymenttypesofcashregisterchecks", "ТипыТипыОплатЧековККМ"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("typesofperiods", "ТипыПериодов"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("typesofproductionoperations", "ВидыОперацийВыпускаПродукции"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("typesofresponsiblepersons", "ВидыОтветственныхЛиц"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("typesofsbdsoperationsother", "ВидыОперацийСБДСПрочее"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("typesofsettlementswithcounterparties", "ВидыРасчетовСКонтрагентами"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("typesofwarehouses", "ТипыСкладов"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("uisstatecontractstep", "ЭтапГосконтрактаЕИС"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("underleaseagreement", "ПоДоговоруЛизинга"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("unitofmeasure", "ЕдиницаИзмерения"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("unitofproductbatchid", "ЕдиницаИзмеренияРНПТ"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("unitoftraceability", "ЕдиницаИзмеренияПрослеживаемости"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("upholded_", "Утверждена"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("uploadformat", "ФорматВыгрузки"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("urgencyofloanloan", "СрочностьКредитаЗайма"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("usecharacteristics", "ИспользоватьХарактеристики"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("usediscountsmarkups", "ИспользоватьСкидкиНаценки"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("usedmaterials", "Материалы"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("useexcises", "ИспользоватьАкцизы"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("usefullifebefore2009", "СрокИспользованияНУДо2009"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("usefullifemonthsac", "СрокПолезногоИспользованияБУ"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("usefullifemonthsta", "СрокПолезногоИспользованияНУ"); // @NON-NLS-1 @NON-NLS-2
@@ -2561,9 +2855,12 @@
 	Словарь.Вставить("usetransportparametersfile", "ИспользоватьПараметрыТранспортаFILE"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("usetransportparametersftp", "ИспользоватьПараметрыТранспортаFTP"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("utii", "ЕНВД"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("uuidtype", "ТипУникальныйИдентификатор"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("vacationproduced", "ОтпускПроизвел"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("validbefore", "ДействителенДо"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("validityenddate", "ДатаОкончанияДействия"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("validityperiod", "СрокДействия"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("validitystartdate", "ДатаНачалаДействия"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("validuntil_", "ГоденДо"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("valuechoiceformtitle", "ЗаголовокФормыВыбораЗначения"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("valueformtitle", "ЗаголовокФормыЗначения"); // @NON-NLS-1 @NON-NLS-2
@@ -2586,8 +2883,11 @@
 	Словарь.Вставить("vatrate", "СтавкаНДС"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("vatratebeforechange", "СтавкаНДСДоИзменения"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("vatrateofremuneration", "СтавкаНДСВознаграждения"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("vatrates", "СтавкиНДС"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("vattaxagent", "НалоговыйАгентПоНДС"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("vattaxation", "НалогообложениеНДС"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("vattaxationofseller", "НалогообложениеНДСПродавца"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("vattaxbase", "НалоговаяБазаНДС"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("vehicles", "ТранспортныеСредства"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("vendor", "Поставщик"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("vendorinvoicereceived", "СчетФактураПолученный"); // @NON-NLS-1 @NON-NLS-2
@@ -2596,12 +2896,14 @@
 	Словарь.Вставить("volumeindecaliters", "ОбъемДАЛ"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("volumem3", "Объем"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("volumeofproductsworksforcalculatingdepreciationinphysicalunits", "ОбъемПродукцииРаботДляВычисленияАмортизации"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("wagereserves", "РезервыПоОплатеТруда"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("waitingforconfirmationofcancellation", "ОжидаетсяПодтверждениеАннулирования"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("waitingforresponsetoinvitation", "ОжидаетсяОтветНаПриглашение"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("warehouse", "Склад"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("warehousegroup_", "СкладГруппа"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("warehouseinvoice", "СчетУчетаНаСкладе"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("warehousestore", "ТипСклада"); // @NON-NLS-1 @NON-NLS-2
+	Словарь.Вставить("waystorepaycostofinventory", "СпособыПогашенияСтоимостиТМЦ"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("wearaccrual", "НачислениеИзноса"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("webpage", "ВебСтраница"); // @NON-NLS-1 @NON-NLS-2
 	Словарь.Вставить("week", "Неделя"); // @NON-NLS-1 @NON-NLS-2

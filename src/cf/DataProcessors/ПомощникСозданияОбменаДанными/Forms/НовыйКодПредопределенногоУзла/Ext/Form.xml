@@ -22,6 +22,17 @@
 				</Title>
 				<ExtendedTooltip name="ФормаУстановитьНовыйКодРасширеннаяПодсказка" id="12"/>
 			</Button>
+			<Button name="ФормаЗакрытьФорму" id="13">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.ЗакрытьФорму</CommandName>
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Закрыть</v8:content>
+					</v8:item>
+				</Title>
+				<ExtendedTooltip name="ФормаЗакрытьФормуРасширеннаяПодсказка" id="14"/>
+			</Button>
 		</ChildItems>
 	</AutoCommandBar>
 	<Events>
@@ -38,40 +49,100 @@
 			<Behavior>Usual</Behavior>
 			<ShowTitle>false</ShowTitle>
 			<ExtendedTooltip name="ГруппаПредупреждениеРасширеннаяПодсказка" id="4"/>
+		</UsualGroup>
+		<Pages name="ГруппаПанель" id="15">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Панель</v8:content>
+				</v8:item>
+			</Title>
+			<PagesRepresentation>None</PagesRepresentation>
+			<ExtendedTooltip name="ГруппаПанельРасширеннаяПодсказка" id="16"/>
 			<ChildItems>
-				<PictureDecoration name="КартинкаПредупреждение" id="5">
-					<Title formatted="false">
+				<Page name="СтраницаПредупреждение" id="17">
+					<Title>
 						<v8:item>
 							<v8:lang>ru</v8:lang>
-							<v8:content>Картинка предупреждение</v8:content>
+							<v8:content>Страница предупреждение</v8:content>
 						</v8:item>
 					</Title>
-					<Picture>
-						<xr:Ref>CommonPicture.Предупреждение32</xr:Ref>
-						<xr:LoadTransparent>false</xr:LoadTransparent>
-					</Picture>
-					<FileDragMode>AsFile</FileDragMode>
-					<ContextMenu name="КартинкаПредупреждениеКонтекстноеМеню" id="6"/>
-					<ExtendedTooltip name="КартинкаПредупреждениеРасширеннаяПодсказка" id="7"/>
-				</PictureDecoration>
-				<LabelDecoration name="ДекорацияПредупреждение" id="8">
-					<AutoMaxWidth>false</AutoMaxWidth>
-					<Title formatted="true">
-						<v8:item>
-							<v8:lang>ru</v8:lang>
-							<v8:content>&lt;colorstyle -16&gt;Внимание!&lt;/&gt;
+					<Group>AlwaysHorizontal</Group>
+					<ExtendedTooltip name="СтраницаПредупреждениеРасширеннаяПодсказка" id="18"/>
+					<ChildItems>
+						<PictureDecoration name="КартинкаПредупреждение" id="5">
+							<Title formatted="false">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Картинка предупреждение</v8:content>
+								</v8:item>
+							</Title>
+							<Picture>
+								<xr:Ref>CommonPicture.Предупреждение32</xr:Ref>
+								<xr:LoadTransparent>false</xr:LoadTransparent>
+							</Picture>
+							<FileDragMode>AsFile</FileDragMode>
+							<ContextMenu name="КартинкаПредупреждениеКонтекстноеМеню" id="6"/>
+							<ExtendedTooltip name="КартинкаПредупреждениеРасширеннаяПодсказка" id="7"/>
+						</PictureDecoration>
+						<LabelDecoration name="ДекорацияПредупреждение" id="8">
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<Title formatted="true">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>&lt;colorstyle -16&gt;Внимание!&lt;/&gt;
 Данная операция необратима и предназначена только для устранения ошибки синхронизации, 
 связанной с дублированием настроек обмена в информационных базах, 
 которые были получены путем копирования.
  
 Не рекомендуется применять для работающих синхронизаций.</v8:content>
+								</v8:item>
+							</Title>
+							<ContextMenu name="ДекорацияПредупреждениеКонтекстноеМеню" id="9"/>
+							<ExtendedTooltip name="ДекорацияПредупреждениеРасширеннаяПодсказка" id="10"/>
+						</LabelDecoration>
+					</ChildItems>
+				</Page>
+				<Page name="СтраницаРаботаВСервисе" id="19">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Страница работа в сервисе</v8:content>
 						</v8:item>
 					</Title>
-					<ContextMenu name="ДекорацияПредупреждениеКонтекстноеМеню" id="9"/>
-					<ExtendedTooltip name="ДекорацияПредупреждениеРасширеннаяПодсказка" id="10"/>
-				</LabelDecoration>
+					<Group>AlwaysHorizontal</Group>
+					<ExtendedTooltip name="СтраницаРаботаВСервисеРасширеннаяПодсказка" id="20"/>
+					<ChildItems>
+						<PictureDecoration name="КартинкаПредупреждение1" id="21">
+							<Title formatted="false">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Картинка предупреждение</v8:content>
+								</v8:item>
+							</Title>
+							<Picture>
+								<xr:Ref>CommonPicture.Предупреждение32</xr:Ref>
+								<xr:LoadTransparent>false</xr:LoadTransparent>
+							</Picture>
+							<FileDragMode>AsFile</FileDragMode>
+							<ContextMenu name="КартинкаПредупреждение1КонтекстноеМеню" id="22"/>
+							<ExtendedTooltip name="КартинкаПредупреждение1РасширеннаяПодсказка" id="23"/>
+						</PictureDecoration>
+						<LabelDecoration name="ДекорацияПредупреждение1" id="24">
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<Title formatted="false">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Установка нового кода недоступна в сервисе</v8:content>
+								</v8:item>
+							</Title>
+							<ContextMenu name="ДекорацияПредупреждение1КонтекстноеМеню" id="25"/>
+							<ExtendedTooltip name="ДекорацияПредупреждение1РасширеннаяПодсказка" id="26"/>
+						</LabelDecoration>
+					</ChildItems>
+				</Page>
 			</ChildItems>
-		</UsualGroup>
+		</Pages>
 	</ChildItems>
 	<Attributes>
 		<Attribute name="Объект" id="1">
@@ -110,6 +181,21 @@
 				</v8:item>
 			</ToolTip>
 			<Action>УстановитьНовыйКод</Action>
+		</Command>
+		<Command name="ЗакрытьФорму" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Закрыть</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Закрыть форму</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ЗакрытьФорму</Action>
 		</Command>
 	</Commands>
 </Form>
