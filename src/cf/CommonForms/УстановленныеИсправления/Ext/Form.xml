@@ -42,19 +42,56 @@
 							<ContextMenu name="ИнформацияКартинкаКонтекстноеМеню" id="63"/>
 							<ExtendedTooltip name="ИнформацияКартинкаРасширеннаяПодсказка" id="64"/>
 						</PictureDecoration>
-						<LabelDecoration name="ИнформацияОписание" id="67">
-							<AutoMaxWidth>false</AutoMaxWidth>
-							<Title formatted="false">
+						<UsualGroup name="ГруппаИнформацияОбновления" id="132">
+							<Title>
 								<v8:item>
 									<v8:lang>ru</v8:lang>
-									<v8:content>Изменения, которые будут сделаны, вступят в силу при следующем входе в приложение.</v8:content>
+									<v8:content>Информация обновления</v8:content>
 								</v8:item>
 							</Title>
-							<VerticalAlign>Center</VerticalAlign>
-							<TitleHeight>2</TitleHeight>
-							<ContextMenu name="ИнформацияОписаниеКонтекстноеМеню" id="68"/>
-							<ExtendedTooltip name="ИнформацияОписаниеРасширеннаяПодсказка" id="69"/>
-						</LabelDecoration>
+							<GroupVerticalAlign>Center</GroupVerticalAlign>
+							<Group>Vertical</Group>
+							<VerticalAlign>Top</VerticalAlign>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаИнформацияОбновленияРасширеннаяПодсказка" id="133"/>
+							<ChildItems>
+								<LabelDecoration name="ИнформацияОписание" id="67">
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Изменения, которые будут сделаны, вступят в силу при следующем входе в приложение.</v8:content>
+										</v8:item>
+									</Title>
+									<GroupVerticalAlign>Center</GroupVerticalAlign>
+									<VerticalAlign>Center</VerticalAlign>
+									<TitleHeight>1</TitleHeight>
+									<ContextMenu name="ИнформацияОписаниеКонтекстноеМеню" id="68"/>
+									<ExtendedTooltip name="ИнформацияОписаниеРасширеннаяПодсказка" id="69"/>
+								</LabelDecoration>
+								<Button name="ПоискИУстановкаОбновлений" id="130">
+									<Type>Hyperlink</Type>
+									<GroupVerticalAlign>Bottom</GroupVerticalAlign>
+									<CommandName>Form.Command.ПоискИУстановкаОбновлений</CommandName>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Поиск и установка обновлений</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTipRepresentation>ShowRight</ToolTipRepresentation>
+									<ExtendedTooltip name="ПоискИУстановкаОбновленийРасширеннаяПодсказка" id="131">
+										<Title formatted="false">
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>с портала 1C:Обновление программ.</v8:content>
+											</v8:item>
+										</Title>
+									</ExtendedTooltip>
+								</Button>
+							</ChildItems>
+						</UsualGroup>
 					</ChildItems>
 				</Page>
 				<Page name="СтраницаДлительнаяОперация" id="117">
@@ -161,7 +198,7 @@
 								<v8:content>Удалить исправление</v8:content>
 							</v8:item>
 						</Title>
-						<LocationInCommandBar>InCommandBarAndInAdditionalSubmenu</LocationInCommandBar>
+						<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
 						<ExtendedTooltip name="ФормаУдалитьИсправлениеРасширеннаяПодсказка" id="49"/>
 					</Button>
 					<Button name="УстановленныеИсправленияВыгрузитьПодключенныеИсправления" id="125">
@@ -173,17 +210,14 @@
 								<v8:content>Выгрузить подключенные исправления</v8:content>
 							</v8:item>
 						</Title>
+						<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
 						<ExtendedTooltip name="УстановленныеИсправленияВыгрузитьПодключенныеИсправленияРасширеннаяПодсказка" id="126"/>
 					</Button>
 					<Button name="УстановленныеИсправленияЗакрыть" id="110">
 						<Type>CommandBarButton</Type>
 						<CommandName>Form.StandardCommand.Close</CommandName>
+						<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
 						<ExtendedTooltip name="УстановленныеИсправленияЗакрытьРасширеннаяПодсказка" id="111"/>
-					</Button>
-					<Button name="УстановленныеИсправленияСправка" id="72">
-						<Type>CommandBarButton</Type>
-						<CommandName>Form.StandardCommand.Help</CommandName>
-						<ExtendedTooltip name="УстановленныеИсправленияСправкаРасширеннаяПодсказка" id="73"/>
 					</Button>
 					<Button name="УстановленныеИсправленияИзменитьФорму" id="70">
 						<Type>CommandBarButton</Type>
@@ -221,6 +255,11 @@
 						<ContextMenu name="СтрокаПоискаКонтекстноеМеню" id="128"/>
 						<ExtendedTooltip name="СтрокаПоискаРасширеннаяПодсказка" id="129"/>
 					</SearchStringAddition>
+					<Button name="УстановленныеИсправленияСправка" id="72">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.StandardCommand.Help</CommandName>
+						<ExtendedTooltip name="УстановленныеИсправленияСправкаРасширеннаяПодсказка" id="73"/>
+					</Button>
 				</ChildItems>
 			</AutoCommandBar>
 			<ExtendedTooltip name="УстановленныеИсправленияРасширеннаяПодсказка" id="4"/>
@@ -359,141 +398,6 @@
 				</LabelField>
 			</ChildItems>
 		</Table>
-		<UsualGroup name="ГруппаЛегенда" id="78">
-			<Title>
-				<v8:item>
-					<v8:lang>ru</v8:lang>
-					<v8:content>Легенда</v8:content>
-				</v8:item>
-			</Title>
-			<Group>Vertical</Group>
-			<Behavior>Usual</Behavior>
-			<Representation>None</Representation>
-			<ShowTitle>false</ShowTitle>
-			<ExtendedTooltip name="ГруппаЛегендаРасширеннаяПодсказка" id="79"/>
-			<ChildItems>
-				<UsualGroup name="ГруппаЛегендаПодключено" id="80">
-					<Title>
-						<v8:item>
-							<v8:lang>ru</v8:lang>
-							<v8:content>Легенда подключено</v8:content>
-						</v8:item>
-					</Title>
-					<Group>AlwaysHorizontal</Group>
-					<Behavior>Usual</Behavior>
-					<Representation>None</Representation>
-					<ShowTitle>false</ShowTitle>
-					<ExtendedTooltip name="ГруппаЛегендаПодключеноРасширеннаяПодсказка" id="81"/>
-					<ChildItems>
-						<PictureDecoration name="КартинкаПодключено" id="82">
-							<Title formatted="false">
-								<v8:item>
-									<v8:lang>ru</v8:lang>
-									<v8:content>Подключено</v8:content>
-								</v8:item>
-							</Title>
-							<Picture>
-								<xr:Ref>CommonPicture.СостоянияРасширенийПодключено</xr:Ref>
-								<xr:LoadTransparent>false</xr:LoadTransparent>
-							</Picture>
-							<FileDragMode>AsFile</FileDragMode>
-							<ContextMenu name="КартинкаПодключеноКонтекстноеМеню" id="83"/>
-							<ExtendedTooltip name="КартинкаПодключеноРасширеннаяПодсказка" id="84"/>
-						</PictureDecoration>
-						<LabelDecoration name="ЛегендаПодключено" id="85">
-							<Title formatted="false">
-								<v8:item>
-									<v8:lang>ru</v8:lang>
-									<v8:content>Расширение подключено</v8:content>
-								</v8:item>
-							</Title>
-							<ContextMenu name="ЛегендаПодключеноКонтекстноеМеню" id="86"/>
-							<ExtendedTooltip name="ЛегендаПодключеноРасширеннаяПодсказка" id="87"/>
-						</LabelDecoration>
-					</ChildItems>
-				</UsualGroup>
-				<UsualGroup name="ГруппаЛегендаБудетПодключено" id="88">
-					<Title>
-						<v8:item>
-							<v8:lang>ru</v8:lang>
-							<v8:content>Легенда будет подключено</v8:content>
-						</v8:item>
-					</Title>
-					<Group>AlwaysHorizontal</Group>
-					<Behavior>Usual</Behavior>
-					<Representation>None</Representation>
-					<ShowTitle>false</ShowTitle>
-					<ExtendedTooltip name="ГруппаЛегендаБудетПодключеноРасширеннаяПодсказка" id="89"/>
-					<ChildItems>
-						<PictureDecoration name="КартинкаБудетПодключено" id="90">
-							<Title formatted="false">
-								<v8:item>
-									<v8:lang>ru</v8:lang>
-									<v8:content>Будет подключено</v8:content>
-								</v8:item>
-							</Title>
-							<Picture>
-								<xr:Ref>CommonPicture.СостоянияРасширенийБудетПодключено</xr:Ref>
-								<xr:LoadTransparent>false</xr:LoadTransparent>
-							</Picture>
-							<FileDragMode>AsFile</FileDragMode>
-							<ContextMenu name="КартинкаБудетПодключеноКонтекстноеМеню" id="91"/>
-							<ExtendedTooltip name="КартинкаБудетПодключеноРасширеннаяПодсказка" id="92"/>
-						</PictureDecoration>
-						<LabelDecoration name="ЛегендаБудетПодключено" id="93">
-							<Title formatted="false">
-								<v8:item>
-									<v8:lang>ru</v8:lang>
-									<v8:content>Будет подключено после перезапуска приложения</v8:content>
-								</v8:item>
-							</Title>
-							<ContextMenu name="ЛегендаБудетПодключеноКонтекстноеМеню" id="94"/>
-							<ExtendedTooltip name="ЛегендаБудетПодключеноРасширеннаяПодсказка" id="95"/>
-						</LabelDecoration>
-					</ChildItems>
-				</UsualGroup>
-				<UsualGroup name="ГруппаЛегендаОшибкаПодключения" id="96">
-					<Title>
-						<v8:item>
-							<v8:lang>ru</v8:lang>
-							<v8:content>Легенда ошибка подключения</v8:content>
-						</v8:item>
-					</Title>
-					<Group>AlwaysHorizontal</Group>
-					<Behavior>Usual</Behavior>
-					<Representation>None</Representation>
-					<ShowTitle>false</ShowTitle>
-					<ExtendedTooltip name="ГруппаЛегендаОшибкаПодключенияРасширеннаяПодсказка" id="97"/>
-					<ChildItems>
-						<PictureDecoration name="КартинкаОшибкаПодключения" id="98">
-							<Title formatted="false">
-								<v8:item>
-									<v8:lang>ru</v8:lang>
-									<v8:content>Ошибка подключения</v8:content>
-								</v8:item>
-							</Title>
-							<Picture>
-								<xr:Ref>CommonPicture.СостоянияРасширенийОшибка</xr:Ref>
-								<xr:LoadTransparent>false</xr:LoadTransparent>
-							</Picture>
-							<FileDragMode>AsFile</FileDragMode>
-							<ContextMenu name="КартинкаОшибкаПодключенияКонтекстноеМеню" id="99"/>
-							<ExtendedTooltip name="КартинкаОшибкаПодключенияРасширеннаяПодсказка" id="100"/>
-						</PictureDecoration>
-						<LabelDecoration name="ЛегендаОшибкаПодключения" id="101">
-							<Title formatted="false">
-								<v8:item>
-									<v8:lang>ru</v8:lang>
-									<v8:content>Не удалось подключить при входе в приложение</v8:content>
-								</v8:item>
-							</Title>
-							<ContextMenu name="ЛегендаОшибкаПодключенияКонтекстноеМеню" id="102"/>
-							<ExtendedTooltip name="ЛегендаОшибкаПодключенияРасширеннаяПодсказка" id="103"/>
-						</LabelDecoration>
-					</ChildItems>
-				</UsualGroup>
-			</ChildItems>
-		</UsualGroup>
 		<UsualGroup name="ГруппаГоризонтальнаяГруппировка" id="46">
 			<Title>
 				<v8:item>
@@ -501,11 +405,151 @@
 					<v8:content>Горизонтальная группировка</v8:content>
 				</v8:item>
 			</Title>
+			<HorizontalStretch>true</HorizontalStretch>
+			<Group>AlwaysHorizontal</Group>
+			<HorizontalAlign>Right</HorizontalAlign>
 			<Behavior>Usual</Behavior>
 			<Representation>NormalSeparation</Representation>
 			<ShowTitle>false</ShowTitle>
 			<ExtendedTooltip name="ГруппаГоризонтальнаяГруппировкаРасширеннаяПодсказка" id="47"/>
 			<ChildItems>
+				<UsualGroup name="ГруппаЛегенда" id="78">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Легенда</v8:content>
+						</v8:item>
+					</Title>
+					<GroupHorizontalAlign>Left</GroupHorizontalAlign>
+					<Group>Vertical</Group>
+					<HorizontalAlign>Left</HorizontalAlign>
+					<Behavior>Usual</Behavior>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаЛегендаРасширеннаяПодсказка" id="79"/>
+					<ChildItems>
+						<UsualGroup name="ГруппаЛегендаПодключено" id="80">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Легенда подключено</v8:content>
+								</v8:item>
+							</Title>
+							<Group>AlwaysHorizontal</Group>
+							<Behavior>Usual</Behavior>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаЛегендаПодключеноРасширеннаяПодсказка" id="81"/>
+							<ChildItems>
+								<PictureDecoration name="КартинкаПодключено" id="82">
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Подключено</v8:content>
+										</v8:item>
+									</Title>
+									<Picture>
+										<xr:Ref>CommonPicture.СостоянияРасширенийПодключено</xr:Ref>
+										<xr:LoadTransparent>false</xr:LoadTransparent>
+									</Picture>
+									<FileDragMode>AsFile</FileDragMode>
+									<ContextMenu name="КартинкаПодключеноКонтекстноеМеню" id="83"/>
+									<ExtendedTooltip name="КартинкаПодключеноРасширеннаяПодсказка" id="84"/>
+								</PictureDecoration>
+								<LabelDecoration name="ЛегендаПодключено" id="85">
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Расширение подключено</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="ЛегендаПодключеноКонтекстноеМеню" id="86"/>
+									<ExtendedTooltip name="ЛегендаПодключеноРасширеннаяПодсказка" id="87"/>
+								</LabelDecoration>
+							</ChildItems>
+						</UsualGroup>
+						<UsualGroup name="ГруппаЛегендаБудетПодключено" id="88">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Легенда будет подключено</v8:content>
+								</v8:item>
+							</Title>
+							<Group>AlwaysHorizontal</Group>
+							<Behavior>Usual</Behavior>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаЛегендаБудетПодключеноРасширеннаяПодсказка" id="89"/>
+							<ChildItems>
+								<PictureDecoration name="КартинкаБудетПодключено" id="90">
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Будет подключено</v8:content>
+										</v8:item>
+									</Title>
+									<Picture>
+										<xr:Ref>CommonPicture.СостоянияРасширенийБудетПодключено</xr:Ref>
+										<xr:LoadTransparent>false</xr:LoadTransparent>
+									</Picture>
+									<FileDragMode>AsFile</FileDragMode>
+									<ContextMenu name="КартинкаБудетПодключеноКонтекстноеМеню" id="91"/>
+									<ExtendedTooltip name="КартинкаБудетПодключеноРасширеннаяПодсказка" id="92"/>
+								</PictureDecoration>
+								<LabelDecoration name="ЛегендаБудетПодключено" id="93">
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Будет подключено после перезапуска приложения</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="ЛегендаБудетПодключеноКонтекстноеМеню" id="94"/>
+									<ExtendedTooltip name="ЛегендаБудетПодключеноРасширеннаяПодсказка" id="95"/>
+								</LabelDecoration>
+							</ChildItems>
+						</UsualGroup>
+						<UsualGroup name="ГруппаЛегендаОшибкаПодключения" id="96">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Легенда ошибка подключения</v8:content>
+								</v8:item>
+							</Title>
+							<Group>AlwaysHorizontal</Group>
+							<Behavior>Usual</Behavior>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаЛегендаОшибкаПодключенияРасширеннаяПодсказка" id="97"/>
+							<ChildItems>
+								<PictureDecoration name="КартинкаОшибкаПодключения" id="98">
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Ошибка подключения</v8:content>
+										</v8:item>
+									</Title>
+									<Picture>
+										<xr:Ref>CommonPicture.СостоянияРасширенийОшибка</xr:Ref>
+										<xr:LoadTransparent>false</xr:LoadTransparent>
+									</Picture>
+									<FileDragMode>AsFile</FileDragMode>
+									<ContextMenu name="КартинкаОшибкаПодключенияКонтекстноеМеню" id="99"/>
+									<ExtendedTooltip name="КартинкаОшибкаПодключенияРасширеннаяПодсказка" id="100"/>
+								</PictureDecoration>
+								<LabelDecoration name="ЛегендаОшибкаПодключения" id="101">
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Не удалось подключить при входе в приложение</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="ЛегендаОшибкаПодключенияКонтекстноеМеню" id="102"/>
+									<ExtendedTooltip name="ЛегендаОшибкаПодключенияРасширеннаяПодсказка" id="103"/>
+								</LabelDecoration>
+							</ChildItems>
+						</UsualGroup>
+					</ChildItems>
+				</UsualGroup>
 				<LabelDecoration name="ДекорацияЖурналРегистрации" id="40">
 					<Title formatted="false">
 						<v8:item>
@@ -514,6 +558,7 @@
 						</v8:item>
 					</Title>
 					<Hyperlink>true</Hyperlink>
+					<HorizontalAlign>Right</HorizontalAlign>
 					<ContextMenu name="ДекорацияЖурналРегистрацииКонтекстноеМеню" id="41"/>
 					<ExtendedTooltip name="ДекорацияЖурналРегистрацииРасширеннаяПодсказка" id="42"/>
 					<Events>
@@ -662,11 +707,6 @@
 				<v8:Type>xs:boolean</v8:Type>
 			</Type>
 		</Attribute>
-		<Attribute name="ЭтоПодчиненныйУзелРИБ" id="10">
-			<Type>
-				<v8:Type>xs:boolean</v8:Type>
-			</Type>
-		</Attribute>
 		<Attribute name="ПриОбновлении" id="11">
 			<Type>
 				<v8:Type>xs:boolean</v8:Type>
@@ -705,6 +745,22 @@
 				</v8:item>
 			</Title>
 			<Action>ВыгрузитьПодключенныеИсправления</Action>
+		</Command>
+		<Command name="ПоискИУстановкаОбновлений" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Поиск и установка обновлений</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Поиск и установка обновлений</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ПоискИУстановкаОбновлений</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
 		</Command>
 	</Commands>
 	<Parameters>

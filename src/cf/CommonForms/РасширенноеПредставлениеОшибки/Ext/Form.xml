@@ -66,22 +66,6 @@
 						</LabelDecoration>
 					</ChildItems>
 				</UsualGroup>
-				<InputField name="ТекстОшибкиКлиент" id="9">
-					<DataPath>ТекстОшибкиКлиент</DataPath>
-					<ReadOnly>true</ReadOnly>
-					<Title>
-						<v8:item>
-							<v8:lang>ru</v8:lang>
-							<v8:content>Текст ошибки клиент</v8:content>
-						</v8:item>
-					</Title>
-					<TitleLocation>None</TitleLocation>
-					<AutoMaxWidth>false</AutoMaxWidth>
-					<MultiLine>true</MultiLine>
-					<BorderColor>style:FormBackColor</BorderColor>
-					<ContextMenu name="ТекстОшибкиКлиентКонтекстноеМеню" id="10"/>
-					<ExtendedTooltip name="ТекстОшибкиКлиентРасширеннаяПодсказка" id="11"/>
-				</InputField>
 				<UsualGroup name="ВозможныеПричиныИРешенияКлиент" id="53">
 					<Title>
 						<v8:item>
@@ -95,6 +79,33 @@
 					<ShowTitle>false</ShowTitle>
 					<ExtendedTooltip name="ВозможныеПричиныИРешенияКлиентРасширеннаяПодсказка" id="54"/>
 					<ChildItems>
+						<UsualGroup name="ВозможныеРешенияКлиент" id="17">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Рекомендации</v8:content>
+								</v8:item>
+							</Title>
+							<Behavior>Usual</Behavior>
+							<Representation>None</Representation>
+							<ExtendedTooltip name="ВозможныеРешенияКлиентРасширеннаяПодсказка" id="18"/>
+							<ChildItems>
+								<LabelDecoration name="РешенияКлиентТекст" id="19">
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Возможные способы устранения (клиент)</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="РешенияКлиентТекстКонтекстноеМеню" id="20"/>
+									<ExtendedTooltip name="РешенияКлиентТекстРасширеннаяПодсказка" id="21"/>
+									<Events>
+										<Event name="URLProcessing">РешенияКлиентТекстОбработкаНавигационнойСсылки</Event>
+									</Events>
+								</LabelDecoration>
+							</ChildItems>
+						</UsualGroup>
 						<UsualGroup name="ВозможныеПричиныКлиент" id="12">
 							<Title>
 								<v8:item>
@@ -122,35 +133,25 @@
 								</LabelDecoration>
 							</ChildItems>
 						</UsualGroup>
-						<UsualGroup name="ВозможныеРешенияКлиент" id="17">
-							<Title>
-								<v8:item>
-									<v8:lang>ru</v8:lang>
-									<v8:content>Возможные способы устранения</v8:content>
-								</v8:item>
-							</Title>
-							<Behavior>Usual</Behavior>
-							<Representation>None</Representation>
-							<ExtendedTooltip name="ВозможныеРешенияКлиентРасширеннаяПодсказка" id="18"/>
-							<ChildItems>
-								<LabelDecoration name="РешенияКлиентТекст" id="19">
-									<AutoMaxWidth>false</AutoMaxWidth>
-									<Title formatted="false">
-										<v8:item>
-											<v8:lang>ru</v8:lang>
-											<v8:content>Возможные способы устранения (клиент)</v8:content>
-										</v8:item>
-									</Title>
-									<ContextMenu name="РешенияКлиентТекстКонтекстноеМеню" id="20"/>
-									<ExtendedTooltip name="РешенияКлиентТекстРасширеннаяПодсказка" id="21"/>
-									<Events>
-										<Event name="URLProcessing">РешенияКлиентТекстОбработкаНавигационнойСсылки</Event>
-									</Events>
-								</LabelDecoration>
-							</ChildItems>
-						</UsualGroup>
 					</ChildItems>
 				</UsualGroup>
+				<InputField name="ТекстОшибкиКлиент" id="9">
+					<DataPath>ТекстОшибкиКлиент</DataPath>
+					<ReadOnly>true</ReadOnly>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Технические подробности</v8:content>
+						</v8:item>
+					</Title>
+					<TitleTextColor>style:AccentColor</TitleTextColor>
+					<TitleLocation>Top</TitleLocation>
+					<AutoMaxWidth>false</AutoMaxWidth>
+					<MultiLine>true</MultiLine>
+					<BorderColor>style:FormBackColor</BorderColor>
+					<ContextMenu name="ТекстОшибкиКлиентКонтекстноеМеню" id="10"/>
+					<ExtendedTooltip name="ТекстОшибкиКлиентРасширеннаяПодсказка" id="11"/>
+				</InputField>
 				<LabelDecoration name="ИнструкцияКлиент" id="24">
 					<AutoMaxWidth>false</AutoMaxWidth>
 					<Title formatted="false">
@@ -229,22 +230,6 @@
 						</LabelDecoration>
 					</ChildItems>
 				</UsualGroup>
-				<InputField name="ТекстОшибкиСервер" id="37">
-					<DataPath>ТекстОшибкиСервер</DataPath>
-					<ReadOnly>true</ReadOnly>
-					<Title>
-						<v8:item>
-							<v8:lang>ru</v8:lang>
-							<v8:content>Текст ошибки сервер</v8:content>
-						</v8:item>
-					</Title>
-					<TitleLocation>None</TitleLocation>
-					<AutoMaxWidth>false</AutoMaxWidth>
-					<MultiLine>true</MultiLine>
-					<BorderColor>style:FormBackColor</BorderColor>
-					<ContextMenu name="ТекстОшибкиСерверКонтекстноеМеню" id="38"/>
-					<ExtendedTooltip name="ТекстОшибкиСерверРасширеннаяПодсказка" id="39"/>
-				</InputField>
 				<UsualGroup name="ВозможныеПричиныИРешенияСервер" id="55">
 					<Title>
 						<v8:item>
@@ -258,6 +243,33 @@
 					<ShowTitle>false</ShowTitle>
 					<ExtendedTooltip name="ВозможныеПричиныИРешенияСерверРасширеннаяПодсказка" id="56"/>
 					<ChildItems>
+						<UsualGroup name="ВозможныеРешенияСервер" id="45">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Рекомендации</v8:content>
+								</v8:item>
+							</Title>
+							<Behavior>Usual</Behavior>
+							<Representation>None</Representation>
+							<ExtendedTooltip name="ВозможныеРешенияСерверРасширеннаяПодсказка" id="46"/>
+							<ChildItems>
+								<LabelDecoration name="РешенияСерверТекст" id="47">
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Возможные способы устранения (сервер)</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="РешенияСерверТекстКонтекстноеМеню" id="48"/>
+									<ExtendedTooltip name="РешенияСерверТекстРасширеннаяПодсказка" id="49"/>
+									<Events>
+										<Event name="URLProcessing">РешенияСерверТекстОбработкаНавигационнойСсылки</Event>
+									</Events>
+								</LabelDecoration>
+							</ChildItems>
+						</UsualGroup>
 						<UsualGroup name="ВозможныеПричиныСервер" id="40">
 							<Title>
 								<v8:item>
@@ -285,35 +297,25 @@
 								</LabelDecoration>
 							</ChildItems>
 						</UsualGroup>
-						<UsualGroup name="ВозможныеРешенияСервер" id="45">
-							<Title>
-								<v8:item>
-									<v8:lang>ru</v8:lang>
-									<v8:content>Возможные способы устранения</v8:content>
-								</v8:item>
-							</Title>
-							<Behavior>Usual</Behavior>
-							<Representation>None</Representation>
-							<ExtendedTooltip name="ВозможныеРешенияСерверРасширеннаяПодсказка" id="46"/>
-							<ChildItems>
-								<LabelDecoration name="РешенияСерверТекст" id="47">
-									<AutoMaxWidth>false</AutoMaxWidth>
-									<Title formatted="false">
-										<v8:item>
-											<v8:lang>ru</v8:lang>
-											<v8:content>Возможные способы устранения (сервер)</v8:content>
-										</v8:item>
-									</Title>
-									<ContextMenu name="РешенияСерверТекстКонтекстноеМеню" id="48"/>
-									<ExtendedTooltip name="РешенияСерверТекстРасширеннаяПодсказка" id="49"/>
-									<Events>
-										<Event name="URLProcessing">РешенияСерверТекстОбработкаНавигационнойСсылки</Event>
-									</Events>
-								</LabelDecoration>
-							</ChildItems>
-						</UsualGroup>
 					</ChildItems>
 				</UsualGroup>
+				<InputField name="ТекстОшибкиСервер" id="37">
+					<DataPath>ТекстОшибкиСервер</DataPath>
+					<ReadOnly>true</ReadOnly>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Технические подробности</v8:content>
+						</v8:item>
+					</Title>
+					<TitleTextColor>style:AccentColor</TitleTextColor>
+					<TitleLocation>Top</TitleLocation>
+					<AutoMaxWidth>false</AutoMaxWidth>
+					<MultiLine>true</MultiLine>
+					<BorderColor>style:FormBackColor</BorderColor>
+					<ContextMenu name="ТекстОшибкиСерверКонтекстноеМеню" id="38"/>
+					<ExtendedTooltip name="ТекстОшибкиСерверРасширеннаяПодсказка" id="39"/>
+				</InputField>
 				<LabelDecoration name="ИнструкцияСервер" id="50">
 					<AutoMaxWidth>false</AutoMaxWidth>
 					<Title formatted="false">
@@ -356,6 +358,33 @@
 					<ShowTitle>false</ShowTitle>
 					<ExtendedTooltip name="ВозможныеПричиныИРешенияРасширеннаяПодсказка" id="100"/>
 					<ChildItems>
+						<UsualGroup name="ВозможныеРешения" id="91">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Рекомендации</v8:content>
+								</v8:item>
+							</Title>
+							<Behavior>Usual</Behavior>
+							<Representation>None</Representation>
+							<ExtendedTooltip name="ВозможныеРешенияРасширеннаяПодсказка" id="92"/>
+							<ChildItems>
+								<LabelDecoration name="РешенияТекст" id="93">
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<Title formatted="true">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Возможные способы устранения</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="РешенияТекстКонтекстноеМеню" id="94"/>
+									<ExtendedTooltip name="РешенияТекстРасширеннаяПодсказка" id="95"/>
+									<Events>
+										<Event name="URLProcessing">РешенияКлиентТекстОбработкаНавигационнойСсылки</Event>
+									</Events>
+								</LabelDecoration>
+							</ChildItems>
+						</UsualGroup>
 						<UsualGroup name="ВозможныеПричины" id="86">
 							<Title>
 								<v8:item>
@@ -381,33 +410,6 @@
 									<ContextMenu name="ПричиныТекстКонтекстноеМеню" id="102"/>
 									<ExtendedTooltip name="ПричиныТекстРасширеннаяПодсказка" id="103"/>
 								</InputField>
-							</ChildItems>
-						</UsualGroup>
-						<UsualGroup name="ВозможныеРешения" id="91">
-							<Title>
-								<v8:item>
-									<v8:lang>ru</v8:lang>
-									<v8:content>Возможные способы устранения</v8:content>
-								</v8:item>
-							</Title>
-							<Behavior>Usual</Behavior>
-							<Representation>None</Representation>
-							<ExtendedTooltip name="ВозможныеРешенияРасширеннаяПодсказка" id="92"/>
-							<ChildItems>
-								<LabelDecoration name="РешенияТекст" id="93">
-									<AutoMaxWidth>false</AutoMaxWidth>
-									<Title formatted="true">
-										<v8:item>
-											<v8:lang>ru</v8:lang>
-											<v8:content>Возможные способы устранения</v8:content>
-										</v8:item>
-									</Title>
-									<ContextMenu name="РешенияТекстКонтекстноеМеню" id="94"/>
-									<ExtendedTooltip name="РешенияТекстРасширеннаяПодсказка" id="95"/>
-									<Events>
-										<Event name="URLProcessing">РешенияКлиентТекстОбработкаНавигационнойСсылки</Event>
-									</Events>
-								</LabelDecoration>
 							</ChildItems>
 						</UsualGroup>
 					</ChildItems>
