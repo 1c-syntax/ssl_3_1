@@ -185,24 +185,6 @@
 									<ContextMenu name="ДекорацияДоверительКонтекстноеМеню" id="113"/>
 									<ExtendedTooltip name="ДекорацияДоверительРасширеннаяПодсказка" id="114"/>
 								</LabelDecoration>
-								<InputField name="ТипДоверителя" id="107">
-									<DataPath>ТипДоверителя</DataPath>
-									<Title>
-										<v8:item>
-											<v8:lang>ru</v8:lang>
-											<v8:content>Тип доверителя</v8:content>
-										</v8:item>
-									</Title>
-									<TitleLocation>None</TitleLocation>
-									<Width>15</Width>
-									<ListChoiceMode>true</ListChoiceMode>
-									<ChooseType>false</ChooseType>
-									<ContextMenu name="ТипДоверителяКонтекстноеМеню" id="108"/>
-									<ExtendedTooltip name="ТипДоверителяРасширеннаяПодсказка" id="109"/>
-									<Events>
-										<Event name="OnChange">ТипДоверителяПриИзменении</Event>
-									</Events>
-								</InputField>
 								<InputField name="Доверитель" id="218">
 									<DataPath>Доверитель</DataPath>
 									<Title>
@@ -226,7 +208,9 @@
 									<ExtendedTooltip name="ДоверительРасширеннаяПодсказка" id="220"/>
 									<Events>
 										<Event name="OnChange">ДоверительПриИзменении</Event>
+										<Event name="AutoComplete">ДоверительПредставительАвтоПодбор</Event>
 										<Event name="Clearing">ДоверительОчистка</Event>
+										<Event name="ChoiceProcessing">ДоверительПредставительОбработкаВыбора</Event>
 									</Events>
 								</InputField>
 							</ChildItems>
@@ -259,24 +243,6 @@
 									<ContextMenu name="ДекорацияПредставительКонтекстноеМеню" id="118"/>
 									<ExtendedTooltip name="ДекорацияПредставительРасширеннаяПодсказка" id="119"/>
 								</LabelDecoration>
-								<InputField name="ТипПредставителя" id="120">
-									<DataPath>ТипПредставителя</DataPath>
-									<Title>
-										<v8:item>
-											<v8:lang>ru</v8:lang>
-											<v8:content>Тип представителя</v8:content>
-										</v8:item>
-									</Title>
-									<TitleLocation>None</TitleLocation>
-									<Width>15</Width>
-									<ListChoiceMode>true</ListChoiceMode>
-									<ChooseType>false</ChooseType>
-									<ContextMenu name="ТипПредставителяКонтекстноеМеню" id="121"/>
-									<ExtendedTooltip name="ТипПредставителяРасширеннаяПодсказка" id="122"/>
-									<Events>
-										<Event name="OnChange">ТипПредставителяПриИзменении</Event>
-									</Events>
-								</InputField>
 								<InputField name="Представитель" id="221">
 									<DataPath>Представитель</DataPath>
 									<Title>
@@ -300,7 +266,9 @@
 									<ExtendedTooltip name="ПредставительРасширеннаяПодсказка" id="223"/>
 									<Events>
 										<Event name="OnChange">ПредставительПриИзменении</Event>
+										<Event name="AutoComplete">ДоверительПредставительАвтоПодбор</Event>
 										<Event name="Clearing">ПредставительОчистка</Event>
+										<Event name="ChoiceProcessing">ДоверительПредставительОбработкаВыбора</Event>
 									</Events>
 								</InputField>
 							</ChildItems>
@@ -987,7 +955,7 @@
 			</UseAlways>
 			<Settings xsi:type="DynamicList">
 				<ManualQuery>true</ManualQuery>
-				<DynamicDataRead>true</DynamicDataRead>
+				<DynamicDataRead>false</DynamicDataRead>
 				<QueryText>ВЫБРАТЬ
 	СправочникМашиночитаемыеДоверенности.Ссылка КАК Ссылка,
 	СправочникМашиночитаемыеДоверенности.ПометкаУдаления КАК ПометкаУдаления,
@@ -1048,7 +1016,7 @@
 				РегистрСведений.МашиночитаемыеДоверенностиПредставителиИДоверители КАК МашиночитаемыеДоверенностиПредставителиИДоверители
 			ГДЕ
 				МашиночитаемыеДоверенностиПредставителиИДоверители.ТипУчастника = ЗНАЧЕНИЕ(Перечисление.ТипыУчастниковМЧД.Доверитель)
-				И МашиночитаемыеДоверенностиПредставителиИДоверители.ИНН + "|" + МашиночитаемыеДоверенностиПредставителиИДоверители.ИННФЛ + "|" + МашиночитаемыеДоверенностиПредставителиИДоверители.СНИЛС + "|" + МашиночитаемыеДоверенностиПредставителиИДоверители.ФИО + "|" + МашиночитаемыеДоверенностиПредставителиИДоверители.НаименованиеОрганизации ПОДОБНО &amp;ДоверительСтрокаПоиска СПЕЦСИМВОЛ "~")),
+				И МашиночитаемыеДоверенностиПредставителиИДоверители.ИНН + "|" + МашиночитаемыеДоверенностиПредставителиИДоверители.ИННФЛ + "|" + МашиночитаемыеДоверенностиПредставителиИДоверители.СНИЛС + "|" + МашиночитаемыеДоверенностиПредставителиИДоверители.ФИО +"|" + МашиночитаемыеДоверенностиПредставителиИДоверители.КПП + "|" + МашиночитаемыеДоверенностиПредставителиИДоверители.НаименованиеОрганизации ПОДОБНО &amp;ДоверительСтрокаПоиска СПЕЦСИМВОЛ "~")),
 	(СправочникМашиночитаемыеДоверенности.Ссылка В
 			(ВЫБРАТЬ
 				МашиночитаемыеДоверенностиПредставителиИДоверители.МашиночитаемаяДоверенность КАК МашиночитаемаяДоверенность
@@ -1056,41 +1024,7 @@
 				РегистрСведений.МашиночитаемыеДоверенностиПредставителиИДоверители КАК МашиночитаемыеДоверенностиПредставителиИДоверители
 			ГДЕ
 				МашиночитаемыеДоверенностиПредставителиИДоверители.ТипУчастника = ЗНАЧЕНИЕ(Перечисление.ТипыУчастниковМЧД.Представитель)
-				И МашиночитаемыеДоверенностиПредставителиИДоверители.ИНН + "|" + МашиночитаемыеДоверенностиПредставителиИДоверители.ИННФЛ + "|" + МашиночитаемыеДоверенностиПредставителиИДоверители.СНИЛС + "|" + МашиночитаемыеДоверенностиПредставителиИДоверители.ФИО + "|" + МашиночитаемыеДоверенностиПредставителиИДоверители.НаименованиеОрганизации ПОДОБНО &amp;ПредставительСтрокаПоиска СПЕЦСИМВОЛ "~")),
-	(СправочникМашиночитаемыеДоверенности.Ссылка В
-			(ВЫБРАТЬ
-				МашиночитаемыеДоверенностиДоверители.Ссылка КАК Ссылка
-			ИЗ
-				Справочник.МашиночитаемыеДоверенности.Доверители КАК МашиночитаемыеДоверенностиДоверители
-			ГДЕ
-				МашиночитаемыеДоверенностиДоверители.Доверитель = &amp;Доверитель)),
-	(СправочникМашиночитаемыеДоверенности.Ссылка В
-			(ВЫБРАТЬ
-				МашиночитаемыеДоверенностиПредставители.Ссылка КАК Ссылка
-			ИЗ
-				Справочник.МашиночитаемыеДоверенности.Представители КАК МашиночитаемыеДоверенностиПредставители
-			ГДЕ
-				МашиночитаемыеДоверенностиПредставители.Представитель = &amp;Представитель)),
-	(СправочникМашиночитаемыеДоверенности.Ссылка В
-			(ВЫБРАТЬ
-				МашиночитаемыеДоверенностиДоверители.Ссылка КАК Ссылка
-			ИЗ
-				Справочник.МашиночитаемыеДоверенности.Доверители КАК МашиночитаемыеДоверенностиДоверители
-					ЛЕВОЕ СОЕДИНЕНИЕ Справочник.Пользователи КАК Пользователи
-					ПО
-						МашиночитаемыеДоверенностиДоверители.Доверитель = Пользователи.ФизическоеЛицо
-			ГДЕ
-				Пользователи.Ссылка = &amp;ДоверительПользователь)),
-	(СправочникМашиночитаемыеДоверенности.Ссылка В
-			(ВЫБРАТЬ
-				МашиночитаемыеДоверенностиПредставители.Ссылка КАК Ссылка
-			ИЗ
-				Справочник.МашиночитаемыеДоверенности.Представители КАК МашиночитаемыеДоверенностиПредставители
-					ЛЕВОЕ СОЕДИНЕНИЕ Справочник.Пользователи КАК Пользователи
-					ПО
-						МашиночитаемыеДоверенностиПредставители.Представитель = Пользователи.ФизическоеЛицо
-			ГДЕ
-				Пользователи.Ссылка = &amp;ПредставительПользователь)),
+				И МашиночитаемыеДоверенностиПредставителиИДоверители.ИНН + "|" + МашиночитаемыеДоверенностиПредставителиИДоверители.ИННФЛ + "|" + МашиночитаемыеДоверенностиПредставителиИДоверители.СНИЛС + "|" + МашиночитаемыеДоверенностиПредставителиИДоверители.ФИО + "|" + МашиночитаемыеДоверенностиПредставителиИДоверители.КПП + "|" + МашиночитаемыеДоверенностиПредставителиИДоверители.НаименованиеОрганизации ПОДОБНО &amp;ПредставительСтрокаПоиска СПЕЦСИМВОЛ "~")),
 	(СправочникМашиночитаемыеДоверенности.Ссылка В
 			(ВЫБРАТЬ
 				МашиночитаемыеДоверенностиПолномочия.Ссылка КАК Ссылка
@@ -1143,6 +1077,15 @@
 			ИЗ
 				РегистрСведений.МашиночитаемыеДоверенностиПредставителиИДоверители КАК МашиночитаемыеДоверенностиПредставителиИДоверители
 			ГДЕ
+				МашиночитаемыеДоверенностиПредставителиИДоверители.ТипУчастника = ЗНАЧЕНИЕ(Перечисление.ТипыУчастниковМЧД.Доверитель)
+				И МашиночитаемыеДоверенностиПредставителиИДоверители.КПП = &amp;ДоверительКПП)),
+			
+	(СправочникМашиночитаемыеДоверенности.Ссылка В
+			(ВЫБРАТЬ
+				МашиночитаемыеДоверенностиПредставителиИДоверители.МашиночитаемаяДоверенность КАК МашиночитаемаяДоверенность
+			ИЗ
+				РегистрСведений.МашиночитаемыеДоверенностиПредставителиИДоверители КАК МашиночитаемыеДоверенностиПредставителиИДоверители
+			ГДЕ
 				МашиночитаемыеДоверенностиПредставителиИДоверители.ТипУчастника = ЗНАЧЕНИЕ(Перечисление.ТипыУчастниковМЧД.Представитель)
 				И МашиночитаемыеДоверенностиПредставителиИДоверители.ИНН = &amp;ПредставительИНН)),
 	(СправочникМашиночитаемыеДоверенности.Ссылка В
@@ -1168,7 +1111,15 @@
 				РегистрСведений.МашиночитаемыеДоверенностиПредставителиИДоверители КАК МашиночитаемыеДоверенностиПредставителиИДоверители
 			ГДЕ
 				МашиночитаемыеДоверенностиПредставителиИДоверители.ТипУчастника = ЗНАЧЕНИЕ(Перечисление.ТипыУчастниковМЧД.Представитель)
-				И МашиночитаемыеДоверенностиПредставителиИДоверители.СНИЛС = &amp;ПредставительСНИЛС))}</QueryText>
+				И МашиночитаемыеДоверенностиПредставителиИДоверители.СНИЛС = &amp;ПредставительСНИЛС)),
+	(СправочникМашиночитаемыеДоверенности.Ссылка В
+			(ВЫБРАТЬ
+				МашиночитаемыеДоверенностиПредставителиИДоверители.МашиночитаемаяДоверенность КАК МашиночитаемаяДоверенность
+			ИЗ
+				РегистрСведений.МашиночитаемыеДоверенностиПредставителиИДоверители КАК МашиночитаемыеДоверенностиПредставителиИДоверители
+			ГДЕ
+				МашиночитаемыеДоверенностиПредставителиИДоверители.ТипУчастника = ЗНАЧЕНИЕ(Перечисление.ТипыУчастниковМЧД.Представитель)
+				И МашиночитаемыеДоверенностиПредставителиИДоверители.КПП = &amp;ПредставительКПП))}</QueryText>
 				<Field xsi:type="dcssch:DataSetFieldField">
 					<dcssch:dataPath>Верна</dcssch:dataPath>
 					<dcssch:field>Верна</dcssch:field>
@@ -1380,20 +1331,6 @@
 					<dcssch:field>ФайлДоверенности</dcssch:field>
 				</Field>
 				<Parameter>
-					<dcssch:name>Доверитель</dcssch:name>
-					<dcssch:title xsi:type="v8:LocalStringType">
-						<v8:item>
-							<v8:lang>ru</v8:lang>
-							<v8:content>Доверитель</v8:content>
-						</v8:item>
-					</dcssch:title>
-					<dcssch:valueType>
-						<v8:TypeId>c14a0491-75b5-4af9-b0d0-bb698a5467a4</v8:TypeId>
-					</dcssch:valueType>
-					<dcssch:value xsi:nil="true"/>
-					<dcssch:useRestriction>false</dcssch:useRestriction>
-				</Parameter>
-				<Parameter>
 					<dcssch:name>ДоверительИНН</dcssch:name>
 					<dcssch:title xsi:type="v8:LocalStringType">
 						<v8:item>
@@ -1445,20 +1382,6 @@
 						</v8:StringQualifiers>
 					</dcssch:valueType>
 					<dcssch:value xsi:type="xs:string"/>
-					<dcssch:useRestriction>false</dcssch:useRestriction>
-				</Parameter>
-				<Parameter>
-					<dcssch:name>ДоверительПользователь</dcssch:name>
-					<dcssch:title xsi:type="v8:LocalStringType">
-						<v8:item>
-							<v8:lang>ru</v8:lang>
-							<v8:content>Доверитель пользователь</v8:content>
-						</v8:item>
-					</dcssch:title>
-					<dcssch:valueType>
-						<v8:Type>cfg:CatalogRef.Пользователи</v8:Type>
-					</dcssch:valueType>
-					<dcssch:value xsi:nil="true"/>
 					<dcssch:useRestriction>false</dcssch:useRestriction>
 				</Parameter>
 				<Parameter>
@@ -1535,20 +1458,6 @@
 					<dcssch:useRestriction>false</dcssch:useRestriction>
 				</Parameter>
 				<Parameter>
-					<dcssch:name>Представитель</dcssch:name>
-					<dcssch:title xsi:type="v8:LocalStringType">
-						<v8:item>
-							<v8:lang>ru</v8:lang>
-							<v8:content>Представитель</v8:content>
-						</v8:item>
-					</dcssch:title>
-					<dcssch:valueType>
-						<v8:TypeId>c14a0491-75b5-4af9-b0d0-bb698a5467a4</v8:TypeId>
-					</dcssch:valueType>
-					<dcssch:value xsi:nil="true"/>
-					<dcssch:useRestriction>false</dcssch:useRestriction>
-				</Parameter>
-				<Parameter>
 					<dcssch:name>ПредставительИНН</dcssch:name>
 					<dcssch:title xsi:type="v8:LocalStringType">
 						<v8:item>
@@ -1600,20 +1509,6 @@
 						</v8:StringQualifiers>
 					</dcssch:valueType>
 					<dcssch:value xsi:type="xs:string"/>
-					<dcssch:useRestriction>false</dcssch:useRestriction>
-				</Parameter>
-				<Parameter>
-					<dcssch:name>ПредставительПользователь</dcssch:name>
-					<dcssch:title xsi:type="v8:LocalStringType">
-						<v8:item>
-							<v8:lang>ru</v8:lang>
-							<v8:content>Представитель пользователь</v8:content>
-						</v8:item>
-					</dcssch:title>
-					<dcssch:valueType>
-						<v8:Type>cfg:CatalogRef.Пользователи</v8:Type>
-					</dcssch:valueType>
-					<dcssch:value xsi:nil="true"/>
 					<dcssch:useRestriction>false</dcssch:useRestriction>
 				</Parameter>
 				<Parameter>
@@ -1696,6 +1591,42 @@
 					</dcssch:title>
 					<dcssch:value xsi:nil="true"/>
 					<dcssch:useRestriction>true</dcssch:useRestriction>
+				</Parameter>
+				<Parameter>
+					<dcssch:name>ДоверительКПП</dcssch:name>
+					<dcssch:title xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Доверитель КПП</v8:content>
+						</v8:item>
+					</dcssch:title>
+					<dcssch:valueType>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</dcssch:valueType>
+					<dcssch:value xsi:type="xs:string"/>
+					<dcssch:useRestriction>false</dcssch:useRestriction>
+				</Parameter>
+				<Parameter>
+					<dcssch:name>ПредставительКПП</dcssch:name>
+					<dcssch:title xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Представитель КПП</v8:content>
+						</v8:item>
+					</dcssch:title>
+					<dcssch:valueType>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</dcssch:valueType>
+					<dcssch:value xsi:type="xs:string"/>
+					<dcssch:useRestriction>false</dcssch:useRestriction>
 				</Parameter>
 				<MainTable>Catalog.МашиночитаемыеДоверенности</MainTable>
 				<ListSettings>
@@ -1781,23 +1712,11 @@
 			<Type/>
 		</Attribute>
 		<Attribute name="ТипДоверителя" id="11">
-			<Title>
-				<v8:item>
-					<v8:lang>ru</v8:lang>
-					<v8:content>Тип доверителя</v8:content>
-				</v8:item>
-			</Title>
 			<Type>
 				<v8:Type>v8:TypeDescription</v8:Type>
 			</Type>
 		</Attribute>
 		<Attribute name="ТипПредставителя" id="4">
-			<Title>
-				<v8:item>
-					<v8:lang>ru</v8:lang>
-					<v8:content>Тип представителя</v8:content>
-				</v8:item>
-			</Title>
 			<Type>
 				<v8:Type>v8:TypeDescription</v8:Type>
 			</Type>
