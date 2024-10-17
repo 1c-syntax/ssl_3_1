@@ -454,6 +454,19 @@
 			<ContextMenu name="ДекорацияРазделитель2КонтекстноеМеню" id="79"/>
 			<ExtendedTooltip name="ДекорацияРазделитель2РасширеннаяПодсказка" id="80"/>
 		</LabelDecoration>
+		<LabelDecoration name="ДополнительнаяСсылка" id="116">
+			<Title formatted="false">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Дополнительная ссылка</v8:content>
+				</v8:item>
+			</Title>
+			<ContextMenu name="ДополнительнаяСсылкаКонтекстноеМеню" id="117"/>
+			<ExtendedTooltip name="ДополнительнаяСсылкаРасширеннаяПодсказка" id="118"/>
+			<Events>
+				<Event name="URLProcessing">ДополнительнаяСсылкаОбработкаНавигационнойСсылки</Event>
+			</Events>
+		</LabelDecoration>
 		<UsualGroup name="ГруппаПодвал" id="60">
 			<Title>
 				<v8:item>
@@ -837,6 +850,29 @@
 					<v8:AllowedLength>Variable</v8:AllowedLength>
 				</v8:StringQualifiers>
 			</Type>
+		</Parameter>
+		<Parameter name="ТекстДополнительнойСсылки">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Parameter>
+		<Parameter name="ОбработчикДополнительнойСсылки">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+			<KeyParameter>true</KeyParameter>
+		</Parameter>
+		<Parameter name="ПараметрОбработчикаДополнительнойСсылки">
+			<Type/>
+			<KeyParameter>true</KeyParameter>
 		</Parameter>
 	</Parameters>
 </Form>

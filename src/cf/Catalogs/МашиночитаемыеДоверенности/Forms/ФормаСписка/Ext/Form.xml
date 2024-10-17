@@ -730,6 +730,35 @@
 				</LabelField>
 			</ChildItems>
 		</Table>
+		<UsualGroup name="ГруппаПолномочия" id="270">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Полномочия доверенности</v8:content>
+				</v8:item>
+			</Title>
+			<ExtendedTooltip name="ГруппаПолномочияРасширеннаяПодсказка" id="271"/>
+			<ChildItems>
+				<InputField name="ПолномочияДоверенности" id="275">
+					<DataPath>Items.Список.CurrentData.ТекстПолномочий</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Полномочия доверенности</v8:content>
+						</v8:item>
+					</Title>
+					<TitleLocation>None</TitleLocation>
+					<AutoMaxWidth>false</AutoMaxWidth>
+					<Height>12</Height>
+					<AutoMaxHeight>false</AutoMaxHeight>
+					<VerticalStretch>true</VerticalStretch>
+					<MultiLine>true</MultiLine>
+					<HeightControlVariant>UseContentHeight</HeightControlVariant>
+					<ContextMenu name="ПолномочияДоверенностиКонтекстноеМеню" id="276"/>
+					<ExtendedTooltip name="ПолномочияДоверенностиРасширеннаяПодсказка" id="277"/>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
 		<UsualGroup name="ГруппаЛегенда" id="176">
 			<Title>
 				<v8:item>
@@ -949,8 +978,12 @@
 			</Type>
 			<MainAttribute>true</MainAttribute>
 			<UseAlways>
+				<Field>~Список.Ограничения</Field>
+				<Field>~Список.Полномочия</Field>
 				<Field>Список.ВозможностьПередоверия</Field>
+				<Field>Список.ПолномочияВТекстовомВиде</Field>
 				<Field>Список.Ссылка</Field>
+				<Field>Список.ТекстПолномочий</Field>
 				<Field>Список.ФайлДоверенности</Field>
 			</UseAlways>
 			<Settings xsi:type="DynamicList">
@@ -983,6 +1016,12 @@
 			ТОГДА ИСТИНА
 		ИНАЧЕ ЛОЖЬ
 	КОНЕЦ КАК Действует,
+	СправочникМашиночитаемыеДоверенности.ПолномочияВТекстовомВиде КАК ПолномочияВТекстовомВиде,
+	ВЫБОР
+		КОГДА &amp;ВидимостьПолномочий
+			ТОГДА СправочникМашиночитаемыеДоверенности.ТекстПолномочий
+		Иначе ""
+		КОНЕЦ КАК ТекстПолномочий,
 	ВЫБОР
 		КОГДА СправочникМашиночитаемыеДоверенности.ПометкаУдаления
 			ТОГДА 1
@@ -1628,6 +1667,20 @@
 					<dcssch:value xsi:type="xs:string"/>
 					<dcssch:useRestriction>false</dcssch:useRestriction>
 				</Parameter>
+				<Parameter>
+					<dcssch:name>ВидимостьПолномочий</dcssch:name>
+					<dcssch:title xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Видимость полномочий</v8:content>
+						</v8:item>
+					</dcssch:title>
+					<dcssch:valueType>
+						<v8:Type>xs:boolean</v8:Type>
+					</dcssch:valueType>
+					<dcssch:value xsi:type="xs:boolean">false</dcssch:value>
+					<dcssch:useRestriction>true</dcssch:useRestriction>
+				</Parameter>
 				<MainTable>Catalog.МашиночитаемыеДоверенности</MainTable>
 				<ListSettings>
 					<dcsset:filter>
@@ -1698,11 +1751,6 @@
 			</Title>
 			<Type/>
 		</Attribute>
-		<Attribute name="ФизическоеЛицоПользователя" id="7">
-			<Type>
-				<v8:TypeSet>cfg:DefinedType.ФизическоеЛицо</v8:TypeSet>
-			</Type>
-		</Attribute>
 		<Attribute name="АвторизованныйПользователь" id="8">
 			<Type>
 				<v8:Type>cfg:CatalogRef.Пользователи</v8:Type>
@@ -1710,16 +1758,6 @@
 		</Attribute>
 		<Attribute name="ЗначениеДоверитель" id="9">
 			<Type/>
-		</Attribute>
-		<Attribute name="ТипДоверителя" id="11">
-			<Type>
-				<v8:Type>v8:TypeDescription</v8:Type>
-			</Type>
-		</Attribute>
-		<Attribute name="ТипПредставителя" id="4">
-			<Type>
-				<v8:Type>v8:TypeDescription</v8:Type>
-			</Type>
 		</Attribute>
 		<Attribute name="ОтборПоСостоянию" id="3">
 			<Type>
@@ -1781,6 +1819,15 @@
 		</Attribute>
 		<Attribute name="ПараметрыПодключаемыхКоманд" id="17">
 			<Type/>
+		</Attribute>
+		<Attribute name="ПолномочияДоверенности" id="18">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
 		</Attribute>
 	</Attributes>
 	<Commands>
