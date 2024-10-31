@@ -602,18 +602,21 @@
 								</LabelField>
 							</ChildItems>
 						</Table>
-						<Button name="ОткрытьМашиночитаемыеДоверенности" id="476">
-							<Type>Hyperlink</Type>
-							<Visible>false</Visible>
-							<CommandName>Form.Command.ОткрытьМашиночитаемыеДоверенности</CommandName>
-							<Title>
+						<LabelDecoration name="ДекорацияОткрытьМашиночитаемыеДоверенности" id="490">
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<HorizontalStretch>true</HorizontalStretch>
+							<Title formatted="false">
 								<v8:item>
 									<v8:lang>ru</v8:lang>
-									<v8:content>Машиночитаемые доверенности</v8:content>
+									<v8:content>Открыть машиночитаемые доверенности</v8:content>
 								</v8:item>
 							</Title>
-							<ExtendedTooltip name="ОткрытьМашиночитаемыеДоверенностиРасширеннаяПодсказка" id="477"/>
-						</Button>
+							<ContextMenu name="ДекорацияОткрытьМашиночитаемыеДоверенностиКонтекстноеМеню" id="491"/>
+							<ExtendedTooltip name="ДекорацияОткрытьМашиночитаемыеДоверенностиРасширеннаяПодсказка" id="492"/>
+							<Events>
+								<Event name="URLProcessing">ДекорацияОткрытьМашиночитаемыеДоверенностиОбработкаНавигационнойСсылки</Event>
+							</Events>
+						</LabelDecoration>
 						<UsualGroup name="ГруппаЛегенда" id="379">
 							<Title>
 								<v8:item>
@@ -1187,7 +1190,7 @@
 							<Title>
 								<v8:item>
 									<v8:lang>ru</v8:lang>
-									<v8:content>Путь к приложению</v8:content>
+									<v8:content>Путь к приложению, если установлено по нестандартному пути</v8:content>
 								</v8:item>
 							</Title>
 							<Group>Vertical</Group>
@@ -2104,21 +2107,6 @@
 			</Picture>
 			<Action>ДобавитьТолькоДляШифрования</Action>
 			<Representation>TextPicture</Representation>
-		</Command>
-		<Command name="ОткрытьМашиночитаемыеДоверенности" id="12">
-			<Title>
-				<v8:item>
-					<v8:lang>ru</v8:lang>
-					<v8:content>Машиночитаемые доверенности</v8:content>
-				</v8:item>
-			</Title>
-			<ToolTip>
-				<v8:item>
-					<v8:lang>ru</v8:lang>
-					<v8:content>Открыть машиночитаемые доверенности</v8:content>
-				</v8:item>
-			</ToolTip>
-			<Action>ОткрытьМашиночитаемыеДоверенности</Action>
 		</Command>
 	</Commands>
 	<Parameters>
