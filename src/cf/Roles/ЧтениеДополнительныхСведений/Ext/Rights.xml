@@ -4,33 +4,6 @@
 	<setForAttributesByDefault>true</setForAttributesByDefault>
 	<independentRightsOfChildObjects>false</independentRightsOfChildObjects>
 	<object>
-		<name>InformationRegister.ДополнительныеСведения</name>
-		<right>
-			<name>Read</name>
-			<value>true</value>
-			<restrictionByCondition>
-				<condition>#Если &amp;ОграничениеДоступаНаУровнеЗаписейУниверсально #Тогда
-#ДляРегистра("ИдентификаторыОбъектовМетаданных.РегистрСведенийДополнительныеСведения", "Свойство", "", "", "", "")
-#Иначе
-#ПоЗначениям( "РегистрСведений.ДополнительныеСведения", "","",
-"ДополнительныеСведения", "Свойство",
-"","", "","", "","", "","", "","", "","", "","", "","", "","", "","", "","", "","", "","", "","", "","")
-#КонецЕсли</condition>
-			</restrictionByCondition>
-		</right>
-		<right>
-			<name>View</name>
-			<value>true</value>
-		</right>
-	</object>
-	<object>
-		<name>CommonCommand.ДополнительныеСведенияКоманднаяПанель</name>
-		<right>
-			<name>View</name>
-			<value>true</value>
-		</right>
-	</object>
-	<object>
 		<name>Configuration.БиблиотекаСтандартныхПодсистем</name>
 		<right>
 			<name>MainWindowModeNormal</name>
@@ -54,6 +27,33 @@
 		</right>
 		<right>
 			<name>AnalyticsSystemClient</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
+		<name>InformationRegister.ДополнительныеСведения</name>
+		<right>
+			<name>Read</name>
+			<value>true</value>
+			<restrictionByCondition>
+				<condition>#Если &amp;ОграничениеДоступаНаУровнеЗаписейУниверсально #Тогда
+#ДляРегистра("ИдентификаторыОбъектовМетаданных.РегистрСведенийДополнительныеСведения", "Свойство", "", "", "", "")
+#Иначе
+#ПоЗначениям( "РегистрСведений.ДополнительныеСведения", "","",
+"ДополнительныеСведения", "Свойство",
+"","", "","", "","", "","", "","", "","", "","", "","", "","", "","", "","", "","", "","", "","", "","")
+#КонецЕсли</condition>
+			</restrictionByCondition>
+		</right>
+		<right>
+			<name>View</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
+		<name>CommonCommand.ДополнительныеСведенияКоманднаяПанель</name>
+		<right>
+			<name>View</name>
 			<value>true</value>
 		</right>
 	</object>
