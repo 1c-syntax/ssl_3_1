@@ -1100,6 +1100,24 @@
 				РегистрСведений.МашиночитаемыеДоверенностиПредставителиИДоверители КАК МашиночитаемыеДоверенностиПредставителиИДоверители
 			ГДЕ
 				МашиночитаемыеДоверенностиПредставителиИДоверители.ТипУчастника = ЗНАЧЕНИЕ(Перечисление.ТипыУчастниковМЧД.Доверитель)
+				И МашиночитаемыеДоверенностиПредставителиИДоверители.НаименованиеОрганизации = &amp;ДоверительНаименованиеОрганизации)),
+
+	(СправочникМашиночитаемыеДоверенности.Ссылка В
+			(ВЫБРАТЬ
+				МашиночитаемыеДоверенностиПредставителиИДоверители.МашиночитаемаяДоверенность КАК МашиночитаемаяДоверенность
+			ИЗ
+				РегистрСведений.МашиночитаемыеДоверенностиПредставителиИДоверители КАК МашиночитаемыеДоверенностиПредставителиИДоверители
+			ГДЕ
+				МашиночитаемыеДоверенностиПредставителиИДоверители.ТипУчастника = ЗНАЧЕНИЕ(Перечисление.ТипыУчастниковМЧД.Доверитель)
+				И МашиночитаемыеДоверенностиПредставителиИДоверители.ФИО = &amp;ДоверительФИО)),
+			
+	(СправочникМашиночитаемыеДоверенности.Ссылка В
+			(ВЫБРАТЬ
+				МашиночитаемыеДоверенностиПредставителиИДоверители.МашиночитаемаяДоверенность КАК МашиночитаемаяДоверенность
+			ИЗ
+				РегистрСведений.МашиночитаемыеДоверенностиПредставителиИДоверители КАК МашиночитаемыеДоверенностиПредставителиИДоверители
+			ГДЕ
+				МашиночитаемыеДоверенностиПредставителиИДоверители.ТипУчастника = ЗНАЧЕНИЕ(Перечисление.ТипыУчастниковМЧД.Доверитель)
 				И МашиночитаемыеДоверенностиПредставителиИДоверители.ИНН = &amp;ДоверительИНН)),
 	(СправочникМашиночитаемыеДоверенности.Ссылка В
 			(ВЫБРАТЬ
@@ -1133,7 +1151,24 @@
 			ГДЕ
 				МашиночитаемыеДоверенностиПредставителиИДоверители.ТипУчастника = ЗНАЧЕНИЕ(Перечисление.ТипыУчастниковМЧД.Доверитель)
 				И МашиночитаемыеДоверенностиПредставителиИДоверители.КПП = &amp;ДоверительКПП)),
-			
+	(СправочникМашиночитаемыеДоверенности.Ссылка В
+			(ВЫБРАТЬ
+				МашиночитаемыеДоверенностиПредставителиИДоверители.МашиночитаемаяДоверенность КАК МашиночитаемаяДоверенность
+			ИЗ
+				РегистрСведений.МашиночитаемыеДоверенностиПредставителиИДоверители КАК МашиночитаемыеДоверенностиПредставителиИДоверители
+			ГДЕ
+				МашиночитаемыеДоверенностиПредставителиИДоверители.ТипУчастника = ЗНАЧЕНИЕ(Перечисление.ТипыУчастниковМЧД.Представитель)
+				И МашиночитаемыеДоверенностиПредставителиИДоверители.НаименованиеОрганизации = &amp;ПредставительНаименованиеОрганизации)),
+
+	(СправочникМашиночитаемыеДоверенности.Ссылка В
+			(ВЫБРАТЬ
+				МашиночитаемыеДоверенностиПредставителиИДоверители.МашиночитаемаяДоверенность КАК МашиночитаемаяДоверенность
+			ИЗ
+				РегистрСведений.МашиночитаемыеДоверенностиПредставителиИДоверители КАК МашиночитаемыеДоверенностиПредставителиИДоверители
+			ГДЕ
+				МашиночитаемыеДоверенностиПредставителиИДоверители.ТипУчастника = ЗНАЧЕНИЕ(Перечисление.ТипыУчастниковМЧД.Представитель)
+				И МашиночитаемыеДоверенностиПредставителиИДоверители.ФИО = &amp;ПредставительФИО)),
+		
 	(СправочникМашиночитаемыеДоверенности.Ссылка В
 			(ВЫБРАТЬ
 				МашиночитаемыеДоверенностиПредставителиИДоверители.МашиночитаемаяДоверенность КАК МашиночитаемаяДоверенность
@@ -1696,6 +1731,78 @@
 					<dcssch:value xsi:type="xs:boolean">false</dcssch:value>
 					<dcssch:useRestriction>true</dcssch:useRestriction>
 				</Parameter>
+				<Parameter>
+					<dcssch:name>ДоверительНаименованиеОрганизации</dcssch:name>
+					<dcssch:title xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Доверитель наименование организации</v8:content>
+						</v8:item>
+					</dcssch:title>
+					<dcssch:valueType>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</dcssch:valueType>
+					<dcssch:value xsi:type="xs:string"/>
+					<dcssch:useRestriction>false</dcssch:useRestriction>
+				</Parameter>
+				<Parameter>
+					<dcssch:name>ДоверительФИО</dcssch:name>
+					<dcssch:title xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Доверитель ФИО</v8:content>
+						</v8:item>
+					</dcssch:title>
+					<dcssch:valueType>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</dcssch:valueType>
+					<dcssch:value xsi:type="xs:string"/>
+					<dcssch:useRestriction>false</dcssch:useRestriction>
+				</Parameter>
+				<Parameter>
+					<dcssch:name>ПредставительНаименованиеОрганизации</dcssch:name>
+					<dcssch:title xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Представитель наименование организации</v8:content>
+						</v8:item>
+					</dcssch:title>
+					<dcssch:valueType>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</dcssch:valueType>
+					<dcssch:value xsi:type="xs:string"/>
+					<dcssch:useRestriction>false</dcssch:useRestriction>
+				</Parameter>
+				<Parameter>
+					<dcssch:name>ПредставительФИО</dcssch:name>
+					<dcssch:title xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Представитель ФИО</v8:content>
+						</v8:item>
+					</dcssch:title>
+					<dcssch:valueType>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</dcssch:valueType>
+					<dcssch:value xsi:type="xs:string"/>
+					<dcssch:useRestriction>false</dcssch:useRestriction>
+				</Parameter>
 				<MainTable>Catalog.МашиночитаемыеДоверенности</MainTable>
 				<ListSettings>
 					<dcsset:filter>
@@ -1771,9 +1878,6 @@
 				<v8:Type>cfg:CatalogRef.Пользователи</v8:Type>
 			</Type>
 		</Attribute>
-		<Attribute name="ЗначениеДоверитель" id="9">
-			<Type/>
-		</Attribute>
 		<Attribute name="ОтборПоСостоянию" id="3">
 			<Type>
 				<v8:Type>xs:string</v8:Type>
@@ -1843,6 +1947,12 @@
 					<v8:AllowedLength>Variable</v8:AllowedLength>
 				</v8:StringQualifiers>
 			</Type>
+		</Attribute>
+		<Attribute name="ОтборПоДоверителю" id="4">
+			<Type/>
+		</Attribute>
+		<Attribute name="ОтборПоПредставителю" id="7">
+			<Type/>
 		</Attribute>
 	</Attributes>
 	<Commands>

@@ -50,6 +50,20 @@
 				<LocationInCommandBar>InCommandBarAndInAdditionalSubmenu</LocationInCommandBar>
 				<ExtendedTooltip name="ФормаОбщаяКомандаНапомнитьРасширеннаяПодсказка" id="16"/>
 			</Button>
+			<Popup name="ПодменюОрганайзер" id="50">
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Органайзер</v8:content>
+					</v8:item>
+				</Title>
+				<Picture>
+					<xr:Ref>CommonPicture.Органайзер</xr:Ref>
+					<xr:LoadTransparent>false</xr:LoadTransparent>
+				</Picture>
+				<Representation>Picture</Representation>
+				<ExtendedTooltip name="ПодменюОрганайзерРасширеннаяПодсказка" id="51"/>
+			</Popup>
 			<SearchStringAddition name="СтрокаПоиска" id="47">
 				<AdditionSource>
 					<Item>Список</Item>
@@ -196,6 +210,9 @@
 				<ContextMenu name="СписокSearchControlContextMenu" id="45"/>
 				<ExtendedTooltip name="СписокSearchControlExtendedTooltip" id="46"/>
 			</SearchControlAddition>
+			<Events>
+				<Event name="OnActivateRow">СписокПриАктивизацииСтроки</Event>
+			</Events>
 			<ChildItems>
 				<ColumnGroup name="Содержание" id="8">
 					<Title>
