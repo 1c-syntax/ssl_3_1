@@ -150,6 +150,9 @@
 				<ContextMenu name="СписокУправлениеПоискомКонтекстноеМеню" id="139"/>
 				<ExtendedTooltip name="СписокУправлениеПоискомРасширеннаяПодсказка" id="140"/>
 			</SearchControlAddition>
+			<Events>
+				<Event name="OnActivateRow">СписокПриАктивизацииСтроки</Event>
+			</Events>
 			<ChildItems>
 				<ColumnGroup name="ГруппаВажность" id="99">
 					<Title>
@@ -521,6 +524,15 @@
 						<CommandName>Form.Item.ДеревоЗадач.StandardCommand.OutputList</CommandName>
 						<ExtendedTooltip name="ДеревоЗадачВывестиСписокРасширеннаяПодсказка" id="86"/>
 					</Button>
+					<ButtonGroup name="КомандыФормы" id="150">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Команды формы</v8:content>
+							</v8:item>
+						</Title>
+						<ExtendedTooltip name="КомандыФормыРасширеннаяПодсказка" id="151"/>
+					</ButtonGroup>
 				</ChildItems>
 			</AutoCommandBar>
 			<ExtendedTooltip name="ДеревоЗадачРасширеннаяПодсказка" id="87"/>
@@ -550,6 +562,7 @@
 			</SearchControlAddition>
 			<Events>
 				<Event name="Selection">ДеревоЗадачВыбор</Event>
+				<Event name="OnActivateRow">ДеревоЗадачПриАктивизацииСтроки</Event>
 			</Events>
 			<ChildItems>
 				<PictureField name="ДеревоЗадачВажность" id="28">

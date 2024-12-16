@@ -3,7 +3,7 @@
 	<Title>
 		<v8:item>
 			<v8:lang>ru</v8:lang>
-			<v8:content>Населенный пункт</v8:content>
+			<v8:content>Город, населенный пункт</v8:content>
 		</v8:item>
 	</Title>
 	<WindowOpeningMode>LockOwnerWindow</WindowOpeningMode>
@@ -104,14 +104,20 @@
 			<ShowTitle>false</ShowTitle>
 			<ExtendedTooltip name="ГруппаЧастейАдресаРасширеннаяПодсказка" id="8"/>
 			<ChildItems>
-				<InputField name="СубъектРФ" id="12">
+				<InputField name="Регион" id="12">
 					<DataPath>Регион</DataPath>
 					<DefaultItem>true</DefaultItem>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Регион</v8:content>
+						</v8:item>
+					</Title>
 					<Width>30</Width>
 					<ChoiceButton>true</ChoiceButton>
 					<EditTextUpdate>OnValueChange</EditTextUpdate>
-					<ContextMenu name="СубъектРФКонтекстноеМеню" id="13"/>
-					<ExtendedTooltip name="СубъектРФРасширеннаяПодсказка" id="14"/>
+					<ContextMenu name="РегионКонтекстноеМеню" id="13"/>
+					<ExtendedTooltip name="РегионРасширеннаяПодсказка" id="14"/>
 					<Events>
 						<Event name="OnChange">СубъектРФПриИзменении</Event>
 						<Event name="AutoComplete">СубъектРФАвтоПодбор</Event>

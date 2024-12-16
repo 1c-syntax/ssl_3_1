@@ -8,7 +8,6 @@
 	</AutoCommandBar>
 	<Events>
 		<Event name="ChoiceProcessing">ОбработкаВыбора</Event>
-		<Event name="OnOpen">ПриОткрытии</Event>
 		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
 		<Event name="OnClose">ПриЗакрытии</Event>
 	</Events>
@@ -546,7 +545,7 @@
 																<ExtendedTooltip name="РеквизитыОбъектаАлгоритмУправлениеПоискомРасширеннаяПодсказка" id="327"/>
 															</SearchControlAddition>
 															<Events>
-																<Event name="DragStart">РеквизитыОбъекта1НачалоПеретаскивания</Event>
+																<Event name="DragStart">РеквизитыОбъектаАлгоритмНачалоПеретаскивания</Event>
 															</Events>
 															<ChildItems>
 																<InputField name="РеквизитыОбъектаАлгоритмПредставление" id="334">
@@ -1483,11 +1482,6 @@
 				<v8:Type>xs:boolean</v8:Type>
 			</Type>
 		</Attribute>
-		<Attribute name="ЭтоВнешняяОбработка" id="2">
-			<Type>
-				<v8:Type>xs:boolean</v8:Type>
-			</Type>
-		</Attribute>
 		<Attribute name="ВремяНачалаИзменения" id="8">
 			<Type>
 				<v8:Type>xs:dateTime</v8:Type>
@@ -1577,15 +1571,6 @@
 			</Type>
 			<Settings xsi:type="v8:TypeDescription"/>
 		</Attribute>
-		<Attribute name="ПутьКФайлуВнешнейОбработкиНаКлиенте" id="3">
-			<Type>
-				<v8:Type>xs:string</v8:Type>
-				<v8:StringQualifiers>
-					<v8:Length>0</v8:Length>
-					<v8:AllowedLength>Variable</v8:AllowedLength>
-				</v8:StringQualifiers>
-			</Type>
-		</Attribute>
 		<Attribute name="ЧислоОбъектовВПорции" id="5">
 			<Type>
 				<v8:Type>xs:decimal</v8:Type>
@@ -1594,11 +1579,6 @@
 					<v8:FractionDigits>0</v8:FractionDigits>
 					<v8:AllowedSign>Nonnegative</v8:AllowedSign>
 				</v8:NumberQualifiers>
-			</Type>
-		</Attribute>
-		<Attribute name="ВерсияБСПСоответствуетТребованиям" id="49">
-			<Type>
-				<v8:Type>xs:boolean</v8:Type>
 			</Type>
 		</Attribute>
 	</Attributes>

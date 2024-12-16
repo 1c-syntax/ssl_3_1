@@ -330,8 +330,8 @@
 						</v8:item>
 					</Title>
 					<Picture>
-						<xr:Ref>CommonPicture.Предупреждение</xr:Ref>
-						<xr:LoadTransparent>false</xr:LoadTransparent>
+						<xr:Ref>StdPicture.DialogExclamation</xr:Ref>
+						<xr:LoadTransparent>true</xr:LoadTransparent>
 					</Picture>
 					<FileDragMode>AsFile</FileDragMode>
 					<ContextMenu name="ПредупреждениеКонтекстноеМеню" id="540"/>
@@ -479,12 +479,6 @@
 											<v8:content>Страна</v8:content>
 										</v8:item>
 									</Title>
-									<ToolTip>
-										<v8:item>
-											<v8:lang>ru</v8:lang>
-											<v8:content>Страна адреса</v8:content>
-										</v8:item>
-									</ToolTip>
 									<HorizontalAlign>Left</HorizontalAlign>
 									<Width>60</Width>
 									<AutoMaxWidth>false</AutoMaxWidth>
@@ -513,7 +507,7 @@
 									<InputHint>
 										<v8:item>
 											<v8:lang>ru</v8:lang>
-											<v8:content>Введите первые буквы названия страны</v8:content>
+											<v8:content>Выберите или введите название страны</v8:content>
 										</v8:item>
 									</InputHint>
 									<ChoiceHistoryOnInput>DontUse</ChoiceHistoryOnInput>
@@ -536,19 +530,13 @@
 											<v8:content>Город, населенный пункт</v8:content>
 										</v8:item>
 									</Title>
-									<ToolTip>
-										<v8:item>
-											<v8:lang>ru</v8:lang>
-											<v8:content>Город, населенный пункт адреса</v8:content>
-										</v8:item>
-									</ToolTip>
 									<Width>60</Width>
 									<AutoMaxWidth>false</AutoMaxWidth>
 									<ChoiceButton>true</ChoiceButton>
 									<InputHint>
 										<v8:item>
 											<v8:lang>ru</v8:lang>
-											<v8:content>Введите первые буквы названия населенного пункта</v8:content>
+											<v8:content>Выберите или введите название населенного пункта</v8:content>
 										</v8:item>
 									</InputHint>
 									<ContextMenu name="НаселенныйПунктКонтекстноеМеню" id="17"/>
@@ -572,19 +560,13 @@
 									<ToolTip>
 										<v8:item>
 											<v8:lang>ru</v8:lang>
-											<v8:content>Улица адреса</v8:content>
+											<v8:content>Введите первые буквы названия улицы</v8:content>
 										</v8:item>
 									</ToolTip>
 									<Width>60</Width>
 									<AutoMaxWidth>false</AutoMaxWidth>
 									<ChoiceButton>true</ChoiceButton>
 									<EditTextUpdate>OnValueChange</EditTextUpdate>
-									<InputHint>
-										<v8:item>
-											<v8:lang>ru</v8:lang>
-											<v8:content>Введите первые буквы названия улицы</v8:content>
-										</v8:item>
-									</InputHint>
 									<ContextMenu name="УлицаКонтекстноеМеню" id="19"/>
 									<ExtendedTooltip name="УлицаРасширеннаяПодсказка" id="114"/>
 									<Events>
@@ -1135,7 +1117,6 @@
 							</Title>
 							<Group>Vertical</Group>
 							<Behavior>Usual</Behavior>
-							<Representation>None</Representation>
 							<United>false</United>
 							<ShowTitle>false</ShowTitle>
 							<ExtendedTooltip name="ГруппаПредставлениеАдресаРасширеннаяПодсказка" id="413"/>
@@ -1154,6 +1135,8 @@
 									<AutoMaxWidth>false</AutoMaxWidth>
 									<MultiLine>true</MultiLine>
 									<ChooseType>false</ChooseType>
+									<TextColor>style:ПоясняющийТекст</TextColor>
+									<BorderColor>style:FormBackColor</BorderColor>
 									<ContextMenu name="ПредставлениеАдресаКонтекстноеМеню" id="8">
 										<ChildItems>
 											<ButtonGroup name="ПредставлениеАдресаКонтекстноеМенюГруппа" id="156">
@@ -2023,6 +2006,11 @@
 				<v8:Type>xs:boolean</v8:Type>
 			</Type>
 		</Attribute>
+		<Attribute name="ЦветПоясняющегоТекста" id="59">
+			<Type>
+				<v8:Type>v8ui:Color</v8:Type>
+			</Type>
+		</Attribute>
 	</Attributes>
 	<Commands>
 		<Command name="КомандаОК" id="1">
@@ -2275,12 +2263,6 @@
 					<v8:content>Отмена</v8:content>
 				</v8:item>
 			</Title>
-			<ToolTip>
-				<v8:item>
-					<v8:lang>ru</v8:lang>
-					<v8:content>Команда отмена</v8:content>
-				</v8:item>
-			</ToolTip>
 			<Action>КомандаОтмена</Action>
 		</Command>
 	</Commands>
