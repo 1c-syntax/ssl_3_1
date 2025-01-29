@@ -550,8 +550,17 @@ function doExecuteUpdate (lastVersion) {
       }
     } catch (e) {
       log(format('[СообщениеОтказВызоваОбновитьИсправленияИзСкрипта]', e.name, e.message), true)
-      return 2
-    }
+      return 2 
+      }
+  } else if (lastVersion) {
+    var result = runApp(
+      v8client,
+      format(
+        'ENTERPRISE {0} {1} /AllowExecuteScheduledJobs -Off /C"ВключитьИсправленияИЗавершитьРаботу;РегламентныеЗаданияОтключены"',
+        infoBasePath,
+        infoBaseAuthorization),
+      SW_SHOW,
+      true)
   }
   if (useComConnector && doBlockUsers) {
     var connection = createConnection()
@@ -804,7 +813,7 @@ function loadCfg (fileName) {
   var ret = runApp(
     v8conf,
     format(
-      'CONFIG {0} {1} /LoadCfg "{2}" /Out "{3}" /UC{4} /DisableStartupMessages /DisableStartupDialogs',
+      'DESIGNER {0} {1} /LoadCfg "{2}" /Out "{3}" /UC{4} /DisableStartupMessages /DisableStartupDialogs',
       infoBasePath,
       infoBaseAuthorization,
       fileName,
@@ -822,7 +831,7 @@ function updateCfg (fileName) {
   var ret = runApp(
     v8conf,
     format(
-      'CONFIG {0} {1} /UpdateCfg "{2}" /Out "{3}" /UC{4} /DisableStartupMessages /DisableStartupDialogs',
+      'DESIGNER {0} {1} /UpdateCfg "{2}" /Out "{3}" /UC{4} /DisableStartupMessages /DisableStartupDialogs',
       infoBasePath,
       infoBaseAuthorization,
       fileName,
@@ -840,7 +849,7 @@ function updateDbCfg () {
   var ret = runApp(
     v8conf,
     format(
-      'CONFIG {0} {1} /UpdateDBCfg -server /Out "{2}" /UC{3} /DisableStartupMessages /DisableStartupDialogs',
+      'DESIGNER {0} {1} /UpdateDBCfg -server /Out "{2}" /UC{3} /DisableStartupMessages /DisableStartupDialogs',
       infoBasePath,
       infoBaseAuthorization,
       tempLogFileName,
@@ -860,7 +869,7 @@ function compressDB () {
   var ret = runApp(
     v8conf, 
     format(
-      'CONFIG {0} {1} /IBCheckAndRepair -IBCompression /Out "{2}" /UC{3} /DisableStartupMessages /DisableStartupDialogs',
+      'DESIGNER {0} {1} /IBCheckAndRepair -IBCompression /Out "{2}" /UC{3} /DisableStartupMessages /DisableStartupDialogs',
       infoBasePath,
       infoBaseAuthorization,
       tempLogFileName,
@@ -969,13 +978,13 @@ function addDeletePatches() {
   return result
 }
 
-function DeletePatches() {
+function TurnOffPatches() {
  
  if (!useComConnector) {
     return 0
   }
  
- var Action = 'RemoveAll'
+ var Action = 'TurnOffAll'
  
  registerCOM()
  
@@ -993,12 +1002,47 @@ function DeletePatches() {
     appendLog('unicode')
 
   } catch (e) {
-    log(format('[СообщениеОтказВызоваУдалитьИсправленияИзСкрипта]', e.name, e.message), true)
+    log(format('[СообщениеОтказВызоваОтключитьИсправленияИзСкрипта]', e.name, e.message), true)
     result = 2;
   }
   
   if (result != 0) {
-    log('[СообщениеОтказУдаленияИсправлений]')
+    log('[СообщениеОтказОтключенияИсправлений]')
+  }
+  
+  return result
+}
+
+function TurnOnPatches() {
+ 
+ if (!useComConnector) {
+    return 0
+  }
+ 
+ var Action = 'TurnOnAll'
+ 
+ registerCOM()
+ 
+ try {
+   var result = runApp('wscript.exe',
+      format('"{0}\\add-delete-patches.js" /ConnectionString:"{1}" /COMConnectorName:"{2}" /Action:"{3}" /Out:"{4}\\{5}"',
+        thisFileDir,
+        connectionString.replace(/"/g, '\''),
+        comConnectorName,
+        Action,
+        thisFileDir,
+        tempLogFileName
+      ),
+      SW_HIDE, true)
+    appendLog('unicode')
+
+  } catch (e) {
+    log(format('[СообщениеОтказВызоваОтключитьИсправленияИзСкрипта]', e.name, e.message), true)
+    result = 2;
+  }
+  
+  if (result != 0) {
+    log('[СообщениеОтказВключенияИсправлений]')
   }
   
   return result

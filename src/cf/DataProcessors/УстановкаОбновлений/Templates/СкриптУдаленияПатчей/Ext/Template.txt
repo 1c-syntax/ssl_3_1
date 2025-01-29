@@ -94,12 +94,19 @@ try {
 
 try {
 
-  if (Action == 'RemoveAll') {
+  if (Action == 'TurnOffAll') {
 
     if (outf != null) {
-      outf.WriteLine(mainEvent + ": [СообщениеВызовУдалитьИсправленияИзСкрипта]")
+      outf.WriteLine(mainEvent + ": [СообщениеВызовОтключитьИсправленияИзСкрипта]")
     }
-    connection.ОбновлениеКонфигурацииВызовСервера.УдалитьИсправленияИзСкрипта();
+    connection.ОбновлениеКонфигурацииВызовСервера.ОтключитьИсправленияИзСкрипта();
+
+  }else if (Action == 'TurnOnAll') {
+  
+    if (outf != null) {
+      outf.WriteLine(mainEvent + ": [СообщениеВызовВключитьИсправленияИзСкрипта]")
+    }
+    connection.ОбновлениеКонфигурацииВызовСервера.ВключитьИсправленияИзСкрипта();
 
   } else {
 
