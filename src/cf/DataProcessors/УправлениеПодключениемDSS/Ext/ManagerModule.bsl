@@ -1701,7 +1701,7 @@
 	Результат.Вставить("СвойствоУчетнойЗаписи", "/api/v1/dssapi/PropertyLogin");
 	Результат.Вставить("ОтправитьКодАктивацииКлюча", "/api/v1/dssapi/GetActivationCode?skid=%1&guid=%2");
 	
-	Результат.Вставить("ВебСервис", "http://regservice.1c.ru/regservice/regservice.asmx?wsdl");
+	Результат.Вставить("ВебСервис", "https://regservice.1c.ru/regservice/regservice.asmx?wsdl");
 	
 	Возврат Результат;
 	
