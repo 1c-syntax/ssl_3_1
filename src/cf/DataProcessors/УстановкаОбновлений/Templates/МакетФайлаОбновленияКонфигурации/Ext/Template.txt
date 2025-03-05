@@ -981,7 +981,14 @@ function addDeletePatches() {
 function TurnOffPatches() {
  
  if (!useComConnector) {
-    return 0
+    return runApp(
+      v8client,
+      format(
+        'ENTERPRISE {0} {1} /AllowExecuteScheduledJobs -Off /C"ОтключитьИсправленияИЗавершитьРаботу;РегламентныеЗаданияОтключены"',
+        infoBasePath,
+        infoBaseAuthorization),
+      SW_SHOW,
+      true)
   }
  
  var Action = 'TurnOffAll'
