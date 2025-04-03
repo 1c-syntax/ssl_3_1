@@ -18,19 +18,15 @@
 		<Event name="BeforeLoadDataFromSettingsAtServer">ПриЗагрузкеДанныхИзНастроекНаСервере</Event>
 	</Events>
 	<ChildItems>
-		<UsualGroup name="ГруппаПользовательскихНастроек" id="130">
+		<CommandBar name="ГруппаПользовательскихНастроек" id="130">
 			<Title>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
 					<v8:content>Группа пользовательских настроек</v8:content>
 				</v8:item>
 			</Title>
-			<Group>Vertical</Group>
-			<Behavior>Usual</Behavior>
-			<Representation>None</Representation>
-			<ShowTitle>false</ShowTitle>
 			<ExtendedTooltip name="ГруппаПользовательскихНастроекРасширеннаяПодсказка" id="131"/>
-		</UsualGroup>
+		</CommandBar>
 		<CommandBar name="КоманднаяПанельСписка" id="50">
 			<Title>
 				<v8:item>
@@ -121,7 +117,6 @@
 			<ShowRoot>false</ShowRoot>
 			<AllowRootChoice>false</AllowRootChoice>
 			<UpdateOnDataChange>Auto</UpdateOnDataChange>
-			<UserSettingsGroup>ГруппаПользовательскихНастроек</UserSettingsGroup>
 			<AllowGettingCurrentRowURL>true</AllowGettingCurrentRowURL>
 			<ContextMenu name="СписокКонтекстноеМеню" id="2"/>
 			<AutoCommandBar name="СписокКоманднаяПанель" id="3"/>
@@ -524,14 +519,14 @@
 						<CommandName>Form.Item.ДеревоЗадач.StandardCommand.OutputList</CommandName>
 						<ExtendedTooltip name="ДеревоЗадачВывестиСписокРасширеннаяПодсказка" id="86"/>
 					</Button>
-					<ButtonGroup name="КомандыФормы" id="150">
+					<ButtonGroup name="КомандыФормы" id="152">
 						<Title>
 							<v8:item>
 								<v8:lang>ru</v8:lang>
 								<v8:content>Команды формы</v8:content>
 							</v8:item>
 						</Title>
-						<ExtendedTooltip name="КомандыФормыРасширеннаяПодсказка" id="151"/>
+						<ExtendedTooltip name="КомандыФормыРасширеннаяПодсказка" id="153"/>
 					</ButtonGroup>
 				</ChildItems>
 			</AutoCommandBar>
@@ -990,7 +985,7 @@
 	<Parameters>
 		<Parameter name="ЗначениеОтбора">
 			<Type>
-				<v8:TypeSet>cfg:AnyRef</v8:TypeSet>
+				<v8:TypeSet>cfg:AnyIBRef</v8:TypeSet>
 			</Type>
 			<KeyParameter>true</KeyParameter>
 		</Parameter>

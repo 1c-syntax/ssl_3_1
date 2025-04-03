@@ -1572,7 +1572,7 @@
 				</Column>
 				<Column name="Предмет" id="9">
 					<Type>
-						<v8:TypeSet>cfg:AnyRef</v8:TypeSet>
+						<v8:TypeSet>cfg:AnyIBRef</v8:TypeSet>
 					</Type>
 				</Column>
 			</Columns>
@@ -1867,11 +1867,22 @@
 		</Command>
 	</Commands>
 	<Parameters>
-		<Parameter name="ДополнительныеПараметры">
-			<Type/>
-		</Parameter>
 		<Parameter name="Отбор">
 			<Type/>
+		</Parameter>
+		<Parameter name="ТипВзаимодействия">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Parameter>
+		<Parameter name="ТолькоПочта">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
 		</Parameter>
 	</Parameters>
 </Form>

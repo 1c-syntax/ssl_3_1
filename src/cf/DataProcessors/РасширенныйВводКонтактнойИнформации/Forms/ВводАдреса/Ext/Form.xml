@@ -1115,7 +1115,7 @@
 									<v8:content>Представление адреса</v8:content>
 								</v8:item>
 							</Title>
-							<Group>Vertical</Group>
+							<Group>AlwaysHorizontal</Group>
 							<Behavior>Usual</Behavior>
 							<United>false</United>
 							<ShowTitle>false</ShowTitle>
@@ -1168,6 +1168,21 @@
 										<Event name="OnChange">ПредставлениеАдресаПриИзменении</Event>
 									</Events>
 								</InputField>
+								<Button name="СкопироватьАдресВБуферОбмена" id="593">
+									<Type>UsualButton</Type>
+									<CommandName>Form.Command.СкопироватьАдресВБуферОбмена</CommandName>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Скопировать адрес в буфер обмена</v8:content>
+										</v8:item>
+									</Title>
+									<ShapeRepresentation>WhenActive</ShapeRepresentation>
+									<ExtendedTooltip name="СкопироватьАдресВБуферОбменаРасширеннаяПодсказка" id="594">
+										<Visible>false</Visible>
+										<Enabled>false</Enabled>
+									</ExtendedTooltip>
+								</Button>
 							</ChildItems>
 						</UsualGroup>
 					</ChildItems>
@@ -1340,19 +1355,17 @@
 						</Page>
 					</ChildItems>
 				</Pages>
-				<UsualGroup name="НужнаПомощь" id="551">
+				<UsualGroup name="ГруппаТребуетсяПомощь" id="561">
 					<Title>
 						<v8:item>
 							<v8:lang>ru</v8:lang>
-							<v8:content>Нужна помощь?</v8:content>
+							<v8:content>Требуется помощь?</v8:content>
 						</v8:item>
 					</Title>
-					<GroupHorizontalAlign>Right</GroupHorizontalAlign>
 					<GroupVerticalAlign>Center</GroupVerticalAlign>
-					<Group>AlwaysHorizontal</Group>
+					<Group>Vertical</Group>
 					<Behavior>PopUp</Behavior>
-					<Representation>None</Representation>
-					<ExtendedTooltip name="НужнаПомощьРасширеннаяПодсказка" id="552"/>
+					<ExtendedTooltip name="ГруппаТребуетсяПомощьРасширеннаяПодсказка" id="562"/>
 					<ChildItems>
 						<LabelDecoration name="ДекорацияНужнаПомощь" id="553">
 							<AutoMaxWidth>false</AutoMaxWidth>
@@ -1361,15 +1374,46 @@
 									<v8:lang>ru</v8:lang>
 									<v8:content>Адресные сведения предоставляются &lt;link https://fias.nalog.ru/&gt;Государственным адресным реестром&lt;/&gt; (ГАР). Ее оператор - ФНС России. 
 
-В случае если не удалось подобрать адрес или введенный адрес не проходит проверку, следует проверить его наличие на сайте ФНС России и обратиться в &lt;link https://www.nalog.ru/rn77/service/service_feedback/?service=22&gt;службу поддержки online-сервисов&lt;/&gt; ФНС России.
-
-В иных случаях обратитесь в службу поддержки фирмы "1С", предоставив &lt;link e1cib/data/РегистрСведений.АдресныеОбъекты.Форма.СведенияОбАдресномКлассификаторе&gt;технические сведения о возникшем затруднении&lt;/&gt;.</v8:content>
+В случае если не удалось подобрать адрес или введенный адрес не проходит проверку, следует проверить его наличие на сайте ФНС России и обратиться в &lt;link https://www.nalog.ru/rn77/service/service_feedback/?service=22&gt;службу поддержки online-сервисов&lt;/&gt; ФНС России.</v8:content>
 								</v8:item>
 							</Title>
 							<ContextMenu name="ДекорацияНужнаПомощьКонтекстноеМеню" id="554"/>
 							<ExtendedTooltip name="ДекорацияНужнаПомощьРасширеннаяПодсказка" id="555"/>
+						</LabelDecoration>
+						<UsualGroup name="ГруппаОбращенияВТехническуюПоддержку" id="585">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Обращения в техническую поддержку</v8:content>
+								</v8:item>
+							</Title>
+							<Group>Vertical</Group>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаОбращенияВТехническуюПоддержкуРасширеннаяПодсказка" id="586"/>
+							<ChildItems>
+								<LabelDecoration name="ОписаниеОбращенияВПоддержку" id="587">
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<ContextMenu name="ОписаниеОбращенияВПоддержкуКонтекстноеМеню" id="588"/>
+									<ExtendedTooltip name="ОписаниеОбращенияВПоддержкуРасширеннаяПодсказка" id="589"/>
+									<Events>
+										<Event name="URLProcessing">ОписаниеОбращенияВПоддержкуОбработкаНавигационнойСсылки</Event>
+									</Events>
+								</LabelDecoration>
+							</ChildItems>
+						</UsualGroup>
+						<LabelDecoration name="СведенияОбАдресе" id="590">
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<Title formatted="true">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Дополнительно возможно просмотреть &lt;link СведенияОбАдресе&gt;сведения об адресе&lt;/&gt;. </v8:content>
+								</v8:item>
+							</Title>
+							<ContextMenu name="СведенияОбАдресеКонтекстноеМеню" id="591"/>
+							<ExtendedTooltip name="СведенияОбАдресеРасширеннаяПодсказка" id="592"/>
 							<Events>
-								<Event name="URLProcessing">ДекорацияНужнаПомощьОбработкаНавигационнойСсылки</Event>
+								<Event name="URLProcessing">СведенияОбАдресеОбработкаНавигационнойСсылки</Event>
 							</Events>
 						</LabelDecoration>
 					</ChildItems>
@@ -2264,6 +2308,26 @@
 				</v8:item>
 			</Title>
 			<Action>КомандаОтмена</Action>
+		</Command>
+		<Command name="СкопироватьАдресВБуферОбмена" id="30">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Скопировать адрес в буфер обмена</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Скопировать адрес в буфер обмена</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>CommonPicture.СкопироватьВБуферОбмена</xr:Ref>
+				<xr:LoadTransparent>false</xr:LoadTransparent>
+			</Picture>
+			<Action>СкопироватьАдресВБуферОбмена</Action>
+			<Representation>Picture</Representation>
 		</Command>
 	</Commands>
 	<Parameters>

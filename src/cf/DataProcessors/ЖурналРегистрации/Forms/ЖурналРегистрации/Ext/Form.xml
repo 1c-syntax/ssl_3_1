@@ -304,7 +304,7 @@
 											<Button name="УстановитьОтборПоЗначениюВТекущейКолонкеКонтекст" id="98">
 												<Type>CommandBarButton</Type>
 												<SkipOnInput>false</SkipOnInput>
-												<CommandName>Form.Command.УстановитьОтборПоЗначениюВТекущейКолонке</CommandName>
+												<CommandName>Form.Command.УстановитьОтборПоЗначению</CommandName>
 												<TextColor>style:ButtonTextColor</TextColor>
 												<BackColor>style:ButtonBackColor</BackColor>
 												<BorderColor>style:BorderColor</BorderColor>
@@ -332,7 +332,7 @@
 									<Button name="ПросмотрТекущегоСобытияВОтдельномОкнеКонтекст" id="96">
 										<Type>CommandBarButton</Type>
 										<SkipOnInput>false</SkipOnInput>
-										<CommandName>Form.Command.ПросмотрТекущегоСобытияВОтдельномОкне</CommandName>
+										<CommandName>Form.Command.ПросмотрСобытия</CommandName>
 										<TextColor>style:ButtonTextColor</TextColor>
 										<BackColor>style:ButtonBackColor</BackColor>
 										<BorderColor>style:BorderColor</BorderColor>
@@ -376,37 +376,49 @@
 										<LocationInCommandBar>InCommandBarAndInAdditionalSubmenu</LocationInCommandBar>
 										<ExtendedTooltip name="ВыгрузитьЖурналДляПередачиВТехподдержкуРасширеннаяПодсказка" id="210"/>
 									</Button>
-									<Button name="ПросмотрТекущегоСобытияВОтдельномОкне" id="38">
-										<Type>CommandBarButton</Type>
-										<Representation>PictureAndText</Representation>
-										<SkipOnInput>false</SkipOnInput>
-										<CommandName>Form.Command.ПросмотрТекущегоСобытияВОтдельномОкне</CommandName>
-										<TextColor>style:ButtonTextColor</TextColor>
-										<BackColor>style:ButtonBackColor</BackColor>
-										<BorderColor>style:BorderColor</BorderColor>
+									<ButtonGroup name="ГруппаОткрыть" id="537">
 										<Title>
 											<v8:item>
 												<v8:lang>ru</v8:lang>
 												<v8:content>Открыть</v8:content>
 											</v8:item>
 										</Title>
-										<ExtendedTooltip name="ПросмотрТекущегоСобытияВОтдельномОкнеРасширеннаяПодсказка" id="126"/>
-									</Button>
-									<Button name="ОткрытьДанныеДляПросмотра" id="40">
-										<Type>CommandBarButton</Type>
-										<SkipOnInput>false</SkipOnInput>
-										<CommandName>Form.Command.ОткрытьДанныеДляПросмотра</CommandName>
-										<TextColor>style:ButtonTextColor</TextColor>
-										<BackColor>style:ButtonBackColor</BackColor>
-										<BorderColor>style:BorderColor</BorderColor>
-										<Title>
-											<v8:item>
-												<v8:lang>ru</v8:lang>
-												<v8:content>Открыть данные для просмотра</v8:content>
-											</v8:item>
-										</Title>
-										<ExtendedTooltip name="ОткрытьДанныеДляПросмотраРасширеннаяПодсказка" id="127"/>
-									</Button>
+										<Representation>Compact</Representation>
+										<ExtendedTooltip name="ГруппаОткрытьРасширеннаяПодсказка" id="538"/>
+										<ChildItems>
+											<Button name="ПросмотрТекущегоСобытияВОтдельномОкне" id="38">
+												<Type>CommandBarButton</Type>
+												<Representation>PictureAndText</Representation>
+												<SkipOnInput>false</SkipOnInput>
+												<CommandName>Form.Command.ПросмотрСобытия</CommandName>
+												<TextColor>style:ButtonTextColor</TextColor>
+												<BackColor>style:ButtonBackColor</BackColor>
+												<BorderColor>style:BorderColor</BorderColor>
+												<Title>
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>Открыть</v8:content>
+													</v8:item>
+												</Title>
+												<ExtendedTooltip name="ПросмотрТекущегоСобытияВОтдельномОкнеРасширеннаяПодсказка" id="126"/>
+											</Button>
+											<Button name="ОткрытьДанныеДляПросмотра" id="40">
+												<Type>CommandBarButton</Type>
+												<SkipOnInput>false</SkipOnInput>
+												<CommandName>Form.Command.ОткрытьДанныеДляПросмотра</CommandName>
+												<TextColor>style:ButtonTextColor</TextColor>
+												<BackColor>style:ButtonBackColor</BackColor>
+												<BorderColor>style:BorderColor</BorderColor>
+												<Title>
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>Открыть данные для просмотра</v8:content>
+													</v8:item>
+												</Title>
+												<ExtendedTooltip name="ОткрытьДанныеДляПросмотраРасширеннаяПодсказка" id="127"/>
+											</Button>
+										</ChildItems>
+									</ButtonGroup>
 									<ButtonGroup name="КомандыОтбора" id="105">
 										<Title>
 											<v8:item>
@@ -423,42 +435,54 @@
 												<Title>
 													<v8:item>
 														<v8:lang>ru</v8:lang>
-														<v8:content>Интервал</v8:content>
+														<v8:content>Интервал...</v8:content>
 													</v8:item>
 												</Title>
 												<ExtendedTooltip name="УстановитьИнтервалДатДляПросмотраРасширеннаяПодсказка" id="122"/>
 											</Button>
-											<Button name="УстановитьОтбор" id="42">
-												<Type>CommandBarButton</Type>
-												<Representation>PictureAndText</Representation>
-												<SkipOnInput>false</SkipOnInput>
-												<CommandName>Form.Command.УстановитьОтбор</CommandName>
-												<TextColor>style:ButtonTextColor</TextColor>
-												<BackColor>style:ButtonBackColor</BackColor>
-												<BorderColor>style:BorderColor</BorderColor>
+											<ButtonGroup name="ГруппаОтборы" id="535">
 												<Title>
 													<v8:item>
 														<v8:lang>ru</v8:lang>
-														<v8:content>Установить отбор</v8:content>
+														<v8:content>Отборы</v8:content>
 													</v8:item>
 												</Title>
-												<ExtendedTooltip name="УстановитьОтборРасширеннаяПодсказка" id="123"/>
-											</Button>
-											<Button name="УстановитьОтборПоЗначениюВТекущейКолонке" id="43">
-												<Type>CommandBarButton</Type>
-												<SkipOnInput>false</SkipOnInput>
-												<CommandName>Form.Command.УстановитьОтборПоЗначениюВТекущейКолонке</CommandName>
-												<TextColor>style:ButtonTextColor</TextColor>
-												<BackColor>style:ButtonBackColor</BackColor>
-												<BorderColor>style:BorderColor</BorderColor>
-												<Title>
-													<v8:item>
-														<v8:lang>ru</v8:lang>
-														<v8:content>Установить отбор по значению в текущей колонке</v8:content>
-													</v8:item>
-												</Title>
-												<ExtendedTooltip name="УстановитьОтборПоЗначениюВТекущейКолонкеРасширеннаяПодсказка" id="124"/>
-											</Button>
+												<Representation>Compact</Representation>
+												<ExtendedTooltip name="ГруппаОтборыРасширеннаяПодсказка" id="536"/>
+												<ChildItems>
+													<Button name="УстановитьОтбор" id="42">
+														<Type>CommandBarButton</Type>
+														<Representation>PictureAndText</Representation>
+														<SkipOnInput>false</SkipOnInput>
+														<CommandName>Form.Command.УстановитьОтбор</CommandName>
+														<TextColor>style:ButtonTextColor</TextColor>
+														<BackColor>style:ButtonBackColor</BackColor>
+														<BorderColor>style:BorderColor</BorderColor>
+														<Title>
+															<v8:item>
+																<v8:lang>ru</v8:lang>
+																<v8:content>Установить отбор...</v8:content>
+															</v8:item>
+														</Title>
+														<ExtendedTooltip name="УстановитьОтборРасширеннаяПодсказка" id="123"/>
+													</Button>
+													<Button name="УстановитьОтборПоЗначению" id="43">
+														<Type>CommandBarButton</Type>
+														<SkipOnInput>false</SkipOnInput>
+														<CommandName>Form.Command.УстановитьОтборПоЗначению</CommandName>
+														<TextColor>style:ButtonTextColor</TextColor>
+														<BackColor>style:ButtonBackColor</BackColor>
+														<BorderColor>style:BorderColor</BorderColor>
+														<Title>
+															<v8:item>
+																<v8:lang>ru</v8:lang>
+																<v8:content>Установить отбор по значению в колонке</v8:content>
+															</v8:item>
+														</Title>
+														<ExtendedTooltip name="УстановитьОтборПоЗначениюРасширеннаяПодсказка" id="124"/>
+													</Button>
+												</ChildItems>
+											</ButtonGroup>
 											<Button name="ОтключитьОтбор" id="44">
 												<Type>CommandBarButton</Type>
 												<SkipOnInput>false</SkipOnInput>
@@ -509,7 +533,7 @@
 											<Button name="ОбновитьТекущийСписок" id="46">
 												<Type>CommandBarButton</Type>
 												<SkipOnInput>false</SkipOnInput>
-												<CommandName>Form.Command.ОбновитьТекущийСписок</CommandName>
+												<CommandName>Form.Command.ОбновитьСписок</CommandName>
 												<TextColor>style:ButtonTextColor</TextColor>
 												<BackColor>style:ButtonBackColor</BackColor>
 												<BorderColor>style:BorderColor</BorderColor>
@@ -1020,7 +1044,7 @@
 											<Button name="УстановитьОтборПоЗначениюВТекущейКолонкеКонтекст2" id="432">
 												<Type>CommandBarButton</Type>
 												<SkipOnInput>false</SkipOnInput>
-												<CommandName>Form.Command.УстановитьОтборПоЗначениюВТекущейКолонке</CommandName>
+												<CommandName>Form.Command.УстановитьОтборПоЗначению</CommandName>
 												<TextColor>style:ButtonTextColor</TextColor>
 												<BackColor>style:ButtonBackColor</BackColor>
 												<BorderColor>style:BorderColor</BorderColor>
@@ -1048,7 +1072,7 @@
 									<Button name="ПросмотрТекущегоСобытияВОтдельномОкнеКонтекст2" id="436">
 										<Type>CommandBarButton</Type>
 										<SkipOnInput>false</SkipOnInput>
-										<CommandName>Form.Command.ПросмотрТекущегоСобытияВОтдельномОкне</CommandName>
+										<CommandName>Form.Command.ПросмотрСобытия</CommandName>
 										<TextColor>style:ButtonTextColor</TextColor>
 										<BackColor>style:ButtonBackColor</BackColor>
 										<BorderColor>style:BorderColor</BorderColor>
@@ -1096,7 +1120,7 @@
 										<Type>CommandBarButton</Type>
 										<Representation>PictureAndText</Representation>
 										<SkipOnInput>false</SkipOnInput>
-										<CommandName>Form.Command.ПросмотрТекущегоСобытияВОтдельномОкне</CommandName>
+										<CommandName>Form.Command.ПросмотрСобытия</CommandName>
 										<TextColor>style:ButtonTextColor</TextColor>
 										<BackColor>style:ButtonBackColor</BackColor>
 										<BorderColor>style:BorderColor</BorderColor>
@@ -1163,7 +1187,7 @@
 											<Button name="УстановитьОтборПоЗначениюВТекущейКолонке2" id="452">
 												<Type>CommandBarButton</Type>
 												<SkipOnInput>false</SkipOnInput>
-												<CommandName>Form.Command.УстановитьОтборПоЗначениюВТекущейКолонке</CommandName>
+												<CommandName>Form.Command.УстановитьОтборПоЗначению</CommandName>
 												<TextColor>style:ButtonTextColor</TextColor>
 												<BackColor>style:ButtonBackColor</BackColor>
 												<BorderColor>style:BorderColor</BorderColor>
@@ -1225,7 +1249,7 @@
 											<Button name="ОбновитьТекущийСписок2" id="464">
 												<Type>CommandBarButton</Type>
 												<SkipOnInput>false</SkipOnInput>
-												<CommandName>Form.Command.ОбновитьТекущийСписок</CommandName>
+												<CommandName>Form.Command.ОбновитьСписок</CommandName>
 												<TextColor>style:ButtonTextColor</TextColor>
 												<BackColor>style:ButtonBackColor</BackColor>
 												<BorderColor>style:BorderColor</BorderColor>
@@ -1823,7 +1847,7 @@
 						<v8:Type>xs:string</v8:Type>
 						<v8:Type>xs:dateTime</v8:Type>
 						<v8:Type>xs:decimal</v8:Type>
-						<v8:TypeSet>cfg:AnyRef</v8:TypeSet>
+						<v8:TypeSet>cfg:AnyIBRef</v8:TypeSet>
 						<v8:NumberQualifiers>
 							<v8:Digits>10</v8:Digits>
 							<v8:FractionDigits>0</v8:FractionDigits>
@@ -2264,7 +2288,7 @@
 		</Attribute>
 	</Attributes>
 	<Commands>
-		<Command name="ПросмотрТекущегоСобытияВОтдельномОкне" id="1">
+		<Command name="ПросмотрСобытия" id="1">
 			<Title>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
@@ -2274,14 +2298,10 @@
 			<ToolTip>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Просмотр текущего события в отдельном окне</v8:content>
+					<v8:content>Просмотр события в отдельном окне</v8:content>
 				</v8:item>
 			</ToolTip>
 			<Shortcut>F2</Shortcut>
-			<Picture>
-				<xr:Ref>StdPicture.Properties</xr:Ref>
-				<xr:LoadTransparent>true</xr:LoadTransparent>
-			</Picture>
 			<Action>ПросмотрТекущегоСобытияВОтдельномОкне</Action>
 			<CurrentRowUse>DontUse</CurrentRowUse>
 		</Command>
@@ -2346,17 +2366,17 @@
 			<Representation>Picture</Representation>
 			<CurrentRowUse>DontUse</CurrentRowUse>
 		</Command>
-		<Command name="УстановитьОтборПоЗначениюВТекущейКолонке" id="5">
+		<Command name="УстановитьОтборПоЗначению" id="5">
 			<Title>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Установить отбор по значению в текущей колонке</v8:content>
+					<v8:content>Установить отбор по значению в колонке</v8:content>
 				</v8:item>
 			</Title>
 			<ToolTip>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Установить отбор по значению в текущей колонке</v8:content>
+					<v8:content>Установить отбор по значению в колонке</v8:content>
 				</v8:item>
 			</ToolTip>
 			<Picture>
@@ -2386,17 +2406,17 @@
 			<Action>ОтключитьОтбор</Action>
 			<CurrentRowUse>DontUse</CurrentRowUse>
 		</Command>
-		<Command name="ОбновитьТекущийСписок" id="8">
+		<Command name="ОбновитьСписок" id="8">
 			<Title>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Обновить текущий список</v8:content>
+					<v8:content>Обновить список</v8:content>
 				</v8:item>
 			</Title>
 			<ToolTip>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Обновить текущий список</v8:content>
+					<v8:content>Обновить список событий</v8:content>
 				</v8:item>
 			</ToolTip>
 			<Shortcut>F5</Shortcut>
@@ -2414,7 +2434,12 @@
 					<v8:content>Выгрузить в файл...</v8:content>
 				</v8:item>
 			</Title>
+			<Picture>
+				<xr:Ref>CommonPicture.Скачать</xr:Ref>
+				<xr:LoadTransparent>false</xr:LoadTransparent>
+			</Picture>
 			<Action>ВыгрузитьЖурналДляПередачиВТехподдержку</Action>
+			<Representation>TextPicture</Representation>
 		</Command>
 	</Commands>
 	<Parameters>

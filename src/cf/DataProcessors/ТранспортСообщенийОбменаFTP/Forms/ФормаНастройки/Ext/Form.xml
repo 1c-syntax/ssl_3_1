@@ -1,0 +1,262 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.18">
+	<WindowOpeningMode>LockOwnerWindow</WindowOpeningMode>
+	<SaveWindowSettings>false</SaveWindowSettings>
+	<CommandBarLocation>Bottom</CommandBarLocation>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<HorizontalAlign>Right</HorizontalAlign>
+		<Autofill>false</Autofill>
+		<ChildItems>
+			<Button name="ФормаПроверитьПодключение" id="22">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.ПроверитьПодключение</CommandName>
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Проверить подключение</v8:content>
+					</v8:item>
+				</Title>
+				<ExtendedTooltip name="ФормаПроверитьПодключениеРасширеннаяПодсказка" id="23"/>
+			</Button>
+			<Button name="ФормаГотово" id="20">
+				<Type>CommandBarButton</Type>
+				<DefaultButton>true</DefaultButton>
+				<CommandName>Form.Command.Готово</CommandName>
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Готово</v8:content>
+					</v8:item>
+				</Title>
+				<ExtendedTooltip name="ФормаГотовоРасширеннаяПодсказка" id="21"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="ГруппаСерверПорт" id="24">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сервер порт</v8:content>
+				</v8:item>
+			</Title>
+			<Behavior>Usual</Behavior>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаСерверПортExtendedTooltip" id="25"/>
+			<ChildItems>
+				<InputField name="СоединениеПуть" id="26">
+					<DataPath>Объект.Путь</DataPath>
+					<AutoMaxWidth>false</AutoMaxWidth>
+					<ContextMenu name="СоединениеПутьКонтекстноеМеню" id="27"/>
+					<ExtendedTooltip name="СоединениеПутьРасширеннаяПодсказка" id="28"/>
+				</InputField>
+				<InputField name="СоединениеПорт" id="29">
+					<DataPath>Объект.Порт</DataPath>
+					<EditFormat>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ЧГ=0</v8:content>
+						</v8:item>
+					</EditFormat>
+					<ContextMenu name="СоединениеПортКонтекстноеМеню" id="30"/>
+					<ExtendedTooltip name="СоединениеПортРасширеннаяПодсказка" id="31"/>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="ГруппаПользовательПароль" id="32">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Пользователь пароль</v8:content>
+				</v8:item>
+			</Title>
+			<Group>Vertical</Group>
+			<Behavior>Usual</Behavior>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаПользовательПарольExtendedTooltip" id="33"/>
+			<ChildItems>
+				<InputField name="СоединениеПользователь" id="34">
+					<DataPath>Объект.Пользователь</DataPath>
+					<ContextMenu name="СоединениеПользовательКонтекстноеМеню" id="35"/>
+					<ExtendedTooltip name="СоединениеПользовательРасширеннаяПодсказка" id="36"/>
+				</InputField>
+				<InputField name="СоединениеПароль" id="37">
+					<DataPath>Объект.Пароль</DataPath>
+					<PasswordMode>true</PasswordMode>
+					<ContextMenu name="СоединениеПарольКонтекстноеМеню" id="38"/>
+					<ExtendedTooltip name="СоединениеПарольРасширеннаяПодсказка" id="39"/>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="РазмерФайла" id="40">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Размер файла</v8:content>
+				</v8:item>
+			</Title>
+			<Behavior>Usual</Behavior>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="РазмерФайлаРасширеннаяПодсказка" id="41"/>
+			<ChildItems>
+				<InputField name="СоединениеМаксимальныйДопустимыйРазмерСообщения" id="42">
+					<DataPath>Объект.МаксимальныйДопустимыйРазмерСообщения</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Максимальный размер сообщения обмена, КБайт</v8:content>
+						</v8:item>
+					</Title>
+					<ChoiceButton>true</ChoiceButton>
+					<ContextMenu name="СоединениеМаксимальныйДопустимыйРазмерСообщенияКонтекстноеМеню" id="43"/>
+					<ExtendedTooltip name="СоединениеМаксимальныйДопустимыйРазмерСообщенияРасширеннаяПодсказка" id="44"/>
+				</InputField>
+				<LabelDecoration name="Декорация1" id="45">
+					<AutoMaxWidth>false</AutoMaxWidth>
+					<Title formatted="false">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>КБ  (0 – нет ограничений)</v8:content>
+						</v8:item>
+					</Title>
+					<ContextMenu name="Декорация1КонтекстноеМеню" id="46"/>
+					<ExtendedTooltip name="Декорация1ExtendedTooltip" id="47"/>
+				</LabelDecoration>
+			</ChildItems>
+		</UsualGroup>
+		<CheckBoxField name="СоединениеПассивноеСоединение" id="48">
+			<DataPath>Объект.ПассивноеСоединение</DataPath>
+			<TitleLocation>Right</TitleLocation>
+			<CheckBoxType>Auto</CheckBoxType>
+			<ContextMenu name="СоединениеПассивноеСоединениеКонтекстноеМеню" id="49"/>
+			<ExtendedTooltip name="СоединениеПассивноеСоединениеРасширеннаяПодсказка" id="50"/>
+		</CheckBoxField>
+		<Button name="ПараметрыДоступаВИнтернет" id="51">
+			<Type>Hyperlink</Type>
+			<CommandName>Form.Command.ПараметрыДоступаВИнтернет</CommandName>
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Параметры доступа в Интернет</v8:content>
+				</v8:item>
+			</Title>
+			<ExtendedTooltip name="ПараметрыДоступаВИнтернетРасширеннаяПодсказка" id="52"/>
+		</Button>
+		<UsualGroup name="Архив" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Архив</v8:content>
+				</v8:item>
+			</Title>
+			<HorizontalStretch>true</HorizontalStretch>
+			<Group>Vertical</Group>
+			<Behavior>Usual</Behavior>
+			<Representation>NormalSeparation</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="АрхивРасширеннаяПодсказка" id="5"/>
+			<ChildItems>
+				<CheckBoxField name="СжиматьФайлИсходящегоСообщения" id="6">
+					<DataPath>Объект.СжиматьФайлИсходящегоСообщения</DataPath>
+					<TitleLocation>Right</TitleLocation>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="СжиматьФайлИсходящегоСообщенияКонтекстноеМеню" id="7"/>
+					<ExtendedTooltip name="СжиматьФайлИсходящегоСообщенияРасширеннаяПодсказка" id="8"/>
+					<Events>
+						<Event name="OnChange">СжиматьФайлИсходящегоСообщенияПриИзменении</Event>
+					</Events>
+				</CheckBoxField>
+				<InputField name="ПарольАрхиваСообщенияОбмена" id="9">
+					<DataPath>Объект.ПарольАрхиваСообщенияОбмена</DataPath>
+					<TitleLocation>Top</TitleLocation>
+					<Width>20</Width>
+					<HorizontalStretch>true</HorizontalStretch>
+					<PasswordMode>true</PasswordMode>
+					<ContextMenu name="ПарольАрхиваСообщенияОбменаКонтекстноеМеню" id="10"/>
+					<ExtendedTooltip name="ПарольАрхиваСообщенияОбменаРасширеннаяПодсказка" id="11"/>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<CheckBoxField name="Транслитерация" id="53">
+			<DataPath>Объект.Транслитерация</DataPath>
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Транслитерация имени файла сообщения обмена</v8:content>
+				</v8:item>
+			</Title>
+			<TitleLocation>Right</TitleLocation>
+			<CheckBoxType>Auto</CheckBoxType>
+			<ContextMenu name="ТранслитерацияКонтекстноеМеню" id="54"/>
+			<ExtendedTooltip name="ТранслитерацияРасширеннаяПодсказка" id="55"/>
+		</CheckBoxField>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:DataProcessorObject.ТранспортСообщенийОбменаFTP</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="Готово" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Готово</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Готово</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>Готово</Action>
+		</Command>
+		<Command name="ПроверитьПодключение" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Проверить подключение</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Проверить подключение</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ПроверитьПодключение</Action>
+		</Command>
+		<Command name="ПараметрыДоступаВИнтернет" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Параметры доступа в Интернет</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Параметры доступа в Интернет</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ПараметрыДоступаВИнтернет</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+	</Commands>
+	<Parameters>
+		<Parameter name="НастройкиТранспорта">
+			<Type/>
+			<KeyParameter>true</KeyParameter>
+		</Parameter>
+	</Parameters>
+</Form>

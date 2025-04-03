@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.18">
+	<SaveDataInSettings>UseList</SaveDataInSettings>
 	<AutoURL>false</AutoURL>
 	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
-		<Autofill>false</Autofill>
 		<ChildItems>
 			<Button name="OK" id="27">
 				<Type>CommandBarButton</Type>
@@ -34,10 +34,56 @@
 				</Title>
 				<ExtendedTooltip name="ОтменитьРасширеннаяПодсказка" id="237"/>
 			</Button>
+			<Button name="ФормаСохранитьЗначения" id="364">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.StandardCommand.SaveValues</CommandName>
+				<ExtendedTooltip name="ФормаСохранитьЗначенияРасширеннаяПодсказка" id="365"/>
+			</Button>
+			<Button name="ФормаВосстановитьЗначения" id="368">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.StandardCommand.RestoreValues</CommandName>
+				<ExtendedTooltip name="ФормаВосстановитьЗначенияРасширеннаяПодсказка" id="369"/>
+			</Button>
+			<ButtonGroup name="НастройкиФормы" id="360">
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Форма группа1</v8:content>
+					</v8:item>
+				</Title>
+				<ExtendedTooltip name="НастройкиФормыРасширеннаяПодсказка" id="361"/>
+				<ChildItems>
+					<Button name="СохранитьНастройкиВФайл" id="356">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Command.СохранитьНастройкиВФайл</CommandName>
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Сохранить настройки в файл...</v8:content>
+							</v8:item>
+						</Title>
+						<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
+						<ExtendedTooltip name="СохранитьНастройкиВФайлРасширеннаяПодсказка" id="357"/>
+					</Button>
+					<Button name="ЗагрузитьНастройкиИзФайла" id="358">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Command.ЗагрузитьНастройкиИзФайла</CommandName>
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Загрузить настройки из файла...</v8:content>
+							</v8:item>
+						</Title>
+						<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
+						<ExtendedTooltip name="ЗагрузитьНастройкиИзФайлаРасширеннаяПодсказка" id="359"/>
+					</Button>
+				</ChildItems>
+			</ButtonGroup>
 		</ChildItems>
 	</AutoCommandBar>
 	<Events>
 		<Event name="NotificationProcessing">ОбработкаОповещения</Event>
+		<Event name="OnLoadDataFromSettingsAtServer">ПриЗагрузкеДанныхИзНастроекНаСервере</Event>
 		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
 	</Events>
 	<ChildItems>
@@ -227,28 +273,40 @@
 									<HorizontalLocation>Right</HorizontalLocation>
 									<ExtendedTooltip name="КоманднаяПанельВажностьРасширеннаяПодсказка" id="314"/>
 									<ChildItems>
-										<Button name="УстановитьФлажки" id="243">
-											<Type>CommandBarButton</Type>
-											<CommandName>Form.Command.УстановитьФлажкиВажности</CommandName>
+										<ButtonGroup name="ГруппаФлажкиВажность" id="362">
 											<Title>
 												<v8:item>
 													<v8:lang>ru</v8:lang>
-													<v8:content>Установить флажки</v8:content>
+													<v8:content>Важность</v8:content>
 												</v8:item>
 											</Title>
-											<ExtendedTooltip name="УстановитьФлажкиРасширеннаяПодсказка" id="244"/>
-										</Button>
-										<Button name="СнятьФлажки" id="245">
-											<Type>CommandBarButton</Type>
-											<CommandName>Form.Command.СнятьФлажкиВажности</CommandName>
-											<Title>
-												<v8:item>
-													<v8:lang>ru</v8:lang>
-													<v8:content>Снять флажки</v8:content>
-												</v8:item>
-											</Title>
-											<ExtendedTooltip name="СнятьФлажкиРасширеннаяПодсказка" id="246"/>
-										</Button>
+											<Representation>Compact</Representation>
+											<ExtendedTooltip name="ГруппаФлажкиВажностьРасширеннаяПодсказка" id="363"/>
+											<ChildItems>
+												<Button name="УстановитьФлажки" id="243">
+													<Type>CommandBarButton</Type>
+													<CommandName>Form.Command.УстановитьФлажкиВажности</CommandName>
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Установить флажки</v8:content>
+														</v8:item>
+													</Title>
+													<ExtendedTooltip name="УстановитьФлажкиРасширеннаяПодсказка" id="244"/>
+												</Button>
+												<Button name="СнятьФлажки" id="245">
+													<Type>CommandBarButton</Type>
+													<CommandName>Form.Command.СнятьФлажкиВажности</CommandName>
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Снять флажки</v8:content>
+														</v8:item>
+													</Title>
+													<ExtendedTooltip name="СнятьФлажкиРасширеннаяПодсказка" id="246"/>
+												</Button>
+											</ChildItems>
+										</ButtonGroup>
 									</ChildItems>
 								</CommandBar>
 							</ChildItems>
@@ -920,6 +978,9 @@
 				<Field>СписокПользователей.Presentation</Field>
 				<Field>СписокПользователей.ValueType</Field>
 			</UseAlways>
+			<Save>
+				<Field>СписокПользователей</Field>
+			</Save>
 			<Settings xsi:type="v8:TypeDescription">
 				<v8:Type>xs:string</v8:Type>
 				<v8:StringQualifiers>
@@ -932,6 +993,9 @@
 			<Type>
 				<v8:Type>v8:ValueListType</v8:Type>
 			</Type>
+			<Save>
+				<Field>События</Field>
+			</Save>
 			<Settings xsi:type="v8:TypeDescription"/>
 		</Attribute>
 		<Attribute name="Компьютеры" id="6">
@@ -949,6 +1013,9 @@
 				<Field>Компьютеры.Presentation</Field>
 				<Field>Компьютеры.ValueType</Field>
 			</UseAlways>
+			<Save>
+				<Field>Компьютеры</Field>
+			</Save>
 			<Settings xsi:type="v8:TypeDescription">
 				<v8:Type>xs:string</v8:Type>
 				<v8:StringQualifiers>
@@ -971,6 +1038,9 @@
 				<Field>Приложения.Picture</Field>
 				<Field>Приложения.ValueType</Field>
 			</UseAlways>
+			<Save>
+				<Field>Приложения</Field>
+			</Save>
 			<Settings xsi:type="v8:TypeDescription">
 				<v8:Type>xs:string</v8:Type>
 				<v8:StringQualifiers>
@@ -993,6 +1063,9 @@
 				<Field>Важность.Picture</Field>
 				<Field>Важность.ValueType</Field>
 			</UseAlways>
+			<Save>
+				<Field>Важность</Field>
+			</Save>
 			<Settings xsi:type="v8:TypeDescription">
 				<v8:Type>xs:string</v8:Type>
 				<v8:StringQualifiers>
@@ -1015,6 +1088,9 @@
 					<v8:AllowedLength>Variable</v8:AllowedLength>
 				</v8:StringQualifiers>
 			</Type>
+			<Save>
+				<Field>Комментарий</Field>
+			</Save>
 		</Attribute>
 		<Attribute name="Метаданные" id="10">
 			<Title>
@@ -1031,6 +1107,9 @@
 				<Field>Метаданные.Presentation</Field>
 				<Field>Метаданные.ValueType</Field>
 			</UseAlways>
+			<Save>
+				<Field>Метаданные</Field>
+			</Save>
 			<Settings xsi:type="v8:TypeDescription">
 				<v8:Type>xs:string</v8:Type>
 				<v8:StringQualifiers>
@@ -1051,7 +1130,7 @@
 				<v8:Type>xs:string</v8:Type>
 				<v8:Type>xs:dateTime</v8:Type>
 				<v8:Type>xs:decimal</v8:Type>
-				<v8:TypeSet>cfg:AnyRef</v8:TypeSet>
+				<v8:TypeSet>cfg:AnyIBRef</v8:TypeSet>
 				<v8:NumberQualifiers>
 					<v8:Digits>10</v8:Digits>
 					<v8:FractionDigits>0</v8:FractionDigits>
@@ -1065,6 +1144,9 @@
 					<v8:DateFractions>DateTime</v8:DateFractions>
 				</v8:DateQualifiers>
 			</Type>
+			<Save>
+				<Field>Данные</Field>
+			</Save>
 		</Attribute>
 		<Attribute name="ПредставлениеДанных" id="12">
 			<Title>
@@ -1081,6 +1163,9 @@
 					<v8:AllowedLength>Variable</v8:AllowedLength>
 				</v8:StringQualifiers>
 			</Type>
+			<Save>
+				<Field>ПредставлениеДанных</Field>
+			</Save>
 		</Attribute>
 		<Attribute name="СтатусТранзакции" id="13">
 			<Title>
@@ -1097,6 +1182,9 @@
 				<Field>СтатусТранзакции.Presentation</Field>
 				<Field>СтатусТранзакции.ValueType</Field>
 			</UseAlways>
+			<Save>
+				<Field>СтатусТранзакции</Field>
+			</Save>
 			<Settings xsi:type="v8:TypeDescription">
 				<v8:Type>xs:string</v8:Type>
 				<v8:StringQualifiers>
@@ -1119,6 +1207,9 @@
 					<v8:AllowedLength>Variable</v8:AllowedLength>
 				</v8:StringQualifiers>
 			</Type>
+			<Save>
+				<Field>Транзакция</Field>
+			</Save>
 		</Attribute>
 		<Attribute name="СтрСеансы" id="15">
 			<Title>
@@ -1134,6 +1225,9 @@
 					<v8:AllowedLength>Variable</v8:AllowedLength>
 				</v8:StringQualifiers>
 			</Type>
+			<Save>
+				<Field>СтрСеансы</Field>
+			</Save>
 		</Attribute>
 		<Attribute name="Сеансы" id="16">
 			<Type>
@@ -1163,6 +1257,9 @@
 				<Field>РабочиеСерверы.Presentation</Field>
 				<Field>РабочиеСерверы.ValueType</Field>
 			</UseAlways>
+			<Save>
+				<Field>РабочиеСерверы</Field>
+			</Save>
 			<Settings xsi:type="v8:TypeDescription">
 				<v8:Type>xs:string</v8:Type>
 				<v8:StringQualifiers>
@@ -1186,6 +1283,9 @@
 				<Field>ОсновныеIPПорты.Presentation</Field>
 				<Field>ОсновныеIPПорты.ValueType</Field>
 			</UseAlways>
+			<Save>
+				<Field>ОсновныеIPПорты</Field>
+			</Save>
 			<Settings xsi:type="v8:TypeDescription">
 				<v8:Type>xs:decimal</v8:Type>
 				<v8:NumberQualifiers>
@@ -1210,6 +1310,9 @@
 				<Field>ВспомогательныеIPПорты.Presentation</Field>
 				<Field>ВспомогательныеIPПорты.ValueType</Field>
 			</UseAlways>
+			<Save>
+				<Field>ВспомогательныеIPПорты</Field>
+			</Save>
 			<Settings xsi:type="v8:TypeDescription">
 				<v8:Type>xs:decimal</v8:Type>
 				<v8:NumberQualifiers>
@@ -1255,6 +1358,9 @@
 					<v8:DateFractions>DateTime</v8:DateFractions>
 				</v8:DateQualifiers>
 			</Type>
+			<Save>
+				<Field>ИнтервалОтбораДатаНачала</Field>
+			</Save>
 		</Attribute>
 		<Attribute name="ИнтервалОтбораДатаОкончания" id="3">
 			<Title>
@@ -1269,6 +1375,9 @@
 					<v8:DateFractions>DateTime</v8:DateFractions>
 				</v8:DateQualifiers>
 			</Type>
+			<Save>
+				<Field>ИнтервалОтбораДатаОкончания</Field>
+			</Save>
 		</Attribute>
 		<Attribute name="СобытияОтображаемые" id="21">
 			<Title>
@@ -1307,6 +1416,9 @@
 			<Type>
 				<v8:Type>v8:ValueListType</v8:Type>
 			</Type>
+			<Save>
+				<Field>РазделениеДанныхСеанса</Field>
+			</Save>
 			<Settings xsi:type="v8:TypeDescription"/>
 		</Attribute>
 		<Attribute name="ДанныеНесколькоЗначений" id="26">
@@ -1319,6 +1431,9 @@
 			<Type>
 				<v8:Type>xs:boolean</v8:Type>
 			</Type>
+			<Save>
+				<Field>ДанныеНесколькоЗначений</Field>
+			</Save>
 		</Attribute>
 		<Attribute name="ДанныеСписок" id="28">
 			<Title>
@@ -1330,12 +1445,15 @@
 			<Type>
 				<v8:Type>v8:ValueListType</v8:Type>
 			</Type>
+			<Save>
+				<Field>ДанныеСписок</Field>
+			</Save>
 			<Settings xsi:type="v8:TypeDescription">
 				<v8:Type>xs:boolean</v8:Type>
 				<v8:Type>xs:string</v8:Type>
 				<v8:Type>xs:dateTime</v8:Type>
 				<v8:Type>xs:decimal</v8:Type>
-				<v8:TypeSet>cfg:AnyRef</v8:TypeSet>
+				<v8:TypeSet>cfg:AnyIBRef</v8:TypeSet>
 				<v8:NumberQualifiers>
 					<v8:Digits>10</v8:Digits>
 					<v8:FractionDigits>0</v8:FractionDigits>
@@ -1360,6 +1478,9 @@
 			<Type>
 				<v8:Type>v8:ValueListType</v8:Type>
 			</Type>
+			<Save>
+				<Field>ОбластиДанных</Field>
+			</Save>
 			<Settings xsi:type="v8:TypeDescription"/>
 		</Attribute>
 	</Attributes>
@@ -1477,6 +1598,24 @@
 			</ToolTip>
 			<Action>ИнтервалОтбораПриИзменении</Action>
 			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="СохранитьНастройкиВФайл" id="7">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сохранить настройки в файл...</v8:content>
+				</v8:item>
+			</Title>
+			<Action>СохранитьНастройкиВФайл</Action>
+		</Command>
+		<Command name="ЗагрузитьНастройкиИзФайла" id="8">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Загрузить настройки из файла...</v8:content>
+				</v8:item>
+			</Title>
+			<Action>ЗагрузитьНастройкиИзФайла</Action>
 		</Command>
 	</Commands>
 	<Parameters>

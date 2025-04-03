@@ -2,11 +2,11 @@
 <Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.18">
 	<Width>55</Width>
 	<WindowOpeningMode>LockOwnerWindow</WindowOpeningMode>
+	<SaveWindowSettings>false</SaveWindowSettings>
 	<AutoTitle>false</AutoTitle>
 	<CommandBarLocation>None</CommandBarLocation>
 	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
 	<Events>
-		<Event name="OnOpen">ПриОткрытии</Event>
 		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
 	</Events>
 	<ChildItems>
@@ -135,7 +135,7 @@
 						</UsualGroup>
 					</ChildItems>
 				</UsualGroup>
-				<UsualGroup name="ТехническиеПодробностиКлиент" id="119">
+				<UsualGroup name="ТехническиеПодробностиКлиент" id="128">
 					<Title>
 						<v8:item>
 							<v8:lang>ru</v8:lang>
@@ -146,7 +146,7 @@
 					<Collapsed>true</Collapsed>
 					<ControlRepresentation>Picture</ControlRepresentation>
 					<Representation>None</Representation>
-					<ExtendedTooltip name="ТехническиеПодробностиКлиентРасширеннаяПодсказка" id="120"/>
+					<ExtendedTooltip name="ТехническиеПодробностиКлиентРасширеннаяПодсказка" id="129"/>
 					<ChildItems>
 						<InputField name="ТекстОшибкиКлиент" id="9">
 							<DataPath>ТекстОшибкиКлиент</DataPath>
@@ -314,7 +314,7 @@
 						</UsualGroup>
 					</ChildItems>
 				</UsualGroup>
-				<UsualGroup name="ТехническиеПодробностиСервер" id="121">
+				<UsualGroup name="ТехническиеПодробностиСервер" id="126">
 					<Title>
 						<v8:item>
 							<v8:lang>ru</v8:lang>
@@ -325,7 +325,7 @@
 					<Collapsed>true</Collapsed>
 					<ControlRepresentation>Picture</ControlRepresentation>
 					<Representation>None</Representation>
-					<ExtendedTooltip name="ТехническиеПодробностиСерверРасширеннаяПодсказка" id="122"/>
+					<ExtendedTooltip name="ТехническиеПодробностиСерверРасширеннаяПодсказка" id="127"/>
 					<ChildItems>
 						<InputField name="ТекстОшибкиСервер" id="37">
 							<DataPath>ТекстОшибкиСервер</DataPath>
@@ -444,7 +444,7 @@
 						</UsualGroup>
 					</ChildItems>
 				</UsualGroup>
-				<UsualGroup name="ТехническиеПодробности" id="123">
+				<UsualGroup name="ТехническиеПодробности" id="124">
 					<Title>
 						<v8:item>
 							<v8:lang>ru</v8:lang>
@@ -455,7 +455,7 @@
 					<Collapsed>true</Collapsed>
 					<ControlRepresentation>Picture</ControlRepresentation>
 					<Representation>None</Representation>
-					<ExtendedTooltip name="ТехническиеПодробностиРасширеннаяПодсказка" id="124"/>
+					<ExtendedTooltip name="ТехническиеПодробностиРасширеннаяПодсказка" id="125"/>
 					<ChildItems>
 						<InputField name="ТекстОшибки" id="83">
 							<DataPath>ТекстОшибки</DataPath>
@@ -526,47 +526,52 @@
 			<ShowTitle>false</ShowTitle>
 			<ExtendedTooltip name="ГруппаПодвалРасширеннаяПодсказка" id="61"/>
 			<ChildItems>
-				<UsualGroup name="Помощь" id="62">
+				<UsualGroup name="ГруппаТребуетсяПомощь" id="130">
 					<Title>
 						<v8:item>
 							<v8:lang>ru</v8:lang>
 							<v8:content>Требуется помощь?</v8:content>
 						</v8:item>
 					</Title>
+					<GroupVerticalAlign>Center</GroupVerticalAlign>
 					<Group>Vertical</Group>
 					<Behavior>PopUp</Behavior>
-					<ExtendedTooltip name="ПомощьРасширеннаяПодсказка" id="63"/>
+					<ExtendedTooltip name="ГруппаТребуетсяПомощьРасширеннаяПодсказка" id="131"/>
 					<ChildItems>
-						<LabelDecoration name="ИнформацияДляПоддержки" id="67">
-							<Title formatted="true">
-								<v8:item>
-									<v8:lang>ru</v8:lang>
-									<v8:content>При возникновении затруднений ознакомьтесь со списком &lt;link %1&gt;типичных проблем при работе с приложениями электронной подписи и их решений&lt;/&gt;.
-
-В иных случаях обратитесь в службу поддержки фирмы "1С", предоставив &lt;link %2&gt;техническую информацию о возникшей проблеме&lt;/&gt;.</v8:content>
-								</v8:item>
-							</Title>
-							<ContextMenu name="ИнформацияДляПоддержкиКонтекстноеМеню" id="68"/>
-							<ExtendedTooltip name="ИнформацияДляПоддержкиРасширеннаяПодсказка" id="69"/>
-							<Events>
-								<Event name="URLProcessing">ИнформацияДляПоддержкиОбработкаНавигационнойСсылки</Event>
-							</Events>
-						</LabelDecoration>
-						<UsualGroup name="ГруппаСкачатьТехническуюИнформацию" id="114">
+						<UsualGroup name="ГруппаОбращенияВТехническуюПоддержку" id="132">
 							<Title>
 								<v8:item>
 									<v8:lang>ru</v8:lang>
-									<v8:content>Скачать техническую информацию</v8:content>
+									<v8:content>Обращения в техническую поддержку</v8:content>
 								</v8:item>
 							</Title>
-							<Group>AlwaysHorizontal</Group>
+							<Group>Vertical</Group>
+							<Representation>None</Representation>
 							<ShowTitle>false</ShowTitle>
-							<ExtendedTooltip name="ГруппаСкачатьТехническуюИнформациюРасширеннаяПодсказка" id="115"/>
+							<ExtendedTooltip name="ГруппаОбращенияВТехническуюПоддержкуРасширеннаяПодсказка" id="133"/>
 							<ChildItems>
-								<Button name="СкачатьТехническуюИнформацию" id="104">
-									<Type>UsualButton</Type>
-									<Representation>Picture</Representation>
-									<CommandName>Form.Command.СкачатьТехническуюИнформацию</CommandName>
+								<LabelDecoration name="ОписаниеОбращенияВПоддержку" id="134">
+									<ContextMenu name="ОписаниеОбращенияВПоддержкуКонтекстноеМеню" id="135"/>
+									<ExtendedTooltip name="ОписаниеОбращенияВПоддержкуРасширеннаяПодсказка" id="136"/>
+								</LabelDecoration>
+								<Button name="ВопросВПоддержку" id="137">
+									<Type>Hyperlink</Type>
+									<CommandName>Form.Command.ВопросВПоддержку</CommandName>
+									<Picture>
+										<xr:Ref>CommonPicture.ОтправитьЭлектронноеПисьмо</xr:Ref>
+										<xr:LoadTransparent>false</xr:LoadTransparent>
+									</Picture>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Вопрос в поддержку</v8:content>
+										</v8:item>
+									</Title>
+									<ExtendedTooltip name="ВопросВПоддержкуРасширеннаяПодсказка" id="138"/>
+								</Button>
+								<Button name="ИнформацияДляОтправкиВПоддержку" id="139">
+									<Type>Hyperlink</Type>
+									<CommandName>Form.Command.ИнформацияДляОтправкиВПоддержку</CommandName>
 									<Picture>
 										<xr:Ref>CommonPicture.Скачать</xr:Ref>
 										<xr:LoadTransparent>false</xr:LoadTransparent>
@@ -574,48 +579,11 @@
 									<Title>
 										<v8:item>
 											<v8:lang>ru</v8:lang>
-											<v8:content>Скачать техническую информацию</v8:content>
+											<v8:content>Информация для отправки в поддержку</v8:content>
 										</v8:item>
 									</Title>
-									<ExtendedTooltip name="СкачатьТехническуюИнформациюРасширеннаяПодсказка" id="105"/>
+									<ExtendedTooltip name="ИнформацияДляОтправкиВПоддержкуРасширеннаяПодсказка" id="140"/>
 								</Button>
-								<UsualGroup name="ГруппаФормируетсяТехническаяИнформация" id="106">
-									<Visible>false</Visible>
-									<Title>
-										<v8:item>
-											<v8:lang>ru</v8:lang>
-											<v8:content>Формируется техническая информация</v8:content>
-										</v8:item>
-									</Title>
-									<ShowTitle>false</ShowTitle>
-									<ExtendedTooltip name="ГруппаФормируетсяТехническаяИнформацияРасширеннаяПодсказка" id="107"/>
-									<ChildItems>
-										<PictureDecoration name="ДекорацияКартинкаФормируетсяТехническаяИнформация" id="108">
-											<Title formatted="false">
-												<v8:item>
-													<v8:lang>ru</v8:lang>
-													<v8:content>Декорация картинка формируется техническая информация</v8:content>
-												</v8:item>
-											</Title>
-											<Picture>
-												<xr:Ref>CommonPicture.ДлительнаяОперация16</xr:Ref>
-												<xr:LoadTransparent>false</xr:LoadTransparent>
-											</Picture>
-											<ContextMenu name="ДекорацияКартинкаФормируетсяТехническаяИнформацияКонтекстноеМеню" id="109"/>
-											<ExtendedTooltip name="ДекорацияКартинкаФормируетсяТехническаяИнформацияРасширеннаяПодсказка" id="110"/>
-										</PictureDecoration>
-										<LabelDecoration name="ДекорацияНадписьФормируетсяТехническаяИнформация" id="111">
-											<Title formatted="false">
-												<v8:item>
-													<v8:lang>ru</v8:lang>
-													<v8:content>Формируется техническая информация...</v8:content>
-												</v8:item>
-											</Title>
-											<ContextMenu name="ДекорацияНадписьФормируетсяТехническаяИнформацияКонтекстноеМеню" id="112"/>
-											<ExtendedTooltip name="ДекорацияНадписьФормируетсяТехническаяИнформацияРасширеннаяПодсказка" id="113"/>
-										</LabelDecoration>
-									</ChildItems>
-								</UsualGroup>
 							</ChildItems>
 						</UsualGroup>
 					</ChildItems>
@@ -776,9 +744,6 @@
 				<v8:Type>xs:boolean</v8:Type>
 			</Type>
 		</Attribute>
-		<Attribute name="ПараметрыДополненияТекстаРешенияОшибкиКлассификатора" id="11">
-			<Type/>
-		</Attribute>
 	</Attributes>
 	<Commands>
 		<Command name="ПерейтиКНастройкеПрограмм" id="1">
@@ -807,11 +772,11 @@
 			<Action>УстановитьРасширение</Action>
 			<CurrentRowUse>DontUse</CurrentRowUse>
 		</Command>
-		<Command name="СкачатьТехническуюИнформацию" id="3">
+		<Command name="ИнформацияДляОтправкиВПоддержку" id="3">
 			<Title>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Скачать техническую информацию</v8:content>
+					<v8:content>Информация для отправки в поддержку</v8:content>
 				</v8:item>
 			</Title>
 			<ToolTip>
@@ -820,7 +785,30 @@
 					<v8:content>Скачать техническую информацию</v8:content>
 				</v8:item>
 			</ToolTip>
-			<Action>СкачатьТехническуюИнформацию</Action>
+			<Picture>
+				<xr:Ref>CommonPicture.Скачать</xr:Ref>
+				<xr:LoadTransparent>false</xr:LoadTransparent>
+			</Picture>
+			<Action>ИнформацияДляОтправкиВПоддержку</Action>
+		</Command>
+		<Command name="ВопросВПоддержку" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Вопрос в поддержку</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Вопрос в поддержку</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>CommonPicture.ОтправитьЭлектронноеПисьмо</xr:Ref>
+				<xr:LoadTransparent>false</xr:LoadTransparent>
+			</Picture>
+			<Action>ВопросВПоддержку</Action>
 		</Command>
 	</Commands>
 	<Parameters>

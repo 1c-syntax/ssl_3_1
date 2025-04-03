@@ -937,6 +937,7 @@
 						<ExcludedCommand>OutputList</ExcludedCommand>
 						<ExcludedCommand>Refresh</ExcludedCommand>
 						<ExcludedCommand>SaveDynamicListSettings</ExcludedCommand>
+						<ExcludedCommand>SearchHistory</ExcludedCommand>
 						<ExcludedCommand>ShowMultipleSelection</ExcludedCommand>
 					</CommandSet>
 					<SearchStringLocation>None</SearchStringLocation>
@@ -1757,7 +1758,7 @@
 				</v8:StringQualifiers>
 			</Type>
 		</Attribute>
-		<Attribute name="ЕстьЭлектроннаяПодпись" id="17">
+		<Attribute name="ДоступнаПечатьСоШтампом" id="17">
 			<Type>
 				<v8:Type>xs:boolean</v8:Type>
 			</Type>
@@ -2448,7 +2449,9 @@
 	</Commands>
 	<Parameters>
 		<Parameter name="ВладелецФайла">
-			<Type/>
+			<Type>
+				<v8:TypeSet>cfg:AnyIBRef</v8:TypeSet>
+			</Type>
 			<KeyParameter>true</KeyParameter>
 		</Parameter>
 		<Parameter name="ТолькоПросмотр">
@@ -2482,6 +2485,11 @@
 		<Parameter name="СкрыватьВладельца">
 			<Type>
 				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Parameter>
+		<Parameter name="ТекущаяСтрока">
+			<Type>
+				<v8:TypeSet>cfg:CatalogRef</v8:TypeSet>
 			</Type>
 		</Parameter>
 	</Parameters>

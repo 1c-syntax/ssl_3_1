@@ -223,17 +223,39 @@
 						</Title>
 						<ExtendedTooltip name="ФормаЗакончитьРедактированиеРасширеннаяПодсказка" id="153"/>
 					</Button>
-					<Button name="Печать" id="383">
-						<Type>CommandBarButton</Type>
-						<CommandName>Form.Command.Печать</CommandName>
+					<Popup name="ПодменюПечать" id="452">
 						<Title>
 							<v8:item>
 								<v8:lang>ru</v8:lang>
 								<v8:content>Печать</v8:content>
 							</v8:item>
 						</Title>
-						<ExtendedTooltip name="ПечатьРасширеннаяПодсказка" id="384"/>
-					</Button>
+						<ExtendedTooltip name="ПодменюПечатьРасширеннаяПодсказка" id="453"/>
+						<ChildItems>
+							<Button name="Печать" id="383">
+								<Type>CommandBarButton</Type>
+								<CommandName>Form.Command.Печать</CommandName>
+								<Title>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Печать</v8:content>
+									</v8:item>
+								</Title>
+								<ExtendedTooltip name="ПечатьРасширеннаяПодсказка" id="384"/>
+							</Button>
+							<Button name="ПечатьСоШтампом" id="454">
+								<Type>CommandBarButton</Type>
+								<CommandName>Form.Command.ПечатьСоШтампом</CommandName>
+								<Title>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Со штампом электронной подписи...</v8:content>
+									</v8:item>
+								</Title>
+								<ExtendedTooltip name="ПечатьСоШтампомРасширеннаяПодсказка" id="455"/>
+							</Button>
+						</ChildItems>
+					</Popup>
 					<Button name="Отправить" id="379">
 						<Type>CommandBarButton</Type>
 						<CommandName>Form.Command.Отправить</CommandName>
@@ -2276,6 +2298,11 @@
 				</v8:StringQualifiers>
 			</Type>
 		</Attribute>
+		<Attribute name="ЕстьЭлектроннаяПодпись" id="23">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
 	</Attributes>
 	<Commands>
 		<Command name="ИмпортФайлов" id="1">
@@ -2886,6 +2913,15 @@
 			<Action>Удалить</Action>
 			<CurrentRowUse>Use</CurrentRowUse>
 			<AssociatedTableElementId xsi:type="xs:string">Список</AssociatedTableElementId>
+		</Command>
+		<Command name="ПечатьСоШтампом" id="33">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Со штампом электронной подписи...</v8:content>
+				</v8:item>
+			</Title>
+			<Action>ПечатьСоШтампом</Action>
 		</Command>
 	</Commands>
 	<Parameters>

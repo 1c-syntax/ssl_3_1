@@ -263,17 +263,17 @@
 					</Title>
 					<ExtendedTooltip name="КомандыРедактированияРасширеннаяПодсказка" id="99"/>
 					<ChildItems>
-						<Button name="Переименовать" id="633">
+						<Button name="ИзменитьНастройкиМакета" id="633">
 							<Type>CommandBarButton</Type>
-							<CommandName>Form.Command.Переименовать</CommandName>
+							<CommandName>Form.Command.ИзменитьНастройкиМакета</CommandName>
 							<Title>
 								<v8:item>
 									<v8:lang>ru</v8:lang>
-									<v8:content>Переименовать макет...</v8:content>
+									<v8:content>Изменить настройки макета...</v8:content>
 								</v8:item>
 							</Title>
 							<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
-							<ExtendedTooltip name="ПереименоватьРасширеннаяПодсказка" id="634"/>
+							<ExtendedTooltip name="ИзменитьНастройкиМакетаРасширеннаяПодсказка" id="634"/>
 						</Button>
 						<Button name="УдалитьШтампЭП" id="607">
 							<Type>CommandBarButton</Type>
@@ -757,6 +757,67 @@
 										</Button>
 									</ChildItems>
 								</ButtonGroup>
+								<Popup name="РазмещениеТекстаЕще" id="771">
+									<EnableContentChange>true</EnableContentChange>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Размещение текста</v8:content>
+										</v8:item>
+									</Title>
+									<Representation>PictureAndText</Representation>
+									<ExtendedTooltip name="РазмещениеТекстаЕщеРасширеннаяПодсказка" id="772"/>
+									<ChildItems>
+										<Button name="РазмещениеАвтоЕще" id="761">
+											<Type>CommandBarButton</Type>
+											<CommandName>Form.Command.РазмещениеАвто</CommandName>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Авто</v8:content>
+												</v8:item>
+											</Title>
+											<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
+											<ExtendedTooltip name="РазмещениеАвтоЕщеРасширеннаяПодсказка" id="762"/>
+										</Button>
+										<Button name="РазмещениеПереноситьЕще" id="763">
+											<Type>CommandBarButton</Type>
+											<CommandName>Form.Command.РазмещениеПереносить</CommandName>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Переносить</v8:content>
+												</v8:item>
+											</Title>
+											<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
+											<ExtendedTooltip name="РазмещениеПереноситьЕщеРасширеннаяПодсказка" id="764"/>
+										</Button>
+										<Button name="РазмещениеЗабиватьЕще" id="777">
+											<Type>CommandBarButton</Type>
+											<CommandName>Form.Command.РазмещениеЗабивать</CommandName>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Забивать</v8:content>
+												</v8:item>
+											</Title>
+											<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
+											<ExtendedTooltip name="РазмещениеЗабиватьЕщеРасширеннаяПодсказка" id="778"/>
+										</Button>
+										<Button name="РазмещениеОбрезатьЕще" id="779">
+											<Type>CommandBarButton</Type>
+											<CommandName>Form.Command.РазмещениеОбрезать</CommandName>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Обрезать</v8:content>
+												</v8:item>
+											</Title>
+											<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
+											<ExtendedTooltip name="РазмещениеОбрезатьЕщеРасширеннаяПодсказка" id="780"/>
+										</Button>
+									</ChildItems>
+								</Popup>
 								<ButtonGroup name="ЦветВсеДействия" id="673">
 									<Title>
 										<v8:item>
@@ -1194,6 +1255,98 @@
 						</Popup>
 					</ChildItems>
 				</ButtonGroup>
+				<ButtonGroup name="РазмещениеТекста" id="759">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Размещение текста (командная панель)</v8:content>
+						</v8:item>
+					</Title>
+					<Representation>Compact</Representation>
+					<ExtendedTooltip name="РазмещениеТекстаРасширеннаяПодсказка" id="760"/>
+					<ChildItems>
+						<Button name="РазмещениеАвто" id="786">
+							<Type>CommandBarButton</Type>
+							<CommandName>Form.Command.РазмещениеАвто</CommandName>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Авто</v8:content>
+								</v8:item>
+							</Title>
+							<LocationInCommandBar>InCommandBar</LocationInCommandBar>
+							<ExtendedTooltip name="РазмещениеАвтоРасширеннаяПодсказка" id="787"/>
+						</Button>
+						<Button name="РазмещениеПереносить" id="788">
+							<Type>CommandBarButton</Type>
+							<CommandName>Form.Command.РазмещениеПереносить</CommandName>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Переносить</v8:content>
+								</v8:item>
+							</Title>
+							<LocationInCommandBar>InCommandBar</LocationInCommandBar>
+							<ExtendedTooltip name="РазмещениеПереноситьРасширеннаяПодсказка" id="789"/>
+						</Button>
+						<Button name="РазмещениеЗабивать" id="790">
+							<Type>CommandBarButton</Type>
+							<UserVisible>
+								<xr:Common>false</xr:Common>
+							</UserVisible>
+							<CommandName>Form.Command.РазмещениеЗабивать</CommandName>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Забивать</v8:content>
+								</v8:item>
+							</Title>
+							<LocationInCommandBar>InCommandBar</LocationInCommandBar>
+							<ExtendedTooltip name="РазмещениеЗабиватьРасширеннаяПодсказка" id="791"/>
+						</Button>
+						<Button name="РазмещениеОбрезать" id="792">
+							<Type>CommandBarButton</Type>
+							<UserVisible>
+								<xr:Common>false</xr:Common>
+							</UserVisible>
+							<CommandName>Form.Command.РазмещениеОбрезать</CommandName>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Обрезать</v8:content>
+								</v8:item>
+							</Title>
+							<LocationInCommandBar>InCommandBar</LocationInCommandBar>
+							<ExtendedTooltip name="РазмещениеОбрезатьРасширеннаяПодсказка" id="793"/>
+						</Button>
+					</ChildItems>
+				</ButtonGroup>
+				<ButtonGroup name="Области" id="765">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Области</v8:content>
+						</v8:item>
+					</Title>
+					<Representation>Compact</Representation>
+					<ExtendedTooltip name="ОбластиРасширеннаяПодсказка" id="766"/>
+					<ChildItems>
+						<Button name="НазначитьИмя" id="767">
+							<Type>CommandBarButton</Type>
+							<Representation>PictureAndText</Representation>
+							<CommandName>Form.Item.ТабличныйДокумент.StandardCommand.SetName</CommandName>
+							<LocationInCommandBar>InCommandBarAndInAdditionalSubmenu</LocationInCommandBar>
+							<ExtendedTooltip name="НазначитьИмяРасширеннаяПодсказка" id="768"/>
+						</Button>
+						<Button name="УдалитьИмя" id="769">
+							<Type>CommandBarButton</Type>
+							<Representation>PictureAndText</Representation>
+							<CommandName>Form.Item.ТабличныйДокумент.StandardCommand.RemoveName</CommandName>
+							<LocationInCommandBar>InCommandBarAndInAdditionalSubmenu</LocationInCommandBar>
+							<ExtendedTooltip name="УдалитьИмяРасширеннаяПодсказка" id="770"/>
+						</Button>
+					</ChildItems>
+				</ButtonGroup>
 				<ButtonGroup name="КоманднаяПанельКолонтитулов" id="478">
 					<Visible>false</Visible>
 					<Title>
@@ -1475,6 +1628,24 @@
 			<ShowTitle>false</ShowTitle>
 			<ExtendedTooltip name="ГруппаНазначениеМакетаРасширеннаяПодсказка" id="736"/>
 			<ChildItems>
+				<InputField name="ФорматСохраненияВыгрузки" id="756">
+					<DataPath>ФорматСохраненияВыгрузки</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Формат сохранения выгрузки</v8:content>
+						</v8:item>
+					</Title>
+					<Width>21</Width>
+					<HorizontalStretch>false</HorizontalStretch>
+					<TextEdit>false</TextEdit>
+					<ContextMenu name="ФорматСохраненияВыгрузкиКонтекстноеМеню" id="757"/>
+					<ExtendedTooltip name="ФорматСохраненияВыгрузкиРасширеннаяПодсказка" id="758"/>
+					<Events>
+						<Event name="OnChange">ФорматСохраненияВыгрузкиПриИзменении</Event>
+						<Event name="Clearing">ФорматСохраненияВыгрузкиОчистка</Event>
+					</Events>
+				</InputField>
 				<LabelDecoration name="ЗаголовокНазначение" id="737">
 					<Title formatted="false">
 						<v8:item>
@@ -1738,6 +1909,29 @@
 													<ContextMenu name="ПечатнаяФормаКонтекстноеМеню" id="599"/>
 													<ExtendedTooltip name="ПечатнаяФормаРасширеннаяПодсказка" id="600"/>
 												</SpreadSheetDocumentField>
+											</ChildItems>
+										</Page>
+										<Page name="СтраницаОбразецВыгрузки" id="781">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Страница образец выгрузки</v8:content>
+												</v8:item>
+											</Title>
+											<ExtendedTooltip name="СтраницаОбразецВыгрузкиРасширеннаяПодсказка" id="782"/>
+											<ChildItems>
+												<TextDocumentField name="Выгрузка" id="783">
+													<DataPath>Выгрузка</DataPath>
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Выгрузка</v8:content>
+														</v8:item>
+													</Title>
+													<TitleLocation>None</TitleLocation>
+													<ContextMenu name="ВыгрузкаКонтекстноеМеню" id="784"/>
+													<ExtendedTooltip name="ВыгрузкаРасширеннаяПодсказка" id="785"/>
+												</TextDocumentField>
 											</ChildItems>
 										</Page>
 									</ChildItems>
@@ -2412,6 +2606,51 @@
 				<v8:Type>xs:boolean</v8:Type>
 			</Type>
 		</Attribute>
+		<Attribute name="МакетДляВыгрузкиОбъекта" id="55">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ФорматСохраненияВыгрузки" id="56">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Формат сохранения выгрузки</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:EnumRef.ФорматыВыгрузкиОбъектов</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="Выгрузка" id="54">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Выгрузка</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ОсновнаяПечатнаяФорма" id="52">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="НаименованиеПечатнойФормы" id="53">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>100</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
 	</Attributes>
 	<Commands>
 		<Command name="ЗаписатьИЗакрыть" id="1">
@@ -2802,14 +3041,14 @@
 			</Title>
 			<Action>ЗагрузитьИзФайла</Action>
 		</Command>
-		<Command name="Переименовать" id="42">
+		<Command name="ИзменитьНастройкиМакета" id="42">
 			<Title>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Переименовать макет...</v8:content>
+					<v8:content>Изменить настройки макета...</v8:content>
 				</v8:item>
 			</Title>
-			<Action>Переименовать</Action>
+			<Action>ИзменитьНастройкиМакета</Action>
 		</Command>
 		<Command name="ИзменитьШрифт" id="7">
 			<Title>
@@ -2889,6 +3128,83 @@
 				<xr:LoadTransparent>false</xr:LoadTransparent>
 			</Picture>
 			<Action>ИзменитьЦветГраницы</Action>
+		</Command>
+		<Command name="РазмещениеАвто" id="43">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Авто</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Автоматическое размещение текста</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>CommonPicture.РазмещениеТекстаАвто</xr:Ref>
+				<xr:LoadTransparent>false</xr:LoadTransparent>
+			</Picture>
+			<Action>РазмещениеАвто</Action>
+		</Command>
+		<Command name="РазмещениеЗабивать" id="44">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Забивать</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Забивать текст</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>CommonPicture.РазмещениеТекстаЗабивать</xr:Ref>
+				<xr:LoadTransparent>false</xr:LoadTransparent>
+			</Picture>
+			<Action>РазмещениеЗабивать</Action>
+		</Command>
+		<Command name="РазмещениеОбрезать" id="45">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Обрезать</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Обрезать текст</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>CommonPicture.РазмещениеТекстаОбрезать</xr:Ref>
+				<xr:LoadTransparent>false</xr:LoadTransparent>
+			</Picture>
+			<Action>РазмещениеОбрезать</Action>
+		</Command>
+		<Command name="РазмещениеПереносить" id="46">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Переносить</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Переносить текст</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>CommonPicture.РазмещениеТекстаПереносить</xr:Ref>
+				<xr:LoadTransparent>false</xr:LoadTransparent>
+			</Picture>
+			<Action>РазмещениеПереносить</Action>
+			<CurrentRowUse>Use</CurrentRowUse>
 		</Command>
 	</Commands>
 	<Parameters>
@@ -2987,6 +3303,31 @@
 		<Parameter name="ДоступноНазначение">
 			<Type>
 				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Parameter>
+		<Parameter name="МакетДляВыгрузкиОбъекта">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Parameter>
+		<Parameter name="ФорматСохраненияВыгрузки">
+			<Type>
+				<v8:Type>cfg:EnumRef.ФорматыВыгрузкиОбъектов</v8:Type>
+			</Type>
+		</Parameter>
+		<Parameter name="ОсновнаяПечатнаяФорма">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+			<KeyParameter>true</KeyParameter>
+		</Parameter>
+		<Parameter name="НаименованиеПечатнойФормы">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>100</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
 			</Type>
 		</Parameter>
 	</Parameters>

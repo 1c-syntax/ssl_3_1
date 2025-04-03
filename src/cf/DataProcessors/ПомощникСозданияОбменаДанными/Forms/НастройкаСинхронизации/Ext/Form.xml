@@ -93,6 +93,117 @@
 			<Behavior>Usual</Behavior>
 			<ExtendedTooltip name="ГруппаНастройкаРасширеннаяПодсказка" id="122"/>
 			<ChildItems>
+				<UsualGroup name="ГруппаВыборТипаТранспорта" id="167">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Выбратьтип подключения</v8:content>
+						</v8:item>
+					</Title>
+					<Group>AlwaysHorizontal</Group>
+					<Behavior>Usual</Behavior>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаВыборТипаТранспортаРасширеннаяПодсказка" id="168"/>
+					<ChildItems>
+						<Pages name="ПанельВыборТипаТранспорта" id="169">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Панель выбор типа транспорта</v8:content>
+								</v8:item>
+							</Title>
+							<PagesRepresentation>None</PagesRepresentation>
+							<ExtendedTooltip name="ПанельВыборТипаТранспортаРасширеннаяПодсказка" id="170"/>
+							<ChildItems>
+								<Page name="СтраницаВыборТипаТранспортаУспешно" id="171">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Страница типа транспорта успешно</v8:content>
+										</v8:item>
+									</Title>
+									<ExtendedTooltip name="СтраницаВыборТипаТранспортаУспешноРасширеннаяПодсказка" id="172"/>
+									<ChildItems>
+										<PictureDecoration name="Декорация12" id="173">
+											<Width>2</Width>
+											<Height>1</Height>
+											<Picture>
+												<xr:Ref>CommonPicture.Успешно</xr:Ref>
+												<xr:LoadTransparent>false</xr:LoadTransparent>
+											</Picture>
+											<FileDragMode>AsFile</FileDragMode>
+											<ContextMenu name="Декорация12КонтекстноеМеню" id="174"/>
+											<ExtendedTooltip name="Декорация12РасширеннаяПодсказка" id="175"/>
+										</PictureDecoration>
+									</ChildItems>
+								</Page>
+								<Page name="СтраницаВыборТипаТранспортаТекущий" id="176">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Страница выбор типа транспорта текущий</v8:content>
+										</v8:item>
+									</Title>
+									<ExtendedTooltip name="СтраницаВыборТипаТранспортаТекущийРасширеннаяПодсказка" id="177"/>
+									<ChildItems>
+										<PictureDecoration name="Декорация13" id="178">
+											<Width>2</Width>
+											<Height>1</Height>
+											<Picture>
+												<xr:Ref>StdPicture.BusinessProcessStart</xr:Ref>
+												<xr:LoadTransparent>true</xr:LoadTransparent>
+											</Picture>
+											<FileDragMode>AsFile</FileDragMode>
+											<ContextMenu name="Декорация13КонтекстноеМеню" id="179"/>
+											<ExtendedTooltip name="Декорация13РасширеннаяПодсказка" id="180"/>
+										</PictureDecoration>
+									</ChildItems>
+								</Page>
+								<Page name="СтраницаВыборТипаТранспортаПустой" id="181">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Страница выбор типа транспорта пустой</v8:content>
+										</v8:item>
+									</Title>
+									<ExtendedTooltip name="СтраницаВыборТипаТранспортаПустойРасширеннаяПодсказка" id="182"/>
+									<ChildItems>
+										<PictureDecoration name="Декорация22" id="183">
+											<Width>2</Width>
+											<Height>2</Height>
+											<FileDragMode>AsFile</FileDragMode>
+											<ContextMenu name="Декорация22КонтекстноеМеню" id="184"/>
+											<ExtendedTooltip name="Декорация22РасширеннаяПодсказка" id="185"/>
+										</PictureDecoration>
+									</ChildItems>
+								</Page>
+							</ChildItems>
+						</Pages>
+						<Button name="ВыборТипаТранспорта" id="186">
+							<Type>Hyperlink</Type>
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<CommandName>Form.Command.ВыборТипаТранспорта</CommandName>
+							<Font ref="style:КомандаПомощникаНастройкиСинхронизацииОбычнаяШрифт" kind="StyleItem"/>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Выбор типа подключения</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTipRepresentation>ShowBottom</ToolTipRepresentation>
+							<ExtendedTooltip name="ВыборТипаТранспортаРасширеннаяПодсказка" id="187">
+								<AutoMaxWidth>false</AutoMaxWidth>
+								<Title formatted="false">
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Для начала синхронизации данных необходимо указать, каким способом приложения будут подключаться друг к другу.</v8:content>
+									</v8:item>
+								</Title>
+							</ExtendedTooltip>
+						</Button>
+					</ChildItems>
+				</UsualGroup>
 				<UsualGroup name="ГруппаНастройкаПодключения" id="16">
 					<Title>
 						<v8:item>
@@ -197,7 +308,7 @@
 								<Title formatted="false">
 									<v8:item>
 										<v8:lang>ru</v8:lang>
-										<v8:content>Для начала синхронизации данных необходимо указать, каким способом программы будут подключаться друг к другу.</v8:content>
+										<v8:content>Необходимо настроить параметры подключения к приложению-корреспонденту.</v8:content>
 									</v8:item>
 								</Title>
 							</ExtendedTooltip>
@@ -307,7 +418,118 @@
 								<Title formatted="false">
 									<v8:item>
 										<v8:lang>ru</v8:lang>
-										<v8:content>Система "%1" должна подтвердить запрос на настройку подключения из этой программы.</v8:content>
+										<v8:content>Система "%1" должна подтвердить запрос на настройку подключения из этого приложения.</v8:content>
+									</v8:item>
+								</Title>
+							</ExtendedTooltip>
+						</Button>
+					</ChildItems>
+				</UsualGroup>
+				<UsualGroup name="ГруппаОбщиеПараметры" id="188">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Общие параметры</v8:content>
+						</v8:item>
+					</Title>
+					<Group>AlwaysHorizontal</Group>
+					<Behavior>Usual</Behavior>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаОбщиеПараметрыРасширеннаяПодсказка" id="189"/>
+					<ChildItems>
+						<Pages name="ПанельОбщиеПараметры" id="190">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Панель общие параметры</v8:content>
+								</v8:item>
+							</Title>
+							<PagesRepresentation>None</PagesRepresentation>
+							<ExtendedTooltip name="ПанельОбщиеПараметрыРасширеннаяПодсказка" id="191"/>
+							<ChildItems>
+								<Page name="СтраницаОбщиеПараметрыУспешно" id="192">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Страница общие параметры успешно</v8:content>
+										</v8:item>
+									</Title>
+									<ExtendedTooltip name="СтраницаОбщиеПараметрыУспешноРасширеннаяПодсказка" id="193"/>
+									<ChildItems>
+										<PictureDecoration name="Декорация14" id="194">
+											<Width>2</Width>
+											<Height>1</Height>
+											<Picture>
+												<xr:Ref>CommonPicture.Успешно</xr:Ref>
+												<xr:LoadTransparent>false</xr:LoadTransparent>
+											</Picture>
+											<FileDragMode>AsFile</FileDragMode>
+											<ContextMenu name="Декорация14КонтекстноеМеню" id="195"/>
+											<ExtendedTooltip name="Декорация14РасширеннаяПодсказка" id="196"/>
+										</PictureDecoration>
+									</ChildItems>
+								</Page>
+								<Page name="СтраницаОбщиеПараметрыТекущий" id="197">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Страница общие параметры текущий</v8:content>
+										</v8:item>
+									</Title>
+									<ExtendedTooltip name="СтраницаОбщиеПараметрыТекущийРасширеннаяПодсказка" id="198"/>
+									<ChildItems>
+										<PictureDecoration name="Декорация23" id="199">
+											<Width>2</Width>
+											<Height>1</Height>
+											<Picture>
+												<xr:Ref>StdPicture.BusinessProcessStart</xr:Ref>
+												<xr:LoadTransparent>true</xr:LoadTransparent>
+											</Picture>
+											<FileDragMode>AsFile</FileDragMode>
+											<ContextMenu name="Декорация23КонтекстноеМеню" id="200"/>
+											<ExtendedTooltip name="Декорация23РасширеннаяПодсказка" id="201"/>
+										</PictureDecoration>
+									</ChildItems>
+								</Page>
+								<Page name="СтраницаОбщиеПараметрыПустой" id="202">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Страница общие параметры пустой</v8:content>
+										</v8:item>
+									</Title>
+									<ExtendedTooltip name="СтраницаОбщиеПараметрыПустойРасширеннаяПодсказка" id="203"/>
+									<ChildItems>
+										<PictureDecoration name="Декорация24" id="204">
+											<Width>2</Width>
+											<Height>2</Height>
+											<FileDragMode>AsFile</FileDragMode>
+											<ContextMenu name="Декорация24КонтекстноеМеню" id="205"/>
+											<ExtendedTooltip name="Декорация24РасширеннаяПодсказка" id="206"/>
+										</PictureDecoration>
+									</ChildItems>
+								</Page>
+							</ChildItems>
+						</Pages>
+						<Button name="НастроитьОбщиеПараметры" id="207">
+							<Type>Hyperlink</Type>
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<CommandName>Form.Command.НастроитьОбщиеПараметры</CommandName>
+							<Font ref="style:КомандаПомощникаНастройкиСинхронизацииОбычнаяШрифт" kind="StyleItem"/>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Настроить общие параметры синхронизации</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTipRepresentation>ShowBottom</ToolTipRepresentation>
+							<ExtendedTooltip name="НастроитьОбщиеПараметрыРасширеннаяПодсказка" id="208">
+								<AutoMaxWidth>false</AutoMaxWidth>
+								<Title formatted="false">
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Необходимо задать общие настройки синхронизации. Выполняется проверка узла и синхронизация параметров с корреспондентом.</v8:content>
 									</v8:item>
 								</Title>
 							</ExtendedTooltip>
@@ -418,7 +640,7 @@
 								<Title formatted="false">
 									<v8:item>
 										<v8:lang>ru</v8:lang>
-										<v8:content>Перед началом использования синхронизации данных требуется указать ограничения отправки данных, а также правила получения данных из другой программы (значения по умолчанию).</v8:content>
+										<v8:content>Перед началом использования синхронизации данных требуется указать ограничения отправки данных, а также правила получения данных из другого приложения (значения по умолчанию).</v8:content>
 									</v8:item>
 								</Title>
 							</ExtendedTooltip>
@@ -530,7 +752,7 @@
 									<v8:item>
 										<v8:lang>ru</v8:lang>
 										<v8:content>Создание начального образа может занять длительное время.
-После создания необходимо развернуть информационную базу из созданного образа и выполнить первоначальный запуск программы для завершения настройки. Возможно создать начальный образ позднее. Для этого необходимо открыть параметры настроенной синхронизации и выполнить команду «Создание начального образа подчиненного узла распределенной информационной базы».</v8:content>
+После создания необходимо развернуть информационную базу из созданного образа и выполнить первоначальный запуск приложения для завершения настройки. Возможно создать начальный образ позднее. Для этого необходимо открыть параметры настроенной синхронизации и выполнить команду "Создание начального образа подчиненного узла распределенной информационной базы".</v8:content>
 									</v8:item>
 								</Title>
 							</ExtendedTooltip>
@@ -640,7 +862,7 @@
 								<Title formatted="false">
 									<v8:item>
 										<v8:lang>ru</v8:lang>
-										<v8:content>Если учет ведется в обеих программах, перед запуском синхронизации следует выполнить сопоставление данных. Это позволит избежать появления дублирующихся элементов справочников, которые независимо друг от друга были введены в обеих программах, например, с одинаковыми наименованиями. С помощью сопоставления можно указать, какие данные являются одинаковыми в двух программах. После чего можно будет выполнить загрузку с учетом настроенных сопоставлений.</v8:content>
+										<v8:content>Если учет ведется в обоих приложениях, перед запуском синхронизации следует выполнить сопоставление данных. Это позволит избежать появления дублирующихся элементов справочников, которые независимо друг от друга были введены в обоих приложениях, например, с одинаковыми наименованиями. С помощью сопоставления можно указать, какие данные являются одинаковыми в двух приложениях. После чего можно будет выполнить загрузку с учетом настроенных сопоставлений.</v8:content>
 									</v8:item>
 								</Title>
 							</ExtendedTooltip>
@@ -751,8 +973,9 @@
 								<Title formatted="false">
 									<v8:item>
 										<v8:lang>ru</v8:lang>
-										<v8:content>Будет произведена выгрузка данных из этой программы. Сразу после завершения настройки синхронизации возможно будет выполнить загрузку данных в другой программе и указать, какие данные являются одинаковыми для двух синхронизирующихся программ.
-Выгрузку данных можно выполнить позднее из списка настроенных синхронизаций данных.</v8:content>
+										<v8:content>Будет произведена выгрузка данных из этого приложения. Сразу после завершения настройки синхронизации, можно будет выполнить загрузку данных в другом приложении и указать, какие данные являются одинаковыми для двух синхронизируемых приложений.
+Выгрузку данных можно выполнить позднее из списка настроенных синхронизаций данных.
+</v8:content>
 									</v8:item>
 								</Title>
 							</ExtendedTooltip>
@@ -772,7 +995,7 @@
 				</v8:StringQualifiers>
 			</Type>
 		</Attribute>
-		<Attribute name="ИмяПланаОбмена" id="2">
+		<Attribute name="УдалитьИмяПланаОбмена" id="2">
 			<Type>
 				<v8:Type>xs:string</v8:Type>
 				<v8:StringQualifiers>
@@ -781,7 +1004,7 @@
 				</v8:StringQualifiers>
 			</Type>
 		</Attribute>
-		<Attribute name="ИдентификаторНастройки" id="3">
+		<Attribute name="УдалитьИдентификаторНастройки" id="3">
 			<Type>
 				<v8:Type>xs:string</v8:Type>
 				<v8:StringQualifiers>
@@ -894,7 +1117,7 @@
 				</Column>
 			</Columns>
 		</Attribute>
-		<Attribute name="УзелОбмена" id="13">
+		<Attribute name="УдалитьУзелОбмена" id="13">
 			<Type>
 				<v8:TypeSet>cfg:ExchangePlanRef</v8:TypeSet>
 			</Type>
@@ -986,11 +1209,6 @@
 				<v8:Type>xs:boolean</v8:Type>
 			</Type>
 		</Attribute>
-		<Attribute name="ОбменДаннымиСВнешнейСистемой" id="30">
-			<Type>
-				<v8:Type>xs:boolean</v8:Type>
-			</Type>
-		</Attribute>
 		<Attribute name="ПараметрыПодключенияВнешнейСистемы" id="31">
 			<Type/>
 		</Attribute>
@@ -1002,10 +1220,11 @@
 				<v8:Type>xs:boolean</v8:Type>
 			</Type>
 		</Attribute>
-		<Attribute name="ВидТранспорта" id="6">
+		<Attribute name="Объект" id="19">
 			<Type>
-				<v8:Type>cfg:EnumRef.ВидыТранспортаСообщенийОбмена</v8:Type>
+				<v8:Type>cfg:DataProcessorObject.ПомощникСозданияОбменаДанными</v8:Type>
 			</Type>
+			<MainAttribute>true</MainAttribute>
 		</Attribute>
 	</Attributes>
 	<Commands>
@@ -1117,6 +1336,36 @@
 				</v8:item>
 			</ToolTip>
 			<Action>ПолучитьПодтверждениеПодключения</Action>
+		</Command>
+		<Command name="ВыборТипаТранспорта" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Выбор типа транспорта</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Выбор типа транспорта</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ВыборТипаТранспорта</Action>
+		</Command>
+		<Command name="НастроитьОбщиеПараметры" id="9">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Настроить общие параметры</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Настроить общие параметры</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>НастроитьОбщиеПараметры</Action>
 		</Command>
 	</Commands>
 </Form>

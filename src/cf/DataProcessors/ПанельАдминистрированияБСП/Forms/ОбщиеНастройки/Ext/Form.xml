@@ -1502,6 +1502,82 @@
 						</UsualGroup>
 					</ChildItems>
 				</UsualGroup>
+				<UsualGroup name="ГруппаРазрешитьЗагрузкуИзИнтернетаВЭлектроннойПодписи" id="2281">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Разрешить загрузку из интернета в электронной подписи</v8:content>
+						</v8:item>
+					</Title>
+					<Width>86</Width>
+					<Group>Vertical</Group>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаРазрешитьЗагрузкуИзИнтернетаВЭлектроннойПодписиРасширеннаяПодсказка" id="2282"/>
+					<ChildItems>
+						<CheckBoxField name="КонстантаРазрешитьДоступКИнтернетСервисамЭлектроннойПодписи" id="2278">
+							<DataPath>КонстантаРазрешитьДоступКИнтернетСервисамЭлектроннойПодписи</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Разрешить доступ к Интернет-сервисам</v8:content>
+								</v8:item>
+							</Title>
+							<TitleLocation>Right</TitleLocation>
+							<ToolTipRepresentation>ShowBottom</ToolTipRepresentation>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="КонстантаРазрешитьДоступКИнтернетСервисамЭлектроннойПодписиКонтекстноеМеню" id="2279"/>
+							<ExtendedTooltip name="КонстантаРазрешитьДоступКИнтернетСервисамЭлектроннойПодписиРасширеннаяПодсказка" id="2280">
+								<AutoMaxWidth>false</AutoMaxWidth>
+								<MaxWidth>86</MaxWidth>
+								<HorizontalStretch>false</HorizontalStretch>
+								<Title formatted="false">
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Загружать и устанавливать списки отзыва и свежие рекомендации по устранению проблем из интернета автоматически. </v8:content>
+									</v8:item>
+								</Title>
+							</ExtendedTooltip>
+							<Events>
+								<Event name="OnChange">Подключаемый_ПриИзмененииРеквизита</Event>
+							</Events>
+						</CheckBoxField>
+						<UsualGroup name="ГруппаКомментарийРазрешитьЗагрузкуИзИнтернетаВЭлектроннойПодписи" id="2283">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Комментарий разрешить загрузку из интернета в электронной подписи</v8:content>
+								</v8:item>
+							</Title>
+							<Width>86</Width>
+							<Group>AlwaysHorizontal</Group>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаКомментарийРазрешитьЗагрузкуИзИнтернетаВЭлектроннойПодписиРасширеннаяПодсказка" id="2284"/>
+							<ChildItems>
+								<PictureDecoration name="ДекорацияРазрешитьЗагрузкуИзИнтернетаВЭлектроннойПодписи" id="2285">
+									<Picture>
+										<xr:Ref>CommonPicture.ИнформацияПоНедоступнымПолям</xr:Ref>
+										<xr:LoadTransparent>false</xr:LoadTransparent>
+									</Picture>
+									<ContextMenu name="ДекорацияРазрешитьЗагрузкуИзИнтернетаВЭлектроннойПодписиКонтекстноеМеню" id="2286"/>
+									<ExtendedTooltip name="ДекорацияРазрешитьЗагрузкуИзИнтернетаВЭлектроннойПодписиРасширеннаяПодсказка" id="2287"/>
+								</PictureDecoration>
+								<LabelDecoration name="КомментарийРазрешитьЗагрузкуИзИнтернетаВЭлектроннойПодписи" id="2288">
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<MaxWidth>86</MaxWidth>
+									<HorizontalStretch>false</HorizontalStretch>
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Для разблокировки настроек необходимо включить доступ к Интернет-сервисам "Интернет-поддержка и сервисы" — "Разрешить доступ к Интернет-сервисам".</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="КомментарийРазрешитьЗагрузкуИзИнтернетаВЭлектроннойПодписиКонтекстноеМеню" id="2289"/>
+									<ExtendedTooltip name="КомментарийРазрешитьЗагрузкуИзИнтернетаВЭлектроннойПодписиРасширеннаяПодсказка" id="2290"/>
+								</LabelDecoration>
+							</ChildItems>
+						</UsualGroup>
+					</ChildItems>
+				</UsualGroup>
 			</ChildItems>
 		</UsualGroup>
 		<UsualGroup name="ГруппаУдалениеПомеченных" id="2096">
@@ -1591,7 +1667,7 @@
 					<ToolTip>
 						<v8:item>
 							<v8:lang>ru</v8:lang>
-							<v8:content>Открыть рабочее место для удаления помеченных</v8:content>
+							<v8:content>Безвозвратно удалить или восстановить объекты, помеченные на удаление.</v8:content>
 						</v8:item>
 					</ToolTip>
 					<ToolTipRepresentation>ShowBottom</ToolTipRepresentation>
@@ -1833,11 +1909,6 @@
 				<v8:Type>xs:boolean</v8:Type>
 			</Type>
 		</Attribute>
-		<Attribute name="ДоступнаУсовершенствованнаяПодпись" id="2">
-			<Type>
-				<v8:Type>xs:boolean</v8:Type>
-			</Type>
-		</Attribute>
 		<Attribute name="КонстантаТипПодписиКриптографииПоУмолчанию" id="4">
 			<Title>
 				<v8:item>
@@ -1949,6 +2020,17 @@
 					<v8:Length>0</v8:Length>
 					<v8:AllowedLength>Variable</v8:AllowedLength>
 				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="КонстантаРазрешитьДоступКИнтернетСервисамЭлектроннойПодписи" id="19">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Разрешить доступ к Интернет-сервисам</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
 			</Type>
 		</Attribute>
 	</Attributes>

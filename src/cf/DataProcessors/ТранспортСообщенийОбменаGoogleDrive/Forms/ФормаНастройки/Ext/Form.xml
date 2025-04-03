@@ -1,0 +1,227 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.18">
+	<SaveWindowSettings>false</SaveWindowSettings>
+	<CommandBarLocation>Bottom</CommandBarLocation>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<HorizontalAlign>Right</HorizontalAlign>
+		<Autofill>false</Autofill>
+		<ChildItems>
+			<Button name="ФормаПроверитьПодключение" id="1">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.ПроверитьПодключение</CommandName>
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Проверить подключение</v8:content>
+					</v8:item>
+				</Title>
+				<ExtendedTooltip name="ФормаПроверитьПодключениеРасширеннаяПодсказка" id="2"/>
+			</Button>
+			<Button name="ФормаГотово" id="3">
+				<Type>CommandBarButton</Type>
+				<DefaultButton>true</DefaultButton>
+				<CommandName>Form.Command.Готово</CommandName>
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Готово</v8:content>
+					</v8:item>
+				</Title>
+				<ExtendedTooltip name="ФормаГотовоРасширеннаяПодсказка" id="4"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<InputField name="КаталогВОблаке" id="74">
+			<DataPath>Объект.КаталогВОблаке</DataPath>
+			<ToolTipRepresentation>ShowBottom</ToolTipRepresentation>
+			<ContextMenu name="КаталогВОблакеКонтекстноеМеню" id="75"/>
+			<ExtendedTooltip name="КаталогВОблакеРасширеннаяПодсказка" id="76">
+				<Title formatted="false">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Например 'exchange’. Каталог должен быть уже создан в сервисе. Доспутимо использовать только латинские символы </v8:content>
+					</v8:item>
+				</Title>
+			</ExtendedTooltip>
+		</InputField>
+		<UsualGroup name="НастройкиДоступа" id="58">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Настройки доступа</v8:content>
+				</v8:item>
+			</Title>
+			<Group>Vertical</Group>
+			<Behavior>Collapsible</Behavior>
+			<ControlRepresentation>Picture</ControlRepresentation>
+			<Representation>None</Representation>
+			<ExtendedTooltip name="НастройкиДоступаРасширеннаяПодсказка" id="59"/>
+			<ChildItems>
+				<Button name="GoogleПолучитьТокен" id="77">
+					<Type>UsualButton</Type>
+					<CommandName>Form.Command.ПолучитьТокен</CommandName>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Получить токен</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="GoogleПолучитьТокенРасширеннаяПодсказка" id="78"/>
+				</Button>
+				<InputField name="CclientID" id="50">
+					<DataPath>Объект.ClientID</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Client ID</v8:content>
+						</v8:item>
+					</Title>
+					<ClearButton>true</ClearButton>
+					<ContextMenu name="CclientIDКонтекстноеМеню" id="51"/>
+					<ExtendedTooltip name="CclientIDРасширеннаяПодсказка" id="52"/>
+				</InputField>
+				<InputField name="ClientSecret" id="53">
+					<DataPath>Объект.ClientSecret</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Client secret</v8:content>
+						</v8:item>
+					</Title>
+					<ClearButton>true</ClearButton>
+					<ContextMenu name="ClientSecretКонтекстноеМеню" id="54"/>
+					<ExtendedTooltip name="ClientSecretРасширеннаяПодсказка" id="55"/>
+				</InputField>
+				<InputField name="AccessToken" id="35">
+					<DataPath>Объект.AccessToken</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Access token</v8:content>
+						</v8:item>
+					</Title>
+					<ClearButton>true</ClearButton>
+					<ContextMenu name="AccessTokenКонтекстноеМеню" id="36"/>
+					<ExtendedTooltip name="AccessTokenРасширеннаяПодсказка" id="37"/>
+				</InputField>
+				<InputField name="RefreshToken" id="38">
+					<DataPath>Объект.RefreshToken</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Refresh token</v8:content>
+						</v8:item>
+					</Title>
+					<ClearButton>true</ClearButton>
+					<ContextMenu name="RefreshTokenКонтекстноеМеню" id="39"/>
+					<ExtendedTooltip name="RefreshTokenРасширеннаяПодсказка" id="40"/>
+				</InputField>
+				<InputField name="ExpiresIn" id="44">
+					<DataPath>Объект.ExpiresIn</DataPath>
+					<ReadOnly>true</ReadOnly>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Expires in (Истекает)</v8:content>
+						</v8:item>
+					</Title>
+					<ContextMenu name="ExpiresInКонтекстноеМеню" id="45"/>
+					<ExtendedTooltip name="ExpiresInРасширеннаяПодсказка" id="46"/>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<LabelDecoration name="Декорация1" id="20">
+			<ContextMenu name="Декорация1КонтекстноеМеню" id="21"/>
+			<ExtendedTooltip name="Декорация1РасширеннаяПодсказка" id="22"/>
+		</LabelDecoration>
+		<CheckBoxField name="СжиматьФайлИсходящегоСообщения" id="11">
+			<DataPath>Объект.СжиматьФайлИсходящегоСообщения</DataPath>
+			<TitleLocation>Right</TitleLocation>
+			<CheckBoxType>Auto</CheckBoxType>
+			<ContextMenu name="СжиматьФайлИсходящегоСообщенияКонтекстноеМеню" id="12"/>
+			<ExtendedTooltip name="СжиматьФайлИсходящегоСообщенияРасширеннаяПодсказка" id="13"/>
+			<Events>
+				<Event name="OnChange">СжиматьФайлИсходящегоСообщенияПриИзменении</Event>
+			</Events>
+		</CheckBoxField>
+		<InputField name="ПарольАрхиваСообщенияОбмена" id="14">
+			<DataPath>Объект.ПарольАрхиваСообщенияОбмена</DataPath>
+			<TitleLocation>Top</TitleLocation>
+			<PasswordMode>true</PasswordMode>
+			<ContextMenu name="ПарольАрхиваСообщенияОбменаКонтекстноеМеню" id="15"/>
+			<ExtendedTooltip name="ПарольАрхиваСообщенияОбменаРасширеннаяПодсказка" id="16"/>
+		</InputField>
+		<CheckBoxField name="Транслитерация" id="17">
+			<DataPath>Объект.Транслитерация</DataPath>
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Транслитерация имени файла сообщения обмена</v8:content>
+				</v8:item>
+			</Title>
+			<TitleLocation>Right</TitleLocation>
+			<CheckBoxType>Auto</CheckBoxType>
+			<ContextMenu name="ТранслитерацияКонтекстноеМеню" id="18"/>
+			<ExtendedTooltip name="ТранслитерацияРасширеннаяПодсказка" id="19"/>
+		</CheckBoxField>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:DataProcessorObject.ТранспортСообщенийОбменаGoogleDrive</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="Готово" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Готово</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Готово</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>Готово</Action>
+		</Command>
+		<Command name="ПроверитьПодключение" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Проверить подключение</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Проверить подключение</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ПроверитьПодключение</Action>
+		</Command>
+		<Command name="ПолучитьТокен" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Получить токен</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Получить токен</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ПолучитьТокен</Action>
+		</Command>
+	</Commands>
+</Form>

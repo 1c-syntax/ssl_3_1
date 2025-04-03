@@ -72,7 +72,7 @@
 													<v8:lang>ru</v8:lang>
 													<v8:content>Выгрузка данных может занять длительное время в случаях:
  - медленного канала связи;
- - большого объема данных в этой программе.
+ - большого объема данных в этом приложении.
 
 Если операция будет отменена, можно выполнить ее позднее из формы списка настроенных синхронизаций данных.</v8:content>
 												</v8:item>
@@ -565,7 +565,7 @@
 															<v8:lang>ru</v8:lang>
 															<v8:content>Выгрузка успешно завершена.
 
-Теперь можно перейти в программу "%1" и выполнить сопоставление и загрузку полученных данных.</v8:content>
+Теперь можно перейти в приложение "%1" и выполнить сопоставление и загрузку полученных данных.</v8:content>
 														</v8:item>
 													</Title>
 													<ContextMenu name="ДекорацияНадписьВыгрузкаЗавершенаКонтекстноеМеню" id="97"/>
@@ -1158,7 +1158,7 @@
 				<v8:Type>xs:boolean</v8:Type>
 			</Type>
 		</Attribute>
-		<Attribute name="ВидТранспорта" id="10">
+		<Attribute name="удалить_ВидТранспорта" id="10">
 			<Type>
 				<v8:Type>cfg:EnumRef.ВидыТранспортаСообщенийОбмена</v8:Type>
 			</Type>
@@ -1269,6 +1269,21 @@
 			<Type>
 				<v8:TypeSet>cfg:DefinedType.КонечнаяТочкаОбменаСообщениями</v8:TypeSet>
 			</Type>
+		</Attribute>
+		<Attribute name="ИдентификаторТранспорта" id="22">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="НастройкиТранспорта" id="29">
+			<Type/>
+		</Attribute>
+		<Attribute name="ДанныеАутентификации" id="30">
+			<Type/>
 		</Attribute>
 	</Attributes>
 	<Commands>

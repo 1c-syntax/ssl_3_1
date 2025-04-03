@@ -133,32 +133,66 @@
 			<ShowTitle>false</ShowTitle>
 			<ExtendedTooltip name="ГруппаПодвалРасширеннаяПодсказка" id="63"/>
 			<ChildItems>
-				<UsualGroup name="Инструкция" id="54">
+				<UsualGroup name="ГруппаТребуетсяПомощь" id="89">
 					<Title>
 						<v8:item>
 							<v8:lang>ru</v8:lang>
 							<v8:content>Требуется помощь?</v8:content>
 						</v8:item>
 					</Title>
+					<GroupVerticalAlign>Center</GroupVerticalAlign>
 					<Group>Vertical</Group>
 					<Behavior>PopUp</Behavior>
-					<ExtendedTooltip name="ИнструкцияРасширеннаяПодсказка" id="55"/>
+					<ExtendedTooltip name="ГруппаТребуетсяПомощьРасширеннаяПодсказка" id="90"/>
 					<ChildItems>
-						<LabelDecoration name="ИнформацияДляПоддержки" id="69">
-							<Title formatted="true">
+						<UsualGroup name="ГруппаОбращенияВТехническуюПоддержку" id="91">
+							<Title>
 								<v8:item>
 									<v8:lang>ru</v8:lang>
-									<v8:content>При возникновении затруднений ознакомьтесь со списком &lt;link %1&gt;типичных проблем при работе с приложениями электронной подписи и их решений&lt;/&gt;.
-
-В иных случаях обратитесь в службу поддержки фирмы "1С", предоставив &lt;link %2&gt;техническую информацию о возникшей проблеме&lt;/&gt;.</v8:content>
+									<v8:content>Обращения в техническую поддержку</v8:content>
 								</v8:item>
 							</Title>
-							<ContextMenu name="ИнформацияДляПоддержкиКонтекстноеМеню" id="70"/>
-							<ExtendedTooltip name="ИнформацияДляПоддержкиРасширеннаяПодсказка" id="71"/>
-							<Events>
-								<Event name="URLProcessing">ИнформацияДляПоддержкиОбработкаНавигационнойСсылки</Event>
-							</Events>
-						</LabelDecoration>
+							<Group>Vertical</Group>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаОбращенияВТехническуюПоддержкуРасширеннаяПодсказка" id="92"/>
+							<ChildItems>
+								<LabelDecoration name="ОписаниеОбращенияВПоддержку" id="93">
+									<ContextMenu name="ОписаниеОбращенияВПоддержкуКонтекстноеМеню" id="94"/>
+									<ExtendedTooltip name="ОписаниеОбращенияВПоддержкуРасширеннаяПодсказка" id="95"/>
+								</LabelDecoration>
+								<Button name="ВопросВПоддержку" id="96">
+									<Type>Hyperlink</Type>
+									<CommandName>Form.Command.ВопросВПоддержку</CommandName>
+									<Picture>
+										<xr:Ref>CommonPicture.ОтправитьЭлектронноеПисьмо</xr:Ref>
+										<xr:LoadTransparent>false</xr:LoadTransparent>
+									</Picture>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Вопрос в поддержку</v8:content>
+										</v8:item>
+									</Title>
+									<ExtendedTooltip name="ВопросВПоддержкуРасширеннаяПодсказка" id="97"/>
+								</Button>
+								<Button name="ИнформацияДляОтправкиВПоддержку" id="98">
+									<Type>Hyperlink</Type>
+									<CommandName>Form.Command.ИнформацияДляОтправкиВПоддержку</CommandName>
+									<Picture>
+										<xr:Ref>CommonPicture.Скачать</xr:Ref>
+										<xr:LoadTransparent>false</xr:LoadTransparent>
+									</Picture>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Информация для отправки в поддержку</v8:content>
+										</v8:item>
+									</Title>
+									<ExtendedTooltip name="ИнформацияДляОтправкиВПоддержкуРасширеннаяПодсказка" id="99"/>
+								</Button>
+							</ChildItems>
+						</UsualGroup>
 					</ChildItems>
 				</UsualGroup>
 				<CommandBar name="КоманднаяПанель" id="64">
@@ -279,6 +313,18 @@
 						</v8:StringQualifiers>
 					</Type>
 				</Column>
+				<Column name="Действие" id="6">
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="Параметры" id="7">
+					<Type/>
+				</Column>
 			</Columns>
 		</Attribute>
 		<Attribute name="ОписаниеОшибки" id="1">
@@ -335,6 +381,44 @@
 			</ToolTip>
 			<Action>УстановитьРасширение</Action>
 			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ВопросВПоддержку" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Вопрос в поддержку</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Вопрос в поддержку</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>CommonPicture.ОтправитьЭлектронноеПисьмо</xr:Ref>
+				<xr:LoadTransparent>false</xr:LoadTransparent>
+			</Picture>
+			<Action>ВопросВПоддержку</Action>
+		</Command>
+		<Command name="ИнформацияДляОтправкиВПоддержку" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Информация для отправки в поддержку</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Скачать техническую информацию</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>CommonPicture.Скачать</xr:Ref>
+				<xr:LoadTransparent>false</xr:LoadTransparent>
+			</Picture>
+			<Action>ИнформацияДляОтправкиВПоддержку</Action>
 		</Command>
 	</Commands>
 	<Parameters>

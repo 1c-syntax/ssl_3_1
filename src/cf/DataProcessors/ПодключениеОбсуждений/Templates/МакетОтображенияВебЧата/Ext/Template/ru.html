@@ -1,0 +1,407 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"><html><head><meta http-equiv="content-type" content="text/html;charset=utf-8"></meta><meta http-equiv="X-UA-Compatible" content="IE=edge"></meta><style>
+        :root {
+            --INTERFACE_BACKGROUND_COLOR: #FFF;
+            --INTERFACE_COLOR: #313235;
+            --INTERFACE_TEXT_BACKGROUND_COLOR: #F4F6F8;
+            --INTERFACE_TEXT_OWNER_BACKGROUND_COLOR: #EAF3FA;
+            --INTERFACE_BG_4: rgba(0,0,0,0.4);
+        }
+
+        [data-theme="dark"] {
+            --INTERFACE_BACKGROUND_COLOR: #363636;
+            --INTERFACE_COLOR: #FFF;
+            --INTERFACE_TEXT_BACKGROUND_COLOR: rgba(244,244,244,0.25);
+            --INTERFACE_TEXT_OWNER_BACKGROUND_COLOR: rgba(224,233,244,0.25);
+            --INTERFACE_BG_4: rgba(255, 255, 255, 0.4);
+        }
+
+        body, div, p, td, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, textarea {margin: 0; padding: 0;}
+        html {text-align: left;}
+        html[dir=rtl] {text-align: right;}
+        li {list-style: none;}
+        img {border: 0 none;}
+        table {border-collapse: collapse; border-spacing: 0;}
+        a, *[tabindex], map area, button {outline: medium none;}
+        textarea {overflow: auto; resize: none;}
+        textarea:focus, textarea:active {outline: none 0;}
+        ::-webkit-caps-lock-indicator, ::-webkit-contacts-auto-fill-button, ::-webkit-credentials-auto-fill-button {display: none; visibility: hidden; pointer-events: none; position: absolute; right: 0;}
+
+        .ecs-body {cursor: default; -webkit-tap-highlight-color: rgba(0,0,0,0); -webkit-touch-callout: none; overflow: hidden; -moz-user-select: none; -webkit-user-select: none;}
+        .ecs-base {color: var(--INTERFACE_COLOR); font-family: 'Almarai', Roboto, sans-serif; font-size: 10pt;}
+        .ecs-base textarea {font: inherit; background-color: var(--INTERFACE_BACKGROUND_COLOR); color: var(--INTERFACE_COLOR); border: 0 none; text-align: inherit; line-height: 1.5em; -moz-user-select: text; -webkit-user-select: text;}
+        .ecs-base svg {fill: inherit; position: relative; width: inherit; height: inherit; max-width: 100%; max-height: 100%; pointer-events: none;}
+        .ecs-chat {border-radius: 0.6em 0.6em 0 0; position: absolute; width: 400px; height: 500px; box-shadow: rgba(0, 0, 0, 0.16) -8px 0px 28px 0px; transition: opacity 0.225s ease 0s;}
+
+        .fullSize {position: absolute; top: 0; right: 0; bottom: 0; left: 0;}
+
+        .ico {fill: var(--INTERFACE_COLOR); display: inline-flex; flex: 0 0 auto; justify-content: center; align-items: center; position: relative; width: 1.2em; height: 1.2em}
+        .i24, svg.i24 {width: 1.8em; height: 1.8em;}
+        .ico-28 {padding: 0.45em;}
+        .iHoverRound:not(.disabled):HOVER:before {content: ''; border-radius: 50%; position: absolute; top: 0; right: 0; bottom: 0; left: 0; opacity: 0.1; box-shadow: 0 0 0 2em inset;}
+        .borderDashedH {border-top: 1px solid var(--INTERFACE_COLOR); width: 100%; margin: 0.45em 0; opacity: 0.25;}
+
+        .ecsChatDate, .ecsChatBox, .ecsChatName {-moz-user-select: text; -webkit-user-select: text;}
+        .ecsChat, .ecsAnswer {position: relative; width: 100%; overflow-y: auto; box-sizing: border-box;}
+        .main, .ecsContent {position: relative; width: 100%; height: 100%; overflow: hidden;}
+        .ico, .ecsChatDate, .ecsStatus:before {box-sizing: content-box;}
+
+        .ecsContent {background-color: var(--INTERFACE_BACKGROUND_COLOR);}
+        .frame {flex: 1 1 60%; position: relative; overflow: hidden;}
+        .frameContent {flex-direction: column; position: relative; overflow-x: hidden; padding-top: 3.9em;}
+
+        .ecsTopline {position: absolute; top: 0; right: 0; left: 0;}
+        .ecsTopline * {fill: inherit;}
+        .ecsTopline .toplineBox {display: block; font-size: 1em; font-weight: normal; position: relative; width: 100%; min-width: 2em; height: 1.5em; margin: 0 0.3em; line-height: 1.5em; overflow: hidden;}
+        .toplineBox:after {content: attr(data-title); display: block; color: inherit; position: absolute; width: 100%; box-sizing: border-box; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; z-index: 0;}
+        .ecsTopline .ico {cursor: default; opacity: 0.9;}
+
+        .ecsHeader {align-items: center; position: relative; height: 3.3em; padding: 0.3em 0.75em;}
+        .ecs-chat-hide .ecsHeader {height: 2.7em;}
+        .ecsHeaderIco {display: flex; flex: 0 0 auto;}
+        .ecs-chat:not(.ecs-chat-hide) .ecsHeaderIco, .ecs-chat-hide .ecsHeader .ico:not(.ecsHeaderIco) {display: none;}
+
+        .ecsChat {padding: 0 0 0 3.75em;}
+        html[dir=rtl] .ecsChat {padding: 0 3.75em 0 0;}
+        .ecsChatBlock {position: relative; width: 100%; padding-bottom: 1.95em; z-index: 0; -webkit-overflow-scrolling: touch;}
+
+        .ecsChatDate {justify-content: center; font-size: 0.8em; font-weight: bold; color: var(--INTERFACE_BG_4); position: sticky; top: 0.2px; width: 100%; padding: 0 1.8em; margin: 1.8em -3.6em 0; z-index: 1;}
+        .ecsChatDate div {border-radius: 2em; background: var(--INTERFACE_BACKGROUND_COLOR); padding: 0.3em 0.6em;}
+        .ecsChatDate div {border-radius: 2em; background: var(--INTERFACE_BACKGROUND_COLOR); padding: 0.3em 0.6em;}
+        
+        .ecsChatItem {display: flex; position: relative; margin-top: 0.3em;}
+        .ecsChatItem.ecsOwner {justify-content: flex-end;}
+        .ecsChatInfo {flex-direction: row-reverse; flex: 0 0 auto; align-items: center; align-self: baseline; opacity: 0.5;}
+        .ecsChatItem.ecsOwner .ecsChatInfo {align-self: flex-end;}
+        .ecsChatBox {flex-direction: column; align-items: flex-end; max-width: 80%; padding: 0 0.45em 0.45em 0.45em; transition: .5s; -webkit-transition: .5s; -moz-transition: .5s;}
+        .ecsChatText, .ecsChatText span {max-height: 1000000px;}
+        .ecsChatText {background: var(--INTERFACE_TEXT_BACKGROUND_COLOR); border-radius: 0.6em; position: relative; word-wrap: break-word; overflow: hidden; cursor: text; margin-bottom: 0.15em; padding: 0.45em 0.6em 0.6em 0.6em; box-sizing: border-box; line-height: 1.5em;}
+        .ecsChatItem.ecsOwner .ecsChatText {background: var(--INTERFACE_TEXT_OWNER_BACKGROUND_COLOR);}
+        .ecsChatName {font-weight: bold; opacity: 0.5;}
+
+        .ecsAvatar {display: inline-flex; justify-content: flex-end; align-items: flex-end; background-repeat: no-repeat; background-position: center top; background-size: cover; border-radius: 50%; position: absolute; margin: 0 -1em; width: 1em; height: 1em;}
+        .ecsAvatar svg {fill: var(--INTERFACE_COLOR); position: absolute; z-index: -1;}
+        .ecsStatus:before {content: ''; display: inline-block; flex: 0 0 auto; background-color: #64C846; background-clip: padding-box; border: 2px solid var(--INTERFACE_BACKGROUND_COLOR); border-radius: 50%; width: 0.2em; height: 0.2em; min-width: 6px; min-height: 6px;}
+
+        .ecsMessage textarea::-moz-placeholder {color: var(--INTERFACE_COLOR); opacity: 0.4;}
+        .ecsMessage textarea::-webkit-input-placeholder {color: var(--INTERFACE_COLOR); opacity: 0.39;}
+        .ecsMessage textarea:-ms-input-placeholder {color: var(--INTERFACE_COLOR); opacity: 0.41;}
+
+        .ecsAnswer {border-width: 0.15em 0 0.9em 0; border-style: solid; border-color: transparent; padding: 0 0 0 1.35em; max-height: calc(100% - 108px); overflow: inherit;}
+        html[dir=rtl] .ecsAnswer {padding: 0 1.35em 0 0;}
+        .ecsAnswer .ecsMessage {box-sizing: border-box;}
+        .ecsAnswer .editArea {padding-right: 0.6em;}
+        .ecsAnswerInfo {width: 100%; margin: 0 -0.3em;}
+        .ecsAnswer .ico {opacity: 0.5;}
+        .ecsAnswer .ico:HOVER {opacity: 0.75;}
+
+        .ecs-chat {bottom: 0; margin: 0 30px;}
+        .ecs-chat.ecs-chat-hide {width: 240px; height: 40px; box-shadow: rgba(0, 0, 0, 0.16) 0 8px 28px 0; cursor: pointer;}
+        .ecs-chat-bottom.ecs-chat-placeStart {left: 0;}
+        .ecs-chat-bottom.ecs-chat-placeEnd {right: 0;}
+        .ecs-chat-bottom.ecs-chat-placeCenter {left: 50%; margin: 0 -120px;}
+        .ecs-chat-bottom.ecs-chat-placeCenter {margin: 0 -200px;}
+        .ecs-chat-hide.ecs-chat-bottom.ecs-chat-placeCenter {margin: 0 -120px;}
+        .ecs-chat:not(.ecs-chat-hide) {left: 50%; right: auto; margin: 0 -200px;}
+        .ecs-chat-end.ecs-chat-hide {right: -100px; margin: 130px 0; transform: rotate(-90deg); box-shadow: rgba(0, 0, 0, 0.16) -8px 0 28px 0;}
+        .ecs-chat-end.ecs-chat-hide.ecs-chat-placeStart {bottom: 0;}
+        .ecs-chat-end.ecs-chat-hide.ecs-chat-placeEnd {top: 0;}
+        .ecs-chat-end.ecs-chat-hide.ecs-chat-placeCenter {top: 50%; margin: -20px 0;}
+        .ecs-chat-start.ecs-chat-hide {left: -100px; margin: 130px 0; transform: rotate(90deg); box-shadow: rgba(0, 0, 0, 0.16) 8px 0 28px 0;}
+        .ecs-chat-start.ecs-chat-hide.ecs-chat-placeStart {bottom: 0;}
+        .ecs-chat-start.ecs-chat-hide.ecs-chat-placeEnd {top: 0;}
+        .ecs-chat-start.ecs-chat-hide.ecs-chat-placeCenter {top: 50%; margin: -20px 0;}
+
+        .ecs-chat-video-no .ecsIcoVideo {display: none;}
+        .ecs-chat-avatar-hide .ecsAvatar {display: none;}
+        .ecs-chat-avatar-hide .ecsChat {padding: 0 0 0 12px;}
+        html[dir=rtl] .ecsContent .ecsChat {padding: 0 12px 0 0;}
+
+        .flex {display: flex;}
+        .flex-column {display: flex; flex-direction: column;}
+        .flex-ai-center {align-items: center;}
+        .flex-jc-end {justify-content: flex-end;}
+        .flex-0-0-auto {flex: 0 0 auto;}
+        .flex-1-1-auto {flex: 1 1 auto;}
+        .flex-1-1-100 {flex: 1 1 100%;}
+        .fs-8 {font-size: 0.8em;}
+        .fs40 {font-size: 2.7em;}
+        .m-8 {margin: 0.6em;}
+        .mt-4 {margin-top: 0.3em;}
+        .nowrap {white-space: nowrap;}
+        .dots {white-space: nowrap; overflow: hidden; text-overflow: ellipsis;}
+    </style></head><body>
+<div id="ecs-main" class="ecs-body ecs-base ecs-chat">
+    
+<div class="fullSize">
+        
+<div class="main flex-column ecs-base">
+            
+<div class="frame flex">
+                
+<div class="ecs-base frameContent flex flex-1-1-100">
+                    
+<div id="ecs-topline" class="chatTopline ecsTopline">
+                        
+<div class="ecsHeader flex">
+                            <span class="ico flex-0-0-auto i24 ecsHeaderIco">
+                                <svg><use xlink:href="#svg_bubbleDouble" href="#svg_bubbleDouble"></use></svg></span>
+                            
+<div class="flex-1-1-auto flex flex-ai-center">
+                                
+<div id="ecs-topline-text" class="chatToplineBox toplineBox" dir="auto"></div>
+                            </div>
+                            
+<div class="flex flex-ai-center flex-0-0-auto">
+                                <span id="ecs-video-button" class="ecsIcoVideo ico flex-0-0-auto iHoverRound ico-28">
+                                    <svg><use xlink:href="#svg_camera" href="#svg_camera"></use></svg></span>
+                                <span id="ecs-hide-button" class="ico flex-0-0-auto iHoverRound ico-28">
+                                    <svg><use xlink:href="#svg_closeBig" href="#svg_closeBig"></use></svg></span>
+                            </div>
+                        </div>
+                    </div>
+                    
+<div class="ecsContent flex-column flex-1-1-100 flex-jc-end flex-ai-center">
+                        
+<div class="ecsChat ecsChatAvatarHide" style="padding-right: 12px;">
+                            
+<div class="ecsChatBlock flex-ai-center">
+                                
+<div class="ecsChatDate flex flex-ai-center">
+                                    
+<div id="ecs-chat-today"></div>
+                                </div>
+                                
+<div class="ecsChatItem">
+                                    
+<div class="ecsAvatar flex-0-0-auto fs40 ecsStatus">
+                                        <svg><use xlink:href="#svg_avatar" href="#svg_avatar"></use></svg></div>
+                                    
+<div class="ecsChatBox flex">
+                                        
+<div class="ecsChatText">
+                                            
+<div class="flex">
+                                                
+<div class="ecsChatWho flex flex-1-1-100 dots">
+                                                    
+<div class="flex-1-1-100 fs-8 dots">
+                                                        
+<div id="ecs-chat-admin" class="ecsChatName dots"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <span id="ecs-chat-text1"></span>
+                                        </div>
+                                        
+<div class="ecsChatInfo flex">
+                                            <span id="ecs-chat-time1" class="fs-8 nowrap"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+<div class="ecsChatItem ecsOwner">
+                                    
+<div class="ecsChatBox flex">
+                                        
+<div class="ecsChatText">
+                                            <span id="ecs-chat-text2"></span>
+                                        </div>
+                                        
+<div class="ecsChatInfo flex">
+                                            <span id="ecs-chat-time2" class="fs-8 nowrap"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+<div class="borderDashedH"></div>
+                        
+<div class="ecsAnswer flex flex-column flex-0-0-auto">
+                            
+<div class="ecsMessage flex-column flex-1-1-auto mt-4">
+                                <textarea id="ecs-chat-textarea" autocomplete="off" spellcheck="false" readonly="readonly" class="editArea flex-1-1-auto" dir="auto" title="" style="height: 1.8em;"></textarea><div class="ecsAnswerInfo flex flex-0-0-auto flex-ai-center mt-4">
+                                    <span id="ecs-attach-button" class="ico flex-0-0-auto pointer">
+                                        <svg><use xlink:href="#svg_attach" href="#svg_attach"></use></svg></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <svg class="none"><symbol id="svg_avatar" viewbox="0 0 64 64"><circle cx="32" cy="32" r="30" fill-opacity="0.1"></circle><path fill-rule="evenodd" clip-rule="evenodd" d="M23.8627 16.1466C25.3477 13.2068 28.2588 12 32 12C35.7413 12 38.6534 13.2066 40.1379 16.1463C41.2695 18.3877 41.2684 21.1288 41.2676 23.1481C41.2676 23.2025 41.2675 23.2563 41.2675 23.3096C41.2675 26.494 39.6589 30.0842 37.1034 33.2212L35.8849 34.7184L37.2887 36.0446C37.611 36.3493 38.161 36.7376 39.1336 37.2913C40.093 37.8374 41.375 38.4961 43.1054 39.3608C44.5618 40.0906 45.8642 40.7508 46.9174 41.3452C47.9377 41.9209 48.8689 42.5128 49.488 43.1315C50.5531 44.1978 51.1551 45.6555 51.4995 46.9177C51.8513 48.2069 51.9865 49.4841 51.9998 50.3733C52.0132 51.2662 51.2931 51.9972 50.4001 51.9973L13.6001 52C12.7062 52.0001 11.9856 51.2676 12.0002 50.3738C12.0148 49.4839 12.151 48.2056 12.5032 46.916C12.8478 45.6538 13.4484 44.1967 14.5123 43.1316C15.1313 42.5133 16.0628 41.9203 17.0829 41.3445C18.136 40.7502 19.4363 40.0912 20.8932 39.3621C22.623 38.4986 23.9061 37.8393 24.8652 37.2928C25.8373 36.7388 26.387 36.3499 26.7095 36.0439L28.1138 34.7161L26.8964 33.2206C24.3435 30.0857 22.733 26.4935 22.733 23.3092C22.733 23.2558 22.733 23.2019 22.7329 23.1474C22.7321 21.1284 22.731 18.3872 23.8627 16.1466Z" fill="#A0A0A0"></path></symbol><symbol id="svg_bubbleDouble" viewbox="0 0 24 24"><path d="M10.5 14.5633V14.5117C10.5 12.4217 12.18 10.6633 14.4608 10.1508C14.1575 8.2325 12.1325 6.66667 9.58333 6.66667C6.81667 6.66667 4.66667 8.51083 4.66667 10.65C4.66667 11.4575 4.96667 12.2333 5.53333 12.8983C5.56 12.93 5.6025 12.9767 5.66 13.0358C6.14992 13.5393 6.44573 14.2 6.495 14.9008C7.09008 14.5568 7.78498 14.4268 8.46417 14.5325C8.6025 14.5542 8.71583 14.5708 8.80167 14.5825C9.3659 14.6558 9.93765 14.6491 10.5 14.5625V14.5633ZM10.8808 16.1892C10.1227 16.3193 9.34936 16.3348 8.58667 16.235C8.46034 16.2179 8.33422 16.1993 8.20833 16.1792C7.8969 16.1306 7.57832 16.1932 7.30833 16.3558L5.72167 17.3125C5.59947 17.3878 5.45637 17.422 5.31333 17.41C5.22683 17.4035 5.14246 17.3799 5.06507 17.3407C4.98768 17.3015 4.91879 17.2474 4.86235 17.1815C4.80592 17.1157 4.76304 17.0393 4.73618 16.9568C4.70932 16.8743 4.69901 16.7873 4.70583 16.7008L4.83083 15.2167C4.84641 15.0305 4.82181 14.8432 4.75869 14.6673C4.69557 14.4915 4.59542 14.3313 4.465 14.1975C4.39573 14.1269 4.32875 14.0541 4.26417 13.9792C3.46917 13.0458 3 11.8942 3 10.6492C3 7.52917 5.9475 5 9.58333 5C12.9667 5 15.7525 7.18917 16.125 10.0067C18.935 10.1342 21.1667 12.1025 21.1667 14.5117C21.1667 15.5058 20.7867 16.425 20.1425 17.17C20.1 17.22 20.0458 17.2783 19.98 17.345C19.8747 17.451 19.7936 17.5787 19.7424 17.7191C19.6912 17.8595 19.671 18.0094 19.6833 18.1583L19.7842 19.3442C19.7893 19.4137 19.7806 19.4835 19.7586 19.5497C19.7366 19.6159 19.7018 19.677 19.6561 19.7297C19.6104 19.7823 19.5548 19.8255 19.4924 19.8565C19.43 19.8876 19.3621 19.9061 19.2925 19.9108C19.1767 19.9203 19.0609 19.8929 18.9617 19.8325L17.6758 19.0683C17.4566 18.9386 17.1993 18.8888 16.9475 18.9275C16.825 18.9467 16.7225 18.9608 16.6408 18.9717C16.3775 19.005 16.1075 19.0233 15.8333 19.0233C13.5883 19.0233 11.6683 17.85 10.8808 16.1892V16.1892ZM16.695 17.2808C17.1653 17.2084 17.6463 17.2584 18.0917 17.4258C18.2085 16.9532 18.4506 16.5208 18.7925 16.1742C18.8342 16.1325 18.865 16.0992 18.8808 16.0808C19.2883 15.61 19.5 15.07 19.5 14.5117C19.5 13.0083 17.9142 11.6667 15.8333 11.6667C13.7525 11.6667 12.1667 13.0083 12.1667 14.5117C12.1667 16.015 13.7525 17.3567 15.8333 17.3567C16.0342 17.3567 16.2333 17.3433 16.4283 17.3183C16.495 17.31 16.585 17.2975 16.695 17.28V17.2808Z"></path></symbol><symbol id="svg_camera" viewbox="0 0 16 16"><path fill-rule="evenodd" clip-rule="evenodd" d="M11 6.80425V4.5C11 3.67157 10.3284 3 9.5 3H2.5C1.67157 3 1 3.67157 1 4.5V11.5C1 12.3284 1.67157 13 2.5 13H9.5C10.3284 13 11 12.3284 11 11.5V9.19575L15 11.6958V4.30425L11 6.80425ZM16 2.5V13.5L12 11V11.5C12 11.7174 11.9723 11.9283 11.9201 12.1293C11.6411 13.2054 10.6633 14 9.5 14H2.5C1.11929 14 0 12.8807 0 11.5V4.5C0 3.11929 1.11929 2 2.5 2H9.5C10.6633 2 11.6411 2.7946 11.9201 3.87068C11.9723 4.07174 12 4.28263 12 4.5V5L16 2.5Z"></path></symbol><symbol id="svg_closeBig" viewbox="0 0 16 16"><path d="M3.11092 3.81803L3.81803 3.11092L7.99857 7.29146L12.18 3.11002L12.89 3.82L8.70856 8.00145L12.8891 12.182L12.182 12.8891L8.00145 8.70856L3.82 12.89L3.11002 12.18L7.29146 7.99856L3.11092 3.81803Z"></path></symbol><symbol id="svg_attach" viewbox="0 0 16 16"><path fill-rule="evenodd" clip-rule="evenodd" d="M8.39644 2.89645C10.1105 1.18241 12.8895 1.1824 14.6036 2.89645C16.3176 4.6105 16.3176 7.38951 14.6035 9.10356L9.7071 14C9.51184 14.1953 9.19526 14.1953 9 14V14C8.80473 13.8047 8.80473 13.4882 9 13.2929L13.8964 8.39645C15.22 7.07293 15.22 4.92708 13.8964 3.60356C12.5729 2.28003 10.4271 2.28004 9.10355 3.60356L1.85355 10.8536C0.944243 11.7629 0.944243 13.2371 1.85355 14.1464C2.76286 15.0558 4.23713 15.0558 5.14644 14.1465L10.8964 8.39645C11.3915 7.90135 11.3915 7.09865 10.8964 6.60356C10.4013 6.10846 9.59864 6.10846 9.10355 6.60356L4.7071 11C4.51184 11.1953 4.19526 11.1953 4 11V11C3.80473 10.8047 3.80473 10.4882 4 10.2929L8.39644 5.89645C9.28206 5.01083 10.7179 5.01083 11.6035 5.89645C12.4892 6.78207 12.4892 8.21794 11.6035 9.10355L5.85355 14.8536C4.55371 16.1534 2.44627 16.1534 1.14644 14.8536C-0.153388 13.5537 -0.153388 11.4463 1.14644 10.1464L8.39644 2.89645Z"></path></symbol></svg></div>
+</div>
+<script>
+    let opened = true;
+    function initString (id, value) {
+        switch (id) {
+            case 'today':
+                document.getElementById('ecs-chat-today').innerText = value;
+                break;
+            case 'administrator':
+                document.getElementById('ecs-chat-admin').innerText = value;
+                break;
+            case 'text1':
+                document.getElementById('ecs-chat-text1').innerText = value;
+                break;
+            case 'text2':
+                document.getElementById('ecs-chat-text2').innerText = value;
+                break;
+            case 'time':
+                document.getElementById('ecs-chat-time1').innerText = value;
+                document.getElementById('ecs-chat-time2').innerText = value;
+                break;
+            case 'textareaTooltip':
+                document.getElementById('ecs-chat-textarea').placeholder = value;
+                break;
+            case 'attachFileTooltip':
+                document.getElementById('ecs-attach-button').title = value;
+                break;
+            case 'videoCallTooltip':
+                document.getElementById('ecs-video-button').title = value;
+                break;
+            case 'closeTooltip':
+                document.getElementById('ecs-hide-button').title = value;
+                break;
+        }
+    }
+
+    function updatePreview (param, value) {
+        switch (param) {
+            case 'titleText':
+                setTitleText(value);
+                break;
+            case 'titleBackColor':
+                setTitleBackColor(value);
+                break;
+            case 'titleTextColor':
+                setTitleTextColor(value);
+                break;
+            case 'allowVideoconferences':
+                setAllowVideoconferences(value);
+                break;
+            case 'orientation':
+                setOrientation(value);
+                break;
+            case 'orientationPadding':
+                setOrientationPadding(value);
+                break;
+            case 'displayUserPictures':
+                setDisplayUserPictures(value);
+                break;
+            case 'colorTheme':
+                setColorTheme(value);
+                break;
+        }
+    }
+
+    function setTitleText (value) {
+        const element = document.getElementById('ecs-topline-text');
+        element.setAttribute('data-title', value);
+    }
+
+    function setTitleBackColor (value) {
+        const element = document.getElementById('ecs-topline');
+        element.style.backgroundColor = value;
+    }
+
+    function setTitleTextColor (value) {
+        const element = document.getElementById('ecs-topline');
+        element.style.color = value;
+        element.style.fill = value;
+    }
+
+    function setAllowVideoconferences (value) {
+        enableClass('ecs-chat-video-no', value === 'disallowed' || value === 'allowedToWebChatOnly');
+    }
+
+    function setOrientation (value) {
+        enableClass('ecs-chat-start', value === 'left');
+        enableClass('ecs-chat-bottom', value === 'bottom');
+        enableClass('ecs-chat-end', value === 'right');
+    }
+
+    function setOrientationPadding (value) {
+        enableClass('ecs-chat-placeStart', value === '0');
+        enableClass('ecs-chat-placeCenter', value === '50');
+        enableClass('ecs-chat-placeEnd', value === '100');
+    }
+
+    function setDisplayUserPictures (value) {
+        enableClass('ecs-chat-avatar-hide', value === 'false');
+    }
+
+    function setColorTheme (value) {
+        let dark = false;
+        switch (value) {
+            case 'auto':
+                dark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                break;
+            case 'light':
+                dark = false;
+                break;
+            case 'dark':
+                dark = true;
+                break;
+        }
+
+        if (dark)
+            document.documentElement.setAttribute('data-theme', 'dark');
+        else
+            document.documentElement.removeAttribute('data-theme');
+    }
+
+    function enableClass (name, enable) {
+        const element = document.getElementById('ecs-main');
+        if (enable)
+            element.classList.add(name);
+        else
+            element.classList.remove(name);
+    }
+
+    function onToplineClick (e) {
+        let target = e.target;
+        while (!target.id)
+            target = target.parentNode;
+
+        target.id === 'ecs-hide-button' ? hide() : open();
+    }
+
+    function open () {
+        if (!opened)
+        {
+            const element = document.getElementById('ecs-main');
+            element.style.opacity = '0';
+            setTimeout(() =>
+                {
+                    enableClass('ecs-chat-hide', false);
+                }, 250);
+            setTimeout(() =>
+                {
+                    element.style.opacity = '1';
+                }, 260);
+            opened = true;
+        }
+    }
+
+    function hide() {
+        if (opened)
+        {
+            const element = document.getElementById('ecs-main');
+            element.style.opacity = '0';
+            setTimeout(() =>
+                {
+                    enableClass('ecs-chat-hide', true);
+                }, 250);
+            setTimeout(() =>
+                {
+                    element.style.opacity = '1';
+                }, 260);
+            opened = false;
+        }
+    }
+
+    const topline = document.getElementById('ecs-topline');
+    topline.onclick = onToplineClick;
+</script></body></html>

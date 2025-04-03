@@ -169,7 +169,7 @@
 							<v8:item>
 								<v8:lang>ru</v8:lang>
 								<v8:content>Минимальный интервал не должен быть меньше 15 минут (900 секунд).
-Точное время выполнения сценария зависит от загруженности программы.</v8:content>
+Точное время выполнения сценария зависит от загруженности приложения.</v8:content>
 							</v8:item>
 						</Title>
 					</ExtendedTooltip>
@@ -203,7 +203,7 @@
 						<v8:item>
 							<v8:lang>ru</v8:lang>
 							<v8:content>Минимальный интервал не должен быть меньше 15 минут.
-Точное время выполнения сценария зависит от загруженности программы.</v8:content>
+Точное время выполнения сценария зависит от загруженности приложения.</v8:content>
 						</v8:item>
 					</Title>
 					<ContextMenu name="Декорация2КонтекстноеМеню" id="162"/>
@@ -292,9 +292,6 @@
 						<ContextMenu name="СоставРасписанияУправлениеПоискомКонтекстноеМеню" id="154"/>
 						<ExtendedTooltip name="СоставРасписанияУправлениеПоискомРасширеннаяПодсказка" id="155"/>
 					</SearchControlAddition>
-					<Events>
-						<Event name="OnActivateRow">СоставРасписанияПриАктивизацииСтроки</Event>
-					</Events>
 					<ChildItems>
 						<LabelField name="НастройкиОбменаНомерСтроки" id="108">
 							<DataPath>Объект.НастройкиОбмена.LineNumber</DataPath>
@@ -337,14 +334,20 @@
 								</InputField>
 							</ChildItems>
 						</ColumnGroup>
-						<InputField name="НастройкиОбменаВидТранспортаОбмена" id="114">
-							<DataPath>Объект.НастройкиОбмена.ВидТранспортаОбмена</DataPath>
+						<InputField name="НастройкиОбменаИдентификаторТранспорта" id="180">
+							<DataPath>Объект.НастройкиОбмена.ИдентификаторТранспорта</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Транспорт</v8:content>
+								</v8:item>
+							</Title>
 							<EditMode>EnterOnInput</EditMode>
 							<ListChoiceMode>true</ListChoiceMode>
-							<ContextMenu name="НастройкиОбменаВидТранспортаОбменаКонтекстноеМеню" id="115"/>
-							<ExtendedTooltip name="НастройкиОбменаВидТранспортаОбменаExtendedTooltip" id="142"/>
+							<ContextMenu name="НастройкиОбменаИдентификаторТранспортаКонтекстноеМеню" id="181"/>
+							<ExtendedTooltip name="НастройкиОбменаИдентификаторТранспортаРасширеннаяПодсказка" id="182"/>
 							<Events>
-								<Event name="StartChoice">НастройкиОбменаВидТранспортаОбменаНачалоВыбора</Event>
+								<Event name="StartChoice">НастройкиОбменаИдентификаторТранспортаНачалоВыбора</Event>
 							</Events>
 						</InputField>
 						<InputField name="НастройкиОбменаВыполняемоеДействие" id="116">

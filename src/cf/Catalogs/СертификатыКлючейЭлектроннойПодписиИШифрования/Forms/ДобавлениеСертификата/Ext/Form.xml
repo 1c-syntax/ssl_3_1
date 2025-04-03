@@ -27,7 +27,7 @@
 					<Title>
 						<v8:item>
 							<v8:lang>ru</v8:lang>
-							<v8:content>Оформить заявление на выпуск сертификата...</v8:content>
+							<v8:content>Выпустить сертификат...</v8:content>
 						</v8:item>
 					</Title>
 					<ExtendedTooltip name="ДобавитьЗаявлениеНаВыпускСертификатаРасширеннаяПодсказка" id="101"/>
@@ -38,10 +38,21 @@
 					<Title>
 						<v8:item>
 							<v8:lang>ru</v8:lang>
-							<v8:content>Добавить для подписания и шифрования...</v8:content>
+							<v8:content>Добавить для подписания и шифрования из личного хранилища...</v8:content>
 						</v8:item>
 					</Title>
 					<ExtendedTooltip name="ДобавитьДляПодписанияИШифрованияРасширеннаяПодсказка" id="85"/>
+				</Button>
+				<Button name="ДобавитьДляПодписанияИШифрованияИзФайлов" id="102">
+					<Type>UsualButton</Type>
+					<CommandName>Form.Command.ДобавитьДляПодписанияИШифрованияИзФайлов</CommandName>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Добавить для подписания и шифрования из файлов...</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="ДобавитьДляПодписанияИШифрованияИзФайловРасширеннаяПодсказка" id="103"/>
 				</Button>
 				<UsualGroup name="ГруппаТолькоДляШифрования" id="94">
 					<Title>
@@ -108,7 +119,7 @@
 			<Title>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Добавить для подписания и шифрования...</v8:content>
+					<v8:content>Добавить для подписания и шифрования из личного хранилища...</v8:content>
 				</v8:item>
 			</Title>
 			<Picture>
@@ -152,7 +163,7 @@
 			<Title>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Оформить заявление на выпуск сертификата...</v8:content>
+					<v8:content>Выпустить сертификат...</v8:content>
 				</v8:item>
 			</Title>
 			<Picture>
@@ -175,6 +186,21 @@
 			</Picture>
 			<Action>ДобавитьТолькоДляШифрования</Action>
 			<Representation>TextPicture</Representation>
+		</Command>
+		<Command name="ДобавитьДляПодписанияИШифрованияИзФайлов" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Добавить для подписания и шифрования из файлов...</v8:content>
+				</v8:item>
+			</Title>
+			<Picture>
+				<xr:Ref>CommonPicture.СертификатВЛичномХранилище</xr:Ref>
+				<xr:LoadTransparent>false</xr:LoadTransparent>
+			</Picture>
+			<Action>ДобавитьДляПодписанияИШифрованияИзФайлов</Action>
+			<Representation>TextPicture</Representation>
+			<CurrentRowUse>DontUse</CurrentRowUse>
 		</Command>
 	</Commands>
 	<Parameters>

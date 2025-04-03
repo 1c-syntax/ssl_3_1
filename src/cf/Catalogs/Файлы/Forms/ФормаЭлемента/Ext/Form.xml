@@ -1270,27 +1270,9 @@
 													<v8:lang>ru</v8:lang>
 													<v8:content>Статус</v8:content>
 												</v8:item>
-												<v8:item>
-													<v8:lang>ru</v8:lang>
-													<v8:content>Статус</v8:content>
-												</v8:item>
 											</Title>
 											<ContextMenu name="ЭлектронныеПодписиРезультатПроверкиКраткийКонтекстноеМеню" id="324"/>
 											<ExtendedTooltip name="ЭлектронныеПодписиРезультатПроверкиКраткийРасширеннаяПодсказка" id="325"/>
-										</InputField>
-										<InputField name="ЭлектронныеПодписиДатаПроверкиПодписи" id="151">
-											<DataPath>ЭлектронныеПодписи.ДатаПроверкиПодписи</DataPath>
-											<Title>
-												<v8:item>
-													<v8:lang>ru</v8:lang>
-													<v8:content>Дата проверки</v8:content>
-												</v8:item>
-											</Title>
-											<EditMode>EnterOnInput</EditMode>
-											<AutoCellHeight>true</AutoCellHeight>
-											<Width>10</Width>
-											<ContextMenu name="ЭлектронныеПодписиДатаПроверкиПодписиКонтекстноеМеню" id="152"/>
-											<ExtendedTooltip name="ЭлектронныеПодписиДатаПроверкиПодписиРасширеннаяПодсказка" id="153"/>
 										</InputField>
 										<InputField name="ЭлектронныеПодписиМашиночитаемаяДоверенность" id="315">
 											<DataPath>ЭлектронныеПодписи.МашиночитаемаяДоверенность</DataPath>
@@ -1305,6 +1287,20 @@
 											<AutoMaxHeight>false</AutoMaxHeight>
 											<ContextMenu name="ЭлектронныеПодписиМашиночитаемаяДоверенностьКонтекстноеМеню" id="316"/>
 											<ExtendedTooltip name="ЭлектронныеПодписиМашиночитаемаяДоверенностьРасширеннаяПодсказка" id="317"/>
+										</InputField>
+										<InputField name="ЭлектронныеПодписиДатаПроверкиПодписи" id="151">
+											<DataPath>ЭлектронныеПодписи.ДатаПроверкиПодписи</DataPath>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Дата проверки</v8:content>
+												</v8:item>
+											</Title>
+											<EditMode>EnterOnInput</EditMode>
+											<AutoCellHeight>true</AutoCellHeight>
+											<Width>10</Width>
+											<ContextMenu name="ЭлектронныеПодписиДатаПроверкиПодписиКонтекстноеМеню" id="152"/>
+											<ExtendedTooltip name="ЭлектронныеПодписиДатаПроверкиПодписиРасширеннаяПодсказка" id="153"/>
 										</InputField>
 									</ChildItems>
 								</ColumnGroup>
@@ -1336,21 +1332,6 @@
 								</CheckBoxField>
 							</ChildItems>
 						</Table>
-						<LabelDecoration name="Инструкция" id="190">
-							<AutoMaxWidth>false</AutoMaxWidth>
-							<Title formatted="false">
-								<v8:item>
-									<v8:lang>ru</v8:lang>
-									<v8:content>Решение типовых проблем при работе с приложениями электронной подписи</v8:content>
-								</v8:item>
-							</Title>
-							<Hyperlink>true</Hyperlink>
-							<ContextMenu name="ИнструкцияКонтекстноеМеню" id="191"/>
-							<ExtendedTooltip name="ИнструкцияРасширеннаяПодсказка" id="192"/>
-							<Events>
-								<Event name="Click">ИнструкцияНажатие</Event>
-							</Events>
-						</LabelDecoration>
 					</ChildItems>
 				</Page>
 				<Page name="ГруппаСертификатыШифрования" id="28">
@@ -1502,7 +1483,7 @@
 		</Attribute>
 		<Attribute name="ЗначениеКопирования" id="2">
 			<Type>
-				<v8:TypeSet>cfg:AnyRef</v8:TypeSet>
+				<v8:TypeSet>cfg:AnyIBRef</v8:TypeSet>
 			</Type>
 		</Attribute>
 		<Attribute name="ИмяСправочника" id="3">
@@ -1577,7 +1558,7 @@
 				</Column>
 				<Column name="Объект" id="5">
 					<Type>
-						<v8:TypeSet>cfg:AnyRef</v8:TypeSet>
+						<v8:TypeSet>cfg:AnyIBRef</v8:TypeSet>
 					</Type>
 				</Column>
 				<Column name="АдресПодписи" id="6">
@@ -2397,13 +2378,13 @@
 	<Parameters>
 		<Parameter name="Ключ">
 			<Type>
-				<v8:TypeSet>cfg:AnyRef</v8:TypeSet>
+				<v8:TypeSet>cfg:AnyIBRef</v8:TypeSet>
 			</Type>
 			<KeyParameter>true</KeyParameter>
 		</Parameter>
 		<Parameter name="ЗначениеКопирования">
 			<Type>
-				<v8:TypeSet>cfg:AnyRef</v8:TypeSet>
+				<v8:TypeSet>cfg:AnyIBRef</v8:TypeSet>
 			</Type>
 			<KeyParameter>true</KeyParameter>
 		</Parameter>
@@ -2414,7 +2395,7 @@
 		</Parameter>
 		<Parameter name="ПрисоединенныйФайл">
 			<Type>
-				<v8:TypeSet>cfg:AnyRef</v8:TypeSet>
+				<v8:TypeSet>cfg:AnyIBRef</v8:TypeSet>
 			</Type>
 			<KeyParameter>true</KeyParameter>
 		</Parameter>
@@ -2429,7 +2410,7 @@
 		</Parameter>
 		<Parameter name="ВладелецФайла">
 			<Type>
-				<v8:TypeSet>cfg:AnyRef</v8:TypeSet>
+				<v8:TypeSet>cfg:AnyIBRef</v8:TypeSet>
 			</Type>
 		</Parameter>
 		<Parameter name="РежимСоздания">

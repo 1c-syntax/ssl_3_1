@@ -1,0 +1,778 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.18">
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<Autofill>false</Autofill>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnOpen">ПриОткрытии</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<LabelDecoration name="ДекорацияЗаголовок" id="1">
+			<AutoMaxWidth>false</AutoMaxWidth>
+			<MaxWidth>80</MaxWidth>
+			<Title formatted="true">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Для работы с усиленной квалифицированной электронной подписью (УКЭП) на компьютере должен быть установлен сертифицированный* токен или отдельное приложение - средство криптографической защиты информации. С их помощью вы сможете работать с любым количеством электронных подписей на одном компьютере**. 
+
+Выберите, какой токен вы будете использовать или одно из приложений для установки на этом компьютере:</v8:content>
+				</v8:item>
+			</Title>
+			<ContextMenu name="ДекорацияЗаголовокКонтекстноеМеню" id="2"/>
+			<ExtendedTooltip name="ДекорацияЗаголовокРасширеннаяПодсказка" id="3"/>
+		</LabelDecoration>
+		<UsualGroup name="Приложения" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Приложения</v8:content>
+				</v8:item>
+			</Title>
+			<VerticalStretch>false</VerticalStretch>
+			<Group>Vertical</Group>
+			<Representation>None</Representation>
+			<ExtendedTooltip name="ПриложенияРасширеннаяПодсказка" id="5"/>
+			<ChildItems>
+				<UsualGroup name="Программы" id="6">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Программы</v8:content>
+						</v8:item>
+					</Title>
+					<Behavior>Usual</Behavior>
+					<Representation>NormalSeparation</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ПрограммыРасширеннаяПодсказка" id="7"/>
+					<ChildItems>
+						<UsualGroup name="ГруппаУстановитьVipNet" id="8">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Установить vip net</v8:content>
+								</v8:item>
+							</Title>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаУстановитьVipNetРасширеннаяПодсказка" id="9"/>
+							<ChildItems>
+								<Button name="УстановитьVipNet" id="10">
+									<Type>UsualButton</Type>
+									<CommandName>Form.Command.УстановитьVipNet</CommandName>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>ViPNet CSP</v8:content>
+										</v8:item>
+									</Title>
+									<ExtendedTooltip name="УстановитьVipNetРасширеннаяПодсказка" id="11"/>
+								</Button>
+								<PictureDecoration name="ДекорацияНедоступноДляУстановкиVipNet" id="12">
+									<Visible>false</Visible>
+									<VerticalStretch>true</VerticalStretch>
+									<TextColor>style:BorderColor</TextColor>
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Недоступно для установки </v8:content>
+										</v8:item>
+									</Title>
+									<Picture>
+										<xr:Ref>CommonPicture.Предупреждение</xr:Ref>
+										<xr:LoadTransparent>false</xr:LoadTransparent>
+									</Picture>
+									<ContextMenu name="ДекорацияНедоступноДляУстановкиVipNetКонтекстноеМеню" id="13"/>
+									<ExtendedTooltip name="ДекорацияНедоступноДляУстановкиVipNetРасширеннаяПодсказка" id="14"/>
+								</PictureDecoration>
+								<LabelDecoration name="Отступ" id="15">
+									<Width>1</Width>
+									<ContextMenu name="ОтступКонтекстноеМеню" id="16"/>
+									<ExtendedTooltip name="ОтступРасширеннаяПодсказка" id="17"/>
+								</LabelDecoration>
+							</ChildItems>
+						</UsualGroup>
+						<Button name="УстановитьКриптоПро" id="18">
+							<Type>UsualButton</Type>
+							<CommandName>Form.Command.УстановитьКриптоПро</CommandName>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>КриптоПро CSP</v8:content>
+								</v8:item>
+							</Title>
+							<ExtendedTooltip name="УстановитьКриптоПроРасширеннаяПодсказка" id="19"/>
+						</Button>
+						<LabelDecoration name="Отступ2" id="112">
+							<Width>1</Width>
+							<ContextMenu name="Отступ2КонтекстноеМеню" id="113"/>
+							<ExtendedTooltip name="Отступ2РасширеннаяПодсказка" id="114"/>
+						</LabelDecoration>
+						<UsualGroup name="ГруппаУстановитьSignalCOM" id="20">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Установить SignalCOM</v8:content>
+								</v8:item>
+							</Title>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаУстановитьSignalCOMРасширеннаяПодсказка" id="21"/>
+							<ChildItems>
+								<Button name="УстановитьSignalCOM" id="22">
+									<Type>UsualButton</Type>
+									<CommandName>Form.Command.УстановитьSignalCOM</CommandName>
+									<Picture>
+										<xr:Ref>StdPicture.GotoExternalURL</xr:Ref>
+										<xr:LoadTransparent>true</xr:LoadTransparent>
+									</Picture>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Signal-COM CSP</v8:content>
+										</v8:item>
+									</Title>
+									<ExtendedTooltip name="УстановитьSignalCOMРасширеннаяПодсказка" id="23"/>
+								</Button>
+								<PictureDecoration name="ДекорацияНедоступноДляУстановкиSignalCOM" id="24">
+									<Visible>false</Visible>
+									<VerticalStretch>true</VerticalStretch>
+									<TextColor>style:BorderColor</TextColor>
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Недоступно для установки</v8:content>
+										</v8:item>
+									</Title>
+									<Picture>
+										<xr:Ref>CommonPicture.Предупреждение</xr:Ref>
+										<xr:LoadTransparent>false</xr:LoadTransparent>
+									</Picture>
+									<ContextMenu name="ДекорацияНедоступноДляУстановкиSignalCOMКонтекстноеМеню" id="25"/>
+									<ExtendedTooltip name="ДекорацияНедоступноДляУстановкиSignalCOMРасширеннаяПодсказка" id="26"/>
+								</PictureDecoration>
+								<LabelDecoration name="Отступ1" id="27">
+									<Width>1</Width>
+									<ContextMenu name="Отступ1КонтекстноеМеню" id="28"/>
+									<ExtendedTooltip name="Отступ1РасширеннаяПодсказка" id="29"/>
+								</LabelDecoration>
+							</ChildItems>
+						</UsualGroup>
+						<Button name="УстановитьДругое" id="30">
+							<Type>UsualButton</Type>
+							<CommandName>Form.Command.УстановитьДругоеПриложение</CommandName>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Другое</v8:content>
+								</v8:item>
+							</Title>
+							<ExtendedTooltip name="УстановитьДругоеРасширеннаяПодсказка" id="31"/>
+						</Button>
+					</ChildItems>
+				</UsualGroup>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="БиблиотекиДляТокенов" id="32">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Токены</v8:content>
+				</v8:item>
+			</Title>
+			<Group>Vertical</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="БиблиотекиДляТокеновРасширеннаяПодсказка" id="33"/>
+			<ChildItems>
+				<UsualGroup name="ТокеныШапка" id="115">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Токены шапка</v8:content>
+						</v8:item>
+					</Title>
+					<Group>AlwaysHorizontal</Group>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ТокеныШапкаРасширеннаяПодсказка" id="116"/>
+					<ChildItems>
+						<LabelDecoration name="НадписьТокены" id="117">
+							<TextColor>#009646</TextColor>
+							<Title formatted="false">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Токены</v8:content>
+								</v8:item>
+							</Title>
+							<ContextMenu name="НадписьТокеныКонтекстноеМеню" id="118"/>
+							<ExtendedTooltip name="НадписьТокеныРасширеннаяПодсказка" id="119"/>
+						</LabelDecoration>
+						<Button name="ФормаОбновитьИнформациюОТокенах" id="83">
+							<Type>UsualButton</Type>
+							<Representation>Picture</Representation>
+							<Width>3</Width>
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<CommandName>Form.Command.ОбновитьИнформациюОТокенах</CommandName>
+							<Picture>
+								<xr:Ref>StdPicture.Reread</xr:Ref>
+								<xr:LoadTransparent>true</xr:LoadTransparent>
+							</Picture>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Обновить</v8:content>
+								</v8:item>
+							</Title>
+							<ShapeRepresentation>WhenActive</ShapeRepresentation>
+							<ExtendedTooltip name="ФормаОбновитьИнформациюОТокенахРасширеннаяПодсказка" id="84"/>
+						</Button>
+					</ChildItems>
+				</UsualGroup>
+				<Pages name="ГруппаСтраницы" id="34">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Страницы</v8:content>
+						</v8:item>
+					</Title>
+					<PagesRepresentation>None</PagesRepresentation>
+					<ExtendedTooltip name="ГруппаСтраницыРасширеннаяПодсказка" id="35"/>
+					<ChildItems>
+						<Page name="ВыполняетсяДиагностика" id="36">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Выполняется диагностика</v8:content>
+								</v8:item>
+							</Title>
+							<Group>AlwaysHorizontal</Group>
+							<ExtendedTooltip name="ВыполняетсяДиагностикаРасширеннаяПодсказка" id="37"/>
+							<ChildItems>
+								<PictureDecoration name="ДекорацияКартинка" id="38">
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Декорация картинка</v8:content>
+										</v8:item>
+									</Title>
+									<Picture>
+										<xr:Ref>CommonPicture.ДлительнаяОперация48</xr:Ref>
+										<xr:LoadTransparent>false</xr:LoadTransparent>
+									</Picture>
+									<ContextMenu name="ДекорацияКартинкаКонтекстноеМеню" id="39"/>
+									<ExtendedTooltip name="ДекорацияКартинкаРасширеннаяПодсказка" id="40"/>
+								</PictureDecoration>
+								<LabelDecoration name="ДекорацияНадпись" id="41">
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Выполняется диагностика...</v8:content>
+										</v8:item>
+									</Title>
+									<GroupVerticalAlign>Center</GroupVerticalAlign>
+									<ContextMenu name="ДекорацияНадписьКонтекстноеМеню" id="42"/>
+									<ExtendedTooltip name="ДекорацияНадписьРасширеннаяПодсказка" id="43"/>
+								</LabelDecoration>
+							</ChildItems>
+						</Page>
+						<Page name="РезультатДиагностики" id="44">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Результат диагностики</v8:content>
+								</v8:item>
+							</Title>
+							<HorizontalStretch>false</HorizontalStretch>
+							<ExtendedTooltip name="РезультатДиагностикиРасширеннаяПодсказка" id="45"/>
+							<ChildItems>
+								<LabelDecoration name="ДекорацияОшибка" id="46">
+									<Visible>false</Visible>
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<MaxWidth>50</MaxWidth>
+									<ContextMenu name="ДекорацияОшибкаКонтекстноеМеню" id="47"/>
+									<ExtendedTooltip name="ДекорацияОшибкаРасширеннаяПодсказка" id="48"/>
+								</LabelDecoration>
+								<RadioButtonField name="Разрядность" id="133">
+									<DataPath>Разрядность</DataPath>
+									<Visible>false</Visible>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Разрядность</v8:content>
+										</v8:item>
+									</Title>
+									<TitleLocation>None</TitleLocation>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Для 32-битной операционной системы выберите значение x86</v8:content>
+										</v8:item>
+									</ToolTip>
+									<ToolTipRepresentation>Button</ToolTipRepresentation>
+									<RadioButtonType>Auto</RadioButtonType>
+									<ChoiceList>
+										<xr:Item>
+											<xr:Presentation/>
+											<xr:CheckState>0</xr:CheckState>
+											<xr:Value xsi:type="FormChoiceListDesTimeValue">
+												<Presentation/>
+												<Value xsi:type="xs:string">x86-64</Value>
+											</xr:Value>
+										</xr:Item>
+										<xr:Item>
+											<xr:Presentation/>
+											<xr:CheckState>0</xr:CheckState>
+											<xr:Value xsi:type="FormChoiceListDesTimeValue">
+												<Presentation/>
+												<Value xsi:type="xs:string">x86</Value>
+											</xr:Value>
+										</xr:Item>
+									</ChoiceList>
+									<ContextMenu name="РазрядностьКонтекстноеМеню" id="134"/>
+									<ExtendedTooltip name="РазрядностьРасширеннаяПодсказка" id="135"/>
+								</RadioButtonField>
+								<UsualGroup name="Компонента" id="49">
+									<Visible>false</Visible>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Компонента ExtraCryptoAPI</v8:content>
+										</v8:item>
+									</Title>
+									<ExtendedTooltip name="КомпонентаРасширеннаяПодсказка" id="50"/>
+									<ChildItems>
+										<LabelDecoration name="ДекорацияКомпонента" id="51">
+											<AutoMaxWidth>false</AutoMaxWidth>
+											<MaxWidth>50</MaxWidth>
+											<Title formatted="false">
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Требуется установка компоненты.</v8:content>
+												</v8:item>
+											</Title>
+											<ContextMenu name="ДекорацияКомпонентаКонтекстноеМеню" id="52"/>
+											<ExtendedTooltip name="ДекорацияКомпонентаРасширеннаяПодсказка" id="53"/>
+										</LabelDecoration>
+									</ChildItems>
+								</UsualGroup>
+								<UsualGroup name="ГруппаУстановкаТокенов" id="123">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Установка токенов</v8:content>
+										</v8:item>
+									</Title>
+									<Group>AlwaysHorizontal</Group>
+									<Representation>None</Representation>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="ГруппаУстановкаТокеновРасширеннаяПодсказка" id="124"/>
+									<ChildItems>
+										<UsualGroup name="Рутокен" id="54">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Рутокен ЭЦП</v8:content>
+												</v8:item>
+											</Title>
+											<ToolTipRepresentation>Button</ToolTipRepresentation>
+											<ShowTitle>false</ShowTitle>
+											<ExtendedTooltip name="РутокенРасширеннаяПодсказка" id="55"/>
+											<ChildItems>
+												<Button name="УстановитьДляРутокена" id="56">
+													<Type>UsualButton</Type>
+													<Representation>PictureAndText</Representation>
+													<CommandName>Form.Command.УстановитьДляРутокена</CommandName>
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Рутокен ЭЦП</v8:content>
+														</v8:item>
+													</Title>
+													<ToolTipRepresentation>ShowBottom</ToolTipRepresentation>
+													<ExtendedTooltip name="УстановитьДляРутокенаРасширеннаяПодсказка" id="57">
+														<Height>2</Height>
+														<Title formatted="false">
+															<v8:item>
+																<v8:lang>ru</v8:lang>
+																<v8:content>Готов к работе</v8:content>
+															</v8:item>
+														</Title>
+													</ExtendedTooltip>
+												</Button>
+											</ChildItems>
+										</UsualGroup>
+										<UsualGroup name="Джакарта" id="81">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>JaCarta</v8:content>
+												</v8:item>
+											</Title>
+											<ToolTipRepresentation>Button</ToolTipRepresentation>
+											<ShowTitle>false</ShowTitle>
+											<ExtendedTooltip name="ДжакартаРасширеннаяПодсказка" id="82"/>
+											<ChildItems>
+												<Button name="УстановитьДляДжакарта" id="60">
+													<Type>UsualButton</Type>
+													<Representation>PictureAndText</Representation>
+													<CommandName>Form.Command.УстановитьДляДжакарта</CommandName>
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>JaCarta</v8:content>
+														</v8:item>
+													</Title>
+													<ToolTipRepresentation>ShowBottom</ToolTipRepresentation>
+													<ExtendedTooltip name="УстановитьДляДжакартаРасширеннаяПодсказка" id="61">
+														<Height>2</Height>
+														<Title formatted="false">
+															<v8:item>
+																<v8:lang>ru</v8:lang>
+																<v8:content>Готов к работе</v8:content>
+															</v8:item>
+														</Title>
+													</ExtendedTooltip>
+												</Button>
+											</ChildItems>
+										</UsualGroup>
+									</ChildItems>
+								</UsualGroup>
+								<UsualGroup name="ПодключенныеТокены" id="85">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Подключенные токены</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTipRepresentation>Button</ToolTipRepresentation>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="ПодключенныеТокеныРасширеннаяПодсказка" id="86">
+										<AutoMaxWidth>false</AutoMaxWidth>
+										<Title formatted="false">
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Если токен не отображается в подключенных, убедитесь, что он вставлен в USB-порт компьютера и на нем горит световой индикатор и запустите диагностику еще раз. Попробуйте другой USB-порт или другой компьютер.</v8:content>
+											</v8:item>
+										</Title>
+									</ExtendedTooltip>
+									<ChildItems>
+										<Table name="Токены" id="87">
+											<Representation>List</Representation>
+											<ReadOnly>true</ReadOnly>
+											<ChangeRowSet>false</ChangeRowSet>
+											<ChangeRowOrder>false</ChangeRowOrder>
+											<AutoMaxWidth>false</AutoMaxWidth>
+											<MaxWidth>80</MaxWidth>
+											<HeightControlVariant>UseContentHeight</HeightControlVariant>
+											<Header>false</Header>
+											<UseAlternationRowColor>true</UseAlternationRowColor>
+											<AutoInsertNewRow>true</AutoInsertNewRow>
+											<EnableStartDrag>true</EnableStartDrag>
+											<EnableDrag>true</EnableDrag>
+											<DataPath>Токены</DataPath>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Подключенные токены</v8:content>
+												</v8:item>
+											</Title>
+											<CommandSet>
+												<ExcludedCommand>Add</ExcludedCommand>
+												<ExcludedCommand>Change</ExcludedCommand>
+												<ExcludedCommand>Copy</ExcludedCommand>
+												<ExcludedCommand>Delete</ExcludedCommand>
+												<ExcludedCommand>EndEdit</ExcludedCommand>
+											</CommandSet>
+											<RowFilter xsi:nil="true"/>
+											<ContextMenu name="ТокеныКонтекстноеМеню" id="88"/>
+											<AutoCommandBar name="ТокеныКоманднаяПанель" id="89">
+												<Autofill>false</Autofill>
+											</AutoCommandBar>
+											<ExtendedTooltip name="ТокеныРасширеннаяПодсказка" id="90"/>
+											<SearchStringAddition name="ТокеныСтрокаПоиска" id="91">
+												<AdditionSource>
+													<Item>Токены</Item>
+													<Type>SearchStringRepresentation</Type>
+												</AdditionSource>
+												<ContextMenu name="ТокеныСтрокаПоискаКонтекстноеМеню" id="92"/>
+												<ExtendedTooltip name="ТокеныСтрокаПоискаРасширеннаяПодсказка" id="93"/>
+											</SearchStringAddition>
+											<ViewStatusAddition name="ТокеныСостояниеПросмотра" id="94">
+												<AdditionSource>
+													<Item>Токены</Item>
+													<Type>ViewStatusRepresentation</Type>
+												</AdditionSource>
+												<ContextMenu name="ТокеныСостояниеПросмотраКонтекстноеМеню" id="95"/>
+												<ExtendedTooltip name="ТокеныСостояниеПросмотраРасширеннаяПодсказка" id="96"/>
+											</ViewStatusAddition>
+											<SearchControlAddition name="ТокеныУправлениеПоиском" id="97">
+												<AdditionSource>
+													<Item>Токены</Item>
+													<Type>SearchControl</Type>
+												</AdditionSource>
+												<ContextMenu name="ТокеныУправлениеПоискомКонтекстноеМеню" id="98"/>
+												<ExtendedTooltip name="ТокеныУправлениеПоискомРасширеннаяПодсказка" id="99"/>
+											</SearchControlAddition>
+											<Events>
+												<Event name="Selection">ТокеныВыбор</Event>
+											</Events>
+											<ChildItems>
+												<InputField name="ТокеныПредставление" id="109">
+													<DataPath>Токены.Представление</DataPath>
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Представление</v8:content>
+														</v8:item>
+													</Title>
+													<EditMode>EnterOnInput</EditMode>
+													<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+													<ContextMenu name="ТокеныПредставлениеКонтекстноеМеню" id="110"/>
+													<ExtendedTooltip name="ТокеныПредставлениеРасширеннаяПодсказка" id="111"/>
+												</InputField>
+											</ChildItems>
+										</Table>
+									</ChildItems>
+								</UsualGroup>
+							</ChildItems>
+						</Page>
+					</ChildItems>
+				</Pages>
+			</ChildItems>
+		</UsualGroup>
+		<LabelDecoration name="ДекорацияПрограммы2" id="103">
+			<AutoMaxWidth>false</AutoMaxWidth>
+			<MaxWidth>80</MaxWidth>
+			<TextColor>style:ПоясняющийТекст</TextColor>
+			<Title formatted="false">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>
+
+ * Приложение, сертифицированное ФСБ и ФСТЭК, соответствует стандартам безопасности ГОСТ Р 34.11-2012, ГОСТ Р 34.10-2012 и другим стандартам, принятым в России.
+
+** Для работы на разных компьютерах необходимо для каждого приобрести дополнительную лицензию или настроить электронную подпись на сервере (этим занимается администратор).
+</v8:content>
+				</v8:item>
+			</Title>
+			<ContextMenu name="ДекорацияПрограммы2КонтекстноеМеню" id="104"/>
+			<ExtendedTooltip name="ДекорацияПрограммы2РасширеннаяПодсказка" id="105"/>
+		</LabelDecoration>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="ТребуетсяУстановкаДрайверовДжакарта" id="1">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="Объект" id="2">
+			<Type>
+				<v8:Type>cfg:DataProcessorObject.ПрограммыЭлектроннойПодписиИШифрования</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+		</Attribute>
+		<Attribute name="АдресРезультата" id="3">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="Токены" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Подключенные токены</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTable</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="Токен" id="1">
+					<Type/>
+				</Column>
+				<Column name="Представление" id="2">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Представление</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+		<Attribute name="ТребуетсяУстановкаOpenSSL" id="5">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ТребуетсяУстановкаБиблиотекиИнтеграции" id="6">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ТребуетсяУстановкаДрайверовРутокен" id="7">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ТолькоУстановкаТокенов" id="8">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="Разрядность" id="9">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Разрядность</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="УстановитьКриптоПро" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>КриптоПро CSP</v8:content>
+				</v8:item>
+			</Title>
+			<Picture>
+				<xr:Ref>CommonPicture.ЗначокЩита</xr:Ref>
+				<xr:LoadTransparent>false</xr:LoadTransparent>
+			</Picture>
+			<Action>УстановитьКриптоПро</Action>
+			<Representation>TextPicture</Representation>
+		</Command>
+		<Command name="УстановитьVipNet" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>ViPNet CSP</v8:content>
+				</v8:item>
+			</Title>
+			<Picture>
+				<xr:Ref>CommonPicture.ЗначокЩита</xr:Ref>
+				<xr:LoadTransparent>false</xr:LoadTransparent>
+			</Picture>
+			<Action>УстановитьVipNet</Action>
+			<Representation>TextPicture</Representation>
+		</Command>
+		<Command name="УстановитьSignalCOM" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Signal-COM CSP</v8:content>
+				</v8:item>
+			</Title>
+			<Picture>
+				<xr:Ref>CommonPicture.ТипГиперссылка</xr:Ref>
+				<xr:LoadTransparent>false</xr:LoadTransparent>
+			</Picture>
+			<Action>УстановитьSignalCOM</Action>
+			<Representation>TextPicture</Representation>
+		</Command>
+		<Command name="ОбновитьИнформациюОТокенах" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Обновить информацию о токенах</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Обновить информацию о токенах</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.Refresh</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>ОбновитьИнформациюОТокенах</Action>
+			<Representation>Picture</Representation>
+		</Command>
+		<Command name="УстановитьДляДжакарта" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Установить</v8:content>
+				</v8:item>
+			</Title>
+			<Picture>
+				<xr:Ref>CommonPicture.ЗначокЩита</xr:Ref>
+				<xr:LoadTransparent>false</xr:LoadTransparent>
+			</Picture>
+			<Action>УстановитьДляДжакарта</Action>
+		</Command>
+		<Command name="УстановитьДляРутокена" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Установить</v8:content>
+				</v8:item>
+			</Title>
+			<Picture>
+				<xr:Ref>CommonPicture.ЗначокЩита</xr:Ref>
+				<xr:LoadTransparent>false</xr:LoadTransparent>
+			</Picture>
+			<Action>УстановитьДляРутокена</Action>
+		</Command>
+		<Command name="УстановитьДругоеПриложение" id="7">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Другое</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Установить другое приложение</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.GotoExternalURL</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>УстановитьДругоеПриложение</Action>
+			<Representation>TextPicture</Representation>
+		</Command>
+	</Commands>
+	<Parameters>
+		<Parameter name="ВидТокена">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+			<KeyParameter>true</KeyParameter>
+		</Parameter>
+		<Parameter name="ТолькоУстановкаТокенов">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Parameter>
+	</Parameters>
+</Form>

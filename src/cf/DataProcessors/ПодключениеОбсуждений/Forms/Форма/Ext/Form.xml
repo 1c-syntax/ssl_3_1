@@ -8,6 +8,7 @@
 		<Autofill>false</Autofill>
 	</AutoCommandBar>
 	<Events>
+		<Event name="NotificationProcessing">ОбработкаОповещения</Event>
 		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
 	</Events>
 	<ChildItems>
@@ -225,6 +226,45 @@
 												<Event name="OnChange">ВыборСервераВзаимодействияДиалогПриИзменении</Event>
 											</Events>
 										</RadioButtonField>
+										<UsualGroup name="ГруппаКомментарийРазрешенДоступКИнтернетСервисам" id="127">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Комментарий разрешен доступ к интернет сервисам</v8:content>
+												</v8:item>
+											</Title>
+											<HorizontalStretch>true</HorizontalStretch>
+											<Group>AlwaysHorizontal</Group>
+											<ShowTitle>false</ShowTitle>
+											<ExtendedTooltip name="ГруппаКомментарийРазрешенДоступКИнтернетСервисамРасширеннаяПодсказка" id="128"/>
+											<ChildItems>
+												<PictureDecoration name="ДекорацияРазрешенДоступКИнтернетСервисам" id="129">
+													<Title formatted="false">
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Декорация разрешен доступ к интернет сервисам</v8:content>
+														</v8:item>
+													</Title>
+													<Picture>
+														<xr:Ref>CommonPicture.ИнформацияПоНедоступнымПолям</xr:Ref>
+														<xr:LoadTransparent>false</xr:LoadTransparent>
+													</Picture>
+													<ContextMenu name="ДекорацияРазрешенДоступКИнтернетСервисамКонтекстноеМеню" id="130"/>
+													<ExtendedTooltip name="ДекорацияРазрешенДоступКИнтернетСервисамРасширеннаяПодсказка" id="131"/>
+												</PictureDecoration>
+												<LabelDecoration name="КомментарийРазрешенДоступКИнтернетСервисам" id="132">
+													<HorizontalStretch>false</HorizontalStretch>
+													<Title formatted="false">
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Для разблокировки настройки необходимо включить доступ к Интернет-сервисам "Интернет-поддержка и сервисы" — "Разрешить доступ к Интернет-сервисам".</v8:content>
+														</v8:item>
+													</Title>
+													<ContextMenu name="КомментарийРазрешенДоступКИнтернетСервисамКонтекстноеМеню" id="133"/>
+													<ExtendedTooltip name="КомментарийРазрешенДоступКИнтернетСервисамРасширеннаяПодсказка" id="134"/>
+												</LabelDecoration>
+											</ChildItems>
+										</UsualGroup>
 										<RadioButtonField name="ВыборСервераВзаимодействияЛокально" id="114">
 											<DataPath>ВыборСервераВзаимодействия</DataPath>
 											<Title>

@@ -24,12 +24,14 @@ var comConnectorName = [ИмяCOMСоединителя] // имя COM-клас�
 var useComConnector = [ИспользоватьCOMСоединитель] // флаг использования COM-соединения для работы с 1С:Предприятием 8
 var OnExit = [ВыполнитьПриЗавершенииРаботы] // "true" - при завершении работы, "false" - прямо сейчас.
 var tempLogFileName = 'templog.txt'
+var v8comcntr = [ПутьКCOMСоединителю] // Путь к comcntr.dll
 var runAppAdditionalParams = [ПараметрыЗапускаПредприятия] // Аргументы командной строки, которые следует добавить к запуску 1С:Предприятия в режиме клиента.
 #КонецОбласти
 
 #Область ОбластьРезервногоКопирования
 
 if (useComConnector) {
+  registerCOM()
   var comConnectorCached = new ActiveXObject(comConnectorName) // для защиты от перерегистрации comConnector из других сеансов
 }
 
@@ -76,19 +78,17 @@ function runApp (sFilePath, sFileArgs, show, bWaitOnReturn) {
   }
   var ret = 1
   log(format('[СообщениеНачалоЗапуска]',
-    sFilePath, sFileArgs, SWtoString(show), bWaitOnReturn))
-  if (oFileSystemObject.FileExists(sFilePath)) {
-    try {
-      ret = oShell.Run(format('"{0}" {1}', sFilePath, sFileArgs), show, bWaitOnReturn)
-    } catch (e) {
-      log(format('[СообщениеДеталиИсключения]', e.name, e.message), true)
-      return 1
-    }
-    log(format('[СообщениеРезультатЗапуска]', ret), ret !== 0)
-    return ret
-  } else {
-    log(format('[СообщениеОтказЗапуска]', sFilePath), true)
+    sFilePath,
+    sFileArgs,
+    SWtoString(show),
+    bWaitOnReturn))
+  try {
+    ret = oShell.Run(format('"{0}" {1}', sFilePath, sFileArgs), show, bWaitOnReturn)
+  } catch (e) {
+    log(format('[СообщениеДеталиИсключения]', e.name, e.message), true)
+    return 1
   }
+  log(format('[СообщениеРезультатЗапуска]', ret), ret !== 0)
   return ret
 }
 
@@ -449,6 +449,11 @@ function fromUnicode (text) {
   }
   str = str.replace(/"/g, '""')
   return str
+}
+
+function registerCOM() {
+  param = format('/n /i:user /s "{0}"', v8comcntr)
+  return runApp('regsvr32.exe', param, SW_HIDE, true)
 }
 
 // Интерактивный запуск "1С:Предприятие"

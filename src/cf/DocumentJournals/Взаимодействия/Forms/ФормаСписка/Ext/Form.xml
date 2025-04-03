@@ -72,6 +72,39 @@
 				</LabelDecoration>
 			</ChildItems>
 		</UsualGroup>
+		<UsualGroup name="ПредупреждениеОНеактуальностиИндекса" id="943">
+			<Visible>false</Visible>
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Предупреждение о неактуальности индекса</v8:content>
+				</v8:item>
+			</Title>
+			<Group>AlwaysHorizontal</Group>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ПредупреждениеОНеактуальностиИндексаРасширеннаяПодсказка" id="944"/>
+			<ChildItems>
+				<PictureDecoration name="ПредупреждениеОНеактуальностиИндексаКартинка" id="945">
+					<Picture>
+						<xr:Ref>CommonPicture.Предупреждение</xr:Ref>
+						<xr:LoadTransparent>false</xr:LoadTransparent>
+					</Picture>
+					<ContextMenu name="ПредупреждениеОНеактуальностиИндексаКартинкаКонтекстноеМеню" id="946"/>
+					<ExtendedTooltip name="ПредупреждениеОНеактуальностиИндексаКартинкаРасширеннаяПодсказка" id="947"/>
+				</PictureDecoration>
+				<LabelDecoration name="ПредупреждениеОНеактуальностиИндексаНадпись" id="948">
+					<AutoMaxWidth>false</AutoMaxWidth>
+					<Title formatted="false">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Результаты поиска могут быть неточными, повторите поиск позднее</v8:content>
+						</v8:item>
+					</Title>
+					<ContextMenu name="ПредупреждениеОНеактуальностиИндексаНадписьКонтекстноеМеню" id="949"/>
+					<ExtendedTooltip name="ПредупреждениеОНеактуальностиИндексаНадписьРасширеннаяПодсказка" id="950"/>
+				</LabelDecoration>
+			</ChildItems>
+		</UsualGroup>
 		<UsualGroup name="ГруппаПользовательскихНастроек" id="832">
 			<UserVisible>
 				<xr:Common>false</xr:Common>
@@ -3707,7 +3740,7 @@
 					<Type>
 						<v8:Type>xs:string</v8:Type>
 						<v8:Type>v8:TypeDescription</v8:Type>
-						<v8:TypeSet>cfg:AnyRef</v8:TypeSet>
+						<v8:TypeSet>cfg:AnyIBRef</v8:TypeSet>
 						<v8:StringQualifiers>
 							<v8:Length>0</v8:Length>
 							<v8:AllowedLength>Variable</v8:AllowedLength>
@@ -3846,7 +3879,7 @@
 				</Column>
 				<Column name="Значение" id="3">
 					<Type>
-						<v8:TypeSet>cfg:AnyRef</v8:TypeSet>
+						<v8:TypeSet>cfg:AnyIBRef</v8:TypeSet>
 					</Type>
 				</Column>
 			</Columns>
@@ -4195,6 +4228,11 @@
 			</Type>
 		</Attribute>
 		<Attribute name="РазделениеВключено" id="48">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ИндексПолнотекстовогоПоискаАктуален" id="49">
 			<Type>
 				<v8:Type>xs:boolean</v8:Type>
 			</Type>
@@ -4823,4 +4861,30 @@
 			<CurrentRowUse>DontUse</CurrentRowUse>
 		</Command>
 	</Commands>
+	<Parameters>
+		<Parameter name="РежимВыбора">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Parameter>
+		<Parameter name="ТолькоПочта">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Parameter>
+		<Parameter name="ИмяТекущейПанелиНавигации">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Parameter>
+		<Parameter name="ТекущаяСтрока">
+			<Type>
+				<v8:TypeSet>cfg:AnyIBRef</v8:TypeSet>
+			</Type>
+		</Parameter>
+	</Parameters>
 </Form>

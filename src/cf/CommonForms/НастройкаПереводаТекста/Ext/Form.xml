@@ -6,53 +6,76 @@
 	</CommandSet>
 	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
 		<Autofill>false</Autofill>
-		<ChildItems>
-			<Button name="ЗаписатьИЗакрыть" id="9">
-				<Type>CommandBarButton</Type>
-				<Representation>Text</Representation>
-				<DefaultButton>true</DefaultButton>
-				<CommandName>Form.Command.ЗаписатьИЗакрыть</CommandName>
-				<Picture>
-					<xr:Ref>StdPicture.WriteAndClose</xr:Ref>
-					<xr:LoadTransparent>true</xr:LoadTransparent>
-				</Picture>
-				<Title>
-					<v8:item>
-						<v8:lang>ru</v8:lang>
-						<v8:content>Записать и закрыть</v8:content>
-					</v8:item>
-				</Title>
-				<ExtendedTooltip name="ЗаписатьИЗакрытьРасширеннаяПодсказка" id="10"/>
-			</Button>
-			<Button name="ФормаЗаписать" id="15">
-				<Type>CommandBarButton</Type>
-				<CommandName>Form.StandardCommand.Write</CommandName>
-				<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
-				<ExtendedTooltip name="ФормаЗаписатьРасширеннаяПодсказка" id="16"/>
-			</Button>
-			<ButtonGroup name="СтандартныеКоманды" id="11">
-				<Title>
-					<v8:item>
-						<v8:lang>ru</v8:lang>
-						<v8:content>Стандартные команды</v8:content>
-					</v8:item>
-				</Title>
-				<CommandSource>Form</CommandSource>
-				<ExtendedTooltip name="СтандартныеКомандыРасширеннаяПодсказка" id="12"/>
-			</ButtonGroup>
-			<Button name="ФормаСправка" id="13">
-				<Type>CommandBarButton</Type>
-				<CommandName>Form.StandardCommand.Help</CommandName>
-				<ExtendedTooltip name="ФормаСправкаРасширеннаяПодсказка" id="14"/>
-			</Button>
-		</ChildItems>
 	</AutoCommandBar>
 	<Events>
+		<Event name="AfterWrite">ПослеЗаписи</Event>
 		<Event name="OnReadAtServer">ПриЧтенииНаСервере</Event>
 		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+		<Event name="BeforeWriteAtServer">ПередЗаписьюНаСервере</Event>
 		<Event name="OnWriteAtServer">ПриЗаписиНаСервере</Event>
 	</Events>
 	<ChildItems>
+		<LabelDecoration name="ЗаголовокКонтекстногоРежима" id="17">
+			<AutoMaxWidth>false</AutoMaxWidth>
+			<Font ref="sys:DefaultGUIFont" bold="true" italic="false" underline="false" strikeout="false" kind="WindowsFont"/>
+			<Title formatted="false">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Для перевода текста выберите сервис и укажите настройки</v8:content>
+				</v8:item>
+			</Title>
+			<ContextMenu name="ЗаголовокКонтекстногоРежимаКонтекстноеМеню" id="18"/>
+			<ExtendedTooltip name="ЗаголовокКонтекстногоРежимаРасширеннаяПодсказка" id="19"/>
+		</LabelDecoration>
+		<CommandBar name="КоманднаяПанель" id="20">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Командная панель</v8:content>
+				</v8:item>
+			</Title>
+			<ExtendedTooltip name="КоманднаяПанельРасширеннаяПодсказка" id="21"/>
+			<ChildItems>
+				<Button name="ЗаписатьИЗакрыть" id="9">
+					<Type>CommandBarButton</Type>
+					<Representation>Text</Representation>
+					<DefaultButton>true</DefaultButton>
+					<CommandName>Form.Command.ЗаписатьИЗакрыть</CommandName>
+					<Picture>
+						<xr:Ref>StdPicture.WriteAndClose</xr:Ref>
+						<xr:LoadTransparent>true</xr:LoadTransparent>
+					</Picture>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Записать и закрыть</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="ЗаписатьИЗакрытьРасширеннаяПодсказка" id="10"/>
+				</Button>
+				<Button name="ФормаЗаписать" id="15">
+					<Type>CommandBarButton</Type>
+					<CommandName>Form.StandardCommand.Write</CommandName>
+					<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
+					<ExtendedTooltip name="ФормаЗаписатьРасширеннаяПодсказка" id="16"/>
+				</Button>
+				<ButtonGroup name="СтандартныеКоманды" id="11">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Стандартные команды</v8:content>
+						</v8:item>
+					</Title>
+					<CommandSource>Form</CommandSource>
+					<ExtendedTooltip name="СтандартныеКомандыРасширеннаяПодсказка" id="12"/>
+				</ButtonGroup>
+				<Button name="ФормаСправка" id="13">
+					<Type>CommandBarButton</Type>
+					<CommandName>Form.StandardCommand.Help</CommandName>
+					<ExtendedTooltip name="ФормаСправкаРасширеннаяПодсказка" id="14"/>
+				</Button>
+			</ChildItems>
+		</CommandBar>
 		<InputField name="СервисПереводаТекста" id="1">
 			<DataPath>НаборКонстант.СервисПереводаТекста</DataPath>
 			<ToolTipRepresentation>ShowBottom</ToolTipRepresentation>
@@ -90,6 +113,9 @@
 			</Type>
 			<MainAttribute>true</MainAttribute>
 			<SavedData>true</SavedData>
+			<UseAlways>
+				<Field>НаборКонстант.ИспользоватьСервисПереводаТекста</Field>
+			</UseAlways>
 		</Attribute>
 		<Attribute name="ПараметрыАвторизации" id="5">
 			<Type>
@@ -115,4 +141,11 @@
 			<Action>ЗаписатьИЗакрыть</Action>
 		</Command>
 	</Commands>
+	<Parameters>
+		<Parameter name="ЭтоКонтекстныйВызов">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Parameter>
+	</Parameters>
 </Form>

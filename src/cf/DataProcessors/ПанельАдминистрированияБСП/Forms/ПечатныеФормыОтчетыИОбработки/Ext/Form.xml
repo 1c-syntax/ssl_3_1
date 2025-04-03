@@ -18,6 +18,7 @@
 		<Autofill>false</Autofill>
 	</AutoCommandBar>
 	<Events>
+		<Event name="NotificationProcessing">ОбработкаОповещения</Event>
 		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
 		<Event name="OnClose">ПриЗакрытии</Event>
 	</Events>
@@ -113,7 +114,20 @@
 										<Title formatted="false">
 											<v8:item>
 												<v8:lang>ru</v8:lang>
-												<v8:content>Настройка макетов печатных форм документов.</v8:content>
+												<v8:content>Настройка макетов печатных форм справочников и документов.</v8:content>
+											</v8:item>
+										</Title>
+									</ExtendedTooltip>
+								</Button>
+								<Button name="ОткрытьМакетыВыгрузки" id="1742">
+									<Type>Hyperlink</Type>
+									<CommandName>CommonCommand.МакетыФайловВыгрузки</CommandName>
+									<ToolTipRepresentation>ShowBottom</ToolTipRepresentation>
+									<ExtendedTooltip name="ОткрытьМакетыВыгрузкиРасширеннаяПодсказка" id="1743">
+										<Title formatted="false">
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Настройка макетов выгрузки справочников и документов.</v8:content>
 											</v8:item>
 										</Title>
 									</ExtendedTooltip>
@@ -176,7 +190,7 @@
 										</v8:item>
 									</Title>
 									<ToolTipRepresentation>ShowBottom</ToolTipRepresentation>
-									<Group>AlwaysHorizontal</Group>
+									<Group>Vertical</Group>
 									<Behavior>Usual</Behavior>
 									<Representation>None</Representation>
 									<ShowTitle>false</ShowTitle>
@@ -189,34 +203,100 @@
 										</Title>
 									</ExtendedTooltip>
 									<ChildItems>
-										<CheckBoxField name="ИспользоватьСервисПереводаТекста" id="1719">
-											<DataPath>НаборКонстант.ИспользоватьСервисПереводаТекста</DataPath>
+										<UsualGroup name="ГруппаИспользоватьСервисПереводаТекста" id="1753">
 											<Title>
 												<v8:item>
 													<v8:lang>ru</v8:lang>
-													<v8:content>Перевод текста</v8:content>
+													<v8:content>Использовать сервис перевода текста</v8:content>
 												</v8:item>
 											</Title>
-											<TitleLocation>None</TitleLocation>
-											<CheckBoxType>Auto</CheckBoxType>
-											<ContextMenu name="ИспользоватьСервисПереводаТекстаКонтекстноеМеню" id="1720"/>
-											<ExtendedTooltip name="ИспользоватьСервисПереводаТекстаРасширеннаяПодсказка" id="1721"/>
-											<Events>
-												<Event name="OnChange">ИспользоватьСервисПереводаТекстаПриИзменении</Event>
-											</Events>
-										</CheckBoxField>
-										<LabelDecoration name="НастройкаСервисаПереводаТекста" id="1722">
-											<Title formatted="true">
+											<Group>AlwaysHorizontal</Group>
+											<ShowTitle>false</ShowTitle>
+											<ExtendedTooltip name="ГруппаИспользоватьСервисПереводаТекстаРасширеннаяПодсказка" id="1754"/>
+											<ChildItems>
+												<CheckBoxField name="ИспользоватьСервисПереводаТекста1" id="1755">
+													<DataPath>ИспользоватьСервисПереводаТекста</DataPath>
+													<Visible>false</Visible>
+													<Enabled>false</Enabled>
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Использовать сервис перевода текста</v8:content>
+														</v8:item>
+													</Title>
+													<TitleLocation>None</TitleLocation>
+													<CheckBoxType>Auto</CheckBoxType>
+													<ContextMenu name="ИспользоватьСервисПереводаТекста1КонтекстноеМеню" id="1756"/>
+													<ExtendedTooltip name="ИспользоватьСервисПереводаТекста1РасширеннаяПодсказка" id="1757"/>
+												</CheckBoxField>
+												<CheckBoxField name="ИспользоватьСервисПереводаТекста" id="1719">
+													<DataPath>НаборКонстант.ИспользоватьСервисПереводаТекста</DataPath>
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Перевод текста</v8:content>
+														</v8:item>
+													</Title>
+													<TitleLocation>None</TitleLocation>
+													<CheckBoxType>Auto</CheckBoxType>
+													<ContextMenu name="ИспользоватьСервисПереводаТекстаКонтекстноеМеню" id="1720"/>
+													<ExtendedTooltip name="ИспользоватьСервисПереводаТекстаРасширеннаяПодсказка" id="1721"/>
+													<Events>
+														<Event name="OnChange">ИспользоватьСервисПереводаТекстаПриИзменении</Event>
+													</Events>
+												</CheckBoxField>
+												<LabelDecoration name="НастройкаСервисаПереводаТекста" id="1722">
+													<Title formatted="true">
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Перевод текста с помощью онлайн-переводчика</v8:content>
+														</v8:item>
+													</Title>
+													<ContextMenu name="НастройкаСервисаПереводаТекстаКонтекстноеМеню" id="1723"/>
+													<ExtendedTooltip name="НастройкаСервисаПереводаТекстаРасширеннаяПодсказка" id="1724"/>
+													<Events>
+														<Event name="URLProcessing">НастройкаСервисаПереводаТекстаОбработкаНавигационнойСсылки</Event>
+													</Events>
+												</LabelDecoration>
+											</ChildItems>
+										</UsualGroup>
+									</ChildItems>
+								</UsualGroup>
+								<UsualGroup name="ГруппаКомментарийРазрешенДоступКИнтернетСервисам" id="1745">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Комментарий разрешен доступ к интернет сервисам</v8:content>
+										</v8:item>
+									</Title>
+									<Group>AlwaysHorizontal</Group>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="ГруппаКомментарийРазрешенДоступКИнтернетСервисамРасширеннаяПодсказка" id="1746"/>
+									<ChildItems>
+										<PictureDecoration name="ДекорацияРазрешенДоступКИнтернетСервисам" id="1747">
+											<Title formatted="false">
 												<v8:item>
 													<v8:lang>ru</v8:lang>
-													<v8:content>Перевод текста с помощью онлайн-переводчика</v8:content>
+													<v8:content>Декорация разрешен доступ к интернет сервисам</v8:content>
 												</v8:item>
 											</Title>
-											<ContextMenu name="НастройкаСервисаПереводаТекстаКонтекстноеМеню" id="1723"/>
-											<ExtendedTooltip name="НастройкаСервисаПереводаТекстаРасширеннаяПодсказка" id="1724"/>
-											<Events>
-												<Event name="URLProcessing">НастройкаСервисаПереводаТекстаОбработкаНавигационнойСсылки</Event>
-											</Events>
+											<Picture>
+												<xr:Ref>CommonPicture.ИнформацияПоНедоступнымПолям</xr:Ref>
+												<xr:LoadTransparent>false</xr:LoadTransparent>
+											</Picture>
+											<ContextMenu name="ДекорацияРазрешенДоступКИнтернетСервисамКонтекстноеМеню" id="1748"/>
+											<ExtendedTooltip name="ДекорацияРазрешенДоступКИнтернетСервисамРасширеннаяПодсказка" id="1749"/>
+										</PictureDecoration>
+										<LabelDecoration name="КомментарийРазрешенДоступКИнтернетСервисам" id="1750">
+											<HorizontalStretch>false</HorizontalStretch>
+											<Title formatted="false">
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Для разблокировки настройки необходимо включить доступ к Интернет-сервисам "Интернет-поддержка и сервисы" — "Разрешить доступ к Интернет-сервисам".</v8:content>
+												</v8:item>
+											</Title>
+											<ContextMenu name="КомментарийРазрешенДоступКИнтернетСервисамКонтекстноеМеню" id="1751"/>
+											<ExtendedTooltip name="КомментарийРазрешенДоступКИнтернетСервисамРасширеннаяПодсказка" id="1752"/>
 										</LabelDecoration>
 									</ChildItems>
 								</UsualGroup>
@@ -427,7 +507,19 @@
 										</CheckBoxField>
 										<InputField name="КоличествоМесяцевХраненияИсторииРассылкиОтчетов" id="1732">
 											<DataPath>НаборКонстант.КоличествоМесяцевХраненияИсторииРассылкиОтчетов</DataPath>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Количество месяцев хранения истории</v8:content>
+												</v8:item>
+											</Title>
 											<TitleLocation>None</TitleLocation>
+											<ToolTip>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Количество месяцев хранения истории рассылки отчетов</v8:content>
+												</v8:item>
+											</ToolTip>
 											<SpinButton>true</SpinButton>
 											<ContextMenu name="КоличествоМесяцевХраненияИсторииРассылкиОтчетовКонтекстноеМеню" id="1733"/>
 											<ExtendedTooltip name="КоличествоМесяцевХраненияИсторииРассылкиОтчетовРасширеннаяПодсказка" id="1734"/>
@@ -719,6 +811,17 @@
 		</Attribute>
 		<Attribute name="РежимРаботы" id="15">
 			<Type/>
+		</Attribute>
+		<Attribute name="ИспользоватьСервисПереводаТекста" id="16">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Использовать сервис перевода текста</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
 		</Attribute>
 	</Attributes>
 	<Commands>

@@ -37,11 +37,11 @@
 			<ShowTitle>false</ShowTitle>
 			<ExtendedTooltip name="ШапкаЗаявленияРасширеннаяПодсказка" id="814"/>
 			<ChildItems>
-				<UsualGroup name="ГруппаОбработкаЗаявления" id="766">
+				<UsualGroup name="ГруппаОбработкаЗаявленияСправка" id="1032">
 					<Title>
 						<v8:item>
 							<v8:lang>ru</v8:lang>
-							<v8:content>Обработка заявления</v8:content>
+							<v8:content>Обработка заявления и справка</v8:content>
 						</v8:item>
 					</Title>
 					<HorizontalStretch>true</HorizontalStretch>
@@ -50,51 +50,79 @@
 					<Behavior>Usual</Behavior>
 					<Representation>None</Representation>
 					<ShowTitle>false</ShowTitle>
-					<BackColor>style:ToolTipBackColor</BackColor>
-					<ExtendedTooltip name="ГруппаОбработкаЗаявленияРасширеннаяПодсказка" id="767"/>
+					<ExtendedTooltip name="ГруппаОбработкаЗаявленияСправкаРасширеннаяПодсказка" id="1033"/>
 					<ChildItems>
-						<Button name="ОбновитьСостояниеОбработкиЗаявления" id="768">
-							<Type>UsualButton</Type>
-							<CommandName>Form.Command.ОбновитьСостояниеОбработкиЗаявления</CommandName>
-							<BackColor>style:ToolTipBackColor</BackColor>
+						<UsualGroup name="ГруппаОбработкаЗаявления" id="766">
 							<Title>
 								<v8:item>
 									<v8:lang>ru</v8:lang>
-									<v8:content>Обновить состояние обработки заявления</v8:content>
+									<v8:content>Обработка заявления</v8:content>
 								</v8:item>
 							</Title>
-							<ExtendedTooltip name="ОбновитьСостояниеОбработкиЗаявленияРасширеннаяПодсказка" id="769"/>
-						</Button>
-						<LabelDecoration name="ДекорацияСостояние" id="910">
-							<AutoMaxWidth>false</AutoMaxWidth>
-							<MaxWidth>60</MaxWidth>
 							<HorizontalStretch>true</HorizontalStretch>
-							<Title formatted="false">
-								<v8:item>
-									<v8:lang>ru</v8:lang>
-									<v8:content>Состояние заявления</v8:content>
-								</v8:item>
-							</Title>
-							<ContextMenu name="ДекорацияСостояниеКонтекстноеМеню" id="911"/>
-							<ExtendedTooltip name="ДекорацияСостояниеРасширеннаяПодсказка" id="912"/>
-						</LabelDecoration>
-						<CheckBoxField name="НапомнитьОГотовности" id="887">
-							<DataPath>НапомнитьОГотовности</DataPath>
-							<Title>
-								<v8:item>
-									<v8:lang>ru</v8:lang>
-									<v8:content>Напомнить о готовности</v8:content>
-								</v8:item>
-							</Title>
-							<TitleLocation>Right</TitleLocation>
+							<GroupVerticalAlign>Top</GroupVerticalAlign>
+							<Group>AlwaysHorizontal</Group>
+							<Behavior>Usual</Behavior>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<BackColor>style:ToolTipBackColor</BackColor>
+							<ExtendedTooltip name="ГруппаОбработкаЗаявленияРасширеннаяПодсказка" id="767"/>
+							<ChildItems>
+								<Button name="ОбновитьСостояниеОбработкиЗаявления" id="768">
+									<Type>UsualButton</Type>
+									<CommandName>Form.Command.ОбновитьСостояниеОбработкиЗаявления</CommandName>
+									<BackColor>style:ToolTipBackColor</BackColor>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Обновить состояние обработки заявления</v8:content>
+										</v8:item>
+									</Title>
+									<ExtendedTooltip name="ОбновитьСостояниеОбработкиЗаявленияРасширеннаяПодсказка" id="769"/>
+								</Button>
+								<LabelDecoration name="ДекорацияСостояние" id="910">
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<MaxWidth>60</MaxWidth>
+									<HorizontalStretch>true</HorizontalStretch>
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Состояние заявления</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="ДекорацияСостояниеКонтекстноеМеню" id="911"/>
+									<ExtendedTooltip name="ДекорацияСостояниеРасширеннаяПодсказка" id="912"/>
+								</LabelDecoration>
+								<CheckBoxField name="НапомнитьОГотовности" id="887">
+									<DataPath>НапомнитьОГотовности</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Напомнить о готовности</v8:content>
+										</v8:item>
+									</Title>
+									<TitleLocation>Right</TitleLocation>
+									<GroupHorizontalAlign>Right</GroupHorizontalAlign>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="НапомнитьОГотовностиКонтекстноеМеню" id="888"/>
+									<ExtendedTooltip name="НапомнитьОГотовностиРасширеннаяПодсказка" id="889"/>
+									<Events>
+										<Event name="OnChange">НапомнитьОГотовностиПриИзменении</Event>
+									</Events>
+								</CheckBoxField>
+							</ChildItems>
+						</UsualGroup>
+						<Button name="Справка" id="1030">
+							<Type>UsualButton</Type>
+							<Representation>Picture</Representation>
 							<GroupHorizontalAlign>Right</GroupHorizontalAlign>
-							<CheckBoxType>Auto</CheckBoxType>
-							<ContextMenu name="НапомнитьОГотовностиКонтекстноеМеню" id="888"/>
-							<ExtendedTooltip name="НапомнитьОГотовностиРасширеннаяПодсказка" id="889"/>
-							<Events>
-								<Event name="OnChange">НапомнитьОГотовностиПриИзменении</Event>
-							</Events>
-						</CheckBoxField>
+							<CommandName>Form.StandardCommand.Help</CommandName>
+							<Picture>
+								<xr:Ref>StdPicture.FormHelp</xr:Ref>
+								<xr:LoadTransparent>true</xr:LoadTransparent>
+							</Picture>
+							<ExtendedTooltip name="СправкаРасширеннаяПодсказка" id="1031"/>
+						</Button>
 					</ChildItems>
 				</UsualGroup>
 				<UsualGroup name="ГруппаВидПродления" id="849">
@@ -424,6 +452,45 @@
 						</Button>
 					</ChildItems>
 				</UsualGroup>
+				<UsualGroup name="ГруппаТарифы" id="1023">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Тарифы</v8:content>
+						</v8:item>
+					</Title>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаТарифыРасширеннаяПодсказка" id="1024"/>
+					<ChildItems>
+						<InputField name="ПредставлениеТарифа" id="1025">
+							<DataPath>ДанныеЗаявления.ПредставлениеТарифа</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Тариф</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTipRepresentation>Button</ToolTipRepresentation>
+							<Width>20</Width>
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<HorizontalStretch>false</HorizontalStretch>
+							<DropListButton>true</DropListButton>
+							<ChoiceButton>false</ChoiceButton>
+							<OpenButton>false</OpenButton>
+							<CreateButton>false</CreateButton>
+							<AutoMarkIncomplete>true</AutoMarkIncomplete>
+							<ChoiceHistoryOnInput>DontUse</ChoiceHistoryOnInput>
+							<ContextMenu name="ПредставлениеТарифаКонтекстноеМеню" id="1026"/>
+							<ExtendedTooltip name="ПредставлениеТарифаРасширеннаяПодсказка" id="1027">
+								<GroupHorizontalAlign>Left</GroupHorizontalAlign>
+							</ExtendedTooltip>
+							<Events>
+								<Event name="OnChange">ПредставлениеТарифаПриИзменении</Event>
+							</Events>
+						</InputField>
+					</ChildItems>
+				</UsualGroup>
 				<UsualGroup name="ГруппаБумажноеПродление" id="861">
 					<Title>
 						<v8:item>
@@ -551,12 +618,6 @@
 										</v8:item>
 									</Title>
 									<TitleFont ref="style:ЗаявлениеНаВыпускСертификатаЗаголовокКлючевогоПоляШрифт" kind="StyleItem"/>
-									<ToolTip>
-										<v8:item>
-											<v8:lang>ru</v8:lang>
-											<v8:content>Партнер фирмы 1С, который будет обрабатывать заявление.</v8:content>
-										</v8:item>
-									</ToolTip>
 									<ToolTipRepresentation>Button</ToolTipRepresentation>
 									<AutoMaxWidth>false</AutoMaxWidth>
 									<ChoiceButton>true</ChoiceButton>
@@ -569,7 +630,9 @@
 										</v8:item>
 									</InputHint>
 									<ContextMenu name="ДокументыПартнерКонтекстноеМеню" id="513"/>
-									<ExtendedTooltip name="ДокументыПартнерРасширеннаяПодсказка" id="514"/>
+									<ExtendedTooltip name="ДокументыПартнерРасширеннаяПодсказка" id="514">
+										<Title formatted="true"/>
+									</ExtendedTooltip>
 									<Events>
 										<Event name="OnChange">ДокументыПартнерПриИзменении</Event>
 										<Event name="StartChoice">ДокументыПартнерНачалоВыбора</Event>
@@ -578,38 +641,51 @@
 										<Event name="ChoiceProcessing">ДокументыПартнерОбработкаВыбора</Event>
 									</Events>
 								</InputField>
-								<InputField name="ДокументыПартнерИНН" id="335">
-									<DataPath>ДокументыПартнерИНН</DataPath>
+								<UsualGroup name="ГруппаРеквизитыОбслуживающейОрганизации" id="1028">
 									<Title>
 										<v8:item>
 											<v8:lang>ru</v8:lang>
-											<v8:content>ИНН партнера</v8:content>
+											<v8:content>Реквизиты обслуживающей организации</v8:content>
 										</v8:item>
 									</Title>
-									<Width>14</Width>
-									<HorizontalStretch>false</HorizontalStretch>
-									<ContextMenu name="ДокументыПартнерИННКонтекстноеМеню" id="336"/>
-									<ExtendedTooltip name="ДокументыПартнерИННРасширеннаяПодсказка" id="337"/>
-									<Events>
-										<Event name="OnChange">ДокументыПартнерИННПриИзменении</Event>
-									</Events>
-								</InputField>
-								<InputField name="ДокументыПартнерКПП" id="338">
-									<DataPath>ДокументыПартнерКПП</DataPath>
-									<Title>
-										<v8:item>
-											<v8:lang>ru</v8:lang>
-											<v8:content>КПП партнера</v8:content>
-										</v8:item>
-									</Title>
-									<Width>14</Width>
-									<HorizontalStretch>false</HorizontalStretch>
-									<ContextMenu name="ДокументыПартнерКППКонтекстноеМеню" id="339"/>
-									<ExtendedTooltip name="ДокументыПартнерКППРасширеннаяПодсказка" id="340"/>
-									<Events>
-										<Event name="OnChange">ДокументыПартнерКПППриИзменении</Event>
-									</Events>
-								</InputField>
+									<Representation>None</Representation>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="ГруппаРеквизитыОбслуживающейОрганизацииРасширеннаяПодсказка" id="1029"/>
+									<ChildItems>
+										<InputField name="ДокументыПартнерИНН" id="335">
+											<DataPath>ДокументыПартнерИНН</DataPath>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>ИНН партнера</v8:content>
+												</v8:item>
+											</Title>
+											<Width>14</Width>
+											<HorizontalStretch>false</HorizontalStretch>
+											<ContextMenu name="ДокументыПартнерИННКонтекстноеМеню" id="336"/>
+											<ExtendedTooltip name="ДокументыПартнерИННРасширеннаяПодсказка" id="337"/>
+											<Events>
+												<Event name="OnChange">ДокументыПартнерИННПриИзменении</Event>
+											</Events>
+										</InputField>
+										<InputField name="ДокументыПартнерКПП" id="338">
+											<DataPath>ДокументыПартнерКПП</DataPath>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>КПП партнера</v8:content>
+												</v8:item>
+											</Title>
+											<Width>14</Width>
+											<HorizontalStretch>false</HorizontalStretch>
+											<ContextMenu name="ДокументыПартнерКППКонтекстноеМеню" id="339"/>
+											<ExtendedTooltip name="ДокументыПартнерКППРасширеннаяПодсказка" id="340"/>
+											<Events>
+												<Event name="OnChange">ДокументыПартнерКПППриИзменении</Event>
+											</Events>
+										</InputField>
+									</ChildItems>
+								</UsualGroup>
 							</ChildItems>
 						</UsualGroup>
 					</ChildItems>
@@ -749,7 +825,7 @@
 												<Title formatted="false">
 													<v8:item>
 														<v8:lang>ru</v8:lang>
-														<v8:content>Программа для работы с электронной подписью должна быть установлена на компьютере</v8:content>
+														<v8:content>Приложение для работы с электронной подписью должно быть установлено на компьютере</v8:content>
 													</v8:item>
 												</Title>
 												<Events>
@@ -785,7 +861,7 @@
 												<Title formatted="false">
 													<v8:item>
 														<v8:lang>ru</v8:lang>
-														<v8:content>Программа для работы с электронной подписью должна быть установлена на компьютере</v8:content>
+														<v8:content>Приложение для работы с электронной подписью должно быть установлено на компьютере</v8:content>
 													</v8:item>
 												</Title>
 												<Events>
@@ -943,6 +1019,7 @@
 								<ExcludedCommand>MoveUp</ExcludedCommand>
 								<ExcludedCommand>OutputList</ExcludedCommand>
 								<ExcludedCommand>SearchEverywhere</ExcludedCommand>
+								<ExcludedCommand>SearchHistory</ExcludedCommand>
 								<ExcludedCommand>SelectAll</ExcludedCommand>
 								<ExcludedCommand>ShowMultipleSelection</ExcludedCommand>
 								<ExcludedCommand>ShowRowRearrangement</ExcludedCommand>
@@ -1105,6 +1182,62 @@
 									</Picture>
 									<ContextMenu name="ОчиститьПаспортКонтекстноеМеню" id="880"/>
 									<ExtendedTooltip name="ОчиститьПаспортРасширеннаяПодсказка" id="881"/>
+									<Events>
+										<Event name="Click">ОчиститьДокумент</Event>
+									</Events>
+								</PictureDecoration>
+							</ChildItems>
+						</UsualGroup>
+						<UsualGroup name="ГруппаСНИЛС" id="1012">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>СНИЛС</v8:content>
+								</v8:item>
+							</Title>
+							<Behavior>Usual</Behavior>
+							<Representation>NormalSeparation</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаСНИЛСРасширеннаяПодсказка" id="1013"/>
+							<ChildItems>
+								<LabelDecoration name="ДекорацияСНИЛС" id="1014">
+									<Font ref="style:ЗаявлениеНаВыпускСертификатаЗаголовокКлючевогоПоляШрифт" kind="StyleItem"/>
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>СНИЛС:</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="ДекорацияСНИЛСКонтекстноеМеню" id="1015"/>
+									<ExtendedTooltip name="ДекорацияСНИЛСРасширеннаяПодсказка" id="1016"/>
+								</LabelDecoration>
+								<LabelDecoration name="ВыбратьСНИЛС" id="1017">
+									<Title formatted="true">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>&lt;link ВыбратьДокумент&gt;выбрать файл&lt;/&gt;</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="ВыбратьСНИЛСКонтекстноеМеню" id="1018"/>
+									<ExtendedTooltip name="ВыбратьСНИЛСРасширеннаяПодсказка" id="1019"/>
+									<Events>
+										<Event name="URLProcessing">ВыбратьДокументОбработкаНавигационнойСсылки</Event>
+									</Events>
+								</LabelDecoration>
+								<PictureDecoration name="ОчиститьСНИЛС" id="1020">
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Очистить</v8:content>
+										</v8:item>
+									</Title>
+									<Hyperlink>true</Hyperlink>
+									<Picture>
+										<xr:Ref>StdPicture.InputFieldClear</xr:Ref>
+										<xr:LoadTransparent>true</xr:LoadTransparent>
+									</Picture>
+									<ContextMenu name="ОчиститьСНИЛСКонтекстноеМеню" id="1021"/>
+									<ExtendedTooltip name="ОчиститьСНИЛСРасширеннаяПодсказка" id="1022"/>
 									<Events>
 										<Event name="Click">ОчиститьДокумент</Event>
 									</Events>
@@ -1349,33 +1482,86 @@
 					<ContextMenu name="ДекорацияОтступКонтекстноеМеню" id="792"/>
 					<ExtendedTooltip name="ДекорацияОтступРасширеннаяПодсказка" id="793"/>
 				</LabelDecoration>
-				<UsualGroup name="ГруппаТребуетсяПомощь" id="789">
+				<UsualGroup name="ГруппаТребуетсяПомощь" id="1052">
 					<Title>
 						<v8:item>
 							<v8:lang>ru</v8:lang>
 							<v8:content>Требуется помощь?</v8:content>
 						</v8:item>
 					</Title>
+					<GroupVerticalAlign>Center</GroupVerticalAlign>
 					<Group>Vertical</Group>
 					<Behavior>PopUp</Behavior>
-					<ExtendedTooltip name="ГруппаТребуетсяПомощьРасширеннаяПодсказка" id="790"/>
+					<ExtendedTooltip name="ГруппаТребуетсяПомощьРасширеннаяПодсказка" id="1053"/>
 					<ChildItems>
-						<Button name="ТехническаяИнформация" id="815">
-							<Type>Hyperlink</Type>
-							<CommandName>Form.Command.ТехническаяИнформация</CommandName>
+						<LabelDecoration name="ДекорацияСертификаты" id="1044">
+							<Width>45</Width>
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<Title formatted="true">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>В случае необходимости установки выпущенного сертификата средствами электронной подписи и шифрования сохраните &lt;link Сертификат&gt;сертификат&lt;/&gt; и &lt;link КорневойСертификат&gt;корневой сертификат&lt;/&gt; на компьютер.</v8:content>
+								</v8:item>
+							</Title>
+							<ContextMenu name="ДекорацияСертификатыКонтекстноеМеню" id="1045"/>
+							<ExtendedTooltip name="ДекорацияСертификатыРасширеннаяПодсказка" id="1046"/>
+							<Events>
+								<Event name="URLProcessing">ДекорацияСертификатыОбработкаНавигационнойСсылки</Event>
+							</Events>
+						</LabelDecoration>
+						<UsualGroup name="ГруппаОбращенияВТехническуюПоддержку" id="1054">
 							<Title>
 								<v8:item>
 									<v8:lang>ru</v8:lang>
-									<v8:content>Техническая информация</v8:content>
+									<v8:content>Обращения в техническую поддержку</v8:content>
 								</v8:item>
 							</Title>
-							<ExtendedTooltip name="ТехническаяИнформацияРасширеннаяПодсказка" id="816"/>
-						</Button>
+							<Group>Vertical</Group>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаОбращенияВТехническуюПоддержкуРасширеннаяПодсказка" id="1055"/>
+							<ChildItems>
+								<LabelDecoration name="ОписаниеОбращенияВПоддержку" id="1056">
+									<ContextMenu name="ОписаниеОбращенияВПоддержкуКонтекстноеМеню" id="1057"/>
+									<ExtendedTooltip name="ОписаниеОбращенияВПоддержкуРасширеннаяПодсказка" id="1058"/>
+								</LabelDecoration>
+								<Button name="ВопросВПоддержку" id="1059">
+									<Type>Hyperlink</Type>
+									<CommandName>Form.Command.ВопросВПоддержку</CommandName>
+									<Picture>
+										<xr:Ref>CommonPicture.ОтправитьЭлектронноеПисьмо</xr:Ref>
+										<xr:LoadTransparent>false</xr:LoadTransparent>
+									</Picture>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Вопрос в поддержку</v8:content>
+										</v8:item>
+									</Title>
+									<ExtendedTooltip name="ВопросВПоддержкуРасширеннаяПодсказка" id="1060"/>
+								</Button>
+								<Button name="ИнформацияДляОтправкиВПоддержку" id="1061">
+									<Type>Hyperlink</Type>
+									<CommandName>Form.Command.ИнформацияДляОтправкиВПоддержку</CommandName>
+									<Picture>
+										<xr:Ref>CommonPicture.Скачать</xr:Ref>
+										<xr:LoadTransparent>false</xr:LoadTransparent>
+									</Picture>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Информация для отправки в поддержку</v8:content>
+										</v8:item>
+									</Title>
+									<ExtendedTooltip name="ИнформацияДляОтправкиВПоддержкуРасширеннаяПодсказка" id="1062"/>
+								</Button>
+							</ChildItems>
+						</UsualGroup>
 						<LabelDecoration name="ДекорацияОписание" id="802">
 							<Title formatted="false">
 								<v8:item>
 									<v8:lang>ru</v8:lang>
-									<v8:content>Описание, условия и цены</v8:content>
+									<v8:content>Описание и условия</v8:content>
 								</v8:item>
 							</Title>
 							<Hyperlink>true</Hyperlink>
@@ -1426,7 +1612,7 @@
 				</v8:item>
 			</Title>
 			<Type>
-				<v8:TypeSet>cfg:AnyRef</v8:TypeSet>
+				<v8:TypeSet>cfg:AnyIBRef</v8:TypeSet>
 			</Type>
 		</Attribute>
 		<Attribute name="НаименованиеСокращенное" id="6">
@@ -1618,7 +1804,7 @@
 				</v8:item>
 			</Title>
 			<Type>
-				<v8:TypeSet>cfg:AnyRef</v8:TypeSet>
+				<v8:TypeSet>cfg:AnyIBRef</v8:TypeSet>
 			</Type>
 		</Attribute>
 		<Attribute name="ДокументВид" id="37">
@@ -1935,12 +2121,12 @@
 		</Attribute>
 		<Attribute name="ДокументыРуководительСсылка" id="69">
 			<Type>
-				<v8:TypeSet>cfg:AnyRef</v8:TypeSet>
+				<v8:TypeSet>cfg:AnyIBRef</v8:TypeSet>
 			</Type>
 		</Attribute>
 		<Attribute name="ДокументыПартнерСсылка" id="70">
 			<Type>
-				<v8:TypeSet>cfg:AnyRef</v8:TypeSet>
+				<v8:TypeSet>cfg:AnyIBRef</v8:TypeSet>
 			</Type>
 		</Attribute>
 		<Attribute name="ДатаОбновленияСостояния" id="49">
@@ -2510,6 +2696,82 @@
 				<v8:Type>xs:boolean</v8:Type>
 			</Type>
 		</Attribute>
+		<Attribute name="АдресФайлаСНИЛС" id="106">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="Тарифы" id="107">
+			<Type>
+				<v8:Type>v8:ValueTable</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="Код" id="1">
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="Описание" id="2">
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="Представление" id="5">
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="ТипПровайдера" id="3">
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+		<Attribute name="ПродлениеСертификатаСтороннегоУЦ" id="111">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="АдресЗаявлениеНаПодключение" id="108">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="СтоимостьЛицензииКриптоПро" id="112">
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>9</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
 	</Attributes>
 	<Commands>
 		<Command name="УказатьСведенияОбОрганизации" id="7">
@@ -2587,20 +2849,18 @@
 			<Action>ОбновитьСостояниеОбработкиЗаявления</Action>
 			<Representation>Picture</Representation>
 		</Command>
-		<Command name="ТехническаяИнформация" id="4">
+		<Command name="ИнформацияДляОтправкиВПоддержку" id="4">
 			<Title>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Техническая информация</v8:content>
+					<v8:content>Информация для отправки в поддержку</v8:content>
 				</v8:item>
 			</Title>
-			<ToolTip>
-				<v8:item>
-					<v8:lang>ru</v8:lang>
-					<v8:content>Техническая информация</v8:content>
-				</v8:item>
-			</ToolTip>
-			<Action>ТехническаяИнформация</Action>
+			<Picture>
+				<xr:Ref>CommonPicture.Скачать</xr:Ref>
+				<xr:LoadTransparent>false</xr:LoadTransparent>
+			</Picture>
+			<Action>ИнформацияДляОтправкиВПоддержку</Action>
 		</Command>
 		<Command name="ВыбратьВидОрганизации" id="1">
 			<Title>
@@ -2656,6 +2916,25 @@
 			</Title>
 			<Action>Готово</Action>
 		</Command>
+		<Command name="ВопросВПоддержку" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Вопрос в поддержку</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Вопрос в поддержку</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>CommonPicture.ОтправитьЭлектронноеПисьмо</xr:Ref>
+				<xr:LoadTransparent>false</xr:LoadTransparent>
+			</Picture>
+			<Action>ВопросВПоддержку</Action>
+		</Command>
 	</Commands>
 	<Parameters>
 		<Parameter name="СертификатСсылка">
@@ -2665,7 +2944,7 @@
 		</Parameter>
 		<Parameter name="Организация">
 			<Type>
-				<v8:TypeSet>cfg:AnyRef</v8:TypeSet>
+				<v8:TypeSet>cfg:AnyIBRef</v8:TypeSet>
 			</Type>
 		</Parameter>
 		<Parameter name="СертификатОснование">
@@ -2675,7 +2954,7 @@
 		</Parameter>
 		<Parameter name="ФизическоеЛицо">
 			<Type>
-				<v8:TypeSet>cfg:AnyRef</v8:TypeSet>
+				<v8:TypeSet>cfg:AnyIBRef</v8:TypeSet>
 			</Type>
 		</Parameter>
 		<Parameter name="НаТокене">

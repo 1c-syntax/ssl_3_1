@@ -1,0 +1,236 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.18">
+	<WindowOpeningMode>LockOwnerWindow</WindowOpeningMode>
+	<SaveWindowSettings>false</SaveWindowSettings>
+	<CommandBarLocation>Bottom</CommandBarLocation>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<HorizontalAlign>Right</HorizontalAlign>
+		<Autofill>false</Autofill>
+		<ChildItems>
+			<Button name="ФормаПроверитьПодключение" id="22">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.ПроверитьПодключение</CommandName>
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Проверить подключение</v8:content>
+					</v8:item>
+				</Title>
+				<ExtendedTooltip name="ФормаПроверитьПодключениеРасширеннаяПодсказка" id="23"/>
+			</Button>
+			<Button name="ФормаГотово" id="20">
+				<Type>CommandBarButton</Type>
+				<DefaultButton>true</DefaultButton>
+				<CommandName>Form.Command.Готово</CommandName>
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Готово</v8:content>
+					</v8:item>
+				</Title>
+				<ExtendedTooltip name="ФормаГотовоРасширеннаяПодсказка" id="21"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnOpen">ПриОткрытии</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<RadioButtonField name="ВариантРаботыИнформационнойБазы" id="26">
+			<DataPath>Объект.ВариантРаботыИнформационнойБазы</DataPath>
+			<TitleLocation>None</TitleLocation>
+			<RadioButtonType>Auto</RadioButtonType>
+			<ColumnsCount>1</ColumnsCount>
+			<ChoiceList>
+				<xr:Item>
+					<xr:Presentation/>
+					<xr:CheckState>0</xr:CheckState>
+					<xr:Value xsi:type="FormChoiceListDesTimeValue">
+						<Presentation>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Файловая база-корреспондент</v8:content>
+							</v8:item>
+						</Presentation>
+						<Value xsi:type="xs:decimal">0</Value>
+					</xr:Value>
+				</xr:Item>
+				<xr:Item>
+					<xr:Presentation/>
+					<xr:CheckState>0</xr:CheckState>
+					<xr:Value xsi:type="FormChoiceListDesTimeValue">
+						<Presentation>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Клиент-серверная база-корреспондент</v8:content>
+							</v8:item>
+						</Presentation>
+						<Value xsi:type="xs:decimal">1</Value>
+					</xr:Value>
+				</xr:Item>
+			</ChoiceList>
+			<ContextMenu name="ВариантРаботыИнформационнойБазыКонтекстноеМеню" id="27"/>
+			<ExtendedTooltip name="ВариантРаботыИнформационнойБазыРасширеннаяПодсказка" id="28"/>
+			<Events>
+				<Event name="OnChange">ВариантРаботыИнформационнойБазыПриИзменении</Event>
+			</Events>
+		</RadioButtonField>
+		<Pages name="ВариантыРаботыИнформационнойБазы" id="29">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Варианты работы информационной базы</v8:content>
+				</v8:item>
+			</Title>
+			<PagesRepresentation>None</PagesRepresentation>
+			<ExtendedTooltip name="ВариантыРаботыИнформационнойБазыExtendedTooltip" id="30"/>
+			<ChildItems>
+				<Page name="СтраницаВариантРаботыФайловый" id="31">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Страница вариант работы файловый</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="СтраницаВариантРаботыФайловыйExtendedTooltip" id="32"/>
+					<ChildItems>
+						<InputField name="КаталогИнформационнойБазы" id="55">
+							<DataPath>Объект.КаталогИнформационнойБазы</DataPath>
+							<TitleLocation>Top</TitleLocation>
+							<ChoiceButton>true</ChoiceButton>
+							<OpenButton>true</OpenButton>
+							<ContextMenu name="КаталогИнформационнойБазыКонтекстноеМеню" id="56"/>
+							<ExtendedTooltip name="КаталогИнформационнойБазыРасширеннаяПодсказка" id="57"/>
+							<Events>
+								<Event name="StartChoice">КаталогИнформационнойБазыНачалоВыбора</Event>
+								<Event name="Opening">КаталогИнформационнойБазыОткрытие</Event>
+							</Events>
+						</InputField>
+					</ChildItems>
+				</Page>
+				<Page name="СтраницаВариантРаботыКлиентСерверный" id="36">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Страница вариант работы клиент серверный</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="СтраницаВариантРаботыКлиентСерверныйExtendedTooltip" id="37"/>
+					<ChildItems>
+						<InputField name="ИмяСервера1СПредприятия" id="38">
+							<DataPath>Объект.ИмяСервера1СПредприятия</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Имя сервера</v8:content>
+								</v8:item>
+							</Title>
+							<ContextMenu name="ИмяСервера1СПредприятияКонтекстноеМеню" id="39"/>
+							<ExtendedTooltip name="ИмяСервера1СПредприятияРасширеннаяПодсказка" id="40"/>
+						</InputField>
+						<InputField name="ИмяИнформационнойБазыНаСервере1СПредприятия" id="41">
+							<DataPath>Объект.ИмяИнформационнойБазыНаСервере1СПредприятия</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Имя информационной базы на сервере</v8:content>
+								</v8:item>
+							</Title>
+							<ContextMenu name="ИмяИнформационнойБазыНаСервере1СПредприятияКонтекстноеМеню" id="42"/>
+							<ExtendedTooltip name="ИмяИнформационнойБазыНаСервере1СПредприятияРасширеннаяПодсказка" id="43"/>
+						</InputField>
+					</ChildItems>
+				</Page>
+			</ChildItems>
+		</Pages>
+		<CheckBoxField name="АутентификацияОперационнойСистемы" id="44">
+			<DataPath>Объект.АутентификацияОперационнойСистемы</DataPath>
+			<TitleLocation>Right</TitleLocation>
+			<CheckBoxType>Auto</CheckBoxType>
+			<ContextMenu name="АутентификацияОперационнойСистемыКонтекстноеМеню" id="45"/>
+			<ExtendedTooltip name="АутентификацияОперационнойСистемыРасширеннаяПодсказка" id="46"/>
+			<Events>
+				<Event name="OnChange">АутентификацияОперационнойСистемыПриИзменении</Event>
+			</Events>
+		</CheckBoxField>
+		<UsualGroup name="ГруппаПользовательПароль" id="47">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>COM группа пользователь пароль</v8:content>
+				</v8:item>
+			</Title>
+			<Group>Vertical</Group>
+			<Behavior>Usual</Behavior>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаПользовательПарольРасширеннаяПодсказка" id="48"/>
+			<ChildItems>
+				<InputField name="Пользователь" id="49">
+					<DataPath>Объект.ИмяПользователя</DataPath>
+					<ContextMenu name="ПользовательКонтекстноеМеню" id="50"/>
+					<ExtendedTooltip name="ПользовательРасширеннаяПодсказка" id="51"/>
+				</InputField>
+				<InputField name="Пароль" id="52">
+					<DataPath>Объект.ПарольПользователя</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Пароль</v8:content>
+						</v8:item>
+					</Title>
+					<PasswordMode>true</PasswordMode>
+					<ContextMenu name="ПарольКонтекстноеМеню" id="53"/>
+					<ExtendedTooltip name="ПарольРасширеннаяПодсказка" id="54"/>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:DataProcessorObject.ТранспортСообщенийОбменаCOM</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="Готово" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Готово</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Готово</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>Готово</Action>
+		</Command>
+		<Command name="ПроверитьПодключение" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Проверить подключение</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Проверить подключение</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ПроверитьПодключение</Action>
+		</Command>
+	</Commands>
+	<Parameters>
+		<Parameter name="НастройкиТранспорта">
+			<Type/>
+			<KeyParameter>true</KeyParameter>
+		</Parameter>
+	</Parameters>
+</Form>

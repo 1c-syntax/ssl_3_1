@@ -730,23 +730,46 @@ TIF - Не все браузеры отображают этот формат.</
 								</InputField>
 							</ChildItems>
 						</UsualGroup>
-						<LabelDecoration name="ИнформацияДляТехническойПоддержки" id="165">
-							<Title formatted="false">
-								<v8:item>
-									<v8:lang>ru</v8:lang>
-									<v8:content>Информация для технической поддержки</v8:content>
-								</v8:item>
-							</Title>
-							<Hyperlink>true</Hyperlink>
-							<HorizontalAlign>Auto</HorizontalAlign>
-							<ContextMenu name="ИнформацияДляТехническойПоддержкиКонтекстноеМеню" id="166"/>
-							<ExtendedTooltip name="ИнформацияДляТехническойПоддержкиРасширеннаяПодсказка" id="167"/>
-							<Events>
-								<Event name="Click">ИнформацияДляТехническойПоддержкиНажатие</Event>
-							</Events>
-						</LabelDecoration>
 					</ChildItems>
 				</UsualGroup>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="ОшибкаСканирования" id="145">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Ошибка сканирования</v8:content>
+				</v8:item>
+			</Title>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ОшибкаСканированияРасширеннаяПодсказка" id="146"/>
+			<ChildItems>
+				<PictureDecoration name="КартинкаОшибкиСканирования" id="147">
+					<Title formatted="false">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Картинка ошибки сканирования</v8:content>
+						</v8:item>
+					</Title>
+					<Picture>
+						<xr:Ref>CommonPicture.Предупреждение</xr:Ref>
+						<xr:LoadTransparent>false</xr:LoadTransparent>
+					</Picture>
+					<ContextMenu name="КартинкаОшибкиСканированияКонтекстноеМеню" id="148"/>
+					<ExtendedTooltip name="КартинкаОшибкиСканированияРасширеннаяПодсказка" id="149"/>
+				</PictureDecoration>
+				<LabelDecoration name="ТекстОшибкиСканирования" id="150">
+					<AutoMaxWidth>false</AutoMaxWidth>
+					<Title formatted="false">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Сканирование завершилось аварийно. При возникновении затруднений обратитесь в службу поддержки фирмы "1С".</v8:content>
+						</v8:item>
+					</Title>
+					<ContextMenu name="ТекстОшибкиСканированияКонтекстноеМеню" id="151"/>
+					<ExtendedTooltip name="ТекстОшибкиСканированияРасширеннаяПодсказка" id="152"/>
+				</LabelDecoration>
 			</ChildItems>
 		</UsualGroup>
 		<UsualGroup name="ГруппаПодвал" id="153">
@@ -760,45 +783,57 @@ TIF - Не все браузеры отображают этот формат.</
 			<ShowTitle>false</ShowTitle>
 			<ExtendedTooltip name="ГруппаПодвалРасширеннаяПодсказка" id="154"/>
 			<ChildItems>
-				<UsualGroup name="ОшибкаСканирования" id="145">
+				<UsualGroup name="ГруппаТребуетсяПомощь" id="177">
 					<Title>
 						<v8:item>
 							<v8:lang>ru</v8:lang>
-							<v8:content>Ошибка сканирования</v8:content>
+							<v8:content>Требуется помощь?</v8:content>
 						</v8:item>
 					</Title>
-					<Representation>None</Representation>
-					<ShowTitle>false</ShowTitle>
-					<ExtendedTooltip name="ОшибкаСканированияРасширеннаяПодсказка" id="146"/>
+					<GroupVerticalAlign>Center</GroupVerticalAlign>
+					<Group>Vertical</Group>
+					<Behavior>PopUp</Behavior>
+					<ExtendedTooltip name="ГруппаТребуетсяПомощьРасширеннаяПодсказка" id="178"/>
 					<ChildItems>
-						<PictureDecoration name="КартинкаОшибкиСканирования" id="147">
-							<Title formatted="false">
-								<v8:item>
-									<v8:lang>ru</v8:lang>
-									<v8:content>Картинка ошибки сканирования</v8:content>
-								</v8:item>
-							</Title>
-							<Picture>
-								<xr:Ref>CommonPicture.Предупреждение</xr:Ref>
-								<xr:LoadTransparent>false</xr:LoadTransparent>
-							</Picture>
-							<ContextMenu name="КартинкаОшибкиСканированияКонтекстноеМеню" id="148"/>
-							<ExtendedTooltip name="КартинкаОшибкиСканированияРасширеннаяПодсказка" id="149"/>
-						</PictureDecoration>
-						<LabelDecoration name="ТекстОшибкиСканирования" id="150">
+						<LabelDecoration name="Рекомендации" id="179">
 							<AutoMaxWidth>false</AutoMaxWidth>
 							<Title formatted="true">
 								<v8:item>
 									<v8:lang>ru</v8:lang>
-									<v8:content>Сканирование завершилось аварийно, сохранить &lt;link ТехническаяИнформация&gt;информацию для технической поддержки&lt;/&gt;.</v8:content>
+									<v8:content>Попробуйте одно из следующих действий:
+
+</v8:content>
 								</v8:item>
 							</Title>
-							<ContextMenu name="ТекстОшибкиСканированияКонтекстноеМеню" id="151"/>
-							<ExtendedTooltip name="ТекстОшибкиСканированияРасширеннаяПодсказка" id="152"/>
+							<ContextMenu name="РекомендацииКонтекстноеМеню" id="180"/>
+							<ExtendedTooltip name="РекомендацииРасширеннаяПодсказка" id="181"/>
 							<Events>
-								<Event name="URLProcessing">ТекстОшибкиСканированияОбработкаНавигационнойСсылки</Event>
+								<Event name="URLProcessing">РекомендацииОбработкаНавигационнойСсылки</Event>
 							</Events>
 						</LabelDecoration>
+						<UsualGroup name="ГруппаОбращенияВТехническуюПоддержку" id="182">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Обращения в техническую поддержку</v8:content>
+								</v8:item>
+							</Title>
+							<Group>Vertical</Group>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаОбращенияВТехническуюПоддержкуРасширеннаяПодсказка" id="183"/>
+							<ChildItems>
+								<LabelDecoration name="ОписаниеОбращенияВПоддержку" id="184">
+									<Width>55</Width>
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<ContextMenu name="ОписаниеОбращенияВПоддержкуКонтекстноеМеню" id="185"/>
+									<ExtendedTooltip name="ОписаниеОбращенияВПоддержкуРасширеннаяПодсказка" id="186"/>
+									<Events>
+										<Event name="URLProcessing">ОписаниеОбращенияВПоддержкуОбработкаНавигационнойСсылки</Event>
+									</Events>
+								</LabelDecoration>
+							</ChildItems>
+						</UsualGroup>
 					</ChildItems>
 				</UsualGroup>
 				<CommandBar name="ГруппаКоманднаяПанель" id="155">
@@ -1150,6 +1185,15 @@ TIF - Не все браузеры отображают этот формат.</
 			</Title>
 			<Type>
 				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ПредставлениеОшибки" id="29">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
 			</Type>
 		</Attribute>
 	</Attributes>

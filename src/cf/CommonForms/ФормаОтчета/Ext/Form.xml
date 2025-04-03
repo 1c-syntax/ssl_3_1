@@ -396,15 +396,18 @@
 										</Button>
 									</ChildItems>
 								</ButtonGroup>
-								<ButtonGroup name="ГруппаСохранениеИРассылкаВарианта" id="1123">
+								<Popup name="ПодменюОтправить" id="1123">
 									<Title>
 										<v8:item>
 											<v8:lang>ru</v8:lang>
-											<v8:content>Сохранение и рассылка варианта</v8:content>
+											<v8:content>Отправить</v8:content>
 										</v8:item>
 									</Title>
-									<Representation>Compact</Representation>
-									<ExtendedTooltip name="ГруппаСохранениеИРассылкаВариантаРасширеннаяПодсказка" id="1124"/>
+									<Picture>
+										<xr:Ref>StdPicture.SendMessage</xr:Ref>
+										<xr:LoadTransparent>true</xr:LoadTransparent>
+									</Picture>
+									<ExtendedTooltip name="ПодменюОтправитьРасширеннаяПодсказка" id="1124"/>
 									<ChildItems>
 										<Button name="СохранитьОтчет" id="1101">
 											<Type>CommandBarButton</Type>
@@ -412,13 +415,26 @@
 											<Title>
 												<v8:item>
 													<v8:lang>ru</v8:lang>
-													<v8:content>Сохранить в файл</v8:content>
+													<v8:content>На компьютер</v8:content>
 												</v8:item>
 											</Title>
 											<LocationInCommandBar>InCommandBar</LocationInCommandBar>
 											<ExtendedTooltip name="СохранитьОтчетРасширеннаяПодсказка" id="1102"/>
 										</Button>
-										<Popup name="ГруппаОтправить" id="63">
+										<Button name="ОтправитьПоПочте" id="97">
+											<Type>CommandBarButton</Type>
+											<Representation>Picture</Representation>
+											<CommandName>Form.Command.ОтправитьПоПочте</CommandName>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Почта</v8:content>
+												</v8:item>
+											</Title>
+											<LocationInCommandBar>InCommandBar</LocationInCommandBar>
+											<ExtendedTooltip name="ОтправитьПоПочтеРасширеннаяПодсказка" id="128"/>
+										</Button>
+										<ButtonGroup name="ГруппаОтправить" id="63">
 											<Title>
 												<v8:item>
 													<v8:lang>ru</v8:lang>
@@ -431,30 +447,10 @@
 													<v8:content>Отправить отчет по электронной почте</v8:content>
 												</v8:item>
 											</ToolTip>
-											<Picture>
-												<xr:Ref>CommonPicture.ЭлектронноеПисьмо</xr:Ref>
-												<xr:LoadTransparent>false</xr:LoadTransparent>
-											</Picture>
-											<Representation>Picture</Representation>
 											<ExtendedTooltip name="ГруппаОтправитьРасширеннаяПодсказка" id="127"/>
-											<ChildItems>
-												<Button name="ОтправитьПоПочте" id="97">
-													<Type>CommandBarButton</Type>
-													<Representation>Picture</Representation>
-													<CommandName>Form.Command.ОтправитьПоПочте</CommandName>
-													<Title>
-														<v8:item>
-															<v8:lang>ru</v8:lang>
-															<v8:content>Отправить сейчас...</v8:content>
-														</v8:item>
-													</Title>
-													<LocationInCommandBar>InCommandBar</LocationInCommandBar>
-													<ExtendedTooltip name="ОтправитьПоПочтеРасширеннаяПодсказка" id="128"/>
-												</Button>
-											</ChildItems>
-										</Popup>
+										</ButtonGroup>
 									</ChildItems>
-								</ButtonGroup>
+								</Popup>
 							</ChildItems>
 						</ButtonGroup>
 						<ButtonGroup name="ГруппаПереходМеждуИзменениямиНастроек" id="1107">
@@ -1159,50 +1155,58 @@
 									<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
 									<ExtendedTooltip name="ПараметрыСтраницыРасширеннаяПодсказка" id="140"/>
 								</Button>
-								<Button name="СохранитьОтчетЕще" id="1103">
-									<Type>CommandBarButton</Type>
-									<CommandName>Form.Command.СохранитьОтчет</CommandName>
-									<Title>
-										<v8:item>
-											<v8:lang>ru</v8:lang>
-											<v8:content>Сохранить в файл</v8:content>
-										</v8:item>
-									</Title>
-									<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
-									<ExtendedTooltip name="СохранитьОтчетЕщеРасширеннаяПодсказка" id="1104"/>
-								</Button>
-								<Popup name="ГруппаОтправитьЕще" id="754">
+								<Popup name="ГруппаОтправитьОтчетЕще" id="1226">
 									<Title>
 										<v8:item>
 											<v8:lang>ru</v8:lang>
 											<v8:content>Отправить</v8:content>
 										</v8:item>
 									</Title>
-									<ToolTip>
-										<v8:item>
-											<v8:lang>ru</v8:lang>
-											<v8:content>Отправить отчет по электронной почте</v8:content>
-										</v8:item>
-									</ToolTip>
 									<Picture>
-										<xr:Ref>CommonPicture.ЭлектронноеПисьмо</xr:Ref>
-										<xr:LoadTransparent>false</xr:LoadTransparent>
+										<xr:Ref>StdPicture.SendMessage</xr:Ref>
+										<xr:LoadTransparent>true</xr:LoadTransparent>
 									</Picture>
-									<Representation>Picture</Representation>
-									<ExtendedTooltip name="ГруппаОтправитьЕщеРасширеннаяПодсказка" id="755"/>
+									<ExtendedTooltip name="ГруппаОтправитьОтчетЕщеРасширеннаяПодсказка" id="1227"/>
 									<ChildItems>
+										<Button name="СохранитьОтчетЕще" id="1103">
+											<Type>CommandBarButton</Type>
+											<CommandName>Form.Command.СохранитьОтчет</CommandName>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>На компьютер</v8:content>
+												</v8:item>
+											</Title>
+											<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
+											<ExtendedTooltip name="СохранитьОтчетЕщеРасширеннаяПодсказка" id="1104"/>
+										</Button>
 										<Button name="ОтправитьПоПочтеЕще" id="756">
 											<Type>CommandBarButton</Type>
 											<CommandName>Form.Command.ОтправитьПоПочте</CommandName>
 											<Title>
 												<v8:item>
 													<v8:lang>ru</v8:lang>
-													<v8:content>Отправить сейчас...</v8:content>
+													<v8:content>Почта</v8:content>
 												</v8:item>
 											</Title>
 											<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
 											<ExtendedTooltip name="ОтправитьПоПочтеЕщеРасширеннаяПодсказка" id="757"/>
 										</Button>
+										<ButtonGroup name="ГруппаОтправитьЕще" id="754">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Отправить</v8:content>
+												</v8:item>
+											</Title>
+											<ToolTip>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Отправить отчет по электронной почте</v8:content>
+												</v8:item>
+											</ToolTip>
+											<ExtendedTooltip name="ГруппаОтправитьЕщеРасширеннаяПодсказка" id="755"/>
+										</ButtonGroup>
 									</ChildItems>
 								</Popup>
 							</ChildItems>
@@ -3385,7 +3389,7 @@
 			<Title>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Сохранить в файл...</v8:content>
+					<v8:content>На компьютер</v8:content>
 				</v8:item>
 			</Title>
 			<ToolTip>

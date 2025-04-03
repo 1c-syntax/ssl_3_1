@@ -23,18 +23,18 @@
 			<UseStandardCommands>false</UseStandardCommands>
 			<DefaultForm>DataProcessor.ТранспортСообщенийОбменаEMAIL.Form.Форма</DefaultForm>
 			<AuxiliaryForm/>
-			<IncludeHelpInContents>false</IncludeHelpInContents>
+			<IncludeHelpInContents>true</IncludeHelpInContents>
 			<ExtendedPresentation/>
 			<Explanation/>
 		</Properties>
 		<ChildObjects>
 			<Attribute uuid="ab178a93-8570-43b6-ae42-f34a7cc4f359">
 				<Properties>
-					<Name>EMAILМаксимальныйДопустимыйРазмерСообщения</Name>
+					<Name>МаксимальныйДопустимыйРазмерСообщения</Name>
 					<Synonym>
 						<v8:item>
 							<v8:lang>ru</v8:lang>
-							<v8:content>Максимальный размер сообщения обмена, КБайт</v8:content>
+							<v8:content>Максимальный допустимый размер сообщения</v8:content>
 						</v8:item>
 					</Synonym>
 					<Comment/>
@@ -74,7 +74,7 @@
 			</Attribute>
 			<Attribute uuid="4c82f31d-7a98-47dd-89dc-1846cb15bf3b">
 				<Properties>
-					<Name>EMAILСжиматьФайлИсходящегоСообщения</Name>
+					<Name>СжиматьФайлИсходящегоСообщения</Name>
 					<Synonym>
 						<v8:item>
 							<v8:lang>ru</v8:lang>
@@ -108,7 +108,7 @@
 			</Attribute>
 			<Attribute uuid="168e3189-2676-4cdb-bc9d-78d85df51faf">
 				<Properties>
-					<Name>EMAILУчетнаяЗапись</Name>
+					<Name>УчетнаяЗапись</Name>
 					<Synonym>
 						<v8:item>
 							<v8:lang>ru</v8:lang>
@@ -183,54 +183,16 @@
 					<ChoiceHistoryOnInput>Auto</ChoiceHistoryOnInput>
 				</Properties>
 			</Attribute>
-			<Attribute uuid="470bbff8-20d0-475c-a61a-1a09ac14c2db">
+			<Attribute uuid="c4b691fb-d511-4950-835c-d6e9c65ecbc2">
 				<Properties>
-					<Name>ШаблонИмениФайлаСообщения</Name>
+					<Name>Транслитерация</Name>
 					<Synonym>
 						<v8:item>
 							<v8:lang>ru</v8:lang>
-							<v8:content>Шаблон имени файла сообщения</v8:content>
+							<v8:content>Транслитерация</v8:content>
 						</v8:item>
 					</Synonym>
 					<Comment/>
-					<Type>
-						<v8:Type>xs:string</v8:Type>
-						<v8:StringQualifiers>
-							<v8:Length>0</v8:Length>
-							<v8:AllowedLength>Variable</v8:AllowedLength>
-						</v8:StringQualifiers>
-					</Type>
-					<PasswordMode>false</PasswordMode>
-					<Format/>
-					<EditFormat/>
-					<ToolTip/>
-					<MarkNegatives>false</MarkNegatives>
-					<Mask/>
-					<MultiLine>false</MultiLine>
-					<ExtendedEdit>false</ExtendedEdit>
-					<MinValue xsi:nil="true"/>
-					<MaxValue xsi:nil="true"/>
-					<FillChecking>DontCheck</FillChecking>
-					<ChoiceFoldersAndItems>Items</ChoiceFoldersAndItems>
-					<ChoiceParameterLinks/>
-					<ChoiceParameters/>
-					<QuickChoice>Auto</QuickChoice>
-					<CreateOnInput>Auto</CreateOnInput>
-					<ChoiceForm/>
-					<LinkByType/>
-					<ChoiceHistoryOnInput>Auto</ChoiceHistoryOnInput>
-				</Properties>
-			</Attribute>
-			<Attribute uuid="6ea25680-c4db-4717-9498-62420ca16970">
-				<Properties>
-					<Name>ИспользоватьВременныйКаталогДляОтправкиИПриемаСообщений</Name>
-					<Synonym>
-						<v8:item>
-							<v8:lang>ru</v8:lang>
-							<v8:content>Использовать временный каталог для отправки и приема сообщений</v8:content>
-						</v8:item>
-					</Synonym>
-					<Comment>Истина - Отправка и получение сообщений обмена будет выполняться через временный каталог; Ложь – отправка и получение будет выполняться напрямую через каталог обмена</Comment>
 					<Type>
 						<v8:Type>xs:boolean</v8:Type>
 					</Type>
@@ -255,41 +217,8 @@
 					<ChoiceHistoryOnInput>Auto</ChoiceHistoryOnInput>
 				</Properties>
 			</Attribute>
-			<Attribute uuid="55412118-700a-4a2d-b7c9-d3b7c0f4bd9a">
-				<Properties>
-					<Name>УзелИнформационнойБазы</Name>
-					<Synonym>
-						<v8:item>
-							<v8:lang>ru</v8:lang>
-							<v8:content>Узел информационной базы</v8:content>
-						</v8:item>
-					</Synonym>
-					<Comment/>
-					<Type>
-						<v8:TypeSet>cfg:ExchangePlanRef</v8:TypeSet>
-					</Type>
-					<PasswordMode>false</PasswordMode>
-					<Format/>
-					<EditFormat/>
-					<ToolTip/>
-					<MarkNegatives>false</MarkNegatives>
-					<Mask/>
-					<MultiLine>false</MultiLine>
-					<ExtendedEdit>false</ExtendedEdit>
-					<MinValue xsi:nil="true"/>
-					<MaxValue xsi:nil="true"/>
-					<FillChecking>DontCheck</FillChecking>
-					<ChoiceFoldersAndItems>Items</ChoiceFoldersAndItems>
-					<ChoiceParameterLinks/>
-					<ChoiceParameters/>
-					<QuickChoice>Auto</QuickChoice>
-					<CreateOnInput>Auto</CreateOnInput>
-					<ChoiceForm/>
-					<LinkByType/>
-					<ChoiceHistoryOnInput>Auto</ChoiceHistoryOnInput>
-				</Properties>
-			</Attribute>
 			<Form>Форма</Form>
+			<Form>ФормаНастройки</Form>
 		</ChildObjects>
 	</DataProcessor>
 </MetaDataObject>

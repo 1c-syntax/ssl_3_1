@@ -23,14 +23,14 @@
 			<UseStandardCommands>false</UseStandardCommands>
 			<DefaultForm>DataProcessor.ТранспортСообщенийОбменаFTP.Form.Форма</DefaultForm>
 			<AuxiliaryForm/>
-			<IncludeHelpInContents>false</IncludeHelpInContents>
+			<IncludeHelpInContents>true</IncludeHelpInContents>
 			<ExtendedPresentation/>
 			<Explanation/>
 		</Properties>
 		<ChildObjects>
 			<Attribute uuid="821b93bd-f0dd-4468-972a-d9b2b4de72f1">
 				<Properties>
-					<Name>FTPСжиматьФайлИсходящегоСообщения</Name>
+					<Name>СжиматьФайлИсходящегоСообщения</Name>
 					<Synonym>
 						<v8:item>
 							<v8:lang>ru</v8:lang>
@@ -64,11 +64,11 @@
 			</Attribute>
 			<Attribute uuid="56900066-90e3-40c0-b64a-8f7964a4dfc1">
 				<Properties>
-					<Name>FTPСоединениеМаксимальныйДопустимыйРазмерСообщения</Name>
+					<Name>МаксимальныйДопустимыйРазмерСообщения</Name>
 					<Synonym>
 						<v8:item>
 							<v8:lang>ru</v8:lang>
-							<v8:content>Максимальный размер сообщения обмена, КБайт</v8:content>
+							<v8:content>Максимальный допустимый размер сообщения</v8:content>
 						</v8:item>
 					</Synonym>
 					<Comment/>
@@ -108,7 +108,7 @@
 			</Attribute>
 			<Attribute uuid="56f0c4d6-9b13-486a-9586-05e657dca8be">
 				<Properties>
-					<Name>FTPСоединениеПароль</Name>
+					<Name>Пароль</Name>
 					<Synonym>
 						<v8:item>
 							<v8:lang>ru</v8:lang>
@@ -146,7 +146,7 @@
 			</Attribute>
 			<Attribute uuid="c795c0d3-6a0d-4311-9821-df320663727e">
 				<Properties>
-					<Name>FTPСоединениеПассивноеСоединение</Name>
+					<Name>ПассивноеСоединение</Name>
 					<Synonym>
 						<v8:item>
 							<v8:lang>ru</v8:lang>
@@ -180,7 +180,7 @@
 			</Attribute>
 			<Attribute uuid="512b8d89-8798-4549-9e79-b9c3f7d9098f">
 				<Properties>
-					<Name>FTPСоединениеПользователь</Name>
+					<Name>Пользователь</Name>
 					<Synonym>
 						<v8:item>
 							<v8:lang>ru</v8:lang>
@@ -218,7 +218,7 @@
 			</Attribute>
 			<Attribute uuid="e1fe71f8-f37c-4705-aca1-c25e2bdc5db6">
 				<Properties>
-					<Name>FTPСоединениеПорт</Name>
+					<Name>Порт</Name>
 					<Synonym>
 						<v8:item>
 							<v8:lang>ru</v8:lang>
@@ -257,7 +257,7 @@
 			</Attribute>
 			<Attribute uuid="7f356abf-9045-4a76-89f3-8b52d467122a">
 				<Properties>
-					<Name>FTPСоединениеПуть</Name>
+					<Name>Путь</Name>
 					<Synonym>
 						<v8:item>
 							<v8:lang>ru</v8:lang>
@@ -331,54 +331,16 @@
 					<ChoiceHistoryOnInput>Auto</ChoiceHistoryOnInput>
 				</Properties>
 			</Attribute>
-			<Attribute uuid="51fa8d01-44a1-4e75-9b04-6a2504972f08">
+			<Attribute uuid="e38fb48f-0e16-44d9-bf3f-21c804c404e0">
 				<Properties>
-					<Name>ШаблонИмениФайлаСообщения</Name>
+					<Name>Транслитерация</Name>
 					<Synonym>
 						<v8:item>
 							<v8:lang>ru</v8:lang>
-							<v8:content>Шаблон имени файла сообщения</v8:content>
+							<v8:content>Транслитерация</v8:content>
 						</v8:item>
 					</Synonym>
 					<Comment/>
-					<Type>
-						<v8:Type>xs:string</v8:Type>
-						<v8:StringQualifiers>
-							<v8:Length>0</v8:Length>
-							<v8:AllowedLength>Variable</v8:AllowedLength>
-						</v8:StringQualifiers>
-					</Type>
-					<PasswordMode>false</PasswordMode>
-					<Format/>
-					<EditFormat/>
-					<ToolTip/>
-					<MarkNegatives>false</MarkNegatives>
-					<Mask/>
-					<MultiLine>false</MultiLine>
-					<ExtendedEdit>false</ExtendedEdit>
-					<MinValue xsi:nil="true"/>
-					<MaxValue xsi:nil="true"/>
-					<FillChecking>DontCheck</FillChecking>
-					<ChoiceFoldersAndItems>Items</ChoiceFoldersAndItems>
-					<ChoiceParameterLinks/>
-					<ChoiceParameters/>
-					<QuickChoice>Auto</QuickChoice>
-					<CreateOnInput>Auto</CreateOnInput>
-					<ChoiceForm/>
-					<LinkByType/>
-					<ChoiceHistoryOnInput>Auto</ChoiceHistoryOnInput>
-				</Properties>
-			</Attribute>
-			<Attribute uuid="73dae482-a1ee-4c57-8859-2dd8e8635a49">
-				<Properties>
-					<Name>ИспользоватьВременныйКаталогДляОтправкиИПриемаСообщений</Name>
-					<Synonym>
-						<v8:item>
-							<v8:lang>ru</v8:lang>
-							<v8:content>Использовать временный каталог для отправки и приема сообщений</v8:content>
-						</v8:item>
-					</Synonym>
-					<Comment>Истина - Отправка и получение сообщений обмена будет выполняться через временный каталог; Ложь – отправка и получение будет выполняться напрямую через каталог обмена</Comment>
 					<Type>
 						<v8:Type>xs:boolean</v8:Type>
 					</Type>
@@ -403,41 +365,8 @@
 					<ChoiceHistoryOnInput>Auto</ChoiceHistoryOnInput>
 				</Properties>
 			</Attribute>
-			<Attribute uuid="9c57c3d0-aaa1-4c87-a81c-36ac4dd48eaa">
-				<Properties>
-					<Name>УзелИнформационнойБазы</Name>
-					<Synonym>
-						<v8:item>
-							<v8:lang>ru</v8:lang>
-							<v8:content>Узел информационной базы</v8:content>
-						</v8:item>
-					</Synonym>
-					<Comment/>
-					<Type>
-						<v8:TypeSet>cfg:ExchangePlanRef</v8:TypeSet>
-					</Type>
-					<PasswordMode>false</PasswordMode>
-					<Format/>
-					<EditFormat/>
-					<ToolTip/>
-					<MarkNegatives>false</MarkNegatives>
-					<Mask/>
-					<MultiLine>false</MultiLine>
-					<ExtendedEdit>false</ExtendedEdit>
-					<MinValue xsi:nil="true"/>
-					<MaxValue xsi:nil="true"/>
-					<FillChecking>DontCheck</FillChecking>
-					<ChoiceFoldersAndItems>Items</ChoiceFoldersAndItems>
-					<ChoiceParameterLinks/>
-					<ChoiceParameters/>
-					<QuickChoice>Auto</QuickChoice>
-					<CreateOnInput>Auto</CreateOnInput>
-					<ChoiceForm/>
-					<LinkByType/>
-					<ChoiceHistoryOnInput>Auto</ChoiceHistoryOnInput>
-				</Properties>
-			</Attribute>
 			<Form>Форма</Form>
+			<Form>ФормаНастройки</Form>
 		</ChildObjects>
 	</DataProcessor>
 </MetaDataObject>

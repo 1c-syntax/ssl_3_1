@@ -636,20 +636,20 @@
 										<Event name="OnChange">ЗаголовокПриИзменении</Event>
 									</Events>
 								</InputField>
-								<RadioButtonField name="ВидСвойств" id="20">
-									<DataPath>ВидСвойств</DataPath>
+								<RadioButtonField name="ВидСвойства" id="20">
+									<DataPath>ВидСвойства</DataPath>
 									<Visible>false</Visible>
 									<Title>
 										<v8:item>
 											<v8:lang>ru</v8:lang>
-											<v8:content>Вид свойств</v8:content>
+											<v8:content>Вид свойства</v8:content>
 										</v8:item>
 									</Title>
 									<TitleLocation>None</TitleLocation>
 									<RadioButtonType>Auto</RadioButtonType>
 									<ColumnsCount>1</ColumnsCount>
-									<ContextMenu name="ВидСвойствКонтекстноеМеню" id="21"/>
-									<ExtendedTooltip name="ВидСвойствРасширеннаяПодсказка" id="119"/>
+									<ContextMenu name="ВидСвойстваКонтекстноеМеню" id="21"/>
+									<ExtendedTooltip name="ВидСвойстваРасширеннаяПодсказка" id="119"/>
 									<Events>
 										<Event name="OnChange">ВидСвойствПриИзменении</Event>
 									</Events>
@@ -927,7 +927,7 @@
 											<ShowTitle>false</ShowTitle>
 											<ExtendedTooltip name="ГруппаЦветаСвойствРасширеннаяПодсказка" id="499"/>
 											<ChildItems>
-												<LabelDecoration name="ДекорацияЦветСвойств" id="500">
+												<LabelDecoration name="ДекорацияЦветСвойства" id="500">
 													<TextColor>style:ButtonTextColor</TextColor>
 													<Title formatted="false">
 														<v8:item>
@@ -936,8 +936,8 @@
 														</v8:item>
 													</Title>
 													<ToolTipRepresentation>ShowLeft</ToolTipRepresentation>
-													<ContextMenu name="ДекорацияЦветСвойствКонтекстноеМеню" id="501"/>
-													<ExtendedTooltip name="ДекорацияЦветСвойствРасширеннаяПодсказка" id="502"/>
+													<ContextMenu name="ДекорацияЦветСвойстваКонтекстноеМеню" id="501"/>
+													<ExtendedTooltip name="ДекорацияЦветСвойстваРасширеннаяПодсказка" id="502"/>
 												</LabelDecoration>
 												<CommandBar name="КоманднаяПанельЦветаСвойств" id="503">
 													<Title>
@@ -1960,11 +1960,11 @@
 			<MainAttribute>true</MainAttribute>
 			<SavedData>true</SavedData>
 		</Attribute>
-		<Attribute name="ВидСвойств" id="3">
+		<Attribute name="ВидСвойства" id="3">
 			<Title>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Вид свойств</v8:content>
+					<v8:content>Вид свойства</v8:content>
 				</v8:item>
 			</Title>
 			<Type>
@@ -2257,19 +2257,19 @@
 	ВЫБОР
 		КОГДА Наборы.ЭтоГруппа
 			ТОГДА Наборы.Наименование
-		КОГДА &amp;ВидСвойств = ЗНАЧЕНИЕ(Перечисление.ВидыСвойств.ДополнительныеСведения)
+		КОГДА &amp;ВидСвойства = ЗНАЧЕНИЕ(Перечисление.ВидыСвойств.ДополнительныеСведения)
 			ТОГДА ВЫБОР
 				КОГДА Наборы.КоличествоСведений = ""
 					ТОГДА Наборы.Наименование
 				ИНАЧЕ Наборы.Наименование + " (" + Наборы.КоличествоСведений + ")"
 			КОНЕЦ
-		КОГДА &amp;ВидСвойств = ЗНАЧЕНИЕ(Перечисление.ВидыСвойств.ДополнительныеРеквизиты)
+		КОГДА &amp;ВидСвойства = ЗНАЧЕНИЕ(Перечисление.ВидыСвойств.ДополнительныеРеквизиты)
 		ТОГДА ВЫБОР
 			КОГДА Наборы.КоличествоРеквизитов = ""
 				ТОГДА Наборы.Наименование
 			ИНАЧЕ Наборы.Наименование + " (" + Наборы.КоличествоРеквизитов + ")"
 		КОНЕЦ
-		КОГДА &amp;ВидСвойств = ЗНАЧЕНИЕ(Перечисление.ВидыСвойств.Метки)
+		КОГДА &amp;ВидСвойства = ЗНАЧЕНИЕ(Перечисление.ВидыСвойств.Метки)
 		ТОГДА ВЫБОР
 			КОГДА Наборы.КоличествоМеток = ""
 				ТОГДА Наборы.Наименование
@@ -2389,6 +2389,10 @@
 						</v8:item>
 					</dcssch:title>
 				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ОтредактированныеПредопределенныеРеквизиты</dcssch:dataPath>
+					<dcssch:field>ОтредактированныеПредопределенныеРеквизиты</dcssch:field>
+				</Field>
 				<Parameter>
 					<dcssch:name>ИсключаемыеНаборы</dcssch:name>
 					<dcssch:title xsi:type="v8:LocalStringType">
@@ -2412,11 +2416,11 @@
 					<dcssch:valueListAllowed>true</dcssch:valueListAllowed>
 				</Parameter>
 				<Parameter>
-					<dcssch:name>ВидСвойств</dcssch:name>
+					<dcssch:name>ВидСвойства</dcssch:name>
 					<dcssch:title xsi:type="v8:LocalStringType">
 						<v8:item>
 							<v8:lang>ru</v8:lang>
-							<v8:content>Вид свойств</v8:content>
+							<v8:content>Вид свойства</v8:content>
 						</v8:item>
 					</dcssch:title>
 					<dcssch:valueType>

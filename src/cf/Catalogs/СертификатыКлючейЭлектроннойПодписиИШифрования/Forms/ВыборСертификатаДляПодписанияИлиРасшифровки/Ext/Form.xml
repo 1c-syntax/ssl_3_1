@@ -6,6 +6,7 @@
 			<v8:content>Выбор сертификата для подписания данных</v8:content>
 		</v8:item>
 	</Title>
+	<Width>70</Width>
 	<WindowOpeningMode>LockOwnerWindow</WindowOpeningMode>
 	<AutoTitle>false</AutoTitle>
 	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
@@ -183,7 +184,7 @@
 											<Title formatted="false">
 												<v8:item>
 													<v8:lang>ru</v8:lang>
-													<v8:content>Чтобы отобразить сертификаты необходимо авторизоваться на сервере DSS</v8:content>
+													<v8:content>Чтобы отобразить сертификаты DSS необходимо авторизоваться на сервере DSS</v8:content>
 												</v8:item>
 											</Title>
 											<Hyperlink>true</Hyperlink>
@@ -267,6 +268,30 @@
 									<AutoCommandBar name="СертификатыКоманднаяПанель" id="219">
 										<Autofill>false</Autofill>
 										<ChildItems>
+											<Button name="ДобавитьДляПодписанияИШифрованияИзФайлов" id="886">
+												<Type>CommandBarButton</Type>
+												<Representation>PictureAndText</Representation>
+												<CommandName>Form.Command.ДобавитьДляПодписанияИШифрованияИзФайлов</CommandName>
+												<Title>
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>Добавить из файлов...</v8:content>
+													</v8:item>
+												</Title>
+												<ToolTipRepresentation>Balloon</ToolTipRepresentation>
+												<ExtendedTooltip name="ДобавитьДляПодписанияИШифрованияИзФайловРасширеннаяПодсказка" id="887"/>
+											</Button>
+											<Button name="ДобавитьЗаявлениеНаВыпускСертификата" id="898">
+												<Type>CommandBarButton</Type>
+												<CommandName>Form.Command.ДобавитьЗаявлениеНаВыпускСертификата</CommandName>
+												<Title>
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>Выпустить сертификат...</v8:content>
+													</v8:item>
+												</Title>
+												<ExtendedTooltip name="ДобавитьЗаявлениеНаВыпускСертификатаРасширеннаяПодсказка" id="899"/>
+											</Button>
 											<SearchStringAddition name="СтрокаПоиск" id="873">
 												<AdditionSource>
 													<Item>Сертификаты</Item>
@@ -1056,6 +1081,11 @@
 						<v8:Type>xs:boolean</v8:Type>
 					</Type>
 				</Column>
+				<Column name="Ссылка" id="9">
+					<Type>
+						<v8:Type>cfg:CatalogRef.СертификатыКлючейЭлектроннойПодписиИШифрования</v8:Type>
+					</Type>
+				</Column>
 			</Columns>
 		</Attribute>
 		<Attribute name="СертификатНаименование" id="9">
@@ -1317,6 +1347,20 @@
 				<v8:Type>xs:boolean</v8:Type>
 			</Type>
 		</Attribute>
+		<Attribute name="ЗаявлениеНаВыпускСертификатаДоступно" id="33">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="АдресСертификата" id="32">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
 	</Attributes>
 	<Commands>
 		<Command name="Далее" id="1">
@@ -1456,6 +1500,46 @@
 			</ToolTip>
 			<Action>ВыбратьСсылку</Action>
 		</Command>
+		<Command name="ДобавитьЗаявлениеНаВыпускСертификата" id="9">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Выпустить сертификат...</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Оформить заявление на выпуск сертификата</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>CommonPicture.ЗаявлениеНаВыпускСертификатаКлюча</xr:Ref>
+				<xr:LoadTransparent>false</xr:LoadTransparent>
+			</Picture>
+			<Action>ДобавитьЗаявлениеНаВыпускСертификата</Action>
+			<Representation>TextPicture</Representation>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ДобавитьДляПодписанияИШифрованияИзФайлов" id="13">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Добавить из файлов...</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Добавить для подписания и шифрования из файлов</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>CommonPicture.СертификатВЛичномХранилище</xr:Ref>
+				<xr:LoadTransparent>false</xr:LoadTransparent>
+			</Picture>
+			<Action>ДобавитьДляПодписанияИШифрованияИзФайлов</Action>
+		</Command>
 	</Commands>
 	<Parameters>
 		<Parameter name="ДляШифрованияИРасшифровки">
@@ -1510,6 +1594,20 @@
 		<Parameter name="Организация">
 			<Type>
 				<v8:TypeSet>cfg:CatalogRef</v8:TypeSet>
+			</Type>
+		</Parameter>
+		<Parameter name="АдресСертификата">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Parameter>
+		<Parameter name="ОтображатьКомандыДобавления">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
 			</Type>
 		</Parameter>
 	</Parameters>
