@@ -120,281 +120,331 @@
 		<Event name="OnWriteAtServer">ПриЗаписиНаСервере</Event>
 	</Events>
 	<ChildItems>
-		<UsualGroup name="ГруппаСтатусы" id="767">
+		<UsualGroup name="ГруппаВсеСтатусы" id="1227">
 			<Title>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Статусы</v8:content>
+					<v8:content>Все статусы</v8:content>
 				</v8:item>
 			</Title>
 			<Width>75</Width>
 			<HorizontalStretch>false</HorizontalStretch>
 			<VerticalStretch>false</VerticalStretch>
-			<Representation>None</Representation>
+			<Group>Vertical</Group>
 			<ShowTitle>false</ShowTitle>
-			<ExtendedTooltip name="ГруппаСтатусыРасширеннаяПодсказка" id="768"/>
+			<ExtendedTooltip name="ГруппаВсеСтатусыРасширеннаяПодсказка" id="1228"/>
 			<ChildItems>
-				<UsualGroup name="ГруппаСтатусВРеестреФНС" id="1111">
+				<UsualGroup name="ГруппаСтатусы" id="767">
 					<Title>
 						<v8:item>
 							<v8:lang>ru</v8:lang>
-							<v8:content>Статус в реестре ФНС</v8:content>
+							<v8:content>Статусы</v8:content>
 						</v8:item>
 					</Title>
 					<HorizontalStretch>true</HorizontalStretch>
 					<VerticalStretch>true</VerticalStretch>
-					<VerticalAlign>Center</VerticalAlign>
+					<Representation>None</Representation>
 					<ShowTitle>false</ShowTitle>
-					<BackColor>style:ToolTipBackColor</BackColor>
-					<ExtendedTooltip name="ГруппаСтатусВРеестреФНСРасширеннаяПодсказка" id="1112"/>
+					<ExtendedTooltip name="ГруппаСтатусыРасширеннаяПодсказка" id="768"/>
 					<ChildItems>
-						<PictureDecoration name="ДекорацияСоздание" id="493">
-							<Visible>false</Visible>
-							<Title formatted="false">
+						<UsualGroup name="ГруппаСтатусВРеестреФНС" id="1111">
+							<Title>
 								<v8:item>
 									<v8:lang>ru</v8:lang>
-									<v8:content>Декорация создание</v8:content>
+									<v8:content>Статус в реестре ФНС</v8:content>
 								</v8:item>
 							</Title>
-							<PictureSize>AutoSize</PictureSize>
-							<Picture>
-								<xr:Ref>CommonPicture.МЧДСоздание</xr:Ref>
-								<xr:LoadTransparent>false</xr:LoadTransparent>
-							</Picture>
-							<ContextMenu name="ДекорацияСозданиеКонтекстноеМеню" id="494"/>
-							<ExtendedTooltip name="ДекорацияСозданиеРасширеннаяПодсказка" id="495"/>
-						</PictureDecoration>
-						<PictureDecoration name="ДекорацияПодписание" id="496">
-							<Visible>false</Visible>
-							<Title formatted="false">
-								<v8:item>
-									<v8:lang>ru</v8:lang>
-									<v8:content>Декорация подписание</v8:content>
-								</v8:item>
-							</Title>
-							<PictureSize>AutoSize</PictureSize>
-							<Picture>
-								<xr:Ref>CommonPicture.МЧДСозданаПодписание</xr:Ref>
-								<xr:LoadTransparent>false</xr:LoadTransparent>
-							</Picture>
-							<ContextMenu name="ДекорацияПодписаниеКонтекстноеМеню" id="497"/>
-							<ExtendedTooltip name="ДекорацияПодписаниеРасширеннаяПодсказка" id="498"/>
-						</PictureDecoration>
-						<PictureDecoration name="ДекорацияРегистрация" id="499">
-							<Visible>false</Visible>
-							<Title formatted="false">
-								<v8:item>
-									<v8:lang>ru</v8:lang>
-									<v8:content>Декорация регистрация</v8:content>
-								</v8:item>
-							</Title>
-							<PictureSize>AutoSize</PictureSize>
-							<Picture>
-								<xr:Ref>CommonPicture.МЧДНаРегистрации</xr:Ref>
-								<xr:LoadTransparent>false</xr:LoadTransparent>
-							</Picture>
-							<ContextMenu name="ДекорацияРегистрацияКонтекстноеМеню" id="500"/>
-							<ExtendedTooltip name="ДекорацияРегистрацияРасширеннаяПодсказка" id="501"/>
-						</PictureDecoration>
-						<PictureDecoration name="ДекорацияЗарегистрирована" id="505">
-							<Visible>false</Visible>
-							<Title formatted="false">
-								<v8:item>
-									<v8:lang>ru</v8:lang>
-									<v8:content>Декорация зарегистрирована</v8:content>
-								</v8:item>
-							</Title>
-							<PictureSize>AutoSize</PictureSize>
-							<Picture>
-								<xr:Ref>CommonPicture.МЧДВРеестре</xr:Ref>
-								<xr:LoadTransparent>false</xr:LoadTransparent>
-							</Picture>
-							<ContextMenu name="ДекорацияЗарегистрированаКонтекстноеМеню" id="506"/>
-							<ExtendedTooltip name="ДекорацияЗарегистрированаРасширеннаяПодсказка" id="507"/>
-						</PictureDecoration>
-						<PictureDecoration name="ДекорацияОтменена" id="977">
-							<Visible>false</Visible>
-							<Title formatted="false">
-								<v8:item>
-									<v8:lang>ru</v8:lang>
-									<v8:content>Декорация отменена</v8:content>
-								</v8:item>
-							</Title>
-							<PictureSize>AutoSize</PictureSize>
-							<Picture>
-								<xr:Ref>CommonPicture.МЧДОтменена</xr:Ref>
-								<xr:LoadTransparent>false</xr:LoadTransparent>
-							</Picture>
-							<ContextMenu name="ДекорацияОтмененаКонтекстноеМеню" id="978"/>
-							<ExtendedTooltip name="ДекорацияОтмененаРасширеннаяПодсказка" id="979"/>
-						</PictureDecoration>
-						<PictureDecoration name="ДекорацияПросрочена" id="974">
-							<Visible>false</Visible>
-							<Title formatted="false">
-								<v8:item>
-									<v8:lang>ru</v8:lang>
-									<v8:content>Декорация просрочена</v8:content>
-								</v8:item>
-							</Title>
-							<PictureSize>AutoSize</PictureSize>
-							<Picture>
-								<xr:Ref>CommonPicture.МЧДИстекСрокДействия</xr:Ref>
-								<xr:LoadTransparent>false</xr:LoadTransparent>
-							</Picture>
-							<ContextMenu name="ДекорацияПросроченаКонтекстноеМеню" id="975"/>
-							<ExtendedTooltip name="ДекорацияПросроченаРасширеннаяПодсказка" id="976"/>
-						</PictureDecoration>
-						<PictureDecoration name="ДекорацияПодписана" id="510">
-							<Visible>false</Visible>
-							<Title formatted="false">
-								<v8:item>
-									<v8:lang>ru</v8:lang>
-									<v8:content>Декорация подписана</v8:content>
-								</v8:item>
-							</Title>
-							<PictureSize>AutoSize</PictureSize>
-							<Picture>
-								<xr:Ref>CommonPicture.МЧДПодписана</xr:Ref>
-								<xr:LoadTransparent>false</xr:LoadTransparent>
-							</Picture>
-							<ContextMenu name="ДекорацияПодписанаКонтекстноеМеню" id="511"/>
-							<ExtendedTooltip name="ДекорацияПодписанаРасширеннаяПодсказка" id="512"/>
-						</PictureDecoration>
-						<PictureDecoration name="ДекорацияСозданиеБезРегистрации" id="1069">
-							<Visible>false</Visible>
-							<Title formatted="false">
-								<v8:item>
-									<v8:lang>ru</v8:lang>
-									<v8:content>Декорация создание без регистрации</v8:content>
-								</v8:item>
-							</Title>
-							<PictureSize>AutoSize</PictureSize>
-							<Picture>
-								<xr:Ref>CommonPicture.МЧДСозданиеБезРегистрации</xr:Ref>
-								<xr:LoadTransparent>false</xr:LoadTransparent>
-							</Picture>
-							<ContextMenu name="ДекорацияСозданиеБезРегистрацииКонтекстноеМеню" id="1070"/>
-							<ExtendedTooltip name="ДекорацияСозданиеБезРегистрацииРасширеннаяПодсказка" id="1071"/>
-						</PictureDecoration>
-						<PictureDecoration name="ДекорацияПодписаниеБезРегистрации" id="1089">
-							<Visible>false</Visible>
-							<Title formatted="false">
-								<v8:item>
-									<v8:lang>ru</v8:lang>
-									<v8:content>Декорация подписание без регистрации</v8:content>
-								</v8:item>
-							</Title>
-							<PictureSize>AutoSize</PictureSize>
-							<Picture>
-								<xr:Ref>CommonPicture.МЧДСозданаПодписаниеБезРегистрации</xr:Ref>
-								<xr:LoadTransparent>false</xr:LoadTransparent>
-							</Picture>
-							<ContextMenu name="ДекорацияПодписаниеБезРегистрацииКонтекстноеМеню" id="1090"/>
-							<ExtendedTooltip name="ДекорацияПодписаниеБезРегистрацииРасширеннаяПодсказка" id="1068"/>
-						</PictureDecoration>
-						<PictureDecoration name="ДекорацияГотово" id="502">
-							<Visible>false</Visible>
-							<Title formatted="false">
-								<v8:item>
-									<v8:lang>ru</v8:lang>
-									<v8:content>Декорация готово</v8:content>
-								</v8:item>
-							</Title>
-							<PictureSize>AutoSize</PictureSize>
-							<Picture>
-								<xr:Ref>CommonPicture.МЧДАктивна</xr:Ref>
-								<xr:LoadTransparent>false</xr:LoadTransparent>
-							</Picture>
-							<ContextMenu name="ДекорацияГотовоКонтекстноеМеню" id="503"/>
-							<ExtendedTooltip name="ДекорацияГотовоРасширеннаяПодсказка" id="504"/>
-						</PictureDecoration>
-						<PictureDecoration name="ДекорацияОшибка" id="1160">
-							<Visible>false</Visible>
-							<Title formatted="false">
-								<v8:item>
-									<v8:lang>ru</v8:lang>
-									<v8:content>Декорация ошибка</v8:content>
-								</v8:item>
-							</Title>
-							<Picture>
-								<xr:Ref>CommonPicture.МЧДОшибка</xr:Ref>
-								<xr:LoadTransparent>false</xr:LoadTransparent>
-							</Picture>
-							<ContextMenu name="ДекорацияОшибкаКонтекстноеМеню" id="1161"/>
-							<ExtendedTooltip name="ДекорацияОшибкаРасширеннаяПодсказка" id="1162"/>
-						</PictureDecoration>
-						<LabelDecoration name="ОписаниеСостояния" id="773">
-							<AutoMaxWidth>false</AutoMaxWidth>
-							<AutoMaxHeight>false</AutoMaxHeight>
-							<Title formatted="true">
-								<v8:item>
-									<v8:lang>ru</v8:lang>
-									<v8:content>Статус регистрации в реестре ФНС</v8:content>
-								</v8:item>
-							</Title>
-							<ToolTipRepresentation>None</ToolTipRepresentation>
+							<HorizontalStretch>true</HorizontalStretch>
+							<VerticalStretch>true</VerticalStretch>
 							<VerticalAlign>Center</VerticalAlign>
-							<ContextMenu name="ОписаниеСостоянияКонтекстноеМеню" id="774"/>
-							<ExtendedTooltip name="ОписаниеСостоянияРасширеннаяПодсказка" id="775"/>
-							<Events>
-								<Event name="URLProcessing">ОписаниеСостоянияОбработкаНавигационнойСсылки</Event>
-							</Events>
-						</LabelDecoration>
+							<ShowTitle>false</ShowTitle>
+							<BackColor>style:ToolTipBackColor</BackColor>
+							<ExtendedTooltip name="ГруппаСтатусВРеестреФНСРасширеннаяПодсказка" id="1112"/>
+							<ChildItems>
+								<PictureDecoration name="ДекорацияСоздание" id="493">
+									<Visible>false</Visible>
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Декорация создание</v8:content>
+										</v8:item>
+									</Title>
+									<PictureSize>AutoSize</PictureSize>
+									<Picture>
+										<xr:Ref>CommonPicture.МЧДСоздание</xr:Ref>
+										<xr:LoadTransparent>false</xr:LoadTransparent>
+									</Picture>
+									<ContextMenu name="ДекорацияСозданиеКонтекстноеМеню" id="494"/>
+									<ExtendedTooltip name="ДекорацияСозданиеРасширеннаяПодсказка" id="495"/>
+								</PictureDecoration>
+								<PictureDecoration name="ДекорацияПодписание" id="496">
+									<Visible>false</Visible>
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Декорация подписание</v8:content>
+										</v8:item>
+									</Title>
+									<PictureSize>AutoSize</PictureSize>
+									<Picture>
+										<xr:Ref>CommonPicture.МЧДСозданаПодписание</xr:Ref>
+										<xr:LoadTransparent>false</xr:LoadTransparent>
+									</Picture>
+									<ContextMenu name="ДекорацияПодписаниеКонтекстноеМеню" id="497"/>
+									<ExtendedTooltip name="ДекорацияПодписаниеРасширеннаяПодсказка" id="498"/>
+								</PictureDecoration>
+								<PictureDecoration name="ДекорацияРегистрация" id="499">
+									<Visible>false</Visible>
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Декорация регистрация</v8:content>
+										</v8:item>
+									</Title>
+									<PictureSize>AutoSize</PictureSize>
+									<Picture>
+										<xr:Ref>CommonPicture.МЧДНаРегистрации</xr:Ref>
+										<xr:LoadTransparent>false</xr:LoadTransparent>
+									</Picture>
+									<ContextMenu name="ДекорацияРегистрацияКонтекстноеМеню" id="500"/>
+									<ExtendedTooltip name="ДекорацияРегистрацияРасширеннаяПодсказка" id="501"/>
+								</PictureDecoration>
+								<PictureDecoration name="ДекорацияЗарегистрирована" id="505">
+									<Visible>false</Visible>
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Декорация зарегистрирована</v8:content>
+										</v8:item>
+									</Title>
+									<PictureSize>AutoSize</PictureSize>
+									<Picture>
+										<xr:Ref>CommonPicture.МЧДВРеестре</xr:Ref>
+										<xr:LoadTransparent>false</xr:LoadTransparent>
+									</Picture>
+									<ContextMenu name="ДекорацияЗарегистрированаКонтекстноеМеню" id="506"/>
+									<ExtendedTooltip name="ДекорацияЗарегистрированаРасширеннаяПодсказка" id="507"/>
+								</PictureDecoration>
+								<PictureDecoration name="ДекорацияОтменена" id="977">
+									<Visible>false</Visible>
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Декорация отменена</v8:content>
+										</v8:item>
+									</Title>
+									<PictureSize>AutoSize</PictureSize>
+									<Picture>
+										<xr:Ref>CommonPicture.МЧДОтменена</xr:Ref>
+										<xr:LoadTransparent>false</xr:LoadTransparent>
+									</Picture>
+									<ContextMenu name="ДекорацияОтмененаКонтекстноеМеню" id="978"/>
+									<ExtendedTooltip name="ДекорацияОтмененаРасширеннаяПодсказка" id="979"/>
+								</PictureDecoration>
+								<PictureDecoration name="ДекорацияПросрочена" id="974">
+									<Visible>false</Visible>
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Декорация просрочена</v8:content>
+										</v8:item>
+									</Title>
+									<PictureSize>AutoSize</PictureSize>
+									<Picture>
+										<xr:Ref>CommonPicture.МЧДИстекСрокДействия</xr:Ref>
+										<xr:LoadTransparent>false</xr:LoadTransparent>
+									</Picture>
+									<ContextMenu name="ДекорацияПросроченаКонтекстноеМеню" id="975"/>
+									<ExtendedTooltip name="ДекорацияПросроченаРасширеннаяПодсказка" id="976"/>
+								</PictureDecoration>
+								<PictureDecoration name="ДекорацияПодписана" id="510">
+									<Visible>false</Visible>
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Декорация подписана</v8:content>
+										</v8:item>
+									</Title>
+									<PictureSize>AutoSize</PictureSize>
+									<Picture>
+										<xr:Ref>CommonPicture.МЧДПодписана</xr:Ref>
+										<xr:LoadTransparent>false</xr:LoadTransparent>
+									</Picture>
+									<ContextMenu name="ДекорацияПодписанаКонтекстноеМеню" id="511"/>
+									<ExtendedTooltip name="ДекорацияПодписанаРасширеннаяПодсказка" id="512"/>
+								</PictureDecoration>
+								<PictureDecoration name="ДекорацияСозданиеБезРегистрации" id="1069">
+									<Visible>false</Visible>
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Декорация создание без регистрации</v8:content>
+										</v8:item>
+									</Title>
+									<PictureSize>AutoSize</PictureSize>
+									<Picture>
+										<xr:Ref>CommonPicture.МЧДСозданиеБезРегистрации</xr:Ref>
+										<xr:LoadTransparent>false</xr:LoadTransparent>
+									</Picture>
+									<ContextMenu name="ДекорацияСозданиеБезРегистрацииКонтекстноеМеню" id="1070"/>
+									<ExtendedTooltip name="ДекорацияСозданиеБезРегистрацииРасширеннаяПодсказка" id="1071"/>
+								</PictureDecoration>
+								<PictureDecoration name="ДекорацияПодписаниеБезРегистрации" id="1089">
+									<Visible>false</Visible>
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Декорация подписание без регистрации</v8:content>
+										</v8:item>
+									</Title>
+									<PictureSize>AutoSize</PictureSize>
+									<Picture>
+										<xr:Ref>CommonPicture.МЧДСозданаПодписаниеБезРегистрации</xr:Ref>
+										<xr:LoadTransparent>false</xr:LoadTransparent>
+									</Picture>
+									<ContextMenu name="ДекорацияПодписаниеБезРегистрацииКонтекстноеМеню" id="1090"/>
+									<ExtendedTooltip name="ДекорацияПодписаниеБезРегистрацииРасширеннаяПодсказка" id="1068"/>
+								</PictureDecoration>
+								<PictureDecoration name="ДекорацияГотово" id="502">
+									<Visible>false</Visible>
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Декорация готово</v8:content>
+										</v8:item>
+									</Title>
+									<PictureSize>AutoSize</PictureSize>
+									<Picture>
+										<xr:Ref>CommonPicture.МЧДАктивна</xr:Ref>
+										<xr:LoadTransparent>false</xr:LoadTransparent>
+									</Picture>
+									<ContextMenu name="ДекорацияГотовоКонтекстноеМеню" id="503"/>
+									<ExtendedTooltip name="ДекорацияГотовоРасширеннаяПодсказка" id="504"/>
+								</PictureDecoration>
+								<PictureDecoration name="ДекорацияОшибка" id="1160">
+									<Visible>false</Visible>
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Декорация ошибка</v8:content>
+										</v8:item>
+									</Title>
+									<Picture>
+										<xr:Ref>CommonPicture.МЧДОшибка</xr:Ref>
+										<xr:LoadTransparent>false</xr:LoadTransparent>
+									</Picture>
+									<ContextMenu name="ДекорацияОшибкаКонтекстноеМеню" id="1161"/>
+									<ExtendedTooltip name="ДекорацияОшибкаРасширеннаяПодсказка" id="1162"/>
+								</PictureDecoration>
+								<LabelDecoration name="ОписаниеСостояния" id="773">
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<AutoMaxHeight>false</AutoMaxHeight>
+									<Title formatted="true">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Статус регистрации в реестре ФНС</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTipRepresentation>None</ToolTipRepresentation>
+									<VerticalAlign>Center</VerticalAlign>
+									<ContextMenu name="ОписаниеСостоянияКонтекстноеМеню" id="774"/>
+									<ExtendedTooltip name="ОписаниеСостоянияРасширеннаяПодсказка" id="775"/>
+									<Events>
+										<Event name="URLProcessing">ОписаниеСостоянияОбработкаНавигационнойСсылки</Event>
+									</Events>
+								</LabelDecoration>
+							</ChildItems>
+						</UsualGroup>
+						<UsualGroup name="ГруппаСтатусВДругомРеестре" id="1113">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Статус в другом реестре</v8:content>
+								</v8:item>
+							</Title>
+							<VerticalStretch>true</VerticalStretch>
+							<VerticalAlign>Center</VerticalAlign>
+							<ShowTitle>false</ShowTitle>
+							<BackColor>style:ToolTipBackColor</BackColor>
+							<ExtendedTooltip name="ГруппаСтатусВДругомРеестреРасширеннаяПодсказка" id="1114"/>
+							<ChildItems>
+								<PictureDecoration name="ДекорацияКартинкаДругойРеестр" id="1099">
+									<Visible>false</Visible>
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Декорация регистрация</v8:content>
+										</v8:item>
+									</Title>
+									<PictureSize>AutoSize</PictureSize>
+									<Picture>
+										<xr:Ref>CommonPicture.МЧДНаРегистрации</xr:Ref>
+										<xr:LoadTransparent>false</xr:LoadTransparent>
+									</Picture>
+									<ContextMenu name="ДекорацияКартинкаДругойРеестрКонтекстноеМеню" id="1100"/>
+									<ExtendedTooltip name="ДекорацияКартинкаДругойРеестрРасширеннаяПодсказка" id="1101"/>
+								</PictureDecoration>
+								<LabelDecoration name="ОписаниеСостоянияВДругомРеестре" id="1086">
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<MaxWidth>40</MaxWidth>
+									<Title formatted="true">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Описание состояния в другом реестре</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTipRepresentation>None</ToolTipRepresentation>
+									<VerticalAlign>Center</VerticalAlign>
+									<ContextMenu name="ОписаниеСостоянияВДругомРеестреКонтекстноеМеню" id="1087"/>
+									<ExtendedTooltip name="ОписаниеСостоянияВДругомРеестреРасширеннаяПодсказка" id="1088"/>
+									<Events>
+										<Event name="URLProcessing">ДругойРеестрОбработкаНавигационнойСсылки</Event>
+									</Events>
+								</LabelDecoration>
+							</ChildItems>
+						</UsualGroup>
 					</ChildItems>
 				</UsualGroup>
-				<LabelDecoration name="ДекорацияРазделитель" id="1091">
-					<Width>1</Width>
-					<AutoMaxWidth>false</AutoMaxWidth>
-					<AutoMaxHeight>false</AutoMaxHeight>
-					<HorizontalStretch>false</HorizontalStretch>
-					<ContextMenu name="ДекорацияРазделительКонтекстноеМеню" id="1092"/>
-					<ExtendedTooltip name="ДекорацияРазделительРасширеннаяПодсказка" id="1093"/>
-				</LabelDecoration>
-				<UsualGroup name="ГруппаСтатусВДругомРеестре" id="1113">
+				<UsualGroup name="ГруппаРегистрацияВФНС" id="1219">
 					<Title>
 						<v8:item>
 							<v8:lang>ru</v8:lang>
-							<v8:content>Статус в другом реестре</v8:content>
+							<v8:content>Регистрация ВФНС</v8:content>
 						</v8:item>
 					</Title>
-					<Width>35</Width>
+					<HorizontalStretch>true</HorizontalStretch>
 					<VerticalStretch>true</VerticalStretch>
-					<VerticalAlign>Center</VerticalAlign>
 					<ShowTitle>false</ShowTitle>
 					<BackColor>style:ToolTipBackColor</BackColor>
-					<ExtendedTooltip name="ГруппаСтатусВДругомРеестреРасширеннаяПодсказка" id="1114"/>
+					<ExtendedTooltip name="ГруппаРегистрацияВФНСРасширеннаяПодсказка" id="1220"/>
 					<ChildItems>
-						<PictureDecoration name="ДекорацияКартинкаДругойРеестр" id="1099">
-							<Visible>false</Visible>
+						<PictureDecoration name="ДекорацияКартинкаРегистрацияВФНС" id="1224">
 							<Title formatted="false">
 								<v8:item>
 									<v8:lang>ru</v8:lang>
-									<v8:content>Декорация регистрация</v8:content>
+									<v8:content>Декорация картинка регистрация ВФНС</v8:content>
 								</v8:item>
 							</Title>
-							<PictureSize>AutoSize</PictureSize>
+							<PictureSize>ByFontSize</PictureSize>
 							<Picture>
-								<xr:Ref>CommonPicture.МЧДНаРегистрации</xr:Ref>
-								<xr:LoadTransparent>false</xr:LoadTransparent>
+								<xr:Ref>StdPicture.DialogInformation</xr:Ref>
+								<xr:LoadTransparent>true</xr:LoadTransparent>
 							</Picture>
-							<ContextMenu name="ДекорацияКартинкаДругойРеестрКонтекстноеМеню" id="1100"/>
-							<ExtendedTooltip name="ДекорацияКартинкаДругойРеестрРасширеннаяПодсказка" id="1101"/>
+							<ContextMenu name="ДекорацияКартинкаРегистрацияВФНСКонтекстноеМеню" id="1225"/>
+							<ExtendedTooltip name="ДекорацияКартинкаРегистрацияВФНСРасширеннаяПодсказка" id="1226"/>
 						</PictureDecoration>
-						<LabelDecoration name="ОписаниеСостоянияВДругомРеестре" id="1086">
+						<LabelDecoration name="ДекорацияРегистрацияВФНС" id="1221">
 							<AutoMaxWidth>false</AutoMaxWidth>
-							<MaxWidth>40</MaxWidth>
-							<Title formatted="true">
+							<Title formatted="false">
 								<v8:item>
 									<v8:lang>ru</v8:lang>
-									<v8:content>Описание состояния в другом реестре</v8:content>
+									<v8:content>Декорация регистрация в ФНС</v8:content>
 								</v8:item>
 							</Title>
-							<ToolTipRepresentation>None</ToolTipRepresentation>
-							<VerticalAlign>Center</VerticalAlign>
-							<ContextMenu name="ОписаниеСостоянияВДругомРеестреКонтекстноеМеню" id="1087"/>
-							<ExtendedTooltip name="ОписаниеСостоянияВДругомРеестреРасширеннаяПодсказка" id="1088"/>
+							<ContextMenu name="ДекорацияРегистрацияВФНСКонтекстноеМеню" id="1222"/>
+							<ExtendedTooltip name="ДекорацияРегистрацияВФНСРасширеннаяПодсказка" id="1223"/>
 							<Events>
-								<Event name="URLProcessing">ДругойРеестрОбработкаНавигационнойСсылки</Event>
+								<Event name="URLProcessing">ДекорацияРегистрацияВФНСОбработкаНавигационнойСсылки</Event>
 							</Events>
 						</LabelDecoration>
 					</ChildItems>
@@ -3379,6 +3429,15 @@
 					</Type>
 				</Column>
 			</Columns>
+		</Attribute>
+		<Attribute name="АдресХронологическихДанных" id="58">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
 		</Attribute>
 	</Attributes>
 	<Commands>
