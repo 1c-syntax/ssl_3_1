@@ -521,6 +521,40 @@
 										<Event name="ChoiceProcessing">СтранаОбработкаВыбора</Event>
 									</Events>
 								</InputField>
+								<InputField name="РегионИностранногоАдреса" id="597">
+									<DataPath>РегионИностранногоАдреса</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Регион</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="РегионИностранногоАдресаКонтекстноеМеню" id="598"/>
+									<ExtendedTooltip name="РегионИностранногоАдресаРасширеннаяПодсказка" id="599">
+										<Visible>false</Visible>
+										<Enabled>false</Enabled>
+									</ExtendedTooltip>
+									<Events>
+										<Event name="OnChange">РегионИностранногоАдресаПриИзменении</Event>
+									</Events>
+								</InputField>
+								<InputField name="РайонИностранногоАдреса" id="600">
+									<DataPath>РайонИностранногоАдреса</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Район</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="РайонИностранногоАдресаКонтекстноеМеню" id="601"/>
+									<ExtendedTooltip name="РайонИностранногоАдресаРасширеннаяПодсказка" id="602">
+										<Visible>false</Visible>
+										<Enabled>false</Enabled>
+									</ExtendedTooltip>
+									<Events>
+										<Event name="OnChange">РайонИностранногоАдресаПриИзменении</Event>
+									</Events>
+								</InputField>
 								<InputField name="НаселенныйПункт" id="16">
 									<DataPath>НаселенныйПункт</DataPath>
 									<DefaultItem>true</DefaultItem>
@@ -547,6 +581,23 @@
 										<Event name="StartChoice">НаселенныйПунктНачалоВыбора</Event>
 										<Event name="Clearing">НаселенныйПунктОчистка</Event>
 										<Event name="ChoiceProcessing">НаселенныйПунктОбработкаВыбора</Event>
+									</Events>
+								</InputField>
+								<InputField name="ВнутригородскойРайонИностранногоАдреса" id="603">
+									<DataPath>ВнутригородскойРайонИностранногоАдреса</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Внутригородской район</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="ВнутригородскойРайонИностранногоАдресаКонтекстноеМеню" id="604"/>
+									<ExtendedTooltip name="ВнутригородскойРайонИностранногоАдресаРасширеннаяПодсказка" id="605">
+										<Visible>false</Visible>
+										<Enabled>false</Enabled>
+									</ExtendedTooltip>
+									<Events>
+										<Event name="OnChange">ВнутригородскойРайонИностранногоАдресаПриИзменении</Event>
 									</Events>
 								</InputField>
 								<InputField name="Улица" id="18">
@@ -1518,7 +1569,7 @@
 			<Type>
 				<v8:Type>xs:string</v8:Type>
 				<v8:StringQualifiers>
-					<v8:Length>6</v8:Length>
+					<v8:Length>10</v8:Length>
 					<v8:AllowedLength>Variable</v8:AllowedLength>
 				</v8:StringQualifiers>
 			</Type>
@@ -2053,6 +2104,51 @@
 		<Attribute name="ЦветПоясняющегоТекста" id="59">
 			<Type>
 				<v8:Type>v8ui:Color</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="РегионИностранногоАдреса" id="60">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Регион</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="РайонИностранногоАдреса" id="61">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Район</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ВнутригородскойРайонИностранногоАдреса" id="62">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Внутригородской район</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
 			</Type>
 		</Attribute>
 	</Attributes>
