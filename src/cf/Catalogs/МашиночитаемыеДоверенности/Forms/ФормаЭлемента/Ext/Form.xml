@@ -15,6 +15,20 @@
 				</Title>
 				<ExtendedTooltip name="ФормаПодписатьРасширеннаяПодсказка" id="444"/>
 			</Button>
+			<Button name="ФормаОтправитьНаПодписание" id="1229">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.ОтправитьНаПодписание</CommandName>
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Отправить на подписание...</v8:content>
+					</v8:item>
+				</Title>
+				<ExtendedTooltip name="ФормаОтправитьНаПодписаниеРасширеннаяПодсказка" id="1230">
+					<Visible>false</Visible>
+					<Enabled>false</Enabled>
+				</ExtendedTooltip>
+			</Button>
 			<Button name="ФормаОтправить" id="508">
 				<Type>CommandBarButton</Type>
 				<CommandName>Form.Command.Отправить</CommandName>
@@ -3445,6 +3459,16 @@
 				<v8:Type>xs:boolean</v8:Type>
 			</Type>
 		</Attribute>
+		<Attribute name="ОжидаетсяПодписание" id="67">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ИспользоватьСервисМобильнойПодписи" id="68">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
 	</Attributes>
 	<Commands>
 		<Command name="ВыборТипаДоверителя" id="1">
@@ -3758,6 +3782,15 @@
 				</v8:item>
 			</Title>
 			<Action>ВыбратьПолномочия</Action>
+		</Command>
+		<Command name="ОтправитьНаПодписание" id="24">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отправить на подписание...</v8:content>
+				</v8:item>
+			</Title>
+			<Action>ОтправитьНаПодписание</Action>
 		</Command>
 	</Commands>
 	<Parameters>

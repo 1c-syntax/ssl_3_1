@@ -321,6 +321,20 @@
 									</Title>
 									<ExtendedTooltip name="ФормаПодписатьРасширеннаяПодсказка" id="71"/>
 								</Button>
+								<Button name="ФормаОтправитьНаПодписание" id="309">
+									<Type>CommandBarButton</Type>
+									<CommandName>Form.Command.ОтправитьНаПодписание</CommandName>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Отправить на подписание...</v8:content>
+										</v8:item>
+									</Title>
+									<ExtendedTooltip name="ФормаОтправитьНаПодписаниеРасширеннаяПодсказка" id="310">
+										<Visible>false</Visible>
+										<Enabled>false</Enabled>
+									</ExtendedTooltip>
+								</Button>
 								<Button name="ФормаДобавитьПодписьИзФайла" id="20">
 									<Type>CommandBarButton</Type>
 									<CommandName>Form.Command.ДобавитьЭПИзФайла</CommandName>
@@ -1250,6 +1264,20 @@
 										</Title>
 										<ExtendedTooltip name="ЭлектронныеПодписиПродлитьДействиеПодписейРасширеннаяПодсказка" id="293"/>
 									</Button>
+									<Button name="ЭлектронныеПодписиОтправитьНаПодписание" id="311">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.Command.ОтправитьНаПодписание</CommandName>
+										<Title>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Отправить на подписание...</v8:content>
+											</v8:item>
+										</Title>
+										<ExtendedTooltip name="ЭлектронныеПодписиОтправитьНаПодписаниеРасширеннаяПодсказка" id="312">
+											<Visible>false</Visible>
+											<Enabled>false</Enabled>
+										</ExtendedTooltip>
+									</Button>
 									<SearchStringAddition name="СтрокаПоискаЭлектронныеПодписи" id="294">
 										<AdditionSource>
 											<Item>ЭлектронныеПодписи</Item>
@@ -1771,6 +1799,11 @@
 							<v8:Length>0</v8:Length>
 							<v8:AllowedLength>Variable</v8:AllowedLength>
 						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="ИдентификаторПодписи" id="31">
+					<Type>
+						<v8:Type>v8:UUID</v8:Type>
 					</Type>
 				</Column>
 			</Columns>
@@ -2653,6 +2686,15 @@
 				</v8:item>
 			</ToolTip>
 			<Action>ПродлитьДействиеПодписей</Action>
+		</Command>
+		<Command name="ОтправитьНаПодписание" id="32">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отправить на подписание...</v8:content>
+				</v8:item>
+			</Title>
+			<Action>ОтправитьНаПодписание</Action>
 		</Command>
 	</Commands>
 	<Parameters>

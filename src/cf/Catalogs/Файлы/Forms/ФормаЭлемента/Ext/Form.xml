@@ -199,6 +199,20 @@
 									</Title>
 									<ExtendedTooltip name="ФормаПодписатьРасширеннаяПодсказка" id="71"/>
 								</Button>
+								<Button name="ФормаОтправитьНаПодписание" id="328">
+									<Type>CommandBarButton</Type>
+									<CommandName>Form.Command.ОтправитьНаПодписание</CommandName>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Отправить на подписание...</v8:content>
+										</v8:item>
+									</Title>
+									<ExtendedTooltip name="ФормаОтправитьНаПодписаниеРасширеннаяПодсказка" id="329">
+										<Visible>false</Visible>
+										<Enabled>false</Enabled>
+									</ExtendedTooltip>
+								</Button>
 								<Button name="ФормаДобавитьПодписьИзФайла" id="20">
 									<Type>CommandBarButton</Type>
 									<CommandName>Form.Command.ДобавитьЭПИзФайла</CommandName>
@@ -1171,6 +1185,20 @@
 										</Title>
 										<ExtendedTooltip name="ЭлектронныеПодписиПродлитьДействиеПодписейРасширеннаяПодсказка" id="299"/>
 									</Button>
+									<Button name="ЭлектронныеПодписиОтправитьНаПодписание" id="330">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.Command.ОтправитьНаПодписание</CommandName>
+										<Title>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Отправить на подписание...</v8:content>
+											</v8:item>
+										</Title>
+										<ExtendedTooltip name="ЭлектронныеПодписиОтправитьНаПодписаниеРасширеннаяПодсказка" id="331">
+											<Visible>false</Visible>
+											<Enabled>false</Enabled>
+										</ExtendedTooltip>
+									</Button>
 									<SearchStringAddition name="СтрокаПоискаЭлектронныеПодписи" id="300">
 										<AdditionSource>
 											<Item>ЭлектронныеПодписи</Item>
@@ -1189,6 +1217,8 @@
 							</AutoCommandBar>
 							<ExtendedTooltip name="ЭлектронныеПодписиРасширеннаяПодсказка" id="89"/>
 							<SearchStringAddition name="ЭлектронныеПодписиСтрокаПоиска" id="131">
+								<Visible>false</Visible>
+								<Enabled>false</Enabled>
 								<AdditionSource>
 									<Item>ЭлектронныеПодписи</Item>
 									<Type>SearchStringRepresentation</Type>
@@ -1197,6 +1227,8 @@
 								<ExtendedTooltip name="ЭлектронныеПодписиСтрокаПоискаРасширеннаяПодсказка" id="133"/>
 							</SearchStringAddition>
 							<ViewStatusAddition name="ЭлектронныеПодписиСостояниеПросмотра" id="134">
+								<Visible>false</Visible>
+								<Enabled>false</Enabled>
 								<AdditionSource>
 									<Item>ЭлектронныеПодписи</Item>
 									<Type>ViewStatusRepresentation</Type>
@@ -1205,6 +1237,8 @@
 								<ExtendedTooltip name="ЭлектронныеПодписиСостояниеПросмотраРасширеннаяПодсказка" id="136"/>
 							</ViewStatusAddition>
 							<SearchControlAddition name="ЭлектронныеПодписиУправлениеПоиском" id="137">
+								<Visible>false</Visible>
+								<Enabled>false</Enabled>
 								<AdditionSource>
 									<Item>ЭлектронныеПодписи</Item>
 									<Type>SearchControl</Type>
@@ -1410,6 +1444,8 @@
 							</AutoCommandBar>
 							<ExtendedTooltip name="СертификатыШифрованияРасширеннаяПодсказка" id="96"/>
 							<SearchStringAddition name="СертификатыШифрованияСтрокаПоиска" id="140">
+								<Visible>false</Visible>
+								<Enabled>false</Enabled>
 								<AdditionSource>
 									<Item>СертификатыШифрования</Item>
 									<Type>SearchStringRepresentation</Type>
@@ -1418,6 +1454,8 @@
 								<ExtendedTooltip name="СертификатыШифрованияСтрокаПоискаРасширеннаяПодсказка" id="142"/>
 							</SearchStringAddition>
 							<ViewStatusAddition name="СертификатыШифрованияСостояниеПросмотра" id="143">
+								<Visible>false</Visible>
+								<Enabled>false</Enabled>
 								<AdditionSource>
 									<Item>СертификатыШифрования</Item>
 									<Type>ViewStatusRepresentation</Type>
@@ -1426,6 +1464,8 @@
 								<ExtendedTooltip name="СертификатыШифрованияСостояниеПросмотраРасширеннаяПодсказка" id="145"/>
 							</ViewStatusAddition>
 							<SearchControlAddition name="СертификатыШифрованияУправлениеПоиском" id="146">
+								<Visible>false</Visible>
+								<Enabled>false</Enabled>
 								<AdditionSource>
 									<Item>СертификатыШифрования</Item>
 									<Type>SearchControl</Type>
@@ -1700,6 +1740,11 @@
 							<v8:Length>0</v8:Length>
 							<v8:AllowedLength>Variable</v8:AllowedLength>
 						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="ИдентификаторПодписи" id="4">
+					<Type>
+						<v8:Type>v8:UUID</v8:Type>
 					</Type>
 				</Column>
 			</Columns>
@@ -2373,6 +2418,15 @@
 				</v8:item>
 			</Title>
 			<Action>ПроверенаВручную</Action>
+		</Command>
+		<Command name="ОтправитьНаПодписание" id="31">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отправить на подписание...</v8:content>
+				</v8:item>
+			</Title>
+			<Action>ОтправитьНаПодписание</Action>
 		</Command>
 	</Commands>
 	<Parameters>

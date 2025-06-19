@@ -1,0 +1,198 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.18">
+	<WindowOpeningMode>LockOwnerWindow</WindowOpeningMode>
+	<CommandBarLocation>Bottom</CommandBarLocation>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<HorizontalAlign>Right</HorizontalAlign>
+		<Autofill>false</Autofill>
+		<ChildItems>
+			<Button name="ФормаДокументыПодписаны" id="4">
+				<Type>CommandBarButton</Type>
+				<DefaultButton>true</DefaultButton>
+				<CommandName>Form.Command.ДокументыПодписаны</CommandName>
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Документы подписаны</v8:content>
+					</v8:item>
+				</Title>
+				<ExtendedTooltip name="ФормаДокументыПодписаныРасширеннаяПодсказка" id="5">
+					<Visible>false</Visible>
+					<Enabled>false</Enabled>
+				</ExtendedTooltip>
+			</Button>
+			<Button name="ФормаОтмена" id="6">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.Отмена</CommandName>
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Отмена</v8:content>
+					</v8:item>
+				</Title>
+				<ExtendedTooltip name="ФормаОтменаРасширеннаяПодсказка" id="7">
+					<Visible>false</Visible>
+					<Enabled>false</Enabled>
+				</ExtendedTooltip>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="NotificationProcessing">ОбработкаОповещения</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<Pages name="ГруппаСтраницы" id="8">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Страницы</v8:content>
+				</v8:item>
+			</Title>
+			<PagesRepresentation>None</PagesRepresentation>
+			<ExtendedTooltip name="ГруппаСтраницыРасширеннаяПодсказка" id="9">
+				<Visible>false</Visible>
+				<Enabled>false</Enabled>
+			</ExtendedTooltip>
+			<ChildItems>
+				<Page name="ГруппаОтправлено" id="10">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Отправлено</v8:content>
+						</v8:item>
+					</Title>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаОтправленоРасширеннаяПодсказка" id="11">
+						<Visible>false</Visible>
+						<Enabled>false</Enabled>
+					</ExtendedTooltip>
+					<ChildItems>
+						<LabelDecoration name="НадписьОтправлено" id="1">
+							<Title formatted="true">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Документы отправлены подписанту в мобильное приложение &lt;b&gt;Моя подпись&lt;/&gt; от ФНС. Зайдите в приложение и подпишите документы, затем нажмите кнопку &lt;b&gt;Документы подписаны&lt;/&gt;</v8:content>
+								</v8:item>
+							</Title>
+							<ContextMenu name="НадписьОтправленоКонтекстноеМеню" id="2"/>
+							<ExtendedTooltip name="НадписьОтправленоРасширеннаяПодсказка" id="3">
+								<Visible>false</Visible>
+								<Enabled>false</Enabled>
+							</ExtendedTooltip>
+						</LabelDecoration>
+					</ChildItems>
+				</Page>
+				<Page name="ГруппаОжидание" id="12">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Ожидание</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="ГруппаОжиданиеРасширеннаяПодсказка" id="13">
+						<Visible>false</Visible>
+						<Enabled>false</Enabled>
+					</ExtendedTooltip>
+					<ChildItems>
+						<PictureDecoration name="КартинкаОжидание" id="14">
+							<Title formatted="false">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Картинка ожидание</v8:content>
+								</v8:item>
+							</Title>
+							<Picture>
+								<xr:Ref>CommonPicture.ДлительнаяОперация48</xr:Ref>
+								<xr:LoadTransparent>false</xr:LoadTransparent>
+							</Picture>
+							<ContextMenu name="КартинкаОжиданиеКонтекстноеМеню" id="15"/>
+							<ExtendedTooltip name="КартинкаОжиданиеРасширеннаяПодсказка" id="16">
+								<Visible>false</Visible>
+								<Enabled>false</Enabled>
+							</ExtendedTooltip>
+						</PictureDecoration>
+						<LabelDecoration name="НадписьОжидание" id="17">
+							<Title formatted="false">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Не закрывайте окно, ожидайте получения подписей из сервиса мобильной подписи...</v8:content>
+								</v8:item>
+							</Title>
+							<ContextMenu name="НадписьОжиданиеКонтекстноеМеню" id="18"/>
+							<ExtendedTooltip name="НадписьОжиданиеРасширеннаяПодсказка" id="19">
+								<Visible>false</Visible>
+								<Enabled>false</Enabled>
+							</ExtendedTooltip>
+						</LabelDecoration>
+					</ChildItems>
+				</Page>
+			</ChildItems>
+		</Pages>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="ИдентификаторыДокументов" id="1">
+			<Type>
+				<v8:Type>v8:ValueTable</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="ИдентификаторДокумента" id="1">
+					<Type>
+						<v8:Type>v8:UUID</v8:Type>
+					</Type>
+				</Column>
+				<Column name="ПодписьПолучена" id="2">
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+				<Column name="СвойстваПодписи" id="3">
+					<Type/>
+				</Column>
+			</Columns>
+		</Attribute>
+		<Attribute name="Ошибка" id="4">
+			<Type/>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="ДокументыПодписаны" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Документы подписаны</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Документы подписаны</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ДокументыПодписаны</Action>
+		</Command>
+		<Command name="Отмена" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отмена</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отмена</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>Отмена</Action>
+		</Command>
+	</Commands>
+	<Parameters>
+		<Parameter name="ИдентификаторыДокументов">
+			<Type/>
+		</Parameter>
+		<Parameter name="Подписант">
+			<Type/>
+		</Parameter>
+	</Parameters>
+</Form>
