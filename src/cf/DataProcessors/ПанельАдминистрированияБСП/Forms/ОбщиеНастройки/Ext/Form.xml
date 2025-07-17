@@ -909,33 +909,6 @@
 									<ShowTitle>false</ShowTitle>
 									<ExtendedTooltip name="ГруппаНастройкиПодписиРасширеннаяПодсказка" id="2143"/>
 									<ChildItems>
-										<LabelField name="ТипПодписиКриптографииПоУмолчанию1" id="2245">
-											<DataPath>КонстантаТипПодписиКриптографииПоУмолчанию</DataPath>
-											<Visible>false</Visible>
-											<Title>
-												<v8:item>
-													<v8:lang>ru</v8:lang>
-													<v8:content>Тип подписи для документов</v8:content>
-												</v8:item>
-											</Title>
-											<TitleLocation>Top</TitleLocation>
-											<ToolTipRepresentation>ShowBottom</ToolTipRepresentation>
-											<ContextMenu name="ТипПодписиКриптографииПоУмолчанию1КонтекстноеМеню" id="2246"/>
-											<ExtendedTooltip name="ТипПодписиКриптографииПоУмолчанию1РасширеннаяПодсказка" id="2247">
-												<Title formatted="false">
-													<v8:item>
-														<v8:lang>ru</v8:lang>
-														<v8:content>В приложении в Интернете типы подписи с метками времени можно выбрать при подписании сертификатом, установленным на компьютер с помощью приложения электронной подписи.</v8:content>
-													</v8:item>
-												</Title>
-												<Events>
-													<Event name="URLProcessing">ТипПодписиКриптографииПоУмолчанию1РасширеннаяПодсказкаОбработкаНавигационнойСсылки</Event>
-												</Events>
-											</ExtendedTooltip>
-											<Events>
-												<Event name="OnChange">ТипПодписиПриИзменении</Event>
-											</Events>
-										</LabelField>
 										<RadioButtonField name="ТипПодписиКриптографииПоУмолчанию" id="2175">
 											<DataPath>КонстантаТипПодписиКриптографииПоУмолчанию</DataPath>
 											<Title>
@@ -1156,6 +1129,62 @@
 															<ContextMenu name="ДекорацияУсовершенствоватьПодписиАвтоматическиКонтекстноеМеню" id="2234"/>
 															<ExtendedTooltip name="ДекорацияУсовершенствоватьПодписиАвтоматическиРасширеннаяПодсказка" id="2235"/>
 														</LabelDecoration>
+														<RadioButtonField name="УсовершенствоватьПодписиАвтоматически1" id="2291">
+															<DataPath>КонстантаУсовершенствоватьПодписиАвтоматически</DataPath>
+															<Visible>false</Visible>
+															<Title>
+																<v8:item>
+																	<v8:lang>ru</v8:lang>
+																	<v8:content>Автоматически усовершенствовать подписи</v8:content>
+																</v8:item>
+															</Title>
+															<TitleLocation>None</TitleLocation>
+															<ToolTipRepresentation>ShowBottom</ToolTipRepresentation>
+															<RadioButtonType>Auto</RadioButtonType>
+															<ChoiceList>
+																<xr:Item>
+																	<xr:Presentation/>
+																	<xr:CheckState>0</xr:CheckState>
+																	<xr:Value xsi:type="FormChoiceListDesTimeValue">
+																		<Presentation>
+																			<v8:item>
+																				<v8:lang>ru</v8:lang>
+																				<v8:content>Не усовершенствовать</v8:content>
+																			</v8:item>
+																		</Presentation>
+																		<Value xsi:type="xs:decimal">0</Value>
+																	</xr:Value>
+																</xr:Item>
+																<xr:Item>
+																	<xr:Presentation/>
+																	<xr:CheckState>0</xr:CheckState>
+																	<xr:Value xsi:type="FormChoiceListDesTimeValue">
+																		<Presentation>
+																			<v8:item>
+																				<v8:lang>ru</v8:lang>
+																				<v8:content>В интерфейсе администратора *</v8:content>
+																			</v8:item>
+																		</Presentation>
+																		<Value xsi:type="xs:decimal">2</Value>
+																	</xr:Value>
+																</xr:Item>
+															</ChoiceList>
+															<ContextMenu name="УсовершенствоватьПодписиАвтоматически1КонтекстноеМеню" id="2292"/>
+															<ExtendedTooltip name="УсовершенствоватьПодписиАвтоматически1РасширеннаяПодсказка" id="2293">
+																<Title formatted="true">
+																	<v8:item>
+																		<v8:lang>ru</v8:lang>
+																		<v8:content>* С помощью команд в &lt;link ОтчетОПродленииПодписей&gt;отчете&lt;/&gt; и панели текущих дел.</v8:content>
+																	</v8:item>
+																</Title>
+																<Events>
+																	<Event name="URLProcessing">УсовершенствоватьПодписиАвтоматическиРасширеннаяПодсказкаОбработкаНавигационнойСсылки</Event>
+																</Events>
+															</ExtendedTooltip>
+															<Events>
+																<Event name="OnChange">УсовершенствоватьПодписиПриИзменении</Event>
+															</Events>
+														</RadioButtonField>
 														<RadioButtonField name="УсовершенствоватьПодписиАвтоматически" id="2155">
 															<DataPath>КонстантаУсовершенствоватьПодписиАвтоматически</DataPath>
 															<Title>
