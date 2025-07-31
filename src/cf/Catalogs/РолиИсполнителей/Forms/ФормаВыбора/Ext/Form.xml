@@ -96,13 +96,13 @@
 			</Events>
 			<ChildItems>
 				<LabelField name="Наименование" id="4">
-					<DataPath>Список.Description</DataPath>
+					<DataPath>Список.Наименование</DataPath>
 					<DefaultItem>true</DefaultItem>
 					<ContextMenu name="НаименованиеКонтекстноеМеню" id="5"/>
 					<ExtendedTooltip name="НаименованиеРасширеннаяПодсказка" id="17"/>
 				</LabelField>
 				<LabelField name="Ссылка" id="23">
-					<DataPath>Список.Ref</DataPath>
+					<DataPath>Список.Ссылка</DataPath>
 					<UserVisible>
 						<xr:Common>false</xr:Common>
 					</UserVisible>
@@ -128,7 +128,7 @@
 			</Type>
 			<MainAttribute>true</MainAttribute>
 			<UseAlways>
-				<Field>Список.Ref</Field>
+				<Field>Список.Ссылка</Field>
 			</UseAlways>
 			<Settings xsi:type="DynamicList">
 				<ManualQuery>true</ManualQuery>
@@ -140,6 +140,14 @@
 	РегистрСведений.ИсполнителиЗадач КАК ИсполнителиЗадачПереопределяемый
 		ЛЕВОЕ СОЕДИНЕНИЕ Справочник.РолиИсполнителей КАК СправочникРолиИсполнителейПереопределяемый
 		ПО (ИсполнителиЗадачПереопределяемый.РольИсполнителя = СправочникРолиИсполнителейПереопределяемый.Ссылка)
+;
+
+ВЫБРАТЬ РАЗЛИЧНЫЕ
+	РолиИсполнителейНазначениеПереопределяемый.Ссылка КАК Ссылка,
+	РолиИсполнителейНазначениеПереопределяемый.ТипПользователей КАК ТипПользователей
+ПОМЕСТИТЬ РолиИсполнителейНазначение
+ИЗ
+	Справочник.РолиИсполнителей.Назначение КАК РолиИсполнителейНазначениеПереопределяемый	
 ;
 
 ВЫБРАТЬ
@@ -169,9 +177,99 @@
 	СправочникРолиИсполнителейПереопределяемый.ВнешняяРоль,
 	СправочникРолиИсполнителейПереопределяемый.КраткоеПредставление
 	ИЗ
-	Справочник.РолиИсполнителей.Назначение КАК РолиИсполнителейНазначениеПереопределяемый
+	РолиИсполнителейНазначение КАК РолиИсполнителейНазначениеПереопределяемый
 		ЛЕВОЕ СОЕДИНЕНИЕ Справочник.РолиИсполнителей КАК СправочникРолиИсполнителейПереопределяемый
 		ПО РолиИсполнителейНазначениеПереопределяемый.Ссылка = СправочникРолиИсполнителейПереопределяемый.Ссылка</QueryText>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>Ссылка</dcssch:dataPath>
+					<dcssch:field>Ссылка</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ПометкаУдаления</dcssch:dataPath>
+					<dcssch:field>ПометкаУдаления</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>Код</dcssch:dataPath>
+					<dcssch:field>Код</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>Наименование</dcssch:dataPath>
+					<dcssch:field>Наименование</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>Предопределенный</dcssch:dataPath>
+					<dcssch:field>Предопределенный</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ИспользуетсяБезОбъектовАдресации</dcssch:dataPath>
+					<dcssch:field>ИспользуетсяБезОбъектовАдресации</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ИспользуетсяСОбъектамиАдресации</dcssch:dataPath>
+					<dcssch:field>ИспользуетсяСОбъектамиАдресации</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ТипыОсновногоОбъектаАдресации</dcssch:dataPath>
+					<dcssch:field>ТипыОсновногоОбъектаАдресации</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ТипыДополнительногоОбъектаАдресации</dcssch:dataPath>
+					<dcssch:field>ТипыДополнительногоОбъектаАдресации</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>Комментарий</dcssch:dataPath>
+					<dcssch:field>Комментарий</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ЕстьИсполнители</dcssch:dataPath>
+					<dcssch:field>ЕстьИсполнители</dcssch:field>
+					<dcssch:title xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Есть исполнители</v8:content>
+						</v8:item>
+					</dcssch:title>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ВнешняяРоль</dcssch:dataPath>
+					<dcssch:field>ВнешняяРоль</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>КраткоеПредставление</dcssch:dataPath>
+					<dcssch:field>КраткоеПредставление</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>УзелОбмена</dcssch:dataPath>
+					<dcssch:field>УзелОбмена</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>Назначение</dcssch:dataPath>
+					<dcssch:field>Назначение</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ИмяПредопределенныхДанных</dcssch:dataPath>
+					<dcssch:field>ИмяПредопределенныхДанных</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>КомментарийЯзык2</dcssch:dataPath>
+					<dcssch:field>КомментарийЯзык2</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ОтредактированныеПредопределенныеРеквизиты</dcssch:dataPath>
+					<dcssch:field>ОтредактированныеПредопределенныеРеквизиты</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>КомментарийЯзык1</dcssch:dataPath>
+					<dcssch:field>КомментарийЯзык1</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>НаименованиеЯзык1</dcssch:dataPath>
+					<dcssch:field>НаименованиеЯзык1</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>НаименованиеЯзык2</dcssch:dataPath>
+					<dcssch:field>НаименованиеЯзык2</dcssch:field>
+				</Field>
 				<MainTable>Catalog.РолиИсполнителей</MainTable>
 				<ListSettings>
 					<dcsset:filter>
