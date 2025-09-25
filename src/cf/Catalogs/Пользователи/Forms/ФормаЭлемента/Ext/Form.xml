@@ -1007,6 +1007,9 @@
 																	<CheckBoxType>Auto</CheckBoxType>
 																	<ContextMenu name="ПользовательИБЗапрещеноВосстанавливатьПарольКонтекстноеМеню" id="367"/>
 																	<ExtendedTooltip name="ПользовательИБЗапрещеноВосстанавливатьПарольРасширеннаяПодсказка" id="368"/>
+																	<Events>
+																		<Event name="OnChange">ПользовательИБЗапрещеноВосстанавливатьПарольПриИзменении</Event>
+																	</Events>
 																</CheckBoxField>
 																<CheckBoxField name="ПользовательИБПоказыватьВСпискеВыбора" id="25">
 																	<DataPath>ПользовательИБПоказыватьВСпискеВыбора</DataPath>
@@ -1832,11 +1835,6 @@
 				<v8:Type>xs:boolean</v8:Type>
 			</Type>
 		</Attribute>
-		<Attribute name="ВходВПрограммуРазрешенЗначениеПрямогоИзменения" id="33">
-			<Type>
-				<v8:Type>xs:boolean</v8:Type>
-			</Type>
-		</Attribute>
 		<Attribute name="ПотребоватьСменуПароляПриВходе" id="35">
 			<Title>
 				<v8:item>
@@ -1873,15 +1871,6 @@
 				</v8:NumberQualifiers>
 			</Type>
 		</Attribute>
-		<Attribute name="ПользовательИБИмяЗначениеПрямогоИзменения" id="39">
-			<Type>
-				<v8:Type>xs:string</v8:Type>
-				<v8:StringQualifiers>
-					<v8:Length>0</v8:Length>
-					<v8:AllowedLength>Variable</v8:AllowedLength>
-				</v8:StringQualifiers>
-			</Type>
-		</Attribute>
 		<Attribute name="ПользовательИБПароль" id="40">
 			<Type/>
 			<SavedData>true</SavedData>
@@ -1911,11 +1900,6 @@
 					<v8:Length>0</v8:Length>
 					<v8:AllowedLength>Variable</v8:AllowedLength>
 				</v8:StringQualifiers>
-			</Type>
-		</Attribute>
-		<Attribute name="ПользовательИБАутентификацияСтандартнаяЗначениеПрямогоИзменения" id="3">
-			<Type>
-				<v8:Type>xs:boolean</v8:Type>
 			</Type>
 		</Attribute>
 		<Attribute name="АдресФотографии" id="4">
@@ -2149,6 +2133,14 @@
 		</Attribute>
 		<Attribute name="ВидКонтактнойИнформацииТелефонПользователя" id="60">
 			<Type/>
+		</Attribute>
+		<Attribute name="ЗначенияПрямогоИзменения" id="61">
+			<Type/>
+		</Attribute>
+		<Attribute name="ПотребоватьСменуПароляПриВходеБыло" id="3">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
 		</Attribute>
 	</Attributes>
 	<Commands>

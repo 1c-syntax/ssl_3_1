@@ -715,6 +715,9 @@
 																	<CheckBoxType>Auto</CheckBoxType>
 																	<ContextMenu name="ПользовательИБЗапрещеноВосстанавливатьПарольКонтекстноеМеню" id="362"/>
 																	<ExtendedTooltip name="ПользовательИБЗапрещеноВосстанавливатьПарольРасширеннаяПодсказка" id="363"/>
+																	<Events>
+																		<Event name="OnChange">ПользовательИБЗапрещеноВосстанавливатьПарольПриИзменении</Event>
+																	</Events>
 																</CheckBoxField>
 															</ChildItems>
 														</UsualGroup>
@@ -1450,11 +1453,6 @@
 				<v8:Type>xs:boolean</v8:Type>
 			</Type>
 		</Attribute>
-		<Attribute name="ВходВПрограммуРазрешенЗначениеПрямогоИзменения" id="28">
-			<Type>
-				<v8:Type>xs:boolean</v8:Type>
-			</Type>
-		</Attribute>
 		<Attribute name="ПотребоватьСменуПароляПриВходе" id="33">
 			<Title>
 				<v8:item>
@@ -1494,15 +1492,6 @@
 				</v8:NumberQualifiers>
 			</Type>
 		</Attribute>
-		<Attribute name="ПользовательИБИмяЗначениеПрямогоИзменения" id="37">
-			<Type>
-				<v8:Type>xs:string</v8:Type>
-				<v8:StringQualifiers>
-					<v8:Length>0</v8:Length>
-					<v8:AllowedLength>Variable</v8:AllowedLength>
-				</v8:StringQualifiers>
-			</Type>
-		</Attribute>
 		<Attribute name="ПользовательИБПароль" id="38">
 			<Type/>
 			<SavedData>true</SavedData>
@@ -1519,11 +1508,6 @@
 				</v8:StringQualifiers>
 			</Type>
 			<SavedData>true</SavedData>
-		</Attribute>
-		<Attribute name="ПользовательИБАутентификацияСтандартнаяЗначениеПрямогоИзменения" id="3">
-			<Type>
-				<v8:Type>xs:boolean</v8:Type>
-			</Type>
 		</Attribute>
 		<Attribute name="ПользовательИБАдресЭлектроннойПочты" id="4">
 			<Type>
@@ -1592,6 +1576,14 @@
 		</Attribute>
 		<Attribute name="ПараметрыСвойств" id="46">
 			<Type/>
+		</Attribute>
+		<Attribute name="ЗначенияПрямогоИзменения" id="47">
+			<Type/>
+		</Attribute>
+		<Attribute name="ПотребоватьСменуПароляПриВходеБыло" id="3">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
 		</Attribute>
 	</Attributes>
 	<Commands>
