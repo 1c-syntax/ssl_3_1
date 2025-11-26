@@ -18,9 +18,62 @@
 				</Title>
 				<ExtendedTooltip name="ФормаЗакрытьФормуРасширеннаяПодсказка" id="40"/>
 			</Button>
+			<ButtonGroup name="ФормаГруппаДополнительно" id="147">
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Дополнительно</v8:content>
+					</v8:item>
+				</Title>
+				<ToolTip>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Форма группа дополнительно</v8:content>
+					</v8:item>
+				</ToolTip>
+				<ExtendedTooltip name="ФормаГруппаДополнительноРасширеннаяПодсказка" id="148"/>
+				<ChildItems>
+					<Button name="ФормаПереключитьКонтроль" id="145">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Command.ПереключитьКонтроль</CommandName>
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Переключить контроль</v8:content>
+							</v8:item>
+						</Title>
+						<ExtendedTooltip name="ФормаПереключитьКонтрольРасширеннаяПодсказка" id="146"/>
+					</Button>
+					<Button name="ФормаОтображатьПредупреждениеОЗацикливании" id="149">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Command.ОтображатьПредупреждениеОЗацикливании</CommandName>
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Отображать предупреждение о зацикливании</v8:content>
+							</v8:item>
+						</Title>
+						<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
+						<ExtendedTooltip name="ФормаОтображатьПредупреждениеОЗацикливанииРасширеннаяПодсказка" id="150"/>
+					</Button>
+					<Button name="ФормаКонтурСинхронизации" id="143">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Command.КонтурСинхронизации</CommandName>
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Контур синхронизации</v8:content>
+							</v8:item>
+						</Title>
+						<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
+						<ExtendedTooltip name="ФормаКонтурСинхронизацииРасширеннаяПодсказка" id="144"/>
+					</Button>
+				</ChildItems>
+			</ButtonGroup>
 		</ChildItems>
 	</AutoCommandBar>
 	<Events>
+		<Event name="OnOpen">ПриОткрытии</Event>
 		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
 	</Events>
 	<ChildItems>
@@ -203,6 +256,22 @@
 									<ContextMenu name="ТаблицаУзловУзелИнформационнойБазыКонтекстноеМеню" id="123"/>
 									<ExtendedTooltip name="ТаблицаУзловУзелИнформационнойБазыРасширеннаяПодсказка" id="124"/>
 								</InputField>
+								<CheckBoxField name="ТаблицаУзловОтключитьКонтрольКонтураСинхронизации" id="151">
+									<DataPath>ТаблицаУзлов.ОтключитьКонтрольКонтураСинхронизации</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Отключить контроль</v8:content>
+										</v8:item>
+									</Title>
+									<EditMode>EnterOnInput</EditMode>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="ТаблицаУзловОтключитьКонтрольКонтураСинхронизацииКонтекстноеМеню" id="152"/>
+									<ExtendedTooltip name="ТаблицаУзловОтключитьКонтрольКонтураСинхронизацииРасширеннаяПодсказка" id="153"/>
+									<Events>
+										<Event name="OnChange">ТаблицаУзловОтключитьКонтрольКонтураСинхронизацииПриИзменении</Event>
+									</Events>
+								</CheckBoxField>
 								<InputField name="ТаблицаУзловРегистрацияДанныхОбменаПриЗацикливании" id="134">
 									<DataPath>ТаблицаУзлов.РегистрацияДанныхОбменаПриЗацикливании</DataPath>
 									<ReadOnly>true</ReadOnly>
@@ -229,6 +298,21 @@
 									<CellHyperlink>true</CellHyperlink>
 									<ContextMenu name="ТаблицаУзловНезарегистрированныеДанныеКонтекстноеМеню" id="138"/>
 									<ExtendedTooltip name="ТаблицаУзловНезарегистрированныеДанныеРасширеннаяПодсказка" id="139"/>
+								</InputField>
+								<InputField name="ТаблицаУзловОтступ" id="154">
+									<DataPath>ТаблицаУзлов.Отступ</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Отступ</v8:content>
+										</v8:item>
+									</Title>
+									<TitleLocation>None</TitleLocation>
+									<EditMode>EnterOnInput</EditMode>
+									<Width>3</Width>
+									<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+									<ContextMenu name="ТаблицаУзловОтступКонтекстноеМеню" id="155"/>
+									<ExtendedTooltip name="ТаблицаУзловОтступРасширеннаяПодсказка" id="156"/>
 								</InputField>
 							</ChildItems>
 						</Table>
@@ -258,6 +342,17 @@
 					<ShowTitle>false</ShowTitle>
 					<ExtendedTooltip name="ГруппаДругаяБазаРасширеннаяПодсказка" id="130"/>
 					<ChildItems>
+						<LabelDecoration name="ИнформацияДругаяБазаВнимание" id="140">
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<Title formatted="true">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>&lt;b&gt;&lt;colorstyle -16&gt;Внимание!&lt;/&gt;&lt;/&gt;</v8:content>
+								</v8:item>
+							</Title>
+							<ContextMenu name="ИнформацияДругаяБазаВниманиеКонтекстноеМеню" id="141"/>
+							<ExtendedTooltip name="ИнформацияДругаяБазаВниманиеРасширеннаяПодсказка" id="142"/>
+						</LabelDecoration>
 						<LabelDecoration name="ИнформацияДругаяБаза" id="131">
 							<AutoMaxWidth>false</AutoMaxWidth>
 							<Title formatted="false">
@@ -332,7 +427,43 @@
 						</v8:StringQualifiers>
 					</Type>
 				</Column>
+				<Column name="ОтключитьКонтрольКонтураСинхронизации" id="4">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Отключить контроль</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+				<Column name="Отступ" id="5">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Отступ</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
 			</Columns>
+		</Attribute>
+		<Attribute name="КонтрольКонтураСинхронизацииВключен" id="2">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="СкрытоПредупреждениеЗацикливания" id="3">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
 		</Attribute>
 	</Attributes>
 	<Commands>
@@ -350,6 +481,51 @@
 				</v8:item>
 			</ToolTip>
 			<Action>ЗакрытьФорму</Action>
+		</Command>
+		<Command name="КонтурСинхронизации" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Контур синхронизации</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Контур синхронизации</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>КонтурСинхронизации</Action>
+		</Command>
+		<Command name="ПереключитьКонтроль" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Переключить контроль</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Переключить контроль</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ПереключитьКонтроль</Action>
+		</Command>
+		<Command name="ОтображатьПредупреждениеОЗацикливании" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отображать предупреждение о зацикливании</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отображать предупреждение о зацикливании</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ОтображатьПредупреждениеОЗацикливании</Action>
 		</Command>
 	</Commands>
 </Form>

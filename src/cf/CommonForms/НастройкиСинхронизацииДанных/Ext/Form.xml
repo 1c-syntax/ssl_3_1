@@ -122,6 +122,7 @@
 				</v8:item>
 			</Title>
 			<Width>45</Width>
+			<HorizontalStretch>true</HorizontalStretch>
 			<Group>Horizontal</Group>
 			<Behavior>Usual</Behavior>
 			<Representation>None</Representation>
@@ -224,7 +225,7 @@
 			<Behavior>Usual</Behavior>
 			<Representation>None</Representation>
 			<ShowTitle>false</ShowTitle>
-			<BackColor>style:ЦветФонаПредупреждения</BackColor>
+			<BackColor>style:ПодсказкаСинхронизации</BackColor>
 			<ExtendedTooltip name="ИнформационнаяПанельТребуетсяПерезагрузкаРасширеннаяПодсказка" id="760"/>
 			<ChildItems>
 				<PictureDecoration name="ПредупреждениеОПерезагрузкеКартинка" id="761">
@@ -269,7 +270,7 @@
 			<Behavior>Usual</Behavior>
 			<Representation>None</Representation>
 			<ShowTitle>false</ShowTitle>
-			<BackColor>style:ЦветФонаПредупреждения</BackColor>
+			<BackColor>style:ПодсказкаСинхронизации</BackColor>
 			<ExtendedTooltip name="ИнформационнаяПанельОбнаруженоЗацикливаниеРасширеннаяПодсказка" id="770"/>
 			<ChildItems>
 				<PictureDecoration name="ПредупреждениеОЗацикливанииКартинка" id="771">
@@ -295,7 +296,8 @@
 					<Title formatted="true">
 						<v8:item>
 							<v8:lang>ru</v8:lang>
-							<v8:content>Обнаружено зацикливание синхронизаций. Для получения подробной информации перейдите по &lt;link 1&gt;ссылке&lt;/&gt;.</v8:content>
+							<v8:content>Обнаружена циклическая настройка нескольких синхронизаций (&lt;link 1&gt;подробнее&lt;/&gt;).
+Предупреждение можно &lt;link 2&gt;скрыть&lt;/&gt;.</v8:content>
 						</v8:item>
 					</Title>
 					<GroupVerticalAlign>Center</GroupVerticalAlign>
@@ -1657,6 +1659,15 @@
 					</Title>
 					<Type>
 						<v8:Type>v8ui:Picture</v8:Type>
+					</Type>
+				</Column>
+				<Column name="ТекущееДействиеУзла" id="41">
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
 					</Type>
 				</Column>
 			</Columns>

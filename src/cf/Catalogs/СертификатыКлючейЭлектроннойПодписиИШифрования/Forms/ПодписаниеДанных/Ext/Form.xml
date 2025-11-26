@@ -427,6 +427,7 @@
 										</Title>
 									</ExtendedTooltip>
 									<Events>
+										<Event name="OnChange">ПодписантПриИзменении</Event>
 										<Event name="Opening">ПодписантОткрытие</Event>
 										<Event name="Creating">ПодписантСоздание</Event>
 										<Event name="Clearing">ПодписантОчистка</Event>
@@ -571,6 +572,9 @@
 											<ChoiceHistoryOnInput>DontUse</ChoiceHistoryOnInput>
 											<ContextMenu name="МашиночитаемаяДоверенностьКонтекстноеМеню" id="502"/>
 											<ExtendedTooltip name="МашиночитаемаяДоверенностьРасширеннаяПодсказка" id="503"/>
+											<Events>
+												<Event name="OnChange">МашиночитаемаяДоверенностьПриИзменении</Event>
+											</Events>
 										</InputField>
 									</ChildItems>
 								</Page>
@@ -950,6 +954,19 @@
 				<v8:Type>xs:boolean</v8:Type>
 			</Type>
 		</Attribute>
+		<Attribute name="ОтборДоверенностей" id="35">
+			<Type/>
+		</Attribute>
+		<Attribute name="СохранитьНастройкуПодписантаПослеПодписания" id="36">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="СохранитьНастройкуДоверенностиПослеПодписания" id="37">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
 	</Attributes>
 	<Commands>
 		<Command name="Подписать" id="5">
@@ -1027,6 +1044,9 @@
 			<Type/>
 		</Parameter>
 		<Parameter name="Подписант">
+			<Type/>
+		</Parameter>
+		<Parameter name="ОтборДоверенностей">
 			<Type/>
 		</Parameter>
 	</Parameters>
