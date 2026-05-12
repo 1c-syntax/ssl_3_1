@@ -243,32 +243,66 @@
 									<v8:content>Подвал субъектов</v8:content>
 								</v8:item>
 							</Title>
-							<Group>Horizontal</Group>
 							<Behavior>Usual</Behavior>
 							<Representation>None</Representation>
 							<ShowTitle>false</ShowTitle>
 							<ExtendedTooltip name="ГруппаПодвалСубъектовРасширеннаяПодсказка" id="117"/>
 							<ChildItems>
-								<CheckBoxField name="ЗагружатьИсториюИзмененийАдресныхОбъектов" id="190">
-									<DataPath>ЗагружатьИсториюИзмененийАдресныхОбъектов</DataPath>
+								<UsualGroup name="ГруппаСтрокаПодвала" id="251">
 									<Title>
 										<v8:item>
 											<v8:lang>ru</v8:lang>
-											<v8:content>Загружать историю изменений адресных объектов</v8:content>
+											<v8:content>Строка подвала</v8:content>
 										</v8:item>
 									</Title>
-									<TitleLocation>Right</TitleLocation>
-									<ToolTip>
-										<v8:item>
-											<v8:lang>ru</v8:lang>
-											<v8:content>Загрузка истории переименования, переподчинения или исключения адресных сведений в адресном классификаторе.</v8:content>
-										</v8:item>
-									</ToolTip>
-									<ToolTipRepresentation>Button</ToolTipRepresentation>
-									<CheckBoxType>Auto</CheckBoxType>
-									<ContextMenu name="ЗагружатьИсториюИзмененийАдресныхОбъектовКонтекстноеМеню" id="191"/>
-									<ExtendedTooltip name="ЗагружатьИсториюИзмененийАдресныхОбъектовРасширеннаяПодсказка" id="192"/>
-								</CheckBoxField>
+									<Group>Vertical</Group>
+									<Representation>None</Representation>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="ГруппаСтрокаПодвалаРасширеннаяПодсказка" id="252"/>
+									<ChildItems>
+										<CheckBoxField name="ЗагружатьПомещения" id="248">
+											<DataPath>ЗагружатьПомещения</DataPath>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Загружать помещения</v8:content>
+												</v8:item>
+											</Title>
+											<TitleLocation>Right</TitleLocation>
+											<ToolTip>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Позволяет выбирать помещения и квартиры при вводе адреса, что необходимо для корректной сдачи отчетности. 
+Загрузка этих сведений увеличит размер адресного классификатора примерно в 2 раза.</v8:content>
+												</v8:item>
+											</ToolTip>
+											<ToolTipRepresentation>Button</ToolTipRepresentation>
+											<CheckBoxType>Auto</CheckBoxType>
+											<ContextMenu name="ЗагружатьПомещенияКонтекстноеМеню" id="249"/>
+											<ExtendedTooltip name="ЗагружатьПомещенияРасширеннаяПодсказка" id="250"/>
+										</CheckBoxField>
+										<CheckBoxField name="ЗагружатьИсториюИзмененийАдресныхОбъектов" id="190">
+											<DataPath>ЗагружатьИсториюИзмененийАдресныхОбъектов</DataPath>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Загружать историю изменений адресных объектов</v8:content>
+												</v8:item>
+											</Title>
+											<TitleLocation>Right</TitleLocation>
+											<ToolTip>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Загрузка истории переименования, переподчинения или исключения адресных сведений в адресном классификаторе.</v8:content>
+												</v8:item>
+											</ToolTip>
+											<ToolTipRepresentation>Button</ToolTipRepresentation>
+											<CheckBoxType>Auto</CheckBoxType>
+											<ContextMenu name="ЗагружатьИсториюИзмененийАдресныхОбъектовКонтекстноеМеню" id="191"/>
+											<ExtendedTooltip name="ЗагружатьИсториюИзмененийАдресныхОбъектовРасширеннаяПодсказка" id="192"/>
+										</CheckBoxField>
+									</ChildItems>
+								</UsualGroup>
 								<UsualGroup name="ГруппаВыбраноРегионовДляЗагрузки" id="212">
 									<Title>
 										<v8:item>
@@ -1091,6 +1125,17 @@
 					<v8:FractionDigits>0</v8:FractionDigits>
 					<v8:AllowedSign>Any</v8:AllowedSign>
 				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ЗагружатьПомещения" id="20">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Загружать помещения</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
 			</Type>
 		</Attribute>
 	</Attributes>

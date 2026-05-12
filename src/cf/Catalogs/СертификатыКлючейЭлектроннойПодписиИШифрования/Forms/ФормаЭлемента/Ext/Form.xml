@@ -118,6 +118,20 @@
 				<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
 				<ExtendedTooltip name="ФормаПоказатьАвтозаполняемыеРеквизитыРасширеннаяПодсказка" id="220"/>
 			</Button>
+			<Button name="ФормаОчиститьПерсональныеНастройки" id="334">
+				<Type>CommandBarButton</Type>
+				<Visible>false</Visible>
+				<CommandName>Form.Command.ОчиститьПерсональныеНастройки</CommandName>
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Очистить персональные настройки</v8:content>
+					</v8:item>
+				</Title>
+				<ToolTipRepresentation>Balloon</ToolTipRepresentation>
+				<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
+				<ExtendedTooltip name="ФормаОчиститьПерсональныеНастройкиРасширеннаяПодсказка" id="335"/>
+			</Button>
 			<Button name="ФормаПоказатьЗаявлениеПоКоторомуБылПолученСертификат" id="265">
 				<Type>CommandBarButton</Type>
 				<Enabled>false</Enabled>
@@ -145,6 +159,7 @@
 	</AutoCommandBar>
 	<Events>
 		<Event name="AfterWrite">ПослеЗаписи</Event>
+		<Event name="AfterWriteAtServer">ПослеЗаписиНаСервере</Event>
 		<Event name="NotificationProcessing">ОбработкаОповещения</Event>
 		<Event name="OnReadAtServer">ПриЧтенииНаСервере</Event>
 		<Event name="OnOpen">ПриОткрытии</Event>
@@ -153,7 +168,7 @@
 		<Event name="FillCheckProcessingAtServer">ОбработкаПроверкиЗаполненияНаСервере</Event>
 	</Events>
 	<ChildItems>
-		<UsualGroup name="ШапкаГруппа" id="325">
+		<UsualGroup name="ШапкаГруппа" id="325" DisplayImportance="Usual">
 			<Title>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
@@ -1050,6 +1065,21 @@
 			</Picture>
 			<Action>ПодобратьФизическоеЛицо</Action>
 			<ModifiesSavedData>true</ModifiesSavedData>
+		</Command>
+		<Command name="ОчиститьПерсональныеНастройки" id="12">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Очистить персональные настройки</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Очищает персональные настройки сертификата: подписание непроверенным сертификатом, доверенность, выбранную для подписания.</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ОчиститьПерсональныеНастройки</Action>
 		</Command>
 	</Commands>
 	<CommandInterface>

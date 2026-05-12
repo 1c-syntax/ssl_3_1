@@ -50,14 +50,14 @@
 								<v8:item>
 									<v8:lang>ru</v8:lang>
 									<v8:content>Нажмите &lt;b&gt;Синхронизировать&lt;/&gt;&lt;b&gt; &lt;/&gt;&lt;b&gt;и&lt;/&gt;&lt;b&gt; &lt;/&gt;&lt;b&gt;продолжить,&lt;/&gt; чтобы получить
-обновление приложения еще раз (рекомендуется).
+обновление приложения еще раз (рекомендуется) или загрузите сообщение из архива.
 </v8:content>
 								</v8:item>
 							</Title>
 							<ContextMenu name="ИнформационнаяНадписьКонтекстноеМеню" id="33"/>
 							<ExtendedTooltip name="ИнформационнаяНадписьРасширеннаяПодсказка" id="34"/>
 						</LabelDecoration>
-						<UsualGroup name="ГруппаСообщениеИзАрхива" id="89">
+						<UsualGroup name="ГруппаСообщениеИзАрхива" id="79">
 							<Title>
 								<v8:item>
 									<v8:lang>ru</v8:lang>
@@ -66,13 +66,13 @@
 							</Title>
 							<Representation>None</Representation>
 							<ShowTitle>false</ShowTitle>
-							<ExtendedTooltip name="ГруппаСообщениеИзАрхиваРасширеннаяПодсказка" id="90"/>
+							<ExtendedTooltip name="ГруппаСообщениеИзАрхиваРасширеннаяПодсказка" id="80"/>
 							<ChildItems>
-								<LabelDecoration name="ЗаглушкаСообщениеИзАрхива" id="91">
-									<ContextMenu name="ЗаглушкаСообщениеИзАрхиваКонтекстноеМеню" id="92"/>
-									<ExtendedTooltip name="ЗаглушкаСообщениеИзАрхиваРасширеннаяПодсказка" id="93"/>
+								<LabelDecoration name="ЗаглушкаСообщениеИзАрхива" id="81">
+									<ContextMenu name="ЗаглушкаСообщениеИзАрхиваКонтекстноеМеню" id="82"/>
+									<ExtendedTooltip name="ЗаглушкаСообщениеИзАрхиваРасширеннаяПодсказка" id="83"/>
 								</LabelDecoration>
-								<CheckBoxField name="ПродолжитьЗагрузкуСообщениемИзАрхива" id="94">
+								<CheckBoxField name="ПродолжитьЗагрузкуСообщениемИзАрхива" id="86">
 									<DataPath>ПродолжитьЗагрузкуСообщениемИзАрхива</DataPath>
 									<Title>
 										<v8:item>
@@ -82,13 +82,13 @@
 									</Title>
 									<TitleLocation>Right</TitleLocation>
 									<CheckBoxType>Auto</CheckBoxType>
-									<ContextMenu name="ПродолжитьЗагрузкуСообщениемИзАрхиваКонтекстноеМеню" id="95"/>
-									<ExtendedTooltip name="ПродолжитьЗагрузкуСообщениемИзАрхиваРасширеннаяПодсказка" id="96"/>
+									<ContextMenu name="ПродолжитьЗагрузкуСообщениемИзАрхиваКонтекстноеМеню" id="87"/>
+									<ExtendedTooltip name="ПродолжитьЗагрузкуСообщениемИзАрхиваРасширеннаяПодсказка" id="88"/>
 									<Events>
 										<Event name="OnChange">ПродолжитьЗагрузкуСообщениемИзАрхиваПриИзменении</Event>
 									</Events>
 								</CheckBoxField>
-								<Button name="ОткрытьСообщениеИзАрхива" id="97">
+								<Button name="ОткрытьСообщениеИзАрхива" id="84">
 									<Type>Hyperlink</Type>
 									<CommandName>Form.Command.ОткрытьСообщениеИзАрхива</CommandName>
 									<Title>
@@ -97,7 +97,7 @@
 											<v8:content>&lt;Сообщение в архиве отсутствует&gt;</v8:content>
 										</v8:item>
 									</Title>
-									<ExtendedTooltip name="ОткрытьСообщениеИзАрхиваРасширеннаяПодсказка" id="98"/>
+									<ExtendedTooltip name="ОткрытьСообщениеИзАрхиваРасширеннаяПодсказка" id="85"/>
 								</Button>
 							</ChildItems>
 						</UsualGroup>
@@ -438,7 +438,7 @@
 				</v8:StringQualifiers>
 			</Type>
 		</Attribute>
-		<Attribute name="ПериодЗаписиАрхивногоСообщения" id="17">
+		<Attribute name="ПериодЗаписиАрхивногоСообщения" id="15">
 			<Type>
 				<v8:Type>xs:dateTime</v8:Type>
 				<v8:DateQualifiers>
@@ -446,7 +446,7 @@
 				</v8:DateQualifiers>
 			</Type>
 		</Attribute>
-		<Attribute name="ПродолжитьЗагрузкуСообщениемИзАрхива" id="18">
+		<Attribute name="ПродолжитьЗагрузкуСообщениемИзАрхива" id="16">
 			<Title>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
@@ -456,6 +456,12 @@
 			<Type>
 				<v8:Type>xs:boolean</v8:Type>
 			</Type>
+		</Attribute>
+		<Attribute name="ПараметрыОбработчикаОжиданияОбмена" id="19">
+			<Type/>
+		</Attribute>
+		<Attribute name="ПараметрыОбработчикаОбмена" id="20">
+			<Type/>
 		</Attribute>
 	</Attributes>
 	<Commands>
@@ -539,7 +545,7 @@
 			<Action>ЗабылиПароль</Action>
 			<CurrentRowUse>DontUse</CurrentRowUse>
 		</Command>
-		<Command name="ОткрытьСообщениеИзАрхива" id="7">
+		<Command name="ОткрытьСообщениеИзАрхива" id="6">
 			<Title>
 				<v8:item>
 					<v8:lang>ru</v8:lang>

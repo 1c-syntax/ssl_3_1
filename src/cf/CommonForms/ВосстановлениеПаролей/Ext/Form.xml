@@ -40,6 +40,7 @@
 		</ChildItems>
 	</AutoCommandBar>
 	<Events>
+		<Event name="NotificationProcessing">ОбработкаОповещения</Event>
 		<Event name="OnOpen">ПриОткрытии</Event>
 		<Event name="BeforeClose">ПередЗакрытием</Event>
 		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
@@ -214,10 +215,11 @@
 													<Title>
 														<v8:item>
 															<v8:lang>ru</v8:lang>
-															<v8:content>Сервер отправки</v8:content>
+															<v8:content>Сервис отправки</v8:content>
 														</v8:item>
 													</Title>
 													<TitleLocation>None</TitleLocation>
+													<ToolTipRepresentation>None</ToolTipRepresentation>
 													<RadioButtonType>Auto</RadioButtonType>
 													<ColumnsCount>1</ColumnsCount>
 													<ChoiceList>
@@ -236,11 +238,62 @@
 														</xr:Item>
 													</ChoiceList>
 													<ContextMenu name="ВариантОтправкиПоПочтеСтандартныйСервисКонтекстноеМеню" id="101"/>
-													<ExtendedTooltip name="ВариантОтправкиПоПочтеСтандартныйСервисРасширеннаяПодсказка" id="102"/>
+													<ExtendedTooltip name="ВариантОтправкиПоПочтеСтандартныйСервисРасширеннаяПодсказка" id="102">
+														<Title formatted="true">
+															<v8:item>
+																<v8:lang>ru</v8:lang>
+																<v8:content>Для отправки кода через стандартный сервис 1С &lt;link открыть&gt;подключите&lt;/&gt; Интернет-поддержку пользователей.
+</v8:content>
+															</v8:item>
+														</Title>
+														<Events>
+															<Event name="URLProcessing">ВариантОтправкиПоПочтеСтандартныйСервисРасширеннаяПодсказкаОбработкаНавигационнойСсылки</Event>
+														</Events>
+													</ExtendedTooltip>
 													<Events>
 														<Event name="OnChange">ВариантОтправкиСтандартныйСервисПриИзменении</Event>
 													</Events>
 												</RadioButtonField>
+												<UsualGroup name="ГруппаСервисПерестанетРаботать" id="246">
+													<Visible>false</Visible>
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Сервис перестанет работать</v8:content>
+														</v8:item>
+													</Title>
+													<Group>AlwaysHorizontal</Group>
+													<ShowTitle>false</ShowTitle>
+													<ExtendedTooltip name="ГруппаСервисПерестанетРаботатьРасширеннаяПодсказка" id="247"/>
+													<ChildItems>
+														<PictureDecoration name="ДекорацияСервисПерестанетРаботать" id="248">
+															<Title formatted="false">
+																<v8:item>
+																	<v8:lang>ru</v8:lang>
+																	<v8:content>Декорация сервис перестанет работать</v8:content>
+																</v8:item>
+															</Title>
+															<Picture>
+																<xr:Ref>StdPicture.DialogExclamation</xr:Ref>
+																<xr:LoadTransparent>true</xr:LoadTransparent>
+															</Picture>
+															<ContextMenu name="ДекорацияСервисПерестанетРаботатьКонтекстноеМеню" id="249"/>
+															<ExtendedTooltip name="ДекорацияСервисПерестанетРаботатьРасширеннаяПодсказка" id="250"/>
+														</PictureDecoration>
+														<LabelDecoration name="КомментарийСервисПерестанетРаботать" id="251">
+															<HorizontalStretch>false</HorizontalStretch>
+															<Title formatted="true">
+																<v8:item>
+																	<v8:lang>ru</v8:lang>
+																	<v8:content>Для получения кодов восстановления паролей с помощью стандартного сервиса 1С требуется обновить платформу до версии &lt;&lt;b&gt;&gt;%1&lt;&lt;/b&gt;&gt; или старше.
+Устаревшая версия стандартного сервиса 1С, которая используется текущей версией платформы, перестанет работать через некоторое время.</v8:content>
+																</v8:item>
+															</Title>
+															<ContextMenu name="КомментарийСервисПерестанетРаботатьКонтекстноеМеню" id="252"/>
+															<ExtendedTooltip name="КомментарийСервисПерестанетРаботатьРасширеннаяПодсказка" id="253"/>
+														</LabelDecoration>
+													</ChildItems>
+												</UsualGroup>
 												<UsualGroup name="ГруппаНастройкиПочты" id="111">
 													<Title>
 														<v8:item>
@@ -467,6 +520,9 @@
 													<PasswordMode>true</PasswordMode>
 													<ContextMenu name="ПарольSMTPКонтекстноеМеню" id="80"/>
 													<ExtendedTooltip name="ПарольSMTPРасширеннаяПодсказка" id="81"/>
+													<Events>
+														<Event name="OnChange">ПарольSMTPПриИзменении</Event>
+													</Events>
 												</InputField>
 											</ChildItems>
 										</UsualGroup>
@@ -502,6 +558,44 @@
 									<Representation>None</Representation>
 									<ExtendedTooltip name="ГруппаТекстСообщенияРасширеннаяПодсказка" id="58"/>
 									<ChildItems>
+										<UsualGroup name="ГруппаПредупреждениеТекстНеРедактируется" id="209">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Предупреждение текст не редактируется</v8:content>
+												</v8:item>
+											</Title>
+											<Group>AlwaysHorizontal</Group>
+											<ShowTitle>false</ShowTitle>
+											<ExtendedTooltip name="ГруппаПредупреждениеТекстНеРедактируетсяРасширеннаяПодсказка" id="210"/>
+											<ChildItems>
+												<PictureDecoration name="ДекорацияПредупреждениеТекстНеРедактируется" id="211">
+													<Title formatted="false">
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Декорация предупреждение текст не редактируется</v8:content>
+														</v8:item>
+													</Title>
+													<Picture>
+														<xr:Ref>CommonPicture.ИнформацияПоНедоступнымПолям</xr:Ref>
+														<xr:LoadTransparent>false</xr:LoadTransparent>
+													</Picture>
+													<ContextMenu name="ДекорацияПредупреждениеТекстНеРедактируетсяКонтекстноеМеню" id="212"/>
+													<ExtendedTooltip name="ДекорацияПредупреждениеТекстНеРедактируетсяРасширеннаяПодсказка" id="213"/>
+												</PictureDecoration>
+												<LabelDecoration name="КомментарийПредупреждениеТекстНеРедактируется" id="214">
+													<HorizontalStretch>false</HorizontalStretch>
+													<Title formatted="false">
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Текст сообщения формирует сервис отправки 1С, обычно текст сообщения имеет вид, как показано ниже.</v8:content>
+														</v8:item>
+													</Title>
+													<ContextMenu name="КомментарийПредупреждениеТекстНеРедактируетсяКонтекстноеМеню" id="215"/>
+													<ExtendedTooltip name="КомментарийПредупреждениеТекстНеРедактируетсяРасширеннаяПодсказка" id="216"/>
+												</LabelDecoration>
+											</ChildItems>
+										</UsualGroup>
 										<InputField name="ТемаПисьма" id="59">
 											<DataPath>ТемаПисьма</DataPath>
 											<Title>
@@ -1101,6 +1195,26 @@
 			</Type>
 		</Attribute>
 		<Attribute name="ИспользоватьSSL" id="22">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ДанныеАутентификацииВСтандартномСервисе1СЗаполнены" id="23">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ЕстьПодсистемаИнтернетПоддержкиПользователей" id="24">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ПриЧтенииИспользуетсяСтандартныйСервис" id="25">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ПлатформаПоддерживаетОтправкуЧерезСтандартныйСервис" id="26">
 			<Type>
 				<v8:Type>xs:boolean</v8:Type>
 			</Type>

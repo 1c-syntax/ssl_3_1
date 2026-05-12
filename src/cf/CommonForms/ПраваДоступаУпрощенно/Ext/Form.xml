@@ -25,6 +25,18 @@
 				</Title>
 				<ExtendedTooltip name="ФормаОтчетПраваПользователяРасширеннаяПодсказка" id="143"/>
 			</Button>
+			<Button name="ФормаОтчетПраваРолейПользователя" id="178">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.ФормаОтчетПраваРолейПользователя</CommandName>
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Отчет Права ролей (пользователя)</v8:content>
+					</v8:item>
+				</Title>
+				<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
+				<ExtendedTooltip name="ФормаОтчетПраваРолейПользователяРасширеннаяПодсказка" id="179"/>
+			</Button>
 			<Button name="ПоказыватьНеиспользуемыеВидыДоступа" id="110">
 				<Type>CommandBarButton</Type>
 				<CommandName>Form.Command.ПоказыватьНеиспользуемыеВидыДоступа</CommandName>
@@ -58,6 +70,55 @@
 		<Event name="FillCheckProcessingAtServer">ОбработкаПроверкиЗаполненияНаСервере</Event>
 	</Events>
 	<ChildItems>
+		<UsualGroup name="НекорректныйСоставРолейПользователяИБ" id="170">
+			<Visible>false</Visible>
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Некорректный состав ролей пользователя ИБ</v8:content>
+				</v8:item>
+			</Title>
+			<Group>AlwaysHorizontal</Group>
+			<VerticalAlign>Center</VerticalAlign>
+			<Behavior>Usual</Behavior>
+			<Representation>NormalSeparation</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="НекорректныйСоставРолейПользователяИБРасширеннаяПодсказка" id="171"/>
+			<ChildItems>
+				<PictureDecoration name="НекорректныйСоставРолейПользователяИБКартинка" id="172">
+					<SkipOnInput>false</SkipOnInput>
+					<Title formatted="false">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Некорректный состав ролей пользователя ИБ (картинка)</v8:content>
+						</v8:item>
+					</Title>
+					<Picture>
+						<xr:Ref>StdPicture.DialogExclamation</xr:Ref>
+						<xr:LoadTransparent>true</xr:LoadTransparent>
+					</Picture>
+					<FileDragMode>AsFile</FileDragMode>
+					<ContextMenu name="НекорректныйСоставРолейПользователяИБКартинкаКонтекстноеМеню" id="173"/>
+					<ExtendedTooltip name="НекорректныйСоставРолейПользователяИБКартинкаРасширеннаяПодсказка" id="174"/>
+				</PictureDecoration>
+				<LabelDecoration name="НекорректныйСоставРолейПользователяИБНадпись" id="175">
+					<AutoMaxWidth>false</AutoMaxWidth>
+					<SkipOnInput>false</SkipOnInput>
+					<Title formatted="false">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Роли пользователя информационной базы отличаются от настроенных.</v8:content>
+						</v8:item>
+					</Title>
+					<VerticalAlign>Center</VerticalAlign>
+					<ContextMenu name="НекорректныйСоставРолейПользователяИБНадписьКонтекстноеМеню" id="176"/>
+					<ExtendedTooltip name="НекорректныйСоставРолейПользователяИБНадписьРасширеннаяПодсказка" id="177"/>
+					<Events>
+						<Event name="URLProcessing">НекорректныйСоставРолейПользователяИБНадписьОбработкаНавигационнойСсылки</Event>
+					</Events>
+				</LabelDecoration>
+			</ChildItems>
+		</UsualGroup>
 		<LabelDecoration name="НедостаточноПравНаПросмотр" id="73">
 			<Visible>false</Visible>
 			<AutoMaxWidth>false</AutoMaxWidth>
@@ -837,6 +898,22 @@
 				<v8:Type>xs:boolean</v8:Type>
 			</Type>
 		</Attribute>
+		<Attribute name="ПрочитанныеРоли" id="11">
+			<Type>
+				<v8:Type>v8:ValueTable</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="Роль" id="1">
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>150</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
 	</Attributes>
 	<Commands>
 		<Command name="Записать" id="1">
@@ -919,6 +996,20 @@
 				</v8:item>
 			</ToolTip>
 			<Action>ПодобратьЗначенияДоступа</Action>
+		</Command>
+		<Command name="ФормаОтчетПраваРолейПользователя" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отчет Права ролей (пользователя)</v8:content>
+				</v8:item>
+			</Title>
+			<Picture>
+				<xr:Ref>StdPicture.Report</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>ФормаОтчетПраваРолейПользователя</Action>
+			<Representation>TextPicture</Representation>
 		</Command>
 	</Commands>
 	<Parameters>

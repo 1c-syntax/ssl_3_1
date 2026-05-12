@@ -1,7 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.20">
 	<AutoSaveDataInSettings>Use</AutoSaveDataInSettings>
-	<Group>HorizontalIfPossible</Group>
 	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
 		<Autofill>false</Autofill>
 		<ChildItems>
@@ -124,6 +123,55 @@
 			<ContextMenu name="ПраваСлужебногоПользователяКонтекстноеМеню" id="167"/>
 			<ExtendedTooltip name="ПраваСлужебногоПользователяРасширеннаяПодсказка" id="168"/>
 		</LabelDecoration>
+		<UsualGroup name="НекорректныйСоставРолейПользователяИБ" id="171">
+			<Visible>false</Visible>
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Некорректный состав ролей пользователя ИБ</v8:content>
+				</v8:item>
+			</Title>
+			<Group>AlwaysHorizontal</Group>
+			<VerticalAlign>Center</VerticalAlign>
+			<Behavior>Usual</Behavior>
+			<Representation>NormalSeparation</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="НекорректныйСоставРолейПользователяИБРасширеннаяПодсказка" id="172"/>
+			<ChildItems>
+				<PictureDecoration name="НекорректныйСоставРолейПользователяИБКартинка" id="173">
+					<SkipOnInput>false</SkipOnInput>
+					<Title formatted="false">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Некорректный состав ролей пользователя ИБ (картинка)</v8:content>
+						</v8:item>
+					</Title>
+					<Picture>
+						<xr:Ref>StdPicture.DialogExclamation</xr:Ref>
+						<xr:LoadTransparent>true</xr:LoadTransparent>
+					</Picture>
+					<FileDragMode>AsFile</FileDragMode>
+					<ContextMenu name="НекорректныйСоставРолейПользователяИБКартинкаКонтекстноеМеню" id="174"/>
+					<ExtendedTooltip name="НекорректныйСоставРолейПользователяИБКартинкаРасширеннаяПодсказка" id="175"/>
+				</PictureDecoration>
+				<LabelDecoration name="НекорректныйСоставРолейПользователяИБНадпись" id="176">
+					<AutoMaxWidth>false</AutoMaxWidth>
+					<SkipOnInput>false</SkipOnInput>
+					<Title formatted="false">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Роли пользователя информационной базы отличаются от настроенных.</v8:content>
+						</v8:item>
+					</Title>
+					<VerticalAlign>Center</VerticalAlign>
+					<ContextMenu name="НекорректныйСоставРолейПользователяИБНадписьКонтекстноеМеню" id="177"/>
+					<ExtendedTooltip name="НекорректныйСоставРолейПользователяИБНадписьРасширеннаяПодсказка" id="178"/>
+					<Events>
+						<Event name="URLProcessing">НекорректныйСоставРолейПользователяИБНадписьОбработкаНавигационнойСсылки</Event>
+					</Events>
+				</LabelDecoration>
+			</ChildItems>
+		</UsualGroup>
 		<Pages name="ГруппыДоступаИРоли" id="83">
 			<Title>
 				<v8:item>
@@ -447,6 +495,17 @@
 											</v8:item>
 										</Title>
 										<ExtendedTooltip name="РолиПоказатьПодсистемыРолейРасширеннаяПодсказка" id="133"/>
+									</Button>
+									<Button name="РолиОтчетПраваРолей" id="169">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.Command.РолиОтчетПраваРолей</CommandName>
+										<Title>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Права ролей</v8:content>
+											</v8:item>
+										</Title>
+										<ExtendedTooltip name="РолиОтчетПраваРолейРасширеннаяПодсказка" id="170"/>
 									</Button>
 									<SearchStringAddition name="РолиСтрокаПоиск" id="163">
 										<AdditionSource>
@@ -851,6 +910,20 @@
 				<xr:LoadTransparent>true</xr:LoadTransparent>
 			</Picture>
 			<Action>ОтчетПраваПользователя</Action>
+			<Representation>TextPicture</Representation>
+		</Command>
+		<Command name="РолиОтчетПраваРолей" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Права ролей</v8:content>
+				</v8:item>
+			</Title>
+			<Picture>
+				<xr:Ref>StdPicture.Report</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>РолиОтчетПраваРолей</Action>
 			<Representation>TextPicture</Representation>
 		</Command>
 	</Commands>

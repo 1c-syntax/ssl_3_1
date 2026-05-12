@@ -1108,7 +1108,7 @@
 														<Title formatted="false">
 															<v8:item>
 																<v8:lang>ru</v8:lang>
-																<v8:content>Усовершенствовать подписи до выбранного типа</v8:content>
+																<v8:content>Усовершенствовать подписи до выбранного типа.</v8:content>
 															</v8:item>
 														</Title>
 													</ExtendedTooltip>
@@ -1448,6 +1448,131 @@
 								<Event name="URLProcessing">ДекорацияПроверкаУстановкиКриптопровайдераОбработкаНавигационнойСсылки</Event>
 							</Events>
 						</LabelDecoration>
+					</ChildItems>
+				</UsualGroup>
+				<UsualGroup name="ГруппаМобильнаяПодпись" id="2294">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Мобильная подпись</v8:content>
+						</v8:item>
+					</Title>
+					<Group>Vertical</Group>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаМобильнаяПодписьРасширеннаяПодсказка" id="2295"/>
+					<ChildItems>
+						<UsualGroup name="ГруппаНастройкиМобильнойПодписи" id="2302">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Настройки мобильной подписи</v8:content>
+								</v8:item>
+							</Title>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаНастройкиМобильнойПодписиРасширеннаяПодсказка" id="2303"/>
+							<ChildItems>
+								<CheckBoxField name="ИспользоватьГосключ" id="2296">
+									<DataPath>НаборКонстант.ИспользоватьГосключ</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Госключ</v8:content>
+										</v8:item>
+									</Title>
+									<TitleLocation>Right</TitleLocation>
+									<ToolTipRepresentation>ShowBottom</ToolTipRepresentation>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="ИспользоватьГосключКонтекстноеМеню" id="2297"/>
+									<ExtendedTooltip name="ИспользоватьГосключРасширеннаяПодсказка" id="2298">
+										<Width>43</Width>
+										<AutoMaxWidth>false</AutoMaxWidth>
+										<Title formatted="false">
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Отправлять документы на подписание в мобильное приложение Госключ (Госуслуги).</v8:content>
+											</v8:item>
+										</Title>
+									</ExtendedTooltip>
+									<Events>
+										<Event name="OnChange">Подключаемый_ПриИзмененииРеквизита</Event>
+									</Events>
+								</CheckBoxField>
+								<CheckBoxField name="ИспользоватьСервисМобильнойПодписи" id="2299">
+									<DataPath>НаборКонстант.ИспользоватьСервисМобильнойПодписи</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Моя подпись (ФНС)</v8:content>
+										</v8:item>
+									</Title>
+									<TitleLocation>Right</TitleLocation>
+									<ToolTipRepresentation>ShowBottom</ToolTipRepresentation>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="ИспользоватьСервисМобильнойПодписиКонтекстноеМеню" id="2300"/>
+									<ExtendedTooltip name="ИспользоватьСервисМобильнойПодписиРасширеннаяПодсказка" id="2301">
+										<Width>43</Width>
+										<AutoMaxWidth>false</AutoMaxWidth>
+										<Title formatted="false">
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Отправлять документы на подпись в мобильное приложение Моя подпись (ФНС).</v8:content>
+											</v8:item>
+										</Title>
+									</ExtendedTooltip>
+									<Events>
+										<Event name="OnChange">Подключаемый_ПриИзмененииРеквизита</Event>
+									</Events>
+								</CheckBoxField>
+							</ChildItems>
+						</UsualGroup>
+						<UsualGroup name="ГруппаУчетныеЗаписиМобильнойПодписи" id="2304">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Учетные записи мобильной подписи</v8:content>
+								</v8:item>
+							</Title>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаУчетныеЗаписиМобильнойПодписиРасширеннаяПодсказка" id="2305"/>
+							<ChildItems>
+								<Button name="НастройкиОтправкиВГосключ" id="2306">
+									<Type>Hyperlink</Type>
+									<CommandName>Catalog.НастройкиОтправкиВГосключ.Command.НастройкиОтправкиВГосключ</CommandName>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Настройки отправки в Госключ</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTipRepresentation>ShowBottom</ToolTipRepresentation>
+									<ExtendedTooltip name="НастройкиОтправкиВГосключРасширеннаяПодсказка" id="2307">
+										<Width>43</Width>
+										<AutoMaxWidth>false</AutoMaxWidth>
+										<Title formatted="false">
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Настройки доступа сотрудников организаций для отправки документов на подписание в Госключ.</v8:content>
+											</v8:item>
+										</Title>
+									</ExtendedTooltip>
+								</Button>
+								<Button name="ПодписантыСервисаМобильнойПодписи" id="2308">
+									<Type>Hyperlink</Type>
+									<CommandName>Catalog.ПодписантыСервисаМобильнойПодписи.Command.ПодписантыСервисаМобильнойПодписи</CommandName>
+									<ToolTipRepresentation>ShowBottom</ToolTipRepresentation>
+									<ExtendedTooltip name="ПодписантыСервисаМобильнойПодписиРасширеннаяПодсказка" id="2309">
+										<Width>43</Width>
+										<AutoMaxWidth>false</AutoMaxWidth>
+										<Title formatted="false">
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Настройки получателей документов на подписание в мобильном приложении.</v8:content>
+											</v8:item>
+										</Title>
+									</ExtendedTooltip>
+								</Button>
+							</ChildItems>
+						</UsualGroup>
 					</ChildItems>
 				</UsualGroup>
 				<UsualGroup name="ГруппаОблачнаяПодпись" id="2113">
@@ -1896,8 +2021,10 @@
 			<MainAttribute>true</MainAttribute>
 			<UseAlways>
 				<Field>НаборКонстант.ИзвлекатьТекстыФайловНаСервере</Field>
+				<Field>НаборКонстант.ИспользоватьГосключ</Field>
 				<Field>НаборКонстант.ИспользоватьПолнотекстовыйПоиск</Field>
 				<Field>НаборКонстант.ИспользоватьРазделениеПоОбластямДанных</Field>
+				<Field>НаборКонстант.ИспользоватьСервисМобильнойПодписи</Field>
 			</UseAlways>
 		</Attribute>
 		<Attribute name="ИспользоватьПолнотекстовыйПоиск" id="6">

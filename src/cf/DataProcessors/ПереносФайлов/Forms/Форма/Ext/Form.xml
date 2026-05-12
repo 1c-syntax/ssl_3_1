@@ -68,7 +68,7 @@
 						<Presentation>
 							<v8:item>
 								<v8:lang>ru</v8:lang>
-								<v8:content>Из информационной базы в тома</v8:content>
+								<v8:content>Из базы данных в тома</v8:content>
 							</v8:item>
 						</Presentation>
 						<Value xsi:type="xs:string">ПеренестиВТома</Value>
@@ -81,7 +81,7 @@
 						<Presentation>
 							<v8:item>
 								<v8:lang>ru</v8:lang>
-								<v8:content>Из томов в информационную базу</v8:content>
+								<v8:content>Из томов в базу данных</v8:content>
 							</v8:item>
 						</Presentation>
 						<Value xsi:type="xs:string">ПеренестиВБазу</Value>
@@ -142,6 +142,20 @@
 							<TitleLocation>None</TitleLocation>
 							<Width>35</Width>
 							<AutoMaxWidth>false</AutoMaxWidth>
+							<ChoiceParameters>
+								<app:item name="Отбор.СпособХраненияФайлов">
+									<app:value xsi:type="FormChoiceListDesTimeValue">
+										<Presentation/>
+										<Value xsi:type="xr:DesignTimeRef">Enum.СпособыХраненияФайлов.EnumValue.ВСетевыхКаталогах</Value>
+									</app:value>
+								</app:item>
+								<app:item name="Отбор.ВидТомаХраненияФайлов">
+									<app:value xsi:type="FormChoiceListDesTimeValue">
+										<Presentation/>
+										<Value xsi:type="xr:DesignTimeRef">Enum.ВидыХраненияФайлов.EnumValue.ОперационноеХранение</Value>
+									</app:value>
+								</app:item>
+							</ChoiceParameters>
 							<ContextMenu name="ТомХраненияПриемникКонтекстноеМеню" id="12"/>
 							<ExtendedTooltip name="ТомХраненияПриемникРасширеннаяПодсказка" id="13"/>
 							<Events>
@@ -187,6 +201,20 @@
 							<TitleLocation>None</TitleLocation>
 							<Width>35</Width>
 							<AutoMaxWidth>false</AutoMaxWidth>
+							<ChoiceParameters>
+								<app:item name="Отбор.СпособХраненияФайлов">
+									<app:value xsi:type="FormChoiceListDesTimeValue">
+										<Presentation/>
+										<Value xsi:type="xr:DesignTimeRef">Enum.СпособыХраненияФайлов.EnumValue.ВСетевыхКаталогах</Value>
+									</app:value>
+								</app:item>
+								<app:item name="Отбор.ВидТомаХраненияФайлов">
+									<app:value xsi:type="FormChoiceListDesTimeValue">
+										<Presentation/>
+										<Value xsi:type="xr:DesignTimeRef">Enum.ВидыХраненияФайлов.EnumValue.ОперационноеХранение</Value>
+									</app:value>
+								</app:item>
+							</ChoiceParameters>
 							<ContextMenu name="ТомХраненияИсточникКонтекстноеМеню" id="20"/>
 							<ExtendedTooltip name="ТомХраненияИсточникРасширеннаяПодсказка" id="21"/>
 							<Events>

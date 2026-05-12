@@ -1,0 +1,407 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.20">
+	<WindowOpeningMode>LockOwnerWindow</WindowOpeningMode>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<Autofill>false</Autofill>
+	</AutoCommandBar>
+	<ChildItems>
+		<UsualGroup name="Основное" id="30">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Основное</v8:content>
+				</v8:item>
+			</Title>
+			<Group>Vertical</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ОсновноеРасширеннаяПодсказка" id="31"/>
+			<ChildItems>
+				<Pages name="Страницы" id="36">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Страницы</v8:content>
+						</v8:item>
+					</Title>
+					<PagesRepresentation>None</PagesRepresentation>
+					<ExtendedTooltip name="СтраницыРасширеннаяПодсказка" id="37"/>
+					<ChildItems>
+						<Page name="СтраницаПочтовыйСервис" id="38">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Почтовый сервис</v8:content>
+								</v8:item>
+							</Title>
+							<ExtendedTooltip name="СтраницаПочтовыйСервисРасширеннаяПодсказка" id="39"/>
+							<ChildItems>
+								<InputField name="ПочтовыйСервис" id="45">
+									<DataPath>ПочтовыйСервис</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Почтовый сервис</v8:content>
+										</v8:item>
+									</Title>
+									<TitleLocation>Top</TitleLocation>
+									<ListChoiceMode>true</ListChoiceMode>
+									<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+									<ChoiceList>
+										<xr:Item>
+											<xr:Presentation/>
+											<xr:CheckState>0</xr:CheckState>
+											<xr:Value xsi:type="FormChoiceListDesTimeValue">
+												<Presentation>
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>Яндекс</v8:content>
+													</v8:item>
+												</Presentation>
+												<Value xsi:type="xs:string">yandex.ru</Value>
+											</xr:Value>
+										</xr:Item>
+										<xr:Item>
+											<xr:Presentation/>
+											<xr:CheckState>0</xr:CheckState>
+											<xr:Value xsi:type="FormChoiceListDesTimeValue">
+												<Presentation>
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>Mail.ru</v8:content>
+													</v8:item>
+												</Presentation>
+												<Value xsi:type="xs:string">mail.ru</Value>
+											</xr:Value>
+										</xr:Item>
+										<xr:Item>
+											<xr:Presentation/>
+											<xr:CheckState>0</xr:CheckState>
+											<xr:Value xsi:type="FormChoiceListDesTimeValue">
+												<Presentation>
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>Gmail.com</v8:content>
+													</v8:item>
+												</Presentation>
+												<Value xsi:type="xs:string">gmail.com</Value>
+											</xr:Value>
+										</xr:Item>
+										<xr:Item>
+											<xr:Presentation/>
+											<xr:CheckState>0</xr:CheckState>
+											<xr:Value xsi:type="FormChoiceListDesTimeValue">
+												<Presentation>
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>Outlook.com</v8:content>
+													</v8:item>
+												</Presentation>
+												<Value xsi:type="xs:string">office365.com</Value>
+											</xr:Value>
+										</xr:Item>
+									</ChoiceList>
+									<ContextMenu name="ПочтовыйСервисКонтекстноеМеню" id="46"/>
+									<ExtendedTooltip name="ПочтовыйСервисРасширеннаяПодсказка" id="47"/>
+									<Events>
+										<Event name="OnChange">ПочтовыйСервисПриИзменении</Event>
+									</Events>
+								</InputField>
+							</ChildItems>
+						</Page>
+						<Page name="СтраницаРегистрацияПриложения" id="40">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Регистрация приложения</v8:content>
+								</v8:item>
+							</Title>
+							<ExtendedTooltip name="СтраницаРегистрацияПриложенияРасширеннаяПодсказка" id="41"/>
+							<ChildItems>
+								<InputField name="ПочтовыйСервисРегистрацияПриложения" id="48">
+									<DataPath>ПочтовыйСервис</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Почтовый сервис</v8:content>
+										</v8:item>
+									</Title>
+									<TitleLocation>Top</TitleLocation>
+									<ListChoiceMode>true</ListChoiceMode>
+									<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+									<ChoiceList>
+										<xr:Item>
+											<xr:Presentation/>
+											<xr:CheckState>0</xr:CheckState>
+											<xr:Value xsi:type="FormChoiceListDesTimeValue">
+												<Presentation>
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>Яндекс</v8:content>
+													</v8:item>
+												</Presentation>
+												<Value xsi:type="xs:string">yandex.ru</Value>
+											</xr:Value>
+										</xr:Item>
+										<xr:Item>
+											<xr:Presentation/>
+											<xr:CheckState>0</xr:CheckState>
+											<xr:Value xsi:type="FormChoiceListDesTimeValue">
+												<Presentation>
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>Mail.ru</v8:content>
+													</v8:item>
+												</Presentation>
+												<Value xsi:type="xs:string">mail.ru</Value>
+											</xr:Value>
+										</xr:Item>
+										<xr:Item>
+											<xr:Presentation/>
+											<xr:CheckState>0</xr:CheckState>
+											<xr:Value xsi:type="FormChoiceListDesTimeValue">
+												<Presentation>
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>Gmail.com</v8:content>
+													</v8:item>
+												</Presentation>
+												<Value xsi:type="xs:string">gmail.com</Value>
+											</xr:Value>
+										</xr:Item>
+										<xr:Item>
+											<xr:Presentation/>
+											<xr:CheckState>0</xr:CheckState>
+											<xr:Value xsi:type="FormChoiceListDesTimeValue">
+												<Presentation>
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>Outlook.com</v8:content>
+													</v8:item>
+												</Presentation>
+												<Value xsi:type="xs:string">office365.com</Value>
+											</xr:Value>
+										</xr:Item>
+									</ChoiceList>
+									<ContextMenu name="ПочтовыйСервисРегистрацияПриложенияКонтекстноеМеню" id="49"/>
+									<ExtendedTooltip name="ПочтовыйСервисРегистрацияПриложенияРасширеннаяПодсказка" id="50"/>
+									<Events>
+										<Event name="OnChange">ПочтовыйСервисПриИзменении</Event>
+									</Events>
+								</InputField>
+								<UsualGroup name="ГруппаРегистрацияПриложения" id="1">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Регистрация приложения</v8:content>
+										</v8:item>
+									</Title>
+									<Group>Vertical</Group>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="ГруппаРегистрацияПриложенияРасширеннаяПодсказка" id="2"/>
+									<ChildItems>
+										<LabelDecoration name="ПояснениеПоАдресуПеренаправления" id="6">
+											<AutoMaxWidth>false</AutoMaxWidth>
+											<MaxWidth>50</MaxWidth>
+											<AutoMaxHeight>false</AutoMaxHeight>
+											<Title formatted="true">
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>
+Из настроек регистрации приложения заполните следующие поля:
+</v8:content>
+												</v8:item>
+											</Title>
+											<ContextMenu name="ПояснениеПоАдресуПеренаправленияКонтекстноеМеню" id="7"/>
+											<ExtendedTooltip name="ПояснениеПоАдресуПеренаправленияРасширеннаяПодсказка" id="8"/>
+										</LabelDecoration>
+										<InputField name="АдресПеренаправления" id="9">
+											<DataPath>АдресПеренаправления</DataPath>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Адрес перенаправления (redirect_uri)</v8:content>
+												</v8:item>
+											</Title>
+											<TitleLocation>Top</TitleLocation>
+											<AutoMarkIncomplete>true</AutoMarkIncomplete>
+											<ContextMenu name="АдресПеренаправленияКонтекстноеМеню" id="10"/>
+											<ExtendedTooltip name="АдресПеренаправленияРасширеннаяПодсказка" id="11"/>
+										</InputField>
+										<LabelDecoration name="ПояснениеПоИдентификаторуПриложения" id="12">
+											<AutoMaxWidth>false</AutoMaxWidth>
+											<MaxWidth>50</MaxWidth>
+											<AutoMaxHeight>false</AutoMaxHeight>
+											<Title formatted="true"/>
+											<ContextMenu name="ПояснениеПоИдентификаторуПриложенияКонтекстноеМеню" id="13"/>
+											<ExtendedTooltip name="ПояснениеПоИдентификаторуПриложенияРасширеннаяПодсказка" id="14"/>
+										</LabelDecoration>
+										<InputField name="ИдентификаторПриложения" id="15">
+											<DataPath>ИдентификаторПриложения</DataPath>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Идентификатор приложения (client_id)</v8:content>
+												</v8:item>
+											</Title>
+											<TitleLocation>Top</TitleLocation>
+											<AutoMarkIncomplete>true</AutoMarkIncomplete>
+											<ContextMenu name="ИдентификаторПриложенияКонтекстноеМеню" id="16"/>
+											<ExtendedTooltip name="ИдентификаторПриложенияРасширеннаяПодсказка" id="17"/>
+										</InputField>
+										<LabelDecoration name="ПояснениеПоПаролюПриложения" id="18">
+											<AutoMaxWidth>false</AutoMaxWidth>
+											<MaxWidth>50</MaxWidth>
+											<AutoMaxHeight>false</AutoMaxHeight>
+											<Title formatted="true"/>
+											<ContextMenu name="ПояснениеПоПаролюПриложенияКонтекстноеМеню" id="19"/>
+											<ExtendedTooltip name="ПояснениеПоПаролюПриложенияРасширеннаяПодсказка" id="20"/>
+										</LabelDecoration>
+										<InputField name="ПарольПриложения" id="21">
+											<DataPath>ПарольПриложения</DataPath>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Пароль приложения (client_secret)</v8:content>
+												</v8:item>
+											</Title>
+											<TitleLocation>Top</TitleLocation>
+											<AutoMarkIncomplete>true</AutoMarkIncomplete>
+											<ContextMenu name="ПарольПриложенияКонтекстноеМеню" id="22"/>
+											<ExtendedTooltip name="ПарольПриложенияРасширеннаяПодсказка" id="23"/>
+										</InputField>
+										<LabelDecoration name="ДополнительноеПояснение" id="24">
+											<AutoMaxWidth>false</AutoMaxWidth>
+											<MaxWidth>50</MaxWidth>
+											<AutoMaxHeight>false</AutoMaxHeight>
+											<Title formatted="false">
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>У некоторых сервисов новое зарегистрированное приложение становится доступным не сразу. Рекомендуется после регистрации подождать несколько минут, прежде чем продолжить настройку.</v8:content>
+												</v8:item>
+											</Title>
+											<ContextMenu name="ДополнительноеПояснениеКонтекстноеМеню" id="25"/>
+											<ExtendedTooltip name="ДополнительноеПояснениеРасширеннаяПодсказка" id="26"/>
+										</LabelDecoration>
+									</ChildItems>
+								</UsualGroup>
+							</ChildItems>
+						</Page>
+					</ChildItems>
+				</Pages>
+				<CommandBar name="ГруппаКоманднаяПанель" id="34">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Командная панель</v8:content>
+						</v8:item>
+					</Title>
+					<HorizontalLocation>Right</HorizontalLocation>
+					<ExtendedTooltip name="ГруппаКоманднаяПанельРасширеннаяПодсказка" id="35"/>
+					<ChildItems>
+						<Button name="Зарегистрировать" id="32">
+							<Type>CommandBarButton</Type>
+							<DefaultButton>true</DefaultButton>
+							<CommandName>Form.Command.Зарегистрировать</CommandName>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Зарегистрировать</v8:content>
+								</v8:item>
+							</Title>
+							<ExtendedTooltip name="ЗарегистрироватьРасширеннаяПодсказка" id="33"/>
+						</Button>
+						<Button name="Справка" id="51">
+							<Type>CommandBarButton</Type>
+							<CommandName>Form.StandardCommand.Help</CommandName>
+							<ExtendedTooltip name="СправкаРасширеннаяПодсказка" id="52"/>
+						</Button>
+					</ChildItems>
+				</CommandBar>
+			</ChildItems>
+		</UsualGroup>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="АдресПеренаправления" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Адрес перенаправления</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ИдентификаторПриложения" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Идентификатор приложения</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ПарольПриложения" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Ключ доступа приложения</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ПочтовыйСервис" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Почтовый сервис</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+			<FillCheck>ShowError</FillCheck>
+		</Attribute>
+		<Attribute name="НастройкиПочтовогоСервиса" id="5">
+			<Type/>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="Зарегистрировать" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Зарегистрировать</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Зарегистрировать</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>Зарегистрировать</Action>
+		</Command>
+	</Commands>
+</Form>

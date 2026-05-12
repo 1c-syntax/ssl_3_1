@@ -121,7 +121,6 @@
 							<Representation>List</Representation>
 							<ChangeRowSet>false</ChangeRowSet>
 							<ChangeRowOrder>false</ChangeRowOrder>
-							<Header>false</Header>
 							<AutoInsertNewRow>true</AutoInsertNewRow>
 							<EnableStartDrag>true</EnableStartDrag>
 							<EnableDrag>true</EnableDrag>
@@ -219,6 +218,7 @@
 										</v8:item>
 									</Title>
 									<EditMode>EnterOnInput</EditMode>
+									<ShowInHeader>false</ShowInHeader>
 									<CheckBoxType>Auto</CheckBoxType>
 									<ContextMenu name="ПользователиПометкаКонтекстноеМеню" id="24"/>
 									<ExtendedTooltip name="ПользователиПометкаРасширеннаяПодсказка" id="25"/>
@@ -236,6 +236,28 @@
 									<ContextMenu name="ПользователиПользовательКонтекстноеМеню" id="21"/>
 									<ExtendedTooltip name="ПользователиПользовательРасширеннаяПодсказка" id="22"/>
 								</InputField>
+								<CheckBoxField name="ТаблицаПользователейБезИспользованияКлюча" id="73">
+									<DataPath>ТаблицаПользователей.БезИспользованияКлюча</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Без использования ключа</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Разрешить пользователю применять сертификат при выполнении операций, не требующих использования ключа электронной подписи. Например, выбирать сертификат для шифрования.</v8:content>
+										</v8:item>
+									</ToolTip>
+									<EditMode>EnterOnInput</EditMode>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="ТаблицаПользователейБезИспользованияКлючаКонтекстноеМеню" id="74"/>
+									<ExtendedTooltip name="ТаблицаПользователейБезИспользованияКлючаРасширеннаяПодсказка" id="75"/>
+									<Events>
+										<Event name="OnChange">ТаблицаПользователейБезИспользованияКлючаПриИзменении</Event>
+									</Events>
+								</CheckBoxField>
 							</ChildItems>
 						</Table>
 					</ChildItems>
@@ -252,7 +274,6 @@
 					<ChildItems>
 						<Table name="ВыбранныеПользователи" id="51">
 							<Representation>List</Representation>
-							<Header>false</Header>
 							<DataPath>ВыбранныеПользователи</DataPath>
 							<Title>
 								<v8:item>
@@ -303,6 +324,25 @@
 									<ContextMenu name="ВыбранныеПользователиПользовательКонтекстноеМеню" id="68"/>
 									<ExtendedTooltip name="ВыбранныеПользователиПользовательРасширеннаяПодсказка" id="69"/>
 								</InputField>
+								<CheckBoxField name="ВыбранныеПользователиБезИспользованияКлюча" id="70">
+									<DataPath>ВыбранныеПользователи.БезИспользованияКлюча</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Без использования ключа</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Разрешить пользователю применять сертификат при выполнении операций, не требующих использования ключа электронной подписи. Например, выбирать сертификат для шифрования.</v8:content>
+										</v8:item>
+									</ToolTip>
+									<EditMode>EnterOnInput</EditMode>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="ВыбранныеПользователиБезИспользованияКлючаКонтекстноеМеню" id="71"/>
+									<ExtendedTooltip name="ВыбранныеПользователиБезИспользованияКлючаРасширеннаяПодсказка" id="72"/>
+								</CheckBoxField>
 							</ChildItems>
 						</Table>
 					</ChildItems>
@@ -348,6 +388,11 @@
 					<CommandName>Form.StandardCommand.Cancel</CommandName>
 					<ExtendedTooltip name="ОтменаРасширеннаяПодсказка" id="6"/>
 				</Button>
+				<Button name="Справка" id="76">
+					<Type>CommandBarButton</Type>
+					<CommandName>Form.StandardCommand.Help</CommandName>
+					<ExtendedTooltip name="СправкаРасширеннаяПодсказка" id="77"/>
+				</Button>
 			</ChildItems>
 		</CommandBar>
 	</ChildItems>
@@ -386,6 +431,17 @@
 					</Type>
 				</Column>
 				<Column name="Основной" id="3">
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+				<Column name="БезИспользованияКлюча" id="4">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Без использования ключа</v8:content>
+						</v8:item>
+					</Title>
 					<Type>
 						<v8:Type>xs:boolean</v8:Type>
 					</Type>
@@ -437,6 +493,17 @@
 					</Title>
 					<Type>
 						<v8:Type>cfg:CatalogRef.Пользователи</v8:Type>
+					</Type>
+				</Column>
+				<Column name="БезИспользованияКлюча" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Без использования ключа</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
 					</Type>
 				</Column>
 			</Columns>

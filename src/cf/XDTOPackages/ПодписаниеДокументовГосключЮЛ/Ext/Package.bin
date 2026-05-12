@@ -1,0 +1,62 @@
+﻿<package xmlns="http://v8.1c.ru/8.1/xdto" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" targetNamespace="urn://www.1c.ru/ssl/gosuslugi/sign_document_ukep_legalperson/1.0.0" elementFormQualified="true" attributeFormQualified="false">
+	<property name="SignRequest">
+		<typeDef xmlns:d3p1="urn://www.1c.ru/ssl/gosuslugi/sign_document_ukep_legalperson/1.0.0" xsi:type="ObjectType" base="d3p1:SignRequestType"/>
+	</property>
+	<property xmlns:d2p1="urn://www.1c.ru/ssl/gosuslugi/sign_document_ukep_legalperson/1.0.0" name="SignResponse" type="d2p1:SignResponseType"/>
+	<valueType name="OGRNType" base="xs:string" variety="Atomic">
+		<pattern>\d{11}|\d{13}|\d{15}</pattern>
+	</valueType>
+	<valueType name="RAFPType" base="xs:string" variety="Atomic">
+		<pattern>\d{11}</pattern>
+	</valueType>
+	<valueType name="SNILSType" base="xs:string" variety="Atomic">
+		<pattern>[0-9]{3}[-][0-9]{3}[-][0-9]{3} [0-9]{2}</pattern>
+	</valueType>
+	<valueType name="inn_userType" base="xs:string" variety="Atomic">
+		<pattern>\d{12}</pattern>
+	</valueType>
+	<valueType name="string-250" base="xs:string" variety="Atomic" maxLength="250"/>
+	<valueType name="string-50" base="xs:string" variety="Atomic" maxLength="50"/>
+	<valueType name="stringNN-20" base="xs:normalizedString" variety="Atomic" minLength="1" maxLength="20"/>
+	<objectType name="AttributeType">
+		<property xmlns:d3p1="urn://www.1c.ru/ssl/gosuslugi/sign_document_ukep_legalperson/1.0.0" name="AttributeName" type="d3p1:string-50"/>
+		<property name="AttributeValue" type="xs:normalizedString"/>
+	</objectType>
+	<objectType name="DocumentType">
+		<property xmlns:d3p1="urn://www.1c.ru/ssl/gosuslugi/sign_document_ukep_legalperson/1.0.0" name="MimeType" type="d3p1:string-50"/>
+	</objectType>
+	<objectType name="ErrorType">
+		<property name="ErrorCode" type="xs:byte"/>
+		<property xmlns:d3p1="urn://www.1c.ru/ssl/gosuslugi/sign_document_ukep_legalperson/1.0.0" name="ErrorMessage" type="d3p1:string-250"/>
+	</objectType>
+	<objectType name="ForeignOrgType">
+		<property xmlns:d3p1="urn://www.1c.ru/ssl/gosuslugi/sign_document_ukep_legalperson/1.0.0" name="RAFP" type="d3p1:RAFPType"/>
+		<property xmlns:d3p1="urn://www.1c.ru/ssl/gosuslugi/sign_document_ukep_legalperson/1.0.0" name="INN_user" type="d3p1:inn_userType"/>
+	</objectType>
+	<objectType name="RFOrgType" ordered="false" sequenced="true">
+		<property xmlns:d3p1="urn://www.1c.ru/ssl/gosuslugi/sign_document_ukep_legalperson/1.0.0" name="Snils" type="d3p1:SNILSType" lowerBound="0"/>
+		<property xmlns:d3p1="urn://www.1c.ru/ssl/gosuslugi/sign_document_ukep_legalperson/1.0.0" name="OID" type="d3p1:stringNN-20" lowerBound="0"/>
+		<property xmlns:d3p1="urn://www.1c.ru/ssl/gosuslugi/sign_document_ukep_legalperson/1.0.0" name="OGRN" type="d3p1:OGRNType"/>
+	</objectType>
+	<objectType name="SignFileType">
+		<property xmlns:d3p1="urn://www.1c.ru/ssl/gosuslugi/sign_document_ukep_legalperson/1.0.0" name="DocumentId" type="d3p1:string-50"/>
+		<property xmlns:d3p1="urn://www.1c.ru/ssl/gosuslugi/sign_document_ukep_legalperson/1.0.0" name="FileSmevId" type="d3p1:string-50"/>
+		<property xmlns:d3p1="urn://www.1c.ru/ssl/gosuslugi/sign_document_ukep_legalperson/1.0.0" name="Attribute" type="d3p1:AttributeType" lowerBound="0" upperBound="10"/>
+	</objectType>
+	<objectType name="SignRejectType"/>
+	<objectType name="SignRequestType" ordered="false" sequenced="true">
+		<property xmlns:d3p1="urn://www.1c.ru/ssl/gosuslugi/sign_document_ukep_legalperson/1.0.0" name="RFOrg" type="d3p1:RFOrgType" lowerBound="0"/>
+		<property xmlns:d3p1="urn://www.1c.ru/ssl/gosuslugi/sign_document_ukep_legalperson/1.0.0" name="ForeignOrg" type="d3p1:ForeignOrgType" lowerBound="0"/>
+		<property xmlns:d3p1="urn://www.1c.ru/ssl/gosuslugi/sign_document_ukep_legalperson/1.0.0" name="Backlink" type="d3p1:string-250" lowerBound="0"/>
+		<property name="SignExpiration" type="xs:dateTime"/>
+		<property xmlns:d3p1="urn://www.1c.ru/ssl/gosuslugi/sign_document_ukep_legalperson/1.0.0" name="Description" type="d3p1:string-250"/>
+		<property xmlns:d3p1="urn://www.1c.ru/ssl/gosuslugi/sign_document_ukep_legalperson/1.0.0" name="Attribute" type="d3p1:AttributeType" lowerBound="0" upperBound="10"/>
+	</objectType>
+	<objectType name="SignResponseType" ordered="false" sequenced="true">
+		<property xmlns:d3p1="urn://www.1c.ru/ssl/gosuslugi/sign_document_ukep_legalperson/1.0.0" name="OID" type="d3p1:stringNN-20"/>
+		<property xmlns:d3p1="urn://www.1c.ru/ssl/gosuslugi/sign_document_ukep_legalperson/1.0.0" name="OGRN" type="d3p1:OGRNType"/>
+		<property xmlns:d3p1="urn://www.1c.ru/ssl/gosuslugi/sign_document_ukep_legalperson/1.0.0" name="SignFile" type="d3p1:SignFileType" lowerBound="0" upperBound="-1"/>
+		<property xmlns:d3p1="urn://www.1c.ru/ssl/gosuslugi/sign_document_ukep_legalperson/1.0.0" name="SignReject" type="d3p1:SignRejectType" lowerBound="0"/>
+		<property xmlns:d3p1="urn://www.1c.ru/ssl/gosuslugi/sign_document_ukep_legalperson/1.0.0" name="Error" type="d3p1:ErrorType" lowerBound="0"/>
+	</objectType>
+</package>

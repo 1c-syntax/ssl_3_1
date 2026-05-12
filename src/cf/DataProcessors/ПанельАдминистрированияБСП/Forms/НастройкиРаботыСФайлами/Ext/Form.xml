@@ -183,7 +183,7 @@
 										</v8:item>
 									</Title>
 									<AutoMaxWidth>false</AutoMaxWidth>
-									<MaxWidth>30</MaxWidth>
+									<MaxWidth>35</MaxWidth>
 									<ListChoiceMode>true</ListChoiceMode>
 									<TextEdit>false</TextEdit>
 									<ChoiceList>
@@ -194,7 +194,7 @@
 												<Presentation>
 													<v8:item>
 														<v8:lang>ru</v8:lang>
-														<v8:content>в информационной базе</v8:content>
+														<v8:content>в базе данных</v8:content>
 													</v8:item>
 												</Presentation>
 												<Value xsi:type="xs:string">ВИнформационнойБазе</Value>
@@ -207,7 +207,7 @@
 												<Presentation>
 													<v8:item>
 														<v8:lang>ru</v8:lang>
-														<v8:content>в томах на сервере</v8:content>
+														<v8:content>в томах (в сетевых каталогах)</v8:content>
 													</v8:item>
 												</Presentation>
 												<Value xsi:type="xs:string">ВТомахНаДиске</Value>
@@ -220,7 +220,7 @@
 												<Presentation>
 													<v8:item>
 														<v8:lang>ru</v8:lang>
-														<v8:content>в информационной базе и томах на сервере</v8:content>
+														<v8:content>в базе данных или в томах</v8:content>
 													</v8:item>
 												</Presentation>
 												<Value xsi:type="xs:string">ВИнформационнойБазеИТомахНаДиске</Value>
@@ -1159,6 +1159,115 @@
 				</UsualGroup>
 			</ChildItems>
 		</UsualGroup>
+		<UsualGroup name="ГруппаФайловыйАрхив" id="2231">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Файловый архив</v8:content>
+				</v8:item>
+			</Title>
+			<Group>Vertical</Group>
+			<ExtendedTooltip name="ГруппаФайловыйАрхивРасширеннаяПодсказка" id="2232"/>
+			<ChildItems>
+				<UsualGroup name="ГруппаОбщиеНастройкиФайловогоАрхива" id="2233">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Общие настройки файлового архива</v8:content>
+						</v8:item>
+					</Title>
+					<Group>AlwaysHorizontal</Group>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаОбщиеНастройкиФайловогоАрхиваРасширеннаяПодсказка" id="2234"/>
+					<ChildItems>
+						<CheckBoxField name="ИспользоватьФайловыйАрхив" id="2235">
+							<DataPath>ИспользоватьФайловыйАрхив</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Использовать файловый архив</v8:content>
+								</v8:item>
+							</Title>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="ИспользоватьФайловыйАрхивКонтекстноеМеню" id="2236"/>
+							<ExtendedTooltip name="ИспользоватьФайловыйАрхивРасширеннаяПодсказка" id="2237"/>
+							<Events>
+								<Event name="OnChange">ИспользоватьФайловыйАрхивПриИзменении</Event>
+							</Events>
+						</CheckBoxField>
+						<Button name="НастройкаРаботыСФайловымАрхивом" id="2238">
+							<Type>Hyperlink</Type>
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<CommandName>Form.Command.НастройкаРаботыСФайловымАрхивом</CommandName>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Настройка работы с файловым архивом</v8:content>
+								</v8:item>
+							</Title>
+							<ExtendedTooltip name="НастройкаРаботыСФайловымАрхивомРасширеннаяПодсказка" id="2239"/>
+						</Button>
+						<Button name="СправочникТомаХраненияФайловАрхивные" id="2240">
+							<Type>Hyperlink</Type>
+							<CommandName>Form.Command.СправочникТомаХраненияФайловАрхивные</CommandName>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Тома архивного хранения</v8:content>
+								</v8:item>
+							</Title>
+							<ExtendedTooltip name="СправочникТомаХраненияФайловАрхивныеРасширеннаяПодсказка" id="2241"/>
+						</Button>
+					</ChildItems>
+				</UsualGroup>
+				<UsualGroup name="ГруппаТекстИнформированияПользователя" id="2242">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Текст информирования пользователя</v8:content>
+						</v8:item>
+					</Title>
+					<Group>Vertical</Group>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаТекстИнформированияПользователяРасширеннаяПодсказка" id="2243"/>
+					<ChildItems>
+						<InputField name="ТекстИнформированияПользователяОНедоступностиФайлаВАрхиве" id="2244">
+							<DataPath>НаборКонстант.ТекстИнформированияПользователяОНедоступностиФайлаВАрхиве</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Текст информирования пользователя</v8:content>
+								</v8:item>
+							</Title>
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<MaxWidth>62</MaxWidth>
+							<Height>2</Height>
+							<HorizontalStretch>true</HorizontalStretch>
+							<VerticalStretch>false</VerticalStretch>
+							<MultiLine>true</MultiLine>
+							<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+							<ContextMenu name="ТекстИнформированияПользователяОНедоступностиФайлаВАрхивеКонтекстноеМеню" id="2245"/>
+							<ExtendedTooltip name="ТекстИнформированияПользователяОНедоступностиФайлаВАрхивеРасширеннаяПодсказка" id="2246"/>
+							<Events>
+								<Event name="OnChange">ТекстИнформированияПользователяОНедоступностиФайлаВАрхивеПриИзменении</Event>
+							</Events>
+						</InputField>
+						<LabelDecoration name="ПояснениеВоВстроенномХранилищеДвоичныхДанных" id="2247">
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<TextColor>style:ПоясняющийТекст</TextColor>
+							<Title formatted="false">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Текст информирования пользователя в ситуации, когда недоступен файл, перенесенный в файловый архив.</v8:content>
+								</v8:item>
+							</Title>
+							<ContextMenu name="ПояснениеВоВстроенномХранилищеДвоичныхДанныхКонтекстноеМеню" id="2248"/>
+							<ExtendedTooltip name="ПояснениеВоВстроенномХранилищеДвоичныхДанныхРасширеннаяПодсказка" id="2249"/>
+						</LabelDecoration>
+					</ChildItems>
+				</UsualGroup>
+			</ChildItems>
+		</UsualGroup>
 	</ChildItems>
 	<Attributes>
 		<Attribute name="НаборКонстант" id="1">
@@ -1184,6 +1293,7 @@
 				<Field>НаборКонстант.ИспользоватьПризнакРассмотрено</Field>
 				<Field>НаборКонстант.ИспользоватьПрочиеВзаимодействия</Field>
 				<Field>НаборКонстант.ИспользоватьСинхронизациюДанных</Field>
+				<Field>НаборКонстант.ИспользоватьФайловыйАрхив</Field>
 				<Field>НаборКонстант.ИспользоватьЭлектронныеПодписи</Field>
 				<Field>НаборКонстант.КаталогСообщенийОбменаДаннымиДляLinux</Field>
 				<Field>НаборКонстант.КаталогСообщенийОбменаДаннымиДляWindows</Field>
@@ -1195,6 +1305,7 @@
 				<Field>НаборКонстант.СписокЗапрещенныхРасширенийОбластиДанных</Field>
 				<Field>НаборКонстант.СписокРасширенийТекстовыхФайлов</Field>
 				<Field>НаборКонстант.СписокРасширенийФайловOpenDocumentОбластиДанных</Field>
+				<Field>НаборКонстант.ТекстИнформированияПользователяОНедоступностиФайлаВАрхиве</Field>
 				<Field>НаборКонстант.ХранитьФайлыВТомахНаДиске</Field>
 			</UseAlways>
 		</Attribute>
@@ -1303,6 +1414,22 @@
 				<v8:Type>xs:boolean</v8:Type>
 			</Type>
 		</Attribute>
+		<Attribute name="ДоступныХранилищаДвоичныхДанных" id="7">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ИспользоватьФайловыйАрхив" id="8">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Использовать файловый архив</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
 	</Attributes>
 	<Commands>
 		<Command name="СправочникТомаХраненияФайлов" id="37">
@@ -1375,6 +1502,36 @@
 				</v8:item>
 			</ToolTip>
 			<Action>ВыполнитьДедупликацию</Action>
+		</Command>
+		<Command name="СправочникТомаХраненияФайловАрхивные" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Справочник тома хранения файлов архивные</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Справочник тома хранения файлов архивные</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>СправочникТомаХраненияФайловАрхивные</Action>
+		</Command>
+		<Command name="НастройкаРаботыСФайловымАрхивом" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Настройка работы с файловым архивом</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Настройка работы с файловым архивом</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>НастройкаРаботыСФайловымАрхивом</Action>
 		</Command>
 	</Commands>
 </Form>

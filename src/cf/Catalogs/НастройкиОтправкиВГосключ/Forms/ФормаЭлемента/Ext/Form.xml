@@ -1,0 +1,463 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.20">
+	<WindowOpeningMode>LockOwnerWindow</WindowOpeningMode>
+	<UseForFoldersAndItems>Items</UseForFoldersAndItems>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<ChildItems>
+			<Button name="ФормаАвторизоваться" id="74">
+				<Type>CommandBarButton</Type>
+				<Visible>false</Visible>
+				<CommandName>Form.Command.Авторизоваться</CommandName>
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Авторизоваться в ЕСИА</v8:content>
+					</v8:item>
+				</Title>
+				<ExtendedTooltip name="ФормаАвторизоватьсяРасширеннаяПодсказка" id="75"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="AfterWrite">ПослеЗаписи</Event>
+		<Event name="AfterWriteAtServer">ПослеЗаписиНаСервере</Event>
+		<Event name="OnReadAtServer">ПриЧтенииНаСервере</Event>
+		<Event name="BeforeWrite">ПередЗаписью</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+		<Event name="OnWriteAtServer">ПриЗаписиНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<LabelDecoration name="ДекорацияАвторизация" id="88">
+			<Visible>false</Visible>
+			<BackColor>style:ToolTipBackColor</BackColor>
+			<ContextMenu name="ДекорацияАвторизацияКонтекстноеМеню" id="89"/>
+			<ExtendedTooltip name="ДекорацияАвторизацияРасширеннаяПодсказка" id="90"/>
+		</LabelDecoration>
+		<Pages name="ГруппаСтраницы" id="78">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Страницы</v8:content>
+				</v8:item>
+			</Title>
+			<ExtendedTooltip name="ГруппаСтраницыРасширеннаяПодсказка" id="79"/>
+			<ChildItems>
+				<Page name="СтраницаДанные" id="80">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Ключ доступа</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="СтраницаДанныеРасширеннаяПодсказка" id="81"/>
+					<ChildItems>
+						<UsualGroup name="ГруппаОрганизация" id="84">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Организация</v8:content>
+								</v8:item>
+							</Title>
+							<Group>Vertical</Group>
+							<United>false</United>
+							<ShowTitle>false</ShowTitle>
+							<ThroughAlign>Use</ThroughAlign>
+							<ExtendedTooltip name="ГруппаОрганизацияРасширеннаяПодсказка" id="85"/>
+							<ChildItems>
+								<InputField name="Организация" id="4">
+									<DataPath>Объект.Организация</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+									<ContextMenu name="ОрганизацияКонтекстноеМеню" id="5"/>
+									<ExtendedTooltip name="ОрганизацияРасширеннаяПодсказка" id="6"/>
+									<Events>
+										<Event name="OnChange">ОрганизацияПриИзменении</Event>
+									</Events>
+								</InputField>
+							</ChildItems>
+						</UsualGroup>
+						<UsualGroup name="ГруппаРеквизитыОрганизации" id="47">
+							<Visible>false</Visible>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Реквизиты организации</v8:content>
+								</v8:item>
+							</Title>
+							<United>false</United>
+							<ShowTitle>false</ShowTitle>
+							<ThroughAlign>Use</ThroughAlign>
+							<ExtendedTooltip name="ГруппаРеквизитыОрганизацииРасширеннаяПодсказка" id="48"/>
+							<ChildItems>
+								<InputField name="НаименованиеОрганизации" id="7">
+									<DataPath>Объект.НаименованиеОрганизации</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+									<ContextMenu name="НаименованиеОрганизацииКонтекстноеМеню" id="8"/>
+									<ExtendedTooltip name="НаименованиеОрганизацииРасширеннаяПодсказка" id="9"/>
+								</InputField>
+								<InputField name="ИНН" id="10">
+									<DataPath>Объект.ИНН</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<MaxWidth>12</MaxWidth>
+									<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+									<ContextMenu name="ИННКонтекстноеМеню" id="11"/>
+									<ExtendedTooltip name="ИННРасширеннаяПодсказка" id="12"/>
+								</InputField>
+								<InputField name="ОГРН" id="52">
+									<DataPath>Объект.ОГРН</DataPath>
+									<Width>15</Width>
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+									<ContextMenu name="ОГРНКонтекстноеМеню" id="53"/>
+									<ExtendedTooltip name="ОГРНРасширеннаяПодсказка" id="54"/>
+								</InputField>
+								<InputField name="КодОКАТО" id="16">
+									<DataPath>Объект.КодОКАТО</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Код ОКАТО</v8:content>
+										</v8:item>
+									</Title>
+									<EditMode>EnterOnInput</EditMode>
+									<ChoiceButton>true</ChoiceButton>
+									<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+									<ContextMenu name="КодОКАТОКонтекстноеМеню" id="17"/>
+									<ExtendedTooltip name="КодОКАТОРасширеннаяПодсказка" id="18">
+										<Title formatted="false">
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Код ОКАТО местоположения пользователя (можно передавать код ОКАТО региона, если невозможно определить точнее)
+</v8:content>
+											</v8:item>
+										</Title>
+									</ExtendedTooltip>
+								</InputField>
+							</ChildItems>
+						</UsualGroup>
+						<UsualGroup name="ГруппаСертификат" id="76">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Сертификат для подписания запросов в Госключ</v8:content>
+								</v8:item>
+							</Title>
+							<Group>Vertical</Group>
+							<United>false</United>
+							<ThroughAlign>Use</ThroughAlign>
+							<ExtendedTooltip name="ГруппаСертификатРасширеннаяПодсказка" id="77"/>
+							<ChildItems>
+								<InputField name="Сертификат" id="68">
+									<DataPath>Объект.Сертификат</DataPath>
+									<ToolTipRepresentation>Button</ToolTipRepresentation>
+									<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+									<ContextMenu name="СертификатКонтекстноеМеню" id="69"/>
+									<ExtendedTooltip name="СертификатРасширеннаяПодсказка" id="70">
+										<Title formatted="false">
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Для подписания запросов на отправку документов в Госключ требуется обезличенный сертификат организации. Если он не установлен на сервере, запросы необходимо будет подписывать на клиенте.</v8:content>
+											</v8:item>
+										</Title>
+									</ExtendedTooltip>
+								</InputField>
+								<InputField name="ПарольСертификата" id="71">
+									<DataPath>ПарольСертификата</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Пароль</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Пароль закрытого ключа сертификата указывается для автоматического подписания запросов в Госключ на сервере/в файловой базе.</v8:content>
+										</v8:item>
+									</ToolTip>
+									<ToolTipRepresentation>Button</ToolTipRepresentation>
+									<PasswordMode>true</PasswordMode>
+									<ChoiceButton>true</ChoiceButton>
+									<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+									<ChoiceButtonPicture>
+										<xr:Ref>CommonPicture.ВводимыеСимволыВидны</xr:Ref>
+										<xr:LoadTransparent>false</xr:LoadTransparent>
+									</ChoiceButtonPicture>
+									<ContextMenu name="ПарольСертификатаКонтекстноеМеню" id="72"/>
+									<ExtendedTooltip name="ПарольСертификатаРасширеннаяПодсказка" id="73"/>
+									<Events>
+										<Event name="OnChange">ПарольСертификатаПриИзменении</Event>
+										<Event name="EditTextChange">ПарольСертификатаИзменениеТекстаРедактирования</Event>
+										<Event name="StartChoice">ПарольСертификатаНачалоВыбора</Event>
+									</Events>
+								</InputField>
+							</ChildItems>
+						</UsualGroup>
+						<UsualGroup name="ГруппаКлючДоступа" id="55">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Ключ доступа</v8:content>
+								</v8:item>
+							</Title>
+							<Group>Vertical</Group>
+							<United>false</United>
+							<ExtendedTooltip name="ГруппаКлючДоступаРасширеннаяПодсказка" id="56"/>
+							<ChildItems>
+								<InputField name="КлючДоступа" id="62">
+									<DataPath>КлючДоступа</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Ключ доступа</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTipRepresentation>Button</ToolTipRepresentation>
+									<PasswordMode>true</PasswordMode>
+									<ChoiceButton>true</ChoiceButton>
+									<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+									<ChoiceButtonPicture>
+										<xr:Ref>CommonPicture.ВводимыеСимволыВидны</xr:Ref>
+										<xr:LoadTransparent>false</xr:LoadTransparent>
+									</ChoiceButtonPicture>
+									<ContextMenu name="КлючДоступаКонтекстноеМеню" id="63"/>
+									<ExtendedTooltip name="КлючДоступаРасширеннаяПодсказка" id="64">
+										<Title formatted="true">
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>&lt;bgcolor #ffffe1&gt;&lt;font Segoe UI&gt;&lt;fontsize 9&gt;Ключ доступа, полученный сотрудником на портале Госуслуг. Подробнее см. инструкцию по интеграции с Госключом по API &lt;/&gt;&lt;/&gt;&lt;font Segoe UI&gt;&lt;fontsize 9&gt;&lt;link https://partners.gosuslugi.ru/catalog/goskey&gt;https://partners.gosuslugi.ru/catalog/goskey&lt;/&gt;&lt;/&gt;&lt;/&gt;&lt;/&gt;
+</v8:content>
+											</v8:item>
+										</Title>
+									</ExtendedTooltip>
+									<Events>
+										<Event name="OnChange">КлючДоступаПриИзменении</Event>
+										<Event name="EditTextChange">КлючДоступаИзменениеТекстаРедактирования</Event>
+										<Event name="StartChoice">КлючДоступаНачалоВыбора</Event>
+									</Events>
+								</InputField>
+								<InputField name="СрокДействия" id="49">
+									<DataPath>Объект.СрокДействия</DataPath>
+									<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+									<ContextMenu name="СрокДействияКонтекстноеМеню" id="50"/>
+									<ExtendedTooltip name="СрокДействияРасширеннаяПодсказка" id="51"/>
+									<Events>
+										<Event name="OnChange">СрокДействияПриИзменении</Event>
+									</Events>
+								</InputField>
+								<InputField name="АдресСервиса" id="22">
+									<DataPath>Объект.АдресСервиса</DataPath>
+									<UserVisible>
+										<xr:Common>false</xr:Common>
+									</UserVisible>
+									<EditMode>EnterOnInput</EditMode>
+									<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+									<ContextMenu name="АдресСервисаКонтекстноеМеню" id="23"/>
+									<ExtendedTooltip name="АдресСервисаРасширеннаяПодсказка" id="24"/>
+								</InputField>
+								<InputField name="АдресЕСИА" id="25">
+									<DataPath>Объект.АдресЕСИА</DataPath>
+									<UserVisible>
+										<xr:Common>false</xr:Common>
+									</UserVisible>
+									<EditMode>EnterOnInput</EditMode>
+									<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+									<ContextMenu name="АдресЕСИАКонтекстноеМеню" id="26"/>
+									<ExtendedTooltip name="АдресЕСИАРасширеннаяПодсказка" id="27"/>
+								</InputField>
+							</ChildItems>
+						</UsualGroup>
+						<UsualGroup name="ГруппаПодвал" id="86">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Подвал</v8:content>
+								</v8:item>
+							</Title>
+							<Group>Vertical</Group>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаПодвалРасширеннаяПодсказка" id="87"/>
+							<ChildItems>
+								<InputField name="Ответственный" id="59">
+									<DataPath>Объект.Ответственный</DataPath>
+									<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+									<ContextMenu name="ОтветственныйКонтекстноеМеню" id="60"/>
+									<ExtendedTooltip name="ОтветственныйРасширеннаяПодсказка" id="61"/>
+									<Events>
+										<Event name="OnChange">ОтветственныйПриИзменении</Event>
+									</Events>
+								</InputField>
+								<InputField name="Наименование" id="1">
+									<DataPath>Объект.Description</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Наименование</v8:content>
+										</v8:item>
+									</Title>
+									<EditMode>EnterOnInput</EditMode>
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+									<ContextMenu name="НаименованиеКонтекстноеМеню" id="2"/>
+									<ExtendedTooltip name="НаименованиеРасширеннаяПодсказка" id="3"/>
+									<Events>
+										<Event name="OnChange">НаименованиеПриИзменении</Event>
+									</Events>
+								</InputField>
+								<InputField name="Комментарий" id="65">
+									<DataPath>Объект.Комментарий</DataPath>
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+									<ContextMenu name="КомментарийКонтекстноеМеню" id="66"/>
+									<ExtendedTooltip name="КомментарийРасширеннаяПодсказка" id="67"/>
+								</InputField>
+							</ChildItems>
+						</UsualGroup>
+					</ChildItems>
+				</Page>
+				<Page name="СтраницаПользователи" id="82">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Пользователи</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="СтраницаПользователиРасширеннаяПодсказка" id="83"/>
+					<ChildItems>
+						<Table name="Пользователи" id="28">
+							<Representation>List</Representation>
+							<TitleLocation>Top</TitleLocation>
+							<Header>false</Header>
+							<AutoInsertNewRow>true</AutoInsertNewRow>
+							<EnableStartDrag>true</EnableStartDrag>
+							<EnableDrag>true</EnableDrag>
+							<DataPath>Объект.Пользователи</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Пользователи, имеющие право на отправку документов в Госключ с этим ключом доступа</v8:content>
+								</v8:item>
+							</Title>
+							<RowFilter xsi:nil="true"/>
+							<ContextMenu name="ПользователиКонтекстноеМеню" id="29"/>
+							<AutoCommandBar name="ПользователиКоманднаяПанель" id="30"/>
+							<ExtendedTooltip name="ПользователиРасширеннаяПодсказка" id="31"/>
+							<SearchStringAddition name="ПользователиСтрокаПоиска" id="32">
+								<AdditionSource>
+									<Item>Пользователи</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ПользователиСтрокаПоискаКонтекстноеМеню" id="33"/>
+								<ExtendedTooltip name="ПользователиСтрокаПоискаРасширеннаяПодсказка" id="34"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="ПользователиСостояниеПросмотра" id="35">
+								<AdditionSource>
+									<Item>Пользователи</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ПользователиСостояниеПросмотраКонтекстноеМеню" id="36"/>
+								<ExtendedTooltip name="ПользователиСостояниеПросмотраРасширеннаяПодсказка" id="37"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="ПользователиУправлениеПоиском" id="38">
+								<AdditionSource>
+									<Item>Пользователи</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="ПользователиУправлениеПоискомКонтекстноеМеню" id="39"/>
+								<ExtendedTooltip name="ПользователиУправлениеПоискомРасширеннаяПодсказка" id="40"/>
+							</SearchControlAddition>
+							<Events>
+								<Event name="BeforeAddRow">ПользователиПередНачаломДобавления</Event>
+							</Events>
+							<ChildItems>
+								<InputField name="ПользователиПользователь" id="44">
+									<DataPath>Объект.Пользователи.Пользователь</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ShowInHeader>false</ShowInHeader>
+									<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+									<ContextMenu name="ПользователиПользовательКонтекстноеМеню" id="45"/>
+									<ExtendedTooltip name="ПользователиПользовательРасширеннаяПодсказка" id="46"/>
+								</InputField>
+							</ChildItems>
+						</Table>
+					</ChildItems>
+				</Page>
+			</ChildItems>
+		</Pages>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:CatalogObject.НастройкиОтправкиВГосключ</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<SavedData>true</SavedData>
+		</Attribute>
+		<Attribute name="КлючДоступа" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Ключ доступа</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+			<SavedData>true</SavedData>
+		</Attribute>
+		<Attribute name="КлючДоступаИзменен" id="3">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ИспользуетсяАвтонаименование" id="4">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ПарольСертификата" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Пароль</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+			<SavedData>true</SavedData>
+		</Attribute>
+		<Attribute name="ПарольСертификатаИзменен" id="6">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="Авторизоваться" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Авторизоваться в ЕСИА</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Авторизоваться</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>Авторизоваться</Action>
+		</Command>
+	</Commands>
+</Form>

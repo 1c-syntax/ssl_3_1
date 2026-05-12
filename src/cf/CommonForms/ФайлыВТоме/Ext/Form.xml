@@ -136,6 +136,17 @@
 				<Event name="BeforeRowChange">СписокПередНачаломИзменения</Event>
 			</Events>
 			<ChildItems>
+				<LabelField name="СписокНаименованиеФайла" id="43">
+					<DataPath>Список.НаименованиеФайла</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Имя файла</v8:content>
+						</v8:item>
+					</Title>
+					<ContextMenu name="СписокНаименованиеФайлаКонтекстноеМеню" id="44"/>
+					<ExtendedTooltip name="СписокНаименованиеФайлаРасширеннаяПодсказка" id="45"/>
+				</LabelField>
 				<LabelField name="СписокПутьКФайлу" id="18">
 					<DataPath>Список.ПутьКФайлу</DataPath>
 					<Title>
@@ -256,9 +267,130 @@
 	ВЫРАЗИТЬ("" КАК СТРОКА) КАК ПутьКФайлу,
 	ВЫРАЗИТЬ(0 КАК ЧИСЛО(10, 0)) КАК Размер,
 	ЗНАЧЕНИЕ(Справочник.Пользователи.ПустаяСсылка) КАК Автор,
-	ЛОЖЬ КАК ЭтоПрисоединенныеФайлы
+	ЛОЖЬ КАК ЭтоПрисоединенныеФайлы,
+	ВЫРАЗИТЬ("" КАК СТРОКА) КАК НаименованиеФайла
 ИЗ
 	Справочник.ТомаХраненияФайлов КАК ХранилищеФайловПереопределяемый</QueryText>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>Код</dcssch:dataPath>
+					<dcssch:field>Код</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>СпособХраненияФайлов</dcssch:dataPath>
+					<dcssch:field>СпособХраненияФайлов</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ВидТомаХраненияФайлов</dcssch:dataPath>
+					<dcssch:field>ВидТомаХраненияФайлов</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>Комментарий</dcssch:dataPath>
+					<dcssch:field>Комментарий</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ПорядокЗаполнения</dcssch:dataPath>
+					<dcssch:field>ПорядокЗаполнения</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ВремяПоследнейОчисткиФайлов</dcssch:dataPath>
+					<dcssch:field>ВремяПоследнейОчисткиФайлов</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>МаксимальныйРазмер</dcssch:dataPath>
+					<dcssch:field>МаксимальныйРазмер</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ПутьКФайлу</dcssch:dataPath>
+					<dcssch:field>ПутьКФайлу</dcssch:field>
+					<dcssch:title xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Путь к файлу</v8:content>
+						</v8:item>
+					</dcssch:title>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ПолныйПутьLinux</dcssch:dataPath>
+					<dcssch:field>ПолныйПутьLinux</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ПолныйПутьWindows</dcssch:dataPath>
+					<dcssch:field>ПолныйПутьWindows</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ИмяХранилищаДвоичныхДанных</dcssch:dataPath>
+					<dcssch:field>ИмяХранилищаДвоичныхДанных</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>Предопределенный</dcssch:dataPath>
+					<dcssch:field>Предопределенный</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>Ссылка</dcssch:dataPath>
+					<dcssch:field>Ссылка</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ИмяПредопределенныхДанных</dcssch:dataPath>
+					<dcssch:field>ИмяПредопределенныхДанных</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>Наименование</dcssch:dataPath>
+					<dcssch:field>Наименование</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ИндексКартинки</dcssch:dataPath>
+					<dcssch:field>ИндексКартинки</dcssch:field>
+					<dcssch:title xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Индекс картинки</v8:content>
+						</v8:item>
+					</dcssch:title>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>Размер</dcssch:dataPath>
+					<dcssch:field>Размер</dcssch:field>
+					<dcssch:title xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Размер</v8:content>
+						</v8:item>
+					</dcssch:title>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>Автор</dcssch:dataPath>
+					<dcssch:field>Автор</dcssch:field>
+					<dcssch:title xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Автор</v8:content>
+						</v8:item>
+					</dcssch:title>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ЭтоПрисоединенныеФайлы</dcssch:dataPath>
+					<dcssch:field>ЭтоПрисоединенныеФайлы</dcssch:field>
+					<dcssch:title xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Это присоединенные файлы</v8:content>
+						</v8:item>
+					</dcssch:title>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ПометкаУдаления</dcssch:dataPath>
+					<dcssch:field>ПометкаУдаления</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>НаименованиеФайла</dcssch:dataPath>
+					<dcssch:field>НаименованиеФайла</dcssch:field>
+					<dcssch:title xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Наименование файла</v8:content>
+						</v8:item>
+					</dcssch:title>
+				</Field>
 				<MainTable>Catalog.ТомаХраненияФайлов</MainTable>
 				<ListSettings>
 					<dcsset:filter>

@@ -1,5 +1,12 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.20">
+	<Title>
+		<v8:item>
+			<v8:lang>ru</v8:lang>
+			<v8:content>Тома хранения файлов</v8:content>
+		</v8:item>
+	</Title>
+	<AutoTitle>false</AutoTitle>
 	<MobileDeviceCommandBarContent>
 		<xr:Item>
 			<xr:Presentation/>
@@ -81,6 +88,33 @@
 				</Button>
 			</ChildItems>
 		</CommandBar>
+		<UsualGroup name="ГруппаУправлениеХранилищамиДвоичныхДанных" id="84">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Управление хранилищами двоичных данных</v8:content>
+				</v8:item>
+			</Title>
+			<GroupHorizontalAlign>Right</GroupHorizontalAlign>
+			<Group>AlwaysHorizontal</Group>
+			<Behavior>Usual</Behavior>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаУправлениеХранилищамиДвоичныхДанныхРасширеннаяПодсказка" id="85"/>
+			<ChildItems>
+				<Button name="КнопкаУправлениеХранилищамиДвоичныхДанных" id="86">
+					<Type>Hyperlink</Type>
+					<GroupHorizontalAlign>Right</GroupHorizontalAlign>
+					<CommandName>Form.Command.НастроитьХранилищаДвоичныхДанных</CommandName>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Управление хранилищами двоичных данных</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="КнопкаУправлениеХранилищамиДвоичныхДанныхРасширеннаяПодсказка" id="87"/>
+				</Button>
+			</ChildItems>
+		</UsualGroup>
 		<Table name="Список" id="1">
 			<Representation>List</Representation>
 			<CommandBarLocation>None</CommandBarLocation>
@@ -259,6 +293,11 @@
 					<ContextMenu name="СписокСсылкаКонтекстноеМеню" id="26"/>
 					<ExtendedTooltip name="СписокСсылкаРасширеннаяПодсказка" id="27"/>
 				</LabelField>
+				<LabelField name="СписокВидТомаХраненияФайлов" id="81">
+					<DataPath>Список.ВидТомаХраненияФайлов</DataPath>
+					<ContextMenu name="СписокВидТомаХраненияФайловКонтекстноеМеню" id="82"/>
+					<ExtendedTooltip name="СписокВидТомаХраненияФайловРасширеннаяПодсказка" id="83"/>
+				</LabelField>
 			</ChildItems>
 		</Table>
 	</ChildItems>
@@ -298,6 +337,11 @@
 					<dcsset:itemsUserSettingID>911b6018-f537-43e8-a417-da56b22f9aec</dcsset:itemsUserSettingID>
 				</ListSettings>
 			</Settings>
+		</Attribute>
+		<Attribute name="ОбрабатываемыйВидТомаХраненияФайлов" id="2">
+			<Type>
+				<v8:Type>cfg:EnumRef.ВидыХраненияФайлов</v8:Type>
+			</Type>
 		</Attribute>
 	</Attributes>
 	<Commands>
@@ -347,5 +391,27 @@
 			</Title>
 			<Action>ПроверитьЦелостность</Action>
 		</Command>
+		<Command name="НастроитьХранилищаДвоичныхДанных" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Настроить хранилища двоичных данных</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Настроить хранилища двоичных данных</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>НастроитьХранилищаДвоичныхДанных</Action>
+		</Command>
 	</Commands>
+	<Parameters>
+		<Parameter name="ЗначениеОтбораПоВидуТомаХраненияФайлов">
+			<Type>
+				<v8:Type>cfg:EnumRef.ВидыХраненияФайлов</v8:Type>
+			</Type>
+		</Parameter>
+	</Parameters>
 </Form>

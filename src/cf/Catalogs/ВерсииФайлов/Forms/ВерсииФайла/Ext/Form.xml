@@ -302,6 +302,34 @@
 				<Event name="BeforeRowChange">СписокПередНачаломИзменения</Event>
 			</Events>
 			<ChildItems>
+				<PictureField name="СписокНомерКартинкиЭтоАрхив" id="127">
+					<DataPath>Список.НомерКартинкиЭтоАрхив</DataPath>
+					<ReadOnly>true</ReadOnly>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>В архиве</v8:content>
+						</v8:item>
+					</Title>
+					<TitleLocation>None</TitleLocation>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Файл перенесен в архив</v8:content>
+						</v8:item>
+					</ToolTip>
+					<HeaderPicture>
+						<xr:Ref>CommonPicture.ФайловыйАрхив</xr:Ref>
+						<xr:LoadTransparent>false</xr:LoadTransparent>
+					</HeaderPicture>
+					<Width>2</Width>
+					<ValuesPicture>
+						<xr:Ref>CommonPicture.ФайловыйАрхив</xr:Ref>
+						<xr:LoadTransparent>false</xr:LoadTransparent>
+					</ValuesPicture>
+					<ContextMenu name="СписокНомерКартинкиЭтоАрхивКонтекстноеМеню" id="128"/>
+					<ExtendedTooltip name="СписокНомерКартинкиЭтоАрхивРасширеннаяПодсказка" id="129"/>
+				</PictureField>
 				<ColumnGroup name="ГруппаВертикально" id="114">
 					<Title>
 						<v8:item>
@@ -431,6 +459,7 @@
 				<Field>Список.Код</Field>
 				<Field>Список.Комментарий</Field>
 				<Field>Список.НомерВерсии</Field>
+				<Field>Список.НомерКартинкиЭтоАрхив</Field>
 				<Field>Список.ПолноеНаименование</Field>
 				<Field>Список.ПометкаУдаления</Field>
 				<Field>Список.Размер</Field>
@@ -464,11 +493,166 @@
 		ИНАЧЕ ЛОЖЬ
 	КОНЕЦ КАК ЭтоТекущая,
 	ВерсииФайловПереопределяемый.Расширение КАК Расширение,
-	ВерсииФайловПереопределяемый.НомерВерсии КАК НомерВерсии
+	ВерсииФайловПереопределяемый.НомерВерсии КАК НомерВерсии,
+	0 КАК НомерКартинкиЭтоАрхив
 ИЗ
 	Справочник.ВерсииФайлов КАК ВерсииФайловПереопределяемый
 ГДЕ
 	ВерсииФайловПереопределяемый.Владелец = &amp;Владелец</QueryText>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ПутьКФайлу</dcssch:dataPath>
+					<dcssch:field>ПутьКФайлу</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>Наименование</dcssch:dataPath>
+					<dcssch:field>Наименование</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ДатаМодификацииУниверсальная</dcssch:dataPath>
+					<dcssch:field>ДатаМодификацииУниверсальная</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>Том</dcssch:dataPath>
+					<dcssch:field>Том</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ДатаМодификацииФайла</dcssch:dataPath>
+					<dcssch:field>ДатаМодификацииФайла</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>СтатусИзвлеченияТекста</dcssch:dataPath>
+					<dcssch:field>СтатусИзвлеченияТекста</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ФайлХранилище</dcssch:dataPath>
+					<dcssch:field>ФайлХранилище</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ТекстХранилище</dcssch:dataPath>
+					<dcssch:field>ТекстХранилище</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>Размер</dcssch:dataPath>
+					<dcssch:field>Размер</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ТипХраненияФайла</dcssch:dataPath>
+					<dcssch:field>ТипХраненияФайла</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ДатаПереносаВАрхив</dcssch:dataPath>
+					<dcssch:field>ДатаПереносаВАрхив</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ПометкаУдаления</dcssch:dataPath>
+					<dcssch:field>ПометкаУдаления</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>УсловноПеренесенВАрхив</dcssch:dataPath>
+					<dcssch:field>УсловноПеренесенВАрхив</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>УдалитьЭлектронныеПодписи</dcssch:dataPath>
+					<dcssch:field>УдалитьЭлектронныеПодписи</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>Предопределенный</dcssch:dataPath>
+					<dcssch:field>Предопределенный</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>Ссылка</dcssch:dataPath>
+					<dcssch:field>Ссылка</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ИмяПредопределенныхДанных</dcssch:dataPath>
+					<dcssch:field>ИмяПредопределенныхДанных</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>Код</dcssch:dataPath>
+					<dcssch:field>Код</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>Комментарий</dcssch:dataPath>
+					<dcssch:field>Комментарий</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>Автор</dcssch:dataPath>
+					<dcssch:field>Автор</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ДатаСоздания</dcssch:dataPath>
+					<dcssch:field>ДатаСоздания</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ПолноеНаименование</dcssch:dataPath>
+					<dcssch:field>ПолноеНаименование</dcssch:field>
+					<dcssch:title xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Полное наименование</v8:content>
+						</v8:item>
+					</dcssch:title>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>РодительскаяВерсия</dcssch:dataPath>
+					<dcssch:field>РодительскаяВерсия</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ИндексКартинки</dcssch:dataPath>
+					<dcssch:field>ИндексКартинки</dcssch:field>
+					<dcssch:title xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Индекс картинки</v8:content>
+						</v8:item>
+					</dcssch:title>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>Владелец</dcssch:dataPath>
+					<dcssch:field>Владелец</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ЭтоТекущая</dcssch:dataPath>
+					<dcssch:field>ЭтоТекущая</dcssch:field>
+					<dcssch:title xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Это текущая</v8:content>
+						</v8:item>
+					</dcssch:title>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>НомерВерсии</dcssch:dataPath>
+					<dcssch:field>НомерВерсии</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>Расширение</dcssch:dataPath>
+					<dcssch:field>Расширение</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>НомерКартинкиЭтоАрхив</dcssch:dataPath>
+					<dcssch:field>НомерКартинкиЭтоАрхив</dcssch:field>
+					<dcssch:title xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Номер картинки это архив</v8:content>
+						</v8:item>
+					</dcssch:title>
+				</Field>
+				<Parameter>
+					<dcssch:name>Владелец</dcssch:name>
+					<dcssch:title xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Владелец</v8:content>
+						</v8:item>
+					</dcssch:title>
+					<dcssch:valueType>
+						<v8:Type>cfg:CatalogRef.Файлы</v8:Type>
+					</dcssch:valueType>
+					<dcssch:value xsi:nil="true"/>
+					<dcssch:useRestriction>true</dcssch:useRestriction>
+				</Parameter>
 				<MainTable>Catalog.ВерсииФайлов</MainTable>
 				<ListSettings>
 					<dcsset:filter>

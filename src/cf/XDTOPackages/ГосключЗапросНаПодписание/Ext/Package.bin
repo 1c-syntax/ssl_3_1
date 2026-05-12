@@ -1,0 +1,24 @@
+﻿<package xmlns="http://v8.1c.ru/8.1/xdto" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" targetNamespace="http://www.1c.ru/ssl/SignRequest" elementFormQualified="true" attributeFormQualified="false">
+	<property xmlns:d2p1="http://www.1c.ru/ssl/SignRequest" name="SignRequest" type="d2p1:SignRequestType"/>
+	<valueType name="string-14" base="xs:string" variety="Atomic" maxLength="14"/>
+	<valueType name="string-250" base="xs:string" variety="Atomic" maxLength="250"/>
+	<valueType name="string-50" base="xs:string" variety="Atomic" maxLength="50"/>
+	<valueType name="stringNN-20" base="xs:normalizedString" variety="Atomic" minLength="1" maxLength="20"/>
+	<objectType name="AttributeType">
+		<property xmlns:d3p1="http://www.1c.ru/ssl/SignRequest" name="AttributeName" type="d3p1:string-50"/>
+		<property name="AttributeValue" type="xs:normalizedString"/>
+	</objectType>
+	<objectType name="DocumentType">
+		<property xmlns:d3p1="http://www.1c.ru/ssl/SignRequest" name="DocumentId" type="d3p1:string-50"/>
+		<property xmlns:d3p1="http://www.1c.ru/ssl/SignRequest" name="MimeType" type="d3p1:string-50"/>
+		<property xmlns:d3p1="http://www.1c.ru/ssl/SignRequest" name="Description" type="d3p1:string-250" lowerBound="0"/>
+		<property xmlns:d3p1="http://www.1c.ru/ssl/SignRequest" name="Backlink" type="d3p1:string-250" lowerBound="0"/>
+		<property name="SignExpiration" type="xs:dateTime" lowerBound="0"/>
+		<property xmlns:d3p1="http://www.1c.ru/ssl/SignRequest" name="Attribute" type="d3p1:AttributeType" lowerBound="0" upperBound="10"/>
+	</objectType>
+	<objectType name="SignRequestType">
+		<property xmlns:d3p1="http://www.1c.ru/ssl/SignRequest" name="Snils" type="d3p1:string-14"/>
+		<property xmlns:d3p1="http://www.1c.ru/ssl/SignRequest" name="Document" type="d3p1:DocumentType" upperBound="-1"/>
+		<property xmlns:d3p1="http://www.1c.ru/ssl/SignRequest" name="OID" type="d3p1:stringNN-20"/>
+	</objectType>
+</package>

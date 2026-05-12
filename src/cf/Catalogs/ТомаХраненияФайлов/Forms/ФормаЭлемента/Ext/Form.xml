@@ -65,6 +65,7 @@
 	</AutoCommandBar>
 	<Events>
 		<Event name="AfterWrite">ПослеЗаписи</Event>
+		<Event name="AfterWriteAtServer">ПослеЗаписиНаСервере</Event>
 		<Event name="OnReadAtServer">ПриЧтенииНаСервере</Event>
 		<Event name="OnOpen">ПриОткрытии</Event>
 		<Event name="BeforeClose">ПередЗакрытием</Event>
@@ -120,6 +121,59 @@
 					</Title>
 					<ExtendedTooltip name="СвойстваГлавноеРасширеннаяПодсказка" id="45"/>
 					<ChildItems>
+						<UsualGroup name="ГруппаСпособХраненияФайлов" id="52">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Способ хранения файлов</v8:content>
+								</v8:item>
+							</Title>
+							<Group>AlwaysHorizontal</Group>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаСпособХраненияФайловРасширеннаяПодсказка" id="53"/>
+							<ChildItems>
+								<InputField name="СпособХраненияФайлов" id="54">
+									<DataPath>Объект.СпособХраненияФайлов</DataPath>
+									<TitleLocation>Top</TitleLocation>
+									<WarningOnEditRepresentation>Show</WarningOnEditRepresentation>
+									<WarningOnEdit>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Меняя способ хранения файлов тома, вы потеряете возможность доступа к уже созданным на этом томе файлам</v8:content>
+										</v8:item>
+									</WarningOnEdit>
+									<ListChoiceMode>true</ListChoiceMode>
+									<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+									<AutoMarkIncomplete>true</AutoMarkIncomplete>
+									<ChooseType>false</ChooseType>
+									<TextEdit>false</TextEdit>
+									<ContextMenu name="СпособХраненияФайловКонтекстноеМеню" id="55"/>
+									<ExtendedTooltip name="СпособХраненияФайловРасширеннаяПодсказка" id="56"/>
+									<Events>
+										<Event name="OnChange">СпособХраненияФайловПриИзменении</Event>
+									</Events>
+								</InputField>
+								<InputField name="ИмяХранилищаДвоичныхДанных" id="57">
+									<DataPath>Объект.ИмяХранилищаДвоичныхДанных</DataPath>
+									<TitleLocation>Top</TitleLocation>
+									<WarningOnEditRepresentation>Show</WarningOnEditRepresentation>
+									<WarningOnEdit>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Меняя имя внешного хранилища двоичных данных тома, вы потеряете возможность доступа к уже созданным на этом томе файлам</v8:content>
+										</v8:item>
+									</WarningOnEdit>
+									<ChoiceButton>false</ChoiceButton>
+									<ListChoiceMode>true</ListChoiceMode>
+									<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+									<AutoMarkIncomplete>true</AutoMarkIncomplete>
+									<ChooseType>false</ChooseType>
+									<TextEdit>false</TextEdit>
+									<ContextMenu name="ИмяХранилищаДвоичныхДанныхКонтекстноеМеню" id="58"/>
+									<ExtendedTooltip name="ИмяХранилищаДвоичныхДанныхРасширеннаяПодсказка" id="59"/>
+								</InputField>
+							</ChildItems>
+						</UsualGroup>
 						<UsualGroup name="ГруппаПути" id="11">
 							<Title>
 								<v8:item>
@@ -336,4 +390,16 @@
 			<CurrentRowUse>DontUse</CurrentRowUse>
 		</Command>
 	</Commands>
+	<CommandInterface>
+		<NavigationPanel>
+			<Item>
+				<Command>0</Command>
+				<Type>Auto</Type>
+				<DefaultVisible>false</DefaultVisible>
+				<Visible>
+					<xr:Common>false</xr:Common>
+				</Visible>
+			</Item>
+		</NavigationPanel>
+	</CommandInterface>
 </Form>

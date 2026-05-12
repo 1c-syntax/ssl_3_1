@@ -13,6 +13,7 @@
 		<Autofill>false</Autofill>
 	</AutoCommandBar>
 	<Events>
+		<Event name="NotificationProcessing">ОбработкаОповещения</Event>
 		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
 	</Events>
 	<ChildItems>
@@ -234,13 +235,13 @@
 							<ShowTitle>false</ShowTitle>
 							<ExtendedTooltip name="ГруппаНастройкаНеЗавершенаРасширеннаяПодсказка" id="4"/>
 							<ChildItems>
-								<PictureDecoration name="КартинкаНастройкаНеЗаервшена" id="5">
+								<PictureDecoration name="КартинкаНастройкаНеЗавершена" id="5">
 									<Width>3</Width>
 									<Height>2</Height>
 									<Title formatted="false">
 										<v8:item>
 											<v8:lang>ru</v8:lang>
-											<v8:content>Картинка настройка не заервшена</v8:content>
+											<v8:content>Картинка настройка не завершена</v8:content>
 										</v8:item>
 									</Title>
 									<PictureSize>Proportionally</PictureSize>
@@ -250,10 +251,10 @@
 										<xr:LoadTransparent>true</xr:LoadTransparent>
 									</Picture>
 									<FileDragMode>AsFile</FileDragMode>
-									<ContextMenu name="КартинкаНастройкаНеЗаервшенаКонтекстноеМеню" id="6"/>
-									<ExtendedTooltip name="КартинкаНастройкаНеЗаервшенаРасширеннаяПодсказка" id="7"/>
+									<ContextMenu name="КартинкаНастройкаНеЗавершенаКонтекстноеМеню" id="6"/>
+									<ExtendedTooltip name="КартинкаНастройкаНеЗавершенаРасширеннаяПодсказка" id="7"/>
 								</PictureDecoration>
-								<LabelDecoration name="НадписьНастройкаНеЗаервшена" id="8">
+								<LabelDecoration name="НадписьНастройкаНеЗавершена" id="8">
 									<AutoMaxWidth>false</AutoMaxWidth>
 									<HorizontalStretch>true</HorizontalStretch>
 									<Title formatted="false">
@@ -263,8 +264,8 @@
 										</v8:item>
 									</Title>
 									<GroupVerticalAlign>Center</GroupVerticalAlign>
-									<ContextMenu name="НадписьНастройкаНеЗаервшенаКонтекстноеМеню" id="9"/>
-									<ExtendedTooltip name="НадписьНастройкаНеЗаервшенаРасширеннаяПодсказка" id="10"/>
+									<ContextMenu name="НадписьНастройкаНеЗавершенаКонтекстноеМеню" id="9"/>
+									<ExtendedTooltip name="НадписьНастройкаНеЗавершенаРасширеннаяПодсказка" id="10"/>
 								</LabelDecoration>
 							</ChildItems>
 						</UsualGroup>
@@ -368,6 +369,11 @@
 					</Title>
 					<Type>
 						<v8:Type>v8ui:Picture</v8:Type>
+					</Type>
+				</Column>
+				<Column name="ОбязательныеРеквизитыНастройкиЗаполнены" id="10">
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
 					</Type>
 				</Column>
 			</Columns>
