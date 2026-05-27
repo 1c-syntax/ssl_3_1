@@ -195,6 +195,7 @@
 							<Representation>List</Representation>
 							<ReadOnly>true</ReadOnly>
 							<DefaultItem>true</DefaultItem>
+							<SelectionMode>SingleRow</SelectionMode>
 							<UseAlternationRowColor>true</UseAlternationRowColor>
 							<AutoInsertNewRow>true</AutoInsertNewRow>
 							<InitialTreeView>ExpandTopLevel</InitialTreeView>
@@ -216,6 +217,7 @@
 								<ExcludedCommand>EndEdit</ExcludedCommand>
 								<ExcludedCommand>MoveDown</ExcludedCommand>
 								<ExcludedCommand>MoveUp</ExcludedCommand>
+								<ExcludedCommand>ShowRowRearrangement</ExcludedCommand>
 								<ExcludedCommand>SortListAsc</ExcludedCommand>
 								<ExcludedCommand>SortListDesc</ExcludedCommand>
 							</CommandSet>
@@ -238,15 +240,15 @@
 										</Title>
 										<ExtendedTooltip name="ГруппыДоступаКонтекстноеМенюИзменитьГруппуРасширеннаяПодсказка" id="119"/>
 									</Button>
-									<ButtonGroup name="ГруппыДоступаКонтекстноеАвтоМеню" id="52">
+									<ButtonGroup name="ГруппыДоступаСтандартноеКонтекстноеМеню" id="52">
 										<Title>
 											<v8:item>
 												<v8:lang>ru</v8:lang>
-												<v8:content>Группы доступа контекстное авто меню</v8:content>
+												<v8:content>Группы доступа стандартное контекстное меню</v8:content>
 											</v8:item>
 										</Title>
 										<CommandSource>Item.ГруппыДоступа</CommandSource>
-										<ExtendedTooltip name="ГруппыДоступаКонтекстноеАвтоМенюРасширеннаяПодсказка" id="120"/>
+										<ExtendedTooltip name="ГруппыДоступаСтандартноеКонтекстноеМенюРасширеннаяПодсказка" id="120"/>
 									</ButtonGroup>
 								</ChildItems>
 							</ContextMenu>
@@ -286,20 +288,16 @@
 										</Title>
 										<ExtendedTooltip name="ГруппыДоступаИзменитьГруппуРасширеннаяПодсказка" id="123"/>
 									</Button>
-									<SearchStringAddition name="ГруппыДоступаСтрокаПоиск" id="160">
-										<AdditionSource>
-											<Item>ГруппыДоступа</Item>
-											<Type>SearchStringRepresentation</Type>
-										</AdditionSource>
+									<ButtonGroup name="ГруппыДоступаСтандартныеКоманды" id="182">
 										<Title>
 											<v8:item>
 												<v8:lang>ru</v8:lang>
-												<v8:content>Поиск</v8:content>
+												<v8:content>Группы доступа стандартные команды</v8:content>
 											</v8:item>
 										</Title>
-										<ContextMenu name="ГруппыДоступаСтрокаПоискКонтекстноеМеню" id="161"/>
-										<ExtendedTooltip name="ГруппыДоступаСтрокаПоискРасширеннаяПодсказка" id="162"/>
-									</SearchStringAddition>
+										<CommandSource>Item.ГруппыДоступа</CommandSource>
+										<ExtendedTooltip name="ГруппыДоступаСтандартныеКомандыРасширеннаяПодсказка" id="183"/>
+									</ButtonGroup>
 								</ChildItems>
 							</AutoCommandBar>
 							<ExtendedTooltip name="ГруппыДоступаРасширеннаяПодсказка" id="124"/>
@@ -466,22 +464,21 @@
 							</Title>
 							<CommandSet>
 								<ExcludedCommand>Add</ExcludedCommand>
+								<ExcludedCommand>Change</ExcludedCommand>
 								<ExcludedCommand>Copy</ExcludedCommand>
-								<ExcludedCommand>CopyToClipboard</ExcludedCommand>
 								<ExcludedCommand>Delete</ExcludedCommand>
 								<ExcludedCommand>EndEdit</ExcludedCommand>
 								<ExcludedCommand>HierarchicalList</ExcludedCommand>
 								<ExcludedCommand>List</ExcludedCommand>
 								<ExcludedCommand>MoveDown</ExcludedCommand>
 								<ExcludedCommand>MoveUp</ExcludedCommand>
-								<ExcludedCommand>OutputList</ExcludedCommand>
+								<ExcludedCommand>ShowRowRearrangement</ExcludedCommand>
 								<ExcludedCommand>SortListAsc</ExcludedCommand>
 								<ExcludedCommand>SortListDesc</ExcludedCommand>
 								<ExcludedCommand>Tree</ExcludedCommand>
 							</CommandSet>
-							<ContextMenu name="РолиКонтекстноеМеню" id="86">
-								<Autofill>false</Autofill>
-							</ContextMenu>
+							<SearchStringLocation>CommandBar</SearchStringLocation>
+							<ContextMenu name="РолиКонтекстноеМеню" id="86"/>
 							<AutoCommandBar name="РолиКоманднаяПанель" id="87">
 								<Autofill>false</Autofill>
 								<ChildItems>
@@ -507,20 +504,16 @@
 										</Title>
 										<ExtendedTooltip name="РолиОтчетПраваРолейРасширеннаяПодсказка" id="170"/>
 									</Button>
-									<SearchStringAddition name="РолиСтрокаПоиск" id="163">
-										<AdditionSource>
-											<Item>Роли</Item>
-											<Type>SearchStringRepresentation</Type>
-										</AdditionSource>
+									<ButtonGroup name="РолиСтандартныеКоманды" id="184">
 										<Title>
 											<v8:item>
 												<v8:lang>ru</v8:lang>
-												<v8:content>Поиск</v8:content>
+												<v8:content>Роли стандартные команды</v8:content>
 											</v8:item>
 										</Title>
-										<ContextMenu name="РолиСтрокаПоискКонтекстноеМеню" id="164"/>
-										<ExtendedTooltip name="РолиСтрокаПоискРасширеннаяПодсказка" id="165"/>
-									</SearchStringAddition>
+										<CommandSource>Item.Роли</CommandSource>
+										<ExtendedTooltip name="РолиСтандартныеКомандыРасширеннаяПодсказка" id="185"/>
+									</ButtonGroup>
 								</ChildItems>
 							</AutoCommandBar>
 							<ExtendedTooltip name="РолиРасширеннаяПодсказка" id="134"/>
@@ -589,6 +582,20 @@
 										</InputField>
 									</ChildItems>
 								</ColumnGroup>
+								<InputField name="РолиИмя" id="179">
+									<DataPath>Роли.Имя</DataPath>
+									<UserVisible>
+										<xr:Common>false</xr:Common>
+									</UserVisible>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Имя роли</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="РолиИмяКонтекстноеМеню" id="180"/>
+									<ExtendedTooltip name="РолиИмяРасширеннаяПодсказка" id="181"/>
+								</InputField>
 							</ChildItems>
 						</Table>
 					</ChildItems>
@@ -747,6 +754,12 @@
 					</Type>
 				</Column>
 				<Column name="Имя" id="5">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Имя роли</v8:content>
+						</v8:item>
+					</Title>
 					<Type>
 						<v8:Type>xs:string</v8:Type>
 						<v8:StringQualifiers>

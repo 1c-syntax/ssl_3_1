@@ -22,6 +22,46 @@
 		<Event name="OnWriteAtServer">ПриЗаписиНаСервере</Event>
 	</Events>
 	<ChildItems>
+		<UsualGroup name="ГруппаПредупреждениеОНебезопасномПротоколе" id="75">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Предупреждение о небезопасном протоколе</v8:content>
+				</v8:item>
+			</Title>
+			<Group>AlwaysHorizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<BackColor>style:ЦветФонаВнимание</BackColor>
+			<ExtendedTooltip name="ГруппаПредупреждениеОНебезопасномПротоколеРасширеннаяПодсказка" id="76"/>
+			<ChildItems>
+				<PictureDecoration name="ДекорацияКартинкаПредупреждениеОНебезопасномПротоколе" id="77">
+					<Title formatted="false">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Декорация картинка предупреждение о небезопасном протоколе</v8:content>
+						</v8:item>
+					</Title>
+					<Picture>
+						<xr:Ref>CommonPicture.Предупреждение</xr:Ref>
+						<xr:LoadTransparent>false</xr:LoadTransparent>
+					</Picture>
+					<ContextMenu name="ДекорацияКартинкаПредупреждениеОНебезопасномПротоколеКонтекстноеМеню" id="78"/>
+					<ExtendedTooltip name="ДекорацияКартинкаПредупреждениеОНебезопасномПротоколеРасширеннаяПодсказка" id="79"/>
+				</PictureDecoration>
+				<LabelDecoration name="ДекорацияНадписьПредупреждениеОНебезопасномПротоколе" id="80">
+					<AutoMaxWidth>false</AutoMaxWidth>
+					<Title formatted="false">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Выбранный сервис работает по протоколу http - данные авторизации будут передаваться небезопасно.</v8:content>
+						</v8:item>
+					</Title>
+					<ContextMenu name="ДекорацияНадписьПредупреждениеОНебезопасномПротоколеКонтекстноеМеню" id="81"/>
+					<ExtendedTooltip name="ДекорацияНадписьПредупреждениеОНебезопасномПротоколеРасширеннаяПодсказка" id="82"/>
+				</LabelDecoration>
+			</ChildItems>
+		</UsualGroup>
 		<UsualGroup name="ГруппаНаименованиеИНастройки" id="65">
 			<Title>
 				<v8:item>
@@ -118,6 +158,7 @@
 							<ContextMenu name="СервисКонтекстноеМеню" id="70"/>
 							<ExtendedTooltip name="СервисРасширеннаяПодсказка" id="71"/>
 							<Events>
+								<Event name="OnChange">СервисПриИзменении</Event>
 								<Event name="ChoiceProcessing">СервисОбработкаВыбора</Event>
 							</Events>
 						</InputField>

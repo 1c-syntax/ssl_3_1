@@ -49,7 +49,7 @@
 	
 	Ответ = Новый HTTPСервисОтвет(КодОтвета);
 	Ответ.Заголовки.Вставить("Content-Type", "text/html; charset=utf-8");
-	Ответ.УстановитьТелоИзСтроки("soccess");
+	Ответ.УстановитьТелоИзСтроки("success");
 	
 	Возврат Ответ;
 	
@@ -228,7 +228,7 @@
 		|            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
 		|            text-align: center;
 		|            padding: 60px 20px;
-		|            background: #F7FAFC url(" + КотDataURL() + ") no-repeat center bottom;
+		|            background: #F7FAFC url(" + КартинкаУспешногоОтвета() + ") no-repeat center bottom;
 		|            background-size: contain;
 		|            color: #2D3748;
 		|            min-height: 100vh;
@@ -273,7 +273,7 @@
 	
 КонецФункции
 
-Функция КотDataURL()
+Функция КартинкаУспешногоОтвета()
 	
 	Картинка = БиблиотекаКартинок.КотОткрытаяАвторизацияПочтовогоСервиса;
 	ДвоичныеДанные = Картинка.ПолучитьДвоичныеДанные();
@@ -282,9 +282,9 @@
 	СтрокаBase64 = СтрЗаменить(СтрокаBase64, Символы.ВК, "");
 	СтрокаBase64 = СтрЗаменить(СтрокаBase64, Символы.ПС, "");
 	
-	КотDataURL = "data:image/svg+xml;base64," + СтрокаBase64;
+	КартинкаУспешногоОтвета = "data:image/svg+xml;base64," + СтрокаBase64;
 	
-	Возврат КотDataURL;
+	Возврат КартинкаУспешногоОтвета;
 	
 КонецФункции
 
