@@ -28,6 +28,38 @@
 			<ContextMenu name="ИдентификаторКонтекстноеМеню" id="8"/>
 			<ExtendedTooltip name="ИдентификаторРасширеннаяПодсказка" id="9"/>
 		</InputField>
+		<InputField name="ОбъектФормата" id="10">
+			<DataPath>Запись.ОбъектФормата</DataPath>
+			<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+			<ContextMenu name="ОбъектФорматаКонтекстноеМеню" id="11"/>
+			<ExtendedTooltip name="ОбъектФорматаРасширеннаяПодсказка" id="12"/>
+		</InputField>
+		<InputField name="Основной" id="13">
+			<DataPath>Запись.Основной</DataPath>
+			<ToolTipRepresentation>Button</ToolTipRepresentation>
+			<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+			<ContextMenu name="ОсновнойКонтекстноеМеню" id="14"/>
+			<ExtendedTooltip name="ОсновнойРасширеннаяПодсказка" id="15">
+				<Title formatted="false">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Опция влияет на отправку ссылок, которым назначено более одного соответствия. При отправке будет использоваться основной идентификатор, если основной не указан то, первый выбранный. В предыдущих версиях, при нахождении нескольких записей для одной ссылки сопоставление чистилось (записи для ссылки удалялись).</v8:content>
+					</v8:item>
+				</Title>
+			</ExtendedTooltip>
+		</InputField>
+		<LabelField name="СсылкаВнешняяНавигационная" id="16">
+			<DataPath>Запись.СсылкаВнешняяНавигационная</DataPath>
+			<ReadOnly>true</ReadOnly>
+			<TitleLocation>None</TitleLocation>
+			<AutoMaxWidth>false</AutoMaxWidth>
+			<Hiperlink>true</Hiperlink>
+			<ContextMenu name="СсылкаВнешняяНавигационнаяКонтекстноеМеню" id="17"/>
+			<ExtendedTooltip name="СсылкаВнешняяНавигационнаяРасширеннаяПодсказка" id="18"/>
+			<Events>
+				<Event name="Click">СсылкаВнешняяНавигационнаяНажатие</Event>
+			</Events>
+		</LabelField>
 	</ChildItems>
 	<Attributes>
 		<Attribute name="Запись" id="1">

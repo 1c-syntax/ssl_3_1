@@ -1,9 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.20">
-	<CommandSet>
-		<ExcludedCommand>CancelSearch</ExcludedCommand>
-		<ExcludedCommand>Find</ExcludedCommand>
-	</CommandSet>
 	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
 	<Events>
 		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
@@ -13,7 +9,7 @@
 			<Title>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>User settings group</v8:content>
+					<v8:content>Группа пользовательских настроек</v8:content>
 				</v8:item>
 			</Title>
 			<VerticalStretch>false</VerticalStretch>
@@ -26,7 +22,6 @@
 			<CommandBarLocation>None</CommandBarLocation>
 			<DefaultItem>true</DefaultItem>
 			<UseAlternationRowColor>true</UseAlternationRowColor>
-			<SearchOnInput>DontUse</SearchOnInput>
 			<InitialTreeView>ExpandTopLevel</InitialTreeView>
 			<EnableStartDrag>true</EnableStartDrag>
 			<DataPath>Список</DataPath>
@@ -34,15 +29,9 @@
 			<Title>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Список</v8:content>
+					<v8:content>Соответствие ссылок ИБ к идентификаторам</v8:content>
 				</v8:item>
 			</Title>
-			<CommandSet>
-				<ExcludedCommand>CancelSearch</ExcludedCommand>
-				<ExcludedCommand>Find</ExcludedCommand>
-			</CommandSet>
-			<SearchStringLocation>None</SearchStringLocation>
-			<SearchControlLocation>None</SearchControlLocation>
 			<AutoRefresh>false</AutoRefresh>
 			<AutoRefreshPeriod>60</AutoRefreshPeriod>
 			<Period>
@@ -87,79 +76,74 @@
 				<ContextMenu name="СписокУправлениеПоискомКонтекстноеМеню" id="14"/>
 				<ExtendedTooltip name="СписокУправлениеПоискомРасширеннаяПодсказка" id="15"/>
 			</SearchControlAddition>
+			<Events>
+				<Event name="Selection">СписокВыбор</Event>
+			</Events>
 			<ChildItems>
+				<CheckBoxField name="Основной" id="28">
+					<DataPath>Список.Основной</DataPath>
+					<TitleLocation>None</TitleLocation>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="ОсновнойКонтекстноеМеню" id="29"/>
+					<ExtendedTooltip name="ОсновнойРасширеннаяПодсказка" id="30"/>
+				</CheckBoxField>
 				<LabelField name="Идентификатор" id="16">
 					<DataPath>Список.Идентификатор</DataPath>
 					<DefaultItem>true</DefaultItem>
 					<ContextMenu name="ИдентификаторКонтекстноеМеню" id="17"/>
 					<ExtendedTooltip name="ИдентификаторРасширеннаяПодсказка" id="18"/>
 				</LabelField>
-				<InputField name="Ссылка" id="22">
+				<LabelField name="Ссылка" id="19">
 					<DataPath>Список.Ссылка</DataPath>
-					<ContextMenu name="СсылкаКонтекстноеМеню" id="23"/>
-					<ExtendedTooltip name="СсылкаРасширеннаяПодсказка" id="24"/>
-				</InputField>
-				<LabelField name="УзелИнформационнойБазы" id="19">
-					<DataPath>Список.УзелИнформационнойБазы</DataPath>
-					<ContextMenu name="УзелИнформационнойБазыКонтекстноеМеню" id="20"/>
-					<ExtendedTooltip name="УзелИнформационнойБазыРасширеннаяПодсказка" id="21"/>
+					<DefaultItem>true</DefaultItem>
+					<ContextMenu name="СсылкаКонтекстноеМеню" id="20"/>
+					<ExtendedTooltip name="СсылкаРасширеннаяПодсказка" id="21"/>
 				</LabelField>
+				<LabelField name="УзелИнформационнойБазы" id="22">
+					<DataPath>Список.УзелИнформационнойБазы</DataPath>
+					<DefaultItem>true</DefaultItem>
+					<ReadOnly>true</ReadOnly>
+					<Hiperlink>true</Hiperlink>
+					<ContextMenu name="УзелИнформационнойБазыКонтекстноеМеню" id="23"/>
+					<ExtendedTooltip name="УзелИнформационнойБазыРасширеннаяПодсказка" id="24"/>
+				</LabelField>
+				<LabelField name="ОбъектФормата" id="31">
+					<DataPath>Список.ОбъектФормата</DataPath>
+					<Width>20</Width>
+					<ContextMenu name="ОбъектФорматаКонтекстноеМеню" id="32"/>
+					<ExtendedTooltip name="ОбъектФорматаРасширеннаяПодсказка" id="33"/>
+				</LabelField>
+				<InputField name="СсылкаВнешняяНавигационная" id="25">
+					<DataPath>Список.СсылкаВнешняяНавигационная</DataPath>
+					<DefaultItem>true</DefaultItem>
+					<ReadOnly>true</ReadOnly>
+					<EditMode>Directly</EditMode>
+					<CellHyperlink>true</CellHyperlink>
+					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+					<ContextMenu name="СсылкаВнешняяНавигационнаяКонтекстноеМеню" id="26"/>
+					<ExtendedTooltip name="СсылкаВнешняяНавигационнаяРасширеннаяПодсказка" id="27"/>
+				</InputField>
 			</ChildItems>
 		</Table>
 	</ChildItems>
 	<Attributes>
 		<Attribute name="Список" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Соответствие ссылок ИБ к идентификаторам</v8:content>
+				</v8:item>
+			</Title>
 			<Type>
 				<v8:Type>cfg:DynamicList</v8:Type>
 			</Type>
 			<MainAttribute>true</MainAttribute>
 			<Settings xsi:type="DynamicList">
-				<ManualQuery>true</ManualQuery>
+				<ManualQuery>false</ManualQuery>
 				<DynamicDataRead>true</DynamicDataRead>
-				<QueryText>ВЫБРАТЬ
-	ПубличныеИдентификаторыСинхронизируемыхОбъектов.Идентификатор,
-	ПубличныеИдентификаторыСинхронизируемыхОбъектов.Ссылка,
-	ПубличныеИдентификаторыСинхронизируемыхОбъектов.УзелИнформационнойБазы
-ИЗ
-	РегистрСведений.ПубличныеИдентификаторыСинхронизируемыхОбъектов КАК ПубличныеИдентификаторыСинхронизируемыхОбъектов</QueryText>
-				<Field xsi:type="dcssch:DataSetFieldField">
-					<dcssch:dataPath>Идентификатор</dcssch:dataPath>
-					<dcssch:field>Идентификатор</dcssch:field>
-				</Field>
-				<Field xsi:type="dcssch:DataSetFieldField">
-					<dcssch:dataPath>Ссылка</dcssch:dataPath>
-					<dcssch:field>Ссылка</dcssch:field>
-					<dcssch:attributeUseRestriction>
-						<dcssch:field>true</dcssch:field>
-						<dcssch:condition>true</dcssch:condition>
-					</dcssch:attributeUseRestriction>
-				</Field>
-				<Field xsi:type="dcssch:DataSetFieldField">
-					<dcssch:dataPath>УзелИнформационнойБазы</dcssch:dataPath>
-					<dcssch:field>УзелИнформационнойБазы</dcssch:field>
-					<dcssch:attributeUseRestriction>
-						<dcssch:field>true</dcssch:field>
-						<dcssch:condition>true</dcssch:condition>
-						<dcssch:group>true</dcssch:group>
-						<dcssch:order>true</dcssch:order>
-					</dcssch:attributeUseRestriction>
-				</Field>
 				<MainTable>InformationRegister.ПубличныеИдентификаторыСинхронизируемыхОбъектов</MainTable>
 				<ListSettings>
 					<dcsset:filter>
-						<dcsset:item xsi:type="dcsset:FilterItemComparison">
-							<dcsset:use>false</dcsset:use>
-							<dcsset:left xsi:type="dcscor:Field">Идентификатор</dcsset:left>
-							<dcsset:comparisonType>Contains</dcsset:comparisonType>
-							<dcsset:right xsi:type="xs:string"/>
-							<dcsset:userSettingID>23862a8a-12df-4d42-942d-f85d29e20f39</dcsset:userSettingID>
-						</dcsset:item>
-						<dcsset:item xsi:type="dcsset:FilterItemComparison">
-							<dcsset:use>false</dcsset:use>
-							<dcsset:left xsi:type="dcscor:Field">Ссылка</dcsset:left>
-							<dcsset:comparisonType>Equal</dcsset:comparisonType>
-							<dcsset:userSettingID>192dd927-9431-438a-829d-4714b21d3eb4</dcsset:userSettingID>
-						</dcsset:item>
 						<dcsset:viewMode>Normal</dcsset:viewMode>
 						<dcsset:userSettingID>dfcece9d-5077-440b-b6b3-45a5cb4538eb</dcsset:userSettingID>
 					</dcsset:filter>

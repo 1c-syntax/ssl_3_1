@@ -529,7 +529,7 @@
 								<Title formatted="false">
 									<v8:item>
 										<v8:lang>ru</v8:lang>
-										<v8:content>Необходимо задать общие настройки синхронизации. Выполняется проверка узла и синхронизация параметров с корреспондентом.</v8:content>
+										<v8:content>Необходимо заполнить наименование настройки синхронизации и префикс корреспондента.</v8:content>
 									</v8:item>
 								</Title>
 							</ExtendedTooltip>
@@ -640,7 +640,7 @@
 								<Title formatted="false">
 									<v8:item>
 										<v8:lang>ru</v8:lang>
-										<v8:content>Перед началом использования синхронизации данных требуется указать ограничения отправки данных, а также правила получения данных из другого приложения (значения по умолчанию).</v8:content>
+										<v8:content>Перед началом использования синхронизации данных, при необходимости, можно указать фильтры и отборы, а также значения по получению для принимаемых данных.</v8:content>
 									</v8:item>
 								</Title>
 							</ExtendedTooltip>
@@ -862,11 +862,486 @@
 								<Title formatted="false">
 									<v8:item>
 										<v8:lang>ru</v8:lang>
-										<v8:content>Если учет ведется в обоих приложениях, перед запуском синхронизации следует выполнить сопоставление данных. Это позволит избежать появления дублирующихся элементов справочников, которые независимо друг от друга были введены в обоих приложениях, например, с одинаковыми наименованиями. С помощью сопоставления можно указать, какие данные являются одинаковыми в двух приложениях. После чего можно будет выполнить загрузку с учетом настроенных сопоставлений.</v8:content>
+										<v8:content>Если в приложении корреспонденте были введены данные (ведется учет), то перед регулярной синхронизацией рекомендуется выполнить сопоставление данных. Это позволит избежать появления дублирующихся элементов справочников и документов.</v8:content>
 									</v8:item>
 								</Title>
 							</ExtendedTooltip>
 						</Button>
+					</ChildItems>
+				</UsualGroup>
+				<UsualGroup name="ГруппаОбъектнаяКонвертация" id="209">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Объектная конвертация</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Шаги объектной конвертации</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Group>Vertical</Group>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаОбъектнаяКонвертацияРасширеннаяПодсказка" id="210"/>
+					<ChildItems>
+						<UsualGroup name="ГруппаЧтениеДанных" id="211">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Чтение данных</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Шаг "Чтение данных"</v8:content>
+								</v8:item>
+							</ToolTip>
+							<Group>AlwaysHorizontal</Group>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаЧтениеДанныхРасширеннаяПодсказка" id="212"/>
+							<ChildItems>
+								<Pages name="ПанельЧтениеДанных" id="213">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Панель чтение данных</v8:content>
+										</v8:item>
+									</Title>
+									<PagesRepresentation>None</PagesRepresentation>
+									<ExtendedTooltip name="ПанельЧтениеДанныхРасширеннаяПодсказка" id="214"/>
+									<ChildItems>
+										<Page name="СтраницаЧтениеДанныхУспешно" id="215">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Страница чтение данных успешно</v8:content>
+												</v8:item>
+											</Title>
+											<ExtendedTooltip name="СтраницаЧтениеДанныхУспешноРасширеннаяПодсказка" id="216"/>
+											<ChildItems>
+												<PictureDecoration name="Декорация25" id="217">
+													<Width>2</Width>
+													<Height>1</Height>
+													<Picture>
+														<xr:Ref>CommonPicture.Успешно</xr:Ref>
+														<xr:LoadTransparent>false</xr:LoadTransparent>
+													</Picture>
+													<FileDragMode>AsFile</FileDragMode>
+													<ContextMenu name="Декорация25КонтекстноеМеню" id="218"/>
+													<ExtendedTooltip name="Декорация25РасширеннаяПодсказка" id="219"/>
+												</PictureDecoration>
+											</ChildItems>
+										</Page>
+										<Page name="СтраницаЧтениеДанныхТекущий" id="220">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Страница чтение данных текущий</v8:content>
+												</v8:item>
+											</Title>
+											<ExtendedTooltip name="СтраницаЧтениеДанныхТекущийРасширеннаяПодсказка" id="221"/>
+											<ChildItems>
+												<PictureDecoration name="Декорация26" id="222">
+													<Width>2</Width>
+													<Height>1</Height>
+													<Picture>
+														<xr:Ref>StdPicture.BusinessProcessStart</xr:Ref>
+														<xr:LoadTransparent>true</xr:LoadTransparent>
+													</Picture>
+													<FileDragMode>AsFile</FileDragMode>
+													<ContextMenu name="Декорация26КонтекстноеМеню" id="223"/>
+													<ExtendedTooltip name="Декорация26РасширеннаяПодсказка" id="224"/>
+												</PictureDecoration>
+											</ChildItems>
+										</Page>
+										<Page name="СтраницаЧтениеДанныхПустой" id="225">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Страница чтение данных пустой</v8:content>
+												</v8:item>
+											</Title>
+											<ExtendedTooltip name="СтраницаЧтениеДанныхПустойРасширеннаяПодсказка" id="226"/>
+											<ChildItems>
+												<PictureDecoration name="Декорация27" id="227">
+													<Width>2</Width>
+													<Height>2</Height>
+													<FileDragMode>AsFile</FileDragMode>
+													<ContextMenu name="Декорация27КонтекстноеМеню" id="228"/>
+													<ExtendedTooltip name="Декорация27РасширеннаяПодсказка" id="229"/>
+												</PictureDecoration>
+											</ChildItems>
+										</Page>
+									</ChildItems>
+								</Pages>
+								<Button name="ПрочитатьПервоначальныеДанные" id="230">
+									<Type>Hyperlink</Type>
+									<CommandName>Form.Command.ПрочитатьПервоначальныеДанные</CommandName>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Прочитать первоначальные данные</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTipRepresentation>ShowBottom</ToolTipRepresentation>
+									<ExtendedTooltip name="ПрочитатьПервоначальныеДанныеРасширеннаяПодсказка" id="231">
+										<AutoMaxWidth>false</AutoMaxWidth>
+										<Title formatted="false">
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Получить сообщение с данными для дальнейшей обработки (конвертации и сопоставления).</v8:content>
+											</v8:item>
+										</Title>
+									</ExtendedTooltip>
+								</Button>
+							</ChildItems>
+						</UsualGroup>
+						<UsualGroup name="ГруппаСопоставлениеПервоначальныхДанных" id="232">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Сопоставление первоначальных данных</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Шаг "Сопоставления данных"</v8:content>
+								</v8:item>
+							</ToolTip>
+							<Group>AlwaysHorizontal</Group>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаСопоставлениеПервоначальныхДанныхРасширеннаяПодсказка" id="233"/>
+							<ChildItems>
+								<Pages name="ПанельСопоставлениеПервоначальныхДанных" id="234">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Панель сопоставление первоначальных данных</v8:content>
+										</v8:item>
+									</Title>
+									<PagesRepresentation>None</PagesRepresentation>
+									<ExtendedTooltip name="ПанельСопоставлениеПервоначальныхДанныхРасширеннаяПодсказка" id="235"/>
+									<ChildItems>
+										<Page name="СтраницаСопоставлениеПервоначальныхДанныхУспешно" id="236">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Страница сопоставление первоначальных данных успешно</v8:content>
+												</v8:item>
+											</Title>
+											<ExtendedTooltip name="СтраницаСопоставлениеПервоначальныхДанныхУспешноРасширеннаяПодсказка" id="237"/>
+											<ChildItems>
+												<PictureDecoration name="Декорация28" id="238">
+													<Width>2</Width>
+													<Height>1</Height>
+													<Picture>
+														<xr:Ref>CommonPicture.Успешно</xr:Ref>
+														<xr:LoadTransparent>false</xr:LoadTransparent>
+													</Picture>
+													<FileDragMode>AsFile</FileDragMode>
+													<ContextMenu name="Декорация28КонтекстноеМеню" id="239"/>
+													<ExtendedTooltip name="Декорация28РасширеннаяПодсказка" id="240"/>
+												</PictureDecoration>
+											</ChildItems>
+										</Page>
+										<Page name="СтраницаСопоставлениеПервоначальныхДанныхТекущий" id="241">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Страница сопоставление первоначальных данных текущий</v8:content>
+												</v8:item>
+											</Title>
+											<ExtendedTooltip name="СтраницаСопоставлениеПервоначальныхДанныхТекущийРасширеннаяПодсказка" id="242"/>
+											<ChildItems>
+												<PictureDecoration name="Декорация29" id="243">
+													<Width>2</Width>
+													<Height>1</Height>
+													<Picture>
+														<xr:Ref>StdPicture.BusinessProcessStart</xr:Ref>
+														<xr:LoadTransparent>true</xr:LoadTransparent>
+													</Picture>
+													<FileDragMode>AsFile</FileDragMode>
+													<ContextMenu name="Декорация29КонтекстноеМеню" id="244"/>
+													<ExtendedTooltip name="Декорация29РасширеннаяПодсказка" id="245"/>
+												</PictureDecoration>
+											</ChildItems>
+										</Page>
+										<Page name="СтраницаСопоставлениеПервоначальныхДанныхПустой" id="246">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Страница сопоставление первоначальных данных пустой</v8:content>
+												</v8:item>
+											</Title>
+											<ExtendedTooltip name="СтраницаСопоставлениеПервоначальныхДанныхПустойРасширеннаяПодсказка" id="247"/>
+											<ChildItems>
+												<PictureDecoration name="Декорация30" id="248">
+													<Width>2</Width>
+													<Height>2</Height>
+													<FileDragMode>AsFile</FileDragMode>
+													<ContextMenu name="Декорация30КонтекстноеМеню" id="249"/>
+													<ExtendedTooltip name="Декорация30РасширеннаяПодсказка" id="250"/>
+												</PictureDecoration>
+											</ChildItems>
+										</Page>
+									</ChildItems>
+								</Pages>
+								<Button name="СопоставитьПервоначальныеДанныеПомощником" id="251">
+									<Type>Hyperlink</Type>
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<CommandName>Form.Command.СопоставитьПервоначальныеДанныеПомощником</CommandName>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Сопоставить первоначальные данные помощником (вручную)</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTipRepresentation>ShowBottom</ToolTipRepresentation>
+									<ExtendedTooltip name="СопоставитьПервоначальныеДанныеПомощникомРасширеннаяПодсказка" id="252">
+										<AutoMaxWidth>false</AutoMaxWidth>
+										<Title formatted="false">
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Сопоставить полученные данные с данными в текущем приложении. Качественное сопоставление поможет избежать дублирования объектов (справочников и документов).</v8:content>
+											</v8:item>
+										</Title>
+									</ExtendedTooltip>
+								</Button>
+							</ChildItems>
+						</UsualGroup>
+						<UsualGroup name="ГруппаРассмотретьПроблемыЗагрузки" id="253">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Рассмотреть проблемы загрузки</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Шаг "Расследования проблем"</v8:content>
+								</v8:item>
+							</ToolTip>
+							<Group>AlwaysHorizontal</Group>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаРассмотретьПроблемыЗагрузкиРасширеннаяПодсказка" id="254"/>
+							<ChildItems>
+								<Pages name="ПанельРассмотретьПроблемыЗагрузки" id="255">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Панель рассмотреть проблемы загрузки</v8:content>
+										</v8:item>
+									</Title>
+									<PagesRepresentation>None</PagesRepresentation>
+									<ExtendedTooltip name="ПанельРассмотретьПроблемыЗагрузкиРасширеннаяПодсказка" id="256"/>
+									<ChildItems>
+										<Page name="СтраницаРассмотретьПроблемыЗагрузкиУспешно" id="257">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Страница рассмотреть проблемы загрузки успешно</v8:content>
+												</v8:item>
+											</Title>
+											<ExtendedTooltip name="СтраницаРассмотретьПроблемыЗагрузкиУспешноРасширеннаяПодсказка" id="258"/>
+											<ChildItems>
+												<PictureDecoration name="Декорация31" id="259">
+													<Width>2</Width>
+													<Height>1</Height>
+													<Picture>
+														<xr:Ref>CommonPicture.Успешно</xr:Ref>
+														<xr:LoadTransparent>false</xr:LoadTransparent>
+													</Picture>
+													<FileDragMode>AsFile</FileDragMode>
+													<ContextMenu name="Декорация31КонтекстноеМеню" id="260"/>
+													<ExtendedTooltip name="Декорация31РасширеннаяПодсказка" id="261"/>
+												</PictureDecoration>
+											</ChildItems>
+										</Page>
+										<Page name="СтраницаРассмотретьПроблемыЗагрузкиТекущий" id="262">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Страница рассмотреть проблемы загрузки текущий</v8:content>
+												</v8:item>
+											</Title>
+											<ExtendedTooltip name="СтраницаРассмотретьПроблемыЗагрузкиТекущийРасширеннаяПодсказка" id="263"/>
+											<ChildItems>
+												<PictureDecoration name="Декорация32" id="264">
+													<Width>2</Width>
+													<Height>1</Height>
+													<Picture>
+														<xr:Ref>StdPicture.BusinessProcessStart</xr:Ref>
+														<xr:LoadTransparent>true</xr:LoadTransparent>
+													</Picture>
+													<FileDragMode>AsFile</FileDragMode>
+													<ContextMenu name="Декорация32КонтекстноеМеню" id="265"/>
+													<ExtendedTooltip name="Декорация32РасширеннаяПодсказка" id="266"/>
+												</PictureDecoration>
+											</ChildItems>
+										</Page>
+										<Page name="СтраницаРассмотретьПроблемыЗагрузкиПустой" id="267">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Страница рассмотреть проблемы загрузки пустой</v8:content>
+												</v8:item>
+											</Title>
+											<ExtendedTooltip name="СтраницаРассмотретьПроблемыЗагрузкиПустойРасширеннаяПодсказка" id="268"/>
+											<ChildItems>
+												<PictureDecoration name="Декорация33" id="269">
+													<Width>2</Width>
+													<Height>2</Height>
+													<FileDragMode>AsFile</FileDragMode>
+													<ContextMenu name="Декорация33КонтекстноеМеню" id="270"/>
+													<ExtendedTooltip name="Декорация33РасширеннаяПодсказка" id="271"/>
+												</PictureDecoration>
+											</ChildItems>
+										</Page>
+									</ChildItems>
+								</Pages>
+								<Button name="РассмотретьПроблемыЗагрузкиПервоначальныхДанных" id="272">
+									<Type>Hyperlink</Type>
+									<CommandName>Form.Command.РассмотретьПроблемыЗагрузкиПервоначальныхДанных</CommandName>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Рассмотреть проблемы загрузки первоначальных данных</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTipRepresentation>ShowBottom</ToolTipRepresentation>
+									<ExtendedTooltip name="РассмотретьПроблемыЗагрузкиПервоначальныхДанныхРасширеннаяПодсказка" id="273">
+										<AutoMaxWidth>false</AutoMaxWidth>
+										<Title formatted="false">
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Рассмотреть проблемы и предупреждения, которые возникли при конвертации первоначальных данных.
+</v8:content>
+											</v8:item>
+										</Title>
+									</ExtendedTooltip>
+								</Button>
+							</ChildItems>
+						</UsualGroup>
+						<UsualGroup name="ГруппаПодтвердитьДействияПриЗагрузкеДанных" id="274">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Подтвердить действия при загрузке данных</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Шаг "Подтверждение настроек загрузки"</v8:content>
+								</v8:item>
+							</ToolTip>
+							<Group>AlwaysHorizontal</Group>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаПодтвердитьДействияПриЗагрузкеДанныхРасширеннаяПодсказка" id="275"/>
+							<ChildItems>
+								<Pages name="ПанельПодтвердитьДействияПриЗагрузкеДанных" id="276">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Панель подтвердить действия при загрузке данных</v8:content>
+										</v8:item>
+									</Title>
+									<PagesRepresentation>None</PagesRepresentation>
+									<ExtendedTooltip name="ПанельПодтвердитьДействияПриЗагрузкеДанныхРасширеннаяПодсказка" id="277"/>
+									<ChildItems>
+										<Page name="СтраницаПодтвердитьДействияПриЗагрузкеДанныхУспешно" id="278">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Страница подтвердить действия при загрузке данных успешно</v8:content>
+												</v8:item>
+											</Title>
+											<ExtendedTooltip name="СтраницаПодтвердитьДействияПриЗагрузкеДанныхУспешноРасширеннаяПодсказка" id="279"/>
+											<ChildItems>
+												<PictureDecoration name="Декорация34" id="280">
+													<Width>2</Width>
+													<Height>1</Height>
+													<Picture>
+														<xr:Ref>CommonPicture.Успешно</xr:Ref>
+														<xr:LoadTransparent>false</xr:LoadTransparent>
+													</Picture>
+													<FileDragMode>AsFile</FileDragMode>
+													<ContextMenu name="Декорация34КонтекстноеМеню" id="281"/>
+													<ExtendedTooltip name="Декорация34РасширеннаяПодсказка" id="282"/>
+												</PictureDecoration>
+											</ChildItems>
+										</Page>
+										<Page name="СтраницаПодтвердитьДействияПриЗагрузкеДанныхТекущий" id="283">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Страница подтвердить действия при загрузке данных текущий</v8:content>
+												</v8:item>
+											</Title>
+											<ExtendedTooltip name="СтраницаПодтвердитьДействияПриЗагрузкеДанныхТекущийРасширеннаяПодсказка" id="284"/>
+											<ChildItems>
+												<PictureDecoration name="Декорация35" id="285">
+													<Width>2</Width>
+													<Height>1</Height>
+													<Picture>
+														<xr:Ref>StdPicture.BusinessProcessStart</xr:Ref>
+														<xr:LoadTransparent>true</xr:LoadTransparent>
+													</Picture>
+													<FileDragMode>AsFile</FileDragMode>
+													<ContextMenu name="Декорация35КонтекстноеМеню" id="286"/>
+													<ExtendedTooltip name="Декорация35РасширеннаяПодсказка" id="287"/>
+												</PictureDecoration>
+											</ChildItems>
+										</Page>
+										<Page name="СтраницаПодтвердитьДействияПриЗагрузкеДанныхПустой" id="288">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Страница подтвердить действия при загрузке данных пустой</v8:content>
+												</v8:item>
+											</Title>
+											<ExtendedTooltip name="СтраницаПодтвердитьДействияПриЗагрузкеДанныхПустойРасширеннаяПодсказка" id="289"/>
+											<ChildItems>
+												<PictureDecoration name="Декорация36" id="290">
+													<Width>2</Width>
+													<Height>2</Height>
+													<FileDragMode>AsFile</FileDragMode>
+													<ContextMenu name="Декорация36КонтекстноеМеню" id="291"/>
+													<ExtendedTooltip name="Декорация36РасширеннаяПодсказка" id="292"/>
+												</PictureDecoration>
+											</ChildItems>
+										</Page>
+									</ChildItems>
+								</Pages>
+								<Button name="ПодтвердитьДействияПриЗагрузкеДанных" id="293">
+									<Type>Hyperlink</Type>
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<CommandName>Form.Command.ПодтвердитьДействияПриЗагрузкеДанных</CommandName>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Проверить и подтвердить настройку "Действия при загрузке данных"</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTipRepresentation>ShowBottom</ToolTipRepresentation>
+									<ExtendedTooltip name="ПодтвердитьДействияПриЗагрузкеДанныхРасширеннаяПодсказка" id="294">
+										<AutoMaxWidth>false</AutoMaxWidth>
+										<Title formatted="false">
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Подтвердить действия, которые будут предприниматься при загрузке определенного типа данных.</v8:content>
+											</v8:item>
+										</Title>
+									</ExtendedTooltip>
+								</Button>
+							</ChildItems>
+						</UsualGroup>
 					</ChildItems>
 				</UsualGroup>
 				<UsualGroup name="ГруппаНачальнаяВыгрузкаДанных" id="74">
@@ -973,9 +1448,7 @@
 								<Title formatted="false">
 									<v8:item>
 										<v8:lang>ru</v8:lang>
-										<v8:content>Будет произведена выгрузка данных из этого приложения. Сразу после завершения настройки синхронизации, можно будет выполнить загрузку данных в другом приложении и указать, какие данные являются одинаковыми для двух синхронизируемых приложений.
-Выгрузку данных можно выполнить позднее из списка настроенных синхронизаций данных.
-</v8:content>
+										<v8:content>Если в этом приложении уже ведется учет, то рекомендуется до начала регулярной синхронизации выполнить сопоставление данных. Для этого необходимо отправить накопленные (исторические) данные в приложение корреспондент, и там выполнить их сопоставление. При этом, если данных много, можно пропустить этот шаг и отправить данные по частям вручную.</v8:content>
 									</v8:item>
 								</Title>
 							</ExtendedTooltip>
@@ -1366,6 +1839,66 @@
 				</v8:item>
 			</ToolTip>
 			<Action>НастроитьОбщиеПараметры</Action>
+		</Command>
+		<Command name="ПодтвердитьДействияПриЗагрузкеДанных" id="10">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Проверить и подтвердить настройку "Действия при загрузке данных"</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Подтвердить действия при загрузке данных</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ПодтвердитьДействияПриЗагрузкеДанных</Action>
+		</Command>
+		<Command name="ПрочитатьПервоначальныеДанные" id="11">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Прочитать первоначальные данные</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Прочитать первоначальные данные</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ПрочитатьПервоначальныеДанные</Action>
+		</Command>
+		<Command name="РассмотретьПроблемыЗагрузкиПервоначальныхДанных" id="12">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Рассмотреть проблемы загрузки первоначальных данных</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Рассмотреть проблемы загрузки первоначальных данных</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>РассмотретьПроблемыЗагрузкиПервоначальныхДанных</Action>
+		</Command>
+		<Command name="СопоставитьПервоначальныеДанныеПомощником" id="13">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сопоставить первоначальные данные помощником (вручную)</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сопоставить первоначальные данные помощником</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>СопоставитьПервоначальныеДанныеПомощником</Action>
 		</Command>
 	</Commands>
 </Form>

@@ -1,0 +1,256 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.20">
+	<Title>
+		<v8:item>
+			<v8:lang>ru</v8:lang>
+			<v8:content>Установка действия</v8:content>
+		</v8:item>
+	</Title>
+	<AutoTitle>false</AutoTitle>
+	<CommandBarLocation>Bottom</CommandBarLocation>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<HorizontalAlign>Right</HorizontalAlign>
+		<Autofill>false</Autofill>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<LabelDecoration name="ДекорацияПояснение" id="1">
+			<AutoMaxWidth>false</AutoMaxWidth>
+			<MaxWidth>45</MaxWidth>
+			<Title formatted="true">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>&lt;colorstyle 0:ad87bd29-0ad1-4da4-ac62-38e714e0cb9f&gt;Для справочника "Демо: Банковские счета" в информационной базе нет объектов, которым не установлено соответствие. Рекомендуется&lt;/&gt;&lt;colorstyle 0:ad87bd29-0ad1-4da4-ac62-38e714e0cb9f&gt; для 172 объектов к загрузке установить действие "Создать новые". Ок?&lt;/&gt;</v8:content>
+				</v8:item>
+			</Title>
+			<ContextMenu name="ДекорацияПояснениеКонтекстноеМеню" id="2"/>
+			<ExtendedTooltip name="ДекорацияПояснениеРасширеннаяПодсказка" id="3"/>
+		</LabelDecoration>
+		<CheckBoxField name="ПрименитьИзменения" id="18">
+			<DataPath>ПрименитьИзменения</DataPath>
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Применить изменения</v8:content>
+				</v8:item>
+			</Title>
+			<TitleLocation>Right</TitleLocation>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Будет не только установлено действие, но и сразу же применены изменения для справочника "Демо: Банковские счета"</v8:content>
+				</v8:item>
+			</ToolTip>
+			<ToolTipRepresentation>None</ToolTipRepresentation>
+			<CheckBoxType>Auto</CheckBoxType>
+			<ContextMenu name="ПрименитьИзмененияКонтекстноеМеню" id="19"/>
+			<ExtendedTooltip name="ПрименитьИзмененияРасширеннаяПодсказка" id="20"/>
+		</CheckBoxField>
+		<UsualGroup name="ГруппаПояснениеПрименитьИзменения" id="21">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Пояснение применить изменения</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Пояснение о применении изменений</v8:content>
+				</v8:item>
+			</ToolTip>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаПояснениеПрименитьИзмененияРасширеннаяПодсказка" id="22"/>
+			<ChildItems>
+				<LabelDecoration name="ДекорацияОтступПрименитьИзменения" id="23">
+					<ContextMenu name="ДекорацияОтступПрименитьИзмененияКонтекстноеМеню" id="24"/>
+					<ExtendedTooltip name="ДекорацияОтступПрименитьИзмененияРасширеннаяПодсказка" id="25"/>
+				</LabelDecoration>
+				<LabelDecoration name="ДекорацияПояснениеПрименитьИзменения" id="26">
+					<Title formatted="true">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>&lt;colorstyle 0:ad87bd29-0ad1-4da4-ac62-38e714e0cb9f&gt;Будет не только установлено действие, но и сразу же применены изменения для справочника "Демо: Банковские счета"&lt;/&gt;</v8:content>
+						</v8:item>
+					</Title>
+					<ContextMenu name="ДекорацияПояснениеПрименитьИзмененияКонтекстноеМеню" id="27"/>
+					<ExtendedTooltip name="ДекорацияПояснениеПрименитьИзмененияРасширеннаяПодсказка" id="28"/>
+				</LabelDecoration>
+			</ChildItems>
+		</UsualGroup>
+		<CheckBoxField name="НеПоказыватьБольше" id="10">
+			<DataPath>НеПоказыватьБольше</DataPath>
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Больше не показывать</v8:content>
+				</v8:item>
+			</Title>
+			<TitleTextColor>style:FormTextColor</TitleTextColor>
+			<TitleLocation>Right</TitleLocation>
+			<CheckBoxType>Auto</CheckBoxType>
+			<ContextMenu name="НеПоказыватьБольшеКонтекстноеМеню" id="11"/>
+			<ExtendedTooltip name="НеПоказыватьБольшеРасширеннаяПодсказка" id="12"/>
+		</CheckBoxField>
+		<UsualGroup name="ГруппаПояснениеБольшеНеПоказывать" id="29">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа пояснение применить изменения</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Пояснение предложения больше не показывать данную форму</v8:content>
+				</v8:item>
+			</ToolTip>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаПояснениеБольшеНеПоказыватьРасширеннаяПодсказка" id="30"/>
+			<ChildItems>
+				<LabelDecoration name="ДекорацияОтступБольшеНеПоказывать" id="31">
+					<ContextMenu name="ДекорацияОтступБольшеНеПоказыватьКонтекстноеМеню" id="32"/>
+					<ExtendedTooltip name="ДекорацияОтступБольшеНеПоказыватьРасширеннаяПодсказка" id="33"/>
+				</LabelDecoration>
+				<LabelDecoration name="ДекорацияПояснениеБольшеНеПоказывать" id="34">
+					<Title formatted="true">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>&lt;colorstyle 0:ad87bd29-0ad1-4da4-ac62-38e714e0cb9f&gt;Данная форма больше не будет показываться, изменить данное поведение вы сможете в настройках&lt;/&gt;</v8:content>
+						</v8:item>
+					</Title>
+					<ContextMenu name="ДекорацияПояснениеБольшеНеПоказыватьКонтекстноеМеню" id="35"/>
+					<ExtendedTooltip name="ДекорацияПояснениеБольшеНеПоказыватьРасширеннаяПодсказка" id="36"/>
+				</LabelDecoration>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="ГруппаПодвал" id="8">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Подвал</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Команды формы</v8:content>
+				</v8:item>
+			</ToolTip>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаПодвалРасширеннаяПодсказка" id="9"/>
+			<ChildItems>
+				<LabelDecoration name="ДекорацияОтступ" id="15">
+					<AutoMaxWidth>false</AutoMaxWidth>
+					<HorizontalStretch>true</HorizontalStretch>
+					<ContextMenu name="ДекорацияОтступКонтекстноеМеню" id="16"/>
+					<ExtendedTooltip name="ДекорацияОтступРасширеннаяПодсказка" id="17"/>
+				</LabelDecoration>
+				<CommandBar name="ПодвалКоманднаяПанель" id="13">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Подвал командная панель</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Командная панель</v8:content>
+						</v8:item>
+					</ToolTip>
+					<HorizontalStretch>false</HorizontalStretch>
+					<ExtendedTooltip name="ПодвалКоманднаяПанельРасширеннаяПодсказка" id="14"/>
+					<ChildItems>
+						<Button name="ФормаОК" id="4">
+							<Type>CommandBarButton</Type>
+							<DefaultButton>true</DefaultButton>
+							<CommandName>Form.Command.ОК</CommandName>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>ОК</v8:content>
+								</v8:item>
+							</Title>
+							<ExtendedTooltip name="ФормаОКРасширеннаяПодсказка" id="5"/>
+						</Button>
+						<Button name="ФормаОтмена" id="6">
+							<Type>CommandBarButton</Type>
+							<CommandName>Form.StandardCommand.Cancel</CommandName>
+							<ExtendedTooltip name="ФормаОтменаРасширеннаяПодсказка" id="7"/>
+						</Button>
+					</ChildItems>
+				</CommandBar>
+			</ChildItems>
+		</UsualGroup>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:DataProcessorObject.РаботаСРезультатамиОбмена</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+		</Attribute>
+		<Attribute name="НеПоказыватьБольше" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Не показывать больше</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ПрименитьИзменения" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Применить изменения</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="ОК" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>ОК</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>ОК</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ОК</Action>
+		</Command>
+	</Commands>
+	<Parameters>
+		<Parameter name="ПолноеИмяТипаМетаданных">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Parameter>
+		<Parameter name="СинонимТипаМетаданных">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Parameter>
+	</Parameters>
+</Form>

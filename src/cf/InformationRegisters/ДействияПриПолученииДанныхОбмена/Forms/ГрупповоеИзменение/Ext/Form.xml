@@ -1,0 +1,573 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.20">
+	<Title>
+		<v8:item>
+			<v8:lang>ru</v8:lang>
+			<v8:content>Групповое изменение действий</v8:content>
+		</v8:item>
+	</Title>
+	<AutoSaveDataInSettings>Use</AutoSaveDataInSettings>
+	<AutoTitle>false</AutoTitle>
+	<CommandBarLocation>Bottom</CommandBarLocation>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<HorizontalAlign>Right</HorizontalAlign>
+		<Autofill>false</Autofill>
+		<ChildItems>
+			<Button name="ФормаОК" id="27">
+				<Type>CommandBarButton</Type>
+				<DefaultButton>true</DefaultButton>
+				<CommandName>Form.Command.ОК</CommandName>
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Изменить выделенные строки</v8:content>
+					</v8:item>
+				</Title>
+				<ExtendedTooltip name="ФормаОКРасширеннаяПодсказка" id="28"/>
+			</Button>
+			<Button name="ФормаОтмена" id="29">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.StandardCommand.Cancel</CommandName>
+				<ExtendedTooltip name="ФормаОтменаРасширеннаяПодсказка" id="30"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnLoadDataFromSettingsAtServer">ПриЗагрузкеДанныхИзНастроекНаСервере</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="ГруппаНастройкиЗагрузки" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Настройки загрузки</v8:content>
+				</v8:item>
+			</Title>
+			<Group>Vertical</Group>
+			<Representation>NormalSeparation</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаНастройкиЗагрузкиРасширеннаяПодсказка" id="5"/>
+			<ChildItems>
+				<CheckBoxField name="ИзменитьНастройкиЗагрузки" id="67">
+					<DataPath>ИзменитьНастройкиЗагрузки</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Изменить настройки загрузки</v8:content>
+						</v8:item>
+					</Title>
+					<TitleLocation>Right</TitleLocation>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="ИзменитьНастройкиЗагрузкиКонтекстноеМеню" id="68"/>
+					<ExtendedTooltip name="ИзменитьНастройкиЗагрузкиРасширеннаяПодсказка" id="69"/>
+					<Events>
+						<Event name="OnChange">ИзменитьНастройкиЗагрузкиПриИзменении</Event>
+					</Events>
+				</CheckBoxField>
+				<UsualGroup name="ГруппаДляНастройкиЗагрузки" id="25">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Для настройки загрузки</v8:content>
+						</v8:item>
+					</Title>
+					<Group>Vertical</Group>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаДляНастройкиЗагрузкиРасширеннаяПодсказка" id="26"/>
+					<ChildItems>
+						<UsualGroup name="ГруппаДляЗагружать" id="31">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Объекты выбранных типов:</v8:content>
+								</v8:item>
+							</Title>
+							<TitleTextColor>style:НастройкаОтбораОбменаЦветЗаголовкаРамки</TitleTextColor>
+							<TitleFont ref="style:НастройкаОтбораОбменаШрифтЗаголовка" kind="StyleItem"/>
+							<Group>AlwaysHorizontal</Group>
+							<Representation>NormalSeparation</Representation>
+							<ExtendedTooltip name="ГруппаДляЗагружатьРасширеннаяПодсказка" id="32"/>
+							<ChildItems>
+								<LabelDecoration name="ДекорацияОтступЗагружать" id="64">
+									<ContextMenu name="ДекорацияОтступЗагружатьКонтекстноеМеню" id="65"/>
+									<ExtendedTooltip name="ДекорацияОтступЗагружатьРасширеннаяПодсказка" id="66"/>
+								</LabelDecoration>
+								<RadioButtonField name="Загружать" id="61">
+									<DataPath>Загружать</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Загружать</v8:content>
+										</v8:item>
+									</Title>
+									<TitleTextColor>style:НастройкаОтбораОбменаЦветЗаголовкаРамки</TitleTextColor>
+									<TitleLocation>None</TitleLocation>
+									<RadioButtonType>RadioButtons</RadioButtonType>
+									<ColumnsCount>1</ColumnsCount>
+									<ChoiceList>
+										<xr:Item>
+											<xr:Presentation/>
+											<xr:CheckState>0</xr:CheckState>
+											<xr:Value xsi:type="FormChoiceListDesTimeValue">
+												<Presentation>
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>Загружать</v8:content>
+													</v8:item>
+												</Presentation>
+												<Value xsi:type="xs:string">Загружать</Value>
+											</xr:Value>
+										</xr:Item>
+										<xr:Item>
+											<xr:Presentation/>
+											<xr:CheckState>0</xr:CheckState>
+											<xr:Value xsi:type="FormChoiceListDesTimeValue">
+												<Presentation>
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>Не загружать</v8:content>
+													</v8:item>
+												</Presentation>
+												<Value xsi:type="xs:string">НеЗагружать</Value>
+											</xr:Value>
+										</xr:Item>
+									</ChoiceList>
+									<ContextMenu name="ЗагружатьКонтекстноеМеню" id="62"/>
+									<ExtendedTooltip name="ЗагружатьРасширеннаяПодсказка" id="63"/>
+									<Events>
+										<Event name="OnChange">ЗагружатьПриИзменении</Event>
+									</Events>
+								</RadioButtonField>
+							</ChildItems>
+						</UsualGroup>
+						<UsualGroup name="ГруппаЗагрузки" id="70">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Загрузки</v8:content>
+								</v8:item>
+							</Title>
+							<Group>AlwaysHorizontal</Group>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаЗагрузкиРасширеннаяПодсказка" id="71"/>
+							<ChildItems>
+								<UsualGroup name="ГруппаУстанавливатьСоответствия" id="17">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Устанавливать соответствия:</v8:content>
+										</v8:item>
+									</Title>
+									<TitleTextColor>style:НастройкаОтбораОбменаЦветЗаголовкаРамки</TitleTextColor>
+									<TitleFont ref="style:НастройкаОтбораОбменаШрифтЗаголовка" kind="StyleItem"/>
+									<Group>Vertical</Group>
+									<ExtendedTooltip name="ГруппаУстанавливатьСоответствияРасширеннаяПодсказка" id="18"/>
+									<ChildItems>
+										<UsualGroup name="ГруппаУстанавливатьСоответствияПомощником" id="43">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Устанавливать соответствия помощником</v8:content>
+												</v8:item>
+											</Title>
+											<Group>AlwaysHorizontal</Group>
+											<ShowTitle>false</ShowTitle>
+											<ExtendedTooltip name="ГруппаУстанавливатьСоответствияПомощникомРасширеннаяПодсказка" id="44"/>
+											<ChildItems>
+												<LabelDecoration name="ДекорацияОтступУстанавливатьСоответствияПомощником" id="45">
+													<ContextMenu name="ДекорацияОтступУстанавливатьСоответствияПомощникомКонтекстноеМеню" id="46"/>
+													<ExtendedTooltip name="ДекорацияОтступУстанавливатьСоответствияПомощникомРасширеннаяПодсказка" id="47"/>
+												</LabelDecoration>
+												<RadioButtonField name="УстанавливатьСоответствияПомощником" id="19">
+													<DataPath>УстанавливатьСоответствия</DataPath>
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Устанавливать соответствия</v8:content>
+														</v8:item>
+													</Title>
+													<TitleLocation>None</TitleLocation>
+													<RadioButtonType>Auto</RadioButtonType>
+													<ColumnsCount>1</ColumnsCount>
+													<ChoiceList>
+														<xr:Item>
+															<xr:Presentation/>
+															<xr:CheckState>0</xr:CheckState>
+															<xr:Value xsi:type="FormChoiceListDesTimeValue">
+																<Presentation>
+																	<v8:item>
+																		<v8:lang>ru</v8:lang>
+																		<v8:content>Помощником (по любым полям)</v8:content>
+																	</v8:item>
+																</Presentation>
+																<Value xsi:type="xr:DesignTimeRef">Enum.ВариантыНеобходимостиУстановкиСоответствийПриПолученииДанных.EnumValue.Помощником</Value>
+															</xr:Value>
+														</xr:Item>
+													</ChoiceList>
+													<ContextMenu name="УстанавливатьСоответствияПомощникомКонтекстноеМеню" id="20"/>
+													<ExtendedTooltip name="УстанавливатьСоответствияПомощникомРасширеннаяПодсказка" id="21"/>
+												</RadioButtonField>
+											</ChildItems>
+										</UsualGroup>
+										<UsualGroup name="ГруппаДляНовыхПослеПодтверждения" id="48">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Группа для новых автоматически</v8:content>
+												</v8:item>
+											</Title>
+											<Group>AlwaysHorizontal</Group>
+											<ShowTitle>false</ShowTitle>
+											<ExtendedTooltip name="ГруппаДляНовыхПослеПодтвержденияРасширеннаяПодсказка" id="49"/>
+											<ChildItems>
+												<LabelDecoration name="ДекорацияОтступНовыеПослеПодтверждения" id="50">
+													<ContextMenu name="ДекорацияОтступНовыеПослеПодтвержденияКонтекстноеМеню" id="51"/>
+													<ExtendedTooltip name="ДекорацияОтступНовыеПослеПодтвержденияРасширеннаяПодсказка" id="52"/>
+												</LabelDecoration>
+												<RadioButtonField name="ДляНовыхПослеПодтверждения" id="22">
+													<DataPath>УстанавливатьСоответствия</DataPath>
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Устанавливать соответствия</v8:content>
+														</v8:item>
+													</Title>
+													<TitleLocation>None</TitleLocation>
+													<RadioButtonType>Auto</RadioButtonType>
+													<ColumnsCount>1</ColumnsCount>
+													<ChoiceList>
+														<xr:Item>
+															<xr:Presentation/>
+															<xr:CheckState>0</xr:CheckState>
+															<xr:Value xsi:type="FormChoiceListDesTimeValue">
+																<Presentation>
+																	<v8:item>
+																		<v8:lang>ru</v8:lang>
+																		<v8:content>Автоматически (по ключевым полям)</v8:content>
+																	</v8:item>
+																</Presentation>
+																<Value xsi:type="xr:DesignTimeRef">Enum.ВариантыНеобходимостиУстановкиСоответствийПриПолученииДанных.EnumValue.Автоматически</Value>
+															</xr:Value>
+														</xr:Item>
+													</ChoiceList>
+													<ContextMenu name="ДляНовыхПослеПодтвержденияКонтекстноеМеню" id="23"/>
+													<ExtendedTooltip name="ДляНовыхПослеПодтвержденияРасширеннаяПодсказка" id="24"/>
+												</RadioButtonField>
+											</ChildItems>
+										</UsualGroup>
+										<UsualGroup name="ГруппаУстанавливатьСоответствияНеУстанавливать" id="72">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Группа для новых автоматически</v8:content>
+												</v8:item>
+											</Title>
+											<Group>AlwaysHorizontal</Group>
+											<ShowTitle>false</ShowTitle>
+											<ExtendedTooltip name="ГруппаУстанавливатьСоответствияНеУстанавливатьРасширеннаяПодсказка" id="73"/>
+											<ChildItems>
+												<LabelDecoration name="ДекорацияУстанавливатьСоответствияНеУстанавливать" id="74">
+													<ContextMenu name="ДекорацияУстанавливатьСоответствияНеУстанавливатьКонтекстноеМеню" id="75"/>
+													<ExtendedTooltip name="ДекорацияУстанавливатьСоответствияНеУстанавливатьРасширеннаяПодсказка" id="76"/>
+												</LabelDecoration>
+												<RadioButtonField name="ИскатьУстанавливатьНеУстанавливать" id="77">
+													<DataPath>УстанавливатьСоответствия</DataPath>
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Устанавливать соответствия</v8:content>
+														</v8:item>
+													</Title>
+													<TitleLocation>None</TitleLocation>
+													<RadioButtonType>Auto</RadioButtonType>
+													<ColumnsCount>1</ColumnsCount>
+													<ChoiceList>
+														<xr:Item>
+															<xr:Presentation/>
+															<xr:CheckState>0</xr:CheckState>
+															<xr:Value xsi:type="FormChoiceListDesTimeValue">
+																<Presentation>
+																	<v8:item>
+																		<v8:lang>ru</v8:lang>
+																		<v8:content>Не устанавливать (создавать новые)</v8:content>
+																	</v8:item>
+																</Presentation>
+																<Value xsi:type="xr:DesignTimeRef">Enum.ВариантыНеобходимостиУстановкиСоответствийПриПолученииДанных.EnumValue.НеУстанавливать</Value>
+															</xr:Value>
+														</xr:Item>
+													</ChoiceList>
+													<ContextMenu name="ИскатьУстанавливатьНеУстанавливатьКонтекстноеМеню" id="78"/>
+													<ExtendedTooltip name="ИскатьУстанавливатьНеУстанавливатьРасширеннаяПодсказка" id="79"/>
+												</RadioButtonField>
+											</ChildItems>
+										</UsualGroup>
+									</ChildItems>
+								</UsualGroup>
+								<UsualGroup name="ГруппаКакЗагружать" id="9">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Как загружать:</v8:content>
+										</v8:item>
+									</Title>
+									<TitleTextColor>style:НастройкаОтбораОбменаЦветЗаголовкаРамки</TitleTextColor>
+									<TitleFont ref="style:НастройкаОтбораОбменаШрифтЗаголовка" kind="StyleItem"/>
+									<Group>Vertical</Group>
+									<Representation>NormalSeparation</Representation>
+									<ExtendedTooltip name="ГруппаКакЗагружатьРасширеннаяПодсказка" id="10"/>
+									<ChildItems>
+										<UsualGroup name="ГруппаКакЗагружатьАвтоматически" id="33">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Как загружать автоматически</v8:content>
+												</v8:item>
+											</Title>
+											<Group>AlwaysHorizontal</Group>
+											<ShowTitle>false</ShowTitle>
+											<ExtendedTooltip name="ГруппаКакЗагружатьАвтоматическиРасширеннаяПодсказка" id="34"/>
+											<ChildItems>
+												<LabelDecoration name="ДекорацияОтступКакЗагружатьАвтоматически" id="35">
+													<ContextMenu name="ДекорацияОтступКакЗагружатьАвтоматическиКонтекстноеМеню" id="36"/>
+													<ExtendedTooltip name="ДекорацияОтступКакЗагружатьАвтоматическиРасширеннаяПодсказка" id="37"/>
+												</LabelDecoration>
+												<RadioButtonField name="КакЗагружатьАвтоматически" id="11">
+													<DataPath>КакЗагружать</DataPath>
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Как загружать</v8:content>
+														</v8:item>
+													</Title>
+													<TitleLocation>None</TitleLocation>
+													<RadioButtonType>Auto</RadioButtonType>
+													<ColumnsCount>1</ColumnsCount>
+													<ChoiceList>
+														<xr:Item>
+															<xr:Presentation/>
+															<xr:CheckState>0</xr:CheckState>
+															<xr:Value xsi:type="FormChoiceListDesTimeValue">
+																<Presentation/>
+																<Value xsi:type="xr:DesignTimeRef">Enum.ВариантыДействийПриПолученииДанныхОбмена.EnumValue.Автоматически</Value>
+															</xr:Value>
+														</xr:Item>
+													</ChoiceList>
+													<ContextMenu name="КакЗагружатьАвтоматическиКонтекстноеМеню" id="12"/>
+													<ExtendedTooltip name="КакЗагружатьАвтоматическиРасширеннаяПодсказка" id="13"/>
+												</RadioButtonField>
+											</ChildItems>
+										</UsualGroup>
+										<UsualGroup name="ГруппаКакЗагружатьПослеПодтверждения" id="38">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Группа для существующих после </v8:content>
+												</v8:item>
+											</Title>
+											<Group>AlwaysHorizontal</Group>
+											<ShowTitle>false</ShowTitle>
+											<ExtendedTooltip name="ГруппаКакЗагружатьПослеПодтвержденияРасширеннаяПодсказка" id="39"/>
+											<ChildItems>
+												<LabelDecoration name="ДекорацияОтступКакЗагружатьПослеПодтверждения" id="40">
+													<Font bold="true" kind="AutoFont"/>
+													<ContextMenu name="ДекорацияОтступКакЗагружатьПослеПодтвержденияКонтекстноеМеню" id="41"/>
+													<ExtendedTooltip name="ДекорацияОтступКакЗагружатьПослеПодтвержденияРасширеннаяПодсказка" id="42"/>
+												</LabelDecoration>
+												<RadioButtonField name="КакЗагружатьПослеПодтверждения" id="14">
+													<DataPath>КакЗагружать</DataPath>
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Как загружать</v8:content>
+														</v8:item>
+													</Title>
+													<TitleLocation>None</TitleLocation>
+													<RadioButtonType>Auto</RadioButtonType>
+													<ColumnsCount>1</ColumnsCount>
+													<ChoiceList>
+														<xr:Item>
+															<xr:Presentation/>
+															<xr:CheckState>0</xr:CheckState>
+															<xr:Value xsi:type="FormChoiceListDesTimeValue">
+																<Presentation>
+																	<v8:item>
+																		<v8:lang>ru</v8:lang>
+																		<v8:content>После подтверждения</v8:content>
+																	</v8:item>
+																</Presentation>
+																<Value xsi:type="xr:DesignTimeRef">Enum.ВариантыДействийПриПолученииДанныхОбмена.EnumValue.ПослеПодтверждения</Value>
+															</xr:Value>
+														</xr:Item>
+													</ChoiceList>
+													<ContextMenu name="КакЗагружатьПослеПодтвержденияКонтекстноеМеню" id="15"/>
+													<ExtendedTooltip name="КакЗагружатьПослеПодтвержденияРасширеннаяПодсказка" id="16"/>
+												</RadioButtonField>
+											</ChildItems>
+										</UsualGroup>
+									</ChildItems>
+								</UsualGroup>
+							</ChildItems>
+						</UsualGroup>
+					</ChildItems>
+				</UsualGroup>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="ГруппаКомментарий" id="53">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Комментарий</v8:content>
+				</v8:item>
+			</Title>
+			<Group>Vertical</Group>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаКомментарийРасширеннаяПодсказка" id="54"/>
+			<ChildItems>
+				<CheckBoxField name="ИзменитьКомментарий" id="55">
+					<DataPath>ИзменитьКомментарий</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Добавить или изменить комментарий</v8:content>
+						</v8:item>
+					</Title>
+					<TitleLocation>Right</TitleLocation>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="ИзменитьКомментарийКонтекстноеМеню" id="56"/>
+					<ExtendedTooltip name="ИзменитьКомментарийРасширеннаяПодсказка" id="57"/>
+					<Events>
+						<Event name="OnChange">ИзменитьКомментарийПриИзменении</Event>
+					</Events>
+				</CheckBoxField>
+				<InputField name="Комментарий" id="58">
+					<DataPath>Комментарий</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Комментарий</v8:content>
+						</v8:item>
+					</Title>
+					<TitleLocation>None</TitleLocation>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Комментарий, который поясняет почему была установлена текущая настройка варианта действий</v8:content>
+						</v8:item>
+					</ToolTip>
+					<AutoMaxWidth>false</AutoMaxWidth>
+					<MultiLine>true</MultiLine>
+					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+					<InputHint>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Пояснение устанавливаемой настройки</v8:content>
+						</v8:item>
+					</InputHint>
+					<ContextMenu name="КомментарийКонтекстноеМеню" id="59"/>
+					<ExtendedTooltip name="КомментарийРасширеннаяПодсказка" id="60"/>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="УстанавливатьСоответствия" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Устанавливать соответствия</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:EnumRef.ВариантыНеобходимостиУстановкиСоответствийПриПолученииДанных</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="КакЗагружать" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Как загружать</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:EnumRef.ВариантыДействийПриПолученииДанныхОбмена</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ИзменитьКомментарий" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Добавить или изменить комментарий</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+			<Save>
+				<Field>ИзменитьКомментарий</Field>
+			</Save>
+		</Attribute>
+		<Attribute name="Комментарий" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Комментарий</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ИзменитьНастройкиЗагрузки" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Изменить настройки загрузки</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+			<Save>
+				<Field>ИзменитьНастройкиЗагрузки</Field>
+			</Save>
+		</Attribute>
+		<Attribute name="Загружать" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Загружать</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="ОК" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>ОК</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>ОК</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ОК</Action>
+		</Command>
+	</Commands>
+</Form>

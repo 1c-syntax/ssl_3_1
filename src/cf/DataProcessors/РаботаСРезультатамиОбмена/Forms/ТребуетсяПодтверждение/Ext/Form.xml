@@ -1,0 +1,1389 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.20">
+	<Title>
+		<v8:item>
+			<v8:lang>ru</v8:lang>
+			<v8:content>Объекты, требующие подтверждения загрузки</v8:content>
+		</v8:item>
+	</Title>
+	<AutoSaveDataInSettings>Use</AutoSaveDataInSettings>
+	<AutoTitle>false</AutoTitle>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<Autofill>false</Autofill>
+	</AutoCommandBar>
+	<Events>
+		<Event name="NotificationProcessing">ОбработкаОповещения</Event>
+		<Event name="OnOpen">ПриОткрытии</Event>
+		<Event name="URLGetProcessing">ОбработкаПолученияНавигационнойСсылки</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+		<Event name="BeforeLoadDataFromSettingsAtServer">ПередЗагрузкойДанныхИзНастроекНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="ГруппаШапкаФормы" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Шапка формы</v8:content>
+				</v8:item>
+			</Title>
+			<Group>AlwaysHorizontal</Group>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаШапкаФормыРасширеннаяПодсказка" id="2"/>
+			<ChildItems>
+				<UsualGroup name="ГруппаБыстрыеОтборы" id="3">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Быстрые отборы</v8:content>
+						</v8:item>
+					</Title>
+					<Group>AlwaysHorizontal</Group>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаБыстрыеОтборыРасширеннаяПодсказка" id="4"/>
+					<ChildItems>
+						<RadioButtonField name="УстановленоСоответствиеОтбор" id="8">
+							<DataPath>УстановленоСоответствиеОтбор</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Отображать объекты</v8:content>
+								</v8:item>
+							</Title>
+							<RadioButtonType>Tumbler</RadioButtonType>
+							<ChoiceList>
+								<xr:Item>
+									<xr:Presentation/>
+									<xr:CheckState>0</xr:CheckState>
+									<xr:Value xsi:type="FormChoiceListDesTimeValue">
+										<Presentation>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Все</v8:content>
+											</v8:item>
+										</Presentation>
+										<Value xsi:type="xs:string">Все</Value>
+									</xr:Value>
+								</xr:Item>
+								<xr:Item>
+									<xr:Presentation/>
+									<xr:CheckState>0</xr:CheckState>
+									<xr:Value xsi:type="FormChoiceListDesTimeValue">
+										<Presentation>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Новые</v8:content>
+											</v8:item>
+										</Presentation>
+										<Value xsi:type="xs:string">Новые</Value>
+									</xr:Value>
+								</xr:Item>
+								<xr:Item>
+									<xr:Presentation/>
+									<xr:CheckState>0</xr:CheckState>
+									<xr:Value xsi:type="FormChoiceListDesTimeValue">
+										<Presentation>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Существующие</v8:content>
+											</v8:item>
+										</Presentation>
+										<Value xsi:type="xs:string">Существующие</Value>
+									</xr:Value>
+								</xr:Item>
+							</ChoiceList>
+							<ContextMenu name="УстановленоСоответствиеОтборКонтекстноеМеню" id="9"/>
+							<ExtendedTooltip name="УстановленоСоответствиеОтборРасширеннаяПодсказка" id="10"/>
+							<Events>
+								<Event name="OnChange">УстановленоСоответствиеОтборПриИзменении</Event>
+							</Events>
+						</RadioButtonField>
+					</ChildItems>
+				</UsualGroup>
+				<LabelDecoration name="ДекорацияШапкаФормыОтступ" id="11">
+					<AutoMaxWidth>false</AutoMaxWidth>
+					<HorizontalStretch>true</HorizontalStretch>
+					<GroupVerticalAlign>Bottom</GroupVerticalAlign>
+					<ContextMenu name="ДекорацияШапкаФормыОтступКонтекстноеМеню" id="12"/>
+					<ExtendedTooltip name="ДекорацияШапкаФормыОтступРасширеннаяПодсказка" id="13"/>
+				</LabelDecoration>
+				<LabelDecoration name="ДекорацияДействияПриПолученииДанных" id="19">
+					<Title formatted="true">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>&lt;link ОткрытьФормуДействияПриПолученияДанных&gt;Действия при получении данных&lt;/&gt;</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Возможность указать, будут ли загружаться объекты, и если да то каким образом - автоматически или после подтверждения</v8:content>
+						</v8:item>
+					</ToolTip>
+					<GroupVerticalAlign>Bottom</GroupVerticalAlign>
+					<ContextMenu name="ДекорацияДействияПриПолученииДанныхКонтекстноеМеню" id="20"/>
+					<ExtendedTooltip name="ДекорацияДействияПриПолученииДанныхРасширеннаяПодсказка" id="21"/>
+					<Events>
+						<Event name="URLProcessing">ДекорацияДействияПриПолученииДанныхОбработкаНавигационнойСсылки</Event>
+					</Events>
+				</LabelDecoration>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="ГруппаСписокПанельНавигации" id="22">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Список панель навигации</v8:content>
+				</v8:item>
+			</Title>
+			<Group>AlwaysHorizontal</Group>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаСписокПанельНавигацииРасширеннаяПодсказка" id="23"/>
+			<ChildItems>
+				<UsualGroup name="ГруппаСписок" id="24">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Список</v8:content>
+						</v8:item>
+					</Title>
+					<Group>Vertical</Group>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаСписокРасширеннаяПодсказка" id="25"/>
+					<ChildItems>
+						<UsualGroup name="ГруппаКомандныеПанелиСписка" id="26">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Командные панели списка</v8:content>
+								</v8:item>
+							</Title>
+							<Group>Vertical</Group>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаКомандныеПанелиСпискаРасширеннаяПодсказка" id="27"/>
+							<ChildItems>
+								<UsualGroup name="ГруппаКоманднаяПанельФормы" id="28">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Командная панель формы</v8:content>
+										</v8:item>
+									</Title>
+									<Group>AlwaysHorizontal</Group>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="ГруппаКоманднаяПанельФормыРасширеннаяПодсказка" id="29"/>
+									<ChildItems>
+										<CommandBar name="ГруппаКомандыСписка" id="30">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Команды списка</v8:content>
+												</v8:item>
+											</Title>
+											<Width>44</Width>
+											<HorizontalStretch>false</HorizontalStretch>
+											<ExtendedTooltip name="ГруппаКомандыСпискаРасширеннаяПодсказка" id="31"/>
+											<ChildItems>
+												<Button name="СписокОткрытьПроблему" id="32">
+													<Type>CommandBarButton</Type>
+													<CommandName>Form.Command.ОткрытьПроблему</CommandName>
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Открыть проблему</v8:content>
+														</v8:item>
+													</Title>
+													<ExtendedTooltip name="СписокОткрытьПроблемуРасширеннаяПодсказка" id="33"/>
+												</Button>
+												<Button name="Подтвердить" id="34">
+													<Type>CommandBarButton</Type>
+													<CommandName>Form.Command.Подтвердить</CommandName>
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Подтвердить</v8:content>
+														</v8:item>
+													</Title>
+													<ExtendedTooltip name="ПодтвердитьРасширеннаяПодсказка" id="35"/>
+												</Button>
+												<Button name="Отклонить" id="36">
+													<Type>CommandBarButton</Type>
+													<CommandName>Form.Command.Отклонить</CommandName>
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Отклонить</v8:content>
+														</v8:item>
+													</Title>
+													<ExtendedTooltip name="ОтклонитьРасширеннаяПодсказка" id="37"/>
+												</Button>
+												<Button name="УстановитьСоответствие" id="42">
+													<Type>CommandBarButton</Type>
+													<CommandName>Form.Command.УстановитьСоответствие</CommandName>
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Установить соответствие</v8:content>
+														</v8:item>
+													</Title>
+													<ExtendedTooltip name="УстановитьСоответствиеРасширеннаяПодсказка" id="43"/>
+												</Button>
+												<Button name="ОткрытьОбъектВИсточнике" id="44">
+													<Type>CommandBarButton</Type>
+													<CommandName>Form.Command.ОткрытьОбъектВИсточнике</CommandName>
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Открыть объект в источнике</v8:content>
+														</v8:item>
+													</Title>
+													<ExtendedTooltip name="ОткрытьОбъектВИсточникеРасширеннаяПодсказка" id="45"/>
+												</Button>
+												<Button name="СписокУстановитьИнтервал" id="46">
+													<Type>CommandBarButton</Type>
+													<CommandName>Form.Command.УстановитьИнтервал</CommandName>
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Установить интервал</v8:content>
+														</v8:item>
+													</Title>
+													<ExtendedTooltip name="СписокУстановитьИнтервалРасширеннаяПодсказка" id="47"/>
+												</Button>
+											</ChildItems>
+										</CommandBar>
+										<UsualGroup name="ГруппаОтображениеПериода" id="48">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Отображение периода</v8:content>
+												</v8:item>
+											</Title>
+											<ShowTitle>false</ShowTitle>
+											<ExtendedTooltip name="ГруппаОтображениеПериодаРасширеннаяПодсказка" id="49"/>
+											<ChildItems>
+												<LabelDecoration name="ДекорацияОтборПериод" id="50">
+													<ContextMenu name="ДекорацияОтборПериодКонтекстноеМеню" id="51"/>
+													<ExtendedTooltip name="ДекорацияОтборПериодРасширеннаяПодсказка" id="52"/>
+												</LabelDecoration>
+											</ChildItems>
+										</UsualGroup>
+										<CommandBar name="ГруппаСтандартныеКомандыСписка" id="53">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Стандартные команды списка</v8:content>
+												</v8:item>
+											</Title>
+											<CommandSource>Item.СписокТребуетсяПодтверждение</CommandSource>
+											<ExtendedTooltip name="ГруппаСтандартныеКомандыСпискаРасширеннаяПодсказка" id="54"/>
+											<ChildItems>
+												<Button name="СписокИзменитьФорму" id="55">
+													<Type>CommandBarButton</Type>
+													<CommandName>Form.StandardCommand.CustomizeForm</CommandName>
+													<ExtendedTooltip name="СписокИзменитьФормуРасширеннаяПодсказка" id="56"/>
+												</Button>
+												<Button name="Справка" id="57">
+													<Type>CommandBarButton</Type>
+													<Representation>Picture</Representation>
+													<CommandName>Form.StandardCommand.Help</CommandName>
+													<LocationInCommandBar>InCommandBar</LocationInCommandBar>
+													<ExtendedTooltip name="СправкаРасширеннаяПодсказка" id="58"/>
+												</Button>
+											</ChildItems>
+										</CommandBar>
+										<Button name="ПоказатьПанель" id="61">
+											<Type>UsualButton</Type>
+											<CommandName>Form.Command.ПоказатьПанель</CommandName>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Показать панель</v8:content>
+												</v8:item>
+											</Title>
+											<ExtendedTooltip name="ПоказатьПанельРасширеннаяПодсказка" id="62"/>
+										</Button>
+									</ChildItems>
+								</UsualGroup>
+							</ChildItems>
+						</UsualGroup>
+						<Table name="СписокТребуетсяПодтверждение" id="63">
+							<ChangeRowSet>false</ChangeRowSet>
+							<UseAlternationRowColor>true</UseAlternationRowColor>
+							<EnableStartDrag>true</EnableStartDrag>
+							<DataPath>СписокТребуетсяПодтверждение</DataPath>
+							<RowPictureDataPath>СписокТребуетсяПодтверждение.ИдентификаторКартинки</RowPictureDataPath>
+							<RowsPicture>
+								<xr:Ref>CommonPicture.КоллекцияОбъектыМетаданных</xr:Ref>
+								<xr:LoadTransparent>false</xr:LoadTransparent>
+							</RowsPicture>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Список требуется подтверждение</v8:content>
+								</v8:item>
+							</Title>
+							<CommandSet>
+								<ExcludedCommand>Change</ExcludedCommand>
+								<ExcludedCommand>ChangeHistory</ExcludedCommand>
+								<ExcludedCommand>GetURL</ExcludedCommand>
+								<ExcludedCommand>SearchEverywhere</ExcludedCommand>
+							</CommandSet>
+							<SearchStringLocation>CommandBar</SearchStringLocation>
+							<ViewStatusLocation>Top</ViewStatusLocation>
+							<SearchControlLocation>CommandBar</SearchControlLocation>
+							<AutoRefresh>false</AutoRefresh>
+							<AutoRefreshPeriod>60</AutoRefreshPeriod>
+							<Period>
+								<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+								<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+								<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+							</Period>
+							<ChoiceFoldersAndItems>Items</ChoiceFoldersAndItems>
+							<RestoreCurrentRow>false</RestoreCurrentRow>
+							<TopLevelParent xsi:nil="true"/>
+							<ShowRoot>true</ShowRoot>
+							<AllowRootChoice>false</AllowRootChoice>
+							<UpdateOnDataChange>Auto</UpdateOnDataChange>
+							<AllowGettingCurrentRowURL>true</AllowGettingCurrentRowURL>
+							<ContextMenu name="СписокТребуетсяПодтверждениеКонтекстноеМеню" id="64">
+								<Autofill>false</Autofill>
+								<ChildItems>
+									<ButtonGroup name="СписокТребуетсяПодтверждениеКонтекстноеМенюГруппаКомандыРаботыСПроблемами" id="150">
+										<Title>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Требуется подтверждение контекстное меню группа команды работы с проблемами</v8:content>
+											</v8:item>
+										</Title>
+										<ExtendedTooltip name="СписокТребуетсяПодтверждениеКонтекстноеМенюГруппаКомандыРаботыСПроблемамиРасширеннаяПодсказка" id="151"/>
+										<ChildItems>
+											<Button name="СписокТребуетсяПодтверждениеКонтекстноеМенюОткрытьПроблему" id="152">
+												<Type>CommandBarButton</Type>
+												<CommandName>Form.Command.ОткрытьПроблему</CommandName>
+												<Title>
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>Открыть проблему</v8:content>
+													</v8:item>
+												</Title>
+												<ExtendedTooltip name="СписокТребуетсяПодтверждениеКонтекстноеМенюОткрытьПроблемуРасширеннаяПодсказка" id="153"/>
+											</Button>
+											<Button name="СписокТребуетсяПодтверждениеКонтекстноеМенюПодтвердить" id="154">
+												<Type>CommandBarButton</Type>
+												<CommandName>Form.Command.Подтвердить</CommandName>
+												<Title>
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>Подтвердить</v8:content>
+													</v8:item>
+												</Title>
+												<ExtendedTooltip name="СписокТребуетсяПодтверждениеКонтекстноеМенюПодтвердитьРасширеннаяПодсказка" id="155"/>
+											</Button>
+											<Button name="СписокТребуетсяПодтверждениеКонтекстноеМенюОтклонить" id="156">
+												<Type>CommandBarButton</Type>
+												<CommandName>Form.Command.Отклонить</CommandName>
+												<Title>
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>Отклонить</v8:content>
+													</v8:item>
+												</Title>
+												<ExtendedTooltip name="СписокТребуетсяПодтверждениеКонтекстноеМенюОтклонитьРасширеннаяПодсказка" id="157"/>
+											</Button>
+											<Button name="СписокТребуетсяПодтверждениеКонтекстноеМенюУстановитьСоответствие" id="158">
+												<Type>CommandBarButton</Type>
+												<CommandName>Form.Command.УстановитьСоответствие</CommandName>
+												<Title>
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>Установить соответствие</v8:content>
+													</v8:item>
+												</Title>
+												<ExtendedTooltip name="СписокТребуетсяПодтверждениеКонтекстноеМенюУстановитьСоответствиеРасширеннаяПодсказка" id="159"/>
+											</Button>
+											<Button name="СписокТребуетсяПодтверждениеКонтекстноеМенюОткрытьОбъектВИсточнике" id="160">
+												<Type>CommandBarButton</Type>
+												<CommandName>Form.Command.ОткрытьОбъектВИсточнике</CommandName>
+												<Title>
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>Открыть объект в источнике</v8:content>
+													</v8:item>
+												</Title>
+												<ExtendedTooltip name="СписокТребуетсяПодтверждениеКонтекстноеМенюОткрытьОбъектВИсточникеРасширеннаяПодсказка" id="161"/>
+											</Button>
+										</ChildItems>
+									</ButtonGroup>
+									<Button name="СписокТребуетсяПодтверждениеКонтекстноеМенюНеТребуетПодтвержденияСписок" id="94">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.Command.НеТребуетПодтвержденияСписок</CommandName>
+										<Title>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Отменить необходимость подтверждения объектов данного типа</v8:content>
+											</v8:item>
+										</Title>
+										<ExtendedTooltip name="СписокТребуетсяПодтверждениеКонтекстноеМенюНеТребуетПодтвержденияСписокРасширеннаяПодсказка" id="95"/>
+									</Button>
+									<ButtonGroup name="СписокТребуетсяПодтверждениеКонтекстноеМенюГруппаКомандыСписка" id="96">
+										<Title>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Требуется подтверждение контекстное меню группа команды списка</v8:content>
+											</v8:item>
+										</Title>
+										<CommandSource>Item.СписокТребуетсяПодтверждение</CommandSource>
+										<ExtendedTooltip name="СписокТребуетсяПодтверждениеКонтекстноеМенюГруппаКомандыСпискаРасширеннаяПодсказка" id="97"/>
+									</ButtonGroup>
+								</ChildItems>
+							</ContextMenu>
+							<AutoCommandBar name="СписокТребуетсяПодтверждениеКоманднаяПанель" id="65">
+								<Autofill>false</Autofill>
+							</AutoCommandBar>
+							<ExtendedTooltip name="СписокТребуетсяПодтверждениеРасширеннаяПодсказка" id="66"/>
+							<SearchStringAddition name="СписокТребуетсяПодтверждениеСтрокаПоиска" id="67">
+								<AdditionSource>
+									<Item>СписокТребуетсяПодтверждение</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="СписокТребуетсяПодтверждениеСтрокаПоискаКонтекстноеМеню" id="68"/>
+								<ExtendedTooltip name="СписокТребуетсяПодтверждениеСтрокаПоискаРасширеннаяПодсказка" id="69"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="СписокТребуетсяПодтверждениеСостояниеПросмотра" id="70">
+								<AdditionSource>
+									<Item>СписокТребуетсяПодтверждение</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="СписокТребуетсяПодтверждениеСостояниеПросмотраКонтекстноеМеню" id="71"/>
+								<ExtendedTooltip name="СписокТребуетсяПодтверждениеСостояниеПросмотраРасширеннаяПодсказка" id="72"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="СписокТребуетсяПодтверждениеУправлениеПоиском" id="73">
+								<AdditionSource>
+									<Item>СписокТребуетсяПодтверждение</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="СписокТребуетсяПодтверждениеУправлениеПоискомКонтекстноеМеню" id="74"/>
+								<ExtendedTooltip name="СписокТребуетсяПодтверждениеУправлениеПоискомРасширеннаяПодсказка" id="75"/>
+							</SearchControlAddition>
+							<Events>
+								<Event name="Selection">СписокВыбор</Event>
+								<Event name="OnGetDataAtServer">СписокТребуетсяПодтверждениеПриПолученииДанныхНаСервере</Event>
+							</Events>
+							<ChildItems>
+								<LabelField name="СписокТребуетсяПодтверждениеТипОбъекта" id="135">
+									<DataPath>СписокТребуетсяПодтверждение.ТипОбъекта</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Тип объекта</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="СписокТребуетсяПодтверждениеТипОбъектаКонтекстноеМеню" id="136"/>
+									<ExtendedTooltip name="СписокТребуетсяПодтверждениеТипОбъектаРасширеннаяПодсказка" id="137"/>
+								</LabelField>
+								<LabelField name="СписокТребуетсяПодтверждениеПредставлениеОбъекта" id="138">
+									<DataPath>СписокТребуетсяПодтверждение.ПредставлениеОбъекта</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Представление</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="СписокТребуетсяПодтверждениеПредставлениеОбъектаКонтекстноеМеню" id="139"/>
+									<ExtendedTooltip name="СписокТребуетсяПодтверждениеПредставлениеОбъектаРасширеннаяПодсказка" id="140"/>
+								</LabelField>
+								<LabelField name="СписокТребуетсяПодтверждениеСоответствиеВИБ" id="141">
+									<DataPath>СписокТребуетсяПодтверждение.СоответствиеВИБ</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Соответствие в ИБ</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="СписокТребуетсяПодтверждениеСоответствиеВИБКонтекстноеМеню" id="142"/>
+									<ExtendedTooltip name="СписокТребуетсяПодтверждениеСоответствиеВИБРасширеннаяПодсказка" id="143"/>
+								</LabelField>
+								<LabelField name="СписокТребуетсяПодтверждениеКоличествоБлокирует" id="144">
+									<DataPath>СписокТребуетсяПодтверждение.КоличествоБлокирует</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Блокирует</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="СписокТребуетсяПодтверждениеКоличествоБлокируетКонтекстноеМеню" id="145"/>
+									<ExtendedTooltip name="СписокТребуетсяПодтверждениеКоличествоБлокируетРасширеннаяПодсказка" id="146"/>
+								</LabelField>
+								<LabelField name="СписокТребуетсяПодтверждениеДатаВозникновения" id="147">
+									<DataPath>СписокТребуетсяПодтверждение.ДатаВозникновения</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Дата возн.</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="СписокТребуетсяПодтверждениеДатаВозникновенияКонтекстноеМеню" id="148"/>
+									<ExtendedTooltip name="СписокТребуетсяПодтверждениеДатаВозникновенияРасширеннаяПодсказка" id="149"/>
+								</LabelField>
+							</ChildItems>
+						</Table>
+					</ChildItems>
+				</UsualGroup>
+				<UsualGroup name="ГруппаТипыОбъектов" id="98">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Типы объектов</v8:content>
+						</v8:item>
+					</Title>
+					<Group>Vertical</Group>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаТипыОбъектовРасширеннаяПодсказка" id="99"/>
+					<ChildItems>
+						<UsualGroup name="ГруппаТипыОбъектовКоманднаяПанель" id="100">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Типы объектов командная панель</v8:content>
+								</v8:item>
+							</Title>
+							<GroupHorizontalAlign>Right</GroupHorizontalAlign>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаТипыОбъектовКоманднаяПанельРасширеннаяПодсказка" id="101"/>
+							<ChildItems>
+								<LabelDecoration name="ДекорацияОтступТипыОбъектов" id="102">
+									<HorizontalStretch>true</HorizontalStretch>
+									<ContextMenu name="ДекорацияОтступТипыОбъектовКонтекстноеМеню" id="103"/>
+									<ExtendedTooltip name="ДекорацияОтступТипыОбъектовРасширеннаяПодсказка" id="104"/>
+								</LabelDecoration>
+								<Button name="СкрытьПанель" id="105">
+									<Type>UsualButton</Type>
+									<GroupHorizontalAlign>Right</GroupHorizontalAlign>
+									<CommandName>Form.Command.СкрытьПанель</CommandName>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Скрыть панель</v8:content>
+										</v8:item>
+									</Title>
+									<ExtendedTooltip name="СкрытьПанельРасширеннаяПодсказка" id="106"/>
+								</Button>
+							</ChildItems>
+						</UsualGroup>
+						<Table name="ТипыОбъектов" id="107">
+							<Representation>List</Representation>
+							<CommandBarLocation>None</CommandBarLocation>
+							<ChangeRowSet>false</ChangeRowSet>
+							<ChangeRowOrder>false</ChangeRowOrder>
+							<AutoInsertNewRow>true</AutoInsertNewRow>
+							<EnableStartDrag>true</EnableStartDrag>
+							<EnableDrag>true</EnableDrag>
+							<DataPath>ТипыОбъектов</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Типы объектов</v8:content>
+								</v8:item>
+							</Title>
+							<CommandSet>
+								<ExcludedCommand>Add</ExcludedCommand>
+								<ExcludedCommand>Change</ExcludedCommand>
+								<ExcludedCommand>Copy</ExcludedCommand>
+								<ExcludedCommand>CopyToClipboard</ExcludedCommand>
+								<ExcludedCommand>Delete</ExcludedCommand>
+								<ExcludedCommand>EndEdit</ExcludedCommand>
+								<ExcludedCommand>FindByCurrentValue</ExcludedCommand>
+								<ExcludedCommand>MoveDown</ExcludedCommand>
+								<ExcludedCommand>MoveUp</ExcludedCommand>
+								<ExcludedCommand>OutputList</ExcludedCommand>
+								<ExcludedCommand>SearchEverywhere</ExcludedCommand>
+								<ExcludedCommand>SearchHistory</ExcludedCommand>
+								<ExcludedCommand>ShowMultipleSelection</ExcludedCommand>
+								<ExcludedCommand>ShowRowRearrangement</ExcludedCommand>
+							</CommandSet>
+							<RowFilter xsi:nil="true"/>
+							<ContextMenu name="ТипыОбъектовКонтекстноеМеню" id="108">
+								<Autofill>false</Autofill>
+								<ChildItems>
+									<Button name="ТипыОбъектовКонтекстноеМенюНеТребуетПодтверждение" id="131">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.Command.НеТребуетПодтверждение</CommandName>
+										<Title>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Отменить необходимость подтверждения объектов</v8:content>
+											</v8:item>
+										</Title>
+										<ExtendedTooltip name="ТипыОбъектовКонтекстноеМенюНеТребуетПодтверждениеРасширеннаяПодсказка" id="132"/>
+									</Button>
+									<ButtonGroup name="ТипыОбъектовКонтекстноеМенюГруппаКомандыСписка" id="133">
+										<Title>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Типы объектов контекстное меню группа команды списка</v8:content>
+											</v8:item>
+										</Title>
+										<CommandSource>Item.ТипыОбъектов</CommandSource>
+										<ExtendedTooltip name="ТипыОбъектовКонтекстноеМенюГруппаКомандыСпискаРасширеннаяПодсказка" id="134"/>
+									</ButtonGroup>
+								</ChildItems>
+							</ContextMenu>
+							<AutoCommandBar name="ТипыОбъектовКоманднаяПанель" id="109"/>
+							<ExtendedTooltip name="ТипыОбъектовРасширеннаяПодсказка" id="110"/>
+							<SearchStringAddition name="ТипыОбъектовСтрокаПоиска" id="111">
+								<AdditionSource>
+									<Item>ТипыОбъектов</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ТипыОбъектовСтрокаПоискаКонтекстноеМеню" id="112"/>
+								<ExtendedTooltip name="ТипыОбъектовСтрокаПоискаРасширеннаяПодсказка" id="113"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="ТипыОбъектовСостояниеПросмотра" id="114">
+								<AdditionSource>
+									<Item>ТипыОбъектов</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ТипыОбъектовСостояниеПросмотраКонтекстноеМеню" id="115"/>
+								<ExtendedTooltip name="ТипыОбъектовСостояниеПросмотраРасширеннаяПодсказка" id="116"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="ТипыОбъектовУправлениеПоиском" id="117">
+								<AdditionSource>
+									<Item>ТипыОбъектов</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="ТипыОбъектовУправлениеПоискомКонтекстноеМеню" id="118"/>
+								<ExtendedTooltip name="ТипыОбъектовУправлениеПоискомРасширеннаяПодсказка" id="119"/>
+							</SearchControlAddition>
+							<Events>
+								<Event name="OnActivateRow">ТипыОбъектовПриАктивизацииСтроки</Event>
+							</Events>
+							<ChildItems>
+								<ColumnGroup name="ТипОбъектаПредставление" id="120">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Тип объекта представление</v8:content>
+										</v8:item>
+									</Title>
+									<Group>InCell</Group>
+									<ExtendedTooltip name="ТипОбъектаПредставлениеРасширеннаяПодсказка" id="121"/>
+									<ChildItems>
+										<PictureField name="ТипыОбъектовИндексКартинки" id="122">
+											<DataPath>ТипыОбъектов.ИндексКартинки</DataPath>
+											<ReadOnly>true</ReadOnly>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Индекс картинки</v8:content>
+												</v8:item>
+											</Title>
+											<EditMode>EnterOnInput</EditMode>
+											<ShowInHeader>false</ShowInHeader>
+											<ValuesPicture>
+												<xr:Ref>CommonPicture.КоллекцияОбъектыМетаданных</xr:Ref>
+												<xr:LoadTransparent>false</xr:LoadTransparent>
+											</ValuesPicture>
+											<ContextMenu name="ТипыОбъектовИндексКартинкиКонтекстноеМеню" id="123"/>
+											<ExtendedTooltip name="ТипыОбъектовИндексКартинкиРасширеннаяПодсказка" id="124"/>
+										</PictureField>
+										<InputField name="ТипыОбъектовСинонимОбъектаМетаданных" id="125">
+											<DataPath>ТипыОбъектов.СинонимОбъектаМетаданных</DataPath>
+											<ReadOnly>true</ReadOnly>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Тип объекта</v8:content>
+												</v8:item>
+											</Title>
+											<EditMode>EnterOnInput</EditMode>
+											<AutoMaxWidth>false</AutoMaxWidth>
+											<MaxWidth>15</MaxWidth>
+											<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+											<ContextMenu name="ТипыОбъектовСинонимОбъектаМетаданныхКонтекстноеМеню" id="126"/>
+											<ExtendedTooltip name="ТипыОбъектовСинонимОбъектаМетаданныхРасширеннаяПодсказка" id="127"/>
+										</InputField>
+									</ChildItems>
+								</ColumnGroup>
+								<InputField name="ТипыОбъектовКоличествоОбъектов" id="128">
+									<DataPath>ТипыОбъектов.КоличествоОбъектов</DataPath>
+									<ReadOnly>true</ReadOnly>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Количество</v8:content>
+										</v8:item>
+									</Title>
+									<EditMode>EnterOnInput</EditMode>
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<MaxWidth>8</MaxWidth>
+									<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+									<ContextMenu name="ТипыОбъектовКоличествоОбъектовКонтекстноеМеню" id="129"/>
+									<ExtendedTooltip name="ТипыОбъектовКоличествоОбъектовРасширеннаяПодсказка" id="130"/>
+								</InputField>
+							</ChildItems>
+						</Table>
+					</ChildItems>
+				</UsualGroup>
+			</ChildItems>
+		</UsualGroup>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:DataProcessorObject.РаботаСРезультатамиОбмена</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+		</Attribute>
+		<Attribute name="ДоступныеДляОтбораТипыОбъектов" id="2">
+			<Type>
+				<v8:Type>v8:ValueListType</v8:Type>
+			</Type>
+			<Settings xsi:type="v8:TypeDescription">
+				<v8:Type>cfg:CatalogRef.ИдентификаторыОбъектовМетаданных</v8:Type>
+			</Settings>
+		</Attribute>
+		<Attribute name="ОбъектыМетаданныхОтбор" id="3">
+			<Type>
+				<v8:Type>v8:ValueListType</v8:Type>
+			</Type>
+			<Settings xsi:type="v8:TypeDescription"/>
+		</Attribute>
+		<Attribute name="ПанельТиповСкрыта" id="4">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+			<Save>
+				<Field>ПанельТиповСкрыта</Field>
+			</Save>
+		</Attribute>
+		<Attribute name="Период" id="5">
+			<Type>
+				<v8:Type>v8:StandardPeriod</v8:Type>
+			</Type>
+			<Save>
+				<Field>Период.EndDate</Field>
+				<Field>Период.StartDate</Field>
+				<Field>Период.Variant</Field>
+			</Save>
+		</Attribute>
+		<Attribute name="СписокТребуетсяПодтверждение" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Список требуется подтверждение</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:DynamicList</v8:Type>
+			</Type>
+			<UseAlways>
+				<Field>СписокТребуетсяПодтверждение.ВнешняяСсылкаНаОбъект</Field>
+				<Field>СписокТребуетсяПодтверждение.ОбъектФормата</Field>
+				<Field>СписокТребуетсяПодтверждение.ПолноеИмяОбъектаМетаданных</Field>
+				<Field>СписокТребуетсяПодтверждение.ПолученныйОбъект</Field>
+				<Field>СписокТребуетсяПодтверждение.ПравилоКонвертации</Field>
+				<Field>СписокТребуетсяПодтверждение.ПредставлениеОбъекта</Field>
+				<Field>СписокТребуетсяПодтверждение.СоответствиеВИБ</Field>
+				<Field>СписокТребуетсяПодтверждение.ТипОбъекта</Field>
+			</UseAlways>
+			<Settings xsi:type="DynamicList">
+				<ManualQuery>true</ManualQuery>
+				<DynamicDataRead>true</DynamicDataRead>
+				<QueryText>ВЫБРАТЬ
+	ОбъектыКЗагрузке.ОбъектМетаданных               КАК ТипОбъекта,
+	ОбъектыКЗагрузке.ПолученныйОбъект               КАК ПолученныйОбъект,
+	ОбъектыКЗагрузке.ПравилоКонвертации             КАК ПравилоКонвертации,
+	ОбъектыКЗагрузке.ОбъектФормата                  КАК ОбъектФормата,
+	ПрочитанныеДанныеСообщенийОбмена.ДатаДобавления КАК ДатаДобавления,
+	ОбъектыКЗагрузке.ДатаУстановкиПричиныДобавления КАК ДатаВозникновения,
+	ВЫРАЗИТЬ("" КАК СТРОКА(150))                    КАК ПредставлениеОбъекта,
+	ОбъектыКЗагрузке.ВнешняяСсылкаНаОбъект          КАК ВнешняяСсылкаНаОбъект,
+	ВЫБОР
+		КОГДА ИдентификаторыОбъектовМетаданных.ПорядокКоллекции ЕСТЬ NULL
+			ТОГДА 0
+		КОГДА ИдентификаторыОбъектовМетаданных.ПорядокКоллекции = 4
+			ТОГДА 4
+		КОГДА ИдентификаторыОбъектовМетаданных.ПорядокКоллекции = 5
+			ТОГДА 8
+		ИНАЧЕ 0
+	КОНЕЦ КАК ИдентификаторКартинки,
+	ОбъектыКЗагрузке.СсылкаНаОбъект                   КАК СоответствиеВИБ,
+	ИдентификаторыОбъектовМетаданных.ПолноеИмя        КАК ПолноеИмяОбъектаМетаданных,
+	КоличествоБлокируемыхОбъектовКЗагрузке.Количество КАК КоличествоБлокирует
+ИЗ
+	РегистрСведений.ОбъектыКЗагрузке КАК ОбъектыКЗагрузке
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ РегистрСведений.ПрочитанныеДанныеСообщенийОбмена КАК ПрочитанныеДанныеСообщенийОбмена
+		ПО ОбъектыКЗагрузке.ПолученныйОбъект = ПрочитанныеДанныеСообщенийОбмена.ПолученныйОбъект
+			И ПрочитанныеДанныеСообщенийОбмена.УзелПланаОбмена = ОбъектыКЗагрузке.УзелПланаОбмена
+			И ПрочитанныеДанныеСообщенийОбмена.ОбъектФормата = ОбъектыКЗагрузке.ОбъектФормата
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ Справочник.ИдентификаторыОбъектовМетаданных КАК ИдентификаторыОбъектовМетаданных 
+			ПО ОбъектыКЗагрузке.ОбъектМетаданных = ИдентификаторыОбъектовМетаданных.Ссылка
+		ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.КоличествоБлокируемыхОбъектовКЗагрузке КАК КоличествоБлокируемыхОбъектовКЗагрузке
+		ПО ОбъектыКЗагрузке.ПолученныйОбъект = КоличествоБлокируемыхОбъектовКЗагрузке.ОбъектКПолучению
+		И КоличествоБлокируемыхОбъектовКЗагрузке.УзелПланаОбмена = ОбъектыКЗагрузке.УзелПланаОбмена
+		И ОбъектыКЗагрузке.ОбъектФормата     = КоличествоБлокируемыхОбъектовКЗагрузке.ОбъектФормата
+ГДЕ
+	ОбъектыКЗагрузке.ПричинаДобавления = ЗНАЧЕНИЕ(Перечисление.ПричиныДобавленияВРегистрОбъектыКЗагрузке.ТребуетсяПодтверждение)
+	И ОбъектыКЗагрузке.УзелПланаОбмена = &amp;УзелПланаОбмена
+{ГДЕ
+	((ОбъектыКЗагрузке.ДатаУстановкиПричиныДобавления&gt;= &amp;НачалоПериода
+			ИЛИ &amp;НачалоПериода = ДАТАВРЕМЯ(1, 1, 1))
+			И (ОбъектыКЗагрузке.ДатаУстановкиПричиныДобавления &lt;= &amp;КонецПериода
+				ИЛИ &amp;КонецПериода = ДАТАВРЕМЯ(1, 1, 1)))}</QueryText>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ПолученныйОбъект</dcssch:dataPath>
+					<dcssch:field>ПолученныйОбъект</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ОбъектМетаданных</dcssch:dataPath>
+					<dcssch:field>ОбъектМетаданных</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ДатаУстановкиПричиныДобавления</dcssch:dataPath>
+					<dcssch:field>ДатаУстановкиПричиныДобавления</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ПравилоКонвертации</dcssch:dataPath>
+					<dcssch:field>ПравилоКонвертации</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ДатаДобавления</dcssch:dataPath>
+					<dcssch:field>ДатаДобавления</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ПредставлениеОбъекта</dcssch:dataPath>
+					<dcssch:field>ПредставлениеОбъекта</dcssch:field>
+					<dcssch:title xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Представление объекта</v8:content>
+						</v8:item>
+					</dcssch:title>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ВнешняяСсылкаНаОбъект</dcssch:dataPath>
+					<dcssch:field>ВнешняяСсылкаНаОбъект</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>СсылкаНаОбъект</dcssch:dataPath>
+					<dcssch:field>СсылкаНаОбъект</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ИдентификаторКартинки</dcssch:dataPath>
+					<dcssch:field>ИдентификаторКартинки</dcssch:field>
+					<dcssch:title xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Идентификатор картинки</v8:content>
+						</v8:item>
+					</dcssch:title>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>КоличествоБлокирует</dcssch:dataPath>
+					<dcssch:field>КоличествоБлокирует</dcssch:field>
+					<dcssch:title xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Количество блокирует</v8:content>
+						</v8:item>
+					</dcssch:title>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ДанныеСконвертированногоОбъекта</dcssch:dataPath>
+					<dcssch:field>ДанныеСконвертированногоОбъекта</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ПолноеПредставлениеОшибки</dcssch:dataPath>
+					<dcssch:field>ПолноеПредставлениеОшибки</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ПричинаДобавления</dcssch:dataPath>
+					<dcssch:field>ПричинаДобавления</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>КраткоеПредставлениеОшибки</dcssch:dataPath>
+					<dcssch:field>КраткоеПредставлениеОшибки</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>КомментарийАдминистратора</dcssch:dataPath>
+					<dcssch:field>КомментарийАдминистратора</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ДатаОбрабатываемойВерсии</dcssch:dataPath>
+					<dcssch:field>ДатаОбрабатываемойВерсии</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>СтатусОбновленияОбъектаВИБ</dcssch:dataPath>
+					<dcssch:field>СтатусОбновленияОбъектаВИБ</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ТипОбъекта</dcssch:dataPath>
+					<dcssch:field>ТипОбъекта</dcssch:field>
+					<dcssch:title xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Тип загружаемого объекта</v8:content>
+						</v8:item>
+					</dcssch:title>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>СоответствиеВИБ</dcssch:dataPath>
+					<dcssch:field>СоответствиеВИБ</dcssch:field>
+					<dcssch:title xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Соответствие ВИБ</v8:content>
+						</v8:item>
+					</dcssch:title>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ДатаВозникновения</dcssch:dataPath>
+					<dcssch:field>ДатаВозникновения</dcssch:field>
+					<dcssch:title xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Дата возникновения</v8:content>
+						</v8:item>
+					</dcssch:title>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ПолноеИмяОбъектаМетаданных</dcssch:dataPath>
+					<dcssch:field>ПолноеИмяОбъектаМетаданных</dcssch:field>
+					<dcssch:title xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Полное имя объекта метаданных</v8:content>
+						</v8:item>
+					</dcssch:title>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ПространствоИменОбъектаФормата</dcssch:dataPath>
+					<dcssch:field>ПространствоИменОбъектаФормата</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>КлючОбрабатывающегоЗадания</dcssch:dataPath>
+					<dcssch:field>КлючОбрабатывающегоЗадания</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>УзелПланаОбмена</dcssch:dataPath>
+					<dcssch:field>УзелПланаОбмена</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ИмяОбъектаФорматаЗапросаНаВыгрузку</dcssch:dataPath>
+					<dcssch:field>ИмяОбъектаФорматаЗапросаНаВыгрузку</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ОбъектФормата</dcssch:dataPath>
+					<dcssch:field>ОбъектФормата</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ДатаОтправкиЗапросаНаВыгрузку</dcssch:dataPath>
+					<dcssch:field>ДатаОтправкиЗапросаНаВыгрузку</dcssch:field>
+				</Field>
+				<Parameter>
+					<dcssch:name>КонецПериода</dcssch:name>
+					<dcssch:title xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Конец периода</v8:content>
+						</v8:item>
+					</dcssch:title>
+					<dcssch:valueType>
+						<v8:Type>xs:dateTime</v8:Type>
+						<v8:DateQualifiers>
+							<v8:DateFractions>DateTime</v8:DateFractions>
+						</v8:DateQualifiers>
+					</dcssch:valueType>
+					<dcssch:value xsi:type="xs:dateTime">0001-01-01T00:00:00</dcssch:value>
+					<dcssch:useRestriction>false</dcssch:useRestriction>
+				</Parameter>
+				<Parameter>
+					<dcssch:name>НачалоПериода</dcssch:name>
+					<dcssch:title xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Начало периода</v8:content>
+						</v8:item>
+					</dcssch:title>
+					<dcssch:valueType>
+						<v8:Type>xs:dateTime</v8:Type>
+						<v8:DateQualifiers>
+							<v8:DateFractions>DateTime</v8:DateFractions>
+						</v8:DateQualifiers>
+					</dcssch:valueType>
+					<dcssch:value xsi:type="xs:dateTime">0001-01-01T00:00:00</dcssch:value>
+					<dcssch:useRestriction>false</dcssch:useRestriction>
+				</Parameter>
+				<Parameter>
+					<dcssch:name>УзелПланаОбмена</dcssch:name>
+					<dcssch:title xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Узел плана обмена</v8:content>
+						</v8:item>
+					</dcssch:title>
+					<dcssch:valueType>
+						<v8:TypeSet>cfg:ExchangePlanRef</v8:TypeSet>
+					</dcssch:valueType>
+					<dcssch:value xsi:nil="true"/>
+					<dcssch:useRestriction>true</dcssch:useRestriction>
+				</Parameter>
+				<MainTable>InformationRegister.ОбъектыКЗагрузке</MainTable>
+				<ListSettings>
+					<dcsset:filter>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>dfcece9d-5077-440b-b6b3-45a5cb4538eb</dcsset:userSettingID>
+					</dcsset:filter>
+					<dcsset:order>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>88619765-ccb3-46c6-ac52-38e9c992ebd4</dcsset:userSettingID>
+					</dcsset:order>
+					<dcsset:conditionalAppearance>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>b75fecce-942b-4aed-abc9-e6a02e460fb3</dcsset:userSettingID>
+					</dcsset:conditionalAppearance>
+					<dcsset:itemsViewMode>Normal</dcsset:itemsViewMode>
+					<dcsset:itemsUserSettingID>911b6018-f537-43e8-a417-da56b22f9aec</dcsset:itemsUserSettingID>
+				</ListSettings>
+			</Settings>
+		</Attribute>
+		<Attribute name="ТипыОбъектов" id="7">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Типы объектов</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTable</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="СинонимОбъектаМетаданных" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Синоним объекта метаданных</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>150</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="ОбъектыБезСоответствий" id="3">
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>10</v8:Digits>
+							<v8:FractionDigits>0</v8:FractionDigits>
+							<v8:AllowedSign>Any</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+				<Column name="ПолноеИмяТипаОбъекта" id="5">
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>250</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="ИдентификаторОбъектаМетаданных" id="6">
+					<Type>
+						<v8:Type>cfg:CatalogRef.ИдентификаторыОбъектовМетаданных</v8:Type>
+					</Type>
+				</Column>
+				<Column name="ИндексКартинки" id="7">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Индекс картинки</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>3</v8:Digits>
+							<v8:FractionDigits>0</v8:FractionDigits>
+							<v8:AllowedSign>Any</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+				<Column name="КоличествоОбъектов" id="2">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Количество объектов</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+		<Attribute name="УзелИнформационнойБазы" id="8">
+			<Type>
+				<v8:TypeSet>cfg:ExchangePlanRef</v8:TypeSet>
+			</Type>
+		</Attribute>
+		<Attribute name="УстановленоСоответствиеОтбор" id="9">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Соответствие</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+			<Save>
+				<Field>УстановленоСоответствиеОтбор</Field>
+			</Save>
+		</Attribute>
+		<Attribute name="ТекущийТипОбъекта" id="10">
+			<Type>
+				<v8:Type>cfg:CatalogRef.ИдентификаторыОбъектовМетаданных</v8:Type>
+			</Type>
+			<Save>
+				<Field>ТекущийТипОбъекта</Field>
+			</Save>
+		</Attribute>
+		<Attribute name="ИдентификаторСтрокиТипыОбъектов" id="11">
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>10</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="НавигационнаяСсылкаФормы" id="12">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="НеТребуетПодтверждение" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отменить необходимость подтверждения объектов</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Не требует подтверждение</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>CommonPicture.ОтменитьНеобходимостьУстановкиСоответствия</xr:Ref>
+				<xr:LoadTransparent>false</xr:LoadTransparent>
+			</Picture>
+			<Action>НеТребуетПодтверждение</Action>
+		</Command>
+		<Command name="НеТребуетПодтвержденияСписок" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отменить необходимость подтверждения объектов данного типа</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отменить необходимость подтверждения объектов данного типа</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>CommonPicture.ОтменитьНеобходимостьУстановкиСоответствия</xr:Ref>
+				<xr:LoadTransparent>false</xr:LoadTransparent>
+			</Picture>
+			<Action>НеТребуетПодтвержденияСписок</Action>
+		</Command>
+		<Command name="Отклонить" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отклонить</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отклонить</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>CommonPicture.ОтклонитьЗагрузкуПолученногоОбъекта</xr:Ref>
+				<xr:LoadTransparent>false</xr:LoadTransparent>
+			</Picture>
+			<Action>Отклонить</Action>
+			<Representation>Picture</Representation>
+		</Command>
+		<Command name="ОткрытьОбъектВИсточнике" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Открыть объект в источнике</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Открыть объект в источнике</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.GotoExternalURL</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>ОткрытьОбъектВИсточнике</Action>
+			<Representation>Picture</Representation>
+		</Command>
+		<Command name="ОткрытьПроблему" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Открыть проблему</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Открыть проблему</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>CommonPicture.ОткрытьПроблемуПолученныйОбъект</xr:Ref>
+				<xr:LoadTransparent>false</xr:LoadTransparent>
+			</Picture>
+			<Action>ОткрытьПроблему</Action>
+			<Representation>TextPicture</Representation>
+		</Command>
+		<Command name="Подтвердить" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Подтвердить</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Подтвердить</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>CommonPicture.ПодтвердитьЗагрузкуОбъекта</xr:Ref>
+				<xr:LoadTransparent>false</xr:LoadTransparent>
+			</Picture>
+			<Action>Подтвердить</Action>
+			<Representation>TextPicture</Representation>
+		</Command>
+		<Command name="ПоказатьПанель" id="7">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Показать панель</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Показать панель</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>CommonPicture.СкрытьПанель</xr:Ref>
+				<xr:LoadTransparent>false</xr:LoadTransparent>
+			</Picture>
+			<Action>ПоказатьПанель</Action>
+			<Representation>Picture</Representation>
+		</Command>
+		<Command name="СкрытьПанель" id="8">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Скрыть панель</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Скрыть панель</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>CommonPicture.ПоказатьПанель</xr:Ref>
+				<xr:LoadTransparent>false</xr:LoadTransparent>
+			</Picture>
+			<Action>СкрытьПанель</Action>
+			<Representation>Picture</Representation>
+		</Command>
+		<Command name="УстановитьИнтервал" id="9">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Установить интервал</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Установить интервал</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.SetDateInterval</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>УстановитьИнтервал</Action>
+		</Command>
+		<Command name="УстановитьСоответствие" id="10">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Установить соответствие</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Установить соответствие</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>CommonPicture.УстановитьСоответствиеПолученномуОбъекту</xr:Ref>
+				<xr:LoadTransparent>false</xr:LoadTransparent>
+			</Picture>
+			<Action>УстановитьСоответствие</Action>
+		</Command>
+	</Commands>
+	<Parameters>
+		<Parameter name="УзелИнформационнойБазы">
+			<Type>
+				<v8:TypeSet>cfg:ExchangePlanRef</v8:TypeSet>
+			</Type>
+		</Parameter>
+	</Parameters>
+</Form>

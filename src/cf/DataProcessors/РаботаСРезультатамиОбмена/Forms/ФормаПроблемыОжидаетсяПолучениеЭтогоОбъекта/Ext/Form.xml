@@ -1,0 +1,1025 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.20">
+	<Title>
+		<v8:item>
+			<v8:lang>ru</v8:lang>
+			<v8:content>Объект, требующий получения</v8:content>
+		</v8:item>
+	</Title>
+	<AutoTitle>false</AutoTitle>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<ChildItems>
+			<Button name="ФормаПроблемаРешена" id="1">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.ПроблемаРешена</CommandName>
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Проблема решена</v8:content>
+					</v8:item>
+				</Title>
+				<ExtendedTooltip name="ФормаПроблемаРешенаРасширеннаяПодсказка" id="2"/>
+			</Button>
+			<Button name="ФормаОткрытьОбъектВИсточнике" id="3">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.ОткрытьОбъектВИсточнике</CommandName>
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Открыть в источнике</v8:content>
+					</v8:item>
+				</Title>
+				<ExtendedTooltip name="ФормаОткрытьОбъектВИсточникеРасширеннаяПодсказка" id="4"/>
+			</Button>
+			<Button name="ФормаУстановитьСоответствие" id="5">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.УстановитьСоответствие</CommandName>
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Установить соответствие</v8:content>
+					</v8:item>
+				</Title>
+				<ExtendedTooltip name="ФормаУстановитьСоответствиеРасширеннаяПодсказка" id="6"/>
+			</Button>
+			<Button name="ФормаСправка" id="9">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.StandardCommand.Help</CommandName>
+				<ExtendedTooltip name="ФормаСправкаРасширеннаяПодсказка" id="10"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnOpen">ПриОткрытии</Event>
+		<Event name="URLGetProcessing">ОбработкаПолученияНавигационнойСсылки</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<Pages name="СтраницыФормы" id="11">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Страницы формы</v8:content>
+				</v8:item>
+			</Title>
+			<ExtendedTooltip name="СтраницыФормыРасширеннаяПодсказка" id="12"/>
+			<ChildItems>
+				<Page name="СтраницаОсновное" id="13">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Основное</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="СтраницаОсновноеРасширеннаяПодсказка" id="14"/>
+					<ChildItems>
+						<UsualGroup name="ГруппаШапкаОсновное" id="15">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Шапка основное</v8:content>
+								</v8:item>
+							</Title>
+							<Group>Vertical</Group>
+							<ShowTitle>false</ShowTitle>
+							<ThroughAlign>Use</ThroughAlign>
+							<ExtendedTooltip name="ГруппаШапкаОсновноеРасширеннаяПодсказка" id="16"/>
+							<ChildItems>
+								<LabelField name="ПредставлениеОбъектаМетаданных" id="17">
+									<DataPath>ПредставлениеОбъектаМетаданных</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Тип объекта</v8:content>
+										</v8:item>
+									</Title>
+									<TitleTextColor>style:ЦветЗаголовкаЭлементаФормыПроблемы</TitleTextColor>
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<HorizontalStretch>false</HorizontalStretch>
+									<ContextMenu name="ПредставлениеОбъектаМетаданныхКонтекстноеМеню" id="18"/>
+									<ExtendedTooltip name="ПредставлениеОбъектаМетаданныхРасширеннаяПодсказка" id="19"/>
+								</LabelField>
+								<UsualGroup name="ГруппаТипОбъектаБлокирует" id="20">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Тип объекта блокирует</v8:content>
+										</v8:item>
+									</Title>
+									<Group>AlwaysHorizontal</Group>
+									<ShowTitle>false</ShowTitle>
+									<ThroughAlign>Use</ThroughAlign>
+									<ExtendedTooltip name="ГруппаТипОбъектаБлокируетРасширеннаяПодсказка" id="21"/>
+									<ChildItems>
+										<InputField name="ПолученныйОбъект" id="22">
+											<DataPath>ПолученныйОбъект</DataPath>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Идентификатор</v8:content>
+												</v8:item>
+											</Title>
+											<TitleTextColor>style:ЦветЗаголовкаЭлементаФормыПроблемы</TitleTextColor>
+											<AutoMaxWidth>false</AutoMaxWidth>
+											<MaxWidth>24</MaxWidth>
+											<HorizontalStretch>false</HorizontalStretch>
+											<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+											<BorderColor>style:FormBackColor</BorderColor>
+											<ContextMenu name="ПолученныйОбъектКонтекстноеМеню" id="23"/>
+											<ExtendedTooltip name="ПолученныйОбъектРасширеннаяПодсказка" id="24"/>
+										</InputField>
+										<LabelField name="ДатаВозникновения" id="25">
+											<DataPath>ДатаВозникновения</DataPath>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Дата возникновения проблемы</v8:content>
+												</v8:item>
+											</Title>
+											<TitleTextColor>style:ЦветЗаголовкаЭлементаФормыПроблемы</TitleTextColor>
+											<AutoMaxWidth>false</AutoMaxWidth>
+											<MaxWidth>12</MaxWidth>
+											<Format>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>ДЛФ=</v8:content>
+												</v8:item>
+											</Format>
+											<ContextMenu name="ДатаВозникновенияКонтекстноеМеню" id="26"/>
+											<ExtendedTooltip name="ДатаВозникновенияРасширеннаяПодсказка" id="27"/>
+										</LabelField>
+									</ChildItems>
+								</UsualGroup>
+							</ChildItems>
+						</UsualGroup>
+						<UsualGroup name="ГруппаСоответствиеКомментарий" id="30">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Соответствие комментарий</v8:content>
+								</v8:item>
+							</Title>
+							<ShowTitle>false</ShowTitle>
+							<ThroughAlign>Use</ThroughAlign>
+							<ExtendedTooltip name="ГруппаСоответствиеКомментарийРасширеннаяПодсказка" id="31"/>
+							<ChildItems>
+								<LabelField name="СоответствиеВИБСтрока" id="32">
+									<DataPath>СоответствиеВИБСтрока</DataPath>
+									<ReadOnly>true</ReadOnly>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Соответствие в ИБ</v8:content>
+										</v8:item>
+									</Title>
+									<TitleTextColor>style:ЦветЗаголовкаЭлементаФормыПроблемы</TitleTextColor>
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<AutoMaxHeight>false</AutoMaxHeight>
+									<VerticalStretch>false</VerticalStretch>
+									<ContextMenu name="СоответствиеВИБСтрокаКонтекстноеМеню" id="33"/>
+									<ExtendedTooltip name="СоответствиеВИБСтрокаРасширеннаяПодсказка" id="34"/>
+									<Events>
+										<Event name="URLProcessing">СоответствиеВИБСтрокаОбработкаНавигационнойСсылки</Event>
+									</Events>
+								</LabelField>
+								<LabelDecoration name="ДекорацияТипОбъектаКомментарийОтступ" id="35">
+									<Visible>false</Visible>
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<HorizontalStretch>true</HorizontalStretch>
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Декорация тип объекта комментарий отступ</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="ДекорацияТипОбъектаКомментарийОтступКонтекстноеМеню" id="36"/>
+									<ExtendedTooltip name="ДекорацияТипОбъектаКомментарийОтступРасширеннаяПодсказка" id="37"/>
+								</LabelDecoration>
+								<LabelDecoration name="ПереходВКомментарийДекорация" id="38">
+									<Title formatted="true"/>
+									<ContextMenu name="ПереходВКомментарийДекорацияКонтекстноеМеню" id="39"/>
+									<ExtendedTooltip name="ПереходВКомментарийДекорацияРасширеннаяПодсказка" id="40"/>
+									<Events>
+										<Event name="URLProcessing">ПереходВКомментарийОбработкаНавигационнойСсылки</Event>
+									</Events>
+								</LabelDecoration>
+							</ChildItems>
+						</UsualGroup>
+						<Pages name="СтраницыБлокируемыеОбъектыФормирование" id="115">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Страницы блокируемые объекты формирование</v8:content>
+								</v8:item>
+							</Title>
+							<PagesRepresentation>None</PagesRepresentation>
+							<ExtendedTooltip name="СтраницыБлокируемыеОбъектыФормированиеРасширеннаяПодсказка" id="116"/>
+							<ChildItems>
+								<Page name="СтраницаБлокируемыеОбъекты" id="117">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Страница блокируемые объекты</v8:content>
+										</v8:item>
+									</Title>
+									<ExtendedTooltip name="СтраницаБлокируемыеОбъектыРасширеннаяПодсказка" id="118"/>
+									<ChildItems>
+										<UsualGroup name="ГруппаБлокируемыеОбъектыШапка" id="43">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Блокируемые объекты шапка</v8:content>
+												</v8:item>
+											</Title>
+											<Group>AlwaysHorizontal</Group>
+											<ShowTitle>false</ShowTitle>
+											<ExtendedTooltip name="ГруппаБлокируемыеОбъектыШапкаРасширеннаяПодсказка" id="44"/>
+											<ChildItems>
+												<UsualGroup name="ГруппаБлокируемыеОбъектыЗапросНаВыгрузку" id="159">
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Блокируемые объекты запрос на выгрузку</v8:content>
+														</v8:item>
+													</Title>
+													<ShowTitle>false</ShowTitle>
+													<ExtendedTooltip name="ГруппаБлокируемыеОбъектыЗапросНаВыгрузкуРасширеннаяПодсказка" id="160"/>
+													<ChildItems>
+														<LabelDecoration name="ДекорацияБлокируемыеОбъекты" id="45">
+															<AutoMaxWidth>false</AutoMaxWidth>
+															<Title formatted="true">
+																<v8:item>
+																	<v8:lang>ru</v8:lang>
+																	<v8:content>&lt;color #000000&gt;Блокируемые объекты:&lt;/&gt;</v8:content>
+																</v8:item>
+															</Title>
+															<ContextMenu name="ДекорацияБлокируемыеОбъектыКонтекстноеМеню" id="46"/>
+															<ExtendedTooltip name="ДекорацияБлокируемыеОбъектыРасширеннаяПодсказка" id="47"/>
+														</LabelDecoration>
+														<LabelDecoration name="ДекорацияПустая" id="161">
+															<AutoMaxWidth>false</AutoMaxWidth>
+															<HorizontalStretch>true</HorizontalStretch>
+															<ContextMenu name="ДекорацияПустаяКонтекстноеМеню" id="162"/>
+															<ExtendedTooltip name="ДекорацияПустаяРасширеннаяПодсказка" id="163"/>
+														</LabelDecoration>
+														<LabelDecoration name="ПредставлениеЗапросНаВыгрузку" id="164">
+															<AutoMaxHeight>false</AutoMaxHeight>
+															<GroupHorizontalAlign>Right</GroupHorizontalAlign>
+															<ContextMenu name="ПредставлениеЗапросНаВыгрузкуКонтекстноеМеню" id="165"/>
+															<ExtendedTooltip name="ПредставлениеЗапросНаВыгрузкуРасширеннаяПодсказка" id="166"/>
+														</LabelDecoration>
+													</ChildItems>
+												</UsualGroup>
+											</ChildItems>
+										</UsualGroup>
+										<Table name="БлокируемыеОбъекты" id="85">
+											<Representation>List</Representation>
+											<ReadOnly>true</ReadOnly>
+											<ChangeRowSet>false</ChangeRowSet>
+											<ChangeRowOrder>false</ChangeRowOrder>
+											<HorizontalLines>false</HorizontalLines>
+											<VerticalLines>false</VerticalLines>
+											<AutoInsertNewRow>true</AutoInsertNewRow>
+											<EnableStartDrag>true</EnableStartDrag>
+											<EnableDrag>true</EnableDrag>
+											<DataPath>БлокируемыеОбъекты</DataPath>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Блокируемые объекты</v8:content>
+												</v8:item>
+											</Title>
+											<CommandSet>
+												<ExcludedCommand>Add</ExcludedCommand>
+												<ExcludedCommand>Change</ExcludedCommand>
+												<ExcludedCommand>Copy</ExcludedCommand>
+											</CommandSet>
+											<RowFilter xsi:nil="true"/>
+											<ContextMenu name="БлокируемыеОбъектыКонтекстноеМеню" id="86">
+												<Autofill>false</Autofill>
+												<ChildItems>
+													<Button name="БлокируемыеОбъектыКонтекстноеМенюОткрытьПроблему" id="145">
+														<Type>CommandBarButton</Type>
+														<CommandName>Form.Command.ОткрытьПроблему</CommandName>
+														<Title>
+															<v8:item>
+																<v8:lang>ru</v8:lang>
+																<v8:content>Открыть проблему</v8:content>
+															</v8:item>
+														</Title>
+														<ExtendedTooltip name="БлокируемыеОбъектыКонтекстноеМенюОткрытьПроблемуРасширеннаяПодсказка" id="146"/>
+													</Button>
+													<ButtonGroup name="БлокируемыеОбъектыКонтекстноеМенюГруппаКомандыТаблицы" id="143">
+														<Title>
+															<v8:item>
+																<v8:lang>ru</v8:lang>
+																<v8:content>Блокируемые объекты контекстное меню группа команды таблицы</v8:content>
+															</v8:item>
+														</Title>
+														<CommandSource>Item.БлокируемыеОбъекты</CommandSource>
+														<ExtendedTooltip name="БлокируемыеОбъектыКонтекстноеМенюГруппаКомандыТаблицыРасширеннаяПодсказка" id="144"/>
+													</ButtonGroup>
+												</ChildItems>
+											</ContextMenu>
+											<AutoCommandBar name="БлокируемыеОбъектыКоманднаяПанель" id="87">
+												<Autofill>false</Autofill>
+											</AutoCommandBar>
+											<ExtendedTooltip name="БлокируемыеОбъектыРасширеннаяПодсказка" id="88"/>
+											<SearchStringAddition name="БлокируемыеОбъектыСтрокаПоиска" id="89">
+												<AdditionSource>
+													<Item>БлокируемыеОбъекты</Item>
+													<Type>SearchStringRepresentation</Type>
+												</AdditionSource>
+												<ContextMenu name="БлокируемыеОбъектыСтрокаПоискаКонтекстноеМеню" id="90"/>
+												<ExtendedTooltip name="БлокируемыеОбъектыСтрокаПоискаРасширеннаяПодсказка" id="91"/>
+											</SearchStringAddition>
+											<ViewStatusAddition name="БлокируемыеОбъектыСостояниеПросмотра" id="92">
+												<AdditionSource>
+													<Item>БлокируемыеОбъекты</Item>
+													<Type>ViewStatusRepresentation</Type>
+												</AdditionSource>
+												<ContextMenu name="БлокируемыеОбъектыСостояниеПросмотраКонтекстноеМеню" id="93"/>
+												<ExtendedTooltip name="БлокируемыеОбъектыСостояниеПросмотраРасширеннаяПодсказка" id="94"/>
+											</ViewStatusAddition>
+											<SearchControlAddition name="БлокируемыеОбъектыУправлениеПоиском" id="95">
+												<AdditionSource>
+													<Item>БлокируемыеОбъекты</Item>
+													<Type>SearchControl</Type>
+												</AdditionSource>
+												<ContextMenu name="БлокируемыеОбъектыУправлениеПоискомКонтекстноеМеню" id="96"/>
+												<ExtendedTooltip name="БлокируемыеОбъектыУправлениеПоискомРасширеннаяПодсказка" id="97"/>
+											</SearchControlAddition>
+											<Events>
+												<Event name="Selection">БлокируемыеОбъектыВыбор</Event>
+											</Events>
+											<ChildItems>
+												<ColumnGroup name="ГруппаТипОбъекта" id="98">
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Тип объекта</v8:content>
+														</v8:item>
+													</Title>
+													<Group>InCell</Group>
+													<ExtendedTooltip name="ГруппаТипОбъектаРасширеннаяПодсказка" id="99"/>
+													<ChildItems>
+														<PictureField name="БлокируемыеОбъектыИндексКартинки" id="100">
+															<DataPath>БлокируемыеОбъекты.ИндексКартинки</DataPath>
+															<Title>
+																<v8:item>
+																	<v8:lang>ru</v8:lang>
+																	<v8:content>Индекс картинки</v8:content>
+																</v8:item>
+															</Title>
+															<EditMode>EnterOnInput</EditMode>
+															<ShowInHeader>false</ShowInHeader>
+															<ValuesPicture>
+																<xr:Ref>CommonPicture.КоллекцияОбъектыМетаданных</xr:Ref>
+																<xr:LoadTransparent>false</xr:LoadTransparent>
+															</ValuesPicture>
+															<ContextMenu name="БлокируемыеОбъектыИндексКартинкиКонтекстноеМеню" id="101"/>
+															<ExtendedTooltip name="БлокируемыеОбъектыИндексКартинкиРасширеннаяПодсказка" id="102"/>
+														</PictureField>
+														<InputField name="БлокируемыеОбъектыОбъектМетаданных" id="103">
+															<DataPath>БлокируемыеОбъекты.ОбъектМетаданных</DataPath>
+															<Title>
+																<v8:item>
+																	<v8:lang>ru</v8:lang>
+																	<v8:content>Тип объекта</v8:content>
+																</v8:item>
+															</Title>
+															<EditMode>EnterOnInput</EditMode>
+															<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+															<ContextMenu name="БлокируемыеОбъектыОбъектМетаданныхКонтекстноеМеню" id="104"/>
+															<ExtendedTooltip name="БлокируемыеОбъектыОбъектМетаданныхРасширеннаяПодсказка" id="105"/>
+														</InputField>
+													</ChildItems>
+												</ColumnGroup>
+												<InputField name="БлокируемыеОбъектыПредставление" id="106">
+													<DataPath>БлокируемыеОбъекты.Представление</DataPath>
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Представление</v8:content>
+														</v8:item>
+													</Title>
+													<EditMode>EnterOnInput</EditMode>
+													<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+													<ContextMenu name="БлокируемыеОбъектыПредставлениеКонтекстноеМеню" id="107"/>
+													<ExtendedTooltip name="БлокируемыеОбъектыПредставлениеРасширеннаяПодсказка" id="108"/>
+												</InputField>
+												<InputField name="БлокируемыеОбъектыСоответствиеВИБ" id="109">
+													<DataPath>БлокируемыеОбъекты.СоответствиеВИБ</DataPath>
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Соответствие в ИБ</v8:content>
+														</v8:item>
+													</Title>
+													<EditMode>EnterOnInput</EditMode>
+													<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+													<ContextMenu name="БлокируемыеОбъектыСоответствиеВИБКонтекстноеМеню" id="110"/>
+													<ExtendedTooltip name="БлокируемыеОбъектыСоответствиеВИБРасширеннаяПодсказка" id="111"/>
+												</InputField>
+												<InputField name="БлокируемыеОбъектыДатаВозникновения" id="112">
+													<DataPath>БлокируемыеОбъекты.ДатаВозникновения</DataPath>
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Дата возн.</v8:content>
+														</v8:item>
+													</Title>
+													<EditMode>EnterOnInput</EditMode>
+													<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+													<ContextMenu name="БлокируемыеОбъектыДатаВозникновенияКонтекстноеМеню" id="113"/>
+													<ExtendedTooltip name="БлокируемыеОбъектыДатаВозникновенияРасширеннаяПодсказка" id="114"/>
+												</InputField>
+											</ChildItems>
+										</Table>
+									</ChildItems>
+								</Page>
+								<Page name="СтраницаФормированиеБлокируемыеОбъекты" id="119">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Страница формирование блокируемые объекты</v8:content>
+										</v8:item>
+									</Title>
+									<ExtendedTooltip name="СтраницаФормированиеБлокируемыеОбъектыРасширеннаяПодсказка" id="120"/>
+									<ChildItems>
+										<UsualGroup name="ГруппаРезультатВыгрузкиИнформация" id="121">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Результат выгрузки информация</v8:content>
+												</v8:item>
+												<v8:item>
+													<v8:lang>en</v8:lang>
+													<v8:content>Group export result information</v8:content>
+												</v8:item>
+											</Title>
+											<ToolTip>
+												<v8:item>
+													<v8:lang>en</v8:lang>
+													<v8:content>Group export result information</v8:content>
+												</v8:item>
+											</ToolTip>
+											<Group>Vertical</Group>
+											<ShowTitle>false</ShowTitle>
+											<ExtendedTooltip name="ГруппаРезультатВыгрузкиИнформацияРасширеннаяПодсказка" id="122"/>
+											<ChildItems>
+												<LabelDecoration name="ДекорацияОтступВыполняетсяВыгрузкаВерх" id="131">
+													<VerticalStretch>true</VerticalStretch>
+													<ContextMenu name="ДекорацияОтступВыполняетсяВыгрузкаВерхКонтекстноеМеню" id="132"/>
+													<ExtendedTooltip name="ДекорацияОтступВыполняетсяВыгрузкаВерхРасширеннаяПодсказка" id="133"/>
+												</LabelDecoration>
+												<UsualGroup name="ГруппаПрогрессВыгрузки" id="123">
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Прогресс выгрузки</v8:content>
+														</v8:item>
+														<v8:item>
+															<v8:lang>en</v8:lang>
+															<v8:content>Group export progress</v8:content>
+														</v8:item>
+													</Title>
+													<ToolTip>
+														<v8:item>
+															<v8:lang>en</v8:lang>
+															<v8:content>Group export progress</v8:content>
+														</v8:item>
+													</ToolTip>
+													<GroupHorizontalAlign>Center</GroupHorizontalAlign>
+													<ShowTitle>false</ShowTitle>
+													<ExtendedTooltip name="ГруппаПрогрессВыгрузкиРасширеннаяПодсказка" id="124"/>
+													<ChildItems>
+														<LabelDecoration name="ДекорацияВыполняетсяВыгрузкаЛево" id="137">
+															<HorizontalStretch>true</HorizontalStretch>
+															<ContextMenu name="ДекорацияВыполняетсяВыгрузкаЛевоКонтекстноеМеню" id="138"/>
+															<ExtendedTooltip name="ДекорацияВыполняетсяВыгрузкаЛевоРасширеннаяПодсказка" id="139"/>
+														</LabelDecoration>
+														<PictureDecoration name="КартинкаПрогрессРезультатВыгрузки" id="125">
+															<Title formatted="false">
+																<v8:item>
+																	<v8:lang>ru</v8:lang>
+																	<v8:content>Картинка прогресс результат выгрузки</v8:content>
+																</v8:item>
+																<v8:item>
+																	<v8:lang>en</v8:lang>
+																	<v8:content>Picture progress export result</v8:content>
+																</v8:item>
+															</Title>
+															<Picture>
+																<xr:Ref>CommonPicture.ДлительнаяОперация48</xr:Ref>
+																<xr:LoadTransparent>false</xr:LoadTransparent>
+															</Picture>
+															<ContextMenu name="КартинкаПрогрессРезультатВыгрузкиКонтекстноеМеню" id="126"/>
+															<ExtendedTooltip name="КартинкаПрогрессРезультатВыгрузкиРасширеннаяПодсказка" id="127"/>
+														</PictureDecoration>
+														<LabelDecoration name="ДекорацияИнформацияПрогрессВыгрузки" id="128">
+															<Title formatted="false">
+																<v8:item>
+																	<v8:lang>ru</v8:lang>
+																	<v8:content>Выполняется получение данных. Пожалуйста подождите....</v8:content>
+																</v8:item>
+																<v8:item>
+																	<v8:lang>en</v8:lang>
+																	<v8:content>Exporting. Please wait...</v8:content>
+																</v8:item>
+															</Title>
+															<GroupVerticalAlign>Center</GroupVerticalAlign>
+															<ContextMenu name="ДекорацияИнформацияПрогрессВыгрузкиКонтекстноеМеню" id="129"/>
+															<ExtendedTooltip name="ДекорацияИнформацияПрогрессВыгрузкиРасширеннаяПодсказка" id="130"/>
+														</LabelDecoration>
+														<LabelDecoration name="ДекорацияВыполняетсяВыгрузкаПраво" id="140">
+															<HorizontalStretch>true</HorizontalStretch>
+															<ContextMenu name="ДекорацияВыполняетсяВыгрузкаПравоКонтекстноеМеню" id="141"/>
+															<ExtendedTooltip name="ДекорацияВыполняетсяВыгрузкаПравоРасширеннаяПодсказка" id="142"/>
+														</LabelDecoration>
+													</ChildItems>
+												</UsualGroup>
+												<LabelDecoration name="ДекорацияОтступВыполняетсяВыгрузкаВерхНиз" id="134">
+													<VerticalStretch>true</VerticalStretch>
+													<ContextMenu name="ДекорацияОтступВыполняетсяВыгрузкаВерхНизКонтекстноеМеню" id="135"/>
+													<ExtendedTooltip name="ДекорацияОтступВыполняетсяВыгрузкаВерхНизРасширеннаяПодсказка" id="136"/>
+												</LabelDecoration>
+											</ChildItems>
+										</UsualGroup>
+									</ChildItems>
+								</Page>
+							</ChildItems>
+						</Pages>
+						<UsualGroup name="ГруппаБлокируемыеОбъекты" id="41">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Блокируемые объекты</v8:content>
+								</v8:item>
+							</Title>
+							<Group>Vertical</Group>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаБлокируемыеОбъектыРасширеннаяПодсказка" id="42"/>
+						</UsualGroup>
+					</ChildItems>
+				</Page>
+				<Page name="СтраницаРекомендации" id="80">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Рекомендации</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="СтраницаРекомендацииРасширеннаяПодсказка" id="81"/>
+					<ChildItems>
+						<HTMLDocumentField name="РекомендацииПоРаботе" id="82">
+							<DataPath>РекомендацииПоРаботе</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Рекомендации по работе</v8:content>
+								</v8:item>
+							</Title>
+							<TitleLocation>None</TitleLocation>
+							<ContextMenu name="РекомендацииПоРаботеКонтекстноеМеню" id="83"/>
+							<ExtendedTooltip name="РекомендацииПоРаботеРасширеннаяПодсказка" id="84"/>
+							<Events>
+								<Event name="OnClick">РекомендацииПоРаботеПриНажатии</Event>
+							</Events>
+						</HTMLDocumentField>
+					</ChildItems>
+				</Page>
+			</ChildItems>
+		</Pages>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:DataProcessorObject.РаботаСРезультатамиОбмена</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+		</Attribute>
+		<Attribute name="БлокируетНепосредственно" id="2">
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>10</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="БлокируетОпосредовано" id="3">
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>10</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ВнешняяСсылкаНаОбъект" id="4">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>150</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ДанныеОпосредованоПолучены" id="5">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ДатаВозникновения" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Дата возникновения</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:dateTime</v8:Type>
+				<v8:DateQualifiers>
+					<v8:DateFractions>DateTime</v8:DateFractions>
+				</v8:DateQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ДатаПолученияДанных" id="7">
+			<Type>
+				<v8:Type>xs:dateTime</v8:Type>
+				<v8:DateQualifiers>
+					<v8:DateFractions>DateTime</v8:DateFractions>
+				</v8:DateQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ИдентификаторОбъектаМетаданных" id="8">
+			<Type>
+				<v8:Type>cfg:CatalogRef.ИдентификаторыОбъектовМетаданных</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="КартинкаКомментарий" id="9">
+			<Type/>
+		</Attribute>
+		<Attribute name="Комментарий" id="10">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ПолноеИмяОбъектаМетаданных" id="11">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>150</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ПолноеПредставлениеОшибки" id="12">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ПолученныйОбъект" id="13">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Полученный объект</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>150</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ПравилоКонвертации" id="14">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>150</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ПредставлениеОбъектаМетаданных" id="15">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Объект метаданных</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>200</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="РекомендацииПоРаботе" id="16">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Рекомендации по работе</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="СоответствиеВИБ" id="17">
+			<Type>
+				<v8:TypeSet>cfg:AnyIBRef</v8:TypeSet>
+			</Type>
+		</Attribute>
+		<Attribute name="СоответствиеВИБСтрока" id="18">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Соответствие в ИБ</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8ui:FormattedString</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="СоответствиеУстановленоВЭтойФорме" id="19">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="УзелИнформационнойБазы" id="20">
+			<Type>
+				<v8:TypeSet>cfg:ExchangePlanRef</v8:TypeSet>
+			</Type>
+		</Attribute>
+		<Attribute name="ЦветГиперссылки" id="21">
+			<Type/>
+		</Attribute>
+		<Attribute name="БлокируемыеОбъекты" id="22">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Блокируемые объекты</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTable</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="ОбъектМетаданных" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Объект метаданных</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.ИдентификаторыОбъектовМетаданных</v8:Type>
+					</Type>
+				</Column>
+				<Column name="Представление" id="2">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Представление</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>200</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="СоответствиеВИБ" id="3">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Соответствие ВИБ</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:TypeSet>cfg:AnyIBRef</v8:TypeSet>
+					</Type>
+				</Column>
+				<Column name="ДатаВозникновения" id="4">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Дата возникновения</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:dateTime</v8:Type>
+						<v8:DateQualifiers>
+							<v8:DateFractions>DateTime</v8:DateFractions>
+						</v8:DateQualifiers>
+					</Type>
+				</Column>
+				<Column name="ИндексКартинки" id="5">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Индекс картинки</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>10</v8:Digits>
+							<v8:FractionDigits>0</v8:FractionDigits>
+							<v8:AllowedSign>Any</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+				<Column name="ПравилоКонвертации" id="6">
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>150</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="ПолученныйОбъект" id="7">
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>150</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="ОбъектФормата" id="8">
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>100</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+		<Attribute name="ЦветЗаголовкаЭлементаФормыПроблемы" id="23">
+			<Type/>
+		</Attribute>
+		<Attribute name="ВозможныеТипыОбъектовМетаданных" id="24">
+			<Type>
+				<v8:Type>v8:ValueListType</v8:Type>
+			</Type>
+			<Settings xsi:type="v8:TypeDescription"/>
+		</Attribute>
+		<Attribute name="ИмяОбъектаФормата" id="25">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>100</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ПоказыватьПредупреждениеПриПовторномОткрытииФормыПроблемы" id="26">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="УстановкаСоответствияНевозможна" id="27">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="НавигационнаяСсылкаФормы" id="28">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ДатаОтправкиЗапросаНаВыгрузку" id="29">
+			<Type>
+				<v8:Type>xs:dateTime</v8:Type>
+				<v8:DateQualifiers>
+					<v8:DateFractions>DateTime</v8:DateFractions>
+				</v8:DateQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ОбъектФормата" id="30">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>100</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="ОткрытьОбъектВИсточнике" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Открыть в источнике</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Открыть объект в базе корреспонденте</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.GotoExternalURL</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>ОткрытьОбъектВИсточнике</Action>
+			<Representation>TextPicture</Representation>
+		</Command>
+		<Command name="ПроблемаРешена" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Проблема решена</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Проблема решена</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ПроблемаРешена</Action>
+			<Representation>TextPicture</Representation>
+		</Command>
+		<Command name="УстановитьСоответствие" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Установить соответствие</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Установить соответствие</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>CommonPicture.УстановитьСоответствиеПолученномуОбъекту</xr:Ref>
+				<xr:LoadTransparent>false</xr:LoadTransparent>
+			</Picture>
+			<Action>УстановитьСоответствие</Action>
+			<Representation>TextPicture</Representation>
+		</Command>
+		<Command name="ОткрытьПроблему" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Открыть проблему</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Открыть проблему</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>CommonPicture.ОткрытьПроблемуПолученныйОбъект</xr:Ref>
+				<xr:LoadTransparent>false</xr:LoadTransparent>
+			</Picture>
+			<Action>ОткрытьПроблему</Action>
+		</Command>
+	</Commands>
+	<Parameters>
+		<Parameter name="ДанныеЗаписиОбъектКЗагрузке">
+			<Type/>
+		</Parameter>
+		<Parameter name="ЭтоПовторноеОткрытиеФормыПроблемы">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Parameter>
+	</Parameters>
+</Form>

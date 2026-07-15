@@ -1,0 +1,357 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.20">
+	<Title>
+		<v8:item>
+			<v8:lang>ru</v8:lang>
+			<v8:content>Групповая загрузка документов с ошибкой проведения</v8:content>
+		</v8:item>
+	</Title>
+	<AutoTitle>false</AutoTitle>
+	<CommandBarLocation>Bottom</CommandBarLocation>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<HorizontalAlign>Right</HorizontalAlign>
+		<Autofill>false</Autofill>
+		<ChildItems>
+			<Button name="Далее" id="16">
+				<Type>CommandBarButton</Type>
+				<DefaultButton>true</DefaultButton>
+				<GroupHorizontalAlign>Right</GroupHorizontalAlign>
+				<CommandName>Form.Command.Далее</CommandName>
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Далее</v8:content>
+					</v8:item>
+				</Title>
+				<ExtendedTooltip name="ДалееРасширеннаяПодсказка" id="17"/>
+			</Button>
+			<Button name="Отмена" id="20">
+				<Type>CommandBarButton</Type>
+				<GroupHorizontalAlign>Right</GroupHorizontalAlign>
+				<CommandName>Form.StandardCommand.Cancel</CommandName>
+				<ExtendedTooltip name="ОтменаРасширеннаяПодсказка" id="21"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<Pages name="СтраницыФормы" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Страницы формы</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Страницы пояснение и результат выполнения</v8:content>
+				</v8:item>
+			</ToolTip>
+			<PagesRepresentation>None</PagesRepresentation>
+			<ExtendedTooltip name="СтраницыФормыРасширеннаяПодсказка" id="2"/>
+			<ChildItems>
+				<Page name="СтраницаНачало" id="3">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Страница начало</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="СтраницаНачалоРасширеннаяПодсказка" id="4"/>
+					<ChildItems>
+						<LabelDecoration name="ДекорацияПояснение" id="9">
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<MaxWidth>60</MaxWidth>
+							<Title formatted="true">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>&lt;fontsize 10&gt;&lt;colorstyle 0:ad87bd29-0ad1-4da4-ac62-38e714e0cb9f&gt;Данная операция позволяет загрузить изменения в цепочках связанных документов, когда нельзя изменять предшествующие документы при наличии последующих. Необходимо сначала отменить проведение последующих документов.&lt;/&gt;&lt;/&gt;
+&lt;fontsize 10&gt;&lt;colorstyle 0:ad87bd29-0ad1-4da4-ac62-38e714e0cb9f&gt; &lt;/&gt;&lt;/&gt;
+&lt;fontsize 10&gt;&lt;colorstyle 0:ad87bd29-0ad1-4da4-ac62-38e714e0cb9f&gt;При выполнении данной операции:&lt;/&gt;&lt;/&gt;
+&lt;fontsize 10&gt;&lt;colorstyle 0:ad87bd29-0ad1-4da4-ac62-38e714e0cb9f&gt;- Будет отменено проведение существующих документов, для которых не удалось загрузить изменения из-за ошибок при проведении. Отмена проведения будет выполняться в "обратном порядке" убывания дат документов.&lt;/&gt;&lt;/&gt;
+&lt;fontsize 10&gt;&lt;colorstyle 0:ad87bd29-0ad1-4da4-ac62-38e714e0cb9f&gt;- Будет выполнена попытка загрузить и провести данные документы, но уже в хронологическом порядке возрастания даты документов.&lt;/&gt;&lt;/&gt;
+&lt;fontsize 10&gt;&lt;colorstyle 0:ad87bd29-0ad1-4da4-ac62-38e714e0cb9f&gt;- При этом, если по какой-то причине загрузка или проведение одного или нескольких документов не выполнится, то они останутся не проведенными.&lt;/&gt;&lt;/&gt;
+&lt;fontsize 10&gt;&lt;colorstyle 0:ad87bd29-0ad1-4da4-ac62-38e714e0cb9f&gt; &lt;/&gt;&lt;/&gt;
+&lt;fontsize 10&gt;&lt;colorstyle 0:ad87bd29-0ad1-4da4-ac62-38e714e0cb9f&gt;Рекомендуется выполнять данную операцию только в случае, когда невозможно загрузить документы обычным способом.  &lt;/&gt;&lt;/&gt;&lt;fontsize 10&gt;&lt;colorstyle 0:ad87bd29-0ad1-4da4-ac62-38e714e0cb9f&gt; &lt;/&gt;&lt;/&gt;&lt;fontsize 10&gt; &lt;/&gt;&lt;fontsize 10&gt; &lt;/&gt;&lt;fontsize 12&gt;    &lt;/&gt;&lt;fontsize 12&gt;                                                                                        &lt;/&gt;</v8:content>
+								</v8:item>
+							</Title>
+							<ContextMenu name="ДекорацияПояснениеКонтекстноеМеню" id="10"/>
+							<ExtendedTooltip name="ДекорацияПояснениеРасширеннаяПодсказка" id="11"/>
+						</LabelDecoration>
+					</ChildItems>
+				</Page>
+				<Page name="СтраницаОжидание" id="5">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Страница ожидание</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="СтраницаОжиданиеРасширеннаяПодсказка" id="6"/>
+					<ChildItems>
+						<LabelDecoration name="ДекорацияОтступВерх" id="30">
+							<AutoMaxHeight>false</AutoMaxHeight>
+							<VerticalStretch>true</VerticalStretch>
+							<ContextMenu name="ДекорацияОтступВерхКонтекстноеМеню" id="31"/>
+							<ExtendedTooltip name="ДекорацияОтступВерхРасширеннаяПодсказка" id="32"/>
+						</LabelDecoration>
+						<UsualGroup name="ГруппаОжиданиеИнформацияГоризонтальныеОтступ" id="36">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Ожидание информация горизонтальные отступ</v8:content>
+								</v8:item>
+							</Title>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаОжиданиеИнформацияГоризонтальныеОтступРасширеннаяПодсказка" id="37"/>
+							<ChildItems>
+								<LabelDecoration name="ДекорацияОтступЛево" id="38">
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<HorizontalStretch>true</HorizontalStretch>
+									<ContextMenu name="ДекорацияОтступЛевоКонтекстноеМеню" id="39"/>
+									<ExtendedTooltip name="ДекорацияОтступЛевоРасширеннаяПодсказка" id="40"/>
+								</LabelDecoration>
+								<UsualGroup name="ГруппаОжиданиеИнформация" id="44">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Ожидание информация</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Ожидание и информация</v8:content>
+										</v8:item>
+									</ToolTip>
+									<Group>AlwaysHorizontal</Group>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="ГруппаОжиданиеИнформацияРасширеннаяПодсказка" id="45"/>
+									<ChildItems>
+										<Pages name="СтраницыКартинкиОжиданиеОшибка" id="52">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Страницы картинки ожидание ошибка</v8:content>
+												</v8:item>
+											</Title>
+											<PagesRepresentation>None</PagesRepresentation>
+											<ExtendedTooltip name="СтраницыКартинкиОжиданиеОшибкаРасширеннаяПодсказка" id="53"/>
+											<ChildItems>
+												<Page name="СтраницаКартинкаОжидание" id="54">
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Страница картинка ожидание</v8:content>
+														</v8:item>
+													</Title>
+													<Group>AlwaysHorizontal</Group>
+													<ExtendedTooltip name="СтраницаКартинкаОжиданиеРасширеннаяПодсказка" id="55"/>
+													<ChildItems>
+														<PictureDecoration name="ДекорацияОжидание" id="27">
+															<Title formatted="false">
+																<v8:item>
+																	<v8:lang>ru</v8:lang>
+																	<v8:content>Декорация ожидание</v8:content>
+																</v8:item>
+															</Title>
+															<GroupVerticalAlign>Center</GroupVerticalAlign>
+															<Picture>
+																<xr:Ref>CommonPicture.ДлительнаяОперация48</xr:Ref>
+																<xr:LoadTransparent>false</xr:LoadTransparent>
+															</Picture>
+															<ContextMenu name="ДекорацияОжиданиеКонтекстноеМеню" id="28"/>
+															<ExtendedTooltip name="ДекорацияОжиданиеРасширеннаяПодсказка" id="29"/>
+														</PictureDecoration>
+														<LabelDecoration name="ДекорацияИнформацияОжидание" id="46">
+															<GroupVerticalAlign>Center</GroupVerticalAlign>
+															<VerticalAlign>Center</VerticalAlign>
+															<ContextMenu name="ДекорацияИнформацияОжиданиеКонтекстноеМеню" id="47"/>
+															<ExtendedTooltip name="ДекорацияИнформацияОжиданиеРасширеннаяПодсказка" id="48"/>
+														</LabelDecoration>
+													</ChildItems>
+												</Page>
+												<Page name="СтраницаКартинкаОшибка" id="56">
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Страница картинка ошибка</v8:content>
+														</v8:item>
+													</Title>
+													<Group>AlwaysHorizontal</Group>
+													<ExtendedTooltip name="СтраницаКартинкаОшибкаРасширеннаяПодсказка" id="57"/>
+													<ChildItems>
+														<PictureDecoration name="ДекорацияОшибка" id="58">
+															<Title formatted="false">
+																<v8:item>
+																	<v8:lang>ru</v8:lang>
+																	<v8:content>Декорация ошибка</v8:content>
+																</v8:item>
+															</Title>
+															<GroupVerticalAlign>Center</GroupVerticalAlign>
+															<Picture>
+																<xr:Ref>CommonPicture.Ошибка32</xr:Ref>
+																<xr:LoadTransparent>false</xr:LoadTransparent>
+															</Picture>
+															<ContextMenu name="ДекорацияОшибкаКонтекстноеМеню" id="59"/>
+															<ExtendedTooltip name="ДекорацияОшибкаРасширеннаяПодсказка" id="60"/>
+														</PictureDecoration>
+														<LabelDecoration name="ДекорацияИнформацияОшибка" id="61">
+															<GroupVerticalAlign>Center</GroupVerticalAlign>
+															<ContextMenu name="ДекорацияИнформацияОшибкаКонтекстноеМеню" id="62"/>
+															<ExtendedTooltip name="ДекорацияИнформацияОшибкаРасширеннаяПодсказка" id="63"/>
+														</LabelDecoration>
+													</ChildItems>
+												</Page>
+											</ChildItems>
+										</Pages>
+									</ChildItems>
+								</UsualGroup>
+								<LabelDecoration name="ДекорацияОтступПраво" id="41">
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<HorizontalStretch>true</HorizontalStretch>
+									<HorizontalAlign>Right</HorizontalAlign>
+									<ContextMenu name="ДекорацияОтступПравоКонтекстноеМеню" id="42"/>
+									<ExtendedTooltip name="ДекорацияОтступПравоРасширеннаяПодсказка" id="43"/>
+								</LabelDecoration>
+							</ChildItems>
+						</UsualGroup>
+						<LabelDecoration name="ДекорацияОтступНиз" id="33">
+							<AutoMaxHeight>false</AutoMaxHeight>
+							<VerticalStretch>true</VerticalStretch>
+							<HorizontalAlign>Center</HorizontalAlign>
+							<ContextMenu name="ДекорацияОтступНизКонтекстноеМеню" id="34"/>
+							<ExtendedTooltip name="ДекорацияОтступНизРасширеннаяПодсказка" id="35"/>
+						</LabelDecoration>
+					</ChildItems>
+				</Page>
+				<Page name="СтраницаИтог" id="7">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Страница итог</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="СтраницаИтогРасширеннаяПодсказка" id="8"/>
+					<ChildItems>
+						<LabelDecoration name="ИтоговаяИнформация" id="49">
+							<Title formatted="true"/>
+							<ContextMenu name="ИтоговаяИнформацияКонтекстноеМеню" id="50"/>
+							<ExtendedTooltip name="ИтоговаяИнформацияРасширеннаяПодсказка" id="51"/>
+						</LabelDecoration>
+					</ChildItems>
+				</Page>
+			</ChildItems>
+		</Pages>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:DataProcessorObject.РаботаСРезультатамиОбмена</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+		</Attribute>
+		<Attribute name="УзелИнформационнойБазы" id="2">
+			<Type>
+				<v8:TypeSet>cfg:ExchangePlanRef</v8:TypeSet>
+			</Type>
+		</Attribute>
+		<Attribute name="ВозниклаОшибка" id="3">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ЦветПоясняющийТекст" id="4">
+			<Type/>
+		</Attribute>
+		<Attribute name="ОбрабатываемыеДокументы" id="5">
+			<Type>
+				<v8:Type>v8:ValueTable</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="Документ" id="1">
+					<Type>
+						<v8:TypeSet>cfg:DocumentRef</v8:TypeSet>
+					</Type>
+				</Column>
+				<Column name="БылПроведен" id="2">
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+				<Column name="ВыполненаОтменаПроведения" id="3">
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+				<Column name="НоваяПричинаДобавления" id="4">
+					<Type>
+						<v8:Type>cfg:EnumRef.ПричиныДобавленияВРегистрОбъектыКЗагрузке</v8:Type>
+					</Type>
+				</Column>
+				<Column name="ПолученныйОбъект" id="5">
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>150</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="ПравилоКонвертации" id="6">
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>150</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="НовыйСтатусЗагрузки" id="7">
+					<Type>
+						<v8:Type>cfg:EnumRef.СтатусыОбновленияОбъектаПриПроблемахЗаписи</v8:Type>
+					</Type>
+				</Column>
+				<Column name="ОбъектФормата" id="8">
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>100</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+		<Attribute name="ШрифтЗаголовкаПредставления" id="6">
+			<Type/>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="Далее" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Далее</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Далее</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>Далее</Action>
+		</Command>
+	</Commands>
+	<Parameters>
+		<Parameter name="УзелИнформационнойБазы">
+			<Type>
+				<v8:TypeSet>cfg:ExchangePlanRef</v8:TypeSet>
+			</Type>
+		</Parameter>
+	</Parameters>
+</Form>

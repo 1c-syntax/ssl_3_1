@@ -2032,7 +2032,18 @@
 													<ContextMenu name="ПерейтиВЖурналРегистрацииСобытийЗагрузкиДанныхКонтекстноеМеню" id="578"/>
 													<ExtendedTooltip name="ПерейтиВЖурналРегистрацииСобытийЗагрузкиДанныхExtendedTooltip" id="797"/>
 												</LabelDecoration>
-												<Button name="ПерейтиВЖурналРегистрацииСобытийЗагрузкиДанныхПодробно" id="389">
+												<Button name="ПерейтиКПредупреждениямЗагрузки" id="1049">
+													<Type>Hyperlink</Type>
+													<CommandName>Form.Command.ПерейтиКПредупреждениямЗагрузки</CommandName>
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Предупреждения загрузки...</v8:content>
+														</v8:item>
+													</Title>
+													<ExtendedTooltip name="ПерейтиКПредупреждениямЗагрузкиРасширеннаяПодсказка" id="1050"/>
+												</Button>
+												<Button name="ПерейтиВЖурналРегистрацииСобытийЗагрузкиДанныхПодробно" id="1051">
 													<Type>Hyperlink</Type>
 													<SkipOnInput>false</SkipOnInput>
 													<Height>1</Height>
@@ -2040,10 +2051,10 @@
 													<Title>
 														<v8:item>
 															<v8:lang>ru</v8:lang>
-															<v8:content>Подробно...</v8:content>
+															<v8:content>Журнал регистрации</v8:content>
 														</v8:item>
 													</Title>
-													<ExtendedTooltip name="ПерейтиВЖурналРегистрацииСобытийЗагрузкиДанныхПодробноExtendedTooltip" id="810"/>
+													<ExtendedTooltip name="ПерейтиВЖурналРегистрацииСобытийЗагрузкиДанныхПодробноExtendedTooltip" id="1052"/>
 												</Button>
 											</ChildItems>
 										</UsualGroup>
@@ -2219,17 +2230,28 @@
 													<ContextMenu name="ПерейтиВЖурналРегистрацииСобытийВыгрузкиДанныхКонтекстноеМеню" id="582"/>
 													<ExtendedTooltip name="ПерейтиВЖурналРегистрацииСобытийВыгрузкиДанныхExtendedTooltip" id="808"/>
 												</LabelDecoration>
-												<Button name="ПерейтиВЖурналРегистрацииСобытийВыгрузкиДанныхПодробно" id="404">
+												<Button name="ПерейтиКПредупреждениямВыгрузки" id="1053">
+													<Type>Hyperlink</Type>
+													<CommandName>Form.Command.ПерейтиКПредупреждениямВыгрузки</CommandName>
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Предупреждения выгрузки...</v8:content>
+														</v8:item>
+													</Title>
+													<ExtendedTooltip name="ПерейтиКПредупреждениямВыгрузкиРасширеннаяПодсказка" id="1054"/>
+												</Button>
+												<Button name="ПерейтиВЖурналРегистрацииСобытийВыгрузкиДанныхПодробно" id="1055">
 													<Type>Hyperlink</Type>
 													<SkipOnInput>false</SkipOnInput>
 													<CommandName>Form.Command.ПерейтиВЖурналРегистрацииСобытийВыгрузкиДанных</CommandName>
 													<Title>
 														<v8:item>
 															<v8:lang>ru</v8:lang>
-															<v8:content>Подробно...</v8:content>
+															<v8:content>Журнал регистрации</v8:content>
 														</v8:item>
 													</Title>
-													<ExtendedTooltip name="ПерейтиВЖурналРегистрацииСобытийВыгрузкиДанныхПодробноExtendedTooltip" id="811"/>
+													<ExtendedTooltip name="ПерейтиВЖурналРегистрацииСобытийВыгрузкиДанныхПодробноExtendedTooltip" id="1056"/>
 												</Button>
 											</ChildItems>
 										</UsualGroup>
@@ -3133,11 +3155,6 @@
 				<v8:Type>xs:boolean</v8:Type>
 			</Type>
 		</Attribute>
-		<Attribute name="ОбменЧерезВебСервис" id="25">
-			<Type>
-				<v8:Type>xs:boolean</v8:Type>
-			</Type>
-		</Attribute>
 		<Attribute name="ДлительнаяОперацияЗавершена" id="26">
 			<Type>
 				<v8:Type>xs:boolean</v8:Type>
@@ -3359,11 +3376,6 @@
 				<v8:Type>xs:boolean</v8:Type>
 			</Type>
 		</Attribute>
-		<Attribute name="ОбменЧерезВнешнееСоединение" id="64">
-			<Type>
-				<v8:Type>xs:boolean</v8:Type>
-			</Type>
-		</Attribute>
 		<Attribute name="ИдентификаторВременногоКаталогаДляОбмена" id="2">
 			<Type>
 				<v8:Type>xs:string</v8:Type>
@@ -3428,6 +3440,16 @@
 		</Attribute>
 		<Attribute name="ДанныеАутентификации" id="28">
 			<Type/>
+		</Attribute>
+		<Attribute name="ЭтоУзелОбъектнойКонвертации" id="25">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ПодсистемаВерсионированияСуществует" id="41">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
 		</Attribute>
 	</Attributes>
 	<Commands>
@@ -3499,7 +3521,7 @@
 			<Title>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Перейти в журнал регистрации</v8:content>
+					<v8:content>Журнал регистрации</v8:content>
 				</v8:item>
 			</Title>
 			<ToolTip>
@@ -3515,7 +3537,7 @@
 			<Title>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Перейти в журнал регистрации событий выгрузки данных</v8:content>
+					<v8:content>Журнал регистрации</v8:content>
 				</v8:item>
 			</Title>
 			<ToolTip>
@@ -3736,5 +3758,67 @@
 			</ToolTip>
 			<Action>ЗавершитьСинхронизацию</Action>
 		</Command>
+		<Command name="ПерейтиКПредупреждениямВыгрузки" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Предупреждения выгрузки...</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Перейти к предупреждениям загрузки</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ПерейтиКПредупреждениямВыгрузки</Action>
+		</Command>
+		<Command name="ПерейтиКПредупреждениямЗагрузки" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Предупреждения загрузки...</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Перейти к предупреждениям загрузки</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ПерейтиКПредупреждениямЗагрузки</Action>
+		</Command>
 	</Commands>
+	<Parameters>
+		<Parameter name="ОбъектнаяКонвертацияXDTO">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+			<KeyParameter>true</KeyParameter>
+		</Parameter>
+		<Parameter name="КодУзлаИнформационнойБазы">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>255</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Parameter>
+		<Parameter name="ИмяПланаОбмена">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Parameter>
+		<Parameter name="ЗакрытьФормуБезусловно">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+				<v8:Type>v8:Null</v8:Type>
+			</Type>
+		</Parameter>
+	</Parameters>
 </Form>
