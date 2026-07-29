@@ -133,6 +133,12 @@
 						</v8:item>
 					</Title>
 					<ToolTipRepresentation>Button</ToolTipRepresentation>
+					<PasswordMode>true</PasswordMode>
+					<ChoiceButton>true</ChoiceButton>
+					<ChoiceButtonPicture>
+						<xr:Ref>CommonPicture.ВводимыеСимволыВидны</xr:Ref>
+						<xr:LoadTransparent>false</xr:LoadTransparent>
+					</ChoiceButtonPicture>
 					<InputHint>
 						<v8:item>
 							<v8:lang>ru</v8:lang>
@@ -141,6 +147,11 @@
 					</InputHint>
 					<ContextMenu name="ТокенКонтекстноеМеню" id="15"/>
 					<ExtendedTooltip name="ТокенРасширеннаяПодсказка" id="16"/>
+					<Events>
+						<Event name="OnChange">ТокенПриИзменении</Event>
+						<Event name="EditTextChange">ТокенИзменениеТекстаРедактирования</Event>
+						<Event name="StartChoice">ТокенНачалоВыбора</Event>
+					</Events>
 				</InputField>
 			</ChildItems>
 		</UsualGroup>
@@ -274,6 +285,11 @@
 					</Type>
 				</Column>
 			</Columns>
+		</Attribute>
+		<Attribute name="ТокенИзменен" id="5">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
 		</Attribute>
 	</Attributes>
 	<Commands>

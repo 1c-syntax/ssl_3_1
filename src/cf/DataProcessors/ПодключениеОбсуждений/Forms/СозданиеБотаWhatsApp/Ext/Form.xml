@@ -128,6 +128,12 @@
 							<v8:content>Ключ (token)</v8:content>
 						</v8:item>
 					</Title>
+					<PasswordMode>true</PasswordMode>
+					<ChoiceButton>true</ChoiceButton>
+					<ChoiceButtonPicture>
+						<xr:Ref>CommonPicture.ВводимыеСимволыВидны</xr:Ref>
+						<xr:LoadTransparent>false</xr:LoadTransparent>
+					</ChoiceButtonPicture>
 					<InputHint>
 						<v8:item>
 							<v8:lang>ru</v8:lang>
@@ -136,6 +142,11 @@
 					</InputHint>
 					<ContextMenu name="ТокенКонтекстноеМеню" id="34"/>
 					<ExtendedTooltip name="ТокенРасширеннаяПодсказка" id="35"/>
+					<Events>
+						<Event name="OnChange">ТокенПриИзменении</Event>
+						<Event name="EditTextChange">ТокенИзменениеТекстаРедактирования</Event>
+						<Event name="StartChoice">ТокенНачалоВыбора</Event>
+					</Events>
 				</InputField>
 				<InputField name="ИдКанала" id="36">
 					<DataPath>Канал</DataPath>
@@ -337,6 +348,11 @@
 			</Type>
 		</Attribute>
 		<Attribute name="ИнтеграцияИспользуется" id="7">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ТокенИзменен" id="8">
 			<Type>
 				<v8:Type>xs:boolean</v8:Type>
 			</Type>
