@@ -487,9 +487,9 @@
 
 // Добавляет в zip-архив xml-файл описания настроек варианта отчета, со следующей спецификацией:
 //  <SettingsDescription ReportName="Отчет.Файлы">
-//  	<Settings Key="50a4127a-7646-49b3-9d09-51681e6e16b9" Presentation="Версии файлов"/>
-//  	<UserSettings Key="a61e745b-ac46-46d3-92a6-5bba4969b7d2" Presentation="Файлы > 100 Кб" isCurrent="true"/>
-//  	<UserSettings Key="6895ac09-f02d-4b17-82b6-79dd76c7b2a3" Presentation="Файлы > 10 Мб" isCurrent="false"/>
+//  	<Settings Key="<УникальныйИдентификатор>" Presentation="Версии файлов"/>
+//  	<UserSettings Key="<УникальныйИдентификатор>" Presentation="Файлы > 100 Кб" isCurrent="true"/>
+//  	<UserSettings Key="<УникальныйИдентификатор>" Presentation="Файлы > 10 Мб" isCurrent="false"/>
 //  </SettingsDescription>
 //
 // Параметры:

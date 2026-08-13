@@ -80,18 +80,6 @@
 						<CommandName>Form.Item.Список.StandardCommand.SetDeletionMark</CommandName>
 						<ExtendedTooltip name="ФормаУстановитьПометкуУдаленияРасширеннаяПодсказка" id="109"/>
 					</Button>
-					<Button name="ФормаУдалить" id="118">
-						<Type>CommandBarButton</Type>
-						<CommandName>Form.Command.Удалить</CommandName>
-						<Title>
-							<v8:item>
-								<v8:lang>ru</v8:lang>
-								<v8:content>Удалить</v8:content>
-							</v8:item>
-						</Title>
-						<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
-						<ExtendedTooltip name="ФормаУдалитьРасширеннаяПодсказка" id="119"/>
-					</Button>
 				</ChildItems>
 			</ButtonGroup>
 			<Button name="ПоказыватьПомеченныеФайлы" id="120">
@@ -255,17 +243,6 @@
 						<CommandName>Form.Item.Список.StandardCommand.SetDeletionMark</CommandName>
 						<ExtendedTooltip name="СписокКонтекстноеМенюУстановитьПометкуУдаленияРасширеннаяПодсказка" id="113"/>
 					</Button>
-					<Button name="СписокКонтекстноеМенюУдалить" id="122">
-						<Type>CommandBarButton</Type>
-						<CommandName>Form.Command.Удалить</CommandName>
-						<Title>
-							<v8:item>
-								<v8:lang>ru</v8:lang>
-								<v8:content>Удалить</v8:content>
-							</v8:item>
-						</Title>
-						<ExtendedTooltip name="СписокКонтекстноеМенюУдалитьРасширеннаяПодсказка" id="123"/>
-					</Button>
 				</ChildItems>
 			</ContextMenu>
 			<AutoCommandBar name="СписокКоманднаяПанель" id="22"/>
@@ -298,7 +275,6 @@
 				<Event name="Selection">СписокВыбор</Event>
 				<Event name="BeforeAddRow">СписокПередНачаломДобавления</Event>
 				<Event name="BeforeDeleteRow">СписокПередУдалением</Event>
-				<Event name="OnActivateRow">СписокПриАктивизацииСтроки</Event>
 				<Event name="BeforeRowChange">СписокПередНачаломИзменения</Event>
 			</Events>
 			<ChildItems>
@@ -818,27 +794,6 @@
 				</v8:item>
 			</ToolTip>
 			<Action>ПоказыватьПомеченныеФайлы</Action>
-		</Command>
-		<Command name="Удалить" id="8">
-			<Title>
-				<v8:item>
-					<v8:lang>ru</v8:lang>
-					<v8:content>Удалить</v8:content>
-				</v8:item>
-			</Title>
-			<ToolTip>
-				<v8:item>
-					<v8:lang>ru</v8:lang>
-					<v8:content>Удалить данные версии файла</v8:content>
-				</v8:item>
-			</ToolTip>
-			<Picture>
-				<xr:Ref>StdPicture.DeleteDirectly</xr:Ref>
-				<xr:LoadTransparent>true</xr:LoadTransparent>
-			</Picture>
-			<Action>Удалить</Action>
-			<CurrentRowUse>Use</CurrentRowUse>
-			<AssociatedTableElementId xsi:type="xs:string">Список</AssociatedTableElementId>
 		</Command>
 	</Commands>
 	<Parameters>
