@@ -10,11 +10,16 @@
 		<xr:Item>
 			<xr:Presentation/>
 			<xr:CheckState>0</xr:CheckState>
-			<xr:Value xsi:type="xs:string">КоманднаяПанель</xr:Value>
+			<xr:Value xsi:type="xs:string"/>
 		</xr:Item>
 	</MobileDeviceCommandBarContent>
+	<CommandSet>
+		<ExcludedCommand>Copy</ExcludedCommand>
+		<ExcludedCommand>Create</ExcludedCommand>
+		<ExcludedCommand>MoveItem</ExcludedCommand>
+	</CommandSet>
 	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
-		<Autofill>false</Autofill>
+		<HorizontalAlign>Auto</HorizontalAlign>
 	</AutoCommandBar>
 	<Events>
 		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
@@ -24,6 +29,7 @@
 			<Representation>Tree</Representation>
 			<Height>7</Height>
 			<ChoiceMode>true</ChoiceMode>
+			<SelectionMode>SingleRow</SelectionMode>
 			<Header>false</Header>
 			<HorizontalLines>false</HorizontalLines>
 			<VerticalLines>false</VerticalLines>
@@ -31,7 +37,7 @@
 			<EnableStartDrag>true</EnableStartDrag>
 			<FileDragMode>AsFile</FileDragMode>
 			<DataPath>Список</DataPath>
-			<RowPictureDataPath>Список.ИндексКартинки</RowPictureDataPath>
+			<RowPictureDataPath>Список.DefaultPicture</RowPictureDataPath>
 			<RowsPicture>
 				<xr:Ref>CommonPicture.КоллекцияПиктограммФайлов</xr:Ref>
 				<xr:LoadTransparent>false</xr:LoadTransparent>
@@ -43,7 +49,9 @@
 				</v8:item>
 			</Title>
 			<CommandSet>
+				<ExcludedCommand>Copy</ExcludedCommand>
 				<ExcludedCommand>Create</ExcludedCommand>
+				<ExcludedCommand>MoveItem</ExcludedCommand>
 			</CommandSet>
 			<AutoRefresh>false</AutoRefresh>
 			<AutoRefreshPeriod>60</AutoRefreshPeriod>
@@ -61,29 +69,8 @@
 			<AllowGettingCurrentRowURL>true</AllowGettingCurrentRowURL>
 			<ContextMenu name="СписокКонтекстноеМеню" id="2"/>
 			<AutoCommandBar name="СписокКоманднаяПанель" id="3">
-				<ChildItems>
-					<ButtonGroup name="КоманднаяПанель" id="29">
-						<Title>
-							<v8:item>
-								<v8:lang>ru</v8:lang>
-								<v8:content>Командная панель</v8:content>
-							</v8:item>
-						</Title>
-						<CommandSource>Form</CommandSource>
-						<ExtendedTooltip name="КоманднаяПанельРасширеннаяПодсказка" id="30"/>
-					</ButtonGroup>
-					<Button name="СписокСоздатьГруппу" id="31">
-						<Type>CommandBarButton</Type>
-						<CommandName>Form.Command.СоздатьГруппу</CommandName>
-						<Title>
-							<v8:item>
-								<v8:lang>ru</v8:lang>
-								<v8:content>Создать группу</v8:content>
-							</v8:item>
-						</Title>
-						<ExtendedTooltip name="СписокСоздатьГруппуРасширеннаяПодсказка" id="32"/>
-					</Button>
-				</ChildItems>
+				<HorizontalAlign>Auto</HorizontalAlign>
+				<Autofill>false</Autofill>
 			</AutoCommandBar>
 			<ExtendedTooltip name="СписокРасширеннаяПодсказка" id="4"/>
 			<SearchStringAddition name="СписокСтрокаПоиска" id="5">
@@ -112,6 +99,7 @@
 			</SearchControlAddition>
 			<Events>
 				<Event name="ValueChoice">СписокВыборЗначения</Event>
+				<Event name="BeforeAddRow">СписокПередНачаломДобавления</Event>
 			</Events>
 			<ChildItems>
 				<ColumnGroup name="КартинкаНаименование" id="36">
@@ -131,7 +119,7 @@
 							<ExtendedTooltip name="СписокСтандартнаяКартинкаРасширеннаяПодсказка" id="35"/>
 						</PictureField>
 						<LabelField name="СписокНаименование" id="20">
-							<DataPath>Список.Наименование</DataPath>
+							<DataPath>Список.Description</DataPath>
 							<Title>
 								<v8:item>
 									<v8:lang>ru</v8:lang>
@@ -144,7 +132,7 @@
 					</ChildItems>
 				</ColumnGroup>
 				<InputField name="СписокСсылка" id="38">
-					<DataPath>Список.Ссылка</DataPath>
+					<DataPath>Список.Ref</DataPath>
 					<UserVisible>
 						<xr:Common>false</xr:Common>
 					</UserVisible>
@@ -171,22 +159,14 @@
 			<Type>
 				<v8:Type>cfg:DynamicList</v8:Type>
 			</Type>
+			<MainAttribute>true</MainAttribute>
 			<UseAlways>
-				<Field>Список.Ссылка</Field>
+				<Field>Список.Ref</Field>
 			</UseAlways>
 			<Settings xsi:type="DynamicList">
-				<ManualQuery>true</ManualQuery>
+				<ManualQuery>false</ManualQuery>
 				<DynamicDataRead>true</DynamicDataRead>
-				<QueryText>ВЫБРАТЬ
-	ЗНАЧЕНИЕ(Справочник.Пользователи.ПустаяСсылка) КАК Ссылка,
-	ЛОЖЬ КАК ПометкаУдаления,
-	1 КАК ИндексКартинки,
-	ВЫРАЗИТЬ("" КАК СТРОКА(150)) КАК Наименование,
-	ЛОЖЬ КАК ЭтоГруппа,
-	&amp;ВладелецФайла КАК ВладелецФайла
-ИЗ
-	Справочник.Пользователи КАК ИдентификаторыОбъектовМетаданныхПереопределяемый</QueryText>
-				<MainTable>Catalog.Пользователи</MainTable>
+				<MainTable>Catalog.ПапкиФайлов</MainTable>
 				<ListSettings>
 					<dcsset:filter>
 						<dcsset:viewMode>Normal</dcsset:viewMode>
@@ -217,32 +197,23 @@
 				</v8:StringQualifiers>
 			</Type>
 		</Attribute>
+		<Attribute name="АдресПеремещаемыхФайлов" id="4">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
 	</Attributes>
-	<Commands>
-		<Command name="СоздатьГруппу" id="1">
-			<Title>
-				<v8:item>
-					<v8:lang>ru</v8:lang>
-					<v8:content>Создать группу</v8:content>
-				</v8:item>
-			</Title>
-			<ToolTip>
-				<v8:item>
-					<v8:lang>ru</v8:lang>
-					<v8:content>Создать группу</v8:content>
-				</v8:item>
-			</ToolTip>
-			<Action>СоздатьГруппу</Action>
-			<CurrentRowUse>DontUse</CurrentRowUse>
-		</Command>
-	</Commands>
 	<Parameters>
 		<Parameter name="ВладелецФайлов">
 			<Type/>
+			<KeyParameter>true</KeyParameter>
 		</Parameter>
 		<Parameter name="ПеремещаемыеФайлы">
 			<Type/>
-			<KeyParameter>true</KeyParameter>
 		</Parameter>
 	</Parameters>
 </Form>

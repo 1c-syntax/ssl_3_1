@@ -339,6 +339,23 @@
 				</v8:StringQualifiers>
 			</valueType>
 		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Приложение</dataPath>
+			<field>Приложение</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Приложение</v8:content>
+				</v8:item>
+			</title>
+			<valueType>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</valueType>
+		</field>
 		<dataSource>ИсточникДанных1</dataSource>
 		<objectName>АнализАктивностиПользователей</objectName>
 	</dataSet>
@@ -888,6 +905,24 @@
 		<useRestriction>false</useRestriction>
 		<use>Always</use>
 	</parameter>
+	<parameter>
+		<name>Приложение</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Приложение</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:string</v8:Type>
+			<v8:StringQualifiers>
+				<v8:Length>0</v8:Length>
+				<v8:AllowedLength>Variable</v8:AllowedLength>
+			</v8:StringQualifiers>
+		</valueType>
+		<useRestriction>false</useRestriction>
+		<valueListAllowed>true</valueListAllowed>
+	</parameter>
 	<settingsVariant>
 		<dcsset:name>АнализАктивностиПользователей</dcsset:name>
 		<dcsset:presentation xsi:type="v8:LocalStringType">
@@ -933,6 +968,13 @@
 					<dcsset:viewMode>Normal</dcsset:viewMode>
 					<dcsset:userSettingID>3b5d40a2-468f-43b6-8f1f-0193ca8b35fc</dcsset:userSettingID>
 				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>Приложение</dcscor:parameter>
+					<dcscor:value xsi:nil="true"/>
+					<dcsset:viewMode>Normal</dcsset:viewMode>
+					<dcsset:userSettingID>6aa4403b-4b02-4429-bd34-a3d846f49cda</dcsset:userSettingID>
+				</dcscor:item>
 			</dcsset:dataParameters>
 			<dcsset:order>
 				<dcsset:item xsi:type="dcsset:OrderItemField">
@@ -940,16 +982,72 @@
 					<dcsset:orderType>Desc</dcsset:orderType>
 				</dcsset:item>
 			</dcsset:order>
+			<dcsset:conditionalAppearance>
+				<dcsset:item>
+					<dcsset:selection>
+						<dcsset:item>
+							<dcsset:field>Дата</dcsset:field>
+						</dcsset:item>
+						<dcsset:item>
+							<dcsset:field>ДатаОдновременноРаботавшихПользователей</dcsset:field>
+						</dcsset:item>
+					</dcsset:selection>
+					<dcsset:filter/>
+					<dcsset:appearance>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>Формат</dcscor:parameter>
+							<dcscor:value xsi:type="v8:LocalStringType">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>ДЛФ=D</v8:content>
+								</v8:item>
+							</dcscor:value>
+						</dcscor:item>
+					</dcsset:appearance>
+				</dcsset:item>
+				<dcsset:item>
+					<dcsset:selection>
+						<dcsset:item>
+							<dcsset:field>СозданоДокументов.ПроцентОбщий</dcsset:field>
+						</dcsset:item>
+						<dcsset:item>
+							<dcsset:field>СозданоСправочников.ПроцентОбщий</dcsset:field>
+						</dcsset:item>
+					</dcsset:selection>
+					<dcsset:filter/>
+					<dcsset:appearance>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>Формат</dcscor:parameter>
+							<dcscor:value xsi:type="v8:LocalStringType">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>ЧДЦ=1</v8:content>
+								</v8:item>
+							</dcscor:value>
+						</dcscor:item>
+					</dcsset:appearance>
+				</dcsset:item>
+				<dcsset:item>
+					<dcsset:selection>
+						<dcsset:item>
+							<dcsset:field>ЧасовРаботы</dcsset:field>
+						</dcsset:item>
+					</dcsset:selection>
+					<dcsset:filter/>
+					<dcsset:appearance>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>Формат</dcscor:parameter>
+							<dcscor:value xsi:type="v8:LocalStringType">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>ЧДЦ=2</v8:content>
+								</v8:item>
+							</dcscor:value>
+						</dcscor:item>
+					</dcsset:appearance>
+				</dcsset:item>
+			</dcsset:conditionalAppearance>
 			<dcsset:outputParameters>
-				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
-					<dcscor:use>false</dcscor:use>
-					<dcscor:parameter>МакетОформления</dcscor:parameter>
-					<dcscor:value xsi:type="xs:string">Основной</dcscor:value>
-				</dcscor:item>
-				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
-					<dcscor:parameter>ВыводитьЗаголовок</dcscor:parameter>
-					<dcscor:value xsi:type="dcsset:DataCompositionTextOutputType">Output</dcscor:value>
-				</dcscor:item>
 				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
 					<dcscor:parameter>Заголовок</dcscor:parameter>
 					<dcscor:value xsi:type="v8:LocalStringType">
@@ -979,124 +1077,12 @@
 						<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
 					</dcsset:order>
 					<dcsset:selection>
-						<dcsset:item xsi:type="dcsset:SelectedItemField">
-							<dcsset:field>Пользователь</dcsset:field>
-						</dcsset:item>
-						<dcsset:item xsi:type="dcsset:SelectedItemField">
-							<dcsset:field>КоличествоЗапусков</dcsset:field>
-						</dcsset:item>
-						<dcsset:item xsi:type="dcsset:SelectedItemField">
-							<dcsset:field>ЧасовРаботы</dcsset:field>
-						</dcsset:item>
-						<dcsset:item xsi:type="dcsset:SelectedItemFolder">
-							<dcsset:lwsTitle>
-								<v8:item>
-									<v8:lang>ru</v8:lang>
-									<v8:content>Документы</v8:content>
-								</v8:item>
-							</dcsset:lwsTitle>
-							<dcsset:item xsi:type="dcsset:SelectedItemField">
-								<dcsset:field>СозданоДокументов</dcsset:field>
-								<dcsset:lwsTitle>
-									<v8:item>
-										<v8:lang>ru</v8:lang>
-										<v8:content>Введено</v8:content>
-									</v8:item>
-								</dcsset:lwsTitle>
-							</dcsset:item>
-							<dcsset:item xsi:type="dcsset:SelectedItemField">
-								<dcsset:use>false</dcsset:use>
-								<dcsset:field>СозданоДокументов.ПроцентОбщий</dcsset:field>
-								<dcsset:lwsTitle>
-									<v8:item>
-										<v8:lang>ru</v8:lang>
-										<v8:content>Процент введённых документов</v8:content>
-									</v8:item>
-								</dcsset:lwsTitle>
-							</dcsset:item>
-							<dcsset:item xsi:type="dcsset:SelectedItemField">
-								<dcsset:field>ИзмененоДокументов</dcsset:field>
-								<dcsset:lwsTitle>
-									<v8:item>
-										<v8:lang>ru</v8:lang>
-										<v8:content>Изменено</v8:content>
-									</v8:item>
-								</dcsset:lwsTitle>
-							</dcsset:item>
-							<dcsset:placement>Auto</dcsset:placement>
-						</dcsset:item>
-						<dcsset:item xsi:type="dcsset:SelectedItemFolder">
-							<dcsset:lwsTitle>
-								<v8:item>
-									<v8:lang>ru</v8:lang>
-									<v8:content>Справочники</v8:content>
-								</v8:item>
-							</dcsset:lwsTitle>
-							<dcsset:item xsi:type="dcsset:SelectedItemField">
-								<dcsset:field>СозданоСправочников</dcsset:field>
-								<dcsset:lwsTitle>
-									<v8:item>
-										<v8:lang>ru</v8:lang>
-										<v8:content>Введено</v8:content>
-									</v8:item>
-								</dcsset:lwsTitle>
-							</dcsset:item>
-							<dcsset:item xsi:type="dcsset:SelectedItemField">
-								<dcsset:use>false</dcsset:use>
-								<dcsset:field>СозданоСправочников.ПроцентОбщий</dcsset:field>
-								<dcsset:lwsTitle>
-									<v8:item>
-										<v8:lang>ru</v8:lang>
-										<v8:content>Процент введённых справочников</v8:content>
-									</v8:item>
-								</dcsset:lwsTitle>
-							</dcsset:item>
-							<dcsset:item xsi:type="dcsset:SelectedItemField">
-								<dcsset:field>ИзмененоСправочников</dcsset:field>
-								<dcsset:lwsTitle>
-									<v8:item>
-										<v8:lang>ru</v8:lang>
-										<v8:content>Изменено</v8:content>
-									</v8:item>
-								</dcsset:lwsTitle>
-							</dcsset:item>
-							<dcsset:placement>Auto</dcsset:placement>
-						</dcsset:item>
-						<dcsset:item xsi:type="dcsset:SelectedItemField">
-							<dcsset:field>Ошибок</dcsset:field>
-						</dcsset:item>
-						<dcsset:item xsi:type="dcsset:SelectedItemField">
-							<dcsset:field>Предупреждений</dcsset:field>
-						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
 					</dcsset:selection>
-					<dcsset:conditionalAppearance>
-						<dcsset:item>
-							<dcsset:selection>
-								<dcsset:item>
-									<dcsset:field>СозданоДокументов.ПроцентОбщий</dcsset:field>
-								</dcsset:item>
-								<dcsset:item>
-									<dcsset:field>СозданоДокументов.ПроцентОбщий</dcsset:field>
-								</dcsset:item>
-							</dcsset:selection>
-							<dcsset:filter/>
-							<dcsset:appearance>
-								<dcscor:item xsi:type="dcsset:SettingsParameterValue">
-									<dcscor:parameter>Формат</dcscor:parameter>
-									<dcscor:value xsi:type="v8:LocalStringType">
-										<v8:item>
-											<v8:lang>ru</v8:lang>
-											<v8:content>ЧДЦ=1</v8:content>
-										</v8:item>
-									</dcscor:value>
-								</dcscor:item>
-							</dcsset:appearance>
-						</dcsset:item>
-					</dcsset:conditionalAppearance>
 					<dcsset:item>
 						<dcsset:groupItems>
 							<dcsset:item xsi:type="dcsset:GroupItemField">
-								<dcsset:field>Неделя</dcsset:field>
+								<dcsset:field>Приложение</dcsset:field>
 								<dcsset:groupType>Items</dcsset:groupType>
 								<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
 								<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
@@ -1104,130 +1090,15 @@
 							</dcsset:item>
 						</dcsset:groupItems>
 						<dcsset:order>
-							<dcsset:item xsi:type="dcsset:OrderItemField">
-								<dcsset:field>Неделя</dcsset:field>
-								<dcsset:orderType>Desc</dcsset:orderType>
-							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
 						</dcsset:order>
 						<dcsset:selection>
-							<dcsset:item xsi:type="dcsset:SelectedItemField">
-								<dcsset:field>Неделя</dcsset:field>
-							</dcsset:item>
-							<dcsset:item xsi:type="dcsset:SelectedItemField">
-								<dcsset:field>КоличествоЗапусков</dcsset:field>
-							</dcsset:item>
-							<dcsset:item xsi:type="dcsset:SelectedItemField">
-								<dcsset:field>ЧасовРаботы</dcsset:field>
-							</dcsset:item>
-							<dcsset:item xsi:type="dcsset:SelectedItemFolder">
-								<dcsset:lwsTitle>
-									<v8:item>
-										<v8:lang>ru</v8:lang>
-										<v8:content>Документы</v8:content>
-									</v8:item>
-								</dcsset:lwsTitle>
-								<dcsset:item xsi:type="dcsset:SelectedItemField">
-									<dcsset:field>СозданоДокументов</dcsset:field>
-									<dcsset:lwsTitle>
-										<v8:item>
-											<v8:lang>ru</v8:lang>
-											<v8:content>Введено</v8:content>
-										</v8:item>
-									</dcsset:lwsTitle>
-								</dcsset:item>
-								<dcsset:item xsi:type="dcsset:SelectedItemField">
-									<dcsset:use>false</dcsset:use>
-									<dcsset:field>СозданоДокументов.ПроцентОбщий</dcsset:field>
-									<dcsset:lwsTitle>
-										<v8:item>
-											<v8:lang>ru</v8:lang>
-											<v8:content>Процент введённых документов</v8:content>
-										</v8:item>
-									</dcsset:lwsTitle>
-								</dcsset:item>
-								<dcsset:item xsi:type="dcsset:SelectedItemField">
-									<dcsset:field>ИзмененоДокументов</dcsset:field>
-									<dcsset:lwsTitle>
-										<v8:item>
-											<v8:lang>ru</v8:lang>
-											<v8:content>Изменено</v8:content>
-										</v8:item>
-									</dcsset:lwsTitle>
-								</dcsset:item>
-								<dcsset:placement>Auto</dcsset:placement>
-							</dcsset:item>
-							<dcsset:item xsi:type="dcsset:SelectedItemFolder">
-								<dcsset:lwsTitle>
-									<v8:item>
-										<v8:lang>ru</v8:lang>
-										<v8:content>Справочники</v8:content>
-									</v8:item>
-								</dcsset:lwsTitle>
-								<dcsset:item xsi:type="dcsset:SelectedItemField">
-									<dcsset:field>СозданоСправочников</dcsset:field>
-									<dcsset:lwsTitle>
-										<v8:item>
-											<v8:lang>ru</v8:lang>
-											<v8:content>Введено</v8:content>
-										</v8:item>
-									</dcsset:lwsTitle>
-								</dcsset:item>
-								<dcsset:item xsi:type="dcsset:SelectedItemField">
-									<dcsset:use>false</dcsset:use>
-									<dcsset:field>СозданоСправочников.ПроцентОбщий</dcsset:field>
-									<dcsset:lwsTitle>
-										<v8:item>
-											<v8:lang>ru</v8:lang>
-											<v8:content>Процент введённых справочников</v8:content>
-										</v8:item>
-									</dcsset:lwsTitle>
-								</dcsset:item>
-								<dcsset:item xsi:type="dcsset:SelectedItemField">
-									<dcsset:field>ИзмененоСправочников</dcsset:field>
-									<dcsset:lwsTitle>
-										<v8:item>
-											<v8:lang>ru</v8:lang>
-											<v8:content>Изменено</v8:content>
-										</v8:item>
-									</dcsset:lwsTitle>
-								</dcsset:item>
-								<dcsset:placement>Auto</dcsset:placement>
-							</dcsset:item>
-							<dcsset:item xsi:type="dcsset:SelectedItemField">
-								<dcsset:field>Ошибок</dcsset:field>
-							</dcsset:item>
-							<dcsset:item xsi:type="dcsset:SelectedItemField">
-								<dcsset:field>Предупреждений</dcsset:field>
-							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
 						</dcsset:selection>
-						<dcsset:conditionalAppearance>
-							<dcsset:item>
-								<dcsset:selection>
-									<dcsset:item>
-										<dcsset:field>СозданоДокументов.ПроцентОбщий</dcsset:field>
-									</dcsset:item>
-									<dcsset:item>
-										<dcsset:field>СозданоСправочников.ПроцентОбщий</dcsset:field>
-									</dcsset:item>
-								</dcsset:selection>
-								<dcsset:filter/>
-								<dcsset:appearance>
-									<dcscor:item xsi:type="dcsset:SettingsParameterValue">
-										<dcscor:parameter>Формат</dcscor:parameter>
-										<dcscor:value xsi:type="v8:LocalStringType">
-											<v8:item>
-												<v8:lang>ru</v8:lang>
-												<v8:content>ЧДЦ=1</v8:content>
-											</v8:item>
-										</dcscor:value>
-									</dcscor:item>
-								</dcsset:appearance>
-							</dcsset:item>
-						</dcsset:conditionalAppearance>
 						<dcsset:item>
 							<dcsset:groupItems>
 								<dcsset:item xsi:type="dcsset:GroupItemField">
-									<dcsset:field>Дата</dcsset:field>
+									<dcsset:field>Неделя</dcsset:field>
 									<dcsset:groupType>Items</dcsset:groupType>
 									<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
 									<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
@@ -1235,164 +1106,122 @@
 								</dcsset:item>
 							</dcsset:groupItems>
 							<dcsset:order>
-								<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+								<dcsset:item xsi:type="dcsset:OrderItemField">
+									<dcsset:field>Неделя</dcsset:field>
+									<dcsset:orderType>Desc</dcsset:orderType>
+								</dcsset:item>
 							</dcsset:order>
 							<dcsset:selection>
-								<dcsset:item xsi:type="dcsset:SelectedItemField">
-									<dcsset:field>Дата</dcsset:field>
-								</dcsset:item>
-								<dcsset:item xsi:type="dcsset:SelectedItemField">
-									<dcsset:field>КоличествоЗапусков</dcsset:field>
-								</dcsset:item>
-								<dcsset:item xsi:type="dcsset:SelectedItemField">
-									<dcsset:field>ЧасовРаботы</dcsset:field>
-								</dcsset:item>
-								<dcsset:item xsi:type="dcsset:SelectedItemFolder">
-									<dcsset:lwsTitle>
-										<v8:item>
-											<v8:lang>ru</v8:lang>
-											<v8:content>Документы</v8:content>
-										</v8:item>
-									</dcsset:lwsTitle>
-									<dcsset:item xsi:type="dcsset:SelectedItemField">
-										<dcsset:field>СозданоДокументов</dcsset:field>
-									</dcsset:item>
-									<dcsset:item xsi:type="dcsset:SelectedItemField">
-										<dcsset:use>false</dcsset:use>
-										<dcsset:field>СозданоДокументов.ПроцентОбщий</dcsset:field>
-										<dcsset:lwsTitle>
-											<v8:item>
-												<v8:lang>ru</v8:lang>
-												<v8:content>Процент введённых документов</v8:content>
-											</v8:item>
-										</dcsset:lwsTitle>
-									</dcsset:item>
-									<dcsset:item xsi:type="dcsset:SelectedItemField">
-										<dcsset:field>ИзмененоДокументов</dcsset:field>
-									</dcsset:item>
-									<dcsset:placement>Auto</dcsset:placement>
-								</dcsset:item>
-								<dcsset:item xsi:type="dcsset:SelectedItemFolder">
-									<dcsset:lwsTitle>
-										<v8:item>
-											<v8:lang>ru</v8:lang>
-											<v8:content>Справочники</v8:content>
-										</v8:item>
-									</dcsset:lwsTitle>
-									<dcsset:item xsi:type="dcsset:SelectedItemField">
-										<dcsset:field>СозданоСправочников</dcsset:field>
-									</dcsset:item>
-									<dcsset:item xsi:type="dcsset:SelectedItemField">
-										<dcsset:use>false</dcsset:use>
-										<dcsset:field>СозданоСправочников.ПроцентОбщий</dcsset:field>
-										<dcsset:lwsTitle>
-											<v8:item>
-												<v8:lang>ru</v8:lang>
-												<v8:content>Процент введённых справочников</v8:content>
-											</v8:item>
-										</dcsset:lwsTitle>
-									</dcsset:item>
-									<dcsset:item xsi:type="dcsset:SelectedItemField">
-										<dcsset:field>ИзмененоСправочников</dcsset:field>
-									</dcsset:item>
-									<dcsset:placement>Auto</dcsset:placement>
-								</dcsset:item>
-								<dcsset:item xsi:type="dcsset:SelectedItemField">
-									<dcsset:field>Ошибок</dcsset:field>
-								</dcsset:item>
-								<dcsset:item xsi:type="dcsset:SelectedItemField">
-									<dcsset:field>Предупреждений</dcsset:field>
-								</dcsset:item>
+								<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
 							</dcsset:selection>
-							<dcsset:conditionalAppearance>
-								<dcsset:item>
-									<dcsset:selection/>
-									<dcsset:filter/>
-									<dcsset:appearance>
-										<dcscor:item xsi:type="dcsset:SettingsParameterValue">
-											<dcscor:parameter>Формат</dcscor:parameter>
-											<dcscor:value xsi:type="v8:LocalStringType">
-												<v8:item>
-													<v8:lang>ru</v8:lang>
-													<v8:content>ДЛФ=D</v8:content>
-												</v8:item>
-											</dcscor:value>
-										</dcscor:item>
-									</dcsset:appearance>
-								</dcsset:item>
-								<dcsset:item>
-									<dcsset:selection>
-										<dcsset:item>
-											<dcsset:field>СозданоДокументов.ПроцентОбщий</dcsset:field>
-										</dcsset:item>
-										<dcsset:item>
-											<dcsset:field>СозданоСправочников.ПроцентОбщий</dcsset:field>
-										</dcsset:item>
-									</dcsset:selection>
-									<dcsset:filter/>
-									<dcsset:appearance>
-										<dcscor:item xsi:type="dcsset:SettingsParameterValue">
-											<dcscor:parameter>Формат</dcscor:parameter>
-											<dcscor:value xsi:type="v8:LocalStringType">
-												<v8:item>
-													<v8:lang>ru</v8:lang>
-													<v8:content>ЧДЦ=1</v8:content>
-												</v8:item>
-											</dcscor:value>
-										</dcscor:item>
-									</dcsset:appearance>
-								</dcsset:item>
-								<dcsset:item>
-									<dcsset:selection>
-										<dcsset:item>
-											<dcsset:field>ЧасовРаботы</dcsset:field>
-										</dcsset:item>
-									</dcsset:selection>
-									<dcsset:filter/>
-									<dcsset:appearance>
-										<dcscor:item xsi:type="dcsset:SettingsParameterValue">
-											<dcscor:parameter>Формат</dcscor:parameter>
-											<dcscor:value xsi:type="v8:LocalStringType">
-												<v8:item>
-													<v8:lang>ru</v8:lang>
-													<v8:content>ЧДЦ=2</v8:content>
-												</v8:item>
-											</dcscor:value>
-										</dcscor:item>
-									</dcsset:appearance>
-								</dcsset:item>
-							</dcsset:conditionalAppearance>
-							<dcsset:outputParameters>
-								<dcscor:item xsi:type="dcsset:SettingsParameterValue">
-									<dcscor:use>false</dcscor:use>
-									<dcscor:parameter>МакетОформления</dcscor:parameter>
-									<dcscor:value xsi:type="xs:string">Основной</dcscor:value>
-								</dcscor:item>
-							</dcsset:outputParameters>
+							<dcsset:item>
+								<dcsset:groupItems>
+									<dcsset:item xsi:type="dcsset:GroupItemField">
+										<dcsset:field>Дата</dcsset:field>
+										<dcsset:groupType>Items</dcsset:groupType>
+										<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+										<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+										<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+									</dcsset:item>
+								</dcsset:groupItems>
+								<dcsset:order>
+									<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+								</dcsset:order>
+								<dcsset:selection>
+									<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+								</dcsset:selection>
+							</dcsset:item>
 						</dcsset:item>
 					</dcsset:item>
 				</dcsset:row>
-				<dcsset:conditionalAppearance>
-					<dcsset:item>
-						<dcsset:selection>
-							<dcsset:item>
-								<dcsset:field>ЧасовРаботы</dcsset:field>
-							</dcsset:item>
-						</dcsset:selection>
-						<dcsset:filter/>
-						<dcsset:appearance>
-							<dcscor:item xsi:type="dcsset:SettingsParameterValue">
-								<dcscor:parameter>Формат</dcscor:parameter>
-								<dcscor:value xsi:type="v8:LocalStringType">
-									<v8:item>
-										<v8:lang>ru</v8:lang>
-										<v8:content>ЧДЦ=2</v8:content>
-									</v8:item>
-								</dcscor:value>
-							</dcscor:item>
-						</dcsset:appearance>
+				<dcsset:selection>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>КоличествоЗапусков</dcsset:field>
 					</dcsset:item>
-				</dcsset:conditionalAppearance>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ЧасовРаботы</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemFolder">
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Документы</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:field>СозданоДокументов</dcsset:field>
+							<dcsset:lwsTitle>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Введено</v8:content>
+								</v8:item>
+							</dcsset:lwsTitle>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:use>false</dcsset:use>
+							<dcsset:field>СозданоДокументов.ПроцентОбщий</dcsset:field>
+							<dcsset:lwsTitle>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Введено, %</v8:content>
+								</v8:item>
+							</dcsset:lwsTitle>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:field>ИзмененоДокументов</dcsset:field>
+							<dcsset:lwsTitle>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Изменено</v8:content>
+								</v8:item>
+							</dcsset:lwsTitle>
+						</dcsset:item>
+						<dcsset:placement>Auto</dcsset:placement>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemFolder">
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Справочники</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:field>СозданоСправочников</dcsset:field>
+							<dcsset:lwsTitle>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Введено</v8:content>
+								</v8:item>
+							</dcsset:lwsTitle>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:use>false</dcsset:use>
+							<dcsset:field>СозданоСправочников.ПроцентОбщий</dcsset:field>
+							<dcsset:lwsTitle>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Введено, %</v8:content>
+								</v8:item>
+							</dcsset:lwsTitle>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:field>ИзмененоСправочников</dcsset:field>
+							<dcsset:lwsTitle>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Изменено</v8:content>
+								</v8:item>
+							</dcsset:lwsTitle>
+						</dcsset:item>
+						<dcsset:placement>Auto</dcsset:placement>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>Ошибок</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>Предупреждений</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
 			</dcsset:item>
 			<dcsset:item xsi:type="dcsset:StructureItemGroup">
 				<dcsset:groupItems>
@@ -1419,10 +1248,6 @@
 					</dcsset:item>
 				</dcsset:selection>
 				<dcsset:outputParameters>
-					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
-						<dcscor:parameter>ВыводитьЗаголовок</dcscor:parameter>
-						<dcscor:value xsi:type="dcsset:DataCompositionTextOutputType">Auto</dcscor:value>
-					</dcscor:item>
 					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
 						<dcscor:parameter>Заголовок</dcscor:parameter>
 						<dcscor:value xsi:type="v8:LocalStringType">
@@ -1457,23 +1282,6 @@
 							<dcsset:field>ОдновременноРаботавшихПользователей</dcsset:field>
 						</dcsset:item>
 					</dcsset:selection>
-					<dcsset:conditionalAppearance>
-						<dcsset:item>
-							<dcsset:selection/>
-							<dcsset:filter/>
-							<dcsset:appearance>
-								<dcscor:item xsi:type="dcsset:SettingsParameterValue">
-									<dcscor:parameter>Формат</dcscor:parameter>
-									<dcscor:value xsi:type="v8:LocalStringType">
-										<v8:item>
-											<v8:lang>ru</v8:lang>
-											<v8:content>ДЛФ=D</v8:content>
-										</v8:item>
-									</dcscor:value>
-								</dcscor:item>
-							</dcsset:appearance>
-						</dcsset:item>
-					</dcsset:conditionalAppearance>
 					<dcsset:item xsi:type="dcsset:StructureItemGroup">
 						<dcsset:order>
 							<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
@@ -1501,9 +1309,7 @@
 						<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
 					</dcsset:order>
 					<dcsset:selection>
-						<dcsset:item xsi:type="dcsset:SelectedItemField">
-							<dcsset:field>Пользователь</dcsset:field>
-						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
 					</dcsset:selection>
 					<dcsset:conditionalAppearance>
 						<dcsset:item>
@@ -1525,24 +1331,11 @@
 				<dcsset:selection>
 					<dcsset:item xsi:type="dcsset:SelectedItemField">
 						<dcsset:field>СозданоДокументов</dcsset:field>
-						<dcsset:lwsTitle>
-							<v8:item>
-								<v8:lang>ru</v8:lang>
-								<v8:content>Введено документов</v8:content>
-							</v8:item>
-						</dcsset:lwsTitle>
 					</dcsset:item>
 					<dcsset:item xsi:type="dcsset:SelectedItemField">
 						<dcsset:field>ИзмененоДокументов</dcsset:field>
 					</dcsset:item>
 				</dcsset:selection>
-				<dcsset:conditionalAppearance>
-					<dcsset:item>
-						<dcsset:selection/>
-						<dcsset:filter/>
-						<dcsset:appearance/>
-					</dcsset:item>
-				</dcsset:conditionalAppearance>
 				<dcsset:outputParameters>
 					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
 						<dcscor:parameter>ТипДиаграммы</dcscor:parameter>
@@ -1559,10 +1352,6 @@
 								<v8:content>Диаграмма "Введено документов и справочников"</v8:content>
 							</v8:item>
 						</dcsset:userSettingPresentation>
-					</dcscor:item>
-					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
-						<dcscor:parameter>ВыводитьЗаголовок</dcscor:parameter>
-						<dcscor:value xsi:type="dcsset:DataCompositionTextOutputType">Output</dcscor:value>
 					</dcscor:item>
 					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
 						<dcscor:parameter>Заголовок</dcscor:parameter>
@@ -1592,9 +1381,7 @@
 						<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
 					</dcsset:order>
 					<dcsset:selection>
-						<dcsset:item xsi:type="dcsset:SelectedItemField">
-							<dcsset:field>Пользователь</dcsset:field>
-						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
 					</dcsset:selection>
 					<dcsset:conditionalAppearance>
 						<dcsset:item>
@@ -1616,12 +1403,6 @@
 				<dcsset:selection>
 					<dcsset:item xsi:type="dcsset:SelectedItemField">
 						<dcsset:field>СозданоСправочников</dcsset:field>
-						<dcsset:lwsTitle>
-							<v8:item>
-								<v8:lang>ru</v8:lang>
-								<v8:content>Введено справочников</v8:content>
-							</v8:item>
-						</dcsset:lwsTitle>
 					</dcsset:item>
 					<dcsset:item xsi:type="dcsset:SelectedItemField">
 						<dcsset:field>ИзмененоСправочников</dcsset:field>
@@ -1643,10 +1424,6 @@
 								<v8:content>Диаграмма "Изменено документов и справочников"</v8:content>
 							</v8:item>
 						</dcsset:userSettingPresentation>
-					</dcscor:item>
-					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
-						<dcscor:parameter>ВыводитьЗаголовок</dcscor:parameter>
-						<dcscor:value xsi:type="dcsset:DataCompositionTextOutputType">Output</dcscor:value>
 					</dcscor:item>
 					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
 						<dcscor:parameter>Заголовок</dcscor:parameter>
@@ -1709,6 +1486,13 @@
 					<dcsset:viewMode>Normal</dcsset:viewMode>
 					<dcsset:userSettingID>77c6728f-6e30-41d9-b2b4-7d9dedb0914d</dcsset:userSettingID>
 				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>Приложение</dcscor:parameter>
+					<dcscor:value xsi:nil="true"/>
+					<dcsset:viewMode>Normal</dcsset:viewMode>
+					<dcsset:userSettingID>1945fb18-25b8-4170-9fc7-b2716121a8ad</dcsset:userSettingID>
+				</dcscor:item>
 			</dcsset:dataParameters>
 			<dcsset:order>
 				<dcsset:item xsi:type="dcsset:OrderItemField">
@@ -1716,16 +1500,69 @@
 					<dcsset:orderType>Desc</dcsset:orderType>
 				</dcsset:item>
 			</dcsset:order>
+			<dcsset:conditionalAppearance>
+				<dcsset:item>
+					<dcsset:selection>
+						<dcsset:item>
+							<dcsset:field>Дата</dcsset:field>
+						</dcsset:item>
+					</dcsset:selection>
+					<dcsset:filter/>
+					<dcsset:appearance>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>Формат</dcscor:parameter>
+							<dcscor:value xsi:type="v8:LocalStringType">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>ДЛФ=D</v8:content>
+								</v8:item>
+							</dcscor:value>
+						</dcscor:item>
+					</dcsset:appearance>
+				</dcsset:item>
+				<dcsset:item>
+					<dcsset:selection>
+						<dcsset:item>
+							<dcsset:field>СозданоДокументов.ПроцентОбщий</dcsset:field>
+						</dcsset:item>
+						<dcsset:item>
+							<dcsset:field>СозданоСправочников.ПроцентОбщий</dcsset:field>
+						</dcsset:item>
+					</dcsset:selection>
+					<dcsset:filter/>
+					<dcsset:appearance>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>Формат</dcscor:parameter>
+							<dcscor:value xsi:type="v8:LocalStringType">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>ЧДЦ=1</v8:content>
+								</v8:item>
+							</dcscor:value>
+						</dcscor:item>
+					</dcsset:appearance>
+				</dcsset:item>
+				<dcsset:item>
+					<dcsset:selection>
+						<dcsset:item>
+							<dcsset:field>ЧасовРаботы</dcsset:field>
+						</dcsset:item>
+					</dcsset:selection>
+					<dcsset:filter/>
+					<dcsset:appearance>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>Формат</dcscor:parameter>
+							<dcscor:value xsi:type="v8:LocalStringType">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>ЧДЦ=2</v8:content>
+								</v8:item>
+							</dcscor:value>
+						</dcscor:item>
+					</dcsset:appearance>
+				</dcsset:item>
+			</dcsset:conditionalAppearance>
 			<dcsset:outputParameters>
-				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
-					<dcscor:use>false</dcscor:use>
-					<dcscor:parameter>МакетОформления</dcscor:parameter>
-					<dcscor:value xsi:type="xs:string">Основной</dcscor:value>
-				</dcscor:item>
-				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
-					<dcscor:parameter>ВыводитьЗаголовок</dcscor:parameter>
-					<dcscor:value xsi:type="dcsset:DataCompositionTextOutputType">Output</dcscor:value>
-				</dcscor:item>
 				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
 					<dcscor:parameter>Заголовок</dcscor:parameter>
 					<dcscor:value xsi:type="v8:LocalStringType">
@@ -1763,126 +1600,15 @@
 					</dcsset:order>
 					<dcsset:selection>
 						<dcsset:item xsi:type="dcsset:SelectedItemField">
-							<dcsset:field>Подразделение</dcsset:field>
+							<dcsset:use>false</dcsset:use>
+							<dcsset:field>ПодразделениеПредставление</dcsset:field>
 						</dcsset:item>
-						<dcsset:item xsi:type="dcsset:SelectedItemField">
-							<dcsset:field>КоличествоПользователей</dcsset:field>
-						</dcsset:item>
-						<dcsset:item xsi:type="dcsset:SelectedItemField">
-							<dcsset:field>КоличествоЗапусков</dcsset:field>
-						</dcsset:item>
-						<dcsset:item xsi:type="dcsset:SelectedItemField">
-							<dcsset:field>ЧасовРаботы</dcsset:field>
-						</dcsset:item>
-						<dcsset:item xsi:type="dcsset:SelectedItemFolder">
-							<dcsset:lwsTitle>
-								<v8:item>
-									<v8:lang>ru</v8:lang>
-									<v8:content>Документы</v8:content>
-								</v8:item>
-							</dcsset:lwsTitle>
-							<dcsset:item xsi:type="dcsset:SelectedItemField">
-								<dcsset:field>СозданоДокументов</dcsset:field>
-								<dcsset:lwsTitle>
-									<v8:item>
-										<v8:lang>ru</v8:lang>
-										<v8:content>Введено</v8:content>
-									</v8:item>
-								</dcsset:lwsTitle>
-							</dcsset:item>
-							<dcsset:item xsi:type="dcsset:SelectedItemField">
-								<dcsset:use>false</dcsset:use>
-								<dcsset:field>СозданоДокументов.ПроцентОбщий</dcsset:field>
-								<dcsset:lwsTitle>
-									<v8:item>
-										<v8:lang>ru</v8:lang>
-										<v8:content>Процент введённых документов</v8:content>
-									</v8:item>
-								</dcsset:lwsTitle>
-							</dcsset:item>
-							<dcsset:item xsi:type="dcsset:SelectedItemField">
-								<dcsset:field>ИзмененоДокументов</dcsset:field>
-								<dcsset:lwsTitle>
-									<v8:item>
-										<v8:lang>ru</v8:lang>
-										<v8:content>Изменено</v8:content>
-									</v8:item>
-								</dcsset:lwsTitle>
-							</dcsset:item>
-							<dcsset:placement>Auto</dcsset:placement>
-						</dcsset:item>
-						<dcsset:item xsi:type="dcsset:SelectedItemFolder">
-							<dcsset:lwsTitle>
-								<v8:item>
-									<v8:lang>ru</v8:lang>
-									<v8:content>Справочники</v8:content>
-								</v8:item>
-							</dcsset:lwsTitle>
-							<dcsset:item xsi:type="dcsset:SelectedItemField">
-								<dcsset:field>СозданоСправочников</dcsset:field>
-								<dcsset:lwsTitle>
-									<v8:item>
-										<v8:lang>ru</v8:lang>
-										<v8:content>Введено</v8:content>
-									</v8:item>
-								</dcsset:lwsTitle>
-							</dcsset:item>
-							<dcsset:item xsi:type="dcsset:SelectedItemField">
-								<dcsset:use>false</dcsset:use>
-								<dcsset:field>СозданоСправочников.ПроцентОбщий</dcsset:field>
-								<dcsset:lwsTitle>
-									<v8:item>
-										<v8:lang>ru</v8:lang>
-										<v8:content>Процент введённых справочников</v8:content>
-									</v8:item>
-								</dcsset:lwsTitle>
-							</dcsset:item>
-							<dcsset:item xsi:type="dcsset:SelectedItemField">
-								<dcsset:field>ИзмененоСправочников</dcsset:field>
-								<dcsset:lwsTitle>
-									<v8:item>
-										<v8:lang>ru</v8:lang>
-										<v8:content>Изменено</v8:content>
-									</v8:item>
-								</dcsset:lwsTitle>
-							</dcsset:item>
-							<dcsset:placement>Auto</dcsset:placement>
-						</dcsset:item>
-						<dcsset:item xsi:type="dcsset:SelectedItemField">
-							<dcsset:field>Ошибок</dcsset:field>
-						</dcsset:item>
-						<dcsset:item xsi:type="dcsset:SelectedItemField">
-							<dcsset:field>Предупреждений</dcsset:field>
-						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
 					</dcsset:selection>
-					<dcsset:conditionalAppearance>
-						<dcsset:item>
-							<dcsset:selection>
-								<dcsset:item>
-									<dcsset:field>СозданоДокументов.ПроцентОбщий</dcsset:field>
-								</dcsset:item>
-								<dcsset:item>
-									<dcsset:field>СозданоДокументов.ПроцентОбщий</dcsset:field>
-								</dcsset:item>
-							</dcsset:selection>
-							<dcsset:filter/>
-							<dcsset:appearance>
-								<dcscor:item xsi:type="dcsset:SettingsParameterValue">
-									<dcscor:parameter>Формат</dcscor:parameter>
-									<dcscor:value xsi:type="v8:LocalStringType">
-										<v8:item>
-											<v8:lang>ru</v8:lang>
-											<v8:content>ЧДЦ=1</v8:content>
-										</v8:item>
-									</dcscor:value>
-								</dcscor:item>
-							</dcsset:appearance>
-						</dcsset:item>
-					</dcsset:conditionalAppearance>
 					<dcsset:item>
 						<dcsset:groupItems>
 							<dcsset:item xsi:type="dcsset:GroupItemField">
-								<dcsset:field>Неделя</dcsset:field>
+								<dcsset:field>Приложение</dcsset:field>
 								<dcsset:groupType>Items</dcsset:groupType>
 								<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
 								<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
@@ -1890,133 +1616,15 @@
 							</dcsset:item>
 						</dcsset:groupItems>
 						<dcsset:order>
-							<dcsset:item xsi:type="dcsset:OrderItemField">
-								<dcsset:field>Неделя</dcsset:field>
-								<dcsset:orderType>Desc</dcsset:orderType>
-							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
 						</dcsset:order>
 						<dcsset:selection>
-							<dcsset:item xsi:type="dcsset:SelectedItemField">
-								<dcsset:field>Неделя</dcsset:field>
-							</dcsset:item>
-							<dcsset:item xsi:type="dcsset:SelectedItemField">
-								<dcsset:field>КоличествоПользователей</dcsset:field>
-							</dcsset:item>
-							<dcsset:item xsi:type="dcsset:SelectedItemField">
-								<dcsset:field>КоличествоЗапусков</dcsset:field>
-							</dcsset:item>
-							<dcsset:item xsi:type="dcsset:SelectedItemField">
-								<dcsset:field>ЧасовРаботы</dcsset:field>
-							</dcsset:item>
-							<dcsset:item xsi:type="dcsset:SelectedItemFolder">
-								<dcsset:lwsTitle>
-									<v8:item>
-										<v8:lang>ru</v8:lang>
-										<v8:content>Документы</v8:content>
-									</v8:item>
-								</dcsset:lwsTitle>
-								<dcsset:item xsi:type="dcsset:SelectedItemField">
-									<dcsset:field>СозданоДокументов</dcsset:field>
-									<dcsset:lwsTitle>
-										<v8:item>
-											<v8:lang>ru</v8:lang>
-											<v8:content>Введено</v8:content>
-										</v8:item>
-									</dcsset:lwsTitle>
-								</dcsset:item>
-								<dcsset:item xsi:type="dcsset:SelectedItemField">
-									<dcsset:use>false</dcsset:use>
-									<dcsset:field>СозданоДокументов.ПроцентОбщий</dcsset:field>
-									<dcsset:lwsTitle>
-										<v8:item>
-											<v8:lang>ru</v8:lang>
-											<v8:content>Процент введённых документов</v8:content>
-										</v8:item>
-									</dcsset:lwsTitle>
-								</dcsset:item>
-								<dcsset:item xsi:type="dcsset:SelectedItemField">
-									<dcsset:field>ИзмененоДокументов</dcsset:field>
-									<dcsset:lwsTitle>
-										<v8:item>
-											<v8:lang>ru</v8:lang>
-											<v8:content>Изменено</v8:content>
-										</v8:item>
-									</dcsset:lwsTitle>
-								</dcsset:item>
-								<dcsset:placement>Auto</dcsset:placement>
-							</dcsset:item>
-							<dcsset:item xsi:type="dcsset:SelectedItemFolder">
-								<dcsset:lwsTitle>
-									<v8:item>
-										<v8:lang>ru</v8:lang>
-										<v8:content>Справочники</v8:content>
-									</v8:item>
-								</dcsset:lwsTitle>
-								<dcsset:item xsi:type="dcsset:SelectedItemField">
-									<dcsset:field>СозданоСправочников</dcsset:field>
-									<dcsset:lwsTitle>
-										<v8:item>
-											<v8:lang>ru</v8:lang>
-											<v8:content>Введено</v8:content>
-										</v8:item>
-									</dcsset:lwsTitle>
-								</dcsset:item>
-								<dcsset:item xsi:type="dcsset:SelectedItemField">
-									<dcsset:use>false</dcsset:use>
-									<dcsset:field>СозданоСправочников.ПроцентОбщий</dcsset:field>
-									<dcsset:lwsTitle>
-										<v8:item>
-											<v8:lang>ru</v8:lang>
-											<v8:content>Процент введённых справочников</v8:content>
-										</v8:item>
-									</dcsset:lwsTitle>
-								</dcsset:item>
-								<dcsset:item xsi:type="dcsset:SelectedItemField">
-									<dcsset:field>ИзмененоСправочников</dcsset:field>
-									<dcsset:lwsTitle>
-										<v8:item>
-											<v8:lang>ru</v8:lang>
-											<v8:content>Изменено</v8:content>
-										</v8:item>
-									</dcsset:lwsTitle>
-								</dcsset:item>
-								<dcsset:placement>Auto</dcsset:placement>
-							</dcsset:item>
-							<dcsset:item xsi:type="dcsset:SelectedItemField">
-								<dcsset:field>Ошибок</dcsset:field>
-							</dcsset:item>
-							<dcsset:item xsi:type="dcsset:SelectedItemField">
-								<dcsset:field>Предупреждений</dcsset:field>
-							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
 						</dcsset:selection>
-						<dcsset:conditionalAppearance>
-							<dcsset:item>
-								<dcsset:selection>
-									<dcsset:item>
-										<dcsset:field>СозданоДокументов.ПроцентОбщий</dcsset:field>
-									</dcsset:item>
-									<dcsset:item>
-										<dcsset:field>СозданоСправочников.ПроцентОбщий</dcsset:field>
-									</dcsset:item>
-								</dcsset:selection>
-								<dcsset:filter/>
-								<dcsset:appearance>
-									<dcscor:item xsi:type="dcsset:SettingsParameterValue">
-										<dcscor:parameter>Формат</dcscor:parameter>
-										<dcscor:value xsi:type="v8:LocalStringType">
-											<v8:item>
-												<v8:lang>ru</v8:lang>
-												<v8:content>ЧДЦ=1</v8:content>
-											</v8:item>
-										</dcscor:value>
-									</dcscor:item>
-								</dcsset:appearance>
-							</dcsset:item>
-						</dcsset:conditionalAppearance>
 						<dcsset:item>
 							<dcsset:groupItems>
 								<dcsset:item xsi:type="dcsset:GroupItemField">
-									<dcsset:field>Дата</dcsset:field>
+									<dcsset:field>Неделя</dcsset:field>
 									<dcsset:groupType>Items</dcsset:groupType>
 									<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
 									<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
@@ -2024,167 +1632,125 @@
 								</dcsset:item>
 							</dcsset:groupItems>
 							<dcsset:order>
-								<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+								<dcsset:item xsi:type="dcsset:OrderItemField">
+									<dcsset:field>Неделя</dcsset:field>
+									<dcsset:orderType>Desc</dcsset:orderType>
+								</dcsset:item>
 							</dcsset:order>
 							<dcsset:selection>
-								<dcsset:item xsi:type="dcsset:SelectedItemField">
-									<dcsset:field>Дата</dcsset:field>
-								</dcsset:item>
-								<dcsset:item xsi:type="dcsset:SelectedItemField">
-									<dcsset:field>КоличествоПользователей</dcsset:field>
-								</dcsset:item>
-								<dcsset:item xsi:type="dcsset:SelectedItemField">
-									<dcsset:field>КоличествоЗапусков</dcsset:field>
-								</dcsset:item>
-								<dcsset:item xsi:type="dcsset:SelectedItemField">
-									<dcsset:field>ЧасовРаботы</dcsset:field>
-								</dcsset:item>
-								<dcsset:item xsi:type="dcsset:SelectedItemFolder">
-									<dcsset:lwsTitle>
-										<v8:item>
-											<v8:lang>ru</v8:lang>
-											<v8:content>Документы</v8:content>
-										</v8:item>
-									</dcsset:lwsTitle>
-									<dcsset:item xsi:type="dcsset:SelectedItemField">
-										<dcsset:field>СозданоДокументов</dcsset:field>
-									</dcsset:item>
-									<dcsset:item xsi:type="dcsset:SelectedItemField">
-										<dcsset:use>false</dcsset:use>
-										<dcsset:field>СозданоДокументов.ПроцентОбщий</dcsset:field>
-										<dcsset:lwsTitle>
-											<v8:item>
-												<v8:lang>ru</v8:lang>
-												<v8:content>Процент введённых документов</v8:content>
-											</v8:item>
-										</dcsset:lwsTitle>
-									</dcsset:item>
-									<dcsset:item xsi:type="dcsset:SelectedItemField">
-										<dcsset:field>ИзмененоДокументов</dcsset:field>
-									</dcsset:item>
-									<dcsset:placement>Auto</dcsset:placement>
-								</dcsset:item>
-								<dcsset:item xsi:type="dcsset:SelectedItemFolder">
-									<dcsset:lwsTitle>
-										<v8:item>
-											<v8:lang>ru</v8:lang>
-											<v8:content>Справочники</v8:content>
-										</v8:item>
-									</dcsset:lwsTitle>
-									<dcsset:item xsi:type="dcsset:SelectedItemField">
-										<dcsset:field>СозданоСправочников</dcsset:field>
-									</dcsset:item>
-									<dcsset:item xsi:type="dcsset:SelectedItemField">
-										<dcsset:use>false</dcsset:use>
-										<dcsset:field>СозданоСправочников.ПроцентОбщий</dcsset:field>
-										<dcsset:lwsTitle>
-											<v8:item>
-												<v8:lang>ru</v8:lang>
-												<v8:content>Процент введённых справочников</v8:content>
-											</v8:item>
-										</dcsset:lwsTitle>
-									</dcsset:item>
-									<dcsset:item xsi:type="dcsset:SelectedItemField">
-										<dcsset:field>ИзмененоСправочников</dcsset:field>
-									</dcsset:item>
-									<dcsset:placement>Auto</dcsset:placement>
-								</dcsset:item>
-								<dcsset:item xsi:type="dcsset:SelectedItemField">
-									<dcsset:field>Ошибок</dcsset:field>
-								</dcsset:item>
-								<dcsset:item xsi:type="dcsset:SelectedItemField">
-									<dcsset:field>Предупреждений</dcsset:field>
-								</dcsset:item>
+								<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
 							</dcsset:selection>
-							<dcsset:conditionalAppearance>
-								<dcsset:item>
-									<dcsset:selection/>
-									<dcsset:filter/>
-									<dcsset:appearance>
-										<dcscor:item xsi:type="dcsset:SettingsParameterValue">
-											<dcscor:parameter>Формат</dcscor:parameter>
-											<dcscor:value xsi:type="v8:LocalStringType">
-												<v8:item>
-													<v8:lang>ru</v8:lang>
-													<v8:content>ДЛФ=D</v8:content>
-												</v8:item>
-											</dcscor:value>
-										</dcscor:item>
-									</dcsset:appearance>
-								</dcsset:item>
-								<dcsset:item>
-									<dcsset:selection>
-										<dcsset:item>
-											<dcsset:field>СозданоДокументов.ПроцентОбщий</dcsset:field>
-										</dcsset:item>
-										<dcsset:item>
-											<dcsset:field>СозданоСправочников.ПроцентОбщий</dcsset:field>
-										</dcsset:item>
-									</dcsset:selection>
-									<dcsset:filter/>
-									<dcsset:appearance>
-										<dcscor:item xsi:type="dcsset:SettingsParameterValue">
-											<dcscor:parameter>Формат</dcscor:parameter>
-											<dcscor:value xsi:type="v8:LocalStringType">
-												<v8:item>
-													<v8:lang>ru</v8:lang>
-													<v8:content>ЧДЦ=1</v8:content>
-												</v8:item>
-											</dcscor:value>
-										</dcscor:item>
-									</dcsset:appearance>
-								</dcsset:item>
-								<dcsset:item>
-									<dcsset:selection>
-										<dcsset:item>
-											<dcsset:field>ЧасовРаботы</dcsset:field>
-										</dcsset:item>
-									</dcsset:selection>
-									<dcsset:filter/>
-									<dcsset:appearance>
-										<dcscor:item xsi:type="dcsset:SettingsParameterValue">
-											<dcscor:parameter>Формат</dcscor:parameter>
-											<dcscor:value xsi:type="v8:LocalStringType">
-												<v8:item>
-													<v8:lang>ru</v8:lang>
-													<v8:content>ЧДЦ=2</v8:content>
-												</v8:item>
-											</dcscor:value>
-										</dcscor:item>
-									</dcsset:appearance>
-								</dcsset:item>
-							</dcsset:conditionalAppearance>
-							<dcsset:outputParameters>
-								<dcscor:item xsi:type="dcsset:SettingsParameterValue">
-									<dcscor:use>false</dcscor:use>
-									<dcscor:parameter>МакетОформления</dcscor:parameter>
-									<dcscor:value xsi:type="xs:string">Основной</dcscor:value>
-								</dcscor:item>
-							</dcsset:outputParameters>
+							<dcsset:item>
+								<dcsset:groupItems>
+									<dcsset:item xsi:type="dcsset:GroupItemField">
+										<dcsset:field>Дата</dcsset:field>
+										<dcsset:groupType>Items</dcsset:groupType>
+										<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+										<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+										<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+									</dcsset:item>
+								</dcsset:groupItems>
+								<dcsset:order>
+									<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+								</dcsset:order>
+								<dcsset:selection>
+									<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+								</dcsset:selection>
+							</dcsset:item>
 						</dcsset:item>
 					</dcsset:item>
 				</dcsset:row>
-				<dcsset:conditionalAppearance>
-					<dcsset:item>
-						<dcsset:selection>
-							<dcsset:item>
-								<dcsset:field>ЧасовРаботы</dcsset:field>
-							</dcsset:item>
-						</dcsset:selection>
-						<dcsset:filter/>
-						<dcsset:appearance>
-							<dcscor:item xsi:type="dcsset:SettingsParameterValue">
-								<dcscor:parameter>Формат</dcscor:parameter>
-								<dcscor:value xsi:type="v8:LocalStringType">
-									<v8:item>
-										<v8:lang>ru</v8:lang>
-										<v8:content>ЧДЦ=2</v8:content>
-									</v8:item>
-								</dcscor:value>
-							</dcscor:item>
-						</dcsset:appearance>
+				<dcsset:selection>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>КоличествоПользователей</dcsset:field>
 					</dcsset:item>
-				</dcsset:conditionalAppearance>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>КоличествоЗапусков</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ЧасовРаботы</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemFolder">
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Документы</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:field>СозданоДокументов</dcsset:field>
+							<dcsset:lwsTitle>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Введено</v8:content>
+								</v8:item>
+							</dcsset:lwsTitle>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:use>false</dcsset:use>
+							<dcsset:field>СозданоДокументов.ПроцентОбщий</dcsset:field>
+							<dcsset:lwsTitle>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Введено, %</v8:content>
+								</v8:item>
+							</dcsset:lwsTitle>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:field>ИзмененоДокументов</dcsset:field>
+							<dcsset:lwsTitle>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Изменено</v8:content>
+								</v8:item>
+							</dcsset:lwsTitle>
+						</dcsset:item>
+						<dcsset:placement>Auto</dcsset:placement>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemFolder">
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Справочники</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:field>СозданоСправочников</dcsset:field>
+							<dcsset:lwsTitle>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Введено</v8:content>
+								</v8:item>
+							</dcsset:lwsTitle>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:use>false</dcsset:use>
+							<dcsset:field>СозданоСправочников.ПроцентОбщий</dcsset:field>
+							<dcsset:lwsTitle>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Введено, %</v8:content>
+								</v8:item>
+							</dcsset:lwsTitle>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:field>ИзмененоСправочников</dcsset:field>
+							<dcsset:lwsTitle>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Изменено</v8:content>
+								</v8:item>
+							</dcsset:lwsTitle>
+						</dcsset:item>
+						<dcsset:placement>Auto</dcsset:placement>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>Ошибок</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>Предупреждений</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
 			</dcsset:item>
 			<dcsset:item xsi:type="dcsset:StructureItemChart">
 				<dcsset:point>
@@ -2201,9 +1767,7 @@
 						<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
 					</dcsset:order>
 					<dcsset:selection>
-						<dcsset:item xsi:type="dcsset:SelectedItemField">
-							<dcsset:field>Подразделение</dcsset:field>
-						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
 					</dcsset:selection>
 					<dcsset:conditionalAppearance>
 						<dcsset:item>
@@ -2225,24 +1789,11 @@
 				<dcsset:selection>
 					<dcsset:item xsi:type="dcsset:SelectedItemField">
 						<dcsset:field>СозданоДокументов</dcsset:field>
-						<dcsset:lwsTitle>
-							<v8:item>
-								<v8:lang>ru</v8:lang>
-								<v8:content>Введено документов</v8:content>
-							</v8:item>
-						</dcsset:lwsTitle>
 					</dcsset:item>
 					<dcsset:item xsi:type="dcsset:SelectedItemField">
 						<dcsset:field>ИзмененоДокументов</dcsset:field>
 					</dcsset:item>
 				</dcsset:selection>
-				<dcsset:conditionalAppearance>
-					<dcsset:item>
-						<dcsset:selection/>
-						<dcsset:filter/>
-						<dcsset:appearance/>
-					</dcsset:item>
-				</dcsset:conditionalAppearance>
 				<dcsset:outputParameters>
 					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
 						<dcscor:parameter>ТипДиаграммы</dcscor:parameter>
@@ -2259,10 +1810,6 @@
 								<v8:content>Диаграмма "Введено документов и справочников"</v8:content>
 							</v8:item>
 						</dcsset:userSettingPresentation>
-					</dcscor:item>
-					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
-						<dcscor:parameter>ВыводитьЗаголовок</dcscor:parameter>
-						<dcscor:value xsi:type="dcsset:DataCompositionTextOutputType">Output</dcscor:value>
 					</dcscor:item>
 					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
 						<dcscor:parameter>Заголовок</dcscor:parameter>
@@ -2292,9 +1839,7 @@
 						<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
 					</dcsset:order>
 					<dcsset:selection>
-						<dcsset:item xsi:type="dcsset:SelectedItemField">
-							<dcsset:field>Подразделение</dcsset:field>
-						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
 					</dcsset:selection>
 					<dcsset:conditionalAppearance>
 						<dcsset:item>
@@ -2316,12 +1861,6 @@
 				<dcsset:selection>
 					<dcsset:item xsi:type="dcsset:SelectedItemField">
 						<dcsset:field>СозданоСправочников</dcsset:field>
-						<dcsset:lwsTitle>
-							<v8:item>
-								<v8:lang>ru</v8:lang>
-								<v8:content>Введено справочников</v8:content>
-							</v8:item>
-						</dcsset:lwsTitle>
 					</dcsset:item>
 					<dcsset:item xsi:type="dcsset:SelectedItemField">
 						<dcsset:field>ИзмененоСправочников</dcsset:field>
@@ -2343,10 +1882,6 @@
 								<v8:content>Диаграмма "Изменено документов и справочников"</v8:content>
 							</v8:item>
 						</dcsset:userSettingPresentation>
-					</dcscor:item>
-					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
-						<dcscor:parameter>ВыводитьЗаголовок</dcscor:parameter>
-						<dcscor:value xsi:type="dcsset:DataCompositionTextOutputType">Output</dcscor:value>
 					</dcscor:item>
 					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
 						<dcscor:parameter>Заголовок</dcscor:parameter>
@@ -2372,6 +1907,14 @@
 			</v8:item>
 		</dcsset:presentation>
 		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+			<dcsset:selection>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Введено</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Изменено</dcsset:field>
+				</dcsset:item>
+			</dcsset:selection>
 			<dcsset:dataParameters>
 				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
 					<dcscor:parameter>Пользователь</dcscor:parameter>
@@ -2420,7 +1963,35 @@
 					<dcsset:viewMode>Normal</dcsset:viewMode>
 					<dcsset:userSettingID>4deb8d4f-717d-4874-ab69-1a97f38ef5ad</dcsset:userSettingID>
 				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>Приложение</dcscor:parameter>
+					<dcscor:value xsi:nil="true"/>
+					<dcsset:viewMode>Normal</dcsset:viewMode>
+					<dcsset:userSettingID>14a891db-e4b6-4e71-9da7-5b4818fe998b</dcsset:userSettingID>
+				</dcscor:item>
 			</dcsset:dataParameters>
+			<dcsset:conditionalAppearance>
+				<dcsset:item>
+					<dcsset:selection>
+						<dcsset:item>
+							<dcsset:field>Дата</dcsset:field>
+						</dcsset:item>
+					</dcsset:selection>
+					<dcsset:filter/>
+					<dcsset:appearance>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>Формат</dcscor:parameter>
+							<dcscor:value xsi:type="v8:LocalStringType">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>ДЛФ=D</v8:content>
+								</v8:item>
+							</dcscor:value>
+						</dcscor:item>
+					</dcsset:appearance>
+				</dcsset:item>
+			</dcsset:conditionalAppearance>
 			<dcsset:outputParameters>
 				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
 					<dcscor:parameter>ГоризонтальноеРасположениеОбщихИтогов</dcscor:parameter>
@@ -2429,10 +2000,6 @@
 				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
 					<dcscor:parameter>ВертикальноеРасположениеОбщихИтогов</dcscor:parameter>
 					<dcscor:value xsi:type="dcscor:DataCompositionTotalPlacement">BeginAndEnd</dcscor:value>
-				</dcscor:item>
-				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
-					<dcscor:parameter>ВыводитьЗаголовок</dcscor:parameter>
-					<dcscor:value xsi:type="dcsset:DataCompositionTextOutputType">Output</dcscor:value>
 				</dcscor:item>
 				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
 					<dcscor:parameter>Заголовок</dcscor:parameter>
@@ -2447,153 +2014,75 @@
 					<dcscor:parameter>ВыводитьПараметрыДанных</dcscor:parameter>
 					<dcscor:value xsi:type="dcsset:DataCompositionTextOutputType">DontOutput</dcscor:value>
 				</dcscor:item>
-				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
-					<dcscor:parameter>ВыводитьОтбор</dcscor:parameter>
-					<dcscor:value xsi:type="dcsset:DataCompositionTextOutputType">DontOutput</dcscor:value>
-				</dcscor:item>
 			</dcsset:outputParameters>
 			<dcsset:item xsi:type="dcsset:StructureItemGroup">
 				<dcsset:groupItems>
 					<dcsset:item xsi:type="dcsset:GroupItemField">
-						<dcsset:field>Дата</dcsset:field>
+						<dcsset:field>Приложение</dcsset:field>
 						<dcsset:groupType>Items</dcsset:groupType>
 						<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
 						<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
 						<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
 					</dcsset:item>
 				</dcsset:groupItems>
-				<dcsset:filter>
-					<dcsset:item xsi:type="dcsset:FilterItemComparison">
-						<dcsset:left xsi:type="dcscor:Field">ОбъектСправочникДокумент</dcsset:left>
-						<dcsset:comparisonType>Filled</dcsset:comparisonType>
-					</dcsset:item>
-				</dcsset:filter>
 				<dcsset:order>
-					<dcsset:item xsi:type="dcsset:OrderItemField">
-						<dcsset:field>Дата</dcsset:field>
-						<dcsset:orderType>Desc</dcsset:orderType>
-					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
 				</dcsset:order>
 				<dcsset:selection>
-					<dcsset:item xsi:type="dcsset:SelectedItemField">
-						<dcsset:field>Дата</dcsset:field>
-					</dcsset:item>
-					<dcsset:item xsi:type="dcsset:SelectedItemField">
-						<dcsset:field>Введено</dcsset:field>
-					</dcsset:item>
-					<dcsset:item xsi:type="dcsset:SelectedItemField">
-						<dcsset:field>Изменено</dcsset:field>
-					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
 				</dcsset:selection>
-				<dcsset:conditionalAppearance>
-					<dcsset:item>
-						<dcsset:selection/>
-						<dcsset:filter/>
-						<dcsset:appearance>
-							<dcscor:item xsi:type="dcsset:SettingsParameterValue">
-								<dcscor:parameter>Формат</dcscor:parameter>
-								<dcscor:value xsi:type="v8:LocalStringType">
-									<v8:item>
-										<v8:lang>ru</v8:lang>
-										<v8:content>ДЛФ=D</v8:content>
-									</v8:item>
-								</dcscor:value>
-							</dcscor:item>
-						</dcsset:appearance>
-					</dcsset:item>
-				</dcsset:conditionalAppearance>
-				<dcsset:outputParameters>
-					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
-						<dcscor:parameter>ВыводитьЗаголовок</dcscor:parameter>
-						<dcscor:value xsi:type="dcsset:DataCompositionTextOutputType">DontOutput</dcscor:value>
-					</dcscor:item>
-					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
-						<dcscor:parameter>ВыводитьОтбор</dcscor:parameter>
-						<dcscor:value xsi:type="dcsset:DataCompositionTextOutputType">DontOutput</dcscor:value>
-					</dcscor:item>
-				</dcsset:outputParameters>
 				<dcsset:item xsi:type="dcsset:StructureItemGroup">
 					<dcsset:groupItems>
 						<dcsset:item xsi:type="dcsset:GroupItemField">
-							<dcsset:field>ВидОбъекта</dcsset:field>
+							<dcsset:field>Дата</dcsset:field>
 							<dcsset:groupType>Items</dcsset:groupType>
 							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
 							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
 							<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
 						</dcsset:item>
 					</dcsset:groupItems>
-					<dcsset:filter>
-						<dcsset:item xsi:type="dcsset:FilterItemComparison">
-							<dcsset:left xsi:type="dcscor:Field">ВидОбъекта</dcsset:left>
-							<dcsset:comparisonType>Filled</dcsset:comparisonType>
-							<dcsset:application>Hierarchy</dcsset:application>
-						</dcsset:item>
-					</dcsset:filter>
 					<dcsset:order>
-						<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+						<dcsset:item xsi:type="dcsset:OrderItemField">
+							<dcsset:field>Дата</dcsset:field>
+							<dcsset:orderType>Desc</dcsset:orderType>
+						</dcsset:item>
 					</dcsset:order>
 					<dcsset:selection>
-						<dcsset:item xsi:type="dcsset:SelectedItemField">
-							<dcsset:field>ВидОбъекта</dcsset:field>
-						</dcsset:item>
-						<dcsset:item xsi:type="dcsset:SelectedItemField">
-							<dcsset:field>Введено</dcsset:field>
-						</dcsset:item>
-						<dcsset:item xsi:type="dcsset:SelectedItemField">
-							<dcsset:field>Изменено</dcsset:field>
-						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
 					</dcsset:selection>
-					<dcsset:outputParameters>
-						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
-							<dcscor:parameter>ВыводитьЗаголовок</dcscor:parameter>
-							<dcscor:value xsi:type="dcsset:DataCompositionTextOutputType">DontOutput</dcscor:value>
-						</dcscor:item>
-						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
-							<dcscor:parameter>ВыводитьОтбор</dcscor:parameter>
-							<dcscor:value xsi:type="dcsset:DataCompositionTextOutputType">DontOutput</dcscor:value>
-						</dcscor:item>
-					</dcsset:outputParameters>
 					<dcsset:item xsi:type="dcsset:StructureItemGroup">
 						<dcsset:groupItems>
 							<dcsset:item xsi:type="dcsset:GroupItemField">
-								<dcsset:field>ОбъектСправочникДокумент</dcsset:field>
+								<dcsset:field>ВидОбъекта</dcsset:field>
 								<dcsset:groupType>Items</dcsset:groupType>
 								<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
 								<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
 								<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
 							</dcsset:item>
 						</dcsset:groupItems>
-						<dcsset:filter>
-							<dcsset:item xsi:type="dcsset:FilterItemComparison">
-								<dcsset:left xsi:type="dcscor:Field">ОбъектСправочникДокумент</dcsset:left>
-								<dcsset:comparisonType>Filled</dcsset:comparisonType>
-								<dcsset:application>Hierarchy</dcsset:application>
-							</dcsset:item>
-						</dcsset:filter>
 						<dcsset:order>
 							<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
 						</dcsset:order>
 						<dcsset:selection>
-							<dcsset:item xsi:type="dcsset:SelectedItemField">
-								<dcsset:field>ОбъектСправочникДокумент</dcsset:field>
-							</dcsset:item>
-							<dcsset:item xsi:type="dcsset:SelectedItemField">
-								<dcsset:field>Введено</dcsset:field>
-							</dcsset:item>
-							<dcsset:item xsi:type="dcsset:SelectedItemField">
-								<dcsset:field>Изменено</dcsset:field>
-							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
 						</dcsset:selection>
-						<dcsset:outputParameters>
-							<dcscor:item xsi:type="dcsset:SettingsParameterValue">
-								<dcscor:parameter>ВыводитьЗаголовок</dcscor:parameter>
-								<dcscor:value xsi:type="dcsset:DataCompositionTextOutputType">DontOutput</dcscor:value>
-							</dcscor:item>
-							<dcscor:item xsi:type="dcsset:SettingsParameterValue">
-								<dcscor:parameter>ВыводитьОтбор</dcscor:parameter>
-								<dcscor:value xsi:type="dcsset:DataCompositionTextOutputType">DontOutput</dcscor:value>
-							</dcscor:item>
-						</dcsset:outputParameters>
+						<dcsset:item xsi:type="dcsset:StructureItemGroup">
+							<dcsset:groupItems>
+								<dcsset:item xsi:type="dcsset:GroupItemField">
+									<dcsset:field>ОбъектСправочникДокумент</dcsset:field>
+									<dcsset:groupType>Items</dcsset:groupType>
+									<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+									<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+									<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+								</dcsset:item>
+							</dcsset:groupItems>
+							<dcsset:order>
+								<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+							</dcsset:order>
+							<dcsset:selection>
+								<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+							</dcsset:selection>
+						</dcsset:item>
 					</dcsset:item>
 				</dcsset:item>
 			</dcsset:item>
@@ -2612,9 +2101,7 @@
 						<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
 					</dcsset:order>
 					<dcsset:selection>
-						<dcsset:item xsi:type="dcsset:SelectedItemField">
-							<dcsset:field>Дата</dcsset:field>
-						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
 					</dcsset:selection>
 					<dcsset:conditionalAppearance>
 						<dcsset:item>
@@ -2643,20 +2130,11 @@
 					</dcsset:conditionalAppearance>
 				</dcsset:point>
 				<dcsset:selection>
-					<dcsset:item xsi:type="dcsset:SelectedItemFolder">
-						<dcsset:lwsTitle>
-							<v8:item>
-								<v8:lang>ru</v8:lang>
-								<v8:content>Активность пользователя</v8:content>
-							</v8:item>
-						</dcsset:lwsTitle>
-						<dcsset:item xsi:type="dcsset:SelectedItemField">
-							<dcsset:field>СозданоДокументов</dcsset:field>
-						</dcsset:item>
-						<dcsset:item xsi:type="dcsset:SelectedItemField">
-							<dcsset:field>ИзмененоДокументов</dcsset:field>
-						</dcsset:item>
-						<dcsset:placement>Auto</dcsset:placement>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>СозданоДокументов</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ИзмененоДокументов</dcsset:field>
 					</dcsset:item>
 				</dcsset:selection>
 				<dcsset:outputParameters>
@@ -2674,10 +2152,6 @@
 								<v8:content>Диаграмма "Введено и изменено справочников"</v8:content>
 							</v8:item>
 						</dcsset:userSettingPresentation>
-					</dcscor:item>
-					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
-						<dcscor:parameter>ВыводитьЗаголовок</dcscor:parameter>
-						<dcscor:value xsi:type="dcsset:DataCompositionTextOutputType">Output</dcscor:value>
 					</dcscor:item>
 					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
 						<dcscor:parameter>Заголовок</dcscor:parameter>
@@ -2712,9 +2186,7 @@
 						<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
 					</dcsset:order>
 					<dcsset:selection>
-						<dcsset:item xsi:type="dcsset:SelectedItemField">
-							<dcsset:field>Дата</dcsset:field>
-						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
 					</dcsset:selection>
 					<dcsset:conditionalAppearance>
 						<dcsset:item>
@@ -2743,20 +2215,11 @@
 					</dcsset:conditionalAppearance>
 				</dcsset:point>
 				<dcsset:selection>
-					<dcsset:item xsi:type="dcsset:SelectedItemFolder">
-						<dcsset:lwsTitle>
-							<v8:item>
-								<v8:lang>ru</v8:lang>
-								<v8:content>Активность пользователя</v8:content>
-							</v8:item>
-						</dcsset:lwsTitle>
-						<dcsset:item xsi:type="dcsset:SelectedItemField">
-							<dcsset:field>СозданоСправочников</dcsset:field>
-						</dcsset:item>
-						<dcsset:item xsi:type="dcsset:SelectedItemField">
-							<dcsset:field>ИзмененоСправочников</dcsset:field>
-						</dcsset:item>
-						<dcsset:placement>Auto</dcsset:placement>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>СозданоСправочников</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ИзмененоСправочников</dcsset:field>
 					</dcsset:item>
 				</dcsset:selection>
 				<dcsset:outputParameters>
@@ -2774,10 +2237,6 @@
 								<v8:content>Диаграмма "Введено и изменено документов"</v8:content>
 							</v8:item>
 						</dcsset:userSettingPresentation>
-					</dcscor:item>
-					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
-						<dcscor:parameter>ВыводитьЗаголовок</dcscor:parameter>
-						<dcscor:value xsi:type="dcsset:DataCompositionTextOutputType">Output</dcscor:value>
 					</dcscor:item>
 					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
 						<dcscor:parameter>Заголовок</dcscor:parameter>
@@ -2813,9 +2272,7 @@
 						<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
 					</dcsset:order>
 					<dcsset:selection>
-						<dcsset:item xsi:type="dcsset:SelectedItemField">
-							<dcsset:field>Дата</dcsset:field>
-						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
 					</dcsset:selection>
 					<dcsset:conditionalAppearance>
 						<dcsset:item>
@@ -2844,20 +2301,11 @@
 					</dcsset:conditionalAppearance>
 				</dcsset:point>
 				<dcsset:selection>
-					<dcsset:item xsi:type="dcsset:SelectedItemFolder">
-						<dcsset:lwsTitle>
-							<v8:item>
-								<v8:lang>ru</v8:lang>
-								<v8:content>Активность пользователя</v8:content>
-							</v8:item>
-						</dcsset:lwsTitle>
-						<dcsset:item xsi:type="dcsset:SelectedItemField">
-							<dcsset:field>СозданоБизнесПроцессов</dcsset:field>
-						</dcsset:item>
-						<dcsset:item xsi:type="dcsset:SelectedItemField">
-							<dcsset:field>ИзмененоБизнесПроцессов</dcsset:field>
-						</dcsset:item>
-						<dcsset:placement>Auto</dcsset:placement>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>СозданоБизнесПроцессов</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ИзмененоБизнесПроцессов</dcsset:field>
 					</dcsset:item>
 				</dcsset:selection>
 				<dcsset:outputParameters>
@@ -2875,10 +2323,6 @@
 								<v8:content>Диаграмма "Введено и изменено бизнес процессов"</v8:content>
 							</v8:item>
 						</dcsset:userSettingPresentation>
-					</dcscor:item>
-					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
-						<dcscor:parameter>ВыводитьЗаголовок</dcscor:parameter>
-						<dcscor:value xsi:type="dcsset:DataCompositionTextOutputType">Output</dcscor:value>
 					</dcscor:item>
 					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
 						<dcscor:parameter>Заголовок</dcscor:parameter>
@@ -2914,9 +2358,7 @@
 						<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
 					</dcsset:order>
 					<dcsset:selection>
-						<dcsset:item xsi:type="dcsset:SelectedItemField">
-							<dcsset:field>Дата</dcsset:field>
-						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
 					</dcsset:selection>
 					<dcsset:conditionalAppearance>
 						<dcsset:item>
@@ -2945,20 +2387,11 @@
 					</dcsset:conditionalAppearance>
 				</dcsset:point>
 				<dcsset:selection>
-					<dcsset:item xsi:type="dcsset:SelectedItemFolder">
-						<dcsset:lwsTitle>
-							<v8:item>
-								<v8:lang>ru</v8:lang>
-								<v8:content>Активность пользователя</v8:content>
-							</v8:item>
-						</dcsset:lwsTitle>
-						<dcsset:item xsi:type="dcsset:SelectedItemField">
-							<dcsset:field>СозданоЗадач</dcsset:field>
-						</dcsset:item>
-						<dcsset:item xsi:type="dcsset:SelectedItemField">
-							<dcsset:field>ИзмененоЗадач</dcsset:field>
-						</dcsset:item>
-						<dcsset:placement>Auto</dcsset:placement>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>СозданоЗадач</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ИзмененоЗадач</dcsset:field>
 					</dcsset:item>
 				</dcsset:selection>
 				<dcsset:outputParameters>
@@ -2976,10 +2409,6 @@
 								<v8:content>Диаграмма "Введено и изменено задач"</v8:content>
 							</v8:item>
 						</dcsset:userSettingPresentation>
-					</dcscor:item>
-					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
-						<dcscor:parameter>ВыводитьЗаголовок</dcscor:parameter>
-						<dcscor:value xsi:type="dcsset:DataCompositionTextOutputType">Output</dcscor:value>
 					</dcscor:item>
 					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
 						<dcscor:parameter>Заголовок</dcscor:parameter>
@@ -3095,18 +2524,6 @@
 					<dcsset:userSettingID>8cba6ba6-ca7f-4532-b800-7596761b7b5d</dcsset:userSettingID>
 				</dcscor:item>
 			</dcsset:dataParameters>
-			<dcsset:outputParameters>
-				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
-					<dcscor:use>false</dcscor:use>
-					<dcscor:parameter>Заголовок</dcscor:parameter>
-					<dcscor:value xsi:type="v8:LocalStringType"/>
-				</dcscor:item>
-				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
-					<dcscor:use>false</dcscor:use>
-					<dcscor:parameter>ВыводитьОтбор</dcscor:parameter>
-					<dcscor:value xsi:type="dcsset:DataCompositionTextOutputType">DontOutput</dcscor:value>
-				</dcscor:item>
-			</dcsset:outputParameters>
 		</dcsset:settings>
 	</settingsVariant>
 </DataCompositionSchema>
