@@ -343,7 +343,6 @@
 Процедура ПоместитьВБуферОбмена(Команда)
 	
 	ДокументHTML = Элементы.ПолеHTML.Документ;
-	ДокументHTML.defaultView.value_to_copy = ПолучитьЗначениеТекущейСтроки();
 	Кнопка = ДокументHTML.getElementById("myb");
 	Если Кнопка = Неопределено Тогда
 		ПоказатьПредупреждение(,НСтр("ru = 'Выберите поле объекта, оператор или функцию.'"));
@@ -817,23 +816,22 @@
 						|            </div>
 						|        </div>
 						|        <p>
-						|            <div class=""draggabletext"">%1</div>
+						|            <div id=""valuetext"" class=""draggabletext"">%1</div>
 						|        </p>
 						|    </div>
 						|    <button id=""myb"" class=""myButton"" onclick=""copytext();"">%4</button>
 						|    <script type=""text/javascript"">
-						|    var value_to_copy = null;
 						|        function onDragStart(event) {
 						|            event
 						|                .dataTransfer
-						|                .setData('text/plain', value_to_copy);
+						|                .setData('text/plain', document.getElementById('valuetext').textContent);
 						|        }
 						|
         				|		function copytext() {
 						|            var area = document.createElement('textarea');
 						|
 						|            document.body.appendChild(area);
-						|            area.value = value_to_copy;
+						|            area.value = document.getElementById('valuetext').textContent;
 						|            area.select();
 						|            document.execCommand(""copy"");
 						|            document.body.removeChild(area);
@@ -911,21 +909,20 @@
 	                    | 				%3
 	                    |   	    </div>
 	                    |    	</div>
-	                    |    	<p><div class=""draggabletext"">%1</div></p>
+						|    <p><div id=""valuetext"" class=""draggabletext"">%1</div></p>
 						|    </div>
 						|    <button id=""myb"" class=""myButton"" onclick=""copytext();"">%4</button>
 						|    <script type=""text/javascript"">
-						|    var value_to_copy = null;
 						|        function onDragStart(event) {
 						|            event
 						|                .dataTransfer
-						|                .setData('text/plain', value_to_copy);
+						|                .setData('text/plain', document.getElementById('valuetext').textContent);
 						|        }
 						|        function copytext() {
 						|            var area = document.createElement('textarea');
 						|
 						|            document.body.appendChild(area);
-						|            area.value = value_to_copy;
+						|            area.value = document.getElementById('valuetext').textContent;
 						|            area.select();
 						|            document.execCommand(""copy"");
 						|            document.body.removeChild(area);
@@ -978,8 +975,13 @@
 					|</html>";
 	КонецЕсли;
 	
+	ЗначениеHTML = СтрЗаменить(Значение, "&", "&amp;");
+	ЗначениеHTML = СтрЗаменить(ЗначениеHTML, """", "&quot;");
+	ЗначениеHTML = СтрЗаменить(ЗначениеHTML, "<", "&lt;");
+	ЗначениеHTML = СтрЗаменить(ЗначениеHTML, ">", "&gt;");
+	
 	ПолеHTML = СтроковыеФункцииКлиентСервер.ПодставитьПараметрыВСтроку(ТекстHTML,
-		СтрЗаменить(Значение, """", "&quot;"),
+		ЗначениеHTML,
 		НСтр("ru='Перенос текста'"),
 		НСтр("ru='Перетащите<br> в редактор'"),
 		НСтр("ru='Скопировать'"),
