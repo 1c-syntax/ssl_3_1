@@ -429,6 +429,152 @@
 						</UsualGroup>
 					</ChildItems>
 				</Page>
+				<Page name="СтраницаСпособЗагрузкиДанных" id="209">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Страница способ загрузки данных</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="СтраницаСпособЗагрузкиДанныхРасширеннаяПодсказка" id="210"/>
+					<ChildItems>
+						<UsualGroup name="ГруппаВыборВарианта" id="211">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Выбор варианта</v8:content>
+								</v8:item>
+							</Title>
+							<Group>AlwaysHorizontal</Group>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаВыборВариантаРасширеннаяПодсказка" id="212"/>
+							<ChildItems>
+								<UsualGroup name="ГруппаДекорация" id="213">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Декорация</v8:content>
+										</v8:item>
+									</Title>
+									<Representation>None</Representation>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="ГруппаДекорацияРасширеннаяПодсказка" id="214"/>
+									<ChildItems>
+										<PictureDecoration name="ДекорацияИнформация" id="215">
+											<Title formatted="false">
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Декорация информация</v8:content>
+												</v8:item>
+											</Title>
+											<Picture>
+												<xr:Ref>StdPicture.DialogInformation</xr:Ref>
+												<xr:LoadTransparent>true</xr:LoadTransparent>
+											</Picture>
+											<FileDragMode>AsFile</FileDragMode>
+											<ContextMenu name="ДекорацияИнформацияКонтекстноеМеню" id="216"/>
+											<ExtendedTooltip name="ДекорацияИнформацияРасширеннаяПодсказка" id="217"/>
+										</PictureDecoration>
+									</ChildItems>
+								</UsualGroup>
+								<UsualGroup name="ГруппаОписаниеВариантов" id="218">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Описание вариантов</v8:content>
+										</v8:item>
+									</Title>
+									<Group>Vertical</Group>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="ГруппаОписаниеВариантовРасширеннаяПодсказка" id="219"/>
+									<ChildItems>
+										<RadioButtonField name="ВариантыЗагрузкиПакетно" id="220">
+											<DataPath>ВариантыЗагрузки</DataPath>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Варианты загрузки</v8:content>
+												</v8:item>
+											</Title>
+											<TitleLocation>None</TitleLocation>
+											<ToolTipRepresentation>ShowBottom</ToolTipRepresentation>
+											<RadioButtonType>Auto</RadioButtonType>
+											<ChoiceList>
+												<xr:Item>
+													<xr:Presentation/>
+													<xr:CheckState>0</xr:CheckState>
+													<xr:Value xsi:type="FormChoiceListDesTimeValue">
+														<Presentation>
+															<v8:item>
+																<v8:lang>ru</v8:lang>
+																<v8:content>Пакетно</v8:content>
+															</v8:item>
+														</Presentation>
+														<Value xsi:type="xs:decimal">1</Value>
+													</xr:Value>
+												</xr:Item>
+											</ChoiceList>
+											<ContextMenu name="ВариантыЗагрузкиПакетноКонтекстноеМеню" id="221"/>
+											<ExtendedTooltip name="ВариантыЗагрузкиПакетноРасширеннаяПодсказка" id="222">
+												<AutoMaxWidth>false</AutoMaxWidth>
+												<MaxWidth>60</MaxWidth>
+												<MaxHeight>8</MaxHeight>
+												<Title formatted="false">
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>Вариант подразумевает единую обработку всех полученных данных и только после обработки данных в источник будет отправлено подтверждение о получение. В случае ошибки при загрузке данные все данные считаются не полученными и будут отправлены повторно.</v8:content>
+													</v8:item>
+												</Title>
+											</ExtendedTooltip>
+										</RadioButtonField>
+										<LabelDecoration name="ДекорацияОтступ1" id="224">
+											<ContextMenu name="ДекорацияОтступ1КонтекстноеМеню" id="225"/>
+											<ExtendedTooltip name="ДекорацияОтступ1РасширеннаяПодсказка" id="226"/>
+										</LabelDecoration>
+										<RadioButtonField name="ВариантыЗагрузкиОбъектно" id="227">
+											<DataPath>ВариантыЗагрузки</DataPath>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Варианты загрузки</v8:content>
+												</v8:item>
+											</Title>
+											<TitleLocation>None</TitleLocation>
+											<ToolTipRepresentation>ShowBottom</ToolTipRepresentation>
+											<RadioButtonType>Auto</RadioButtonType>
+											<ChoiceList>
+												<xr:Item>
+													<xr:Presentation/>
+													<xr:CheckState>0</xr:CheckState>
+													<xr:Value xsi:type="FormChoiceListDesTimeValue">
+														<Presentation>
+															<v8:item>
+																<v8:lang>ru</v8:lang>
+																<v8:content>Объектно</v8:content>
+															</v8:item>
+														</Presentation>
+														<Value xsi:type="xs:decimal">2</Value>
+													</xr:Value>
+												</xr:Item>
+											</ChoiceList>
+											<ContextMenu name="ВариантыЗагрузкиОбъектноКонтекстноеМеню" id="228"/>
+											<ExtendedTooltip name="ВариантыЗагрузкиОбъектноРасширеннаяПодсказка" id="229">
+												<AutoMaxWidth>false</AutoMaxWidth>
+												<MaxWidth>60</MaxWidth>
+												<Title formatted="false">
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>Вариант разбивает загрузку данных на два этапа: получение и обработка. Данные считаются полученными сразу после этапа чтения, и до этапа конвертации. Прочитанные данные более не присылаются, даже в случае наличия проблем с их обработкой. В случае ошибки конвертации будут пропущены только те объекты, в которых возникли ошибки, а так же объекты, которые на них ссылаются.</v8:content>
+													</v8:item>
+												</Title>
+											</ExtendedTooltip>
+										</RadioButtonField>
+									</ChildItems>
+								</UsualGroup>
+							</ChildItems>
+						</UsualGroup>
+					</ChildItems>
+				</Page>
 				<Page name="СтраницаСохранениеНастроекПодключения" id="76">
 					<Title>
 						<v8:item>
@@ -1014,6 +1160,22 @@
 		<Attribute name="МодельСервиса" id="26">
 			<Type>
 				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ВариантыЗагрузки" id="27">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Варианты загрузки</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>1</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+				</v8:NumberQualifiers>
 			</Type>
 		</Attribute>
 	</Attributes>

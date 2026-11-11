@@ -1,0 +1,172 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.20">
+	<Title>
+		<v8:item>
+			<v8:lang>ru</v8:lang>
+			<v8:content>Переход на объектную загрузку данных</v8:content>
+		</v8:item>
+	</Title>
+	<Width>60</Width>
+	<WindowOpeningMode>LockOwnerWindow</WindowOpeningMode>
+	<AutoTitle>false</AutoTitle>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<Autofill>false</Autofill>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnOpen">ПриОткрытии</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="ГруппаОсновная" id="19">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Основная</v8:content>
+				</v8:item>
+			</Title>
+			<Group>AlwaysHorizontal</Group>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаОсновнаяРасширеннаяПодсказка" id="20"/>
+			<ChildItems>
+				<PictureDecoration name="КартинкаИнформация" id="5">
+					<Title formatted="false">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Картинка информация</v8:content>
+						</v8:item>
+					</Title>
+					<Picture>
+						<xr:Ref>StdPicture.DialogInformation</xr:Ref>
+						<xr:LoadTransparent>true</xr:LoadTransparent>
+					</Picture>
+					<FileDragMode>AsFile</FileDragMode>
+					<ContextMenu name="КартинкаИнформацияКонтекстноеМеню" id="6"/>
+					<ExtendedTooltip name="КартинкаИнформацияРасширеннаяПодсказка" id="7"/>
+				</PictureDecoration>
+				<Pages name="ГруппаПанель" id="15">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Панель</v8:content>
+						</v8:item>
+					</Title>
+					<PagesRepresentation>None</PagesRepresentation>
+					<ExtendedTooltip name="ГруппаПанельРасширеннаяПодсказка" id="16"/>
+					<ChildItems>
+						<Page name="СтраницаПредупреждение" id="17">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Страница предупреждение</v8:content>
+								</v8:item>
+							</Title>
+							<ExtendedTooltip name="СтраницаПредупреждениеРасширеннаяПодсказка" id="18"/>
+							<ChildItems>
+								<LabelDecoration name="ДекорацияПредупреждение" id="8">
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<Title formatted="true">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Объектная загрузка данных – это способ обработки входящих данных, при котором содержимое сообщений обмена разбивается на объекты, обработка которых идет независимо друг от друга.</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="ДекорацияПредупреждениеКонтекстноеМеню" id="9"/>
+									<ExtendedTooltip name="ДекорацияПредупреждениеРасширеннаяПодсказка" id="10"/>
+								</LabelDecoration>
+								<UsualGroup name="ГруппаВключение" id="26">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Включение</v8:content>
+										</v8:item>
+									</Title>
+									<Group>AlwaysHorizontal</Group>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="ГруппаВключениеРасширеннаяПодсказка" id="27"/>
+									<ChildItems>
+										<Button name="ФормаИзменитьСпособЗагрузкиДанных" id="21">
+											<Type>UsualButton</Type>
+											<DefaultButton>true</DefaultButton>
+											<CommandName>Form.Command.ВключитьОбъектнуюЗагрузкуДанных</CommandName>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Включить объектную загрузку данных</v8:content>
+												</v8:item>
+											</Title>
+											<ExtendedTooltip name="ФормаИзменитьСпособЗагрузкиДанныхРасширеннаяПодсказка" id="22"/>
+										</Button>
+										<LabelDecoration name="ДекорацияВключено" id="28">
+											<Visible>false</Visible>
+											<Font bold="true" kind="AutoFont"/>
+											<Title formatted="false">
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Включено</v8:content>
+												</v8:item>
+											</Title>
+											<ContextMenu name="ДекорацияВключеноКонтекстноеМеню" id="29"/>
+											<ExtendedTooltip name="ДекорацияВключеноРасширеннаяПодсказка" id="30"/>
+										</LabelDecoration>
+									</ChildItems>
+								</UsualGroup>
+								<LabelDecoration name="ДекорацияДействияПриЗагрузки" id="23">
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<Title formatted="true">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>После включения объектной загрузки данных для каждого вида данных можно задать персональные &lt;link ОткрытьФормуДействияПриПолученияДанных&gt;&lt;u&gt;настройки действий при загрузке&lt;/&gt;&lt;/&gt;.</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="ДекорацияДействияПриЗагрузкиКонтекстноеМеню" id="24"/>
+									<ExtendedTooltip name="ДекорацияДействияПриЗагрузкиРасширеннаяПодсказка" id="25"/>
+									<Events>
+										<Event name="URLProcessing">ДекорацияДействияПриЗагрузкиОбработкаНавигационнойСсылки</Event>
+									</Events>
+								</LabelDecoration>
+							</ChildItems>
+						</Page>
+					</ChildItems>
+				</Pages>
+			</ChildItems>
+		</UsualGroup>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:DataProcessorObject.ПомощникСозданияОбменаДанными</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+		</Attribute>
+		<Attribute name="ВключенаОбъектнаяЗагрузкаДанных" id="2">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="ВключитьОбъектнуюЗагрузкуДанных" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Включить объектную загрузку данных</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Включить объектную загрузку данных</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ВключитьОбъектнуюЗагрузкуДанных</Action>
+		</Command>
+	</Commands>
+	<Parameters>
+		<Parameter name="УзелИнформационнойБазы">
+			<Type>
+				<v8:TypeSet>cfg:ExchangePlanRef</v8:TypeSet>
+			</Type>
+			<KeyParameter>true</KeyParameter>
+		</Parameter>
+	</Parameters>
+</Form>
